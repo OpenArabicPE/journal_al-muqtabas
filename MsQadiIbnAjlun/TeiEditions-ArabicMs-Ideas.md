@@ -9,7 +9,7 @@ date: 2015-07-15
 ## Goals:
 
 1. Scholarly goals: make important historical sources accessible to the wider scholarly community and the general public
-    - pilot project: a short unpublished manuscript by Ibn Ṭulūn
+    - pilot project: a short unpublished manuscript by al-Qāḍī Ibn ʿAjlūn
     - prepare digital representations of analogue source documents for analytical purposes. This means first and foremost *diplomatic* editions
     - publish the edition as well as all source files and code under a creative commons licence on the web
 2. Technical goals: proof of concept for an Arabic, TEI-based, digital edition 
@@ -30,8 +30,8 @@ date: 2015-07-15
 
 ## Persons involved
 
-- Torsten Wollina: expertise for Ibn Ṭulūn, Arabic manuscripts, editing
-- Till Grallert: technical expertise, XML, TEI
+- Torsten Wollina: expertise for Ibn Ṭulūn, Ibn ʿAjlūn, Mamluk Damascus, Arabic manuscripts, ms editing
+- Till Grallert: expertise for late Ottoman Damascus, Arabic newspapers; technical expertise, XML, TEI
 
 # Workflow
 
@@ -79,4 +79,3 @@ date: 2015-07-15
 ## Tutorials
 
 - Certainly not the best, but I share the slides for my introduction to markup, TEI, and XML [here](http://tillgrallert.github.io/teaching.html).
-
