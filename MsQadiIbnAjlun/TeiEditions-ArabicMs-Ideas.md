@@ -30,7 +30,7 @@ date: 2015-07-15
 
 ## Persons involved
 
-- Torsten Wollina: expertise for Ibn Ṭulūn, Ibn ʿAjlūn, Mamluk Damascus, Arabic manuscripts, ms editing
+- Torsten Wollina: expertise for Ibn Ṭulūn, Ibn Qāḍī ʿAjlūn, Mamluk Damascus, Arabic manuscripts, ms editing
 - Till Grallert: expertise for late Ottoman Damascus, Arabic newspapers; technical expertise, XML, TEI
 
 # Workflow
@@ -59,6 +59,7 @@ date: 2015-07-15
 4. Add metadata on the source, the recording process, the editing principles, editors etc.: Torsten und Till
 5. Add further mark-up. While we might start with a very limit set of tags, we might want to encode references to persons, places, dates, etc. or even linguistic features at some future point in time.: Torsten und Till
 
+
 ## 3. Produce a website
 
 1. Find a hosting service!
@@ -66,6 +67,8 @@ date: 2015-07-15
 3. Decide how they should be displayed
 4. Write the code etc.
 
+
+## 4. Rules for (easy) transcription
 
 
 # literature / links
