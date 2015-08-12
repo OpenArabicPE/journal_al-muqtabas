@@ -30,7 +30,7 @@ date: 2015-07-15
 
 ## Persons involved
 
-- Torsten Wollina: expertise for Ibn Ṭulūn, Ibn ʿAjlūn, Mamluk Damascus, Arabic manuscripts, ms editing
+- Torsten Wollina: expertise for Ibn Ṭulūn, Ibn Qāḍī ʿAjlūn, Mamluk Damascus, Arabic manuscripts, ms editing
 - Till Grallert: expertise for late Ottoman Damascus, Arabic newspapers; technical expertise, XML, TEI
 
 # Workflow
@@ -59,13 +59,25 @@ date: 2015-07-15
 4. Add metadata on the source, the recording process, the editing principles, editors etc.: Torsten und Till
 5. Add further mark-up. While we might start with a very limit set of tags, we might want to encode references to persons, places, dates, etc. or even linguistic features at some future point in time.: Torsten und Till
 
+
 ## 3. Produce a website
 
 1. Find a hosting service!
-2. Decide which features of the edition should be displayed
+2. Decide which features of the Mss. should be displayed
 3. Decide how they should be displayed
 4. Write the code etc.
 
+
+## 4. Features of Mss to be displayed
+1. Collection, shelfmark, and numbers of relevant folios (if in a majmuʿa)
+2. "Official title" and title given in the Ms.
+3. Names of author and copyist plus life dates if available
+4. Other manuscripts and/or editions of the same text
+5. Short description of the content
+6. Short description of the Ms. (i.e. state of paper and binding, remarks in the margins? (folio number), text complete?, catchwords?)
+
+
+## 5. Rules for (easy) transcription
 
 
 # literature / links
