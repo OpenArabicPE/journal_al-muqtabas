@@ -85,7 +85,9 @@ date: 2015-07-15
 2. Inks and Text Revisions
 	- transcribe coloured inks in coloured letters
 	- crossed out sections should be transcribed as far as readable and also be formatted as crossed out
-	- Missing / superfluous diacriticals should be left missing (z.b. علي statt  على   حسبة für حسبه)
+	- Missing / superfluous diacriticals should be left missing; z.b.
+		+ علي statt  على  
+		+ حسبة für حسبه
 	-
 
 
