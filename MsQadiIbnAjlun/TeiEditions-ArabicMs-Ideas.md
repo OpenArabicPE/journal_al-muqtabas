@@ -78,6 +78,9 @@ date: 2015-07-15
 
 
 ## 5. Rules for (easy) transcription
+<!--We want to keep the language to indicate variants in the reading of the text and to translate visual elements in the text as slim, simple and clear as possible -->
+
+
 
 
 # literature / links
