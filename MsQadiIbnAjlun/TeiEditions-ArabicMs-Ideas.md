@@ -88,7 +88,6 @@ date: 2015-07-15
 	- Missing / superfluous diacriticals should be left missing; z.b.
 		+ علي statt  على  
 		+ حسبة für حسبه
-	-
 
 
 
