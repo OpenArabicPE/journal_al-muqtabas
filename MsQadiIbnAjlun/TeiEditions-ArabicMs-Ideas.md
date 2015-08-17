@@ -78,6 +78,18 @@ date: 2015-07-15
 
 
 ## 5. Rules for (easy) transcription
+<!--We want to keep the language to indicate variants in the reading of the text and to translate visual elements in the text as slim, simple and clear as possible -->
+1. General Formatting:
+	- use templates to mark title, text body, quotes etc.
+	- Apply page break / line break in document when there is page break / line break in the original text
+2. Inks and Text Revisions
+	- transcribe coloured inks in coloured letters
+	- crossed out sections should be transcribed as far as readable and also be formatted as crossed out
+	- Missing / superfluous diacriticals should be left missing; z.b.
+		+ علي statt  على  
+		+ حسبة für حسبه
+	-
+
 
 
 # literature / links
