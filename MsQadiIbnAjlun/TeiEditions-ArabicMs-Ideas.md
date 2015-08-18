@@ -91,7 +91,9 @@ date: 2015-07-15
 		+ حسبة für حسبه
 3. Text Body and Readings
 	- word which clearly belong to the text but stand out from the text body:
-		+ 
+		+ words outside the text body, mark with / before
+		+ words above the line or added by way of "footonote", mark by underlining
+		
 
 
 
