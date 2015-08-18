@@ -85,9 +85,14 @@ date: 2015-07-15
 2. Inks and Text Revisions
 	- transcribe coloured inks in coloured letters
 	- crossed out sections should be transcribed as far as readable and also be formatted as crossed out
+	- If words or passages are not legible, mark by {no. of words; interpretation}
 	- Missing / superfluous diacriticals should be left missing; z.b.
 		+ علي statt  على  
 		+ حسبة für حسبه
+3. Text Body and Readings
+	- word which clearly belong to the text but stand out from the text body:
+		+ words outside the text body, mark with / before
+		+ words above the line or added by way of "footnote", mark by underlining
 
 
 
