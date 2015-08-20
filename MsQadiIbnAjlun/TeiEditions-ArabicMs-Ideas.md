@@ -67,8 +67,11 @@ date: 2015-07-15
 3. Decide how they should be displayed
 4. Write the code etc.
 
+# Detailed description for TEI edition
 
-## 4. Features of Mss to be displayed
+## 1. Features to be recorded
+### 1.1. Metadata of ms
+
 1. Collection, shelfmark, and numbers of relevant folios (if in a majmuʿa)
 2. "Official title" and title given in the Ms.
 3. Names of author and copyist plus life dates if available
@@ -76,8 +79,25 @@ date: 2015-07-15
 5. Short description of the content
 6. Short description of the Ms. (i.e. state of paper and binding, remarks in the margins? (folio number), text complete?, catchwords?)
 
+### 1.2. Text features
 
-## 5. Rules for (easy) transcription
+1. Structural features
+    - line breaks
+    - page breaks
+    - headings
+    - text in the margins
+2. Writing styles
+    - colour of ink
+    - hand shifts
+
+### 1.3. Damaged, illegible parts, normalisation
+
+1. illegible words
+2. damages to the ms
+3. normalisation
+
+## 2. Guidelines of editing principles
+## 2.1. Rules for (easy) transcription
 <!--We want to keep the language to indicate variants in the reading of the text and to translate visual elements in the text as slim, simple and clear as possible -->
 1. General Formatting:
 	- use templates to mark title, text body, quotes etc.
@@ -93,6 +113,14 @@ date: 2015-07-15
 	- word which clearly belong to the text but stand out from the text body:
 		+ words outside the text body, mark with / before
 		+ words above the line or added by way of "footonote", mark by underlining
+
+## 2.2. Formalised rules
+
+## 2.3. Suggestions for tools and formats
+
+1. Initial transcription can be done in the text editor / word-processing software of the transcriber's choice
+    - Plain text and markdown / mmd
+    - CriticMarkup for editorial choices, comments, etc.
 
 # literature / links
 ## Examples
