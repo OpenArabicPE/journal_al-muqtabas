@@ -37,5 +37,41 @@
         </xsl:copy>
     </xsl:template>
     
-   
+    <!-- convert <body> to <group> -->
+    <xsl:template match="tei:body">
+        <group>
+            <xsl:apply-templates select="@* | node()"/>
+        </group>
+    </xsl:template>
+    
+    <!-- create a <text> for each issue -->
+    <xsl:template match="tei:div[./tei:div/tei:head/tei:bibl]">
+        <text>
+            <xsl:attribute name="n" select="concat('i',./tei:div/tei:head/tei:bibl/tei:biblScope/@n)"/>
+            <front>
+                <div>
+                    <xsl:apply-templates select="descendant::tei:head/tei:bibl" mode="mFront"/>
+                </div>
+            </front>
+            <body>
+                <xsl:apply-templates select="@* | node()"/>
+            </body>
+        </text>
+    </xsl:template>
+    
+    <!-- generate structured metadata in the front of each issue -->
+    <xsl:template match="tei:bibl" mode="mFront">
+        <biblStruct>
+            <monogr>
+                <title level="j">المقتبس</title>
+                <editor>محمد كرد علي</editor>
+                <imprint>
+                    <pubPlace>دمشق</pubPlace>
+                    <xsl:copy-of select="./tei:date"/>
+                    <xsl:copy-of select="./tei:biblScope"/>
+                </imprint>
+            </monogr>
+        </biblStruct>
+    </xsl:template>
+
 </xsl:stylesheet>
