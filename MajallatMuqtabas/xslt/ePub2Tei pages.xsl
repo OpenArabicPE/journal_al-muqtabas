@@ -30,9 +30,16 @@
         <xsl:element name="pb">
             <!-- construct an ID from the issue and page numbers provided in human-readible form only -->
             <xsl:attribute name="n">
-                <xsl:analyze-string select="following-sibling::html:div[@class='center']" regex="(الجزء\s*:\s*)(\d+).+(الصفحة\s*:\s*)(\d+)">
+                <xsl:analyze-string select="following-sibling::html:div[@class='center']" regex="(الجزء\s*:\s*)(\d+).+(الصفحة\s*:\s*)(\d+)|(الصفحة\s*:\s*)(\d+)">
                     <xsl:matching-substring>
-                        <xsl:value-of select="concat('n',regex-group(2),'-p',regex-group(4))"/>
+                        <xsl:choose>
+                            <xsl:when test="'(الجزء\s*:\s*)(\d+).+(الصفحة\s*:\s*)(\d+)'">
+                                <xsl:value-of select="concat('n',regex-group(2),'-p',regex-group(4))"/>
+                            </xsl:when>
+                            <xsl:when test="matches(.,'(الصفحة\s*:\s*)(\d+)')">
+                                <xsl:value-of select="concat('p',regex-group(6))"/>
+                            </xsl:when>
+                        </xsl:choose>
                     </xsl:matching-substring>
                 </xsl:analyze-string>
             </xsl:attribute>
