@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:opf="http://www.idpf.org/2007/opf"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs"
     version="2.0">
     
@@ -16,14 +19,15 @@
     
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes" encoding="UTF-8"/>
     
-    <xsl:template match="/">
+    <!-- only needed if run on its own -->
+<!--    <xsl:template match="/">
         <xsl:apply-templates select="descendant::html:div[@id='book-container']"/>
-    </xsl:template>
+    </xsl:template>-->
     
     <!-- div content per page -->
     <xsl:template match="html:div[@id='book-container']">
         <!-- pb -->
-        <xsl:element name="tei:pb">
+        <xsl:element name="pb">
             <!-- construct an ID from the issue and page numbers provided in human-readible form only -->
             <xsl:attribute name="n">
                 <xsl:analyze-string select="following-sibling::html:div[@class='center']" regex="(الجزء\s*:\s*)(\d+).+(الصفحة\s*:\s*)(\d+)">
@@ -45,7 +49,7 @@
     
     <!-- head lines / titles -->
     <xsl:template match="html:span[@class='title']">
-        <xsl:element name="tei:head">
+        <xsl:element name="head">
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
