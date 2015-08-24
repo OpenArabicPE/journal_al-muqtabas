@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:xd="http://www.pnp-software.com/XSLTdoc"
+    xmlns="http://www.w3.org/1999/xhtml"
+    exclude-result-prefixes="xs"
+    version="2.0">
+    
+    <xd:doc scope="stylesheet">
+        <xd:desc>
+            <xd:p>This stylesheet will transform individual pages of an ePub, which are represented by single XHTML files, into fragments of TEI P5 XML.</xd:p>
+        </xd:desc>
+    </xd:doc>
+    
+    <xsl:output method="xml" omit-xml-declaration="no" indent="yes" encoding="UTF-8"/>
+    
+    <xsl:template match="/">
+        <xsl:apply-templates select="descendant::html:div[@id='book-container']"/>
+    </xsl:template>
+    
+    <!-- div content per page -->
+    <xsl:template match="html:div[@id='book-container']">
+        <!-- pb -->
+        <xsl:element name="tei:pb">
+            <!-- construct an ID from the issue and page numbers provided in human-readible form only -->
+            <xsl:attribute name="n">
+                <xsl:analyze-string select="following-sibling::html:div[@class='center']" regex="(الجزء\s*:\s*)(\d+).+(الصفحة\s*:\s*)(\d+)">
+                    <xsl:matching-substring>
+                        <xsl:value-of select="concat('n',regex-group(2),'-p',regex-group(4))"/>
+                    </xsl:matching-substring>
+                </xsl:analyze-string>
+            </xsl:attribute>
+            <!-- point to the source file -->
+            <xsl:attribute name="corresp" select="base-uri()"/>
+        </xsl:element>
+        <xsl:apply-templates/>
+    </xsl:template>
+    
+    <!-- br to lb -->
+    <xsl:template match="html:br">
+        <xsl:element name="lb"/>
+    </xsl:template>
+    
+    <!-- head lines / titles -->
+    <xsl:template match="html:span[@class='title']">
+        <xsl:element name="tei:head">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+</xsl:stylesheet>
