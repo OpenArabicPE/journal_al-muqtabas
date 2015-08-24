@@ -8,7 +8,7 @@
     xmlns:opf="http://www.idpf.org/2007/opf"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="xs"
+    exclude-result-prefixes="xs xd opf dc html tei"
     version="2.0">
     
     <xd:doc scope="stylesheet">
@@ -59,5 +59,15 @@
         <xsl:element name="head">
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+    
+    <!-- gaps -->
+    <xsl:template match="html:span[@class='red'][text()='...']" priority="2">
+        <gap/>
+    </xsl:template>
+    <xsl:template match="html:span[@class='red']" priority="1">
+        <hi style="color:red;">
+            <xsl:apply-templates/>
+        </hi>
     </xsl:template>
 </xsl:stylesheet>
