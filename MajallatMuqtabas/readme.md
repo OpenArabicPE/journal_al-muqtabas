@@ -51,6 +51,9 @@ The main challenge is to combine the full text and the images in a TEI edition.
 - Challenges
     + There seems to be no ready-made converter from ePub to TEI P5. [OxGarage](http://www.tei-c.org/oxgarage/) provides a tool for the opposite direction.
     + Writing the XSLT could be trivial though. The ePub container contains a single xhtml file per page.
+
+## ePub conversion
+
 - ePub container:
     + META-INF
     + OEBPS
@@ -62,7 +65,7 @@ The main challenge is to combine the full text and the images in a TEI edition.
         * toc.ncx
     + mimetype
 
-## example xhtml
+### example xhtml
 
 ~~~ {.xml}
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
@@ -88,9 +91,13 @@ The main challenge is to combine the full text and the images in a TEI edition.
 - encoding principles in *shamela* epub:
     + paragraphs are encoded as double line breaks: `<br/><br/>`
     + page and issue numbers are only encoded in human-readable form: `<div class="center">الجزء: 37 ¦ الصفحة: 1</div>`
-        * the xslt to extract that information from above would be 
+        * see below for the example xslt to extract this information
+    + possible gaps in the transcription: `<span class="red">...</span>`
+- **problems** in *shamela* xhtml:
+    + some entity references are not escaped: `&` instead of `&amp;`
 
-~~~ {.xsl}
+### example XSLT 
+~~~ {.xslt}
 <xsl:template match="html:div[@id='book-container']">
         <!-- pb -->
         <xsl:element name="tei:pb">
@@ -105,3 +112,25 @@ The main challenge is to combine the full text and the images in a TEI edition.
         <xsl:apply-templates/>
     </xsl:template>
 ~~~
+
+- necessary regex to clean up the data quickly
+    + move the `<pb>` at the beginning of a new article inside the `<div>`
+        1. `(<pb\sn=".[^"]+")\s*\n*\s*(corresp=".+\.xhtml"/>)\s*\n*\s*(</p></div><div>)(<head>)`
+        2. `$3$1 $2$4`
+    + split numbers into divs
+        1. `(<div><head>العدد\s*\d+\s*</head>)`
+        2. `</div><div>$1`
+    + normalisation and mark-up for publication dates
+        1. `(<head>)(العدد\s*)(\d+)(\s*</head><p>)(.+)(بتاريخ:\s*)(\d{1,2})\s\-\s(\d{1,2})\s\-\s(\d{4})`
+        2. `<head><bibl><biblScope n="$3" unit="issue">$2$3</biblScope> <date when="$9-$8-$7">$6$7 - $8 - $9</date></bibl></head><p>`
+        3. e.g. `<head>العدد 2</head><p> - بتاريخ: 26 - 3 - 1906`
+        4. e.g. `<head><bibl><biblScope n="9" unit="issue">العدد 9</biblScope> <date when="1906-10-18">بتاريخ: 18 - 10 - 1906</date></bibl></head><p>`
+
+## Generation of metadata, links to facsimiles
+
+### 1. Metadata
+
+Fairly simply task, as *al-Muqtabas* was published regularly once a month.
+
+### 2. Facsimiles
+
