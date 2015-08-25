@@ -115,6 +115,9 @@ date: 2015-07-15
 		+ words above the line or added by way of "footnote", mark by underlining
 
 ## 2.2. Formalised rules
+
+The [manual for cataloguing Arabic manuscripts in TEI](http://www.fihrist.org.uk/manual/) for the [Fihrist project](http://www.fihrist.org.uk/) could be used for inspiration---at least for recording metadata.
+
 ## 2.3. Suggestions for tools and formats
 
 1. Initial transcription can be done in the text editor / word-processing software of the transcriber's choice
