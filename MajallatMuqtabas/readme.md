@@ -52,6 +52,10 @@ The main challenge is to combine the full text and the images in a TEI edition.
     + There seems to be no ready-made converter from ePub to TEI P5. [OxGarage](http://www.tei-c.org/oxgarage/) provides a tool for the opposite direction.
     + Writing the XSLT could be trivial though. The ePub container contains a single xhtml file per page.
 
+## General design
+
+The edition should be conceived of as a corpus of tei files that are grouped by means of xinclude. This way, volumes can be constructed as single Tei files containing a `<group/>` of tei files and a volume specific `<front/>` and `<back/>`
+
 ## ePub conversion
 
 - ePub container:
@@ -64,6 +68,24 @@ The main challenge is to combine the full text and the images in a TEI edition.
         * style.css
         * toc.ncx
     + mimetype
+- encoding principles in *shamela* epub:
+    + paragraphs are encoded as double line breaks: `<br/><br/>`
+    + page and issue numbers are only encoded in human-readable form: `<div class="center">الجزء: 37 ¦ الصفحة: 1</div>`
+        * see below for the example xslt to extract this information
+    + seeming gaps in the transcription marked as `<span class="red">...</span>` indicate for a large part the break between the two parts of a verse (*bayt*) of a *qaṣīda*.
+        * Verse and poetry are covered in [chapter 6 of the TEI guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html)
+
+- **problems** in *shamela* xhtml:
+    + some entity references are not escaped: `&` instead of `&amp;`
+- where to keep the bibliographic information from the ePub?
+
+~~~{.xml}
+<dc:title xmlns="http://www.idpf.org/2007/opf">مجلة المقتبس</dc:title> 
+<dc:creator xmlns="http://www.idpf.org/2007/opf" opf:role="aut">محمد كرد علي</dc:creator> 
+<dc:publisher xmlns="http://www.idpf.org/2007/opf">http://shamela.ws</dc:publisher> 
+<dc:language xmlns="http://www.idpf.org/2007/opf">ar</dc:language> 
+<dc:identifier xmlns="http://www.idpf.org/2007/opf" id="BookID" opf:scheme="UUID">urn:uuid:4caf7b615c3e7278c0cc1fcc2e80c7ec</dc:identifier> 
+~~~
 
 ### example xhtml
 
@@ -88,13 +110,6 @@ The main challenge is to combine the full text and the images in a TEI edition.
 </html>
 ~~~
 
-- encoding principles in *shamela* epub:
-    + paragraphs are encoded as double line breaks: `<br/><br/>`
-    + page and issue numbers are only encoded in human-readable form: `<div class="center">الجزء: 37 ¦ الصفحة: 1</div>`
-        * see below for the example xslt to extract this information
-    + possible gaps in the transcription: `<span class="red">...</span>`
-- **problems** in *shamela* xhtml:
-    + some entity references are not escaped: `&` instead of `&amp;`
 
 ### example XSLT 
 ~~~ {.xslt}
@@ -121,10 +136,31 @@ The main challenge is to combine the full text and the images in a TEI edition.
         1. `(<div><head>العدد\s*\d+\s*</head>)`
         2. `</div><div>$1`
     + normalisation and mark-up for publication dates
-        1. `(<head>)(العدد\s*)(\d+)(\s*</head><p>)(.+)(بتاريخ:\s*)(\d{1,2})\s\-\s(\d{1,2})\s\-\s(\d{4})`
+        1. `(<head>)(العدد\s*)(\d+)(\s*</head>\s*<p>)(.+)(بتاريخ:\s*)(\d{1,2})\s\-\s(\d{1,2})\s\-\s(\d{4})`
         2. `<head><bibl><biblScope n="$3" unit="issue">$2$3</biblScope> <date when="$9-$8-$7">$6$7 - $8 - $9</date></bibl></head><p>`
         3. e.g. `<head>العدد 2</head><p> - بتاريخ: 26 - 3 - 1906`
         4. e.g. `<head><bibl><biblScope n="9" unit="issue">العدد 9</biblScope> <date when="1906-10-18">بتاريخ: 18 - 10 - 1906</date></bibl></head><p>`
+    + translate line breaks into paragraphs
+        1. `<lb/>`
+        2. `</p><p>`
+        3. delete all empty parapragphs: `<p>\s*</p>`
+
+### encoding of *qaṣīda*s
+
+~~~ {.xml}
+<p>وكذا الزراعة والصناعة والتجارة 
+    <gap resp="#org_MS"/> عززت في نجمها مبداكِ</p>
+<p>سميت نصف الأرض عن ثقة وقد 
+    <gap resp="#org_MS"/> فاخرت كل الأرض في أنباكِ</p>
+~~~
+
+
+~~~ {.xml}
+<lg type="bayt">
+    <l>وكذا الزراعة والصناعة والتجارة</l>
+    <l>عززت في نجمها مبداكِ</l>
+</lg>
+~~~
 
 ## Generation of metadata, links to facsimiles
 
