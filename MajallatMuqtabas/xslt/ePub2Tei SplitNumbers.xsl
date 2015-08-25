@@ -74,4 +74,11 @@
         </biblStruct>
     </xsl:template>
 
+    <!-- document changes -->
+    <xsl:template match="tei:revisionDesc">
+        <xsl:copy>
+            <change when="{format-date( current-date(),'[Y0001]-[M01]-[D01]')}">Divided the <gi>body</gi> into a <gi>group</gi> of <gi>text</gi>s along the issues of this periodical.</change>
+            <xsl:apply-templates select="@* | node()"/>
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>
