@@ -73,8 +73,18 @@ lg[type="bayt"] > l:last-child {
  
 /* page breaks */
 
-pb[ed="print"] {
+text pb[ed="print"] {
+    display:inline;
+    content:"\a";
     color:green;
+   }
+text pb:after {
+	content: "@n=" attr(n);
+	direction:ltr;
+	vertical-align:top;
+	font-size: 0.5em;
+	color: orange;
+	display:inline;
 }
 
 /*named entities: inline and colours*/
