@@ -115,15 +115,15 @@ Facsimiles are linked through the `<facsimile>` child of `<TEI>`:
 
 ~~~{.xml}
 <facsimile>
-    <surface xml:id="facs_v6_i1_445" target="http://hdl.handle.net/2027/njp.32101073250910?urlappend=%3Bseq=445">
+    <surface xml:id="facs_v6_i1_445">
         <graphic xml:id="facs_v6_i1_445_g_1" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.tif" mimeType="image/tiff"/>
-        <graphic xml:id="facs_v6_i1_445_g_2" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.jpg" mimeType="image/jpeg"
-        />
+        <graphic xml:id="facs_v6_i1_445_g_2" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.jpg" mimeType="image/jpeg"/>
+        <graphic xml:id="facs_v6_i1_445_g_3" url="http://babel.hathitrust.org/cgi/imgsrv/image?id=njp.32101073250910;seq=445" mimeType="image/jpeg"/>
 </facsimile>
 ~~~
 
-- The `@url` of `<graphic>` links to local downloads of the image
-- The `@target` of `<surface>` links to the online view of the page on HathiTrust.
+- The `@url` of `<graphic>` links to local downloads of the image as well as to the image hosted on HathiTrust's servers
+
 
 # non-structural phenomena of interest to the historian
 
