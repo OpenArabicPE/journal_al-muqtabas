@@ -87,7 +87,43 @@ Each line of a *qaṣīda* is encoded as `<lg type="bayt"/>`
 
 # Typographic marks
 
+# Facsimiles
 
+Image files are available from [Hathitrust](http://catalog.hathitrust.org/Record/100658549) or [Institut du Monde Arabe](http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=9C82C139F9785E99D30089727B40A269).
+
+##  HathiTrust
+
+- links to volumes
+    + [Vol. 1](http://hdl.handle.net/2027/umn.319510029968608)
+    + [Vol. 2](http://hdl.handle.net/2027/umn.319510029968616)
+    + [Vol. 3](http://hdl.handle.net/2027/umn.319510029968624)
+    + [Vol. 4](http://hdl.handle.net/2027/umn.319510029968632)
+    + [Vol. 5](http://hdl.handle.net/2027/umn.319510029968640)
+    + [Vol. 6](http://hdl.handle.net/2027/njp.32101073250910)
+    + [Vol. 8](http://hdl.handle.net/2027/njp.32101007615691)
+    + [Index](http://hdl.handle.net/2027/umn.31951d008457474)
+- access
+    + The journal is in the public domain in the US and can be freely accessed and downloaded
+    + Outside the US, access is restricted.
+    + Formal [licence](https://www.hathitrust.org/access_use#pd-us-google): 
+> Public Domain or Public Domain in the United States, Google-digitized: In addition to the terms for works that are in the Public Domain or in the Public Domain in the United States above, the following statement applies: The digital images and OCR of this work were produced by Google, Inc. (indicated by a watermark on each page in the PageTurner). Google requests that the images and OCR not be re-hosted, redistributed or used commercially. The images are provided for educational, scholarly, non-commercial purposes.
+>Note: There are no restrictions on use of text transcribed from the images, or paraphrased or translated using the images.
+
+## Mark-up
+
+Facsimiles are linked through the `<facsimile>` child of `<TEI>`:
+
+~~~{.xml}
+<facsimile>
+    <surface xml:id="facs_v6_i1_445" target="http://hdl.handle.net/2027/njp.32101073250910?urlappend=%3Bseq=445">
+        <graphic xml:id="facs_v6_i1_445_g_1" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.tif" mimeType="image/tiff"/>
+        <graphic xml:id="facs_v6_i1_445_g_2" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.jpg" mimeType="image/jpeg"
+        />
+</facsimile>
+~~~
+
+- The `@url` of `<graphic>` links to local downloads of the image
+- The `@target` of `<surface>` links to the online view of the page on HathiTrust.
 
 # non-structural phenomena of interest to the historian
 
