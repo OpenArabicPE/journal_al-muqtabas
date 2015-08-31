@@ -22,9 +22,9 @@
     <xsl:variable name="vFileName" select="concat(translate($vHathTrustId,'.','-'),'_img-')"/>
     <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v6/'"/>
     <xsl:variable name="vFileUrl" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathTrustId,';seq=')"/>
-    <xsl:variable name="vImgStart" select="5"/>
-    <xsl:variable name="vNumberPages" select="88"/>
-    <xsl:variable name="vFacsId" select="'facs_v6_i1_'"/>
+    <xsl:variable name="vImgStart" select="807"/>
+    <xsl:variable name="vNumberPages" select="8"/>
+    <xsl:variable name="vFacsId" select="'facs_v6_'"/>
     
     <xsl:template match="tei:TEI">
         <xsl:copy>
