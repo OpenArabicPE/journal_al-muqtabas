@@ -23,7 +23,7 @@
     <xsl:template match="/">
         <xsl:element name="tei:list">
             <xsl:apply-templates select="descendant::tei:text[@type='issue']/tei:body/descendant::tei:head">
-                <xsl:sort select="." order="ascending"/>
+                <xsl:sort select="if(starts-with(.,'ال')) then( substring(.,3)) else(.)" order="ascending"/>
             </xsl:apply-templates>
         </xsl:element>
     </xsl:template>
