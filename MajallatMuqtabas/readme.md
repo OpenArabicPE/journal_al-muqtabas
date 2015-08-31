@@ -47,7 +47,11 @@ It seems that somebody took the pains to upload the tet from *shamela* to WikiSo
 
 # TEI edition
 
-The main challenge is to combine the full text and the images in a TEI edition.
+The main challenge is to combine the full text and the images in a TEI edition. As *al-maktabat al-shāmila* did not reproduce page breaks true to the print edition, every single one of the more than 6000 page breaks must be added manually and linked to the digital image of the page.
+
+## Quality control
+
+A simple way of controlling the quality of the basic structural mark-up would be to cross check any automatically generated table of content or index against the published tables of content at the end of each volume and against the index of *al-Muqtabas* published by [Riyāḍ ʿAbd al-Ḥamīd Murād in 1977](http://hdl.handle.net/2027/umn.31951d008457474). 
 
 ## General design
 
