@@ -4,6 +4,15 @@ author: Till Grallert
 date: 2015-08-27
 ---
 
+# Issues to be solved
+## Serialised articles
+
+While the technical linking by means of attributes is simple, how should the human-readible information contained in the print copies be encoded?
+
+## Typographic marks
+
+Early-twentieth century periodicals contain a lot of typographic markers indicating foreign words, technical terms, proper names, and the end of a section.
+
 # Gaps in the transcription
 
 Gaps in the transcription as copied from shamela are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`
@@ -59,8 +68,8 @@ The common structure of an issue would be a mix of `<div @type="article">` and `
 
 Only page breaks should are recorded (`<pb>`). The page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the printed copies. They were therefore marked as `<pb ed="shamila">`. The page breaks corresponding to the printed edition are identified by `@ed="print"`.
 
-1. Printed original copy:
-2. Transcription from *al-maktaba al-shāmila*:
+1. Printed original copy: `<pb ed="print"/>`
+2. Transcription from *al-maktaba al-shāmila*: `<pb ed="shamela"/>`
 
 ## Lists
 
@@ -85,7 +94,6 @@ Each line of a *qaṣīda* is encoded as `<lg type="bayt"/>`
 </lg>
 ~~~
 
-# Typographic marks
 
 # Facsimiles
 
