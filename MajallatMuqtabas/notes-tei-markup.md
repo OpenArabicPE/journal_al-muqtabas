@@ -68,7 +68,8 @@ The common structure of an issue would be a mix of `<div @type="article">` and `
 
 ## Page, line, and column breaks
 
-Only page breaks should are recorded (`<pb>`). The page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the printed copies. They were therefore marked as `<pb ed="shamila">`. The page breaks corresponding to the printed edition are identified by `@ed="print"`.
+Only page breaks should are recorded (`<pb>`). The page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the origial printed copies. They were therefore marked as `<pb ed="shamila">`. The page breaks corresponding to the original printed edition are identified by `@ed="print"`.
+Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the originl, it appeared to be a facsimile reprint: pagination, font, layout --- everything is identical.
 
 1. Printed original copy: `<pb ed="print"/>`
 2. Transcription from *al-maktaba al-shāmila*: `<pb ed="shamela"/>`
@@ -160,8 +161,9 @@ Imagine, someone bought <measureGrp><measure commodity="wheat" quantity="2" unit
 ## Persons, Places, Organisations
 
 1. Persons:`<persName>`
-    + How to encode this string "حسين كاظم بك والي حلب الحالي" ? Should the information on his position be included in the `<persName>`?
+    + How to encode this string: "حسين كاظم بك والي حلب الحالي" ? Should the information on his position be included in the `<persName>`?
 2. Places: `<placeName>`
+    + How to encode this string: "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"? الفيحاء or الشهباء are clearly references to places by name, but are they a `<placeName>`?
 3. Organisations: `<orgName>`
 
 ## references to intellectual works
