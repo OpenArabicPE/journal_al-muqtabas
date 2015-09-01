@@ -18,13 +18,13 @@
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
     
-    <xsl:variable name="vHathTrustId" select="'njp.32101073250910'"/>
+    <xsl:variable name="vHathTrustId" select="'umn.319510029968632'"/>
     <xsl:variable name="vFileName" select="concat(translate($vHathTrustId,'.','-'),'_img-')"/>
-    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v6/'"/>
+    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v4/'"/>
     <xsl:variable name="vFileUrl" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathTrustId,';seq=')"/>
-    <xsl:variable name="vImgStart" select="807"/>
-    <xsl:variable name="vNumberPages" select="8"/>
-    <xsl:variable name="vFacsId" select="'facs_v6_'"/>
+    <xsl:variable name="vImgStart" select="13"/>
+    <xsl:variable name="vNumberPages" select="72"/>
+    <xsl:variable name="vFacsId" select="'facs_v4_i1_'"/>
     
     <xsl:template match="tei:TEI">
         <xsl:copy>
