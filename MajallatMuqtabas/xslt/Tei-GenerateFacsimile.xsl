@@ -20,11 +20,11 @@
     
     <xsl:variable name="vHathTrustId" select="'umn.319510029968632'"/>
     <xsl:variable name="vFileName" select="concat(translate($vHathTrustId,'.','-'),'_img-')"/>
-    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v4/'"/>
+    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v1/'"/>
     <xsl:variable name="vFileUrl" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathTrustId,';seq=')"/>
     <xsl:variable name="vImgStart" select="13"/>
     <xsl:variable name="vNumberPages" select="72"/>
-    <xsl:variable name="vFacsId" select="'facs_v4_i1_'"/>
+    <xsl:variable name="vFacsId" select="'facs_v1_i1_'"/>
     
     <xsl:template match="tei:TEI">
         <xsl:copy>
