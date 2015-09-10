@@ -15,7 +15,7 @@ Early-twentieth century periodicals contain a lot of typographic markers indicat
 
 # Gaps in the transcription
 
-Gaps in the transcription as copied from shamela are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`
+Gaps in the transcription as copied from shamela are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`. Many, if not most of these originated as the gap between two halves of a single line of a *qaṣīda*.
 
 # Structure
 
@@ -97,6 +97,22 @@ Each line of a *qaṣīda* is encoded as `<lg type="bayt"/>`
 </lg>
 ~~~
 
+There are cases when words are split between the two lines of the *qaṣīda*:
+
+![example for split line of a *qaṣīda*](material/qasida-bayt.png)
+
+How should this be encoded?
+
+~~~ {.xml}
+<lg type="bayt">
+    <l>أبرموا أمرهم عشاء فلما </l>
+    <l> أصبحوا أصبحت لهم ضوضاء</l>
+</lg>
+<lg type="bayt">
+    <l>من منادٍ ومن مجيبٍ ومن تص</l>
+    <l>هالٍ خليل خلال ذاك رغاء</l>
+</lg>
+~~~
 
 # Facsimiles
 
