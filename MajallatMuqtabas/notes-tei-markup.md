@@ -80,7 +80,29 @@ Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked 
 
 Unfortunately, *al-maktaba al-shāmila* did NOT include the sometimes abundant footnotes in their transcription.
 
-## Words in other alphabets than Arabic
+## Languages: `@xml:id`
+
+The use of language codes as values for `@xml:id` follows [BCP 47](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) and specifies that the language code is to be followed by information on the script, if the latter is not the common script for this language, followed by information on the transribing convention.
+
+~~~{.xml}
+<langUsage>
+    <language ident="ar">Arabic</language>
+    <language ident="ar-Latn-x-ijmes">Arabic transcribed into Latin script following the IJMES conventions</language>
+    <language ident="ar-Latn-EN">Arabic transcribed into Latin script following common English practices</language>
+    <language ident="ar-Latn-FR">Arabic transcribed into Latin script following common French practices</language>
+    <language ident="en">English</language>
+    <language ident="en-Arab-AR">English transcribed into Arabic script following common Levantine Arabic practices</language>
+    <language ident="fa">Farsi</language>
+    <language ident="fa-Latn-x-ijmes">Farsi transcribed into Latin script following the IJMES conventions</language>
+    <language ident="fr">French</language>
+    <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
+    <language ident="ota">Ottoman</language>
+    <language ident="ota-Latn-x-ijmes">Ottoman transcribed into Latin script following the IJMES conventions</language>
+    <language ident="tr">Turkish</language>
+</langUsage>
+~~~
+
+### Words in other alphabets than Arabic
 
 Unfortunately, *al-maktaba al-shāmila* did NOT include these words, often technical terms in articles on science and medicine, in their transcription.
 
@@ -182,11 +204,29 @@ Imagine, someone bought <measureGrp><measure commodity="wheat" quantity="2" unit
     + How to encode this string: "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"? الفيحاء or الشهباء are clearly references to places by name, but are they a `<placeName>`?
 3. Organisations: `<orgName>`
 
+## Dates and calendars
+
+1. `@calendar="#cal_gregorian"`
+2. `@calendar="#cal_islamic"`
+3. `@calendar="#cal_julian"`
+4. `@calendar="#cal_ottomanfiscal"`
+
 ## references to intellectual works
+### 1. encoding with `<title>`
+
+References to titles of intellectual works, such as books, periodicals etc., could be encoded with `<title>` using the `@level` attribute for some granularity.
+
+~~~{.xml}
+حتى بلغ المطبوع منها مليون نسخة وأصبحت اليوم تطبع مليوناً ومائتي ألف نسخة في حين تطبع <title level="j">التيمس</title> 55 ألفاً فقط و<title level="j">الديلي اكسبرس</title> 700 ألف و<title level="j">الديلي تلغراف</title> 350 ألفاً والديلي نيوز 300 ألف والمورنن ليدر 350 والستاندارد 120 ألفاً
+~~~
+
+### 2. encoding with `<rs>`
 
 References to intellectual works, such as books, periodicals, laws, etc. should be encoded using `<rs>` with the `@type="work"` and a more specific `@subtype` attribute:
 
 1. Books: `<rs type="work" subtype="book">`
 2. Periodicals: `<rs type="work" subtype="periodical">`
 3. Laws, bills: `<rs type="work" subtype="bill">`
+
+
 
