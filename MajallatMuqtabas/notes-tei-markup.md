@@ -180,6 +180,8 @@ All information on the individual issue is part of the *monographic* level of bi
 5. scope of item (volume, issue, pages)
     - `<biblScope>` with `@unit` attribute of "volume", "issue", "pages" and `@n`, `@from`, `@to` indicating the actual extent. The element should have no `text()` content to avoid language-specificity
 
+Current structure of the `<biblStruct>` in `<sourceDesc>`:
+
 ~~~{.xml}
 <biblStruct>
     <monogr>
@@ -214,6 +216,53 @@ All information on the individual issue is part of the *monographic* level of bi
             </pubPlace>
             <pubPlace xml:lang="en" notBefore="1908" notAfter="1914">
                 <placeName>Damascus</placeName>
+            </pubPlace>
+            <date xml:lang="ar" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">١ محرم ١٣٢٩</date>
+            <date xml:lang="ar-Latn-x-ijmes" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">1 Muḥ 1329</date>
+        </imprint>
+        <biblScope unit="volume" n="6"/>
+        <biblScope unit="issue" n="1"/>
+        <biblScope unit="page" from="1" to="88"/>
+    </monogr>
+    <idno type="oclc">4770057679</idno>
+    <idno type="oclc">79440195</idno>
+    <idno type="aucr">07201136864</idno>
+    <idno type="shamela">26523</idno>
+</biblStruct>
+~~~
+
+Better and shorter idea, without loosing any information:
+
+~~~{.xml}
+<biblStruct>
+    <monogr>
+        <title level="j" xml:lang="ar">المقتبس</title>
+        <title level="j" type="sub" xml:lang="ar">مجلة تبحث في التربية والتعليم والاجتماع والاقتصاد والاداب والتاريخ والآثار واللغة و تدبير المنزل والصحة والكتب وحضارة العرب والغرب</title>
+        <title level="j" type="sub" xml:lang="ar">تصدر في كل شهر عربي بدمشق</title>
+        <title level="j" xml:lang="ar-Latn-x-ijmes">[Majallat] al-Muqtabas</title>
+        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla tabḥath fī al-tarbiyya wa-l-taʿlīm wa-l-ijtimāʿ wa-l-iqtiṣād wa-l-adab wa-l-tārīkh wa-l-āthār wa-l-llugha wa tadbīr al-manzil wa-l-ṣaḥḥa wa-l-kutub wa ḥaḍāra al-ʿarab wa ḥadāra al-gharb</title>
+        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">tuṣadir fī kull shar ʿarabī bi-Dimashq</title>
+        <title level="j" xml:lang="fr">Al-Moktabas</title>
+        <title level="j" type="sub" xml:lang="fr">Revue mensuelle paraissant à Damas (Syrie)</title>
+        <title level="j" type="sub" xml:lang="fr">Pédagogie, sociologie, économie politique, littérature, histoire, archéologie, philologie, ménagerie, hygiène, bibliographie, civilisation arabe et occidentale</title>
+        <editor ref="https://viaf.org/viaf/32272677">
+            <persName xml:lang="ar">
+                <forename>محمد</forename>
+                <surname>كرد علي</surname>
+            </persName>
+            <persName xml:lang="ar-Latn-x-ijmes" >
+                <forename>Muḥammad</forename>
+                <surname>Kurd ʿAlī</surname>
+            </persName>
+        </editor>
+        <imprint>
+            <publisher notAfter="1914" notBefore="1908">
+                <orgName xml:lang="ar">مطبعة المقتبس</orgName>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Muqtabas</orgName>
+            </publisher>
+            <pubPlace notBefore="1908" notAfter="1914">
+                <placeName xml:lang="ar">دمشق</placeName>
+                <placeName xml:lang="en">Damascus</placeName>
             </pubPlace>
             <date xml:lang="ar" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">١ محرم ١٣٢٩</date>
             <date xml:lang="ar-Latn-x-ijmes" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">1 Muḥ 1329</date>
