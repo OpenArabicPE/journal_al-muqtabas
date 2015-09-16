@@ -4,6 +4,24 @@ author: Till Grallert
 date: 2015-08-24
 ---
 
+# To do
+
+## Conceptual level
+
+- URI design: each part of the edition down to, at least, the paragraph level should be addressable for reference in scholarly work.
+    1. I decided to start with an existing identifier for *al-Muqtabas*, the OCLC number, and
+    2. a continuous issue counter from 1 to 96
+    
+- Semantic web: it would be great to link at least references to books to existing records or to provide a means to do so.
+
+## Mark-up
+
+1. Mark-up: The basic structural mark-up of individual issues is far from complete
+    - headlines
+    - splitting articles into sections and sections into individual articles
+    - mark-up of authors with `<byline>`
+2. Text-image linking: while the links to the facsimiles can be automatically generated for each issue, establishing page breaks (`<pb>`) must be done manually for all 6.000+ of them
+
 # Digital imagery
 
 Image files are available from [Hathitrust](http://catalog.hathitrust.org/Record/100658549) or [Institut du Monde Arabe](http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=9C82C139F9785E99D30089727B40A269).
@@ -156,3 +174,17 @@ The edition should be conceived of as a corpus of tei files that are grouped by 
 ## Presentation by means of TEI Boilerplate
 
 I chose TEI Boilerplate for a first display of the TEI files in the browser without need for pre-processed HTML. I have adapted TEI Boilerplate to my needs and made significant alterations to the functionality and look. For a first impression see [here](https://rawgit.com/tillgrallert/ArabicTeiEdition/boilerplate/MajallatMuqtabas/xml/oclc_4770057679_i60.TEIP5.xml).
+
+# Web display
+
+To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate]() and host this heavily altered boilerplate view as a seperate branch of the GitHub repository.
+
+## Bibliographic metadata
+
+The web display should contain automatically generated metadata down to the article level to ease harvesting/ crawling of bibliographic metadata.
+
+### the `<meta>` tag
+
+the `<meta>` tag in the HTML head allows to include RDF ontologies such as [Dublin Core, DC-HTML Prefixed Name as attribute value (XHTML)](dublincore.org/documents/2008/08/04/dc-html/), which are supported by Zotero etc. The syntax is documented [here](http://www.metatags.org/dublin_core_metadata_element_set) This is a quick solution for information on the issue level.
+
+## [OpenURL COinS: A Convention to Embed Bibliographic Metadata in HTML](http://ocoins.info/)
