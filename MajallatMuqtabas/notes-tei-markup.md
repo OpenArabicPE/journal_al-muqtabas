@@ -17,6 +17,10 @@ Early-twentieth century periodicals contain a lot of typographic markers indicat
 
 Gaps in the transcription as copied from shamela are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`. Many, if not most of these originated as the gap between two halves of a single line of a *qaṣīda*.
 
+Sometimes shamela's transcribers could not read a word and marked such omissions with ellipses:
+
+> مثل ال. . . . . ود لكن درها عسل
+
 # Structure
 
 Each issue is conceived of as a single `<text>` that is then grouped into volumes and a complete edition of all issues by means of xPointer.
