@@ -25,7 +25,7 @@
         </xsl:copy>
     </xsl:template>
     <!-- document the changes -->
-    <xsl:template match="tei:revisionDesc">
+    <xsl:template match="tei:revisionDesc" priority="100">
         <xsl:copy>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
@@ -36,12 +36,13 @@
     </xsl:template>
     
     <!-- generate @xml:lang -->
-    <xsl:template match="*[not(@xml:lang)][.!='']">
+    <xsl:template match="*[not(@xml:lang)][.!=''][not(ancestor-or-self::tei:facsimile)]">
         <xsl:copy>
+            <xsl:apply-templates select="@*"/>
             <xsl:attribute name="xml:lang">
                 <xsl:value-of select="ancestor::node()[@xml:lang != ''][1]/@xml:lang"/>
             </xsl:attribute>
-            <xsl:apply-templates select="@* | node()"/>
+            <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="/">
