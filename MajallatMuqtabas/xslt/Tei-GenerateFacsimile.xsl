@@ -18,13 +18,13 @@
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
     
-    <xsl:variable name="vHathTrustId" select="'umn.319510029968632'"/>
+    <xsl:variable name="vHathTrustId" select="'njp.32101073250910'"/>
     <xsl:variable name="vFileName" select="concat(translate($vHathTrustId,'.','-'),'_img-')"/>
-    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v1/'"/>
+    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v6/'"/>
     <xsl:variable name="vFileUrl" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathTrustId,';seq=')"/>
-    <xsl:variable name="vImgStart" select="13"/>
-    <xsl:variable name="vNumberPages" select="72"/>
-    <xsl:variable name="vFacsId" select="'facs_v1_i1_'"/>
+    <xsl:variable name="vImgStart" select="445"/>
+    <xsl:variable name="vNumberPages" select="64"/>
+    <xsl:variable name="vFacsId" select="'facs_'"/>
     
     <xsl:template match="tei:TEI">
         <xsl:copy>
@@ -65,18 +65,18 @@
         <xsl:element name="tei:surface">
             <xsl:attribute name="xml:id" select="concat($vFacsId,$pStart)"/>
             <xsl:element name="tei:graphic">
-                <xsl:attribute name="xml:id" select="concat($vFacsId,$pStart,'_g_1')"/>
+                <xsl:attribute name="xml:id" select="concat($vFacsId,$pStart,'-g_1')"/>
                 <xsl:attribute name="url" select="concat($vFilePath,$vFileName,format-number($pStart,'000'),'.tif')"/>
                 <xsl:attribute name="mimeType" select="'image/tiff'"/>
             </xsl:element>
             <xsl:element name="tei:graphic">
-                <xsl:attribute name="xml:id" select="concat($vFacsId,$pStart,'_g_2')"/>
+                <xsl:attribute name="xml:id" select="concat($vFacsId,$pStart,'-g_2')"/>
                 <xsl:attribute name="url" select="concat($vFilePath,$vFileName,format-number($pStart,'000'),'.jpg')"/>
                 <xsl:attribute name="mimeType" select="'image/jpeg'"/>
             </xsl:element>
             <!-- link to Hathi -->
             <xsl:element name="tei:graphic">
-                <xsl:attribute name="xml:id" select="concat($vFacsId,$pStart,'_g_3')"/>
+                <xsl:attribute name="xml:id" select="concat($vFacsId,$pStart,'-g_3')"/>
                 <xsl:attribute name="url" select="concat($vFileUrl,$pStart)"/>
                 <xsl:attribute name="mimeType" select="'image/jpeg'"/>
             </xsl:element>
