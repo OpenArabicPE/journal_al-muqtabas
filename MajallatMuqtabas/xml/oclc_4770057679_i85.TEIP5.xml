@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i85_text"
-         xml:lang="ar"
-         type="issue"
-         n="i85">
+   <text xml:id="oclc_4770057679_i85_text" xml:lang="ar" type="issue" n="i85">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,37 +202,33 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1914-02-01">بتاريخ: 1 - 2 - 1914</date>
-                                    <biblScope n="85" unit="issue">العدد 85</biblScope>
+                                    <date when="1914-02-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="2" xml:lang="ar">٢</tei:num>  -  <tei:num value="1914" xml:lang="ar">١٩١٤</tei:num> </date>
+                                    <biblScope n="85" unit="issue">العدد  <tei:num value="85" xml:lang="ar">٨٥</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             n=""
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5761.xhtml"/>
+                    <pb ed="shamela" n="" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5761.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="85" unit="issue">العدد 85</biblScope> 
-                  <date when="1914-02-01">بتاريخ: 1 - 2 -
-                            1914</date> 
+                  <biblScope n="85" unit="issue">العدد  <tei:num value="85" xml:lang="ar">٨٥</tei:num> </biblScope> 
+                  <date when="1914-02-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="2" xml:lang="ar">٢</tei:num>  -
+                             <tei:num value="1914" xml:lang="ar">١٩١٤</tei:num> </date> 
                </bibl> 
             </head>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n85-p1"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5762.xhtml"/>
+                        <pb ed="shamela" n="n85-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5762.xhtml"/>
                         <head>مكتبة شيخ الإسلام عارف حكمت</head>
                         <p>قليل من الناس بل من غلاة الكتب من يعرف من أمر هذه الخزانة الغنية الموجودة في المدينة المنورة شيئاً لعدم وجود فهرس
                             مطبوع لها حتى أنك لا تجدها في ترجمة حياة صاحبها في كتاب قاموس الأعلام المؤلفة شمس الدين بك سامي الألباني كأنها
                             ليست من الأعمال التي تجدر بالذكر أو أن يكون المترجم عرض بها فرفعوا قلم المراقبة في عهد السلطان السابق وقد كنا في
                             عداد جاهليها إلى أن كتبت مجلة المقتبس بعض أسماء المخطوطات فيها وفي مكاتب المدينة المنورة نقلاً عن الشيخ جمال
-                            الدين القاسمي في الصفحة 718من السنة الرابعة ثم عادت فنشرت قائمة أخرى بتوقيع إبراهيم أفندي حمدي خربطلي في الصفحة
-                            379 من السنة الرابعة.</p>
+                            الدين القاسمي في الصفحة  <tei:num value="718" xml:lang="ar">٧١٨</tei:num> من السنة الرابعة ثم عادت فنشرت قائمة أخرى بتوقيع إبراهيم أفندي حمدي خربطلي في الصفحة
+                             <tei:num value="379" xml:lang="ar">٣٧٩</tei:num>  من السنة الرابعة.</p>
                         <p>والذي زادنا تعريفا بها هو وصف صديقنا المتقبس لها في رحلته إلى طيبة إذ يقول وأحسنها أي خزائن كتب المدينة المنورة
                             وربما كانت خير مكتبة في البلاد العثمانية كلها بنظامها وانتقاء أمهاتها هي مكتبة شيخ الإسلام عارف حكمت أفندي ففيها
                             نحو عشرة ألاف مجلد كتبت بخطوط المشهورين من الخطاطين كأن تجد الكتاب ذا العشرين جلداً مكتوباً بخط مشرق بديع في
@@ -275,33 +242,29 @@
                             كأن على رؤوسهم الطير إلا حركة خفيفة تنبعث مرة بعد أخرى من أهواء المهواة التي بأيديهم دفعاً لشدة حمارة القيظ.</p>
                         <p>ولما استتب بنا الجلوس أتى إلينا حافظ الكتب بفهارس المكية الخطية وطلب غلينا معرفة اسمنا فلسمنا بطاقتنا وصرنا نطالع
                             الفهارس المرتبة على أنواع العلوم والفنون والمنسقة تنسيقاً جميلاً يدل على ذوق سليم مما يعد عنواناً على نظام هذه
-                            المكتبة كما تراه في المثال <pb ed="shamela"
-                   n="n85-p2"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5763.xhtml"/> المحرر أدناه تقلاً على
+                            المكتبة كما تراه في المثال <pb ed="shamela" n="n85-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5763.xhtml"/> المحرر أدناه تقلاً على
                             أحد الفهارس.</p>
-                        <p>نمرة 175</p>
+                        <p>نمرة  <tei:num value="175" xml:lang="ar">١٧٥</tei:num> </p>
                         <p>اسم الكتاب تذكرة الشعراء المسماة بجمع الخواص</p>
                         <p>المؤلف الصادق الكيلاني</p>
                         <p>خط تعليق</p>
-                        <p>سطر 19</p>
-                        <p>أوراق 105</p>
-                        <p>جلد 1</p>
+                        <p>سطر  <tei:num value="19" xml:lang="ar">١٩</tei:num> </p>
+                        <p>أوراق  <tei:num value="105" xml:lang="ar">١٠٥</tei:num> </p>
+                        <p>جلد  <tei:num value="1" xml:lang="ar">١</tei:num> </p>
                         <p>جدول خالي</p>
                         <p>ملاحظات بالتركي</p>
                         <p>وبعد هنيهة قدم علينا مدير المكتبة عبد القادر أفندي حوار وغدا يرشدنا إلى أمهات الكتب النفسية الموجودة في الكتب
                             فاطلعنا على تفسير انكشاف للزمخشري وبهامشه الكشف على الكشف وقد كتب التفسير أولاً بمجلد واحد بخط مشرق جميل وجداول
                             مذهبة ثم أضيف إليه الهامش بإلصاقه على جوانب المتن الثلاثة إلصاقاً يكاد لا يظهر إلا على الناقد البصير وقد قيل أن
                             هذا التفسير كلف صاحب المكتبة ثلاث مئة جنية مما يدل على مبلغ تأنق الرجل في انتقاء كتبه.</p>
-                        <p>وأرونا أيضاً كتاب تقويم الأبدان في الطب لابن جزله البغدادي وقد نسخه ناسخه سنة 297 أي منذ نيف وألف سنة كما أننا
-                            رأينا ديوان شعر بالفارسية اسمه غزليات شاهي كتب سنة 655 بحروف من ورق قطعت تقطيعا بديعاً وألصقت على صحائف من الورق
+                        <p>وأرونا أيضاً كتاب تقويم الأبدان في الطب لابن جزله البغدادي وقد نسخه ناسخه سنة  <tei:num value="297" xml:lang="ar">٢٩٧</tei:num>  أي منذ نيف وألف سنة كما أننا
+                            رأينا ديوان شعر بالفارسية اسمه غزليات شاهي كتب سنة  <tei:num value="655" xml:lang="ar">٦٥٥</tei:num>  بحروف من ورق قطعت تقطيعا بديعاً وألصقت على صحائف من الورق
                             الملون فجاءت غاية في الدقة.</p>
                         <p>وقيل لنا أن فيها محاضرات ومحاورات الإمام السيوطي بخط يده إلا أن الوقت لم يتسع معنا لمطالعته وترى جميع الكتب مجلده
                             تجليداً متيناً ومحفوظة ضمن غلافات من جلد أيضاً مصفوفة في القماطر بنظام معجب ومطرب والمجلد يشهدها كل يوم وبصلح ما
-                            فسد منها أما المكتبة فقد أسست سنة 1260 كما هو مؤرخ في سقف قاعتها وهي السنة التي أقيل فيها من المشيخة ولعل
-                            لإقالته علاقة بتأسيس المكتبة وأوقف عليها من الكتب في اللغات <pb ed="shamela"
-                   n="n85-p3"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5764.xhtml"/> الثلاث العربية والتركية
-                            والفارسية 5135 مجلد وورد إليها بعد تأسيسها إلى يوم الناس هذا 401 فيكون مجموع كتبها اليوم 5536 مجلداً وزهاء ألفي
+                            فسد منها أما المكتبة فقد أسست سنة  <tei:num value="1260" xml:lang="ar">١٢٦٠</tei:num>  كما هو مؤرخ في سقف قاعتها وهي السنة التي أقيل فيها من المشيخة ولعل
+                            لإقالته علاقة بتأسيس المكتبة وأوقف عليها من الكتب في اللغات <pb ed="shamela" n="n85-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5764.xhtml"/> الثلاث العربية والتركية
+                            والفارسية  <tei:num value="5135" xml:lang="ar">٥١٣٥</tei:num>  مجلد وورد إليها بعد تأسيسها إلى يوم الناس هذا  <tei:num value="401" xml:lang="ar">٤٠١</tei:num>  فيكون مجموع كتبها اليوم  <tei:num value="5536" xml:lang="ar">٥٥٣٦</tei:num>  مجلداً وزهاء ألفي
                             رسالة محررة على هوامش هذه الكتب وبينها نذر يسير باللغة الهندية أردو.</p>
                         <p>وقلة الكتب الواردة عليها التي لا يزيد معدلها السنوي على سبعة كتب تؤيد ما قلناه آنفا من أن عارفي مكتبة عارف قلائل
                             جداً.</p>
@@ -312,27 +275,25 @@
                             بهذه الخزانة النافقة فإن عمال المكتبة الكثيرين هم كفء ويكفؤون للقيام بأعمالها كما ستراه.</p>
                         <p>المشاهرة العدد العنوان</p>
                         <p>قرش صحيح</p>
-                        <p>700 1 مدير</p>
-                        <p>700 1 حافظ كتب أول</p>
-                        <p>600 1 حافظ كتب ثاني</p>
-                        <p>550 1 حافظ كتب ثالث</p>
-                        <p>500 1 حافظ كتب رابع</p>
-                        <p>500 1 مجلد</p>
-                        <p>500 1 بواب</p>
-                        <p>500 1 سقا</p>
-                        <p>500 1 كناس</p>
-                        <p>5050 المجموع</p>
-                        <p>وللمرحوم أوقاف أخرى في المدينة تأتي من عاصمة السلطنة مع مرتبات المكتبة بواسطة <pb ed="shamela"
-                   n="n85-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5765.xhtml"/> الخزانة النبوية إليك
+                        <p> <tei:num value="700" xml:lang="ar">٧٠٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  مدير</p>
+                        <p> <tei:num value="700" xml:lang="ar">٧٠٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  حافظ كتب أول</p>
+                        <p> <tei:num value="600" xml:lang="ar">٦٠٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  حافظ كتب ثاني</p>
+                        <p> <tei:num value="550" xml:lang="ar">٥٥٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  حافظ كتب ثالث</p>
+                        <p> <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  حافظ كتب رابع</p>
+                        <p> <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  مجلد</p>
+                        <p> <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  بواب</p>
+                        <p> <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  سقا</p>
+                        <p> <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  كناس</p>
+                        <p> <tei:num value="5050" xml:lang="ar">٥٠٥٠</tei:num>  المجموع</p>
+                        <p>وللمرحوم أوقاف أخرى في المدينة تأتي من عاصمة السلطنة مع مرتبات المكتبة بواسطة <pb ed="shamela" n="n85-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5765.xhtml"/> الخزانة النبوية إليك
                             بيانها:</p>
                         <p>المشاهرة العدد الموقوف عليه</p>
                         <p>قرش صحيح</p>
-                        <p>600 2 قارئ الشفافي الحرم النبوي</p>
-                        <p>600 2 قارئ دلائل الخيرات النبوي</p>
-                        <p>12 1 سقافي الحرم</p>
-                        <p>900 1 امرأة الواقف المقيمة في المدينة</p>
-                        <p>2112 المجموع</p>
+                        <p> <tei:num value="600" xml:lang="ar">٦٠٠</tei:num>   <tei:num value="2" xml:lang="ar">٢</tei:num>  قارئ الشفافي الحرم النبوي</p>
+                        <p> <tei:num value="600" xml:lang="ar">٦٠٠</tei:num>   <tei:num value="2" xml:lang="ar">٢</tei:num>  قارئ دلائل الخيرات النبوي</p>
+                        <p> <tei:num value="12" xml:lang="ar">١٢</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  سقافي الحرم</p>
+                        <p> <tei:num value="900" xml:lang="ar">٩٠٠</tei:num>   <tei:num value="1" xml:lang="ar">١</tei:num>  امرأة الواقف المقيمة في المدينة</p>
+                        <p> <tei:num value="2112" xml:lang="ar">٢١١٢</tei:num>  المجموع</p>
                         <p>ومما قلله لنا مدير المكتبة أن المرحوم كان ينوي إبلاغ كتب المكتبة إلى عشرة ألاف مجلد كانت تحت يده إلا أنه لم يتمكن
                             من تحقيق أمنيته لأنه حين عزم على الحضور إلى المدينة المنورة يصحب بقية كتبه عاجلته المنية في دار الملك فبيعت كتبه
                             فيها مع تركته بأبخس الأثمان ومنها كتاب الأغاني الذي بيع بخمسة عشر جنيها ثم باع من اشتراه من آخر بستين جنيها وطبع
@@ -343,9 +304,7 @@
                         <p>حيفا: فلسطين // عبد الله مخلص </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n85-p5"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5766.xhtml"/>
+                        <pb ed="shamela" n="n85-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5766.xhtml"/>
                         <head>في بلاد الغرب</head>
                         <p>نساء الإفرنج</p>
                         <p>الانكليز أعجب أمم الحضارة في أخلاقهم وعاداتهم لا يقبلون الجديد إلا بشق الأنفس ولكنهم إذا قبلوا تناغوا فيه وحرصوا
@@ -355,7 +314,7 @@
                             فنلندا واستراليا وزيلاندة الجديدة والنروج.</p>
                         <p>رأى النساء الراقيات من الانكليزيات ذلك ورأينا حقوقهن مهضومة مع الرجل وغرن الغيرة من خصائصهن من اللاتي سبقهن من
                             بنات جنسهن وقمن منذ ثلاثين سنة يطالبن حكومة بريطانية العظمى بحقوق بنات حواء وما زلن منذ عقدت العقيدتان كوب
-                            وميلنر احتجاجا في لندرا سنة 1884 وهن على وتيرة واحدة من السعي وراء مقصدهن لم يدخل الملل على نفوسهن.</p>
+                            وميلنر احتجاجا في لندرا سنة  <tei:num value="1884" xml:lang="ar">١٨٨٤</tei:num>  وهن على وتيرة واحدة من السعي وراء مقصدهن لم يدخل الملل على نفوسهن.</p>
                         <p>خطبت إذ ذاك العقيلة ميلنر وقالت أنها أزمعت أن لا تدفع الخراج الذي عليها للجابي بحيث تضطره إلى أن يكسر بابها ويحجز
                             متاعها وهكذا تقاوم الحكومة وكل سنة تزيد قسوة وإملالا فضحكت الصحف من هذا القول إذ ذاك ومن الغد أرسل إليها من جميع
                             أطراف انكلترا ابر للخياطة إشارة إلى أن المرأة هذا شأنها ولا يليق بها أن تخرج عن هذا الحد.</p>
@@ -364,9 +323,7 @@
                             أحن امرأة هي التي تبدو صالحة لزوجها وأولادها.</p>
                         <p>ولقد ربت ملكة انكلترا وإمبراطورة الهند بناتها على التربية البيتية الراقية حتى أن الأميرة أليس دي هيس درامستاد
                             كتبت إلى أمها تقول: ها قد صنعت الفساتين اللازمة لبناتي الصغيرات في الشتاء فعملت منها سبعة ولم أطرزها فقد بل
-                            فصلتها وخطبتها وعملت أيضاً <pb ed="shamela"
-                   n="n85-p6"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5767.xhtml"/> رداء من الصوف للطفل الذي
+                            فصلتها وخطبتها وعملت أيضاً <pb ed="shamela" n="n85-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5767.xhtml"/> رداء من الصوف للطفل الذي
                             ننتظر قدومه وأنا التي أتولى حسابات الدار ولذلك تريني مستغرقة في العمل إن أسرتنا الصغيرة تزداد بسرعة وستقضي علينا
                             الحال بضع سنين أن نعيش باقتصاد زائد.</p>
                         <p>في مثل هذه الأمة التي ملكتها وأميرتها على هذا الطرز من حب الانصراف إلى الأعمال البيتية يقوم ربات الحجال في أقصى
@@ -384,9 +341,7 @@
                             رجل فكر أن يعلم بناته فن تدبير المنزل كما يعلم في الغرب.</p>
                         <p>القشور التي يتلقفها بعض بناتنا في الأمريكان ولفرنسيس والألمان ومدارس الحكومة لا ترقي أمة تشكو الليل والنهار من
                             مجهلها وجاءتها وتخبيئها جميع المصائب من تعشيشه في صدور كبرائها فما بالك بالصغار أن ما يراه السائح في أوروبا من
-                            مظاهر تربية المرأة ومضاهاتها الرجال في جلائل الأعمال يبكيه على الشرق ولا سيما الشرق الإسلامي يأتيه <pb ed="shamela"
-                   n="n85-p7"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5768.xhtml"/>
+                            مظاهر تربية المرأة ومضاهاتها الرجال في جلائل الأعمال يبكيه على الشرق ولا سيما الشرق الإسلامي يأتيه <pb ed="shamela" n="n85-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5768.xhtml"/>
                             العبر عن إيمانه وشمائله ولا يعتبر.</p>
                         <p>تسعى إيطاليا اليوم لإعطاء المرأة حقها في التصرف بمالها كما تحب دون أن تكون مقيدة بإرادة زوجها أو وليها كما كانت
                             حتى الآن وفي الشمال حاز بنات نوعهن كل هذه الحقوق وهن يطالبن بحقوقهن السياسية ونحن حتى الساعة لم يفكر نساؤنا
@@ -404,9 +359,7 @@
                             وجعل الخدمة ثلاث سنسن أن فرنسا استاقت ألفاً وستمائة معلم في سن القرعة للخدمة العسكرية وأنها ستستعيض عنهم
                             بالمعلمات علمن الصبيان قال الكاتب أنه ساح في أوقات مختلفة في عدة بلاد كانت فيها المدرسة الابتدائية تقبل الفتيات
                             كما تقبل الفتيان معاً على نحو ما تقبل المدارس العليا الطالبات مع الطلاب فرأى أن ذلك لا يضر بالآداب بل ينفعها فإن
-                            الرجال لما كان شأنهم أن يعيشوا مع النساء فمن السخف أن <pb ed="shamela"
-                   n="n85-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5769.xhtml"/> يفصل بعضهم عن بعض عشراً
+                            الرجال لما كان شأنهم أن يعيشوا مع النساء فمن السخف أن <pb ed="shamela" n="n85-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5769.xhtml"/> يفصل بعضهم عن بعض عشراً
                             وخمس عشرة سنة وأن يعود كل جنس أن يعتبر الجنس الأخر دخيلاً وخطراً فإن التعليم المشترك يغرس في الفتيان الشعور
                             بالرجولية وفي الفتيات حياء بدون أن يكشرن عن أنيابهن. فإنا نجد في البيوت التي يكون للبنات فيها أخوة والأخوة أخوات
                             يحرزن صفات ليست أصلا لغيرهن من الأولاد ونحن لا نريد مدارس مختلطة بل مدارس للصبيان تسلم أزمة التعليم فيها
@@ -426,9 +379,7 @@
                             ويوسد إليهن تعليم البنات والبنين.</p>
                         <p>وما أظن إلا القليلات من المتعلمات في بعض المدن العربية والقليل من المتعلمين يفكرون في هذا المطلب الجليل الذي هو
                             أهم الأدواء القاتلة في جسم مجتمعنا وهيهات أن يحصل على شيء من البرء إلا بتعليم البنين والبنات بل إنه بدون العناية
-                            أولا بتعليم البنات لا <pb ed="shamela"
-                   n="n85-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5770.xhtml"/> تستقيم لنا مدنية وتكون
+                            أولا بتعليم البنات لا <pb ed="shamela" n="n85-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5770.xhtml"/> تستقيم لنا مدنية وتكون
                             تعليمها الأمور النافعة بحسب ما تقضي به عاداتنا ومعتقداتنا فينهض المجتمع العربي بإنهاض شان المرأة وبدون ذلك لا
                             أمل لنا بإصلاح بيوتنا.</p>
                         <p>المدنية لا تشفق</p>
@@ -448,9 +399,7 @@
                         <p>قال صاحب المقالة: منذ عرف العالم مازال الإنسان يظلم ويطمع في القضاء على الحيوانات ويسيء استعمال الأسباب التي
                             جعلتها الفطرة أمامه فلا جل نفع معجل بل وربما كان لجلب سرور بربري يقتل بدون خشية أنواع من الحيوانات النافعة التي
                             يحدث من فقدها اختلال في ميزانية هذا الوجود هو يقتل الفيل لأن العاج ثمين جدا ويذبح كلب البحر لأن جلده يباع بثمن
-                            غال ويصيد الجوارح والطيور لأن ريشها تزدان به رؤوس النساء <pb ed="shamela"
-                   n="n85-p10"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5771.xhtml"/> المتبرجات الخ.</p>
+                            غال ويصيد الجوارح والطيور لأن ريشها تزدان به رؤوس النساء <pb ed="shamela" n="n85-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5771.xhtml"/> المتبرجات الخ.</p>
                         <p>وبينا أتصفح هذا وأعجب من رقة شعور القائمين بهذا الأمر وعطفهم على الحيوان وخوفهم من انقراضه مخافة ان يحدث منه خلل
                             في ميزانية عالم الكون والفساد إذا بي أرى في الصفحة الثانية أخبارا من فجائع الطيارات وهلاك الطيارين مما يحدث مثله
                             كل بضعة أيام في الغرب لأن مدنيته لا تشفق بل لا تقوم إلا ببذل بعضهم أرواحهم في سبيل إعلاء كلمة العلم.</p>
@@ -468,9 +417,7 @@
                             للإنسان.</p>
                         <p>مدنية الغرب لا ترحم أحدا ومتى رحم من لا يرحم نفسه. والغرب لا يحزن لفقد ألف أو ألوف من أبنائه قذفا من الجو وهم
                             يطيرون لأنه موقن بان هذه التجارب في النتيجة عن خير بهذا المضمون فمتى نرى أناسا من الشرقيين ينهجون هذا المنهج
-                            ويقلدون الغرب في <pb ed="shamela"
-                   n="n85-p11"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5772.xhtml"/> صالح أعماله فان مما يخجل
+                            ويقلدون الغرب في <pb ed="shamela" n="n85-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5772.xhtml"/> صالح أعماله فان مما يخجل
                             الشرق من ان يعمل الغرب كل هذه الأعمال المدهشة وهو نائم باهت وان يقتل الشرقي إخاء في غرض تافه ولا يقتل نفسه في
                             تحقيق عمل مجيد ومجد مؤثل:</p>
                         <lg type="bayt">
@@ -505,31 +452,27 @@
                             وتؤلف القصص التمثيلية وغيرها في وصف سيرتها.</p>
                         <p>ولا بدع فإن الفرنسيس كما قال برزباين - أشهر رجال الصحافة الأميركية - ورثوا عن اليونان والرومان نبوغاً كانوا به
                             أدلة وموحين بالأفكار للعالم منذ عهد شارلمان فقد كانوا الأولين في الحركة العقلية السابقين في شجاعة القلب وشجاعة
-                            الفكر المجلين في فن <pb ed="shamela"
-                   n="n85-p12"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5773.xhtml"/> الحرب وفن الهندسة وفن
+                            الفكر المجلين في فن <pb ed="shamela" n="n85-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5773.xhtml"/> الحرب وفن الهندسة وفن
                             الجرأة الطبيعية الخارقة في إنشاء السيارات والطيارات وفي عامة الأعمال التي تحتاج إلى عقول لا تخاف وتطلب إقداما
                             عليها لساعتها.</p>
-                        <p>قرأت أمس في الماتين مقالة جاء فيها الفرنسويين يتأهبون للاحتفال بعيد مرور مئة سنة على موت بارمانتيه يوم (13 كانون
-                            الأول 1913) وربما يقل في قراء العربية من يعرفون هذا الرجل ويودون الاطلاع على طرف من ترجمه حياته ليذكنوا على
+                        <p>قرأت أمس في الماتين مقالة جاء فيها الفرنسويين يتأهبون للاحتفال بعيد مرور مئة سنة على موت بارمانتيه يوم ( <tei:num value="13" xml:lang="ar">١٣</tei:num>  كانون
+                            الأول  <tei:num value="1913" xml:lang="ar">١٩١٣</tei:num> ) وربما يقل في قراء العربية من يعرفون هذا الرجل ويودون الاطلاع على طرف من ترجمه حياته ليذكنوا على
                             الأقل من هو الذي يعاد ذكره بعد أن نصبت له التمايل وصيغة باسمه الصفائح التذكارية وأنشأت الجواد الشوارع بل أنشئت
                             قرية باسمه في الجزائر.</p>
                         <p>بارمانتيه هو مخترع البطاطا في فرنسا أو مدخلها إليها على صورة عم استعمالها جميع طبقات الناس فخدمتهم في اقتصادهم
                             وبيوتهم وتغذيتهم مدة القرن الماضي كان هذا الرجل من أبناء العامة سافر من ببلده مونتيديه إلى باريز ليسابق في وظيفة
-                            صيدلة في الجيش فقبل وأرسل مرات إلى ساحات القتال ومنذ سنة 1793 حتى يوم وفاته كان يتولى أعظم الوظائف الصحية
+                            صيدلة في الجيش فقبل وأرسل مرات إلى ساحات القتال ومنذ سنة  <tei:num value="1793" xml:lang="ar">١٧٩٣</tei:num>  حتى يوم وفاته كان يتولى أعظم الوظائف الصحية
                             العسكرية مثل عضو في مجلس الصحة ومفتش عام وصيدلي أول في الجيش الفرنسوي وفي خلال حرب السبع سنين أخذ أسيراً وفي
                             أسره تسنى له أن يدرك ما في البطاطا من المواد المغذية وكانت في معظم الأوقات الغذاء الوحيد له ولا صحابة
                             الأسرى.</p>
-                        <p>حملت البطاطا من أمريكا إلى أوروبا من سنة 1580 إلى 1585 نقلها الأسبانيون لولا ثم الانكليز من فرجينيا وكانت غير
+                        <p>حملت البطاطا من أمريكا إلى أوروبا من سنة  <tei:num value="1580" xml:lang="ar">١٥٨٠</tei:num>  إلى  <tei:num value="1585" xml:lang="ar">١٥٨٥</tei:num>  نقلها الأسبانيون لولا ثم الانكليز من فرجينيا وكانت غير
                             معروفة كثيراً في فرنسا وينظر إليها في الجملة نظرة ازدراء وما زال بارمانتيه منذ استقرار مرة في صيدلية الانفاليد
                             بباريز يكرر في منثورات منوعة فوائدها ويدفع اعتراض المعترضين بشدة لأنهم كانوا يحملون عليه حملات منكرة قائلاً أن
                             رأي الناس في البطاطا أنها غير صالحة لغذاء الإنسان ساقط لا يؤديه له وكذلك دعوهم أنها تضعف الجسم وتحوي الأخطار
                             وعلى العكس فهي لذة الأغنياء ومعوان للفقراء وسلوى في الشدائد.</p>
                         <p>وكان هذا المحسن مدفوعاً إلى ذلك بالعامل الذي وضعه بقوله: لا يكفي من أراد أن يكون نافعاً لأبناء جنسه أن يقول لهم
                             مرة واحدة ما رآه وما عمله وما يجب أن يعمل بل يجب عليه أن لا يمل من تكرار دعوته على صور مختلفة وطرق منوعة اللهم
-                            إلا القوة فإنها لا <pb ed="shamela"
-                   n="n85-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5774.xhtml"/> تستحب ولا تنفع العلوم
+                            إلا القوة فإنها لا <pb ed="shamela" n="n85-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5774.xhtml"/> تستحب ولا تنفع العلوم
                             إلا إذا عمت الطبقات كلها هكذا كان شأن بارمانتيه حتى انتشرت البطاطا بفضل مساعيه المتواصلة وأصبحت تزرع في أرض تبلغ
                             مساحتها مليوناً وستمائة ألف هكتار في وطنه.</p>
                         <p>ولم يقتصر بارمانتيه على الدعوة إلى البطاطا وتحبيها إلى الناس بل كان له أثر محمود في الخبز والخبازة ودرس الأغذية
@@ -548,9 +491,7 @@
                         <p>صناعة الفنادق</p>
                         <p>لعل بعضهم يعترض على هذا العنوان فيقول وهل أصبحت الفنادق والإنزال صناعة حتى تحدثنا بها ولكن من رأى الفنادق في
                             الغرب ولا سيما في البلاد التي بكثير إليها اختلاف السياح كفرنسا وإيطاليا وسويسرا مثلا يهون عليه ان يتصور معنى
-                            الفنادق فيرى قصوراً <pb ed="shamela"
-                   n="n85-p14"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5775.xhtml"/> شاهقة ذات حدائق غناء
+                            الفنادق فيرى قصوراً <pb ed="shamela" n="n85-p14" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5775.xhtml"/> شاهقة ذات حدائق غناء
                             مجهزة بأجهزة قصور الملوك أو أكثر وفيها من التحف والألطاف وبدائع الصناعات ما يلفت عقل البليد دع الحساس الذكي.</p>
                         <p>صناعة الفنادق لا لتمثل حق التمثل إلا لعين من كثرت سياحته إلى الأقطار المختلفة وهناك يدرك خطرها كما يدرك قدر الصحف
                             فيرى إدارة كل نزل أشبه بديوان كبير من دواوين الدول أو مصرف عظيم أو جريدة منتشرة وإتقان تلك الصناعة متوقف على
@@ -568,10 +509,8 @@
                             تكفي النزل الشهرين والثلاثة ومعملا للتصليح محمل نجارة وحدادة إلى آخر ما هنالك مما لا مقابل له بالعربية للتعبير
                             عنه. وللفندق خدام يقومون على غاباته وحدائقه ومنتزهاته وطرقاته وسواق تامة أدواتهم لنق الأمتعة والأثقال منه واليه
                             على الخيل والسيارات ورجال إدارته أكثر من رجال الوزارة فمنهم المستقبلون والقائمون على إعطاء التعليمات لمن يطلبها
-                            ومنهم العارفون بالسكك الحديدية وآخرون للمحاسبة وبعضهم للضجة وغير ذلك. <pb ed="shamela"
-                   n="n85-p15"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5776.xhtml"/> فالفندق مستعمرة صغيرة
-                            ينقسم أقساما قد يختلف عدد القائمين بأعماله من 100 إلى 350 شخصاً. ومدير الفندق سواء كان مالكه أو مديره مسئول عن
+                            ومنهم العارفون بالسكك الحديدية وآخرون للمحاسبة وبعضهم للضجة وغير ذلك. <pb ed="shamela" n="n85-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5776.xhtml"/> فالفندق مستعمرة صغيرة
+                            ينقسم أقساما قد يختلف عدد القائمين بأعماله من  <tei:num value="100" xml:lang="ar">١٠٠</tei:num>  إلى  <tei:num value="350" xml:lang="ar">٣٥٠</tei:num>  شخصاً. ومدير الفندق سواء كان مالكه أو مديره مسئول عن
                             كل ما فيه مديره ويعنى به ويمونه ويلاحظه ويسأل عن كل غلط يأتيه رجاله العاملون بإشارته أو النازلون عنده والقانون
                             يسأله وحده فقط عن كل ما يحدث.</p>
                         <p>ولذا لا يكون صاحب الفندق ق في العبر رجلا عاديا يكتفي منه أن يكون حسن البذة عارفا بالقراءة والكتابة والحساب بشوشا
@@ -589,9 +528,7 @@
                             مصر.</p>
                         <p>ولكم كنت اشتهي أن يأتي بضعة شبان ممن سبق لهم الخدمة أو النظر في فنادق مصر والشام واختلطوا بالإفرنج وعرفوا خصائصهم
                             وتأنقهم في مطعمهم ومنامهم وملبسهم أن يقضوا ولو أشهرا في الفنادق الكبرى ويحضرون ولو سنة دروس مدروسة الفنادق
-                            وتدبير المنزل في سويسرا وأظن أن من يفتح فندقاً ويحسن النظر فيه بحيث يضاهي به أو يكاد <pb ed="shamela"
-                   n="n85-p16"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5777.xhtml"/> فنادق الغرب
+                            وتدبير المنزل في سويسرا وأظن أن من يفتح فندقاً ويحسن النظر فيه بحيث يضاهي به أو يكاد <pb ed="shamela" n="n85-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5777.xhtml"/> فنادق الغرب
                             المتوسطة ينفع نفسه وأمته في اقتصادياتها أكثر من ألف موظف في الحكومة متوسط المعارف لا يهمه إلا رضا من سبقه في
                             الدرجة وانتظار آخر الشهر لقبض الراتب.</p>
                         <p>سوريا بمناخها تشبه سويسرا ولكن هذه تأخذ في السنة من المصطافين والمشتين فيها قناطير مقنطرة من الذهب وذلك لأنها
@@ -611,9 +548,7 @@
                             غيار وبطانة هما إلى الحمرة.</p>
                         <p>هذا هو الشكل الظاهر في طلاب المدارس الاكليريكية الذين يأتون من أنحاء العالم الكاثوليكي ليدرسوا ويتخرجوا بآداب
                             دينهم ثم يعودوا إلى بلادهم أو غيرها يعلمون ويرشدون. وهم قسمان قسم القسوس وهؤلاء يتعلمون في مدارسهم وبعد الدرس
-                            يذهبون إلى منازلهم وقد يعيش بعضهم بين أهله وذوي قرباء فمن هؤلاء لا يطلب إلا أن يسيروا <pb ed="shamela"
-                   n="n85-p17"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5778.xhtml"/> بموجب
+                            يذهبون إلى منازلهم وقد يعيش بعضهم بين أهله وذوي قرباء فمن هؤلاء لا يطلب إلا أن يسيروا <pb ed="shamela" n="n85-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5778.xhtml"/> بموجب
                             القواعد المقررة وهم أحرار فيما عدا ذلك أما الرهبان فدائرتهم أضيق لأنهم يعيشون في مدرسة واحدة مع أقرانهم ويطعمون
                             طعاماً واحدا ويكون في الاكثر طعام تقشف ولا يخرجون إلا برخصة أي أن هؤلاء مقيدون كثيراً ولا قيد صغار الطلبة في
                             المدارس الداخلية.</p>
@@ -633,17 +568,15 @@
                             صحيحة منهم وإذا أخذوا بالتأليف قد يعدون من كبار المؤلفين ولذا ترى الناس في ايطاليا وفي غيرها كثيراً ما يفضلون أن
                             يربى أولادهم على أيدي القسوس وإن كان آباؤهم ملاحدة مارقين من دينهم.</p>
                         <p>ترى الرهبان إذا أخذوا بالزراعة والصناعة بما سبقوا من تخرجوا فيها أعمارهم والحكومة هنا قد جعلت رواتب لقسوس الطليان
-                            كما عينت راتباً للحبر الأعظم منذ يوم أخذت حكومة <pb ed="shamela"
-                   n="n85-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5779.xhtml"/> الوحدة الايطالية أزمة
-                            الأمر بيدها واستولت على أموال الرهبنات وكنائسهم وأوقافهم سنة 1870 لأن جميع مرافق البلاد المهمة كانت بأيديهم إذ
+                            كما عينت راتباً للحبر الأعظم منذ يوم أخذت حكومة <pb ed="shamela" n="n85-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5779.xhtml"/> الوحدة الايطالية أزمة
+                            الأمر بيدها واستولت على أموال الرهبنات وكنائسهم وأوقافهم سنة  <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>  لأن جميع مرافق البلاد المهمة كانت بأيديهم إذ
                             ذاك فغيرت بعض المعاهد وجعلت بعضها مدارس ومتاحف ودواوين حكومة وثكناً للجند وغير ذلك وحظرت على أي جمعية دينية
                             امتلاك ملك إلا أن لرئيس الجمعية أن يملك ما يشاء وقد عادت الملة النصرانية فأخذت تدر المال على رجال الدين بعد
                             الوحدة الجديدة ولذا تراهم يعيشون عيشاً حسناً وأديارهم وكنائسهم منظمة وإرادتهم دارة نامية والفضل في ذلك يرجع إلى
                             المتدينين من أغنياء الكاثوليك في العالم.</p>
                         <p>قلنا أن الحكومة الايطالية عينت منذ زهاء أربعي سنة راتباً لإمام الأحبار ولكنه لم يقبله بعد أن رعت منه السلطة
                             الزمنية وكانت بيده هي والسلطة الروحية بيد أن الحكومة وضعت المبلغ تحت أمره في المصارف وفي كل خمس سنين ترفع منه
-                            الفائدة فقط وتبقي رأس المال بحاله الذي يزيد كل سنة حتى بلغ فيما بلغني 180 مليون فرنك وحضرة البابا لا يريد أن
+                            الفائدة فقط وتبقي رأس المال بحاله الذي يزيد كل سنة حتى بلغ فيما بلغني  <tei:num value="180" xml:lang="ar">١٨٠</tei:num>  مليون فرنك وحضرة البابا لا يريد أن
                             يتناوله وهكذا عف هو وأسلافه وسيتعفف أخلافه عن أخذ مال ممن يرونهم غاصبين حقهم معتمدين على سلطتهم.</p>
                         <p>إن انشقاق ألمانيا وانكلترا وغيرهما عن الكنيسة الكاثوليكية بقيام أمثال جان هوس وكلفن ولو ثيروس في أوائل القرون
                             الحديثة وتلك الأزمة التي دخل فيها المقام البابوي إذ ذاك لم تؤثر كثيراً في سلطته على الأرواح والأشباح وكذلك تغلب
@@ -653,9 +586,7 @@
                             وبعم أثره ويوفق الناهضون به.</p>
                         <p>ولقد لاحظنا أن الفتن الدينية التي أثارها التعصب الديني في القرون الوسطى كانت في ايطاليا أقل مما هي في فرنسا
                             واسبانية حتى أن الإسرائيليين في اسبانية لما ذاقوا العذاب الأليم جلوا عن بلادهم فكان من إيطاليا أن قبلتهم وهذا
-                            ناشئ من لين أخلاق الشعب هنا ويرجح أن كل ما وقع من الاضطهادات لم يكن مما وقف الرؤساء على حقيقته ولو رجعنا <pb ed="shamela"
-                   n="n85-p19"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5780.xhtml"/>
+                            ناشئ من لين أخلاق الشعب هنا ويرجح أن كل ما وقع من الاضطهادات لم يكن مما وقف الرؤساء على حقيقته ولو رجعنا <pb ed="shamela" n="n85-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5780.xhtml"/>
                             إلى تراجم أكثر عظماء هذه الملة من باباوات وكرادلة ورؤساء أساقفة لوجدنا كثيرين منهم خدموا المدينة والآداب خدمة
                             تذكر فتشكر كانوا كذلك يوم كانوا ملوكاً زمنيين وروحيين ويوم أمسوا روحيين فقط حدثنا التاريخ أن الباباليون العاشر
                             في القرن الثالث عشر للميلاد وهم من أسرة ميديسيس المفضلة على العلم قد وسع نطاق الآداب وبث كلمة العلم حتى عد قرنه
@@ -663,7 +594,7 @@
                             الدرجة يحاول أن يقلده في محامده. والله أعلم.</p>
                         <p>العرب والطليان</p>
                         <p>وصل العرب إلى بلاد الأمة التي هي وارثة الرومان منذ القدم أوائل عهد فتح افريقية وما برح العرب يطمعون في فتح جزيرة
-                            صقلية لقربها من الشاطئ المقابل لأفريقية حتى تم لأسد بن الفرات فتحها سنة 212هـ -. قال المؤرخون كان ابتداء حصار
+                            صقلية لقربها من الشاطئ المقابل لأفريقية حتى تم لأسد بن الفرات فتحها سنة  <tei:num value="212" xml:lang="ar">٢١٢</tei:num> هـ -. قال المؤرخون كان ابتداء حصار
                             بلرم عاصمة صقلية في جمادى الآخرة سنة خمس وعشرين ومائتين ودام إلى شهر رجب سنة عشرين ومائتين وفتحي بالأمان وفي سنة
                             خمس وعشرين ومائتين أستأمنت قلاع كثيرة من قلاع جزيرة صقلية منها حرصه وقلعة البلوط واللاطنوا وقلعة ماروب ومرنا
                             وغير ذلك.</p>
@@ -675,15 +606,13 @@
                             البلاد ولعل تلك الحضارة راجت أيضاً في جزيرة قورسقة وأهلاه يتكلمون الايطالية أيضاً وهم اليوم تحت حكم فرنسا وملك
                             العرب جزائر ميورقة ومنورقة المعروفة بجزائر البالايار ويابسة وكانوا يغزون شطوط اسبانية وفرنسا ولا عجب بعد ذلك إذا
                             دخلت كلمات عربية كثيرة في لغات الفرنسيس والطليان والاسبان والبرتغال.</p>
-                        <p>ومن يعلم أن تلك الجزائر مما ارتفع عليه علم الإسلام وأن أقريطش (كريت) وقبرص <pb ed="shamela"
-                   n="n85-p20"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5781.xhtml"/> ورودس ومالطة كان حظها
+                        <p>ومن يعلم أن تلك الجزائر مما ارتفع عليه علم الإسلام وأن أقريطش (كريت) وقبرص <pb ed="shamela" n="n85-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5781.xhtml"/> ورودس ومالطة كان حظها
                             كذلك يعرف أن العرب كانوا رجالاً في البحر كما هم رجال في البر وأنه لا سبيل إلى الأمن من الداخل إذا لم يحفظ الساحل
                             بالجزائر والمواني والفرض ولطالما كانت الحكومات تمتلك الساحل فلا تلبث أن تبسط سلطانها على الداخل.</p>
                         <p>كان الأدارسة حكام تونس هم المتكلفين بغزو جزيرتي سردانيا وصقلية ففتحوا صقلية وكذلك ملوك جزائر الغرب أخذوا على
                             عهدتهم غزو منورقة وميورقة فاستولوا عليهما وعامل العرب الايطاليين والاسبانيين بالحسنى على نحو ما يأمرهم به دينهم
                             ولما رأى الايطاليون هذه المعاملة لم يشاؤوا أن يغيروا شيئاً من مصطلحاتهم حتى أن الملك رجار الذي عاد فاستولى على
-                            صقلية سنة 485 كان يتكلم بالعربية وهو الذي أفضل كثيراً على الشريف الإدريسي الجغرافي الذي وضع كرة أرضية بالفضة
+                            صقلية سنة  <tei:num value="485" xml:lang="ar">٤٨٥</tei:num>  كان يتكلم بالعربية وهو الذي أفضل كثيراً على الشريف الإدريسي الجغرافي الذي وضع كرة أرضية بالفضة
                             كانت من أعاجيب القرون الوسطى دهشت لها أجيال الإفرنج كلهم كما دهشوا للساعة الدقاقة التي أهداها أمير المؤمنين
                             الرشيد إلى شارلمان ملك فرنسا.</p>
                         <p>قال الإدريسي في رجار هو الملك المعظم رجار المعتز بالله المقتدر بقدرته ملك صقلية وايطالية وانكبرود وقلورية أمام
@@ -695,9 +624,7 @@
                             خمسة عشر ويباع الثوب منها بمائة وخمسين رباعي وزائد وناقص.</p>
                         <p>ووصف ابن حوقل صقلية فقال أن طولها سبعة أيام في أربعة أيام والغالب عليها الجبال والقلاع والحصون وجميع أرضها مسكونة
                             مزروعة وليس لها مدينة مشهورة معروفة غير المدينة المعروفة ببلرم وهي قصبة صقلية على نحو البحر من الشمال وهي خمس
-                            جادات محدودة غير متباينة ببعيد مسافة وإن كانت حدودها ظاهرة فمنها المدينة الكبرى التي تسمى <pb ed="shamela"
-                   n="n85-p21"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5782.xhtml"/> بلرم عليها
+                            جادات محدودة غير متباينة ببعيد مسافة وإن كانت حدودها ظاهرة فمنها المدينة الكبرى التي تسمى <pb ed="shamela" n="n85-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5782.xhtml"/> بلرم عليها
                             سور من حجارة مانع شامخ يسكنها التجار وفيها مسجد الجامع الأكبر وكان بيعة للروم وفيه هيكل عظيم ومدينة تعرف
                             بالخالصة ذات سور أيضاً من حجارة وليس كالسور الأول يسكنها السلطان وأتباعه وفيها دار صناعة البحر والديوان وبعد أن
                             وصف أسواقها وباعتها واستطرد إلى كثرة مساجدها وقال أن فيها نيفاً وثلاثمائة مسجد وفي قرية البيضاء مائتا مسجد قال
@@ -716,9 +643,7 @@
                             وجزيرة قرسقة مجاز طوله عشرون ميلاً.</p>
                         <p>ثم وصف جزيرة قرسقة وجزيرة البتة وبالوسة وقبريرة وقبرة وشكلة وبيت برة ومونسة وبونسة واسترنجلو وجزيرة البركان وليبر
                             ودندمة وفيكوذة رركذة وأشتقة وجزيرة الراهب واليابسة وغيرها وقال في وصف مدينة بلرم: وبها حسن المباني التي سارت
-                            الركبان بنشر <pb ed="shamela"
-                   n="n85-p22"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5783.xhtml"/> محاسنها في بناتها ودقائق
+                            الركبان بنشر <pb ed="shamela" n="n85-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5783.xhtml"/> محاسنها في بناتها ودقائق
                             صناعتها وبدائع مخترعاتها وهي على قسمين قصر وربض فالقصر هو القصر القديم المشهور فخره في كل بلد وإقليم وهو في ذاته
                             على ثلاثة اسمطة فالسماط الأول يشتمل على قصور منيفة ومنازل شامخة شريفة وكثير من الفنادق والحمامات وحوانيت التجار
                             الكبار والسماطان الباقيان فيهما أيضاً قصور سامية ومباني فاخرة عالية.</p>
@@ -736,10 +661,8 @@
                             هاماتهم فسآلو عن ذلك فقالوا لما جاؤوهم شمعون الصفى والحواريون دعوهم إلى النصرانية فكذبوهم وحلقوا لحاهم ورؤوسهم
                             فلما ظهر لهم صدق قولهم ندموا على ما فعلوا وحلقوا لحى أنفسهم ورؤوسهم كفارة لذلك.</p>
                         <p>وممن رحل إلى ايطاليا جمال الدين محمد بن سالم بن واصل قاضي القضاة بحماة وكان إماما مبرزا للعلوم العقلية عارفا
-                            بالمنطق والهندسة والأصول والفقه والهيئة والتاريخ توفي سنة 697 ذهب هذا رسولا إلى صاحب صقلية من قبل الملك الظاهر
-                            بيبرس الصالحي <pb ed="shamela"
-                   n="n85-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5784.xhtml"/> وذكر انه أقام عنه وفي
+                            بالمنطق والهندسة والأصول والفقه والهيئة والتاريخ توفي سنة  <tei:num value="697" xml:lang="ar">٦٩٧</tei:num>  ذهب هذا رسولا إلى صاحب صقلية من قبل الملك الظاهر
+                            بيبرس الصالحي <pb ed="shamela" n="n85-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5784.xhtml"/> وذكر انه أقام عنه وفي
                             مدينة من مدائن البر الطويل المتصل بالأندلس من مدينة انبوليا واجتمع به مرارا ووجده متميزا ومحبا للعلوم العقلية
                             يحفظ عشر مقالات من كتاب إقليدس قال وبالقرب من البلد الذي كنت فيه مدينة تسمى لو حارة أهلها كلهم مسلمون من أهل
                             جزيرة صقلية يقام فيها الجمعة ويعلن بشعار الإسلام.</p>
@@ -760,9 +683,7 @@
                             هاتان اللغتان.</p>
                         <p>هذا وكان رجال الدين من كاثوليك الشرق يختلفون إلى رومية منذ القديم ويتعلمون لغتها ويدرسون الدين فيها وهم أكثر من
                             أن يحصوا وفي مقدمتهم السمعاني اللبناني المشهور واللبنانيون الموارنة على ما يظهر أشد الكاثوليك رغبة في المهاجرة
-                            إلى رومية وتواريخ <pb ed="shamela"
-                   n="n85-p24"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5785.xhtml"/> رجال الكهنوت عندهم شاهدة
+                            إلى رومية وتواريخ <pb ed="shamela" n="n85-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5785.xhtml"/> رجال الكهنوت عندهم شاهدة
                             بذلك.</p>
                         <p>لذائذ الغريين</p>
                         <p>قرأت في الصحف الباريزية أن إمبراطور ألمانيا منع ضباط مملكته من رقص التانغو وألوان ستب في الحفلات الرسمية وكذلك
@@ -781,9 +702,7 @@
                             المدن في شرقنا أقرب إلى الفطرة من المتحضرين.</p>
                         <p>كانت الطبقة العالية من رجالنا أيام رقي العرب في الأندلس ومصر والشام والعراق والجزيرة وفارس وغيرها من البلاد التي
                             تأصلت فيها الحضارة لا تستنكف من الضرب بالعود أو غيره من أدوات الطرب أو ترفع أصواتها بالغناء ولا ينكر عليها ذلك
-                            ولطالما كنت ترى بينهم الفقيه والمحدث والطبيب وصاحب الوقار من القضاة والعمال. <pb ed="shamela"
-                   n="n85-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5786.xhtml"/> انحطت الحضارة عندنا
+                            ولطالما كنت ترى بينهم الفقيه والمحدث والطبيب وصاحب الوقار من القضاة والعمال. <pb ed="shamela" n="n85-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5786.xhtml"/> انحطت الحضارة عندنا
                             والفنون الجميلة آخر ما تستعيده الأمة الناهضة وأول ما تفتقده المنحطة وما الغناء والموسيقى إلا من الفنون الجميلة
                             فارتقاء صناعة الغناء والموسيقى في الأمة دليل ارتقائها فهما محركان عظيمان لأرواح أبنائها ومهمازان قويان لترقية
                             شعورهم وتحسين عواطفهم يصرفون فيهما آونات الفراغ فيدخل بهما السرور على القلوب.</p>
@@ -801,15 +720,11 @@
                             هذا الحكم الذي يقوله اليوم أيضاً كل من لا يعرف لغة غيره ولا تأثير موسيقاه وغناءه ومراميها.</p>
                         <p>اللذائذ الثلاث هما من أول ما تدور عليها الحياة الغربية اليوم ولا تضر بالوقار بل تعد من أدوات الظرف والكمال ولعل
                             شرقنا يحتذى في الموسيقى والغناء حذو الغرب مع تعديل تقتضيه طبيعته وعاداته واشتغال البيوت أو لأصحاب آونة الفراغ
-                            بضرب من ضروب الموسيقى والغناء أنفع ألف مرة من لغو الحديث وانتقاض بعضهم بعضاً والحط من أقدار <pb ed="shamela"
-                   n="n85-p26"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5787.xhtml"/> أنفسهم
+                            بضرب من ضروب الموسيقى والغناء أنفع ألف مرة من لغو الحديث وانتقاض بعضهم بعضاً والحط من أقدار <pb ed="shamela" n="n85-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5787.xhtml"/> أنفسهم
                             والسلام. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n85-p27"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5788.xhtml"/>
+                        <pb ed="shamela" n="n85-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5788.xhtml"/>
                         <head>التبدل المادي في الحياة السياسية</head>
                         <p>أوردنا في الجزء الأول نموذجات من كتاب تاريخ السياسة الأوروبية الحاضرة وها نحن نشفعه بفصل ضاف عقده في معنى التبدل
                             المادي الذي حدث في الحياة السياسية قال ما ترجمته:</p>
@@ -820,23 +735,21 @@
                             المصرية.</p>
                         <p>وهذا الانقلاب هو نتيجة الاختراعات التي قامت بالتجربة فقط أو بتطبيق أساليب العلوم العلمية وكثير منها ينتهي إلى
                             الثلث الأخير من القرن الثامن عشر بيد أن نتائجها العملية لم يشعر بها في جمهور الشعوب في أوروبا قبل أواخر حرب
-                            الإمبراطورية الفرنسوية فتغير الحياة المادية لم يبدأ إلا بعد سنة 1814 فهو أعظم حادث عصري بل هو حادث دولي لأن تلك
+                            الإمبراطورية الفرنسوية فتغير الحياة المادية لم يبدأ إلا بعد سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  فهو أعظم حادث عصري بل هو حادث دولي لأن تلك
                             الاختراعات أوجدتها عقول العلماء والمخترعين من كل الأمم وهي مشتركة بينهم بحيث يتعذر كل حين تمييز من له الحظ
                             الأوفر من الأمم في هذه الخدمة فقد انتقلت من أمة إلى أخرى مفيدة لها كلها على السواء.</p>
-                        <p>امتزجت أساليب الحياة المادية الجديدة في عاداتنا بحيث يصعب علينا أن نتمثل كيف كانت أوروبا سنة 1814 على قربها من
+                        <p>امتزجت أساليب الحياة المادية الجديدة في عاداتنا بحيث يصعب علينا أن نتمثل كيف كانت أوروبا سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  على قربها من
                             زمننا واختلاطنا معها في طرز الحياة ولا يخلو من فائدة التذكير بالمخترعات الرئيسية التي جعلت بيننا وبين أجدادنا في
                             ثلاثة أرباع قرن هذا الاختلاف العظيم وأني لأحاول أن أقص هنا تاريخ ما حدث فإنها قامت كلها في أدوار مختلفة على
                             أساليب مختلفة من التكمل المتواتر مما يصعب به نظمها بحسب السنين بل أريد هنا أن أحصيها جامعاً على طبقات المعارف
                             التي هي عملياتها في الحقيقة.</p>
                         <p>فإن الاختراعات الميكانيكية التي تمت كلها في إنكلترا خلال القرن الثامن عشر كانت أولاً أدوات تدار بالأيدي مثل أدوات
                             نسج القطن ونسج الصوف وخياطة الصوف وحياكة القطن وحياكة الصوف وخياطة أقمشة الصوف وصنع الجوارب (أما آلة الخياطة فلم
-                            تحدث إلا <pb ed="shamela"
-                   n="n85-p28"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5789.xhtml"/> في القرن التاسع عشر) ثم
+                            تحدث إلا <pb ed="shamela" n="n85-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5789.xhtml"/> في القرن التاسع عشر) ثم
                             جرى العمل باستعمال القوى الطبيعية المنبعثة من شلالات الماء لإدارة آلات النسيج والحياكة (وذلك في إنكلترا من سنة
-                            1790 إلى 1815) أما البخار فلم يستعمل إلا بعد ذلك العهد ويلحق بالميكانيكيات الآلات الزراعية التي جاء استعمالها
+                             <tei:num value="1790" xml:lang="ar">١٧٩٠</tei:num>  إلى  <tei:num value="1815" xml:lang="ar">١٨١٥</tei:num> ) أما البخار فلم يستعمل إلا بعد ذلك العهد ويلحق بالميكانيكيات الآلات الزراعية التي جاء استعمالها
                             متأخراً وآت صنع الورق وقد نشأ من ارتقاء الميكانيكيات انقلاب في طرق المواصلات وذلك باختراع الطرق المحجرة
-                            (المكادام) سنة 1820 والطرق ذات الانحدار القليل والافريز التي قامت مقام الطرق المعبدة (الشوسة) بالحجر فقط الباهظة
+                            (المكادام) سنة  <tei:num value="1820" xml:lang="ar">١٨٢٠</tei:num>  والطرق ذات الانحدار القليل والافريز التي قامت مقام الطرق المعبدة (الشوسة) بالحجر فقط الباهظة
                             الثمن المشوشة النظام والطرق المستقيمة ذات الانحدار الصعب بإنشاء الجسور المعلقة والقناطر وأنفاق السكك
                             الحديدية.</p>
                         <p>ولقد استفادت الميكانيكيات بتبديل صناعة الاستخراج فأوجدت المواد الضرورية للصناعات الأخرى بكميات وافرة مثل الفحم
@@ -851,9 +764,7 @@
                             الدين بن شداد من قضاة الملك الناصر وكتاب الفتح القسي في الفتح القدسي لعماد الدين الكاتب أحد كتاب ديوانه ثم يؤخذ
                             عمن كان في عصره أو قريبا منه أمثال ابن الأثير صاحب الكامل وتاج الدين شاهنشاه بن أيوب صاحب حماة أو عن صاحب تاريخ
                             الروضتين في أخبار الضوء الكهربائي والفونوغراف والتصفيح.</p>
-                        <p>ومن الكيمياء تشعبت معظم الاختراعات الثانوية فإن الثقاب (عيدان الكبريت المعمول <pb ed="shamela"
-                   n="n85-p29"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5790.xhtml"/> بالفوسفور قام مقام
+                        <p>ومن الكيمياء تشعبت معظم الاختراعات الثانوية فإن الثقاب (عيدان الكبريت المعمول <pb ed="shamela" n="n85-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5790.xhtml"/> بالفوسفور قام مقام
                             القداحة البطيئة الصعبة الاستعمال ونشأت الأسمدة الكيمياوية التي أخذت تبدل الزراعة من حال إلى حال واستخرج السكر من
                             الشمندر وأصبح الغاز أعظم واسطة لإنارة الأماكن العامة والألوان المستخرجة من الفحم الحجري والبنزين والكريزيوت مادة
                             مستخرجة من القطران والتصوير الشمسي والتصوير النوري والمواد المنفجرة الجديدة والأدوية الكيماوية والغسل في الكلور
@@ -865,27 +776,25 @@
                             هذا التبدل المادي كيف فعل في الحياة السياسية في أوروبا وذلك مباشرة يتغير الأساليب العملية في الحكومات وبالواسطة
                             بتحويل تركيب المجتمع</p>
                         <p>أساليب التدمير الحديثة - ظل الاعتماد على المواد المنفجرة القديمة إلى منتصف القرن على نحو ما كان عليه في أواخر
-                            القرون الوسطى فما كان عند الجيش سنة 1814 سوى البارود والبنادق التي تحشى حجارة والمدافع القليلة النظام التي تدك
+                            القرون الوسطى فما كان عند الجيش سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  سوى البارود والبنادق التي تحشى حجارة والمدافع القليلة النظام التي تدك
                             من فوهتها فكانت أسلحة ضعيفة الشأن تدك ببطء وتطلق طلقات رديئة وما كانت تحول دون المتحاربين إلا بتأثيرات معنوية
                             ولم تكن تمنع جيشاً منظماً أن يتجمع ويداهم العدو بالحراب وكان يكفي لمن يريد العصيان إذ ذاك أن تكون عنده بندقية
                             صيد وبارود وكرات فكان الفرق في السلاح بين الجندي والعاصي الثائر لا يعتد به بل أنه إذا وقع القتال في شارع يكون
                             الثائر في مأمن فيتحصن وتكون له الميزة على الجندي فنشأت للحكومات من المواد الملتهبة الجديدة قوة في التدمير جددت
                             علم قمع الثائرين فكان من الزئبق الملتهب أن اخترع الكابسول ثم اكتشف اكتشاف أهم من المواد الملتهبة من مركبات ماء
-                            الفضة فاكتشف أولاً النيروغليسيرين (1847) الذي يمزج بمواد صلبة فيتكون منه الديناميت (1864) وللمواد الملتهبة
-                            المحطة المؤلفة من مركبات ملح البارود التي يحدث منها الانفجار بواسطة ترتيب <pb ed="shamela"
-                   n="n85-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5791.xhtml"/> كيماوي آني قوة في
+                            الفضة فاكتشف أولاً النيروغليسيرين ( <tei:num value="1847" xml:lang="ar">١٨٤٧</tei:num> ) الذي يمزج بمواد صلبة فيتكون منه الديناميت ( <tei:num value="1864" xml:lang="ar">١٨٦٤</tei:num> ) وللمواد الملتهبة
+                            المحطة المؤلفة من مركبات ملح البارود التي يحدث منها الانفجار بواسطة ترتيب <pb ed="shamela" n="n85-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5791.xhtml"/> كيماوي آني قوة في
                             التدمير أرقى من قوة البارود لأن التهاب هذا لا يكون إلا بالحرارة فهو أكثر بطئاً وقد استعيض عن بارود المناجم
                             بالديناميت (لا في حفر الخنادق والنشافات البحرية فقط بل في معظم أعمال البناء في الطرق) فإن بارود الحرب الذي احتفظ
-                            به استعيض عنه بالبنادق تحشى ببارود جديد لا دخان له اخترع سنة 1870 في عدة ممالك على حدة واتخذت في المدافع مركبات
+                            به استعيض عنه بالبنادق تحشى ببارود جديد لا دخان له اخترع سنة  <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>  في عدة ممالك على حدة واتخذت في المدافع مركبات
                             من حامض ملح البارود أو حامض البيكريك (هو حامض يؤلف بعمل حامض ملح البارود على النيلة وعود الند) كماد الميلتيت
                             الملتهبة ومادة الروبيريت الخ.</p>
                         <p>ولقد حدث على ذلك العهد تبديل في استعمال الأسلحة فاخترعت البنادق ذات الطلق الأوسط تجعل فيها خرطوشة مهيأة تدخل في
                             مؤخر البندقية مما زاد كثيراً في السرعة وقليلاً في تنظيم الرماية وكان أول تطبيق لهذه الطريقة بندقية الإبرة (دربس)
-                            التي اعتمد عليها المشاة في الجيش الروسي منذ سنة 1847 ولم تهب سائر البلاد إلى الاقتداء بها وظلت فرنسا مكتفية
-                            ببندقية الصيد (لوفوشو) وبعد أن أحرز الألمان الظفر سنة 1866 تنوعت البندقية التي كانت تحشى من مؤخرها مثل (شاسبوت
+                            التي اعتمد عليها المشاة في الجيش الروسي منذ سنة  <tei:num value="1847" xml:lang="ar">١٨٤٧</tei:num>  ولم تهب سائر البلاد إلى الاقتداء بها وظلت فرنسا مكتفية
+                            ببندقية الصيد (لوفوشو) وبعد أن أحرز الألمان الظفر سنة  <tei:num value="1866" xml:lang="ar">١٨٦٦</tei:num>  تنوعت البندقية التي كانت تحشى من مؤخرها مثل (شاسبوت
                             وماوزر ومارتيني) أنواعاً كثيرة وأصبحت سلاح أورباكلها ومثل هذا الارتقاء حدث في المدفعية فبعد المدفع ذي الخطوط
-                            الداخلية ظهرت المدافع التي تملأ من مؤخرها (ارمسترونغ منذ سنة 1854) ثم جرى تحسينها في ألمانيا (معمل كروب) ثم
+                            الداخلية ظهرت المدافع التي تملأ من مؤخرها (ارمسترونغ منذ سنة  <tei:num value="1854" xml:lang="ar">١٨٥٤</tei:num> ) ثم جرى تحسينها في ألمانيا (معمل كروب) ثم
                             أنشئت المدافع من الفولاذ وأخذت تلك المرامي تقذف قنابل من الميلنيت وانتظم هذا الانقلاب في الأسلحة بالاكتشافات
                             الكيماوية وكان من أثر البارود بلا دخان أن زاد قوة الالتهاب وخفف من ثقل البندقية وأن جعل القذيفة أصغر حجماً وأعظم
                             جرماً وهذه البندقية هي التي دعيت بندقيه لبل.</p>
@@ -893,42 +802,38 @@
                             القديمة القوية بضعفها عن المقاومة ما كان لها من الحصانة الحربية في الدفاع عن التخوم ولم يعد المدافعون يعتمدون
                             على ما سوى إقامة المعسكرات المحصنة بالخنادق ومراكز للذخائر تحميها سلاسل من الحصون المنفصلة وأصبحت تعبئة الجيش
                             الكثيف متعذرة بالبنادق ذات الطابع السريع والقذائف وحلت محل عمل المدفعين المنفردين اللذين يعمدون إلى شجون الأرض
-                            فيتحصنون وراءها. <pb ed="shamela"
-                   n="n85-p31"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5792.xhtml"/> ولقد صعب أن يتمثل الناس
+                            فيتحصنون وراءها. <pb ed="shamela" n="n85-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5792.xhtml"/> ولقد صعب أن يتمثل الناس
                             نتائج هذا الانقلاب في الفن العسكري حتى أن أهل الصناعة أنفسهم لم يتصورا معنى الحرب بين أمتين أوربيتين ولكن الصورة
                             التي صنعوها هي من الدهشة بحيث تكفي لمنع جميع الحكومات أن يأخذوا على أنفسهم تبعتها وكان من ارتقاء فن الحرب أن
                             أصبحت الحرب مستكرهة للغاية حتى أنه لا يجسر امرؤٌ على إيقاد نيرانها وكان من ارتقاء الكيمياء في القذائف أن توطد
                             السلام.</p>
                         <p>فضمت الأسلحة الجديدة للحكومات قوة لا تقاوم في السياسة الداخلية وأصبح من المتعذر ثورة بما يتهيأ لها من الأسلحة أو
                             بنهب الثائرين أسلحة من باعتها بل أنه لا يتيسر القتال بين بنادق الصيد وبنادق الحرب وما من متراس يقاوم المدافع
-                            الجديدة. فليس من الاتفاقات البسيطة أن تضع الثورات والانتفاضات أوزارها منذ سنة 1848 وكانت من قبل في أوربا مألوفة
-                            وما ذلك إلا بتبديل الأسلحة وقع علل بيل أحد الاشتراكيين الألمان هذا التبدل بقوله سنة 1890: لقد سبقت فقلت أن ما
+                            الجديدة. فليس من الاتفاقات البسيطة أن تضع الثورات والانتفاضات أوزارها منذ سنة  <tei:num value="1848" xml:lang="ar">١٨٤٨</tei:num>  وكانت من قبل في أوربا مألوفة
+                            وما ذلك إلا بتبديل الأسلحة وقع علل بيل أحد الاشتراكيين الألمان هذا التبدل بقوله سنة  <tei:num value="1890" xml:lang="ar">١٨٩٠</tei:num> : لقد سبقت فقلت أن ما
                             سينشأ من ثورة يقوم بها على الأكثر مائتا ألف رجل لا شأن له فإننا في هذا الزمن الذي شاعت فيه البنادق الشريعة
                             الطلقات ومدافع مكسيم نضرب بالرصاص ضرب الأذلة ونتق كما تقتل العصافير.</p>
                         <p>ولم يعد في الإمكان قلب حكومة مشروعة ولا الدفاع عن الدستور من القوة الإجرائية وأوضاع الناس الطريقة الوحيدة الفعالة
                             في مقاومة سوء استعمال الحكومة القوة التي تملك زمامها. واستحال الاعتداء الثوري إلى لقاء قذائف وأبدلت الآلة
-                            الجهنمية القديمة التي استعملت ضد لويز فيليب بالقذائف أورسيني سنة 1858 والديناميت وآلات الدمار. وهذه الطرق
+                            الجهنمية القديمة التي استعملت ضد لويز فيليب بالقذائف أورسيني سنة  <tei:num value="1858" xml:lang="ar">١٨٥٨</tei:num>  والديناميت وآلات الدمار. وهذه الطرق
                             المفزعة قد هيأت لبعض الأشخاص المنفردين أسباب إكراه الرأي العام وأن تبدو في مظهر حزب فلم تفد في قوة الأحزاب
                             الثورية حقيقة بل ربما أنقصتها بإثارة الغضب عليهم بإلقاء القذائف التي ارتعدت منها الفرائص وأصبح الناس
                             متضامنين.</p>
                         <p>أساليب الانتقال الجديدة - أبدل انقلاب طرق المواصلات الحياة السياسية بثلاث طرق مباشرة: التلغراف والسكك الحديدية
                             والصحافة. فإن من أصعب الصعوبات التي كانت الحكومة تتعثر بأذيالها في كل زمن بطء المواصلات فلا بلاغ أمر من السلعة
                             المركزية ولأخذ معلومات من العمال المحليين كان يصرف وقت طويل أحياناً في طرق النقل القديمة برداً كانت أو سفناً
-                            وذلك حباً بإيصال الأمر في وقته مما كان يدخل البطء على عمل <pb ed="shamela"
-                   n="n85-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5793.xhtml"/> الحكومة المركزية أو
+                            وذلك حباً بإيصال الأمر في وقته مما كان يدخل البطء على عمل <pb ed="shamela" n="n85-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5793.xhtml"/> الحكومة المركزية أو
                             يجعله مستحيلاً فاقتضى من ثم أن تترك للعمال المحليين سلطة سيئة التحديد وكذلك للوكلاء السياسيين في البلاد الشاسعة
                             سلطة الحل والعقد إلا قليلاً واستدعى ذلك التخلي عن قبول الاستعلامات عن سلوك الوكلاء لإجراء المراقبة عليهم
                             مباشرة.</p>
                         <p>وقد عد التلغراف الهوائي من اختراع من اختراع شوب من الارتقاء العظيم ولكنه لم يكن يستطيع سوى نقل برقيات نادرة في
-                            أوقات الصحو ثم وضع التلغراف الكهربائي بعد سنة 1850 فتمكنت به الحكومات من الاستعلام والعمل في الحال في كل الأبعاد
+                            أوقات الصحو ثم وضع التلغراف الكهربائي بعد سنة  <tei:num value="1850" xml:lang="ar">١٨٥٠</tei:num>  فتمكنت به الحكومات من الاستعلام والعمل في الحال في كل الأبعاد
                             فشعر العالم في الحال بنتائج ذلك في المخابرات السياسية فاستلمت الحكومات بوقوفها على أقل حادث زمام المسائل
                             الخارجية بأجمعها وأصبح وكلاؤها في الخارج أدوات نقل. أما في السياسة الداخلية فإن التلغراف قد أكثر الصلات بين
                             الحكومة وعمالها وإن لم يحذف في الأمور الإدارية ما بقي من الأدوار الماضية للتلغراف في صورة كتابة أصبحت لغواً ونسي
                             المخترعون حذفها. فإن التلغراف بتقويته عمل السلطة المركزية زاد المركز قوة.</p>
                         <p>أما السكة الحديدية فقد قلبت البريد وهو من الأوضاع القديمة محدود بضعف أسباب السحب وذلك بأعدادها قوة للنقل تزيد عدد
-                            المراسلات وتنزل قيمتها على نسبة لم تكن تصدق فقد كان في أوربا بحسب إحصاء مكتب البريد الدولي سنة 1890 - تسعون ألف
+                            المراسلات وتنزل قيمتها على نسبة لم تكن تصدق فقد كان في أوربا بحسب إحصاء مكتب البريد الدولي سنة  <tei:num value="1890" xml:lang="ar">١٨٩٠</tei:num>  - تسعون ألف
                             مكتب بريد أرسل منها عشرة مليارات إرسالية. وعليه فإن السكك والطرق والبرد بتسهيلها حركة الناس والرسائل قد نشطت
                             جميع الأعمال العامة والحياة السياسية نشاطاً كثيراً فتيسر بفضلها وضع إدارة بعملها المنظم المتواصل أصابت سكان
                             القرى القاصية وأتت على مواطن متوحشة كانت باقية في أوربا وسط البلاد التي هي أكثر عراقة في المدنية. ونظمت الشرطة
@@ -936,17 +841,15 @@
                             الجبال.</p>
                         <p>ودخل جميع السكان في الحياة السياسية بوسائطهم المنظمة مع عمل القضاء والجباية والجندية والإدارة. وطرق المواصلات
                             الحديثة قربت بين رجال السلطة العامة وبين المتقاضين والمكلفين (بالخراج) والمرؤوسين وبذلك أصبحت الصلاة أشد تأثيراً
-                            وأقل كلفة وبهذه الوسائط أيضاً أتيح للأحزاب السياسية أن يبثوا دعوتهم ويعقدوا اجتماعاتهم على أيسر سبيل. <pb ed="shamela"
-                   n="n85-p33"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5794.xhtml"/>
-                            وانقلب الصحافة ظهراً لبطن بما اخترع من الآلات فإن الآلة الطابعة بالبخار اخترعت سنة 1814 على يد إدارة الجريدة
+                            وأقل كلفة وبهذه الوسائط أيضاً أتيح للأحزاب السياسية أن يبثوا دعوتهم ويعقدوا اجتماعاتهم على أيسر سبيل. <pb ed="shamela" n="n85-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5794.xhtml"/>
+                            وانقلب الصحافة ظهراً لبطن بما اخترع من الآلات فإن الآلة الطابعة بالبخار اخترعت سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  على يد إدارة الجريدة
                             الإنكليزية التيمس ثم اخترعت آلة تنضيد الحروف ثم آلة الروتاتيف التي اقتصدت من الوقت اللازم للطبع وقللت من اليد
                             العاملة ومكنت من طبع عدد كبير من النسخ في وقت قصير ونفقة قليلة جداً. فانتشرت الصحف اليومية السياسية بين طبقات
                             الشعب فأخذوا يبتاعونها بالمفرد. وكانت من قبل مقصورة على مشتركين من أهل الطبقة الوسطى وتعد من علائم الظرف
                             والزينة. ولقد حاولت الحكومات أن تحظر على الصحف الانتشار بين جمهور الناس فوضعت ضريبة الطوابع عليها أولاً (وهي
                             الطريقة التي تصورتها إنكلترا منذ القرن الثامن عشر) ثم بإكراه أصحاب الصحف على وضع ضمان (وهي طريقة حدثت في فرنسا
-                            سنة 1819) أو بوضع ضريبة على الورق. دع القضايا التي كانت تقام على الصحف وما ينالها من الإلغاء بالطرق الإدارية
-                            (التي أحدثت ضعفاً محسوساً في بياعات الصحف عقيب الارتجاع الذي قام ضد ثورة سنة 1814) بيد أن الصحف الرخيصة على
+                            سنة  <tei:num value="1819" xml:lang="ar">١٨١٩</tei:num> ) أو بوضع ضريبة على الورق. دع القضايا التي كانت تقام على الصحف وما ينالها من الإلغاء بالطرق الإدارية
+                            (التي أحدثت ضعفاً محسوساً في بياعات الصحف عقيب الارتجاع الذي قام ضد ثورة سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num> ) بيد أن الصحف الرخيصة على
                             الرغم من عداوة الحكومات انتهى أمرها بأن تدخل دخولاً قطعياً في أخلاق أوربا بأسرها.</p>
                         <p>وبعد فإن الجريدة اليومية بقوة انتشارها الذي لا يفوقه انتشار قد أصبحت في المجتمعات الحديثة إدارة للاشتهار لا في
                             التجارة فقط بل في السياسة واستعيض عن الطرق في نشر أعمال الحكومة (كالقوانين والأوامر والأحكام) بإذاعتها والإعلان
@@ -956,9 +859,7 @@
                             الشروط الضرورية في إنشاء الأحزاب السياسية.</p>
                         <p>أتى زمن على الصحف عدت فيه من أدوات الظرف بين الطبقات الموسرة واحتكرت فيه الطبقة الوسطى الحياة السياسية والمراقبة
                             والمعارضة وما كان سائر الشعب يتدخل في الحياة العامة إلا بما يقوم به من الثورات والفتن. فأدخلت الرخيصة الثمن في
-                            هذه الطبقة الجامدة تياراً من الدعوة المعارضة بدأ بالتهذيب السياسي في الشعب وبنشوة الحياة <pb ed="shamela"
-                   n="n85-p34"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5795.xhtml"/> السياسية نحو
+                            هذه الطبقة الجامدة تياراً من الدعوة المعارضة بدأ بالتهذيب السياسي في الشعب وبنشوة الحياة <pb ed="shamela" n="n85-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5795.xhtml"/> السياسية نحو
                             الديمقراطية.</p>
                         <p>يضاف إلى ذلك ما حدث من التبدل مباشرة في الحياة السياسية من المنافع الفعلية التي نفعت الأمن الما. وذلك بإنارة
                             الشوارع وأخذ صور الأشخاص بالتصوير الشمسي ممن هو فيما أرى قائمة تامة من التغيرات في شروط الحياة العامة أما
@@ -966,21 +867,19 @@
                             فيه.</p>
                         <p>تحول الشعب - أحدث ارتقاء علوم الحياة المادية نمواً في وسائط البقاء ساعدت على نمو الشعوب في أوربا كلها نمواً
                             سريعاً وإن الإحصائيات التي قامت بها الحكومات في الجملة لتدل على مبلغ ما حدث من هذا القبيل فإن سكان أوربا قد
-                            قدروا سنة 1800 بنحو مائة وثمانين مليوناً فبلغوا اليوم زهاء 350 مليوناً وقد كانت الزيادة على الأكثر في بلاد
+                            قدروا سنة  <tei:num value="1800" xml:lang="ar">١٨٠٠</tei:num>  بنحو مائة وثمانين مليوناً فبلغوا اليوم زهاء  <tei:num value="350" xml:lang="ar">٣٥٠</tei:num>  مليوناً وقد كانت الزيادة على الأكثر في بلاد
                             الشمال لا جرم أن تزايد عدد السكان لم يعمل بالضرورة بذاته في الحياة السياسية ففي الشرق وربما كان في القرون الوسطى
                             جماهير من الشعوب كثيرة التناسل وكثيرة الجمود وللولايات المتحدة سبعة سكان في الكيلو متر الواحد ولهم حياة سياسية
-                            أهم مما للهند الإنكليزية بكثرة نفوسها البالغ 80 في المئة وأن المكانة السياسية في نمو السكان في القرن التاسع عشر
-                            لغريبة في بابها فما كانت المدن سنة 1814 سوى مركز للتمدن والإدارة يتخذها أرباب الأملاك وفلاحو الناحية نقراً لهذا
+                            أهم مما للهند الإنكليزية بكثرة نفوسها البالغ  <tei:num value="80" xml:lang="ar">٨٠</tei:num>  في المئة وأن المكانة السياسية في نمو السكان في القرن التاسع عشر
+                            لغريبة في بابها فما كانت المدن سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  سوى مركز للتمدن والإدارة يتخذها أرباب الأملاك وفلاحو الناحية نقراً لهذا
                             الشأن ومعظمها عبارة عن جماعات من الموظفين وأرباب الصناعات والتجارة يسكنون متباعدين بين شعب يتوفر على زراعة
                             الحقول وقليل من المدن ما كان يتجاوز نفوسها الخمسين ألفاً وإن الصناعات الحديثة بجمعها العملة بالألوف والتنقل
                             بواسطة البخار قد زاد الحركة التجارية الدولية زيادة ضخمة مع جميع أنحاء العالم وقد أنشأت شعباً جديداً من العملة
                             والمستخدمين في التجارة فاتسعت المدن القديمة اتساعاً سريعاً لم يعهد له نظير وغدت القرى الصناعية مدناً عظمى وبلغ
                             من ازدحام الأقدام في بعض الأصقاع الصناعية (ولا سيما في إنكلترا وألمانيا والبلجيك) أن عمت البلاد بحيث تكاد تغطي
-                            سطحها. وزاد معدل سكان المدن بالنسبة لمجموع السكان في فرنسا من 24 في المئة سنة 1946 إلى 36 في المئة سنة 1886
-                            وكانت في إنكلترا وهي أول بلاد دخلت في هذا الارتقاء 51 في المائة من مجموع سكانها أهل مدن سنة 1851 فبلغوا سنة
-                            1890، 89 في المئة. ويؤخذ من تاريخ القرن التاسع عشر أن المدن الكبرى <pb ed="shamela"
-                   n="n85-p35"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5796.xhtml"/> والأصقاع الصناعية كانت
+                            سطحها. وزاد معدل سكان المدن بالنسبة لمجموع السكان في فرنسا من  <tei:num value="24" xml:lang="ar">٢٤</tei:num>  في المئة سنة  <tei:num value="1946" xml:lang="ar">١٩٤٦</tei:num>  إلى  <tei:num value="36" xml:lang="ar">٣٦</tei:num>  في المئة سنة  <tei:num value="1886" xml:lang="ar">١٨٨٦</tei:num> 
+                            وكانت في إنكلترا وهي أول بلاد دخلت في هذا الارتقاء  <tei:num value="51" xml:lang="ar">٥١</tei:num>  في المائة من مجموع سكانها أهل مدن سنة  <tei:num value="1851" xml:lang="ar">١٨٥١</tei:num>  فبلغوا سنة
+                             <tei:num value="1890" xml:lang="ar">١٨٩٠</tei:num> ،  <tei:num value="89" xml:lang="ar">٨٩</tei:num>  في المئة. ويؤخذ من تاريخ القرن التاسع عشر أن المدن الكبرى <pb ed="shamela" n="n85-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5796.xhtml"/> والأصقاع الصناعية كانت
                             في أوربا بأجمعها مراكز للانقلابات ومعارضة للحكومات ورجال الدين وفي هذه المراكز خاصة تجندت الأحزاب السياسية وكانت
                             زيادة سكان المدن إحدى الشروط المادية في سير أوربا نحو الديمقراطية.</p>
                         <p>نمو الثروة - كان من الآلات التي جعلت عوناً للصناعة باستخدامه قوى طبيعية لا حد لها أن أنتجت كميات أكبر من
@@ -997,17 +896,15 @@
                         <p>وقد ارتقى مع ذلك نظام الصحة فكانت القذارة عامة في القرن الثامن عشر في جماع البلاد وعند جميع الطبقات فأصبحت مما
                             يعد عاراً عند الأمم الممدنة ولا أثر لها في أوربا إلا في بلاد الجنوب والشرق أو بين الطبقات الفقيرة من الشعب وأخذت
                             نظافة الجسم والثواب والدار والغذاء من الضروريات الأخلاقية وعم الناس استعمالها بواسطة المدارس وتنتشر منها إلى
-                            القرى ونشأت النظافة العامة من النظافة الخاصة مثل كنس الطرق وكسح المجاري والقمامات وكانت لا تعرف قبل سنة 1814 غدا
-                            كل ذلك اليوم في جميع المدن <pb ed="shamela"
-                   n="n85-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5797.xhtml"/> من الأوضاع الضرورية
+                            القرى ونشأت النظافة العامة من النظافة الخاصة مثل كنس الطرق وكسح المجاري والقمامات وكانت لا تعرف قبل سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  غدا
+                            كل ذلك اليوم في جميع المدن <pb ed="shamela" n="n85-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5797.xhtml"/> من الأوضاع الضرورية
                             وانتشر الإحساس العام من الخجل والقرف فاضطر إلى قطع المساكن الضيقة الرجسة والأزقة القذرة حيث كان يزدحم الشعب
                             الفقير في المدن العظمى.</p>
                         <p>وللعامل بيده اليوم كثير من الأساليب المادية كما أن له كثيراً من أسباب التنعم والتربية العقلية وهو يبالغ بالعناية
-                            بهيئته كأهل الطبقة الوسطى عام 1814 ولذلك تيسر إدخاله إلى الحياة السياسية بدون أن ينشأ عن ذلك أثر من آثار التوحش
+                            بهيئته كأهل الطبقة الوسطى عام  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  ولذلك تيسر إدخاله إلى الحياة السياسية بدون أن ينشأ عن ذلك أثر من آثار التوحش
                             الذي كان يظن وقوعه أرباب التجارب وكان يتراءى أنه حجة لا تغلب ضد التصويت العام.</p>
                         <p>وإن جزءاً مما حدث من السعة بواسطة الصناعة الحديثة قد استهلك وقسماً آخر نفع في الاقتصاد ومن الصعب أن يستدل
-                            بالأرقام على الوفر الذي تراكم منذ سنة 1814 حتى في مملكة واحدة وتقدير مستند إلى أي اعتبارات شخصية يختلف اختلافاً
+                            بالأرقام على الوفر الذي تراكم منذ سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  حتى في مملكة واحدة وتقدير مستند إلى أي اعتبارات شخصية يختلف اختلافاً
                             كثيراً.</p>
                         <p>ومن المحقق أنها تمثل رأس مال يبلغ على الأقل ضعف مبلغ رؤوس الأموال التي تركتها القرون الماضية. ومن هذا الرأس المال
                             الجديد استخدم جزء لإحداث الآلات والأدوات الجديدة في الصناعة والتجارة فأنشئت المعامل والسكك الحديدية وإقراض
@@ -1019,10 +916,8 @@
                             العاملون في القديم قلما ينتجون غير ما يستهلكون أو يستهلك في السوق المحلي فالفلاحون يبيعون قليلاً ولا يبتاعون
                             كبير أمر وأرباب الصناعات يعملون لزبن وطنيين فالصناعة بالجملة والتجارة في القاصية انحصرت في مصنوعات الزينة
                             المصنوعة في بعض المعامل وفي نواتج المستعمرات المجلوبة من وراء البحر فانتهت الحال بالعاملين بل بالزراعيين في
-                            القرن التاسع عشر بما نشأ من الانقلاب الذي حدث أولاً في إنكلترا بين سنتي 1789 - 1814 أن لا يعملوا مصنوعات لأنفسهم
-                            ولا لزبنهم المعروفين بل للسوق فقط لا للسوق المحلية بل للسوق العامة. <pb ed="shamela"
-                   n="n85-p37"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5798.xhtml"/> وانتشرت طريقة الشركات
+                            القرن التاسع عشر بما نشأ من الانقلاب الذي حدث أولاً في إنكلترا بين سنتي  <tei:num value="1789" xml:lang="ar">١٧٨٩</tei:num>  -  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  أن لا يعملوا مصنوعات لأنفسهم
+                            ولا لزبنهم المعروفين بل للسوق فقط لا للسوق المحلية بل للسوق العامة. <pb ed="shamela" n="n85-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5798.xhtml"/> وانتشرت طريقة الشركات
                             المغفلة من الاسم ذات الأسهم بسرعة غريبة واستخدمت في المشاريع الصناعية الكبرى على حين كان يزيد دخل الدول بنمو
                             القروض السريع وهكذا أحدثت كميات ضخمة من الأوراق المالية جعلت قيد المضاربات وانتقلت إدارة المحاصيل إذ ذاك إلى
                             سلطة جماعات المضاربين الذين يديرون سوق العالم ويحددون الأسعار ويستصنعون ما يشاؤون في المعامل ويعينون أسعار
@@ -1037,9 +932,7 @@
                             كانت ولا جرم إحدى صفات الحياة السياسية في القرن التاسع عشر. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n85-p38"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5799.xhtml"/>
+                        <pb ed="shamela" n="n85-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5799.xhtml"/>
                         <head>البلقان وحربها المشؤومة</head>
                         <p>إذا ألقى المتأمل نظرة على مصوَّر قارة أوربا يجد في الجنوب الشرقي منها قطعة كبرى تحدها من الشمال النمسا وروسيا ومن
                             الشرق البحر الأسود وبحر مرمرة وجزء من البحر الأبيض الرومي ومن الجنوب البحر الأبيض ومن الغرب البحر الأدرياتيكي
@@ -1047,29 +940,27 @@
                             كما يقال ذلك لجزيرة العرب. وهذه بلاد البلقان.</p>
                         <p>وتشتمل بلاد البلقان ومساحتها خمسمائة وسبعون ألف كيلو متر مربع على بلاد اليونان وبلغاريا والروم إيلي الشرقي
                             والبوسنة والهرسك ورومانية والصرب والجبل الأسود والروم إيلي اوالأملاك العثمانية في أوربا وكانت سبع ولايات وهي
-                            الأستانة وأدرنة وسلانيك ومناستر وقوصوه وأشقودرة ويانية ولواء جتالجة المستقل وطول البلاد العثمانية الشرقي 1520
-                            كيلو متراً أي من الأستانة إلى منتهى البوسنة وعرضها من بلغاريا إلى حدود ساحل بلاد اليونان 930 كيلو متراً ومساحتها
-                            السطحية 325. 766 كيلو متراً مربعاً وسكانها لا يقلون عن سبعة ملايين.</p>
-                        <p>وكانت مساحة يونان منها قبل الحرب 65 ألف كيلو متراً مربع أي نحو ثلثي مساحة ولاية سوريا وسكانها نحو ثلاثة ملايين
-                            على الأكثر ومساحة رومانية 131 ألف كيلو متر مربع وسكانها ستة ملايين ومساحة بلغاريا 96. 660 وسكانها نحو خمسة
-                            ملايين ومساحة الصرب 48300 كيلو متر مربع وسكانها مليونان ونصف ومساحة الجبل الأسود 9080 كيلو متراً وسكانها 240
+                            الأستانة وأدرنة وسلانيك ومناستر وقوصوه وأشقودرة ويانية ولواء جتالجة المستقل وطول البلاد العثمانية الشرقي  <tei:num value="1520" xml:lang="ar">١٥٢٠</tei:num> 
+                            كيلو متراً أي من الأستانة إلى منتهى البوسنة وعرضها من بلغاريا إلى حدود ساحل بلاد اليونان  <tei:num value="930" xml:lang="ar">٩٣٠</tei:num>  كيلو متراً ومساحتها
+                            السطحية  <tei:num value="325" xml:lang="ar">٣٢٥</tei:num> .  <tei:num value="766" xml:lang="ar">٧٦٦</tei:num>  كيلو متراً مربعاً وسكانها لا يقلون عن سبعة ملايين.</p>
+                        <p>وكانت مساحة يونان منها قبل الحرب  <tei:num value="65" xml:lang="ar">٦٥</tei:num>  ألف كيلو متراً مربع أي نحو ثلثي مساحة ولاية سوريا وسكانها نحو ثلاثة ملايين
+                            على الأكثر ومساحة رومانية  <tei:num value="131" xml:lang="ar">١٣١</tei:num>  ألف كيلو متر مربع وسكانها ستة ملايين ومساحة بلغاريا  <tei:num value="96" xml:lang="ar">٩٦</tei:num> .  <tei:num value="660" xml:lang="ar">٦٦٠</tei:num>  وسكانها نحو خمسة
+                            ملايين ومساحة الصرب  <tei:num value="48300" xml:lang="ar">٤٨٣٠٠</tei:num>  كيلو متر مربع وسكانها مليونان ونصف ومساحة الجبل الأسود  <tei:num value="9080" xml:lang="ar">٩٠٨٠</tei:num>  كيلو متراً وسكانها  <tei:num value="240" xml:lang="ar">٢٤٠</tei:num> 
                             ألفاً والبوسنة والهرسك ونفوسهما أقل من مليونين ولا تكاد توجد بقعة واحدة من هذه البلاد يتكلم أهلها بلسان واحد
                             ويدينون بمذهب واحد وغالبية السكان في البلاد المستقلة عن العثمانية هم من أصل صقلبي (سلافي).</p>
                         <p>تعد البلقان من البلاد الفقيرة القليلة الساكن وقد كانت منذ أواخر الإمبراطورية الرومانية ميداناً للقتل والقتال
                             وأخلص العناصر منذ القديم للعثمانية الفلاخيون سكان رومانيا والأرناؤود سكان مقدونية ولطالما حاربوا في هذا السبيل
-                            وقد احتلت النمسا البوسنة والهرسك احتلالا عسكريا سنة1878 ثم أعلنت ضمها إليها عقيب إعلان الحكم العثماني في السلطنة
-                            العثمانية واستقلت الصرب عنا سنة1878 - 1882 والجبل الأسود سنة1878 واستقلت بلغاريا سنة 1878 - 81 - 85 - 1989
-                            واستولت على الروم إيلي <pb ed="shamela"
-                   n="n85-p39"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5800.xhtml"/> الشرقي سنة1886 واستقلت
-                            اليونان سنة1830 بعد أن حكمها العثمانيون نحو أربعة قرون وذلك بتدخل فرنسا وانكلترا وروسيا إذ ذاك وبعد تحطيم
-                            أسطولنا في وقعة نافارين سنة1827 وفي معاهدة برلين أصلحت التخوم اليونانية من جهة الشمال.</p>
+                            وقد احتلت النمسا البوسنة والهرسك احتلالا عسكريا سنة <tei:num value="1878" xml:lang="ar">١٨٧٨</tei:num>  ثم أعلنت ضمها إليها عقيب إعلان الحكم العثماني في السلطنة
+                            العثمانية واستقلت الصرب عنا سنة <tei:num value="1878" xml:lang="ar">١٨٧٨</tei:num>  -  <tei:num value="1882" xml:lang="ar">١٨٨٢</tei:num>  والجبل الأسود سنة <tei:num value="1878" xml:lang="ar">١٨٧٨</tei:num>  واستقلت بلغاريا سنة  <tei:num value="1878" xml:lang="ar">١٨٧٨</tei:num>  -  <tei:num value="81" xml:lang="ar">٨١</tei:num>  -  <tei:num value="85" xml:lang="ar">٨٥</tei:num>  -  <tei:num value="1989" xml:lang="ar">١٩٨٩</tei:num> 
+                            واستولت على الروم إيلي <pb ed="shamela" n="n85-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5800.xhtml"/> الشرقي سنة <tei:num value="1886" xml:lang="ar">١٨٨٦</tei:num>  واستقلت
+                            اليونان سنة <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>  بعد أن حكمها العثمانيون نحو أربعة قرون وذلك بتدخل فرنسا وانكلترا وروسيا إذ ذاك وبعد تحطيم
+                            أسطولنا في وقعة نافارين سنة <tei:num value="1827" xml:lang="ar">١٨٢٧</tei:num>  وفي معاهدة برلين أصلحت التخوم اليونانية من جهة الشمال.</p>
                         <p>هذه هي البلاد التي نشبت فيها الحرب البلقانية الأخيرة وبينا كانت أنظار العثمانيين متجهة إلى إفريقية في الخريف
-                            الماضي (1330هـ - و1912م) ليروا ماذا يكون مصير طرابلس وبرقة أو ليبيا التي داهمت إيطاليا سواحلها بأساطيلها ورجالها
+                            الماضي ( <tei:num value="1330" xml:lang="ar">١٣٣٠</tei:num> هـ - و <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> م) ليروا ماذا يكون مصير طرابلس وبرقة أو ليبيا التي داهمت إيطاليا سواحلها بأساطيلها ورجالها
                             واستولت عليها وأرادت أن تتوغل في داخلية البلاد فأخذ العرب من أهلها والنزر القليل من الحامية العثمانية فيها
                             يناوشون العسكر الإيطالي القتال والعالم الإسلامي متأثر لهذا الاعتداء والعارفون موقنون بأن سهم القضاء نافذ في ذاك
-                            الإقليم العظيم لا محالة (المقتبس م6 ص672) أعلنت الحكومات البلقانية على العثمانية الحرب في الروم إيلي فقطع الجبل
-                            الأسود علائقه مع دولتنا في 8 تشرين الأول وعملت بلغاريا كذلك في 14 منه وفي17 أعلن الحرب علينا كل من حكومتي الصرب
+                            الإقليم العظيم لا محالة (المقتبس م <tei:num value="6" xml:lang="ar">٦</tei:num>  ص <tei:num value="672" xml:lang="ar">٦٧٢</tei:num> ) أعلنت الحكومات البلقانية على العثمانية الحرب في الروم إيلي فقطع الجبل
+                            الأسود علائقه مع دولتنا في  <tei:num value="8" xml:lang="ar">٨</tei:num>  تشرين الأول وعملت بلغاريا كذلك في  <tei:num value="14" xml:lang="ar">١٤</tei:num>  منه وفي <tei:num value="17" xml:lang="ar">١٧</tei:num>  أعلن الحرب علينا كل من حكومتي الصرب
                             واليونان فأصبحت بلاد الروم إيلي محصورة من الشمال والجنوب ومن البر والبحر ولم يبق للحكومة العثمانية صلة بها إلا
                             من الشرق فقطع البلغار هذا الطريق أيضا باستيلائهم على جسر مصطفى باشا وقرق كليسا ولولو برغاس ودده اغاج على ساحل
                             البحر الأبيض واضطرت جيوشنا إلى التقهقر إلى حصون جتالجة من ضواحي الأستانة واستولى اليونان على يانيا وسلانيك
@@ -1079,13 +970,11 @@
                             كان مع جال حاميتنا ركن إلى الفرار في وقت واحد يحمل أسلحته وذخائره.</p>
                         <p>وكان من أثر ذلك فشل العثمانيين في الروم ايلي فشلا لم يصابوا بمثله في تاريخهم ولو عاون الألبان جيوش الدولة من
                             الشمال بقتالهم الصرب والجبل الأسود ومن الجنوب بكف عادية اليونان لما وفق الحلفاء البلقانيون الأربعة إلى نزع خمس
-                            ولايات من أهم ولايات السلطنة في الروم ايلي. <pb ed="shamela"
-                   n="n85-p40"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5801.xhtml"/> انتهز الألبان هذه الفرصة
+                            ولايات من أهم ولايات السلطنة في الروم ايلي. <pb ed="shamela" n="n85-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5801.xhtml"/> انتهز الألبان هذه الفرصة
                             وكان بعض المنورين من سكان جنوب ألبانيا يتناغون بالاستقلال سرا حتى أن حكم العثمانيين كان اسميا على معظم ألبانيا
                             وأرباب الزعامة يتولون أمرها في الحقيقة فإنه منذ حارب اسكندر بك أحد قدماء زعمائهم جيوش الدولة أربعين سنة ما برحت
-                            الفتن تنشب بين الألبان والأتراك وآخرها عصيان لهم سببه استئثار علي باشا التبه دلتلي والي يانيا المتوفي سنة1822 ثم
-                            حرب سنة1830 فسنة1843 فسنة1879 فسنة1887.</p>
+                            الفتن تنشب بين الألبان والأتراك وآخرها عصيان لهم سببه استئثار علي باشا التبه دلتلي والي يانيا المتوفي سنة <tei:num value="1822" xml:lang="ar">١٨٢٢</tei:num>  ثم
+                            حرب سنة <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>  فسنة <tei:num value="1843" xml:lang="ar">١٨٤٣</tei:num>  فسنة <tei:num value="1879" xml:lang="ar">١٨٧٩</tei:num>  فسنة <tei:num value="1887" xml:lang="ar">١٨٨٧</tei:num> .</p>
                         <p>يقول أحد من شهدوا الوقائع من الضباط أنه لما بدأت الحرب كان الأرناؤد يحاربون الأعداء باستبسال عظيم في برشتنة
                             ومترويجة وايبك وغوسينة وبلاوة وأول معركة نشبت في بلاج وكانت قوة الأعداء هناك مؤلفة من فرقتين صربيتين وخمس
                             بطاريات وقوتنا المقابلة لها طابوران من النظامي وطابوران من رديف الأرناؤد وهما من كيلان وبرشوة وبطارية واحدة
@@ -1099,15 +988,13 @@
                             بستة أشهر أن تبادر بمنح اللامركزية الإدارية للروم ايلي لئلا تكون حجة لحكومات البلقان وبنا كانت الحكومة العثمانية
                             تفكر في إعطاء ما يشبه هذه الصورة في الحكم للولايات العثمانية جمعاء انقض البلقانيون على بلادنا الروملية واستباحوا
                             حماها واستصفوها وعبثا قاتل جنودنا في الذب عن ذمارهم حتى إن أدرنة التي قاومت البلغار والصرب أشهرا لمناعة حصونها
-                            عادت فسقطت في أيدي البلغاريين وكل محصور مأخوذ. <pb ed="shamela"
-                   n="n85-p41"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5802.xhtml"/> نسي الصربيون واليونان
+                            عادت فسقطت في أيدي البلغاريين وكل محصور مأخوذ. <pb ed="shamela" n="n85-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5802.xhtml"/> نسي الصربيون واليونان
                             والبلغار ما كان بينهم من الأحقاد القديمة التي يرد عهدها إلى الدولة البيزنطية ولطالما كان يلقى الشقاق بينهم وكذلك
-                            تفعل النمسا مخافة أن تتحد كلمتهم علينا ومن لا يذكر أن البلغاريين والصربيين تقاتلوا قتالا شديدا سنة 1885 وأن
+                            تفعل النمسا مخافة أن تتحد كلمتهم علينا ومن لا يذكر أن البلغاريين والصربيين تقاتلوا قتالا شديدا سنة  <tei:num value="1885" xml:lang="ar">١٨٨٥</tei:num>  وأن
                             الأحقاد والثارات كانت دائمة متبادلة بين البلغار واليونان في مكدونيا والاختلاف بين الصرب والجبل الأسود كل يوم في
                             شأن ولطالما كان البلغاريون والصربيون على الحياد عندما يحارب العثمانيون اليونانيون. من يذكر هذا يستعظم تحالفهم
-                            الذي تم على يد فرديناند ملك بلغاريا وباشيش وزير الصرب وفنزيلوس وزير اليونانية وكانت بلغاريا منذ سنة1907 والصرب
-                            منذ سنة1908 عام ضمت النمسا ولايتي البوسنة والهرسك نهائيا إلى ملكها واليونان منذ سنة1909 تبالغ في ابتياع الأسلحة
+                            الذي تم على يد فرديناند ملك بلغاريا وباشيش وزير الصرب وفنزيلوس وزير اليونانية وكانت بلغاريا منذ سنة <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num>  والصرب
+                            منذ سنة <tei:num value="1908" xml:lang="ar">١٩٠٨</tei:num>  عام ضمت النمسا ولايتي البوسنة والهرسك نهائيا إلى ملكها واليونان منذ سنة <tei:num value="1909" xml:lang="ar">١٩٠٩</tei:num>  تبالغ في ابتياع الأسلحة
                             والبارود والذخائر مبالغة لم تعهد.</p>
                         <p>بينا كان البلقانيون يعدون كل ذلك كانت الحكومة العثمانية مستغرقة بالفتن الداخلية كاليمن وألبانيا وحوران والكرك
                             أولا ومسألة طرابلس الغرب مؤخرا وضباط الجيش إلا قليلا يتركون تمرين الأجناد ويصرفون أوقاتهم في الأندية السياسية
@@ -1120,9 +1007,7 @@
                         <p>نعم كان لدعاة الدين في تراكيا ومكدونية يد طولى في بث الدعوة السياسية كما أن كهنة الطليان بثوا دعوتهم في بعض
                             الولايات المتاخمة لبلادهم من بلاد الأرناؤد وسعى مثل هذا السعي البلغار والصرب فجاءوا من طريق التعليم كما هي عادة
                             الفاتحين من الغربيين اليوم يرسلون المعلمين مبشرين ومنذرين أولا ثم يبعثون بالبعوث ويكتبون الكتائب. وكان لاستقلال
-                            بطريرك اليونان عن بطريرك القسطنطينية وبطريرك البلغار عنه أيضا دخل <pb ed="shamela"
-                   n="n85-p42"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5803.xhtml"/> كبير في نشر كلمة
+                            بطريرك اليونان عن بطريرك القسطنطينية وبطريرك البلغار عنه أيضا دخل <pb ed="shamela" n="n85-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5803.xhtml"/> كبير في نشر كلمة
                             الاختلاف وتقوية البغض للدولة العلية ولذا كانت حالة المسلمين في بلاد رومانيا والبوسنة والهرسك أقرب إلى الراحة
                             منها في بلاد البلغار واليونان والصرب الذين ينام أهلها ويستيقظون في كراهة العثمانيين منذ القديم.</p>
                         <p>صرفت الدولة نحو خمسين سنة في فتح الروم ايلي وحكمته نحو خمسمائة سنة ومع هذا لم توفق في نشراتها ولا دينها على ما
@@ -1132,19 +1017,17 @@
                             بلاد البلقان ميدانا للقتل والقتال تباع فيها الأرواح كما تباع السماح وأن سهل قوصوة على حدود بلغاريا والصرب
                             والبوسنة ليجأر إلى السماء شاكيا من الدماء التي طالت فيه مرتين بين العثمانيين والبلقانيين ولطالما كانت أسوار
                             بلغراد وفينا واقية لأواسط قارة أوربا من هجمات المهاجمين من العثمانيين.</p>
-                        <p>نشبت الحرب بين الجيوش العثمانية وجيوش الحكومات المتحالفة في 17 تشرين الأول 1912 وعقد الصلح في 29 أيلول 1913 وهلك
+                        <p>نشبت الحرب بين الجيوش العثمانية وجيوش الحكومات المتحالفة في  <tei:num value="17" xml:lang="ar">١٧</tei:num>  تشرين الأول  <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num>  وعقد الصلح في  <tei:num value="29" xml:lang="ar">٢٩</tei:num>  أيلول  <tei:num value="1913" xml:lang="ar">١٩١٣</tei:num>  وهلك
                             في الوقائع من الطرفين عشرات الألوف وأنفقوا من الأموال مئات الألوف من الدنانير وقدر بعض الإحصائيين أن ما خسرته
                             العثمانية من جيشها يبلغ نحو مئة ألف بين قتيل وجريح وأنفقت ثمن ذخائر ومعدات وغيرها نحو ثمانين مليون جنيه وأن
-                            بلغاريا فقدت م جيشها 140 ألف بين قتيل وجريح و90 مليون من الجنيهات والصرب70 ألفا من النفوس و50 مليونا من الجنيهات
-                            واليونان30 ألفا و25 مليونا والجبل الأسود ثمانية آلاف نفس ومليون جنيه ولا يدخل في هذا الإحصاء ما فقده السكان في
+                            بلغاريا فقدت م جيشها  <tei:num value="140" xml:lang="ar">١٤٠</tei:num>  ألف بين قتيل وجريح و <tei:num value="90" xml:lang="ar">٩٠</tei:num>  مليون من الجنيهات والصرب <tei:num value="70" xml:lang="ar">٧٠</tei:num>  ألفا من النفوس و <tei:num value="50" xml:lang="ar">٥٠</tei:num>  مليونا من الجنيهات
+                            واليونان <tei:num value="30" xml:lang="ar">٣٠</tei:num>  ألفا و <tei:num value="25" xml:lang="ar">٢٥</tei:num>  مليونا والجبل الأسود ثمانية آلاف نفس ومليون جنيه ولا يدخل في هذا الإحصاء ما فقده السكان في
                             البلاد التي كانت ميدان الوغى حولا من الزمن وقد قام البلغار بفظائع مع أهل تركيا ومكدونية من المسلمين واليونان
                             اشمأزت منها الإنسانية والمدنية وذلك عندما تراجعت صفوفها يوم أرادت عقيب النجاح الباهر الذي صادفته في الحرب الأولى
                             عندما كانت تحارب العثمانيين من جهة ويحاربهم من أخرى اليونان والصرب والجبل الأسود ولما طمعت في الاستئثار بالغنيمة
-                            أو بأطايبها عادت حليفاتها فأنفقت عليها مع رومانيا واصلتها حربا عوانا سلبتها به قسما من البلاد التي كانت كانت <pb ed="shamela"
-                   n="n85-p43"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5804.xhtml"/>
+                            أو بأطايبها عادت حليفاتها فأنفقت عليها مع رومانيا واصلتها حربا عوانا سلبتها به قسما من البلاد التي كانت كانت <pb ed="shamela" n="n85-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5804.xhtml"/>
                             لها واستعاد العثمانيون منها مدينة أدرنة وكان باسترجاع العثمانيين لهذه الحاضرة وقرق كليسا أن ربحوا أرضا واسعة لا
-                            يقل عرضها عن45 كيلو مترا ولا يقل طولها عن120 كيلو مترا وأهم من ذلك امتلاك الخط الحديدي من أدرنة إلى ديموتقة
+                            يقل عرضها عن <tei:num value="45" xml:lang="ar">٤٥</tei:num>  كيلو مترا ولا يقل طولها عن <tei:num value="120" xml:lang="ar">١٢٠</tei:num>  كيلو مترا وأهم من ذلك امتلاك الخط الحديدي من أدرنة إلى ديموتقة
                             وإبعاد الحدود عن العاصمة واستبقاء بعض المواقع الحصينة في يد الدولة ولا يكلفها تحصينها كثيراً.</p>
                         <p>ولكن خرج معظم المسلمين في الروم ايلي من الحكم العثماني وانتقلوا إلى الحكومات الأخرى البلقانية وكان ند الصرب كمية
                             من المسلمين حوالي نيش وعند اليونان حفنة من إقليم تساليا وعند رومانيا في إقليم دوبريجه فأخذت رومانيا من بلغاريا
@@ -1152,47 +1035,43 @@
                             كتلة عظيمة من المسلمين في بقعة واحدة.</p>
                         <p>وقسمت بعض الصحف الإنكليزية الخطيرة عناصر سكان الولايات الخمس التي خرجت عن الحكم العثماني وأديان أهلها كما
                             يلي:</p>
-                        <p>(1) ولاية قوصوة: عدد سكانها 908915 منهم 89350 مسلماً تركياً و13680 مسلماً بلغارياً و251800 أرثوذكسي بلغاري
-                            و112870 أرثوذكسياً صربياً و150 أرثوذكسياً يونانياً و910 أرثوذكس رومان و418250 مسلماً ألبانياً و21905 لاتينياً
+                        <p>( <tei:num value="1" xml:lang="ar">١</tei:num> ) ولاية قوصوة: عدد سكانها  <tei:num value="908915" xml:lang="ar">٩٠٨٩١٥</tei:num>  منهم  <tei:num value="89350" xml:lang="ar">٨٩٣٥٠</tei:num>  مسلماً تركياً و <tei:num value="13680" xml:lang="ar">١٣٦٨٠</tei:num>  مسلماً بلغارياً و <tei:num value="251800" xml:lang="ar">٢٥١٨٠٠</tei:num>  أرثوذكسي بلغاري
+                            و <tei:num value="112870" xml:lang="ar">١١٢٨٧٠</tei:num>  أرثوذكسياً صربياً و <tei:num value="150" xml:lang="ar">١٥٠</tei:num>  أرثوذكسياً يونانياً و <tei:num value="910" xml:lang="ar">٩١٠</tei:num>  أرثوذكس رومان و <tei:num value="418250" xml:lang="ar">٤١٨٢٥٠</tei:num>  مسلماً ألبانياً و <tei:num value="21905" xml:lang="ar">٢١٩٠٥</tei:num>  لاتينياً
                             يهودياً.</p>
-                        <p>(2) ولاية أشقودرة: عدد سكانها 322000 منهم 12000 مسلماً تركياً و80000 مسلم ألباني و40000 مسلم صربي و140000
-                            كاثوليكي ألباني و30000 أرثوذكسي صربي و10000 أرثوذكسي روماني و10000 إسرائيلي.</p>
-                        <p>(3) ولاية يانيا: عدد سكانها641000 منهم180000 مسلم ألباني و110000 أرثوذكسي ألباني و120000 أرثوذكسي بلغاري و110000
-                            أرثوذكسي يوناني و180000 أرثوذكسي روماني و110000 كاثوليكي ألباني و13000 يهودي.</p>
-                        <p>(4) ولاية مناستر: عدد سكانها 846000 منهم111500 مسلماً تركياً و25900 مسلم بلغاري و218650 مسلم ألباني و330800
-                            أرثوذكسي بلغاري و61930 أرثوذكسياً يونانياً و24700 من أديان مختلفة.</p>
-                        <p>(5) ولاية سلانيك: عدد سكانها 116539 منهم333440 مسلما تركيا و98590 مسلما بلغاريا و446050 أرثوذكسيا بلغاريا و168500
-                            أرثوذكسيا يونانيا و24970 أرثوذكسيا <pb ed="shamela"
-                   n="n85-p44"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5805.xhtml"/> رومانيا و55320 يهوديا
-                            و38580 من أديان منوعة.</p>
+                        <p>( <tei:num value="2" xml:lang="ar">٢</tei:num> ) ولاية أشقودرة: عدد سكانها  <tei:num value="322000" xml:lang="ar">٣٢٢٠٠٠</tei:num>  منهم  <tei:num value="12000" xml:lang="ar">١٢٠٠٠</tei:num>  مسلماً تركياً و <tei:num value="80000" xml:lang="ar">٨٠٠٠٠</tei:num>  مسلم ألباني و <tei:num value="40000" xml:lang="ar">٤٠٠٠٠</tei:num>  مسلم صربي و <tei:num value="140000" xml:lang="ar">١٤٠٠٠٠</tei:num> 
+                            كاثوليكي ألباني و <tei:num value="30000" xml:lang="ar">٣٠٠٠٠</tei:num>  أرثوذكسي صربي و <tei:num value="10000" xml:lang="ar">١٠٠٠٠</tei:num>  أرثوذكسي روماني و <tei:num value="10000" xml:lang="ar">١٠٠٠٠</tei:num>  إسرائيلي.</p>
+                        <p>( <tei:num value="3" xml:lang="ar">٣</tei:num> ) ولاية يانيا: عدد سكانها <tei:num value="641000" xml:lang="ar">٦٤١٠٠٠</tei:num>  منهم <tei:num value="180000" xml:lang="ar">١٨٠٠٠٠</tei:num>  مسلم ألباني و <tei:num value="110000" xml:lang="ar">١١٠٠٠٠</tei:num>  أرثوذكسي ألباني و <tei:num value="120000" xml:lang="ar">١٢٠٠٠٠</tei:num>  أرثوذكسي بلغاري و <tei:num value="110000" xml:lang="ar">١١٠٠٠٠</tei:num> 
+                            أرثوذكسي يوناني و <tei:num value="180000" xml:lang="ar">١٨٠٠٠٠</tei:num>  أرثوذكسي روماني و <tei:num value="110000" xml:lang="ar">١١٠٠٠٠</tei:num>  كاثوليكي ألباني و <tei:num value="13000" xml:lang="ar">١٣٠٠٠</tei:num>  يهودي.</p>
+                        <p>( <tei:num value="4" xml:lang="ar">٤</tei:num> ) ولاية مناستر: عدد سكانها  <tei:num value="846000" xml:lang="ar">٨٤٦٠٠٠</tei:num>  منهم <tei:num value="111500" xml:lang="ar">١١١٥٠٠</tei:num>  مسلماً تركياً و <tei:num value="25900" xml:lang="ar">٢٥٩٠٠</tei:num>  مسلم بلغاري و <tei:num value="218650" xml:lang="ar">٢١٨٦٥٠</tei:num>  مسلم ألباني و <tei:num value="330800" xml:lang="ar">٣٣٠٨٠٠</tei:num> 
+                            أرثوذكسي بلغاري و <tei:num value="61930" xml:lang="ar">٦١٩٣٠</tei:num>  أرثوذكسياً يونانياً و <tei:num value="24700" xml:lang="ar">٢٤٧٠٠</tei:num>  من أديان مختلفة.</p>
+                        <p>( <tei:num value="5" xml:lang="ar">٥</tei:num> ) ولاية سلانيك: عدد سكانها  <tei:num value="116539" xml:lang="ar">١١٦٥٣٩</tei:num>  منهم <tei:num value="333440" xml:lang="ar">٣٣٣٤٤٠</tei:num>  مسلما تركيا و <tei:num value="98590" xml:lang="ar">٩٨٥٩٠</tei:num>  مسلما بلغاريا و <tei:num value="446050" xml:lang="ar">٤٤٦٠٥٠</tei:num>  أرثوذكسيا بلغاريا و <tei:num value="168500" xml:lang="ar">١٦٨٥٠٠</tei:num> 
+                            أرثوذكسيا يونانيا و <tei:num value="24970" xml:lang="ar">٢٤٩٧٠</tei:num>  أرثوذكسيا <pb ed="shamela" n="n85-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5805.xhtml"/> رومانيا و <tei:num value="55320" xml:lang="ar">٥٥٣٢٠</tei:num>  يهوديا
+                            و <tei:num value="38580" xml:lang="ar">٣٨٥٨٠</tei:num>  من أديان منوعة.</p>
                         <p>وهذا الإحصاء قبل الحرب أو في خلالها ولكن الحرب حصدت كثيرا من السكان وشتت شمل الآخر ولاسيما من المسلمين الأتراك
                             ويؤخذ من أحداث الإحصائيات التي نشرت عن تصفية حساب حروب البلقان في السنتين الماضيتين أن اليونان نالت النصيب
-                            الأكبر من الغنيمة وتلتها في ذلك الصرب فبلغاريا فرومانيا فالجبل الأسود فقد كانت مساحة اليونان قبل الحرب64657 كيلو
-                            متر مربعا وعدد سكانها2732952 نفسا فربحت في التصفية النهائية أملاكا مساحتها56611 كيلو مترا مربعا وسكانها1620000
-                            نفس فصارت مساحتها كلها الآن121268 كيلو مترا مربعا وعدد سكانها4352952 نفساٍ.</p>
-                        <p>وكانت مساحة الصرب قبل الحرب48303 كيلو مترا مربعا وعدد سكانها2957207 أنفس فربحت في التصفية النهائية أملاكا
-                            مساحتها39047 كيلو مترا مربعا وسكانها1210000 نفس فصارت مساحتها كلها الآن87350 كيلو مترا مربعا وسكانها4167207.</p>
-                        <p>أما بلغاريا فكانت مساحتها قبل الحرب 96345 كيلو متراً مربعاً وسكانها 4329108 أنفس فخسرت في التصفية النهائية أملاكا
-                            مساحتها 7525 كيلو متراً مربعاً وسكانها 285757 نفسا وربحت أملاكا مساحتها 26257 كيلو متر مربعاً وسكانها 709646
-                            نفساً فصارت مساحتها كلها الآن112077 كيلو متراً مربعاً وسكانها 4752997 نفساً.</p>
-                        <p>وكانت مساحة رومانيا قبل الحرب 131353 كيلو متراً مربعاً وسكانها 7248061 نفسا فربحت في التصفية النهائية أملاكا من
-                            بلغاريا مساحتها 7525 كيلو متراً مربعاً وعدد سكانها 285757 نفسا فصارت مساحتها الآن 138878 كيلو مترا مربعا وعدد
-                            سكانها 7533818 نفساً.</p>
-                        <p>وكانت مساحة الجبل الأسود قبل الحرب 9080 كيلو مترا مربعا وسكانه285 ألف نفس فربح في التصفية النهائية أملاكا مساحتها
-                            5876 كيلو متراً مربعاً وسكانها230 ألف نفس فصارت مساحته الآن 14956 كيلو متراً مربعاً وسكانه 515 ألف نفس.</p>
-                        <p>وتبلغ مساحة ألبانيا المستقلة الآن 32 ألف كيلو مترا مربعا وعدد سكانها 880 ألف نفس.</p>
-                        <p>الدولية العلية - كانت مساحة أملاك الدولة العلية في أوربا قبل الحرب 185160 كيلو <pb ed="shamela"
-                   n="n85-p45"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5806.xhtml"/> متراً مربعاً وسكانها
-                            6997646 نفساً فبقي لها منها بعد الحرب الأولى بموجب معاهدة لندن 9168 كيلو متراً مربعاً سكانها 1623000 نفس ولكنها
-                            عادت فاستردت في الحب الثانية أملاكا مساحتها 16201 كيلو متراً مربعاً وسكانها 725000 نفس فصارت مساحتها الآن 25369
-                            كيلو متراً مربعاً وسكانها 2348000 ألف نفس.</p>
-                        <p>وتبلغ مساحة الأراضي الزراعية في الأملاك التي ربحتها كل مملكة من ممالك البلقان كالتالي: 631366 فدانا في بلغاريا
-                            و6919080 فدانا في اليونان و494220 فداناً في الجبل الأسود و1593859 فداناً في رومانيا و3706650 فداناً في صربيا
-                            و3835760 فدانا في العثمانية.</p>
+                            الأكبر من الغنيمة وتلتها في ذلك الصرب فبلغاريا فرومانيا فالجبل الأسود فقد كانت مساحة اليونان قبل الحرب <tei:num value="64657" xml:lang="ar">٦٤٦٥٧</tei:num>  كيلو
+                            متر مربعا وعدد سكانها <tei:num value="2732952" xml:lang="ar">٢٧٣٢٩٥٢</tei:num>  نفسا فربحت في التصفية النهائية أملاكا مساحتها <tei:num value="56611" xml:lang="ar">٥٦٦١١</tei:num>  كيلو مترا مربعا وسكانها <tei:num value="1620000" xml:lang="ar">١٦٢٠٠٠٠</tei:num> 
+                            نفس فصارت مساحتها كلها الآن <tei:num value="121268" xml:lang="ar">١٢١٢٦٨</tei:num>  كيلو مترا مربعا وعدد سكانها <tei:num value="4352952" xml:lang="ar">٤٣٥٢٩٥٢</tei:num>  نفساٍ.</p>
+                        <p>وكانت مساحة الصرب قبل الحرب <tei:num value="48303" xml:lang="ar">٤٨٣٠٣</tei:num>  كيلو مترا مربعا وعدد سكانها <tei:num value="2957207" xml:lang="ar">٢٩٥٧٢٠٧</tei:num>  أنفس فربحت في التصفية النهائية أملاكا
+                            مساحتها <tei:num value="39047" xml:lang="ar">٣٩٠٤٧</tei:num>  كيلو مترا مربعا وسكانها <tei:num value="1210000" xml:lang="ar">١٢١٠٠٠٠</tei:num>  نفس فصارت مساحتها كلها الآن <tei:num value="87350" xml:lang="ar">٨٧٣٥٠</tei:num>  كيلو مترا مربعا وسكانها <tei:num value="4167207" xml:lang="ar">٤١٦٧٢٠٧</tei:num> .</p>
+                        <p>أما بلغاريا فكانت مساحتها قبل الحرب  <tei:num value="96345" xml:lang="ar">٩٦٣٤٥</tei:num>  كيلو متراً مربعاً وسكانها  <tei:num value="4329108" xml:lang="ar">٤٣٢٩١٠٨</tei:num>  أنفس فخسرت في التصفية النهائية أملاكا
+                            مساحتها  <tei:num value="7525" xml:lang="ar">٧٥٢٥</tei:num>  كيلو متراً مربعاً وسكانها  <tei:num value="285757" xml:lang="ar">٢٨٥٧٥٧</tei:num>  نفسا وربحت أملاكا مساحتها  <tei:num value="26257" xml:lang="ar">٢٦٢٥٧</tei:num>  كيلو متر مربعاً وسكانها  <tei:num value="709646" xml:lang="ar">٧٠٩٦٤٦</tei:num> 
+                            نفساً فصارت مساحتها كلها الآن <tei:num value="112077" xml:lang="ar">١١٢٠٧٧</tei:num>  كيلو متراً مربعاً وسكانها  <tei:num value="4752997" xml:lang="ar">٤٧٥٢٩٩٧</tei:num>  نفساً.</p>
+                        <p>وكانت مساحة رومانيا قبل الحرب  <tei:num value="131353" xml:lang="ar">١٣١٣٥٣</tei:num>  كيلو متراً مربعاً وسكانها  <tei:num value="7248061" xml:lang="ar">٧٢٤٨٠٦١</tei:num>  نفسا فربحت في التصفية النهائية أملاكا من
+                            بلغاريا مساحتها  <tei:num value="7525" xml:lang="ar">٧٥٢٥</tei:num>  كيلو متراً مربعاً وعدد سكانها  <tei:num value="285757" xml:lang="ar">٢٨٥٧٥٧</tei:num>  نفسا فصارت مساحتها الآن  <tei:num value="138878" xml:lang="ar">١٣٨٨٧٨</tei:num>  كيلو مترا مربعا وعدد
+                            سكانها  <tei:num value="7533818" xml:lang="ar">٧٥٣٣٨١٨</tei:num>  نفساً.</p>
+                        <p>وكانت مساحة الجبل الأسود قبل الحرب  <tei:num value="9080" xml:lang="ar">٩٠٨٠</tei:num>  كيلو مترا مربعا وسكانه <tei:num value="285" xml:lang="ar">٢٨٥</tei:num>  ألف نفس فربح في التصفية النهائية أملاكا مساحتها
+                             <tei:num value="5876" xml:lang="ar">٥٨٧٦</tei:num>  كيلو متراً مربعاً وسكانها <tei:num value="230" xml:lang="ar">٢٣٠</tei:num>  ألف نفس فصارت مساحته الآن  <tei:num value="14956" xml:lang="ar">١٤٩٥٦</tei:num>  كيلو متراً مربعاً وسكانه  <tei:num value="515" xml:lang="ar">٥١٥</tei:num>  ألف نفس.</p>
+                        <p>وتبلغ مساحة ألبانيا المستقلة الآن  <tei:num value="32" xml:lang="ar">٣٢</tei:num>  ألف كيلو مترا مربعا وعدد سكانها  <tei:num value="880" xml:lang="ar">٨٨٠</tei:num>  ألف نفس.</p>
+                        <p>الدولية العلية - كانت مساحة أملاك الدولة العلية في أوربا قبل الحرب  <tei:num value="185160" xml:lang="ar">١٨٥١٦٠</tei:num>  كيلو <pb ed="shamela" n="n85-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5806.xhtml"/> متراً مربعاً وسكانها
+                             <tei:num value="6997646" xml:lang="ar">٦٩٩٧٦٤٦</tei:num>  نفساً فبقي لها منها بعد الحرب الأولى بموجب معاهدة لندن  <tei:num value="9168" xml:lang="ar">٩١٦٨</tei:num>  كيلو متراً مربعاً سكانها  <tei:num value="1623000" xml:lang="ar">١٦٢٣٠٠٠</tei:num>  نفس ولكنها
+                            عادت فاستردت في الحب الثانية أملاكا مساحتها  <tei:num value="16201" xml:lang="ar">١٦٢٠١</tei:num>  كيلو متراً مربعاً وسكانها  <tei:num value="725000" xml:lang="ar">٧٢٥٠٠٠</tei:num>  نفس فصارت مساحتها الآن  <tei:num value="25369" xml:lang="ar">٢٥٣٦٩</tei:num> 
+                            كيلو متراً مربعاً وسكانها  <tei:num value="2348000" xml:lang="ar">٢٣٤٨٠٠٠</tei:num>  ألف نفس.</p>
+                        <p>وتبلغ مساحة الأراضي الزراعية في الأملاك التي ربحتها كل مملكة من ممالك البلقان كالتالي:  <tei:num value="631366" xml:lang="ar">٦٣١٣٦٦</tei:num>  فدانا في بلغاريا
+                            و <tei:num value="6919080" xml:lang="ar">٦٩١٩٠٨٠</tei:num>  فدانا في اليونان و <tei:num value="494220" xml:lang="ar">٤٩٤٢٢٠</tei:num>  فداناً في الجبل الأسود و <tei:num value="1593859" xml:lang="ar">١٥٩٣٨٥٩</tei:num>  فداناً في رومانيا و <tei:num value="3706650" xml:lang="ar">٣٧٠٦٦٥٠</tei:num>  فداناً في صربيا
+                            و <tei:num value="3835760" xml:lang="ar">٣٨٣٥٧٦٠</tei:num>  فدانا في العثمانية.</p>
                         <p>ولكن جملة الأراضي الزراعية التي كانت في بلغاريا الأصلية وما أضيف إليها من الأراضي الزراعية في الأملاك التي ربحتها
-                            في الحرب نقصت نحو760 ألف فدان عما كانت عليه أولا وذلك لأن الأملاك التي اقتطعتها منها رومانيا كلها أراض زراعية
+                            في الحرب نقصت نحو <tei:num value="760" xml:lang="ar">٧٦٠</tei:num>  ألف فدان عما كانت عليه أولا وذلك لأن الأملاك التي اقتطعتها منها رومانيا كلها أراض زراعية
                             والأملاك التي ربحتها هي في الحرب معظمها أراض بور.</p>
                         <p>على أن عدد السكان في تلك الأملاك لا يثبت على ما ذكرناه آنفاً لأن كثيرين من البلغاريين في مكدونيا الصربية
                             واليونانية هجروا أوطانهم إلى الأملاك البلغارية في تركيا وبلغاريا نفسها ولا يزالون يهاجرونها إلى الآن وسيستمرون
@@ -1202,14 +1081,12 @@
                             معظم الزيادة سيقع في الأملاك البلغارية لكثرة البلغاريين الذين يهاجرون إليها من الأملاك المصرية واليونانية في
                             مكدونيا.</p>
                         <p>أما الأموال التي أنفقتها بلغاريا على حربها مع الدولة العلية أولاً ومع حليفاتها ثانياً فقد قدرها أحد أساتذة جامعة
-                            صوفيا كالتالي 12400000 جنيه اعتمادات أصلية وستة ملايين جنيه تجهيزات ومليون جنيهاً عجز في الإيرادات بسبب الحرب
-                            وستة ملايين جنيه لأجل مون وأجرة نقل و7200000 جنيه لأجل سكك حديد حربية وشؤون أخرى تختص بالتحصين و16 مليون جنيه
-                            رأس مال لرواتب الجنود الذين أصيبوا في الحرب بعاهات <pb ed="shamela"
-                   n="n85-p46"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5807.xhtml"/> أقعدتهم عن العمل وتحصيل
-                            رواتبهم و60 مليون جنيه ثمن الأراضي التي اضطرت بلغاريا أن تتنازل عنها لرومانيا وجملة ذلك 109600000 جنيه.</p>
-                        <p>رأى القارئ مما سلف أن مساحة البلاد التي استقلت وسميت ألبانيا قد بلغت 32 ألف كيلو متر مربع ولا يبلغ سكانها أكثر
-                            من880 ألفا ولا تزال الفتن قائمة على ساق وقدم بين الأرناؤود واليونان يريد الأولون أن يستخلصوا من مقاطعة أبيروس من
+                            صوفيا كالتالي  <tei:num value="12400000" xml:lang="ar">١٢٤٠٠٠٠٠</tei:num>  جنيه اعتمادات أصلية وستة ملايين جنيه تجهيزات ومليون جنيهاً عجز في الإيرادات بسبب الحرب
+                            وستة ملايين جنيه لأجل مون وأجرة نقل و <tei:num value="7200000" xml:lang="ar">٧٢٠٠٠٠٠</tei:num>  جنيه لأجل سكك حديد حربية وشؤون أخرى تختص بالتحصين و <tei:num value="16" xml:lang="ar">١٦</tei:num>  مليون جنيه
+                            رأس مال لرواتب الجنود الذين أصيبوا في الحرب بعاهات <pb ed="shamela" n="n85-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5807.xhtml"/> أقعدتهم عن العمل وتحصيل
+                            رواتبهم و <tei:num value="60" xml:lang="ar">٦٠</tei:num>  مليون جنيه ثمن الأراضي التي اضطرت بلغاريا أن تتنازل عنها لرومانيا وجملة ذلك  <tei:num value="109600000" xml:lang="ar">١٠٩٦٠٠٠٠٠</tei:num>  جنيه.</p>
+                        <p>رأى القارئ مما سلف أن مساحة البلاد التي استقلت وسميت ألبانيا قد بلغت  <tei:num value="32" xml:lang="ar">٣٢</tei:num>  ألف كيلو متر مربع ولا يبلغ سكانها أكثر
+                            من <tei:num value="880" xml:lang="ar">٨٨٠</tei:num>  ألفا ولا تزال الفتن قائمة على ساق وقدم بين الأرناؤود واليونان يريد الأولون أن يستخلصوا من مقاطعة أبيروس من
                             بقي من أبناء عنصرهم وإلى كتابة هذه السطور لم يتم شيء بين الفريقين وغاية ما جرى أن أوربا عينت لألبانيا حاكما
                             مسيحيا هو الأمير فيد من أصل ألماني وأهم البلدان التي وقعت في حصة ألبانيا الحديثة هي دراج وايلبصان وأشقوردة
                             وتيران وأولونية وبرات واركري وكوريجة وياقوة وبرزرين.</p>
@@ -1223,9 +1100,7 @@
                             والغامر وتضر بالمغلوب والغالب بما تجلب من الولايات على الأسرات فيتراجع العمران ويقل نسل الإنسان. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n85-p47"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5808.xhtml"/>
+                        <pb ed="shamela" n="n85-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5808.xhtml"/>
                         <head>السيد جمال الدين القاسمي</head>
                         <p>تلد الولادات كل يوم أولادا وتطوي الأرض أناسا لا يحصي عددهم غير خالقهم ولكن من يؤثرون الأثر النافع فيذكرون في
                             حياتهم وبعد مماتهم أقل من القليل وأقل منهم في أهل هذا الشرق التعس وفي أهل الإسلام خاصة وذلك لأن العلم الإسلامي
@@ -1244,9 +1119,7 @@
                             بعالم حقيقي يكسر قيود التقليد ويقول بالأخذ من كل علم فندر النبوغ لأنه ندر أن يلقى العالم ما ينشط عزيمته وكان
                             قصارى من تسمو به الهمة إلى أخذ نفسه بمذاهب التعلم والتعليم أن يقتبس من كتب الفروع ما لا يخرج به عن مألوف معاصر
                             به ومن حكم عقله في بعض المسائل كان اتهامه بأمانته من أيسر الأشياء وطرده من حظيرة الحظرة لدى العامة ومن سموا
-                            أنفسهم بالخاصة من الأمور المتعارفة أما التضليل والتفكير والتبديع والتنسيق فهذا لا يخلو منه عالم يريد أن <pb ed="shamela"
-                   n="n85-p48"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5809.xhtml"/>
+                            أنفسهم بالخاصة من الأمور المتعارفة أما التضليل والتفكير والتبديع والتنسيق فهذا لا يخلو منه عالم يريد أن <pb ed="shamela" n="n85-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5809.xhtml"/>
                             يخرج بالناس من الظلمات إلى النور.</p>
                         <p>ولكن إرادة المولى سبحانه قضت بأن لا تحرم هذه الأمة من أعلام يصدعون بالحق فيجددون لها أمر دينها ويستطيبون الأذي في
                             إنارة العقول والرجوع بالشرع إلى الحد الذي رسمه الشارع وأصحابه والتابعون والأئمة الهاديون المهديون ومن هؤلاء
@@ -1266,9 +1139,7 @@
                             الفوارق.</p>
                         <p>تذرع الفقيد بعامة ذرائع النفع لهذه الأمة فكان إماما في تآلفه الوفيرة إماما في دروسه الكثيرة إماما في محرابه
                             ومنبره ومصلاه رأسا في مضاء العزيمة رأسا في العفة وهذه الصفة هي السر الأعظم الذي دار عليه محور نبوغه لأنه لو صانع
-                            طمعا في حطام الدنيا <pb ed="shamela"
-                   n="n85-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5810.xhtml"/> لما خرج عن صفوف أهل
+                            طمعا في حطام الدنيا <pb ed="shamela" n="n85-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5810.xhtml"/> لما خرج عن صفوف أهل
                             محيطه ولكان عالم وسطا يشتغل بالتافهات ويعيش في تقية ويموت كذلك.</p>
                         <p>كان أجذل الله ثوابه إذا لقيه المماحك في أحد المجامع عرضا أو غشيه في درسه وبيته ناقدا أو ناقما علمه م حيث لا يشعر
                             وهداه إلى المحبة بلين القول فإذا أيقن أنه من المكابرين المموهين أعرض عنه وقال سلاما ولذلك لم يلق ما لقيه أشداء
@@ -1286,9 +1157,7 @@
                             أكثر وجوهه على الشيخ القاسمي فإنه كان نحيل الجسم كبير الروح ولو تهيأ لجمال الدين مثل صلاح الدين لسرت أفكاره أكثر
                             مما سرت وراقت أسفاره أكثر مما وفق إليه ولكن إذا عظم المطلوب قل المساعد. وقديما زكا غرس العلم في الشرق في ظل
                             الملوك والأمراء واليوم يزكو في الغرب في حمى الجامعات والمجامع والجمعيات. والعلم مذ كان محتاج إلى العلم.</p>
-                        <p>برز الفقيد الراحل وأي تبريز في علوم الشرع وما إليها ولم يفته النظر في علوم المدينة <pb ed="shamela"
-                   n="n85-p50"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5811.xhtml"/> فألم بأكثرها إلماما
+                        <p>برز الفقيد الراحل وأي تبريز في علوم الشرع وما إليها ولم يفته النظر في علوم المدينة <pb ed="shamela" n="n85-p50" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5811.xhtml"/> فألم بأكثرها إلماما
                             كافيا لتكون له عونا على فهم أسرار الشريعة أما وقد جمع الفضيلتين فلا تجد لكلامه مسحة من الجمود المعهود لكثيرين
                             ممن يقتصرون على العلم والعلمين ويعدون ما عداهما لغوا. فهو عالم ديني كامل ولكنه كان يقرأ العلوم المدنية ويطالع
                             صحفها ومجلاتها وكتبها الحديثة كما يطالعها المنقطعون إلى هذه العلوم وزيادة ولا ينكر شيئا يقال له علم أو فن ولذلك
@@ -1307,14 +1176,12 @@
                             والمعطلين.</p>
                         <p>لم يكد فقيدنا العزيز يطرق هذه الموضوعات ويهيب بالناس إلى الأخذ بمذاهب السلف ويتلطف في إبلاغها العقول المظلمة في
                             دروسه وتآليفه حتى أخذ بعض أهل الجمود يغتابونه ويحذرون عوامهم بدون برهان من الأخذ عنه ولكن ظلمه تقليدهم ما لبثت
-                            أن انقشعت بنور اجتهاده وتراجع أمر خصومه بعد قليل وقد بهر الناس فضله وعلمه وأنشأ <pb ed="shamela"
-                   n="n85-p51"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5812.xhtml"/> بعد أن كان يزيفون أقواله
+                            أن انقشعت بنور اجتهاده وتراجع أمر خصومه بعد قليل وقد بهر الناس فضله وعلمه وأنشأ <pb ed="shamela" n="n85-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5812.xhtml"/> بعد أن كان يزيفون أقواله
                             في مجامعهم الخاصة والعامة يتبعون أقواله المدعومة بالسنة الصحيحة ومذاهب الأئمة.</p>
                         <p>وأكبر دليل على ذلك ما شهدناه يوم مشهده الأخير من إجماع من كانوا خصومه أمس على أعظام الخطب فيه والإقرار له بفضائل
                             كانوا يغمطونه إياها ولكن المعاصرة حرمان.</p>
                         <p>رأيت رجالا كثيرين من أهل الإسلام وغيرهم وفي مصر والشام خاصة أر همة تفوق همة صديقي الراحل ولا نفسا طويلا على العمل
-                            ودؤوباً عليه أكثر منه ولا غراما بالإفادة والاستفادة ولا حبا بالعلم للعلم فقد قضى عن49 عاما وخلف ما خلف من عشرات
+                            ودؤوباً عليه أكثر منه ولا غراما بالإفادة والاستفادة ولا حبا بالعلم للعلم فقد قضى عن <tei:num value="49" xml:lang="ar">٤٩</tei:num>  عاما وخلف ما خلف من عشرات
                             من مصنفاته الدينية العصرية النافعة منها تفسيره الذي لم يطبع ومنها مقالاته الممتعة وأبحاثه المستوفاة وأثر في عقول
                             كثير من الطلبة تخرجوا به وأخذوا أحكام الحلال والحرام عنه دع دروس وعظة للعامة وحلقات خاصته ومع كل هذا كان حتى
                             الرمق الأخير أشبه بطالب يريد أن يجوز الامتحان لنيل شهادة العالمية. وكلما كان يوغل في طلب المزيد من العلم
@@ -1328,9 +1195,7 @@
                             ليغشى مجلسه أولياؤه وأخلاؤه وطلاب الفوائد منه.</p>
                         <p>فهو علامة بين العلماء منور ممدن بين المنورين بنور المدنية الصحيحة ذهب مثال الرجل الصالح عفيف الطعمة لم يسف إلى ما
                             يسف إليه بعض من يتذوقون قليلا من المعارف وما أنكر إلا المنكر ولا أمر إلا بالمعروف ومن ضيق ذات يده كان يتصدق في
-                            السر ولا يخلو ساعة من عبادة وذكر وما فقده جلل على دمشق بل على الشام بل على أهل الإسلام <pb ed="shamela"
-                   n="n85-p52"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5813.xhtml"/> وشهرته التي
+                            السر ولا يخلو ساعة من عبادة وذكر وما فقده جلل على دمشق بل على الشام بل على أهل الإسلام <pb ed="shamela" n="n85-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5813.xhtml"/> وشهرته التي
                             نالها في العالم الإسلامي في هذه السن من الكهولة هي مما استحقه أو أقل مما يستحقه لأنه حقيقة العالم العامل الذي
                             يحبب الدين حتى لمن لم يتدين حياته فاللهم عوض المسلمين عن هذه الدرة اليتيمة التي أصيبوا بها وارحمه عداد حسناته
                             وارزقنا الصبر عليه وجميع أسرته وأحبابه الذين فجعوا به.</p>
@@ -1411,9 +1276,7 @@
                             <l>وتصدرت للعلم غير رجاله </l>
                             <l> فاعتز غر واستطال جهول</l>
                         </lg>
-                        <p>قد حكموا أوهامهم وتحكموا <gap resp="#org_MS"/> فالعقل في ربقاتها مكبول <pb ed="shamela"
-                   n="n85-p53"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5814.xhtml"/> في كفهم نعم الحياة
+                        <p>قد حكموا أوهامهم وتحكموا <gap resp="#org_MS"/> فالعقل في ربقاتها مكبول <pb ed="shamela" n="n85-p53" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5814.xhtml"/> في كفهم نعم الحياة
                             وبؤسها <gap resp="#org_MS"/> وإليهم التحريم والتحليل</p>
                         <lg type="bayt">
                             <l>ولو أنهم عمدوا إلى التحقيق لم </l>
@@ -1461,9 +1324,7 @@
                         </lg>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n85-p54"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5815.xhtml"/>
+                        <pb ed="shamela" n="n85-p54" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5815.xhtml"/>
                         <head>أخبار وأفكار</head>
                         <p>الصناعة المصرية</p>
                         <p>أصدرت إدارة التعليم الفني والصناعي والتجاري في مصر نشرة تخص فيها على إحياء فنون الصناعة المصرية قالت فيها: من
@@ -1482,12 +1343,10 @@
                             والتصميم ليحصل على المعلومات العملية الكافية لتعلمه صناعة يدوية خاصة ليتسنى له الوقوف على دقائقها وما شاكل ذلك
                             فيستطيع ابتكار الأشكال الأصلية اللازمة إليها، لذلك يتلقى الطلبة فيه طرائق حسن الاستنباط بحالة أفضل وصورة أسرع
                             ولا يستعان بالآلات الأوربية إلا حينما تدعو الضرورة فضلا عن توجيه العناية إلى تعليمهم طرق الأشغال المحلية مع
-                            الالتفات إلى جعل أساس التعليم في الرسم التطبيقي قائما عل نقل ومحاكاة صور الزخارف العربية <pb ed="shamela"
-                   n="n85-p55"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5816.xhtml"/> والفارسية
+                            الالتفات إلى جعل أساس التعليم في الرسم التطبيقي قائما عل نقل ومحاكاة صور الزخارف العربية <pb ed="shamela" n="n85-p55" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5816.xhtml"/> والفارسية
                             التي بالمساجد ودور الآثار.</p>
                         <p>ويسوغ لكل طالب حائز للشهادة الدراسية الابتدائية الالتحاق بهذا القسم. أما المصروفات المدرسية فهي ثمانية جنيهات
-                            مصرية في السنة عن التلميذ الخارجي و16 عن التلميذ الداخلي.</p>
+                            مصرية في السنة عن التلميذ الخارجي و <tei:num value="16" xml:lang="ar">١٦</tei:num>  عن التلميذ الداخلي.</p>
                         <p>وتشتمل الدراسة التحضيرية على تعليم الأشغال اليدوية في فنون التجارة وعمل الأثاث والحفر على الخشب وأشغال التطعيم
                             وأشغال صياغة المعادن وترصيعها بالجواهر وزخرفة المنازل والنسيج والصياغة.</p>
                         <p>ومدة التعليم سنتان يتخصص الطالب بعدهما لإتقان فن من تلك الفنون الصناعية مدة سنتين أخريين قبل دخول الامتحان لنل
@@ -1504,21 +1363,19 @@
                             بقسم الفنون الصناعية بمدرسة الصنائع ببولاق حيث يرتشفون مناهل التعليم فيه ليأخذوا على عاتقهم القيام بقسط وافر من
                             جلائل الأعمال الشريفة التي ترتقي بها موارد الثروة في الديار المصرية ويعاونون على جعل مركزها الصناعي والمالي
                             قائما على أساس متين.</p>
-                        <p>نعم أن سعادة البلاد تتوقف في الوقت الحاضر على حالتها الزراعية ومن ثم كانت قيمة <pb ed="shamela"
-                   n="n85-p56"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5817.xhtml"/> الواردات السنوية من
+                        <p>نعم أن سعادة البلاد تتوقف في الوقت الحاضر على حالتها الزراعية ومن ثم كانت قيمة <pb ed="shamela" n="n85-p56" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5817.xhtml"/> الواردات السنوية من
                             المصنوعات الأوربية عظيمة جداً. على أنه ليس ثمة ما يمنع المصريين من القيام بصنع تلك المصنوعات تحت إشراف الماهرين
                             من الصناع. فان النتاج الذي بدأ في الأعمال الصناعية القليلة التي كانت تصنع تحت رقابة المصريين فيما سبق من الزمان
                             لدليل على أنهم جديرون بإخراج أحسن أنواع المصنوعات من الأثاث وشغال المعادن وعلى أنهم قادرون تماماً على مباراة
                             المصنوعات الأوربية الواردة من الخارج ومنافستها ولذلك فليس هناك سبب يعوقهم عن بلوغ النجاح في الصناعات الأخرى كما
                             نجحوا في غيرها.</p>
                         <p>دين مصر</p>
-                        <p>نشر صندوق الدين العمومي في مصر تقريره عن عام1913ومنه يرى أن الباقي على مصر من القرض المضمون إلى أخر السنة الماضية
-                            يبلغ7. 102. 800 جنيه انكليزي وما استهلك منه في العام الماضي بواسطة شراء أوراقه 112. 500 جنيه انكليزي. والدين
-                            الموحد 55، 971. 960 جنيه انكليزي والجملة 94، 202، 540 جنيهاً انكليزياً. وقد هبط سعر الدين الموحد في السنة
-                            الماضية إلى أوطأ ما بلغه في الأربع عشرة سنة الماضية فكان اقل ما بيع به 96 جنيهاً وأعلى ما بلغ 110 وربع جنيه في
-                            عام 1902.</p>
-                        <p>الأندية (1)</p>
+                        <p>نشر صندوق الدين العمومي في مصر تقريره عن عام <tei:num value="1913" xml:lang="ar">١٩١٣</tei:num> ومنه يرى أن الباقي على مصر من القرض المضمون إلى أخر السنة الماضية
+                            يبلغ <tei:num value="7" xml:lang="ar">٧</tei:num> .  <tei:num value="102" xml:lang="ar">١٠٢</tei:num> .  <tei:num value="800" xml:lang="ar">٨٠٠</tei:num>  جنيه انكليزي وما استهلك منه في العام الماضي بواسطة شراء أوراقه  <tei:num value="112" xml:lang="ar">١١٢</tei:num> .  <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>  جنيه انكليزي. والدين
+                            الموحد  <tei:num value="55" xml:lang="ar">٥٥</tei:num> ،  <tei:num value="971" xml:lang="ar">٩٧١</tei:num> .  <tei:num value="960" xml:lang="ar">٩٦٠</tei:num>  جنيه انكليزي والجملة  <tei:num value="94" xml:lang="ar">٩٤</tei:num> ،  <tei:num value="202" xml:lang="ar">٢٠٢</tei:num> ،  <tei:num value="540" xml:lang="ar">٥٤٠</tei:num>  جنيهاً انكليزياً. وقد هبط سعر الدين الموحد في السنة
+                            الماضية إلى أوطأ ما بلغه في الأربع عشرة سنة الماضية فكان اقل ما بيع به  <tei:num value="96" xml:lang="ar">٩٦</tei:num>  جنيهاً وأعلى ما بلغ  <tei:num value="110" xml:lang="ar">١١٠</tei:num>  وربع جنيه في
+                            عام  <tei:num value="1902" xml:lang="ar">١٩٠٢</tei:num> .</p>
+                        <p>الأندية ( <tei:num value="1" xml:lang="ar">١</tei:num> )</p>
                         <p>سادتي الأخوان</p>
                         <p>هذه أول مرة نحتفل فيها بافتتاح ناد من مثل هذا النوع في قاعدة الشام فشكراً للقائمين به ولا سيما رئيسه المستر ديفي
                             قنصل انكلترا واني لأتوسم الخير والبقاء لنادينا الجديد لان رأسه من امة هي اعرق الأمم معرفة بالمنتديات وما ينبغي
@@ -1526,9 +1383,7 @@
                             انكليزية نقلتها أكثر أمم الحضارة إلى لغاتها ويقابلها بالافرنسية على سبيل التجوز سيركل وعربها العرب بالنادي
                             فالكلوب أو النادي هو مجمع من الطراز الأول يختلف إليه أناس متماثلون في طبقاتهم ويكونون في الغالب في سيرتهم كما
                             يكون سراة الناس أدبا ولطف ومعاملة والكلمة المقابلة في اللغة الانكليزية هي جنتلمين ومن الصعب ترجمتها بالفرنسية
-                            ويعنى بها من بلغوا غاية الكمال في التربية والتهذيب يجتمعون للعب والتسلية وتلاوة الصحف <pb ed="shamela"
-                   n="n85-p57"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5818.xhtml"/> والتحدث وغير
+                            ويعنى بها من بلغوا غاية الكمال في التربية والتهذيب يجتمعون للعب والتسلية وتلاوة الصحف <pb ed="shamela" n="n85-p57" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5818.xhtml"/> والتحدث وغير
                             ذلك من الأغراض.</p>
                         <p>كانت الندية عند منشئها بادئ بدء مجتمعات أصحاب متعارفين تضم شملهم ليأكلوا فيها ويشربوا في أوقات مخصوصة ولم تكن
                             أماكنها خاصة بمن يجتمع فيها فانتظمت مع الزمن وانقلبت قصوراً فخمة محترمة ولم يكن النساء يدخلنها لأول أمرها وكان
@@ -1547,9 +1402,7 @@
                             من أخلاق الانكليز كما قال إميل بوتمي أنهم أكثر الناس عزوفاً عن الاختلاط بغيرهم أو كما قال اميرسون فيلسوف
                             الأميركان: انك تحسب الانكليزي إذا اجتمع مع الأجانب اخرس فهو لا يصافحك ولا يتركك تنظر ما في عينيه في الفندق ويلفظ
                             اسمه بحيث لا يسمع فكل واحد من هؤلاء الجزائريين جزيرة برأسها فمن ثمرات الأندية عند البريطانيين أن أهل كل حرفة
-                            وطبقة يعرفون في أنديتهم اقدر الرجال <pb ed="shamela"
-                   n="n85-p58"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5819.xhtml"/> فيهم فإذا جاء وقت انتخاب
+                            وطبقة يعرفون في أنديتهم اقدر الرجال <pb ed="shamela" n="n85-p58" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5819.xhtml"/> فيهم فإذا جاء وقت انتخاب
                             مجلس النواب يكونون لمبرزيهم اعرف الدعاة لهم فيختارونهم للنيابة عن الأمة أي أن أعضاء نادي الإشراف وأعضاء نادي
                             الحوذيين والسواقين والسكافيين والطباعين والوراقين والبزالين والفحامين بل وكل ما يخطر ببالك من أرباب الصناعات
                             المختلفة يستعينون بالأندية على اختبار مدارك إخوانهم فينيبون عنهم أخطبهم وأعقلهم وأمنهم وأعملهم وهكذا كانت
@@ -1561,16 +1414,14 @@
                             الناس يدخله من ضاقت صدورهم من الوحدة والعزلة ولا يقبل فيه النساء إلا بعد سن الخامسة والعشرين وهو دولي عام ولا
                             يؤدي المشترك فيه شيئاً وهو غريب في بابه لأنه يضم أناسا من أهل الأرض بأسرها ومن جميع الطبقات الراقية وفيه كثير من
                             أرباب المكانة والشهرة.</p>
-                        <p>وهناك ناد اسمه نادي العجل الذهبي ونادي القط الأسود ونادينا وهو نادي أعاظم الأدباء ونادي 101 ونادي الست ساعات وهو
+                        <p>وهناك ناد اسمه نادي العجل الذهبي ونادي القط الأسود ونادينا وهو نادي أعاظم الأدباء ونادي  <tei:num value="101" xml:lang="ar">١٠١</tei:num>  ونادي الست ساعات وهو
                             ناد أعضاؤه ستة يدخلون إليه كل يوم الساعة السادسة ويخرجون الساعة الثانية عشرة ومع كل واحد منهم كتاب. والنادي
                             الدائم وعدد أعضائه مئة يقسمون أن لا يبرحوا منازلهم مهما كلفهم الأمر من المخاطر حتى انه حدث يوماً حريق قرب ناديهم
-                            فلم يخرجوا منه إلا بقوة رجال الشرطة. وقد أسس بعض أبناء الأسر في ايرلندا سنة 1766 ناديا لهم ليختطفوا البنات
-                            ويتزوجوا بهن قسرا فانحل هذا النادي سنة 1802 عقيب حوادث أفاض فيها مجلس النواب الانكليزي. وفي ايرلندا أندية قلما
+                            فلم يخرجوا منه إلا بقوة رجال الشرطة. وقد أسس بعض أبناء الأسر في ايرلندا سنة  <tei:num value="1766" xml:lang="ar">١٧٦٦</tei:num>  ناديا لهم ليختطفوا البنات
+                            ويتزوجوا بهن قسرا فانحل هذا النادي سنة  <tei:num value="1802" xml:lang="ar">١٨٠٢</tei:num>  عقيب حوادث أفاض فيها مجلس النواب الانكليزي. وفي ايرلندا أندية قلما
                             تقبل النساء وفيها أندية للنساء العازفات عن الزواج. وسيفتح الآن ناد غريب اسمه نادي اللوبياء السوداء على مثال نادي
                             نيويورك وهو مؤلف من أربعين عزباً يجتمعون مرة في السنة ويضع رئيسه في صندوق أربعين حبة لوبياء بيضاء ومنها سوداء
-                            ويسحب كل عضو حبة فمن سقطت السوداء في يده حكم عليه قانون النادي بان يتزوج والنادي يقوم <pb ed="shamela"
-                   n="n85-p59"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5820.xhtml"/> بنفقة تزويجه
+                            ويسحب كل عضو حبة فمن سقطت السوداء في يده حكم عليه قانون النادي بان يتزوج والنادي يقوم <pb ed="shamela" n="n85-p59" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5820.xhtml"/> بنفقة تزويجه
                             كما يبتاع له أثاث بيته ونفقة سفره ثلاثة أسابيع مدة شهر العسل.</p>
                         <p>وعندهم أندية لطالبات الزواج على مثال نادي اليابان الذي يتم بواسطته كل أسبوع مئتا قران وأكثر المقترنين يتزوجون
                             بالنظر إلى صور خطيباتهم الشمسية. وكان في لندرا نادي التقبيل ولكن حدثت منه غوائل لم تفض إلا بمعرفة المحاكم.</p>
@@ -1581,7 +1432,7 @@
                             وحركاته يغرم في المرة الأولى وفي الثانية يطرد من حظيرة أقرانه. وفيها نادي العبوسين يدخله من ساءت أخلاقهم يلتزمون
                             السكوت فيجلس الواحد منهم إلى ناحية يدخن غليونه بدون أن يتكلم. وعندهم نادي الفلس أربعة أقسام أي نادي البخلاء
                             المقترين وفيه أناس من كبار أرباب الأملاك وأعاظم الماليين ونادي قتلة البشر وهم يؤثرون القتل على ثلم الشرف ورئيسهم
-                            قتل 25 شخصاً في البراز.</p>
+                            قتل  <tei:num value="25" xml:lang="ar">٢٥</tei:num>  شخصاً في البراز.</p>
                         <p>ولا اعرف فيما اطلعت عليه من كتب العرب في التاريخ والشعر والخطب والمحاضرات أنه عهد لبغداد وقرطبة والقاهرة ودمشق
                             والقيروان أيام عزها معهد يماثل هذه الأندية الحديثة وغاية ما تبين أن المتماثلين كانوا يجتمعون في بيوتهم وحلقاتهم
                             الخاصة فمنهم من يجتمع للمباحثة في العلم كاجتماع إخوان الصفا ومن يروي عنهم التوحيدي في مقابساته كانوا من نحل
@@ -1589,9 +1440,7 @@
                             وهو أشبه بالصليبية عندنا أو الشيرا يجتمعون لتعاطيه كما يجتمع المحدثون على القهوة والشاي وغيرهما من المشروبات
                             فيغذون باجتماعهم أرواحهم كما يفكهون بما يتعاطونه أجسادهم وما كانت الطبقة العالية من أهل الشرف والعلم والفقه ترى
                             من الغضاضة أن ترفع أصواتها بالغناء أو تأخذ بالعزف والإيقاع في مجالسها وأنديتها لأنهم علموا قبل أهل المدينة
-                            الحديثة أن المرء قد يستغني عن القراءة والكتابة ولا يستغني عن رفع صوته ليتغنى فيطرب نفسه وجلاسه وكتاب الأغاني <pb ed="shamela"
-                   n="n85-p60"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5821.xhtml"/>
+                            الحديثة أن المرء قد يستغني عن القراءة والكتابة ولا يستغني عن رفع صوته ليتغنى فيطرب نفسه وجلاسه وكتاب الأغاني <pb ed="shamela" n="n85-p60" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5821.xhtml"/>
                             لأبي الفرج الأصفهاني مملوء بأخبار أهل هذه الطبقة.</p>
                         <p>حكا صاحب اليتيمة انه كان في جملة القضاة الذين ينادمون الوزير المهلبي ويجتمعون عنده في الأسبوع ليلتين على التبسط
                             في القصف واللهو ابن قريعة وابن معروف والقاضي التنوخي وغيرهم وما منهم إلا أبيض الحية طويلها وكذلك كان الوزير
@@ -1611,9 +1460,7 @@
                             فكانوا يحضرون مجلسه في وقته ويقعدون من جانبيه وبين يديه ويقدم كل واحد منهم طبق فيه أصناف الفاكهة الموجودة في
                             الوقت من خير شيء ثم يجعل في الوسط طبق كبير يشتمل على جميع الأصناف طبق فيه سكين يقطع بها صاحبه ما يحتاج إلى قطعه
                             من سفرجل وخوخ وكمثرى ومعه طست زجاج يرمي فيه الثفل فإذا بلغوا من ذلك حاجتهم واستوفوا كفايتهم شيلت الأطباق وقدمت
-                            الطست والأباريق <pb ed="shamela"
-                   n="n85-p61"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5822.xhtml"/> فغسلوا أيديهم وأحضرت
+                            الطست والأباريق <pb ed="shamela" n="n85-p61" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5822.xhtml"/> فغسلوا أيديهم وأحضرت
                             المائدة مغشاة بدبيقي فوق مكبة خيارز ومن تحتها سفرة ادم فاضلة غليها وحواليها مناديل الغمر من الثياب المقصور فإذا
                             وضعت رفعت المكبة والأغشية واخذ القوم في الأكل وأبو الحسن بن الفرات يحدثهم ويباسطهم ويؤنسهم فلا يزال على ذلك
                             والألوان توضع وترفع أكثر من ساعتين ثم ينهضون إلى مجلس في جانب المجلس الذي كانوا فيه ويغسلون أيديهم والفراشون
@@ -1632,16 +1479,14 @@
                             من قيامها بالتقاطع والشجار فالله اسأل إن يعلمنا من مدينة الغرب ومدينة العرب ما تنبسط له النفس ويطيب له القلب فان
                             سرعة ائتلاف قلوب الأبرار_كما قال احد الحكماء_كسرعة اختلاط قطر المطر بماء الأنهار وبعد قلوب الفجار من الائتلاف
                             كبعد البهائم من التعاطف نكون على حد قول الشاعر:</p>
-                        <p>أحب الفتى ينفي الفواحش سمعه <gap resp="#org_MS"/> كان به عن كل فاحشة وقراً <pb ed="shamela"
-                   n="n85-p62"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5823.xhtml"/> سليم دواعي الصدر لا
+                        <p>أحب الفتى ينفي الفواحش سمعه <gap resp="#org_MS"/> كان به عن كل فاحشة وقراً <pb ed="shamela" n="n85-p62" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5823.xhtml"/> سليم دواعي الصدر لا
                             باسطاً أذى <gap resp="#org_MS"/> ولا مانعاً خيراًولا ناطقاً هجراً</p>
                         <lg type="bayt">
                             <l>إذا ما أتت من صاحب لك زلة </l>
                             <l> ففك أنت محتالاً لزلته عذراً</l>
                         </lg>
                         <p>المرأة في القديم والحديث</p>
-                        <p>خطبت الآنسة مي في حفلة النادي في القاهرة مساء 23 ابريل 1914 ومما قالته:</p>
+                        <p>خطبت الآنسة مي في حفلة النادي في القاهرة مساء  <tei:num value="23" xml:lang="ar">٢٣</tei:num>  ابريل  <tei:num value="1914" xml:lang="ar">١٩١٤</tei:num>  ومما قالته:</p>
                         <p>طافت المدينة أنحاء العالم ولكن ما حالنا بها؟ لقد ظهرت معجزاتها في اكتشافات البشر وعلومهم وفنونهم وأساليبهم وكيفية
                             معيشتهم إلا أن الشقاء مازال شقاء! مازلنا نشاهد حولنا الحرب والفقر والمرض والقتل والانحطاط النفسي والعاهات
                             الأخلاقية على تعدد أنواعها وما برحت الشعوب تشكو حكوماتها والأوطان تشقى بأبنائها والعائلات تتعذب بأفرادها
@@ -1657,9 +1502,7 @@
                             في ساعات الفراغ إلى تمثال بهرجة تتراكم عليه الأثواب والجواهر الثمينة ومن منا يدري بما كانت تستر الأثواب الحريرية
                             والجواهر الثمينة من قرح القلب الدامية التي لم يضمدها بشر؟</p>
                         <p>تاريخ المرأة استشهاد طويل أليم ومن أغرب الغرائب أنها لم تجد لها في القدم صديقاً ولا نصيراً. كانت عامة الشعب
-                            تكرهها وتحتقرها وليس ذلك بكثير على قوم جاهلين تحجرت <pb ed="shamela"
-                   n="n85-p63"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5824.xhtml"/> منهم القلوب وصمت الإفهام
+                            تكرهها وتحتقرها وليس ذلك بكثير على قوم جاهلين تحجرت <pb ed="shamela" n="n85-p63" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5824.xhtml"/> منهم القلوب وصمت الإفهام
                             فهم لا يدركون شيئا مما يتجاوز دائرة شخصهم الصغير لكني أرى الأمر عجباً بل فظيعا من رجال نحسبهم نوابغ زمانهم وقادة
                             أفكار العالم. لم يذكر شعراء اللاتين من المرأة إلا جمال جسدها وليس في قصائدهم ما يدل على تلمس آثار النفس وراء
                             ظواهر الجسد وجميعهم متفق على تسميتها الشيطان الجميل أو ينبوع المسرات السامة وشعراء اليونان اسخيلوس واوربيدس
@@ -1678,9 +1521,7 @@
                         <p>ثم جاء نبي الإسلام فرفع شانها أي رفعة في بلاد العرب إذ حرم واد الفتيات وسواها بالرجل في جميع الحقوق والواجبات إلا
                             في الشهادة والميراث فان امرأتين اثنتين تساويان رجلاً - وفي ما عدا ذلك فهي والرجل سواء في جميع الحقوق المدنية
                             ويقول العارفون أن لها الحقوق السياسية أيضاً. والمسلمات لهن إن يكن فقيهات وكانت أول فقيهة منهن عائشة زوجة صاحب
-                            الشريعة الإسلامية الذي قال لقومه: خذوا دينكم عنها!. <pb ed="shamela"
-                   n="n85-p64"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5825.xhtml"/> وعلي أن اذكر هنا اسمي
+                            الشريعة الإسلامية الذي قال لقومه: خذوا دينكم عنها!. <pb ed="shamela" n="n85-p64" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5825.xhtml"/> وعلي أن اذكر هنا اسمي
                             بلوتارك ودانتي وهما أول من تلمس نفس المرأة من طغمة الشعراء والمفكرين. لقد جعلا لقصائدهما عرائس شعر تتجلى فيهن
                             ملكات الجمال الأدبي: وهما اللذان ترنما للمرة الأولى بذكر المرأة ذات النفس السامية والذكاء الوقاد ومقدمة عثرات
                             الجنس القوي. من منا لا يعرف لورا وبياتريس؟ إن هذين الاسمين لا يفترقان عن اسمي بلوتارك ودانتي وسيكونان أبداً
@@ -1699,9 +1540,7 @@
                             مدينة الغد الممتعة بتحقيق أجمل الأماني الجائلة في قلب الإنسان. ليست مدينة الغد مدينة الرجل وحده بل هي مدينة
                             الإنسانية لان المرأة آخذة بالصعود إلى مركزها الحقيقي بقرب الرجل. إن موجة النور نور الارتقاء النسائي تزداد
                             ارتفاعاً واتساعاً مع الأيام. في فرنسا وانكلترا وأميركا وألمانيا وايطاليا تجاهد المرأة جهاد الأبطال في سبيل ترقية
-                            جنسها وترقية النوع البشري معها. <pb ed="shamela"
-                   n="n85-p65"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5826.xhtml"/> ولقد نالت جميع حقوقها في
+                            جنسها وترقية النوع البشري معها. <pb ed="shamela" n="n85-p65" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5826.xhtml"/> ولقد نالت جميع حقوقها في
                             اسوج ونروج وفنلندا وزيلاندا الجديدة وفي بعض الولايات المتحدة فهي الآن والرجل سواء أدبياً ومدنياً وسياسياً أيضاً.
                             وفي كل من هذه البلاد كان تأثيرها نافعاً جميلاً وحيث تقلدت المرأة الوظائف العمومية قد قلت الجرائم وخفت وطأة السكر
                             وظهر تحسن محسوس يكاد يكون ملموساً في مستوى أخلاق الأمة وفي حالتها الصحية جميعاً.</p>
@@ -1720,9 +1559,7 @@
                             الأشغال العمومية.</p>
                         <p>وكم قالوا إن المعارف لم تخلق للمرأة وان العلم يذهب بجمالها وتواضعها ولطفها وانه يجعلها متكبرة جافة ومحتقرة
                             العائلة هازئة بالرجل وها نحن نراها إذا تعلمت زادت جمالاً وحناناً أكيداً واحتراماً للعائلة ووإجلالاً للرجل. أنها
-                            الآن تفهم معاني الحياة وتريد بكل قواها <pb ed="shamela"
-                   n="n85-p66"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5827.xhtml"/> ترقية نفسها وإعلاء
+                            الآن تفهم معاني الحياة وتريد بكل قواها <pb ed="shamela" n="n85-p66" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5827.xhtml"/> ترقية نفسها وإعلاء
                             مداركها وتربية شخصيتها الجميلة واستخدام ملكاتها في بث الخير والسعادة حولها وعلى كل ما يحيط بها. المرأة الراقية
                             وحدها تعرف إن لها فخراً رئيساً واحداً وهو أن تكون (أماً) وهي وحدها تعرف أنها كانت إلى اليوم أم الجسد فقط وتحاول
                             أن تصبح أم الروح أيضاً أم العواطف وأم الأفكار وأم الميول والمهذبة الكبرى والصديقة العظمى!</p>
@@ -1740,15 +1577,13 @@
                             القيود الدهرية التي طالما عذبت فكر المرأة ونحن اليوم عند عتبة مستقبل باهر. في مصر تشتعل شرارة الحياة. . .</p>
                         <p>الآثار العربية في أسبانيا</p>
                         <p>عهدت حكومة أسبانيا إلى مدير مدرسة الهندسة العليا في مدريد بتجديد كنيسة قرطبة الكاتدرائية وكانت من قبل جامعاً على
-                            عهد العرب هناك فقام بأعمال الحفر في المكان الذي <pb ed="shamela"
-                   n="n85-p67"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5828.xhtml"/> اعتقد انه كان في القديم
+                            عهد العرب هناك فقام بأعمال الحفر في المكان الذي <pb ed="shamela" n="n85-p67" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5828.xhtml"/> اعتقد انه كان في القديم
                             قصر الزهراء وذلك للبحث عن هندسة جامع قرطبة على ما يجب إذ تبين أن هذا المعهد قد امتزجت فيه الهندسة الإسلامية
                             الصرفة مع الهندسة الأسبانية المسيحية فقال على ما نقلت عنه مجلة العالم الإسلامي الفرنسية أن الهندسة الإسلامية لا
                             تختلف فقط بين بلد وبلد وبين عصر وأخر بل يجب أن يلاحظ أن المهندسين المسلمين قد اقتبسوا أموراً جديدة من البلاد
                             التي افتتحها قومهم وأضافوا إلى هندستهم. قال المهندس الأسباني أن من بحثوا في الهندسة الإسلامية لم ينظروا نظراً
-                            بليغاً إلى المؤثرات الأجنبية في هندستهم. فانك ترى مثلاً جامع ابن طولون في القاهرة وهو مما بني في سنة 265هـ -
-                            (879م) زيادات ترد أصل هندسة هذا المعهد المشهور إلى بين النهرين ومن جهة أخرى كأنه من هندسة المغرب والأندلس وذلك
+                            بليغاً إلى المؤثرات الأجنبية في هندستهم. فانك ترى مثلاً جامع ابن طولون في القاهرة وهو مما بني في سنة  <tei:num value="265" xml:lang="ar">٢٦٥</tei:num> هـ -
+                            ( <tei:num value="879" xml:lang="ar">٨٧٩</tei:num> م) زيادات ترد أصل هندسة هذا المعهد المشهور إلى بين النهرين ومن جهة أخرى كأنه من هندسة المغرب والأندلس وذلك
                             لان فتح الفاطميين لمصر وهم من القيروان قد اثر في الهندسة المصرية لعهدهم. واستند الباحث الأسباني على ما قاله صاحب
                             تاريخ البيان من الأندلسيين فتبين بعبارته مساحة الجامع واستخرج منه عدة قطع من أحجار وكتابات واوان خزفية ساعدته
                             على تأييد فكرة من أن الهندسة الإسلامية الأندلسية قد اقتبست أشياء كثيرة من غيرها واستنتج من بحثه في طرق نحت
@@ -1760,41 +1595,37 @@
                         <p>وصف المؤلفون من العرب قصر الزهراء أحسن وصف وقصور الخلفاء هناك قال العالم الأسباني أن مسجد قرطبة وتلك القصور
                             الزاهرة وما حوت من النقوش المرمر والذهب تفوق ببنائها كل ما يتصوره العقل ولم يبق من آثار تلك القصور سوى عمودين من
                             الرخام وذلك لان قرطبة كانت ميداناً للفتن منذ عصور فذهبت في جملة ما ذهب من عادياتها كنوز خلفاء المغرب ونهبت خرائب
-                            قصورهم عدة مرات واستعملت أحجارها في إقامة بنايات <pb ed="shamela"
-                   n="n85-p68"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5829.xhtml"/> جديدة. وقد أشار إلى ما
+                            قصورهم عدة مرات واستعملت أحجارها في إقامة بنايات <pb ed="shamela" n="n85-p68" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5829.xhtml"/> جديدة. وقد أشار إلى ما
                             وجده من الكؤوس والأواني من القيشاني المصور عليها بالحروف الكوفية نباتات أو صور إنسانية واستدل منه إن هذه الصناعة
                             أي صناعة الخزف المزين بالمينا هو من عمل الأندلسيين.</p>
                         <p>تجارة المواني العثمانية</p>
-                        <p>نشرت الصحف الايطالية للملق التجاري في سفارة الأستانة تقريراً مسهباً عن تجارة السلطنة العثمانية في سنة1911 - 1912
-                            استنتج منه أن التجارة العثمانية لم تخسر بما فقدته السلطنة في الحروب الأخيرة من الأملاك في أوروبا وإفريقيا إلا 22
+                        <p>نشرت الصحف الايطالية للملق التجاري في سفارة الأستانة تقريراً مسهباً عن تجارة السلطنة العثمانية في سنة <tei:num value="1911" xml:lang="ar">١٩١١</tei:num>  -  <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> 
+                            استنتج منه أن التجارة العثمانية لم تخسر بما فقدته السلطنة في الحروب الأخيرة من الأملاك في أوروبا وإفريقيا إلا  <tei:num value="22" xml:lang="ar">٢٢</tei:num> 
                             في المائة فقط. وهذه خلاصة التقرير:</p>
-                        <p>الواردات: بلغت قيمة ما استوردته السلطنة من البلاد الخارجية في السنة المذكورة مبلغ37، 600، 000 ليرة دخل منها بطريق
+                        <p>الواردات: بلغت قيمة ما استوردته السلطنة من البلاد الخارجية في السنة المذكورة مبلغ <tei:num value="37" xml:lang="ar">٣٧</tei:num> ،  <tei:num value="600" xml:lang="ar">٦٠٠</tei:num> ،  <tei:num value="000" xml:lang="ar">٠٠٠</tei:num>  ليرة دخل منها بطريق
                             الأستانة (مع جمارك اسطنبول وغلطة حيدر باشا وأزمير وكملك ومودانيا وبندرمه والدردنيل وغليبوني ورودستو وزنجلداك)
-                            34، 78 في المائة وبطريق بيروت (مع سائر المواني السورية) 13، 79 في المائة. وبطريق أزمير (مع جمارك أيولي ومدللي
-                            وصاقس ورودس وسائر جزر الأرخبيل) 12، 88 بالمائة. وبطريق سيلانيك (مع جمارك قوله واسكوب وبربوي والسونا والحدود
-                            اليونانية الصربية) 12، 85 في المائة. وبطريق طرابزون (مع جمارك قرة صند وسمسون واينة بولي وارضوم والحدود الروسية
-                            الإيرانية) 6، 14 في المائة. وبطريق بغداد 5، 20 في المائة. وبطريق الإسكندرية (مع جمارك مرسين واضالية والمواني
-                            المجاورة لهما) 3، 82 في المائة. وبطريق دده اغاج (مع جمارك جسر مصطفى باشا وادرنة وبورتولاغوس والحدود البلغارية
-                            والسواحل الأوربية على البحر الأسود) 3. 67 في المائة. وبطريق بروزة (مع جمارك الونية وسانتي كوارنتا وسلاهو فوودراج
-                            واشقودة وحدود الجبل الأسود) 2، 19 في المائة. وبطريق جدة 1. 82 في المائة. وبطريق مدينة طرابلس الغرب 1، 46 في
-                            المائة. وبطريق الحديدة 1. 30 في المائة.</p>
-                        <p>أما الصادرات فقد بلغت قيمتها كلها 19، 414، 068 ليرة. وفقد اصدر منها بطريق أزمير 28، 73 في المائة. وبطريق
-                            الاستانة19، 38 في المائة. وبطريق سلانيك 12، 38 في المائة. وبطريق طرابزون 10، 42 في المائة. وبطريق بيروت 9، 29 في
-                            المائة. <pb ed="shamela"
-                   n="n85-p69"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5830.xhtml"/> وبطريق الإسكندرية 6، 39
-                            في المائة. وبطريق بغداد 4، 14 في المائة. وبطريق دده اغاج 3، 53 في المائة. وبطريق بروزة 2، 27 في المائة. وبطريق
-                            طرابلس الغرب 1، 67 في المائة. وبطريق الحديدة 1، 61 في المائة. وبطريق جدة 0، 19 في المائة.</p>
+                             <tei:num value="34" xml:lang="ar">٣٤</tei:num> ،  <tei:num value="78" xml:lang="ar">٧٨</tei:num>  في المائة وبطريق بيروت (مع سائر المواني السورية)  <tei:num value="13" xml:lang="ar">١٣</tei:num> ،  <tei:num value="79" xml:lang="ar">٧٩</tei:num>  في المائة. وبطريق أزمير (مع جمارك أيولي ومدللي
+                            وصاقس ورودس وسائر جزر الأرخبيل)  <tei:num value="12" xml:lang="ar">١٢</tei:num> ،  <tei:num value="88" xml:lang="ar">٨٨</tei:num>  بالمائة. وبطريق سيلانيك (مع جمارك قوله واسكوب وبربوي والسونا والحدود
+                            اليونانية الصربية)  <tei:num value="12" xml:lang="ar">١٢</tei:num> ،  <tei:num value="85" xml:lang="ar">٨٥</tei:num>  في المائة. وبطريق طرابزون (مع جمارك قرة صند وسمسون واينة بولي وارضوم والحدود الروسية
+                            الإيرانية)  <tei:num value="6" xml:lang="ar">٦</tei:num> ،  <tei:num value="14" xml:lang="ar">١٤</tei:num>  في المائة. وبطريق بغداد  <tei:num value="5" xml:lang="ar">٥</tei:num> ،  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  في المائة. وبطريق الإسكندرية (مع جمارك مرسين واضالية والمواني
+                            المجاورة لهما)  <tei:num value="3" xml:lang="ar">٣</tei:num> ،  <tei:num value="82" xml:lang="ar">٨٢</tei:num>  في المائة. وبطريق دده اغاج (مع جمارك جسر مصطفى باشا وادرنة وبورتولاغوس والحدود البلغارية
+                            والسواحل الأوربية على البحر الأسود)  <tei:num value="3" xml:lang="ar">٣</tei:num> .  <tei:num value="67" xml:lang="ar">٦٧</tei:num>  في المائة. وبطريق بروزة (مع جمارك الونية وسانتي كوارنتا وسلاهو فوودراج
+                            واشقودة وحدود الجبل الأسود)  <tei:num value="2" xml:lang="ar">٢</tei:num> ،  <tei:num value="19" xml:lang="ar">١٩</tei:num>  في المائة. وبطريق جدة  <tei:num value="1" xml:lang="ar">١</tei:num> .  <tei:num value="82" xml:lang="ar">٨٢</tei:num>  في المائة. وبطريق مدينة طرابلس الغرب  <tei:num value="1" xml:lang="ar">١</tei:num> ،  <tei:num value="46" xml:lang="ar">٤٦</tei:num>  في
+                            المائة. وبطريق الحديدة  <tei:num value="1" xml:lang="ar">١</tei:num> .  <tei:num value="30" xml:lang="ar">٣٠</tei:num>  في المائة.</p>
+                        <p>أما الصادرات فقد بلغت قيمتها كلها  <tei:num value="19" xml:lang="ar">١٩</tei:num> ،  <tei:num value="414" xml:lang="ar">٤١٤</tei:num> ،  <tei:num value="068" xml:lang="ar">٠٦٨</tei:num>  ليرة. وفقد اصدر منها بطريق أزمير  <tei:num value="28" xml:lang="ar">٢٨</tei:num> ،  <tei:num value="73" xml:lang="ar">٧٣</tei:num>  في المائة. وبطريق
+                            الاستانة <tei:num value="19" xml:lang="ar">١٩</tei:num> ،  <tei:num value="38" xml:lang="ar">٣٨</tei:num>  في المائة. وبطريق سلانيك  <tei:num value="12" xml:lang="ar">١٢</tei:num> ،  <tei:num value="38" xml:lang="ar">٣٨</tei:num>  في المائة. وبطريق طرابزون  <tei:num value="10" xml:lang="ar">١٠</tei:num> ،  <tei:num value="42" xml:lang="ar">٤٢</tei:num>  في المائة. وبطريق بيروت  <tei:num value="9" xml:lang="ar">٩</tei:num> ،  <tei:num value="29" xml:lang="ar">٢٩</tei:num>  في
+                            المائة. <pb ed="shamela" n="n85-p69" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5830.xhtml"/> وبطريق الإسكندرية  <tei:num value="6" xml:lang="ar">٦</tei:num> ،  <tei:num value="39" xml:lang="ar">٣٩</tei:num> 
+                            في المائة. وبطريق بغداد  <tei:num value="4" xml:lang="ar">٤</tei:num> ،  <tei:num value="14" xml:lang="ar">١٤</tei:num>  في المائة. وبطريق دده اغاج  <tei:num value="3" xml:lang="ar">٣</tei:num> ،  <tei:num value="53" xml:lang="ar">٥٣</tei:num>  في المائة. وبطريق بروزة  <tei:num value="2" xml:lang="ar">٢</tei:num> ،  <tei:num value="27" xml:lang="ar">٢٧</tei:num>  في المائة. وبطريق
+                            طرابلس الغرب  <tei:num value="1" xml:lang="ar">١</tei:num> ،  <tei:num value="67" xml:lang="ar">٦٧</tei:num>  في المائة. وبطريق الحديدة  <tei:num value="1" xml:lang="ar">١</tei:num> ،  <tei:num value="61" xml:lang="ar">٦١</tei:num>  في المائة. وبطريق جدة  <tei:num value="0" xml:lang="ar">٠</tei:num> ،  <tei:num value="19" xml:lang="ar">١٩</tei:num>  في المائة.</p>
                         <p>وإذا وزعنا مجموع الصادرات والواردات على الأملاك العثمانية في أسيا وأوربا وإفريقيا كان نصيب كل منها كما يلي:</p>
-                        <p>الأستانة وداخلتيها: 34، 78 في المائة من الواردات و19، 38 في المائة من الصادرات. الولايات الأوربية: 18، 71 في
-                            المائة من الواردات و18، 18 في المائة من الصادرات. الولايات الأسيوية: 44، 95 في المائة من الواردات و60، 77 في
-                            المائة من الصادرات. الولايات الإفريقية: 1، 56 في المائة من الواردات و1، 67 في المائة من الصادرات.</p>
+                        <p>الأستانة وداخلتيها:  <tei:num value="34" xml:lang="ar">٣٤</tei:num> ،  <tei:num value="78" xml:lang="ar">٧٨</tei:num>  في المائة من الواردات و <tei:num value="19" xml:lang="ar">١٩</tei:num> ،  <tei:num value="38" xml:lang="ar">٣٨</tei:num>  في المائة من الصادرات. الولايات الأوربية:  <tei:num value="18" xml:lang="ar">١٨</tei:num> ،  <tei:num value="71" xml:lang="ar">٧١</tei:num>  في
+                            المائة من الواردات و <tei:num value="18" xml:lang="ar">١٨</tei:num> ،  <tei:num value="18" xml:lang="ar">١٨</tei:num>  في المائة من الصادرات. الولايات الأسيوية:  <tei:num value="44" xml:lang="ar">٤٤</tei:num> ،  <tei:num value="95" xml:lang="ar">٩٥</tei:num>  في المائة من الواردات و <tei:num value="60" xml:lang="ar">٦٠</tei:num> ،  <tei:num value="77" xml:lang="ar">٧٧</tei:num>  في
+                            المائة من الصادرات. الولايات الإفريقية:  <tei:num value="1" xml:lang="ar">١</tei:num> ،  <tei:num value="56" xml:lang="ar">٥٦</tei:num>  في المائة من الواردات و <tei:num value="1" xml:lang="ar">١</tei:num> ،  <tei:num value="67" xml:lang="ar">٦٧</tei:num>  في المائة من الصادرات.</p>
                         <p>شعر الشهر</p>
                         <p>تحت هذا العنوان ننشر في كل جزء ما نعثر عليه من شعر الشعراء في مصر والشام والعراق والجزيرة والحجاز واليمن ونجد
                             وتونس وبرقة والجزائر ومراكش ليقف القارئ على أطيب ما قيل وعلى درجة رقي الأدب العربي وإنا نخص هذا الجزء بنموذج من
                             شعر الحكمة والاجتماع قال إبراهيم منيب أفندي الباجه جي.</p>
-                        <p>(مجلة لغة العرب البغدادية م3ص536)</p>
+                        <p>(مجلة لغة العرب البغدادية م <tei:num value="3" xml:lang="ar">٣</tei:num> ص <tei:num value="536" xml:lang="ar">٥٣٦</tei:num> )</p>
                         <lg type="bayt">
                             <l>يحصد الإنسان ما قد زرعا </l>
                             <l> فازرع الخير وكن منتفعا</l>
@@ -1831,9 +1662,7 @@
                             <l>حصة العاجز حرمان وان </l>
                             <l> ليس للإنسان إلا ما سعى</l>
                         </lg>
-                        <p>وقال محمد أفندي الهاشمي في ص 508 أيضاً: <pb ed="shamela"
-                   n="n85-p70"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5831.xhtml"/> كم من شقي في الحياة <gap resp="#org_MS"/> يعد في أهل القبور</p>
+                        <p>وقال محمد أفندي الهاشمي في ص  <tei:num value="508" xml:lang="ar">٥٠٨</tei:num>  أيضاً: <pb ed="shamela" n="n85-p70" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5831.xhtml"/> كم من شقي في الحياة <gap resp="#org_MS"/> يعد في أهل القبور</p>
                         <lg type="bayt">
                             <l>الجهل ريح عاصف </l>
                             <l> ترمي الشعوب بكل بور</l>
@@ -1862,7 +1691,7 @@
                             <l>ما حدت عن قصد الطري </l>
                             <l> ق ولا جنحت إلى نفور</l>
                         </lg>
-                        <p>وجاء في جريدة اللاذقية (عدد 288) قصيدة تحت عنوان خطرات يعرب بإمضاء (ع. ز) في المعرة منها:</p>
+                        <p>وجاء في جريدة اللاذقية (عدد  <tei:num value="288" xml:lang="ar">٢٨٨</tei:num> ) قصيدة تحت عنوان خطرات يعرب بإمضاء (ع. ز) في المعرة منها:</p>
                         <lg type="bayt">
                             <l>أولاد يعرب أين همة جدكم </l>
                             <l> وخلوصه والصدق في العزمات</l>
@@ -1907,7 +1736,7 @@
                             <l>أيضيع شرع الله بين ظهوركم </l>
                             <l> يا أمة خضعت لفتك طغاة</l>
                         </lg>
-                        <p>وقال احمد أفندي نسيم في المؤبد (7267) من قصيدة:</p>
+                        <p>وقال احمد أفندي نسيم في المؤبد ( <tei:num value="7267" xml:lang="ar">٧٢٦٧</tei:num> ) من قصيدة:</p>
                         <lg type="bayt">
                             <l>لو تعدل الأيام في أبنائها </l>
                             <l> ما كان منهم مسعد وفقير</l>
@@ -1916,9 +1745,7 @@
                             <l>ساء الزمان فليس فيه منعم </l>
                             <l> أو مطمئن الجانبين قرير</l>
                         </lg>
-                        <p>وإذا تفكر في الحياة اخو نهى <gap resp="#org_MS"/> كره الحياة رساءه التفكير <pb ed="shamela"
-                   n="n85-p71"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5832.xhtml"/> ما زينة الدنيا وزخرف
+                        <p>وإذا تفكر في الحياة اخو نهى <gap resp="#org_MS"/> كره الحياة رساءه التفكير <pb ed="shamela" n="n85-p71" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5832.xhtml"/> ما زينة الدنيا وزخرف
                             عيشها <gap resp="#org_MS"/> إلا متاع زائل وغرور</p>
                         <lg type="bayt">
                             <l>وكأن أحداث الزمان إذا طغت </l>
@@ -2006,9 +1833,7 @@
                             <l>أبناؤه نبذوا الفضيلة جانباً </l>
                             <l> فحياتهم ابد الزمان آثام</l>
                         </lg>
-                        <p>إن ينشدوا للمجد أو يتهيئوا <gap resp="#org_MS"/> لملمة فجاهدهم إلمام <pb ed="shamela"
-                   n="n85-p72"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5833.xhtml"/> أو يعزموا أمراً نسوه في
+                        <p>إن ينشدوا للمجد أو يتهيئوا <gap resp="#org_MS"/> لملمة فجاهدهم إلمام <pb ed="shamela" n="n85-p72" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5833.xhtml"/> أو يعزموا أمراً نسوه في
                             غد <gap resp="#org_MS"/> فكأن ما قصدوا له أحلام</p>
                         <lg type="bayt">
                             <l>أو يدعهم داعي مجانبة العلى </l>
@@ -2020,13 +1845,11 @@
                         </lg>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n85-p73"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5834.xhtml"/>
+                        <pb ed="shamela" n="n85-p73" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5834.xhtml"/>
                         <head>مخطوطات ومطبوعات</head>
                         <p>محمد والآخرة</p>
-                        <p>تأليف بول كازنوفا طبع على نفقة بول غوتنر في بالريس سنة 1911</p>
-                        <p>هو كراسة بالفرنسية وقعت في 83 صفحة زعم فيها مؤلفها إن القرآن الكريم تطالت إلى تحريف أشياء منه جماعة من الصحابة
+                        <p>تأليف بول كازنوفا طبع على نفقة بول غوتنر في بالريس سنة  <tei:num value="1911" xml:lang="ar">١٩١١</tei:num> </p>
+                        <p>هو كراسة بالفرنسية وقعت في  <tei:num value="83" xml:lang="ar">٨٣</tei:num>  صفحة زعم فيها مؤلفها إن القرآن الكريم تطالت إلى تحريف أشياء منه جماعة من الصحابة
                             بعد وفاة الرسول عليه الصلاة والسلام مؤيداً أقواله بمزاعم غيره من الأوربيين الذين نظروا إلى الإسلام شزراً وتكلموا
                             فيه كلام أهل القرون الوسطى.</p>
                         <p>انتقاد كتب زيدان بك</p>
@@ -2038,74 +1861,66 @@
                         <p>الحالة الاقتصادية</p>
                         <p>في أصقاع حيفا وعكا</p>
                         <p>هو تقرير للمسيو ارتوركي احد رجال المشرقيات عند الفرنسيين وقنصل فرنسا في بغداد الآن وضعه باللغة الفرنسية عن حالة
-                            تلك الأصقاع في اقتصادياتها وقد وقع في 123 صفحة وفيه أمور نافعة وإحصائيات مدققة في الجملة تدل على مبلغ عناية
+                            تلك الأصقاع في اقتصادياتها وقد وقع في  <tei:num value="123" xml:lang="ar">١٢٣</tei:num>  صفحة وفيه أمور نافعة وإحصائيات مدققة في الجملة تدل على مبلغ عناية
                             المؤلف يدرس موضوعه.</p>
                         <p>تلخيص التاريخ العثماني المصور</p>
-                        <p>تعريب شاكر بك الحنبلي طبع على نفقة المكتبة الهاشمية بدمشق في مطبعة الترقي أجاد <pb ed="shamela"
-                   n="n85-p74"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5835.xhtml"/> المعرب في تعريب هذا
+                        <p>تعريب شاكر بك الحنبلي طبع على نفقة المكتبة الهاشمية بدمشق في مطبعة الترقي أجاد <pb ed="shamela" n="n85-p74" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5835.xhtml"/> المعرب في تعريب هذا
                             المختصر عن التركية في تاريخ ملوك العثمانيين والأحداث التي وقعت في أيامهم وقد حلاه بصور الملوك وخرائط منوعة وهو
-                            في 152 صفحة.</p>
+                            في  <tei:num value="152" xml:lang="ar">١٥٢</tei:num>  صفحة.</p>
                         <p>إرشاد الناشئين</p>
                         <p>لنعمان أفندي الأعظمي طبع على نفقة الأمير مبدر الفرعون آل فتلة في مطبعة الآداب ببغداد.</p>
-                        <p>هي دروس دينية علمية أدبية ألقاها الأستاذ الأعظمي على تلاميذه دلت على فضل وأدب وقعت في 65 صفحة.</p>
+                        <p>هي دروس دينية علمية أدبية ألقاها الأستاذ الأعظمي على تلاميذه دلت على فضل وأدب وقعت في  <tei:num value="65" xml:lang="ar">٦٥</tei:num>  صفحة.</p>
                         <p>خطبة نادي الشرق</p>
-                        <p>في مطبعة سرسم في الموصل 1331هـ -</p>
+                        <p>في مطبعة سرسم في الموصل  <tei:num value="1331" xml:lang="ar">١٣٣١</tei:num> هـ -</p>
                         <p>هي خطب ألقاها في الموصل السيد محمد حبيب العبيدي من أساتذة الحدباء إبان الحرب العثمانية البلقانية وفيها ما يحرك
                             الأشجان ويثير العواطف بعبارات عذبة تدل على فرط غيرة وطنية وحمية عربية عثمانية.</p>
                         <p>الجغرافية العمومية</p>
                         <p>تأليف احمد جودت أفندي المارديني وعلى نفقة المكتبة الهاشمية بمطبعة الترقي.</p>
-                        <p>هي الحلقة الأولى من علم تقويم البلدان جعلت لها أسئلة في أخر كل درس وقد حوت هذه السلسلة 28 شكلاً و8خرائط وقعت في
-                            76صفحة فعسى أن يوفق المؤلف إلى إتمامها لفائدة النشء الجديد.</p>
+                        <p>هي الحلقة الأولى من علم تقويم البلدان جعلت لها أسئلة في أخر كل درس وقد حوت هذه السلسلة  <tei:num value="28" xml:lang="ar">٢٨</tei:num>  شكلاً و <tei:num value="8" xml:lang="ar">٨</tei:num> خرائط وقعت في
+                             <tei:num value="76" xml:lang="ar">٧٦</tei:num> صفحة فعسى أن يوفق المؤلف إلى إتمامها لفائدة النشء الجديد.</p>
                         <p>الوقاية الصحية</p>
                         <p>من الأمراض المعدية</p>
                         <p>هي رسالة صحية للدكتور سليمان الحاج في صور طبعها في مطبعة العرفان لينفق ثمنها في بناء الجامع الجديد في بلده فنال
                             مؤلفها اجرين اجر تعليم واجر عبادة.</p>
                         <p>مجلة العلوم الاجتماعية</p>
                         <p>يسرنا صدور مثل هذه المجلة النافعة في هذا القطر وهي تبحث في الحقوق والاقتصاد والاجتماع ومعظم أبحاثها جديد وهي
-                            لمنشئها توفيق أفندي الناطور المحامي ومدير <pb ed="shamela"
-                   n="n85-p75"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5836.xhtml"/> تحريرها الشيخ محمد منيب
+                            لمنشئها توفيق أفندي الناطور المحامي ومدير <pb ed="shamela" n="n85-p75" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5836.xhtml"/> تحريرها الشيخ محمد منيب
                             الناطور وقد عهد بتحريرها للجنة من الحقوقيين والاقتصاديين والاجتماعيين وهي تصدر مرة في الشهر في مدينة بيروت وعدد
-                            صفحاتها 32. وقد طالعنا في أعدادها الأولى مقالات نافعة وأبحاثاً معربة عن الإفرنجية تنير الشبهات فنحث على اقتنائها
+                            صفحاتها  <tei:num value="32" xml:lang="ar">٣٢</tei:num> . وقد طالعنا في أعدادها الأولى مقالات نافعة وأبحاثاً معربة عن الإفرنجية تنير الشبهات فنحث على اقتنائها
                             فهي من أجمل الكتب العصرية وما المجلات إلا كتب حديثة ممتعة.</p>
                         <p>إرشاد الأديب</p>
                         <p>إلى معرفة الأديب المعروف بمعجم الأدباء أو طبقات الأدباء لياقوت الرومي طبع بمطبعة هندية بمصر.</p>
                         <p>لصديقنا الأستاذ مرجليوت احد علماء المشرقيات من الانكليز همة لا تكل في نشر آثار سلفنا وقد نشر بواسطة لجنة تذكار
                             حبيب حتى الآن عدة كتب مفيدة ومنها هذا السفر النفيس لصاحب معجم البلدان وقد صدر في العهد الأخير الجزء الخامس
-                            والجزء السادس والأول في 520 صفحة والثاني في 531 صفحة الأول في تراجم من يبتدئ أسماؤهم بحرف العين وفيه من المشاهير
+                            والجزء السادس والأول في  <tei:num value="520" xml:lang="ar">٥٢٠</tei:num>  صفحة والثاني في  <tei:num value="531" xml:lang="ar">٥٣١</tei:num>  صفحة الأول في تراجم من يبتدئ أسماؤهم بحرف العين وفيه من المشاهير
                             ترجمة ابن حزم وابن سيده والكسائي والأخفش والأصبهاني والتوحيدي وابن العميد والماوردي وابن القفطي وابن عساكر وفي
                             الثاني وهو بقية من أول اسمه عين وغين وفاء وقاف وكاف ولام وميم وفيه من المشاهير ترجمة الجاحظ والقاسم بن سلام
                             والحريري وقدامة بن جعفر والبيروني والشافعي والطبري وأمثالهم من الأعلام والكتاب في طبعه وتصحيحه وتعليق حواشيه
                             كسائر الأجزاء السابقة فشكراً للناشر ورحمة لمن وقف المال لإحياء آثار الشرقيين عربهم وفرسهم وتركهم.</p>
                         <p>الإدارة في فارس</p>
                         <p>هي دروس بالفرنسية ألقاها المسيو دمورني في أصول الإدارة الفارسية على تلميذه الشاه احمد شاه فارس الحالي وعلى طلاب
-                            مدرسة العلوم السياسية في طهران دلت على أحكامه لهذا الموضوع وانه في الحقوق مبرز تحرير والكتاب في 216 صفحة طبعه
-                            ارنست لرو الطابع في باريس سنة 1913.</p>
-                        <p>كتاب الطواسين <pb ed="shamela"
-                   n="n85-p76"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5837.xhtml"/> أبو الغيث الحسين بن
-                            منصور الحلاج البيضاوي البغدادي هو من المتكلمين والنظار قتل في بغداد سنة 309 بفتوى من بعض علمائها لأنه تكلم فيما
+                            مدرسة العلوم السياسية في طهران دلت على أحكامه لهذا الموضوع وانه في الحقوق مبرز تحرير والكتاب في  <tei:num value="216" xml:lang="ar">٢١٦</tei:num>  صفحة طبعه
+                            ارنست لرو الطابع في باريس سنة  <tei:num value="1913" xml:lang="ar">١٩١٣</tei:num> .</p>
+                        <p>كتاب الطواسين <pb ed="shamela" n="n85-p76" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5837.xhtml"/> أبو الغيث الحسين بن
+                            منصور الحلاج البيضاوي البغدادي هو من المتكلمين والنظار قتل في بغداد سنة  <tei:num value="309" xml:lang="ar">٣٠٩</tei:num>  بفتوى من بعض علمائها لأنه تكلم فيما
                             يقال بما يخالف الشريعة واستهوى الناس وترجمته حافلة في تاريخ ابن الأثير وغيره وقد عثر له المسيو لويس ماسنيون من
                             مستشرقي فرنسا بكتاب الطواسين فنشره بالعربية وترجمته بالفارسية وعلق عليه شروحاً وحواشي ترفع الغامض عن مذهب الحلاج
                             وسهل على عارفي اللغة الفرنسية الوقوف على حقيقة كلام هذا المتكلم إن صح أن كتاب الطاسين من تأليفه لان العبارات
                             أكثرها إلى العجمية لا يفهم لها معنى كبير ولا تنطبق مع شهرة الحلاج ولعل بعض الملاحدة دس عليه هذا الكتاب ولطالما
                             دست الرسائل ونسبت الآراء لأناس من الأعاظم وهم لم يقولوها. معنى الطواسين جمع طاسين وقد جعلها أقساماً منها طاسين
                             السراج وطاسين الفهم وطاسين الصفاء وطاسين الدائرة الخ وكلها معميات وألفاظها غير منتقاة ومعانيها غير محررة. ويشكر
-                            ناشرها ومعلق حواشيها على كل حال وقد طبعت على نفقة الكتبي بول غوتنر في باريس سنة 1913 في 222 صفحة فنشكر للمهدي
+                            ناشرها ومعلق حواشيها على كل حال وقد طبعت على نفقة الكتبي بول غوتنر في باريس سنة  <tei:num value="1913" xml:lang="ar">١٩١٣</tei:num>  في  <tei:num value="222" xml:lang="ar">٢٢٢</tei:num>  صفحة فنشكر للمهدي
                             هديته.</p>
-                        <p>1912</p>
+                        <p> <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> </p>
                         <p>تقرير المجمع السميثوني</p>
                         <p>اعتاد هذا المجمع الأميركي أن يصدر كل سنة تقريراً مستوفي في مئات من الصفحات حاوية أبحاث الباحثين من العلماء
-                            وتقريره عن السنة الماضية قد وقع في 780 صفحة وفيه رسوم تنير النصوص.</p>
+                            وتقريره عن السنة الماضية قد وقع في  <tei:num value="780" xml:lang="ar">٧٨٠</tei:num>  صفحة وفيه رسوم تنير النصوص.</p>
                         <p>عزة الأمس ذلة اليوم</p>
-                        <p>خطاب للميرزا محمد رحيم بالفارسية تعريب الشيخ محمد الكاظمي طبع بمطبعة ولاية بغداد 1331 ص53.</p>
+                        <p>خطاب للميرزا محمد رحيم بالفارسية تعريب الشيخ محمد الكاظمي طبع بمطبعة ولاية بغداد  <tei:num value="1331" xml:lang="ar">١٣٣١</tei:num>  ص <tei:num value="53" xml:lang="ar">٥٣</tei:num> .</p>
                         <p>عدد صاحب هذا الخطاب البلاد والممالك التي دخلها المسلمون وحكموها من سور الصين شرقاً إلى البحر الاتلانتيقي غرباً
                             إلى نهر السين شمالاً إلى بحر عمان وعدن وجزائر مدغشقر جنوباً فاستولوا في البر على ما يساوي أكثر من ضعفي أوربا من
                             المعمورة وعدد الدول المعظمة في الإسلام وعدد منها الدولة الأموية الشرقية، العباسية الأموية الغربية، الادريسية،
-                            الأغلبية، الطاهرية، العلوية، الصفارية، الطولونية، السامانية، المسافرية، <pb ed="shamela"
-                   n="n85-p77"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5838.xhtml"/> الفاطمية، المكناسية،
+                            الأغلبية، الطاهرية، العلوية، الصفارية، الطولونية، السامانية، المسافرية، <pb ed="shamela" n="n85-p77" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5838.xhtml"/> الفاطمية، المكناسية،
                             الزبادية، البويهية، الإخشيدية، الادريسية الثانية، الكلبية، الشاهينية، الحسينية (إحداها في كردستان انقرضت
                             والثانية في تونس لا تزال) الغزنوية، الصنهاجية، المروانية، المعزاوية، الايليكية، المرابطية، المزيدية، الزيرية،
                             الحمودية، الهودية، العامرية، المرداسية، العبادية، الافطسية، الجهورية، ذي النونية، السلجوقية، البورية، الارتقية،
@@ -2116,37 +1931,33 @@
                             فرنك بعد طرح جميع نفقات الدولة في حين نرى انكلترا وهي أغنى دول الأرض وعليها من الديون ما يقرب مليار ليرة وروسيا
                             وعليها مثل ما على انكلترا. وتوسع في الكلام عن العلماء والعلوم والمكتبات والمساجد وقصور الملوك في الشرق والغرب
                             ومنها ما كلف الملايين من الجنيهات. وألم باهتمام السلف في تعمير الأراضي وتوسيع البلاد فقال كانت مساحة مدينة قرطبة
-                            في الأصل 33 ألف ذراع فاهتموا في توسيعها فبلغت طولاً 24 وعرضا ستة أميال فصار المجموع 144 ميلاً مربعاً وهذه مدينة
-                            لندن أوسع بلاد العالم تشتمل على ما يقرب من سبعة ملايين من النفوس مساحتها 117 ميلاً مربعاً وكان سكان مدينة بغداد
-                            مليوناً ونصفا وعدد شوارعها 64 ألفا وأنهارها 150 ألفاً ودورها 240 ألفاً ونفوس بغداد اليوم لا تبلغ 150 ألفاً وكانت
-                            انهار البصرة في عهد بلال بن أبي درة 100 ألف نهراً تجري فيها السفن الصغار ومن هنا يمكنك أن تقيس عدد نفوسها وبلغت
-                            مساحة البصرة 39 ميلاً مربعاً وكان عرض الشارع العام فيها 60 ذراعاً وسائر الشوارع 20 ذراعاً ونفوس البصرة اليوم 30
+                            في الأصل  <tei:num value="33" xml:lang="ar">٣٣</tei:num>  ألف ذراع فاهتموا في توسيعها فبلغت طولاً  <tei:num value="24" xml:lang="ar">٢٤</tei:num>  وعرضا ستة أميال فصار المجموع  <tei:num value="144" xml:lang="ar">١٤٤</tei:num>  ميلاً مربعاً وهذه مدينة
+                            لندن أوسع بلاد العالم تشتمل على ما يقرب من سبعة ملايين من النفوس مساحتها  <tei:num value="117" xml:lang="ar">١١٧</tei:num>  ميلاً مربعاً وكان سكان مدينة بغداد
+                            مليوناً ونصفا وعدد شوارعها  <tei:num value="64" xml:lang="ar">٦٤</tei:num>  ألفا وأنهارها  <tei:num value="150" xml:lang="ar">١٥٠</tei:num>  ألفاً ودورها  <tei:num value="240" xml:lang="ar">٢٤٠</tei:num>  ألفاً ونفوس بغداد اليوم لا تبلغ  <tei:num value="150" xml:lang="ar">١٥٠</tei:num>  ألفاً وكانت
+                            انهار البصرة في عهد بلال بن أبي درة  <tei:num value="100" xml:lang="ar">١٠٠</tei:num>  ألف نهراً تجري فيها السفن الصغار ومن هنا يمكنك أن تقيس عدد نفوسها وبلغت
+                            مساحة البصرة  <tei:num value="39" xml:lang="ar">٣٩</tei:num>  ميلاً مربعاً وكان عرض الشارع العام فيها  <tei:num value="60" xml:lang="ar">٦٠</tei:num>  ذراعاً وسائر الشوارع  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  ذراعاً ونفوس البصرة اليوم  <tei:num value="30" xml:lang="ar">٣٠</tei:num> 
                             ألفاً وكان عدد رجال مصر بعد الفتح ثمانية ملايين فإذا أضفنا إلى ذلك الأطفال والشيوخ والنساء يبلغ عدد نفوسها
                             ثلاثين مليوناً وكانت مساحة أرضها الزراعية في زمان هشام بن عبد الملك ثلاثين مليوناً من الأفدنة وقيل انه كانت
-                            الفسطاس في الاتساع بحيث اشتملت على 36 ألف مسجد وثمانية ألاف شارع عام و1170 حماماً وبلغت طبقات دورها سبع طبقات
-                            لشدة الازدحام وكان كثير من دورها يشتمل على مائتي نفس وصرفوا على بعض أبنيتها مثل دار الحرم <pb ed="shamela"
-                   n="n85-p78"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5839.xhtml"/> بحمارويه 350
+                            الفسطاس في الاتساع بحيث اشتملت على  <tei:num value="36" xml:lang="ar">٣٦</tei:num>  ألف مسجد وثمانية ألاف شارع عام و <tei:num value="1170" xml:lang="ar">١١٧٠</tei:num>  حماماً وبلغت طبقات دورها سبع طبقات
+                            لشدة الازدحام وكان كثير من دورها يشتمل على مائتي نفس وصرفوا على بعض أبنيتها مثل دار الحرم <pb ed="shamela" n="n85-p78" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5839.xhtml"/> بحمارويه  <tei:num value="350" xml:lang="ar">٣٥٠</tei:num> 
                             ألف جنيه.</p>
                         <p>وأفاض في المستشفيات ودور العجزة والطب والأطباء والمراصد الفلكية والسفن والمواني والصناعات وسخاء الأمراء والأغنياء
                             بما لا يكاد يصدق لولا أن ذكره ثقات الرواة وقال أنهم حيروا العالم بثروتهم الشخصية فبلغت غلة الخيزران أم الرشيد في
-                            السنة 160 مليون فرنك وبلغت غلة يحيى وابنه جعفر في كل سنة 100 مليون جنيه وكانت تركة المنصور بعد موته 600 مليون
+                            السنة  <tei:num value="160" xml:lang="ar">١٦٠</tei:num>  مليون فرنك وبلغت غلة يحيى وابنه جعفر في كل سنة  <tei:num value="100" xml:lang="ar">١٠٠</tei:num>  مليون جنيه وكانت تركة المنصور بعد موته  <tei:num value="600" xml:lang="ar">٦٠٠</tei:num>  مليون
                             فرنك من الفضة وسبعة ملايين جنيه من الذهب وكانت تركة يعقوب بن ليث الصفار خمسين مليون فرنك من الفضة ومليوني جنيه
-                            من الذهب وقدرت تركة المستكفي بخمسين مليوناً من الجنيهات وكانت تركة إبراهيم الموصلي مغني الرشيد 24 مليون فرنك
-                            وأوصى الرشيد إلى المأمون بألف مليون فرنك وكانت 600 بعير تحمل مطبخ عمرو بن ليث الصفار و800 بعير تحمل الماء كل يوم
-                            إلى طعام عائلة المقتفي العباسي من دجلة وكان لام المستعين فراش صرف عليه 60 مليوناً من الجنيهات عليه نقوش على شكل
+                            من الذهب وقدرت تركة المستكفي بخمسين مليوناً من الجنيهات وكانت تركة إبراهيم الموصلي مغني الرشيد  <tei:num value="24" xml:lang="ar">٢٤</tei:num>  مليون فرنك
+                            وأوصى الرشيد إلى المأمون بألف مليون فرنك وكانت  <tei:num value="600" xml:lang="ar">٦٠٠</tei:num>  بعير تحمل مطبخ عمرو بن ليث الصفار و <tei:num value="800" xml:lang="ar">٨٠٠</tei:num>  بعير تحمل الماء كل يوم
+                            إلى طعام عائلة المقتفي العباسي من دجلة وكان لام المستعين فراش صرف عليه  <tei:num value="60" xml:lang="ar">٦٠</tei:num>  مليوناً من الجنيهات عليه نقوش على شكل
                             الحيوانات والطيور أبدانها من الذهب وعيونها من الجوهر وقد فاقت الدولة الإسلامية دول الأرض في الثروة وكانوا يظهرون
                             أثار ذلك لسفراء الأجانب وهؤلاء كثيراً ما يستنصرون بدول الإسلام واخذوا الخراج من دول الروم والصين والنمسا والروس
                             ولطالما كانت دول الإفرنج تتقرب بإرسال الهدايا والتحف إلى مقام الخلافة وأورد بعض الأمثلة التاريخية على كل ذلك. ثم
                             أفاض في الذلة التي لحقت الإخلاف فرده إلى البطالة والتسامح وقلة عنايتنا بالعلم والدين مما عرفه الخاص والعام.</p>
                         <p>كتاب الشيعة وفنون الإسلام</p>
-                        <p>تأليف السيد حسن الصدر طبع بمطبعة العرفان في صيدا سنة 1331 ص150 مؤلف هذا الكتاب من كبار فقهاء الشيعة في العراق
+                        <p>تأليف السيد حسن الصدر طبع بمطبعة العرفان في صيدا سنة  <tei:num value="1331" xml:lang="ar">١٣٣١</tei:num>  ص <tei:num value="150" xml:lang="ar">١٥٠</tei:num>  مؤلف هذا الكتاب من كبار فقهاء الشيعة في العراق
                             واحد مؤلفيهم ذكر فيه العلوم التي تقدمت الشيعة في وضعها وأول من وضع ذلك العلم ومن صنف فيه أو اخترع علماً من فروع
                             ذلك العلم وصنف فيه أول من ابتكر معنى اتبع فيه وأول من افرد نوعاً من العلم في التصنيف إلى غير ذلك مما دل على بعد
                             غور المؤلف وسعة مادته ولطف أسلوبه وإنا مع إجلالنا لعمله وتقدير التاريخ للخدم الجليلة التي قام بها علماء مذهبه في
-                            خدمة العلم والأدب لا نرى بداًً من إبداء ملاحظة عساها تقع من المؤلف وغيره في المحل الذي يجب أن توضع فيه وهو <pb ed="shamela"
-                   n="n85-p79"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5840.xhtml"/>
+                            خدمة العلم والأدب لا نرى بداًً من إبداء ملاحظة عساها تقع من المؤلف وغيره في المحل الذي يجب أن توضع فيه وهو <pb ed="shamela" n="n85-p79" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5840.xhtml"/>
                             أن هذا الكتاب يحوي أماكن لا يقرها التاريخ الصحيح مثل نسبة التشيع إلى كثير من علماء الصدر الأول فان كان كل من يحب
                             علياً كرم الله وجهه يعد في نظر المؤلف شيعياً فان جمهور المسلمين شيعة إلا قليلاً.</p>
                         <p>كنا نحب أن لا يشار إلى ذلك في هذا المكان ولكن المؤلف تحامل أيضا على عظماء في العلم والحكم كقوله في تقدم الشيعة في
@@ -2157,16 +1968,14 @@
                         <p>وقد تابع المؤلف مؤرخي الشيعة في اتهام المأمون رضي الله بقتل الفضل بن سهل وعلي بن موسى الرضا رضي الله عنه فقال:
                             ولما نقل المأمون الخلافة إلى بني علي كان الفضل بن سهل هو القائم بهذا الأمر والمحسن له ولما رأى المأمون إنكار
                             العباسيين لبغداد لذلك حتى خلعوه وبايعوا إبراهيم عمه قام وقعد ودس جماعة على الفضل بن سهل فقتلوه في الحمام ثم قتل
-                            الإمام الرضا (ع) بالسم وكتب إلى بغداد أن الذي أنكرتموه من أمر علي بن موسى قد زال وكان ذلك سنة 204هـ -.</p>
+                            الإمام الرضا (ع) بالسم وكتب إلى بغداد أن الذي أنكرتموه من أمر علي بن موسى قد زال وكان ذلك سنة  <tei:num value="204" xml:lang="ar">٢٠٤</tei:num> هـ -.</p>
                         <p>والعجب أن هذه القصة التي ما تزال يرددها بعضهم ليس لها اثر في كتب ثقات المؤرخين بل مؤرخي الأمة فكأنها من موضوعات
                             القرون المتأخرة تتناقل لا يغار الصدور على المأمون ودولته مع انه لم يحسن احد للطالبين إحسان الخليفة المأمون ولم
                             تتجرد نفس خليفة من الجمود المذهبي تجرده منه كما ذكر ذلك الثقات الذين يعتد بأقوالهم ويكاد يقع الإجماع على تصحيح
                             رواياتهم. وكنا نود لو خلت الكتب العلمية العصرية على الأقل من هذه النزعات لتقريب ما بين القلوب.</p>
                         <p>الوساطة بين المتنبي وخصومه</p>
-                        <p>لأبي الحسن علي بن عبد العزيز الشهير بالقاضي الجرجاني المتوفى سنة 396هـ - عني بنشره وشرحه الشيخ احمد عارف الزين
-                            طبع بمطبعة العرفان في صيدا سنة 1331 <pb ed="shamela"
-                   n="n85-p80"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5841.xhtml"/> ص416.</p>
+                        <p>لأبي الحسن علي بن عبد العزيز الشهير بالقاضي الجرجاني المتوفى سنة  <tei:num value="396" xml:lang="ar">٣٩٦</tei:num> هـ - عني بنشره وشرحه الشيخ احمد عارف الزين
+                            طبع بمطبعة العرفان في صيدا سنة  <tei:num value="1331" xml:lang="ar">١٣٣١</tei:num>  <pb ed="shamela" n="n85-p80" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5841.xhtml"/> ص <tei:num value="416" xml:lang="ar">٤١٦</tei:num> .</p>
                         <p>لم يرزق شاعر عربي من الخطوة ما ناله أبو الطيب المتنبي بشعره ولم تتناول الأقلام شعر شاعر بالمدح والقدح مثله. وهذا
                             الكتاب هو من الأمهات التي كتبت في ذاك العصر وعدل مؤلفها في حكمه على المتنبي وناهيك بمن يحكم له وعليه أمثال
                             القاضي الجرجاني إنسان حدقة العلم ودرة تاج الأدب وفارس عسكر الشعب كما قال الثعالبي.</p>

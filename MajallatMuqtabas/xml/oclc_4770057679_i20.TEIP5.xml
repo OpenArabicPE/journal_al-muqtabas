@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i20_text"
-         xml:lang="ar"
-         type="issue"
-         n="i20">
+   <text xml:id="oclc_4770057679_i20_text" xml:lang="ar" type="issue" n="i20">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,30 +202,26 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1907-09-15">بتاريخ: 15 - 9 - 1907</date>
-                                    <biblScope n="20" unit="issue">العدد 20</biblScope>
+                                    <date when="1907-09-15">بتاريخ:  <tei:num value="15" xml:lang="ar">١٥</tei:num>  -  <tei:num value="9" xml:lang="ar">٩</tei:num>  -  <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num> </date>
+                                    <biblScope n="20" unit="issue">العدد  <tei:num value="20" xml:lang="ar">٢٠</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             n=""
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1099.xhtml"/>
+                    <pb ed="shamela" n="" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1099.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="20" unit="issue">العدد 20</biblScope> 
-                  <date when="1907-09-15">بتاريخ: 15 - 9 -
-                            1907</date> 
+                  <biblScope n="20" unit="issue">العدد  <tei:num value="20" xml:lang="ar">٢٠</tei:num> </biblScope> 
+                  <date when="1907-09-15">بتاريخ:  <tei:num value="15" xml:lang="ar">١٥</tei:num>  -  <tei:num value="9" xml:lang="ar">٩</tei:num>  -
+                             <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num> </date> 
                </bibl> 
             </head>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n20-p1"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1100.xhtml"/>
+                        <pb ed="shamela" n="n20-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1100.xhtml"/>
                         <head>صدور المشارقة والمغاربة</head>
                         <p>تولستوي</p>
                         <p>ما خلت كل أمة ولا كل عصر من وجود مصلح أو مجدد يقوم بين قومه بالوعظ والإرشاد ويأخذ بيدها في مهيع السداد. تساوت في
@@ -272,9 +239,7 @@
                             ضعاف الفطرة من البشر إذا كنا أنذلاً مثله وأني لا أنكر عندما بدأت أذكر حياتي وقد تمثلت أمامي غفلتي ولؤمي وذهبت بي
                             الهواجس كل مذهب ورحت أقول في نفسي أنا ذاك الرجل الذي يطريني كثيرون على ما بي من شقاء وبلاهة. ولك أن تفسر قولي
                             هذا بأني أكثر احتيالا من غيري - أقول لك هذا القول بحرية ولا أقوله لأجمل به إنشائي. من أجل هذا إلى تسطير ترجمتي
-                            لأني رأيت من اللازم اللازب أن للملأ لؤم حياتي بأسره إلى أن تنبهت من غفلتي وأن أذكر محاسنها بعد أنتباهي. <pb ed="shamela"
-                   n="n20-p2"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1101.xhtml"/>
+                            لأني رأيت من اللازم اللازب أن للملأ لؤم حياتي بأسره إلى أن تنبهت من غفلتي وأن أذكر محاسنها بعد أنتباهي. <pb ed="shamela" n="n20-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1101.xhtml"/>
                             ذكرت بادئ بدء الحسنات في حياتي ولكني لما فكرت في الحوادث المكررة التي انتابتني في غضونها رأيت أن مثل هذا هذه
                             الترجمة أن لم تكن كلها كذباً لم تكن كلها مكتوبة بإخلاص لأني مثلت فيها المناحي الحسنة وأسدلت حجاب السكوت على
                             المناحي السيئة وعندما فكرت في كتابه الحقيقة على بابها دون أكتم منها شيئاً من السيئات التي تخللت حياتي ذعرت مما
@@ -292,9 +257,7 @@
                             للحال بما دهمني من الشهوات التي لم يضبطها عنان.</p>
                         <p>على أن اشتعال الفكر على هذا النحو في خلال مرضي دلني في دلالة صريحة على أن ترجمة الإنسان نفسه على ما تكتب في
                             العادة التراجم إذا أغضيت فيها عن نذالتي وجريمتي في حياتي تكون ولا جرم كذباً وإن خير الأساليب التي يتوخاها الكاتب
-                            في ترجمته أن ينطق بالحقيقة على جليتها. وأمثال هذه التراجم هي التي تمثل الحقيقة على <pb ed="shamela"
-                   n="n20-p3"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1102.xhtml"/> بابها للقارئ وإن أورثت
+                            في ترجمته أن ينطق بالحقيقة على جليتها. وأمثال هذه التراجم هي التي تمثل الحقيقة على <pb ed="shamela" n="n20-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1102.xhtml"/> بابها للقارئ وإن أورثت
                             كاتبها الخجل.</p>
                         <p>فلما ذكرت ماضي حياتي على النحو أي ذكرت ما أتيت من خير وما تم على يدي من شرر أيتني أقسم أدوار حياتي الطويلة إلى
                             أربعة أدوار: أولها ذاك الدور العجيب وخصوصاً إذا قيس بالدور الذي يليه - البار البهيج الشعري وأعني به دور
@@ -314,9 +277,7 @@
                             كان من اللطف والأنس على جانب وقد أدى به الكرم إلى الإسراف الذي بلغ حد الحمق. وكان بثقة يخلص وكانت في مقاطعة
                             بيليف في بولياني ميدان الولائم وتمثيل الروايات والمراقص والمأدب ويضاف إلى ما يقتضي ذلك من النفقات ولوع جدي
                             بالمقأمرة على ضعف معرفته فيها مع ما كان مني من إقراض كل من يقصده دراهم ما كان يرجعها إليه. هذا إلى الأعمال
-                            الكثيرة التي باشرها <pb ed="shamela"
-                   n="n20-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1103.xhtml"/> فإنتهت كلها بخراب بيته
+                            الكثيرة التي باشرها <pb ed="shamela" n="n20-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1103.xhtml"/> فإنتهت كلها بخراب بيته
                             وإفلاسه حتى باع أملاك زوجه واضطر إلى التوظف فصار للحال والياً لقازان. ذكروا لي أن جدي لم يكن يقبل الرشى ما خلا
                             رشوات من عملة الأكحول وهي الرشوة التي ما كانت تستنكر إذ ذاك في كل ناحية من أنحاء الأمبراطورية الروسية ولكن قيل
                             لي أن جدتي كانت تقبل الرشوة بدون اطلاع جدي وهكذا دامت الحال حتى زوجت ابنتها الثانية في قازان والبكر في بطرسبرج
@@ -334,9 +295,7 @@
                             مرتين وكان يتلو على مسامع الحضور حكاية قمر الزمان المعروفة في قصة ألف ليلة وليلة وكنت اقترب من القصاص استمع إليه
                             ولكنني ما كنت أفهم شيئاً مما يقول ثم أنام ولا أعود أحس بما يجري في دارنا إلى الغد.</p>
                         <p>وما أعرفه عن جدي والد أمي أنه بعد أن صار قائداً على عهد الأمبراطورة كاترينا عزل دفعة واحدة عن منصبه لأنه لم يرض
-                            أن يتزوج ابنة أخت المشير يونمكين نديم كاترينا <pb ed="shamela"
-                   n="n20-p5"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1104.xhtml"/> الثانية فنحاه عن منصبه
+                            أن يتزوج ابنة أخت المشير يونمكين نديم كاترينا <pb ed="shamela" n="n20-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1104.xhtml"/> الثانية فنحاه عن منصبه
                             لأنه رفض الزواج منها لأسباب لم عرفها فيها رداً غير جميل. ولما نحي عن منصبه تزوج بفتاة من أهل الصور رزق منها
                             لبنة. وكان جدي هذا مشهوراً بجبروته وأنه من الرؤساء البغاة. بيد أني لم ينقل لي شيء عن قسوته ولا عن عقوباته
                             المعتادة في عهده وأظن أن ذلك كان يقع منه على التحقيق لكنه لم يجسر أحد من حاشيته وفلاحيه أن يطلعني على ذلك مع
@@ -354,9 +313,7 @@
                             خلافاً لمعاصراتها إذ ذاك وتعرف الفرنسية والألمانية والإنكليزية والإيطالية ولها ميل إلى الفنون وتجيد الضرب على
                             البيانو. ولقد ذكر لي عشيرتها بأنها كانت تحسن إلقاء الحكايات فتستدعي إعجاب الحضور وترتجل الكلام ارتجالا وكانت
                             تمتاز بكظم غيظها على ما روى لي الخدام. فإذا عرض لها ما يهيجها يحمر وجهها وربما بكت على ما نقلت لي وصيفتها ولكنها
-                            ما قط فاهت بكلمة قبيحة إذ أنها لم <pb ed="shamela"
-                   n="n20-p6"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1105.xhtml"/> تكن تعرف من ألفاظ الهجر
+                            ما قط فاهت بكلمة قبيحة إذ أنها لم <pb ed="shamela" n="n20-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1105.xhtml"/> تكن تعرف من ألفاظ الهجر
                             ولا كلمة.</p>
                         <p>لدي رسائل كتبتها والدتي وإلى خالاتي وجريدة تصف فيها سلوك أخي البكر (نيكلولانكا) الذي كلن عمره ست سنين عندما توفيت
                             وكان أشبه منا كلنا بصورتها. وكانت ما استنتجت ذلك من كتاباتها ولحظت ذلك من أخي وعلمته علم اليقين عدم الاحتفال
@@ -375,9 +332,7 @@
                             معتدلة في إظهارها عباراتها تدل على الاعتدال والإخلاص. قيل لي أن والدتي كانت تحبني حباً جما وتدعونني بتيامني
                             الصغير وقد كانت غنية وكان والدي نشيطاً بهجاً واسع الصيت والصلات وأظن أن والدتي كانت تحب والدي لأنه والد بنيها
                             وزوجها ولم تكن تحبه حب العاشق المستهام وكان حبها لخطيبها الأول الذي اختطفته المنية حب الفتيات الذي لا يشعرن به
-                            إلا لمرة واحدة وإن ما أعلمه عم اليقين هو أن أمي كانت <pb ed="shamela"
-                   n="n20-p7"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1106.xhtml"/> تحب ثلاثة حباً حقيقياً
+                            إلا لمرة واحدة وإن ما أعلمه عم اليقين هو أن أمي كانت <pb ed="shamela" n="n20-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1106.xhtml"/> تحب ثلاثة حباً حقيقياً
                             وهم خطيبها الأول والآنسة اينيس الفرنسية إحدى صويحباتها وابنها البكر وكانت تنشئ له جريدة ذكر لرغبتها الشديدة في
                             تربيته ما أمكن وهناك دليل على أنها كانت ضعيفة في هذا المعنى لا تدري ما تعمله. مثال ذلك أنها كانت تؤنبه عندما
                             يشتد فيه شعور الإحساس فيبكي مثلاً عندما يشاهد الحيوانات تتألم أمامه لأن على المرء برأيها أن يكون قاسي القلب
@@ -390,14 +345,12 @@
                         <p>لبعض الأسرات أوقات من الصفاء لا يزعجها موت أحدهم ولا مرض أفرادهم فيعيشون سعداء وهذا الدور صادفته والدتي إلى حين
                             وفاتها فكان والدي يدخل البهجة على قلوب أهل البيت بما يوفره على ذكره من الأضاحيك الملهية والأحاديث المسلية.</p>
                         <p>هذا ما عرفته من مطالعة المفكرات والرسائل عن والدتي وحياتي في بيتنا على ذاك العهد في الطفولية وهاأنا ذا وصلت إلى
-                            وقت ألم فيه بما أذكره بنفسي فأرويه مقروناً بأشخاصه وأماكنه. أما والدي فقد كان عمره سنة 1812 سبع عشر سنة انخرط في
+                            وقت ألم فيه بما أذكره بنفسي فأرويه مقروناً بأشخاصه وأماكنه. أما والدي فقد كان عمره سنة  <tei:num value="1812" xml:lang="ar">١٨١٢</tei:num>  سبع عشر سنة انخرط في
                             سلك الجيش على كثرة توسل أهله به ليرجع عما قصده له خوفهم عليه وكان إذ ذاك أحد أنسائنا قائد الجيش العامل فعينه له
-                            حاجباً واشترك في حرب سنة1813 - 1814 وأسره الفرنسيين ولم يخلص من الأسر إلا سنة 1815 عندما دخل جيشنا باريس.</p>
+                            حاجباً واشترك في حرب سنة <tei:num value="1813" xml:lang="ar">١٨١٣</tei:num>  -  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  وأسره الفرنسيين ولم يخلص من الأسر إلا سنة  <tei:num value="1815" xml:lang="ar">١٨١٥</tei:num>  عندما دخل جيشنا باريس.</p>
                         <p>بلغ العشرين من عمره ولم يكن على شيء من العفاف حتى أن أهله زوجوه بخادمة وكان عمره ست عشر سنة تفادياً من أن تسوء
                             صحته على نحو ما كان القوم يذهبون إليه إذ ذاك فولد له منها ابن دعوة ميشانكا عاش في حياة والدي عيشة حسنة ثم ساءت
-                            حاله فكأن كثيراً ما يلجأ إلينا لنعينه وأني لا أذكر شعور التعجب الغريب الذي شعرت به عندما أمسي أخي <pb ed="shamela"
-                   n="n20-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1107.xhtml"/>
+                            حاله فكأن كثيراً ما يلجأ إلينا لنعينه وأني لا أذكر شعور التعجب الغريب الذي شعرت به عندما أمسي أخي <pb ed="shamela" n="n20-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1107.xhtml"/>
                             هذا شحإذا يستو كف الأكف وهو شبيه في خلقته بأبي بل أشدنا به شبهاً ثم يجيء ويطلب منا أن نحسن إليه بشيء من المال
                             ويسر بما ندفعه إليه من عشرة روبلات أو خمسة عشر. ثم تنحى والدي عن الخدمة ونال راتب العزل ولحق بجدي في قازان وكان
                             حاكمها وبعد قليل ذهب جدي إلى سبيله وأصبح والدي رب أسرته مع جدتي المعتادة على البذخ والديون مثقلة كأهل بيتنا
@@ -416,9 +369,7 @@
                         <p>وأني لا أذكر والدي وهو جالس على ديوانه يدخن بغليونه وأذكر صيوده وأذكر أيامه واجتماعنا به وتحفيظي شيئاً من شعر
                             بوشيكن وكيف أعجب بتلاوتي له. نعم أذكر رحلاته وغدواته ما كان يفيضه علي من حسناته وإحسانه وأذكر حبه وحبي ذلك الذي
                             شعرت به بعد موته أكثر من شعوري به من قبل. وهنا استطرد إلى ذكر شيء مما علق بذهني من أمور طفولتي أذكرها وأنا لا
-                            أثتثبت بعضها حقيقة أم خيالية. ولقد كنت في القماط وأريد أن <pb ed="shamela"
-                   n="n20-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1108.xhtml"/> أفلت يدي ولا أستطيع ذلك
+                            أثتثبت بعضها حقيقة أم خيالية. ولقد كنت في القماط وأريد أن <pb ed="shamela" n="n20-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1108.xhtml"/> أفلت يدي ولا أستطيع ذلك
                             وأصرخ وأبكي وصوتي كان منكراً حتى في عيني ولكن ما كنت أتمالك نفسي من البكاء وأرى أحدهم في قربي يحنو علي ولا أذكر
                             شخصه وأرى ذلك كانه ظلم أو يكاد يكون ظلماً ولكني أذكر إنهما كانتا اثنتين وكان صوتي يؤثر فيهما فكانتا تسمعان صوتي
                             ولكنهما لا تنقذاني مما أشكو منه ثم أصرخ بشدة أيضاً فيريان أنه من اللازم أن أكون مقيداً في قماطي وأنا أرى أنه ليس
@@ -437,9 +388,7 @@
                             حياتنا كلها سوى الخضوع المتواتر لهذه الصور أو الخلاص.</p>
                         <p>أما تذكاراتي القصية فإنها ترجع إلى السنة الرابعة أو الخامسة من عمري وكلها قليلة لا تتعدى حد البيت والعيش المنزلي
                             وما أنس لا أنس في طفولتي وأنا على سروري فرح مبتهج ووصيفتي أو اللائي عهد الهين تربيتي تقص علي قصة ايرميفتا (كما
-                            تخوف عامة <pb ed="shamela"
-                   n="n20-p10"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1109.xhtml"/> النساء في الشرق الأدنى
+                            تخوف عامة <pb ed="shamela" n="n20-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1109.xhtml"/> النساء في الشرق الأدنى
                             الأولاد بالعفريت والبع بع) فكانت تنقبض نفسي لسماعها وأتبدل البهجة بالفزع والفرح بالترح وأذكر شقيقتي بجانبي وأذكر
                             مؤدبنا الألماني تيودور ايفا نو فبتش وأن لم أكن في تلك السن تحت وصايته وأذكر دارنا وأنها كانت شاهقة وأذكر ما
                             ألقاه فيها من النساء وربما كن الغسالات وكيف كنت أقفز ويقفز معنا مؤدبنا ولكن قفزة خفيفة.</p>
@@ -449,133 +398,119 @@
                             والميل إلى الوحدة والتأثر من المظالم. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n20-p11"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1110.xhtml"/>
+                        <pb ed="shamela" n="n20-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1110.xhtml"/>
                         <head>الولايات المتحدة</head>
                         <p>يقسم تاريخ الولايات المتحدة إلى خمسة أدوار: الأول دور السكان الأصليين وهم الهنود والثاني دور السفر والاكتشاف وهو
-                            من سنة 986 إلى سنة 1607 م والثالث دور الاستعمار وهو من سنة 1607إلى سنة 1775 م والرابع دور الثورة من أجل
-                            الاستقلال وهو من سنة 1775 إلى سنة 1789 والخامس دور الجمهورية وهو من سنة 1789 إلى 1907 م</p>
-                        <p>اكتشف غريستفورس كولمبوس أمريكا سنة 1492 ب. م فأخذ بعض الأوروبيين بادئ بدء يهاجرون إليها بقصد امتلاك ديارها وجمع
+                            من سنة  <tei:num value="986" xml:lang="ar">٩٨٦</tei:num>  إلى سنة  <tei:num value="1607" xml:lang="ar">١٦٠٧</tei:num>  م والثالث دور الاستعمار وهو من سنة  <tei:num value="1607" xml:lang="ar">١٦٠٧</tei:num> إلى سنة  <tei:num value="1775" xml:lang="ar">١٧٧٥</tei:num>  م والرابع دور الثورة من أجل
+                            الاستقلال وهو من سنة  <tei:num value="1775" xml:lang="ar">١٧٧٥</tei:num>  إلى سنة  <tei:num value="1789" xml:lang="ar">١٧٨٩</tei:num>  والخامس دور الجمهورية وهو من سنة  <tei:num value="1789" xml:lang="ar">١٧٨٩</tei:num>  إلى  <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num>  م</p>
+                        <p>اكتشف غريستفورس كولمبوس أمريكا سنة  <tei:num value="1492" xml:lang="ar">١٤٩٢</tei:num>  ب. م فأخذ بعض الأوروبيين بادئ بدء يهاجرون إليها بقصد امتلاك ديارها وجمع
                             لجينها ونضارها. ولما ذاع صيت هذه الديار في أقطار أوروبا واشتهر أمر غناها واتساع بقاعها وخصب أراضيها وغباوة
-                            هنودها أخذ يتقاطر إليها الأوربيين زرافات وجماعات وذلك من سنة 1607 م فصاعداً. وكأنت الأمة الإنكليزية أكثر الأمم
+                            هنودها أخذ يتقاطر إليها الأوربيين زرافات وجماعات وذلك من سنة  <tei:num value="1607" xml:lang="ar">١٦٠٧</tei:num>  م فصاعداً. وكأنت الأمة الإنكليزية أكثر الأمم
                             الأوروبية اهتماماً بالمهاجرة إلى أمريكا. ثم لما كثر عدد الأوربيين فيها اغتصبوا أملاكاً واسعة من الهنود واشتروا
                             بعضها بأثمان بخسة واستوطنوا بعض مقاطعات الولايات المتحدة.</p>
-                        <p>وفي 18 نيسأن سنة 1775 م أعلن الأمريكيون الحرب على بريطانيا العظمى. وفي 7 حزيرأن سنة 1776 م نهضوا لطلب الاستقلال
+                        <p>وفي  <tei:num value="18" xml:lang="ar">١٨</tei:num>  نيسأن سنة  <tei:num value="1775" xml:lang="ar">١٧٧٥</tei:num>  م أعلن الأمريكيون الحرب على بريطانيا العظمى. وفي  <tei:num value="7" xml:lang="ar">٧</tei:num>  حزيرأن سنة  <tei:num value="1776" xml:lang="ar">١٧٧٦</tei:num>  م نهضوا لطلب الاستقلال
                             من سلطة تلك الدولة لاستبدادها بهم وتضيقها على أملاكهم حينئذ فتابعوا الحرب. وبعد سبع سنين جرت فيها الدماء أنهاراً
-                            استقلوا في 4 تموز سنة 1783 م</p>
+                            استقلوا في  <tei:num value="4" xml:lang="ar">٤</tei:num>  تموز سنة  <tei:num value="1783" xml:lang="ar">١٧٨٣</tei:num>  م</p>
                         <p>ويرجع معظم الفضل لذلك إلى ديكا رد هنري لي وتامس جفرسن من فرجينيا ويوحنا أدامس من ماسثوست وبنيامين فرنكلن من
-                            بنسلفإنيا وروجر شيرمان من كنتكت وروبرت لنكستن من نيويورك فهم الستة المشهورون الذين اجتمعوا في 11 حزيرأن سنة 1776
+                            بنسلفإنيا وروجر شيرمان من كنتكت وروبرت لنكستن من نيويورك فهم الستة المشهورون الذين اجتمعوا في  <tei:num value="11" xml:lang="ar">١١</tei:num>  حزيرأن سنة  <tei:num value="1776" xml:lang="ar">١٧٧٦</tei:num> 
                             م وقد قرروا أن ينزعوا رقبة الاستبداد عن رقاب الشعب.</p>
-                        <p>وسنة 1789 جدد الأمريكيون المعاهدة بعضهم مع بعض ودونوا فيها نظامات وشرائع في مدينة فيلادلفيا. وكان عدد الولايات
+                        <p>وسنة  <tei:num value="1789" xml:lang="ar">١٧٨٩</tei:num>  جدد الأمريكيون المعاهدة بعضهم مع بعض ودونوا فيها نظامات وشرائع في مدينة فيلادلفيا. وكان عدد الولايات
                             التي دخلت في المعاهدة إذ ذاك ثلاث عشرة ولاية وهي نيو همبشير وفر مونت ومسشوست ونيويورك وكنتكت ونيوجرسي وبنسلفإنيا
                             ودالوار ورودايلندا ومريلا ند وفرجينيا وكرولينا الشمالية والجنوبية.</p>
-                        <p>وفي 4 حزيرأن سنة 1789 م أعلنت الولايات المتحدة الحرب أيضاً على بريطانيا <pb ed="shamela"
-                   n="n20-p12"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1111.xhtml"/> العظمى وكان في عهد مادسن
+                        <p>وفي  <tei:num value="4" xml:lang="ar">٤</tei:num>  حزيرأن سنة  <tei:num value="1789" xml:lang="ar">١٧٨٩</tei:num>  م أعلنت الولايات المتحدة الحرب أيضاً على بريطانيا <pb ed="shamela" n="n20-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1111.xhtml"/> العظمى وكان في عهد مادسن
                             الرئيس الرابع للولايات المتحدة وكانت نتيجة تلك الحرب ازدياد العمران وتعزيز قوة السكان.</p>
-                        <p>وفي 26 نيسأن سنة1845 م أخذت الولايات المتحدة تحارب الأسبأن فأظهر الأمريكيون قوة الاتحاد والاستقلال ولم تزدهم تلك
+                        <p>وفي  <tei:num value="26" xml:lang="ar">٢٦</tei:num>  نيسأن سنة <tei:num value="1845" xml:lang="ar">١٨٤٥</tei:num>  م أخذت الولايات المتحدة تحارب الأسبأن فأظهر الأمريكيون قوة الاتحاد والاستقلال ولم تزدهم تلك
                             الحرب إلا مجداً وعزاً وعمراناً. ونشأت الحرب المذكورة في عهد بولك الرئيس الثاني عشر للبلاد.</p>
-                        <p>وفي 12 نيسأن سنة 1861 م بدأ حرب تحرير العبيد بين الشمال والجنوب في الولايات المتحدة وانتهت في 9 نيسأن سنة 1865
-                            وكان رئيس البلاد إذ ذاك إبرأهيملنكن الشهير. وسنة 1898 م حاربت الولايات المتحدة اسبانيا وفازت عليها ووسعت دائرة
+                        <p>وفي  <tei:num value="12" xml:lang="ar">١٢</tei:num>  نيسأن سنة  <tei:num value="1861" xml:lang="ar">١٨٦١</tei:num>  م بدأ حرب تحرير العبيد بين الشمال والجنوب في الولايات المتحدة وانتهت في  <tei:num value="9" xml:lang="ar">٩</tei:num>  نيسأن سنة  <tei:num value="1865" xml:lang="ar">١٨٦٥</tei:num> 
+                            وكان رئيس البلاد إذ ذاك إبرأهيملنكن الشهير. وسنة  <tei:num value="1898" xml:lang="ar">١٨٩٨</tei:num>  م حاربت الولايات المتحدة اسبانيا وفازت عليها ووسعت دائرة
                             نفوذها واشتد ساعدها وذاعت سطوتها واتسع نطاق بقاعها وارتفع شأن تمدنها وعمرانها وكأن ذلك في عهد مكنلي الرئيس
                             الخامس والعشرين للبلاد.</p>
-                        <p>أول رجل عظيم رأس الولايات الأمريكية هو جورج واشنطن. ولد في 22 شباط سنة 1732 م في وست فرجينيا وشب على الآداب
-                            الرائعة والهمة الرافعة والمبادئ النافعة وفي نيسان عام 1789 م رأس الولايات المتحدة وظل في منصبه الخطير 8 سنوات
-                            وقضى نحبه في 12 كانون الأول سنة 1797 م. وأقل ما يقال عنه إنه كان رجلاً فاضلاً ورئيساً عاملاً غير مدافع رقى بلاده
+                        <p>أول رجل عظيم رأس الولايات الأمريكية هو جورج واشنطن. ولد في  <tei:num value="22" xml:lang="ar">٢٢</tei:num>  شباط سنة  <tei:num value="1732" xml:lang="ar">١٧٣٢</tei:num>  م في وست فرجينيا وشب على الآداب
+                            الرائعة والهمة الرافعة والمبادئ النافعة وفي نيسان عام  <tei:num value="1789" xml:lang="ar">١٧٨٩</tei:num>  م رأس الولايات المتحدة وظل في منصبه الخطير  <tei:num value="8" xml:lang="ar">٨</tei:num>  سنوات
+                            وقضى نحبه في  <tei:num value="12" xml:lang="ar">١٢</tei:num>  كانون الأول سنة  <tei:num value="1797" xml:lang="ar">١٧٩٧</tei:num>  م. وأقل ما يقال عنه إنه كان رجلاً فاضلاً ورئيساً عاملاً غير مدافع رقى بلاده
                             إلى درجة سامية تحسد عليها. والشعب الأمريكي يجله كثيراً ويعيد له كل سنة ويدعوه أب الأمة.</p>
-                        <p>وتولى أريكة الرئاسة بعد واشنطن يوحنا أدامس. ولد في برينتري من أعمال ماسشوست في 19 تشرين الأول عام 1735 م وانتخب
-                            رئيساً للولايات المتحدة في 4 إذار سنة 1797 م وأتم مدة الرئاسة التي هي أربع سنوات. وقد نمت البلاد في أيامه وانتهت
+                        <p>وتولى أريكة الرئاسة بعد واشنطن يوحنا أدامس. ولد في برينتري من أعمال ماسشوست في  <tei:num value="19" xml:lang="ar">١٩</tei:num>  تشرين الأول عام  <tei:num value="1735" xml:lang="ar">١٧٣٥</tei:num>  م وانتخب
+                            رئيساً للولايات المتحدة في  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار سنة  <tei:num value="1797" xml:lang="ar">١٧٩٧</tei:num>  م وأتم مدة الرئاسة التي هي أربع سنوات. وقد نمت البلاد في أيامه وانتهت
                             مدته بختام القرن الثامن عشر.</p>
                         <p>وخلف الرئيس أدامس تامس جفرسن أحد الستة الأشخاص المصلحين الذين مر ذكرهم وهو الرئيس الثالث. ولد في البيمارلي من
-                            أعمال فرجينيا في 2 نيسان عام 1743 م وانتخب رئيساً للبلاد في غرة القرن التاسع عشر سنة1801 م ورأسها دورين أي ثمان
+                            أعمال فرجينيا في  <tei:num value="2" xml:lang="ar">٢</tei:num>  نيسان عام  <tei:num value="1743" xml:lang="ar">١٧٤٣</tei:num>  م وانتخب رئيساً للبلاد في غرة القرن التاسع عشر سنة <tei:num value="1801" xml:lang="ar">١٨٠١</tei:num>  م ورأسها دورين أي ثمان
                             سنوات وكان غيوراً على الإصلاح ومصلحة الوطن والأمة كفؤاً للقيام بالعظائم والأمة الأمريكية تحسبه من أعظم المصلحين
-                            وأفضل رؤساء البلاد توفي في 4 تموز سنة 1846 <pb ed="shamela"
-                   n="n20-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1112.xhtml"/> م.</p>
-                        <p>وقام بعد جفرسن جيمس ماديسن وهو الرئيس الرابع على البلاد ولد في كن جورجيا من أعمال فرجينيا في 6 إذار عام 1751 م
-                            وتوفي في 28 كانون الثاني عام 1836 م في مونتيار من أعمال فرجينيا. كان ماديسن ناظر الداخلية في عهد الرئيس جفرسن
-                            وفي 4 إذار عام 1809 م انتخب رئيساً للولايات المتحدة ورأسها مرتين وللرئيس ماديسن أفضال على الجمهورية يذكروها
-                            الأمريكيون ويغالون بها وقام بعد جفرسن جيمس منرو وهو الرئيس الخامس ولد في 29 نيسأن سنة 1758 في ويستمورلاند من
-                            أعمال فرجينيا ومات في 4 تموز عام 1831 وانتخب رئيساً للبلاد في 4 إذار عام 1817 م ورأس البلاد مدتين أي 8 سنوات.
+                            وأفضل رؤساء البلاد توفي في  <tei:num value="4" xml:lang="ar">٤</tei:num>  تموز سنة  <tei:num value="1846" xml:lang="ar">١٨٤٦</tei:num>  <pb ed="shamela" n="n20-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1112.xhtml"/> م.</p>
+                        <p>وقام بعد جفرسن جيمس ماديسن وهو الرئيس الرابع على البلاد ولد في كن جورجيا من أعمال فرجينيا في  <tei:num value="6" xml:lang="ar">٦</tei:num>  إذار عام  <tei:num value="1751" xml:lang="ar">١٧٥١</tei:num>  م
+                            وتوفي في  <tei:num value="28" xml:lang="ar">٢٨</tei:num>  كانون الثاني عام  <tei:num value="1836" xml:lang="ar">١٨٣٦</tei:num>  م في مونتيار من أعمال فرجينيا. كان ماديسن ناظر الداخلية في عهد الرئيس جفرسن
+                            وفي  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار عام  <tei:num value="1809" xml:lang="ar">١٨٠٩</tei:num>  م انتخب رئيساً للولايات المتحدة ورأسها مرتين وللرئيس ماديسن أفضال على الجمهورية يذكروها
+                            الأمريكيون ويغالون بها وقام بعد جفرسن جيمس منرو وهو الرئيس الخامس ولد في  <tei:num value="29" xml:lang="ar">٢٩</tei:num>  نيسأن سنة  <tei:num value="1758" xml:lang="ar">١٧٥٨</tei:num>  في ويستمورلاند من
+                            أعمال فرجينيا ومات في  <tei:num value="4" xml:lang="ar">٤</tei:num>  تموز عام  <tei:num value="1831" xml:lang="ar">١٨٣١</tei:num>  وانتخب رئيساً للبلاد في  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار عام  <tei:num value="1817" xml:lang="ar">١٨١٧</tei:num>  م ورأس البلاد مدتين أي  <tei:num value="8" xml:lang="ar">٨</tei:num>  سنوات.
                             ومونرو وهو الرئيس المشهور بشريعته التي سنها وهي أن أمريكا للأمريكيين وقد أفادت هذه الشريعة الجمهورية الأمريكية
                             فوائد عظيمة. وكان منرو أحد المتصفين بالغيرة والمروءة والشهامة وخدمة الدولة والأمة خدمة صادقة.</p>
-                        <p>وخلف مونرو يوحنا كونيكي أدامس وهو الرئيس السادس. ولد في شهر تموز عام 1767 وقضى نحبه في 23كانون الثاني عام 1848
+                        <p>وخلف مونرو يوحنا كونيكي أدامس وهو الرئيس السادس. ولد في شهر تموز عام  <tei:num value="1767" xml:lang="ar">١٧٦٧</tei:num>  وقضى نحبه في  <tei:num value="23" xml:lang="ar">٢٣</tei:num> كانون الثاني عام  <tei:num value="1848" xml:lang="ar">١٨٤٨</tei:num> 
                             وكان من أقدر رجال الجمهورية في السياسة الخارجية والداخلية. تولى نظارة الداخلية في عهد الرئيس مونرو وانتخب رئيساً
-                            للبلاد في 4 إذار عام 1825 م وبعد أن أكمل مدته عين نائباً لولاية ماسشوست في واشنطن العاصمة وقام بعد يوحنا أدامس
-                            أندرا وس جاكسن وهو الرئيس السابع. ولد في أكسم من أعمال ساتلمنت في 5 إذار عام 1767 م ورأس البلاد مرتين وكان
+                            للبلاد في  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار عام  <tei:num value="1825" xml:lang="ar">١٨٢٥</tei:num>  م وبعد أن أكمل مدته عين نائباً لولاية ماسشوست في واشنطن العاصمة وقام بعد يوحنا أدامس
+                            أندرا وس جاكسن وهو الرئيس السابع. ولد في أكسم من أعمال ساتلمنت في  <tei:num value="5" xml:lang="ar">٥</tei:num>  إذار عام  <tei:num value="1767" xml:lang="ar">١٧٦٧</tei:num>  م ورأس البلاد مرتين وكان
                             ديمقراطياً</p>
-                        <p>وخلف جكسن مارتن بيورن وهو الرئيس الثامن ولد في كندر هوك من أعمال نيويورك ونائباً للرئيس جكسن 4 سنوات وفي 4 إذار
-                            عام 1837 انتخبه الحزب الديمقراطي رئيساً للبلاد وكانت مدته أربعة أعوام.</p>
-                        <p>وقام وليم هنري هرسن وهو الرئيس التاسع والبطل الشهير. ولد في بيركلي من أعمال فرجينيا سنة 1773 م وانتخب للرئاسة في
-                            4 إذار عام 1841 م وكانت مدته شهراً وأحداً وذلك بسبب وفاته.</p>
-                        <p>وأقيم بعده يوحنا تيلر وهو الرئيس العاشر. ولد في مدينة تشارلس من أعمال فرجينيا في 29 إذار عام 1790 وتوفي في 17
-                            كانون الثاني عام 1862 م وانتخب للرئاسة في 4 <pb ed="shamela"
-                   n="n20-p14"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1113.xhtml"/> نيسان سنو1837 وكانت مدته
+                        <p>وخلف جكسن مارتن بيورن وهو الرئيس الثامن ولد في كندر هوك من أعمال نيويورك ونائباً للرئيس جكسن  <tei:num value="4" xml:lang="ar">٤</tei:num>  سنوات وفي  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار
+                            عام  <tei:num value="1837" xml:lang="ar">١٨٣٧</tei:num>  انتخبه الحزب الديمقراطي رئيساً للبلاد وكانت مدته أربعة أعوام.</p>
+                        <p>وقام وليم هنري هرسن وهو الرئيس التاسع والبطل الشهير. ولد في بيركلي من أعمال فرجينيا سنة  <tei:num value="1773" xml:lang="ar">١٧٧٣</tei:num>  م وانتخب للرئاسة في
+                             <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار عام  <tei:num value="1841" xml:lang="ar">١٨٤١</tei:num>  م وكانت مدته شهراً وأحداً وذلك بسبب وفاته.</p>
+                        <p>وأقيم بعده يوحنا تيلر وهو الرئيس العاشر. ولد في مدينة تشارلس من أعمال فرجينيا في  <tei:num value="29" xml:lang="ar">٢٩</tei:num>  إذار عام  <tei:num value="1790" xml:lang="ar">١٧٩٠</tei:num>  وتوفي في  <tei:num value="17" xml:lang="ar">١٧</tei:num> 
+                            كانون الثاني عام  <tei:num value="1862" xml:lang="ar">١٨٦٢</tei:num>  م وانتخب للرئاسة في  <tei:num value="4" xml:lang="ar">٤</tei:num>  <pb ed="shamela" n="n20-p14" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1113.xhtml"/> نيسان سنو <tei:num value="1837" xml:lang="ar">١٨٣٧</tei:num>  وكانت مدته
                             أربع سنوات إلا ثلاثين يوماً.</p>
-                        <p>وخلف الرئيس تيلر نوكس بولك. ولد في وكرولينا الشمالية عام 1795 م ومات في تانسي عام 1849 م. وتولى رئاسة البلاد في 4
-                            إذار عام 1845 م وكانت مدته أربعة أعوام وهو الرئيس الحادي عشر للبلاد.</p>
-                        <p>وقام بعد بولك زكريا تيلر. ولد في 24 تشرين الثاني عام 1784 م وقضى نحبه في 9 تموز وتولى كرسي الرئاسة في 4 إذار عام
-                            1849 م وكانت مدته أربعة شهور وأربعة أيام. ومما يذكر عنه إنه كان محبباً إلى النفوس وذا شهرة عظيمة حازها بدربته
+                        <p>وخلف الرئيس تيلر نوكس بولك. ولد في وكرولينا الشمالية عام  <tei:num value="1795" xml:lang="ar">١٧٩٥</tei:num>  م ومات في تانسي عام  <tei:num value="1849" xml:lang="ar">١٨٤٩</tei:num>  م. وتولى رئاسة البلاد في  <tei:num value="4" xml:lang="ar">٤</tei:num> 
+                            إذار عام  <tei:num value="1845" xml:lang="ar">١٨٤٥</tei:num>  م وكانت مدته أربعة أعوام وهو الرئيس الحادي عشر للبلاد.</p>
+                        <p>وقام بعد بولك زكريا تيلر. ولد في  <tei:num value="24" xml:lang="ar">٢٤</tei:num>  تشرين الثاني عام  <tei:num value="1784" xml:lang="ar">١٧٨٤</tei:num>  م وقضى نحبه في  <tei:num value="9" xml:lang="ar">٩</tei:num>  تموز وتولى كرسي الرئاسة في  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار عام
+                             <tei:num value="1849" xml:lang="ar">١٨٤٩</tei:num>  م وكانت مدته أربعة شهور وأربعة أيام. ومما يذكر عنه إنه كان محبباً إلى النفوس وذا شهرة عظيمة حازها بدربته
                             وحنكته وبسالته التي أبداها أيام كان قائد العام في حزب الولايات المتحدة مع المكسيك وهو الرئيس الثاني عشر.</p>
-                        <p>وظهر بعد تيلر ميلا رد فيليور وهو الرئيس الثالث عشر. ولد في كيفونيورك في 7 كانون الثاني عام 1800 م ومات في 8 إذار
-                            في بفلو نيورك. وانتخب للرئاسة في 8 أيار سنة 1804 م وكانت مدته ثلاثة أعوام وثلاثة أشهر و37 يوماً</p>
-                        <p>وخلف فيلمور فرنكلن بايري وهو الرئيس الرابع عشر. ولد في 23 تشرين الثاني عام 1804 وقضى نحبه في 8 تشرين الأول في
-                            نيوهمشير عام 1769 م وانتخب رئيساً للبلاد في إذار سنة 1853 م وكانت مدته أربع سنوات. وفي أثناء رئاسته فتحت أبواب
+                        <p>وظهر بعد تيلر ميلا رد فيليور وهو الرئيس الثالث عشر. ولد في كيفونيورك في  <tei:num value="7" xml:lang="ar">٧</tei:num>  كانون الثاني عام  <tei:num value="1800" xml:lang="ar">١٨٠٠</tei:num>  م ومات في  <tei:num value="8" xml:lang="ar">٨</tei:num>  إذار
+                            في بفلو نيورك. وانتخب للرئاسة في  <tei:num value="8" xml:lang="ar">٨</tei:num>  أيار سنة  <tei:num value="1804" xml:lang="ar">١٨٠٤</tei:num>  م وكانت مدته ثلاثة أعوام وثلاثة أشهر و <tei:num value="37" xml:lang="ar">٣٧</tei:num>  يوماً</p>
+                        <p>وخلف فيلمور فرنكلن بايري وهو الرئيس الرابع عشر. ولد في  <tei:num value="23" xml:lang="ar">٢٣</tei:num>  تشرين الثاني عام  <tei:num value="1804" xml:lang="ar">١٨٠٤</tei:num>  وقضى نحبه في  <tei:num value="8" xml:lang="ar">٨</tei:num>  تشرين الأول في
+                            نيوهمشير عام  <tei:num value="1769" xml:lang="ar">١٧٦٩</tei:num>  م وانتخب رئيساً للبلاد في إذار سنة  <tei:num value="1853" xml:lang="ar">١٨٥٣</tei:num>  م وكانت مدته أربع سنوات. وفي أثناء رئاسته فتحت أبواب
                             التجارة للولايات المتحدة في مملكة اليابان وكان بايري ديمقراطياً.</p>
-                        <p>وقام بعد الرئيس بايري جيمس بوتشانن رئيساً للولايات وهو الرئيس الخامس ولد في 12 نيسان عام 1791 م في بلدة الرئيس
-                            فرنكلن من أعمال بنسلفإنيا. وتوفي في أول حزيرأن سنة 1862 م كان الرئيس بوتشانن قبل أن يتولى رئاسة البلاد ناظر
-                            الداخلية في عهد الرئاسة بولك وانتخب رئيساً للبلاد في 4 إذار عام 1857م وكانت مدته أربع سنوات وكان ديمقراطياً</p>
-                        <p>أما إبرأهيملنكن فقد ولد في 12 شباط سنة 1809 م في ولاية كنتكي وقتل في 15 نيسأن سنة1865 م وذلك في أول عهد رئاسته
-                            للمدة الثانية وانتخب رئيساً للولايات في 4 إذار عام 1861 م وكانت مدته أربع سنوات و42 يوماً وهو الرئيس السادس عشر
-                            المشهور بفضائله والمحبوب جداً من شعبه. وتحتفل الأمة الأميركية في مولده سنوياً اعتباراً لخدمه <pb ed="shamela"
-                   n="n20-p15"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1114.xhtml"/> الجليلة في
+                        <p>وقام بعد الرئيس بايري جيمس بوتشانن رئيساً للولايات وهو الرئيس الخامس ولد في  <tei:num value="12" xml:lang="ar">١٢</tei:num>  نيسان عام  <tei:num value="1791" xml:lang="ar">١٧٩١</tei:num>  م في بلدة الرئيس
+                            فرنكلن من أعمال بنسلفإنيا. وتوفي في أول حزيرأن سنة  <tei:num value="1862" xml:lang="ar">١٨٦٢</tei:num>  م كان الرئيس بوتشانن قبل أن يتولى رئاسة البلاد ناظر
+                            الداخلية في عهد الرئاسة بولك وانتخب رئيساً للبلاد في  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار عام  <tei:num value="1857" xml:lang="ar">١٨٥٧</tei:num> م وكانت مدته أربع سنوات وكان ديمقراطياً</p>
+                        <p>أما إبرأهيملنكن فقد ولد في  <tei:num value="12" xml:lang="ar">١٢</tei:num>  شباط سنة  <tei:num value="1809" xml:lang="ar">١٨٠٩</tei:num>  م في ولاية كنتكي وقتل في  <tei:num value="15" xml:lang="ar">١٥</tei:num>  نيسأن سنة <tei:num value="1865" xml:lang="ar">١٨٦٥</tei:num>  م وذلك في أول عهد رئاسته
+                            للمدة الثانية وانتخب رئيساً للولايات في  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار عام  <tei:num value="1861" xml:lang="ar">١٨٦١</tei:num>  م وكانت مدته أربع سنوات و <tei:num value="42" xml:lang="ar">٤٢</tei:num>  يوماً وهو الرئيس السادس عشر
+                            المشهور بفضائله والمحبوب جداً من شعبه. وتحتفل الأمة الأميركية في مولده سنوياً اعتباراً لخدمه <pb ed="shamela" n="n20-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1114.xhtml"/> الجليلة في
                             سبيل الإنسانية والوطنية وتقديراً لمقامه السامي في قلوب الأمريكيين خصوصاً وعالم الحضر عموماً.</p>
-                        <p>والرئيس السابع عشر هو أنداوس جانسن. ولد في وكرولينا الشمالية عام 1808 م ومات في 31 تموز عام 1875 وتولى الرئاسة في
-                            15 نيسأن سنة 1865 وكانت مدته ثلاثة أعوام وعشرة أشهر و15 يوماً.</p>
-                        <p>والرئيس الثامن عشر يوليس غرانت. ولد في ولاية أهايو في 17 نيسان 1885 تولى الرئاسة في 4 إذار عام 1869 وكانت مدته
+                        <p>والرئيس السابع عشر هو أنداوس جانسن. ولد في وكرولينا الشمالية عام  <tei:num value="1808" xml:lang="ar">١٨٠٨</tei:num>  م ومات في  <tei:num value="31" xml:lang="ar">٣١</tei:num>  تموز عام  <tei:num value="1875" xml:lang="ar">١٨٧٥</tei:num>  وتولى الرئاسة في
+                             <tei:num value="15" xml:lang="ar">١٥</tei:num>  نيسأن سنة  <tei:num value="1865" xml:lang="ar">١٨٦٥</tei:num>  وكانت مدته ثلاثة أعوام وعشرة أشهر و <tei:num value="15" xml:lang="ar">١٥</tei:num>  يوماً.</p>
+                        <p>والرئيس الثامن عشر يوليس غرانت. ولد في ولاية أهايو في  <tei:num value="17" xml:lang="ar">١٧</tei:num>  نيسان  <tei:num value="1885" xml:lang="ar">١٨٨٥</tei:num>  تولى الرئاسة في  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار عام  <tei:num value="1869" xml:lang="ar">١٨٦٩</tei:num>  وكانت مدته
                             ثماني سنوات.</p>
-                        <p>والرئيس التاسع عشر هو أرتر فورد هايس. ولد في أهايو عام 1817 وكان من إشراف البلاد وأكابر أغنيائها. رأس البلاد في 5
-                            إذار عام 1877 وذلك بعد أن تقلب في وظائف سامية كثيرة وكانت مدته 4 أعوام.</p>
-                        <p>والرئيس العشرون هو جيمس غارفيلد. ولد في 19 تشرين الثاني عام 1831 في كويهفو أهايو وأطلق عليه الرصاص في 2 تموز عام
-                            1881 ومات من جراء ذلك في 19 أيلول عام 1881 م وتولى الرئاسة في 4 إذار عام 1881 وكانت مدته خمسة أشهر.</p>
-                        <p>والرئيس الحادي والعشرون هو تشتر أرثور. ولد في فرنكلين من أعمال فرمونت في 5 تشرين الأول سنة 1830 وحاز شهادة محام
-                            سنة 1850 ثم انتخب نائياً للرئاسة عام 1880 ثم تولاها في 1881 بداعي اغتيال الرئيس غارفيلد وكانت مدته ثلاثة أعوام
-                            و7 أشهر إلا يومين.</p>
-                        <p>والرئيس الثاني والعشرون هو غرو فيلد كليفلنلد. ولد في كالداوي من أعمال نيوجرسي في إذار عام 1837 وبعد أنتعلم قبل في
-                            مجمع العلماء في نيويورك ثم درس الشريعة في بفلونيورد عام 1855 ونال الشهادة عام 1859 م ثم نصب مدعياً لبفلو عام
-                            1863 م ثم مأموراً للأحكام عام 1869 نم ثم حاكماً على مدينة بفلو عام 1871 وسنة 1883 أقيم حاكماً على مدينة نيويورك
-                            وسنة 1884 م انتخب رئيساً للولايات وكانت مدته 4 أعوام وكان ديمقراطياً.</p>
-                        <p>والرئيس الثالث والعشرون هو هاريسن وكانت مدته من سنة 1888 إلى سنة 1892 والرابع والعشرون هو كليفلند المتقدم الذكر
-                            وكانت مدته من سنة 1892 م إلى سنة 1896 <pb ed="shamela"
-                   n="n20-p16"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1115.xhtml"/> والخامس والعشرون هو
-                            مكنلي وكانت مدته من سنة 1806 إلى سنة 1901 م والسادس والعشرون هو تيودور روزفلت الرئيس الحالي.</p>
+                        <p>والرئيس التاسع عشر هو أرتر فورد هايس. ولد في أهايو عام  <tei:num value="1817" xml:lang="ar">١٨١٧</tei:num>  وكان من إشراف البلاد وأكابر أغنيائها. رأس البلاد في  <tei:num value="5" xml:lang="ar">٥</tei:num> 
+                            إذار عام  <tei:num value="1877" xml:lang="ar">١٨٧٧</tei:num>  وذلك بعد أن تقلب في وظائف سامية كثيرة وكانت مدته  <tei:num value="4" xml:lang="ar">٤</tei:num>  أعوام.</p>
+                        <p>والرئيس العشرون هو جيمس غارفيلد. ولد في  <tei:num value="19" xml:lang="ar">١٩</tei:num>  تشرين الثاني عام  <tei:num value="1831" xml:lang="ar">١٨٣١</tei:num>  في كويهفو أهايو وأطلق عليه الرصاص في  <tei:num value="2" xml:lang="ar">٢</tei:num>  تموز عام
+                             <tei:num value="1881" xml:lang="ar">١٨٨١</tei:num>  ومات من جراء ذلك في  <tei:num value="19" xml:lang="ar">١٩</tei:num>  أيلول عام  <tei:num value="1881" xml:lang="ar">١٨٨١</tei:num>  م وتولى الرئاسة في  <tei:num value="4" xml:lang="ar">٤</tei:num>  إذار عام  <tei:num value="1881" xml:lang="ar">١٨٨١</tei:num>  وكانت مدته خمسة أشهر.</p>
+                        <p>والرئيس الحادي والعشرون هو تشتر أرثور. ولد في فرنكلين من أعمال فرمونت في  <tei:num value="5" xml:lang="ar">٥</tei:num>  تشرين الأول سنة  <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>  وحاز شهادة محام
+                            سنة  <tei:num value="1850" xml:lang="ar">١٨٥٠</tei:num>  ثم انتخب نائياً للرئاسة عام  <tei:num value="1880" xml:lang="ar">١٨٨٠</tei:num>  ثم تولاها في  <tei:num value="1881" xml:lang="ar">١٨٨١</tei:num>  بداعي اغتيال الرئيس غارفيلد وكانت مدته ثلاثة أعوام
+                            و <tei:num value="7" xml:lang="ar">٧</tei:num>  أشهر إلا يومين.</p>
+                        <p>والرئيس الثاني والعشرون هو غرو فيلد كليفلنلد. ولد في كالداوي من أعمال نيوجرسي في إذار عام  <tei:num value="1837" xml:lang="ar">١٨٣٧</tei:num>  وبعد أنتعلم قبل في
+                            مجمع العلماء في نيويورك ثم درس الشريعة في بفلونيورد عام  <tei:num value="1855" xml:lang="ar">١٨٥٥</tei:num>  ونال الشهادة عام  <tei:num value="1859" xml:lang="ar">١٨٥٩</tei:num>  م ثم نصب مدعياً لبفلو عام
+                             <tei:num value="1863" xml:lang="ar">١٨٦٣</tei:num>  م ثم مأموراً للأحكام عام  <tei:num value="1869" xml:lang="ar">١٨٦٩</tei:num>  نم ثم حاكماً على مدينة بفلو عام  <tei:num value="1871" xml:lang="ar">١٨٧١</tei:num>  وسنة  <tei:num value="1883" xml:lang="ar">١٨٨٣</tei:num>  أقيم حاكماً على مدينة نيويورك
+                            وسنة  <tei:num value="1884" xml:lang="ar">١٨٨٤</tei:num>  م انتخب رئيساً للولايات وكانت مدته  <tei:num value="4" xml:lang="ar">٤</tei:num>  أعوام وكان ديمقراطياً.</p>
+                        <p>والرئيس الثالث والعشرون هو هاريسن وكانت مدته من سنة  <tei:num value="1888" xml:lang="ar">١٨٨٨</tei:num>  إلى سنة  <tei:num value="1892" xml:lang="ar">١٨٩٢</tei:num>  والرابع والعشرون هو كليفلند المتقدم الذكر
+                            وكانت مدته من سنة  <tei:num value="1892" xml:lang="ar">١٨٩٢</tei:num>  م إلى سنة  <tei:num value="1896" xml:lang="ar">١٨٩٦</tei:num>  <pb ed="shamela" n="n20-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1115.xhtml"/> والخامس والعشرون هو
+                            مكنلي وكانت مدته من سنة  <tei:num value="1806" xml:lang="ar">١٨٠٦</tei:num>  إلى سنة  <tei:num value="1901" xml:lang="ar">١٩٠١</tei:num>  م والسادس والعشرون هو تيودور روزفلت الرئيس الحالي.</p>
                         <p>ما برحت الولايات المتحدة بعد استقلالها في حاجة ماسة لإلى من يعمر ديارها ويحرث أرضيها ويستغل خيراتها ويستخرج
                             معادنها ويساعدها على تنظيم مدينتها وتوسيع نطاق عمرانها وترقبها في مراقي الارتقاء ففتحت حكوماتها أبواب المهاجرة
                             لجميع الأمم على اختلاف هيئاتها ولغاتها فوافاها الأوروبي من إنكلترا وجرمانيا والنمسا وإيطاليا وروسيا وأسوج ونروج
                             واليونان وبرتغال وسويسرا وهولندا والبلجيك والآسيوي من الصين واليابان والهند والبلاد العثمانية وجاءها الأفريقي من
                             ديار النيل ومراكش والسودان. ومما يلي يعلم القارئ نمو سكان الولايات المتحدة وعمرانها الغربيين.</p>
                         <p>عدد سكان الولايات المتحدة</p>
-                        <p>عام 1790 3929214</p>
-                        <p>1800 5308483</p>
-                        <p>18107239881</p>
-                        <p>1820 9638453</p>
-                        <p>1830 12866020</p>
-                        <p>1840 17069453</p>
-                        <p>1850 23191876</p>
-                        <p>1860 31443321</p>
-                        <p>1870 38558371</p>
-                        <p>1880 50155783</p>
-                        <p>1890 52622250</p>
-                        <p>1900 75994575</p>
-                        <p>1907</p>
-                        <p>أما عدد الولايات المتحدة فكأن سنة1789 م ثلاث عشرة ولاية واليوم صارت 48 ولاية. وتقع سبع عشرة ولاية في الجهة
-                            الشرقية على الأوقيانس الاتلانتيكي وهي نيويورك <pb ed="shamela"
-                   n="n20-p17"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1116.xhtml"/> ونيوجرسي ونيو همشير ورود
+                        <p>عام  <tei:num value="1790" xml:lang="ar">١٧٩٠</tei:num>   <tei:num value="3929214" xml:lang="ar">٣٩٢٩٢١٤</tei:num> </p>
+                        <p> <tei:num value="1800" xml:lang="ar">١٨٠٠</tei:num>   <tei:num value="5308483" xml:lang="ar">٥٣٠٨٤٨٣</tei:num> </p>
+                        <p> <tei:num value="18107239881" xml:lang="ar">١٨١٠٧٢٣٩٨٨١</tei:num> </p>
+                        <p> <tei:num value="1820" xml:lang="ar">١٨٢٠</tei:num>   <tei:num value="9638453" xml:lang="ar">٩٦٣٨٤٥٣</tei:num> </p>
+                        <p> <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>   <tei:num value="12866020" xml:lang="ar">١٢٨٦٦٠٢٠</tei:num> </p>
+                        <p> <tei:num value="1840" xml:lang="ar">١٨٤٠</tei:num>   <tei:num value="17069453" xml:lang="ar">١٧٠٦٩٤٥٣</tei:num> </p>
+                        <p> <tei:num value="1850" xml:lang="ar">١٨٥٠</tei:num>   <tei:num value="23191876" xml:lang="ar">٢٣١٩١٨٧٦</tei:num> </p>
+                        <p> <tei:num value="1860" xml:lang="ar">١٨٦٠</tei:num>   <tei:num value="31443321" xml:lang="ar">٣١٤٤٣٣٢١</tei:num> </p>
+                        <p> <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>   <tei:num value="38558371" xml:lang="ar">٣٨٥٥٨٣٧١</tei:num> </p>
+                        <p> <tei:num value="1880" xml:lang="ar">١٨٨٠</tei:num>   <tei:num value="50155783" xml:lang="ar">٥٠١٥٥٧٨٣</tei:num> </p>
+                        <p> <tei:num value="1890" xml:lang="ar">١٨٩٠</tei:num>   <tei:num value="52622250" xml:lang="ar">٥٢٦٢٢٢٥٠</tei:num> </p>
+                        <p> <tei:num value="1900" xml:lang="ar">١٩٠٠</tei:num>   <tei:num value="75994575" xml:lang="ar">٧٥٩٩٤٥٧٥</tei:num> </p>
+                        <p> <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num> </p>
+                        <p>أما عدد الولايات المتحدة فكأن سنة <tei:num value="1789" xml:lang="ar">١٧٨٩</tei:num>  م ثلاث عشرة ولاية واليوم صارت  <tei:num value="48" xml:lang="ar">٤٨</tei:num>  ولاية. وتقع سبع عشرة ولاية في الجهة
+                            الشرقية على الأوقيانس الاتلانتيكي وهي نيويورك <pb ed="shamela" n="n20-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1116.xhtml"/> ونيوجرسي ونيو همشير ورود
                             ايلندا وماين وبنسلفإنيا وكولومبيا وكنتكت ومر مونت ومسشوست ومريلا ند وفرجينيا وكرولينا الشمالية والجنوبية
                             وجيورجيا ودولار.</p>
                         <p>وخمس ولايات تقع على بحر المكسيك وهي تكساس ولويزيانا ومسيسي والأباما وفلوريدا وسبع عشرة ولاية تقع في وسط البلاد
@@ -584,20 +519,18 @@
                         <p>وإحدى عشرة ولاية غربية تقع على الأوقيانس الباسيفيكي وهي كاليفورنيا وأور يكون ونيفادا زبوتاه ومونتانا وأيد هو
                             وواشنطن وكولور يدو ونيو مكسيكو وارزونا وأويوما.</p>
                         <p>ولا يزال باب المهاجرة إلى الولايات المتحدة مفتوحاً لجميع الشعوب ما خلا الصينيين فإن حكومة الولايات سنت شريعة لمنع
-                            دخولهم إلى بلادهم سنة 1884 م. وفي 28 شباط سنة 1907 صادق المجلس التشريعي في ولاية كاليفورنيا على لائحة تمنع
+                            دخولهم إلى بلادهم سنة  <tei:num value="1884" xml:lang="ar">١٨٨٤</tei:num>  م. وفي  <tei:num value="28" xml:lang="ar">٢٨</tei:num>  شباط سنة  <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num>  صادق المجلس التشريعي في ولاية كاليفورنيا على لائحة تمنع
                             الأجنبي من التملك في تلك الولاية. هذا إذا لم يكن متجنساً بالجنسية الأمريكية. وغاية المجلس القصوى منع اليابانيين
                             والصينيين من دخول كاليفورنيا والتملك فيها فهم لا يستطيعون التجنس بالجنسية الأمريكية. ويظهر من تشديد العم سام على
                             المهاجرين في هذا العهد الأخير أنه لا بد من إيصاد باب المهاجرة في وجه الأسيويين أن لم يكن عاجلاً فآجلاً.</p>
                         <p>ودعوى حكومة العم سام أن الشعب الأسيويين سواء كان من الصين أم اليابان أم الدولة العلية فهو لا ينفع البلاد. فما
                             يرمي إليه الأسيوي هو جمع المال وإنفاذه إلى وطنه خل عنك أنه ربما ضاقت الولايات على رحبها بأهإليها بعد مضي قرن.
-                            ومن جدول عدد سكان الولايات الآنف يتبين أن زيادة السكان بلغت في مدة 117 سنة نحو اثنين وثمانين مليوناً من النفوس
+                            ومن جدول عدد سكان الولايات الآنف يتبين أن زيادة السكان بلغت في مدة  <tei:num value="117" xml:lang="ar">١١٧</tei:num>  سنة نحو اثنين وثمانين مليوناً من النفوس
                             فإذا استمرت الزيادة على هذا المعدل فلا شك أن حكومة واشنطن تضطر إلى إقفال باب الهجرة وربما قفلته فبل انقضاء تلك
                             المدة.</p>
                         <p>مما تقدم يعلم المطالع أن النصر كان حليف الولايات المتحدة في الخمس حروب التي ذكرتها وأن نمو السكان والعمران كان
-                            اليفها وأنها أي الولايات صارت في مدة 32 سنة في طليعة الممالك المتمدنة بالقوة والسطوة والجاه والثروة بل أن
-                            المدينة والحضارة والعمران وهذا لعمري من بعض الأدلة على نشاط الشعب الأمريكي واتحاده وارتقاء شخصيات <pb ed="shamela"
-                   n="n20-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1117.xhtml"/>
+                            اليفها وأنها أي الولايات صارت في مدة  <tei:num value="32" xml:lang="ar">٣٢</tei:num>  سنة في طليعة الممالك المتمدنة بالقوة والسطوة والجاه والثروة بل أن
+                            المدينة والحضارة والعمران وهذا لعمري من بعض الأدلة على نشاط الشعب الأمريكي واتحاده وارتقاء شخصيات <pb ed="shamela" n="n20-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1117.xhtml"/>
                             أفراده وعلى بذله ومروءته وشهامته وغيرته وصدق وطنيته وعلى سهر حكوماته على مصلحة البلاد والأنام وقيامها بواجباتها
                             نحو أمتها ووطنها خير قيام.</p>
                         <p>فإنعم بكل أمة تحذو حذو الأمة الأمريكية وتقفو أثر مصلحيها العظام ورؤسائها الكرام وأنعم بكل دولة تسهر على مصلحة
@@ -607,9 +540,7 @@
                         <p>يوسف جرجس زخم </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n20-p19"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1118.xhtml"/>
+                        <pb ed="shamela" n="n20-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1118.xhtml"/>
                         <head>الكنى والألقاب</head>
                         <p>رأيت بحثاً في الكنى والألقاب لأحد قراء المقتبس ذكر فيه القاعدة المصطلح عليها في الكنى كقولهم أبو اسحق لمن أسمه
                             إبرأهيموأبو إبرأهيملمن اسمه إسماعيل وأبو داود لمن اسمه سليمان وأبو محمد لمن اسمه عبد الله وأبو العباس لمن اسمه
@@ -629,9 +560,7 @@
                         <p>ومن كنأهم للوحش أبو فارس للنمر. ومن الكنى الجمادية ما ينسب إلى قرية عين دارة وهو قولهم أبو حسن طقطق وللتين
                             المطبوخ بالدبس وأبو نجم الدين محني ذقنه. وللإبريق أبو يوسف علم الدين ولذلك قالوا إذا حضر أبو نجم الدين محني ذقنه
                             قام يرقص أبو يوسف علم الدين أي إذا حضر التين المطبوخ بالدبس فلا بد من دورأن الإبريق للشرب وهذا يحاكي اصطلاح
-                            القدماء الذي ذكره كاتب بحث الكنى والألقاب من جهة تكنية الجوامد. <pb ed="shamela"
-                   n="n20-p20"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1119.xhtml"/> ومما أهمله مكاتبكم من
+                            القدماء الذي ذكره كاتب بحث الكنى والألقاب من جهة تكنية الجوامد. <pb ed="shamela" n="n20-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1119.xhtml"/> ومما أهمله مكاتبكم من
                             الكنى الحيوانية أبو حجأدب للحرباء وأبو الحسل وأبو السيل للضب وأبو عسلة وأبو مذقة للذئب وأبو سليمأن لضرب من
                             الجعلان وأبو الأبد للنسر وأبو روح للهدهد وأبو الأخذ للباشق وأبو الأخطل للبرذون وأبو الأشعب للبازي وأبو الأشيم
                             وأبو حسأن للعقاب وأبو ثقل للضبع وأبو جاعرة للغداف من الغربان وأبو حكيم للذئاب ومثله أبو جعفر وأبو برائل للديك
@@ -652,9 +581,7 @@
                             يشعر بالبلاغة. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n20-p21"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1120.xhtml"/>
+                        <pb ed="shamela" n="n20-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1120.xhtml"/>
                         <head>سوء المنقلب</head>
                         <lg type="bayt">
                             <l>بغداد حسبك رقدة وثبات </l>
@@ -752,9 +679,7 @@
                             <l>سالت مياه الواديين جوارفاً </l>
                             <l> فطفحن والأسداد مؤتكلات</l>
                         </lg>
-                        <p>فتهاجم الماآن من ضفتيهما <gap resp="#org_MS"/> فتناطحا وتوالت الهجمات <pb ed="shamela"
-                   n="n20-p22"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1121.xhtml"/> حتى إذا اتصل الفرات
+                        <p>فتهاجم الماآن من ضفتيهما <gap resp="#org_MS"/> فتناطحا وتوالت الهجمات <pb ed="shamela" n="n20-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1121.xhtml"/> حتى إذا اتصل الفرات
                             بدجلة <gap resp="#org_MS"/> وتساوت الوهدات والربوات</p>
                         <lg type="bayt">
                             <l>زحفت جيوش السيل حتى أصبحت </l>
@@ -848,9 +773,7 @@
                             <l>أم أين كرخايا تمد مياهه </l>
                             <l> نهر الدجاج فتكثر الغلات</l>
                         </lg>
-                        <p>أم أين نهر الملك حيث تسلسلت <gap resp="#org_MS"/> فيه المياه وهن مطردات <pb ed="shamela"
-                   n="n20-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1122.xhtml"/> قد كان تزدرع الحبوب
+                        <p>أم أين نهر الملك حيث تسلسلت <gap resp="#org_MS"/> فيه المياه وهن مطردات <pb ed="shamela" n="n20-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1122.xhtml"/> قد كان تزدرع الحبوب
                             بأرضه <gap resp="#org_MS"/> فتسح فيه بفيضها البركات</p>
                         <lg type="bayt">
                             <l>أم أين بطا طيا تأتيه من </l>
@@ -928,9 +851,7 @@
                         <p>معروف الرصافي </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n20-p24"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1123.xhtml"/>
+                        <pb ed="shamela" n="n20-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1123.xhtml"/>
                         <head>اليونان</head>
                         <p>أثينة</p>
                         <p>الشعب الأثيني</p>
@@ -949,10 +870,8 @@
                             تقليل قيمة السكة وهو مما سهل على المدينون أن يوفوا ما عليهم من أهون سبب. ثانياً جعل الفلاحين ملاكاً للأراضي التي
                             يزرعونها ومن ذاك الحين صار في اتيكيا كثير من صغار أصحاب الأملاك مما لم يعهد مثله في بلاد يونانية. ثالثاً قسم
                             السكان العامة إلى أربع طبقات يحسب مداخليهم وقضى على كل منهم أن يؤدي الضرائب ويقوم بالخدمة العسكرية على نسبة
-                            ثروته. أما الفقراء <pb ed="shamela"
-                   n="n20-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1124.xhtml"/> فأعفأهم من الضرائب
-                            والخدمة. ولقد خضع الأثينيون بعد صولون إلى بيزيستراس أحد أبنائهم العالمين العارفين ثم بدأ الاضطراب سنة510</p>
+                            ثروته. أما الفقراء <pb ed="shamela" n="n20-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1124.xhtml"/> فأعفأهم من الضرائب
+                            والخدمة. ولقد خضع الأثينيون بعد صولون إلى بيزيستراس أحد أبنائهم العالمين العارفين ثم بدأ الاضطراب سنة <tei:num value="510" xml:lang="ar">٥١٠</tei:num> </p>
                         <p>إصلاح كليستين - استفاد كليستين أحد زعماء الأحزاب من هذه الاضطرابات فقام بثورة عظيمة. ولقد سكن كثير من الغرباء في
                             اتيكيا وكان معظمهم ملاحين وتجاراً يقطنون مدينة بيرا بالقرب من المرفأ. فأعطأهم كليستين حقوق الوطنيين وساوأهم
                             بالسكان الأقدمين فصار من ثم في تلك المقاطعة شعبان مختلفإن سكان اتيكيا وسكان بيرا وكانا يتميزان إحداهما عن الآخر
@@ -968,9 +887,7 @@
                             أجساداً وليس لهم من شريعة غير أرادة سيدهم. ولسيدهم عليهم كل حق وسيطرة فإن شاء شغلهم وإن شاء حبسهم وإن شاء حرمهم
                             من طعامهم وإن شاء ضربهم وإذا نشأت لأحد الوطنيين قضية يتأتى لخصمه أن يطلب تعذيب موإليه ليقروا بما يعملون. وقد
                             امتدح عدة خطباء أثينيين هذه العادة وعدوها ضرباً من ضروب الحذق لأخذ شهادة صحيحة. قال الخطيب ايزيه أن التعذيب أحسن
-                            واسطة لنيل البراهين إلى كشف القناع عن محيا الحقيقة بجعل العبدان في العذاب الشديد. <pb ed="shamela"
-                   n="n20-p26"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1125.xhtml"/> الأجانب - هم ناس من أصول
+                            واسطة لنيل البراهين إلى كشف القناع عن محيا الحقيقة بجعل العبدان في العذاب الشديد. <pb ed="shamela" n="n20-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1125.xhtml"/> الأجانب - هم ناس من أصول
                             مختلفة يقيمون في اتيكيا وهم الذين يدعون الميتيكيين (أي المتساكنين) ولم يكف الرجل كما هو الحال عندنا أن يولد في
                             أرض أثينة ليعد وطنياً بل يجب أن يكون ابن وطني. وعبثاً استوطن الطراء في اتيكيا أجيالاً كثيرة وما عدت قط أسراتهم
                             أثينية. فالميتيكيون والحالة هذه لم يكن لهم أن يشتركوا في الحكومة ولا أن يتزوجوا وطنية ولا أن يقتنوا ملكاً على
@@ -988,9 +905,7 @@
                             السكان بل هو جماعة الوطنيين وخلصاء الإشراف وعددهم بين خمسة آلاف إلى عشرون ألف رجل وهم زعماء الأمة بأسرها.
                             ولهؤلاء الجماعة سلطة مطلقة وكلمة عليا وهم في التحقيق ملوك أثينة فإن مجلسهم يلتئم ثلاث مرات في الشهر للمفاوضة
                             والاقتراع. يجتمعون في الهواء الطلق في ساحة البينكس فيجلس الوطنيون على مقاعد من حجر ذات درجات ويقعد الحكام
-                            بإزائهم على مصطبة ويفتحون الجلسة باحتفال ديني وصلاة يصلونها ثم يعلن المنادي بصوت جهوري بالمسألة <pb ed="shamela"
-                   n="n20-p27"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1126.xhtml"/> التي يتناقش
+                            بإزائهم على مصطبة ويفتحون الجلسة باحتفال ديني وصلاة يصلونها ثم يعلن المنادي بصوت جهوري بالمسألة <pb ed="shamela" n="n20-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1126.xhtml"/> التي يتناقش
                             فيها المجلس قائلاً من منكم يشرع بالكلام أولاً. ولكل وطني الحق أن يطلب ذلك. وعندها يصعد الخطباء المنبر بحسب تفاوت
                             أعمارهم ومتى تكلموا كافة يضع الرئيس المسألة المطلوبة على بساط البحث فيقترع المجلس بأن يرفع أعضاؤه أيديهم ثم
                             ينصرفون.</p>
@@ -1009,9 +924,7 @@
                             كذلك. والوطنيون يتساوون لا من حيث الأمور النظرية بل من حيث الأمور العملية. ولقد قال الحكيم سقراط لأحد أهالي
                             أثينة المنورين وكان لا يجرأ على الكلام أمام الشعب يا هذا ممن تخاف؟ أمن القصارين أم من السكافين أو من المعمارين
                             أو الحرأثين أم من السوقة والمرتزقين فمن هاته الطبقات يتألف المجلس وكثيرون من هؤلاء الحكام مضطرون إلى الاحتراف
-                            ليعيشوا ولم يكن في وسعهم أن يخدموا الحكومة بالمجان ولذلك عينت لهم مشاهرات وأجوراً <pb ed="shamela"
-                   n="n20-p28"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1127.xhtml"/> سانتيماً من سكنتا وهو
+                            ليعيشوا ولم يكن في وسعهم أن يخدموا الحكومة بالمجان ولذلك عينت لهم مشاهرات وأجوراً <pb ed="shamela" n="n20-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1127.xhtml"/> سانتيماً من سكنتا وهو
                             القدر الذي يتأتى لرجل أن يعيشوا به ذاك العصر. من أجل هذا العصر الأعضاء الفقراء في هذه المجالس وجلسوا على دكات
                             المحاكم مع الأغنياء كتفاً إلى كتف ووجهاً إلى وجه.</p>
                         <p>الفوضويون من الشعب_لما كانت تفصل المسائل برمتها في المجلس أو المحاكم بالمناقشة فيها وإلقاء الخطب في مضامينها كان
@@ -1031,9 +944,7 @@
                             ويطرحن خارج المنازل أكثر من البنين قال أحد الخطباء الهزليين أن الابن يربى في الغالب ولو كان ذووه في أقصى دركات
                             الفاقة أما الابنة فتهمل ولو كان أهلها من الغنى على جانب. فإن قبل الوالد الولد يعد من الأسرة ويترك أولاً في مساكن
                             النساء بالقرب من الأم حيث يظل البنات إلى أن يتزوجن أما البنين فينفصلون عن تلك البيوت في السابعة من عمرهم فيسلم
-                            الطفل الأثيني <pb ed="shamela"
-                   n="n20-p29"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1128.xhtml"/> إلى المربي الذي يعهد
+                            الطفل الأثيني <pb ed="shamela" n="n20-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1128.xhtml"/> إلى المربي الذي يعهد
                             إليه تعليمه وتحسين هيئته والخضوع والطاعة وكثيراً ما يكون المعلم من طبقة الموالي إلا أن والد الطفل جعله في حل من
                             ضرب ابنه. وهذه كانت عادة عامة في القدم. ثم يذهب الولد إلى الكتاب يتعلم القراءة والكتابة والحساب وإنشاد الأشعار
                             والتغني مع جماعة الموسيقيين على نغمات المزمار ثم يأخذ في سبيل تعلم الألعاب الرياضية وهذه غاية ما يتعلمه الولد
@@ -1052,9 +963,7 @@
                             باختيار أزواج لهن من أبناء الأمة ويزوجهن بمن ينتخبنهم.</p>
                         <p>النساء - كان في داخل كل بيت أثيني مسكن منعزل بالنساء يدعى الحرم ولا يختلف إلى هذا المسكن غير الزوج والأنسباء
                             وتبقى فيه ربة البيت دائماً مع صويحباتها وإمائها تراقب أعمالهن وتلقنهن أصول تدبير المنازل وتوزع بينهن الصوف
-                            ليحكنه وهي تشغل نفسها بحياكة الثياب أيضاً. وقلما كانت تخرج من دارها إلا في الأعياد الدينية ولا تظهر في <pb ed="shamela"
-                   n="n20-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1129.xhtml"/>
+                            ليحكنه وهي تشغل نفسها بحياكة الثياب أيضاً. وقلما كانت تخرج من دارها إلا في الأعياد الدينية ولا تظهر في <pb ed="shamela" n="n20-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1129.xhtml"/>
                             مجتمعات الرجال قط. قال الخطيب أزيس: حقاً أنه لم يكن لأحد أن يجرأ على الغداء عند امرأة مزوجة فإن النساء المزوجات
                             لا يخرجن لتنأول الطعام مع الرجال ولا يسمحن لأنفسهن أن يأكلن مع الغرباء وغير المحارم. وما كنت لتنأول المرأة التي
                             تخالط الرجال معدودة في جملة النساء المحتشمات المهذبات. وهكذا لم تكن المرأة وهي على حالها من الاعتزال والجهل ذات
@@ -1073,9 +982,7 @@
                             اليونانية في آسيا ولم يبق على يونان أوروبا. وقيل أنه أمر أن يتمثل لديه ضابط في كل مأدبة على مسامعه قوله: مولاي
                             تذكر الأثينيين. وقد بعث إلى المدن اليونانية يطلب تراباً وماءً. وهذه الإشارة الشائعة عند الفرس كانت دلالة على أن
                             شعباً يخضع بلاده لسلطة الخاقان الأعظم فأوجس معظم اليونانيين خيفة واستسلموا خاضعين باخعين فطرح الإسبارطيون
-                            المندوبين <pb ed="shamela"
-                   n="n20-p31"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1130.xhtml"/> من الفرس في بئر قائلين
+                            المندوبين <pb ed="shamela" n="n20-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1130.xhtml"/> من الفرس في بئر قائلين
                             لهم أن يأخذوا منها ماءً وتراباً يحملونهم إلى ملكهم. وهذه كانت فاتحة الحروب المادية.</p>
                         <p>مبادلة الخصمين - أن التباين بين هذين العالمين المتحاربين قد أشار إليه هيرودتس أحسن إشارة في صورة محاورة بين
                             كسيركيس ملك الملوك وديمارات أحد المنفيين من الإسبارطيين فقال هذا: أتجاسر أن أؤكد لك أن الإسبارطيين يعلنون عليك
@@ -1093,9 +1000,7 @@
                             الهلال بدراً وكان القمر إذ ذاك في الربع الأول فقضي على الأثينيين أن يحاربوا وحدهم فجاء عشرة آلاف من الوطنيين
                             مسلحين سلاح الأبطال وأقاموا لهم معسكراً أمام صفوف الفرس بقيادة عشرة قواد يتناوبها كل منهم يوماً حتى إذا كانت
                             نوبة القيادة لملتيادس عبى جيشه للحرب فهاجم الأثينيون صفوف الأعداء على صفوف مشتبكة فلما رأهم الفرس اقتربوا منهم
-                            ولم يجعلوا <pb ed="shamela"
-                   n="n20-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1131.xhtml"/> في مقدمتهم فرساناً ولا
+                            ولم يجعلوا <pb ed="shamela" n="n20-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1131.xhtml"/> في مقدمتهم فرساناً ولا
                             دارعين فظنوهم جنوا وأضاعوا رشدهم. وهذه هي المرة الأولى التي جسر فيها اليونان صفوف الفرس في حرب منظمة. فطفق
                             الأثينيون يحملون على جناحي الجيش ويمزقونه كل ممزق ثم رجعوا إلى القلب وحملوا الفرس على الهزيمة نحو البحر
                             واضطرابهم إلى معاودة ركوب البحر وكان من نصرة اليونأن في حرب الماراتون أن أنقذتهم وأطارت صيتهم في أرض يونان
@@ -1106,7 +1011,7 @@
                             ما كان من حبل ذي أنشوطه ومن فرنجين مسلحين بحراب قصيرة وأتراس صغيرة ومن ليديين مجهزين على الطريقة اليونانية ومن
                             تراكسيين يحملون حراباً ومدى وقد شغل تعداد صفات الجيش عشرين فصلاً في تاريخ هيرودتس. وكان هؤلاء المحاربون يجرون
                             وراءهم جموعاً توازي الجموع المدربة على القتال من خدمة للجيش وموالي من النساء وكثير من البغال والخيل والجمال
-                            والعجلات المشحونة بالأثقال ولقد اجتاز هؤلاء الأخلاط هيلسبون على جسر قام من مراكب في ربيع سنة 481 وظلوا يتابعون
+                            والعجلات المشحونة بالأثقال ولقد اجتاز هؤلاء الأخلاط هيلسبون على جسر قام من مراكب في ربيع سنة  <tei:num value="481" xml:lang="ar">٤٨١</tei:num>  وظلوا يتابعون
                             سيرهم سبعة أيام بليإليها تحت ضرب السياط ثم اجتازوا تراكسيا وساروا على بلاد يونان يجرون بالقوة وراءهم من يصادفونه
                             من الشعوب فكان الأسطول الفارسي وهو مؤلف من ألف ومائتي سفينة حربية يمشي على شواطئ تراكسيا مجتازاً ترعة جبل أتوس
                             الذي خرقه كسيركيس عمداً. فدخل الرعب في قلوب اليونانيين وخضع معظمهم لخاقأن الفرس فضموا جندهم إلى الجيش الفارسي.
@@ -1114,9 +1019,7 @@
                             بجواب يبعث على الطمأنينة رد عليهم بقوله: إن زيوس يمنح بالاس (حامية أثينة) جداراً من خشب لا يتأتى الاستيلاء عليه
                             وحده وأنكم لتجدون فيه سلامتكم أنتم وبنوكم. ولقد حث العرافون الذين طلبوا إليهم أن يفسروا كلام هذا الهاتف جماعة
                             الأثينيين على مغادرة اتيكيا وأن يذهبوا ليستوطنوا مكاناً آخر. وفسر تمستوكلس جدار الخشب بالمراكب. فقضت الحال إذا
-                            أن يرجعوا على <pb ed="shamela"
-                   n="n20-p33"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1132.xhtml"/> الأسطول ويحاربوا الفرس
+                            أن يرجعوا على <pb ed="shamela" n="n20-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1132.xhtml"/> الأسطول ويحاربوا الفرس
                             في البحر.</p>
                         <p>وإذ قد عزم أهل أثينة وإسبارطة على المقاومة أخذوا يبحثون في تأليف عصابة اليونأن للحكم على الفرس فاجترأت بعض المدن
                             على الدخول في هذه العصبة وانضموا تحت قيادة إسبارطة ولما نشبت أربع حروب في عام واحد قرروا القتال فسحق الفرس
@@ -1126,9 +1029,7 @@
                             وهكذا غلب اليونأن الخاقان الأعظم صاحب فارس. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n20-p34"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1133.xhtml"/>
+                        <pb ed="shamela" n="n20-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1133.xhtml"/>
                         <head>صحف منسية</head>
                         <p>كتاب الأشربة - لابن قتيبة</p>
                         <p>عني بنشره المسيو أرتوركي</p>
@@ -1148,9 +1049,7 @@
                             اشرب النبيذ ما استبشعته فإذا سهل فاتركه. فأراد أنه يسهل على شاربه إذا أخذ في الأسكار. وقيل لسعيد بن سالم: أتشرب
                             النبيذ؟ قال لا. وقيل لم: قال تركت كثيره لله وقليله للناس. حدثني محمد بن عبيد عن إبرأهيمبن أبي بكر بن عياش قال:
                             صام عمي الحسن بن عياش خمسين حولاً متتابعة فكان لا يفطر في السنة إلا خمسة أيام كان أبي يصنع أيام التشريق طعاماً
-                            بكثرة وتجودة ويدعو الفقهاء ومشائخنا فيتغذون مع أبي ويسقيهم أو قال من أراد منهم النبيذ <pb ed="shamela"
-                   n="n20-p35"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1134.xhtml"/> الصلب؟ وكان
+                            بكثرة وتجودة ويدعو الفقهاء ومشائخنا فيتغذون مع أبي ويسقيهم أو قال من أراد منهم النبيذ <pb ed="shamela" n="n20-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1134.xhtml"/> الصلب؟ وكان
                             سفيأن الثوري يشرب النبيذ الصلب الذي تحمر منه وجنتاه واحتجوا من جهة النظر بأن الأشياء كلها حلال إلا ما حرمه الله.
                             قالوا فلا نزيل يقين الحلال بالاختلاف ولو كان المحللون فرقة من الناس فكيف وهم أكثر الفرق؟ وأهل الكوفة جميعاً على
                             التخليل لايختلفون. حدثني اسحق بن راهويه قال سمعت وكيعاً يقول: النبيذ أحل من الماء ولم يكن أحد من الكوفيين يحرمه
@@ -1169,9 +1068,7 @@
                             بغيرها وكيف يخرق ظهور المسلمين على الظهور وظهر المسلم حمى لا يباح الا بيقين وقد يأكل الرجل الكمثرى والتفاح
                             والسفرجل ويشرب المشبه النبيذ فيوجد منه رائحة النبيذ وكان الا قيشر اخد وقد شرق وأستنكه فوجدوا منه رائحة النبيذ
                             ظاهرة فقال</p>
-                        <p>يقولون لي انكه قد شربت مدامة <gap resp="#org_MS"/> فقلت لهم لا بل أكلت سفرجلا <pb ed="shamela"
-                   n="n20-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1135.xhtml"/> وقالوا: وجدنا الناس
+                        <p>يقولون لي انكه قد شربت مدامة <gap resp="#org_MS"/> فقلت لهم لا بل أكلت سفرجلا <pb ed="shamela" n="n20-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1135.xhtml"/> وقالوا: وجدنا الناس
                             ثلاثة اصناف أصحاب الرأي وهم جميعاً مجمعون على تحليله أبو حنيفة وأبو يوسف ومحمد وكل من سلك سبيلهم وأصحاب الحديث
                             وأكثرهم على التحليل. وأصحاب الكلام هم أيضاً على ذلك وكيف نزيل يقين التحليل بطائفة من الناس؟ قالوا: ومثل النبيذ
                             مثل نهر طالوت. حدثني شبابة قال: حدثنا غسان بن أبي الصلاح الكوفي عن أبي سلمة يحيى بن دينار عن أبي المطهر الوراق
@@ -1189,9 +1086,7 @@
                             والأمم فقد شربها نوح عليه السلام حين خرج من السفينة واغترس الحبلة حتى سكر منها وبدت فخده وشربها لوط عليه السلام
                             ليلة رفع وشربها المسلمون في صدر الإسلام. وقالوا: اما قرلهم أن الخمر ما خمر والمسكر مخمر فهو خمر مثله فإن الأشياء
                             قد نتشاكل في بعض المعاني فيسمى بعضها بعلة فيه وهي في آخر ولا يطلق ذلك الاسم على الآخر الا ترى أن اللبن يخمر
-                            يروبة تلقى فيه ويترك حتى يروب ولا يسمى اللبن خمراً وإن خمير العجين يسمى خميراً <pb ed="shamela"
-                   n="n20-p37"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1136.xhtml"/> ولا يسمى هو ولا ما خمر
+                            يروبة تلقى فيه ويترك حتى يروب ولا يسمى اللبن خمراً وإن خمير العجين يسمى خميراً <pb ed="shamela" n="n20-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1136.xhtml"/> ولا يسمى هو ولا ما خمر
                             به من العجين خمراً وإن نقيع التمر يسمى سكراً لا سكاره ولا يسمى غيره سكراً وإن كأن يسكر وهذا أكثر في كلام العرب
                             من أن يحيط به.</p>
                         <p>وقالوا: واما قولهم للرجل مخمور وبه خمار إذا أصابه الصداع والارعاش عقب الشراب فأن ذلك قد يقال لمن أصابه مثله في
@@ -1227,9 +1122,7 @@
                             <l>فظللنا بنعمة واتكانا </l>
                             <l> وشربنا الحلال من قلله</l>
                         </lg>
-                        <p>اتكانا - طعمنا. ومنه قول الله تعالى: {واعتدنا لهن متكا} وشربنا الحلال يعني النبيذ والقلل <pb ed="shamela"
-                   n="n20-p38"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1137.xhtml"/> جمع قلة وهي
+                        <p>اتكانا - طعمنا. ومنه قول الله تعالى: {واعتدنا لهن متكا} وشربنا الحلال يعني النبيذ والقلل <pb ed="shamela" n="n20-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1137.xhtml"/> جمع قلة وهي
                             جرار يكون فيها النبيذ. قال الشاعر:</p>
                         <p>وقد كأن يسقى من قلال وحنتم</p>
                         <p>ولما دخل على الوليد ليقتل قال لهم: ما تنكرون مني؟ الم افعل؟ وجعل يعدد إحسانه إليهم. قالوا: ننكر منك شرب الخمر
@@ -1278,9 +1171,7 @@
                         </lg>
                         <p>يريد إنهما يغتبقأن الخمر الذي يوجب شربه الحد ثم تنبه فقال يوأفق فهر اليهود ويكره للمسلم العابد فهذا يدل على أن
                             غيره لا يكره له ولا يوجب الحد. وفهر اليهود هو موضع مدارسهم الذي يجتمعون فيه ومنه حديث أمير المؤمنين علي بن أبي
-                            طالب رضي الله عنه أنه رأى قوماً يصلون قد سدلوا ثيابهم فقال: كانهم اليهود خرجوا من فهرهم. <pb ed="shamela"
-                   n="n20-p39"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1138.xhtml"/> وهذا أبو
+                            طالب رضي الله عنه أنه رأى قوماً يصلون قد سدلوا ثيابهم فقال: كانهم اليهود خرجوا من فهرهم. <pb ed="shamela" n="n20-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1138.xhtml"/> وهذا أبو
                             النواس شاهد الناس على شيء فقال:</p>
                         <lg type="bayt">
                             <l>يا ابنة القوم اصحبينا </l>
@@ -1311,18 +1202,16 @@
                         </lg>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n20-p40"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1139.xhtml"/>
+                        <pb ed="shamela" n="n20-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1139.xhtml"/>
                         <head>مطبوعات ومخطوطات</head>
                         <p>الدليل في موارد أعالي النيل</p>
                         <p>ألف هذا الكتاب السير وليم جارستن مستشار نظارة الأشغال العمومية في مصر وعربه إبرأهيممصور بك رئيس الترجمة في هذه
                             النظارة. وقد جمع فأوعى في وصف كل ماله علاقة بالنيلين الأبيض والأزرق من منطقة البحيرات في أواسط القارة الأفريقية
                             حتى بلاد السودان. صرف المؤلف سنين في الرحلة إلى تلك البلاد ووصف أحوالها الطبيعية والجيولوجية وأمدته الكومة
                             بالنفقات الطائلة التي لا تقوى عليها إلا الدول العظمى وساعده في مهمته بعض رجال الري والعلماء المخصين في هذا الفن
-                            فجاء ما كتب دليلاً على جودة البحث والاستقراء. والكتاب في 636 صفحة كبيرة من أجود الطبع والورق وفيه ما عدا
+                            فجاء ما كتب دليلاً على جودة البحث والاستقراء. والكتاب في  <tei:num value="636" xml:lang="ar">٦٣٦</tei:num>  صفحة كبيرة من أجود الطبع والورق وفيه ما عدا
                             الملحقات وذكر ما يمكن القيام به في المستقبل من الأعمال في سبيل زيادة الانتفاع بمياه النيل رسوم شمسية في الأماكن
-                            والجبال والجدأول والأنهار التي يمر بها هذا النيل وهي 46 رسماً متقناً.</p>
+                            والجبال والجدأول والأنهار التي يمر بها هذا النيل وهي  <tei:num value="46" xml:lang="ar">٤٦</tei:num>  رسماً متقناً.</p>
                         <p>ومن تلاه بالأمعأن الذي يستحقه يدرك غاية الإفرنج في إشباع مصنفاتهم وصرف أقصى الهمة إلى تحسينها وإتقانها ويدرك مبلغ
                             اهتمام المترجم بنقل هذا الكتاب الفني الذي يهم العربية نقل أمثاله من اللغات الإفرنجية.</p>
                         <p>هذا السفر المفيد شاهد عدل على اتساع صدر العربية لترجمة عامة العلوم والفنون بلغة بليغة لا تشوبها شائبة العجمة
@@ -1332,16 +1221,14 @@
                             إلى هذا اللسان كتاب استوفى شروط التأليف على الصورة التي ذكرناها في فرع من فروع العلم التي لا عهد بها للعربية لما
                             اتت عليها بضع سنين ألا وهي تحاكي أرقى اللغات العلمية الأوروبية.</p>
                         <p>ومن تصفح كتاب الدليل ممن عانى صناعة التعريب يتجلى له ما عاناه معربه في نقله وخصوصاً بعض المصطلحات التي عمد إلى
-                            بحر اللغة واغترف منه ألفاظاً عربية قابل <pb ed="shamela"
-                   n="n20-p41"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1140.xhtml"/> بها المفردات الإفرنجي
+                            بحر اللغة واغترف منه ألفاظاً عربية قابل <pb ed="shamela" n="n20-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1140.xhtml"/> بها المفردات الإفرنجي
                             وهي تربو على مئة لفظة ومعظمها مما لم يدر على السن الكتاب والمعربين.</p>
                         <p>تاريخ الأستاذ الأمام</p>
                         <p>هو اسم تاريخ فقيد الشرق الشيخ محمد جمعه له مريده السيد محمد رشيد رضا صاحب المنار الاغر في ثلاث مجلدات كبيرة الأول
                             في سيرته وهو لا يزال تحت الطبع والثاني في منشآته وهو يحتوي على بعض رسائله ومقالاته التي نشرت في الجرائد والمجلات
-                            ولوائحه في إصلاح التربية والتعليم الديني ورسائله إلى العلماء والأدباء وحكمه المنثورة وهو في 560 صفحة من قطع
+                            ولوائحه في إصلاح التربية والتعليم الديني ورسائله إلى العلماء والأدباء وحكمه المنثورة وهو في  <tei:num value="560" xml:lang="ar">٥٦٠</tei:num>  صفحة من قطع
                             الثمن وقد قدم له مؤلفة مقدمة بين فيها منزلة المرحوم المفتي من العلم والعمل ثم أخذ في نقل بعض ما خطته يراعته في
-                            خلال حياته على اختلاف اطوارها ومن تلاه يدرك قدر الفقيد العزيز. والجزء الثالث وهو في 438 صفحة من قطع الثمن أيضاً
+                            خلال حياته على اختلاف اطوارها ومن تلاه يدرك قدر الفقيد العزيز. والجزء الثالث وهو في  <tei:num value="438" xml:lang="ar">٤٣٨</tei:num>  صفحة من قطع الثمن أيضاً
                             يحتوي على تأبين الجرائد وبعض الكبراء والفضلاء ونموذج من التعازي ومراثي الشعراء وفيه شي كثير من ذكر العواطف يدل
                             على مكانته من وضع التاريخ له في قلوب مريديه واحبابه على اختلاف الأمصار والأفكار وفي هذا الجزء مثال من شعر العصر
                             ونثره في موضوع واحد وهو الرثاء وتقييد المناقب والأثار.</p>
@@ -1352,20 +1239,18 @@
                             عظيماً في عامة الاقطار والأمصار.</p>
                         <p>لوائح الانوار البهية</p>
                         <p>كتاب للشيخ محمد بن احمد السفاريني الأثري الحنبلي من أهل القرن الثاني عشر يتضمن شرح منظومته التي ضمنها أمهات مسائل
-                            عقائد السلف وهو في مجلدين الأول في 388 صفحة والثاني في 488 صفحة طبعها على نفقته طبعاً متقناً بعض الراغبين باتحاف
-                            <pb ed="shamela"
-                   n="n20-p42"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1141.xhtml"/> الخلف بأثار السلف وذلك
+                            عقائد السلف وهو في مجلدين الأول في  <tei:num value="388" xml:lang="ar">٣٨٨</tei:num>  صفحة والثاني في  <tei:num value="488" xml:lang="ar">٤٨٨</tei:num>  صفحة طبعها على نفقته طبعاً متقناً بعض الراغبين باتحاف
+                            <pb ed="shamela" n="n20-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1141.xhtml"/> الخلف بأثار السلف وذلك
                             في مطبعة المنار وبملاحظة صاحبها الفاضل وقد وشحه بفهرست مرتب على الحروف يتيسر به الوقوف على محتويات الكتاب فنحت
                             الأثريين على اقتنائه ونشكر لطابعة ومصححة عنايتهما.</p>
                         <p>مؤلفات السيد البكري</p>
                         <p>سماحة السيد محمد توفيق البكري نقيب الإشراف هو من بيت مذكور بالشرف في مصر وهو معروف باشتغاله بالعلم والأدب وقد طبع
-                            في هذه الأيام خمسة كتب مهمة في بابها احدها سماه صهاريج اللؤلؤ وهو سفر وقع في 388 صفحة بقطع الثمن جيد الطبعة جمع
+                            في هذه الأيام خمسة كتب مهمة في بابها احدها سماه صهاريج اللؤلؤ وهو سفر وقع في  <tei:num value="388" xml:lang="ar">٣٨٨</tei:num>  صفحة بقطع الثمن جيد الطبعة جمع
                             فيه كثيراً من نثره ونظمه الرائق وسلك فيه مسلكاً جديداً في الوصف جمع إلى فخامة اللفظ براعة المعنى وشرحه الشيخ
                             احمد الشنقيطي والشيخ محمد المصري شرحاً صافياً. الثاني كتاب التعليم والإرشاد جمعه بعض رجال الصوفية في عصرنا بأمره
-                            وهو في 677 صفحة وفيه ما لا يسع الصوفية جهله من المسائل. والثالث كتاب بيت السادة الوفائية تأليف سماحته واسمه يدل
+                            وهو في  <tei:num value="677" xml:lang="ar">٦٧٧</tei:num>  صفحة وفيه ما لا يسع الصوفية جهله من المسائل. والثالث كتاب بيت السادة الوفائية تأليف سماحته واسمه يدل
                             على مسماه ذكر فيه تراجم ما اشتهر من هذا البيت ومناقبهم. والرابع كتاب بيت الصديق تأليفه أيضاً يظم منثورة من أسفار
-                            عديدة استقصى فيه تاريخ هذا البيت الظاهر مكانه في الإسلام وهو في 411 صفحة من قطع الثمن. والخامس كتاب المستقبل
+                            عديدة استقصى فيه تاريخ هذا البيت الظاهر مكانه في الإسلام وهو في  <tei:num value="411" xml:lang="ar">٤١١</tei:num>  صفحة من قطع الثمن. والخامس كتاب المستقبل
                             للإسلام وهو من قلم المؤلف أيضاً ذكر فيه ما يتعلق بهذا الشأن فنثني على همة المؤلف ونرجو أن يوأصل اتحاف القراء
                             بمثل ما اتحفهم به من هذه الأثار الرائعة.</p>
                         <p>مجموعة</p>
@@ -1374,13 +1259,11 @@
                             حضرة أمير المؤمنين المأمون في مسألة خلق القرآن بين عبد العزيز الكناني وبشر المريسي وكان المأمون هو الحكم قابان
                             عن فضل جم وإنه كان يقصد بمسألة خلق القرآن التي شغلت بعض العلماء في آخر عهده تحقيق حقيقة علمية لا الانتصار لنفسه
                             او لما وقع في ذهنه وهذه الرسالة أعظم مثال في الحرية العربية. طبعها الحاج مقبل الذكير وجعلها وفقاً لا يباع ولا
-                            يشرى يمعرفة فرج الله أفندي زكي الكردي الكتبي المعروف في القاهرة فجاءت في 249 صفحة جيدة <pb ed="shamela"
-                   n="n20-p43"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1142.xhtml"/> الشكل.</p>
+                            يشرى يمعرفة فرج الله أفندي زكي الكردي الكتبي المعروف في القاهرة فجاءت في  <tei:num value="249" xml:lang="ar">٢٤٩</tei:num>  صفحة جيدة <pb ed="shamela" n="n20-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1142.xhtml"/> الشكل.</p>
                         <p>الجامعة الإسلامية وأوروبا</p>
                         <p>هي رسالة تأليف رفيق بك العظم صاحب كتاب أشهر مشاهير الإسلام وغيره من المصنفات الاجتماعية بحث فيها بحثاً تاريخياً
                             في الجامعة الإسلامية وذكر فيها للمتعصبين من ساسة الاوربيين تحاملهم على بلاد الإسلام بالبراهين التاريخية الدامغة
-                            ونصح فيها للشرقيين والغربيين نصيحة من خبر الأمور الحاضرة وقاسها بالغابرة وهي 58 صفحة جيدة الطبع والوضع.</p>
+                            ونصح فيها للشرقيين والغربيين نصيحة من خبر الأمور الحاضرة وقاسها بالغابرة وهي  <tei:num value="58" xml:lang="ar">٥٨</tei:num>  صفحة جيدة الطبع والوضع.</p>
                         <p>الإنسان ابن التربية</p>
                         <p>كتاب أدبي أخلاقي انتقادي لجرجي أفندي نقولا باز المعروف بمقالاته الاجتماعية والأخلاقية وفيه مباحث مفيدة مثل محاسن
                             العصر ومساوئ الحضارة وسوء التربية والوالدين والتربية البيتية والاجتماعية وغير ذلك مما ينفع أرباب البيوت ويؤثر في
@@ -1394,43 +1277,37 @@
                             المشرقية أهدانا إياها مؤلفها عقيب أن طلع على مقالة التقيه في الجزء الثالث من هذه السنة وسنعود إلى الاقتباس منها
                             ما لم نحصل عليه من النقول.</p>
                         <p>مقالات قصر الدوبارة</p>
-                        <p>كتاب في 110 صفحات طبعه عبد الله أفندي حسين وصالح أفندي شكري حوى مقالات كتبتها جريدة المؤيد في اللورد كرومر
-                            وسياسته وخطابه الوداعي ورد المؤيد عليه وغير <pb ed="shamela"
-                   n="n20-p44"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1143.xhtml"/> ذلك مما له صلة بهذا
+                        <p>كتاب في  <tei:num value="110" xml:lang="ar">١١٠</tei:num>  صفحات طبعه عبد الله أفندي حسين وصالح أفندي شكري حوى مقالات كتبتها جريدة المؤيد في اللورد كرومر
+                            وسياسته وخطابه الوداعي ورد المؤيد عليه وغير <pb ed="shamela" n="n20-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1143.xhtml"/> ذلك مما له صلة بهذا
                             البحث وقد أحسن طابعاه في نشره على هذا الشكل الجميل فإن هذه المقالات من خير ما خطته يراعة كاتب سياسي في معنى
                             الدفاع عن امته وبلاده وهو يطلب من طابعيه في دار المؤيد.</p>
                         <p>لبنان في خمس سنين</p>
-                        <p>هو كتاب وقائع في 140 صفحة شرح فيه كاتبه ما حدث من الحوادث والأخبار في جبل لبنأن في عهده الأخير شرحاً ضافياً
+                        <p>هو كتاب وقائع في  <tei:num value="140" xml:lang="ar">١٤٠</tei:num>  صفحة شرح فيه كاتبه ما حدث من الحوادث والأخبار في جبل لبنأن في عهده الأخير شرحاً ضافياً
                             يستعان به في المستقبل على وضع تاريخ مفصل لهذا الجبل فجاء ما كتبه الكاتب أشبه بالأخبار اليومية لابن بدير في القرن
                             الثاني عشر في دمشق والجبرتي في القرن الثالث عشر في مصر هذا مع سلاسة في التعبير وتلاعب بالألفاظ والمعاني يدل على
                             بعد غور الكاتب وحسن بيانه.</p>
                         <p>أطباق الذهب</p>
                         <p>لشرف الدين عبد المؤمن بن هبة الله المغربي الأصفهاني مائتا مقالة ومقالة في الحكم والمواعظ على طريقة السجع البديع
-                            شرحها الشيخ محمد منير المقدم في الأزهر وضبطها بالشكل الكامل وطبعها طبعاً جيداً فجاءت في زهاء 150 صفحة صغيرة.</p>
+                            شرحها الشيخ محمد منير المقدم في الأزهر وضبطها بالشكل الكامل وطبعها طبعاً جيداً فجاءت في زهاء  <tei:num value="150" xml:lang="ar">١٥٠</tei:num>  صفحة صغيرة.</p>
                         <p>رواية الخادعين</p>
                         <p>هي إحدى روايات احمد مدحت أفندي الكاتب التركي عربها حقي بك العظم صاحب كتابي دفاع بلفنا وحرب اليونان وهي تمثل صورة
                             من المدنية الإسلامية في القرن الأول نشرت ملحقة لجريدة الكلمة الحرة وتباع بأربعة قروش في مكتبة القاهرة.</p>
                         <p>الدقائق في الحقائق</p>
-                        <p>(أفكاري عن النفس والروح ثم القدرة الإلهية والأديان تأليف يعقوب أفندي جبرائيل مراد) وهو في 126 صفحة جيدة
+                        <p>(أفكاري عن النفس والروح ثم القدرة الإلهية والأديان تأليف يعقوب أفندي جبرائيل مراد) وهو في  <tei:num value="126" xml:lang="ar">١٢٦</tei:num>  صفحة جيدة
                             الورق.</p>
                         <p>نسمات الصباح</p>
                         <p>هذه نبذة من شعر حلمي أفندي مصري صدرها بنبذة بالشعر والعرب وضمنها مقاطيع وتخاميس وقصائد عرب بعضها عن الإفرنسية
-                            ونظم بعضها في أغراض عصرية لطيفة فجاءت في 64 صفحة صغيرة. <pb ed="shamela"
-                   n="n20-p45"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1144.xhtml"/> اكاذيب السياسة</p>
+                            ونظم بعضها في أغراض عصرية لطيفة فجاءت في  <tei:num value="64" xml:lang="ar">٦٤</tei:num>  صفحة صغيرة. <pb ed="shamela" n="n20-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1144.xhtml"/> اكاذيب السياسة</p>
                         <p>كراسة في الرد على خطبة اللورد كرومر التي القاها في حفلة وداعه التي اقيمت بأمره في دار التمثيل الكبرى بالقاهرة
-                            مساء 4 مايو سنة 1907 تأليف (ابنة النيل) وهي فتاة مصرية لم تصرح باسمها وعدد صفحاتها 78 صفحة صغيرة. </p>
+                            مساء  <tei:num value="4" xml:lang="ar">٤</tei:num>  مايو سنة  <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num>  تأليف (ابنة النيل) وهي فتاة مصرية لم تصرح باسمها وعدد صفحاتها  <tei:num value="78" xml:lang="ar">٧٨</tei:num>  صفحة صغيرة. </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n20-p46"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1145.xhtml"/>
+                        <pb ed="shamela" n="n20-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1145.xhtml"/>
                         <head>سير العلم</head>
                         <p>سكة حديد جديدة</p>
                         <p>اخترع مهندس ايرلاندي اسمه لوي برنان بعد أن صرف سنين طويلة في النظر والبحث طريقة جديدة لتسيير مركبات السكك
                             الحديدية إذا سلمت له من كل وجه فإنها تقلب أصول النقل المتبعة الأن في اقطار الأرض واختراعه عبارة عن تطبيق ناموس
-                            الجير وسكوب (وهي آلة اخترعها فوكول سنة 1852 ليستدل بها على دورأن الأرض) على مركبات السكك الحديد بل على جميع
+                            الجير وسكوب (وهي آلة اخترعها فوكول سنة  <tei:num value="1852" xml:lang="ar">١٨٥٢</tei:num>  ليستدل بها على دورأن الأرض) على مركبات السكك الحديد بل على جميع
                             المركبات كمركبات الاتوموييل وغيرها. فالسكة الجديدة تسير إذا على خط واحد فتوفر نفقات كثيرة وليس فيها ادنى خطر
                             وتسير بالكهربائية لا بالبخار.</p>
                         <p>التصوير بالألوان</p>
@@ -1445,9 +1322,7 @@
                         <p>سم الغضب</p>
                         <p>ثبت للأستاذ غاتس من واشنطن أن للغضب الذي يثور في رؤوس الناس سماً كما أن للحزن سماً خاصاً به وللخوف كذلك. ذلك لأن
                             التغييرات الباطنية مهما كانت فجائية او زائلة يكون منها رد فعل على المجموع العصبي فنفس السخص الغضبان أو السوداوي
-                            يختلف بلونه عن نفس السوداوي الكئيب ولكي يثبت ذلك جعل بعضهم يتنفسون في أنبوب <pb ed="shamela"
-                   n="n20-p47"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1146.xhtml"/> برد بالجليد لينحل النفس
+                            يختلف بلونه عن نفس السوداوي الكئيب ولكي يثبت ذلك جعل بعضهم يتنفسون في أنبوب <pb ed="shamela" n="n20-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1146.xhtml"/> برد بالجليد لينحل النفس
                             المستنشق فيه فجاء منه سائل لا لون عند ما كان المتنفس في الانبوب ساكناً غير مضطرب. وسائل اسفع إذا كان المستنشق
                             غضوباً وسائل اسود إذا كان حزيناً وسائل وردي إذا كان وجدانه يتألم. وقال أن نفس الغضب إذا سال على الطريقة التي
                             ابتدعها يكون فيه كمية من القوة الحيوية ومواد كيماوية إذا ابتلعها المرء تورده حتفه وإن هذا السم هو أشد سم عرفه
@@ -1461,25 +1336,23 @@
                             أن تضاف فهارس مكتبة الأمة في باريز وهي ثالث مكتبة من مكاتب العالم بكثرة كتبها وتسقط منها المكررات وهكذا يعمل
                             بالأحدى عشرة مكتبة من المكاتب الكبرى في العالم فيأتي من ذلك فهرس عام لجميع الأسفار في الأرض.</p>
                         <p>السيارات</p>
-                        <p>صنعت الولايات المتحدة سنة 1906 - 58 ألف سيارة (اتوموبيل) وصنعت فرنسا 55 ألفاً وصنعت إنكلترا 27 ألفاً وصنعت
-                            ألمانيا وإيطاليا 20 ألفاً.</p>
+                        <p>صنعت الولايات المتحدة سنة  <tei:num value="1906" xml:lang="ar">١٩٠٦</tei:num>  -  <tei:num value="58" xml:lang="ar">٥٨</tei:num>  ألف سيارة (اتوموبيل) وصنعت فرنسا  <tei:num value="55" xml:lang="ar">٥٥</tei:num>  ألفاً وصنعت إنكلترا  <tei:num value="27" xml:lang="ar">٢٧</tei:num>  ألفاً وصنعت
+                            ألمانيا وإيطاليا  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  ألفاً.</p>
                         <p>التوفير</p>
                         <p>كان فيما مضي يمدح أهل الطبقة الوسطى في فرنسا لاقتصادهم ولكن ثبت أن الألمانيين من أهل طبقتهم أكثر منهم اقتصاداً
-                            فإن ما وضع في صناديق التوفير في فرنسا في سنة 1904 قد بلغ أربعة ملايين ونصفاً من الفرنكات وسكان فرنسا 39 مليوناً
-                            على حين بلغ ما وضعه الألمانيون وعددهم 37 مليوناً تسعة ملايين ونصفاً وقد زاد المودع في صناديق التوفير في فرنسا من
-                            سنة 1900 إلى سنة 1904 مائتي مليون اما في بروسيا فقد بلغ مليارين من الفرنكات. <pb ed="shamela"
-                   n="n20-p48"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1147.xhtml"/> غلاء الحاجيات</p>
+                            فإن ما وضع في صناديق التوفير في فرنسا في سنة  <tei:num value="1904" xml:lang="ar">١٩٠٤</tei:num>  قد بلغ أربعة ملايين ونصفاً من الفرنكات وسكان فرنسا  <tei:num value="39" xml:lang="ar">٣٩</tei:num>  مليوناً
+                            على حين بلغ ما وضعه الألمانيون وعددهم  <tei:num value="37" xml:lang="ar">٣٧</tei:num>  مليوناً تسعة ملايين ونصفاً وقد زاد المودع في صناديق التوفير في فرنسا من
+                            سنة  <tei:num value="1900" xml:lang="ar">١٩٠٠</tei:num>  إلى سنة  <tei:num value="1904" xml:lang="ar">١٩٠٤</tei:num>  مائتي مليون اما في بروسيا فقد بلغ مليارين من الفرنكات. <pb ed="shamela" n="n20-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1147.xhtml"/> غلاء الحاجيات</p>
                         <p>غلت أسعار الحاجيات في العالم المتمدن مع أن ما يستخرج سنوياً من الذهب قد بلغ ضعفي ما كان عليه منذ عشر سنين. ويؤخذ
-                            من إحصاء التجارة العام أن تجارة العالم ارتفعت من 54 مليار فرنك سنة 1867 إلى 136 ملياراً سنة 1901 أي أن مجموع
-                            النقود المتعامل بها قد بلغت ثلاثة أضعاف ما كانت في 34 سنة على أن محصولات العالم لم ترتق ثلاثة أضعاف ما كانت عليه
+                            من إحصاء التجارة العام أن تجارة العالم ارتفعت من  <tei:num value="54" xml:lang="ar">٥٤</tei:num>  مليار فرنك سنة  <tei:num value="1867" xml:lang="ar">١٨٦٧</tei:num>  إلى  <tei:num value="136" xml:lang="ar">١٣٦</tei:num>  ملياراً سنة  <tei:num value="1901" xml:lang="ar">١٩٠١</tei:num>  أي أن مجموع
+                            النقود المتعامل بها قد بلغت ثلاثة أضعاف ما كانت في  <tei:num value="34" xml:lang="ar">٣٤</tei:num>  سنة على أن محصولات العالم لم ترتق ثلاثة أضعاف ما كانت عليه
                             ولا تنسب الزيادة لارتفاع أسعار البضائع بل لبخس أثمأن الذهب لكثرة المستخرج منه.</p>
                         <p>عمال المخازن</p>
                         <p>كتب احد كبار البيوت التجارية التي تبيع بالجملة في شيكاغو نصيحة لمستخدميه وهي: لا تحتقر أصلاً زبوناً ولو كان رث
                             الثياب. ولا تقلم أظافرك على ملاء من الناس ولجعل في جيبك أبداً قلم رصاص ولا تعره لأحد ولا ترتكب غلطة واحدة سبق لك
                             ارتكابها.</p>
                         <p>طواف العالم</p>
-                        <p>آخر ما اهتدى إليه البشر من السرعة في الأسفار أن يقطع المرء الأرض في خمسين يوماً بإنفاق 146 جنيهاً فيسير السائح من
+                        <p>آخر ما اهتدى إليه البشر من السرعة في الأسفار أن يقطع المرء الأرض في خمسين يوماً بإنفاق  <tei:num value="146" xml:lang="ar">١٤٦</tei:num>  جنيهاً فيسير السائح من
                             باريز إلى موسكو ففلاديفوستك فكويه فيوكوهاما فسيتيل فنيويورك فشربورغ ففرنسا.</p>
                         <p>اتقاء الغش</p>
                         <p>من أحسن الطرق التي سارت عليها الولايات المتحدة في اتقاء الغش في الإعلانات أنه إذا نشرت جريدة إعلاناً ضاراً تنذرها
@@ -1488,10 +1361,8 @@
                             الجرائد عنها الإعلانات.</p>
                         <p>التربية في يابان</p>
                         <p>كتب احد نبلاء يابان مقالة في إحدى المجلات الإنكليزية ذكر فيها ما توفر الميكادو عليه من العناية منذ خمس وعشرين سنة
-                            لإنهاض الآداب في بلاده. قال أنه شرع سنة 1880 <pb ed="shamela"
-                   n="n20-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1148.xhtml"/> بمنع بعض الكتب المدرسية
-                            والدساتير وفي سنة 1890 جعل بناء التعليم على أسس جديدة وأمر الأمبراطور أن تكون مبادئ التربية مأخوذة عن تربية
+                            لإنهاض الآداب في بلاده. قال أنه شرع سنة  <tei:num value="1880" xml:lang="ar">١٨٨٠</tei:num>  <pb ed="shamela" n="n20-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1148.xhtml"/> بمنع بعض الكتب المدرسية
+                            والدساتير وفي سنة  <tei:num value="1890" xml:lang="ar">١٨٩٠</tei:num>  جعل بناء التعليم على أسس جديدة وأمر الأمبراطور أن تكون مبادئ التربية مأخوذة عن تربية
                             البيوت وعواطف المربين وعطفهم على من يربون وأن يسعى كل أمرئ إلى توسيع مداركه العقلية بان يتأهل للدفاع عن المصلحة
                             العامة.</p>
                         <p>وصية عالم</p>
@@ -1510,31 +1381,27 @@
                             بعلمه الجديد القائم على البحث في أحوال الفقراء لا البحث في الفقر أشبه بعلم البحث في الجانين لا البحث في الجنايات
                             قال من بحث له في المجلة الإفرنسية: ويعرف الاختلاف الظاهر في أشكال طبقات أهل السعة وأهل الفاقة من الناس وما
                             بينهما من الفروق التي تكاد تجعلهما المتين متباينتين مع إنهما يعيشأن في ارض واحدة ويتكلمان بلغة واحدة بالبحث في
-                            أشكال الطبقات النازلة وتأثيرهما الطبيعية والفسيولوجية. قال توكفيل الكاتب السياسي الفرنسوي (1805 - 1859) تتألف
-                            أمم مختلفة كثيرة من طبقات المجتمع الواحد <pb ed="shamela"
-                   n="n20-p50"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1149.xhtml"/> وقالوا أن كل امة تنقسم
+                            أشكال الطبقات النازلة وتأثيرهما الطبيعية والفسيولوجية. قال توكفيل الكاتب السياسي الفرنسوي ( <tei:num value="1805" xml:lang="ar">١٨٠٥</tei:num>  -  <tei:num value="1859" xml:lang="ar">١٨٥٩</tei:num> ) تتألف
+                            أمم مختلفة كثيرة من طبقات المجتمع الواحد <pb ed="shamela" n="n20-p50" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1149.xhtml"/> وقالوا أن كل امة تنقسم
                             إلى المتين وهو قول صحيح لأننا لو بحثنا في حياة الفقير وحياة الغني لرأينا أن مبدأ التناقض بينهما على اتمة بيد أن
                             هذا الرأي يعد من غريب الآراء.</p>
                         <p>قامات الفقراء من أرباب الأعسار أصغر من قامات الموسع عليهم من أهل اليسار. فطول بن الفقير في الرابعة عشرة من عمره
                             متر وستة وأربعون سنتيمراً وطول ابن الغني في مثل هذه السن متر ونصف وطول قامات الرجال الفقراء متر وأربعة وستون
                             سنتيمتراً في الغالب وطول الأغنياء في سنهم متر وثمانية وستون سنتيمتراً ووزن جسم الموسرين من الأولاد وهم في
-                            الثالثة عشرة 35 كيلو وزنة جسم ابن الفقير في مثل تلك السن 33 كيلو. ومحيط رأس ابن الفقير في الحادية عشرة أصغر من
-                            محيط رأس ابن الغني فهو في الأول 524 في الثاني 533 وابن الغني وهو في سن العشرين 551. 9 وابن الفقير 547. 0 وهكذا
+                            الثالثة عشرة  <tei:num value="35" xml:lang="ar">٣٥</tei:num>  كيلو وزنة جسم ابن الفقير في مثل تلك السن  <tei:num value="33" xml:lang="ar">٣٣</tei:num>  كيلو. ومحيط رأس ابن الفقير في الحادية عشرة أصغر من
+                            محيط رأس ابن الغني فهو في الأول  <tei:num value="524" xml:lang="ar">٥٢٤</tei:num>  في الثاني  <tei:num value="533" xml:lang="ar">٥٣٣</tei:num>  وابن الغني وهو في سن العشرين  <tei:num value="551" xml:lang="ar">٥٥١</tei:num> .  <tei:num value="9" xml:lang="ar">٩</tei:num>  وابن الفقير  <tei:num value="547" xml:lang="ar">٥٤٧</tei:num> .  <tei:num value="0" xml:lang="ar">٠</tei:num>  وهكذا
                             ارتفاع الجبهة وقوة الجمجمة والدماغ والجمجمة الداخلية وزاوية الوجه كلها في قياسها في الفقراء أصغر مما هي في
                             الأغنياء وسعة الحنك في الفقراء أكثر مماهي في الأغنياء.</p>
                         <p>وإذا قيست قوة أبناء الفقراء بقوة أبناء الأغنياء بمقياس القوة (ديناموتر) نجد أن الغني في السابعة يحمل عشرة كيلو
-                            على حين لايقدر ابن الفقير أن يحمل أكثر من ثمانية. والفتاة من بنات اليسار تحمل 12 كيلو وهي في الثانية عشرة ومثلها
-                            من الفقيرات لا تقوى على حمل أكثر من 7 كيلو. وأولاد الأغنياء أقل صبراً على التعب من أولاد الفقراء فقد دلت التجارب
-                            الكثيرة أن أبناء الأغنياء في الثانية عشرة من اعمارهم تنقص من 18 إلى 7 كيلو. وكذلك الصدر فإنه في أولاد الموسرين
+                            على حين لايقدر ابن الفقير أن يحمل أكثر من ثمانية. والفتاة من بنات اليسار تحمل  <tei:num value="12" xml:lang="ar">١٢</tei:num>  كيلو وهي في الثانية عشرة ومثلها
+                            من الفقيرات لا تقوى على حمل أكثر من  <tei:num value="7" xml:lang="ar">٧</tei:num>  كيلو. وأولاد الأغنياء أقل صبراً على التعب من أولاد الفقراء فقد دلت التجارب
+                            الكثيرة أن أبناء الأغنياء في الثانية عشرة من اعمارهم تنقص من  <tei:num value="18" xml:lang="ar">١٨</tei:num>  إلى  <tei:num value="7" xml:lang="ar">٧</tei:num>  كيلو. وكذلك الصدر فإنه في أولاد الموسرين
                             أكثر سعة من أبناء المعسرين اللهم إلا فيمن يعملون أعمالاً صناعية من أبناء الفقراء يكبر بها محيط صدورهم.</p>
                         <p>وحركة النمو في أولاد الفقراء أبطأ مما هي في أولاد الأغنياء. وبنات الفقراء لا يبلغن الا بعد سنة او سنتين من السن
                             التي يبلغ فيها امثالهن من بنات الأغنياء. وأثبت كثير من الأطباء أن المولودين حديثاً من أولاد الفقراء أقل وزناً من
                             امثالهم من أبناء الأغنياء والأم المستريحة تلد أولاداً أثقل وزناً من الأم المتعبة إلى آخر يوم من حملها وليس لها
                             غذاء جيد. ومن المؤثرات في صحة المولود سن الأم وزمن بلوغها وتعاقب ولادتها وصحة حالتها وكل هذه الأمور تؤثر في طول
-                            الطفل ووزنه. <pb ed="shamela"
-                   n="n20-p51"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1150.xhtml"/> ويخطئ من يقول أن الجمال
+                            الطفل ووزنه. <pb ed="shamela" n="n20-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1150.xhtml"/> ويخطئ من يقول أن الجمال
                             وتناسب الأعضاء موجدان في أولاد الفقراء لأن الجمال والقوة والنشاط تابعة لسعة العيش أبداً ولاسيما لحالة الأم وإن
                             وجد جمال في أبناء الفقيرات وبناتهن فإنه عرض زائل يذبل لأول نضارته وأقل تعب ينالهم. وتكثر الأسقام والموت في
                             الفقراء أكثر من كثرتها بين الأغنياء وذلك لأن الفقير عرضة للأمراض أكثر بالنظر لتركيبه فلا يقوى على مقاومتها ولان
@@ -1552,9 +1419,7 @@
                             القاصية وامة في الدانية وثبت للباحث بالبراهين المدققة أن الاختلاف في الولادة والموت وسن الزواج والأمراض وغيرها
                             بين البارزين الفقراء وبين أهل طبقتهم من سكان فينا أقل مما هو بين سكان مملكتي إيطاليا ونروج مثلاً وأن الاختلاف
                             يكثر بين طبقتي الفقراء والأغنياء من أهل البلد الواحد ولا يكثر على تلك النسبة بين شعبين متباينين بلغتيهما وأصلهما
-                            بعيدين أحدهما عن الآخر مئات من المراحل. والتمدن يبدو في الطبقات النازلة مهما ارتقت بلادهم <pb ed="shamela"
-                   n="n20-p52"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1151.xhtml"/> كما يبدو عند
+                            بعيدين أحدهما عن الآخر مئات من المراحل. والتمدن يبدو في الطبقات النازلة مهما ارتقت بلادهم <pb ed="shamela" n="n20-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1151.xhtml"/> كما يبدو عند
                             الطبقات النازلة في البلاد المنحطة أي أن فقراء بلاد التمدن ينتشر فيهم الجهل ويقل النسل ويكثر الموت والجرائم كما
                             هو الحال بين فقراء البلاد الساقطة. ولا يفوتنا النظر أن التمدن لا ينتشر في الآفاق المنوعة من ارض واحدة على معدل
                             واحد بل أنه يستنير كل الإنارة في أفق ويظلم في آخر أو يكون ذا نور ضئيل ورسم محيل. وهم قوم أن الطوتمية وعبادة
@@ -1566,9 +1431,7 @@
                             الطبقات النازلة. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n20-p53"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1152.xhtml"/>
+                        <pb ed="shamela" n="n20-p53" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1152.xhtml"/>
                         <head>نقد المقتبس</head>
                         <p>كان معظم النقد الذي ورد على هذه المجلة في عامها الأول مقصوراً على الألفاظ والوضع اما نقد هذه السنة فأكثره على
                             المعاني والمقاصد. وقد كتب إلينا احد أهل العلم في القاهرة يقول (كنت آليت على نفسك أن لا تتعرض في المقتبس للمباحث
@@ -1588,9 +1451,7 @@
                         <p>ليس معنى نشرنا في السنة الماضية لمقالتين في حريق الأسكندرية أحدهما معربة عن التركية والأخرى عن الإنكليزية مما
                             يستدل منه على أننا نريد الغض من الرفع لآخر فالمسألة تاريخية صرفة تعاورتها الأقلام ولا تزال تتعاورها من أهل كل
                             نحلة وجنس. وكذلك درجنا بحث (شعراء النصرانية في الجاهلية) وهو من المباحث التي لامنا بعضهم على القبول بنشرها ولو
-                            علم اللائمون بأن الناقد والمنتقد عليه متحدان في النحلة والمشرب <pb ed="shamela"
-                   n="n20-p54"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1153.xhtml"/> لخففوا من اللائمة. وهكذا
+                            علم اللائمون بأن الناقد والمنتقد عليه متحدان في النحلة والمشرب <pb ed="shamela" n="n20-p54" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1153.xhtml"/> لخففوا من اللائمة. وهكذا
                             قل في نشرنا مقالة التقية فإنا لم نقصد إلى الحط من فرقة معينة فيما كتبنا وعذرنا إلى من تألموا مما نقلناه في
                             التقية عند الشيعة أن ليس لدينا كتاب من كتب محققيهم ننقل عنه ما يتم به البحث. ولو تفضل أولئك الناقدون فوافونا بما
                             أثر عن أهل العلم من الشيعة لكانوا أحسنوا صنعاً. وقد كان وعدنا احد أفاضلهم أن يوافينا بما قاله علماؤهم ثم عاد

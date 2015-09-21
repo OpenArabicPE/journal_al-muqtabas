@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i82_text"
-         xml:lang="ar"
-         type="issue"
-         n="i82">
+   <text xml:id="oclc_4770057679_i82_text" xml:lang="ar" type="issue" n="i82">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,32 +202,28 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1912-12-01">بتاريخ: 1 - 12 - 1912</date>
-                                    <biblScope n="82" unit="issue">العدد 82</biblScope>
+                                    <date when="1912-12-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="12" xml:lang="ar">١٢</tei:num>  -  <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> </date>
+                                    <biblScope n="82" unit="issue">العدد  <tei:num value="82" xml:lang="ar">٨٢</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             n=""
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5538.xhtml"/>
+                    <pb ed="shamela" n="" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5538.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="82" unit="issue">العدد 82</biblScope> 
-                  <date when="1912-12-01">بتاريخ: 1 - 12 -
-                            1912</date> 
+                  <biblScope n="82" unit="issue">العدد  <tei:num value="82" xml:lang="ar">٨٢</tei:num> </biblScope> 
+                  <date when="1912-12-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="12" xml:lang="ar">١٢</tei:num>  -
+                             <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> </date> 
                </bibl> 
             </head>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n82-p1"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5539.xhtml"/>
+                        <pb ed="shamela" n="n82-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5539.xhtml"/>
                         <head>رسالة في الكلمات المعربة</head>
-                        <p>لابن كمال باشا المتوفى سنة 942</p>
+                        <p>لابن كمال باشا المتوفى سنة  <tei:num value="942" xml:lang="ar">٩٤٢</tei:num> </p>
                         <p>تابع ما قبله</p>
                         <p>السين: الساباط موضع بالمداين معرب بلاس آباد وبلاس اسم رجل وصوب تعريبه من شاه آباد معناه معمور الملك والساباط
                             سقيفة بين دارين تحتها طريق (الساذج) هو المجرد أو الأطلس معرب ساده (السبج) هو الخرز الأسود معرب شبه (السبيج)
@@ -273,9 +240,7 @@
                             صفة فأسكنها إياها فلما طابت بنى به مدينة وكند بالتركي المدينة فكان يقول بلد شمر (السمند) دابة نارية معرب سمندر
                             (السميد) نوع من الخبز معرب (السنباذج) حجر المسن معرب (سنجة) الميزان مفتوحة وبالسين أفصح من الصاد فإنه معرب سنك
                             (السندس) بالضم ضرب من رقيق الديباج معرب بلا خلاف (السوذنيق والسوذق) بفتح السين فيهما الصفر وقيل الشاهين عن
-                            الغوري وكذلك <pb ed="shamela"
-                   n="n82-p2"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5540.xhtml"/> السوذانق بضم السين وكسر
+                            الغوري وكذلك <pb ed="shamela" n="n82-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5540.xhtml"/> السوذانق بضم السين وكسر
                             النون وكلها فارسي معرب (السور) الضيافة فارسية شرفها النبي صلى الله عليه وسلم (السياسة) في النجوم الزاهرة أن
                             جنكيزخان قسم ممالكه بين أولاده الثلاثة وأوصاهم بوصايا لم يخرجوا عنها وبقوا مع كثرتهم واختلاف أديانهم عَلَى ذلك
                             يعبرون عن ذلك سه سيا فثقل عَلَى لسان العرب فغيروا الترتيب فقالوا سياسة (السيب) التفاح فارسي معرب ومنه سيبويه أي
@@ -292,9 +257,7 @@
                             الصحيح الجيد النقي (الطباشير) معرب تباشير (الطبرزذ) نوع من السكر كأنه نحت بالفأس معرب تبرزذ وعربيته المبرت
                             ومعناه المضروب بالبرد وهو الفأس (الطراز) بالكسر علم الثوب معرب (الطرخون) نبات معروف أصل عروقه العاقر قرحا
                             (الطست) معروف معرب تشت (الطشختان) معرب تشت خوان (الطنبور) معرب أصله دنبهء بره شبه بالية الحمل (الطنجير) بالكسر
-                            معرب تنجره (الطيلسان) مثلثة اللام عن عياض معرب تالسان. <pb ed="shamela"
-                   n="n82-p3"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5541.xhtml"/> العين: (العراق) قال
+                            معرب تنجره (الطيلسان) مثلثة اللام عن عياض معرب تالسان. <pb ed="shamela" n="n82-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5541.xhtml"/> العين: (العراق) قال
                             الأصمعي أصلها بالفارسية ويران شهر أي بلد الخراب فعربوها فقالوا العراق (العسكر) أصله لشكر في الأساس له عسكر من
                             مال أي كثير وشهدت الكسرين أي عرفة ومنى فلا يطلق إلا عَلَى جم غفير وجمع كثير (عيسى) عَلَى مسماه الصلاة والسلام
                             معرب أيشوع.</p>
@@ -312,9 +275,7 @@
                             قرميسين بالكسر بلد قرب الدينور معرب كرمانشاهان قسبند معرب كسبند لما يشد في الوسط أو كوسبند للشاة القسطاس صلاية
                             الطيب رومية القسي هو الدرهم الذي خالطه غش وتدليس قال وخمسميء منها قسي وزائف قال الفارسي أن هذه اللفظة معربة ليست
                             بأصل في كلامهم ويقال فعيل من القسوة القطوفا الذي يضاف إليه البزر فيقال بزر قطونا أعجمي معرب القنشليل المغرفة
-                            معرب كغجه ليز القمنجر القواس معرب كمانكر <pb ed="shamela"
-                   n="n82-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5542.xhtml"/> القنطار اثنا عشر ألف
+                            معرب كغجه ليز القمنجر القواس معرب كمانكر <pb ed="shamela" n="n82-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5542.xhtml"/> القنطار اثنا عشر ألف
                             أوقية رومية القهندز هو الحصن القديم كهن دز ولا يوجد في كلامهم دال ثم زاي بلا واسطة القوش الصغير معرب كوجك
                             (القيراون) معرب كاروان.</p>
                         <p>الكاف: (الكاغد) هو القرطاس معرب (الكراسة) بالتشديد واحدة الكراس الجزء من الصحيفة والكراريس جمع معرب كراسة
@@ -333,9 +294,7 @@
                             مشى معناه المبارك عبرية كما يقال في موشى موسى مشكدانة بالكسر وبالشين المعجمة لقب عبد اللع بن عمر بن أبان المحدث
                             لطيب ريحه وأخلاقه فارسية معناه موضع المسك مصر علم بلدة عظيمة مشهورة بأم الدنيا معرب مصراييم المنجنيق جمع موبذان
                             أو موبذ بضم الميم وفتح الباء فقيه المجوس المواتيد هي البقايا واحدها معرب ماتده المهرجان هو فصل الخريف معرب
-                            مهركان المهرة هي الخرزة <pb ed="shamela"
-                   n="n82-p5"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5543.xhtml"/> كان النساء يتحببن بها
+                            مهركان المهرة هي الخرزة <pb ed="shamela" n="n82-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5543.xhtml"/> كان النساء يتحببن بها
                             معرب المينجتج هو المطبوخ من الأنبذة معرب مي نجته الميزاب فارسي معناه الأصلي بل الماء هربوه بالهمز ولهذا جمعوه
                             عَلَى مآزيب.</p>
                         <p>النون: الناخذاة مالك سفينة البحر أو وكيله والجمع النواخذة النارجيل جوز الهند أعجمي عَلَى غير أبنية العرب الناريج
@@ -354,9 +313,7 @@
                             الحكماء وليس بعربي محض في القاموس الهيولى القطن وشبه الأوائل طينة العالم به.</p>
                         <p>الياء: اليارق الجبارة وهو الدستبند العريض الياسمين نوع من الرياحين معرب الياقوت نوع من الجواهر أجوده الأحمر معرب
                             اليشب حجر معروف معرب يشم اليوم معرب يوماً حذف الفه للتعريب اليهود فارسي معرب يهوذا كأنهم سموا بأكبر أولاد يعقوب
-                            أو عربي من هاد إذا تاب سموا بذلك لما تابوا من عبادة العجل. <pb ed="shamela"
-                   n="n82-p6"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5544.xhtml"/> إنما الله آله واحد <gap resp="#org_MS"/> فرية الشرك وبال الجاحد</p>
+                            أو عربي من هاد إذا تاب سموا بذلك لما تابوا من عبادة العجل. <pb ed="shamela" n="n82-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5544.xhtml"/> إنما الله آله واحد <gap resp="#org_MS"/> فرية الشرك وبال الجاحد</p>
                         <p>بسم الله الرحمن الرحيم</p>
                         <p>حامداً لمن جعل العقل في جامع هيكل الإنسان كالشمع ومصلياً عَلَى أشراف أفراد وصفوا بالجمع وعلى آله وأصحابه كل واحد
                             منهم كالألف وخلف من بعدهم خلف وبعد فهذه جامعة الألفاظ وضعت بالعربية بالجمع اعتباراً للأجزاء كالأفراد نطفة أمشاج
@@ -371,9 +328,7 @@
                             أن نواحيه أخلاق (نعل أسماط) أي غير مخصوفة (سراويل أسماط) أي غير محشوة. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n82-p7"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5545.xhtml"/>
+                        <pb ed="shamela" n="n82-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5545.xhtml"/>
                         <head>المدنية السياسية</head>
                         <p>في</p>
                         <p>القرن العشرين</p>
@@ -461,9 +416,7 @@
                             <l>فما انتفخت أوداجهم من تعصب </l>
                             <l> ولا امتلأت أحشاؤهم من شخائم</l>
                         </lg>
-                        <p>ولله أرض شرفوها بوطئهم <gap resp="#org_MS"/> فما عرفت من بعد عيب واصم <pb ed="shamela"
-                   n="n82-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5546.xhtml"/> وإن غض منهم خوضهم في
+                        <p>ولله أرض شرفوها بوطئهم <gap resp="#org_MS"/> فما عرفت من بعد عيب واصم <pb ed="shamela" n="n82-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5546.xhtml"/> وإن غض منهم خوضهم في
                             ضلالهم <gap resp="#org_MS"/> وشعث منهم سعيهم بالنمائم</p>
                         <lg type="bayt">
                             <l>تعرض سيف. وانبرت بندقية </l>
@@ -557,9 +510,7 @@
                             <l>وكم شحذ اليونان رأياً مسدداً </l>
                             <l> فطاش بهم عند الخطوب الدواهم</l>
                         </lg>
-                        <p>وذلك ما زاد التفجع والأسى <gap resp="#org_MS"/> وعلمان كيف احتقار العظائم <pb ed="shamela"
-                   n="n82-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5547.xhtml"/> فيا دولاً ذل القضاء
+                        <p>وذلك ما زاد التفجع والأسى <gap resp="#org_MS"/> وعلمان كيف احتقار العظائم <pb ed="shamela" n="n82-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5547.xhtml"/> فيا دولاً ذل القضاء
                             لأمرها <gap resp="#org_MS"/> فساد صروح الملك فوق الجماجم</p>
                         <lg type="bayt">
                             <l>وكاثر كثبان الرمال عديدها </l>
@@ -588,11 +539,9 @@
                         <p>الديار المصرية // فؤاد الخطيب </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n82-p10"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5548.xhtml"/>
+                        <pb ed="shamela" n="n82-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5548.xhtml"/>
                         <head>تذكرة ابن العديم</head>
-                        <p>ابن العديم هو عمر بن كمال الدين العقيلي الحلبي رئيس الشام المتوفى سنة 666 كان محدثاً فاضلاً حافظاً مؤرخاً صادقاً
+                        <p>ابن العديم هو عمر بن كمال الدين العقيلي الحلبي رئيس الشام المتوفى سنة  <tei:num value="666" xml:lang="ar">٦٦٦</tei:num>  كان محدثاً فاضلاً حافظاً مؤرخاً صادقاً
                             فقيهاً مفتياً منشئاً بليغاً كاتباً محموداً درس وأفتى وصنف وترسل عن الملوك وكان رأساً في الخط المنسوب لاسيما
                             النسخ والواشي وله التصانيف الرائقة منها تاريخ حلب أدركته المنية قبل إكمال تبييضه وله كتاب الدراري في ذكر الذراري
                             صنفه للملك الظاهر غازي وقدمه له يوم ولد ولده الملك العزيز وكتاب الأخبار المستفادة في ذكر بني جرادة وكتاب في الخط
@@ -608,7 +557,7 @@
                             <l> ولذته مع أنني لم أذقهما</l>
                         </lg>
                         <p>ولابن العديم شعر مستملح ونثر عذب ومن كتبه التي أبقتها الأيام كتاب التذكرة دخل دار الخديوية بالقاهرة جزء منه في
-                            بضعة أجزاء أولها الجزء الخامس وآخرها الجزء السادس عشر في 205 ورقات صغرى أولها:</p>
+                            بضعة أجزاء أولها الجزء الخامس وآخرها الجزء السادس عشر في  <tei:num value="205" xml:lang="ar">٢٠٥</tei:num>  ورقات صغرى أولها:</p>
                         <lg type="bayt">
                             <l>جفني بجفنك قد جفاه هجوعه </l>
                             <l> والقلب واصله عليك ولوعه</l>
@@ -622,9 +571,7 @@
                             الدولة ابن المنقذ نفسه وكانت الزلزلة قد خربت شيزر اثنتين وخمسين وخمسمائة وسقطت القلعة عَلَى أخيه وأولاده وزوجته
                             الخاتون أخت شمس الملوك فسلمت دونهم ونبشت من الردم فجاء نور الدين محمود بن زنكي إلى شيزر وتسلمها وطلب من زوجة
                             أخيه أن تعلمه بالحال وتهددها فقالت له أن الردم سقط عليها وعليهم ونبشت سالمة دونهم ولا تعلم بشيء وإن كان لهم شيء
-                            فهو تحت الردم وكان شرف الدولة غائباً فلما حضر وراى شيزر وما حل بها وعاين زوجة أخيه بعد <pb ed="shamela"
-                   n="n82-p11"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5549.xhtml"/> العز في ذلك
+                            فهو تحت الردم وكان شرف الدولة غائباً فلما حضر وراى شيزر وما حل بها وعاين زوجة أخيه بعد <pb ed="shamela" n="n82-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5549.xhtml"/> العز في ذلك
                             الذل عمل:</p>
                         <lg type="bayt">
                             <l>ليس الصباح من المساء بمثل </l>
@@ -699,9 +646,7 @@
                             <l> مدت خليجاً مزبدا</l>
                         </lg>
                         <p>فوعده أبو الفضائل بإطلاقهما فكتب إليه يتنجز توقيعاً بذلك:</p>
-                        <p>يا أيها الملك الجليل <gap resp="#org_MS"/> ظني بك الحسن الجميل <pb ed="shamela"
-                   n="n82-p12"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5550.xhtml"/> ولعبدك المسكين في <gap resp="#org_MS"/> حمامه خطب جليل</p>
+                        <p>يا أيها الملك الجليل <gap resp="#org_MS"/> ظني بك الحسن الجميل <pb ed="shamela" n="n82-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5550.xhtml"/> ولعبدك المسكين في <gap resp="#org_MS"/> حمامه خطب جليل</p>
                         <lg type="bayt">
                             <l>مالي إليه بغير تو </l>
                             <l> قيع أرواح به سبيل</l>
@@ -779,9 +724,7 @@
                         <p>هو والله مشتري فلك أصبح باليمن دائم الدوران</p>
                         <p>سار في برجه فأطفأ بالسعد نخوس المريخ والدبران</p>
                         <p>طرف الله عين عداه وإن ساء عدوا ما قلت عين الزمان</p>
-                        <p>وكفانا فيه الملمات ما صوب نجم أو لاح برق يمان <pb ed="shamela"
-                   n="n82-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5551.xhtml"/> فوحق الأنعام والكهف
+                        <p>وكفانا فيه الملمات ما صوب نجم أو لاح برق يمان <pb ed="shamela" n="n82-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5551.xhtml"/> فوحق الأنعام والكهف
                             والطو <gap resp="#org_MS"/> ر وطه وسورة الرحمن</p>
                         <p>لو تركنا نختار بين الأماني وضقنا وهن بالأرسان</p>
                         <lg type="bayt">
@@ -851,9 +794,7 @@
                             <l>غير إني أرى الأطايب شرزاً </l>
                             <l> وحليف الإفلاس عنها قصي</l>
                         </lg>
-                        <p>وقال في عبد الودود النحوي <pb ed="shamela"
-                   n="n82-p14"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5552.xhtml"/> كشف رأس النحوي غير عجيب
+                        <p>وقال في عبد الودود النحوي <pb ed="shamela" n="n82-p14" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5552.xhtml"/> كشف رأس النحوي غير عجيب
                             <gap resp="#org_MS"/> هل رأى الناس أَيلا بعمامه</p>
                         <lg type="bayt">
                             <l>هو صدر إن كان زهداً وعلماً </l>
@@ -912,9 +853,7 @@
                             <l>وقد رميناها سهماً </l>
                             <l> من المديح وصبنا</l>
                         </lg>
-                        <p>فاستقي الثرى الجعد يا غيث كل جدب وصبنا <pb ed="shamela"
-                   n="n82-p15"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5553.xhtml"/> ففي كمالك داع <gap resp="#org_MS"/> دعا بنا فأجبنا</p>
+                        <p>فاستقي الثرى الجعد يا غيث كل جدب وصبنا <pb ed="shamela" n="n82-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5553.xhtml"/> ففي كمالك داع <gap resp="#org_MS"/> دعا بنا فأجبنا</p>
                         <p>وأنشدني عز الدين عبد العزيز بن سالم بن محمد الحراني</p>
                         <lg type="bayt">
                             <l>لو كنت تعلم كل ما علم الورى </l>
@@ -932,9 +871,7 @@
                             نفيس خصوصاً وهي مكتوبة بخط صاحبها وفيها من الأشعار والأخبار ما يلذ ويفيد. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n82-p16"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5554.xhtml"/>
+                        <pb ed="shamela" n="n82-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5554.xhtml"/>
                         <head>حب الوطن</head>
                         <p>خطب ارنست لافيس من مشاهير علماء الاجتماع والتاريخ واحد أعضاء المجمع العلمي الفرنساوي في إحدى المدارس الفرنساوية
                             خطبة في حقيق الوطن قال فيها:</p>
@@ -954,9 +891,7 @@
                             الأدب هو بمنزلة الاعتراف العام في أمة تودعه تصوراتها في الوجود وتصوراتها في الإنسان. وكانت الآداب الفرنساوية
                             ترجماناً عبر فكر فرنسا وأخلاقها الخاصة بها وجعل من الجماعة التي ضمت السياسة شملهم جماعة زبطت بينهم الأخلاق.</p>
                         <p>مضى زمن طويل كانت فيه فرنسا متفقة مع مليكها في الأفكار وذلك لاعتقاد الفرنسيس أن الملك كان نائب الله تعالى عَلَى
-                            الأرض يجب حيه وخدمته كما يحب المولى ويطاع. <pb ed="shamela"
-                   n="n82-p17"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5555.xhtml"/> أيها الجمهوريون الصغار
+                            الأرض يجب حيه وخدمته كما يحب المولى ويطاع. <pb ed="shamela" n="n82-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5555.xhtml"/> أيها الجمهوريون الصغار
                             إنه يصعب عليكم قليلاً أن تدركوا هذا الشعور. ولكل زمن أخلاقه والمتأخر قد لا يعي حال المتقدم. ومن الضلال أن لا
                             يعترف أن هذه الأخلاق كانت فيما سلف مستحكمة شائعة كما أن من الضلال أن يحاول بعضهم إحياءها بعد أن ماتت
                             واضمحلت.</p>
@@ -976,9 +911,7 @@
                         <p>ولكن وطنكم ليس وحيداً بين الأوطان في هذا العالم. هناك أوطان كثيرة تحيط بكم تألفت عَلَى غير الصورة التي تألف بها
                             وطنكم كألمانيا وإيطاليا التي كان نشؤهما بطيئاً وكإنكلترا التي كان نشؤها سريعاً. هذه الأوطان قننت قوانينها وأنشأت
                             لغاتها وآدابها وكل منها قد أبانت عن أفكارها وعواطفها في الطبيعة والإنسانية كما ابنا نحن. ولكل منها أفكارها التي
-                            تخالف أفكارنا ونبوغها الذي لا ينطبق مع نبوغنا وكل من تلك الأوطان يحبه أبناؤه كما <pb ed="shamela"
-                   n="n82-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5556.xhtml"/> تحب فرنسا أبناءها.</p>
+                            تخالف أفكارنا ونبوغها الذي لا ينطبق مع نبوغنا وكل من تلك الأوطان يحبه أبناؤه كما <pb ed="shamela" n="n82-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5556.xhtml"/> تحب فرنسا أبناءها.</p>
                         <p>ماذا يجب أن تكون عليه عواطف تلك الأوطان وسلوكها بعضها مع بعض؟ هذه مسألة هي الآن مما يشغل الأذهان ويهيجها وتنقسم
                             في تصورها الأفكار. فقد كان الشعور الذي تشعر به كل منها مدة قرون هو البغض والسلوك الذي تسلكه هو الالتجاء إلى
                             الحرب. والظاهر أنه لم يكن يتأتى للمرء أن يحب وطنه بدون أن يكره وطن غيره.</p>
@@ -997,19 +930,17 @@
                             هي بلاد البشر. ولكن ربما ارتبكتم إذا سئلتم فائدة دراسة التاريخ.</p>
                         <p>ابن الربعين في السنة التي أنتم فيها يبدو كأنه شيخ هرم منذ مائة سنة أو مائتين أو ثلثمائة أو أكثر. ولا شك أنكم
                             تنكرونه ولا علاقة لكم بهم وإذا كانوا هم آمنين مطمئنين في موتهم فعليهم أن يتركوا صغار الأحياء آمنين بدلاً من أن
-                            يملؤوا دروس أسمائهم وقائمة أسمائهم بحركاتهم وسكناتهم وبأرقام تواريخهم وأزمانهم. <pb ed="shamela"
-                   n="n82-p19"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5557.xhtml"/> ولكنكم أيها الأبناء
+                            يملؤوا دروس أسمائهم وقائمة أسمائهم بحركاتهم وسكناتهم وبأرقام تواريخهم وأزمانهم. <pb ed="shamela" n="n82-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5557.xhtml"/> ولكنكم أيها الأبناء
                             مخدوعون باعتقادكم بأن المضي بعيد. هو قريب منا ومجاور لنا وهاءنذ أبينه لكم في بضع كلمات: ولد لويس الرابع عشر سنة
-                            638 أي منذ 260 سنة وأنا الذي لم أبلغ سن الهرم بعد عرفت في نوفيون رجلاً أدرك المعاصرين للويس الرابع عشر.</p>
-                        <p>ويدعى هذا الرجل كؤول وكثيرون ممن جلسوا الآن عَلَى هذه المقاعد يذكرون ألوما إليه فقد مات سنة 1856 في التسعين من
+                             <tei:num value="638" xml:lang="ar">٦٣٨</tei:num>  أي منذ  <tei:num value="260" xml:lang="ar">٢٦٠</tei:num>  سنة وأنا الذي لم أبلغ سن الهرم بعد عرفت في نوفيون رجلاً أدرك المعاصرين للويس الرابع عشر.</p>
+                        <p>ويدعى هذا الرجل كؤول وكثيرون ممن جلسوا الآن عَلَى هذه المقاعد يذكرون ألوما إليه فقد مات سنة  <tei:num value="1856" xml:lang="ar">١٨٥٦</tei:num>  في التسعين من
                             عمره كما تشاهدون ذلك مزبوراً عَلَى شاهد قبره المصنوعة من الرخام الأبيض. وكانت سني إذ ذاك أربع عشرة سنة وكنت أراه
                             كل يوم إلا قليلاً وكان خال خالي الكبير شهد أموراً هائلة مدهشة فرأى لويس السادس عشر يرفع عَلَى المشنقة دستور
                             فرنسا القديم يمزق كل ممزق وفرنسا مولعة بحياة خيالية جديدة. فأخذ يوحي بروح القرن الثامن عشر الذي تعلمت مذ ذاك أن
                             أحبه في أوهامه وخيالاته لأنه كان قرناً في الشقاء والبربرية وتلاه قرن من الهناء والإنسانية.</p>
-                        <p>فالمسيو كؤول ولد إذاً سنة في سنة 1766 وبلغ سنة 1776 سن الرشد. وفي ذلك الزمن لقي ولا شك بعض أناس من أبناء الثمانين
-                            في نوفيون. وعليه فالرجل الذي كان في سن الثمانين سنة 1776 قد ولد سنة 1696 وكان في سنة البلوغ عندما قضى لويس
-                            الرابع عشر نحبه سنة 1715. وبهذا فأنتم ترون أن هذا الملك الذي يتراءى لكم أنه بعيد العهد جداً قد مسستموه بأيديكم
+                        <p>فالمسيو كؤول ولد إذاً سنة في سنة  <tei:num value="1766" xml:lang="ar">١٧٦٦</tei:num>  وبلغ سنة  <tei:num value="1776" xml:lang="ar">١٧٧٦</tei:num>  سن الرشد. وفي ذلك الزمن لقي ولا شك بعض أناس من أبناء الثمانين
+                            في نوفيون. وعليه فالرجل الذي كان في سن الثمانين سنة  <tei:num value="1776" xml:lang="ar">١٧٧٦</tei:num>  قد ولد سنة  <tei:num value="1696" xml:lang="ar">١٦٩٦</tei:num>  وكان في سنة البلوغ عندما قضى لويس
+                            الرابع عشر نحبه سنة  <tei:num value="1715" xml:lang="ar">١٧١٥</tei:num> . وبهذا فأنتم ترون أن هذا الملك الذي يتراءى لكم أنه بعيد العهد جداً قد مسستموه بأيديكم
                             إلا قليلاً.</p>
                         <p>إن المائة والتسعة والثمانين عاماً التي مرت بين موته وبينكم هذه مدة قصيرة من الزمن ينبغي لها ثلاثة رجال وأنا الذي
                             أخاطبكم وخالي وذاك الرجل الثمانين إذا مسك أحد بيد صاحبه نصل إلى هذا العهد وعلى هذا فليس من حاجة إلى سلسلة طويلة
@@ -1018,9 +949,7 @@
                             نستطيع أن نقول عن رجل مات منذ أمد بعيد جداً فلا حق لكم إذاً أن تحيدوا عن الماضي كما تحيدون عن أمر بعيد جداً وإذ
                             كان قريباً منا كثيراً لا يجب أن يتطلع أحدكم لئلا يحمل عَلَى النظر فيه قليلاً. إن هذا التطلع إذاً ينفعكم وبه
                             تطيلون حياتكم أن تضيفوا أزمنة إلى زمانكم كأنكم عشتم فيها. نحن قلما تنعم في حياتنا القصيرة ولذلك نحلم بخلود
-                            روحنا. أما التاريخ فيه ضروب من الخلود وراء حجب <pb ed="shamela"
-                   n="n82-p20"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5558.xhtml"/> الماضي ويظهر لي أني بصرف
+                            روحنا. أما التاريخ فيه ضروب من الخلود وراء حجب <pb ed="shamela" n="n82-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5558.xhtml"/> الماضي ويظهر لي أني بصرف
                             حياتي في دراسته قد بلغت الآن من العمر عَلَى الأقل خمسة أو ستة آلاف سنة. وأنا أتنزه في فضاء واسع طافح بالأنوار
                             والظلمات والحركات وأتنفس برئتين واسعتين.</p>
                         <p>بيد أن معرفة التاريخ شيئاً غير هذا وأحسن منه في الأثر فالتاريخ هو الفراق العظيم بين الإنسان والحيوان. فالكلب يجهل
@@ -1038,9 +967,7 @@
                             وحبس وشرد ملأ سجون بالرجال والمطابق المؤبدة عَلَى أنه لم يكن رديئاً كما لم يكن غبياً لأنه كان عَلَى جانب من
                             الذكاء. ولم يكن ساقطاً لأنه كان محتشماً في سره وعلى شيء من العدل. ولكن الزمن إذ ذاك كان يبيح تلك الأخلاق. وكان
                             كل ما يأتيه الملك يعتقد - ومعظم الشعب يوافقه عَلَى اعتقاده - بأن له الحق أن يعمل ما يريد بحيث أنه لا يحزن إلا
-                            إذا قلبت الأيام له ظهر المجن ولا يتأثر وجدانه بل إنه يأسف قليلاً يبد <pb ed="shamela"
-                   n="n82-p21"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5559.xhtml"/> عليه في حفلته وهو عَلَى
+                            إذا قلبت الأيام له ظهر المجن ولا يتأثر وجدانه بل إنه يأسف قليلاً يبد <pb ed="shamela" n="n82-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5559.xhtml"/> عليه في حفلته وهو عَلَى
                             سرير الملك يكلم وارثه المحزون الذي دعي لويس الخامس عشر.</p>
                         <p>نعم كانت تلك الأعصر عصور عدم المساواة الاجتماعية المعتدلة بدون نقض ولا إبرام. فكان يوصف الفلاحون من حرج في مملكة
                             فرنسا - التي هي ضرب من جدول الأيام الوطني - بأنهم (وإن كانوا أكثر عدد من غيرهم فليسوا مما يجب الاحتفال به بل لنا
@@ -1059,9 +986,7 @@
                             والمظالم الإنسانية التي لم تستأصل شأفتها.</p>
                         <p>هذا العمل شاق ولا يخلو من مخاطر وذلك لأننا نحاول للمرة الأولى أن نرفع ما سقط ونقوم ما انحنى. وظاهر بأن الناس كلهم
                             كيفما دارت الحال لا يقدرون عَلَى الاضطلاع بأعباء الزعامة وأنه يجب شيء من النظام أبداً وشيء من الترتيب وبديهي بان
-                            بعضهم <pb ed="shamela"
-                   n="n82-p22"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5560.xhtml"/> يتساءلون عمن يقوم عَلَى
+                            بعضهم <pb ed="shamela" n="n82-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5560.xhtml"/> يتساءلون عمن يقوم عَلَى
                             هذا النظام وهذا الترتيب.</p>
                         <p>لا تعجب أن ترى كثيراً من الناس وفيهم أهل الحشمة والصلاح يضطربون ويقلقون وينكرون علينا ما نعد الأمة له ونحلم به من
                             تحسين مستقبلنا. هذه الفئة من الناس هي التي تريد منا أن نرجع أفكار أجدادنا وأخلاقهم ولكني لا أرى بأي حق يقفون في
@@ -1072,7 +997,7 @@
                             اللطيفة تعدنا بأمور جميلة. ولكن الإنسانية لم يهدأ لها بال قط. وما قط عاشت بدون شهوات وأحقاد وبدون أحلام ومطامع.
                             أما أنا فإني معجب بما مر علي من أيام البؤس والسخط عجبي من الكون الذي يتم فيه هذا العمل العظيم في العالم.</p>
                         <p>ولو ذكرت لكم ما حدث هناك في تلك المقاطعة وحدها لطال بي المطال ولطالما أصابها ما أصاب باريز نفسها. اذكروا فيها
-                            أيام 1848 والفتن اليومية التي حدثت عَلَى عهد لويز فيلي وأيام الثورة والتمرد عَلَى أيام الحكم القديم عهد لويس
+                            أيام  <tei:num value="1848" xml:lang="ar">١٨٤٨</tei:num>  والفتن اليومية التي حدثت عَلَى عهد لويز فيلي وأيام الثورة والتمرد عَلَى أيام الحكم القديم عهد لويس
                             الرابع عشر وحركات القرون الوسطى الهائلة أما اليوم فليس فيها شيء من هذا يباكر الناس مضاجعهم فينامون ملء جفونهم
                             آمنين مطمئنين.</p>
                         <p>أنا لا أتنبأ فلا أقول بأن الدهر لنا بالمرصاد عَلَى أنني لا أعتقد بالتقلبات الدائمة المحزنة فقد حدث نجاح عظيم في
@@ -1080,9 +1005,7 @@
                             قسوة يعد جناية في البلاد المتمتعة بروج الجهورية.</p>
                         <p>يعلمونكم في المدرسة روح التكافل والتضامن وقاعدته أعن نفسك بنفسك وشعاره أعينوا بعضكم بعضاً وهذه القاعدة هي أساس
                             الإخاء العلمي ثم تجيء بعد أعمال المحسنين الشريفة أي إرادة الأمة الفرنسوية لتحفظ الحياة من الأمراض التي تهددها
-                            والطفولية من <pb ed="shamela"
-                   n="n82-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5561.xhtml"/> العمال وسوء التربية
+                            والطفولية من <pb ed="shamela" n="n82-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5561.xhtml"/> العمال وسوء التربية
                             والعمل من الحوادث والشيخوخة من الشقاء وتعطي الضعيف واسطة للمناقشة مع القوي وتقسم العمال العامة والتكاليف
                             الأميرية العسكرية عَلَى نصاب العدل. وما النظام الجمهوري إلا باحث عن العدل.</p>
                         <p>ألا فلنكبر دائرة الرجاء والآمال بحسن المآل وما الخير إلا ثمرة جهادنا العظيم وسرعته أكثر مما نتصور. واذكروا أن
@@ -1093,9 +1016,7 @@
                             إلا في التعليم ولا تعليم إلا للشبان رجال المستقبل. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n82-p24"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5562.xhtml"/>
+                        <pb ed="shamela" n="n82-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5562.xhtml"/>
                         <head>الجغرافي الإدريسي وصاحب صقلية</head>
                         <p>من مبحث لأحمد باشا زكي</p>
                         <p>لما آلت إلى الملك رجار النورمندي مقاليد الأحكام في جزيرة صقلية رأى ما عليه المسلمون من الحضارة والعرفان ومكارم
@@ -1114,9 +1035,7 @@
                             ونقلاه إلى لغتهما أيضاً. ومثل كلامه عَلَى فلسطين فقد طبعه أحد علماء الألمان باللغة العربية لاحتوائه عَلَى البيت
                             المقدس وما يليه من البقاع التي ظهرت فيها النصرانية.</p>
                         <p>ثم طبع اثنان من أفاضل العلماء الهولانديين قطعة من هذا الكتاب تتضمن ذكر الأندلس وبلاد الغرب ومصر والسودان وعنيا
-                            بترجمتها إلى اللفة الفرنسية مع الشروح اللغوية والجغرافية الضافية الشافية. <pb ed="shamela"
-                   n="n82-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5563.xhtml"/> هذه خلاصة وجيزة عما
+                            بترجمتها إلى اللفة الفرنسية مع الشروح اللغوية والجغرافية الضافية الشافية. <pb ed="shamela" n="n82-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5563.xhtml"/> هذه خلاصة وجيزة عما
                             أعمله (وهو كثير) من هذا الكتاب الفريد الجليل وقد كنا أبناء العرب ولا نزال إلى هذا اليوم لا نعرف سوى ما سبق من
                             القطع التي تفضل الإفرنج بل تصدقوا علينا بطبعها من هذا الكتاب النفيس المكتوب بلغتنا ولفائدتنا. فانعكست الآية
                             وجاءنا النور ضئيلاً من الغرب ومازلنا إذا احتجنا إلى شيء من ثمراته اضطررنا لاقتطافه من الترجمة الفرنسية وفيها ما
@@ -1136,9 +1055,7 @@
                             كثير جداً فتركه الملك له. ورجاه رجار أن يقبله دليلاً عَلَى أنه يعرف فضله.</p>
                         <p>ولم يكن عَلَى الشريف قاصراً عَلَى الجغرافية والفلك بل كان بارعاً في معرفة الطب وعقاقيره. وقد ألف في هذا الفن
                             كتاباً أصبح الآن معدوماً بالكلية. ولكن من يمعن النظر في مفردات ابن البيطار يعرف قيمة هذا الكتاب. فقد نقل عنه
-                            كثيراً في كتابه الباقي بين أيدينا بأصله العربي وبترجمته الفرنسية. <pb ed="shamela"
-                   n="n82-p26"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5564.xhtml"/> ولا بأس أن نذكر شيئاً من
+                            كثيراً في كتابه الباقي بين أيدينا بأصله العربي وبترجمته الفرنسية. <pb ed="shamela" n="n82-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5564.xhtml"/> ولا بأس أن نذكر شيئاً من
                             مقدمة نزهة المشتاق في اختراق الآفاق لتعريف القارئ بالثناء المستطاب الذي خلد به الإدريسي ذكرى رجار عَلَى ممر
                             الأدهار والأعصار.</p>
                         <p>قال الشريف الإدريسي: أفضل ما عني به الناظر، واستعمل فيه الأفكار والخواطر، وما سبق إليه الملك المعظم رجار المعتز
@@ -1158,9 +1075,7 @@
                             أكثر ما في الكتب المذكورة فلما رآهم عَلَى مثل هذه الحال، بعث إلى سائر بلاده فأحضر العارفين بها والمتجولين فيها.
                             . . . .</p>
                         <p>ثم اشار الإدريسي إلى صنع الكرة الفضية وأنها عظيمة الجرم ضخمة الحجم، في وزن أربعمائة رطل بالرومي، في كل رطل مكنها
-                            مائة درهم واثنا عشر درهماً، وقال أنها <pb ed="shamela"
-                   n="n82-p27"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5565.xhtml"/> تضمنت صور الأقاليم
+                            مائة درهم واثنا عشر درهماً، وقال أنها <pb ed="shamela" n="n82-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5565.xhtml"/> تضمنت صور الأقاليم
                             ببلادها وأقطارها وسيفها وريفها وخلجانها وبحارها ومجاري مياهها ومواقع أنهارها وعامرها وغامرها. . . والطرقات. . .
                             والأميال. . . والمسافات. . . والمشاهد. . . إلى أن قال أنه طلب تأليف كتاب مطابق لما في أشكالها وصورها غير أنه
                             يزيد عليها بوصف أحوال البلاد والأرضين في خلقها وبقاعها وأماكنها وصورها وبحارها وجبالها وأنهارها ومواتها
@@ -1178,12 +1093,10 @@
                             يستدل بها ويحصل عَلَى الغرض المقصود منها إن شاء الله تعالى!). </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n82-p28"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5566.xhtml"/>
+                        <pb ed="shamela" n="n82-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5566.xhtml"/>
                         <head>الأمة والتعليم</head>
                         <p>نشر جبرائيل سيايل من علماء فرنسا كتاباً أسماه (التربية والثورة) تكلم فيه عن واجبات الحكومة نحو الرعية وواجبات
-                            الرعية نحو الحكومة ولاسيما عامة الشعب وسوادهم الأعظم وقع في 250 صفحة وهاك تعريب ثلاثة فصول منه قال في حقوق الأمة
+                            الرعية نحو الحكومة ولاسيما عامة الشعب وسوادهم الأعظم وقع في  <tei:num value="250" xml:lang="ar">٢٥٠</tei:num>  صفحة وهاك تعريب ثلاثة فصول منه قال في حقوق الأمة
                             في التعليم وهو مقدمة الكتاب:</p>
                         <p>من راقب الأمور بنظر الناقد البصير لا يلبث أن يسجل بأن الانطباع عَلَى الديمقراطية لا يتأتى إلا إذا كان له عون من
                             الأفراد أنفسهم فالديمقراطية هي في الحقيقة تربية وتعليم لا خلقة وملكة أرثية ولا تنشأ العبودية إلا من ضاعة النفس،
@@ -1200,9 +1113,7 @@
                             الأنانية وحب الذات وحرصاً عَلَى فائدة ينالها بعضهم أو لبلوغ مرقاة من مراقي الكمال تقتصر عنها يد المتناول وما
                             عَلَى المدارس والكليات الجامعة إلا أن تأخذ بيد الأمة في هذا السبيل وتعرفها مصالحها وتعلمها ما يحفظ به كيانه.</p>
                         <p>وحري بنا أن ندعو إلى الأفكار التي تقل العناية بها لأنها تبدو في مظهر يفهم منه أنها طبيعية عامة لا تحتمل الجدال
-                            والقيل والقال وأن تتدبرها ليتجلى لنا معناها وأصلها لآنا <pb ed="shamela"
-                   n="n82-p29"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5567.xhtml"/> كثيراًُ ما نراها تحمل في
+                            والقيل والقال وأن تتدبرها ليتجلى لنا معناها وأصلها لآنا <pb ed="shamela" n="n82-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5567.xhtml"/> كثيراًُ ما نراها تحمل في
                             مطاويها معتقدات نشكو من وجودها ومبادئ هي في الحقيقة قوة هذا العصر وشرفه الأثيل. وهذه الأفكار الجديدة الغريبة هي
                             أن يكون لجميع الناس حق الاشتراك في درك الحقيقة وأن يكون عليهم واجبات يقضي بها عليهم واجب العلم وأن تكون بين
                             العلماء وعامة الأمة روابط أدبية ليوحوا إليهم بما في صدورهم من علم صحيح ويشاطروهم ما حازوه من نعمة العقل الواسع
@@ -1221,14 +1132,12 @@
                             مخاطبات تكون عاقبتها بينهم كثرة المراسلة.</p>
                         <p>وفي رسائل الفيلسوفين ديكارت الفرنسوي وليبنتز الألماني شهادة حية ناطقة بائتمار العلماء في مبادلة الأفكار وتوفرهم
                             عَلَى تحرير العقول من رقها للبحث عن الحقيقة وكان من دواعي الاتصال بين العلماء اعتمادهم عَلَى اللغة اللاتينية وهي
-                            اللغة التي كان يتكلم ويكتب بها جميع المنورين. <pb ed="shamela"
-                   n="n82-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5568.xhtml"/> وكلما كان هذا النهج يتضح
+                            اللغة التي كان يتكلم ويكتب بها جميع المنورين. <pb ed="shamela" n="n82-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5568.xhtml"/> وكلما كان هذا النهج يتضح
                             ويصير إلى المحسوسات أقرب وإلى البحث لا إلى التصور وإلى تقسيم الأعمال بين أهل الاشتغال من الرجال - كان العلماء
                             يدركون بأن حاجتهم بعضهم إلى بعض ماسة كل المساس. إن أعمالهم ينبغي لها أن تكون متجهة إلى مركز واحد وأنهم كلما
                             اتحدت وجهتهم نحو فكر واحد واشتركوا يداً واحدة في عمل واحد أصبحوا كأبناء الوطن الواحد الذين يسعون إلى إبلاغ
                             بلادهم مبالغ الكمال.</p>
-                        <p>قام بيل الكاتب الفرنسوي (1625 - 1798) المبشر بدعوة الفيلسوف فولتير بالإصلاح والتجأ إلى هولاندة لأن ظلم لويس
+                        <p>قام بيل الكاتب الفرنسوي ( <tei:num value="1625" xml:lang="ar">١٦٢٥</tei:num>  -  <tei:num value="1798" xml:lang="ar">١٧٩٨</tei:num> ) المبشر بدعوة الفيلسوف فولتير بالإصلاح والتجأ إلى هولاندة لأن ظلم لويس
                             الرابع عشر جعل تلك المملكة الصغيرة أرض الأفكار الحرة وهناك اخذ بنشر كراسة عَلَى شكل مجلة تحت عنوان ينبئ بما
                             ينطوي عليه من المعاني الحسان وهو أخبار جمهورية الآداب وهذه الجمهورية التي حد لها ولا تخوم ولا جرم تجل عن المصالح
                             المادية والمطامع ومزاحمة الأمراء ومنها أخذت الإنسانية تدخل في طورها المعهود وعظمتها الفائقة ولكن ما الفائدة من
@@ -1242,9 +1151,7 @@
                             التسامح وبمن لا تشمئز نفسه من الظلم الفاضح وتبن مسافة الخلف الذي حدث بالتدريج بين هذه الأعمال البربرية والوجدان
                             البشري ذلك عَلَى الرغم من أنصار التقليد والمحافظين عَلَى الأوهام الخيالات وهناك نشأت قوة جديدة وأعني قوة الرأي
                             العام عَلَى أن هذا الرأي العام لا يزال مقصوراً عَلَى أرباب القصور وصادراً عن خاصة الناس وعلية القوم من أرباب
-                            الأموال والأملاك وقادة الأفكار من الفلاسفة وربات الأفكار من النساء وكلهم بما <pb ed="shamela"
-                   n="n82-p31"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5569.xhtml"/> امتازوا به من ضروب
+                            الأموال والأملاك وقادة الأفكار من الفلاسفة وربات الأفكار من النساء وكلهم بما <pb ed="shamela" n="n82-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5569.xhtml"/> امتازوا به من ضروب
                             التميز عَلَى غيرهم من عامة الشعب قد أحرزوا نعمة التميز والفكر.</p>
                         <p>وقال من فصل آخر: وسعت الثورة الفرنسوية دائرة الإنسانية فأدخلت فيها الناس عَلَى اختلاف أجناسهم. عمت ولم تخصص
                             وتوسعت في مراميها ومعانيها وراحت تعامل جماع الخلق مطبقة ما ورد في فلسفة أرسطو من تعريف الإنسان أنه حيوان عاقل
@@ -1263,9 +1170,7 @@
                             منهم المجتمع الديمقراطي أن يشتركوا في الحياة الوطنية.</p>
                         <p>مطالب الوطن بأن مطالب التمدن هي هي أعز مصالحنا التي نرمي إلى نيلها وتستلزم هذه المطالب أن لا يكون حث الأمة في
                             التعليم من الشرائع المنسوخة فقد فرضنا آنفاً من باب التجوز أن كل امرئ هو شخص في ذاته وأن كل حي خلق عَلَى صورة
-                            البشر هو إنسان وقسمنا بينهم السلطة التي كانت في القديم محصورة في يد فرد واحد فعلينا أن لا نحجم فيما <pb ed="shamela"
-                   n="n82-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5570.xhtml"/>
+                            البشر هو إنسان وقسمنا بينهم السلطة التي كانت في القديم محصورة في يد فرد واحد فعلينا أن لا نحجم فيما <pb ed="shamela" n="n82-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5570.xhtml"/>
                             ندعو إليه وقد أوشكنا أن نفلح فيه إلا وأنه يجب إذا أرنا أن تتفق الأخلاق مع الأوضاع ولا تناقض الحقيقة مبادئ
                             الوطنية الرئيسة أن يقدر كل فرد عَلَى القيام بالواجبات الناشئة من الحقوق التي له ومن الضروري أن يكون الإنسان
                             خلقاً يعقل لأنا فرضنا له ذلك وبنينا قواعد كلامنا عليه. تعليم عامة الأمة هو من النتائج المعقولة في إشراكها
@@ -1284,9 +1189,7 @@
                             عَلَى الأماني الواهين باستنادنا عَلَى العامة والغوغاء من مجموع الأمة وأخطأنا أن بنينا عَلَى خيوط العناكب هذا
                             الشبح من هذيان الفلسفة. فلسفة المساواة بين أبناء الوطن الواحد وأسلمنا المجتمع والتمدن إلى من. إلى الرجل الفطري
                             الذي بين أيدينا. إلى العالمي الذي يطوف الشوارع. إلى حيوان شرير مفترس فاسق. عَلَى أنني أرى عَلَى الرغم مما يقولون
-                            أولئك المتفلسفون أن من الأمور ما ينبغي أن يبدأ من غاياته وهكذا <pb ed="shamela"
-                   n="n82-p33"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5571.xhtml"/> يشرع في الأعمال العظيمة
+                            أولئك المتفلسفون أن من الأمور ما ينبغي أن يبدأ من غاياته وهكذا <pb ed="shamela" n="n82-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5571.xhtml"/> يشرع في الأعمال العظيمة
                             كلها. فالشاعر لا ينظم قصيدة من أبيات ملتحم آخرها بأولها. والمصور يرسم التقاطيع أولاً. والصانع يرى بادئ بدءٍ ما
                             يريد صنعه دفعة واحدة فيتصوره في مجموعه ويحصر فيه ذهنه. وهذا الباعث الداخلي هو الذي يحمله عَلَى أن يفادي بصرف
                             عمره كله ليحكم صناعته ويشرك الناس فيما وقع في نفسه أنه جميل نافع فالفكر يخترع صوراً جديدة من الخير ليحققها ليجدر
@@ -1305,9 +1208,7 @@
                         <p>وقال في معنى المدارس الحرة أي اللادينية ما نصه:</p>
                         <p>الحنق والغضب أيها الأساتذة هو من العواطف التي لا يليق أن تسري إلى قلوبكم لأنها منافية للمهمة التي عهدت إليكم من
                             إنارة العقول وتربية الملكات. فالمدرسة ولا أزيدكم علماً ليست لشيعة مخصوصة ولا لأهل حزب معين بل هي للأمة بمجموعها
-                            ولذلك لا ينطبق مع مصلحتها أن تكون خطتها إلقاء بذور الكراهة والتناكر لأن لأبناء البلاد عَلَى اختلاف <pb ed="shamela"
-                   n="n82-p34"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5572.xhtml"/>
+                            ولذلك لا ينطبق مع مصلحتها أن تكون خطتها إلقاء بذور الكراهة والتناكر لأن لأبناء البلاد عَلَى اختلاف <pb ed="shamela" n="n82-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5572.xhtml"/>
                             أصولهم وأديانهم الحق أن يتبسطوا في بقاعها ورباعها وعليهم حقوق يقضونها عَلَى حد سواء.</p>
                         <p>وإني لأغتبط كلمت رأيت بأن عَلَى الأستاذ ألا يدرك قواعد الأوهام والخرافات إلا بإقامة ما يخلفها من الحقائق السامية
                             وكلما رأيته مضطراً بحكم الضرورة إلى تجنب كل مشاغبة واعتراض وأن يلقي في الأذهان ما ثبت ووقع موقع الحسن ولم يقبل
@@ -1326,9 +1227,7 @@
                             تقم قط الوحدة الوطنية منذ ثار ثائر الثورة الفرنسية عَلَى وحدة الدين والمذهب. وهذا ما دعا إلى أن يكون في المجتمع
                             المدني مبادئ تخوله البقاء والنهوض. وهكذا يرجع الحق الديني القديم القهقرى عَلَى التدريج أمام الحق البشري. وينبعث
                             من ذلك بالتدريج فكر جديد بأن يكتفي المجتمع بما لديه من المقومات والمشخصات. وأنه بما ينشأ في وسطه من الأوضاع
-                            البشرية ثمين فقي <pb ed="shamela"
-                   n="n82-p35"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5573.xhtml"/> ذاته غني باسمه وصفاته
+                            البشرية ثمين فقي <pb ed="shamela" n="n82-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5573.xhtml"/> ذاته غني باسمه وصفاته
                             ويورث الناس قوة تبعثهم عَلَى ورود موارد الكمال. وأم لهم مهما كانت أديانهم وفلسفتهم ومزاعمهم عن العالم الثاني من
                             المجتمع الذي يوليهم الذكاء والإرادة ما يرتفعون به إلى الإنسانية الحقيقية. والمجتمع في مكنته بل هو مضطر إلى أن
                             يهب أعضاؤه المؤلف منهم تربية فيها جميع المواد اللازمة والحاجات المبرمة والغايات السامية.</p>
@@ -1348,9 +1247,7 @@
                             بوجداناتهم بل حاول أن تطهر قلوبهم وتعرضها كما ينبغي لنا أن نراها. علم الناشئة واغرس في نفوسهم ملكة الشعور بعظمة
                             أمنيتهم الحقيقية. اكشف لهم حجاب الماضي واعرض عَلَى أنظارهم تاريخهم ولا تنس أن تطلعهم عَلَى حاضرهم وترشدهم إلى
                             مستقبلهم. علمهم ما يقوي إرادتهم في طلب العدل وثقتهم في الحق ولقنهم ما يستطيعون معه أن يفادوا بنفوسهم ليهيؤا
-                            مدنية أفضل من المدنية الحاضرة. <pb ed="shamela"
-                   n="n82-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5574.xhtml"/> ثق بأن الناس لا يتوقفون
+                            مدنية أفضل من المدنية الحاضرة. <pb ed="shamela" n="n82-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5574.xhtml"/> ثق بأن الناس لا يتوقفون
                             عن ورود مواد الردى مدفوعين بتوهم الكمال إذا عرفت كيف تلقي في نفوسهم أن هذا الكما لهو مادة حياتهم وبدونه لا تقوم
                             لهم قائمة فإن صح أن هاذ التناهي في الكمال مناف للشدة وإزهاق الأرواح وجميع ضروب القتل ولا يكون إلا بتوطيد دعائم
                             السلم بين الأمم فلا تطلب إلى ما تريد صلاحهم أن يتطاولوا فقط إلى الدفع عن حياتهم وحبها والإدلال بقدرها بل سهل في
@@ -1368,10 +1265,8 @@
                             المجتمع. يتهكم خصوم المدرسة الحرة بأن مدرستكم أداة حرب يقصد بها حرب الكنيسة وأنها مخالفة لروح السلطة الروحية.
                             ولكن فاتهم أن التعليم العلمي العلماوي هو نقيض التعليم الديني وأن من شأن المدرسة الحرة أن تبتعد عن إشهار الحرب
                             بين العقول وأن تعمل عَلَى ربط أواخي الإخاء والسلام المتبادل بين العالمين.</p>
-                        <p>قال إدغار كيني سنة 1849 في كتابه تعليم الأمة: طالما ذهبت إلى أن المجتمع الحديث قائم عَلَى مبدأ لا يستطيع القيام
-                            به غيره. وعلى هذا المبدأ قام حقه المطلق في تعليم العلوم <pb ed="shamela"
-                   n="n82-p37"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5575.xhtml"/> المدنية. أساس هذا
+                        <p>قال إدغار كيني سنة  <tei:num value="1849" xml:lang="ar">١٨٤٩</tei:num>  في كتابه تعليم الأمة: طالما ذهبت إلى أن المجتمع الحديث قائم عَلَى مبدأ لا يستطيع القيام
+                            به غيره. وعلى هذا المبدأ قام حقه المطلق في تعليم العلوم <pb ed="shamela" n="n82-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5575.xhtml"/> المدنية. أساس هذا
                             المجتمع الذي يربط بين أجزاءه ويمنعه من السقوط هو أن فيه نقطة لا يمكن تعليمها بمثل السلطة التي اتخذتها لنفسها
                             إحدى الأديان الرسمية. هذا المجتمع يقوم عَلَى مبدأ حب أهل الوطن الواحد بعضهم بعضاً بقطع النظر عن معتقداتهم.</p>
                         <p>فمن الذي يا ترى يتولى نشر هذا المذهب الذي هو في الحقيقة مادة العلم الحديث وهيولاه؟ يتولاه بالفعل لا بالقول. من
@@ -1391,9 +1286,7 @@
                             في فصل الشؤون الدينية عن الدنيوية. فالمدرسة الحرة ليست بهذا النظر عدوة الأديان الصحيحة بل تجهلها وترى أن في
                             مكنتها أن تربي أبناءها عَلَى يدها وحدها.</p>
                         <p>جاء زنة كانت فيه العادات والأخلاق بل الحق برمته مرتبطة بالدين فكان من الكنيسة أن توسعت في سلطتها الروحية بدون
-                            رقيب. من يقصر حقه عَلَى الظلم يضطهده والظلم <pb ed="shamela"
-                   n="n82-p38"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5576.xhtml"/> يقضي بأن تكون القوة تحت
+                            رقيب. من يقصر حقه عَلَى الظلم يضطهده والظلم <pb ed="shamela" n="n82-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5576.xhtml"/> يقضي بأن تكون القوة تحت
                             أمره ويدير دفة الشؤون الدنيوية ويقمع العصاة ولكن المجتمع المدني بعد أن قاسى كثيراً من الظلم قد تخلص منه ورأى أن
                             يحسن القيام بإدارة نفسه بنفسه. وتاريخ الفرنسويين لو نظرنا فيه مناف للكهنوتية ولطالما حاول أجدادنا أن ينزعوا ربقة
                             الخضوع للكنيسة.</p>
@@ -1412,9 +1305,7 @@
                             بالوجدان الشخصي.</p>
                         <p>ألقت اختلافاتنا الدينية بيننا العداوة والبغضاء فانقسمنا بها عَلَى أنفسنا ولا يتأتي أن يحف السلام أرضنا والائتلاف
                             ديارنا ولا أن يكون لنا منها أدب مشترك. لا يسوغ ن تكون المدرسة العامة إلا كما تكون الحكومة مصبوغة بغير الصبغة
-                            الدينية فإذا استوفت هذا الشرط وجحده تصبح ما يجب أن تكون وتقوم بما هو دعامتها ومادة حياتها. إن جمهوريتنا <pb ed="shamela"
-                   n="n82-p39"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5577.xhtml"/>
+                            الدينية فإذا استوفت هذا الشرط وجحده تصبح ما يجب أن تكون وتقوم بما هو دعامتها ومادة حياتها. إن جمهوريتنا <pb ed="shamela" n="n82-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5577.xhtml"/>
                             لا تبحث عن مبدأ وحدتها في التعليم الديني بل هي تعن باستقلالها عن كلب سلطة روحية وترى أن لها من نفسها ما يرفع
                             بنيانها وأن لها من مراميها الخاصة جميع ما هو قوام حياتها وبقائها.</p>
                         <p>وفي وسع جمهوريتنا أيها السادة أن تنفح أبنائها كلهم تربية أساسها ما يجمع شملهم لا ما يشتت جامعتهم. وبدون الاتحاد
@@ -1432,9 +1323,7 @@
                             الإرادة ويحييه الشعور. وبهذه الشروط فقد تصبح الحقائق التي تعلمونا حقيقة حية مرتبطة بأعمال الفكر الذي يوليها
                             عَلَى الدوام ما يكشف القناع عنها ويظهرها في مظهر الحق كلما جد تطبيقها.</p>
                         <p>وما دمت يا هذا تعدد الواجبات العامة وتأمر بالنظافة والاعتدال والشجاعة فالعالم يوافقونك عَلَى ما تقول ومتى حاولت
-                            أن ترجع هذه الأمور إلى مبدأ عام وصرحت بفكر عام في الحياة وقيمتها ومعناها فهناك تختلف الأفكار وتتعارض. <pb ed="shamela"
-                   n="n82-p40"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5578.xhtml"/>
+                            أن ترجع هذه الأمور إلى مبدأ عام وصرحت بفكر عام في الحياة وقيمتها ومعناها فهناك تختلف الأفكار وتتعارض. <pb ed="shamela" n="n82-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5578.xhtml"/>
                             لا تعملوا عَلَى ما فيه هضم حقوق الوجدانات واستعبادها بل تلقونها اعتقادات لا تحلم النفوس أن تدافع عنها بحجة أنكم
                             تريدون أن تعدوا عقولاً حرة ذات كفؤ للعمل. الحكومة الجمهورية لها الحق في البقاؤ بل يجب عليها أن تحرص عليه وتحتاط
                             لنفسها وتدافع عن حوزتها. فهي قائمة عَلَى محض احترام الحريات المتبادلة ومن حقها بل من واجبها أن تعد جيلاً من
@@ -1456,9 +1345,7 @@
                             لأنه هو الأساس ولا بناء بدون أُس قوي. </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n82-p41"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5579.xhtml"/>
+                        <pb ed="shamela" n="n82-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5579.xhtml"/>
                         <head>أخبار وأفكار</head>
                         <p>حفظ المكاتب</p>
                         <p>يحسن أصحاب المكاتب صنعاً إذا أرادوا بقاء كتبهم سالمة أن يقوموا باحتياطات الآتية: يقون أولاً استعمال الخزائن ذات
@@ -1478,9 +1365,7 @@
                             وبين المعدن الأول والمعدن الأخير زهاء خمسة وخمسين معدناً منوعاً دخلت في الاستعمال وأصبحت مساعدة عَلَى المدنية
                             عَلَى اختلاف الأعصار.</p>
                         <p>إننا إذا أردنا الوقوف عَلَى تاريخ المعادن مدققاً يجب علينا الرجوع إلى العهد الذي كان الناس يعملون من الحجر سلاحهم
-                            وهذا لا يقل عن خمسة آلاف سنة وبفضل بحث العلماء <pb ed="shamela"
-                   n="n82-p42"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5580.xhtml"/> تبين أن الذهب كان
+                            وهذا لا يقل عن خمسة آلاف سنة وبفضل بحث العلماء <pb ed="shamela" n="n82-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5580.xhtml"/> تبين أن الذهب كان
                             يستعمله القدماء إذ وجد في مقابرهم مطرقاً عَلَى صورة حلي وبالنزر لندرة الذهب في الجملة لم يدخل في استعمال الأدوات
                             العادية بل اقتصروا عَلَى جعله صلة بين العصرين العظيمين العصر الحجري الذي انقضى والعصر النحاسي (البرونزي) الذي
                             أدى الإنسان إلى اكتشاف الحديد أي إلى أبواب الأزمان التاريخية. ثم ظهر النحاس وعم استعماله في أشياء كثيرة ولكنه
@@ -1498,9 +1383,7 @@
                             الشمال والغرب بل والجنوب.</p>
                         <p>وقد انتقل تطريق المعادن من الشرق إلى الغرب ودلت بعض الآثار التي وجدت مصورة في صورة تصفية بارزة من عهد الدولة
                             الخامسة المصرية وبعض ما وجد من الأثقال الحديدية في سويسرا بأنه كان في ذاك العهد مقاييس قابلة للوزن وأن التجارة
-                            كانت تربط إذ ذاك جمعاً من البشر أو من الأجناس. <pb ed="shamela"
-                   n="n82-p43"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5581.xhtml"/> المالوش</p>
+                            كانت تربط إذ ذاك جمعاً من البشر أو من الأجناس. <pb ed="shamela" n="n82-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5581.xhtml"/> المالوش</p>
                         <p>قرأت أخيراً في مجلة المقتبس ما كتبه البحاثة اللغوي ساتسنا في العنجوس فازددت بفضله معرفة وبأبحاثه العديدة شغفاً
                             منها بحثه في تلك الحشرة الفاتكة مما شف عن تفانيه في خدمة لغتنا العربية ونهضتنا الحديثة.</p>
                         <p>وفي بحث العنجوس اللغوي حقه فوفر عَلَى طلاب الزراعة عناء تنقيب كثير ثم وصف خلق العنجوس جيداً وذكر بعض طرق إتلافه
@@ -1517,9 +1400,7 @@
                             العالم الزراعي غينو أحد مؤلفي دائرة المعارف الزراعية الكبرى. وقال آخرون: أنها من آكلات الحشرات فقط ولكنه قد يأكل
                             بقايا النبات والحشرات المخلوطة وفرقة ذهبت إلى أنها لا تأكل سوى الحشرات والديدان منها الأستاذ بيكار فقد برهن
                             عَلَى قوله بعدة تجارب ناطقة بفساد مذاهب الآخرين وقد امتحنت هذه الحشرة في عطلتي الصيفية الحاضرة بأن وضعت مالوشين
-                            في إناء وتركتهما في الجوع الشديد ثلاثة <pb ed="shamela"
-                   n="n82-p44"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5582.xhtml"/> أيام مع النبات الأخضر ثم
+                            في إناء وتركتهما في الجوع الشديد ثلاثة <pb ed="shamela" n="n82-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5582.xhtml"/> أيام مع النبات الأخضر ثم
                             بعد ذلك فحصت النبات فإذا هو كما وضعته لم يتغير ثم أتيت للمالوش الكبير ببعض ديدان التفاح فكان يلتهمها بنهم
                             وسرعة.</p>
                         <p>كذلك اختلف علماء الحشرات والزراعة في ضرر المالوش ونفعه والمذهب المعتدل أن العناجيس نافعة في الأرض المزروعة حبوباً
@@ -1529,38 +1410,34 @@
                             البلاد منها فتنتفع الأراضي كثيراً ولما كانت بلادنا العربية لم تعتد بعد محاربة هذه الحشرات الفتاكة اعتيادها
                             الحروب الدينية التي أخرتنا قروناً كثيرة. باضت الحشرات لا تبالي، وفرخت خالية الهم والبال حتى صارت من ألد أعداء
                             الفلاحة الشرقية وأكبر مصائب الزارعين ولذلك وجب علي أن أشرح أصدق الحيل المتخذة في ديار الغرب لإتلافها وهي:</p>
-                        <p>1ً - أن تسقي الأرض قليلاً لإخراج الحشرات منها عند الهجيرة لأن هذه المواليش تعشق الماء والرطوبة ومتى صارت عَلَى
+                        <p> <tei:num value="1" xml:lang="ar">١</tei:num> ً - أن تسقي الأرض قليلاً لإخراج الحشرات منها عند الهجيرة لأن هذه المواليش تعشق الماء والرطوبة ومتى صارت عَلَى
                             سطح الأرض سهل التقاطها وإهلاكها وقد ذكر لي رفيقي في درس الزراعة هاشم أفندي البهلوان المعري من أبناء طرابلس الشام
                             أن فلاحي القرى الطرابلسية كالمنية وغيرها يتخذون هذه الطريقة في قتل المواليش.</p>
-                        <p>2ً - أن تصب في ثقوب سراديب المواليش الخارجية بعض السوائل الخاصة كالزيت وكبريت الفحم أو مستحلب البترول والصابون
-                            وتستحضر المستحلب بأخذ 40 جزءاً من البترول وجزءٍ من الصابون و20 جزءاً من الماء والصابون يقطع قطعاً صغيرة ويغلى في
+                        <p> <tei:num value="2" xml:lang="ar">٢</tei:num> ً - أن تصب في ثقوب سراديب المواليش الخارجية بعض السوائل الخاصة كالزيت وكبريت الفحم أو مستحلب البترول والصابون
+                            وتستحضر المستحلب بأخذ  <tei:num value="40" xml:lang="ar">٤٠</tei:num>  جزءاً من البترول وجزءٍ من الصابون و <tei:num value="20" xml:lang="ar">٢٠</tei:num>  جزءاً من الماء والصابون يقطع قطعاً صغيرة ويغلى في
                             الماء حتى يذوب فيرفع عن النار ويزاد عليه البترول ويحرك جيداً وهو سحن حتى يختلط البترول بمذوب الصابون وعند
                             الاستعمال يمزج الرطل بعشرة أرطال ماء ويصب في ثقوب المواليش ويعد هذا المستحلب من قاتلات الحشرات بأنواعها فليستعمل
                             لضربة الليمون برش الأشجار بالمضخة.</p>
-                        <p>3ً - يهلكون كل سنة في الأراضي الرملية حوالي برلين أكثر من مئة ألف من هذه المخربات وذلك أنهم يملئون قصريات (شقفات
-                            الفخار للزهور) ماء يصبون عليه أربعين <pb ed="shamela"
-                   n="n82-p45"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5583.xhtml"/> نقطة من زيت النفط (خلاصة
+                        <p> <tei:num value="3" xml:lang="ar">٣</tei:num> ً - يهلكون كل سنة في الأراضي الرملية حوالي برلين أكثر من مئة ألف من هذه المخربات وذلك أنهم يملئون قصريات (شقفات
+                            الفخار للزهور) ماء يصبون عليه أربعين <pb ed="shamela" n="n82-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5583.xhtml"/> نقطة من زيت النفط (خلاصة
                             التمر تينا) ويدفنون هذه القصريات في عمق خمسة سنتيمترات في الأرض فتتباهت المواليش لتموت في مائها غرقاً وقد ذكر
                             هذه الطريقة الألمانية الأستاذ لاربالترية مدير دار الاستحضار الزراعية في مقاطعة الألب المنخفضة وأحد أساتذة
                             مدرستنا.</p>
-                        <p>4ً - أما في الأراضي المزروعة تبغاً (توتون) فقد ظفر المفتش الزراعي العثماني في ولاية آيدين بطريقة نجح بها كل
+                        <p> <tei:num value="4" xml:lang="ar">٤</tei:num> ً - أما في الأراضي المزروعة تبغاً (توتون) فقد ظفر المفتش الزراعي العثماني في ولاية آيدين بطريقة نجح بها كل
                             النجاح في إبادة المواليش وهي: أن تسلق عرانيس الدرة وترفعها من المرجل والقدر قبيل النضج وبعد تجفيف الذرة تطحن
                             حبوبها مع حامض الزرنيخوس وتذر الدقيق عَلَى الأرض ثم يدفن فيها بواسطة المشط قبل الزراعة الدخان بعشرة أيام وعندئذ
                             يجب إبعاد الطيور الداجنة عن تلك الأرض المسمومة. وإني أوصي أهالي جبل عامل ولواء اللاذقية بهذه الطريقة الناجحة
                             الفعالة.</p>
-                        <p>5ً - أن لا تهمل التفتيش عن أوكار المواليش في أشهر أيار وحزيران وتموز تظهر مثل كتل من التراب مرتفعة محاطة ببعض
-                            النباتات الجافة وحينئذ تحفر في هذه الكتل مقدار 65 سنتيمتراً فتجد فليجة (شرنقة) من التراب يابسة فتأخذها بعناية
+                        <p> <tei:num value="5" xml:lang="ar">٥</tei:num> ً - أن لا تهمل التفتيش عن أوكار المواليش في أشهر أيار وحزيران وتموز تظهر مثل كتل من التراب مرتفعة محاطة ببعض
+                            النباتات الجافة وحينئذ تحفر في هذه الكتل مقدار  <tei:num value="65" xml:lang="ar">٦٥</tei:num>  سنتيمتراً فتجد فليجة (شرنقة) من التراب يابسة فتأخذها بعناية
                             واحتياط لئلا تكسر الفليجة فيقع بيض المالوش عَلَى الأرض ثم تسحق الفليجة كل السحق والأحسن أن تطرحها في النار.</p>
-                        <p>6ً - ذكر بعض كبار المزارعين في فرنسا حيلة تتمكن بها من إتلاف هذه المواليش من الأرض بتاتاً في مدة سنتين أو ثلاث
+                        <p> <tei:num value="6" xml:lang="ar">٦</tei:num> ً - ذكر بعض كبار المزارعين في فرنسا حيلة تتمكن بها من إتلاف هذه المواليش من الأرض بتاتاً في مدة سنتين أو ثلاث
                             وأرى طريقته هذه أنفع الحيل المتخذة في حين أنها قليلة النفقات ولا تضايق المزروعات وهي أن تحفر في الأرض قنوات
-                            معوجة يكون بين القناة والأخرى ثلاثة أو أربعة أمتار وعمقها يختلف من 25 إلى 30 سنتمتراً. ثم يمل تلك الأقنية
+                            معوجة يكون بين القناة والأخرى ثلاثة أو أربعة أمتار وعمقها يختلف من  <tei:num value="25" xml:lang="ar">٢٥</tei:num>  إلى  <tei:num value="30" xml:lang="ar">٣٠</tei:num>  سنتمتراً. ثم يمل تلك الأقنية
                             سرقيناً زبلاً خالطه قش ويعمره سواء كان سرقين خيل أو بقر ثم تغطي الجميع بالتراب فإن سرف المواليش تهرع للقنوات كي
                             تدفأ في السرقين وتتخذه لها مشتى حيث تدخل في دور النطور والاستحالة وينبغي فتح القنوات في شهر أيار المقبل برفع
                             السرقين بالتدريج فتجد أن تلك المواليش بالغة والسرفات التي لم يتم بعد تطويرها فتبيدها عن آخرها.</p>
-                        <p>وفي الأرض كثير من الحشرات تأكل بيوض المواليش. والبيض ينقف بعد ثلاثة أسابيع أو <pb ed="shamela"
-                   n="n82-p46"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5584.xhtml"/> أشهر عن فراخ بيضاء
+                        <p>وفي الأرض كثير من الحشرات تأكل بيوض المواليش. والبيض ينقف بعد ثلاثة أسابيع أو <pb ed="shamela" n="n82-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5584.xhtml"/> أشهر عن فراخ بيضاء
                             صغيرة. وقد زعم بعض علماء الحيوان أن المالوشة تأكل جزءاً من فراخها وأثبت قوم أنها تدافع بالعكس عنها وتفتش لها
                             عَلَى ما يغذيها والغالب أن المالوشة تموت بعد ما تبيض كأكثر الحشرات المنظورة. أما البيضة فصفراء بحجم بزرة القنب
                             (القنبزة) وقشرتها متينة جداً توجد متلاصقة مع أخواتها. أما الفراخ فإنها تعيش العيشة الاشتراكية مدة شهر ثم تتفرق
@@ -1569,19 +1446,17 @@
                             تبلغ في أيار أو حزيران وفيها ترتكب هذه المواليش أكبر فظائع التخريبات في المزروعات.</p>
                         <p>أوريزون (فرنسا) // عز الدين شيخ السروجية.</p>
                         <p>اليابان والأفيون</p>
-                        <p>ذكرت الصحف الأوربية عام 1853 مع الأسف أن عادة تدخين الأفيون لم تقتصر عَلَى بلاد الصين بل تعدتها إلى إنكلترا تقل
+                        <p>ذكرت الصحف الأوربية عام  <tei:num value="1853" xml:lang="ar">١٨٥٣</tei:num>  مع الأسف أن عادة تدخين الأفيون لم تقتصر عَلَى بلاد الصين بل تعدتها إلى إنكلترا تقل
                             إليها استعمالها أناس من البحارة الصينيين كانوا مستخدمين في إخراج شحن البواخر أما اليوم فقد اختلفت الأحوال كل
                             الاختلاف فما من بلد في الغرب إلا سرى إليها استعمال هذا المخدر المضر فسرت إلى أوربا عدوى فاحشة إذ ثبت في أحوال
                             مدهشة أن المواني الغربية تؤدي أموالاً طائلة في سبيل الحصول عَلَى الأفيون الذي انتشر في مواني ألمانيا بواسطة
-                            بحريتها كما سرى إلى مواني فرنسا. وأميركا الشمالية مصابة به كثيراً حتى ثبت الدكتور ورخت بالإحصاء أن 5800 رجل من
-                            البيض في نيويورك يستعملون الأفيون وزهاء 8000 في شيكاغو يستعملونه عَلَى الرغم مما يبذلونه في محاربة هذا المخدر
+                            بحريتها كما سرى إلى مواني فرنسا. وأميركا الشمالية مصابة به كثيراً حتى ثبت الدكتور ورخت بالإحصاء أن  <tei:num value="5800" xml:lang="ar">٥٨٠٠</tei:num>  رجل من
+                            البيض في نيويورك يستعملون الأفيون وزهاء  <tei:num value="8000" xml:lang="ar">٨٠٠٠</tei:num>  في شيكاغو يستعملونه عَلَى الرغم مما يبذلونه في محاربة هذا المخدر
                             المضر.</p>
                         <p>ولم تنتج سوى مملكة واحدة من هذا الخطر. ومن الغريب أنها اقرب جارة للصين ونعني بها اليابان المتصلة معها عَلَى
                             الدوام مباشرة. وقد ألف المسيو مرابن كتباً ممتعاً يفهمه العامة ولا ينفر منه الخاصة يقصد به إثارة حرب صالحة صحية
                             عَلَى الأفيون أبان فيه أن الياباني الذكي العفيف لاحظ بادئ بدء السقوط الشخصي وضعف الجنس الناشئين من هاتين
-                            الرذيلتين: الأفيون والألكحول. ولذا عفت نفس الياباني عن أن يكون حشاشاً <pb ed="shamela"
-                   n="n82-p47"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5585.xhtml"/> وسكيراً.</p>
+                            الرذيلتين: الأفيون والألكحول. ولذا عفت نفس الياباني عن أن يكون حشاشاً <pb ed="shamela" n="n82-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5585.xhtml"/> وسكيراً.</p>
                         <p>ولم يخطئ حكام تلك البلاد الاهتداء للجادة المثلى في اتقاء هذا السم الهائل ومنعه من التسرب إلى بلادهم بل صدرت
                             الأوامر لأول العهد بأن يعاقب بالقتل كل متعاط للأفيون وإلى اليوم يجازى شاربه بالأشغال الشاقة وضربت عقوبات وغرامات
                             شديدة عَلَى من يهرب الأفيون حتى لم يعد يجرأ صاحب سفينة أن يحمله.</p>
@@ -1599,9 +1474,7 @@
                             شعورهم أخذ بالتضاعف إلى حد يدهش المفكرين وجميع طبقات المجتمع يصاب منها أفراد وكثير من الناس يعلمون أسبابه ولا
                             يتقونها. يعلم الشبان والشيوخ والكهول أن كثرة التأثر ومجارات الشهوات من أعظم العوامل في الجنون ومع هذا تراهم لا
                             يتوقفون عن إتيان الرذائل التي تقودهم إلى المستشفيات فالموت الزؤام. وما من أحد لا يعلم أن الإفراط في استعمال
-                            الألكحول والمشروبات مدرجة إلى اختلال الشعور <pb ed="shamela"
-                   n="n82-p48"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5586.xhtml"/> ومع هذا ترى السكارى
+                            الألكحول والمشروبات مدرجة إلى اختلال الشعور <pb ed="shamela" n="n82-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5586.xhtml"/> ومع هذا ترى السكارى
                             مدمنين عَلَى أقداحهم وأهل الشهوات في مسراتهم وأفراحهم وهذا ما حدا القائمين عَلَى الصحة والآداب في الغرب أن
                             يحابوا تعاطي المسكرات بكل ما في وسعهم وأنشأوا لذلك النقابات والجمعيات فانتفع من ذلك كل من إنكلترا وإيرلاندا
                             وفرنسا ورأت جمعية التعاون الأميركية أن نشر التعليم العلمي النفسي بين العامة أنجع الذرائع في القضاء عَلَى الجنون
@@ -1618,12 +1491,10 @@
                             عَلَى غير طائل ويسعوا للشهرة من غير أبوابها ناسين بأعمالهم هدي كتابهم وسنة رسولهم وهيهات أن يرزق العقل السليم من
                             حاد عن سنن الشرع السمح والمدنية الصحيحة.</p>
                         <p>جيش السلام</p>
-                        <p>مات في إنكلترا رجل غريب الشأن من رجالها وهو القائد نوت مؤسس جيش السلام توفي عن 81 سنة قضاها في خدمة الإنسانية
+                        <p>مات في إنكلترا رجل غريب الشأن من رجالها وهو القائد نوت مؤسس جيش السلام توفي عن  <tei:num value="81" xml:lang="ar">٨١</tei:num>  سنة قضاها في خدمة الإنسانية
                             وكان أجير خياط في السنة الخامسة عشرة من عمره ثم بلغ به تقواه وحنانه الغريب عَلَى نحو ما يكون عليه بعض أهالي
-                            مذهبه فقام في ذهنه أن يدعو قومه وأبناء نحلته خاصة إلى العطف عَلَى البائسين ومواساة المنكوبين <pb ed="shamela"
-                   n="n82-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5587.xhtml"/> ووعظ
-                            السكيرين والفاسدين واللاعبين وغذ كان هو من أسرة فقيرة وعرف معنى الفقر بالعمل جاء لندن سنة 1848 وتوطن في أفقر
+                            مذهبه فقام في ذهنه أن يدعو قومه وأبناء نحلته خاصة إلى العطف عَلَى البائسين ومواساة المنكوبين <pb ed="shamela" n="n82-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5587.xhtml"/> ووعظ
+                            السكيرين والفاسدين واللاعبين وغذ كان هو من أسرة فقيرة وعرف معنى الفقر بالعمل جاء لندن سنة  <tei:num value="1848" xml:lang="ar">١٨٤٨</tei:num>  وتوطن في أفقر
                             أحيائها بين المحاويج من أبنائها وبدأ يعظهم بعملهم ويبث دعوة الإنجيل فيهم فاستمال ببلاغته قلوب الشعب وتعدى من
                             الوعظ الخاص لأبناء مذهبه إلى الوعظ العام فاخذ يطوف إنكلترا وينشر الكلم الطيب ويؤاسي من أخنى عليهم الدهر ويدخل
                             أناساً في جمعيته ولم يلبث أن خرج عن أهل مذهبه وأسس له مذهباً جديداً وذلك عقيب زواجه فنشر في الناس تعلماً مسيحياً
@@ -1634,23 +1505,21 @@
                             معونته في الهند وأوستراليا فقام في هذا السبيل بأعظم الخدم للأمة الإنكليزية.</p>
                         <p>هذا ما قرأناه في الصحف الإفرنجية وقد ذكرت مجلة التواريخ السياسية والأدبية نبذة في وصف جيش السلام بقلم أحد أعضاء
                             المجمع العلمي الكونت دوسونفيل قال فيها: إن هذا الجيش كان سبب السخرية منه لأول مرة وإنك لا تتمالك من الضحك عندما
-                            ترى ضباطه يلبسون في رؤوسهم قبعات من القش صغيرة سوداء تحيط بها شريطة حمراء ومنذ تأسيس هذا الجيش سنة 1878 عَلَى يد
+                            ترى ضباطه يلبسون في رؤوسهم قبعات من القش صغيرة سوداء تحيط بها شريطة حمراء ومنذ تأسيس هذا الجيش سنة  <tei:num value="1878" xml:lang="ar">١٨٧٨</tei:num>  عَلَى يد
                             القائد بوت ما يزال عرضة للمعارضة الشديدة الوحشية بل بالاضطهاد ولاسيما في البلاد البرتستانتية من إنكلترا فتغلب
                             هذا القائد عَلَى جميع هذه المصاعب بنشاط غريب وحقق جزءاً عظيماً من نياته التي ألم بها في كتابه الشقاء ببلاد
                             إنكلترا وهو كتاب يبين ما في مطاوي المدنية الإنكليزية من الجروح النغارة وما في نظامها السياسي المدهش من النواقص
                             فتمكن بذلك أن يجعل من جيش السلام جمعية زاهرة غنية يلجأ إليها الناس من حكومات وبلديات وجمعيات.</p>
                         <p>والذي يزيد قوة جيش السلام في لندرا وغيرها هو أنها تجمع في إدارة واحدة الأعمال المختلفة التي يتمم أحدها الآخر ولها
                             الآن في عاصمة إنكلترا نحو خمسين معهداً مختلفة المقاصد منها ما يؤوي الأمهات ومنها ملاجئ للبائسين يبيتون فيها
-                            ومنها مخابز ومعامل <pb ed="shamela"
-                   n="n82-p50"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5588.xhtml"/> للمعاونة بالعمل وملاجئ
+                            ومنها مخابز ومعامل <pb ed="shamela" n="n82-p50" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5588.xhtml"/> للمعاونة بالعمل وملاجئ
                             للنساء وللأولاد والغاية الأساسية التي يرمي إليها هذا الجيش أن يقوي ملكة الأخلاق في أفراده ويرى والحق معه فيما
                             يراه أن المرء الذي صار إلى البؤس بصنعه أو بتأثير الأحوال فيه فعاش فقيراً يتكفف الأيدي لا يعود إلى حالة حسنة إلا
                             بالعمل فإيجاد عمل للداخلين في جيش السلام هو أعظم هم الجمعية لأنها ترى أن العمل يرفع الإنسان ويساعده عَلَى التخلق
                             بالأخلاق الفاضلة.</p>
                         <p>ولهذه الجمعية في لندرا سبعة معامل للمعاونة بالعمل في الصناعات المختلفة وفي تنوع الأعمال مجال للانتفاع لكفاآت
                             البائسين عَلَى اختلاف ضروبهم ممن لا عمل لهم فلهم معمل نجارة عظيم لا يعمل إلا بتوصية ما يطلب منه من الأعمال وجميع
-                            مصنوعاته حسنة وله معمل كبير يجمع فيه الخرق البالية من شوارع لندرا فتسير كل صباح 21 عربة إلى جهات مختلفة تحمل
+                            مصنوعاته حسنة وله معمل كبير يجمع فيه الخرق البالية من شوارع لندرا فتسير كل صباح  <tei:num value="21" xml:lang="ar">٢١</tei:num>  عربة إلى جهات مختلفة تحمل
                             قمامات المدينة ولاسيما الورق القديم والمقوى العتيق والجرائد البالية والخرق والكساحة عَلَى أنواعها فتحملها إلى
                             فناء المحل فتوزع عَلَى غرف تنقيها ثم تجعل أكداساً ترسل إلى فرنسا والولايات المتحدة تباع من معامل الورق. ويعمل في
                             هذا المعمل ثلثمائة نسمة يعيشون من حاصلات عملهم.</p>
@@ -1663,9 +1532,7 @@
                         <p>الشعب الإنكليزي</p>
                         <p>في المدينة الغربية رذائل وفضائل ومن الأسف إننا أخذنا في الشرق رذائلها قبل فضائلها فتسربت إلى أبنائنا وكادت تقوض
                             أركان مجتمعنا وكل يوم نحن منها في شأن ولكن الحضارة في العادة تدخل ويدخل معها كل شيء فإذا ارتقى فرع من فروعها
-                            يتبعه الفرع <pb ed="shamela"
-                   n="n82-p51"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5589.xhtml"/> الآخر وإن كان لا علاقة
+                            يتبعه الفرع <pb ed="shamela" n="n82-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5589.xhtml"/> الآخر وإن كان لا علاقة
                             له به أو هو يخالفه من كل الوجوه والفرق بيننا وبين الأمم الغربية أن خاصيتهم هناك يحاربون تلك الجراحات بمواعظهم
                             وأقلامهم وجمعياتهم وحكوماتهم ونحن معها سكوت لا نتكلم كالبله المتناومين ومن نسميهم منا الخاصة لا يحلمون بغير
                             منافعهم ومظاهرهم.</p>
@@ -1681,12 +1548,10 @@
                             من ربات الدلال والظرف.</p>
                         <p>وكذلك ترى الغرابة في الانتخاب لمجلس العموم فإنها تدوم خمسة عشر يوماً ويدفع المترشحون جميع نفقات الناخبين ومن
                             انبسطت يده بالعطاء أكثر ورد أطعمته وأشربته فاستطابها منتخبوه كانت غلبته للنيابة مضمونة ويكفي أن يقال أن ثلاثة
-                            مرشحين عن يوركشير سنة 1807 أنفقوا لنيل كرسيين في مجلس النواب خمسمائة ألف ليرة إنكليزية حتى إذا ظفر اثنان منهم لم
+                            مرشحين عن يوركشير سنة  <tei:num value="1807" xml:lang="ar">١٨٠٧</tei:num>  أنفقوا لنيل كرسيين في مجلس النواب خمسمائة ألف ليرة إنكليزية حتى إذا ظفر اثنان منهم لم
                             يسلما من إهانة الأمة التي كانت تلقى عليها الأوساخ والأوحال فكان الإنكليز بذلك يقتدون بإجراء طرق الرومان في رومية
                             ممن لم يكونوا يصعدون القلعة يوم مبايعتهم قبل أن ينالهم خصومهم بأنواع السخرية والشتائم.</p>
-                        <p>وليس تاريخ الإنكليز غريب فقط بل هو معلم أيضاً وفيه مثال واضح من تغالي القوم في <pb ed="shamela"
-                   n="n82-p52"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5590.xhtml"/> الأمور الاقتصادية حتى
+                        <p>وليس تاريخ الإنكليز غريب فقط بل هو معلم أيضاً وفيه مثال واضح من تغالي القوم في <pb ed="shamela" n="n82-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5590.xhtml"/> الأمور الاقتصادية حتى
                             أدى ذلك إلى مفاسد لم تحمد مغبتها وهو أنهم يريدون أن تخرج من معملهم أعمال مهمة بقليل من الوقت والنفقة ولذلك اضطر
                             أربابها إلى استخدام النساء بدل الرجال لخضوعهن أكثر من الرجال ولقلة أجورهن قال المؤلف وهناك فوائد أخرى وهو أن
                             النساء قد يستخدمن في جلب رضا أرباب المعمل والزائرين له والأخذ في عنان الشهوات ثم أن المعامل ما يستخدم صغار
@@ -1705,9 +1570,7 @@
                             التلامذة قدرها أما الأسرة فغالباً قد ترتكب غلطاً كبيراً باعتمادها عَلَى الخوف أداة من أدوات التربية ولقد نشأت من
                             الخوف شرور كثيرة لأن صاحبه يخشى الألم والموت بل إن حياته كلها معذبة بنتائجه وليس الذنب عَلَى الأولاد بل عَلَى من
                             ربوهم وأورثوهم خلة الخوف فإن لقانون الوراثة تأثيراً كبيراً في الخوف سواءٌ كان فيلا الإنسان أو في الحيوان والخوف
-                            قديم كقدم الإنسان وليس فيه عار عليكم معشر الطلبة. <pb ed="shamela"
-                   n="n82-p53"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5591.xhtml"/> ولقد قال ديكارت الفيلسوف
+                            قديم كقدم الإنسان وليس فيه عار عليكم معشر الطلبة. <pb ed="shamela" n="n82-p53" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5591.xhtml"/> ولقد قال ديكارت الفيلسوف
                             العظيم: لا تكفي الإرادة لبث الشجاعة من مرقدها ونزع الخوف من أصوله بل تجب العناية في النظر إلى المعقولات
                             والمحسوسات والأمثولات التي تقنع المرء بأن الخطر غير عظيم وأن الأمن يكون في الدفاع أكثر منه في الفرار وأن المجد
                             والسرور في الظفر في حين لا يتوقع الأسف والعار من الفرار.</p>
@@ -1727,9 +1590,7 @@
                             عمل لها التغلب عَلَى الخوف والدهشة.</p>
                         <p>ولكن كل تربية لا تأثير لها إذا لم تؤازروها أنتم أنفسكم يجب عليكم أن تقنعوا أنفسكم بالجرأة أنكم إذا قستم أنفسكم
                             بأناس من أترابكم لا يرون إلا ما يقع نظرهم عليه مباشرة ولا يحاولون الهروب تؤكدون أنكم دونهم في القدرة عَلَى السير
-                            وضعاف في النظر وإياكم أن <pb ed="shamela"
-                   n="n82-p54"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5592.xhtml"/> تفوتكم وسيلة لغرس
+                            وضعاف في النظر وإياكم أن <pb ed="shamela" n="n82-p54" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5592.xhtml"/> تفوتكم وسيلة لغرس
                             الشجاعة في نفوسكم.</p>
                         <p>إنكم لا تتمكنون من التغلب كل التغلب عَلَى الخوف بل تتخلصون منه بعض الشيء وإني طالما كنت في طفولتي وإلى الآن أخاف
                             الرعد لأنني رأيت صاعقة انقضت عَلَى بضعة أمتار مني وأخشى الفئران إلى اليوم وقرضها الخفيف وإن قيل لي عندما كبرت أن
@@ -1747,9 +1608,7 @@
                             المعرفة ولكنها مع ذلك لا تبدي حراكاً هي ليست دون سائر المم في إعجابها بنفسها واحتقارها لها ولكنها في الباطن تعرف
                             قيمة نفسها تشعر بأن فيها فضائل وقوى أخرجتها عن ما مر في القرون لماضية من الهوى التي ظن بأنها تدهورت فيها تاريخها
                             عظيم مجيد بسلاحها محيد بعقلها. إنها كسائر الأمم قد أتت شيئاً من الشر فاستحقت عليه بعض الأحايين اللعنات ولكنها
-                            كفرت عن سيئاتها بحسنات كثيرة فقد حررت شعوباً من رقهم لا يزالون يذكرون لها يدها عليهم وأوحى عليها عقلها السمح <pb ed="shamela"
-                   n="n82-p55"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5593.xhtml"/>
+                            كفرت عن سيئاتها بحسنات كثيرة فقد حررت شعوباً من رقهم لا يزالون يذكرون لها يدها عليهم وأوحى عليها عقلها السمح <pb ed="shamela" n="n82-p55" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5593.xhtml"/>
                             المستنير فلقنت أناساًَ من بلاد مختلفة قيمة الإنسان ولم يبرحوا يذكرونها بعملها فهي تعرف نفسها شريفة بين الأمم معم
                             إن العالم حولها قد تغير كثيراً من نصف قرن فقام شعب بالقرب منا يذكرنا كل حين بلسان البغضاء والقحة بأنه عظيم قوي.
                             ومع أن هذا الشعب عظيم وقوي فإن فرنسا التي تهدد أحداً لا تخاف أحداً بتاتاً بل تعلم إنها فرنسا عَلَى كل حال.</p>
@@ -1767,9 +1626,7 @@
                             مدينة كباريز سكانها ثلاثة ملايين ولندرا سكانها سلعة ملايين هذا ما يخوض أدباء الغرب وعلماؤه عبابه فما قول سادتنا
                             الخاصة في مصر والشام والعراق وتونس فمن منهم خاض في مثل هذه الموضوعات وحبب إلى الناس النزهات والرحلات عَلَى طريقة
                             الغربيين ليحبب إليهم أوطانهم ويعرفهم رجالهم ويبحث عن أمور لا يتيسر لكل إنسان أن يحصل عليها ويتعب المفكرون في
-                            جمعها ونشرها <pb ed="shamela"
-                   n="n82-p56"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5594.xhtml"/> فيأخذها جمهور القراء
+                            جمعها ونشرها <pb ed="shamela" n="n82-p56" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5594.xhtml"/> فيأخذها جمهور القراء
                             هينة لينة.</p>
                         <p>الحج المشوق</p>
                         <p>الإفرنج عَلَى تغاليهم بالبحث عن شؤونهم الداخلية وعاداتهم ورجالهم وأعمالهم وبلادهم لا يغفلون عن شؤون غيرهم وقد
@@ -1788,9 +1645,7 @@
                             لابد أن يكون بينهم من يملك القصور الفخمة والحدائق الغناء ويعيش عيش الكبراء في الرخاء ومع هذا إذا قصدوا إلى
                             الأماكن الطاهرة يتناسون كل هذا العيش الخضال ويساوون الفقراء من الحجاج في مآكلهم التي لا يوجد منها إلا الجشب
                             الغليظ في البادية وينامون في العراء لا يبالون بحماوة القيظ ولا صبارة القر وعجب الرحالة من قوم لا تربطهم جامعة
-                            غير رابطة الإيمان وقال ما أعجب صفوفهم وكتائبهم وهي تسير عَلَى <pb ed="shamela"
-                   n="n82-p57"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5595.xhtml"/> هذا النحو وعجب من وساخة
+                            غير رابطة الإيمان وقال ما أعجب صفوفهم وكتائبهم وهي تسير عَلَى <pb ed="shamela" n="n82-p57" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5595.xhtml"/> هذا النحو وعجب من وساخة
                             الآسياويين من الحجاج وكيف يتواكلون من صفحة واحدة وفيهم ذو العاهة ولا يأنف الباقون ولا ينكر المنكرون وقال أنه لو
                             كان بعض لك في الغرب لقامت القيامة فالشرقي في نظره لا يحسن النظافة وقال أنه علم من بعض علماء دمشق أن المسلمين لا
                             يحجون كلهم فلو كان من كتب عليهم الحج ستين مليوناً مدة خمس عشرة سنة لاقتضى أن يحج كل سنة أربعة ملايين في حين لا
@@ -1809,16 +1664,14 @@
                             قورش وخلفائه وتركوها أنقاضاً ينعق فيها غراب الدمار وها هي اليوم منذ أكثر من ألفي سنة عبارة عن قفر يجيء بعض
                             العلماء فيستنطقون آثاره ويتعرفون أخباره.</p>
                         <p>وسكان هذا المكان الذي طالما بكى في أرجائه أبناء صهيون الإسرائيليون هم أناس من العرب الرحالة ولكن ذلك لم يطمس من
-                            ذكرى حضارتها معلماً فقد ذكر هيرودوتس المؤرخ <pb ed="shamela"
-                   n="n82-p58"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5596.xhtml"/> أن بابل أخصب البلاد
+                            ذكرى حضارتها معلماً فقد ذكر هيرودوتس المؤرخ <pb ed="shamela" n="n82-p58" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5596.xhtml"/> أن بابل أخصب البلاد
                             بحنطتها تأتي حبتها مئة وزيادة بيد أن العلم الحديث حل هذا المعمى في خصب بلاد تلك الأصقاع وهو أنه كانت تروى كلها
                             فلو تهيأت لها خزانات وسدود كما كان لها عَلَى عهد سعادتها كما تهيأ لمصر خزان أسوان فروى النيل عشرات الألوف من
                             الأفدنة التي كانت محرومة من السقيا لعاد إلى بابل خصبها المدهش وأتت السنبلة مئة سنبلة وزيادة.</p>
                         <p>ولقد وقع في ذهن الإسكندر الكبير في آخر عهده أن يعيد إلى ذلك الصقيع بهاءه القديم فأنشأ ترعتي بالأكوبوس والنهروان
-                            وطول الواحدة 480 كيلومتراً وطول الثانية 256 كيلومتراً ليجلب مياه دجلة إلى داخل المدينة إلا أن أخلافه غفلوا عما
+                            وطول الواحدة  <tei:num value="480" xml:lang="ar">٤٨٠</tei:num>  كيلومتراً وطول الثانية  <tei:num value="256" xml:lang="ar">٢٥٦</tei:num>  كيلومتراً ليجلب مياه دجلة إلى داخل المدينة إلا أن أخلافه غفلوا عما
                             بدأ بعمله فعادت البلاد باهتة خربة وهاان السير ويليام ويلكوكس الإنكليزي قام في ذهنه منذ سنين أن يعيد ما كان بدأ
-                            به الإسكندر المقدوني فوضع مشروعاً في الري عَلَى صورة أوفق من المشروع القديم وهو يكلف 750 مليون فرنك ويقسم تلك
+                            به الإسكندر المقدوني فوضع مشروعاً في الري عَلَى صورة أوفق من المشروع القديم وهو يكلف  <tei:num value="750" xml:lang="ar">٧٥٠</tei:num>  مليون فرنك ويقسم تلك
                             البقعة إلى ست مناطق تحيا الأولى بعد الثانية وكل ما تم لإحداها أمر سقياها تقوم بنفقات ما صرفته عَلَى أعمال الري
                             فيها وبذلك تحيا الراضي الواقعة عَلَى شاطئ دجلة والفرات فالبذار يزرع في الخريف فترويه الأمطار حتى إذا جاء آذار
                             ونيسان وفاض الرافدان دجلة والفرات تسقى تلك الأراضي بمياههما الصيف كله فهل تتحقق يا ترى هذه الأحلام ويعود لبابل
@@ -1830,9 +1683,7 @@
                             التجارية المستحكمة القديمة بين بلاد الشام وفرنسا.</p>
                         <p>المدنية</p>
                         <p>كتب أحد علماء فرنسة في المجلة الباريزية مقال تحت عنوان هل المنية في ارتقاء أو انحطاط قال فيها: إن الناظرين إلى
-                            المدنية فريقان فريق يرى ما فيها من العظمة والمنافع <pb ed="shamela"
-                   n="n82-p59"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5597.xhtml"/> المادية التي سخرها
+                            المدنية فريقان فريق يرى ما فيها من العظمة والمنافع <pb ed="shamela" n="n82-p59" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5597.xhtml"/> المادية التي سخرها
                             الإنسان لأمره وآخر يذهب إلى أن الارتقاء عَلَى عمومه لا يتأتى له إلا أن يسير عَلَى الدوام سيراً سريعاً. ويرى هذا
                             الفريق الأخير أن كل شيء ينمو من حسن إلى أحسن وأن البشر يبذلون الجهد للوصول إلى هذه الغاية النافعة ويقولون أن
                             العالم ارتقى في مدارج النشوء والنمو حتى صار الإنسان إلى ما صار إليه فورث قوى عاملة وما نشوء نظام الكون إلا نشوء
@@ -1851,10 +1702,8 @@
                             الاجتماعية كتبادل المحاصيل وتبادل العواطف والأفكار. بل أن هذا التحديد لا يشعر بأن المدنية كذا كاملة فرب شعب ذي
                             مدنية ولكنها جميلة أو قبيحة رائقة أو غير رائقة إنسانية أو ظالمة عَلَى نحو ما يكون للمرء خلق حسن أو رديء
                             فالصناعات قد تكون جميلة أو رديئة والأديان سليمة أو خرافية والعلوم نافعة أو ضارة.</p>
-                        <p>كل شيء يرتقي مع هذه المدنية في مآكلها ومشاربها وملابسها وسائر حالاتها وما ننس لا <pb ed="shamela"
-                   n="n82-p60"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5598.xhtml"/> ننس أن ألفاً وستمائة شخص
-                            غرقوا في باخرة واحدة (تيتانيك) وكان منهم من دفع 22000 فرنك أجرة سفره خمسة أيام ونصف يوم ليركب في حال من الكبر
+                        <p>كل شيء يرتقي مع هذه المدنية في مآكلها ومشاربها وملابسها وسائر حالاتها وما ننس لا <pb ed="shamela" n="n82-p60" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5598.xhtml"/> ننس أن ألفاً وستمائة شخص
+                            غرقوا في باخرة واحدة (تيتانيك) وكان منهم من دفع  <tei:num value="22000" xml:lang="ar">٢٢٠٠٠</tei:num>  فرنك أجرة سفره خمسة أيام ونصف يوم ليركب في حال من الكبر
                             والتفخل ليس بعدها غاية. إن الحرص عَلَى هذه المدنية هو الذي أورث أمراضاً وهموماً وأفقد العالم الحياة الطبيعية
                             فكثرت الأمراض العصبية وداء المفاصل والبول السكري وضعف المجموع العصبي بل لقد كثر الجنون حتى أكد أحد العارفين من
                             أطباء الإنكليز وقد هاله تكاثر عدد المختل شعورهم من أمته في العهد الأخير أن إنكلترا سيعادل عقلاؤها مجانينها بعد
@@ -1872,9 +1721,7 @@
                             ثروة عند الأمم التي يبيعونها مصنوعاتهم والمستعمرون ينقبون عن زيادة ثروة ونفوذ بأن يحملوا بالتدريج الأمم لمنفردة
                             عَلَى الاشتراك بالحياة الاقتصادية والتشبه بالنازلين عليهم وهؤلاء يدوم لهم استعمار الأرض طويلاً بالنسبة لغيرهم.
                             أما الساعون في تمدين أمة فهم الذين يلقنوها معنى الحياة السامية والعمل لما فيه نشر الفضائل والسلام في الأسر وبث
-                            الوطنية والدين عَلَى نحو ما <pb ed="shamela"
-                   n="n82-p61"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5599.xhtml"/> كانت تعمل الأمم القديمة
+                            الوطنية والدين عَلَى نحو ما <pb ed="shamela" n="n82-p61" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5599.xhtml"/> كانت تعمل الأمم القديمة
                             في أيام عزها.</p>
                         <p>ولقد قيل أن فرنسا لم تحسن استثمار من وضعت أيديهم عليهم من الأمم وهذا مما يدعوا إلى مدحها لا إلى القدح فيها وذلك
                             لأن فرنسا ليست من الطمع عَلَى جانب عظيم غيرها وهي رحيمة بمن تغلبهم عَلَى أمرهم. ويقولون أيضاً أنها لا تحسن
@@ -1894,9 +1741,7 @@
                             التاجرين في المقايضات يغني المتقاضيين في المدنيات والاستعمار الذي يذل البعض يفسد الآخرين وكلاهما يتأثران منه.
                             شعرت بذلك الممالك الكبرى في القديم وكذلك كان الحال في إسبانيا والبرتقال: نعم إننا نعرف اليوم كيف تضاعف المقايضات
                             والتجارات ولا نطلب أكثر من أن نرى الزنوج يغلون من نبات المطاط لنربح منه ما نبتاع به قطناً كثيراً وأدوات نشغلها.
-                            لا نطلب أكثر <pb ed="shamela"
-                   n="n82-p62"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5600.xhtml"/> من أن نرى شواطئ دجلة
+                            لا نطلب أكثر <pb ed="shamela" n="n82-p62" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5600.xhtml"/> من أن نرى شواطئ دجلة
                             والفرات وقد أصبحت من الخصب بما تستطيع معه أن توصل في بلادنا عَلَى خطوط حديدية وقاطرات. ويا ليت شعري هل يجد أولئك
                             الشعوب أسباباً تمكنهم من بناء عاصمة كبابل التي كان محيطها المسور يستغرق محيط مدينة باريز وسان ديني وسان جرمان
                             وإذا وفقوا لذلك حفظها زمناً من الانحطاط كما احتفظ بها أسلافهم. إن أول قدم يخطوها السائر نحو المدنية هو إصلاح
@@ -1915,60 +1760,54 @@
                             السودان أول معمل لإحضار هذا النبات الذي يخدم الصناعة خدماً كثيرة.</p>
                         <p>أضخم الكتب</p>
                         <p>قالت المجلة تملك المكتبة الملوكية في استوكهلم كتاباً مخطوطاً عرف باسم توراة الشيطان ويدعى أيضاً مارد الكتب بسبب
-                            حجمه العظيم فإن طوله 90 سنتمتراً وعرضه 50 <pb ed="shamela"
-                   n="n82-p63"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5601.xhtml"/> ويقتضي ثلاثة رجال لحمله
-                            ويحتوي عَلَى 390 صفحات ينقصها 7 صفحات وفي كل صفحة عمودان وقد حسبوا ما اقتضى لهذا المخطوط من الرق فكان جلد 460
+                            حجمه العظيم فإن طوله  <tei:num value="90" xml:lang="ar">٩٠</tei:num>  سنتمتراً وعرضه  <tei:num value="50" xml:lang="ar">٥٠</tei:num>  <pb ed="shamela" n="n82-p63" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5601.xhtml"/> ويقتضي ثلاثة رجال لحمله
+                            ويحتوي عَلَى  <tei:num value="390" xml:lang="ar">٣٩٠</tei:num>  صفحات ينقصها  <tei:num value="7" xml:lang="ar">٧</tei:num>  صفحات وفي كل صفحة عمودان وقد حسبوا ما اقتضى لهذا المخطوط من الرق فكان جلد  <tei:num value="460" xml:lang="ar">٤٦٠</tei:num> 
                             حماراً. وجلده من البلوط الفارغ سمكه أربعة سنتمترات ونصف وله لسان من المعدن.</p>
                         <p>وفي سان فرنسيسكو بأميركا كتاب يعد من مردة الكتب أيضاً وهو الذي عرضته تلك المدينة أيام معروضات كليفورنيا ليكون
-                            سجلاً توضع عليه أسماء الزائرين الذين بلغوا 135 ألفاً وضعوا تواقيعهم عَلَى سبعة آلاف صفحة. وطول كل صفحة 775
-                            سنتمتراً ووزنه 250 كيلوغراماً.</p>
+                            سجلاً توضع عليه أسماء الزائرين الذين بلغوا  <tei:num value="135" xml:lang="ar">١٣٥</tei:num>  ألفاً وضعوا تواقيعهم عَلَى سبعة آلاف صفحة. وطول كل صفحة  <tei:num value="775" xml:lang="ar">٧٧٥</tei:num> 
+                            سنتمتراً ووزنه  <tei:num value="250" xml:lang="ar">٢٥٠</tei:num>  كيلوغراماً.</p>
                         <p>نفقات حرب عامة</p>
-                        <p>حسب الأستاذ شارل ريشه ما تكلفه حرب عامة إذا نشبت في أوربة فكانت كل يوم 274 مليوناً ونصف مليون من الفرنكات تنفقها
+                        <p>حسب الأستاذ شارل ريشه ما تكلفه حرب عامة إذا نشبت في أوربة فكانت كل يوم  <tei:num value="274" xml:lang="ar">٢٧٤</tei:num>  مليوناً ونصف مليون من الفرنكات تنفقها
                             الدول العظمى فقط.</p>
                         <p>نجاح أميركا</p>
-                        <p>كانت رؤوس الأموال التي وضعتها الولايات المتحدة منذ سنة 1900 إلى 1910 في الأعمال الزراعية فقط 20439000 دولار فبلغت
-                            40991000 دولار أي أنها تضاعفت وتجاوزت رؤوس الأموال التي وضعت في المشاريع الزراعية في العشر سنين المذكورة من
-                            8975000 دولار إلى 18429000 دولار أي زادت عن الضعف أما الأموال التي استخدمت في السكك الحديدية فكانت سنة 1900
-                            1263000 دولار فأصبحت سنة 1910 1437000 فتأمل.</p>
+                        <p>كانت رؤوس الأموال التي وضعتها الولايات المتحدة منذ سنة  <tei:num value="1900" xml:lang="ar">١٩٠٠</tei:num>  إلى  <tei:num value="1910" xml:lang="ar">١٩١٠</tei:num>  في الأعمال الزراعية فقط  <tei:num value="20439000" xml:lang="ar">٢٠٤٣٩٠٠٠</tei:num>  دولار فبلغت
+                             <tei:num value="40991000" xml:lang="ar">٤٠٩٩١٠٠٠</tei:num>  دولار أي أنها تضاعفت وتجاوزت رؤوس الأموال التي وضعت في المشاريع الزراعية في العشر سنين المذكورة من
+                             <tei:num value="8975000" xml:lang="ar">٨٩٧٥٠٠٠</tei:num>  دولار إلى  <tei:num value="18429000" xml:lang="ar">١٨٤٢٩٠٠٠</tei:num>  دولار أي زادت عن الضعف أما الأموال التي استخدمت في السكك الحديدية فكانت سنة  <tei:num value="1900" xml:lang="ar">١٩٠٠</tei:num> 
+                             <tei:num value="1263000" xml:lang="ar">١٢٦٣٠٠٠</tei:num>  دولار فأصبحت سنة  <tei:num value="1910" xml:lang="ar">١٩١٠</tei:num>   <tei:num value="1437000" xml:lang="ar">١٤٣٧٠٠٠</tei:num>  فتأمل.</p>
                         <p>جرحى الحروب</p>
                         <p>قالوا أن الخرطوش في العهد الجديد يقل القتل به أكثر من الخرطوش قديماً ولكن الإحصاء دل عَلَى خلاف ذلك فقد قتل في
-                            حرب ألمانيا سنة 1870 واحد من كل خمسة أشخاص واليابان في منشوريا قتل لهم واحد من كل ثلاثة فقد كان المحاربون
-                            الألمان عَلَى ذلك العهد 650 ألفاً فبلغ مجموع جرحاهم 116 ألفاً ومجوع محاربي الروس 590 ألفاهم فبلغ جرحاهم 170600
-                            واليابان في منشوريا 540 ألفاً جرح منهم 220 ألفاً.</p>
-                        <p>مالية الدولة العثمانية <pb ed="shamela"
-                   n="n82-p64"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5602.xhtml"/> ها قد مضى زهاء نصف قرن
+                            حرب ألمانيا سنة  <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>  واحد من كل خمسة أشخاص واليابان في منشوريا قتل لهم واحد من كل ثلاثة فقد كان المحاربون
+                            الألمان عَلَى ذلك العهد  <tei:num value="650" xml:lang="ar">٦٥٠</tei:num>  ألفاً فبلغ مجموع جرحاهم  <tei:num value="116" xml:lang="ar">١١٦</tei:num>  ألفاً ومجوع محاربي الروس  <tei:num value="590" xml:lang="ar">٥٩٠</tei:num>  ألفاهم فبلغ جرحاهم  <tei:num value="170600" xml:lang="ar">١٧٠٦٠٠</tei:num> 
+                            واليابان في منشوريا  <tei:num value="540" xml:lang="ar">٥٤٠</tei:num>  ألفاً جرح منهم  <tei:num value="220" xml:lang="ar">٢٢٠</tei:num>  ألفاً.</p>
+                        <p>مالية الدولة العثمانية <pb ed="shamela" n="n82-p64" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5602.xhtml"/> ها قد مضى زهاء نصف قرن
                             عَلَى عقد الدولة العثمانية قرضاً لها وذلك عَلَى عهد حرب القريم فكثرت سنداتها في العشرين سنة التالية في أسواق
-                            الشرق ولما بهظتها ديونها توقفت سنة 1876 عن الدفع خمس سنين تألفت إدارة الديون العمومية فكان أول حجر أساس المالية
+                            الشرق ولما بهظتها ديونها توقفت سنة  <tei:num value="1876" xml:lang="ar">١٨٧٦</tei:num>  عن الدفع خمس سنين تألفت إدارة الديون العمومية فكان أول حجر أساس المالية
                             العثمانية. وبمناسبة الحرب بين الدولة وحكومات البلقان الأربع كثر تحدث الاقتصاديين في مالية دولتنا وهاك خلاصة ما
                             قالوه مؤخراً قال بعضهم:</p>
                         <p>لا تزال مواد القراطيس العثمانية في أسواق غريزة ويؤخذ من الخزينة العثمانية الأخيرة أن الدين العثماني الموحد كان في
-                            أول آذار الماضي 126 مليوناً و9391 ليرة يضاف إليها مليون ليرة اقترضته بلدية الآستانة والشطر الرابع من قرض ولاية
-                            بغداد وهذا بيانه: 50. 146. 757 الدين الموحد والسندات 18. 275. 620 دين مضمون بجزية مصر وقبرص 2. 319. 944 قرض
-                            تتناول ضمانته مباشرة 30. 763. 414 قرض مضمون بدخل صندوق الدين 24. 603. 656 قروض تديرها الحكومة.</p>
-                        <p>وينبغي أن يحذف من هذه القروض قرض سنة 1855 وفائدته 4 في المئة وقرض 91 وفائدته 4 بالمئة أيضاً وقرض 94 وفائدته 3
+                            أول آذار الماضي  <tei:num value="126" xml:lang="ar">١٢٦</tei:num>  مليوناً و <tei:num value="9391" xml:lang="ar">٩٣٩١</tei:num>  ليرة يضاف إليها مليون ليرة اقترضته بلدية الآستانة والشطر الرابع من قرض ولاية
+                            بغداد وهذا بيانه:  <tei:num value="50" xml:lang="ar">٥٠</tei:num> .  <tei:num value="146" xml:lang="ar">١٤٦</tei:num> .  <tei:num value="757" xml:lang="ar">٧٥٧</tei:num>  الدين الموحد والسندات  <tei:num value="18" xml:lang="ar">١٨</tei:num> .  <tei:num value="275" xml:lang="ar">٢٧٥</tei:num> .  <tei:num value="620" xml:lang="ar">٦٢٠</tei:num>  دين مضمون بجزية مصر وقبرص  <tei:num value="2" xml:lang="ar">٢</tei:num> .  <tei:num value="319" xml:lang="ar">٣١٩</tei:num> .  <tei:num value="944" xml:lang="ar">٩٤٤</tei:num>  قرض
+                            تتناول ضمانته مباشرة  <tei:num value="30" xml:lang="ar">٣٠</tei:num> .  <tei:num value="763" xml:lang="ar">٧٦٣</tei:num> .  <tei:num value="414" xml:lang="ar">٤١٤</tei:num>  قرض مضمون بدخل صندوق الدين  <tei:num value="24" xml:lang="ar">٢٤</tei:num> .  <tei:num value="603" xml:lang="ar">٦٠٣</tei:num> .  <tei:num value="656" xml:lang="ar">٦٥٦</tei:num>  قروض تديرها الحكومة.</p>
+                        <p>وينبغي أن يحذف من هذه القروض قرض سنة  <tei:num value="1855" xml:lang="ar">١٨٥٥</tei:num>  وفائدته  <tei:num value="4" xml:lang="ar">٤</tei:num>  في المئة وقرض  <tei:num value="91" xml:lang="ar">٩١</tei:num>  وفائدته  <tei:num value="4" xml:lang="ar">٤</tei:num>  بالمئة أيضاً وقرض  <tei:num value="94" xml:lang="ar">٩٤</tei:num>  وفائدته  <tei:num value="3" xml:lang="ar">٣</tei:num> 
                             ونصف بالمئة لأن هذه مضمونة بجزية مصر وزيادة دخل جزيرة قبرص وهي من أضمن القروض في نظر حملة القراطيس.</p>
-                        <p>ثم أن قروض 93 و94 تدفع شركة حصر التنباك وشركة السكك الحديدية الشرقية ضمانتها للمصارف مباشرة وعليه يكون الباقي قرض
+                        <p>ثم أن قروض  <tei:num value="93" xml:lang="ar">٩٣</tei:num>  و <tei:num value="94" xml:lang="ar">٩٤</tei:num>  تدفع شركة حصر التنباك وشركة السكك الحديدية الشرقية ضمانتها للمصارف مباشرة وعليه يكون الباقي قرض
                             الموحد العثماني وقروض سندات اليانصيب العثماني وهذا قد خص بهما بموجب أمر سلطاني بعض الموارد كالثمغة ورسوم الكحول
                             والحرير والملح والدخان يتولى إدارتها صندوق الديون العمومية وقد أربى الدخل كثيراً عَلَى النفقة اللازمة للصندوق
                             والأسهم.</p>
-                        <p>ففي سنة 1910 إلى 1911 بلغ دخل صندوق الدين 5 ملايين و61. 335 ليرة أخذ منها لنفقات الإدارة 964. 237 ليرة وبقي 4
-                            ملايين و97. 091 ليرة يؤخذ منها لاستهلاك الأسهم المخصصة بهذه الموارد ولدفع سندات اليانصيب مليونان و157. 375 ليرة
-                            فتكون زيادة الدخل مليوناً و939. 723 تعطي الحكومة الثلاثة الأرباع والربع الآخر يعطى لخزانة صندوق الدين.</p>
-                        <p>هذا ويظل الدخل أكثر من النفقة ولو حذفنا نقص دخل الصندوق من الولايات التي احتلتاه <pb ed="shamela"
-                   n="n82-p65"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5603.xhtml"/> الحكومات البلقانية فقد
-                            جاء في الكتاب الذي قدم للسفراء في شهر ك1 الماضي أن معدل دخل تلك الولايات في العام 713051 ليرة يضاف إليه مبلغ
-                            48990 ليرة من أثمان الملح فيكون المجموع 762005 ليرات أي عبارة عن 22 بالمئة من مجموع الدخل وإذا افترضنا نقص
-                            الدخان من هذه النسبة كان مجموع النقص مليوناً و48305 ليرات وقد ذكرنا قبلاً أن زيادة دخل الدين الصافية هي مليون
-                            و939723 ليرة وعليه تكون الزيادة الباقية حتى بعذ حذف دخل الولايات التي يحتلها البلقان 865418 ليرة.</p>
-                        <p>وقال بعضهم: لا ينكر أن الدولة العلية بفقدها الولايات الأوربية قد خسرت 20 في المئة من دخلها لكن من عرف أن هذه
-                            الولايات كانت تستهلك في السنوات الثلاث الأخيرة 23 في المئة من مجموع نفقات السلطنة يرى أن خسارة مدخولها لا تؤثر
-                            في حال الخزينة. ثم أن الحرب الأخيرة لم تضطر العثمانية إلى أن تنفق أكثر مما كانت تنفقه عندما كان لها 60 ألفاً من
-                            الجنود في ألبانيا لإخماد ثورتها و50 ألفاً في أزمير ومن 60 إلى 70 ألفاً في طرابلس الغرب ومثلهم في اليمن ولم يتأخر
-                            رعايا الدولة عن دفع الأموال المفروضة عليهم حتى أن زيادة الدخل في بيان نظارة المالية الأخيرة بلغ 2. 509. 731 ليرة
-                            عثمانية وبلغ مجموع ضريبة الحرب في شهر واحد 422. 495 ليرة عثمانية. وعليه إن الحكومة العثمانية تحتاج إلى المال فما
+                        <p>ففي سنة  <tei:num value="1910" xml:lang="ar">١٩١٠</tei:num>  إلى  <tei:num value="1911" xml:lang="ar">١٩١١</tei:num>  بلغ دخل صندوق الدين  <tei:num value="5" xml:lang="ar">٥</tei:num>  ملايين و <tei:num value="61" xml:lang="ar">٦١</tei:num> .  <tei:num value="335" xml:lang="ar">٣٣٥</tei:num>  ليرة أخذ منها لنفقات الإدارة  <tei:num value="964" xml:lang="ar">٩٦٤</tei:num> .  <tei:num value="237" xml:lang="ar">٢٣٧</tei:num>  ليرة وبقي  <tei:num value="4" xml:lang="ar">٤</tei:num> 
+                            ملايين و <tei:num value="97" xml:lang="ar">٩٧</tei:num> .  <tei:num value="091" xml:lang="ar">٠٩١</tei:num>  ليرة يؤخذ منها لاستهلاك الأسهم المخصصة بهذه الموارد ولدفع سندات اليانصيب مليونان و <tei:num value="157" xml:lang="ar">١٥٧</tei:num> .  <tei:num value="375" xml:lang="ar">٣٧٥</tei:num>  ليرة
+                            فتكون زيادة الدخل مليوناً و <tei:num value="939" xml:lang="ar">٩٣٩</tei:num> .  <tei:num value="723" xml:lang="ar">٧٢٣</tei:num>  تعطي الحكومة الثلاثة الأرباع والربع الآخر يعطى لخزانة صندوق الدين.</p>
+                        <p>هذا ويظل الدخل أكثر من النفقة ولو حذفنا نقص دخل الصندوق من الولايات التي احتلتاه <pb ed="shamela" n="n82-p65" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5603.xhtml"/> الحكومات البلقانية فقد
+                            جاء في الكتاب الذي قدم للسفراء في شهر ك <tei:num value="1" xml:lang="ar">١</tei:num>  الماضي أن معدل دخل تلك الولايات في العام  <tei:num value="713051" xml:lang="ar">٧١٣٠٥١</tei:num>  ليرة يضاف إليه مبلغ
+                             <tei:num value="48990" xml:lang="ar">٤٨٩٩٠</tei:num>  ليرة من أثمان الملح فيكون المجموع  <tei:num value="762005" xml:lang="ar">٧٦٢٠٠٥</tei:num>  ليرات أي عبارة عن  <tei:num value="22" xml:lang="ar">٢٢</tei:num>  بالمئة من مجموع الدخل وإذا افترضنا نقص
+                            الدخان من هذه النسبة كان مجموع النقص مليوناً و <tei:num value="48305" xml:lang="ar">٤٨٣٠٥</tei:num>  ليرات وقد ذكرنا قبلاً أن زيادة دخل الدين الصافية هي مليون
+                            و <tei:num value="939723" xml:lang="ar">٩٣٩٧٢٣</tei:num>  ليرة وعليه تكون الزيادة الباقية حتى بعذ حذف دخل الولايات التي يحتلها البلقان  <tei:num value="865418" xml:lang="ar">٨٦٥٤١٨</tei:num>  ليرة.</p>
+                        <p>وقال بعضهم: لا ينكر أن الدولة العلية بفقدها الولايات الأوربية قد خسرت  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  في المئة من دخلها لكن من عرف أن هذه
+                            الولايات كانت تستهلك في السنوات الثلاث الأخيرة  <tei:num value="23" xml:lang="ar">٢٣</tei:num>  في المئة من مجموع نفقات السلطنة يرى أن خسارة مدخولها لا تؤثر
+                            في حال الخزينة. ثم أن الحرب الأخيرة لم تضطر العثمانية إلى أن تنفق أكثر مما كانت تنفقه عندما كان لها  <tei:num value="60" xml:lang="ar">٦٠</tei:num>  ألفاً من
+                            الجنود في ألبانيا لإخماد ثورتها و <tei:num value="50" xml:lang="ar">٥٠</tei:num>  ألفاً في أزمير ومن  <tei:num value="60" xml:lang="ar">٦٠</tei:num>  إلى  <tei:num value="70" xml:lang="ar">٧٠</tei:num>  ألفاً في طرابلس الغرب ومثلهم في اليمن ولم يتأخر
+                            رعايا الدولة عن دفع الأموال المفروضة عليهم حتى أن زيادة الدخل في بيان نظارة المالية الأخيرة بلغ  <tei:num value="2" xml:lang="ar">٢</tei:num> .  <tei:num value="509" xml:lang="ar">٥٠٩</tei:num> .  <tei:num value="731" xml:lang="ar">٧٣١</tei:num>  ليرة
+                            عثمانية وبلغ مجموع ضريبة الحرب في شهر واحد  <tei:num value="422" xml:lang="ar">٤٢٢</tei:num> .  <tei:num value="495" xml:lang="ar">٤٩٥</tei:num>  ليرة عثمانية. وعليه إن الحكومة العثمانية تحتاج إلى المال فما
                             ذلك إلا لسد العجز السابق.</p>
                         <p>مدارس الفلاحة في الدانيمرك</p>
                         <p>نشرت المجلة الفرنسوية مبحثاً مهماً تحت هذا العنوان بقلم العقيلة لونر كروبي فآثرنا ليضم إلى ما سبق لنا نشره من
@@ -1977,9 +1816,7 @@
                             أصبح لديها الألبان دافقة كالسيل المنهمر وجمعت بواسطة معامل اللبن منها ما تجعله جبالاً من الزبدة والسمون ترسله
                             إلى إنكلترا فتتناول أثمانه ذهباً وهاجاً. تقسمت في هذه البلاد الثروة تقسيماً كثيراً ومع هذا لا ترى الفلاح يعجز عن
                             القيام بالأعمال الكبرى التي يقتضي لها رؤوس أموال عظيمة قد تألفت شركة تعاون ضمت إليها نحو تسعة أعشار أرباب
-                            الأراضي وغدت البلاد تستثمر بأدق قواعد العلم الحديث فيحلل اللبن مرتين في الشهر في <pb ed="shamela"
-                   n="n82-p66"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5604.xhtml"/> معامل التحليل التي تشعر
+                            الأراضي وغدت البلاد تستثمر بأدق قواعد العلم الحديث فيحلل اللبن مرتين في الشهر في <pb ed="shamela" n="n82-p66" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5604.xhtml"/> معامل التحليل التي تشعر
                             صاحب الملك بأقل تغيير يحدث في حالته وتبين له ما يجب إدخاله من التعديل في تغذية الماشية. وبهذه العناية والحذق في
                             اختيار أجناس البهائم أصبح معدل السنوي للبقرة الدانيمركية يزيد عن واحد من خمسة في خلال العشر سنين الأخيرة.</p>
                         <p>وهكذا تفحص التربة أيضاً فحصاً في المعامل ويجري إصلاحها عَلَى هذا النحو والفلاحون هم الذين يتولون أعمال هذه
@@ -1992,19 +1829,17 @@
                             الأعظم من الأغنياء وأرباب الأملاك أن يقبضوا بذكائهم عَلَى قياد بلادهم وأن يكون لهم في مجلس النواب الأكثرية
                             المطلقة التي تتصرف بالبلاد كما تريد وتتولى مناصب الحكومة وكم من فلاح يبحث في أعوص المسائل فيحلها في حقل عقل
                             وتجارب. فالفلاح الدانيمركي وحيد في هذا الباب في أوربا بفضل التربية التي ربيها أولئك الفلاحون في المدارس العليا
-                            فدخل فيها 47 في المئة من مجموع السكان وتلقنوا التربية العقلية والأخلاقية اللازمة للحقول. وما القائمون بالشركات
+                            فدخل فيها  <tei:num value="47" xml:lang="ar">٤٧</tei:num>  في المئة من مجموع السكان وتلقنوا التربية العقلية والأخلاقية اللازمة للحقول. وما القائمون بالشركات
                             الزراعية إلا تلامذة تلك المدارس التي بنيت بأموال الفلاحين فهي مدارس خاصة يبذل لها الفلاحون عن سعة مع ما عرف به
                             الفلاح من الاقتصاد في كل هذه البلاد. ولذا ترى كل كورة من كور الدانيمرك أن من موجبات شرفها أن يكون لها مدرسة عليا
                             ومن لم يدخلها في عرف الفلاحين يكون من الطبقة الدنيا ليس له من أسباب الشرف لا قليل ولا كثير.</p>
-                        <p>أنشئت المدرسة العليا في الدانيمرك ممثلة لأفكار ممثلها غروندفيج الذي عاش من سنة 1783 إلى 1872 ولقب بنبي الشمال
+                        <p>أنشئت المدرسة العليا في الدانيمرك ممثلة لأفكار ممثلها غروندفيج الذي عاش من سنة  <tei:num value="1783" xml:lang="ar">١٧٨٣</tei:num>  إلى  <tei:num value="1872" xml:lang="ar">١٨٧٢</tei:num>  ولقب بنبي الشمال
                             وبروحه قامت وارتقت وإنك لترى إلى اليوم في المدارس التي أحدثها خطبه وأشعاره وكتاباته تقرأ وتشرح باحترام يوازي ما
-                            تقرأ به <pb ed="shamela"
-                   n="n82-p67"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5605.xhtml"/> التوراة وتفسر به. حتى أن
+                            تقرأ به <pb ed="shamela" n="n82-p67" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5605.xhtml"/> التوراة وتفسر به. حتى أن
                             الأساتذة يرون أن من الواجب الاحتفاظ بتعاليمه وإنك لترى صورته معلقة في كل قاعة من تلك المدارس وهو شيخ يجري أبيض
                             اللحية كبيرة السحنة تظهر عليه الشهامة والنشاط.</p>
                         <p>وكان هذا الرجل من بيت أدب وعلم وكتب في التاريخ والأساطير والشعر القديم والتراجم ما بلغ ثلاثين ألف صفحة وهو عمل
-                            عظيم حتى عَلَى من عاش 91 سنة مثله ممتعاً بصحته وتقواه. وكانت أمه من بيت علم وأبوه واعظاً دينياً فتعلم من والدته
+                            عظيم حتى عَلَى من عاش  <tei:num value="91" xml:lang="ar">٩١</tei:num>  سنة مثله ممتعاً بصحته وتقواه. وكانت أمه من بيت علم وأبوه واعظاً دينياً فتعلم من والدته
                             في صباه حب القديم والميل إلى القصص ولطالما غنت له الأغاني الوطنية والأناشيد الدينية التي كان بها في حياته الفرد
                             المقدم فأصبح شاعراً بما لقنته إياه أمه من الشعور وبواسطة الأناشيد الدينية التي ينشدها الفلاحون كل يوم أثر في
                             أفكار فلاحي بلاده وتعلم اللاتينية وكان يحمله معلمه عَلَى الاختلاف إلى بيوت الفلاحين فاستفاد من هذه الزيارات أكثر
@@ -2018,10 +1853,8 @@
                             المترجم به في أشعاره وكتاباته كلها وأعماله الاجتماعية ولقد صرح في إحدى المجتمعات أنه من العبث أخذ السلاح للدفاع
                             عن الوطن إذا لم يكن المرء متشبعاً بالشعور الديني. فمن ثم كان يرى إثارة الشعور الوطني والإيمان في مدارسه
                             الجديدة.</p>
-                        <p>وفي سنة 1832 نشر لأول مرة في مقدم كتابه الميثولوجيا الكبرى فكرة مدرسته وفي سنة 1844 في اجتمع حضره بضعة ألوف من
-                            الفلاحين الوطنيين خطب القوم فأثرت خطبته <pb ed="shamela"
-                   n="n82-p68"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5606.xhtml"/> في النفوس فراح وهو عَلَى
+                        <p>وفي سنة  <tei:num value="1832" xml:lang="ar">١٨٣٢</tei:num>  نشر لأول مرة في مقدم كتابه الميثولوجيا الكبرى فكرة مدرسته وفي سنة  <tei:num value="1844" xml:lang="ar">١٨٤٤</tei:num>  في اجتمع حضره بضعة ألوف من
+                            الفلاحين الوطنيين خطب القوم فأثرت خطبته <pb ed="shamela" n="n82-p68" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5606.xhtml"/> في النفوس فراح وهو عَلَى
                             أبواب الشيخوخة يعزي نفسه بأنه سيرى أعماله تكلل بالنجاح ولو كان في هذه السن إذ له أسوة حسنة يستوف كولمب الذي ذهب
                             ففتح العالم الجديد وقد ابيض فوده وعارضه. دعا بخطابه امته إلى إحياء الشعور الديني والوطني وإن أنقى مصادر الحياة
                             العقلية والأدبية يجب أن تكون منه عَلَى طرف الثمام تتناولها عَلَى أسرع وجه وأن ينشأ في المدارس الجديدة تعليم حي
@@ -2034,17 +1867,15 @@
                             تعليماً جديداً ولا تخول المتخرج منها امتيازاً ولا تعطيه شهادة. فلم يطلب هذا الرجل من مدرسته أن تخرج تلامذة عَلَى
                             النحو الذي تخرجه مدارس الحكومة فيمتاز متخرجها بما ناله من الدرجة بين أقرانه ومجتمع أخوانه بل يكون من تخرج منها
                             عَلَى استعداد للرجوع إلى المكان الذي غادره ولكن بروح غير روحه الأولى.</p>
-                        <p>أفق غروندويج ونجح وإخفاقه لم يزده إلا مضاءً حتى بلغ عدد مدارسه العليا من سنة 1864 إلى 1904 (71) مدرسة ولطالما شكا
+                        <p>أفق غروندويج ونجح وإخفاقه لم يزده إلا مضاءً حتى بلغ عدد مدارسه العليا من سنة  <tei:num value="1864" xml:lang="ar">١٨٦٤</tei:num>  إلى  <tei:num value="1904" xml:lang="ar">١٩٠٤</tei:num>  ( <tei:num value="71" xml:lang="ar">٧١</tei:num> ) مدرسة ولطالما شكا
                             من أن الأشعار التي نشرها محتذاة من الإنكليزية أو من اللغة الدانيمركية القديمة لم تؤثر إلا في طبقة مستنيرة من
                             الشعب في حين يؤثر أن تراها تفعل في عقول الفلاحين ولكن نفعت في إحياء لغة القوم عَلَى نحو ما نفعت كليات الحكومة
                             ومدارسها عَلَى أن تلك الأشعار لم يكن يمض يوم ولا ليلة إلا وتنشد في البلاد اشتركت في الإقبال عليها مدارسه ومدارس
                             الحكومة وكنائس الدانيمرك وأديارها.</p>
                         <p>يبقى التلميذ إلى الرابعة عشرة أو الخامسة عشرة من سنه في المدرسة يتقن فيها اللغة الدانيمركية ثم يعود إلى المدرسة
-                            العليا فيزيدها إحكاماً كما يبالغون في تعليم التاريخ <pb ed="shamela"
-                   n="n82-p69"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5607.xhtml"/> الدانيمركي وبذلك انبعثت
+                            العليا فيزيدها إحكاماً كما يبالغون في تعليم التاريخ <pb ed="shamela" n="n82-p69" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5607.xhtml"/> الدانيمركي وبذلك انبعثت
                             الوطنية الدانيمركية من مرقدها ولا يسأل كل تلميذ في مدارسه سوى سؤالاً بمفرده بل يوجه إلى التلاميذ كلهم سؤال واحد
-                            يجيبون عليه ومدارسه تدفع أجورها وأجرة كل تلميذ من 200 إلى 250 كوروناً (الكورون فرنك واحد وأربعون سنتيماً) ويجتهد
+                            يجيبون عليه ومدارسه تدفع أجورها وأجرة كل تلميذ من  <tei:num value="200" xml:lang="ar">٢٠٠</tei:num>  إلى  <tei:num value="250" xml:lang="ar">٢٥٠</tei:num>  كوروناً (الكورون فرنك واحد وأربعون سنتيماً) ويجتهد
                             المعلمون أن لا يضغط التلامذة عَلَى أولادهم ويضطروهم إلى الذهاب للمدرسة حتى المعلمين إذا رأوا التلميذ يريد الهرب
                             يفتحون له الباب ولا يسألون عنه عَلَى أن ذلك من النوادر.</p>
                         <p>وصف غروندويج فكر مدرسته بما يلي: يجب أن تحسن تعليم التلامذة معنى الحياة البشرية وطبيعتهم الخاصة وأن يلقنوا الفروض
@@ -2061,9 +1892,7 @@
                             الزاهي. وهن من طبقة لا تجد فيهن شريفة ولا من بنات الأعيان بل هن أجيرات في الحقول والمزارع وخادمات وترى أيديهن
                             مسمرة عَلَى نحو مما تشاهد أيدي كل الفتيات في بلاد السكندنافيا حتى تلميذات الكليات العليا لأنهن عرفن بحبهن
                             للرياضيات البدنية فيتلو عَلَى مسامعهن الأستاذ قطعة في تاريخ الدانيمرك كوصف معركة فريدريسيا التي قضى فيها القائد
-                            ري وكان فيها الظفر <pb ed="shamela"
-                   n="n82-p70"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5608.xhtml"/> مؤقتاً وعقبه ضياع مقاطعة
+                            ري وكان فيها الظفر <pb ed="shamela" n="n82-p70" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5608.xhtml"/> مؤقتاً وعقبه ضياع مقاطعة
                             شلشويق هولستاين ويذكر الخطيب تذكارات مؤلمة وقد حضر الاجتماع مستمعات من مقاطعة شلشويق عَلَى الرغم من حظر الحكومة
                             الألمانية عليهن الحضور. حضرن ليأخذن ما لا يتيسر لهن في مقاطعتهن من الآداب الدانيمركية فكن موضوع التأثر كما كان
                             كلام الخطيب وانكفأن كلهن يبكين وينتحبن ويرفعن أصواتهن متأثرات ولاسيما عندما يختمن الجلسة بإنشاد النشيد
@@ -2081,9 +1910,7 @@
                             يحول دونهن أو يحظر عليهن فحريتهن تامة مطلقة يعشن مع أساتذتهن ومعلماتهن وأسرات معلميهن ومعلماتهن عيشاً بيتياً
                             مشتركاً لا شيء يشق عليهن ويحسن استعمال ما يخولن من الحقوق. قال أحد أساتذة هذه المدارس أنني قضيت حياتي برمتها في
                             هذه البيوت فلم أسمع فيها قط كلمة هجر تنافي الأدب ولم أشهد خصاماً رديئاً وهذا ناشيء من شيئين وهما امتياز هذا
-                            الشعب الوديع اللطيف المعتدل واللسان المهذب الذي يستعمله الأساتذة منذ أول يوم مع التلاميذ <pb ed="shamela"
-                   n="n82-p71"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5609.xhtml"/> والتلميذات
+                            الشعب الوديع اللطيف المعتدل واللسان المهذب الذي يستعمله الأساتذة منذ أول يوم مع التلاميذ <pb ed="shamela" n="n82-p71" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5609.xhtml"/> والتلميذات
                             فيبلغون به شغاف القلوب ولامرأة مدير المدرسة تأثير في جعل حياة الفتيات مفرحة لطيفة والمدير يكون مستشار الأسرات
                             عَلَى كثرتها لأن أولادهم درسوا في مدرسته.</p>
                         <p>أما مواد التعليم فتدور عَلَى التاريخ والجغرافيا وعلم الأدب واللغة الدانيمركية والرياضة البدنية وحفظ الصحة
@@ -2102,10 +1929,8 @@
                             العلمي.</p>
                         <p>يعيش المعلمون في هذه المدارس مع أسراتهم ويذهبون خلال العطلة المدرسية وهي ثلاثة أشهر في السنة إلى جميع أماكن
                             الاجتماع. يختلفون إلى الأعياد الدينية والمحاضرات والأسواق الكبرى وإلى كل مكان يعلمون أن أناساً فيه يجتمعون
-                            فيتكلمون عن مدرستهم ويدعون الفلاحين إليها في الخريف. وبذلك يستكثرون من الطلبة والحكومة لا تراقب هذه <pb ed="shamela"
-                   n="n82-p72"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5610.xhtml"/>
-                            المدارس وتدفع لكل واحدة أتى عليها ثلا سنين إعانة نقدية من 3 إلى 4 آلاف كورون والمعلمون من الطبقة الراقية في
+                            فيتكلمون عن مدرستهم ويدعون الفلاحين إليها في الخريف. وبذلك يستكثرون من الطلبة والحكومة لا تراقب هذه <pb ed="shamela" n="n82-p72" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5610.xhtml"/>
+                            المدارس وتدفع لكل واحدة أتى عليها ثلا سنين إعانة نقدية من  <tei:num value="3" xml:lang="ar">٣</tei:num>  إلى  <tei:num value="4" xml:lang="ar">٤</tei:num>  آلاف كورون والمعلمون من الطبقة الراقية في
                             علمهم ويكونون في الغالب ممن شعروا بميل إلى صناعة التعليم وهم في سن العشرين ولهم اجتماعات ونقابات فلا يدخل في
                             سلكهم ضعيف ولا ساقط في فضائله وعلمه والشعب يعرض عن كل من لا يسوغ أن يتولى تربية بنيه ممن عرف بالإلحاد ولم يترب
                             بآداب الدين. وفي كل سنة تدعو المدرسة من تخرجوا في مدارسها من الفتيان والفتيات وأسراتهم فيأتون من كورتهم مسرعين
@@ -2124,14 +1949,12 @@
                             أشياء منها فعمد رجال الصحة فيها إلى استعمال الأدوية كلها للوقاية فيها فخابت مساعيهم. وقد قررت لجنة خاصة أن
                             الواسطة الوحيدة أن تطهر أماكن العدوى وأن يحارب الذباب بكل حيلة فعهدت البلدية إلى أحد الأخصائيين أن يعد دواءً
                             ناجعاً للقضاء عَلَى العفن فأكثر في المدينة من حب حمض البيرولنجين ويحدد رشه أربع مرات في النهار ودامت هذه الحرب
-                            شهراً فلم يبق بعده أثراً <pb ed="shamela"
-                   n="n82-p73"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5611.xhtml"/> لهذا العدو الهائل وتخلصت
+                            شهراً فلم يبق بعده أثراً <pb ed="shamela" n="n82-p73" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5611.xhtml"/> لهذا العدو الهائل وتخلصت
                             المدينة من الذباب فخفت حمى التيفوس بذلك عَلَى التدريج وجادت الصحة أي جودة وبذلك يفهم أن الحكومات إذا أرادت أن
                             تعمل الحسن للأمم توفق له مهما كان صعب الطريقة.</p>
                         <p>نادي المعمرين</p>
                         <p>أنشئ حديثاً في طوكيو عاصمة اليابان ناد للشيوخ الذي لا يقل عمرهم عن التسعين سنة برئاسة الكونت إوليما الياباني
-                            ويقال أن بين من يضمهم النادي الآن اثني عشر عضواً عمر الواحد منهم 110 سنوات وقد قيل شبيه الشيء منجذب إليه. إن
+                            ويقال أن بين من يضمهم النادي الآن اثني عشر عضواً عمر الواحد منهم  <tei:num value="110" xml:lang="ar">١١٠</tei:num>  سنوات وقد قيل شبيه الشيء منجذب إليه. إن
                             الطيور عَلَى أشكالها تقع.</p>
                         <p>إزالة الحبر عن البسط</p>
                         <p>إن أسهل طريقة يمكنك بها إزالة الحبر عن الطنافس أو البسط أن تأخذ شيئاً من الملح الناعم وتذره عَلَى الحبر وتى اسود
@@ -2140,15 +1963,13 @@
                         <p>إن الطريقة لإحياء الأزهار بعد ذبولها هي أن تقطع قليلاً من أصولها ثم تغمس هذه الأصول في ماء يغلي فالحرارة الشديدة
                             تنبه الزهرة تعد إليها الحياة التي أوشكت أن تفقدها وتجعلها كأنها مقطوفة منذ هنيهة.</p>
                         <p>أكلة الخبز</p>
-                        <p>في الإحصاءات الأخيرة أن كل دانيمركي يأكل في السنة 287 كيلوغراماً من الخبز والبلجيكي 274 كيلوغراماً والفرنسوي 234
-                            والسويسري 212 كيلوغراماً والألماني 209 كيلوغرامات والإسباني والنمساوي 195 كيلوغراماً والإيطالي والبرتقالي 102
+                        <p>في الإحصاءات الأخيرة أن كل دانيمركي يأكل في السنة  <tei:num value="287" xml:lang="ar">٢٨٧</tei:num>  كيلوغراماً من الخبز والبلجيكي  <tei:num value="274" xml:lang="ar">٢٧٤</tei:num>  كيلوغراماً والفرنسوي  <tei:num value="234" xml:lang="ar">٢٣٤</tei:num> 
+                            والسويسري  <tei:num value="212" xml:lang="ar">٢١٢</tei:num>  كيلوغراماً والألماني  <tei:num value="209" xml:lang="ar">٢٠٩</tei:num>  كيلوغرامات والإسباني والنمساوي  <tei:num value="195" xml:lang="ar">١٩٥</tei:num>  كيلوغراماً والإيطالي والبرتقالي  <tei:num value="102" xml:lang="ar">١٠٢</tei:num> 
                             كيلوغرامين. أما العربي فليس له محل من الإعراب في هذا الإحصاء ولعله من أكثر الأمم تنازلاً للخبز إذ ليس عنده الآن
                             إلا الخبز القفار وربما جاء زمن لا يحصله فيكتفي بأكل البقول والثمار.</p>
                         <p>ثروة سويسرا</p>
-                        <p>أحصى الأستاذ ستيجر ثروة سويسرا عَلَى وجه التقريب فكانت نحو 14528 مليون فرنك <pb ed="shamela"
-                   n="n82-p74"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5612.xhtml"/> وأغنى مقاطعاتها مقاطعة
-                            برن التي بلغت ثروتها العامة 2444 مليوناً ثم مقاطعة فود 1742.</p>
+                        <p>أحصى الأستاذ ستيجر ثروة سويسرا عَلَى وجه التقريب فكانت نحو  <tei:num value="14528" xml:lang="ar">١٤٥٢٨</tei:num>  مليون فرنك <pb ed="shamela" n="n82-p74" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5612.xhtml"/> وأغنى مقاطعاتها مقاطعة
+                            برن التي بلغت ثروتها العامة  <tei:num value="2444" xml:lang="ar">٢٤٤٤</tei:num>  مليوناً ثم مقاطعة فود  <tei:num value="1742" xml:lang="ar">١٧٤٢</tei:num> .</p>
                         <p>نساء فنلندة</p>
                         <p>تبين بالاستقراء أن المرأة في فنلندا لما صار له شأن في توظيف الشرطة في بلادها قل الفجور بل كاد يقضى عليه كل القضاء
                             وذلك أن من وظيفة الشرطيات الفنلنديات أن يسهرن عَلَى أخلاق الفتيات وأن يسعين في إيجاد أعمال ومحال يأوي إليها
@@ -2166,9 +1987,7 @@
                             المواد الكيماوية وينشف في تنور أو يطلق عليه مجرى هواء شديد الحرارة فيستحيل إلى مادة بيضاء صوفية تكون عند إخراجها
                             من التنور ملونة الأشكال معمولة طويلة وقصيرة عَلَى نحو ما يعمل الجوخ والثوب أو السروال المعمول من هذا الجوخ
                             الحديدي لا يتلوث بلوثات من الدهن ومرونته تشبه مرونة أدق صوف الماعز. ومن جملة الأصناف الجديدة من هذا النوع نسيج
-                            الورق أو الحطب أو القنب فإن نسيج الورق قد خدم <pb ed="shamela"
-                   n="n82-p75"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5613.xhtml"/> اليابانيين خدمة نافعة
+                            الورق أو الحطب أو القنب فإن نسيج الورق قد خدم <pb ed="shamela" n="n82-p75" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5613.xhtml"/> اليابانيين خدمة نافعة
                             خلال حربهم مع الروس وهو أحسن ما يكون لصنع الأزياء العسكرية الرسمية وتعمل منه اليوم فساطين للسهرات وألبسة
                             للحمامات وأن مدينة طوكيو عاصمة اليابان لتصدر إلى إنكلترا وألمانيا وفرنسا كميات وافرة منه. ويعمل اليابانيون من
                             هذا القماش قفافيز للأيدي أيضاً. أما قماش القنب والحطب فيكون متيناً للغاية يمزج مع بعض المواد الكيماوية التي كتم
@@ -2187,9 +2006,7 @@
                             أن حصان هانس يحسب ويجمع ويطرح بلا غلط ويجيب عَلَى المسائل العويصة بإشارات لا خطئُ وذبك ثبت بأن للحيوان نفوساً
                             كما للإنسان وإنها من الذكاء عَلَى جانب.</p>
                         <p>الإتحاد الأوربي</p>
-                        <p>تكتب المجلات الكبرى في الغرب الحين بعد الآخر مقالات في الدعوة إلى اتحاد أوربي <pb ed="shamela"
-                   n="n82-p76"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5614.xhtml"/> عام تكون به دول أوربا
+                        <p>تكتب المجلات الكبرى في الغرب الحين بعد الآخر مقالات في الدعوة إلى اتحاد أوربي <pb ed="shamela" n="n82-p76" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5614.xhtml"/> عام تكون به دول أوربا
                             يداً واحدة في الخصام والسلام ومن ذلك ما نشرته إحدى المجلات الإنكليزية الخطيرة قالت مؤخراً أن من الأمور الثابتة
                             أن الحالة الحاضرة في أوربا ليست مما يبعث عَلَى الرضى فهي تفقد عَلَى التدريج المكانة وإن كانت لها فيما سلف من
                             الأيام عَلَى حين تنشأُ أمم أخرى أمامها ونبلغ بالتدريج الدرجة الأولى. والسبب في هذا الانحطاط هو أن ممالك أوربا لا
@@ -2208,54 +2025,48 @@
                         <p>تبدل المناخ</p>
                         <p>تنبأ كثير من العلماء بإمكان تبدل يطرأ عَلَى الأرض وقدروا بأن كثرة ما ينفق من حامض الكربون في الهواء لكثرة إنفاق
                             الفحم سيكون السبب في ذلك وقد أكد أحد أساطين العلم مؤخراً بأن المناخ يتغير والحرارة تشتد مستشهداً لذلك بترقي
-                            البشرية في صرف الفحوم <pb ed="shamela"
-                   n="n82-p77"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5615.xhtml"/> وزيادته سنة عن سنة وأن
-                            كمية الحامض الكربوني تنمو عن ذلك المعدل وقد أُحصي ما أنفق من الفحم سنة 1899 فكان 823. 287. 454 طناً ولم يكن
-                            المنفق منه قبل عشر سنين أكثر من 511. 518. 258 في القرن العشرين بمليار طن عَلَى سرعة الزياد ويدعو إلى تقدير ما
+                            البشرية في صرف الفحوم <pb ed="shamela" n="n82-p77" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5615.xhtml"/> وزيادته سنة عن سنة وأن
+                            كمية الحامض الكربوني تنمو عن ذلك المعدل وقد أُحصي ما أنفق من الفحم سنة  <tei:num value="1899" xml:lang="ar">١٨٩٩</tei:num>  فكان  <tei:num value="823" xml:lang="ar">٨٢٣</tei:num> .  <tei:num value="287" xml:lang="ar">٢٨٧</tei:num> .  <tei:num value="454" xml:lang="ar">٤٥٤</tei:num>  طناً ولم يكن
+                            المنفق منه قبل عشر سنين أكثر من  <tei:num value="511" xml:lang="ar">٥١١</tei:num> .  <tei:num value="518" xml:lang="ar">٥١٨</tei:num> .  <tei:num value="258" xml:lang="ar">٢٥٨</tei:num>  في القرن العشرين بمليار طن عَلَى سرعة الزياد ويدعو إلى تقدير ما
                             سينفق من الطنات في القرن العشرين بمليار طن فتتضاعف كمية الكربون في الهواء وتحفظ الكرة حرارتها فتكون الحرارة في
                             الأرض كلها أكثر من الأول. والعلماء يتوقعون فيما إذا كانت هذه الزيادة في الحرارة تضر بوجود الهواء.</p>
                         <p>الأشجار التاريخية</p>
-                        <p>في سنة 1860 غرس البرنس دي غال في حديقة نيويورك الوسطى بيده شجرة دردار أميركية وشجرة بلوط إنكليزية احتفالاً بمرور
+                        <p>في سنة  <tei:num value="1860" xml:lang="ar">١٨٦٠</tei:num>  غرس البرنس دي غال في حديقة نيويورك الوسطى بيده شجرة دردار أميركية وشجرة بلوط إنكليزية احتفالاً بمرور
                             خمسين سنة عَلَى معاهدة غاند ومنذ ذلك العهد نجحت هاتان الشجرتان وأصبحتا من الجمال بحيث لا تضاهيهما شجرة من نوعهما
                             وعمرهما. ومن الأدواح الضخمة التاريخية في العالم شجرة البارون همبولد القائمة في وادي أرغوا في جمهورية فنزويلا
-                            فإنها اكتشفت في القرن السادس عشر ولا تزال إلى اليوم عَلَى مثل ضخاتها يوم اكتشافها وكانت استدارة أغصانها 561
+                            فإنها اكتشفت في القرن السادس عشر ولا تزال إلى اليوم عَلَى مثل ضخاتها يوم اكتشافها وكانت استدارة أغصانها  <tei:num value="561" xml:lang="ar">٥٦١</tei:num> 
                             قدماً وهي الآن كذلك. ومن الشجار الضخمة في العالم الشجرة المعروفة بشجرة التين في أوروتثا التي ما برح طائفة
-                            الكواتش في تنريف تعظمها وقد ثار إعصار هائل سنة 1871 فألقى بها إلى الأرض وكان قطر جذعها 46 قدماً. ويقال أن يونان
+                            الكواتش في تنريف تعظمها وقد ثار إعصار هائل سنة  <tei:num value="1871" xml:lang="ar">١٨٧١</tei:num>  فألقى بها إلى الأرض وكان قطر جذعها  <tei:num value="46" xml:lang="ar">٤٦</tei:num>  قدماً. ويقال أن يونان
                             لم تبرح فيها الشجرة التي كانت تظلل بأغصانها أفلاطون وهو يحادث سقراط. ومن الشجار التاريخية ثلاثة شجرات في جزيرة
                             القديسة هيلانة التي نفي إليها نابليون وبين جذوعها قضى هذا الفاتح. ومنها نخلة جورج واشنطن محرر أميركا ولا يقل
                             عمرها عن قرنين وهي أجمل مثال في الأشجار التاريخية.</p>
                         <p>سكر النبا</p>
                         <p>النبا نوع من النخيل ذو ورق كبير مركب عل شكل ريش أو مشط مجتمع في رأس ساقها. وهو يكثر في عدة أصقاع من الأرض ولاسيما
-                            في جزائر الفلبين ويستخرج منه الكحول بلغ دخله في العام الماضي زهاء 80 ألف هكتولتر ويستعمل ورقه في نسج الحلفاء كما
+                            في جزائر الفلبين ويستخرج منه الكحول بلغ دخله في العام الماضي زهاء  <tei:num value="80" xml:lang="ar">٨٠</tei:num>  ألف هكتولتر ويستعمل ورقه في نسج الحلفاء كما
                             تصنع منه أغطية للدور وورق للفائف ويؤكل ثمره نيئاً أو مطبوخاً وقد أنبأ المكتب العلمي في مانيلا جمهور الزراع
-                            والصناع أنه اكتشف طريقة يمكن معها استخراج مادة سكرية <pb ed="shamela"
-                   n="n82-p78"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5616.xhtml"/> تنافس سكر القصب وتفوقه
+                            والصناع أنه اكتشف طريقة يمكن معها استخراج مادة سكرية <pb ed="shamela" n="n82-p78" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5616.xhtml"/> تنافس سكر القصب وتفوقه
                             بالرخص. وتعيش شجرة النبا خمسين سنة وكل فدان زرع من النبا يعطي غلات وافرة جداً. ولعل بهذا السكر يرخص سكرنا.</p>
                         <p>أعاجيب الحاسبين</p>
                         <p>ظهر في المكسيك حيسوب من أعاجيب الدهر هو فتى الآن في الثامنة من عمره اسمه ميشيل ألبرتو مانتيلا وهو ابن صراف في تلك
                             البلاد ومنذ سنتين كان كأقرانه ليس فيه شيء من خوارق العادات بينا كان أبوه ذات ليلة يجتهد في حساب أحد التواريخ
                             ليكون مطابقاً ليوم أحد دهش لما رأى ولده يجيبه في الحال عَلَى هذه الأشكال وإذ رآه يحسن الإجابة عاد فسأله عن يوم
-                            24 كانون الثاني 1839 أي الأيام كان فأجابه الطفل بعد تفكر ثانيتين أنه كان يوم خميس. وعند ذلك دعا والد الطفل
-                            جيرانهما لإلقاء الأسئلة عليه فكان من جملة ما سألوه عنه أي يوم يكون يوم 24 كانون الثاني سنة 2000 فأجاب يوم
+                             <tei:num value="24" xml:lang="ar">٢٤</tei:num>  كانون الثاني  <tei:num value="1839" xml:lang="ar">١٨٣٩</tei:num>  أي الأيام كان فأجابه الطفل بعد تفكر ثانيتين أنه كان يوم خميس. وعند ذلك دعا والد الطفل
+                            جيرانهما لإلقاء الأسئلة عليه فكان من جملة ما سألوه عنه أي يوم يكون يوم  <tei:num value="24" xml:lang="ar">٢٤</tei:num>  كانون الثاني سنة  <tei:num value="2000" xml:lang="ar">٢٠٠٠</tei:num>  فأجاب يوم
                             الاثنين وقد فحصت المجامع العلمية هذا الولد فأعجب به إذ لم تجد في قواه النفسية شيئاً فوق العادة لأنه كاد يقرأ
                             ويكتب قراءَة وكتابة بسيطة.</p>
                         <p>ولهذا الولد أمثال فإن في جامعة هارفرد الأميركية تلميذاً اسمه ويليام جايمس سيديس كان منذ الخامسة من سنه يحسب
                             الأيام والسنين بحساب سريع عقلي وفي إيطاليا ولد أُمي جاء باريز فأدهش العلماء بسرعته في الحساب وقد سأله ومن جملة
-                            الأسئلة أن يخرج لبهم الجذع المكعب للرقم 27 فحل هذا الإشكال في عشر ثوان. وجاء في القرن الماضي حيسوب زيراه
-                            كولبورون اشتهر أي شهرة فسئل وكان في السادسة من عمره إذا كانت الساعة الدقاقة تدق 156 مرة في اليوم فكم دقة تدق في
-                            مائتي سنة. وسألوه عن مكعب الرقم 1449 وأي مبلغ إذا ضرب بنفسه يكون حاصله 998000 فكان جوابه لا يطول عَلَى كل سؤال
+                            الأسئلة أن يخرج لبهم الجذع المكعب للرقم  <tei:num value="27" xml:lang="ar">٢٧</tei:num>  فحل هذا الإشكال في عشر ثوان. وجاء في القرن الماضي حيسوب زيراه
+                            كولبورون اشتهر أي شهرة فسئل وكان في السادسة من عمره إذا كانت الساعة الدقاقة تدق  <tei:num value="156" xml:lang="ar">١٥٦</tei:num>  مرة في اليوم فكم دقة تدق في
+                            مائتي سنة. وسألوه عن مكعب الرقم  <tei:num value="1449" xml:lang="ar">١٤٤٩</tei:num>  وأي مبلغ إذا ضرب بنفسه يكون حاصله  <tei:num value="998000" xml:lang="ar">٩٩٨٠٠٠</tei:num>  فكان جوابه لا يطول عَلَى كل سؤال
                             من هذه الأسئلة أكثر من أربع ثوان.</p>
                         <p>وجاءَ في الفرنسويين هنري موندر فأدهش لمجامع العلمية وكان مرة ذاهباً إلى تور من طريق الحقول فصادف فتاتين غريبتين
                             وكان هو في الخامسة عشرة من سنه فسألهما هل لكما أن تقولا لي سنكما بتقدير السنين وأنا أقول لكم كم يبلغ من الثواني
-                            فقالت له إحداهن أن سني تسعة عشرة سنة فقال لها في الحال إنك عشت 599 مليون ثانية و184 ألف ثانية. وممن يحشر في هذه
-                            الزمرة فيتو مانجيا ميل الذي حرز في نصف دقيقة ما هو <pb ed="shamela"
-                   n="n82-p79"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5617.xhtml"/> الجذر المكعب من عدد 3.
-                            596. 416 والحيسوب المشهور الألماني زخريا داز الذي كان في الخامسة عشرة من عمره يعمل جلسات عامة يسأل فيها هذه
+                            فقالت له إحداهن أن سني تسعة عشرة سنة فقال لها في الحال إنك عشت  <tei:num value="599" xml:lang="ar">٥٩٩</tei:num>  مليون ثانية و <tei:num value="184" xml:lang="ar">١٨٤</tei:num>  ألف ثانية. وممن يحشر في هذه
+                            الزمرة فيتو مانجيا ميل الذي حرز في نصف دقيقة ما هو <pb ed="shamela" n="n82-p79" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5617.xhtml"/> الجذر المكعب من عدد  <tei:num value="3" xml:lang="ar">٣</tei:num> .
+                             <tei:num value="596" xml:lang="ar">٥٩٦</tei:num> .  <tei:num value="416" xml:lang="ar">٤١٦</tei:num>  والحيسوب المشهور الألماني زخريا داز الذي كان في الخامسة عشرة من عمره يعمل جلسات عامة يسأل فيها هذه
                             الأسئلة المشكلة مع القلم والدواة. ومثلهما جديدياه بركسثون الذي كان يجد بواسطة الحساب العقلي الجذع المكعب من عدد
-                            60 رقماً. ومن الغريب أن هؤلاء الأولاد الخوارق الذين يحصرون أبداً أذهانهم في هذه الموضوعات ليسوا في الأغلب إلا
+                             <tei:num value="60" xml:lang="ar">٦٠</tei:num>  رقماً. ومن الغريب أن هؤلاء الأولاد الخوارق الذين يحصرون أبداً أذهانهم في هذه الموضوعات ليسوا في الأغلب إلا
                             أبناء فلاحين لا يقرأُون في لا يكتبون وهم بينما يعرفون ما لا يتصور العقل أصعب منه من المسائل لا يحسنون معرفة طريق
                             البلدة التي عاشوا فيها وهم يعمرون حافظين لقواهم العقلية فسبحان من خص ما شاء بما شاء.</p>
                         <p>فن الإعلانات</p>
@@ -2268,12 +2079,10 @@
                             بضائعها فيسير المنادون في الشوارع العظمى ومصباح في أيديهم وقد ملؤا سروراً وظرفاً وزاد اختراع الطباعة في انتشار
                             الإعلانات كثيراً فمنذ انتشرت الصحف الأولى زادت الإعلانات. وافتتح بارتولوزي واشياعه في القرن السابع عشر عهد الصور
                             والنقوش بماء الفضة وظلت طريقتها وحيدة بصنعها. ثم جاء فاتو الذي تفنن في الإعلانات عَلَى ما رزق من قريحة وقادة
-                            وأحسن ما صنع من هذا القبيل لرجل إسكافي بيع مؤخراً من إمبراطورية ألمانيا. ونحو سنة 1870 ظهر جول شيريه وكان آية في
+                            وأحسن ما صنع من هذا القبيل لرجل إسكافي بيع مؤخراً من إمبراطورية ألمانيا. ونحو سنة  <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>  ظهر جول شيريه وكان آية في
                             فن الإعلانات ورسمها وجاء بعده غراسه الذي برع وأي براعة في نقش الزجاج وجلود الكتب والبطاقات فانتشر فن الإعلان عند
-                            الفرنسيس سنة 1890 وعنهم شاع في إسبانيا وألمانيا وبلجيكا وإنكلترا كم شاع في أميركا وهكذا كان تفنن الإفرنج في
-                            الإعلانات حتى صار <pb ed="shamela"
-                   n="n82-p80"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5618.xhtml"/> البارع في وضعها وصنعها
+                            الفرنسيس سنة  <tei:num value="1890" xml:lang="ar">١٨٩٠</tei:num>  وعنهم شاع في إسبانيا وألمانيا وبلجيكا وإنكلترا كم شاع في أميركا وهكذا كان تفنن الإفرنج في
+                            الإعلانات حتى صار <pb ed="shamela" n="n82-p80" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5618.xhtml"/> البارع في وضعها وصنعها
                             يعد من المفضلين عَلَى الإنسانية مثل مخترع الطباعة ومخترع البخار ويعيش عيشة حسنة بما ينهال عليه من الأجور
                             والرواتب. </p>
                     </div>

@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i36_text"
-         xml:lang="ar"
-         type="issue"
-         n="i36">
+   <text xml:id="oclc_4770057679_i36_text" xml:lang="ar" type="issue" n="i36">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,40 +202,36 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1909-01-01">بتاريخ: 1 - 1 - 1909</date>
-                                    <biblScope n="36" unit="issue">العدد 36</biblScope>
+                                    <date when="1909-01-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="1909" xml:lang="ar">١٩٠٩</tei:num> </date>
+                                    <biblScope n="36" unit="issue">العدد  <tei:num value="36" xml:lang="ar">٣٦</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             n=""
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2232.xhtml"/>
+                    <pb ed="shamela" n="" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2232.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="36" unit="issue">العدد 36</biblScope> 
-                  <date when="1909-01-01">بتاريخ: 1 - 1 -
-                            1909</date> 
+                  <biblScope n="36" unit="issue">العدد  <tei:num value="36" xml:lang="ar">٣٦</tei:num> </biblScope> 
+                  <date when="1909-01-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="1" xml:lang="ar">١</tei:num>  -
+                             <tei:num value="1909" xml:lang="ar">١٩٠٩</tei:num> </date> 
                </bibl> 
             </head>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n36-p1"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2233.xhtml"/>
+                        <pb ed="shamela" n="n36-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2233.xhtml"/>
                         <head>الحافظة والحفاظ</head>
                         <p>أي نعمة ينالها المرء أعظم من أن تعي ذاكرته كل ما تريد وعيه وتدخره إلى ساعة حاجة للانتفاع به. الحافظة من العوامل
                             المؤثرة في ترقية الأفراد والجماعات وبدونها يصعب الوصول إلى إدراك الحقائق وتمحيصها لانا إذا لم نستعن في كل مطلب
                             من مطالب الحياة بتجارب من سبقونا ونحفظ المأثور عنهم لننسج على منواله كنا أشبه بمن يريد أن يبني له يوم بناء وظلت
                             العلوم والصناعات والآداب في طفولتها الأولى تجري على نظام مضطرب إذ يكون كل امرىء وما يختار.</p>
                         <p>والذاكرة والحافظة حاسة يحفظ بها الذهن على صورة دائمة أموراً مضت وتأثرت وقعت فهي بذلك كما قال مونتين الفيلسوف
-                            (1532 ـ 1592) وعاء العلم وصوان الحكمة. وقال لارشفوكلد الكاتب (1615 ـ 1680) جميع الناس يشكون من حافظتهم وما قط
+                            ( <tei:num value="1532" xml:lang="ar">١٥٣٢</tei:num>  ـ  <tei:num value="1592" xml:lang="ar">١٥٩٢</tei:num> ) وعاء العلم وصوان الحكمة. وقال لارشفوكلد الكاتب ( <tei:num value="1615" xml:lang="ar">١٦١٥</tei:num>  ـ  <tei:num value="1680" xml:lang="ar">١٦٨٠</tei:num> ) جميع الناس يشكون من حافظتهم وما قط
                             شكا أحد من عقله. وقال آخر: إن الذكاء بدون حافظة أشد بغربال لايكاد يمسك ما تضعه فيه. وقال أحدهم: الحافظة واسطة من
                             وسائط الكمال وبدونها لا يستطيع امرؤ أن يقلد شيئاً وينسج على منواله. وقال لاكورنيل الشاعر: يجب لمن يعتمد الكذب أن
-                            يكون ذا ذاكرة جيدة. وهذا مثل قولهم إذا كنت كذوباً كم ذكوراً. وقال بيكته الأديب السويسري (1799ـ 1875): لقد كان
+                            يكون ذا ذاكرة جيدة. وهذا مثل قولهم إذا كنت كذوباً كم ذكوراً. وقال بيكته الأديب السويسري ( <tei:num value="1799" xml:lang="ar">١٧٩٩</tei:num> ـ  <tei:num value="1875" xml:lang="ar">١٨٧٥</tei:num> ): لقد كان
                             للحافظة شأن مهم جداً عند الناس في العصور الأولى أكثر مما صار لها في القرون اللاحقة. كانت الحافظة قبل اختراع
                             الكتابة هي التي تتولى خاصة نقل التقاليد الوطنية والدينية وعامة القوانين والعادات والشعر ولذلك كانت هذه الحاسة
                             التي قلما نحفل الآن بأمرها عند قدماء الآريين مشابهة للفكر نفسه. اختلفت مذاهب الفلاسفة فيما إذا كانت الحافظة حاسة
@@ -273,9 +240,7 @@
                             واللهجات وتردد الألحان والأصوات. ويقول علماء النفس أن الشروط النفسية اللازمة لجودة الذهن متوقفة على جودة تركيب
                             أنسجة الدماغ وحسن تغذية هذه الأنسجة. والتعب والشيخوخة من العوامل المؤثرة في ضعف الحافظة لأنهما ملازمان لضعف
                             تغذية هذه الأنسجة ولذلك قالوا درجة الحافظة لا تختلف بحسب الأشخاص بل تختلف في الشخص الواحد في أدوار مختلفة من
-                            حياته وإذا صرفنا النظر عن الآفات العضوية التي تضر بها فمن هناك أيضاً <pb ed="shamela"
-                   n="n36-p2"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2234.xhtml"/> أحوالاً أقل منها تزيدها
+                            حياته وإذا صرفنا النظر عن الآفات العضوية التي تضر بها فمن هناك أيضاً <pb ed="shamela" n="n36-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2234.xhtml"/> أحوالاً أقل منها تزيدها
                             ضعفاً إلى ضعفها مثل اضطرابات المعدة وسوء الهضم والشقيقة فإن جميع هذه العوارض على الجسم تغيرها تغييراً
                             محسوساً.</p>
                         <p>ولتركيب الدماغ وحالته تأثير ظاهر في الحافظة فقد ذكر بلين الطبيعي الروماني أن رجلاً نسي حتى رسائله بعد أن أصيب
@@ -292,18 +257,16 @@
                         <p>وبعد فإن للحافظة شأناً عرقية الفكر الإنساني وبدونها يكون كل شيء عقيماً لا ثمرة لأنها واسطة لبقاء الأفكار التي
                             صدرت وأحسن ذريعة للحصول على أفكار جديدة ولم يعرف القانون الذي تسير عليه كما أن جوهرها لم يدرك الباحثون حقيقته
                             وغاية ما عرف من أمرها أنها بالانتباه والتمرن وأن الكسل ابن الترف والكسل يجرح الحفظة أن لم نقل يقتلها.</p>
-                        <p>ذكر التاريخ كثيرين من رباب الحافظة النادرة فمنهم في القديم ميتر يدانس الكبير ملك شمالي غربي آسيا الصغرى (123ـ 63
+                        <p>ذكر التاريخ كثيرين من رباب الحافظة النادرة فمنهم في القديم ميتر يدانس الكبير ملك شمالي غربي آسيا الصغرى ( <tei:num value="123" xml:lang="ar">١٢٣</tei:num> ـ  <tei:num value="63" xml:lang="ar">٦٣</tei:num> 
                             ق. م) فقد كان يحكم على اثنين وعشرين أمة مختلفة ويخطب أمام كل منها بلغتها ويدعو كل واحد من جنده باسمه. وذكروا مثل
-                            ذلك عن <pb ed="shamela"
-                   n="n36-p3"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2235.xhtml"/> قورش ملك الفرس
+                            ذلك عن <pb ed="shamela" n="n36-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2235.xhtml"/> قورش ملك الفرس
                             وليموسنقلس وسيبيون الآسياوي وإلا إمبراطور أدريان ويقال أن مزية الحافظة هيأت لاوتون الروماني تولي الملك. وتعلم
-                            ليموسنقلس اللغة الفارسية في سنة وكان ليبس اللغوي الأديب البلجيكي (1547ـ 1606) يحفظ تاريخ تاسيت المؤرخ اللاتيني
+                            ليموسنقلس اللغة الفارسية في سنة وكان ليبس اللغوي الأديب البلجيكي ( <tei:num value="1547" xml:lang="ar">١٥٤٧</tei:num> ـ  <tei:num value="1606" xml:lang="ar">١٦٠٦</tei:num> ) يحفظ تاريخ تاسيت المؤرخ اللاتيني
                             بألفاظه حرفاً بحرف وقد قال أنه يرضى أن يقف جلاد وبيده سيف على رأسه وهو يتلو هذا التاريخ فإذا أخل بحرف واحد يضرب
                             عنقه.</p>
                         <p>وكان لرينودي بون حافظة سعيدة يذكر جميع الأبيات اللاتينية واليونانية التي قرأها في صباه ويتلو صفحات برمتها من
                             ديوان هوميروس وان كان مضى عليه أربعون سنة وهو لم ينظر فيه نظرة واحدة. وكان هوج دونو الفقيه المشهور في القرن
-                            السادس عشر يستظهر القوانين المعروفة في عصره بالحرف الواحد. وحفظ يوسف سكاليجة الأديب (1540ـ 1609) الإلياذة
+                            السادس عشر يستظهر القوانين المعروفة في عصره بالحرف الواحد. وحفظ يوسف سكاليجة الأديب ( <tei:num value="1540" xml:lang="ar">١٥٤٠</tei:num> ـ  <tei:num value="1609" xml:lang="ar">١٦٠٩</tei:num> ) الإلياذة
                             والاوذيسية في أحد وعشرين يوماً. ومن ألطف ما يروى في باب الحافظة أن أحد الفلاحين في فرنسا جاء إلى باريز يقصد
                             صاحباً قديماً له قد استلف منه خمسة فرنكات منذ خمسة عشرة وطلب إليه أن ينقده ماله فتركه وعاد فدفع إليه ليرة واحدة
                             وخمسة فرنكات وقال له: هذا يا صاح قد كنت نلت وأنا في المدرسة ليرة جائزة عن حافظتي فرأيتك أحد مني ذاكرة وأنك أحق
@@ -316,9 +279,7 @@
                             السطور بدل الصدور والقراطيس والأسفار بدل الحفظ والاستظهار فضعفت بهذا الضعف الحافظة وان قويت المفكرة وقلت الرواية
                             وان لم تقل الدراية.</p>
                         <p>انقطع سند الحفظ إلا في بعض ما لا يسع الأمة جهله من القرآن وعلومه فأخذ بعضهم يفتاتون على من عرفوا قديماً بسعة
-                            محفوظهم ويزيفون ولكن بدون برهان ما رواه طائفة <pb ed="shamela"
-                   n="n36-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2236.xhtml"/> الراوين من أبناء
+                            محفوظهم ويزيفون ولكن بدون برهان ما رواه طائفة <pb ed="shamela" n="n36-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2236.xhtml"/> الراوين من أبناء
                             الأذكياء الحافظين. ولو صح الاعتماد على إلقاء الكلام على عواهنه في هذا الباب إذاً لسقط التاريخ وارتفعت الثقة من
                             كل خبر حتى من مجيء الرسم وحروب الملوك ودثور الشعوب والمدن وما إليها. وما أشبه من يكذب بادىء الرأي بلا دليل قاطع
                             بمن يؤثر الهدم على البناء. وشتان بين المخرب والمعمر والمتلف والمخلف والمفسد والمصلح.</p>
@@ -343,9 +304,7 @@
                             <l> تسقي الأراضي وهي لا تشرب</l>
                         </lg>
                         <p>سأل تقي الدين السبكي الحافظ جمال الدين المزي عن حد الحفظ الذي إذا انتهى إليه الرجل الذي جاز له أن يطلق عليه
-                            الحافظ قال: يرجع إلى أهل العرف فقلت وأين أهل العرف <pb ed="shamela"
-                   n="n36-p5"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2237.xhtml"/> قليل جداً قال: اقل ما
+                            الحافظ قال: يرجع إلى أهل العرف فقلت وأين أهل العرف <pb ed="shamela" n="n36-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2237.xhtml"/> قليل جداً قال: اقل ما
                             يكون الرجال اللذين يعرفهم ويعرف تراجمهم وأحوالهم وبلدانهم أكثر من اللذين لا يعرفهم ليكون الحكم للغالب فقلت له:
                             هذا عزيز في هذا الرمان أدركت أن أحداً كذلك فقال: ما رأينا مثل الشيخ شرف الدين الدمياطي ثم قال: وابن دقيق العيد
                             كان له في هذا مشاركة جيدة. قال فتح الدين بن سيد الناس وأما المحدث في عصرنا فهو من اشتغل في الحديث رواية ودراية
@@ -364,9 +323,7 @@
                             عن الشعبي قال: ما كتبت سواداً في بيضاء إلى يومي هذا ولا حدثني رجل بحديث قط الا حفظته فحدثت بهذا الحديث اسحق بن
                             راهوية فقال: تعجب من هذا قلت: نعم قال: ما كنت لأسمع شيئاً إلا حفظته وكأني أنظر إلى سبعين ألف حديث او قال أكثر من
                             سبعين حديث في كتبي. واسند عن أبي داود الخفاف قال: سمعت اسحق ابن راهوية يقول: كأني أنظر إلى مائة ألف حديث في كتبي
-                            <pb ed="shamela"
-                   n="n36-p6"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2238.xhtml"/> وثلاثين ألفاً أسردها.
+                            <pb ed="shamela" n="n36-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2238.xhtml"/> وثلاثين ألفاً أسردها.
                             وأسند الخطيب عن محمد بن يحيى بن خالد قال: سمعت اسحق بن راهوية يقول: أعرف مكان مكان مائة ألف حديث كأني أنظر إليها
                             وأحفظ سبعين ألف حديث عن ظهر قلبي. حفظ أربعة آلاف حديث ضرورة وقال عبد الله أحمد بن حنبل قال أبي الداود بن عمرو
                             الضبي وأنا أسمع: كان يحدثكم إسماعيل بن عباس هذه الأحاديث بحفظه قال: نعم ما رأيت معه متاباً قط قال له: لقد كان
@@ -384,9 +341,7 @@
                             مكان ابن مندة يقول: ما رأيت أحفظ من أبي اسحق بن حمزة الأصبهاني وقال ابن حمزة: ما رأيت أحفظ من أبي جعفر أحمد بن
                             يحي بن زهير القشيري وقال: ما رأيت أحفظ من أبي زرعة الرازي وأما الدارقطني فما رأى أحفظ من نفسه وأما الحاكم فما
                             رأى أحفظ من الدارقطني بل وكان يقول الحاكم ما رأيت أحفظ من أبي علي النيسابوري ومن أبي بكر ابن الجعابي وما رأى
-                            الثلاثة أحفظ من <pb ed="shamela"
-                   n="n36-p7"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2239.xhtml"/> أبي العباس بن عقدة ولا
+                            الثلاثة أحفظ من <pb ed="shamela" n="n36-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2239.xhtml"/> أبي العباس بن عقدة ولا
                             رأى أبو علي النيسابوري مثل النسائي ولا رأى النسسائي مثل اسحق بن راهويه ولا أرى أبو زرعة احفظ من أبي بكر أبي شيبة
                             وما رأى أبو علي النيسابوري مثل ابن خزيمة وما رأى ابن خزيمة مثل أبي عبد الله البخاري ولا رأى البخاري فيما ذكر مثل
                             على بن المديني أولا رأى أيضاً أبو زرعة والبخاري وأبو حاتم وأبو داود مثل أحمد بن حنبل ولا مثل يحيى بن معين وابن
@@ -405,9 +360,7 @@
                         <p>وقيل أن أحمد بن حنبل إمام المحدثين كان يحفظ ألف ألف حديث. قال سعيد بن جبير من أعلام التابعين قرأت القرآن في ركعة
                             البيت الحرام وقال اسمعيل بن عبد الملك كان سعيد بين جبير يؤُمنا في شهر رمضان فيقرأ ليلة بقراءة عبد الله بن مسعود
                             وليلة بقراءة زيد بن ثابت وليلة بقراءَة غيره هكذا أبداً ولا عجب وهو الذي قال فيه أحمد بن حنبل قتل الحجاج سعيد بن
-                            جبير وما على وجه الأرض أحد إلا هو مفتقر إلى علمه. <pb ed="shamela"
-                   n="n36-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2240.xhtml"/> وكان على الرازي يقول من
+                            جبير وما على وجه الأرض أحد إلا هو مفتقر إلى علمه. <pb ed="shamela" n="n36-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2240.xhtml"/> وكان على الرازي يقول من
                             فهم الكتاب (يعني الجامع الصغير لمحمد) فهو من أصحابنا ومن حفظه كان أحفظ أصحابنا وأن المتقدمين من مشايخنا كانوا لا
                             يقلدون أحداً القضاءَ حتى يمتحنوه فإن حفظه قلدوه القضاء وإلا أمروه بالحفظ. وذكر صاحب نفح الطيب أنه كان خارج قرطبة
                             ثلاثة آلاف قرية في كل واحدة منبر وفقيه مقلص تكن الفتيا في الأحكام والشرائع له وكان لا يجعل القالص منهم على رأسه
@@ -425,9 +378,7 @@
                         <p>فقد كان العرب قبل البعثة يروون قصائد شعرائهم وأغاني حداتهم كما يؤخذ من اجتماعاتهم في سوق عكاظ ومِربد البصرة ولم
                             تكن بضاعتهم من ذلك كثيرة لأن أمراء الكلام لم ينبغوا إلا في الإسلام بظهور نور النبوة وفصاحة الكتاب العزيز. ولقد
                             كان الراوية والنسابة ينشد عشرات بل مئات من القصائد كما يحفظ أحدنا لها العهد الأبيات القليلة غير متعلثم ولا
-                            متردد. خذ مثالاً لذلك حماد الرواية المتوفى سنة 155 فقد كان على قلة بضاعته من <pb ed="shamela"
-                   n="n36-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2241.xhtml"/> العربية يروي المئات من
+                            متردد. خذ مثالاً لذلك حماد الرواية المتوفى سنة  <tei:num value="155" xml:lang="ar">١٥٥</tei:num>  فقد كان على قلة بضاعته من <pb ed="shamela" n="n36-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2241.xhtml"/> العربية يروي المئات من
                             القصائد للجاهلين والمخضرمين كما يروي فاتحة الكتاب ويذر أشعار العرب وأيامهم وأنسابهم ولغاتهم كأنه يروي قصة وكان
                             ملوك بني أمية يرجعون إليه في هذا المعنى ويحلونه منزلة عالية من الآجلة والإكرام روى الوليد ابن يزيد الأموي قال له
                             يوماً وقد حضر مجلسه: بم استحققت هذا الاسم فقيل لك الراوية فقال: بأني أروي لكل شاعر تعرفه يا أمير المؤمنين أو
@@ -436,7 +387,7 @@
                             كبيرة سوى المقطعات من شعر الجاهلية دون شعر الإسلام قال سأمتحنك في هذا ثم أمره بالإنشاد فأنشد حتى ضجر الوليد ثم
                             وكل به من استحلفه أن يصدقه عنه ويستوفى عليه فأنشده ألفين وتسعمائة قصيدة للجاهلية وأخبر الوليد بذلك فأمر له بمائة
                             ألف درهم ونوادره كثيرة.</p>
-                        <p>وكان الأصمعي المتوفى سنة 211 أو قبلها صاحب لغة ونحو وإماماً في أخبار العرب وملحهم وغرائبهم قال عمر بن شبة: سمعت
+                        <p>وكان الأصمعي المتوفى سنة  <tei:num value="211" xml:lang="ar">٢١١</tei:num>  أو قبلها صاحب لغة ونحو وإماماً في أخبار العرب وملحهم وغرائبهم قال عمر بن شبة: سمعت
                             الأصمعي يقول: أحفظ ستة عشر ألف أرجوزة وقال اسحق الموصلي: لم أرَ إلا الأصمعي يدعي شيئاً من العلم فيكون أحداً أعلم
                             به منه وحضر يوماً عند الفضل بن الربيع هو وأبو عبيدة معمر بن المثنى فقال له: كم كتابك في الخيل فقال الأصمعي مجلد
                             واحد فسأل أبا عبيدة عن كتابه فقال: خمسون مجلدة فقال له: قم إلى هذا الفرس وأمسك عضواً عضواً منه وسمه فقال: لست
@@ -446,9 +397,7 @@
                             لأن تقدير الجلد عشر ورقات.</p>
                         <p>قال أبو نواس: ما قلت الشعر حتى رويت لستين امرأة من العرب منهم الخنساءُ وليلى فما ظنك بالرجال. قلت ولذلك جاء شعر
                             أبي نواس أحسن شعر المولدين كما شهد له بذلك أصحاب الشأن في هذه الصناعة وفي مقدمتهم الجاحظ الذي فضل شعره على شعر
-                            العرب <pb ed="shamela"
-                   n="n36-p10"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2242.xhtml"/> العرباء قال اسمعيل بن
+                            العرب <pb ed="shamela" n="n36-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2242.xhtml"/> العرباء قال اسمعيل بن
                             نوبخت: ما رأيت قط أوسع علماً من أبي نواس ولا أحفظ منه مع قلة كتبه ولقد فتشنا منزله بعد موته فما وجدنا له إلا
                             قمطراً فيه جزاز مشتمل على غريب ونحو.</p>
                         <p>قال أبو العباس أحمد بن يحيى ثعلب دخل أبو عمرو اسحق بن مراد الشيباني البادية ومعه دستجيتان من حبر فما خرج حتى
@@ -466,14 +415,12 @@
                             ناحية بني أمية ينيخ على باب قتادة فيسأله عن خبر أو نسب أو شعر وكان من أنسب الناس. وكان ابن الكنبي النسابة واسع
                             الرواية من أعلم النسب بالنسب وكان من الحفاظ المشاهير قال: حفظت ما لم يحفظه أحد ونسيت ما لم ينسه أحد. كان لي عم
                             يعاتبني على حفظ القرآن فدخلت بيتاً وحلفت أن لا أخرج منه حتى أحفظ القرآن فحفظته في ثلاثة أيام وتصانيفه تزيد على
-                            مائة وخمسين تصنيفاً وتوفي سنة 204.</p>
-                        <p>وكان أبو عبيدة معمر بن المثنى من أعلم الناس بأيام العرب وأخبارهم وأشعارهم قال <pb ed="shamela"
-                   n="n36-p11"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2243.xhtml"/> الجاحظ: لم يكن في الأرض
+                            مائة وخمسين تصنيفاً وتوفي سنة  <tei:num value="204" xml:lang="ar">٢٠٤</tei:num> .</p>
+                        <p>وكان أبو عبيدة معمر بن المثنى من أعلم الناس بأيام العرب وأخبارهم وأشعارهم قال <pb ed="shamela" n="n36-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2243.xhtml"/> الجاحظ: لم يكن في الأرض
                             خارجي ولا جماعي أعلم بجميع العلوم منه ومع أن كان يلحن ويخطي: إذا قرأ القرآن وإذا أنش بيتاً لا يقيم وزنه وإذا
                             تحدث أو قرأ لحن اعتماداً منه لذلك فقد صنف قرابة مائة مصنف وكان يرى رأي الخوارج ولذلك كثر الطاعنون في نسبه ومشربه
-                            ومذهبه وتوفي سنة 209.</p>
-                        <p>كان أبو المحاسن الرُّوياني المتوفى سنة 502 من رؤوس الأفاضل في أيامه يقول: لو احترقت كتب الشافعي لأمليتها من
+                            ومذهبه وتوفي سنة  <tei:num value="209" xml:lang="ar">٢٠٩</tei:num> .</p>
+                        <p>كان أبو المحاسن الرُّوياني المتوفى سنة  <tei:num value="502" xml:lang="ar">٥٠٢</tei:num>  من رؤوس الأفاضل في أيامه يقول: لو احترقت كتب الشافعي لأمليتها من
                             خاطري. وقال أبو بكر النحوي: لما قد أحسن بن سهل العراق قال: أحب أن أجمع قوماً من أهل الأدب فأحضر أبا عبيدة
                             والأصمعي ونصر ابن علي الجهضمي وحضرت معهم وأفضنا مرة في ذكر الحفاظ فذكرنا الزهري وقتادة ومررنا فالتفت أبو عبيدة
                             فقال: مال الغرض أيها الأمير في ذكر من مضى وبالحضرة ههنا من يقول ما قرأ كتاباً قط فاحتاج إلى أن يعود فيه ولا دخل
@@ -488,9 +435,7 @@
                             ولقد كان الغرب في هذه المزية كالشرق إذ قد حذا المغاربة في حضارتهم وعلومهم حذو المشارقة. فقد كان ابن عبدون أحد
                             فحول شعراء الأندلس وكتابها متكثراً من الحفظ. قال الوزير أبو بكر بن زهر فبينما أنا قاد في دهليز دارنا وعندي رجل
                             شيخ أمرته أن يكتب لي كتاب الأغاني فجاءَ الناسخ بالكراريس التي كتبها فقلتُ له: أين الأصل الذي كتبت عنه لأقابل معك
-                            به قال: ما أتيت به معي فبينا أنا معه في ذلك إذ دخل رجل بذ الهيئة عليه <pb ed="shamela"
-                   n="n36-p12"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2244.xhtml"/> ثياب غليظة أكثرها صوف
+                            به قال: ما أتيت به معي فبينا أنا معه في ذلك إذ دخل رجل بذ الهيئة عليه <pb ed="shamela" n="n36-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2244.xhtml"/> ثياب غليظة أكثرها صوف
                             وعلى رأسه عمامة قد لاثها من غير إتقان وقال لي: يا بني استأذن لي على الوزير أبي مروان فقلت له: هو نائم هذا بعد أن
                             تكلفت جوابه غاية التكلف حملتين على ذلك نزوة الصبا وما رأيت من خشونة هيئة الرجل ثم سكت عني ساعة وقال: ما هذا
                             الكتاب الذي بيديكم فقلت له: ما سؤالك عنه فقال: أحب أن أعرف اسمه فإني كنت أعرف أسماء الكتب. فقلت هو كتاب الأغاني
@@ -505,12 +450,10 @@
                             وأبي بين يديه حافياً حتى بلغ الباب وأمر بدابته التي يركبها فأسرجت وحلف عليه ليركبنها ثم لا ترجع إليه أبداً فلما
                             انفصل قلت لأبي: من هذا الرجل الذي عظمته هذا العظيم قال لي: اسكت ويحك هذا أديب الأندلس وإمامها وسيدها في علم
                             الأدب هذا أبو محمد عبد المجيد بن عبدون أيسر محفوظاته كتاب الأغاني ـ رواها المراكشي.</p>
-                        <p>وروى أيضاً قصة تشبهها قال: أنه لزم أبا جعفر الحميري آخر من انتهى إليه علم الآداب بالأندلس المتوفى سنة 610 نحواً
+                        <p>وروى أيضاً قصة تشبهها قال: أنه لزم أبا جعفر الحميري آخر من انتهى إليه علم الآداب بالأندلس المتوفى سنة  <tei:num value="610" xml:lang="ar">٦١٠</tei:num>  نحواً
                             من سنتين فما رأيت أروى لشعر قديم ولا حديث ولا أذكر بحكاية تتعلق بأدب أو مثل سائر أو بيت أو بيت نادر أو سجعة
                             مستحسنة من أدرك جلة من مشايخ الأندلس فأخذ عنهم علم الحديث والقرآن والآداب وأعانه على ذلك طول عمره وصدق محبته
-                            وإفراط شغفه بالعلم قال لي ولده عصام وقد رأيت عنده نسخة من <pb ed="shamela"
-                   n="n36-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2245.xhtml"/> شعر أبي الطيب قرئت عليّ
+                            وإفراط شغفه بالعلم قال لي ولده عصام وقد رأيت عنده نسخة من <pb ed="shamela" n="n36-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2245.xhtml"/> شعر أبي الطيب قرئت عليّ
                             أو أكثرها فألفيتها شديدة الصحة فقلت له: لقد كتبتها من أصل صحيح وتحرزت في نقلها فقال لي: ما يمكن أن يكون في
                             الدنيا أصح من الأصل الذي كتبت منه فقلت له: أين وجدته قال هو موجود الآن بين أيدينا وعندنا وكنا في المسجد في زاوية
                             فقلت له: أين هو فقال لي: عن يمينك فعلمت أنه يريد الشيخ فقلت: ما على يميني إلا الأستاذ فقال لي: هو أصلي وبإملائه
@@ -529,9 +472,7 @@
                             إنا نريد أن نحدث عن تحقيق فقال اختاروا أي قافية شئتم لا أخرج عنها حتى تعجبوا فاختاروا القاف فابتدأ من أول الليل
                             إلى أن طلع الفجر وهو ينشد وزن (أرق على أرق ومثلي يأرق) وسماره قد نام بعض وضج بعض وهو ما فارق قافية القاف وقال
                             أبو عمران بن سعيد: دخلت عليه يوماً بدار الإشراف باشبيلية وحوله أدباءٌ ينظرون في كتب منها ديوان ذي الرمة فمد
-                            الهيثم يده إلى الديوان المذكورة فمنعه من أحد الأدباء فقال: <pb ed="shamela"
-                   n="n36-p14"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2246.xhtml"/> يا أبا عمران أواجب أن
+                            الهيثم يده إلى الديوان المذكورة فمنعه من أحد الأدباء فقال: <pb ed="shamela" n="n36-p14" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2246.xhtml"/> يا أبا عمران أواجب أن
                             يمنعه منى وما يحفظ منه بيتاً وأنا أحفظه فأكذبته الجماعة فقال اسمعوني. وأمسكوه فابتدأ من أوله حتى قارب نصفه
                             فأقسمنا عليه أن يكف وشهدنا له بالحفظ وكان آية في سرعة البديهة مشهوراً بذلك قال أبو الحسن ابن سعيد: عهدي به في
                             اشبيلية يملي على أحد الطلبة شعراً وعلى ثان موشحة وعلى ثالث زجلاً كل ذلك ارتجالاً.</p>
@@ -550,15 +491,11 @@
                             عن ذلك فإن كنت تريد حفظه فهذا يكون إن شاء الله تعال بعد شهر قال فقال له ابن عبدان: فإن كنت قد حفظته في هذه المدة
                             فمالي عليك قال: أهب لك الكتاب قال: فأخذته من يده فأقبل يهذه عليَّ إلى آخره ثم استلمه فجعله في كمه وقام فتعلق به
                             صاحبه طالباً بماله فقال ما إلى ذلك سبيل وقد وهبته لي قال: فمنعناه منه وقلنا: أنت شرطت على نفسك هذا للغلام فتركه
-                            <pb ed="shamela"
-                   n="n36-p15"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2247.xhtml"/> عليه. والأمثلة كثيرة في
+                            <pb ed="shamela" n="n36-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2247.xhtml"/> عليه. والأمثلة كثيرة في
                             هذا الباب والله أعلم. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n36-p16"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2248.xhtml"/>
+                        <pb ed="shamela" n="n36-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2248.xhtml"/>
                         <head>حماسة الخالديين</head>
                         <p>الخالديان أخوان شقيقان من أهل القرن الثالث كتبا بعض المؤلفات ونسبت إليهما آداب وغرر ولم يكونا يفترقان في حال من
                             الأحوال ولا نعرف في أدباء العرب شقيقين آخرين اتفقا على إخراج بنات أفكارهما في مجلد واحد كما اتفقا على الخروج من
@@ -614,9 +551,7 @@
                             <l> رضينا وساوى فرقدا الأرض فرقد</l>
                         </lg>
                         <p>وما أعدل هذه الحكومة من أبي اسحق فما منهما إلا محسن ينظم في سلك الإبداع ما فاق وراق ويكاثر بمحاسنه وبدائعه
-                            الإفراد من شعراء الشام والعراق وقد ذكرت ما شجر بينهما <pb ed="shamela"
-                   n="n36-p17"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2249.xhtml"/> وبين السري في شأن
+                            الإفراد من شعراء الشام والعراق وقد ذكرت ما شجر بينهما <pb ed="shamela" n="n36-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2249.xhtml"/> وبين السري في شأن
                             المصالتة والمسارقة وما أقدم عليه من دس أحسن أشعارهما في شعر كشاجم وكان أفضل الشام والعراق إذ ذاك فرقتين إحداهما
                             وهي في شق الرجحان تتعصب عليه لهما لفضل ما رزقاه من قلوب الملوك والأكابر والأخرى تتعصب له عليهما. ثم أورد صاحب
                             اليتيمة من أشعارهما ما هو السحر الحلال وما اتفق لهما من التوارد مع السري أو التسارق في زهاء عشرين صفحة. وقد
@@ -649,9 +584,7 @@
                             الجهلاء وما لهم من فصاحة الفصحاء يقول مثل هذا القول فما ظنك بهذا العصر وقبله بمائتي سنة فلسنا بقولنا هذا أيدك
                             الله نطعن على المحدثين ولا نبخسهم تجويدهم ولطف تدقيقهم وطريف معانيهم وإصابة تشبيههم وصحة استعاراتهم إلا إنا نعلم
                             أن الأوائل من الشعراء رسموا رسوماً تبعها من بعدهم وعول عليها من قفا أثرهم وقلَّ شعر من أشعارهم يخلو من معان
-                            صحيحة وألفاظ فصحية وتشبيهات مصيبة <pb ed="shamela"
-                   n="n36-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2250.xhtml"/> واستعارات عجيبة ونحن
+                            صحيحة وألفاظ فصحية وتشبيهات مصيبة <pb ed="shamela" n="n36-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2250.xhtml"/> واستعارات عجيبة ونحن
                             أطال الله في العز بقاك وكبت بالذل أعداك نضمن رسالتنا هذه مختار ما وقع إلينا من أشعار الجاهلية ومن تبعهم من
                             المخضرمين ونجتنب أشعار المشاهير لكثرتها في أيدي الناس ولا نذكر منها إلا الشيء اليسير ولا نخليها من غرر ما رويناه
                             للمحدثين ونذكر أشياءَ من النظائر إذا وردت والاجازات إذا عنت وتتكلم على المعاني المخترعة ولا نجمع نظائر البيت
@@ -691,9 +624,7 @@
                             <l>نفلق هاماً من رجال أعزة </l>
                             <l> علينا وهم كانوا أعق وأظلما</l>
                         </lg>
-                        <p>فأخذه بعضهم فقال <pb ed="shamela"
-                   n="n36-p19"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2251.xhtml"/> قومي هم قتلوا ميم أختي
+                        <p>فأخذه بعضهم فقال <pb ed="shamela" n="n36-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2251.xhtml"/> قومي هم قتلوا ميم أختي
                             <gap resp="#org_MS"/> فإذا رميت أصابني سهمي</p>
                         <lg type="bayt">
                             <l>ولئن عفوت لأعفون جللا </l>
@@ -765,9 +696,7 @@
                             <l>فلما رأيت أنني قد قتلته </l>
                             <l> ندمت عليه أي ساعة مندم</l>
                         </lg>
-                        <p>ولبعضهم: <pb ed="shamela"
-                   n="n36-p20"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2252.xhtml"/> أتتني آية من أم عمرو
+                        <p>ولبعضهم: <pb ed="shamela" n="n36-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2252.xhtml"/> أتتني آية من أم عمرو
                             <gap resp="#org_MS"/> فكدت أغص بالماء القراح</p>
                         <lg type="bayt">
                             <l>فما أنسى رسالتها ولكن </l>
@@ -852,9 +781,7 @@
                             <l>رقيق الحواشي لو تسمع رهاب </l>
                             <l> يبطنانَ قولاً مثله ظل يرجف</l>
                         </lg>
-                        <p>ولما رأين الصبح بادرن ضوَءه <gap resp="#org_MS"/> كمشي قطا البطحاء أوهن أقطف <pb ed="shamela"
-                   n="n36-p21"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2253.xhtml"/> وما بنَّ حتى قلن بالبيت
+                        <p>ولما رأين الصبح بادرن ضوَءه <gap resp="#org_MS"/> كمشي قطا البطحاء أوهن أقطف <pb ed="shamela" n="n36-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2253.xhtml"/> وما بنَّ حتى قلن بالبيت
                             إننا <gap resp="#org_MS"/> تراب وإن الأرض بالناس تخسف</p>
                         <lg type="bayt">
                             <l>فأصبحن صرعى في الحجال كأنما </l>
@@ -917,9 +844,7 @@
                             <l>يحاذرن مني نبوة قد عرفنها </l>
                             <l> قديماً فما يضحكن إلا تبسما</l>
                         </lg>
-                        <p>فقالت له يا ابن أبي جمعة أبهذا القول تدعى الغزل والله لا نال وصلنا وحظي بودنا إلا من <pb ed="shamela"
-                   n="n36-p22"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2254.xhtml"/> يجري معنا كما نريد ويجعل
+                        <p>فقالت له يا ابن أبي جمعة أبهذا القول تدعى الغزل والله لا نال وصلنا وحظي بودنا إلا من <pb ed="shamela" n="n36-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2254.xhtml"/> يجري معنا كما نريد ويجعل
                             الغي إذا أردناه رشدا قم لعنك الله فقام منقطعاً وإلى قولها نظر البحتري فقال:</p>
                         <lg type="bayt">
                             <l>ولا يؤدي إلى الملاح هوى </l>
@@ -974,13 +899,11 @@
                             <l>كأن فؤاده كرة تنزى </l>
                             <l> حذار البين إن نفع الحذار</l>
                         </lg>
-                        <p>وهذا لعمري تشبيه جيد ومعنى صحيح وقال آخر وهو غير هذا المعنى فجود <pb ed="shamela"
-                   n="n36-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2255.xhtml"/> كأن فؤادي في مخاليب طائر
+                        <p>وهذا لعمري تشبيه جيد ومعنى صحيح وقال آخر وهو غير هذا المعنى فجود <pb ed="shamela" n="n36-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2255.xhtml"/> كأن فؤادي في مخاليب طائر
                             <gap resp="#org_MS"/> إذا ذكرت ليلي يشد به قبضا</p>
                         <p>هذا ذكر أن فؤاده إذا ذكرت عشيقته قبض عليه ولم يذكر أنه شديد الخفقان وهو يدخل في هذا المعنى أو يقاربه فجود وأحسن
                             وزاد وأورد معنى ثانياً وهو قوله:</p>
-                        <p>من (757_767) غير مكتوبين</p>
+                        <p>من ( <tei:num value="757" xml:lang="ar">٧٥٧</tei:num> _ <tei:num value="767" xml:lang="ar">٧٦٧</tei:num> ) غير مكتوبين</p>
                         <lg type="bayt">
                             <l>رجعا فسار أبو دلامة ظاهراً </l>
                             <l> والمهر يجفل تحته أجفالا</l>
@@ -1028,9 +951,7 @@
                         <p>معروف الرصافي </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n36-p24"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2256.xhtml"/>
+                        <pb ed="shamela" n="n36-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2256.xhtml"/>
                         <head>حكومة الشورى في المملكة العثمانية</head>
                         <p>من أدق المسائل وأعضلها مسألة توليته الملك واختيار الأصلح لحكم الناس بالعدل والعقل. مسألة شغل بها البشر في كل دور
                             من أدوارهن فقضت ولا تزال تقضي في تأييد سلطة الملوك ملايين من الناس. على هذا كان الحال في حكومات العرب بعد
@@ -1050,9 +971,7 @@
                             الناس أنكم عجلون أن من الملوك من إذا ملك زهده الله فيما عنده ورغبه فيما في يدي غيره وانتقصه شطر أجله وأشرب قلبه
                             الإشفاق فهو يحسد على القليل ويتسخط الكثير ويسأم الرخاء وتنقطع عنه لذة الباه لا يستعمل العبرة ولا يسكن إلى الثقة
                             فهو كالدرهم القسي (الرديء) والسراب الخادع جذل الطاهر حزين الباطن فإذا وجبت نفسه ونضب عمره وضحي ظله حاسبه الله
-                            فأشد حسابه وأقل عفوه إلا أن الفقراء هم المرحومون وخير <pb ed="shamela"
-                   n="n36-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2257.xhtml"/> الملوك من آمن بالله
+                            فأشد حسابه وأقل عفوه إلا أن الفقراء هم المرحومون وخير <pb ed="shamela" n="n36-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2257.xhtml"/> الملوك من آمن بالله
                             وحاكم بكتابه وسنه نبيه صلى الله تعالى عليه وسلم وإنكم اليوم على خلافة النبوة ومفرق المحجة وسترون بعدي ملكاً
                             عضوضاً وملكاً عنوداً وأمة شعاعاً ودما مفاحا فإن كانت للباطل نزوة ولأهل الحق جولة يعفو بها الأثر ويموت لها البشر
                             فالزموا المساجد واستشيروا القرآن والزموا الطاعة ولا تفارقوا الجماعة وليكن الإبرام بعد التشاور والصفقة بعد طول
@@ -1071,9 +990,7 @@
                             وسيرته وإيثار مصلحة الأمة على مصلحة نفسه، ىلة.</p>
                         <p>ومنذ ضعف أمر بني العباس واستولى ملوك الطوائف ضعف أمر الخلافة بن ذهب رسمياً جمعة وأصبح الملوك بحسب الاتفاق أن صلح
                             واحد من مئة يجيء أخلاقه يفسدون ما وضعه. ساعد على ذلك في الأكمثر ضعف الآداب والأخلاق وزهد المتأخرين بعلوم الدنيا
-                            <pb ed="shamela"
-                   n="n36-p26"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2258.xhtml"/> فصح فينا قول ذي عمرو من
+                            <pb ed="shamela" n="n36-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2258.xhtml"/> فصح فينا قول ذي عمرو من
                             أمراء اليمن لجرير بن عبد الله إنكم معشر العرب لن تزالوا بخير ما كنتمة إذا هلك أمير مرت تم في أواخر فإذا كانت
                             بالسيف كانوا ملوكاً يغضبون غضب الملوك ويرضون رضا الملوكثم سلط عليهم جبابرتهم فساموهم سوء العذاب وضربهم بالفاقة
                             وملأ قلوبهم رعباً.</p>
@@ -1093,11 +1010,9 @@
                         <p>وما فتئ الأحرار ينشرونة دعوتهم في جرائد لهم أنشؤها وجمعيات الفوها وكلمتهم تزيدم انتشاراً كلما اشتدت الحكومة في
                             إرهاقهم ولاسيما في المدارس العالية في الاستانة.</p>
                         <p>والمدارس العالية مجمع شمل أذكياء الطلاب من الترك والعرب والجركس والأرناؤود واللاز والروم والأرمن حتى إذا عادوا
-                            إلى بلادهم وتفرقوا في الولايات يضيفون إلى تذمر <pb ed="shamela"
-                   n="n36-p27"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2259.xhtml"/> الأهلين من فساد الأحكاتم
+                            إلى بلادهم وتفرقوا في الولايات يضيفون إلى تذمر <pb ed="shamela" n="n36-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2259.xhtml"/> الأهلين من فساد الأحكاتم
                             تذمراً ويكثرون سواد الحانقين على ذاك النظام الرث القديم.</p>
-                        <p>ولما أوشكت الدولة العلية أن تسقط سنة 1293 باجتماع كلمة أوروبا عليها أعلن القانون الأساسي بسعي مدحت باشا وأعوانه
+                        <p>ولما أوشكت الدولة العلية أن تسقط سنة  <tei:num value="1293" xml:lang="ar">١٢٩٣</tei:num>  باجتماع كلمة أوروبا عليها أعلن القانون الأساسي بسعي مدحت باشا وأعوانه
                             ولم تتمتع الأمة أربعة أشهر بافتتاح مجلس قبل ففسدت النيات والتأثت الأحوال وتنتكرت الأخلاق وهزلت الفضيلة وباب
                             القول الفصل للرشى والمحاباة والشفاعات وراجت سوق النفاق رواجاً سوق النفاقات رواجاً لم تعهده آثينة في آخر أيامها
                             ولا رومية عند زوال سلطانها بل ولا فروق لما تأذن الله بانحلال الدولة البيزنطية منها وكثر الغش والخديعة وغلوا في
@@ -1109,12 +1024,10 @@
                             وفيها العرب والفينيقيون والحيثيون والروم والبابليون والآشوريون والكلدانيون والأرمن واليهود. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n36-p28"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2260.xhtml"/>
+                        <pb ed="shamela" n="n36-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2260.xhtml"/>
                         <head>بين العرب والفرس</head>
                         <p>من أشهر القصائد الاجتماعية العربية قصيدة لقيطو بن يعمر الأيادي ينذر قومه غزو كسري إياهم وكان لقيط كاتباً في ديوان
-                            كسرى فقطع لسان لقيط وغزا إياداً. قال ابن دريد في كتاب الاشتقاق الذي نشره سنة 1854: ومن رجالهم لقيط بن معبد صاحب
+                            كسرى فقطع لسان لقيط وغزا إياداً. قال ابن دريد في كتاب الاشتقاق الذي نشره سنة  <tei:num value="1854" xml:lang="ar">١٨٥٤</tei:num> : ومن رجالهم لقيط بن معبد صاحب
                             القصيدة التي أنذر بها إياداً لما غزتهم الفرسي وهي:</p>
                         <lg type="bayt">
                             <l>كتاب في الصحيفة من لقيط </l>
@@ -1186,9 +1099,7 @@
                             <l>في كل يوم يسنون الحراب لكم </l>
                             <l> لا يهجعون إذا ما غفى شجعا</l>
                         </lg>
-                        <p>خزر عيونهم كأن لحظهم <gap resp="#org_MS"/> حريق نار ترى منه السنا قطعا <pb ed="shamela"
-                   n="n36-p29"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2261.xhtml"/> ويحققون حيال الشول آونة
+                        <p>خزر عيونهم كأن لحظهم <gap resp="#org_MS"/> حريق نار ترى منه السنا قطعا <pb ed="shamela" n="n36-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2261.xhtml"/> ويحققون حيال الشول آونة
                             <gap resp="#org_MS"/> وتنتحون بدار القلعة الرتعا</p>
                         <lg type="bayt">
                             <l>وتلبس ثياب إلا من ضافية </l>
@@ -1279,9 +1190,7 @@
                             <l>هو الجلاء الذي يجتث أصلكم </l>
                             <l> فمن رأى مثل ذا رأياً ومن سمعا</l>
                         </lg>
-                        <p>قوموا قياماً على أمشاط أرجكم <gap resp="#org_MS"/> ثم أفزعوا قد ينال الأمن من فزعا <pb ed="shamela"
-                   n="n36-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2262.xhtml"/> وقلدوا أمركم لله دركم
+                        <p>قوموا قياماً على أمشاط أرجكم <gap resp="#org_MS"/> ثم أفزعوا قد ينال الأمن من فزعا <pb ed="shamela" n="n36-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2262.xhtml"/> وقلدوا أمركم لله دركم
                             <gap resp="#org_MS"/> رحب الذراع بأمر الحرب مضطلعا</p>
                         <lg type="bayt">
                             <l>لا مترفاً أن رخاء العيش ساعده </l>
@@ -1333,14 +1242,12 @@
                         </lg>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n36-p31"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2263.xhtml"/>
+                        <pb ed="shamela" n="n36-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2263.xhtml"/>
                         <head>الاكتشافات الحديثة في القطب الشمالي</head>
-                        <p>قالت مجلة مستندات الترقي ما مثله: كانت أول حملة أرسلت لاكتشاف القطب الشمالي سنة 1553 فقام شانسلور ودورفورث
+                        <p>قالت مجلة مستندات الترقي ما مثله: كانت أول حملة أرسلت لاكتشاف القطب الشمالي سنة  <tei:num value="1553" xml:lang="ar">١٥٥٣</tei:num>  فقام شانسلور ودورفورث
                             وويلوغبي من الإنكليز يحاولون الاهتداء من طريق الشمال إلى طريق بحري للوصول إلى آسيا الشرقية ودعي هذا الطريق بطريق
                             الشمالي الشرقي. وما برح حب اكتشاف القطب آخذا بمجامع العقول حتى ساق كثيرين إلى تقحم تلك الصحاري الجامدة في الشمال
-                            لكشف ما وراءها من أسرار. ولئن فترت الهمم في سبيل اكتشاف القطب من سنة 1650إلى 1750 بالنسبة لبقية الأدوار إلا أن
+                            لكشف ما وراءها من أسرار. ولئن فترت الهمم في سبيل اكتشاف القطب من سنة  <tei:num value="1650" xml:lang="ar">١٦٥٠</tei:num> إلى  <tei:num value="1750" xml:lang="ar">١٧٥٠</tei:num>  بالنسبة لبقية الأدوار إلا أن
                             الرغبة في اكتشافه لم تنقطع منذ ذاك العهد ومهما أعتقد الناس بأن ما ورد في أسطورة قديمة من أن في بحار الشمال جبلاً
                             من المغناطيس كان يدعو السفن والملاحين إلى اكتشافه فتهلك فيه ـ وهي أسطورة من الأساطير الخيالية العارية من كل
                             حقيقة ـفان القطب الجغرافي من الأرض وإن لم يره أحد حتى الآن قد أثر في العقول تأثير ذاك الجبل من المغناطيس وكان من
@@ -1354,56 +1261,50 @@
                             عبارة عن ضرب من ضروب الأرتياض اللهم إلا ما كان من حيث الفائدة الجغرافية الصرفة. بيد أن الإنسانية لا يقر لها قرار
                             إن لم يكتب لأحد شجعان الزمان أن يدوس ذلك الطرف الآخر من محور الأرض والظاهر أن هذا اليوم وإن طال العهد على قدومه
                             غير بعيد الآن فإن ما تم من تقدم اكتشافات القطب في الخمس عشرة سنة الأخيرة قد بلغ حداً لم يكن يظن بلوغه حتى قري
-                            الأمل بأن ستكافئ تلك الهمم الماضية على جهادها قريباً والزمن حلال كل معضل. يعلم ذلك بأدنى نظر يلقي ببصره <pb ed="shamela"
-                   n="n36-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2264.xhtml"/>
+                            الأمل بأن ستكافئ تلك الهمم الماضية على جهادها قريباً والزمن حلال كل معضل. يعلم ذلك بأدنى نظر يلقي ببصره <pb ed="shamela" n="n36-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2264.xhtml"/>
                             على تاريخ القطب والبعثات إليه وما بلغه الباحثون من العرض الشمالي.</p>
-                        <p>قام المقدام بارنتس الهولاندي فبلغ المرة الأولى سنة 1596 الدرجة الثمانيين من العرض ومضى الناس زهاء مائتي سنة حتى
+                        <p>قام المقدام بارنتس الهولاندي فبلغ المرة الأولى سنة  <tei:num value="1596" xml:lang="ar">١٥٩٦</tei:num>  الدرجة الثمانيين من العرض ومضى الناس زهاء مائتي سنة حتى
                             تيسر لهم أن يتقدموا إلى الإمام ثلاث درجات أخرى وكان الصياد سكورسبي أول من وصل في الحقيقة إلى الدرجة الثالثة
-                            والثمانين من العرض سنة 1822ولم يصل الرحالة مارخام الأميركي إلا في سنة 1876 إلى شمالي غرانلاندا أي إلى درجة 20/
-                            83وبعد ستة سنين بلغ وطنية سوكفود الدرجة 24/ 83 وهكذا مضت ثلاثة قرون ولم يصل البشر إلى أكثر من الدرجة 83 في
+                            والثمانين من العرض سنة  <tei:num value="1822" xml:lang="ar">١٨٢٢</tei:num> ولم يصل الرحالة مارخام الأميركي إلا في سنة  <tei:num value="1876" xml:lang="ar">١٨٧٦</tei:num>  إلى شمالي غرانلاندا أي إلى درجة  <tei:num value="20" xml:lang="ar">٢٠</tei:num> /
+                             <tei:num value="83" xml:lang="ar">٨٣</tei:num> وبعد ستة سنين بلغ وطنية سوكفود الدرجة  <tei:num value="24" xml:lang="ar">٢٤</tei:num> /  <tei:num value="83" xml:lang="ar">٨٣</tei:num>  وهكذا مضت ثلاثة قرون ولم يصل البشر إلى أكثر من الدرجة  <tei:num value="83" xml:lang="ar">٨٣</tei:num>  في
                             التقدم نحو القطب ولكن لم تمض أقل من خمس عشرة سنة حتى كثر التقدم في أصقاع القطب وزاد شأنه أكثر من القرون الثلاثة
                             الأخيرة فكان الرحالة نانسن أعظم فاتح فتح عهد سيؤدي ولاشك إلى الاهتداء للقطب وافتتاحه افتتاحا أخيراً فوصل مع
-                            رفيقه جوهانسون في 7نيسان (أبريل) إلى درجة 14/ 86في شمال الأرض المعروفة بأرض فرنسيس يوسف ولكنه أضطر إلى الرجوع
-                            على أعقابه وتقدمت بعثة الدوق دي زلبروز إلى أبعد من ذلك نحو الشمال فبلغ بعض أعضائها الدرجة 33/ 86إلى شمالي أرض
-                            فرنسيس يوسف وقليلاً نحو الغرب من الجهة التي وصل إليها نانس. ووصل الأميركي في مارس 1906 إلى الدرجة 6/ 86وكان بلغ
-                            سنة 1902 إلى درجة 17/ 87</p>
+                            رفيقه جوهانسون في  <tei:num value="7" xml:lang="ar">٧</tei:num> نيسان (أبريل) إلى درجة  <tei:num value="14" xml:lang="ar">١٤</tei:num> /  <tei:num value="86" xml:lang="ar">٨٦</tei:num> في شمال الأرض المعروفة بأرض فرنسيس يوسف ولكنه أضطر إلى الرجوع
+                            على أعقابه وتقدمت بعثة الدوق دي زلبروز إلى أبعد من ذلك نحو الشمال فبلغ بعض أعضائها الدرجة  <tei:num value="33" xml:lang="ar">٣٣</tei:num> /  <tei:num value="86" xml:lang="ar">٨٦</tei:num> إلى شمالي أرض
+                            فرنسيس يوسف وقليلاً نحو الغرب من الجهة التي وصل إليها نانس. ووصل الأميركي في مارس  <tei:num value="1906" xml:lang="ar">١٩٠٦</tei:num>  إلى الدرجة  <tei:num value="6" xml:lang="ar">٦</tei:num> /  <tei:num value="86" xml:lang="ar">٨٦</tei:num> وكان بلغ
+                            سنة  <tei:num value="1902" xml:lang="ar">١٩٠٢</tei:num>  إلى درجة  <tei:num value="17" xml:lang="ar">١٧</tei:num> /  <tei:num value="87" xml:lang="ar">٨٧</tei:num> </p>
                         <p>وهذا جدول بأسماء البعثات إلى القطب وما تم فيها من التقدم منذ بديء بإرسالها إلى عهدنا.</p>
                         <p>تاريخ البعثة أسم رئيس البعثة جنسيته أقصى ما وصلت إليه من درجات العرض الجهة</p>
-                        <p>1553 شانسلوردورفورثوويلوغبي إنكليزا 70/ 71 شمالي أوروبا</p>
-                        <p>1587 دافيس إنكليزي 20/ 72 بحر بافين</p>
-                        <p>1594 بارنتس هولاندي 55/ 77 زامبل الجديدة</p>
-                        <p>1596 بارنتس هولاندي 11/ 80 سبيتزبرغ</p>
-                        <p>1607 هودسون إنكليزي 28/ 80 شرقي غرانلاندا</p>
-                        <p>1773 فيبس إنكليزي 48/ 80 سبيتزبرغ</p>
-                        <p>1806 سكورسبي البكر إنكليزي 30/ 81 شرقي غرانلاندا</p>
-                        <p>1817 سكورسبي الفتى إنكليزي نحو82 شرقي غرانلاندا <pb ed="shamela"
-                   n="n36-p33"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2265.xhtml"/> 1822 سكورسبي الفتى
-                            إنكليزي 83 شرقي غرانلاندا</p>
-                        <p>1834 غراه دانيمركي إلى ما بعد83 شرقي غرانلاندا</p>
-                        <p>1876 ماركام أميركي 20/ 83 شمالي غرانلاندا</p>
-                        <p>1882 سوكود أميركي 24/ 83</p>
-                        <p>1895 نانسن نروجي 14/ 86 أرض فرنسيس يوسف</p>
-                        <p>1900 كاني إيطالي 33/ 86 أرض فرنسيس يوسف</p>
-                        <p>1906 بري أميركي 6/ 87 شمالي غرانلاندا</p>
+                        <p> <tei:num value="1553" xml:lang="ar">١٥٥٣</tei:num>  شانسلوردورفورثوويلوغبي إنكليزا  <tei:num value="70" xml:lang="ar">٧٠</tei:num> /  <tei:num value="71" xml:lang="ar">٧١</tei:num>  شمالي أوروبا</p>
+                        <p> <tei:num value="1587" xml:lang="ar">١٥٨٧</tei:num>  دافيس إنكليزي  <tei:num value="20" xml:lang="ar">٢٠</tei:num> /  <tei:num value="72" xml:lang="ar">٧٢</tei:num>  بحر بافين</p>
+                        <p> <tei:num value="1594" xml:lang="ar">١٥٩٤</tei:num>  بارنتس هولاندي  <tei:num value="55" xml:lang="ar">٥٥</tei:num> /  <tei:num value="77" xml:lang="ar">٧٧</tei:num>  زامبل الجديدة</p>
+                        <p> <tei:num value="1596" xml:lang="ar">١٥٩٦</tei:num>  بارنتس هولاندي  <tei:num value="11" xml:lang="ar">١١</tei:num> /  <tei:num value="80" xml:lang="ar">٨٠</tei:num>  سبيتزبرغ</p>
+                        <p> <tei:num value="1607" xml:lang="ar">١٦٠٧</tei:num>  هودسون إنكليزي  <tei:num value="28" xml:lang="ar">٢٨</tei:num> /  <tei:num value="80" xml:lang="ar">٨٠</tei:num>  شرقي غرانلاندا</p>
+                        <p> <tei:num value="1773" xml:lang="ar">١٧٧٣</tei:num>  فيبس إنكليزي  <tei:num value="48" xml:lang="ar">٤٨</tei:num> /  <tei:num value="80" xml:lang="ar">٨٠</tei:num>  سبيتزبرغ</p>
+                        <p> <tei:num value="1806" xml:lang="ar">١٨٠٦</tei:num>  سكورسبي البكر إنكليزي  <tei:num value="30" xml:lang="ar">٣٠</tei:num> /  <tei:num value="81" xml:lang="ar">٨١</tei:num>  شرقي غرانلاندا</p>
+                        <p> <tei:num value="1817" xml:lang="ar">١٨١٧</tei:num>  سكورسبي الفتى إنكليزي نحو <tei:num value="82" xml:lang="ar">٨٢</tei:num>  شرقي غرانلاندا <pb ed="shamela" n="n36-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2265.xhtml"/>  <tei:num value="1822" xml:lang="ar">١٨٢٢</tei:num>  سكورسبي الفتى
+                            إنكليزي  <tei:num value="83" xml:lang="ar">٨٣</tei:num>  شرقي غرانلاندا</p>
+                        <p> <tei:num value="1834" xml:lang="ar">١٨٣٤</tei:num>  غراه دانيمركي إلى ما بعد <tei:num value="83" xml:lang="ar">٨٣</tei:num>  شرقي غرانلاندا</p>
+                        <p> <tei:num value="1876" xml:lang="ar">١٨٧٦</tei:num>  ماركام أميركي  <tei:num value="20" xml:lang="ar">٢٠</tei:num> /  <tei:num value="83" xml:lang="ar">٨٣</tei:num>  شمالي غرانلاندا</p>
+                        <p> <tei:num value="1882" xml:lang="ar">١٨٨٢</tei:num>  سوكود أميركي  <tei:num value="24" xml:lang="ar">٢٤</tei:num> /  <tei:num value="83" xml:lang="ar">٨٣</tei:num> </p>
+                        <p> <tei:num value="1895" xml:lang="ar">١٨٩٥</tei:num>  نانسن نروجي  <tei:num value="14" xml:lang="ar">١٤</tei:num> /  <tei:num value="86" xml:lang="ar">٨٦</tei:num>  أرض فرنسيس يوسف</p>
+                        <p> <tei:num value="1900" xml:lang="ar">١٩٠٠</tei:num>  كاني إيطالي  <tei:num value="33" xml:lang="ar">٣٣</tei:num> /  <tei:num value="86" xml:lang="ar">٨٦</tei:num>  أرض فرنسيس يوسف</p>
+                        <p> <tei:num value="1906" xml:lang="ar">١٩٠٦</tei:num>  بري أميركي  <tei:num value="6" xml:lang="ar">٦</tei:num> /  <tei:num value="87" xml:lang="ar">٨٧</tei:num>  شمالي غرانلاندا</p>
                         <p>ومن الفوائد التي حدثت من السعي في اكتشاف القطب للعلوم ولاسيما للجغرافية أننا عرفنا من بعثة نانسن أن رأس القطب
                             الشمالي ـ ربما كان مقابلاً من الجهة الثانية للقطب الجنوبي. مغشى من كل مكان يبحر قليل العمق ليس فيه إلا بعض جزائر
                             وأرض عظيمة ذات اتساع كبير هي غرانلاندا. وقد أثبت سفردروب وهو صديق نانس المخلص بعد بضع سنين أن الشاطئ الشمالي من
-                            غرانلاندا لوم يكن يعرف منه إلى ذاك العهد غير قسم صغير ـ لا يمتد نحو الشمال. وقد قط ع الدوق دورليان سنة 1905
+                            غرانلاندا لوم يكن يعرف منه إلى ذاك العهد غير قسم صغير ـ لا يمتد نحو الشمال. وقد قط ع الدوق دورليان سنة  <tei:num value="1905" xml:lang="ar">١٩٠٥</tei:num> 
                             جزءاً من الشاطئ الشرقي الذي لم يعرف في شمال رأس بسمرك. وأحدث الاكتشافات اكتشاف بري الذي أبان أنه يوجد في شمالي
                             غرانلاندا بحر عميق وتيار عظيم يذهب إلى الشرق. وتبين من البعثات إلى أرجاء شمالي القارة الأميركية بأن الشاطئ
                             الشمالي الأميركي من الغرب متصل كل الاتصال ببحر القطب الذي يسمى هناك بحر بوفور على حين أن مجموع الجزائر الغربية
                             الموجودة في الشرق تمتد ولا شك إلى أبعد من ذلك نحو الشمال نحو أكصر مما كان يظن حتى الآن. إذ قد شوهدت في شمالي أرض
                             اكل هبرغ في المحل الآخذ نحو الشمال جزيرة جديد سموها أرض كروكر.</p>
                         <p>وبينما كانت الفوائد كثيرة مهمة من السعي في ارتياد الأرجاء القطبية خلال السنين الأخيرة في شمالي أميركا كان ما بذل
-                            من الجهاد في شمالي آسيا للوقوف على أسرار المحيط المتجمد غير مثمرة أدنى ثمرة. وقد هلك سنة 1903 البارون تول الروسي
+                            من الجهاد في شمالي آسيا للوقوف على أسرار المحيط المتجمد غير مثمرة أدنى ثمرة. وقد هلك سنة  <tei:num value="1903" xml:lang="ar">١٩٠٣</tei:num>  البارون تول الروسي
                             الألماني ولم يبقِ أثراً وهو يحاول بلوغ أرض سانيكوف والغالب أنه هلك وأتباعه جوعاً.</p>
-                        <p>ولقد حصرت دائرة الأرجاء القطبية التي لا تزال غير معروفة في دائرة ضيقة في غضون <pb ed="shamela"
-                   n="n36-p34"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2266.xhtml"/> السنين الأخيرة بفضل
-                            الرحالتين نانسن وبري خاصة. وما برح القطب يغر كثيرين من أرباب الرحلات فقد مضت على الرحالة أندره الذي سافر يوم 11
-                            يوليو 1897 من سبيتزبرغ في منطاده إحدى عشر سنة ولم يأت خبر عنه وربما لم يتعد أكثر من الدرجة الثالثة والثمانين من
+                        <p>ولقد حصرت دائرة الأرجاء القطبية التي لا تزال غير معروفة في دائرة ضيقة في غضون <pb ed="shamela" n="n36-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2266.xhtml"/> السنين الأخيرة بفضل
+                            الرحالتين نانسن وبري خاصة. وما برح القطب يغر كثيرين من أرباب الرحلات فقد مضت على الرحالة أندره الذي سافر يوم  <tei:num value="11" xml:lang="ar">١١</tei:num> 
+                            يوليو  <tei:num value="1897" xml:lang="ar">١٨٩٧</tei:num>  من سبيتزبرغ في منطاده إحدى عشر سنة ولم يأت خبر عنه وربما لم يتعد أكثر من الدرجة الثالثة والثمانين من
                             العرض وهو الذي ساق نفسه إلى الحتف هذا لم نقل إلى أن إقدامه على ما أقدم عليه كان من الجنون المطبق إن لم يكن
                             الانتحار بعينه. وليس هو وحده الذي حاول أن يقطع ثلوج القطب في منطاد تخلصاً من ركوب البحر والمركبات التي لا عجل
                             لها فقد حاول ذلك غيره كالأميركي ولمان الذي أخفق في المرة الأولى ويحاول في الثانية بلوغ النجاح.</p>
@@ -1418,9 +1319,7 @@
                             وقروناً. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n36-p35"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2267.xhtml"/>
+                        <pb ed="shamela" n="n36-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2267.xhtml"/>
                         <head>التأليف في الملوك</head>
                         <p>كان لكثير من الملوك رغبة في العلم لإشراف نفوسهم الملكية على علو قدره وجلالة أمره فمنهم من كان يرغب فيه ويقرب أهله
                             ويسعى في نشره. ومنهم من اشتغل به وسعى في تحصيله حتى فاز بحظ وافر منه. ومنهم من زاد على ذلك فألف فيما عُني به من
@@ -1439,9 +1338,7 @@
                             من فنونه ويُبين ويصوّر خلاف غيره ويبرهن حتى آيست النفس بما مثلوه وعرفت نقل الأصل الذي أصلوه فتشجعت بأن كررت
                             التعلم والتحرير والتصوير لأشكاله الموضوعة والتقدير إلى أن حسنت ما لم يحسنوا من آلته وعرفت ما يختار من عمله
                             وصناعته ولم يذكروا في علمهم بالتحقيق سوى المقنطرات والبروج والكواكب بالتدقيق واستكفوا فيا عداها بحسن الروية من
-                            غير تقدير فلم أزل أفكر فيما أهملوه حتى وضعت له المقادير تابعاً <pb ed="shamela"
-                   n="n36-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2268.xhtml"/> لما رسمه الأولون من
+                            غير تقدير فلم أزل أفكر فيما أهملوه حتى وضعت له المقادير تابعاً <pb ed="shamela" n="n36-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2268.xhtml"/> لما رسمه الأولون من
                             الحساب مكتسباً ما أمكنني منه الاكتساب فوضعت على غاية ما بلغ الاجتهاد إليه ووقع عن التخير الاختيار عليه ما يغني
                             الصانع في تيسير المعرفة ويكفيه عن كثير من الكتب المصنفة وعليه في وضع المقنطرات والكواكب المعول والعمدة على وضعها
                             وتحريرها على المصنف الأول مع معرفتي بفك حروفها وإعدادها وإبعاد مراكزها وأنصاف أقطارها ولست بالمدعي في معرفة هذه
@@ -1459,9 +1356,7 @@
                             المقنطرات وهذا الذي اتصل إلى علمنا من أعمال الإسطرلابات وأعمال التارجهار فإنه لا يمتنع أن يكون قد زيد على هذه
                             الأقسام التي ذكرناها ولم نطلع عليه فليس لنا أن نقطع بأن هذه الأقسام التي ذكرناها هي التي تعمل فقط فعلى هذا ما
                             كان صغيراً وقسم على درجة أو درجتين أو ثلاث تزاحمت خطوط المقنطرات لاسيما عند المركز فلا جل ما صغر منها على عشر
-                            عشر وأصحها ما كانت مقنطراته مقسومة على <pb ed="shamela"
-                   n="n36-p37"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2269.xhtml"/> درجة درجة ليتحقق منها
+                            عشر وأصحها ما كانت مقنطراته مقسومة على <pb ed="shamela" n="n36-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2269.xhtml"/> درجة درجة ليتحقق منها
                             الصحة لأن ما كبر منها وكان فتحه ذراعاً بالحديد خلص نصف درجة يا تقسم درجته الواحدة بنصفين لسعة ما بينها وبين
                             المقنطرة الثانية وما كان فتح ذراعين جديد خلص عشر دقائق أي تقسم درجته الواحدة بستة أقسام كل قسم منها عشر دقائق
                             وما كان منه أربع أذرع أو خمسة بالحديد خلص دقيقة أي تقسم الدرجة الواحدة بسنين قسماً كل قسم منها دقيقة لأن كل ما
@@ -1479,9 +1374,7 @@
                             الاصطرلاب سعته كما قلنا في فتح ذراعين وما فوقه إلى خمسة فلا يمسك باليد وقت أخذ الارتفاع لكبره هو عظمه بل يرفعه
                             شخص بيديه وآخر يأخذ به الارتفاع فإن عظم عُلق على سيبا بقدر ما يتمكن منه الناظر وهو معلق بالسيبا فعند أخذ
                             الارتفاع يرفع الناظر العضادة ويخفضها حتى يصبح له أحد ارتفاعه من الشمس أو الكواكب وأول ما يبتدئ به الراسم من
-                            العمل يخط خطاً بأي قدر شاء ثم يقسمه بتسعين قسماً أجزاءً صحيحة محكمة بقدر الجهد والطاقة فإن صحة <pb ed="shamela"
-                   n="n36-p38"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2270.xhtml"/> العمل موقوفة
+                            العمل يخط خطاً بأي قدر شاء ثم يقسمه بتسعين قسماً أجزاءً صحيحة محكمة بقدر الجهد والطاقة فإن صحة <pb ed="shamela" n="n36-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2270.xhtml"/> العمل موقوفة
                             على قسمة الخط المذكور فمتى كان في القسمة خلل لم تصح بها الأعمال والخط هو المسطرة المقسومة وهذا مثالها (وهنا أورد
                             صورتها) وإن كانت هذه المسطرة بخلاف المسطرة الستينية التي ذكرها الفرغاني في كتابه فإن تلك مقسومة بستين قسماً فإذا
                             أردت عمل هذه المسطرة الستينية التي يقاس منها أعمال الاصطرلاب فإنك تبدأ أولاً بعمل مسطرة صحيحة من خشب صلب.</p>
@@ -1499,31 +1392,27 @@
                             والمريخ كصاحب الجيوش والكتائب والزهرة كالخادم والمطرب وعطارد كالوزير والكاتب فسبحان خالق هذه المحاسن والغرائب
                             ووصفها في كتابه المنزل على سيد الأنباء والشهداء والأباعد والأقارب فقال عز وجل: إنا زينا السماء الدنيا بزينة
                             الكواكب وصلى الله على سيدنا محمد النبي الأمي وعلى آله الكرام وأصحابه الأطايب وبعد فأقول وأنا أقل عباد الله
-                            وأصغرهم إبراهيم بن ممدود الحاسب الملكي <pb ed="shamela"
-                   n="n36-p39"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2271.xhtml"/> المظفري الأشرفي: إني لما
+                            وأصغرهم إبراهيم بن ممدود الحاسب الملكي <pb ed="shamela" n="n36-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2271.xhtml"/> المظفري الأشرفي: إني لما
                             شاهدت الاصطرلابين قسمة السدس من عمل مولانا الملك الأشرف عمر بن مولان ومالك رقنا السلطان الملك المظفر يوسف بن عمر
-                            بن علي بن رسول خلد الله ملكهما وطول عمره من سنة 689 وصحة جميع ما عمله بهما من صحة الدوائر والمقنطرات والمراكز
+                            بن علي بن رسول خلد الله ملكهما وطول عمره من سنة  <tei:num value="689" xml:lang="ar">٦٨٩</tei:num>  وصحة جميع ما عمله بهما من صحة الدوائر والمقنطرات والمراكز
                             وأنصاف الأقطار والكواكب والحجرة والصفائح سبكاً وضرباً قسمة ووضعاً وصحة قسمة دائرة البروج وصحة العضايد وعيار
                             المجموع فيهما ولم أجد فيهما مأخذاً إلا أن كان اليسير من جهة الصانع الخراط ومولانا خلد الله ملكه عارف به وبإصلاحه
                             فشهدت له بالفضيلة وبتجويده في صناعة الاصطرلاب ووضعت له خطي هذا شاهداً على صحة ذلك وأجزت له أن يعمل ما شاء من ذلك
                             أي من الاصطرلابات بم استقريته من إتقانه ومعرفته وذكائه وخبرته واختباري له في ذلك وامتحاني إياه وكذلك في
-                            اصطرلابين عملهما في سنة 689 أحدهما أصغر من الآخر قسمة السدس والأكبر فيهما قسمة الثلث أجزته وشهدت له بالصحة في
+                            اصطرلابين عملهما في سنة  <tei:num value="689" xml:lang="ar">٦٨٩</tei:num>  أحدهما أصغر من الآخر قسمة السدس والأكبر فيهما قسمة الثلث أجزته وشهدت له بالصحة في
                             الأربع اصطرلابات المذكورة وكذلك أجزته في عمله لساعات مستوية يستخرجها بترجهار يعمله علماً وعملاً وأن يعمل منها ما
                             شاءَ لوثوقي بعلمه وعمله فيما استقريته من أعماله في جميع ما ذكرته عنه نفعه الله بما استفاده ونفعنا بما أفدناه
-                            وكتب أقل العبيد المظفري الأشرفي إبراهيم بن ممدود الجلاد الموصلي الحاسب في شهور سنة 690 هجرية على صاحبها أفضل
+                            وكتب أقل العبيد المظفري الأشرفي إبراهيم بن ممدود الجلاد الموصلي الحاسب في شهور سنة  <tei:num value="690" xml:lang="ar">٦٩٠</tei:num>  هجرية على صاحبها أفضل
                             الصلاة والسلام والحمد لله رب العالمين والصلاة والسلام على خاتم النبيين محمد بن عبد الله وعلى آله وصحبه أجمعين
                             وشرف وعظم ثم أقول وأنا أقل عباد الله إبراهيم الحاسب الملكي المظفري الأشرفي أن مولانا الملك الأشرف بن مولانا
-                            السلطان الأعظم الملك المظفر خلد الله ملكهما جدد اصطرلاباً قسمة السدس سنة 691 هجرية صحيحة وتحرير بالغ أعظم مما
+                            السلطان الأعظم الملك المظفر خلد الله ملكهما جدد اصطرلاباً قسمة السدس سنة  <tei:num value="691" xml:lang="ar">٦٩١</tei:num>  هجرية صحيحة وتحرير بالغ أعظم مما
                             قبله مما استدللت على زيادة فضائله فالله تعالى يزيده من فضله وينور باطنه بعلمه بمنه وكرمه وصلى الله على سيدنا
                             محمد النبي وآله وصحبه وسلم.</p>
-                        <p>وأقول أيضاً أن مولانا الملك خلد الله ملكه أوقفني على سموت باصطرلاب قسمه الثلث سنة 692 والسموت لعشرات فاستقريت
+                        <p>وأقول أيضاً أن مولانا الملك خلد الله ملكه أوقفني على سموت باصطرلاب قسمه الثلث سنة  <tei:num value="692" xml:lang="ar">٦٩٢</tei:num>  والسموت لعشرات فاستقريت
                             الكثير منها أعني من السموت التي عملها بالآلات الصحيحة وبالحساب فوجدتها في غاية الصحة والتناسب مما استدللت بصحة
-                            يده وجودة ذهنه وتمكنه في العمل فحكمت بصحة ما يعمله من السموت وأجزت له أن يعمل بعد ذلك <pb ed="shamela"
-                   n="n36-p40"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2272.xhtml"/> ما شاء من
+                            يده وجودة ذهنه وتمكنه في العمل فحكمت بصحة ما يعمله من السموت وأجزت له أن يعمل بعد ذلك <pb ed="shamela" n="n36-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2272.xhtml"/> ما شاء من
                             الاصطرلابات المسمتة وكذلك مما يعمله من الساعات الزمانية والمستوية وخطى الفجر والشفق بأي اصطرلاب شاء وذلك من
-                            جمادى الآخرة سنة 692 والحمد لله حق حمده وصلاته على سيدنا محمد وآله وصحبه كتب ذلك أقل العبيد المظفري الأشرفي
+                            جمادى الآخرة سنة  <tei:num value="692" xml:lang="ar">٦٩٢</tei:num>  والحمد لله حق حمده وصلاته على سيدنا محمد وآله وصحبه كتب ذلك أقل العبيد المظفري الأشرفي
                             إبراهيم الحاسب في التاريخ المذكور.</p>
                         <p>وهذه صورة الشهادة الثانية مهما: بسم الله الرحمن الرحيم صلى الله على سيدنا محمد وعى آله وصحبه وسلم تسليما وكذلك
                             يقول العبد الفقير إلى الله تعالى حسن بن علي الفهري المظفري أني شاهدت الاصطرلابات التي أتقن إحكامها ووضعها مولانا
@@ -1539,9 +1428,7 @@
                             خطوط للساعات المستوية متقاطعة مع خطوط الزمانية ثم بعد أيام قريبة شاهدت الاصطرلاب قسمه الثلث المعمول في سنة تسع
                             وثمانين وستمائة وقد سمت صفائحه الثلث لست عروض وهي عرض يج. . وعرض يج. وعرض يد هـ وعرض يد ل وعرض. . وعرض كاه فوجدت
                             سموتها متقنة العمل صحيحة محققة قسمتها بعشر قسي عشر قسي من قسي السموت ووجدت الجميع من الاصطرلابات المذكورة
-                            بقسمتها وتاريخها كاملة الجودة والتحقيق والصحة وأجزتُ له صناعة <pb ed="shamela"
-                   n="n36-p41"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2273.xhtml"/> الاصطرلاب ووضعها سبكاً
+                            بقسمتها وتاريخها كاملة الجودة والتحقيق والصحة وأجزتُ له صناعة <pb ed="shamela" n="n36-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2273.xhtml"/> الاصطرلاب ووضعها سبكاً
                             وضرباً ورسماً مما استقريته من إتقانه ومعرفته وذكائه وفطنته واختباري لأعماله التي أحكمها وامتحاني إياها ثم أجزي
                             له أن يعمل ما شاء من الساعات المستوية يستخرجها بطرجهار بحكمه علماً وتحقيقاً وشاهدت جهازين من إحكامه وعمله أحدهما
                             فضة والثاني نحاس فوجدتهما في غاية التحقيق فليعمل ما شاء منها فقد وثقت بما استقريته منه في جميع ما ذكرته في خطي
@@ -1551,17 +1438,15 @@
                             الذين لا يساعدهم الوقت على التنقيح والمهم في مثل هذا هو تعليم الصناعة بأي عبارة كانت. </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n36-p42"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2274.xhtml"/>
+                        <pb ed="shamela" n="n36-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2274.xhtml"/>
                         <head>مطبوعات ومخطوطات</head>
                         <p>بغية الوعاة في طبقات اللغويين والنحاة</p>
-                        <p>طبع أحمد أفندي ناجي الجمالي ومحمد أمين أفندي الخانجي وأخوه هذا الكتاب للحافظ جلال الدين السيوطي المتوفى سنة 911
+                        <p>طبع أحمد أفندي ناجي الجمالي ومحمد أمين أفندي الخانجي وأخوه هذا الكتاب للحافظ جلال الدين السيوطي المتوفى سنة  <tei:num value="911" xml:lang="ar">٩١١</tei:num> 
                             وجلال الدين هذا من المكثرين من التأليف وبعضها جيد ممتع. أما هذا الكتاب فهو ظاهر من اسمه جمع فيه تراجم مختصرة
                             للنحاة في كل عصر مستنداً فيه على ما انتهى إليه من كتب طبقاتهم على اختلاف العصور وقد تبين من الكتب التي سردها في
                             المقدمة أن معظم كتب التاريخ المفقودة الآن كانت في عصره موجود بكثرة فاستدللنا على أن الزهد في الفن كثر بعد
                             التسعمائة. والأربعة القرون الأخيرة هي عصور الظلمات لا محالة. وقد بدأه بالمحمديين ثم ذكر الأحمديين ثم ساق أسماء
-                            الرجال على حروف المعجم ووقع في 461 صفحة بالقطع الكبير وهو يطلب من مكتبه محمد أمين أفندي الخانجي الكتبي الشهير في
+                            الرجال على حروف المعجم ووقع في  <tei:num value="461" xml:lang="ar">٤٦١</tei:num>  صفحة بالقطع الكبير وهو يطلب من مكتبه محمد أمين أفندي الخانجي الكتبي الشهير في
                             الحلوجي باثني عشر قرشاً ورقاً وخمسة عشر قرشاً مجلداً وهو من الكتب التي يجدر بكل طالب نحو أن يقتنيه ليعرف رجال
                             فنه ويطلع على أحوالهم ونكاتهم وآدابهم. وقد اعتمد الطالبون في طبع هذا الكتاب على نسخة دار الكتب المصرية وصححوها
                             بقدر الإمكان على ما ظهروا به من النسخ وأجادوا انتقاء حروف طبعها فشكراً لهم.</p>
@@ -1572,10 +1457,8 @@
                             جميع أقطار المعمور معرفته والإطلاع عليه فصور رجال الأمة أجمل تصوير وارشد الحكام أيما إرشاد ووصف الأمم المظلومة
                             أحسن وصف وقال في المدنية وعلومها ما شاء أن يصوغ قلمه البليغ وجال جولة في علوم الإسلام والأزهر ورجال الدين وأفاض
                             في شرح المجالس النيابية ببيان لم ينسج على منواله وذكر تأليف الكتب وتصنيف الأسفار وبيان التأليف عند الأمم ويكف
-                            يؤلف التاريخ ثم الشعر ودرجاته وذكر نظام الجندية <pb ed="shamela"
-                   n="n36-p43"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2275.xhtml"/> والقرعة العسكرية إلى غير
-                            ذلك من الأفكار العالية التي تدل على علو كعبه في البيان والتبيين وقد وقع هذه السفر في 284 صفحة ويطلب من إدارة
+                            يؤلف التاريخ ثم الشعر ودرجاته وذكر نظام الجندية <pb ed="shamela" n="n36-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2275.xhtml"/> والقرعة العسكرية إلى غير
+                            ذلك من الأفكار العالية التي تدل على علو كعبه في البيان والتبيين وقد وقع هذه السفر في  <tei:num value="284" xml:lang="ar">٢٨٤</tei:num>  صفحة ويطلب من إدارة
                             اللواء والمكاتب الشهيرة فنثني على مؤلفه وناشره وطابعه بما هم أهله ونشكرهم على هذه الهدية النفيسة.</p>
                         <p>تاريخ الحضارة</p>
                         <p>للمسيو شارل سنيوبوس أحد أساتذة كلية السوربون في باريز كتاب في ثلاث مجلدات سلسل فيه تاريخ الحضارة فالأول في
@@ -1584,7 +1467,7 @@
                             ذكر الحضارة عند أمم الشرق القديمة من المصريين والكلدانيين والأشوريين والبابليين واليهود والفينيقيين والفرس وأمم
                             الغرب القديمة وهم اليونان والرومان وقد توسع المؤلف كثيراً في الكلام على هاتين الأمتين حتى لم يبق في النفس شيءٌ
                             من أمرهما كل ذلك على أسلوب لطيف وتنسيق في الغاية من الجودة وقد التزمنا فيه التعريب بالحرف مخافة أن يضيع شيءٌ من
-                            معانيه وإن كان هذا النوع من الترجمة لا يُحمد في الأغلب. وهو في زهاء 220 صفحة من صفحات المقتبس ويطلب في القاهرة
+                            معانيه وإن كان هذا النوع من الترجمة لا يُحمد في الأغلب. وهو في زهاء  <tei:num value="220" xml:lang="ar">٢٢٠</tei:num>  صفحة من صفحات المقتبس ويطلب في القاهرة
                             بستة قروش أميرية من مكتبة المؤيد بشارع محمد علي بالقاهرة ومكتبة هندية بالموسكي ومكتبة البابي الحنبي. ومن دمشق من
                             مكتبة محمد أفندي هاشم الكتبي.</p>
                         <p>الدين الإسلامي والتمدن</p>
@@ -1593,19 +1476,15 @@
                             أوروبا وقد أورد بما أورده خلاصة الشرع الإسلامي رداً على من يصوّرونه في صورة تغاير حقيقته وقيل أن فرنسا إذا أحبت
                             أن لا يعود المسلمون من أهل الجزائر إلى ما كان عليهم أجدادهم العرب من الهمجية قبل الإسلام وجب عليها أن تضاعف عدد
                             المدارس وتسهل على أبنائهم دخولها وتجعلهم بحيث يكونون على استعداد لإدراك مبادئ دينهم والتسامح رائدهم. وقد نشرت
-                            هذه الرسالة في المجلة الوطنية بباريز أولاً فنشكر لغيرة كاتبها وأدبه الغض وهي تطلب منه في تلمسان <pb ed="shamela"
-                   n="n36-p44"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2276.xhtml"/> إحدى ولايات
+                            هذه الرسالة في المجلة الوطنية بباريز أولاً فنشكر لغيرة كاتبها وأدبه الغض وهي تطلب منه في تلمسان <pb ed="shamela" n="n36-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2276.xhtml"/> إحدى ولايات
                             الجزائر. </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n36-p45"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2277.xhtml"/>
+                        <pb ed="shamela" n="n36-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2277.xhtml"/>
                         <head>سير العلم والاجتماع</head>
                         <p>آثار خوزستان</p>
                         <p>إقليم خوزستان في فارس من الأقاليم التي رخصت حكومتها لفرنسا أن تأخذ منها جميع ما تعثر عليه من الآثار كما عقدت معها
-                            عقداً سنة 1900 يكون بموجبه لفرنسا حق استخراج العاديات من فارس كلها دون غيرها وقد حفر المسيو مورغان العالم الأثري
+                            عقداً سنة  <tei:num value="1900" xml:lang="ar">١٩٠٠</tei:num>  يكون بموجبه لفرنسا حق استخراج العاديات من فارس كلها دون غيرها وقد حفر المسيو مورغان العالم الأثري
                             في سوس عاصمة ذاك الإقليم فظفر بآثار مهمة حملها في ثمانين صندوقاً وراح يعرضها في متحف اللوفر بباريز وقد كتب عنها
                             بعضهم في جريدة الآنال فصلاً إضافياً قائلاً أن الحفر ما زال في سوس قائماً على ساق وقدم منذ بضع سنين برئاسة هذا
                             العالم الأثري وسوس هي المدينة الغريبة التي خربت مراث وأعيد بناؤها فأنشأ بالآجر المستخرج من أنقاض الأسوار في تلك
@@ -1620,15 +1499,13 @@
                             دلَّ على ذوق أكيد وذكاءٍ حقيقي وتحققنا أن هذا الخزف صنع بحذق يوازي حذق صناعنا في صنع الصيني وقد جعلوا منه
                             أشكالاً كثيرة فمنه تماثيل دينية أو ألعاب للأولاد أو عجلات صغيرة أو غير ذلك من التحف والطرائف. وفي هذه المجموعة
                             النفيسة تماثيل لمشاهير منها بعض رجال معروفين مثل تمثال الملك مونيشتوزو الذي أتى المسيو مورغان بقانونه الذي كتبه
-                            منذ أربعين قرناً قبل المسيح وقد <pb ed="shamela"
-                   n="n36-p46"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2278.xhtml"/> كتبت على التمثال كتابة
+                            منذ أربعين قرناً قبل المسيح وقد <pb ed="shamela" n="n36-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2278.xhtml"/> كتبت على التمثال كتابة
                             تؤكد أن ملك سوس بعينه.</p>
                         <p>الانتحار</p>
                         <p>أثبت الأستاذ قيصر لومبروز الفيلسوف الطلياني أن الحب هو أول باعث على الانتحار وإذ أن الرجال في العادة أكثر إقداماً
-                            على الانتحار من النساء في الغالب فقد بلغ عدد المنتحرين في إيطاليا في سنة 1875 و77 و78 ـ 2516 مقابل 569 منتحرة
-                            وإن عدد المنتحرات بعوامل الحب هو من 70 إلى 75 في المئة. وعدد الرجال من 20 إلى 40 في المئة وكذلك الحال في فرنسا
-                            فإن عدد المنتحرين 17000 مقابل 6000 من النساء فينتحر بدواعي الغرام 28 في المئة من النساء وسبعة في المئة من الرجال
+                            على الانتحار من النساء في الغالب فقد بلغ عدد المنتحرين في إيطاليا في سنة  <tei:num value="1875" xml:lang="ar">١٨٧٥</tei:num>  و <tei:num value="77" xml:lang="ar">٧٧</tei:num>  و <tei:num value="78" xml:lang="ar">٧٨</tei:num>  ـ  <tei:num value="2516" xml:lang="ar">٢٥١٦</tei:num>  مقابل  <tei:num value="569" xml:lang="ar">٥٦٩</tei:num>  منتحرة
+                            وإن عدد المنتحرات بعوامل الحب هو من  <tei:num value="70" xml:lang="ar">٧٠</tei:num>  إلى  <tei:num value="75" xml:lang="ar">٧٥</tei:num>  في المئة. وعدد الرجال من  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  إلى  <tei:num value="40" xml:lang="ar">٤٠</tei:num>  في المئة وكذلك الحال في فرنسا
+                            فإن عدد المنتحرين  <tei:num value="17000" xml:lang="ar">١٧٠٠٠</tei:num>  مقابل  <tei:num value="6000" xml:lang="ar">٦٠٠٠</tei:num>  من النساء فينتحر بدواعي الغرام  <tei:num value="28" xml:lang="ar">٢٨</tei:num>  في المئة من النساء وسبعة في المئة من الرجال
                             فقط وبهذا صدق المثل الإفرنجي القائل (فتش عن المرأة) إشارة إلى أنها السبب في كل بلية.</p>
                         <p>مساوئ الملح</p>
                         <p>ثبت بالتجارب الكيماوية والفسيولوجية مؤخراً أن الملح المستعمل في المطابخ لأجل تحضير الأطعمة يأتي في بعض الأحوال
@@ -1642,9 +1519,7 @@
                             ثم يرى الطبيب المشار إليه أن يمتنع تماماً عن أخذ الملح في بعض الأمراض.</p>
                         <p>الكنس</p>
                         <p>رأت بعض المجلات العلمية أن خير واسطة لدفع مضار الغبار من الدخول عند كنس الشوارع من النوافذ والأبواب بل من السريان
-                            إلى أنوف المارة وأفواههم هو أن لا يكنس <pb ed="shamela"
-                   n="n36-p47"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2279.xhtml"/> الكناسون إلا بعد أن يرش
+                            إلى أنوف المارة وأفواههم هو أن لا يكنس <pb ed="shamela" n="n36-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2279.xhtml"/> الكناسون إلا بعد أن يرش
                             الرشاشون وكذلك الحال في نفض البسط والأثاث فإن على من أراد أن لا يضر بصحة الناس أن لا ينفضها قبل أن يرشها بماءٍ
                             لتصبح ندية وأن من الواجب على البلديات أن لا تغفل هذا الأمر الصحي.</p>
                         <p>اللبن الحليب</p>
@@ -1663,38 +1538,34 @@
                             الأستانة الآن التي تنسج على منوال الصحف الأوروبية في محرريها ومؤازريها ومكاتيبها.</p>
                         <p>غلاء المنازل</p>
                         <p>ارتفعت أجور المنازل في جميع عواصم الأرض في هذا القرن الازدحام والاجتماع وقد نشرت نظارة الأشغال في باريز إحصاءً
-                            جاء فيه أن المنزل الذي كان يؤجر بثمانين فرنكاً <pb ed="shamela"
-                   n="n36-p48"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2280.xhtml"/> سنة 1810 أصبح يؤجر بمئة
-                            وعشرين سنة 1850 وبمائتين وعشرين سنة 1870 وبثلثمائة وعشرين سنة 1900 وبثلثمائة وخمسين سنة 1903 ومثلها قواعد
+                            جاء فيه أن المنزل الذي كان يؤجر بثمانين فرنكاً <pb ed="shamela" n="n36-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2280.xhtml"/> سنة  <tei:num value="1810" xml:lang="ar">١٨١٠</tei:num>  أصبح يؤجر بمئة
+                            وعشرين سنة  <tei:num value="1850" xml:lang="ar">١٨٥٠</tei:num>  وبمائتين وعشرين سنة  <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>  وبثلثمائة وعشرين سنة  <tei:num value="1900" xml:lang="ar">١٩٠٠</tei:num>  وبثلثمائة وخمسين سنة  <tei:num value="1903" xml:lang="ar">١٩٠٣</tei:num>  ومثلها قواعد
                             الولايات وإن تكن بنسبة أقل.</p>
                         <p>النساء والأطفال</p>
-                        <p>قررت فرنسا أن يمنع العاملات إذا كانت سنهن أقل من 14 من حلم رزم وزنها أكثر من خمسة كيلو غرامات والأولاد أن لا
+                        <p>قررت فرنسا أن يمنع العاملات إذا كانت سنهن أقل من  <tei:num value="14" xml:lang="ar">١٤</tei:num>  من حلم رزم وزنها أكثر من خمسة كيلو غرامات والأولاد أن لا
                             تتجاوز حمولتهم أكثر من عشرة كيلو غرامات. كما حظرت على الفتيان والفتيات أن لا يستعملن الدراجات الحمالة التي تسير
                             بالبترول إلا إذا تجاوزن سن الثامنة عشرة.</p>
                         <p>المواليد</p>
-                        <p>يولد في كل ألف امرأة تختلف أعمارهن من 25 إلى 50 في برلين 47 مولوداً من عائلة غنية و157 من عائلة فقيرة وفي باريز
-                            يولد في طبقة الأغنياء 37 مولوداً و108 أولاد في الطبقة الفقيرة ويولد في فيينا 71 مولوداً في كل بيت غني و200 في
-                            الألف في البيوت الفقيرة وفي لندرا 63 مولوداً غنياً في الألف و147 مولوداً فقيراً.</p>
+                        <p>يولد في كل ألف امرأة تختلف أعمارهن من  <tei:num value="25" xml:lang="ar">٢٥</tei:num>  إلى  <tei:num value="50" xml:lang="ar">٥٠</tei:num>  في برلين  <tei:num value="47" xml:lang="ar">٤٧</tei:num>  مولوداً من عائلة غنية و <tei:num value="157" xml:lang="ar">١٥٧</tei:num>  من عائلة فقيرة وفي باريز
+                            يولد في طبقة الأغنياء  <tei:num value="37" xml:lang="ar">٣٧</tei:num>  مولوداً و <tei:num value="108" xml:lang="ar">١٠٨</tei:num>  أولاد في الطبقة الفقيرة ويولد في فيينا  <tei:num value="71" xml:lang="ar">٧١</tei:num>  مولوداً في كل بيت غني و <tei:num value="200" xml:lang="ar">٢٠٠</tei:num>  في
+                            الألف في البيوت الفقيرة وفي لندرا  <tei:num value="63" xml:lang="ar">٦٣</tei:num>  مولوداً غنياً في الألف و <tei:num value="147" xml:lang="ar">١٤٧</tei:num>  مولوداً فقيراً.</p>
                         <p>الهواء</p>
                         <p>حملت بعض الصحف الباريزية حملة صالحة على قلة الهواء الذي يتخلل الأحياء والشوارع وقالت أن الفراغ آخذ بالقلة مع
                             الزمن وأن قلة الساحات العامة والحدائق هو الذي يكثر من الأمراض ولاسيما السلُّ وأنه ثبت أن الأحياء القليلة الساحات
-                            والفسحات كانت أكثر تعرضاً لهذا الداءِ الوبيل. وللندرا 1168 هكتاراً من الأرض البراح ما عدا إحدى عشرة حديقة في
-                            وسطها وفي باريز 214 هكتاراً من الفراغ ما عدا غابة بولونيا التي تحسب ضاحية فالواجب الإكثار من الحدائق لأن الهواء
+                            والفسحات كانت أكثر تعرضاً لهذا الداءِ الوبيل. وللندرا  <tei:num value="1168" xml:lang="ar">١١٦٨</tei:num>  هكتاراً من الأرض البراح ما عدا إحدى عشرة حديقة في
+                            وسطها وفي باريز  <tei:num value="214" xml:lang="ar">٢١٤</tei:num>  هكتاراً من الفراغ ما عدا غابة بولونيا التي تحسب ضاحية فالواجب الإكثار من الحدائق لأن الهواء
                             هو الصحة.</p>
                         <p>التمثيل للأولاد</p>
                         <p>رأى مارك توين الكاتب الأميركي المشهور أن تقام دار للتمثيل خاصة بالأطفال والشبان فلبي طلبه وأنشئوا دار تمثيل سموها
                             مسرح تربية البنين والناشئةت ولا يمثل فيها إلا المولعون بفن التمثيل ويقتصرون في تمثيلهم على الروايات المدرسية
-                            وبذلك يمتنع كثير <pb ed="shamela"
-                   n="n36-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2281.xhtml"/> من الشبان عن غشيان دور
+                            وبذلك يمتنع كثير <pb ed="shamela" n="n36-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2281.xhtml"/> من الشبان عن غشيان دور
                             التمثيل التي لا تمثل فيها إلا الخلاعة والرقاعة.</p>
                         <p>جيش المتمردات</p>
                         <p>قال أحد كتاب الانكليز لا يزال عدد المتمردات من العاملات الانكليزيات في ازدياد ففي انكلترا زهاءُ خمسة ملايين ونصف
-                            من النساء العاملات وهو جيش أضخم من جيش كسركس ملك الفرس بل أكثر من سكان لندرا. فمنهن 867000 عاملة في معامل القطن
-                            و903000 في المصنوعات اليدوية و80500 في التجارة ونحو مئة ألف في الزراعة و55784 حاسبة و200000 معلمة و44000 موسيقية
-                            وممثلة و79000 مرضعة و292 طبيبة. ومن هؤلاء النساء ثلاثة ملايين لم يتزوجن وإن كن جاوزن العشرين من العمر ومنهم
-                            مليون رضين أن يبقين عانسات بعد بلوغهن الخامسة والثلاثين وعدد الأيامى منهن 124647 أيامى.</p>
+                            من النساء العاملات وهو جيش أضخم من جيش كسركس ملك الفرس بل أكثر من سكان لندرا. فمنهن  <tei:num value="867000" xml:lang="ar">٨٦٧٠٠٠</tei:num>  عاملة في معامل القطن
+                            و <tei:num value="903000" xml:lang="ar">٩٠٣٠٠٠</tei:num>  في المصنوعات اليدوية و <tei:num value="80500" xml:lang="ar">٨٠٥٠٠</tei:num>  في التجارة ونحو مئة ألف في الزراعة و <tei:num value="55784" xml:lang="ar">٥٥٧٨٤</tei:num>  حاسبة و <tei:num value="200000" xml:lang="ar">٢٠٠٠٠٠</tei:num>  معلمة و <tei:num value="44000" xml:lang="ar">٤٤٠٠٠</tei:num>  موسيقية
+                            وممثلة و <tei:num value="79000" xml:lang="ar">٧٩٠٠٠</tei:num>  مرضعة و <tei:num value="292" xml:lang="ar">٢٩٢</tei:num>  طبيبة. ومن هؤلاء النساء ثلاثة ملايين لم يتزوجن وإن كن جاوزن العشرين من العمر ومنهم
+                            مليون رضين أن يبقين عانسات بعد بلوغهن الخامسة والثلاثين وعدد الأيامى منهن  <tei:num value="124647" xml:lang="ar">١٢٤٦٤٧</tei:num>  أيامى.</p>
                         <p>العامل العظيم</p>
                         <p>تبين أن أديسون مخترع الكهربائية. .</p>
                         <p>ساعة أي أنه عمل ما يوازي عمل العامل الهم في مئة سنة بيد أن المرء لا يعجب من عظمة أعمال كبار الرجال بقدر ما يعجب
@@ -1706,9 +1577,7 @@
                             وعد ذلك سعادة. واليوم الذي يتناول فيه اللحم والأرز والبقول والفول هو يوم عيده وهنائه.</p>
                         <p>بيد أن ابن الغرب ليس كابن الشرق في هذه الحال وذلك لأن مناخ الغرب يقتضي من جيد الأطعمة ما يقدر معه العامل أن يقاوم
                             هواءَ بلاده ويتحمل مشاقها ولاسيما عملة المعامل. وهناك جمعيات وأفراد كثيرون ممن أسبغ الله عليهم نعمه يفكرون
-                            للبائس الفقير أكثر مما يفكر لنفسه ويأسفون لحرمانه فيسعون لتنعيمه حتى يساوي أهل السعة في بعض ما يجب <pb ed="shamela"
-                   n="n36-p50"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2282.xhtml"/>
+                            للبائس الفقير أكثر مما يفكر لنفسه ويأسفون لحرمانه فيسعون لتنعيمه حتى يساوي أهل السعة في بعض ما يجب <pb ed="shamela" n="n36-p50" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2282.xhtml"/>
                             لقوام جسمه من المطعم والمسكن لتستفيد بلاده منه إذا جادت صحته وسلمت آدابه.</p>
                         <p>هناك من يتأثر المحسن إذا رأى أولاداً يأكلون قليلاً لفقرهم ويطعمون أردأ الأطعمة ويشفق الفسيولوجي على الفتيات
                             العاملات لقلة ما يدخل معدهن من الطعام المغذي ويهتم الأخلاقي إذا رأى ابنة تهيم في الشوارع على وجهها لتملأ بطنها.
@@ -1727,11 +1596,9 @@
                             منه ترسله إدارات المدارس إلى مطاعم أنشأتها في الجوار لتبتاعها العملة والعاملات ولاسيما العاملات بثمن قليل.</p>
                         <p>ولا تتوخى معظم تلك الشركات والجمعيات الربح من تأسيس مطاعم الشعب وقد رأت بعضها أن تحدد القدر المقتضي لرأس المال من
                             الأرباح وما زاد عنه وهو قليل أيضاً يستعين به على إنشاء مطاعم أخرى في أحياء أخرى أو مدن أخرى. وكانت انكلترا بدأت
-                            <pb ed="shamela"
-                   n="n36-p51"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2283.xhtml"/> بإنشاء هذه المطاعم على
+                            <pb ed="shamela" n="n36-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2283.xhtml"/> بإنشاء هذه المطاعم على
                             عهد الملكة فيكتوريا أميرة دي غال قبل توليها عرش أجدادها ففتحت هي وزوجها المطعم بيدها وأكلت منه وجبة كلفتها أربعة
-                            بني ونصفاً (45 سنتيماً) ثم كثرت المطاعم على هذا النحو في انكلترا وأكثرها لا يكلف زيادة عن نصف فرنك كل وجبة تحتوي
+                            بني ونصفاً ( <tei:num value="45" xml:lang="ar">٤٥</tei:num>  سنتيماً) ثم كثرت المطاعم على هذا النحو في انكلترا وأكثرها لا يكلف زيادة عن نصف فرنك كل وجبة تحتوي
                             على بقول ولحوم وجزءٍ من لبن.</p>
                         <p>وفي ألمانيا جمعيات كثيرة من النساء أنشأت في أمهات المدن الألمان ولاسيما الصناعية مطاعم كثيرة تكلف الوجبة فيها
                             أربعين سنتيماً والطاهيات والخادمات هناك من النساء. وقد أنشئ فيها محال لبيع اللبن والشاي والزبدة والقهوة بأثمان
@@ -1742,15 +1609,13 @@
                             ولا يدفع أكثر من ثلاثة فرنكات ونصف وترى فيها النظافة على أتم ما يمكن أن يكون والمواد جيدة ولا تجد في معظم هذه
                             المطاعم أثراً للمشروبات الروحية وفي بعضها محال للمطالعة والتسلية المشروعة. وقد نجحت مطاعم الشعب في ولايات فرنسا
                             أكثر من نجاحها في باريز لغلاء الأجور فيها وارتفاع أسعار مواد الأجور وثبت بالاستقراء للباحثين أنه لا يتأتي إطعام
-                            شاب في مطعم طعاماً كافياً بأقل من فرنك و15 سنتيماً إلى فرنك وربع.</p>
+                            شاب في مطعم طعاماً كافياً بأقل من فرنك و <tei:num value="15" xml:lang="ar">١٥</tei:num>  سنتيماً إلى فرنك وربع.</p>
                         <p>ويرى بعض الاجتماعيون أن مطاعم الشعب يجب أن لا تحصر عملها في إطعام الطعام الجيد للفقراء ممن ينتابونها بل أن تعلمهم
                             وتربيهم وأن لا يكتفى فهيا فقط بحظر بيع المشروبات الروحية بل أن يستعاض عنها بالأشربة والحواء المحللة الصحية ما
                             ينسى معها الذين اعتادوا تناول الكحول أن لا يعاودوا احتساءها. والسكر أحسن مولد للحرارة في الجسم ومعين على الهضم
                             ولذلك رأت ألمانيا أن تدفع كل يوم ستين غراماً من السكر لكل جندي يتناوله مع الماء والقهوة والشاي. وأن البلاد التي
                             لا يطيب ماؤها حريٌّ بها أن تغلي الماء على النار في الأوقات التي إلا تنتفع بها وتمزجه بقشر البرتقال أو الأقحوان
-                            فإذا جاء المستطعمون يتناولون منه فيجمعون فيه سكراً أو يكرعونه صرفاً وهو يغنيهم عن كل <pb ed="shamela"
-                   n="n36-p52"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2284.xhtml"/> شراب وينشط
+                            فإذا جاء المستطعمون يتناولون منه فيجمعون فيه سكراً أو يكرعونه صرفاً وهو يغنيهم عن كل <pb ed="shamela" n="n36-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2284.xhtml"/> شراب وينشط
                             أجسامهم. وظهر من فوائد مطاعم الشعب أن الأمراض كانت تقل من يطعمون فيها لأنهم يكرهون على غسل أيديهم قبل الجلوس إلى
                             الموائد. ومعلوم أن طريق الفم هو الواسطة العظمى في العدوى من الأمراض ولاسيما الهواءُ الأصفر فكان من هذه المطاعم
                             أن علمت المختلفين إليها أن يطهروا أيديهم طوعاً أو كرهاً.</p>
@@ -1769,9 +1634,7 @@
                         <p>هذه الجرائد تعظم الحوادث الساذجة لتستكثر من القراء. أن دعت إلى الاجتماع لسباق الخيل تقلب علم الفروسية ظهراً إلى
                             بطن وإن أحبت عقد مؤتمر من التجار تضاعف ثروة الأمة عشرة أضعاف ما هي عليه وأن اقترحت الاحتفال بسباق السيارات تزعم
                             أنها أحيت هذه الصناعة. نعم هي تدعي أيضاً أنها تظهر المحكوم عليهم من الأبرياء وتشهر الصناعات السامة وتشرف على
-                            المطاعم المغشوشة. <pb ed="shamela"
-                   n="n36-p53"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2285.xhtml"/> للاستكثار من القراء تقيم
+                            المطاعم المغشوشة. <pb ed="shamela" n="n36-p53" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2285.xhtml"/> للاستكثار من القراء تقيم
                             الجرائد مسابقات سخيفة فهي تقترح عدَّ حبات الدخن الموجودة في زجاجة وأن تحزر الكلمات المحذوفة من رفرف (قصة في أسفل
                             الجريدة) تافه وأن يعثر على كنز مخبوء في إحدى المتنزهات العامة وذلك بأن تعلن بأنها تدفع جوائز تقدرها بمئات الألوف
                             من الفرنكات. هي تعمل ذلك ولا حرج عليها لأنه لا يكلفها غير الوعد فإذا ما انحل الإشكال المطلوب حله فلا يكون إلا
@@ -1789,9 +1652,7 @@
                         <p>ومتى أفلحت تلك الجرائد بكثرة سواد قرائها لا تستنكف من بيع أعمدتها للإعلان عن أرباب الموبقات وبائعي السميات
                             واللصوص. لا تراعي فيما نشر إلا ولا ذمة ما دام المعلنون يدفعون لها أجور إعلاناتهم. وليس أحسن من الجرائد للرقيق
                             إلا بيض يطلب على لسانها أحدهم على صفة أنه رجل في بلد بعيد يريد فتاة لتكون في بيته وصيفة أو معلمة أو مؤنسة فإذا
-                            حُملت إليه لا تجد المسكينة غير بيوت الريبة تنتظرها وكذلك الحال في <pb ed="shamela"
-                   n="n36-p54"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2286.xhtml"/> المتجرات بالأعراض من
+                            حُملت إليه لا تجد المسكينة غير بيوت الريبة تنتظرها وكذلك الحال في <pb ed="shamela" n="n36-p54" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2286.xhtml"/> المتجرات بالأعراض من
                             النساء فإنهن يعمدن إلى الصحف فيجعلنها وسيطة بينهن وبين زبونهن مقترحة بأنهن يعطين دروساً في اللغة أو يعرضن تحفاً
                             ونفائس.</p>
                         <p>ولقد يجعل باعة الترياق والأدوية الشافية من الصحف واسطة لممارسة طبهم ولا ينالهم عقوبة فيوصون باستعمال العقاقير
@@ -1810,17 +1671,13 @@
                             الجرائد ذات يوم: أنا لا أدعو إلى الفنون ولا إلى الآداب ولا إلى العلم إنني تاجر وأريد أن أنظر في مصلحتي وما
                             جريدتي إلا حائط يعلق إعلانه عليه كل من يؤدي أجرته. قال هذا ولكن فإنه أن هذا الحائط متحرك يدخل في كل مكان ويزيد
                             عدده إلى ما لا نهاية له يبيعه من القارئ. فأنت أيها الصحافي مسمم لعقول العامة لا تقل في ضررك عن ذاك (البدّال)
-                            الذي يغش المأكولات. <pb ed="shamela"
-                   n="n36-p55"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2287.xhtml"/> سأل أحد كبار الأغنياء
+                            الذي يغش المأكولات. <pb ed="shamela" n="n36-p55" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2287.xhtml"/> سأل أحد كبار الأغنياء
                             الأميركان ذات يوم عن أحسن الطرق التي يتيسر له أن يصرف فيها جزءاً من ثروته في عمل خيري ولو سمع مني لرأى حاجتنا
                             الماسة كل المساس إلى تأسيس جريدة سياسية ذات وقار وحشمة وأعني بها جريدة تقول الحقيقة أبداً أو ما تعتقد أنه
                             الحقيقة ولا تنشر إلا الإعلانات التي تعترف بصحة ما فيها. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n36-p56"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2288.xhtml"/>
+                        <pb ed="shamela" n="n36-p56" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2288.xhtml"/>
                         <head>صدور المقتبس</head>
                         <p>نحمد الله على ان وفقنا إلى الجري على سنة النمو الطبيعي في هذه المجلة وهدانا إلى سبيل التسهيل في اقتباس الفوائد
                             وأقباسها جهد الطاقة على صورة مقبولة في الجملة ولم يزين لنا الخوض إلا فيما درسناه واعتقدنا فيه الغناء. ونشكر

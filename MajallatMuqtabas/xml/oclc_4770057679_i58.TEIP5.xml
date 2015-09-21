@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i58_text"
-         xml:lang="ar"
-         type="issue"
-         n="i58">
+   <text xml:id="oclc_4770057679_i58_text" xml:lang="ar" type="issue" n="i58">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,29 +202,25 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1910-12-01">بتاريخ: 1 - 12 - 1910</date>
-                                    <biblScope n="58" unit="issue">العدد 58</biblScope>
+                                    <date when="1910-12-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="12" xml:lang="ar">١٢</tei:num>  -  <tei:num value="1910" xml:lang="ar">١٩١٠</tei:num> </date>
+                                    <biblScope n="58" unit="issue">العدد  <tei:num value="58" xml:lang="ar">٥٨</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             n=""
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3776.xhtml"/>
+                    <pb ed="shamela" n="" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3776.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="58" unit="issue">العدد 58</biblScope> 
-                  <date when="1910-12-01">بتاريخ: 1 - 12 -
-                            1910</date> 
+                  <biblScope n="58" unit="issue">العدد  <tei:num value="58" xml:lang="ar">٥٨</tei:num> </biblScope> 
+                  <date when="1910-12-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="12" xml:lang="ar">١٢</tei:num>  -
+                             <tei:num value="1910" xml:lang="ar">١٩١٠</tei:num> </date> 
                </bibl> 
             </head>
                         <p> 
-               <pb ed="shamela"
-                   n="n58-p1"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3777.xhtml"/> الضوءُ اللامع</p>
+               <pb ed="shamela" n="n58-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3777.xhtml"/> الضوءُ اللامع</p>
                         <p>من كتب التراجم الممتعة التي تجمع بين الفائدة واللذة هذا التاريخ لمؤلفه محمد بن عبد الرحمن الملقب بشمس الدين
                             السخاوي الأصل القاهري تكلم فيه على رجال عصره بما اعتقده فيهم وأطلق لقلمه العنان أيما إطلاق حتى لتظنه لا يعرف غير
                             الهجاء مذهباً وكشف عورات أهل جيله وقبيله مشرباً.</p>
@@ -262,10 +229,10 @@
                     </div>
                     <div type="article">
                         <head>الضوء اللامع</head>
-                        <p> في أعيان القرن التاسع لشمس الدين محمد ابن عبد الرحمن السخاوي المتوفى سنة 902 اثنتين وتسعين رتبه على الحروف وقد
+                        <p> في أعيان القرن التاسع لشمس الدين محمد ابن عبد الرحمن السخاوي المتوفى سنة  <tei:num value="902" xml:lang="ar">٩٠٢</tei:num>  اثنتين وتسعين رتبه على الحروف وقد
                             صنفه السيوطي في رده مقالة سماها الكاوي في تاريخ السخاوي وشنع عليه فيها وانتخبه الشيخ زين الدين عمر بن أحمد
-                            الشماع الحلبي المتوفى سنة 936 ست وثلاثين وتسعمائة وسماه القبس الحاوي لغرر ضوء السخاوي والشهاب أحمد بن العز محمد
-                            الشهير بابن عبد السلام المتوفى سنة 931 إحدى وثلاثين وتسعمائة وسماه البدر الطالع من الضوء اللامع لأهل القرن
+                            الشماع الحلبي المتوفى سنة  <tei:num value="936" xml:lang="ar">٩٣٦</tei:num>  ست وثلاثين وتسعمائة وسماه القبس الحاوي لغرر ضوء السخاوي والشهاب أحمد بن العز محمد
+                            الشهير بابن عبد السلام المتوفى سنة  <tei:num value="931" xml:lang="ar">٩٣١</tei:num>  إحدى وثلاثين وتسعمائة وسماه البدر الطالع من الضوء اللامع لأهل القرن
                             التاسع واختصره الشيخ أحمد القسطلاني وسماه النور الساطع في مختصر الضوء اللامع.</p>
                         <p>وفي المكتبة الظاهرية بدمشق نسخة صحيحة من هذا الكتاب ربما كانت أصح نسخة في سورية ومصر وهي في نحو ثلاثة آلاف صفحة
                             كبيرة بخط وسط وقعت في خمس مجلدات ضخام. والمؤلف عالم من علماء الحديث وغيره وله مصنفات أخر وترجم نفسه في كتبه وقد
@@ -275,12 +242,10 @@
                             وبعلبك وحمص وحماة وسرمين وحلب ومرّ أيضاً بطرابلس وبرزة كفر بطنا والمزة وداريا وصالحية مصر.</p>
                         <p>وله تصانيف كثيرة في الحديث ومنها تراجم من أخذ عنهم في ثلاثة مجلدات سماه بغية الراوي بمن أخذ عنه السخاوي وفهرست
                             مروياته في أزيد من ثلاث مجلدات والتبر المسبوكفي الذيل على تاريخ المقريزي في نحو أربعة أسفار والضوء اللامع الذي
-                            نحن بصدد الكلام عليه ويكون ست مجلدات بحسب تقديره. والذيل على قضاة مصر نسخة في <pb ed="shamela"
-                   n="n58-p2"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3778.xhtml"/> مجلدة والذيل على طبقات
+                            نحن بصدد الكلام عليه ويكون ست مجلدات بحسب تقديره. والذيل على قضاة مصر نسخة في <pb ed="shamela" n="n58-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3778.xhtml"/> مجلدة والذيل على طبقات
                             القراء لابن الجزري في مجلد على دول الإسلام للذهبي والوفيات في القرن التاسع وترجمة نفسه والتاريخ المحيط وهو في
                             نحو ثلثمائة رزمة على حروف المعجم قال أنه لا يعلم من سبقه إليه. طبقات المالكية أربعة أسفار إلى غير ذلك من ال شروح
-                            والتلاخيص ولد سنة 831 وقد استغرقت ترجمته نفسه في كتابه هذا 11 ورقة ونصف ورقة ولم نر فيه أكبر منها.</p>
+                            والتلاخيص ولد سنة  <tei:num value="831" xml:lang="ar">٨٣١</tei:num>  وقد استغرقت ترجمته نفسه في كتابه هذا  <tei:num value="11" xml:lang="ar">١١</tei:num>  ورقة ونصف ورقة ولم نر فيه أكبر منها.</p>
                         <p>وفي هذا الكتاب من المشاهير الناشري وإبراهيم بن ظهيرة والبقاعي والبرهان الطرابلسي وأحمد الكوراني وابن الهمام وابن
                             الشحنة والمقريزي والحافظ ابن حجر وابن عربشاه وتيمورلنك والقاضي زكريا والحافظ العراقي وابن خلدون والجلال البلقيني
                             والجلال السيوطي. وفيه من غير هذه الطبقة أيضاً طرف صالح جداً منهم من نسب إلى بلده ومسقط رأسه ومنهم من اشتهر
@@ -295,9 +260,7 @@
                             ترجمة في ست ورقات وقشتمر وقطباي وقطليك وقطلعوبغا وقطج وقمرقاس وقراجا وقراسنقر وقرا بلوك وقرا يوسف وقراقجا
                             وقاتباي وقان ويرد وقانصوه وقانيك وقانم وكانور وكمشبغاواق سنقر ولاجين ومنكلي وبغا والطنبغا وأمثالهم ممن لا تعثر
                             لهم على ذكر في غير هذا السفر الحاوي.</p>
-                        <p>وترجم كثيراً من العامة وأرباب الأحوال والنساء وأورد بعض أشعارهن ومنها الجيد مثل <pb ed="shamela"
-                   n="n58-p3"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3779.xhtml"/> شعر فاطمة ابنة القاضي
+                        <p>وترجم كثيراً من العامة وأرباب الأحوال والنساء وأورد بعض أشعارهن ومنها الجيد مثل <pb ed="shamela" n="n58-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3779.xhtml"/> شعر فاطمة ابنة القاضي
                             كمال الدين محمد ابن شيرين الحنفي وقد كتبت إلى المؤلف بعد مجيء الخبر بموت أخويه من نظمها:</p>
                         <lg type="bayt">
                             <l>قفا واسمعا مني حديث أحبتي </l>
@@ -325,9 +288,7 @@
                             أثبت لمن لا يذكر لبعض الأغراض التي لا يحسن معها الاعتراض وألحقت فغي إثباته كثيراً الموجودين رجاء انتفاع من لعله
                             يسال عنهم من المستفيدين مع غلبة الظن الغني عن التوجيه ببقاء إن شاء الله منهم إلى القرن الذي يليه مرتباً له تسهيل
                             الكشف على حروف المعجم الترتيب المعهود في الأسماء والآباء والأنساب والجدود مبتدءاص من الرجال بالأسماء ثم بالكنى
-                            ثم بالأنساب والألقاب وكذا المبهمات بعد الأبناء مراعياً في الترتيب <pb ed="shamela"
-                   n="n58-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3780.xhtml"/> لذلك كله حروف الكلمة
+                            ثم بالأنساب والألقاب وكذا المبهمات بعد الأبناء مراعياً في الترتيب <pb ed="shamela" n="n58-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3780.xhtml"/> لذلك كله حروف الكلمة
                             المقصودة بحيث ابتدأ في الألف مثلاً بالهمزة الممدودة ثم بالهمزة التي بعدها موحدة وألف ثم بالتي بعدها على ما ألف
                             مردوفاً ذلك بالنساء كذلك وكل ما أطلقت فيه شيخنا فمرادي به ابن حجر أستاذنا وكنت أردت إيراد شيءٍ مما لعله يكون
                             عندي من حديث من نشاء الله من المترجمين فخشي التطويل سما أن حصل إيضاحه بالتبيين ولذا اقتصرت على الرضي والزكي
@@ -346,9 +307,7 @@
                             ولذا اكتفينا بإيراد ترجمتين منه لفاضلين أحدهما دمشقي والآخر مصري وإن كان شامي الأصل وذلك إنموذجاً لأسلوب المؤلف
                             وإنشائه قال في ترجمة العالم المؤرخ الكاتب المشهور ابن عربشاه:</p>
                         <p>أحمد بن محمد بن عبد الله بن إبراهيم ابن أبي نصر محمد ابن عربشاه ابن أبي بكر الأستاذ الشهاب أبو محمد ابن الشمس
-                            الدمشقي الأصل الرومي الحنفي والد التاج عبد <pb ed="shamela"
-                   n="n58-p5"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3781.xhtml"/> الوهاب ويعرف بالعجمي
+                            الدمشقي الأصل الرومي الحنفي والد التاج عبد <pb ed="shamela" n="n58-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3781.xhtml"/> الوهاب ويعرف بالعجمي
                             وبابن عربشاه وهو الأكثر وليس بقريب لداود وصالح ابني محمد عربشاه الهمدانيين كالأصل الدمشقيين الحنفيين أيضاً. ولد
                             في ليلة الجمعة منتصف ذي القعدة سنة إحدى وتسعين وسبعمائة ونشأ بها فقرأ القرآن على الزين عمر بن اللبان المقري ثم
                             تحول في سنة ثلاث وثمانمائة في زمن الفتنة مع أخوانه وأمهم وابن اخته عبد الرحمن بن إبراهيم بن خولان إلى سمرقند ثم
@@ -366,9 +325,7 @@
                             يزيد ابن مراد بن عثمان كتاب جامع الحكايات ولامع الروايات من الفارسي إلى التركي في نحو (. .) مجلدات وتفسير أبي
                             الليث السمرقندي القادري بالتركي نظماً وباشر عنده ديوان الإنشاء وكتب عنه إلى ملوك الأطراف عربياً وشامياً وتركياً
                             فبالعجمي لقرا يوسف ونحوه بالتركي لآمر الدشت وسلطانها وبالموغولي لشاروخ وغيره وبالعربي للمؤيد الشيخ كل ذلك مع
-                            حرصه على الاستفادة بحيث قرأ المفتاح على البرهان حيدر الخوافي وأخذ عنه العربية أيضاً <pb ed="shamela"
-                   n="n58-p6"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3782.xhtml"/> فلما مات ابن عثمان رجع
+                            حرصه على الاستفادة بحيث قرأ المفتاح على البرهان حيدر الخوافي وأخذ عنه العربية أيضاً <pb ed="shamela" n="n58-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3782.xhtml"/> فلما مات ابن عثمان رجع
                             إلى وطنه القديم فدخل حلب فأقام بها نحو ثلث سنة ثم الشام وكان دخوله لها في جمادى الآخرة سنة خمس وعشرين فجلس
                             بحانوت مسجد القصب مع شهوده يسيراً ليكون معظم أوقاته الانعزال عن الناس وقرأ بها على القاضي شهاب الدين بن الحبال
                             الحنبلي صحيح مسلم في سنة ثلاثين فلما قدم العلاء البخاري سنة اثنين وثلاثين مع الركب الشامي من الحجاز انقطع غليه
@@ -398,9 +355,7 @@
                             <l>خض بحر فظ حديثه تغش العلا </l>
                             <l> وأجزم بصدقك ناطقاً إذ تسند</l>
                         </lg>
-                        <p>وبيت عاطل هو <pb ed="shamela"
-                   n="n58-p7"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3783.xhtml"/> العالم العالم الإمام لدى
+                        <p>وبيت عاطل هو <pb ed="shamela" n="n58-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3783.xhtml"/> العالم العالم الإمام لدى
                             العلا <gap resp="#org_MS"/> العامل الحكم الهمام الأوحد</p>
                         <p>وبيت شطره الأول مما يستحيل الانعكاس وشكره الثاني عاطل مع كونه مما لا يستحيل أيضاً فالأول مركب من آمن والثاني من
                             أحمد وهو:</p>
@@ -436,9 +391,7 @@
                             <l> عكسها صحفه تلقى فيه الحسن (؟) أجمعا</l>
                         </lg>
                         <p>ومنه:</p>
-                        <p>فعش ما شئت في الدنيا وأدرك <gap resp="#org_MS"/> بها ما شئت من صيت وصوت <pb ed="shamela"
-                   n="n58-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3784.xhtml"/> فحبل العيش موصول بقطع
+                        <p>فعش ما شئت في الدنيا وأدرك <gap resp="#org_MS"/> بها ما شئت من صيت وصوت <pb ed="shamela" n="n58-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3784.xhtml"/> فحبل العيش موصول بقطع
                             <gap resp="#org_MS"/> وخيط العمر معقود بموت</p>
                         <p>ومنه:</p>
                         <lg type="bayt">
@@ -474,9 +427,7 @@
                             <l> منه أُبعدت مزارا</l>
                         </lg>
                         <p>واستوفى ما في الباب قال الشهاب فلم أجد له قافية فكتب على لسان حميد الدين قصيدة بغدادية أولها:</p>
-                        <p>أي خدانود عجعبو <gap resp="#org_MS"/> عن موالاة التناغي <pb ed="shamela"
-                   n="n58-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3785.xhtml"/> فلم يقدر على الجواب
+                        <p>أي خدانود عجعبو <gap resp="#org_MS"/> عن موالاة التناغي <pb ed="shamela" n="n58-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3785.xhtml"/> فلم يقدر على الجواب
                             بمثلها وكتب إليه يقول:</p>
                         <lg type="bayt">
                             <l>يا شهاب الدين يا أح </l>
@@ -515,9 +466,7 @@
                         <p>ولما دخل مصر بعد الخمسين في الطاعون وجد غالب من ببيت الكمال ابن البزازي مات كزوجته وأخته فرثاهم بقصيدة طنانة على
                             عدة قوافي وأظهر في مخالصها من كل قافية إلى الأخرى قوة كعجيبة وملكة للنظم لا ينهض غيره بشق غبارها من قافية اللام
                             إلى قافية الألف إلى الهاء إلى غيرها تزيد عل سبعين بيتاً أولها:</p>
-                        <p>إلى مَ يردى بالكمال <gap resp="#org_MS"/> ويودي بالردى أهل الكمال اه. <pb ed="shamela"
-                   n="n58-p10"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3786.xhtml"/> وقال في ترجمة العلامة
+                        <p>إلى مَ يردى بالكمال <gap resp="#org_MS"/> ويودي بالردى أهل الكمال اه. <pb ed="shamela" n="n58-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3786.xhtml"/> وقال في ترجمة العلامة
                             المقريزي: أحمد بن علي بن عبد القادر بن محمد بن إبراهيم بن محمد بن تيميم بن عبد الصمد بن أبي الحسين ابن عبد الصمد
                             ابن تميم ال ثقفي أبو العباس ابن العلا ابن المحيوي لحسيني العبيدي البعلي الأصلي القاهري سبط ابن الصائغ ويعرف بابن
                             المقريزي وهي نسبة لحارة في بعلبك تعرف بحارة المقارزة وكان أصله من بعلبك وجده من كبار المحدثين فتحول ولده إلى
@@ -535,9 +484,7 @@
                             وأنقى وقال الشعر والنثر وحصل وأفاد وناب في الحكم وكتب التوقيع وولي الحسبة بالقاهرة غير مرة أولها في سنة إحدى
                             وثماني مائة والخطابة بجامع عمرو وبمدرسة حسن الإمامة بجامع الحاكم ونظره وقرأ الحديث بالمؤيدية عوضاً عن لمحب ابن
                             نصر الله حين استقراره في تدريس الحنابلة بها وغير ذلك وحمدت سيرته في مباشراته وكان قد اتصل بالظاهر برقوق ودخل
-                            دمشق مع ولده الناصر في سنة عشر وعاد معه <pb ed="shamela"
-                   n="n58-p11"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3787.xhtml"/> وعرض عليه قضاؤها مراراً
+                            دمشق مع ولده الناصر في سنة عشر وعاد معه <pb ed="shamela" n="n58-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3787.xhtml"/> وعرض عليه قضاؤها مراراً
                             فأبى وصحب بشبك الداودار وقتاً ونالته منه دنيا بل يقال أنه أودع عنده نقداً وحج غير مرة وجاور.</p>
                         <p>وكذا دخل دمشق مراراً وتولى بها ونظر وقف القلانسي والبيمارستان النوري مع كون شرط نظره لقاضيها الشافعي وتدريس
                             الأشرفية والإقبالية وغيرها ثم أعرض عن ذلك وأقام ببلده عاكفاً على الاشتغال بالتاريخ حتى اشتهر به ذكره وبعد فيه
@@ -554,9 +501,7 @@
                             الفوائد يشتمل على علمي العقل والنقل المحتوي على فني الجد والهزل بلغت مجلداته نحو المئة وما شاهده وسمعه مما لم
                             ينقل في كتاب. وشاع النحاة الحق منها والإشارة والإيماء إلى حل لغز الماء وهو ظريف وغير ذلك وقرض سيرة المؤيد لابن
                             ناهض وقد قرأت بخطه أن تصانيفه زادت على مائتي مجلدة كبار وإن شيوخه بلغت ستمائة نفس وكان حسن المذاكرة بالتاريخ
-                            لكنه قليل المعرفة بالمتقدمين ولذلك يكثر له فيهم وقوع التحريف والسقط وربما صحف في المتون. <pb ed="shamela"
-                   n="n58-p12"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3788.xhtml"/> ومما رأيته
+                            لكنه قليل المعرفة بالمتقدمين ولذلك يكثر له فيهم وقوع التحريف والسقط وربما صحف في المتون. <pb ed="shamela" n="n58-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3788.xhtml"/> ومما رأيته
                             في ذلك أن ابن بدر وهو بفتح الموحدة والدال المهملة فضبطه بخطه بالبدل وعلى ابن منصور الكرخي شيخ السلفي وهو بالجيم
                             فضبطه بالخاء المعجمة وكثيراً ما يجعل عبد الله عبيد الله وعكسه بل وبلغني أنه جعل أبا طاهر ابن محمش راوي الحديث
                             المسلسل بالأولية حين حدث به بالخاء المعجمة بدل المهملة وأما في المتأخرين فقد انفرد في تراجمهم بما لا يوافق عليه
@@ -581,9 +526,7 @@
                         </lg>
                         <p>لكن أحسن و (له) الخبرة بالزايرجة والاصطرلاب والرمل والميقات بحيث أنه أخذ لابن خلدون طالعاً والتمس منه تعيين وقت
                             ولا ينه فيقال أنه ين له يوماً فكان كذلك وعد من النوادر.</p>
-                        <p>كل ذلك مع تبجيل الأكابر له إما مداراة له خوفاً من قلمه أو لحسن مذاكرته وقد حدث <pb ed="shamela"
-                   n="n58-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3789.xhtml"/> ببعض تصانيفه ومروباته
+                        <p>كل ذلك مع تبجيل الأكابر له إما مداراة له خوفاً من قلمه أو لحسن مذاكرته وقد حدث <pb ed="shamela" n="n58-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3789.xhtml"/> ببعض تصانيفه ومروباته
                             بمكة والقاهرة سمع منه الفضلاء وأخبر أنه سمع فضل الخير للدمياطي على أبي طلحة الحراوي مرتين فاعتدوا أخباره بذلك
                             وقرئ مرة بل كتب بخطه من قبيل موته بسنة أنه لا يعلم من شاركه في روايته ورأيت بخط صاحبنا النجم ابن فهد أنه حضره في
                             الرابعة علي الحراوي وما علمت مستنده في ذلك.</p>
@@ -610,9 +553,7 @@
                             الإسلامية. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n58-p14"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3790.xhtml"/>
+                        <pb ed="shamela" n="n58-p14" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3790.xhtml"/>
                         <head>ميزان المقادير في تبيان التقادير</head>
                         <p>لعلامة الإمامية وسيخ الفرقة العلوية الشيخ رضي الدين محمد القزويني</p>
                         <p>وكان أحد أفاضل القرن الحادي عشر من أعيان قزوين.</p>
@@ -633,9 +574,7 @@
                             نقود أنظار الأولين والآخرين. خازن مكتوم أسرار السابقين والاحقين. فخر السايدة والنجابة والفضيلة والكمال. عين
                             العظمة وشوكة الجلالة والإقبال. اعتضاد الحضرة المقدسة السلطانية. اعتماد الدولة العلية العالية الخاقانية. أبد الله
                             تعالى ظلال دولته إلى يوم الدين. بحرمه جده سيد المرسلين. وآباءه الأئمة الطاهرين المعصومين. فاعلم أن المقادير
-                            المذكورة على ثلاثة <pb ed="shamela"
-                   n="n58-p15"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3791.xhtml"/> أقسام. إما مقلدة بالوزن.
+                            المذكورة على ثلاثة <pb ed="shamela" n="n58-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3791.xhtml"/> أقسام. إما مقلدة بالوزن.
                             أو بالك يل. وإما بالمساحة. والبحث عنها إما يكون على وجه كشف حقائقها. أو على سوق يظهر دقائقها فانتظمت الرسالة
                             بتفصيلات افتتاحاً. وبتتميمات اختتاماً.</p>
                         <p>تفصيل فيه ذكر المقادير المقدرة بحسب الوزن</p>
@@ -652,9 +591,7 @@
                         <p>الطسوج وهو قدر حبتين من شعيرتين متوسطتين وهو مشهور وبه فسره أهل اللغة أيضاً ولم أجد فيه خلافاً.</p>
                         <p>والقيراط وهو قيراطان قيراط الدرهم وقيراط الدينار. وهذا أيضاً مكي وعراقي فبالحقيقة ثلاثة أقسام:</p>
                         <p>أما قيراط الدرهم فهو أربع شعيرات يبلغ طسوجين في القاموس في م ك ك لقيراط طسوجان والطسوج حبتان يني شعيرتين كذا في
-                            الصحاح. وقيل هو ست شعيرات فيبلغ <pb ed="shamela"
-                   n="n58-p16"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3792.xhtml"/> ثلاثة أساطيج يعني قيراط
+                            الصحاح. وقيل هو ست شعيرات فيبلغ <pb ed="shamela" n="n58-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3792.xhtml"/> ثلاثة أساطيج يعني قيراط
                             الدرهم.</p>
                         <p>وأما القيراط المكي للدينار فهو شعيرتان أو ستة أسباع شعيرة يبلغ سطوجاً وثلاثة أسباعه.</p>
                         <p>وأما القيراط العراقي فهو ثلاث شعيرات وثلاثة أسباع شعيرة يبلغ طسوجاً وخمسة أسباعه في القاموس القيراط والقرّاط
@@ -674,9 +611,7 @@
                             ومقدار الديات والجزية وغير ذلك. والدانق ثماني حبات من أوسط حب الشعير انتهى.</p>
                         <p>والمثقال هو مثقالان المثقال الشرعي وهو المعبر عنه بالدينار بلا خلاف لكن الدينار كثر استعماله في المسكوك من الذهب
                             كما أن أكثر استعمال الدرهم في المسكوك في الفضة قدره ثمان وستون شعيرة وأربعة أسباع شعيرة يبلغ درهماً وثلاثة
-                            أسباعه بالشرعي. في <pb ed="shamela"
-                   n="n58-p17"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3793.xhtml"/> الصحاح وكذا في القاموس
+                            أسباعه بالشرعي. في <pb ed="shamela" n="n58-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3793.xhtml"/> الصحاح وكذا في القاموس
                             المثقال الدرهم وثلاثة أسباع ردهم والدرهم ستة دوانيق والدانق قيراطان الخ. وهو المعتبر في الأحكام الشرعية بلا خلاف
                             يظهر من تتبع كلام الفقهاء. وما وقع في الحديث من أن المثقال من أن المثقال أربعة وعشرون قيراطاً أصغرها مثل حبل
                             واحد وأكبرها ما بين السماء والأرض فمجاز. والمثقال الصيرفي وهو المعروف في زماننا ستة أربع وخمسين ألف في أكثر بلاد
@@ -695,9 +630,7 @@
                         <p>والأوقية القديمة هي ألف وتسعمائة وعشرون شعيرة قدر أربعين درهماً يعني ثمانية وعشرين مثقالاً تبلغ ثمانية إساتير
                             وثمانية أتساع إستار بالمعنى الأول في الصحاح تصريح به وبما سبق منه في موضع آخر كما مر بقوله الأوقية في الحديث
                             أربعون درهماً وكذلك كان فيما مضى فأما اليوم فيما يتعارفها الناس ويقدر عليه الأطباء فالأوقية عندهم وزن عشرة دراهم
-                            وخمسة أسباع درهم وهو إستار وثلثا إستار انتهى وما وقع في الحديث من <pb ed="shamela"
-                   n="n58-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3794.xhtml"/> تفسير الأوقية بأعظم من
+                            وخمسة أسباع درهم وهو إستار وثلثا إستار انتهى وما وقع في الحديث من <pb ed="shamela" n="n58-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3794.xhtml"/> تفسير الأوقية بأعظم من
                             جبل أحد فمجاز.</p>
                         <p>والنتس بالتشديد وهو تسعمائة وستون شعيرة قدر عشرين درهماً يعنى أربعة عشر مثقالاً يبلغ نصف أوقية قديمة كذا في
                             الصحاح والقاموس ورووا كان صداق أزواج النبي صلى الله عليه وعلى آله اثنتي عشرة أوقية ونشاً أتدرون ما النس هو نصف
@@ -715,9 +648,7 @@
                         <p>والمن ويقال له المنا مقصوراً أو المشهور منه منان المن المصري والإنطاليقي وهو ثمانية آلاف ومائتان وثمانية وعشرون
                             شعيرة قدر ست عشرة أوقية جديدة بالمعنى الأول يبلغ رطلاً وثلث رطل على تفسير العامة وفي القانون أيضاً ست عشرة أوقية
                             والخلاف في تفسيرها كما مر. والمن الرومي وهو عشرة آلاف وثمانمائة وثماني شعيرات قدر إحدى وعشرين أوقية بالمعنى
-                            المذكور يبلغ رطلاً وثلاثة أرباع رطل وفي القانون عشرون أوقية يبلغ رطلاً وثلثي رطل بتفسيره. <pb ed="shamela"
-                   n="n58-p19"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3795.xhtml"/> والمن الطبي
+                            المذكور يبلغ رطلاً وثلاثة أرباع رطل وفي القانون عشرون أوقية يبلغ رطلاً وثلثي رطل بتفسيره. <pb ed="shamela" n="n58-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3795.xhtml"/> والمن الطبي
                             وهو اثنا عشر ألفاً واثنان وأربعون شعيرة وستة أسباع شعيرة يبلغ رطلين وبعبارة أخرى أربع وعشرون أوقية ولا خلاف فيه
                             إلا ما يقتضيه ما في القانون من تفسير الأوقية.</p>
                         <p>والمن التبريزي وهو خمسون ألفاً وأربعمائة شعيرة يبلغ ستمائة مثقال صيرفي كما هو المتعارف في زماننا. والمن الشاهي
@@ -737,9 +668,7 @@
                         <p>والقنطار بالكسر قيل مائة وعشرون رطلاً وفي القاموس وزن أربعين أوقية من ذهب أو ألف ومائتا درهم أو مائة رطل من ذهب
                             أو من فضة إلى ألف أو ملأ مسك ثور ذهباً أو فضة انتهى.</p>
                         <p>وهذا الأخير هو الشائع وبعض المفسرين حمل ما في قوله تعالى (وآتيتم إحداهن قنطارا) وما وقع في الأحاديث مع تقديره في
-                            بعضها بألف ومائتي وقية والوقية بأعظم من جبل أحد <pb ed="shamela"
-                   n="n58-p20"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3796.xhtml"/> وفي بعضها بخمسة عشر ألف
+                            بعضها بألف ومائتي وقية والوقية بأعظم من جبل أحد <pb ed="shamela" n="n58-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3796.xhtml"/> وفي بعضها بخمسة عشر ألف
                             مثقال من ذهب والمثقال بأربعة وعشرين قيراطاً أصغرها مثل جبل أحد وأكبرها ما بين السماء والأرض فمجاز.</p>
                         <p>تفصيل فيه ذكر المقادير المقدرة بحسب الكيل</p>
                         <p>هذه التقديرات ينتهي أكثرها إلى مكيال يقال له المد بالضم معياره تخميناً ملأ كف الإنسان المعتدل إذا ملأها ومد يده
@@ -757,9 +686,7 @@
                             تفسير الخاصة وإليه ذهب الرافعي من العامة ومن تبعه. والرابع مائتان وسبعة وخمسون درهماً وسبع درهم هو مائة وثمانون
                             مثقالاً يبلغ رطلين على تفسير العامة نقله صاحب القاموس ونسبه صاحب الصحاح إلى أهل العراق. والخامس مائتان وتسعة
                             وثمانون درهماً وسبعا درهم هو اثنان ومائتا مثقال ونصف مثقال يبلغ رطلين وربعاً على تفسير العامة. وإليه ذهب العلامة
-                            من الخاصة رحمة الله عليه. والسادس مائتان واثنان وتسعون درهماً ونصف درهم هو أربعة ومائتا مثقال <pb ed="shamela"
-                   n="n58-p21"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3797.xhtml"/> وثلاثة أرباع
+                            من الخاصة رحمة الله عليه. والسادس مائتان واثنان وتسعون درهماً ونصف درهم هو أربعة ومائتا مثقال <pb ed="shamela" n="n58-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3797.xhtml"/> وثلاثة أرباع
                             مثقال يبلغ رطلين وربعاً على تفسير الخاصة وإليه ذهب جمهور فقهائنا رضوان اله عليهم أجمعين (والقسط) وهو مكيال يسع
                             مدين بالمعنى الثاني على ما يستفاد من القاموس إذ فسره بما يسع نصف صاع والصاع بأربعة أمداد بذلك المعنى وقيل هو
                             أربعة أرطال بتفسير العامة وحينئذ يبلغ مدين بالمعنى الرابع. ونقل الشيخ في أواخر القانون أن القسط عند الروم رطل
@@ -777,9 +704,7 @@
                         <p>والكيلجة وهي منّ وسبعة أثمان منّ بالطبي يبلغ ثلاثة أرطال وثلاثة أرباع رطل على تفسير العامة كذا في الصحاح والقاموس
                             (والكوك) كتنور وهو كما في الصحاح ثلاث كيلجات يعني أحد عشر رطلاً وربع رطل كذا في القاموس.</p>
                         <p>والويبة بتقديم الياء المثناة التحتانية وهي اثنان أو أربعة وعشرون مداً كذا في القاموس فيجري فيها المذهب الثاني
-                            والرابع اللذان نقلهما في المد ففيها أربعة احتمالات. <pb ed="shamela"
-                   n="n58-p22"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3798.xhtml"/> والفرق وهو مكيال يسع ستة
+                            والرابع اللذان نقلهما في المد ففيها أربعة احتمالات. <pb ed="shamela" n="n58-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3798.xhtml"/> والفرق وهو مكيال يسع ستة
                             عشر رطلاً عراقياً على تفسير العامة كما في الصحاح يبلغ ثمانية أمنان وتفسيره بما يسع ثلاثة أصوع لا يغاير هذا
                             التفسير إذا كان المختار عند المفسرين به أن الصاع خمسة أرطال وثلث فالترديد في تفسيره بين ما يسع ثلاثة أصوع وما
                             يسع ستة عشر رطلاً من صاحب القاموس كأنه لاختلاف التعبير مع كونه بعيداً جداً.</p>
@@ -799,9 +724,7 @@
                             السطح الصغير منها يعني أحد جنبيها وبعضهم لم يقفوا في التقدير على عرض الشعيرة وتجاوزوا عنها وقدروا عرض الشعيرة
                             أيضاً بعرض شعر البرذون ذبه كما قال صاحب البهائية أو عرفه كما صرح به صاحب القسطاس وقيل عرض كل شعيرة ست شعيرات منه
                             وقيل سبع شعيرات فبعد هذا التأسيس اعلم أن هذا القسم من المقادير ينقسم إلى ثلاثة أقسام إما أن يعتبر فيه المساحة
-                            الخطية. وإما أن يعتبر فيها المساحة السطحية. أي مربع الخط. وإما أن يعتبر فيها المساحة الجسمية أي مكعبه <pb ed="shamela"
-                   n="n58-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3799.xhtml"/>
+                            الخطية. وإما أن يعتبر فيها المساحة السطحية. أي مربع الخط. وإما أن يعتبر فيها المساحة الجسمية أي مكعبه <pb ed="shamela" n="n58-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3799.xhtml"/>
                             فالقسم الأول الذي يعتبر فيه المساحة الخطية (الإصبع) وهي قدرت بست شعيرات متلاصقات بالسطح الكبر بحيث يكون ظهر كل
                             منهما على بطن الآخر وبها قدرها صاحب الجغميني. وقيل سبع وبها قدرها شارح اللمعة ففيها أيضاً مذهبان وفي كل مهما
                             يجري احتمالاً تقدير أربعة. الأول كونها ست شعيرات والشعيرة ست شعرات. والثاني. كونها سبع شعيرات والشعيرة سبع
@@ -821,9 +744,7 @@
                         <p>والخطوة والقامة من الإنسان والمعتبر منهما هو المتعارف الوسط ولم يقدرا بشيءٍ معين.</p>
                         <p>والذراع وهي ثلاث الذراع الشرعية ويقال لها القائم وهي ذراع المحدثين وللأصل فيها من طرف المرفق إلى طرف الإصبع
                             الوسطى أو الساعد قدرت بأربع وعشرين إصبعاً يبلغ ست قبضات والذراع الحديد ويقال لها السوداء قدرت بسبع وعشرين إصبعاً
-                            يبلغ سبع <pb ed="shamela"
-                   n="n58-p24"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3800.xhtml"/> قبضات إلا إصبعاً والذراع
+                            يبلغ سبع <pb ed="shamela" n="n58-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3800.xhtml"/> قبضات إلا إصبعاً والذراع
                             الهاشمية وهي ذراع القدماء قدرت باثنين وثلاثين إصبعاً يبلغ ثماني قبضات هذه الثلاثة هي المنقول والأذرع المتداولة
                             في زماننا بحسب البلاد في زماننا غير محدود.</p>
                         <p>والقصبة وهي ست أذرع بالهما شمية وسبع وتسع بالحديد وثماني بالشرعية.</p>
@@ -834,16 +755,14 @@
                             بالهاشمية ونقل صاحب القاموس في تفسيره شعرة آلاف أيضاً وظاهره الشرعي ففيه ثلاثة احتمالات وقول صاحب القاموس في
                             الميل أنه ثلاثة أو أربعة آلاف ذراع بحسب اختلافهم في الفرسخ هل هو تسعة آلاف بذراع القدماء أو اثنا عشر ألف ذراع
                             بذراع المحدثين انتهى إشارة إلى الأول إلى قولين مختلفين فيه وإن كانت عبارته موهمة لخلاف المراد معناها إنه إن
-                            اعتبرت في تقدير الفرسخ ذراع القدماء أي الهاشمية وقدر بتسعة آلاف منها فالميل ال1ي يكون ثلث الفرسخ عبارة عن ثلاثة
+                            اعتبرت في تقدير الفرسخ ذراع القدماء أي الهاشمية وقدر بتسعة آلاف منها فالميل ال <tei:num value="1" xml:lang="ar">١</tei:num> ي يكون ثلث الفرسخ عبارة عن ثلاثة
                             آلاف بهذه الذراع وإن اعتبرت فيه ذراع المحدثين أي الشرعية وقدر باثني عشر ألف منها فالميل عبارة عن ثلاثة أيضاً
                             يعني أربعة آلاف بتلك الذراع وإن اعتبرت فيه ذراع المحدثين أي الشرعية وقدر باثني عشر ألف منها فالميل عبارة عن
                             ثلاثة أيضاً يعني أربعة آلاف بتلك الذراع ولا تفاوت بالتقدير إلا بالاعتبار كما أشار إليه المبيدي في حاشيته على شرح
                             الجغميني بقوله هو ثلاثة أميال بالاتفاق وذراعان الميل أربعة آلاف كل اثنان وثلاثون عند المتقدمين وعلى التقديرين
                             الميل ستة وتسعون ألف إصبع انتهى هذا ولكن دعوى الاتفاق في كون الفرسخ ثلاثة أميال مزيفة بما نقلناه عن صاحب القاموس
                             في تفسيره يعني عشرة آلاف ذراع ولم ينقل أحد تفسير الميل بما يطابق ثلثه.</p>
-                        <p>والبريد وهو عبارة عن اثني عشرة ميلاً يبلغ أربعة فراسخ وهو المشهور ونقل صاحب القاموس في تقديره فرسخين. <pb ed="shamela"
-                   n="n58-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3801.xhtml"/>
+                        <p>والبريد وهو عبارة عن اثني عشرة ميلاً يبلغ أربعة فراسخ وهو المشهور ونقل صاحب القاموس في تقديره فرسخين. <pb ed="shamela" n="n58-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3801.xhtml"/>
                             والمسافة وهي التي شرع عند القصد إليها مع شروطه القصر في الصلوة والصوم اختلف فيها فقيل أربعة فراسخ يبلغ بريداً
                             بالمعنى المشهور وقيل ثمانية فراسخ يبلغ بريدين بهذا المعنى ففيه مذهبان ويجري في كل واحد الاحتمالات المذكورة في
                             الفرسخ ففيها ستة احتمالات يصير في المآل عند ملاحظة المذاهب الثلاثة في الإصبع ثمانية عشر احتمالاً.</p>
@@ -859,9 +778,7 @@
                         <p>الباقي للآتي. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n58-p26"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3802.xhtml"/>
+                        <pb ed="shamela" n="n58-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3802.xhtml"/>
                         <head>علماؤنا</head>
                         <p>وكيف ينشئون أبناءهم</p>
                         <p>إن العالم الذي أصفه في مقالي هذا ليس مما أنبتته بلدتنا طرابلس الشام وحدها.</p>
@@ -883,9 +800,7 @@
                         <p>فكان لا يرعري ولا يزدجر. ثم أخذ يوبخه جهرة صار الولد يحاسب نفسه ويصلح سيرته.</p>
                         <p>قالوا: ولكنك تشتمه لأمر تافه لا علاقة له بما تقول. فقد سمعناك توبخه مذ وضع الكرسيّ في غير الموضع الذي تريد أن
                             يضعه فيه. وهذا لا يحسن بحال من الأحوال أن يوبّخ عليه. لاسيما وهو لا يعلم الغيب الذي وقر في نفسك من لزوم وضع
-                            الكرسيّ في هذا <pb ed="shamela"
-                   n="n58-p27"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3803.xhtml"/> المكان دون ذاك.</p>
+                            الكرسيّ في هذا <pb ed="shamela" n="n58-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3803.xhtml"/> المكان دون ذاك.</p>
                         <p>فتخلص الأستاذ من الجواب على هذا الاعتراض إلى وصف ذكاء ابنه. وصفاء ذهنه. وأنه يفهم ويحفظ ما يلقى عليه بسرعة. وقد
                             حفظ مرة كتابا صغيرا في قواعد اللغة الفارسية وحذق جميع مسائله في وقت قصير. ثم قال: لكن ابني مع هذا الذكاء النادر
                             كسول لا يهتم بحفظ دروسه. ولا يصبر على المطالعة. ولو فعل لكان من النابغين الأولين. وعد في مقدمة الطلاب
@@ -904,9 +819,7 @@
                         <p>قال الراوي: قلت بلى يا سيدي الأستاذ فهمت كل ما تقول ولكنك أنت لم تفهم بعضاً مما أقول:</p>
                         <p>إن قوة الذكاء والفهم غير قوة الميل والرغبة. فما لم تتوفر في الطالب هاتان القوتان لا يقال عنه أنه مستعد للطلب. ولا
                             ذو قابلية للعلم. وإن ابنك ذكي سريع الفهم. لكنه كسول ضعيف الميل. فهو إذن قد توفرت فيه قوة دون قوة. ألا ترى أن
-                            كثيرين من الطلاب هم <pb ed="shamela"
-                   n="n58-p28"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3804.xhtml"/> على العكس من ابنك: ترى
+                            كثيرين من الطلاب هم <pb ed="shamela" n="n58-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3804.xhtml"/> على العكس من ابنك: ترى
                             الواحد منهم كثير الرغبة والميل لتحصيل العلم متوفراً على الدرس والمطالعة جهده. لكنه ينقصه قوة الذكاء والفهم
                             المتوفرة في ابنك. فيضيع عمره ولا يستفيد شيئاً من العلم. وإلا ليلق بمن كان كذلك_أي كان ذكياً لكنه كسول أو مجتهداً
                             لكنه بليد_أن يدع طلب العلم ويأخذ عملاً آخر ينتفع به.</p>
@@ -925,9 +838,7 @@
                             منذ الطفولة. ويلزمونهم إياه بكل وسيلة. ولا يكون في كثير منهم ميل إليه. واستعداد له. فيقضون أعمارهم فيه. من غير
                             أن يكون لهم نصيب منه. سوى القيافة الخاصة. عمامة وطيلسان. وجبة واسعة الأردان.</p>
                         <p>وهناك سبب آخر يحمل الآخرين على الاشتغال بطلب العمر من دون أن تتوفر فيهم القابلية له فلا ينالون حظاً منه: أولئك
-                            يريدون الفرار من الخدمة العسكرية وتضيق ذات <pb ed="shamela"
-                   n="n58-p29"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3805.xhtml"/> يدهم في الغالب عن البدل
+                            يريدون الفرار من الخدمة العسكرية وتضيق ذات <pb ed="shamela" n="n58-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3805.xhtml"/> يدهم في الغالب عن البدل
                             النقدي فيشتغلون في التحصيل لهذا الغرض.</p>
                         <p>وقد ينبع بين هؤلاء أفراد يصبحون فخراً لقومهم. ونبراس هدى في وطنهم. أما الآخرون وهم معظم الطلاب فيحذقون من العلم
                             القدر الذي ينجيهم من الخدمة العسكرية ثم لا يلبثون أن يستغلوا عنه فينسوه رويداً رويدا. ويكونون إلى سن صعب معها
@@ -947,80 +858,72 @@
                             عيون تراقبهم. وتناقشهم لحساب أعمالهم. حتى إذا اقترف أحدهم ما لا يلاءم الآداب صنفه. وكرامة دينه. أكره على التجرد
                             من زيه العلمي. ثم ليختر لنفسه صناعة أخرى أو يبقى متشرداً كما يريد. وإلا فإن ظهور أهل الدين في مظهر يزري بهم ويحط
                             من قدرهم ويدعو إلى النفر منهم وترفع أبناء الخاصة عن الدخول في سلكهم. فلا يعود ينضم إليهم سوى الحثالة. من أهل
-                            الجهالة. وذوي البطالة. <pb ed="shamela"
-                   n="n58-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3806.xhtml"/> طرابلس الشام:</p>
+                            الجهالة. وذوي البطالة. <pb ed="shamela" n="n58-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3806.xhtml"/> طرابلس الشام:</p>
                         <p>المغربي. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n58-p31"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3807.xhtml"/>
+                        <pb ed="shamela" n="n58-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3807.xhtml"/>
                         <head>صحافتنا وصحافتهم</head>
                         <p>يا أمتنا إذا أردت أن يكون لك حول وطول وكلمة عالية مسموعة ومنزلة مهمة عند دولتك وسائر دول الأرض فاقبلي على صحافتك
                             الوطنية إقبال الشعب الأميركي على صحافته.</p>
                         <p>صحافة الولايات المتحدة وصحافتنا</p>
-                        <p>عدد سكان ولاية ميسوري 3166665 عدد صحافتها 1048</p>
-                        <p>=== أوهايو 4157545== 1189</p>
-                        <p>=== إبلنيز 4821== 1746</p>
-                        <p>=== بنسلفانيا 6302115== 1524</p>
-                        <p>=== أيوي 2231883== 1132</p>
-                        <p>=== مشغن 2420952== 810</p>
-                        <p>=== انديانا 2516462== 851</p>
-                        <p>=== مستشوستس 2805346== 654</p>
-                        <p>=== تكسس 3048710== 851</p>
-                        <p>=== كرولينا الشمالية 1893810== 266</p>
-                        <p>=== تنسى 2020616== 298</p>
-                        <p>=== ويسكنسن 2206904== 732</p>
-                        <p>=== كنتكي 2147174== 338</p>
-                        <p>=== جورجيا 2216331== 395</p>
-                        <p>=== مسيسبي 1551270== 251</p>
-                        <p>=== منسوتا 1751394== 770</p>
-                        <p>=== الاباما 1828697== 230</p>
-                        <p>=== فرجينا 1854184== 249</p>
-                        <p>=== نيوجرسي 1883669== 390</p>
-                        <p>=== اركنسس 1311564== 289</p>
-                        <p>=== كرولينا الجنوبية 1340316== 156 <pb ed="shamela"
-                   n="n58-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3808.xhtml"/> === لوزيانا 1381625==
-                            736</p>
-                        <p>=== كلفورنيا 1485053== 738</p>
-                        <p>=== فلوريدو528542== 183</p>
-                        <p>=== ماين 539700== 158</p>
-                        <p>=== كولبوريدو 694466== 374</p>
-                        <p>=== كنتكتت 908420== 173</p>
-                        <p>=== غربي فرجينيا 958800== 217</p>
-                        <p>=== نبراسكا 1066300== 659</p>
-                        <p>=== ماريلند 11880440== 206</p>
-                        <p>=== اوكلاهوما 3988331== 303</p>
-                        <p>=== داكوتا الجنوبية 401570== 393</p>
-                        <p>=== نيو همشر 411588== 94</p>
-                        <p>=== اورغن 413536== 240</p>
-                        <p>=== روداليند 228556== 59</p>
-                        <p>=== واشنطن 518103== 99</p>
-                        <p>=== يوفا 276749== 83</p>
-                        <p>=== مقاطعة كولمبيا 275718== 82</p>
-                        <p>=== داكوتا الشمالية 4191646== 233</p>
-                        <p>=== فزيمونت 343641== 76</p>
-                        <p>=== مقاطعة الهنود 392060== 164</p>
-                        <p>=== نفادا 42335== 35</p>
-                        <p>=== الاسكا 63592== 45</p>
-                        <p>=== اريزونا 122931== 66</p>
-                        <p>=== ايدهو 161772== 99</p>
-                        <p>=== دلوار 184735== 140 <pb ed="shamela"
-                   n="n58-p33"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3809.xhtml"/> === نيو ميكسيكو 195310==
-                            63</p>
+                        <p>عدد سكان ولاية ميسوري  <tei:num value="3166665" xml:lang="ar">٣١٦٦٦٦٥</tei:num>  عدد صحافتها  <tei:num value="1048" xml:lang="ar">١٠٤٨</tei:num> </p>
+                        <p>=== أوهايو  <tei:num value="4157545" xml:lang="ar">٤١٥٧٥٤٥</tei:num> ==  <tei:num value="1189" xml:lang="ar">١١٨٩</tei:num> </p>
+                        <p>=== إبلنيز  <tei:num value="4821" xml:lang="ar">٤٨٢١</tei:num> ==  <tei:num value="1746" xml:lang="ar">١٧٤٦</tei:num> </p>
+                        <p>=== بنسلفانيا  <tei:num value="6302115" xml:lang="ar">٦٣٠٢١١٥</tei:num> ==  <tei:num value="1524" xml:lang="ar">١٥٢٤</tei:num> </p>
+                        <p>=== أيوي  <tei:num value="2231883" xml:lang="ar">٢٢٣١٨٨٣</tei:num> ==  <tei:num value="1132" xml:lang="ar">١١٣٢</tei:num> </p>
+                        <p>=== مشغن  <tei:num value="2420952" xml:lang="ar">٢٤٢٠٩٥٢</tei:num> ==  <tei:num value="810" xml:lang="ar">٨١٠</tei:num> </p>
+                        <p>=== انديانا  <tei:num value="2516462" xml:lang="ar">٢٥١٦٤٦٢</tei:num> ==  <tei:num value="851" xml:lang="ar">٨٥١</tei:num> </p>
+                        <p>=== مستشوستس  <tei:num value="2805346" xml:lang="ar">٢٨٠٥٣٤٦</tei:num> ==  <tei:num value="654" xml:lang="ar">٦٥٤</tei:num> </p>
+                        <p>=== تكسس  <tei:num value="3048710" xml:lang="ar">٣٠٤٨٧١٠</tei:num> ==  <tei:num value="851" xml:lang="ar">٨٥١</tei:num> </p>
+                        <p>=== كرولينا الشمالية  <tei:num value="1893810" xml:lang="ar">١٨٩٣٨١٠</tei:num> ==  <tei:num value="266" xml:lang="ar">٢٦٦</tei:num> </p>
+                        <p>=== تنسى  <tei:num value="2020616" xml:lang="ar">٢٠٢٠٦١٦</tei:num> ==  <tei:num value="298" xml:lang="ar">٢٩٨</tei:num> </p>
+                        <p>=== ويسكنسن  <tei:num value="2206904" xml:lang="ar">٢٢٠٦٩٠٤</tei:num> ==  <tei:num value="732" xml:lang="ar">٧٣٢</tei:num> </p>
+                        <p>=== كنتكي  <tei:num value="2147174" xml:lang="ar">٢١٤٧١٧٤</tei:num> ==  <tei:num value="338" xml:lang="ar">٣٣٨</tei:num> </p>
+                        <p>=== جورجيا  <tei:num value="2216331" xml:lang="ar">٢٢١٦٣٣١</tei:num> ==  <tei:num value="395" xml:lang="ar">٣٩٥</tei:num> </p>
+                        <p>=== مسيسبي  <tei:num value="1551270" xml:lang="ar">١٥٥١٢٧٠</tei:num> ==  <tei:num value="251" xml:lang="ar">٢٥١</tei:num> </p>
+                        <p>=== منسوتا  <tei:num value="1751394" xml:lang="ar">١٧٥١٣٩٤</tei:num> ==  <tei:num value="770" xml:lang="ar">٧٧٠</tei:num> </p>
+                        <p>=== الاباما  <tei:num value="1828697" xml:lang="ar">١٨٢٨٦٩٧</tei:num> ==  <tei:num value="230" xml:lang="ar">٢٣٠</tei:num> </p>
+                        <p>=== فرجينا  <tei:num value="1854184" xml:lang="ar">١٨٥٤١٨٤</tei:num> ==  <tei:num value="249" xml:lang="ar">٢٤٩</tei:num> </p>
+                        <p>=== نيوجرسي  <tei:num value="1883669" xml:lang="ar">١٨٨٣٦٦٩</tei:num> ==  <tei:num value="390" xml:lang="ar">٣٩٠</tei:num> </p>
+                        <p>=== اركنسس  <tei:num value="1311564" xml:lang="ar">١٣١١٥٦٤</tei:num> ==  <tei:num value="289" xml:lang="ar">٢٨٩</tei:num> </p>
+                        <p>=== كرولينا الجنوبية  <tei:num value="1340316" xml:lang="ar">١٣٤٠٣١٦</tei:num> ==  <tei:num value="156" xml:lang="ar">١٥٦</tei:num>  <pb ed="shamela" n="n58-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3808.xhtml"/> === لوزيانا  <tei:num value="1381625" xml:lang="ar">١٣٨١٦٢٥</tei:num> ==
+                             <tei:num value="736" xml:lang="ar">٧٣٦</tei:num> </p>
+                        <p>=== كلفورنيا  <tei:num value="1485053" xml:lang="ar">١٤٨٥٠٥٣</tei:num> ==  <tei:num value="738" xml:lang="ar">٧٣٨</tei:num> </p>
+                        <p>=== فلوريدو <tei:num value="528542" xml:lang="ar">٥٢٨٥٤٢</tei:num> ==  <tei:num value="183" xml:lang="ar">١٨٣</tei:num> </p>
+                        <p>=== ماين  <tei:num value="539700" xml:lang="ar">٥٣٩٧٠٠</tei:num> ==  <tei:num value="158" xml:lang="ar">١٥٨</tei:num> </p>
+                        <p>=== كولبوريدو  <tei:num value="694466" xml:lang="ar">٦٩٤٤٦٦</tei:num> ==  <tei:num value="374" xml:lang="ar">٣٧٤</tei:num> </p>
+                        <p>=== كنتكتت  <tei:num value="908420" xml:lang="ar">٩٠٨٤٢٠</tei:num> ==  <tei:num value="173" xml:lang="ar">١٧٣</tei:num> </p>
+                        <p>=== غربي فرجينيا  <tei:num value="958800" xml:lang="ar">٩٥٨٨٠٠</tei:num> ==  <tei:num value="217" xml:lang="ar">٢١٧</tei:num> </p>
+                        <p>=== نبراسكا  <tei:num value="1066300" xml:lang="ar">١٠٦٦٣٠٠</tei:num> ==  <tei:num value="659" xml:lang="ar">٦٥٩</tei:num> </p>
+                        <p>=== ماريلند  <tei:num value="11880440" xml:lang="ar">١١٨٨٠٤٤٠</tei:num> ==  <tei:num value="206" xml:lang="ar">٢٠٦</tei:num> </p>
+                        <p>=== اوكلاهوما  <tei:num value="3988331" xml:lang="ar">٣٩٨٨٣٣١</tei:num> ==  <tei:num value="303" xml:lang="ar">٣٠٣</tei:num> </p>
+                        <p>=== داكوتا الجنوبية  <tei:num value="401570" xml:lang="ar">٤٠١٥٧٠</tei:num> ==  <tei:num value="393" xml:lang="ar">٣٩٣</tei:num> </p>
+                        <p>=== نيو همشر  <tei:num value="411588" xml:lang="ar">٤١١٥٨٨</tei:num> ==  <tei:num value="94" xml:lang="ar">٩٤</tei:num> </p>
+                        <p>=== اورغن  <tei:num value="413536" xml:lang="ar">٤١٣٥٣٦</tei:num> ==  <tei:num value="240" xml:lang="ar">٢٤٠</tei:num> </p>
+                        <p>=== روداليند  <tei:num value="228556" xml:lang="ar">٢٢٨٥٥٦</tei:num> ==  <tei:num value="59" xml:lang="ar">٥٩</tei:num> </p>
+                        <p>=== واشنطن  <tei:num value="518103" xml:lang="ar">٥١٨١٠٣</tei:num> ==  <tei:num value="99" xml:lang="ar">٩٩</tei:num> </p>
+                        <p>=== يوفا  <tei:num value="276749" xml:lang="ar">٢٧٦٧٤٩</tei:num> ==  <tei:num value="83" xml:lang="ar">٨٣</tei:num> </p>
+                        <p>=== مقاطعة كولمبيا  <tei:num value="275718" xml:lang="ar">٢٧٥٧١٨</tei:num> ==  <tei:num value="82" xml:lang="ar">٨٢</tei:num> </p>
+                        <p>=== داكوتا الشمالية  <tei:num value="4191646" xml:lang="ar">٤١٩١٦٤٦</tei:num> ==  <tei:num value="233" xml:lang="ar">٢٣٣</tei:num> </p>
+                        <p>=== فزيمونت  <tei:num value="343641" xml:lang="ar">٣٤٣٦٤١</tei:num> ==  <tei:num value="76" xml:lang="ar">٧٦</tei:num> </p>
+                        <p>=== مقاطعة الهنود  <tei:num value="392060" xml:lang="ar">٣٩٢٠٦٠</tei:num> ==  <tei:num value="164" xml:lang="ar">١٦٤</tei:num> </p>
+                        <p>=== نفادا  <tei:num value="42335" xml:lang="ar">٤٢٣٣٥</tei:num> ==  <tei:num value="35" xml:lang="ar">٣٥</tei:num> </p>
+                        <p>=== الاسكا  <tei:num value="63592" xml:lang="ar">٦٣٥٩٢</tei:num> ==  <tei:num value="45" xml:lang="ar">٤٥</tei:num> </p>
+                        <p>=== اريزونا  <tei:num value="122931" xml:lang="ar">١٢٢٩٣١</tei:num> ==  <tei:num value="66" xml:lang="ar">٦٦</tei:num> </p>
+                        <p>=== ايدهو  <tei:num value="161772" xml:lang="ar">١٦١٧٧٢</tei:num> ==  <tei:num value="99" xml:lang="ar">٩٩</tei:num> </p>
+                        <p>=== دلوار  <tei:num value="184735" xml:lang="ar">١٨٤٧٣٥</tei:num> ==  <tei:num value="140" xml:lang="ar">١٤٠</tei:num>  <pb ed="shamela" n="n58-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3809.xhtml"/> === نيو ميكسيكو  <tei:num value="195310" xml:lang="ar">١٩٥٣١٠</tei:num> ==
+                             <tei:num value="63" xml:lang="ar">٦٣</tei:num> </p>
                         <p>يظهر من مطالعة هذا الجدول الذي جمعته بعد بذل الوقت الطويل أن نفادا أصغر ولاية في الولايات المتحدة الأمريكية بعدد
-                            سكانها. فهم يبلغون 42335 نفساً وعدد جرائدهم ومجلاتهم كما ترى يبلغ 35 جريدة ومجلّة أي أنّه يصيب كل 1209 أنفس منهم
+                            سكانها. فهم يبلغون  <tei:num value="42335" xml:lang="ar">٤٢٣٣٥</tei:num>  نفساً وعدد جرائدهم ومجلاتهم كما ترى يبلغ  <tei:num value="35" xml:lang="ar">٣٥</tei:num>  جريدة ومجلّة أي أنّه يصيب كل  <tei:num value="1209" xml:lang="ar">١٢٠٩</tei:num>  أنفس منهم
                             جريدة واحدة. هذا ما يرد عليهم من جرائد سائر الولايات المتحدة ومجلاتها</p>
                         <p>وولاية الاسكا تجيء فوق نفادا في عدد السكان. دع عنك عدم استبحارها في الحضارة والعمران بداعي إقليمها البارد جدّا
-                            ومع تقصيرها بذرائع الرقيّ عن شقيقاتها تقرأ أن لسكانها البالغ عددهم 63592 نفساً 45 جريدة ومجلّة أي أنه يصيب كل
-                            1412 نفساً منهم جريدة</p>
+                            ومع تقصيرها بذرائع الرقيّ عن شقيقاتها تقرأ أن لسكانها البالغ عددهم  <tei:num value="63592" xml:lang="ar">٦٣٥٩٢</tei:num>  نفساً  <tei:num value="45" xml:lang="ar">٤٥</tei:num>  جريدة ومجلّة أي أنه يصيب كل
+                             <tei:num value="1412" xml:lang="ar">١٤١٢</tei:num>  نفساً منهم جريدة</p>
                         <p>وقس على نفادا والاسكا بقية الولايات وقابل بين عدد السكان كل منها وعدد جرائدها ومجلاتها ولاسيما أحطّ مقاطعة في
                             الجمهورية بمعارفها وعلومها وأسباب تقدمها ألا وهي مقاطعة بقايا ذلك الشعب القديم شعب سكان أميركا الأصليين الهنود
-                            الذين ما زال أكثرهم عائشا عيشة الهمجية_قابل تجد أن لكل 2451 نفساً منهم جريدة فعددهم 392060 نفساً وعدد جرائدهم
-                            164 جريدة ومجلّة ثم قابل بين عدد سكان الجمهورية الأمريكية وعدد جرائدها وبين عدد سكان البلاد العثمانية وجرائدها
+                            الذين ما زال أكثرهم عائشا عيشة الهمجية_قابل تجد أن لكل  <tei:num value="2451" xml:lang="ar">٢٤٥١</tei:num>  نفساً منهم جريدة فعددهم  <tei:num value="392060" xml:lang="ar">٣٩٢٠٦٠</tei:num>  نفساً وعدد جرائدهم
+                             <tei:num value="164" xml:lang="ar">١٦٤</tei:num>  جريدة ومجلّة ثم قابل بين عدد سكان الجمهورية الأمريكية وعدد جرائدها وبين عدد سكان البلاد العثمانية وجرائدها
                             وتأمّل في الفرق واعتبر وانج باللائمة على مسببّي تأخرنا وتقهقرنا</p>
                         <p>صحافتنا</p>
                         <p>لا أعلم وأنا سحيق الدار كم هو عدد صحافة ولاية سوريا. إلا أنني لا أخالها تتجاوز عدد الأصابع فقد اتصل بي أن غير
@@ -1029,15 +932,13 @@
                             أسمائها</p>
                         <p>في أعظم مدن العربيّة</p>
                         <p>في القرن العشرين الذي اتصلت فيه بلاد العالم بعضها ببعض اتصال شرايين الجسم واختلطت شعوبها اختلاط الحابل بالنابل_في
-                            القرن العشرين الذي قويت فيه شوكة العلم_في <pb ed="shamela"
-                   n="n58-p34"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3810.xhtml"/> القرن الذي كثرت فيه
+                            القرن العشرين الذي قويت فيه شوكة العلم_في <pb ed="shamela" n="n58-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3810.xhtml"/> القرن الذي كثرت فيه
                             الثّورات والنهضات وظهرت الاختراعات والاكتشافات ألا يوجد في أعظم مدينة في البلاد العربيّة_في مدينة من أعرق مدن
                             الدنيا بقدمها_في بقعة من أفضل بقاع المعمورة بأرضها وسمائها وإقليمها وخيراتها_في دمشق أكثر من خمس أو ست جرائد
                             تستحق أن تسمّى جرائد؟</p>
                         <p>كثرة قرّائهم وقلّة قرّائنا</p>
                         <p>عدد سكان ولاية نفادا في أمريكا يقل عن سكان صالحيّة الشام على ما أرجح ولا يزيد كثيرا عن سكان حي نصارى دمشق ولأولئك
-                            35 جريدة وللدمشقيين البالغين ثلاثمائة ألف نفس ونيف خمس أو ست جرائد أو لكل ستين ألفا منهم جريدة وقراء الصحف منهم
+                             <tei:num value="35" xml:lang="ar">٣٥</tei:num>  جريدة وللدمشقيين البالغين ثلاثمائة ألف نفس ونيف خمس أو ست جرائد أو لكل ستين ألفا منهم جريدة وقراء الصحف منهم
                             لا يزيدون عن خمسة بالألف على ما أقدّر وأظن أن تقديري هذا في محله. فالطامة الكبرى ليست فقط بقلة جرائد دمشق بل
                             بقلّة عدد مشتركيها. فلجريدة حقيرة في الجمهورية الأمريكية العظمى مشتركون وقارئون أكثر من أكبر وأقدر وأشهر جريدة
                             في دمشق</p>
@@ -1047,13 +948,11 @@
                             في الجهات في حين أن مكانة المقتبس المعنوية لا تنقص مكانة عن مكانة صحيفة أميركية كبرى تطبع يوميا ستين ألف نسخة
                             كبيرة.</p>
                         <p>مقابلة وانتقاد</p>
-                        <p>في عاصمة نبراسكا البالغ عدد سكانها 65 ألفا عدة جرائد ومجلات ناجحة منها جريدتان عظيمتان سبق ذكرهما تشغل كل منهما
+                        <p>في عاصمة نبراسكا البالغ عدد سكانها  <tei:num value="65" xml:lang="ar">٦٥</tei:num>  ألفا عدة جرائد ومجلات ناجحة منها جريدتان عظيمتان سبق ذكرهما تشغل كل منهما
                             بناية عظيمة ومعدل ما تبعه إحداهما يوميا خمسون ألف نسخة وما تطبعه الأخرى أربعون ألف نسخة وبكل حريّة أقول معنويات
                             تينك الجريدتين الخطيرتين لا تفوق معنويات المقتبس وإنما تفوق بما لا يقاس بكثرة القارئين والمشتركين وتعدد الصفحات
                             وكبر الحجم وبشيء معنوي هو أنك تقرأ عنوانا لكل كتابة أو خبر في تينك الجريدتين تفهم منه ما يرمي إليه الكاتب قبل أن
-                            تطالع الكتابة أو المقالة أو الرسالة وترى الصور الكثيرة المهمة في كل عدد منهما كل يوم ولاسيما عدد الأحد <pb ed="shamela"
-                   n="n58-p35"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3811.xhtml"/>
+                            تطالع الكتابة أو المقالة أو الرسالة وترى الصور الكثيرة المهمة في كل عدد منهما كل يوم ولاسيما عدد الأحد <pb ed="shamela" n="n58-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3811.xhtml"/>
                             الكبير البالغ أربعا وعشرين صفحة كبيرة تقرأ فيه مقالات مشاهير وشهيرات الكُتّاب والكاتبات في أوروبا وأميركا.</p>
                         <p>وأما المقتبس فإنك لا تستطيع أن تفهم الكثير من مقالاته ورسائله وأخباره إلا بعد أن تقرأ الكتابة كلها وإذا كانت
                             طويلة فنضطر أحيانا إلى قراءة العمود أو العمودين أو الثلاثة الأعمدة منه لتلم أو لتقف على مغزاه ومرماه ومن حين
@@ -1071,9 +970,7 @@
                             اللغة العربية فهي تطبع نحو خمسة آلاف نسخة كل يوم ذات ثماني صفحات كبيرة حافلة بالمقالات المحبرة والأخبار المهمة
                             ومزينة بالرسوم الرامية إلى أغراض نافعة وإذا حققت وجدت أن ما تطبعه الهدى وحدها كل صباح لا يقل عما تطبعه جرائد
                             ولاية سورية مجموعة.</p>
-                        <p>لرم وعتاب <pb ed="shamela"
-                   n="n58-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3812.xhtml"/> لا أُريد أني أُنسب إلى
+                        <p>لرم وعتاب <pb ed="shamela" n="n58-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3812.xhtml"/> لا أُريد أني أُنسب إلى
                             أني أحرق الأُرّم وأُؤرث نيران المناظرة لغاية أو نكاية بين المستصغرين منزلة المهاجرين من المتخلفين والنابين عن
                             حياض المهاجرين فلهؤلاء مكانة سامية أبدعها جدهم وكدهم ولأولئك بتعريضهم عيون لا تبصر وأجسام لا تشعر وأغراض كلها
                             أمراض وإنما ألوم بل أعتب على ولاية رجالها ونساؤها وأولادها لا يقل عددهم عن مليون نفس هم عرب في عرب_على ولاية
@@ -1092,9 +989,7 @@
                         <p>صحافة هذا الدور هي غيرها في الماضي</p>
                         <p>لم تكن الصحافة موجودة بعرفي في دور نيرون القرن العشرين. فتلك التي كان العبيد المستعبدون يدعونها صحافة لم يكن
                             أكثرها إلا وريقات أو نشرات لنشر آيات التقديس والتدليس والتدنيس بل لإذاعة المين كل المين والتمويه كل التمويه
-                            والتجهيل كل التجهيل <pb ed="shamela"
-                   n="n58-p37"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3813.xhtml"/> والتضليل كل التضليل وكان
+                            والتجهيل كل التجهيل <pb ed="shamela" n="n58-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3813.xhtml"/> والتضليل كل التضليل وكان
                             الاستذلال والاستعباد يقضيان بدفن الحقائق واستحياء المخارق. أما وقد أدت إلى الشعب بعض حقوقه المعطاة له من الله
                             فمن الغضاضة على الصحافة أن تستر العيوب والعورات وكل صحافة لا تدل الدولة والأمة على حسناتهما وسيئاتهما لبك ما في
                             كلمة الحرية من معنى الحرية لا تدعى صحافة ولا يرجى لأمتها وحكومتها صلاح وإصلاح.</p>
@@ -1102,7 +997,7 @@
                         <p>نعم إن مضمار الانتقاد أوسع في أميركا منه في الدولة العلية بداعي تقييد الصحافة العثمانية وإطلاق حرية أميركا غير أن
                             الذنب على الشعب. فشعب أميركا مطالب وناهض وقائم والشعب العثماني قاعد وجامد ونائم. النواب هم الذين قيدوا حرية
                             الصحافة وهم ضيقوا الخناق عليها والشعب هو الذي انتخب أولئك النواب وأرسلهم إلى عاصمته وهو الذي يدفع مرتباتهم
-                            ونفقاتهم فالشعب هو سيد النواب والنواب خدامه ولم أسمع ولم يسمع غيري أن 250 خادما يستطيعون أن يستبدوا بثلاثين
+                            ونفقاتهم فالشعب هو سيد النواب والنواب خدامه ولم أسمع ولم يسمع غيري أن  <tei:num value="250" xml:lang="ar">٢٥٠</tei:num>  خادما يستطيعون أن يستبدوا بثلاثين
                             مليون (سيد) فيا أيها الشعب مر نوابك بتعديل قانون صحافتك واحملهم على تلبية أمرك فإن لبوه كان ما تريد وإلا فاقلب
                             لهم ظهر المجن في الانتخاب المقبل وانتخب الأصلح فالأصلح حتى تبلغ ضالتك وتعمل عمل البلاد الشعبية. فهل من سامع أو
                             مجيب لهذا الصوت الضعيف.</p>
@@ -1114,16 +1009,12 @@
                             إلا المجسم والمنع تحت شروط أيضا.</p>
                         <p>ثم إن قلة روج بضاعة العلم والأدب من أكبر الدواعي في تخلف صحافتنا العلمية والسياسية كما قال صديقنا صاحب المقالة
                             فمجلة المقتبس على شهرتها لا تطبع سوى ألف نسخة في الشهر وجريدة المقتبس على سعة انتشارها لا تبيع أكثر من ألفي نسخة
-                            في اليوم <pb ed="shamela"
-                   n="n58-p38"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3814.xhtml"/> فمن لنا يوم تطبع فيه
+                            في اليوم <pb ed="shamela" n="n58-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3814.xhtml"/> فمن لنا يوم تطبع فيه
                             صحفنا عشرة آلاف فقط لنقلد الصحافة الغربية حذو القذة بالقذة ومكانة الجرائد بمكانة قرائها والمحيط العامل الأعظم في
                             رقيها. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n58-p39"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3815.xhtml"/>
+                        <pb ed="shamela" n="n58-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3815.xhtml"/>
                         <head>عمران الكرك</head>
                         <p>لم تكن الحال في حوران تستقر على ما يجب بعد أن أدبت الجملة العسكرية أشقياء الدروز في جبل حوران حتى أرادت الحكومة
                             أن تحصي عدد سكان لواء الكرك كما أحصت عدد سكان لواء حوران فنشز السكان وانتقضوا على الحكومة وصادف أن قطعت مرتبات
@@ -1143,9 +1034,7 @@
                             بعمرانه وتاريخه وجغرافيته واقتصاده واستعداده للارتقاء فنقول نقلا عن مصادر عربية وإفرنجية وتركية كثيرة: يمتد هذا
                             اللواء من وراء قصر الزرقاء في الحد الجنوبيّ من لواء حوران إلى مدائن صالح جنوبا وهي مسافة يقطعها راكب المطايا في
                             العادة في نحو خمسة عشر يوماً أما عرضه فمن الغرب نهر الأردن (الشريعة) وبحيرة لوط (البحيرة المنتنة أو البحر الميت)
-                            ووادي العاربة والوجه والعقبة الفاصلة بينه وبين <pb ed="shamela"
-                   n="n58-p40"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3816.xhtml"/> فلسطين إلى بادية الشام
+                            ووادي العاربة والوجه والعقبة الفاصلة بينه وبين <pb ed="shamela" n="n58-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3816.xhtml"/> فلسطين إلى بادية الشام
                             شرقاً فالجوف فنجد وهذه المسافة لا تقل عن خمسة أيام وهي تبلغ أكثر إذا تجاوزنا البادية إلى وادي السرحان في
                             الشرق.</p>
                         <p>وأرضه سهلية جبلية وجباله لا ترتفع كثيرا عن سطح البحر وتدعى بأسماء البلاد التي بقربها الآن وأشهر أنهار اللواء وادي
@@ -1164,9 +1053,7 @@
                             من بحيرة لوط وحمة عفرة من أعمال الطفيلة معادن الكبريت والقصدير والبترول والنحاس. وزرقا معين هذه من الحمامات
                             البخارية أشبه بحمام أبي رباح بالقرب من تدمر. وهي ثلاث حمامات يستحم المستحمون ببخارها ولا يجسر أحد أن يمد يده
                             إليها.</p>
-                        <p>ويقصدها سياح الإفرنج كما يقصدون حمة عفرة من بحيرة لوط حتى إذا بلغوا شاطئها <pb ed="shamela"
-                   n="n58-p41"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3817.xhtml"/> يركبون على الدواب ثلاث
+                        <p>ويقصدها سياح الإفرنج كما يقصدون حمة عفرة من بحيرة لوط حتى إذا بلغوا شاطئها <pb ed="shamela" n="n58-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3817.xhtml"/> يركبون على الدواب ثلاث
                             ساعات.</p>
                         <p>وتقل الحراج في هذا اللواء وأهمها ما كان بالقرب من بلدة الصلت وفي أرض بني حميدة وهي تبعد عن قصبة الكرك خمس ساعات
                             ويمتد هذا الحرج من الزرقاء قرب معين إلى وادي بني حماد وطوله نحو عشر ساعات وفي قضاء الطفيلة حراج واسعة يمشي
@@ -1184,32 +1071,28 @@
                             بين العرب الرحالة أناس من المسيحيين وأهل مادبا كلهم مسيحيون.</p>
                         <p>قال القرماني في (معان) أنها مدينة صغيرة تقع على طريق الركب الشامي وهي على عشر مراحل من دمشق كان غالب ألها
                             نصارى.</p>
-                        <p>والآن ليس فيها أحد منهم ولقد نظمت الحكومة إدارة هذه البلاد سنة 1310 على الحساب الهجري وكانت حكومتها من قبل بيد
+                        <p>والآن ليس فيها أحد منهم ولقد نظمت الحكومة إدارة هذه البلاد سنة  <tei:num value="1310" xml:lang="ar">١٣١٠</tei:num>  على الحساب الهجري وكانت حكومتها من قبل بيد
                             المشايخ والزعماء فجعلت الكرك مركز اللواء وسمت سائر اللواء باسمه وقسمته إلى أربعة أقضية وهي قضاء المركز وقضاء
-                            الصلت وقضاء الطفيلة وقضاء معان وإلى سبع نواح وهي عمان وديبان ومادبا وزيزاء (جيزة) وتبوك <pb ed="shamela"
-                   n="n58-p42"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3818.xhtml"/> وخنزيرة
+                            الصلت وقضاء الطفيلة وقضاء معان وإلى سبع نواح وهي عمان وديبان ومادبا وزيزاء (جيزة) وتبوك <pb ed="shamela" n="n58-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3818.xhtml"/> وخنزيرة
                             والشوبك.</p>
-                        <p>وديبان هي شمالي ضفة أرنون (الموجب) على نحو 4 أميال من مصبه في بحيرة لوط و16 ميلا شمالي الكرك وهي المعروفة في
+                        <p>وديبان هي شمالي ضفة أرنون (الموجب) على نحو  <tei:num value="4" xml:lang="ar">٤</tei:num>  أميال من مصبه في بحيرة لوط و <tei:num value="16" xml:lang="ar">١٦</tei:num>  ميلا شمالي الكرك وهي المعروفة في
                             الكتب المقدسة باسم ديبون وأديمون وكانت إحدى منازل بني إسرائيل واشتهرت ديبان بالحجر الموآبي الذي وجد فيها سنة
-                            1868 وهو حجر أسود طوله أكثر من ثلاثة أقدام عرضه نحو قدمين وسمكه نحو قدم وفيه 34 سطراً من الكتابة الفينيقية
+                             <tei:num value="1868" xml:lang="ar">١٨٦٨</tei:num>  وهو حجر أسود طوله أكثر من ثلاثة أقدام عرضه نحو قدمين وسمكه نحو قدم وفيه  <tei:num value="34" xml:lang="ar">٣٤</tei:num>  سطراً من الكتابة الفينيقية
                             العبرانية قرئت كلها وهي من ميشع بن خموسا ملك موآب ملخصها أنه بنى هذا المقدس لكموش لأنه خلصه معتد وجعله ينظر
-                            بازدراء إلى أعدائه كلهم قال قد ضايق ملك إسرائيل موآب أياماً عديدة. ملك أرض ميدبا وسكن هناك هو وابنه 40 سنة اهلكه
+                            بازدراء إلى أعدائه كلهم قال قد ضايق ملك إسرائيل موآب أياماً عديدة. ملك أرض ميدبا وسكن هناك هو وابنه  <tei:num value="40" xml:lang="ar">٤٠</tei:num>  سنة اهلكه
                             كموش على عهدي حينئذ بنيت بعل معون ورممت قريتايم.</p>
                         <p>بنى ملك إسرائيل عطاروت فهاجمت المدينة وأخذتها وقتلت كل سكانها قال لي كموش اذهب خذ كموش من إسرائيل فذهبت وحاربتها
                             من الفجر إلى نصف النهار فأخذتها وقتلت سبعة آلاف رجل وجررت آنية يهوه على الأرض أمام كموش وأقام ملك إسرائيل مدة
                             حربه معي في ياهط فطرده كموش من أمامي. أنا هو الذي بنى عر وعير (عراعر) وعمل طريق أرنون أنا هو الذي بنى بيت باموت
                             التي أُخربت أنا هو الذي بنى نبوسوروديبون وبيت دبلتايم وبيت بعل معون وقال لي انزل وحارب حور ونايم وخذها أه.</p>
-                        <p>أما مدينة ميدبا ويقال لها الآن مادبا فقد تعاقبت عليها بنو إسرائيل وموآب وعمون مراراً وهي على مسافة 6 أميال من
-                            حشبون بين الشرق والجنوب الشرقي و14 ميلا شرقي بحر لوط وكانت في القرون الأولى مركزا مهما للدين المسيحي ومن آثارها
-                            الآن كنيسة قديمة قيل هي من القرن الخامس وقد وجدت بها سنة 1897 خارطة الأرض المقدسة مرسومة بالفسيفساء رسماً متقناً
+                        <p>أما مدينة ميدبا ويقال لها الآن مادبا فقد تعاقبت عليها بنو إسرائيل وموآب وعمون مراراً وهي على مسافة  <tei:num value="6" xml:lang="ar">٦</tei:num>  أميال من
+                            حشبون بين الشرق والجنوب الشرقي و <tei:num value="14" xml:lang="ar">١٤</tei:num>  ميلا شرقي بحر لوط وكانت في القرون الأولى مركزا مهما للدين المسيحي ومن آثارها
+                            الآن كنيسة قديمة قيل هي من القرن الخامس وقد وجدت بها سنة  <tei:num value="1897" xml:lang="ar">١٨٩٧</tei:num>  خارطة الأرض المقدسة مرسومة بالفسيفساء رسماً متقناً
                             يظهر فيه نهر الأردن وكثير من المدن الرئيسية وكانت مادبا في الأصل مدينة ويؤخذ من الكتابة التي أُثرت من الملك ميزا
                             من القرن الحادي عشر ق م أنها أعيدت إلى الموآبيين لتصير بعد ذلك تحت حكم النبطيين أي العرب وكانت على عهد المكابيين
                             قلعة مهمة استولى عليها هيركان وأصبحت على عهد الرومان جزءا من العربية الصخرية. والخارطة تنزل في خريطة الروم
                             هناك.</p>
-                        <p>وعمان كما قال القرماني مدينة قديمة خربت قبل الإسلام ولها ذكر في تاريخ الإسرائيليين <pb ed="shamela"
-                   n="n58-p43"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3819.xhtml"/> وهي رسم كبير ويمر بجنبها
+                        <p>وعمان كما قال القرماني مدينة قديمة خربت قبل الإسلام ولها ذكر في تاريخ الإسرائيليين <pb ed="shamela" n="n58-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3819.xhtml"/> وهي رسم كبير ويمر بجنبها
                             نهر الزرقاء الذي على طريق الحاج الشامي وهي من أعمال البلقاء وهي من بناء لوط.</p>
                         <p>وأخصب أرض في هذا اللواء هي أرض البلقاء وهي واقعة بين الأردن والبرية ووادي الموجب والزرقاء وتمتد من الصلت إلى
                             مادبا على مسيرة تسع ساعات وهي تزرع في الجملة قال القرماني: البلقاء كورة بين الشام ووادي القرى بها قرية الجبارين
@@ -1218,38 +1101,34 @@
                             كما قال القرماني بلدة هي من أعمال الأردن بها قلعة يسكنها من يحفظها من قبل ملوك العثمانية وينبع من تحت قلعتها
                             عيون كثيرة وتدخل البلد وبها بساتين كثيرة يجلب منها حب الرمان إلى البلاد. ومن أراضي اللواء البائرة الجيدة التربة
                             الشاغرة أرض الشراة المشهورة قديماً وهي تمتد من حصن الشوبك إلى وادي موسى وفيها كلها مياه غزيرة وهي ذات تربة حسنة
-                            وكلها خراب اليوم. والشوبك على 19 ساعة عن الكرك كما أن وادي موسى على 25 ساعة عن الكرك.</p>
-                        <p>ولهذه البلاد تاريخ مجيد قبل الإسلام وبعده ويكفي أن من أعمالها وادي موسى_على 64 ميلا من جنوبي الكرك و54 ميلا عن
+                            وكلها خراب اليوم. والشوبك على  <tei:num value="19" xml:lang="ar">١٩</tei:num>  ساعة عن الكرك كما أن وادي موسى على  <tei:num value="25" xml:lang="ar">٢٥</tei:num>  ساعة عن الكرك.</p>
+                        <p>ولهذه البلاد تاريخ مجيد قبل الإسلام وبعده ويكفي أن من أعمالها وادي موسى_على  <tei:num value="64" xml:lang="ar">٦٤</tei:num>  ميلا من جنوبي الكرك و <tei:num value="54" xml:lang="ar">٥٤</tei:num>  ميلا عن
                             الجنوب الشرقي من بحيرة لوط_المعروف عند الإفرنج ببترا أي العربية الصخرية أو سلع ومن أعمالها بلاد مآب (موآب)
                             المشهورة في تاريخ النصرانية والظاهر أن سلع هي غير بترا وليست مرادفة لها ولا يعرف اليوم اسم بترا الأصليّ ولا
                             تاريخها كما ينبغي ويظهر من النواويس القديمة فيها أن تاريخها يرد إلى القرن السادس ق. م ولم يجر ذكر للنبطيين أي
-                            العرب الذين استولوا على البلاد بعد الأدوميين إلا في سنة 312 ق. م أي أيام أرسل الملك أنتيغونس قائده أتني ثم جاء
+                            العرب الذين استولوا على البلاد بعد الأدوميين إلا في سنة  <tei:num value="312" xml:lang="ar">٣١٢</tei:num>  ق. م أي أيام أرسل الملك أنتيغونس قائده أتني ثم جاء
                             القائد ديمتربوس ليستولي على بترا عاصمة البلاد فأخفق القائدان في فتحها وكانت المدينة في الغالب صغيرة وهي حيث وجدت
                             النواويس القديمة ومعظمها على أكمة هناك لا تمتد إلى الوادي.</p>
                         <p>حازت هذه المدينة مكانة كبرى لحصانتها ومناعتها أمام غارات سكان البادية فكانت مخزن القوافل النبطية لوقوعها على طريق
-                            على طريق البحر الأحمر أي القلزم ومصر وغزة <pb ed="shamela"
-                   n="n58-p44"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3820.xhtml"/> ودمشق وتدمر.</p>
+                            على طريق البحر الأحمر أي القلزم ومصر وغزة <pb ed="shamela" n="n58-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3820.xhtml"/> ودمشق وتدمر.</p>
                         <p>وأول أمير نبطي ذكره التاريخ اسمه ارتياس الأول. وامتد سلطان النبط على عهد المكابيين الأولين إلى شرقي الأردن ولما
                             ضعفت دولة البلاطة والسلوقيين عاد النبط فقوي سلطانهم بسرعة في القرن الثاني قبل الميلاد. وكانت حدود هذه الملكة على
-                            عهد ارتياس الثالث نحو سنة 85 تمتد إلى دمشق ولقب ملكها إذ ذاك عجب اليونان ويستدل على أن المدينة اليونانية كانت قد
+                            عهد ارتياس الثالث نحو سنة  <tei:num value="85" xml:lang="ar">٨٥</tei:num>  تمتد إلى دمشق ولقب ملكها إذ ذاك عجب اليونان ويستدل على أن المدينة اليونانية كانت قد
                             استحكمت أواصرها في أرض النبط من المصانع والنواويس التي عثرت عليها وهي تنم بأجلى بيان عن مدينة يونان وفي أيام هذا
                             الملك حدث المصاف الأول بينه وبين الرومان فاضطر أرتياس أن يؤدي الجزية إليهم. واضطر النبطيون على عهد الإمبراطور
                             بومبي وأخلافه أن يقدموا منهم الحين بعد الآخر جنوداً مساعدين للرومانيين ولكن ظلت مملكتهم حرة قوية وانضمت على عهد
-                            أرتياس الرابع إلى مملكة دمشق. وفي سنة 106 للميلاد جعلت بترا وأعمالها كلها أي العربية الصخرية ولاية رومانية وقد
+                            أرتياس الرابع إلى مملكة دمشق. وفي سنة  <tei:num value="106" xml:lang="ar">١٠٦</tei:num>  للميلاد جعلت بترا وأعمالها كلها أي العربية الصخرية ولاية رومانية وقد
                             أنشأ الإمبراطور تراجان طريقا عظيما وصل فيه بين سورية والبحر الأحمر. وبعد ذلك انقسمت هذه الولاية.</p>
-                        <p>وفي نحو 358 اصبحت بترا ولاية مستقلة برأسها تحت اسم مملكة فلسطين أو فلسطين المسالمة. وإن المصانع والعاديات
+                        <p>وفي نحو  <tei:num value="358" xml:lang="ar">٣٥٨</tei:num>  اصبحت بترا ولاية مستقلة برأسها تحت اسم مملكة فلسطين أو فلسطين المسالمة. وإن المصانع والعاديات
                             الرومانية التي لم تبرح محفوظة إلى اليوم لتدل بأن بترا كانت على عهد الحكم الروماني قد بلغت شوطا عاليا من العظمة
                             والارتقاء ولم تبدأ بالسقوط عن مكانتها إلا في نحو منتصف القرن الثالث للمسيح لارتقاء مملكة فارس ومملكة تدمر اللتين
                             نازعتاها في التجارة بل لان الفرس وفقوا إلى تحويل التجارة عن مصارفها القديمة إلى أصقاع الفرات والخليج
                             الفارسي.</p>
                         <p>ولما فتح العرب هذه البلاد كان قد محي اسم بترا أو كاد. وزعم الصليبيون لما جاؤوا سورية فاتحين أن جبل هارون على
                             مقربة من بترا هو جبل طورسينا فأنشأوا فيها قصرا فخما في ذروته المقدسة ومنذ ذال العهد سقطت المدينة في تيه العدم
-                            إلى أن كان القرن التاسع عشر وقد اكتشف سياح الإفرنج ما فيها من العاديات وفيها 750 ناووسا مهما وهي أهم تلك المصانع
-                            ومن العاديات هنا ما يعد من أغرب ما صنع خزانة فرعون وهي هيكل علوّه 85 قدماً وأسفله دار مربعة قطرها 36 قدم وعلوها
-                            25. <pb ed="shamela"
-                   n="n58-p45"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3821.xhtml"/> وقال مؤرخو الفرنجة أن
+                            إلى أن كان القرن التاسع عشر وقد اكتشف سياح الإفرنج ما فيها من العاديات وفيها  <tei:num value="750" xml:lang="ar">٧٥٠</tei:num>  ناووسا مهما وهي أهم تلك المصانع
+                            ومن العاديات هنا ما يعد من أغرب ما صنع خزانة فرعون وهي هيكل علوّه  <tei:num value="85" xml:lang="ar">٨٥</tei:num>  قدماً وأسفله دار مربعة قطرها  <tei:num value="36" xml:lang="ar">٣٦</tei:num>  قدم وعلوها
+                             <tei:num value="25" xml:lang="ar">٢٥</tei:num> . <pb ed="shamela" n="n58-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3821.xhtml"/> وقال مؤرخو الفرنجة أن
                             معنى سلع في اللغة العبرانية صخر فدعا اليونان والرومان هذه البلاد بترا أي صخراً ودعاها العرب الحجر وقالوا أنها
                             مدينة ثمود وأن الفرجة الصخرية الواقعة فيها المدينة هي صدع الصخرة الذي خرجت منه ناقة صالح. والحقيقة أن سلع بفتح
                             السين وكسرها والجمع السلوع اسم عربي ومعناه الشقوق في الجبال قال أبو زياد الأسلاع طرق في الجبال يسمى الواحد منها
@@ -1273,9 +1152,7 @@
                         <p>أما بلاد موآب أو مآب فهي جزء من العربية السعيدة أو الصخرية بين بحيرة لوط فيما وراء عبر الأردن والبادية على ضفتي
                             نهر أرنون وكانت عاصمة الموآبيين قلعة رباط موآب. والموآبيين هم أبناء لوط لا يعلم من تاريخهم إلا أنهم كانوا أولي
                             بأس شديد يخاف اليهود عاديتهم لغزوهم إياهم الحين بعد الآخر واستولى الموآبيون على الإسرائيليين ثماني عشرة سنة
-                            (1332 ـــ 1314) على عهد حكومة القضاة وقد غلب شارول (جالوت) <pb ed="shamela"
-                   n="n58-p46"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3822.xhtml"/> الموآبيين وخضعوا لسلطان
+                            ( <tei:num value="1332" xml:lang="ar">١٣٣٢</tei:num>  ـــ  <tei:num value="1314" xml:lang="ar">١٣١٤</tei:num> ) على عهد حكومة القضاة وقد غلب شارول (جالوت) <pb ed="shamela" n="n58-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3822.xhtml"/> الموآبيين وخضعوا لسلطان
                             داود مؤقتاً ثم استعبدهم الفرس فالمصريون فالسوريون فالاسكندر فالرومانيون وعلى عهد العرب امتزجوا بهم وفنوا فيهم
                             كما فنيت شعوب كثيرة في الفاتحين مع الزمن وآثروا الانضمام إليهم بسائق الدين والمصلحة الدنيوية. أما مدينة الكرك
                             فكانت هي عاصمة الموآبيين على ما يقول بعض الجغرافيين وكان اسمها كرك موآب.</p>
@@ -1284,7 +1161,7 @@
                             موآب قتلهما فقتل داود منهم ثلاثين ألفا ووضع الباقين تحت الجزية وقد ساعدوا بخننصر في حصار أورشليم واسترجعوا بعد
                             السبي أملاكهم القديمة.</p>
                         <p>وعدّ ياقوت بلاد مآب مدينة واحدة فقال وهي على طرف الشام من نواحي البلقاء قال أحمد بن محمد بن جابر توّجه أبو عبيدة
-                            بن الجراح في خلافة أبي بكر في سنة 13 بعد فتح بصرى بالشام إلى مآب من أرض البلقاء وبها جمع العدد فافتتحها على مثل
+                            بن الجراح في خلافة أبي بكر في سنة  <tei:num value="13" xml:lang="ar">١٣</tei:num>  بعد فتح بصرى بالشام إلى مآب من أرض البلقاء وبها جمع العدد فافتتحها على مثل
                             صلح بصرى وقيل أن فتح مآب قبل فتح بصرى وينسب إليها الخمر قال حاتم طي:</p>
                         <lg type="bayt">
                             <l>سقى الله رب الناس سحاً وديمة </l>
@@ -1303,9 +1180,7 @@
                             وبحر القلزم والبيت المقدس وهي على سن جبل عال تحيط به أودية إلا من جهة الربض.</p>
                         <p>وفي المرآة الوضية وإلى جنوبي نهر الزرقاء إلى نهر الموجب البلقاء وشماليها جبل الصلت وليس فيهما موضع مسكون إلا قرية
                             الصلت ومن مواضعها القديمة جلعاد وعمون وهي الآن عمان وحشبون وهي الآن حسبان والعال ونبا وماعين وعراعر وديبان وفي
-                            جنوب هذه المقاطعة كانت قديما أرض بني عمون وإلى جنوبي النهر الموجب وهو نهر <pb ed="shamela"
-                   n="n58-p47"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3823.xhtml"/> أرنون أيضا وإلى الإحساء
+                            جنوب هذه المقاطعة كانت قديما أرض بني عمون وإلى جنوبي النهر الموجب وهو نهر <pb ed="shamela" n="n58-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3823.xhtml"/> أرنون أيضا وإلى الإحساء
                             أرض الكرك وهي أرض موآب أو أرض قوم لوط ومن قراها الكرك وهي كير موآب وربة هي رابة موآب وزعراء ويقال أنها صاغر التي
                             هرب إليها لوط لما نجا من سادوم.</p>
                         <p>وقال ياقوت أن البلقاء كورة من أعمال دمشق بين الشام ووادي القرى قصبتها عمان وفيها قرى كثيرة ومزارع واسعة وبجودة
@@ -1343,9 +1218,7 @@
                             <l> رفاق إلى أرض الحجاز رواجع</l>
                         </lg>
                         <p>وقال الخطيم العكلي اللص يذكر عمان (بفتح العين)</p>
-                        <p>أعوذ بربي أن أرى الشام بعدها <gap resp="#org_MS"/> وعمان ما غنى الحمام وغرد <pb ed="shamela"
-                   n="n58-p48"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3824.xhtml"/> فذاك الذي استنكرت يا أم
+                        <p>أعوذ بربي أن أرى الشام بعدها <gap resp="#org_MS"/> وعمان ما غنى الحمام وغرد <pb ed="shamela" n="n58-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3824.xhtml"/> فذاك الذي استنكرت يا أم
                             مالك <gap resp="#org_MS"/> فأصبحت منه شاحب اللون أسودا</p>
                         <lg type="bayt">
                             <l>وأن لماضي العزم لو تعلمينه </l>
@@ -1374,9 +1247,7 @@
                             فلقيتهم الروم في جمع عظيم فقاتل زيد حتى قتل فأخذ الراية جعفر فقاتل حتى قتل فأخذ الراية عبد الله بن روحة فكانت
                             تلك حاله فاجتمع المسلمون إلى خالد بن الوليد فانحاز بهم حتى قدم المدينة فجعل الصبيان يحثون عليهم التراب ويقولون
                             يا فرار فررتم في سبيل الله فقال النبي صلى الله عليه وسلم: ليسوا بفرار لكنهم الكرار إن شاء الله وقال حسان بن
-                            ثابت: <pb ed="shamela"
-                   n="n58-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3825.xhtml"/> فلا يعدن الله قتلى
+                            ثابت: <pb ed="shamela" n="n58-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3825.xhtml"/> فلا يعدن الله قتلى
                             تتابعوا <gap resp="#org_MS"/> بموته منهم ذو الجناحين جعفر</p>
                         <lg type="bayt">
                             <l>وزيد وعبد الله هم خير عصبة </l>
@@ -1416,9 +1287,7 @@
                         <p>وقال: (شتار) نقب شتار بكسر الشين نقب من جبل من جبال الشراة بين أرض البلقاء والمدينة على شرقي طريق الحاج يفضي إلى
                             أرض واسعة معشبة يشرف عليها جبال فاران وهي في قبلي الكرك.</p>
                         <p>وقال: (صرفة) قرية من نواحي مآب قرب البلقاء يقال بها فبر يوشع بن نون.</p>
-                        <p>وقال: (الصمان) من نواحي الشام بظاهر البلقاء قال حسان بن ثابت: <pb ed="shamela"
-                   n="n58-p50"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3826.xhtml"/> لمن الدار أقفرت بمعان
+                        <p>وقال: (الصمان) من نواحي الشام بظاهر البلقاء قال حسان بن ثابت: <pb ed="shamela" n="n58-p50" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3826.xhtml"/> لمن الدار أقفرت بمعان
                             <gap resp="#org_MS"/> بين شاطي اليرموك فالصمان</p>
                         <lg type="bayt">
                             <l>فالقريات من بلاس فدا </l>
@@ -1451,9 +1320,7 @@
                             والعرب بقرية من قرى البلقاء يقال لها المشارف.</p>
                         <p>وقال: (معان) بالفتح وآخره نون والمحدثون يقولون بالضم وإياه عنى أهل اللغة منهم الحسن بن علي بن عيسى أبو عبيد
                             المعني الأزدي المعاني من أهل معان البلقاء والمعان المنزل يقال الكوفة معاني أي منزلي قال الأزهري: وميمه ميم مفعل
-                            وهي مدينة في طرف <pb ed="shamela"
-                   n="n58-p51"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3827.xhtml"/> بادية الشام تلقاء الحجاز
+                            وهي مدينة في طرف <pb ed="shamela" n="n58-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3827.xhtml"/> بادية الشام تلقاء الحجاز
                             من نواحي البلقاء وكان النبي صلى الله عليه وسلم بعث جيشاً إلى موتة فيه زيد بن حارثة وجعفر بن أبي طالب وعبد الله
                             بن رواحة فساروا حتى بلغوا معان فأقاموا بها وأرادوا أن يكتبوا إلى النبي صلى الله عليه وسلم عمن تجمع من الجيوش
                             وقيل قد اجتمع من الروم والعرب نحو مائتي ألف فنهاهم عبد الله بن رواحة وقال إنما هي الشهادة أو الظعن ثم قال:</p>
@@ -1504,9 +1371,7 @@
                             <l>ضربت بها التيه ضرب القما </l>
                             <l> ر أما لهذا وإما لذا</l>
                         </lg>
-                        <p>وقال: (الحميمة) بلد من أرض الشراة من أعمال عمان في أطراف الشام كان منزل بني <pb ed="shamela"
-                   n="n58-p52"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3828.xhtml"/> العباس.</p>
+                        <p>وقال: (الحميمة) بلد من أرض الشراة من أعمال عمان في أطراف الشام كان منزل بني <pb ed="shamela" n="n58-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3828.xhtml"/> العباس.</p>
                         <p>وقال: (نقنس) بكسر أوله وثانيه ونونه مشددة من قرى البلقاء من أرض الشام كانت لأبي سفيان بن حرب أيام كان يتجر إلى
                             الشام ثم كانت لولده وبعده.</p>
                         <p>وقال: (النقيب) بالضم وهو تصغير نقب وهو معروف موضع في بلادهم بالشام بين تبوك ومعان على طريق حاج الشام.</p>
@@ -1524,12 +1389,10 @@
                             والشام وكان إذ ذاك حكومتهما واحدة هيأ لها ذلك.</p>
                         <p>قال القرماني: كرك بليدة مشهورة وبها حصن عال على قلعة جبل يقال أنه كان دير الروم وجعله المسلمون حصناً فيها قبر
                             جعفر الطيار وأصحابه وفي أسفله وادٍ في حمام وبساتين كثيرة وكان من دأب ملوك الترك والجراكسة كلما خلعوا سلطاناً
-                            أرسلوه إلى الكرك. <pb ed="shamela"
-                   n="n58-p53"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3829.xhtml"/> أما الكرك أو قلعتها فهي
+                            أرسلوه إلى الكرك. <pb ed="shamela" n="n58-p53" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3829.xhtml"/> أما الكرك أو قلعتها فهي
                             كانت وما زالت من أعظم حصون سورية ولذلكم احتلها الصليبيون وحرص صلاح الدين وأسرته أن يسترجعوها منهم لأنها مفتاح
                             القطرين بل القطر المصري والشامي والحجازي ولذلك تجد ذكرها يتردد كثيراً في التاريخ منذ استولى على الإفرنج إلى أن
-                            انقضت دولة الجراكسة في مصر والشام على يد السلطان سليم العثماني سنة 922 هـ.</p>
+                            انقضت دولة الجراكسة في مصر والشام على يد السلطان سليم العثماني سنة  <tei:num value="922" xml:lang="ar">٩٢٢</tei:num>  هـ.</p>
                         <p>ولطالما كانت الكرك موعداً للقاء وميداناً لإرهاق الدماء وتكافح الناس في جوارها على امتلاكها كفاحاً وأي كفاح بيعت
                             فيه إلى الأرواح والأشباح بيع السماح وهاك الآن مثالاً من صحف التاريخ المنسية تعتبر بها وتزدجر.</p>
                         <p>قال أبو الفدا في حوادث سنة ثمان وستين وخمسمائة وفيها سار صلاح الدين من مصر إلى الكرك وحصرها وكان قد واعد نور
@@ -1570,9 +1433,7 @@
                             <l>سقى الله حياً بالموقر دارهم </l>
                             <l> إلى قسطل البلقاء ذات المحارب</l>
                         </lg>
-                        <p>وقد نشأ من الموقر جملة من المحدثين والنسبة إليها موقري وصرح الشاعر بأن الموقر من <pb ed="shamela"
-                   n="n58-p54"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3830.xhtml"/> أرض الشام فقال:</p>
+                        <p>وقد نشأ من الموقر جملة من المحدثين والنسبة إليها موقري وصرح الشاعر بأن الموقر من <pb ed="shamela" n="n58-p54" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3830.xhtml"/> أرض الشام فقال:</p>
                         <lg type="bayt">
                             <l>أذنت علي اليوم إذ قلت أنني </l>
                             <l> أحب من أهل الشام أهل الموقر</l>
@@ -1607,54 +1468,48 @@
                             أماكن وعرة وأقام السلطان قبالتهم وسار من الفرنج جماعة ودخلوا الكرك فعلم بامتناعه عليه فرحل عنه.</p>
                         <p>وبعد وقعة حطين كان السلطان صلاح الدين بعد أن سار إلى البلاد الشمالية قد جعل على الكرك وغيرها من يحصرها وخلى أخاه
                             الملك العادل في تلك الجهات يباشر ذلك فأرسل أهل الكرك يطلبون الأمان فأمر الملك العادل المباشرين بحصارها بتسلمها
-                            فتسلموا الكرك <pb ed="shamela"
-                   n="n58-p55"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3831.xhtml"/> والشوبك وما بتلك الجهات
+                            فتسلموا الكرك <pb ed="shamela" n="n58-p55" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3831.xhtml"/> والشوبك وما بتلك الجهات
                             من البلاد.</p>
                         <p>قال ياقوت في الشوبك إنها قلعة حصينة في أطراف الشام بين عمان وإيلة والقلزم قرب الكرك وذكر يحيى بن علي التنوخي في
-                            تاريخه أن يقدور الذي ملك الفرس سار في سنة 905 إلى بلاد ربيعة من طيء وهي باق والشراة والبلقاء والجبال ووادي موسى
+                            تاريخه أن يقدور الذي ملك الفرس سار في سنة  <tei:num value="905" xml:lang="ar">٩٠٥</tei:num>  إلى بلاد ربيعة من طيء وهي باق والشراة والبلقاء والجبال ووادي موسى
                             ونزل على حصن قديم خراب يعرف بالشوبك بقرب وادي موسى فعمره ورتب فيه رجاله وبطل السفر من مصر إلى الشام بطريق البرية
                             مع العرب بعمارة هذا الحصن. وبعد وفاة صلاح الدين ظلت الكرك والشوبك والبلاد الشرقية بيد الملك العادل سيف الدين أبو
                             بكر ابن أيوب.</p>
-                        <p>تقدم أن حصن الشوبك كان من جلة الحصون التي يتنافس فيها الفاتحون في هذه الديار وهو على 19 ساعة من الكرك يؤيد ذلك ما
-                            رواه أبو الفدا في حوادث سنة 625 هـ من أن الملك الكامل صاحب مصر أرسل بطلب ابن أخيه الملك الناصر داود ابن الملك
+                        <p>تقدم أن حصن الشوبك كان من جلة الحصون التي يتنافس فيها الفاتحون في هذه الديار وهو على  <tei:num value="19" xml:lang="ar">١٩</tei:num>  ساعة من الكرك يؤيد ذلك ما
+                            رواه أبو الفدا في حوادث سنة  <tei:num value="625" xml:lang="ar">٦٢٥</tei:num>  هـ من أن الملك الكامل صاحب مصر أرسل بطلب ابن أخيه الملك الناصر داود ابن الملك
                             المعظم صاحب دمشق حصن الشوبك فلم يعطه إياه ولا أجابه إليه فسار الملك الكامل من مصر إلى الشام بقصد استخلاص الشوبك
                             وغيره.</p>
-                        <p>وفي حوادث سنة 629 إن الملك الكامل سار من دمشق إلى الشوبك واحتفل له الملك الناصر داود بن المعظم عيسى بن الملك
+                        <p>وفي حوادث سنة  <tei:num value="629" xml:lang="ar">٦٢٩</tei:num>  إن الملك الكامل سار من دمشق إلى الشوبك واحتفل له الملك الناصر داود بن المعظم عيسى بن الملك
                             العادل أبي بكر ابن أيوب احتفالاً عظيماً بالضيافات والإقامات والتقادم وحصل بينهما الاتحاد العام وكان نزول الملك
-                            الكامل باللجون قرب الكرك وهي منزلة الحجاج. وفي سنة 633 فترت العلائق بين الملك الناصر داود صاحب الكرك وبين عمه
+                            الكامل باللجون قرب الكرك وهي منزلة الحجاج. وفي سنة  <tei:num value="633" xml:lang="ar">٦٣٣</tei:num>  فترت العلائق بين الملك الناصر داود صاحب الكرك وبين عمه
                             الملك الكامل صاحب مصر فسار الأول إلى بغداد ملتجئاً إلى الخليفة المستنصر لما حصل عنده من الخوف فأصلح الخليفة
-                            بينهما وعاد الناصر إلى الكرك وفي سنة 635 جرى بين الملك الناصر داود صاحب الكرك وبين الملك الجواد يونس المتولي على
+                            بينهما وعاد الناصر إلى الكرك وفي سنة  <tei:num value="635" xml:lang="ar">٦٣٥</tei:num>  جرى بين الملك الناصر داود صاحب الكرك وبين الملك الجواد يونس المتولي على
                             دمشق مصاف بين جنين ونابلس انتصر فيه الملك الجواد يونس وانهزم الملك الناصر هزيمة قبيحة ونهب عسكره وأثقاله وللناصر
                             هذا وقائع مع أسرته وغيرهم ولكن بني أيوب ومن بعدهم على تنافسهم في الملك كانوا يداً واحدة على أعدائهم الصليبيين
                             حين الحاجة لأن هؤلاء لم تكن انقطعت شأفتهم كلها من بلاد الشام.</p>
-                        <p>وفي سنة 644 سار الأمير فخر الدين يوسف ابن الشيخ من قبل الملك الصالح إلى حرب <pb ed="shamela"
-                   n="n58-p56"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3832.xhtml"/> الملك الناصر داود صاحب
+                        <p>وفي سنة  <tei:num value="644" xml:lang="ar">٦٤٤</tei:num>  سار الأمير فخر الدين يوسف ابن الشيخ من قبل الملك الصالح إلى حرب <pb ed="shamela" n="n58-p56" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3832.xhtml"/> الملك الناصر داود صاحب
                             الكرك فاستولى على جميع بلاد الملك الناصر وولي عليها وسار إلى الكرك وحاصرها وخرب ضياعها وضعف الملك الناصر ضعفاً
                             بالغاً ولم يبق بيده غير الكرك وحدها.</p>
-                        <p>وفي سنة 647 استولى لملك الصالح أيوب صاحب الديار المصرية على الكرك وفي السنة التالية ملك القلعتين الكرك والشوبك
+                        <p>وفي سنة  <tei:num value="647" xml:lang="ar">٦٤٧</tei:num>  استولى لملك الصالح أيوب صاحب الديار المصرية على الكرك وفي السنة التالية ملك القلعتين الكرك والشوبك
                             الملك المغيث فتح الدين وكان اعتقله الملك المعظم تورانشاه في الشوبك فلما قتل هذا بادر النائب عليهما وهو بدر الدين
-                            الصوابي الصالحي فأفرج عن الملك المغيث وملك الحصنين وفي سنة 656 انضمت البحرية إلى المغيث صاحب الكرك والتتر مع
+                            الصوابي الصالحي فأفرج عن الملك المغيث وملك الحصنين وفي سنة  <tei:num value="656" xml:lang="ar">٦٥٦</tei:num>  انضمت البحرية إلى المغيث صاحب الكرك والتتر مع
                             عسكر مصر في غزة فكانت الكسرة على المغيث ومن معه فولى منهزماً إلى الكرك في أسوء حال ونهبت أثقاله ودهليزه. وفي سنة
-                            657 حاصر الملك الناصر يوسف صاحب دمشق والملك المنصور صاحب حماة الملك المغيث صاحب الكرك بسبب حمايته البحرية
-                            وأقاموا على بركة زيزاء (التي يحرفها العامة بجيزة اليوم) ما يزيد على شهرين وفي سنة 660 قتل الملك المغيث صاحب
+                             <tei:num value="657" xml:lang="ar">٦٥٧</tei:num>  حاصر الملك الناصر يوسف صاحب دمشق والملك المنصور صاحب حماة الملك المغيث صاحب الكرك بسبب حمايته البحرية
+                            وأقاموا على بركة زيزاء (التي يحرفها العامة بجيزة اليوم) ما يزيد على شهرين وفي سنة  <tei:num value="660" xml:lang="ar">٦٦٠</tei:num>  قتل الملك المغيث صاحب
                             الكرك قتله الملك الظاهر بيبرس صاحب مصر لأنه كتب أجوبة على مكاتبات من التتر إلى الملك المغيث في أطماعهم في ملك
                             مصر والشام ورتب الظاهر أمور الكرك وعاد إلى مصر.</p>
-                        <p>وفي سنة 680 استقر الصلح بين السلطان الملك المنصور قلاوون وبين الملك خضر ابن الملك الظاهر بيبرس صاحب الكرك. وفي
-                            سنة 708 سار الملك الناصر محمد بن قلاوون من الديار المصرية متوجهاً إلى الحجاز فسار إلى الكرك وكان النائب بها جمال
+                        <p>وفي سنة  <tei:num value="680" xml:lang="ar">٦٨٠</tei:num>  استقر الصلح بين السلطان الملك المنصور قلاوون وبين الملك خضر ابن الملك الظاهر بيبرس صاحب الكرك. وفي
+                            سنة  <tei:num value="708" xml:lang="ar">٧٠٨</tei:num>  سار الملك الناصر محمد بن قلاوون من الديار المصرية متوجهاً إلى الحجاز فسار إلى الكرك وكان النائب بها جمال
                             الدين أقوش الأشرفي فعمل سماطاً واحتفل بع وعبر السلطان إلى المدينة ثم إلى القلعة ولما عبر السلطان على الجسر إلى
                             القلعة والأمراء ماشون بين يديه والمماليك حول فرسه وخلفه سقط بهم جسر قلعة الكرك وقد حصلت يد فرس السلطان وهو راكبه
                             داخل عتبة الباب فلما أحس الفرس بسقوط الجسر أسرع حتى كاد أن يدوس الأمراء الماشين بين يدزيه وسقط من مماليك السلطان
                             خمسة وثلاثون إلى الخندق وسقط غيرهم من أهل الكرك ولم يهلك من المماليك غير شخص واحد لم يكن من الخواص ونزل في الوقت
                             السلطان عند الباب وأحضر الجنوبات والحبال ورفع الذين وقعوا عن آخرهم وأمر بمداواتهم وعادوا إلى ما كانوا عليه وكان
-                            ارتفاع الجسر الذي سقطوا منه إلى الخندق يقارب خمسين ذراعاً. <pb ed="shamela"
-                   n="n58-p57"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3833.xhtml"/> ولما تولى الملك الناصر
+                            ارتفاع الجسر الذي سقطوا منه إلى الخندق يقارب خمسين ذراعاً. <pb ed="shamela" n="n58-p57" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3833.xhtml"/> ولما تولى الملك الناصر
                             أحمد بن الملك الناصر بن محمد بن قلاوون في الكرك أقام فيها أياماً في لهو ولعب فأنكروا عليه أموراً لا تليق
                             بالسلطنة فاتفق أهل الشام على خلعه وأرسلوا إلى المصريين في ذلك فأجابوهم وسلطنوا أخاه الصالح إسماعيل ووردت
                             المراسيم إلى جميع ولايات الأعمال الشامية بتجريد العشرات وغيرهم إلى الكرك وعينوا على معاملتي صيداء وبيروت خمسماءة
-                            راجل فذهبوا إليها سنة 743 ووجدوا في القلعة ومع السلطان أحمد خلقاً كثيراً وقد نصبوا على القلعة في أعلاها خمسة
+                            راجل فذهبوا إليها سنة  <tei:num value="743" xml:lang="ar">٧٤٣</tei:num>  ووجدوا في القلعة ومع السلطان أحمد خلقاً كثيراً وقد نصبوا على القلعة في أعلاها خمسة
                             مجانيق ومدافع كثيرة وكان الكركيون يظهرون من باب القلعة ويقاتلون أحياناً كثيرة وكان الحصار والزحف مستمراً ونصب
                             المحاصرن على القلعة منجنيقاً يرمي بحجارة وزنها خمسة وثلاثون رطلاً.</p>
                         <p>وكان يحكى عن السلطان أحمد أنه كان شاباً حسن الشكل عبل البدن وكان يلبس ملبوس العرب ووسع أكمامه على زي الكركيين
@@ -1677,9 +1532,7 @@
                             بعد أن تجمعت عساكر الشام على حصارها زهاء سنتين.</p>
                         <p>وبعد فليس في التاريخ ولاسيما من بعد دخول الدولة العلية إلى هذه البلاد شيءٌ ينقل ليفيد في حالة بلاد الكرك اللهم ما
                             كان من انتقاض أهالي هذه البلاد على إبراهيم باشا المصري لما فتحها أيام دخوله إلى سورية في أوائل القرن الماضي ونظم
-                            إدارتها وجعل لها حامية <pb ed="shamela"
-                   n="n58-p58"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3834.xhtml"/> من جنده فلم يمض إلا قليل
+                            إدارتها وجعل لها حامية <pb ed="shamela" n="n58-p58" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3834.xhtml"/> من جنده فلم يمض إلا قليل
                             حتى تمرد السكان وقاموا فذبحوا الحامية والموظفين عن بكرة أبيهم حتى أنهم قتلوا كتيبة من جنده كانت آيبة إلى مصر
                             فضللوها في الطريق وأهلكوها إلا قليلاً كما ارتكبوا مثل هذا المنكر هذه المرة ولم يفلحوا.</p>
                         <p>ويؤخذ بالقرينة أن معظم البلاد أصبحت بادية بعد هذه الوقعة لغلبة الجهل واختلال الإدارة وظلم العمال وكذلك حال القرى
@@ -1687,19 +1540,17 @@
                             وأرض بني صخر نحو ثلثمائة قرية وعدة مدن عامرة وليس فيها اليوم سوى خمس عشرة قرية عامرة بعض الشيء.</p>
                         <p>وبعض الخرب في اللواء بيد العرب المزارعين وبعضها شاغرة ملك للحكومة. وبدو الكرك كثيرون فمنهم في قضاء الصلت الدعجة
                             والأيديات وأبي نعيم والشوايكة والأبووندي والعجارمة والميطرون والحرافيش وأراسفة والمشالخة والفاعور والربيع وبنو
-                            صخر وهم يقسمون إلى الزبن والهكيش والحفير والقبعين والفايز ومجموع بيوتهم نحو 4500 بيت وأشهرها بنو صخر وهي 700 بيت
-                            والعدوان وهي 500 والعباد 800 والأرض التي تنزلها هذه القبائل شرقي نهر الشريعة وغربي البادية وشمالاً وادي الوالا
+                            صخر وهم يقسمون إلى الزبن والهكيش والحفير والقبعين والفايز ومجموع بيوتهم نحو  <tei:num value="4500" xml:lang="ar">٤٥٠٠</tei:num>  بيت وأشهرها بنو صخر وهي  <tei:num value="700" xml:lang="ar">٧٠٠</tei:num>  بيت
+                            والعدوان وهي  <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>  والعباد  <tei:num value="800" xml:lang="ar">٨٠٠</tei:num>  والأرض التي تنزلها هذه القبائل شرقي نهر الشريعة وغربي البادية وشمالاً وادي الوالا
                             ووادي الثمد وجنوباً ماء الزرقاء والحدود الفاصلة بين عجلون والصلت وسكان القضاء كله نحو أربعين ألفاً وهو أعمر
                             أقضية الكرك.</p>
                         <p>وفي قضاء الطفيلة نحو عشرين ألفاً من النفوس وهذه أسماء عشائرهم: الحميدات وهي أعظمها مؤلفة من خمسمائة بيت وعبيدين
                             ثقرب نفوسها من الحميدات والبحارات مثلها أيضاً والكلالدة والوهيبات والهلالات وعشيرة المناعين وهي رحالة تقضي أكثر
-                            أيامها في الجوف بالقرب من نجد وتنزل القضاء بعد اشهر بين محطة الجروف ومدينة الطفيلة وفي هذه المدينة 12 ألفاً من
+                            أيامها في الجوف بالقرب من نجد وتنزل القضاء بعد اشهر بين محطة الجروف ومدينة الطفيلة وفي هذه المدينة  <tei:num value="12" xml:lang="ar">١٢</tei:num>  ألفاً من
                             السكان الحضر.</p>
                         <p>وفي قضاء معان عشائر وأفخاذ وأهمها الحويطات ومنها الدمانية وأبوتاية والمطالقة ومنها البدول والشوبك والنعيمات
                             والدبابات والعمامرة والمراعية والدرواشة والعطون والزوايدة والطقاطقة والعمارين والرشايدة والسعيديين والراجفة. وفي
-                            قضاء معان أيضاً ينزل بنو عطية وهم يقسمون سبعة أقسام منهم المزايدة والخضرة والشبوت والهرامسة ومنازلهم من <pb ed="shamela"
-                   n="n58-p59"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3835.xhtml"/>
+                            قضاء معان أيضاً ينزل بنو عطية وهم يقسمون سبعة أقسام منهم المزايدة والخضرة والشبوت والهرامسة ومنازلهم من <pb ed="shamela" n="n58-p59" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3835.xhtml"/>
                             المدورة إلى تبوك.</p>
                         <p>أما عشائر قضاء الكرك فكثيرة وهي أغوات. اللصايمة. بنو حميدة. بياضة. جلامدة. حباشنة. خرشة. خنزيرة. دنيبات. كفاوين.
                             ضمور. حجايا. سليط. شمايلة. صرايرة. صعوب. طراونة. العمرو. عراق. عكشة وحجازين. غور الصافي. غور المزرعة. فقرا.
@@ -1717,9 +1568,7 @@
                         <p>والعشائر التي لها شأن عند الحكومة هي. المجالي. طراونة. ضمور. معايطة. صرايرة. مدانات. هلسة. أما العشائر التي لها
                             نفوذ على العشائر نفسها فهي المجالي. سليط. حجايا. طراونة. بنو حميدة.</p>
                         <p>هذه اسماء العشائر وفرقها ومكانتها أما أماكن نزولها فإن فرق أبي ربيحة. أبي بريز. شخامية. الحيصة. الرواحنة من عشيرة
-                            بني حميدة وسليط وكعابنة والفقراء كلهم ينزلون <pb ed="shamela"
-                   n="n58-p60"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3836.xhtml"/> تحت الخيام في ناحية
+                            بني حميدة وسليط وكعابنة والفقراء كلهم ينزلون <pb ed="shamela" n="n58-p60" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3836.xhtml"/> تحت الخيام في ناحية
                             ديبان من أعمال مركز اللواء. وحدود بيان هذه من القبلة نهو الموجب ومن الشمال اللب ومن الغرب بحر لوط ومن الشرق أم
                             الرصاص في بقعة من الأرض سهلية جبلية يبلغ عرضها أربع ساعات وطولها سبع ساعات. ولا تجد شرقي أم الرصاص أرضاً تزرع
                             ومركز ناحية ديبان وادي الوالا وهو على أحد عشرة ساعة عن مركز اللواء.</p>
@@ -1737,9 +1586,7 @@
                             من تأليف شاردهم وساعد على ذلك في الأكثر انحطاط طبقة اكثر الموظفين الذين يعينون في أمور الإدارة وبذلك زاد الأهلون
                             مراناًَ على الاحتيال تخلصاً بزعمهم من فساد الحال وركنوا إلى شيخوهم على ظلم فيهم أكثر من حكومتهم التي تريد الخير
                             بهم على الجملة وإن كانت لم تهتد إلى الطريق حتى الآن في اختيار الجياد من العمال.</p>
-                        <p>كان الرجاء معقوداً بتأسيس حكومة الكرك أن تغدو عمالتها كلها بعد هذينم العقدين من <pb ed="shamela"
-                   n="n58-p61"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3837.xhtml"/> السنين جنة لما خصتها به
+                        <p>كان الرجاء معقوداً بتأسيس حكومة الكرك أن تغدو عمالتها كلها بعد هذينم العقدين من <pb ed="shamela" n="n58-p61" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3837.xhtml"/> السنين جنة لما خصتها به
                             الفطرة من المواهب وتنقلب تلك الخيام السوداء كما قال أحد العرافين دوراً قوراء فأصبحت بسوء الإدارة بيوت ارزاء
                             ولأواء.</p>
                         <p>كاد أولئك البادية يضعون ثقتهم بالحكومة يوم تولى أمرهم إداري يقيم نصاب العدل ويرفع عن عاتقهم عدوان زعمائهم
@@ -1753,9 +1600,7 @@
                             من يشقي ويسعد ويغني ويفقر. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n58-p62"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3838.xhtml"/>
+                        <pb ed="shamela" n="n58-p62" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3838.xhtml"/>
                         <head>رثاء تولستوي</head>
                         <lg type="bayt">
                             <l>(تولستوي) تجري آية العلم دمعها </l>
@@ -1850,9 +1695,7 @@
                             <l>إليك اعترافي لا لقس وكاهن </l>
                             <l> ونجواي بعد الله وهو غفور</l>
                         </lg>
-                        <p>فزهدك لم ينكره في الأرض عارف <gap resp="#org_MS"/> ولا متعال في السماء كبير <pb ed="shamela"
-                   n="n58-p63"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3839.xhtml"/> بيان يشم الوحي من نفحاته
+                        <p>فزهدك لم ينكره في الأرض عارف <gap resp="#org_MS"/> ولا متعال في السماء كبير <pb ed="shamela" n="n58-p63" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3839.xhtml"/> بيان يشم الوحي من نفحاته
                             <gap resp="#org_MS"/> وعلم كعلم الأنبياء غزير</p>
                         <lg type="bayt">
                             <l>سلكت سبيل المترفين ولذني </l>
@@ -1943,9 +1786,7 @@
                             <l>وحوّر قول الناس مولى وعبده </l>
                             <l> إلى قولهم مستأجر وأجير</l>
                         </lg>
-                        <p>وأضحى نفاذ المال لا أمر في الورى <gap resp="#org_MS"/> ولا نهي إلا ما يرى ويشير <pb ed="shamela"
-                   n="n58-p64"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3840.xhtml"/> نساس حكومات به وممالك
+                        <p>وأضحى نفاذ المال لا أمر في الورى <gap resp="#org_MS"/> ولا نهي إلا ما يرى ويشير <pb ed="shamela" n="n58-p64" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3840.xhtml"/> نساس حكومات به وممالك
                             <gap resp="#org_MS"/> ويذعن أقيال له وصدور</p>
                         <lg type="bayt">
                             <l>وعصر بنوه في السلاح وحرصه </l>
@@ -2036,9 +1877,7 @@
                             <l>قضيت حياة ملؤها البر والتقى </l>
                             <l> فأنت بأجر المتقين جدير</l>
                         </lg>
-                        <p>وسموك فيهم فيلسوفاً وأمسكوا <gap resp="#org_MS"/> وما أنت إلا محسن ومجير <pb ed="shamela"
-                   n="n58-p65"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3841.xhtml"/> وما أنت إلا زاهد صاح
+                        <p>وسموك فيهم فيلسوفاً وأمسكوا <gap resp="#org_MS"/> وما أنت إلا محسن ومجير <pb ed="shamela" n="n58-p65" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P3841.xhtml"/> وما أنت إلا زاهد صاح
                             صيحة <gap resp="#org_MS"/> يرن صداها ساعة ويطير</p>
                         <lg type="bayt">
                             <l>سلوت عن الدنيا ولكنهم صبوا </l>

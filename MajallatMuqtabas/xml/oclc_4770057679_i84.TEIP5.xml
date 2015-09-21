@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i84_text"
-         xml:lang="ar"
-         type="issue"
-         n="i84">
+   <text xml:id="oclc_4770057679_i84_text" xml:lang="ar" type="issue" n="i84">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,37 +202,33 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1914-01-01">بتاريخ: 1 - 1 - 1914</date>
-                                    <biblScope n="84" unit="issue">العدد 84</biblScope>
+                                    <date when="1914-01-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="1914" xml:lang="ar">١٩١٤</tei:num> </date>
+                                    <biblScope n="84" unit="issue">العدد  <tei:num value="84" xml:lang="ar">٨٤</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             n=""
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5705.xhtml"/>
+                    <pb ed="shamela" n="" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5705.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="84" unit="issue">العدد 84</biblScope> 
-                  <date when="1914-01-01">بتاريخ: 1 - 1 -
-                            1914</date> 
+                  <biblScope n="84" unit="issue">العدد  <tei:num value="84" xml:lang="ar">٨٤</tei:num> </biblScope> 
+                  <date when="1914-01-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="1" xml:lang="ar">١</tei:num>  -
+                             <tei:num value="1914" xml:lang="ar">١٩١٤</tei:num> </date> 
                </bibl> 
             </head>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n84-p1"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5706.xhtml"/>
+                        <pb ed="shamela" n="n84-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5706.xhtml"/>
                         <head>راعية الخيل لا راعية الجبل</head>
-                        <p>1 تمهيد</p>
+                        <p> <tei:num value="1" xml:lang="ar">١</tei:num>  تمهيد</p>
                         <p>لغتنا قليلة الاصطلاحات بالنسبة إلى العصر فشوها وزهوها وغضارتها إلا إن الذي وصلنا منها جاءنا مبهماً أو ناقص
                             التعريف والتحديد أو مصحفاً ومحرفاً. وهنا الطامة الكبرى والبلوى العظمى. ومن هذا القبيل الكلمة التي نريد إن نبحث
                             عن حقيقتها وهي راعية الخيل فقد جاءت في كتبهم مصحفة بصورة راعية الجبل فهل هذا التصحيف مقبول؟ - قلنا:</p>
-                        <p>2 قول اللغويين في هذه الكلمة وأسماؤها المختلفة</p>
-                        <p>قال في القاموس: راعية الجبل: طائر. ولم يزد على هذا القدر. وقال في المخصص 8: 155: الراعية يقال لها: راعية الخيل:
+                        <p> <tei:num value="2" xml:lang="ar">٢</tei:num>  قول اللغويين في هذه الكلمة وأسماؤها المختلفة</p>
+                        <p>قال في القاموس: راعية الجبل: طائر. ولم يزد على هذا القدر. وقال في المخصص  <tei:num value="8" xml:lang="ar">٨</tei:num> :  <tei:num value="155" xml:lang="ar">١٥٥</tei:num> : الراعية يقال لها: راعية الخيل:
                             طائرة صفراء صغيرة تراها أبداً تحت بطون الخيل والدواب كأنما خضب جناحاها وعنقها بالزعفران فيها كدرة وسواد وظهرها
                             أصفر وزمكاها لا طويلة ولا قصيرة. وقال صاحب تاج العروس: راعية الجبل كذا في النسخ. والصواب: الخيل بالخاء المعجمة
                             والتحتية كما هو نص التكملة: طائر أصفر يكون تحت بطون الدواب. هكذا هو في التكملة. وقال النضر بن شميل: طائرة صغيرة
@@ -272,9 +239,7 @@
                             الدواعي العقلية على تأييد هذا اللفظ أي راعية الخيل ودفع الرواية المصحفة وهي راعية الجبل.</p>
                         <p>وقال التاج في مستدرك ر ع ي: والراعية: طائر. ورعاءة الخيل: لغة في راعية الخيل. عن الصاغاني. قلت أنا: أما الراعية
                             فهي نفس راعية الخيل كما تقدم نصه من عبارة صاحب المخصص إذ جعل الراعية وراعية الخيل شيئا واحدا. وإما رعاة الخيل
-                            فقد قال اللغوي الانكليزي لين صاحب مد القاموس: هكذا وردت هذه اللفظة بدون ضبط في تاج <pb ed="shamela"
-                   n="n84-p2"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5707.xhtml"/> العروس. والظاهر إن هذه
+                            فقد قال اللغوي الانكليزي لين صاحب مد القاموس: هكذا وردت هذه اللفظة بدون ضبط في تاج <pb ed="shamela" n="n84-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5707.xhtml"/> العروس. والظاهر إن هذه
                             الكتابة مخطوءة لأننا إذا نظرنا إليها نراها داخلة في عداد اسم الجنس وحينئذ يجب أن تضبط هكذا رعاة الجبل. فانظر إلى
                             هذا الكلام مع ما فيه من الغرابة. والأصح إن تضبط اللفظة رعاة الخيل وزان شدادة. فعالة بمعنى فاعلة للمبالغة فكما
                             أنه قيل لها راعية الخيل سميت أيضاً رعاة الخيل لكثرة رعيها وإلا فلو كانت جمعاً لراعية لقيل رواعي الخيل لا رعاة
@@ -295,14 +260,12 @@
                             الليث: هو طائر يألف البيوت وهو أجبن طائر.</p>
                         <p>وهذه الأسماء وإن كانت تقع على جنس واحد من هذا الطير إلا إن الاسم الواحد لا يقع على المدلول الآخر. فالصفرة كثير
                             الصفرة اسمه بالفرنسية وبلغة العلماء وهو كثير الوجود في العراق يكون طول السنة. وأما راعية الخيل أو رعاة الخيل أو
-                            الراعية أو الرعوة فأسمها بالفرنسية وأما بلغة العلم فهو وأما القوبع فهو والذعرة وأم عجلان <pb ed="shamela"
-                   n="n84-p3"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5708.xhtml"/> والفتاح
+                            الراعية أو الرعوة فأسمها بالفرنسية وأما بلغة العلم فهو وأما القوبع فهو والذعرة وأم عجلان <pb ed="shamela" n="n84-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5708.xhtml"/> والفتاح
                             والفتاحية والزعرة شيء واحد وأسمها بالفرنسية وبلسان العلماء أو ويشملها كلها أسم الذعرة أو الزعرة وهو أسم
                             الجنس.</p>
                         <p>ومن أسمائها عند العوام أم صفيدة ذكرها صاحب محيط المحيط في مادة ذعر. وأعاد الكلام في دائرة المعارف في مادة ذعر.
                             قال: الذعرة طائر يهز ذنبه دائماً.</p>
-                        <p>والعامة تقول له أم صفيدة - ومن أسمائها العامية ما ذكره الدكتور أمين المعلوف في معجم الحيوان 36: 458: من المقتطف)
+                        <p>والعامة تقول له أم صفيدة - ومن أسمائها العامية ما ذكره الدكتور أمين المعلوف في معجم الحيوان  <tei:num value="36" xml:lang="ar">٣٦</tei:num> :  <tei:num value="458" xml:lang="ar">٤٥٨</tei:num> : من المقتطف)
                             قال: الذعرة طائر صغير يكثر تحريك ذنبه ويسمى أبا فصادة في مصر وأم سكعكع في الشام قلت: وأسمه زيطة عند العراق وصفرد
                             أبو المليح عند الأعراب.</p>
                         <p>فمع كثرة هذه الأسماء لا ترى المعاجم الفرنسوية أو الإنكليزية العربية تذكر إلا القليل منها. أو لا تذكر شيئاً. فهذا
@@ -317,9 +280,7 @@
                             ينقلون أقوال من تقدمهم بدون ترو أو تدقيق النظر ولهذا معاجمنا العربية الحديثة لا تمتاز عن معاجم الأقدمين بشيء
                             يذكر.</p>
                         <p>وصف هذه الطويئرة على ما جاء به العلماء</p>
-                        <p>راعية الخيل من الطويئرات القواطع من رتبة العصافير المسننة المنقار الراجعة إلى جنس <pb ed="shamela"
-                   n="n84-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5709.xhtml"/> الدقيقات المنقار وإلى
+                        <p>راعية الخيل من الطويئرات القواطع من رتبة العصافير المسننة المنقار الراجعة إلى جنس <pb ed="shamela" n="n84-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5709.xhtml"/> الدقيقات المنقار وإلى
                             صنف هزازات الأذناب. وتمتاز بمنقار دقيق مستقيم وبمنخرين ملوزين يكونان عند قاعدة المنقار ومغشيان إلى نحو منتصفهما
                             بغشاوة جرداء ولها إبهام به ظفر طويل قليل التقوس وعرف بذنب ليس بالطويل ولا بالقصير دائم الحركة تهزه الطائرة من
                             فوق إلى الأسفل.</p>
@@ -338,14 +299,10 @@
                         <p>ولكل من الرواعي والصفارد ضروب وأشكال تختلف بعضها عن بعض بالنعوت فيقولون الصفرد الأرمد والصفرد الأصفر والراعية
                             الرمداء والراعية الصفراء إلى آخر ما هناك. وبهذا القدر كغاية للغوي والأديب. ومن أراد الزيادة فليرجع إلى كتب الفن
                             وقد سيرت عليه المراجعة بعد معرفة الألفاظ العلمية. والله ولي التيسير.</p>
-                        <p>بغداد: <pb ed="shamela"
-                   n="n84-p5"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5710.xhtml"/> ساتسنا </p>
+                        <p>بغداد: <pb ed="shamela" n="n84-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5710.xhtml"/> ساتسنا </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n84-p6"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5711.xhtml"/>
+                        <pb ed="shamela" n="n84-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5711.xhtml"/>
                         <head>الإفادات والإنشادات</head>
                         <p>وقفت في إحدى دور الكتب في النجف على مجلد يوجد درجة عدة كتب نحيفة منها مختصر تاريخ للشام في القرن السابع فقط أوله
                             فلم أعرف مؤلفه ومنها كتاب (الفوائد الوفية بترتيب طبقات الصوفية) تأليف يوسف بن شاهين سبط ابن حجر العسقلاني
@@ -371,9 +328,7 @@
                             <l>مقالة إن قد قلت سوف أناله </l>
                             <l> وذلك من تلقاء مثلك رائع</l>
                         </lg>
-                        <p>يروي (مقالة) بالرفع على أنه بدل من (أنك لمتني) الفاعل بأني وبالفتح على ذلك إلا انه <pb ed="shamela"
-                   n="n84-p7"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5712.xhtml"/> بناء لما أضافه إلى
+                        <p>يروي (مقالة) بالرفع على أنه بدل من (أنك لمتني) الفاعل بأني وبالفتح على ذلك إلا انه <pb ed="shamela" n="n84-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5712.xhtml"/> بناء لما أضافه إلى
                             مبني.</p>
                         <p>إنشاده</p>
                         <p>أنشدني الشيخ الفقيه القاضي الاعدل الفاضل أبو بكر محمد بن عمر بن علي القرشي الهاشمي إبقاء الله في السابع والعشرين
@@ -421,9 +376,7 @@
                         <p>إنشاده</p>
                         <p>أنشدني الأستاذ الكبير أبو سعيد بن لب أبقى الله بركته عشية يوم الأربعاء الثالث لشعبان عام تسعة وخمسين وسبعمائة
                             لنفسه:</p>
-                        <p>وهبك وجدت العفو عن كل زلة <gap resp="#org_MS"/> فأين مقام العفو من مقعد الرضا <pb ed="shamela"
-                   n="n84-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5713.xhtml"/> وكيف بثوب حالك اللون رمت
+                        <p>وهبك وجدت العفو عن كل زلة <gap resp="#org_MS"/> فأين مقام العفو من مقعد الرضا <pb ed="shamela" n="n84-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5713.xhtml"/> وكيف بثوب حالك اللون رمت
                             أن <gap resp="#org_MS"/> يصير كثوب لم يزل قط أبيضا</p>
                         <p>إفادة</p>
                         <p>حدثني الشيخ الفقيه الأستاذ الكبير النحوي الشهير أبو عبد الله محمد بن علي الفخار البيري رحمة الله عليه أن بعض
@@ -457,9 +410,7 @@
                             <l> يعود إن جاورها يحرق</l>
                         </lg>
                         <p>إفادة</p>
-                        <p>حدثنا الأستاذ أبو عبد الله البلنسي قال حدثنا الأستاذ الخطيب أبو عبد الله محمد ابن مرزوق <pb ed="shamela"
-                   n="n84-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5714.xhtml"/> قال سألت أبي
+                        <p>حدثنا الأستاذ أبو عبد الله البلنسي قال حدثنا الأستاذ الخطيب أبو عبد الله محمد ابن مرزوق <pb ed="shamela" n="n84-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5714.xhtml"/> قال سألت أبي
                             ونحن نطوف باليت الحرام زاده الله تشريفاً فقلت له لم كان البيت يجعل في الطواف إلى جهة اليسار ولم يجعل إلى جهة
                             اليمين وهي أشرف فقال لي سريعاً يا بني إن القلب على جهة اليسار فجعل الشق الذي هو محل القلب إلى جهة البيت ليكون
                             أقرب موافقة لقوله تعالى (واجعل أفئدة من الناس تهوي إليهم) فقلت له أن الطبيعيين وأهل التشريح أطبقوا على أن محل
@@ -488,9 +439,7 @@
                             <l>لا يخدعنك في امرئٍ </l>
                             <l> لبس الحلي والحلل</l>
                         </lg>
-                        <p>في الناس من تلقاهم <gap resp="#org_MS"/> حمر الوجوه من الخلل <pb ed="shamela"
-                   n="n84-p10"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5715.xhtml"/> إنشاده</p>
+                        <p>في الناس من تلقاهم <gap resp="#org_MS"/> حمر الوجوه من الخلل <pb ed="shamela" n="n84-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5715.xhtml"/> إنشاده</p>
                         <p>أنشدني الفقيه القاضي أبو بكر بن القرشي لنفسه في السابع والعشرين لذي حجة من عام تسعة وخمسين وسبعمائة.</p>
                         <lg type="bayt">
                             <l>إذا ما تبدي منهج الحق واضحا </l>
@@ -534,9 +483,7 @@
                             <l>لا عتب أن خلفوني في الحضيض لما </l>
                             <l> أشدو به عم صباحاً أيها الطلل</l>
                         </lg>
-                        <p>ورافقوا الغير دوني في مسيرهم <gap resp="#org_MS"/> فربما قصرت بي دونهم علل <pb ed="shamela"
-                   n="n84-p11"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5716.xhtml"/> كم أنجدوا كلما أنهمت
+                        <p>ورافقوا الغير دوني في مسيرهم <gap resp="#org_MS"/> فربما قصرت بي دونهم علل <pb ed="shamela" n="n84-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5716.xhtml"/> كم أنجدوا كلما أنهمت
                             وانتهضوا <gap resp="#org_MS"/> نحو اليفاع وبالعلياء قد نزلوا</p>
                         <lg type="bayt">
                             <l>يجدوا قرائح منهم عزهم وأنا </l>
@@ -596,9 +543,7 @@
                         <p>وهذا غريب.</p>
                         <p>إفادة</p>
                         <p>حدثنا الأستاذ القاضي أبو عبد الله المغربي قال كان أبو زيد بن الإمام يصحف قول الخونجي في الجمل والمقارنات التي
-                            يمكن اجتماعه معها فيقول والمفارقات قال ولعله في هذا كما قال أبو عمرو بن العلاء للأصمعي لما قرأ عليه: <pb ed="shamela"
-                   n="n84-p12"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5717.xhtml"/>
+                            يمكن اجتماعه معها فيقول والمفارقات قال ولعله في هذا كما قال أبو عمرو بن العلاء للأصمعي لما قرأ عليه: <pb ed="shamela" n="n84-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5717.xhtml"/>
                             وغررتني وزعمت أنك لابنٌ في الصيف تامر.</p>
                         <p>فقال</p>
                         <p>وغرزتني وزعمت أنك لاتني بالضيف تأمر</p>
@@ -639,9 +584,7 @@
                             بالكسر ومن الناس من يفتح فقال إنما هو الفتح بمعنى الصحيح قالوا يحتمل أن يكون مصدر صح كحنات.</p>
                         <p>إنشاده</p>
                         <p>أنشدني الفقيه الفاضل أبو عبد الله الشريشي قال أنشدني الشيخ القاضي أبو عبد الله المغربي قال أنشدني الحاج أبو عبد
-                            الله محمد بن عبد الواحد الرباطي قال أنشدني تقي <pb ed="shamela"
-                   n="n84-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5718.xhtml"/> الدين لنفسه:</p>
+                            الله محمد بن عبد الواحد الرباطي قال أنشدني تقي <pb ed="shamela" n="n84-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5718.xhtml"/> الدين لنفسه:</p>
                         <lg type="bayt">
                             <l>تمنيت أن الشيب عاجل لمتي </l>
                             <l> وقرب مني في صباي مزاره</l>
@@ -677,9 +620,7 @@
                             <l>ويستميل الوجد قلبي وقد </l>
                             <l> أصبح لي ثوب الحجى زيا</l>
                         </lg>
-                        <p>يا هل اقضي من منى حاجتي <gap resp="#org_MS"/> وأنحر البز المهاريا <pb ed="shamela"
-                   n="n84-p14"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5719.xhtml"/> وارتوي من زمزم فهي لي
+                        <p>يا هل اقضي من منى حاجتي <gap resp="#org_MS"/> وأنحر البز المهاريا <pb ed="shamela" n="n84-p14" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5719.xhtml"/> وارتوي من زمزم فهي لي
                             <gap resp="#org_MS"/> ألذّ من ريق المهى ريا</p>
                         <p>إنشاده</p>
                         <p>أنشدني الفقيه الرحالة أبو اسحق بن الحاج قال أنشدني الأستاذ الإمام أبو حيان يوسف بن حيان لنفسه:</p>
@@ -728,9 +669,7 @@
                             <l>فأعجب لنار اشتياق في الحشا وقعت </l>
                             <l> والريح تذهبها والماء يلهبها</l>
                         </lg>
-                        <p>إفادة <pb ed="shamela"
-                   n="n84-p15"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5720.xhtml"/> كتب لي بخطه شيخنا الجليل
+                        <p>إفادة <pb ed="shamela" n="n84-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5720.xhtml"/> كتب لي بخطه شيخنا الجليل
                             القاضي أبو عبد الله المغربي رحمه الله على ظهر التسهيل لابن مالك الذي كتبته بخطي بعدما كتب لي بخطه روايته فيه عن
                             أبي الحسين بن مزاحم عن بدر الدين بن جماعة عن المؤلف فكتب بعد ذلك ما نصه:</p>
                         <p>قال محمد بن محمد المغربي بدر الدين بن جماعة المذكور يدعى بقاضي القضاة على ما جرت به عوائد أهل المشرق في تسمية
@@ -753,9 +692,7 @@
                         <p>النجف // محمد رضا الشبيبي </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n84-p16"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5721.xhtml"/>
+                        <pb ed="shamela" n="n84-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5721.xhtml"/>
                         <head>سيرة صلاح الدين</head>
                         <p>لو كان تاريخ العرب يدرس في مدارسنا على أصوله لوجب أن تدرس سيرة السلطان صلاح الدين يوسف ابن أيوب صاحب مصر والشام
                             واليمن والجزيرة كما تدرس سيرة الخلفاء الراشدين فقد مضت القرون بعد الخليفة المأمون العباسي ولم ينشأ للعرب ملك
@@ -768,16 +705,14 @@
                             القسي فإنه راعي فيه السجع من أوله إلى آخره حتى يكاد يمل قارئه وتشغله الألفاظ والجناسات والترصيع وعويص اللغة عن
                             تدبر المعنى ودخوله الآذان بلا استئذان على أن له من سجعه في الأحيان ما يجئ عفو القريحة فيكون المعجب المطرب مثل
                             فصل ذكر حال نساء الفرنج فإنه أبدع فيه كل الإبداع وإن كان ما يظهر ركب مركب الغلو في تمثيل حالهن.</p>
-                        <p>ولقد تدبرنا سيرة الملك الناصر صلاح الدين منذ ولد في قلعة تكربت (532 هـ) وكان والده أيوب بن شاذي والياً بها إلى أن
+                        <p>ولقد تدبرنا سيرة الملك الناصر صلاح الدين منذ ولد في قلعة تكربت ( <tei:num value="532" xml:lang="ar">٥٣٢</tei:num>  هـ) وكان والده أيوب بن شاذي والياً بها إلى أن
                             جاء الموصل مع والده وقد ترعرع إلى أن انتقل معه إلى الشام وأعطي بعلبك إلى أن اتصل بالملك نور الدين محمود بن زنكي
                             إلى أن ذهب مع عمه أسد الدين شيركوه إلى مصر إلى أن ملك مصر وأزال دولة العاضد الفاطمية وخطب للدولة العباسية إلى أن
                             فتح الشام واستخلص أكثر بلاد الساحل الشامي والقدس من الإفرنج إلى أن توفاه الله في دمشق بعد جهاد أربع سنين في
                             الصليبيين - تدبرنا كل هذا فلم نحص له ولا شهدنا له إلا ما ينطبق على مكارم الأخلاق والعدل المتناهي والحلم الذي
                             دونه حلم أحنف ومعاوية ولولا ما دسه الفقهاء عليه من تزيين قتل الشهاب السهروردي الفيلسوف لخرجت صحيفة حياته كلها
                             بيضاء نقية قال ابن شداد أن هذا السلطان كان مبغضا للفلاسفة والمعطلة ومن يعاند الشريعة ولقد أمر ولده صاحب حلب
-                            الملك الظاهر أعز اله أنصاره <pb ed="shamela"
-                   n="n84-p17"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5722.xhtml"/> بقتل شاب نشأ يقال له
+                            الملك الظاهر أعز اله أنصاره <pb ed="shamela" n="n84-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5722.xhtml"/> بقتل شاب نشأ يقال له
                             السهروردي قيل عنه أنه كان معاندا للشرائع معطلا وكان قد قبض عليه ولده المذكور لما بلغه من خبره وعرف السلطان به
                             فأمر بقتله فطلبه أياما فقتله هذه رواية ابن شداد وهو من الفقهاء أورد هذه القصة في معرض أن السلطان يعظم شعائر
                             الدين وإثبات أنه يقول بالعبث والنشور ومجازاة المحسن بالجنة والمسيء بالنار.</p>
@@ -796,12 +731,10 @@
                             واعتقلهم وأهانهم وأخذ منهم أموالا عظيمة.</p>
                         <p>هذه الغلطة الوحيدة هي التي أحصيت لصلاح الدين وهي في الحقيقة انتقام المتفقهة من المتفلسفة أو النقل من العقل - وهذا
                             الانتقام ما برح على أشده في كل زمان ولا سيما منذ القرن السادس إلى آخر العاشر فإنه قتل في بلاد الإسلام كثير من
-                            الأعاظم أو اضطهدوا <pb ed="shamela"
-                   n="n84-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5723.xhtml"/> وأوذوا من قبل أعداء
+                            الأعاظم أو اضطهدوا <pb ed="shamela" n="n84-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5723.xhtml"/> وأوذوا من قبل أعداء
                             الفلسفة وما عدا ذلك فإن صلاح الدين لا يلام على قتل أحد من الصليبيين لأنهم أفحشوا هم في أسره وعاهدوا فخانوا ومثل
                             من قتلهم من المصريين للقضاء على الدولة العبيدية أو من قاموا يدعون إليهم بعد أن زالت دولتهم وفي جملتهم عمارة
-                            اليمني الشاعر (المقتبس م3 ص 169) كل ذلك يغتفر له لأنه في سبيل تأييد سلطانه والملك عقيم كما قيل.</p>
+                            اليمني الشاعر (المقتبس م <tei:num value="3" xml:lang="ar">٣</tei:num>  ص  <tei:num value="169" xml:lang="ar">١٦٩</tei:num> ) كل ذلك يغتفر له لأنه في سبيل تأييد سلطانه والملك عقيم كما قيل.</p>
                         <p>ومما ذكره ابن شداد في عدله أنه كان رؤفاً رحيماً ناصراً للضعيف على القوي ولكن يجلس للعدل في كل يوم اثنين وخميس في
                             مجلس عام يحضره الفقهاء والقضاة والعلماء ويفتح الباب للمتحاكمين حتى يصل إليه كل أحد من كبير وصغير وعجوز هرمة وشيخ
                             كبير وكان يفعل ذلك سفرا وحضراً على أنه كان في جميع زمانه قابلا لجميع ما يعرض عليه من القصص في كل يوم ويفتح باب
@@ -815,9 +748,7 @@
                             على ملكي إلى أن مات وكان في يديه أموال عظيمة كلها لي ومات عنها واستولى عليها السلطان وأنا مطالبه بها فقلت له: يا
                             شيخ وما أقعدك إلى هذه الغاية فقال: لا تبطل بالتأخير وهذا الكتاب الحكمي ينطق بأنه لم يزل في ملكي إلى أن مات فأخذت
                             الكتاب منه وتصفحت مضمونه فوجدته يتضمن حيلة سنقر الخلاطي وأنه قد اشتراه من فلان التاجر بارجيش اليوم الفلاني من
-                            شهر كذا وأنه لم يزل في ملكه إلى أن شذ عن يده في سنة كذا وما عرف شهود هذا الكتاب خروجه عن <pb ed="shamela"
-                   n="n84-p19"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5724.xhtml"/> ملكه بوجه ما
+                            شهر كذا وأنه لم يزل في ملكه إلى أن شذ عن يده في سنة كذا وما عرف شهود هذا الكتاب خروجه عن <pb ed="shamela" n="n84-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5724.xhtml"/> ملكه بوجه ما
                             وتم الشرط إلى آخره فتعجبت من هذه القضية وقلت للرجل: لا ينبغي سماع هذا بلا وجود الخصم وأنا أعرفه وأعرفك ما عنده
                             فرضي الرجل بذلك واندفع فلما اتفق المثول بين يديه في بقية ذلك اليوم عرفته القضية فاستبعد ذلك استبعاداً عظيماً
                             وقال: كنت نظرت في الكتاب فقلت نظرت فيه ورأيته متصل الورود والقبول إلى دمشق شهود معروفون فقال: مبارك نحن نحضر
@@ -836,9 +767,7 @@
                         <p>مثل هذا الفاتح العظيم مات ولم يحفظ ما تجب عليه به الزكاة فان صدقة النفل استرقت جميع ما ملكه من الأموال فملك ما
                             ملك ولم يخلف في خزانته من الذهب والفضة إلا سبعة وأربعين درهما ناصريا وجرما واحدا ذهبا ولم يخلف لملكا ولا دارا
                             ولا عقارا ولا بستانا ولا قرية ولا مزرعة ولا شيئا من أنواع الأملاك وكان رحمه الله يهيب الأقاليم وفتح آمد (ديار
-                            بكر) وطلبها منه ابن قره أرسلان فأعطاه إياها وهو يعطي في وقت الضيق كما <pb ed="shamela"
-                   n="n84-p20"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5725.xhtml"/> يعطي في حال السعة وكان
+                            بكر) وطلبها منه ابن قره أرسلان فأعطاه إياها وهو يعطي في وقت الضيق كما <pb ed="shamela" n="n84-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5725.xhtml"/> يعطي في حال السعة وكان
                             نواب خزائنه يخفون عنه شيئا من المال حرا من أن يفاجئهم مهم لعلمهم بأنه متى علم به أخرجه قال ابن شداد: وكان يعطي
                             فوق ما يؤمل الطالب فما سمعته قط يقول: أعطينا لفلان وكان يعطي الكثير ويبسط وجهه للعطاء بسطه لمن لم يعطه شيئا وما
                             سمعته قط يقول: قد زدت مراراً فكم أزيد وأكثر الرسائل كانت تكون على لساني ويدي وكنت أخجل من كثرة ما يطلبون ولا
@@ -856,9 +785,7 @@
                             يرضه ما كتبوه ولم يكفه ما رتبوه فجاءني في تلك الحالة من استملاه مني ومرضت أذهان الأصحاء ولم يمرض ذهني فتسلم
                             بيروت بخطي وأصبحوا وأنا الآخذ والمعطي وكان الناس قد أنسوا بما أسطره وأبرزه وأنسوا سوى ما أذكره وأحبره والغوا
                             الصحة فيه فألفوا ولقوا السقم في غيره فانفوه فلم يكن في ذلك التوقيع تعويق بل كله بتوفيق من الله توثيق فما فتح فتح
-                            إلا بمفتاحه ولا رتق فتق <pb ed="shamela"
-                   n="n84-p21"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5726.xhtml"/> إلا بصلاحه ولا جلي ظلام
+                            إلا بمفتاحه ولا رتق فتق <pb ed="shamela" n="n84-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5726.xhtml"/> إلا بصلاحه ولا جلي ظلام
                             إلا بإصباحه ولا وري زند إلا باقتداحه.</p>
                         <p>وقال من فصل: وكان قد عرض له مرض فانقلب إلى دمشق يداوي مزاجه فلما عاد إلى الحضرة سأله السلطان: أين كنت ولم أبطأت
                             وحيث أصبت في المجيء فما أخطأت وقد كنا في انتظارك والسؤال عن أخبارك وهذا أوان إحسانك فأين إحسان أوانك فأجر بنانك
@@ -877,9 +804,7 @@
                             فعدنا إلى الخيام وأخذت الكتب التي نمقتها بالبشائر التي حققتها وإذا السلطان قد استبطاني وعدم إجابتي لما دعاني فما
                             صبر ولا انتظر ولا ترقبني أن أحضر ولا أمهل أن أعطى بالبشارة حقها وأجلو بأنوار المعاني فقها وأبلغ بالبلاغة مداها
                             بتقليص الضلالة ثوب هداها وأصف بحدود الأقلام ما صنعته حدود السيوف وأروج نقودي عند السلطان وأغنيه عن الزيوف فأبصرت
-                            عنده مشرفي المطانج <pb ed="shamela"
-                   n="n84-p22"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5727.xhtml"/> والأبيات ومدوني الجرائد
+                            عنده مشرفي المطانج <pb ed="shamela" n="n84-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5727.xhtml"/> والأبيات ومدوني الجرائد
                             بالإثبات وقد كتبوا تلك البشارة الثقيلة الجليلة في رقاع خفيفة بعبارات سخيفة وقد عطلت الحسناء من حيلتها وعروها من
                             بزتها وشوهوا جمالها وأحالوا حالها فذهب المبشرون وسار القاصدون فما كان لتلك الوقعة عند من وقع عليها وقع ولا تم
                             لغليل من رام الاطلاع على حقيقتها نقع وأرادوا بدمشق قراءتها على المنبر فما استحسنوها ولو وردتهم بزينة عبارتي
@@ -897,9 +822,7 @@
                             وما سفارته إلا في نجح وما أسفاره إلا عن صبح وما تجارته إلا لربح فهو يمين الدولة وأمينها ومعين الملة بل معينها
                             بمداده يستمد إمدادها وبسداده للثغور سدادها ودواته دواء المعضلات وبعقده حل المشكلات وبخطه حط عوادي الخطوب وبقطه
                             قط هوادي القطوب وببريه برء الأمراض وبدرءه درء الأعراض وبدره انتظام عقود العقول وبدراريه ابتسام الإقبال والقبول
-                            وبجريه جرى الجياد للجهاد وبسعيه سعي الأمجاد للإنجاد وبحركته سكون الدهماء وببركته ركون الرجاء فما كان الله <pb ed="shamela"
-                   n="n84-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5728.xhtml"/>
+                            وبجريه جرى الجياد للجهاد وبسعيه سعي الأمجاد للإنجاد وبحركته سكون الدهماء وببركته ركون الرجاء فما كان الله <pb ed="shamela" n="n84-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5728.xhtml"/>
                             ليضيعه في صون مالا يصونه من لا يعنيه فخفقت على عكاء من وقوف قلمي عنها وكان قد ألهمني الله فإنه صانه ولم يصنها
                             وشكرت الله على هذه اللطيفة والعارفة الطريفة.</p>
                         <p>وقال من فصل في وفاة السلطان وكيف كانت حاله بعد: وبقيت تلك الأيام لا أفرق بين الدجى والضحى ولا أجد قلبي من سقم
@@ -917,9 +840,7 @@
                             المزايا التي يفاخر بها ما قد يغفر له هذا التبجح ولكن كثيرين يفاخرون وليس عندهم شيء من المزايا. نشأ العماد
                             بأصبهان وقدم بغداد في حداثته وتفقه بالمدرسة النظامية وأقام بها مدة (ابن خلكان) ولما تخرج ومهر تلق بالوزير عون
                             الدين يحيى بن هبيرة ببغداد فولاه النظر بالبصرة ثم بواسط فلما توفي أقام العماد مدة في عيش منكد وجفن مسهد ثم انتقل
-                            إلى دمشق (562 هـ) وسلطانها يومئذ الملك العادل نور <pb ed="shamela"
-                   n="n84-p24"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5729.xhtml"/> الدين وعرفه والد صلاح
+                            إلى دمشق ( <tei:num value="562" xml:lang="ar">٥٦٢</tei:num>  هـ) وسلطانها يومئذ الملك العادل نور <pb ed="shamela" n="n84-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5729.xhtml"/> الدين وعرفه والد صلاح
                             الدين فأحسن إليه وأكرمه وميزه عن الأعيان والأماثل وعرفه صلاح الدين ومدحه بقصيدة ثم إن القاضي كمال الدين الشهروزي
                             نوه بذكره عند السلطان نور الدين وعدد عليه فضائله وأهله لكتابة الإنشاء قال العماد فبقيت متحيرا في الدخول فيما ليس
                             من شأني ولا وظيفتي ولا تقدمت لي به دراية ولقد كانت مواد هذه الصناعة عتيدة عنده لكنه لم يكن قد مارسها فجبن عنها
@@ -937,9 +858,7 @@
                             البرق الشامي في سبع مجلدات وهو مجموع تاريخ وبدأ فيه بذكر نفسه وصورة انتقاله من العراق إلى الشام وما جرى له في
                             خدمة السلطان نور الدين محمود وكيفية تنقله بخدمة السلطان صلاح الدين وذكر شيئا من الفتوحات بالشام وهو من الكتب
                             الممتعة وانما سماه البرق الشامي لأنه شبه أوقاته في تلك الأيام بالبرق لطيبها وسرعة انقضائها وصنف كتب الفتح القسي
-                            في الفتح <pb ed="shamela"
-                   n="n84-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5730.xhtml"/> القسي في مجلدين يتضمن
+                            في الفتح <pb ed="shamela" n="n84-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5730.xhtml"/> القسي في مجلدين يتضمن
                             كيفية فتح البيت المقدس وصنف كتاب السيل على الذيل جعله ذليلا على الذيل لابن السمعاني وهو ذيل على كتاب جريدة القصر
                             وصنف كتاب نصرة الفترة وعصرة القطرة في أخبار الدولة السلجوقية (مطبوع) وله ديوان رسائل وديوان شعر في أربع مجلدات
                             ونفسه في قصائده طويل وله ديوان صغير جميعه دوبيت وكان بينه وبين القاضي الفاضل مكاتبات ومحاورات لطاف.</p>
@@ -947,7 +866,7 @@
                             أوصاله ولم يجد في وجهه باباً مفتوحا فلزم بيته وأقبل على الاشتغال بالتصانيف وكانت ولادته يوم الاثنين ثاني جمادى
                             الأخرى سنة تسع عشرة وخمسمائة بأصبهان وتوفي يوم الاثنين مستهل سهر رمضان سنة سبع وتسعين وخمسمائة بدمشق ودفن في
                             مقابر الصوفية خارج باب النصر.</p>
-                        <p>أما ابن شداد مؤلف السيرة الصلاحية فقد ولد بالموصل سنة 539 وحفظ بها القرآن الكرين في صغره وتخرج بضياء الدين
+                        <p>أما ابن شداد مؤلف السيرة الصلاحية فقد ولد بالموصل سنة  <tei:num value="539" xml:lang="ar">٥٣٩</tei:num>  وحفظ بها القرآن الكرين في صغره وتخرج بضياء الدين
                             القربطي وبابن الشيرجي والطومي الخطيب وغيرهم قرأ عليهم القرآن القراءات والتفسير والحديث والفقه والخلاف والأدب
                             واللغة وأعاد بالمدرسة النظامية وحج في سنة ثلاث وثمانين وخمسمائة وزار بيت المقدس والخليل ثم دخل دمشق والسلطان
                             صلاح الدين محاصر قلعة كوكب فذكر أنه سمع بوصوله فاستدعاه إليه فظن أنه يسأله عن كيفية قتل الأمير شمس الدين فإنه
@@ -957,9 +876,7 @@
                             لك إذا عدت من الزيارة وعزمت على العود فعرفنا بذلك فلنا إليك مهم فأجلبه بالسمع والطاعة فلما عاد عرف بوصوله
                             فاستدعاه وجمع له في تلك المدة كتابا يشتمل على فضائل الجهاد وما أعد الله سبحانه وتعالى للمجاهدين يحتوي على مقدار
                             ثلاثين كراسة خرج إليه واجتمع به ببقعة حصن الأكراد وقدم له الكتاب الذي جمعه وقال إنه كان عزم على الانقطاع في مشهد
-                            لظاهر الموصل إذا وصل إليها ثم أنه اتصل بخدمة صلاح الدين في مستهل جمادى الأولى <pb ed="shamela"
-                   n="n84-p26"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5731.xhtml"/> سنة أربع وثمانين
+                            لظاهر الموصل إذا وصل إليها ثم أنه اتصل بخدمة صلاح الدين في مستهل جمادى الأولى <pb ed="shamela" n="n84-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5731.xhtml"/> سنة أربع وثمانين
                             وخمسمائة ثم ولاه قضاء المعسكر والحكم بالقدس الشريف ولما توفي صلاح الدين كان حاضرا وتوجه إلى حلب لجمع كلمة الأخوة
                             أولاد صلاح الدين وتحليف بعضهم لبعض وكتب الملك الظاهر غياث الدين ابن صلاح الدين إلى أخيه الملك الأفضل نور الدين
                             علي بن صلاح الدين صاحب دمشق يطليه منه فأجابه إلى ذلك فأرسله الملك الظاهر إلى مصر لاستخلاف أخيه الملك العزيز عماد
@@ -977,9 +894,7 @@
                             واحد منهم مكان معين لابتعاده ثم أنه تجهز إلى الديار المصرية لإحضار ابنه الملك الكامل بن الملك العادل للملك
                             العزيز صاحب حلب وكان قد عقد لهم عليها فار في أول سنة تسع وعشرين وستمائة وعاد وقد جاء بها ولما وصل كان قد استقل
                             الملك العزيز بنفسه ورفعوا عنه الحجر ونزل الأتابك طغرل من القلعة إلى داره تحت القلعة واستولى على الملك العزيز
-                            جماعة من <pb ed="shamela"
-                   n="n84-p27"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5732.xhtml"/> الشباب الذين كانوا
+                            جماعة من <pb ed="shamela" n="n84-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5732.xhtml"/> الشباب الذين كانوا
                             يعاشرونه ويجالسونه فاشتغل بهم ولم يرى القاضي ابن المحاسن وجها يرضيه فلازم داره إلى حين وفاته وهو باق على الحكم
                             وإقطاعه جار عليه غابة ما في الباب إنه لم يبقى له حديث في الدولة وكانوا يراجعونه في الأمر فكان يفتح بابه لإسماع
                             الحديث كل يوم بين السلاطين واستمر على ذلك حتى توفي سنة اثنتين وثلاثين وستمائة في حلب وصنف كتابه ملجأ الحكام عند
@@ -997,9 +912,7 @@
                             البلاد ويجري فيها الأمر على السداد وتكون المرأة في القدس مقيمة مع زوجها وشمسها من قبوله في أوجها ويرضي العادل
                             مقدمي الفرنج والداوية والاسبتار ببعض القرى ولا يمكنهم من الحصون التي في الذرا ولا يقيم معها في القدس الأقسسيون
                             ورهبان ولهم منا أمان وإحسان واستدعاني العادل والقاضي بهاء الدين بن شداد وجماعة من الأمراء من أهل الراية والسداد
-                            وهم علم الدين سليمان بن جندر وسابق الدين عثمان وعز الدين بن القدم وحسام الدين بشارة وقال لنا تمضون إلى <pb ed="shamela"
-                   n="n84-p28"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5733.xhtml"/>
+                            وهم علم الدين سليمان بن جندر وسابق الدين عثمان وعز الدين بن القدم وحسام الدين بشارة وقال لنا تمضون إلى <pb ed="shamela" n="n84-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5733.xhtml"/>
                             السلطان وتخبرونه عن هذا الشأن وتسألونه أن يحكمني في هذه البلاد فلما جئنا إلى السلطان عرف الصواب وما أخر الجواب
                             وشهدنا عليه بالرضا وعاد الرسول إلى ملك الانكتير بفضل أمر الوصلة وإراحة الجملة وإزاحة العلة واعتقدنا أن هذا الأمر
                             قد تم إلى أن قال وبلغ الخبر إلى مقدميهم ورؤسائهم فقصوه على قوسهم وعثروا على عروسهم فجبوها بالعذل واللذع ثم رضيت
@@ -1017,9 +930,7 @@
                             الرسول وعاد معاوداً في المعنى وكان حديثه مع الملك العادل ثم هو يلقيه إلى السلطان واستقر أنه رأى أن يأذن له في
                             الخروج ويكون الاجتماع في المرج والعساكر محيطة بهما ومعهما ترجمان فلما أذن في ذلك تأخر الرسول أياماً عنده بسبب
                             مرضه واستفاض أن ملوكهم اجتمعوا عليه وأنكروا عليه ذلك وقالوا هذه مخاطرة بدين النصرانية ثم بعد ذلك وصل رسول يقول
-                            لا تظن تأخري بسبب <pb ed="shamela"
-                   n="n84-p29"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5734.xhtml"/> ما قيل فإن زمان قيادي
+                            لا تظن تأخري بسبب <pb ed="shamela" n="n84-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5734.xhtml"/> ما قيل فإن زمان قيادي
                             مفوض إليّ وأنا أحكم ولا يحكم عليّ غير أني في هذه الأيام اعترى مزاجي التياث منعني عن الحركة فهذا كان العذر في
                             التأخير لا غير وعادة الملوك إذا تقاربت منازلهم أن يتهادوا وعندي ما يصلح للسلطان وأنا استخرج الأذن في إيصاله إليه
                             فقال له الملك العادل قد أذن في ذلك بشرط قبول المجازاة على الهدية فرضي الرسول بذلك وقال الهدية شيء من الجوارح قد
@@ -1039,28 +950,24 @@
                         <p>وقال في عود الرسول من قبل ملك الانتكار: وادي الرسالة وهي أن الملك يسأل ويخضع لك أن تترك له هذه الأماكن الثلاثة
                             عامرة وأي قدر لها في ملكك وعظمتك وما من سبب لإصراره عليها إلا أن الإفرنج لم يسمحوا بها وقد ترك القدس بالكلية فلا
                             يطلب أن يكون فيه رهبان ولا قسوس إلا في القمامة وحدها فأنت تترك له هذه البلاد ويكون الصلح عاماً فيكون لهم كل ما
-                            في أيديهم من الدارون إلى أنطاكية ولكم ما في أيديكم وينتظم الحال <pb ed="shamela"
-                   n="n84-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5735.xhtml"/> ويروج وأن لم ينتظم الصلح
+                            في أيديهم من الدارون إلى أنطاكية ولكم ما في أيديكم وينتظم الحال <pb ed="shamela" n="n84-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5735.xhtml"/> ويروج وأن لم ينتظم الصلح
                             فالإفرنج لا يمكنوه من الرواح ولا يمكن مخالفتهم فأنظر إلى هذه الصناعة في استخلاص الغرض باللين تارة والخشونة أخرى
                             وكان مضطراً إلى الرواح وهذا عمله مع اضطراره والله الولي في أن يقي المسلمين شره فما بلونا أعظم حيلة وأشد إقداماً
                             منه. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n84-p31"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5736.xhtml"/>
+                        <pb ed="shamela" n="n84-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5736.xhtml"/>
                         <head>تاريخ السياسة الأوروبية الحاضرة</head>
                         <p>يفرد الغربيون كل العلوم بتأليف خاصة بل يفردون العلم الواحد بفروع كما هو الحل في التاريخ فقد وضع المسيو شارل
                             سينوبوس أستاذ التاريخ في كلية باريز وصاحب كتاب تاريخ الحضارة الذي عربنا أكثره ونشرناه بين أهل العربية هذا الكتاب
                             في تاريخ السياسة الأوروبية الحاضرة:</p>
-                        <p>أفاض في نشوء الأحزاب السياسية وأشكال الحكومات وتقلبات السياسة في أوروبة منذ سنة 1814إلى سنة 1896 أي منذ سقوط
+                        <p>أفاض في نشوء الأحزاب السياسية وأشكال الحكومات وتقلبات السياسة في أوروبة منذ سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num> إلى سنة  <tei:num value="1896" xml:lang="ar">١٨٩٦</tei:num>  أي منذ سقوط
                             نابليون أيام كان الحاكم المتحكم على كثير من بلاد أوروبا يتدخل في شؤونها الداخلية والخارجية ويحكمها حكماً عسكرياً
                             قاسياً بل كان ببسط نفوذه مباشرة أو بالواسطة على جميع شعوب أوروبا فيحكم الإمبراطورية الفرنسوية مباشرة وهي ليست
                             فقط فرنسا القديمة والبلاد المضافة إلى الجمهورية (كالبلجيك وولايات الريم) بل أجزاء من سويسرا وثلث ايطايا وبلاد
                             القاع والولايات الألمانية الواقعة على شواطئ بحر الشمال والولايات الايليرية (الأسبانية) فيحكم هذه البلاد حكما
                             مطلقاً كما كان يحكم الممالك المجاورة التي ارتبط معها بمعاهدات هجومية ودفاعية مثل ممالك اسبانية ونابولي وإيطالية
-                            وفستوفالية التي ولي عليها أقاربه وممالك ألمانية المنضمة تحت لواء اتحاد الريم وسويسرا والدانمارك واضطر سنة 1812
+                            وفستوفالية التي ولي عليها أقاربه وممالك ألمانية المنضمة تحت لواء اتحاد الريم وسويسرا والدانمارك واضطر سنة  <tei:num value="1812" xml:lang="ar">١٨١٢</tei:num> 
                             المملكتين الألمانيتين المستقلتين النمسا وبروسيا إلى الانضمام إليه ضد روسيا ولم يبقى خارجاً عن سلطانه إلا أطراف
                             أوروبة مثل انكلترا وروسيا والسويد وصقلية والبرتغال وكان عصاة أسبانية يناوشونه القتال وهكذا كانت أوروبا بأجمعها
                             منقسمة إلى معسكرين: نابليون وأعداؤه.</p>
@@ -1069,18 +976,16 @@
                             الحرية واقتدت به بقية الأمم والأحزاب التي اتصفت بها الحياة السياسية في القرن التاسع عشر (مثل الدستوري والنيابي
                             والمتطرف والاشتراكي) قد تألفت في انكلترا قبل أن تظهر في الممالك الأخرى ولذا بدأ بانكلترا في الكلام على التاريخ
                             السياسي في أوروبا.</p>
-                        <p>تكلم على الحومة المركزية في انكلترا والسلطات المحلية وطريقة انتخاب النواب والكنائس <pb ed="shamela"
-                   n="n84-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5737.xhtml"/> وتأليف الجمعيات وحالة
+                        <p>تكلم على الحومة المركزية في انكلترا والسلطات المحلية وطريقة انتخاب النواب والكنائس <pb ed="shamela" n="n84-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5737.xhtml"/> وتأليف الجمعيات وحالة
                             إيرلاندا وحالة الإصلاح وتحرير الكاثوليك والإصلاح في الانتخابات وذكر البواعث التي حملت أهل إيرلاندا على المطالبة
-                            بحقوقهم وكان منها انتشار مرض البطاطا سنة 1845 والمجاعة التي حدثت هناك سنة 1846 فكان الجياع يقصدون المدن يجمعون
+                            بحقوقهم وكان منها انتشار مرض البطاطا سنة  <tei:num value="1845" xml:lang="ar">١٨٤٥</tei:num>  والمجاعة التي حدثت هناك سنة  <tei:num value="1846" xml:lang="ar">١٨٤٦</tei:num>  فكان الجياع يقصدون المدن يجمعون
                             نفايات البقول ويأكلون الأعشاب أو مسواك القرود والطرق وقد بعثرت فيها الجثث فهلك الشعب بكثرته من الشقاء أو هاجر
-                            إلى أميركا فلم تلبث إيرلاندا أن سقطت نفوسها من 8170000 نسمة إلى 6500000نسمة سنة 1851 وأخذ الشعب منذ ذلك الحين
-                            يقلّ فبلغ 5100000 نسمة سنة 1881 و4700000 نسمة سنة 1891. وتكلم على الطرق السياسية التي عمد إليها الايرلنديون
+                            إلى أميركا فلم تلبث إيرلاندا أن سقطت نفوسها من  <tei:num value="8170000" xml:lang="ar">٨١٧٠٠٠٠</tei:num>  نسمة إلى  <tei:num value="6500000" xml:lang="ar">٦٥٠٠٠٠٠</tei:num> نسمة سنة  <tei:num value="1851" xml:lang="ar">١٨٥١</tei:num>  وأخذ الشعب منذ ذلك الحين
+                            يقلّ فبلغ  <tei:num value="5100000" xml:lang="ar">٥١٠٠٠٠٠</tei:num>  نسمة سنة  <tei:num value="1881" xml:lang="ar">١٨٨١</tei:num>  و <tei:num value="4700000" xml:lang="ar">٤٧٠٠٠٠٠</tei:num>  نسمة سنة  <tei:num value="1891" xml:lang="ar">١٨٩١</tei:num> . وتكلم على الطرق السياسية التي عمد إليها الايرلنديون
                             لمداواة هذا الأمراض.</p>
-                        <p>وجود الكلام على انكلترا بين الاصطلاحين سنة 1832 - 1867 وفيه فصول في الإصلاح الإداري وهياج العملة وثورة ايرلندا
+                        <p>وجود الكلام على انكلترا بين الاصطلاحين سنة  <tei:num value="1832" xml:lang="ar">١٨٣٢</tei:num>  -  <tei:num value="1867" xml:lang="ar">١٨٦٧</tei:num>  وفيه فصول في الإصلاح الإداري وهياج العملة وثورة ايرلندا
                             وهياج حرية المقايضة والأزمة الايرلندية والنشوء الديمقراطي وغير ذلك. وكلام طويل على الأحزاب الانكليزية بعد سنة
-                            1868 وما قامت به من جلائل الأعمال وكيف تألف حزب استقلال إيرلاندا الإداري وما أتاه للوصول إلى غرضه وكيف تألفت
+                             <tei:num value="1868" xml:lang="ar">١٨٦٨</tei:num>  وما قامت به من جلائل الأعمال وكيف تألف حزب استقلال إيرلاندا الإداري وما أتاه للوصول إلى غرضه وكيف تألفت
                             الأحزاب الاشتراكية وما قام به وزراء انكلترا في السياسة الداخلية والخارجية مثل الوزير ديزرائيلي الذي كان يهيج
                             العواطف الوطنية الانكليزية باتخاذ سياسة الحرب والضرب باسم الشرف الانكليزي الذي أهين بسياسة الحياد الذي جرى عليها
                             غلادستون وأهاج الشعور الوطني بأمرين: المستعمرات الانكليزية والمسألة الشرقية فكان الأحرار يرمون في سياستهم إلى
@@ -1088,17 +993,15 @@
                             المملكة البريطانية وحاول ان يقوي الصلات بين المستعمرات وانكلترا بوحدة عسكرية وتجارية فنادت الحكومة ببيعة الملكة
                             إمبراطورة على الهند وحاولت إنشاء وحدة أو اتحاد في إفريقيه الجنوبية انتهى بحرب الترنسغال. وصرح ديزرائيلي في
                             المسألة الشرقية بأنه يود سلامة المملكة العثمانية فأوقفه غلادستون زمناً بإهاجة الرأي العام ضد العثمانيين
-                            لارتكابهم الفظائع في بلغاريا وعقدت سنة 1876 في المدن الكبرى بانكلترا عدة احتجاجات يظهر فيها الشعب الانكليزي سخطه
+                            لارتكابهم الفظائع في بلغاريا وعقدت سنة  <tei:num value="1876" xml:lang="ar">١٨٧٦</tei:num>  في المدن الكبرى بانكلترا عدة احتجاجات يظهر فيها الشعب الانكليزي سخطه
                             على مرتكبي تلك المظالم فاستحسن مجلس النواب سياسة التداخل فعمدت انكلترا إلى نفس السياسة التي اتخذتها في حرب
-                            القريم وهي <pb ed="shamela"
-                   n="n84-p33"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5738.xhtml"/> سياسة العداء وقامت بعمل
+                            القريم وهي <pb ed="shamela" n="n84-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5738.xhtml"/> سياسة العداء وقامت بعمل
                             فعلي في أوروبا.</p>
                         <p>وختم المؤلف كلامه بالفصل الآتي تعريبه وهو في النشوء السياسي في انكلترا: ان انكلترا هي الدولة الأوروبية الوحيدة
                             التي اجتازت القرن التاسع عشر بدون ان تقوم بثورة فاحتفظت بدستورها القويم ولم تمسه وكذلك بأصول حكومتها وقد نسي
                             الأجانب الثورات التي نشبت في القرن السابع عشر واستنتجوا من ذلك ان الثبات السياسي ملازم للأخلاق الانكليزية ومع
                             هذا فان نحت هذه الصور الباقية غير المتحولة قد تبدلت الحياة السياسية من حيث العمل تبدلاً مهماً وذلك من ابتداء
-                            القرن إلى أواخره بحيث خرجت انكلترا من طريقة حكمها القديمة فقد كانت الأمة الانكليزية سنة 1814 خاضعة بعد لطبقة من
+                            القرن إلى أواخره بحيث خرجت انكلترا من طريقة حكمها القديمة فقد كانت الأمة الانكليزية سنة  <tei:num value="1814" xml:lang="ar">١٨١٤</tei:num>  خاضعة بعد لطبقة من
                             الإشراف هي القابضة على زمام المجتمع والإدارة المحلية والحكومة المركزية فجدد القرن التاسع عشر النظام الاجتماعي
                             بسنه سنة المساواة أمام القانون فألغيت القوانين والعادات التي كانت تقضي على الطبقات النازلة ولقول بعدم الكفاءة
                             السياسية في المخالفين في الدين مثل الكاثوليك والإسرائيليين ومثل شقاء الملاحين وسقوط المحاويج المعانين ومنع عقد
@@ -1109,11 +1012,9 @@
                             انكلترا من الحكم الدستوري إلى الحكم النيابي وطرية حكمها النيابي تتحول إلى طريقة الحكم الشعبي أو جمهورية يحكمها
                             مجلس منتخب انتخاباً ديمقراطياً.</p>
                         <p>وكان هذا النشوء في المجتمع والحكومة على قاعدة ديمقراطية مناقضا مناقضة صريحة للدستور الارستوكراطي في المجتمع
-                            الانكليزي الذي لم تحفل به زمنا طويلا فقد بدئ بتنفيذ هذا الدستور منذ أربعين سنة بحيث ان العالم تين (سنة 1870) لم
+                            الانكليزي الذي لم تحفل به زمنا طويلا فقد بدئ بتنفيذ هذا الدستور منذ أربعين سنة بحيث ان العالم تين (سنة  <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num> ) لم
                             يتكلم عليه على انه لم يحدث من تحول داخلي في المجتمع الانكليزي بل جاء به من الخارج ولم ينشأ إلا من كيفية تأليف
-                            المملكة الانكليزية المؤلفة من أجزاء متخالفة متباينة. <pb ed="shamela"
-                   n="n84-p34"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5739.xhtml"/> ليست المملكة المتحدة
+                            المملكة الانكليزية المؤلفة من أجزاء متخالفة متباينة. <pb ed="shamela" n="n84-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5739.xhtml"/> ليست المملكة المتحدة
                             بريطانية العظمى وإيرلاندا التي يدعوها بانكلترا على غير حقيقتها أمة كفرنسا بل هي مجتمع أمم قديمة (غاليون
                             وايكوسيون وإيرلانديون) خضعت لسلطان أمة متغلبة وظلت مباينة لها في نظامها الاجتماعي والديني وربما ساغ ان تدعى أمة
                             جديدة ذاك المجتمع الصناعي الذي نشأ منذ أوائل القرن الثامن عشر في الأصقاع المقفرة في الغرب والشمال من
@@ -1131,11 +1032,9 @@
                             التحول نحو الديمقراطية وهكذا كان التبديل البطيء في الأوضاع الانكليزية على نسبة القوى الهائلة التي استخدمها
                             المعارضون.</p>
                         <p>لم يبدأ الحزب الديمقراطي ببث دعوته في مملكة من ممالك أوروبا قبل ان يبثها في انكلترا فان هذه سبقت العالم لأول مرة
-                            في القرن التاسع عشر وذلك انه بواسطة الراديكاليين سنة 1819 قد وضعت الخطة السياسية لجميع الأحزاب الديمقراطية في
+                            في القرن التاسع عشر وذلك انه بواسطة الراديكاليين سنة  <tei:num value="1819" xml:lang="ar">١٨١٩</tei:num>  قد وضعت الخطة السياسية لجميع الأحزاب الديمقراطية في
                             أوروبا. وما من حزب ديمقراطي قد استجاش له أنصاراً وأعواناً أكثر من الراديكاليين والشارتيين والايرلنديين
-                            والمتظاهرين من العملة سنة 1866 فقد كانت انكلترا بلاد الاضطرابات والتظاهرات <pb ed="shamela"
-                   n="n84-p35"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5740.xhtml"/> الهائلة بيد ان هذه
+                            والمتظاهرين من العملة سنة  <tei:num value="1866" xml:lang="ar">١٨٦٦</tei:num>  فقد كانت انكلترا بلاد الاضطرابات والتظاهرات <pb ed="shamela" n="n84-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5740.xhtml"/> الهائلة بيد ان هذه
                             الجماهير الديمقراطية المحترمة بمشروعية مطالبها قد وقفت أمام مقاومة الحكومة الارستقراطية التي كانت قابضة على زمام
                             الأمر فكبحت جماح مخالفيها من دون عناء بتوقيف المشاكسين وسن قوانين استثنائية والاستكثار من الجند.</p>
                         <p>ونال هؤلاء الجماعات في نصف قرن بما قاموا به من التظاهرات أكثر مما نالته حفنة من الجمهوريين الفرنسويين في يوم واحد
@@ -1145,7 +1044,7 @@
                             إيرلاندا والإدارة المحلية النصف انتخابية وقانون العملة النصف ديمقراطي.</p>
                         <p>وقد دبر الأمر رؤساء الأحرار في هذه الإصلاحات وكان لسواد الديمقراطيين من العملة الإيرلانديين بادئ الرأي في الإصلاح
                             بد طولى ثم جرت التظاهرات النهائية بإخافة جماعة المحافظين فطلب قدماء الراديكاليين إصلاح الانتخاب من حيث الجملة
-                            ونزعوا الإصلاحات الانتخابية الجزئية التي جرت سنة 1832 و1867 التي أعقبتها جملة من الإصلاحات الديمقراطية والعامية.
+                            ونزعوا الإصلاحات الانتخابية الجزئية التي جرت سنة  <tei:num value="1832" xml:lang="ar">١٨٣٢</tei:num>  و <tei:num value="1867" xml:lang="ar">١٨٦٧</tei:num>  التي أعقبتها جملة من الإصلاحات الديمقراطية والعامية.
                             وطالب الايرلانديون وحصلوا على المساواة السياسية في المعتقدات الدينية.</p>
                         <p>وبعد ان نال الراديكاليون والايرلانديون جزءاً من السلطة السياسية بواسطة حق الرأي العام في الانتخاب دخلوا تدريجياً
                             في الحزب الحر الانكليزي وانتهى بهم الأمر ان عرضوا عليه برنامجهم في الاستقلال الإداري والإصلاح الديمقراطي بحيث
@@ -1154,29 +1053,25 @@
                         <p>وهكذا تداعى بناء الحكم القديم الذي كان يدافع دوله أكثرية الانكليز الممتازة وذلك بضربات سواد المعارضين من غير
                             الانكليز فانهار البناء قطعة قطعة وحل النظام الجديد أيضاً ب \ ون ان تكون له خطة مجموعة بالاحتفاظ بالملكية
                             واللوردات المتوارثين خلفاً عن سلف وكنيسة الحكومة الممتازة ومجانية الوظائف الانتخابية وقيود حق الانتخاب العام
-                            فامتزجت <pb ed="shamela"
-                   n="n84-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5741.xhtml"/> أوضاع الأنقاض القديمة
+                            فامتزجت <pb ed="shamela" n="n84-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5741.xhtml"/> أوضاع الأنقاض القديمة
                             بطعم الجديدة في مجموع حوى المتناقضات حيث لا يمكن التبوء على التحقيق فيما سيزول أو يبقى قائماً وهكذا من الصفات
                             المشوشة في الحياة السياسية في انكلترا الحالية.</p>
                         <p>تكلم المؤرخ على سياسة الأحزاب بعد إخفاق أعلام نابليون الأول وتاريخ الانقلابات الفرنسوية أشبه بتاريخ الانقلابات
-                            العثمانية ولعلنا نحن المقلدون لها المتشعبون بآراء أهلها. مثال ذلك معاملة حكومة فرنسا للجرائد هناك بعد سنة 1819
+                            العثمانية ولعلنا نحن المقلدون لها المتشعبون بآراء أهلها. مثال ذلك معاملة حكومة فرنسا للجرائد هناك بعد سنة  <tei:num value="1819" xml:lang="ar">١٨١٩</tei:num> 
                             وما أصدرته من القوانين لإرهاقها فقد جعلت على الصحف ضمانة باهظة وضربت عليها كما في الصحافة الانكليزية ضريبة وضع
                             طابع بعشرة سنتيمات عن كل نسخة وخمسة سنتيمات أجرة البريد ولم تكن تباع الجرائد أعداداً مفردة بل لم يكن لها سوى
-                            مشتركين بأسعار غالية إذ انه يقضي على كل نسخة ان تدفع 15 سنتيما ضريبة. وكان الاشتراك من علائم الظرف خاصاً
+                            مشتركين بأسعار غالية إذ انه يقضي على كل نسخة ان تدفع  <tei:num value="15" xml:lang="ar">١٥</tei:num>  سنتيما ضريبة. وكان الاشتراك من علائم الظرف خاصاً
                             بالكبراء أو أهل اليسار وربما اشتراك بضعة منهم ليتقاسموا قيمة الاشتراك بينهم وكانت الصحف قليلة جداً ثلاثة أو
-                            أربعة لكل حزب ومجموع ما يطبع منها نحو سنة 1830 لم يتجاوز الخمسة عشر ألفاً. وقد جاء في تقرير سري سنة 1824 ان
-                            مجموع عدد نسخ الصحف السياسية المعارضة بلغ 41 ألفاً ومجموع ما تطبعه الصحف الموالية للحكومة 15 ألفاً. وقد عدوا من
-                            علائم النجاح الكبير سنة 1830 ان كان عدد مشتركي جريدة الكونستيتوسيونل 23 ألفاً وما كانت هذه الصحف تحتوي إلا على
-                            مقالات سياسية وأدبية غير موقع عليها على الطريقة الانكليزية وقد عدوا انقلابا شروع جريدة البريس بنشرها سنة 1836
+                            أربعة لكل حزب ومجموع ما يطبع منها نحو سنة  <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>  لم يتجاوز الخمسة عشر ألفاً. وقد جاء في تقرير سري سنة  <tei:num value="1824" xml:lang="ar">١٨٢٤</tei:num>  ان
+                            مجموع عدد نسخ الصحف السياسية المعارضة بلغ  <tei:num value="41" xml:lang="ar">٤١</tei:num>  ألفاً ومجموع ما تطبعه الصحف الموالية للحكومة  <tei:num value="15" xml:lang="ar">١٥</tei:num>  ألفاً. وقد عدوا من
+                            علائم النجاح الكبير سنة  <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>  ان كان عدد مشتركي جريدة الكونستيتوسيونل  <tei:num value="23" xml:lang="ar">٢٣</tei:num>  ألفاً وما كانت هذه الصحف تحتوي إلا على
+                            مقالات سياسية وأدبية غير موقع عليها على الطريقة الانكليزية وقد عدوا انقلابا شروع جريدة البريس بنشرها سنة  <tei:num value="1836" xml:lang="ar">١٨٣٦</tei:num> 
                             مقالات في موضوعات مختلفة وعد من العار العظيم ما أتته جريدة البريس من نشر إعلانات مأجورة لتغطية نفقاتها وكانت
                             الجرائد على عهد الحكومة الملكية غالية الثمن فارغة من المادة متشابهة المآل قلما تشبه صحف هذه الأيام ومع هذا كان
                             لها بعددها القليل تأثير كبير في مشتركيها وإذ كان الفرد لا يطالع سوى جريدته كان رأيه رأي جريدته فقط.</p>
-                        <p>سن مجلس النواب الفرنسوي سنة 1822 قانونا للصحافة يقضي باستحصال رخصة قبل إنشاء الجريدة وان يكون للحكومة الحق
+                        <p>سن مجلس النواب الفرنسوي سنة  <tei:num value="1822" xml:lang="ar">١٨٢٢</tei:num>  قانونا للصحافة يقضي باستحصال رخصة قبل إنشاء الجريدة وان يكون للحكومة الحق
                             بإيقافها وان تنظر في دعاويها محاكم عادية مؤلفة من حكام مستقلين عن الحكومة وألغيت المراقبة ولكن الوزارة يحق لها
-                            ان تعيدها بأمر منها <pb ed="shamela"
-                   n="n84-p37"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5742.xhtml"/> وقد جرى البحث أيضاً لمنع
+                            ان تعيدها بأمر منها <pb ed="shamela" n="n84-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5742.xhtml"/> وقد جرى البحث أيضاً لمنع
                             إنشاء جريدة جديدة وان تبتاع الجرائد القديمة واحدة بعد أخرى. وبالحقيقة ان الصحافة كانت خاضعة لطريقة غريبة من
                             الدعاوي والأحكام بحيث أصبحت المعارضة مستحيلة تقريباً حتى ان الحكومة إذا لم تجد مادة لمحاكمة الصحيفة تقيم على
                             مديرها دعوى ترميه فيها بهوى في النفس وتحكم عليه بسلسلة مقالات لا سبيل إلى الحكم بها مفردة ولكنها إذا وضعت بعضها
@@ -1187,37 +1082,33 @@
                             الثورات المغمضة التي بدت فيها في مظهر نشوء مدرك للغاية فقد كانت الأمة الفرنساوية في أواخر القرن الثامن عشر ملكية
                             وان كانت أخذت تسير نحو الديمقراطية والعامية ولا سيما في المدن وأصقاع الشرق والجنوب حيث المجتمع أقرب إلى ان يكون
                             ديمقراطياً والفلاحون أكثر عدداً وكبار المالكين أقل نفوذا ومن هذه السواد القائل بالملكية والديمقراطية انشق سنة
-                            1792 بما قام من شق عصا الطاعة للملك والبلاط الملكي حزب ثوري صغير لم يلبث ان أصبح جمهورياً على خلاف إرادته إلا
-                            قليلا وهو حزب قليل العدد عقد العزم ان يتولى زمام الأمر وبالقوة ان اقتضى الحال فاستولى على الحكم من سنة 1792 إلى
-                            1870 أربع مرات وكان توليه له بطريقة واحدة وهو ضرب مركز الحكومة في باريز وإذ كان أشياعه قلائل لم يتيسر له ان
+                             <tei:num value="1792" xml:lang="ar">١٧٩٢</tei:num>  بما قام من شق عصا الطاعة للملك والبلاط الملكي حزب ثوري صغير لم يلبث ان أصبح جمهورياً على خلاف إرادته إلا
+                            قليلا وهو حزب قليل العدد عقد العزم ان يتولى زمام الأمر وبالقوة ان اقتضى الحال فاستولى على الحكم من سنة  <tei:num value="1792" xml:lang="ar">١٧٩٢</tei:num>  إلى
+                             <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>  أربع مرات وكان توليه له بطريقة واحدة وهو ضرب مركز الحكومة في باريز وإذ كان أشياعه قلائل لم يتيسر له ان
                             يستولي كل الاستيلاء بصورة قطعية وذلك لان الأكثرية من الملكيين تعزم في الحال على تأسيس حكومة ملكية فتبدد
                             الجمهوريين وهكذا كان يتبع كل انقلاب جمهوري إعادة الحكم الملكي فيدوم ريثما يقوم جيل جديد يتقوى به رجال الجمهورية
                             ويكثرون سوادهم للقيام بانقلاب جديد ولكن كانت كل ثورة تحمل معها شطرا من أهل الحكم القديم (الملكية) ممن لا يستطيع
                             البقاء بإعادة سلطانه وهذا التقلب حدث مرات أربعاً.</p>
                         <p>وهكذا أفاض المؤلف في الكلام على كل دولة في أوروبا فتكلم على بلاد القاع (بلجيكا وهولاندة) وسويسرا وثوراتها السلمية
-                            البديعة واسبانية والبرتغال وايطاليا وألمانيا قبل <pb ed="shamela"
-                   n="n84-p38"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5743.xhtml"/> الوحدة الألمانية والنمسا
+                            البديعة واسبانية والبرتغال وايطاليا وألمانيا قبل <pb ed="shamela" n="n84-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5743.xhtml"/> الوحدة الألمانية والنمسا
                             على عهد حكومتها المطلقة ومملكة بروسيا قبل غليوم الأول على الوحدة الألمانية والإمبراطورية الألمانية وكل ذلك بلسان
                             المؤرخ المنصف الذي لا تأخذه العصبية لقومه ما أمكن وأفاض في النظام الدستوري في النمسا والمجر وذكر بلاد السكنديناف
                             ومملكة بروسيا وبولونيا والمملكة العثمانية والأمم النصرانية في البلقان أي رومانيا واليونان والصرب والجبل الأسود
                             والبلغار وعقد فصولاً في آخر سفره البديع في تحول الشروط المادية في الحياة السياسية وفي الكنيسة والأحزاب
-                            الكاثوليكية وفي أوروبا على عهد حكم مترنيخ من سنة 1815 - 1830 وفي منافسة روسيا لانكلترا 1830 - 1854 وفي تفوق
-                            فرنسا والحروب الأهلية سنة 1854 - 1870 وفي تفوق ألمانيا والسلام المسلح.</p>
-                        <p>ومما قاله في مملكة النمسا والمجر وما قام فيهما بشان مسائل اللغات ان بلاد المجر والنمسا قد أصبحت منذ 1867 مملكتين
+                            الكاثوليكية وفي أوروبا على عهد حكم مترنيخ من سنة  <tei:num value="1815" xml:lang="ar">١٨١٥</tei:num>  -  <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>  وفي منافسة روسيا لانكلترا  <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>  -  <tei:num value="1854" xml:lang="ar">١٨٥٤</tei:num>  وفي تفوق
+                            فرنسا والحروب الأهلية سنة  <tei:num value="1854" xml:lang="ar">١٨٥٤</tei:num>  -  <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>  وفي تفوق ألمانيا والسلام المسلح.</p>
+                        <p>ومما قاله في مملكة النمسا والمجر وما قام فيهما بشان مسائل اللغات ان بلاد المجر والنمسا قد أصبحت منذ  <tei:num value="1867" xml:lang="ar">١٨٦٧</tei:num>  مملكتين
                             مختلفتين لكل منهما حياته السياسية الداخلية الخاصة ولكن اشتراكهما في الملك والسياسة الخارجية كان موطداً للتضامن
-                            بينهما ومؤثراً في سياستهما الداخلية وكان من احتلال النمسا لبلاد البوسنة سنة 1878 معدلا للنشوء الداخلي في
+                            بينهما ومؤثراً في سياستهما الداخلية وكان من احتلال النمسا لبلاد البوسنة سنة  <tei:num value="1878" xml:lang="ar">١٨٧٨</tei:num>  معدلا للنشوء الداخلي في
                             البلادين وعلى ذاك العهد كانت بلاد النمسا مزيجاً مختلف الجنس والطبائع من الشعوب وكانت الحياة السياسية بعد سنة
-                            1878 مستغرقة في الجهاد بين تلك الشعوب وكانت الأحزاب وطنية فانقسمت إلى مركزين أشياع الحكومة العامة التي يدير
+                             <tei:num value="1878" xml:lang="ar">١٨٧٨</tei:num>  مستغرقة في الجهاد بين تلك الشعوب وكانت الأحزاب وطنية فانقسمت إلى مركزين أشياع الحكومة العامة التي يدير
                             دفتها الألمان واتحاديين أشياع الحكومات المحلية التي يتولى إدارتها الصقالبة (السلافيون) أي التشك والبولونيون
                             والسلافيون والخرواتيون وينقسم الألمان إلى أحزاب سياسية حزب الحكم القديم الارستقراطي الكاثوليكي أي المحافظ وحزب
                             الديمقراطيين المحررين أي الأحرار ومما كان يزيد في تعقيد الحياة السياسية ان الأمم ليست شعوباً صريحاً تخالفها فما
                             كان العناصر في بلاد النمسا والمجر يمتازون في العمل إلا بلغاتهم فتقوم جنسية المرء بلغته التي يستعملها وأصبح جزء
                             من الألمان صقالبة جرمانيين ولذلك كانت الأمم في كل ولاية (أي الناس الذين يتكلمون بلسان واحد) غير متصلة الأجزاء
                             بعضها بالأخر ممزوجة مزجاً ومنضدة تنضيداً فكانت اللغة الألمانية شائعة في معظم البلاد التي يرفرف فيها العنصر
-                            السقلبي اللسان الذي تتخاطب فيه المدن وكبار أرباب الأملاك والطبقة المتعلمة إذ كانت <pb ed="shamela"
-                   n="n84-p39"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5744.xhtml"/> الألمانية لغة التجارة
+                            السقلبي اللسان الذي تتخاطب فيه المدن وكبار أرباب الأملاك والطبقة المتعلمة إذ كانت <pb ed="shamela" n="n84-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5744.xhtml"/> الألمانية لغة التجارة
                             والبلاط الملكي والعلم والأدب وكان للغة الايطالية نفس تلك المكانة على شواطئ البحر الادرياتيكي وكان ثمة بلاد
                             ألمانية برمتها أي مجرمنة لا أثر فيها للمنازعات الوطنية ولكن كان الاختلاف في اللسان في البلاد الأخرى منشأ عداوات
                             بين السكان من أهل إقليم واحد بل بين أهل المدينة الواحدة وما كان النزاع يقوم فقط في المركز بين النواب في المجلس
@@ -1235,9 +1126,7 @@
                             والإدارة أهم مواضع الخلاف في إمبراطورية النمسا والمجر. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n84-p40"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5745.xhtml"/>
+                        <pb ed="shamela" n="n84-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5745.xhtml"/>
                         <head>في بلاد الغرب</head>
                         <p>(كتبنا في جريدتي القبس والمقتبس زهاء أربعين رسالة من ديار الغرب وضفنا فيها رحلتنا الأخيرة إليها وما لحظناه من
                             أسباب ارتقائها واقتبسناه من فوائدها وعلومها وقد رأينا ان ننظر في أكثرها ونحذف ما ليس له علاقة بموضوع هذه المجلة
@@ -1256,9 +1145,7 @@
                             في كل الإعصار هي مفتاح فتح الأمصار والعلة الأولى في سعادة الشر ونقل المدنيات من النظريات على العمليات.</p>
                         <p>هاجت الخواطر في النفس خصوصا عندما ذكرت ان أميرا واحدا من أمراء ايطاليا وهو البرنس ليوني كايتاني مؤلف تاريخ
                             الإسلام الكبير هو الذي جمع بسعيه وتنشيط حكومته مكتبة له منقطعة النظير في الغرب نفسه فيها كل ما يحتاجه باحث في
-                            تاريخ الإسلام والعرب وبلادهم فاستنسخ من المكاتب الخاصة والعامة في أوروبا وأميركا واسيا وإفريقيه <pb ed="shamela"
-                   n="n84-p41"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5746.xhtml"/> كل مخطوط
+                            تاريخ الإسلام والعرب وبلادهم فاستنسخ من المكاتب الخاصة والعامة في أوروبا وأميركا واسيا وإفريقيه <pb ed="shamela" n="n84-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5746.xhtml"/> كل مخطوط
                             عربي فيه شيء من هذا القبيل وما لم يقدر على نقله اخذ له بالتصوير الشمسي فمن زار هذه المكتبة فكأنه زار مكاتب
                             العالم أجمع واطلع على ما فيها من المواد التاريخية والجغرافية في هذا الباب.</p>
                         <p>شبهتني وأنا أشد الرحال إلى رومية للبحث في مكتبة الأمير الايطالي بطلاب العلم في أوروبا في القرون الوسطى وكان بعضهم
@@ -1281,9 +1168,7 @@
                         <p>اغتنمت فرصة مقامي بضعة أيام في القاهرة لقضاء بعض المشاكل أثناء شخوصي إلى ايطاليا لازور دار الدعوة والإرشاد التي
                             أنشأها صديقي السيد محمد رشيد رضا منشئ المنار في السنة الماضية وكان ينوي إنشاءها في الأستانة أولا لو صادف من
                             القابضين على زمام الأمر تنشيطاً على مشروعه وغرضه الأول من إنشائها إيجاد هيئة صالحة بالعمل من رجال الدين يجمعون
-                            إلى معرفة الدين النقي وأسراره وحكمه المطابق لأحوال <pb ed="shamela"
-                   n="n84-p42"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5747.xhtml"/> الزمن معرفة أحوال العصر
+                            إلى معرفة الدين النقي وأسراره وحكمه المطابق لأحوال <pb ed="shamela" n="n84-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5747.xhtml"/> الزمن معرفة أحوال العصر
                             حتى تحل هذه الطبقة محل الهيئة القديمة التي كادت الأمة تنزع ثقتها منها.</p>
                         <p>انشأ هذه المدرسة الصديق الرصيف أو جماعة الدعوة والإرشاد وهي جمعية مؤلفة من ظاهر الفضل والعقل والتدين لتخريج علماء
                             مرشدين قادرين على الدعوة إلى الإسلام والدفاع عنه والإرشاد الصحيح وإرسالهم إلى البلاد الشديدة الحاجة إليهم ويرسل
@@ -1295,22 +1180,20 @@
                             وفي مقدمتهم الشيخ قاسم آل إبراهيم من كرماء جزيرة العرب بالغي جنيه مباشرة ولعله يتبرع بغيرها كل سنة.</p>
                         <p>في جزيرة الروضة المشهورة الآن بالنيل حيث قام في جنوبها مقياس النيل المبارك بين جسر (كوبري) عباس وجسر الملك الصالح
                             أو بين القاهرة المعزية ومديرية الجيزة قامت اليوم دار الدعوة والإرشاد في أحد مصايف أبناء شريف باشا الوزير المثري
-                            المشهور وقد ضمت في حجرها إلى الآن صنفين عدد طلبتهما الداخليين 35 والخارجين بين 20 إلى 30 يعلمهم عشرة معلمين منهم
+                            المشهور وقد ضمت في حجرها إلى الآن صنفين عدد طلبتهما الداخليين  <tei:num value="35" xml:lang="ar">٣٥</tei:num>  والخارجين بين  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  إلى  <tei:num value="30" xml:lang="ar">٣٠</tei:num>  يعلمهم عشرة معلمين منهم
                             أناس من رجال الدين وآخرون أساتذة علوم صرف وطعام الطلبة ونظافتهم ونظامهم في قيامهم ونومهم مما لم يعهد طلبة العلوم
                             الدينية اللهم إلا ان يكون طلبة مدرسة القضاء الشرعي الحكومة والحكومة أقدر على البذل من الأفراد.</p>
                         <p>ويستفاد من نظام مدرستنا هذه أنها تدرس العلوم والفنون التي تدرس عادة في الكليات مع التربية الدينية وزيادة العناية
                             بالعلوم الإسلامية تنشأ أقسامها بالتدريج يبدأ منها بقسم عال لتخريج الدعاة إلى الإسلام والمرشدين للمسلمين بالوعظ
                             والتدريس ولسان التدريس فيها اللسان العربي ويتحتم فيها تعلم لغة من لغات العلم الأوروبية ويجوز ان تدرس فيها عدة
-                            <pb ed="shamela"
-                   n="n84-p43"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5748.xhtml"/> من اللغات الشرقية
+                            <pb ed="shamela" n="n84-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5748.xhtml"/> من اللغات الشرقية
                             والغربية ولاسيما لغات الشوب الكبيرة من المسلمين كالتركية والفارسية والاوردية والملاوية. ومدة صنف المرشدين ثلاث
                             سنين وكذلك صنف الدعاة ويختار طلابه من متخرجي صنف المرشدين يمكثون ثلاث سنين أيضا وذلك ماعدا السنة التمهيدية
                             الأولى.</p>
                         <p>التعليم في قسم الدعاة والمرشدين من المدرسة مجاني والمدرسة تنفق على الطلاب الداخلين فيه وتكفيهم كل ما يحتاجون إليه
                             فيها وتعطيهم إعانة شهرية بحسب الحاجة والاجتهاد والتهذيب لا تقل عن ريال مصري في الشهر وأما الطلاب الخارجيون فلا
                             تنفق عليهم شيئا.</p>
-                        <p>ومما يشترط في قبول الطلبة الداخلين ان تثق المدرسة بان طالب الدخول حسن السيرة وتكون سنة بين 20 و25 وان يكون حافظا
+                        <p>ومما يشترط في قبول الطلبة الداخلين ان تثق المدرسة بان طالب الدخول حسن السيرة وتكون سنة بين  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  و <tei:num value="25" xml:lang="ar">٢٥</tei:num>  وان يكون حافظا
                             لطائفة من القران الكريم بحيث يسهل عليه إتمام حفظه قبل إتمام دراسة الصنف الأول وان يكون قد حصل قدرا صالحا من
                             النحو والصرف والفقه وعرف القواعد الأربع من الحساب على الأقل وان يكون صحيح الإملاء وحسن الخط في الجملة جيد
                             المطالعة في الكتب العربية ومن أصل قديم في الإسلام وتتحرى المدرسة ان يكون طلابها من الأقطار المختلفة وتمرنهم على
@@ -1322,9 +1205,7 @@
                             ان يجعل الإنسان فضل ماله لنفع أمته ومجد ملته انه لا ينبغي تعمد ترك تحصيل الثروة إلا لعمل نفع للأمة والملة.
                             ويعلمون في باب انتقال الأمم والدول من حال إلى حال مثل قوله سبحانه: إن الله لا يغير ما بقوم حتى يغيروا ما
                             بأنفسهم. وقوله: وتلك الأيام نداولها بين الناس.</p>
-                        <p>هذا ما أمكنني التقاطه مما عساه يفيد واني لأرجو لرئيس جماعة الدعوة والإرشاد محمود <pb ed="shamela"
-                   n="n84-p44"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5749.xhtml"/> سالم بك أحد علماء مصر
+                        <p>هذا ما أمكنني التقاطه مما عساه يفيد واني لأرجو لرئيس جماعة الدعوة والإرشاد محمود <pb ed="shamela" n="n84-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5749.xhtml"/> سالم بك أحد علماء مصر
                             العاملين وسائر مؤازريه الفضلاء الخير في الدارين لعلمهم المبرور وآمل ان يكتب البقاء لهذا العمل العظيم بهمة جامع
                             شمله الأستاذ محمد رشيد رضا ناظر المدرسة ووكيل الجمعية وان يكون أساسه على صخر متين سداه الماديات ولحمته المعنويات
                             فيكون من مادياته مخرجا إلى معنوياته والسلام.</p>
@@ -1344,10 +1225,8 @@
                             أيامنا الغر المحجلة في تاريخ المدينة السعيدة ولكن حضارة الغرب اليوم لا تبقي على ضعيف في قوته ومعرفته ومادته
                             وحكومته. هي تبتلع العالم والشاهد على ذلك استصفاؤها قارة إفريقيه وتوشك قارة آسيا لولا بقايا شعوب مستقلة عظيمة
                             كاليابان والصين.</p>
-                        <p>مدنية أوروبا هي التي حملتنا في البحر المتوسط من بيروت إلى الإسكندرية في 32 ساعة <pb ed="shamela"
-                   n="n84-p45"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5750.xhtml"/> ومن الإسكندرية إلى نابل
-                            في 70 ساعة ومن نابل إلى رومية في أربع ساعات على السكة الحديدية والبخار والكهرباء هما صفوة العلم الأروبي بل
+                        <p>مدنية أوروبا هي التي حملتنا في البحر المتوسط من بيروت إلى الإسكندرية في  <tei:num value="32" xml:lang="ar">٣٢</tei:num>  ساعة <pb ed="shamela" n="n84-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5750.xhtml"/> ومن الإسكندرية إلى نابل
+                            في  <tei:num value="70" xml:lang="ar">٧٠</tei:num>  ساعة ومن نابل إلى رومية في أربع ساعات على السكة الحديدية والبخار والكهرباء هما صفوة العلم الأروبي بل
                             المثال الحي من هذه المدينة الحية التي سيعم فضلها كل بقعة من بقاع الأرض شاء أهلها أم أبوا. فتحيا الأمم التي تقوم
                             بما قامت به أمم الحضارة الحديثة وتموت لا محالة الأمم التي لها من حكومتها أو من تقاليدها أو من ضعفها ما يعوقها عن
                             الانبعاث والحركة.</p>
@@ -1366,9 +1245,7 @@
                             مع أهل الفنادق والمخازن الكبرى وبعض الأماكن العمومية فانك تجد صعوبة في التفاهم مع جميع طبقات القوم لجهلك لغتهم
                             الوطنية. هذا تقارب مع اللغتين الفرنسية والايطالية إحداهما من الأخرى واللغات اللاتينية أي الفرنسية والايطالية
                             والاسبانية والبرتغالية متشابهه لأنها من أصل واحد كما ان اللغتين الألمانية والانكليزية متشابهتان لأنهما من أصل
-                            سكسوني واللغة <pb ed="shamela"
-                   n="n84-p46"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5751.xhtml"/> الروسية والرومانية
+                            سكسوني واللغة <pb ed="shamela" n="n84-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5751.xhtml"/> الروسية والرومانية
                             والبلغارية والصربية متشابهة لأنها من أصل سلافي.</p>
                         <p>ومع أن جليسك تنقبض نفسه منك في العادة إذا لم تكن لك معه لغة مشتركة لا تجد فيها تسمعه في المحال العامة ودور
                             التمثيل والموسيقى هنا ثقلا على سمعك من لغة الطليان وان كنت لا تفهمها بل تبلغ نبراتها صماخ أذنك كأنها أوتار
@@ -1389,9 +1266,7 @@
                         <p>وممن جمع فضيلتي المجد القديم والمجد الحديث فعد عصامياً عظامياً الأمير ليوني كايتاني من كبار الأسر القديمة في
                             رومية التي يرد تاريخها إلى زهاء ألف سنة ومنها خرج رجال خدموا أمتهم على اختلاف العصور والمنازع فكان الباباوات
                             ورؤساء الدين والقواد والحكام ولقد سار سليل هذا البيت على سنة كثير من أمراء الغرب فلم تبطره الزخارف ولم يستهوه
-                            <pb ed="shamela"
-                   n="n84-p47"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5752.xhtml"/> المال والمجد القديم
+                            <pb ed="shamela" n="n84-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5752.xhtml"/> المال والمجد القديم
                             وتنكب عن الرفاهية منذ صغره فدرس في كلية رومية الآداب وأتقن من اللغات الايطالية والفرنسية والانكليزية والألمانية
                             واللاتينية والفارسية والعربية.</p>
                         <p>ولما أحرز حظاً وافراً من العلم والآداب سمت به همته وهو قبيل الخامسة والعشرين أي منذ زهاء عشرين سنة أن يضع لأمته
@@ -1414,9 +1289,7 @@
                             من اللغات المختلفة ينظر فيما يترجمون لكتابه من المواد ما عدا ما ينفقه في الكتب وطبع كتابه ولكن كل ما ينفقه في
                             سنة لا يعادل ما ينفقه غني واحد من فساق أغنياء الأمريكان أو الروس مثلا في ليلة واحدة في باريس أو مونت كارلو
                             فسبحان من أودع في كل قلب ما شغله.</p>
-                        <p>طاف الأمير كثيراً من بلاد الشرق ولا سيما الهند وفارس والشام ومصر ودرس أحوالها <pb ed="shamela"
-                   n="n84-p48"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5753.xhtml"/> وطابق بين ماضيها وحاضرها
+                        <p>طاف الأمير كثيراً من بلاد الشرق ولا سيما الهند وفارس والشام ومصر ودرس أحوالها <pb ed="shamela" n="n84-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5753.xhtml"/> وطابق بين ماضيها وحاضرها
                             فإذا تكلم في تاريخنا صدر عن علم نظري وعملي. ولقد ذهب منذ ست سنين إلى بلاد الشام ليرى بعينه المكان الذي كانت فيه
                             الوقعة الفاصلة بين العرب والروم في اليرموك. وهذا قلما يتيسر إلا لمن أوتي همة شماء واستسهل ركوب كل صعب في سبيل
                             تحقيق رغائبه.</p>
@@ -1433,9 +1306,7 @@
                             لأول مرة حاملا إليه من صديقه أحمد زكي باشا العالم المصري كتاب توصيه ليقبلني للبحث في مكتبته اعتذر عن كونه قابلني
                             بثياب عمله وقال أن عنده شيئا من المخطوطات العربية أخذت بالتصوير الشمسي ولا يدري إن كان فيها حاجتي على انه تفضل
                             ودلني على مظانها وما برح اليوم بعد الأخر يشير علي بالرجوع إلى كتاب كذا فقيه وهو يبش ويقول في الأحايين انه مسرور
-                            لعثوري على شذرات تهمني كل هذا وهو لا يضيع دقيقة من وقته الثمين ناهيك بارتفاع الصحف والمجلات ومنشؤها مثلا. <pb ed="shamela"
-                   n="n84-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5754.xhtml"/>
+                            لعثوري على شذرات تهمني كل هذا وهو لا يضيع دقيقة من وقته الثمين ناهيك بارتفاع الصحف والمجلات ومنشؤها مثلا. <pb ed="shamela" n="n84-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5754.xhtml"/>
                             لئن امتازت التيمورية في مصر بأنها تحوي أمهات كثيرة من مخطوطات علماء الاسلام في علوم مختلفة وامتازت الخزانة
                             الزكية بالقاهرة بجمعها أنفس المطبوعات العربية في الغرب فان الخزانة الكايتانية في رومية تحتوي على الغالب أهم كتب
                             التاريخ الإسلامي أو ماله علاقة فيه وذلك باللغات المختلفة ولا سيما العربية مما هو جدير أن يرحل إليه من الصين لا
@@ -1448,9 +1319,7 @@
                             من كتبه وآثاره وانتقل تراثه بحكم الطبيعة إلى من أحسن تعهده واستثماره سنة الله في خلقه. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n84-p50"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5755.xhtml"/>
+                        <pb ed="shamela" n="n84-p50" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5755.xhtml"/>
                         <head>الهجرة</head>
                         <p>أربعة أحوال تعمل في تكثير سواد الأمم: الهجرة والاستيطان والولادات والوفيات وبنقيضها تفتقر البلاد وتقل الأمم.
                             ومحور الهجرة يدور في الأكثر على تحصيل القوات والفرار من ظلم خصوصا أيام كانت المجاعات في القرون الأولى والوسطى من
@@ -1469,9 +1338,7 @@
                             بإنشاء المدن وتوطيد دعائم المركزية السياسية التي تسهلت أسبابها بنمو الموارد الاقتصادية والأيدي العاملة التي
                             أنشأتها. ومن المدن تنبعث أبداً حركة تنظيم القوة العاملة فصاحب الأملاك يعيش بما تدر عليه أملاكه على حين تضطر
                             المدن ان تطلب ذلك من التجارة وأن تضمن حقوقها في البلاد القاسية بتأمين السبل والتجارة.</p>
-                        <p>قال وما المصانع العظمى التي قامت في القرن الثالث عشر للميلاد وما تلك البيع والمعابد <pb ed="shamela"
-                   n="n84-p51"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5756.xhtml"/> إلا أثر من آثار زيادة
+                        <p>قال وما المصانع العظمى التي قامت في القرن الثالث عشر للميلاد وما تلك البيع والمعابد <pb ed="shamela" n="n84-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5756.xhtml"/> إلا أثر من آثار زيادة
                             السكان في أوروبا وإن الناس أصبحوا يهتمون لأمور أخرى غير حفظ حياتهم مباشرة والسكان من العوامل الضرورية في
                             التبدلات السياسية وعندنا أن الشعب هو أرض التاريخ الذي تنبت فيه الأوضاع والأفكار ولما نمت النفوس منذ القرن الحادي
                             عشر في حمى أسوار المدن والمقاطعات المنظمة ظهرت قوة جديدة أمام الإقطاعات وانتهى التماسك السياسي بقيام المدينة
@@ -1490,9 +1357,7 @@
                             مرتين.</p>
                         <p>وقد نفى سكريتان أن يكون قلة السكان ناشئة من فساد الآداب وقال أن الرؤوس بإقرارهم أنفسهم من أعظم الموغلين في
                             المفاسد والموبقات ومع هذا يزيد سكان الأرياف عندهم والسبب في قلة المواليد هو في الحقيقة إرادة الرفاهية الولادة لا
-                            تشكو من الفقر ولا من حرية الفكر ولا من حرية الأخلاق وما خرابها آت الأمن كثرة الحذر الذي هو ابن الطمع. <pb ed="shamela"
-                   n="n84-p52"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5757.xhtml"/>
+                            تشكو من الفقر ولا من حرية الفكر ولا من حرية الأخلاق وما خرابها آت الأمن كثرة الحذر الذي هو ابن الطمع. <pb ed="shamela" n="n84-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5757.xhtml"/>
                             عرف السوري منذ القديم بحب الهجرة للكسب وإحراز المجد والفينيقيون أو سكان الساحل الأوسط من هذا القطر كانوا رواد
                             الحضارة وربابنة البحار في سواحل البحر المتوسط حتى بلغوا شطوط الجزر البريطانية في أقصى شمال أوروبا وأنشئوا لهم
                             المكاتب التجارية في جنوبي القارة الأوروبية وشمالي افريقية وكان من أخلافهم ما يشبه هذه الأعمال والهجرات ولا سيما
@@ -1506,14 +1371,12 @@
                         <p>حتى إذا جاء القرن الماضي ونشر خط كلخانة ووضعت التنظيمات الخيرية ودخلت البلاد العثمانية في طور أحبت فيه احتذاء
                             مثال الغربيين في إدارتها وضعفت سلطة العمال بعض الشيء وقوي ارتباطهم بالمراكز خصوصا بعد إنشاء الأسلاك البرقية التي
                             سهلت وصول الشكاوي إلى العاصمة بعد التسهيل وأخذ الفلاح يأمن على زرعه وضرعه بالنسبة للماضي والتاجر في المدن قد
-                            تنجو من البوائق متاجرة وكثر بعد حوادث سنة 1860 اختلاط أهل هذا القطر بالغربيين وأنشأت الجمعيات الدينية مدارسها
+                            تنجو من البوائق متاجرة وكثر بعد حوادث سنة  <tei:num value="1860" xml:lang="ar">١٨٦٠</tei:num>  اختلاط أهل هذا القطر بالغربيين وأنشأت الجمعيات الدينية مدارسها
                             الراقية في المدن والقرى بعد كل هذا عادت النفوس تنمو خصوصا في لبنان بعد نظامه الجديد وارتفاع أعلام الأمن في ربوعه
                             وأصبح من الندرة الاغتيال والاقتتال فيه فكثرت نفوسه.</p>
                         <p>وإذ كانت زراعة لبنان ضعيفة تعد بين الزراعات في الدرجة الثالثة أو الرابعة لم يقم بمعاش سكانه فأخذوا يهاجرون أولاً
                             إلى البلاد القريبة منهم ولما تنوقلت الأنباء عن نجاح جماعة من تجار بيت لحم في أمريكا سمت الهمة في بعضهم إلى السير
-                            على أثار من سبقوهم وساعد على ذلك اتصال آسيا بافريقية وأوروبا وأمريكا بالبواخر ففوق بعض من <pb ed="shamela"
-                   n="n84-p53"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5758.xhtml"/> هاجروا من
+                            على أثار من سبقوهم وساعد على ذلك اتصال آسيا بافريقية وأوروبا وأمريكا بالبواخر ففوق بعض من <pb ed="shamela" n="n84-p53" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5758.xhtml"/> هاجروا من
                             لبنان إلى جمع جانب من المال فاشتهر بين قومهم نجاحهم وأخذ يتبعهم في خطتهم الأقرب فالأقرب من سكان البلاد وكان أهل
                             الجبال وهم معتادون القلة وشظف العيش من الجملة هم الناهضون لهجرة بلادهم ولم تمضي سنين حتى سرى داء الهجرة على
                             الأصقاع المخصبة من أرض سوريا مثل وادي الأردن ووادي العاصي وسهل البقاع وسهل حوران فجارت هذه البقاع جبل لبنان وجبل
@@ -1532,9 +1395,7 @@
                             محسوساً بينما شاهد في بلاد غيره وعهد في بلاده ويتأفف من عمله الصغير في الزراعة أو الصناعات الضعيفة فلا يلبث أن
                             يعود أدراجه إلى أمريكا ويختار الموت هناك على البقاء في أرض ذلة وقلة.</p>
                         <p>ولذا لا تعجب إذا رأيت مئات من الدور الفخمة التي عمرت بدراهم أمريكا في هذه الديار خالية من سكانها يلعب فيها الجرذ
-                            والفأر ولا من يقطنها لأن بناتها عادوا فرحلوا أما طلباً <pb ed="shamela"
-                   n="n84-p54"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5759.xhtml"/> لثروة غير التي نالوها
+                            والفأر ولا من يقطنها لأن بناتها عادوا فرحلوا أما طلباً <pb ed="shamela" n="n84-p54" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5759.xhtml"/> لثروة غير التي نالوها
                             وصرفوها كلها في إنشاء دورهم وأما لضيق صدر نالهم من سوء إدارة وفساد نظام وهذا قليل.</p>
                         <p>قال قنصل فرنسا في تقريره الأخير على بلاد الجليل إن هؤلاء المهاجرين ينفعون بالأجور التي يؤدونها لشركات الملاحة
                             ولكنهم يضرون البلاد في ارتقائها الاقتصادي إذ يحرمونها من الأيد العاملة وقد نجحوا بأن أسسوا في البلاد التي هاجروا
@@ -1553,9 +1414,7 @@
                             بدله النقدي قبل أن تصيبه القرعة وبعد أن تفاقم شر الهجرة في العهد الأخير أرادت الحكومة أن تمنع الشبان من السفر
                             فكان ذلك مورد عيش جديد لارتشاء بعض الولاة والمتصرفين والقائم مقامين ورجال الشرطة وكثرة سماسرة المهاجرة حتى لم
                             يتركوا مزرعة إلا ولجوها وأخرجوا منها أعزة أهلها وسهلوا لهم سبل الهجرة ووجد حتى الفقير المعدم من يقرضه على أن
-                            يفيه من عمله في ديار المهجر وزادت المنافسة بين <pb ed="shamela"
-                   n="n84-p55"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5760.xhtml"/> شركات الملاحة فأصبح
+                            يفيه من عمله في ديار المهجر وزادت المنافسة بين <pb ed="shamela" n="n84-p55" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5760.xhtml"/> شركات الملاحة فأصبح
                             السفر ميسوراً من بيروت إلى نيويورك بعشر ليرات وزاد الصادر وقل الوارد وكلما أمل المؤملون أن تهدأ أحوال البلاد
                             تعقدت مشاكلها الداخلية والخارجية وانتشرت عن البلاد أخبار السوء فتأخر عن العودة إليها أبنائها الذين هجروها.</p>
                         <p>هذا والحكومة لم تتذرع بأدنى سبب لنزع هذا الخلل في حياة البلاد من أصوله بل أن النوائب الأخيرة التي صادف وقوعها في

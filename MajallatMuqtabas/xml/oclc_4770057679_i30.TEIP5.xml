@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i30_text"
-         xml:lang="ar"
-         type="issue"
-         n="i30">
+   <text xml:id="oclc_4770057679_i30_text" xml:lang="ar" type="issue" n="i30">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,30 +202,26 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1908-07-01">بتاريخ: 1 - 7 - 1908</date>
-                                    <biblScope n="30" unit="issue">العدد 30</biblScope>
+                                    <date when="1908-07-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="7" xml:lang="ar">٧</tei:num>  -  <tei:num value="1908" xml:lang="ar">١٩٠٨</tei:num> </date>
+                                    <biblScope n="30" unit="issue">العدد  <tei:num value="30" xml:lang="ar">٣٠</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             n=""
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1817.xhtml"/>
+                    <pb ed="shamela" n="" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1817.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="30" unit="issue">العدد 30</biblScope> 
-                  <date when="1908-07-01">بتاريخ: 1 - 7 -
-                            1908</date> 
+                  <biblScope n="30" unit="issue">العدد  <tei:num value="30" xml:lang="ar">٣٠</tei:num> </biblScope> 
+                  <date when="1908-07-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="7" xml:lang="ar">٧</tei:num>  -
+                             <tei:num value="1908" xml:lang="ar">١٩٠٨</tei:num> </date> 
                </bibl> 
             </head>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n30-p1"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1818.xhtml"/>
+                        <pb ed="shamela" n="n30-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1818.xhtml"/>
                         <head>صدور المشارقة والمغاربة</head>
                         <p>عبد الله بن المقفع وعبد الحميد بن يحيى</p>
                         <p>نشأ للعربية في أوائل القرن الثاني للهجرة كاتبان بليغان يصح أن يدعيا واضعي أساس الإنشاء العربي وناهجي طريقة
@@ -273,9 +240,7 @@
                         <p>أهم كتب ابن المقفع التي طار ذكرها كتاب كليلة ودمنة الذي نقله عن الفارسية ورسالته المعروفة باليتيمة في طاعة
                             السلطان. قال القفطي وهو أول من اعتنى في الملة الإسلامية بترجمة الكتب المنطقية لأبي جعفر المنصور وترجم كتب أرسطو
                             طاليس المنطقية الثلاثة وهي كتاب قاطيغورياس وكتاب باري أرمينياس (أوبارميناس) وكتاب أنا لوطيقا وذكر أنه ترجم
-                            إيساغوجي تأليف فرفوريوس الصوري. والأرجح أنه نقل هذه الكتب عن الفارسية <pb ed="shamela"
-                   n="n30-p2"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1819.xhtml"/> أو نقلها له ناقل عن
+                            إيساغوجي تأليف فرفوريوس الصوري. والأرجح أنه نقل هذه الكتب عن الفارسية <pb ed="shamela" n="n30-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1819.xhtml"/> أو نقلها له ناقل عن
                             اليونانية وصاغها هو في قالب عربي فنسبت له إذ لم يثبت أنه كان يعرف غير الفارسية من اللغات. وعبارة ابن أبي أصيبعة
                             في تاريخ الأطباء تشبه قول القفطي في تراجم الحكماء والغالب أنهما نقلا عن مصدر واحد مع تغيير طفيف في
                             عبارتيهما.</p>
@@ -294,9 +259,7 @@
                             المقفع وغيره وقال في الكتب المصنفة في السماء والخرافات أن عبد الله بن المقفع من جملة من كان يعمل الأسمار
                             والخرافات على ألسنة الناس والطير والبهائم.</p>
                         <p>والراجح أن الحسد غلت مراجله في صدور بعض معاصريه والمعاصرة كما قيل حرمان فنسبوا إليه ما نسبوا من الزندقة لقصورهم
-                            عن بلوغ شأوه أو لغرض في أنفسهم قال ابن <pb ed="shamela"
-                   n="n30-p3"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1820.xhtml"/> خلكان نقلاً عن الجاحظ:
+                            عن بلوغ شأوه أو لغرض في أنفسهم قال ابن <pb ed="shamela" n="n30-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1820.xhtml"/> خلكان نقلاً عن الجاحظ:
                             أن ابن المقفع ومطيع بن إياس ويحيى بن زياد كانوا يتهمون في دينهم قال بعضهم: كيف نسي الجاحظ نفسه. قلنا وعبارة
                             الجاحظ في بعض رسائله بشأن ابن المقفع تشير إلى قصوره في علم الكلام فقط فإنه قال:</p>
                         <p>فصلٌ ومن المعلمين ثم من البلغاء المتأدبين عبد الله بن المقفع ويكنى أبا عمرو وكان يتولى لآل الأهتم وكان مقدماًُ في
@@ -315,9 +278,7 @@
                             إرضاء العامة وشفاء الغليل من العدو بحيث ينتقم منه مع إسقاطه ولا يعدم المنصور حينئذ حيلة في قتله جهاراً بهذه
                             التهمة. أما اتهام ابن المقفع بمعارضة القرآن فتنصرف على القاعدة في اتهامه بالزندقة وما نظن القاضي عياض والباقلاني
                             إلا ناقلين عن أناس من أهل السذاجة ومع ذلك فإنهما قالا أنه أناب.</p>
-                        <p>التهمة بالزندقة أمر نشأت منه مضار كثيرة حتى لم يخل منها مثل الإمام الغزالي الذي كان <pb ed="shamela"
-                   n="n30-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1821.xhtml"/> أعظم أنصار الدين فانظر
+                        <p>التهمة بالزندقة أمر نشأت منه مضار كثيرة حتى لم يخل منها مثل الإمام الغزالي الذي كان <pb ed="shamela" n="n30-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1821.xhtml"/> أعظم أنصار الدين فانظر
                             إلى كتاب فيصل التفرقة بين الإسلام والزندقة الذي ألفه في الرد على أولئك الذين نسبوا إليه ما نسبوا فإن فيه الفناء
                             وأغرب من ذلك القيام على أبي حاتم ابن حيان السبتي إمام المحدثين في عصره وصاحب الصحيح المشهور به والكتب الممتعة
                             الكثيرة واستحصال الأمر بقتله لو لم ينج من ذلك بعوارض لا تخطر في البال.</p>
@@ -335,9 +296,7 @@
                             البحث عن الزنادقة وقد أوجب من المضار ما لا يحصى كما يعلم من التواريخ وربما كان عصر المأمون أقرب إلى قلة الزندقة
                             في الحقيقة من العصور التي كثر اتهام معظم المفكرين بها وغيرهم ممن يراد الانتقام منهم.</p>
                         <p>عرفت بهذا أن كلام القائلين بزندقة ابن المقفع مع ما عرف من كلامه هو من ذاك الباب. قال المرتضى في أماليه روى ابن
-                            شبة قال: حدثني من سمع ابن المقفع وقد مر ببيت نار للمجوس بعد أن أسلم فلمحه وتمثل: <pb ed="shamela"
-                   n="n30-p5"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1822.xhtml"/> يا بيت عاتكة الذي
+                            شبة قال: حدثني من سمع ابن المقفع وقد مر ببيت نار للمجوس بعد أن أسلم فلمحه وتمثل: <pb ed="shamela" n="n30-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1822.xhtml"/> يا بيت عاتكة الذي
                             أتعزَّل <gap resp="#org_MS"/> حذَر العذى وبك الفؤاد موكل</p>
                         <lg type="bayt">
                             <l>لإني لأمنحك الصدود وأنني </l>
@@ -359,9 +318,7 @@
                             المنصور وأحضره إليه مقيداً وحضر الشهود الذين شاهدوه وقد دخل داره ولم يخرج فأقاموا الشهادة عند المنصور فقال لهم
                             المنصور: أنا أنظر في الأمر. ثم قال لهم: أرأيتم إن قتلت سفيان به ثم خرج ابن المقفع من هذا البيت وأشار إلى باب
                             خلفه وخاطبكم ما تروني صانعاً بكم أأقتلكم بسفيان. فرجعوا كلهم عن الشهادة واضرب عيسى وسليمان عن ذكره وعلموا أن
-                            قتله كان برضا المنصور. <pb ed="shamela"
-                   n="n30-p6"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1823.xhtml"/> ولابن المقفع شعر قليل
+                            قتله كان برضا المنصور. <pb ed="shamela" n="n30-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1823.xhtml"/> ولابن المقفع شعر قليل
                             ولكنه جيد نقل له صاحب الحماسة ثلاثة أبيات يقال أنه رثى بها يحيى بن زياد وقال الأخفش والصحيح أنه رثى بها ابن أبي
                             العوجا وهي:</p>
                         <lg type="bayt">
@@ -389,9 +346,7 @@
                             فإن ذلك هو العي الأكبر. وقال لآخر: عليك بما سهل من الألفاظ مع التجنب لألفاظ السفلة. وقيل له ما البلاغة فقال:
                             التي إذا سمعها الجاهل ظن أنه يحسن مثلها.</p>
                         <p>وفي البيان والتبيين عن إسحق بن حسان بن فوهة أنه قال: لم يفسر البلاغة تفسير ابن المقفع أحد قط. سئل ما البلاغة قال:
-                            البلاغة اسم جامع لمعان تجري في وجوه كثيرة. فمنها <pb ed="shamela"
-                   n="n30-p7"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1824.xhtml"/> ما يكون في السكوت. ومنها
+                            البلاغة اسم جامع لمعان تجري في وجوه كثيرة. فمنها <pb ed="shamela" n="n30-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1824.xhtml"/> ما يكون في السكوت. ومنها
                             ما يكون في الاستماع. ومنها ما يكون في الإشارة. ومنها ما يكون في الحديث. ومنها ما يكون في الاحتجاج. ومنها ما يكون
                             جواباً ومنها ما يكون ابتداءً. ومنها ما يكون شعراً ومنها ما يكون سجعاً وخطباً ومنها ما يكون رسائل فعامة ما يكون
                             في هذه الأبواب الوحي فيها والإشارة إلى المعنى والإيجاز هو البلاغة.</p>
@@ -413,9 +368,7 @@
                             <l>ولقد شهدت والكلام لآلئٌ </l>
                             <l> تؤم فبكر في الكلام وثيب</l>
                         </lg>
-                        <p>فكأن قساً في عكاظ يخطب <gap resp="#org_MS"/> وكأن ليلى الأخيلية تندب <pb ed="shamela"
-                   n="n30-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1825.xhtml"/> وكثير عزّة يوم بين ينسب
+                        <p>فكأن قساً في عكاظ يخطب <gap resp="#org_MS"/> وكأن ليلى الأخيلية تندب <pb ed="shamela" n="n30-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1825.xhtml"/> وكثير عزّة يوم بين ينسب
                             <gap resp="#org_MS"/> وابن المقفع في اليتيمة يسهب</p>
                         <p>وقال جلال الدين في المزهر نقلاً عن أبي الطيب عبد الواحد اللغوي في مراتب النحويين قال محمد بن سلام: سمعت مشايخنا
                             يقولون لم يكن للعرب بعد الصحابة أذكى من الخليل بن أحمد ولا أجمع ولا كان في العجم أذكى من ابن المقفع ولا
@@ -436,9 +389,7 @@
                             الآن طاب السجود وسجد وكان كاتب مروان طول خلافته.</p>
                         <p>وهو أول من أخذ التحميدات من فصول الكتب واستعمل في بعض كتبه الإيجاز البليغ وفي بعضها الإسهاب المفرط على اقتضاه
                             الحال. فمن افيجاز أن بعض عمال مروان أهدى إليه عبداً اسود فأمره بالإجابة ذاماً مختصراً فكتب: لو وجدت لوناً شراً
-                            من السواد وعدداً أقل <pb ed="shamela"
-                   n="n30-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1826.xhtml"/> من الواحد لأهديته. وأما
+                            من السواد وعدداً أقل <pb ed="shamela" n="n30-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1826.xhtml"/> من الواحد لأهديته. وأما
                             الإسهاب فإنه لما ظهر أبو مسلم الخراساني بدعوة بني العباس كتب إليه مروان كتاباً يستميله ويضمنه ما لو قرئ لأوقع
                             الاختلاف بين أصحاب أبي مسلم وكان من كبر حجمه يحمل على جمل ثم قال لمروان: قد كتبت كتاباً متى قرأه بطل تدبيره فإن
                             يك ذلك وإلا فالهلاك فلما ورد الكتاب على أبي مسلم لم يقرأه وأمر بنار فأحرقه وكتب على جزازة منه إلى مروان:</p>
@@ -462,9 +413,7 @@
                             أم صديقك قال: إنما أحب أخي إذا كان صديقي. وقال أكرموا الكتاب فإن الله تعالى أجرى الرزاق على أيديهم. وقال: القلم
                             شجرة ثمرتها الألفاظ والفكر بحر لؤلؤه الحكمة. ومن كلامه خير الكلام ما كان لفظه فحلاً ومعناه بكراً.</p>
                         <p>قال صاحب وفيات الأعيان وكان كثيراً ما ينشد:</p>
-                        <p>إذا خرج الكتاب كانت دويهم <gap resp="#org_MS"/> قسياً وأقلام الدوي لها نبلا <pb ed="shamela"
-                   n="n30-p10"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1827.xhtml"/> ومما نقله عنه أنه ساير
+                        <p>إذا خرج الكتاب كانت دويهم <gap resp="#org_MS"/> قسياً وأقلام الدوي لها نبلا <pb ed="shamela" n="n30-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1827.xhtml"/> ومما نقله عنه أنه ساير
                             يوماً مروان بن محمد على دابة قد طالت مدتها في ملكه فقال له مروان: قد طالت صحبة هذه الدابة لك فقال: يا أمير
                             المؤمنين إن من بركة الدابة طول صحبتها وقلة علفها فقال له: فكيف سيرها: فقال: همها أمامها وسوطها عنانها وما ضربت
                             قط إلا ظلماً.</p>
@@ -481,9 +430,7 @@
                             تلاوة كلامهما أحسن مترجم عنهما إذ كلام المرء قطعة من عقله. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n30-p11"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1828.xhtml"/>
+                        <pb ed="shamela" n="n30-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1828.xhtml"/>
                         <head>رسالة عبد الحميد الكاتب</head>
                         <p>أما بعد حفظكم الله يا أهل صناعة الكتابة وحاطكم ووفقكم وأرشدكم فإن الله عز وجل جعل الناس بعد الأنبياء والمرسلين
                             صلوات اللع وسلامه عليهم أجمعين ومن بعد الملائكة المكرمين أصنافاً وإن كانوا في الحقيقة سواء وصرفهم في صنوف
@@ -503,9 +450,7 @@
                             من الناس ويناظره ويفهم عنه أو يخاف سطوته أولى بالرفق لصاحبه ومداراته وتقويم أوده من سائس البهيمة التي لا تحير
                             جواباً ولا تعرف صواباً ولا تفهم خطاباً إلا بقدر ما يصيرها إليه صاحبها الراكب عليها.</p>
                         <p>ألا فارفقوا رحمكم الله في النظر واعملوا فيه ما أمكنكم من الروية والفكر تأمنوا بإذن الله ممن صحبتموه النبوة
-                            والاستثقال والجفوة ويصير منكم إلى الموافقة وتصيرون منه إلى <pb ed="shamela"
-                   n="n30-p12"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1829.xhtml"/> المؤاخاة والشفقة إن شاء
+                            والاستثقال والجفوة ويصير منكم إلى الموافقة وتصيرون منه إلى <pb ed="shamela" n="n30-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1829.xhtml"/> المؤاخاة والشفقة إن شاء
                             الله تعالى.</p>
                         <p>ولا يجازون الرجل منكم في هيئة مجلسه وملبسه ومركبه ومطعمه ومشربه وبنائه وخدمه وغير ذلك من فنون أمره قدر حقه فإنكم
                             مع ما فضلكم الله به من شرف صنعكتم خدمة لا تُحملون في خدمتكم على التقصير وحفظة لا تحتمل منكم أفعال التضييع
@@ -525,9 +470,7 @@
                             وسيرها فإن ذلك معين لكم على ما تسموا إليه هممكم ولا تضيعوا النظر في الحساب فإنه قوام كتاب الخراج وارغبوا بأنفسكم
                             عن المطامع سنيها ودنيها وسفساف الأمور ومحاقرها فإنها مذلة للرقاب مفسدة للكتاب ونزهوا صناعتكم عن الدناءة واربأوا
                             بأنفسكم عن السعاية والنميمة وما فيه أصل الجهالات وإياكم والكبر والسخف والعظمة فإنها عداوة مجتلبة من غير أحنة
-                            وتحابوا في الله عز وجل في صناعتكم وتواصوا عليها بالذي هو أليق لأهل الفضل والعدل والنبل من <pb ed="shamela"
-                   n="n30-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1830.xhtml"/> سلفكم وإن
+                            وتحابوا في الله عز وجل في صناعتكم وتواصوا عليها بالذي هو أليق لأهل الفضل والعدل والنبل من <pb ed="shamela" n="n30-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1830.xhtml"/> سلفكم وإن
                             نبا الزمان برجل منكم فاعطفوا عليه وواسوه حتى يرجع إليه حاله ويثوب إليه أمره وإن أقعد أحداً منكم الكبر عن مكسبه
                             ولقاء أخوانه فزوروه وعظموه وشاوروه واستظهروا بفضل تجربته وقديم معرفته وليكن الرجل منكم على من اصطنعه واستظهر به
                             ليوم حاجته إليه أحوط منه على ولده وأخيه فإن عرضت في الشغل محمدة فلا يصرفها إلا إلى صاحبه وإن عرضت مذمة فليحملها
@@ -549,9 +492,7 @@
                             وبيده والسلام عليكم ورحمة الله وبركاته. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n30-p15"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1831.xhtml"/>
+                        <pb ed="shamela" n="n30-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1831.xhtml"/>
                         <head>العامية في الفصحى</head>
                         <p>كثر بحث الباحثين هذه الأيام في المقارنة بين اللغة الفصحى واللغة العامية وقد ظفرنا بكتاب اسمه القول المقتضب فيما
                             وافق لغة أهل مصر من لغة العرب تأليف الشيخ محمد ابن أبي السرور الصديقي من أهل القرن الحادي عشر قال مؤلفه في
@@ -574,9 +515,7 @@
                             ويقولون هاها بالإبل أي زجرها عند ورودها الماء وهأهأ رجل ضحاك، ويقولون يا ما عمل له أصل في اللغة وهو من باب
                             التعجب. ويقولون الأب والأخ مثلاً فيشددون الباء وليس هو خطأ بل له أصل في لغات العرب. ويقولون بيه قال المجدي هو
                             حكاية صوت الصبي والشاب الممتلئ لحماً وصفة الأحمق. ويقولون حوبة ثقال المجدي ومعناه الضعيف عن الشيء والحوبة البعنت
-                            والأخت ورقة فؤاد الأم والهم والحاجة والمرأة <pb ed="shamela"
-                   n="n30-p16"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1832.xhtml"/> والسرية كل ذلك يقال له
+                            والأخت ورقة فؤاد الأم والهم والحاجة والمرأة <pb ed="shamela" n="n30-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1832.xhtml"/> والسرية كل ذلك يقال له
                             حوبة. ويقولون دُرّاربة وهو كناية عن أحد ألواح الدكان وله أصل في اللغة كذا نقله صاحب الكتاب المجرد في اللغة.
                             ويقولون رجب الموجب أي المعظم وهو صحيح. ويقولو سبب قال بعض أئمة اللغة أي باع واشترى في الشيء. ويقولون شقلبه أي
                             غيره من حال إلى آخر. ويقولون طاب وهو اسم لما يلعبون به واسم الكرة أيضاً ويقولون عرقب في حق الدابة إذا قطع
@@ -594,9 +533,7 @@
                             معناه أسرع في الكلام أو سرد كلامه.</p>
                         <p>ويقولن فلان هفت من الجوع أي سقط ومنه تهافت الفراش على الفتيلة أي تساقط عليها فكأنه لكثرة جوعه يسقط كذا نقله بعض
                             أئمة اللغة. ويقولون هيّت علينا أي خوفتنا وهو صحيح ورد في بعض كتب اللغة هيت به صاح به ودعاه وهيت قرية بالعراق
-                            تنسب إليها الخمرة الطيبة ومنه قول أبي نواس: <pb ed="shamela"
-                   n="n30-p17"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1833.xhtml"/> هات اسقني قهوة صفراء
+                            تنسب إليها الخمرة الطيبة ومنه قول أبي نواس: <pb ed="shamela" n="n30-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1833.xhtml"/> هات اسقني قهوة صفراء
                             صافية <gap resp="#org_MS"/> منسوبة لقرى هيت وعانات</p>
                         <p>ويقولون على لون من الطعام عجة قال بعض أئمة اللغة العجة بالضم طعام من البيض. ويقولون لآلة الدراس نورج وهو صحيح
                             لغوي ويقال ذلك أيضاً لآلة الحرث والنورجة والنيرجة الاختلاف إقبالاً وإدباراً والنيرج التمام. ويقولون إذا أُلقي
@@ -614,9 +551,7 @@
                             في القاموس الدحس الدساس شيء في التراب. ويقولون فلان عنده عترسة أي شدة قال في القاموس العترسة الأخذ بالشدة
                             والجفاء والعنف والغلظة. ويقولون ناموسية لشيء يعمل من القماش يدخلون فيه زمن الشتاء وهو صحيح لغوي والناموس عريسة
                             الأسد والناموس جبريل عليه السلام ويقولون فلان هلس وهو صحيح لغوي ومعناه إذا تكلم كلاماً غير منتظم ويطلق على سلب
-                            العقل وعلى الهزال. ويقولون فلان خربشني بأظافره أي آذاني بها وهو صحيح قال في مختصر الصحاح <pb ed="shamela"
-                   n="n30-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1834.xhtml"/> الخربشة
+                            العقل وعلى الهزال. ويقولون فلان خربشني بأظافره أي آذاني بها وهو صحيح قال في مختصر الصحاح <pb ed="shamela" n="n30-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1834.xhtml"/> الخربشة
                             والخرفشة والخرمشة كلها بمعنى واحد. ويقولون طواشي على الخصي وهو صحيح لغوي وارد في بعض كتب اللغة والذي في القاموس
                             الطوش خفة العقل. ويقولون عفش وهو صحيح لغوي يقال عفشه يعفشه جمعه ومن الناس من لا خير فيهم. ويقولون نتش وهو صحيح
                             لغوي قال في الزاهر النتش كالصرب استخراج الشوكة ونحوها ونتشت اليوم كذا وكذا أي اكتسبت. ويقولون فلان بصبص لي أي
@@ -634,9 +569,7 @@
                             فلان نتيف وأعطاني نتفة وكلاهما صحيح لغوي إلا أنهم يحرفونها فيكسرون النون والصحيح الضم قال بعض أئمة اللغة نتف ما
                             تنتفه بإصبعك من شعر أو نبت والنتفة الشيء اليسير. ويقولون شقة قماش قال في القاموس الشقة من الثياب المستطيلة.
                             ويقولون عفقه قال في المجرد عفقه بمعنى أمسكه ويقولون عفلق قال في مختصر الصحاح العفلق الرجل الطويل المسترخي
-                            والعفلق الضخم <pb ed="shamela"
-                   n="n30-p19"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1835.xhtml"/> المسترخي والمرأة الخرقاء
+                            والعفلق الضخم <pb ed="shamela" n="n30-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1835.xhtml"/> المسترخي والمرأة الخرقاء
                             السيئة العمل والمنطق والرجل الأحمق. ويقولون فلان ربى على قلي دبلة قال في مختصر الصحاح الدبل الطاعون ويطلق على
                             الداهية وعلى الجمل الصغير. ويقولون فلان زال قال في المجرد الزول الهيبة العظيمة والزول العجب والجواد والكلأ
                             والخفيف الطريف الفطن ويقولون حزام قال في المجرد الحزام ما يشد به الوسط. ويقولون طارمة قال في مختصر الصحاح
@@ -645,9 +578,7 @@
                             بالطبع. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n30-p20"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1836.xhtml"/>
+                        <pb ed="shamela" n="n30-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1836.xhtml"/>
                         <head>الكتاب</head>
                         <p>إذا بلغت الحضارة أوجها في أمة يتفنن أهل العلم في التأليف المفيد فيضعون المصنفات في الموضوعات التي لا تخطر على بال
                             أحد في مجتمع غير راق ومن كان يظن أن أبا عمرو بن عمر الجاحظ البصري يؤلف كتاباً في مدح الكتب والحث على جمعها عدا
@@ -662,12 +593,10 @@
                             وأطال في إعارة الكتب وفي ورقها وقطعها وطبعها وتصويرها وتجليدها وابتياعها وترتيبها في قماطرها والعناية بفهرستها
                             وتنسيقها وكيفية استعمالها وحفظها وطبعها واختصارها.</p>
                         <p>هذه أهم ما تدور عليه أبحاث هذه المجلدات الخمسة الممتعة ويرى مؤلفها أن لا يقتصر في الكتاب على إلباسه لباس الظرف
-                            وحفظه في الزجاج والنظر إليه بإعجاب وانعطاف بل أنه خلق ليقرأ أو يتدبر ما فيه ويتلذ1 به قال: فأنما أتخذه بمثابة
+                            وحفظه في الزجاج والنظر إليه بإعجاب وانعطاف بل أنه خلق ليقرأ أو يتدبر ما فيه ويتلذ <tei:num value="1" xml:lang="ar">١</tei:num>  به قال: فأنما أتخذه بمثابة
                             أداة للدرس والتسلية والتعزية وقرة العين بل هو واسطة للكمال العقلي والأدبي فأنا من ثم لا أفصل بين محبة الكتب
                             ومحبة الآداب بحال وإن شئت فقل بين محبة الجمال والخير والعدل والحق فبين هذه الأمور تشابه.</p>
-                        <p>وقد اعتذر المؤلف عن أن معظم كتابه ليس من قلمه بل هو عبارة عن استشهاد بأقوال أئمة <pb ed="shamela"
-                   n="n30-p21"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1837.xhtml"/> العلم والأدب في كل عصر
+                        <p>وقد اعتذر المؤلف عن أن معظم كتابه ليس من قلمه بل هو عبارة عن استشهاد بأقوال أئمة <pb ed="shamela" n="n30-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1837.xhtml"/> العلم والأدب في كل عصر
                             ومصر وذلك لأن الاستشهاد بكلام الرجل بعينه يصوره كما هو وله وقع في النفس أكثر من إحالة المطالع على الرجوع إلى ما
                             كتبه المؤلف كما قال سانت بوف العالم. وقال شاتوبريان الفرنسوي الكاتب: لا يجب الاعتقاد بأن معرفة إيراد الشواهد هو
                             مما يسع كل أحد من أرباب العقول الضعيفة أن يفعله ممن فرغ وطابهم من كل علم فيستقون من موارد غيرهم ما راقهم وما
@@ -685,33 +614,29 @@
                             فقال: ما قط حزنت إلا وتبدد حزني بساعة من المطالعة أروّح بها عن نفسي ثم جاء بعده القصصي الإنكليزي بولور ليتون في
                             القرن التاسع عشر ووصف مطالعة بعض المصنفات لشفاء بعض الأمراض فرأى المداواة بالكتب كأنها بعض العقاقير والعناصر.
                             وكل من قال كلمة في هذا الباب لم يخرج في وصفه للأسفار عن حد الحكمة التي علقها ملك مصر على مكتبته أو شرحها أو
-                            المبالغة فيها. وأسس الظالم بيزايسترات <pb ed="shamela"
-                   n="n30-p22"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1838.xhtml"/> (561 ـ 527 ق. م) مكتبة
+                            المبالغة فيها. وأسس الظالم بيزايسترات <pb ed="shamela" n="n30-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1838.xhtml"/> ( <tei:num value="561" xml:lang="ar">٥٦١</tei:num>  ـ  <tei:num value="527" xml:lang="ar">٥٢٧</tei:num>  ق. م) مكتبة
                             عامة في آثينة وهي أول مكتبة من نوعها جمع فيها أشعار هوميروس ولم تكن تعيها من قبل إلا ذاكرة القصاصين والمتشاعرين
                             ويؤخذ من بيت للشاعر أريستوفان (قبل المسيح بخمسة قرون) أن الكتب كانت منتشرة جداً في زمنه بمدينة آثينة. وقال
                             كسينوفون في تذكرة سقراط شيئاً عن الكتب والمجاميع وتجارتها.</p>
-                        <p>واستعمل السبيادس على نحو ذلك الزمن (450 ـ 404 ق. م) طريقة لا تخلو من قلة ذوق ليحبب أبناء وطنه في الكتب فدخل مدرسة
+                        <p>واستعمل السبيادس على نحو ذلك الزمن ( <tei:num value="450" xml:lang="ar">٤٥٠</tei:num>  ـ  <tei:num value="404" xml:lang="ar">٤٠٤</tei:num>  ق. م) طريقة لا تخلو من قلة ذوق ليحبب أبناء وطنه في الكتب فدخل مدرسة
                             خاصة بدراسة النحو وسأل المعلم أن يأتيه ببعض كتب لهوميروس فأجابه أن ليس عنده ولا واحد منها فصفعه وخرج. وكان
-                            الإسكندر الكبير (356 ـ 325 ق. م) مولعاً من وراء الغاية بدرس أشعار هوميروس وبعد أن هزم دار ملك الفرس وقع كان بين
+                            الإسكندر الكبير ( <tei:num value="356" xml:lang="ar">٣٥٦</tei:num>  ـ  <tei:num value="325" xml:lang="ar">٣٢٥</tei:num>  ق. م) مولعاً من وراء الغاية بدرس أشعار هوميروس وبعد أن هزم دار ملك الفرس وقع كان بين
                             أسلاب المغلوبين فسأل خاصته ماذا ينبغي أن يجعل فيه من مال أو متاع فاختلفت آراؤهم أما هو فقال لهم: أنه يضع فيه
                             إلياذة هوميروس لتحفظ فيه حفظاً جديراً بها. وكان الإسكندر أثنءا رحلته إلى آسيا أمر بأن تجلب له تواريخ فيليست
                             وفاجعات أوربيدس وسوفقلس وأشيل وغيرهم ويحب ستاذه أرسطو كما يحب أباه لأن هذا سبب حياته وذاك سبب سعادته. وأنشأ
                             بطليموس سوتر أحد خلفاء الإسكندر الذي استأثر بملك مصر عندما قسمت المملكة اليونانية مكتبة الإسكندرية وهي أشهر
-                            وأغنى مكتبة في الأزمان السالفة وكان ذلك بإشارة ديمتريوس دي فالير (345 ـ 283 ق. م) النحوي المؤرخ البياني حاكم
+                            وأغنى مكتبة في الأزمان السالفة وكان ذلك بإشارة ديمتريوس دي فالير ( <tei:num value="345" xml:lang="ar">٣٤٥</tei:num>  ـ  <tei:num value="283" xml:lang="ar">٢٨٣</tei:num>  ق. م) النحوي المؤرخ البياني حاكم
                             آثينة الذي غدا أول قيم على هذه المكتبة وجرى خلفاؤه من البطالسة على العناية بهذه المكتبة ولاسيما بطليموس الثاني
-                            فيلادلفيس (285 ـ 247 ق. م) وبطليموس الثالث أفرجيتس. وكانوا ينشطون زراعة ورق البردي ليتوفر الورق لديهم ويستخدمون
+                            فيلادلفيس ( <tei:num value="285" xml:lang="ar">٢٨٥</tei:num>  ـ  <tei:num value="247" xml:lang="ar">٢٤٧</tei:num>  ق. م) وبطليموس الثالث أفرجيتس. وكانوا ينشطون زراعة ورق البردي ليتوفر الورق لديهم ويستخدمون
                             كثيراً من النساخ وربما لم يكونوا يستنكفون من السرقة لزيادة ما عندهم من الكتب كما فعل أحدهم فاستعار من مكتبة
                             آثينة كتباً لشعرائهم وفلاسفتهم فاستنسخها ولم يرجع الأصل بل أرجع نسخاً ثانية منها وبطليموس الثاني فيلادلفس ـ لعله
                             لقب بذلك استهزاء به لأنه قتل أخوته أو لأنه تزوج أخته ـ هو الذي أمر بترجمة كتب العبرانيين المقدسة إلى الرومية
                             بمعرفة سبعين من علماء بني إسرائيل وكانت ترجمتهم السبعينية من أهم حوادث التاريخ لأنها سهلت السبيل إلى انتشار
                             اليهودية ومعدت للنصرانية.</p>
-                        <p>ولم تحرق مكتبة الإسكندرية التي قال بعضهم أنه كان فيها نحو سبعمائة ألف مجلد على يد <pb ed="shamela"
-                   n="n30-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1839.xhtml"/> الإمام عمر ولا بأمره كما
+                        <p>ولم تحرق مكتبة الإسكندرية التي قال بعضهم أنه كان فيها نحو سبعمائة ألف مجلد على يد <pb ed="shamela" n="n30-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1839.xhtml"/> الإمام عمر ولا بأمره كما
                             جاء في بعض التقاليد فإن هذه الدعوى من الأغلاط التاريخية العظيمة إذ لم يكن أثر لهذه المكتبة عندما فتحت العرب
-                            مدينة الإسكندرية سنة 640 وعلى عهد البطالسة أصبح أمر المكتبة إلى ضعف فقسمت شطرين جعل كل منهما في مكان مستقل فحرق
-                            القسم الأول قضاءً وقدراً عندما استولى يوليوس قيصر على الإسكندرية سنة 47 قبل المسيح وذهب القسم الثاني وكان جعل في
+                            مدينة الإسكندرية سنة  <tei:num value="640" xml:lang="ar">٦٤٠</tei:num>  وعلى عهد البطالسة أصبح أمر المكتبة إلى ضعف فقسمت شطرين جعل كل منهما في مكان مستقل فحرق
+                            القسم الأول قضاءً وقدراً عندما استولى يوليوس قيصر على الإسكندرية سنة  <tei:num value="47" xml:lang="ar">٤٧</tei:num>  قبل المسيح وذهب القسم الثاني وكان جعل في
                             معبد سيرابيس على يد الأسقف تيوفيل بعد ذاك التاريخ بأربعمائة سنة عقيب الأمر الصادر عن تيودوس بالقضاء على جميع
                             المعابد الوثنية وجعل عاليها سافلها.</p>
                         <p>ومن المكاتب الشهيرة في القديم مكتبة فرغامس برغامة في آسيا الصغرى أسسها أومينوس الثاني إبن آتال الأول قبل المسيح
@@ -726,64 +651,56 @@
                             توسيديد نسخه بخطه الجميل ثماني مرات ليرسخ إنشاؤه في ذهنه ويطبع عليه. وكان الإسكندر الكبير مهووساً بإلياذة
                             هوميروس يصبحها معه حيث ذهب ويضعها تحت المخدة مع سلاحه عندما ينام وكان شيشرون يرى ديموستين أخطب خطيب في كل ضرب من
                             ضروب الخطابة ويعنى بما كتبه أرسطو وأفلاطون وتيوفراست كل العناية.</p>
-                        <p>وكان شارلمان (742 ـ 814) ملك فرنسا مولعاً بتلاوة كتاب مدينة الله للقديس <pb ed="shamela"
-                   n="n30-p24"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1840.xhtml"/> أوغسطينس كما أن الفريد
-                            الكبير ملك إنكلترا (849 ـ 900) يؤثر مطالعة قصص أزوب وترجمتها شعراً إلى اللغة السكسونية وكان يرى تيودور كازا
-                            النحوي اليوناني المشهور (1398 ـ 1478) أن كتب القدماء لو ألقي كلها في النار لاختار أن يخلص منها كتب بلوتارك. وجعل
-                            شارلكان (1500 ـ 1558) كتب توسيديد رفيقته في أعماله وكان يقرأ تذكرات كومين المؤرخ بولع شديد.</p>
-                        <p>وكان كاتم السر فرنسيس باكون (1561 ـ 1626) يقول ليست الكتب إلا تكراراً فابحث في كتب اليونان والرومان والعرب وجميع
+                        <p>وكان شارلمان ( <tei:num value="742" xml:lang="ar">٧٤٢</tei:num>  ـ  <tei:num value="814" xml:lang="ar">٨١٤</tei:num> ) ملك فرنسا مولعاً بتلاوة كتاب مدينة الله للقديس <pb ed="shamela" n="n30-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1840.xhtml"/> أوغسطينس كما أن الفريد
+                            الكبير ملك إنكلترا ( <tei:num value="849" xml:lang="ar">٨٤٩</tei:num>  ـ  <tei:num value="900" xml:lang="ar">٩٠٠</tei:num> ) يؤثر مطالعة قصص أزوب وترجمتها شعراً إلى اللغة السكسونية وكان يرى تيودور كازا
+                            النحوي اليوناني المشهور ( <tei:num value="1398" xml:lang="ar">١٣٩٨</tei:num>  ـ  <tei:num value="1478" xml:lang="ar">١٤٧٨</tei:num> ) أن كتب القدماء لو ألقي كلها في النار لاختار أن يخلص منها كتب بلوتارك. وجعل
+                            شارلكان ( <tei:num value="1500" xml:lang="ar">١٥٠٠</tei:num>  ـ  <tei:num value="1558" xml:lang="ar">١٥٥٨</tei:num> ) كتب توسيديد رفيقته في أعماله وكان يقرأ تذكرات كومين المؤرخ بولع شديد.</p>
+                        <p>وكان كاتم السر فرنسيس باكون ( <tei:num value="1561" xml:lang="ar">١٥٦١</tei:num>  ـ  <tei:num value="1626" xml:lang="ar">١٦٢٦</tei:num> ) يقول ليست الكتب إلا تكراراً فابحث في كتب اليونان والرومان والعرب وجميع
                             مؤلفي القرون الحديثة فلا ترى فيها كلها شيئاً يتعدى ما قاله الفلاسفة أرسطو وأفلاطون وإقليدس وبطليموس. وكان ملتون
-                            الشاعر الإنكليزي (1608 ـ 1674) الأعمى يقرأ في الصباح شيئاً من التوراة بالعبرية ثم يدرس شعر هوميروس ويقال أنه
+                            الشاعر الإنكليزي ( <tei:num value="1608" xml:lang="ar">١٦٠٨</tei:num>  ـ  <tei:num value="1674" xml:lang="ar">١٦٧٤</tei:num> ) الأعمى يقرأ في الصباح شيئاً من التوراة بالعبرية ثم يدرس شعر هوميروس ويقال أنه
                             استظهره كله وعلم بناته الثلاث ثماني لغات يقرأن فيها عليه بدون أن يفهمنها وكان يقول أن البنت تكفيها لغة واحدة
                             ولكنه لم ير بداً من تعليمهن ليقرأن له ما يحب.</p>
-                        <p>وكان كورنيل الشاعر الفرنسوي (1616 ـ 1684) يؤثر مطالعة تاسيت وتيت ليف المؤرخين اللاتينيين ويعنى عناية خاصة بلوكين
-                            الشاعر اللاتيني وسينيك الفيلسوف وسمع لافونتين الشاعر الفرنسوي (1621 ـ 1692) وهو في الثانية والعشرين نشيداً
+                        <p>وكان كورنيل الشاعر الفرنسوي ( <tei:num value="1616" xml:lang="ar">١٦١٦</tei:num>  ـ  <tei:num value="1684" xml:lang="ar">١٦٨٤</tei:num> ) يؤثر مطالعة تاسيت وتيت ليف المؤرخين اللاتينيين ويعنى عناية خاصة بلوكين
+                            الشاعر اللاتيني وسينيك الفيلسوف وسمع لافونتين الشاعر الفرنسوي ( <tei:num value="1621" xml:lang="ar">١٦٢١</tei:num>  ـ  <tei:num value="1692" xml:lang="ar">١٦٩٢</tei:num> ) وهو في الثانية والعشرين نشيداً
                             للشاعر مالريب فأخذ العجب بأقوال هذا الشاعر ثم انصرف إلى مطالعة هوراس وفرجيل وتيرانس وكنتيلين واختار من مؤلفي
                             الفرنسيس رابلي ومارو ودورفي وفواتور وقرأ من الإيطاليين أريوست وبوكاس وماكيافيل وتاس. وشغفت العقيلة دي سيفنية
-                            الكاتبة الفرنسوية (1626 ـ 1696) بمطالعة أدب نيكول ثم كورنيل وبردالو. وكان الأخلاقي لابرويير (1669 ـ1696) يرى أن
+                            الكاتبة الفرنسوية ( <tei:num value="1626" xml:lang="ar">١٦٢٦</tei:num>  ـ  <tei:num value="1696" xml:lang="ar">١٦٩٦</tei:num> ) بمطالعة أدب نيكول ثم كورنيل وبردالو. وكان الأخلاقي لابرويير ( <tei:num value="1669" xml:lang="ar">١٦٦٩</tei:num>  ـ <tei:num value="1696" xml:lang="ar">١٦٩٦</tei:num> ) يرى أن
                             موسى وهوميروس وأفلاطون وفرجيل وهوراس لا يفوقون غيرهم من الكتاب والشعراء إلا بجودة تعابيرهم وتصوراتهم.</p>
-                        <p>وكان الشاعر راسين (1639 ـ 1699) استظهر وهو في السادسة عشرة أو السابعة عشرة أشعار سفوقلس وأربيدس وقرأ أفلاطون
+                        <p>وكان الشاعر راسين ( <tei:num value="1639" xml:lang="ar">١٦٣٩</tei:num>  ـ  <tei:num value="1699" xml:lang="ar">١٦٩٩</tei:num> ) استظهر وهو في السادسة عشرة أو السابعة عشرة أشعار سفوقلس وأربيدس وقرأ أفلاطون
                             وبلوتارك على الأصل اليوناني وكان وهو في المدرسة يقرأ رواية تيوجين وشاريكله لهيلودور اليوناني ففاجأه معلمه فتناول
-                            الكتاب من يده وألقاه في النار ثم اجتهد راسين أن يحصل على نسخة ثانية من هذه الرواية فعامله <pb ed="shamela"
-                   n="n30-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1841.xhtml"/> أستاذه بمثل
+                            الكتاب من يده وألقاه في النار ثم اجتهد راسين أن يحصل على نسخة ثانية من هذه الرواية فعامله <pb ed="shamela" n="n30-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1841.xhtml"/> أستاذه بمثل
                             ذلك ثم استحصل نسخة ثالثة وأخذ يحفظها سراً ولما أتى عليها حمل النسخة إلى معلمه وقال له: لك أن تحرق هذه كما حرقت
                             أختيها لأني لا حاجة بي إليها.</p>
-                        <p>وقال الكاتب الفرنسوي سان أفرموند (1613 ـ 1703) أن رواية دون كيشوت لسرفانتس هي من المصنفات التي أستطيع تلاوتها طول
+                        <p>وقال الكاتب الفرنسوي سان أفرموند ( <tei:num value="1613" xml:lang="ar">١٦١٣</tei:num>  ـ  <tei:num value="1703" xml:lang="ar">١٧٠٣</tei:num> ) أن رواية دون كيشوت لسرفانتس هي من المصنفات التي أستطيع تلاوتها طول
                             عمري دون أن أمل ساعة وكنت أود أن أكون مؤلف دون كيشوت من بين جميع الكتب التي طالعتها ومن رأيي أنه ليس من كتاب
                             يساعد كثيراً على تحسين ذوقنا في كل الأمور مثله. ويظهر أنه كوفيدو من حذاق المؤلفين وأني لأعتبره زيادة لأنه أراد
                             أن يحرق جميع كتبه عندما قرأ دون كيشوت وكان يؤثر لو لم يؤلفها قال ثم إني رأيت مما يلذني طول حياتي كتب مونتين
                             وأشعار مالريب وفاجعات كورنيل ومصنفات فواتور.</p>
-                        <p>سئل الشاعر بوسويه (1627 ـ 1704) عن المصنفات التي يتمنة لو قدر له أن يؤلف مثلها فقال كتاب الرسائل الولايات لباسكال
-                            وكان يؤثر شعر هوراس وكان بوالو (1636 ـ 1711) يجعل لشعر هوراس المقام الأول ثم لتيرانس ويفضل مشاهير القدماء على
-                            مشاهير المحدثين ما خلا باسكال فإنه عده في مصاف العظماء وكانت مكتبة لايبنر الفيلسوف الألماني (1646 ـ 1716) عبارة
+                        <p>سئل الشاعر بوسويه ( <tei:num value="1627" xml:lang="ar">١٦٢٧</tei:num>  ـ  <tei:num value="1704" xml:lang="ar">١٧٠٤</tei:num> ) عن المصنفات التي يتمنة لو قدر له أن يؤلف مثلها فقال كتاب الرسائل الولايات لباسكال
+                            وكان يؤثر شعر هوراس وكان بوالو ( <tei:num value="1636" xml:lang="ar">١٦٣٦</tei:num>  ـ  <tei:num value="1711" xml:lang="ar">١٧١١</tei:num> ) يجعل لشعر هوراس المقام الأول ثم لتيرانس ويفضل مشاهير القدماء على
+                            مشاهير المحدثين ما خلا باسكال فإنه عده في مصاف العظماء وكانت مكتبة لايبنر الفيلسوف الألماني ( <tei:num value="1646" xml:lang="ar">١٦٤٦</tei:num>  ـ  <tei:num value="1716" xml:lang="ar">١٧١٦</tei:num> ) عبارة
                             عن مصنفات أفلاطون وأرسطو وبلوتارك وسكتوس أمبيريكوس وإقليدس وأرخميدس وبلين وشيشرو وسنينك وقد درس منذ نعومة أظفاره
                             اللغات القديمة وآثر التوفر على الأخذ من الشاعرين تيت ليف وفرجيل حتى أنه كان في شيخوخته يسمعك ما قاله فرجيل
                             بالحرف الواحد.</p>
-                        <p>وكان مونتسكيو (1689 ـ 1755) جعل قراءة كتابات تاسيت هجيراه وقال من نفسه: إني لأعترف أن ذوقي أن ذوقي في القدماء وأن
+                        <p>وكان مونتسكيو ( <tei:num value="1689" xml:lang="ar">١٦٨٩</tei:num>  ـ  <tei:num value="1755" xml:lang="ar">١٧٥٥</tei:num> ) جعل قراءة كتابات تاسيت هجيراه وقال من نفسه: إني لأعترف أن ذوقي أن ذوقي في القدماء وأن
                             الزمن القديم يبهجني وأنا أقول أبداً ما قاله بلين أنكم يا هؤلاء تذهبون إلى آثينة فاحترموا الأرباب. وكان يحتفل من
                             وراء الغاية بكتاب تليماك كما يأنس بكتب آسيل وأربيد وسوفقلس وبلوتارك وأرسطو وأفلاطون وشيشرون وسويتون وفرجيل
                             ويختار من المحدثين كربيليون ومونتين ولاروشفوكولد ويعتقد أن أعظم الشعراء أفلاطون ومالبرنش وشافتز بوري
                             ومونتين.</p>
-                        <p>وكنت ترى على منضدة فولتير (1694 ـ 178) رواية أتالي لراسين وكتاب الصوم الصغير لماسيليون وقال الفيلسوف ديدرو
-                            الفرنسوي (1713 ـ 1784) في كلامه على <pb ed="shamela"
-                   n="n30-p26"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1842.xhtml"/> القصصي الإنكليزي
+                        <p>وكنت ترى على منضدة فولتير ( <tei:num value="1694" xml:lang="ar">١٦٩٤</tei:num>  ـ  <tei:num value="178" xml:lang="ar">١٧٨</tei:num> ) رواية أتالي لراسين وكتاب الصوم الصغير لماسيليون وقال الفيلسوف ديدرو
+                            الفرنسوي ( <tei:num value="1713" xml:lang="ar">١٧١٣</tei:num>  ـ  <tei:num value="1784" xml:lang="ar">١٧٨٤</tei:num> ) في كلامه على <pb ed="shamela" n="n30-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1842.xhtml"/> القصصي الإنكليزي
                             ريشارسون أن مطالعة كتبك هي سلوتي في جميع أوقاتي فلو قضت علي الضرورة أن أبيع كتبي لأعلم بثمنها أولادي لاستثنيتك
-                            منها وأبقيتك لي أنت وأسفار موسى وهوميروس وأربيدس وسوفقلس وأتناوب قراءتك مرات. وكان العالم بوفون (1707 ـ 1788)
+                            منها وأبقيتك لي أنت وأسفار موسى وهوميروس وأربيدس وسوفقلس وأتناوب قراءتك مرات. وكان العالم بوفون ( <tei:num value="1707" xml:lang="ar">١٧٠٧</tei:num>  ـ  <tei:num value="1788" xml:lang="ar">١٧٨٨</tei:num> )
                             يوصي بقراءة أعاظم أرباب القرائح والعقول وقد حصرهم في خمسة وهم نيوتن وباكون ولايبز ومونتسكيو وهو في جملتهم.</p>
-                        <p>وكان كانت الفيلسوف (1724 ـ 1804) يرى أن الأرق إذا استولى على امرئ فليس لصاحبه إلا أن يحصر فكره في موضوع واحد أما
-                            هو فكان يجلب النعاس إلى عينيه بأن يتصور شيشرون وحياته وكتاباته وكان كيتي (1749 ـ 1834) يرى أن هي ما يقرأ ما خطته
+                        <p>وكان كانت الفيلسوف ( <tei:num value="1724" xml:lang="ar">١٧٢٤</tei:num>  ـ  <tei:num value="1804" xml:lang="ar">١٨٠٤</tei:num> ) يرى أن الأرق إذا استولى على امرئ فليس لصاحبه إلا أن يحصر فكره في موضوع واحد أما
+                            هو فكان يجلب النعاس إلى عينيه بأن يتصور شيشرون وحياته وكتاباته وكان كيتي ( <tei:num value="1749" xml:lang="ar">١٧٤٩</tei:num>  ـ  <tei:num value="1834" xml:lang="ar">١٨٣٤</tei:num> ) يرى أن هي ما يقرأ ما خطته
                             أنامل مولير وفولتير وقال عن هذا أنه صفوة أمته كما أنه لويس الرابع عشر صفوتها في السياسة وذلك لأن الأسرة إذا طال
                             عليها العهد يتسلسل منها فرد يجمع جميع صفات أجداده وكمالاتهم وهكذا كان فولتير أعظم كاتب كانت بينه وبين أمته
                             مناسبة وهو أعظم أديب على اختلاف العصور وأعجب مؤلف في الطبيعة.</p>
                         <p>وسنحث القراء بشيء من فوائد الكتاب بعد. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n30-p27"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1843.xhtml"/>
+                        <pb ed="shamela" n="n30-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1843.xhtml"/>
                         <head>مجامع الغرب</head>
                         <p>اشتقت لفظة المجمع التي هي تعريب أكاديميا الإفرنجية من أكاديموس بطل آثينة فكانت الأكاديميا هناك عبارة عن بيت خاص
                             أو ملعب محاط بالأشجار حوى عدة محال لتقديس الأرباب ومنها محراب لربة الشعر أنشأه الفيلسوف أفلاطون فكان يتنزه تحت
@@ -793,8 +710,8 @@
                         <p>هكذا كان شأن مجمع البطالسة في الإسكندرية ومجمع الإسرائيلين ومجمع الخلفاء العباسيين في بغداد والأمويين في الأندلس
                             ومجمع شارلمان والفرد الكبير الفرنسويين. وكانت بعض هذه المجامع أشبه بمدارس منها بمجامع علمية كما ترى المجامع
                             اليوم.</p>
-                        <p>نشأت في أوروبا خلال القرن الثالث عشر والرابع عشر مجامع علمية نظرية مثل مجمع فلورنسا إحدى مدن إيطاليا (1270) ومجمع
-                            المناظرات البديعة في طولوز في فرنسا (1323) ولم يعن في ذينك المجمعين بغير الشعر لما أن ألشعر والأدب هو أول ما
+                        <p>نشأت في أوروبا خلال القرن الثالث عشر والرابع عشر مجامع علمية نظرية مثل مجمع فلورنسا إحدى مدن إيطاليا ( <tei:num value="1270" xml:lang="ar">١٢٧٠</tei:num> ) ومجمع
+                            المناظرات البديعة في طولوز في فرنسا ( <tei:num value="1323" xml:lang="ar">١٣٢٣</tei:num> ) ولم يعن في ذينك المجمعين بغير الشعر لما أن ألشعر والأدب هو أول ما
                             تعانيه الأمة وتحرص عليه ليكون سلماً إلى سائر العلوم التي هي قوام المجتمعات البشرية.</p>
                         <p>أما الحركة التي أدت إلى إحداث المجامع الحالية في الغرب فيجتمع إليها خاصة أهل كل بلد وتنظر في المكتشفات والمخترعات
                             المهمة فتقر سليمها وتنبذ سقيمها فترجع إلى عهد النهضة التي نشأت من إيطاليا والنهضة إذا أطلقت في أوروبا يراد بها
@@ -804,9 +721,7 @@
                             وربما كان في المدن الكبرى عشرون مجمعاً أو تزيد. ومن المجمعات الإيطالية التي أشبهت المجمع العلمي الفرنسوي الحالي
                             مجمع كروسكا ولم يكتب البقاء لما عداه من المجامع العلمية الإيطالية التي نشأت في القرن السادس عشر والسابع عشر
                             وقلما كانت تلك المجامع تدوم بعد مؤسسيها. وفي القرن السابع عشر حذت فرنسا حذو إيطاليا في مجامعها فكثرت فيها
-                            المجامع وحسنت حالها لأن الحكومة في فرنسا أخذت <pb ed="shamela"
-                   n="n30-p28"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1844.xhtml"/> بيدها فكانت نشأتها في
+                            المجامع وحسنت حالها لأن الحكومة في فرنسا أخذت <pb ed="shamela" n="n30-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1844.xhtml"/> بيدها فكانت نشأتها في
                             بلاد عني فيها بأمرها. فأنشأ ريشليو الوزير الفرنساوي المجمع العلمي وأنشأ لويز الرابع عشر مجمع العلوم والآثار
                             وفروعه التي نشأ منها مجمع الفنون الجميلة.</p>
                         <p>اختلف بعضهم في فوائد المجامع العلمية ومما قاله رينان الفيلسوف الفرنسوي كثيراً ما يضعف صوت العلم النافع ويتضاءل
@@ -815,20 +730,18 @@
                             الترتيب الحقيقي وهي قليلة ولكنها مفلحة وليس لغير العقل سلطة تبقى. أهـ.</p>
                         <p>كانت المجامع العلمية الفرنسوية من أعظم المجامع التي نشأت في عواصم أوروبا وعليها نسج الناسجون وبمثالها اقتدى
                             المقتدون.</p>
-                        <p>نشأ المجمع العلمي الباريزي الذي هو مفخر من مفاخر الفرنسيس سنة 1629 على يد بضعة أشخاص من أهل الطبقة الوسطى كانوا
+                        <p>نشأ المجمع العلمي الباريزي الذي هو مفخر من مفاخر الفرنسيس سنة  <tei:num value="1629" xml:lang="ar">١٦٢٩</tei:num>  على يد بضعة أشخاص من أهل الطبقة الوسطى كانوا
                             يجتمعون مرة أو مرتين في الأسبوع في منزل لافانتين كونرار أمين سر الملك فيتباحثون كأنهم في زيارة عادية في الأخبار
                             والآداب وإذا ألف أحدهم كتاباً يعرضه على غيره عن طيب خاطر فيقولون فيه رأيهم بحرية وكانوا ثمانية رجال ومعظمهم من
                             أهل الأدب ومن أرباب الذوق وأهل الشعور كما تدل عليه مصنفاتهم فمضى عليهم نحو أربع أو خمس سنين وهم يوالون
                             اجتماعاتهم على هذا النحو والسرور شامل لهم والفائدة يقتطفون من ثمراتها كل جني هني فاتصل خيرهم بريشليو وقد نم على
                             جمعيتهم الصغيرة أحد أصحابه ولعل هذا الوزير أراد أن يكون مرجعاً في كل شيء شأن كبار المستبدين فعرض عليهم إذا كانوا
-                            يحبون أن يجتمعوا اجتماعاً عاماً ويتألفوا جماعة وكان ذلك في أوائل سنة 1634 فتردد أولئك المجتمعون أولاً ثم أجابوا
+                            يحبون أن يجتمعوا اجتماعاً عاماً ويتألفوا جماعة وكان ذلك في أوائل سنة  <tei:num value="1634" xml:lang="ar">١٦٣٤</tei:num>  فتردد أولئك المجتمعون أولاً ثم أجابوا
                             دعوة ريسليو فدعاهم أولاً على تكثير سوادهم فبعد أن كانوا من تسعة إلى اثني عشر رجلاً أصبحوا ثمانية وعشرين ثم
                             تفاوضوا في الشكل الذي يجري عليه المجمع وفي مواده وعمله وهو عبارة عن تحسين اللغة الفرنسوية وتأليف معجم لها وكتاب
-                            نحو وشعر وبيان لتعم اللغة الإفرنسية ويكون لها من الشأن كما كان في القديم للغتين اللاتينية واليونانية. <pb ed="shamela"
-                   n="n30-p29"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1845.xhtml"/>
+                            نحو وشعر وبيان لتعم اللغة الإفرنسية ويكون لها من الشأن كما كان في القديم للغتين اللاتينية واليونانية. <pb ed="shamela" n="n30-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1845.xhtml"/>
                             مات ريشيلو وخلفه في الرئاسة سيكيوه من أصحاب السلطان وأخذ المجمع العلمي صورة من صور ديوان رسمي ثم أخذوا بعد حين
-                            ينشرون محضر جلساته واصطلحوا على أن يلقي كل منتخب من زمرة أعضائه خطاباً. وفي سنة 1702 قرر المجمع قبول النساء
+                            ينشرون محضر جلساته واصطلحوا على أن يلقي كل منتخب من زمرة أعضائه خطاباً. وفي سنة  <tei:num value="1702" xml:lang="ar">١٧٠٢</tei:num>  قرر المجمع قبول النساء
                             العالمات فيه. وفي رواية أن النساء كن يقبلن في مجمع التصوير والنقش الملوكي في باريز بصفتهن أعضاء منذ عهد بعيد
                             ولكن لا يقبلن في المجمع العلمي الأدبي أكثر من غيره. ولطالما كافأ هذا المجمع النساء على ما جادت به قرائحهن من
                             الكتب والرسائل ولم يفكر في إيجاد بعض كراسي لهن يجلسن عليها وكان النساء في مجمع التصوير والنقش وما زلن ممتعات
@@ -841,24 +754,22 @@
                             فيها على ما يشاء.</p>
                         <p>وعلى ما يشتغل به المجمع من تنقيح اللغة وتهذيبها ينظر في المصنفات التي تعرض عليه ويكافئ عليها المحسنين بالجوائز.
                             وله الآن ثلاث وعشرون جائزة يعطيها كل سنة. منها سبع عشرة جائزة أدبية وما عداها جوائز سموها جوائز الفضيلة.</p>
-                        <p>أما مجمع الآثار الفرنسوي فقد أنشء سنة 1663 من أربعة أعضاء من أهل المجمع العلمي السالف ذكره وجعل أعماله النظر في
-                            حل الآثار والشعار والأيقونات وأن تجعل للعاديات القديمة بساطة وذوق تعظيم بها قيمتها الحقيقية وفي سنة 1701 نظم
+                        <p>أما مجمع الآثار الفرنسوي فقد أنشء سنة  <tei:num value="1663" xml:lang="ar">١٦٦٣</tei:num>  من أربعة أعضاء من أهل المجمع العلمي السالف ذكره وجعل أعماله النظر في
+                            حل الآثار والشعار والأيقونات وأن تجعل للعاديات القديمة بساطة وذوق تعظيم بها قيمتها الحقيقية وفي سنة  <tei:num value="1701" xml:lang="ar">١٧٠١</tei:num>  نظم
                             قانون ذاك المجمع مؤلفاً من أربعين عضواً يقسمون إلى أربع طبقات. ويجتمع هذا المجمع مرتين في الأسبوع وأهم عمله
                             البحث في الآثار الفرنسوية والتاريخ الفرنسوي كما يعنى بالآثار الشرقية والغربية كالأشورية والبابلية والسامية
                             والمصرية وغيرها وفيه فحول من الأعضاء المخصين في كل علم من هذه العلوم وهو يعطي جوائز كسائر الأكاديميات الفرنسوية
-                            <pb ed="shamela"
-                   n="n30-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1846.xhtml"/> وينتخب رئيسه لسنة كما في
+                            <pb ed="shamela" n="n30-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1846.xhtml"/> وينتخب رئيسه لسنة كما في
                             سائر المجامع ما عدا العلمي الكبير ويعاونه كاتم أسرار دائم وهو محسوب من جملة الأعضاء الأربعين.</p>
-                        <p>أما مجمع العلوم في فرنسا فمنشؤه مجهول ولم يعرف له تاريخ في الحقيقة إلا سنة 1666 أيام رخص له الوزير كولبر بأن
+                        <p>أما مجمع العلوم في فرنسا فمنشؤه مجهول ولم يعرف له تاريخ في الحقيقة إلا سنة  <tei:num value="1666" xml:lang="ar">١٦٦٦</tei:num>  أيام رخص له الوزير كولبر بأن
                             يجتمع في خزانة كتب الملك لما رأى في أعماله من خدمة الأمة وفي هذا المجمع الفلكيون وعلماء التشريح والنبات
                             والكيماويون والمهندسون والميكانيكيون والطبيعيون. زاره لويس الرابع عشر فوقعت زيارته له موقعاً حسناً. وقد خصصت له
                             فرنسا منذ ألو نشأته اثني عشر ألف ليرة إفرنسية لابتياع الأدوات والآلات اللازمة للتجارب الكيماوية والطبيعية وغيرها
                             وعدد أعضائه أربعون أيضاً كالمجمعين السالفين وهم يقسمون أقساماً.</p>
                         <p>أما مجمع العلوم الأدبية والسياسية فلم يكن له كيان قبل الثورة الفرنسوية وغاية ما في الأمر أنه أسس نادي الأنترسول
-                            للبحث في هذه العلوم على يد الراهب دي لونكور في سنة 1720 فكان يجتمع أعضاؤه وهم مائة من العلماء كل سبت ثلاث ساعات
+                            للبحث في هذه العلوم على يد الراهب دي لونكور في سنة  <tei:num value="1720" xml:lang="ar">١٧٢٠</tei:num>  فكان يجتمع أعضاؤه وهم مائة من العلماء كل سبت ثلاث ساعات
                             يقضون الساعة الأولى في تلاوة بعض أوراق مقتطعة من الجرائد ويتباحثون في الساعة الثانية في الشؤون السياسية ويصرفون
-                            الساعة الثالثة في قراءة مفكرات. فظنت الحكومة الفرنسوية فيه سوءاً فأمرت بإلغائه سنة 1731 حتى إذا كانت سنة 1795 سن
+                            الساعة الثالثة في قراءة مفكرات. فظنت الحكومة الفرنسوية فيه سوءاً فأمرت بإلغائه سنة  <tei:num value="1731" xml:lang="ar">١٧٣١</tei:num>  حتى إذا كانت سنة  <tei:num value="1795" xml:lang="ar">١٧٩٥</tei:num>  سن
                             قانون لهذا المجمع ينقسم على أقسام قسم العلوم الطبيعية والرياضية وقسم العلوم الأدبية والسياسية وقسم الآداب
                             والفنون الجميلة. وينقسم قسم العلوم الأدبية والسياسية إلى ستة أقسام لكل منها ستة أعضاء في باريس وستة مشتركين في
                             الولايات يشتغلون في تحليل الأفكار والعواطف وهم قسم الفلسفة. والثاني قسم الأخلاق وقسم العلوم الاجتماعية
@@ -866,90 +777,80 @@
                             والفلسفي وقسم للجغرافيا. ولما قبض نابليون بونابرت على قياد المملكة الفرنساوية أراد أن يلغي هذا المجمع مخافة أن
                             يثير حركة في القلوب الجامدة إلا أنه عاد بعد فتجددت حياته ولما تغيرت أنواع الحكومات في فرنسا تغيرت الأحوال على
                             جميع العلوم الأدبية والسياسية ثم انحصرت أعمال هذا المجمع بعد اللتيا والتي في الاشتغال بخمسة أقسام وهي الفلسفة
-                            والأخلاق والتشريع (الحقوق العامة والفقه) والاقتصاد السياسي والإحصائيات والتاريخ <pb ed="shamela"
-                   n="n30-p31"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1847.xhtml"/> العام والتاريخ الفلسفي.
+                            والأخلاق والتشريع (الحقوق العامة والفقه) والاقتصاد السياسي والإحصائيات والتاريخ <pb ed="shamela" n="n30-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1847.xhtml"/> العام والتاريخ الفلسفي.
                             وقد كثر ما جاد أهل الخير له بالأموال ومن رصدوا له الأوقاف فضلاً عما وضعته الحكومة الفرنساوية من الاعتمادات من
                             أجله فصار يتأتى له بذلك أن يكافيء المحسنين من المؤلفين. أما مجمع الفنون الجميلة في فرنسا أيضاً فإنه قام مقام عدة
                             مجامع قبله أنشئت منذ عهد لويز الرابع عشر فأضيف إلى مجمع التصوير والنقش مجمع للموسيقى ومجمع للرقص. ومن المجامع
-                            الفرنساوية مجمع التصوير والنقش الملوكي أنشء سنة 1468 وألغي سنة 1793.</p>
-                        <p>وهناك الكثير من المجامع مثل أكاديمية سان دوك المؤسسة سنة 1649 والملغاة سنة 1777 ثم المجمع الملكي للرسم الذي أسس
-                            سنة 1671 في باريز وألغي سنة 1792 ثم مجمع الفنون الجميلة وقد أسس سنة 1795 ولا يزال حياً. وفي ولايات فرنسا كثير من
+                            الفرنساوية مجمع التصوير والنقش الملوكي أنشء سنة  <tei:num value="1468" xml:lang="ar">١٤٦٨</tei:num>  وألغي سنة  <tei:num value="1793" xml:lang="ar">١٧٩٣</tei:num> .</p>
+                        <p>وهناك الكثير من المجامع مثل أكاديمية سان دوك المؤسسة سنة  <tei:num value="1649" xml:lang="ar">١٦٤٩</tei:num>  والملغاة سنة  <tei:num value="1777" xml:lang="ar">١٧٧٧</tei:num>  ثم المجمع الملكي للرسم الذي أسس
+                            سنة  <tei:num value="1671" xml:lang="ar">١٦٧١</tei:num>  في باريز وألغي سنة  <tei:num value="1792" xml:lang="ar">١٧٩٢</tei:num>  ثم مجمع الفنون الجميلة وقد أسس سنة  <tei:num value="1795" xml:lang="ar">١٧٩٥</tei:num>  ولا يزال حياً. وفي ولايات فرنسا كثير من
                             المجامع العلمية للتصوير والنقش كما فيها مجمع علمي للموسيقى ومجمع للرقص وآخر للجراحة وغيره للطب وهناك جمعيات
                             علمية أيضاً.</p>
                         <p>قلنا أن إيطاليا كانت مبعث المجامع الأدبية والعلمية على الطراز الحديث وأنها كثرت كثرة عظيمة وكانت هذه المجامع لأول
                             أمرها عبارة عن اجتماع أشخاص انصرفوا إلى العلوم والآداب والفنون وظهرت بأسماء غريبة دام بعضها وبعضها انفض أعضاؤه
                             والزمن جامع ومفرق. وأهم مجمع قام في إيطاليا المجمع الإفلاطوني في مدينة فلورنسا بسعد كوسم دي ميديس كبير دوقات
-                            طوسكانيات في عصره وكان هم هذا المجمع درس فقوال أفلاطون ثم تفرق أعضاؤه أيدي سب عقب حوادث سنة 1521 ولم يعودوا
+                            طوسكانيات في عصره وكان هم هذا المجمع درس فقوال أفلاطون ثم تفرق أعضاؤه أيدي سب عقب حوادث سنة  <tei:num value="1521" xml:lang="ar">١٥٢١</tei:num>  ولم يعودوا
                             يجتمعون ثم أسست مجامع في نابولي ورومية عنيت بالآداب والتمثيل والشعر وأول جمعية أسست في إيطاليا للبحث في العلوم
-                            الطبيعية نشأت في نابولي سنة 1560 على يد باتيست بورتا وكانت داره أول مجمع لاجتماع المتحابين في العلم وهم كانوا
+                            الطبيعية نشأت في نابولي سنة  <tei:num value="1560" xml:lang="ar">١٥٦٠</tei:num>  على يد باتيست بورتا وكانت داره أول مجمع لاجتماع المتحابين في العلم وهم كانوا
                             سداه ولحمته وقد عنيت بالبحث في الطب والفلسفة الطبيعية. ثم اتهم هذا المجمع بالسحر فاضطر مؤسسه أن يذهب إلى حضرة
-                            البابا لويز الثالث ويبرئ نفسه مما عزي إليه وانحل المجمع وخلفه في رومية سنة 1603 مجمع لنسي وكان من جملة أعضائه
-                            غاليله صاحب الرأي المشهور في دوران الأرض الذي أرداه الجهل في عصره. ثم أنشأ البابا بيوس التاسع سنة 1847 مجمعاً
-                            علمياً في رومية سماه المجمع البابوي النيسي الجديد وبعد سنة 1870 نظم هذا المجمع وأطلق عليه اسم القديم <pb ed="shamela"
-                   n="n30-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1848.xhtml"/>
+                            البابا لويز الثالث ويبرئ نفسه مما عزي إليه وانحل المجمع وخلفه في رومية سنة  <tei:num value="1603" xml:lang="ar">١٦٠٣</tei:num>  مجمع لنسي وكان من جملة أعضائه
+                            غاليله صاحب الرأي المشهور في دوران الأرض الذي أرداه الجهل في عصره. ثم أنشأ البابا بيوس التاسع سنة  <tei:num value="1847" xml:lang="ar">١٨٤٧</tei:num>  مجمعاً
+                            علمياً في رومية سماه المجمع البابوي النيسي الجديد وبعد سنة  <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>  نظم هذا المجمع وأطلق عليه اسم القديم <pb ed="shamela" n="n30-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1848.xhtml"/>
                             المجمع النيسي وهو الآن تحت حماية الحكومة الإيطالية ويتناول نحو عشرين ألف جنيه في السنة من الحكومة وهو قسمان قسم
                             العلوم الأدبية والسياسية وفرع العلوم الطبيعية والظواهر الجوية.</p>
-                        <p>وفي سنة 1657 أنشأ الأمير ليوبولد ميديسي في فلورنسا مجمع سيمنتو للبحث في العلوم الطبيعية ثم انحل وأنشئ في مدينة
-                            فلورنسا مجمع كروسكا سنة 1582 وهو مجمع الأدبي أسسه أشهر شعرائها وعني بتصحيح قاموس اللغة الإيطالية وهذا المعجم هو
+                        <p>وفي سنة  <tei:num value="1657" xml:lang="ar">١٦٥٧</tei:num>  أنشأ الأمير ليوبولد ميديسي في فلورنسا مجمع سيمنتو للبحث في العلوم الطبيعية ثم انحل وأنشئ في مدينة
+                            فلورنسا مجمع كروسكا سنة  <tei:num value="1582" xml:lang="ar">١٥٨٢</tei:num>  وهو مجمع الأدبي أسسه أشهر شعرائها وعني بتصحيح قاموس اللغة الإيطالية وهذا المعجم هو
                             حجة الطليان في لغتهم كمعجم المجمع العلمي الباريزي باللغة الإفرنسية. وقد ضعف هذا المجمع بعض الضعف ولكنه ما زال
                             موجوداً وأعضاؤه على قلتهم نشروا الآن الطبعة الخامسة من معجمه وفي كل من بولونيا وتورين وميلان والبندقية مجامع
-                            علمية أدبية كما فيها مجامع خاصة من أمهات المدن الإيطالية ومنها ما يرد تاريخه إلى سنة 1500.</p>
+                            علمية أدبية كما فيها مجامع خاصة من أمهات المدن الإيطالية ومنها ما يرد تاريخه إلى سنة  <tei:num value="1500" xml:lang="ar">١٥٠٠</tei:num> .</p>
                         <p>أما مجامع الفنون الجميلة فهي بلا شك وافرة في بلدان إيطاليا وكيف وهي أم الصنائع النفيسة والتفنن والذوق وأهم
-                            المجامع من هذا النوع مجمع ميلان أسس سنة 1483 ومجمع الفنون الجميلة في ميلان ومجمع بولونيا المعروف بالمجمع
-                            الكليمنتي نسبة للباب كليمان ومجمع جين اللغوي أسس سنة 1751 ومجمع تورين ومجمع البندقية ومجمع نابولي ومجمع بارم
-                            ومجمع مودين ومجمع لوك ومجمع سين وأهم المجامع المجمع الروماني لسان دوك أسس سنة 1588 ومجمع الفنون والتصير أسس سنة
-                            1860 في فلورنسا وكان أسس على عهد كوسم الأول أمير ميديسي وغيرها من المجامع الصغيرة وفيه بعض أعضاء من الأجانب
+                            المجامع من هذا النوع مجمع ميلان أسس سنة  <tei:num value="1483" xml:lang="ar">١٤٨٣</tei:num>  ومجمع الفنون الجميلة في ميلان ومجمع بولونيا المعروف بالمجمع
+                            الكليمنتي نسبة للباب كليمان ومجمع جين اللغوي أسس سنة  <tei:num value="1751" xml:lang="ar">١٧٥١</tei:num>  ومجمع تورين ومجمع البندقية ومجمع نابولي ومجمع بارم
+                            ومجمع مودين ومجمع لوك ومجمع سين وأهم المجامع المجمع الروماني لسان دوك أسس سنة  <tei:num value="1588" xml:lang="ar">١٥٨٨</tei:num>  ومجمع الفنون والتصير أسس سنة
+                             <tei:num value="1860" xml:lang="ar">١٨٦٠</tei:num>  في فلورنسا وكان أسس على عهد كوسم الأول أمير ميديسي وغيرها من المجامع الصغيرة وفيه بعض أعضاء من الأجانب
                             ولاسيما من الإسبانيين.</p>
-                        <p>أما مجامع إسبانيا فهي مهمة أيضاً. فقد أسس الدوق إسكالونا في مدريد سنة 1713 مجمعاً علمياً على نسق المجمع العلمي
+                        <p>أما مجامع إسبانيا فهي مهمة أيضاً. فقد أسس الدوق إسكالونا في مدريد سنة  <tei:num value="1713" xml:lang="ar">١٧١٣</tei:num>  مجمعاً علمياً على نسق المجمع العلمي
                             الفرنسوي والإيطالي وذلك لنشر اللغة الإسبانية وحفظها فكان أعضاؤه باديء بدء ثمانية ثم أصبحوا أربعة وعشرين وله رئيس
-                            ينتخب كل سنة وكاتم أسرار دائم وقد نشر معجماً. وهناك المجمع التاريخي أسس سنة 1738 وكان لأول مرة جمعية خاصة جعلها
+                            ينتخب كل سنة وكاتم أسرار دائم وقد نشر معجماً. وهناك المجمع التاريخي أسس سنة  <tei:num value="1738" xml:lang="ar">١٧٣٨</tei:num>  وكان لأول مرة جمعية خاصة جعلها
                             الملك تحت حمايته وهو يعني بالمباحث التاريخية وعاديات البلاد الإسبانية وكان أسس في مدريد مجمع للطبيعيات وانفض بعد
-                            سنين فخلفه مجمع العلوم الذي أسس سنة 1847 وقد جروا فيه على مثال مجمع العلوم في باريز وهو ينقسم على <pb ed="shamela"
-                   n="n30-p33"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1849.xhtml"/>
-                            ثلاثة أقسام العلوم الرياضية والطبيعية والظواهر. وفي سنة 1858 أنشئوا في مدريد مجمعاً على مثال المجمع العلمي
+                            سنين فخلفه مجمع العلوم الذي أسس سنة  <tei:num value="1847" xml:lang="ar">١٨٤٧</tei:num>  وقد جروا فيه على مثال مجمع العلوم في باريز وهو ينقسم على <pb ed="shamela" n="n30-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1849.xhtml"/>
+                            ثلاثة أقسام العلوم الرياضية والطبيعية والظواهر. وفي سنة  <tei:num value="1858" xml:lang="ar">١٨٥٨</tei:num>  أنشئوا في مدريد مجمعاً على مثال المجمع العلمي
                             الفرنسوي للعلوم الأدبية. وفيها مجمع للفنون الجميلة أيضاً.</p>
-                        <p>ولحكومة البرتقال في لشبونة عاصمتها مجمع للبحث في التاريخ البرتقالي أسس سنة 1720 على يد الملك يوحنا الخامس وأضافت
-                            إليه الملكة ماري سنة 1779 مجمعاً للعلوم الزراعية والفنون والتجارة والاقتصاد العام. وقد نظم المجمع العلمي سنة
-                            1851 وهو قسمان أحدهما للعلوم الصرفة والثاني للأدب والتاريخ والحقوق والعلوم الأدبية والسياسية وأخذ منذ سنة 1879
+                        <p>ولحكومة البرتقال في لشبونة عاصمتها مجمع للبحث في التاريخ البرتقالي أسس سنة  <tei:num value="1720" xml:lang="ar">١٧٢٠</tei:num>  على يد الملك يوحنا الخامس وأضافت
+                            إليه الملكة ماري سنة  <tei:num value="1779" xml:lang="ar">١٧٧٩</tei:num>  مجمعاً للعلوم الزراعية والفنون والتجارة والاقتصاد العام. وقد نظم المجمع العلمي سنة
+                             <tei:num value="1851" xml:lang="ar">١٨٥١</tei:num>  وهو قسمان أحدهما للعلوم الصرفة والثاني للأدب والتاريخ والحقوق والعلوم الأدبية والسياسية وأخذ منذ سنة  <tei:num value="1879" xml:lang="ar">١٨٧٩</tei:num> 
                             ينشر مذكرات أدبية برتقالية ومجاميع تاريخية مخطوطة ومفكرات اقتصادية.</p>
                         <p>وتجد في أميركا الجنوبية مجامع علمية في كل عاصمة من عواصم جمهورياتها وأهمها مجمع الفنون الجميلة في ريو دي جانيرو
                             وعاصمة البرازيل أسسها الملك يوحنا السادس البرتقالي وكان مديره وأساتذته من الفرنسيس أولاً.</p>
-                        <p>وأسست البلجيك سنة 1772 المجمع الملكي البلجيكي في بروكسيل على يد الإمبراطورة ماري تريز ملكة بلاد القاع وهو يبحث في
+                        <p>وأسست البلجيك سنة  <tei:num value="1772" xml:lang="ar">١٧٧٢</tei:num>  المجمع الملكي البلجيكي في بروكسيل على يد الإمبراطورة ماري تريز ملكة بلاد القاع وهو يبحث في
                             العلوم والأدب وما زال إلى اليوم سائراً على قدم النجاح وقد ضم إليه كل ما في بلاد البلجيك من أهل العلم وحملة لواء
                             أدب وفي كل سنة يعين الملك رئيساً للمجمع من أحد أقسامه الثلاثة في الأدب والفنون الجميلة والعلوم. وبينا كانت
                             أوروبا بأسرها تزهر بالعلوم والآداب على عهد النهضة والإصلاح كانت البلجيك وهي تدعى إذ ذاك بلاد القاع الإسبانية قد
                             خربت ومني سكانها بالحروب الدينية ونزلت من أوج السعادة على حضيض الذلة المحزنة. دامت على ذلك طول القرن السابع عشر
                             وفي تلك الحال التي كانت فيها بلاد البلجيك على جانب من ضعف القوى الطبيعية والعقلية سلمت ولاياتها للنمسا بموجب
-                            معاهدة أوترخت سنة 1713 وكانت الآداب والفنون قد اضمحلت فيها ولم يبق فيها أثر للعلم إلا في كلية لوفين والتعليم
+                            معاهدة أوترخت سنة  <tei:num value="1713" xml:lang="ar">١٧١٣</tei:num>  وكانت الآداب والفنون قد اضمحلت فيها ولم يبق فيها أثر للعلم إلا في كلية لوفين والتعليم
                             فيها على ضعف. فارق الغنى تلك الأمة وإن لم يفارقها نشاطها واحتفظت بتقاليدها وبفضل الملكة ماري تريز هبت البلاد من
-                            رقدتها وانعكس ذاك السبات الطويل إلى يقظة تامة وأعضاء ذاك المجمع 48.</p>
-                        <p>وفي البلجيك مجمع طبي أسس سنة 1841 أعضاؤه أربعون ويقبل أعضاء شرف بقدر ما <pb ed="shamela"
-                   n="n30-p34"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1850.xhtml"/> يستنسبه وأعضاء مراسلين
-                            يبلغ معدلهم مائة رجل منهم 40 بلجيكياً و60 أجنبياً. كما أن مجمعاً علمياً للفنون الجميلة من مدينة أنفرس وفيها
+                            رقدتها وانعكس ذاك السبات الطويل إلى يقظة تامة وأعضاء ذاك المجمع  <tei:num value="48" xml:lang="ar">٤٨</tei:num> .</p>
+                        <p>وفي البلجيك مجمع طبي أسس سنة  <tei:num value="1841" xml:lang="ar">١٨٤١</tei:num>  أعضاؤه أربعون ويقبل أعضاء شرف بقدر ما <pb ed="shamela" n="n30-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1850.xhtml"/> يستنسبه وأعضاء مراسلين
+                            يبلغ معدلهم مائة رجل منهم  <tei:num value="40" xml:lang="ar">٤٠</tei:num>  بلجيكياً و <tei:num value="60" xml:lang="ar">٦٠</tei:num>  أجنبياً. كما أن مجمعاً علمياً للفنون الجميلة من مدينة أنفرس وفيها
                             مجامع للصنائع النفيسة في أمهات المدن البلجيكية. ولكن لمجمع أنفرس فضل التقدم على سائر المجامع التي من نوعه لأن
                             تلك المدينة نفسها امتازت بالصنائع والتفنن فيها منذ خمسة قرون وقد اصبح هذا المجمع بفضل الدروس التي يلقيها في
                             التصوير والنقش والحفر والهندسة كعبة القصاد من مئات من الطلاب في بلاد البلجيك وغيرها. وفي هولاندة مجمعان أحدهما
-                            يدعى مجمع بلاد القاع أسسه سنة 1808 الملك لويز بونابرت واستحال سنة 1852 إلى مجمع العلوم والثاني مجمع ليدن أنشئ
-                            سنة 1766.</p>
-                        <p>ومن أعظم المجامع العلمية في ألمانيا المجمع الذي أسس في فيينا سنة 1652 على مثال المجامع الإيطالية وليس له مدينة
+                            يدعى مجمع بلاد القاع أسسه سنة  <tei:num value="1808" xml:lang="ar">١٨٠٨</tei:num>  الملك لويز بونابرت واستحال سنة  <tei:num value="1852" xml:lang="ar">١٨٥٢</tei:num>  إلى مجمع العلوم والثاني مجمع ليدن أنشئ
+                            سنة  <tei:num value="1766" xml:lang="ar">١٧٦٦</tei:num> .</p>
+                        <p>ومن أعظم المجامع العلمية في ألمانيا المجمع الذي أسس في فيينا سنة  <tei:num value="1652" xml:lang="ar">١٦٥٢</tei:num>  على مثال المجامع الإيطالية وليس له مدينة
                             معينة يجتمع فيها بل يغير مقره بحسب إرادة رئيسه ولكن خزانة كتبه لم تزل باقية في درسد عاصمة سكسونيا وقد نشر منذ
-                            سنة 1895 سلسلة مفكرات تحت أسماء شتى كلها فيس العلم والطب. ومع انتشار العلم في بلاد الألمان وكثرة الكليات فيها لم
+                            سنة  <tei:num value="1895" xml:lang="ar">١٨٩٥</tei:num>  سلسلة مفكرات تحت أسماء شتى كلها فيس العلم والطب. ومع انتشار العلم في بلاد الألمان وكثرة الكليات فيها لم
                             يشعر فيها بالحاجة إلى المجامع العلمية لأول ارتقائها فلم تؤسس المجامع في قواعد بلادها إلا في القرن الثاني عشر على
                             مثال المجامع الفرنساوية وذلك في مدن برلين وميونيخ وليبزيك وغوتنغن.</p>
                         <p>أسس الفيلسوف الألماني لايبنز في برلين بمساعيه وفضل صوفيا شارلوت حامية الآداب والعلوم في عصرها مجمعاً للعلوم. فصد
-                            الأمر بإنشائه سنة 1700 ولم يرض فريدريك الأول أن يعد هذا المجمع من جملة دواوين الحكومة إلا بعد اللتيا والتي
+                            الأمر بإنشائه سنة  <tei:num value="1700" xml:lang="ar">١٧٠٠</tei:num>  ولم يرض فريدريك الأول أن يعد هذا المجمع من جملة دواوين الحكومة إلا بعد اللتيا والتي
                             وإجابة لرغائب زوجته حامية الآداب والعلم فجرى المجمع منذ ذاك العهد على مثال مجمعي لندن وباريز وذلك بجمع المعارف
                             المتفرقة في العالم وتقريبها من الأذهان وتنظيمها وجعل مجموعة لها واضحة سديدة وأن تنمى ويزاد عليها وتوضع موضع
                             الاستعمال ويعم أمرها وتتشربها النفوس على طريقة أمينة مشروعة. قال لايبنز الحكيم في قانون هذا المجمع وهو من إنشائه
                             إن الأسباب التي تبلغ بنا هذا الغرض الذي نرمي إليه هي التأمل ومراقبة صنع الله وعجائبه في الكون ووصف الاكتشافات
                             والاختراعات وما صاغته يد الإنسان من النفائس والعناية بما عني به الناس واعتقدوه من عقائدهم وعلى الجملة النظر في
-                            جميع هذه <pb ed="shamela"
-                   n="n30-p35"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1851.xhtml"/> الدروس وتطبيقها على
+                            جميع هذه <pb ed="shamela" n="n30-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1851.xhtml"/> الدروس وتطبيقها على
                             العمل فهي كنز العلم والعمران الاجتماعي وهي المادة التي تساعد على الخير العام والتوفر على الفضيلة وبث الحقيقة
                             وتمجيد الخالق إلى أن قال: ألا وأنه يجب تطبيق العلم على العمل وتكميل الصنائع والعلوم بأساليبها والعناية بكل ما
                             ينفع البلاد والشعب في الزراعة والصناعة والتجارة بل في الطعام والآدام ويعلي شأن ألمانيا.</p>
@@ -959,49 +860,45 @@
                             الألمانية وكثرت واردات المجمع كثرة مهمة بما نفحته الحكومة إلا أن كلية برلين قد غطت على شهرته بما قامت به من
                             الأعمال العلمية ومع هذا دام له شأن يذكر بين الخاصة ولا سيما عند علماء الأرض الذين يقدرون أعماله العلمية قدرها
                             وهو اليوم أهم مجمع للمباحث اللغوية والتاريخية وله عناية خاصة بالعربية والسنسكريتية.</p>
-                        <p>وفي برلين مجمع للصنائع الجميلة أنشئ سنة 1703 وكان مديروه فرنسويين باديء بدء. وفي بافيرا مجمع للعلوم اسمه المجمع
-                            الملكي وهو في الدرجة الثانية عن الأكاديميات إلا أنه ثقة محترم أسس في ميونيخ سنة 1759 واشتغل لأول أمره بالمباحث
-                            التاريخية وفي سنة 1809 نظم شؤونه تنظيماً حسناً وعهد برئاسته إلى الفيلسوف جاكوبي وقسم أعماله إلى ثلاثة أقسام وهي
+                        <p>وفي برلين مجمع للصنائع الجميلة أنشئ سنة  <tei:num value="1703" xml:lang="ar">١٧٠٣</tei:num>  وكان مديروه فرنسويين باديء بدء. وفي بافيرا مجمع للعلوم اسمه المجمع
+                            الملكي وهو في الدرجة الثانية عن الأكاديميات إلا أنه ثقة محترم أسس في ميونيخ سنة  <tei:num value="1759" xml:lang="ar">١٧٥٩</tei:num>  واشتغل لأول أمره بالمباحث
+                            التاريخية وفي سنة  <tei:num value="1809" xml:lang="ar">١٨٠٩</tei:num>  نظم شؤونه تنظيماً حسناً وعهد برئاسته إلى الفيلسوف جاكوبي وقسم أعماله إلى ثلاثة أقسام وهي
                             الفلسفة وأصل اللغات والعلوم الرياضية والطبيعية والتاريخية.</p>
                         <p>وفي ميونيخ مجمع للفنون الجميلة. وفي إمارة ساكس مجمع للعلوم أنشيء في درسد عاصمتها إلا أن مدينة ليبزيك مركزه
-                            الحقيقي وقد أنشيء سنة 1846 وعدد أعضائه سبعون عضواً ينقسمون على قسمين القسم الرياضي والطبيعي والقسم التاريخي
-                            واللغوي. وفي كل من ليبزيك ودرسد مجمع للفنون الجميلة. وأنشيء في غوتنغن مجمع للعلوم انتظم أمره سنة 1770 وهو ذو
+                            الحقيقي وقد أنشيء سنة  <tei:num value="1846" xml:lang="ar">١٨٤٦</tei:num>  وعدد أعضائه سبعون عضواً ينقسمون على قسمين القسم الرياضي والطبيعي والقسم التاريخي
+                            واللغوي. وفي كل من ليبزيك ودرسد مجمع للفنون الجميلة. وأنشيء في غوتنغن مجمع للعلوم انتظم أمره سنة  <tei:num value="1770" xml:lang="ar">١٧٧٠</tei:num>  وهو ذو
                             ثلاث شعب: الرياضيات والطبيعيات والتاريخيات وللشعبة الطبيعية فيهم أثر مهم في الحركة العلمية الألمانية. ويمكن أن
                             يلحق بمجامع ألمانيا مجمع فينا عاصمة النمسا اليوم ولغته الألمانية.</p>
-                        <p>وفي فينا ما عدا ذلك مجمع علمي إمبراطوري وضع مشروعه لايبنز الفيلسوف ولكنه لم <pb ed="shamela"
-                   n="n30-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1852.xhtml"/> يؤسس إلا سنة 1846 على يد
-                            الإمبراطور فرديناند الأول وهو شعبتان شعبة الرياضيات والطبيعيات وشعبة التاريخ والله وله 60 عضواً مواظبين و24
-                            عضواً بالشرف و120 عضواً مراسلين وكان أول رئيس له المستشرق الكبير هامر بورجستال. وأسس في فيينا سنة 1704 مجمع
+                        <p>وفي فينا ما عدا ذلك مجمع علمي إمبراطوري وضع مشروعه لايبنز الفيلسوف ولكنه لم <pb ed="shamela" n="n30-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1852.xhtml"/> يؤسس إلا سنة  <tei:num value="1846" xml:lang="ar">١٨٤٦</tei:num>  على يد
+                            الإمبراطور فرديناند الأول وهو شعبتان شعبة الرياضيات والطبيعيات وشعبة التاريخ والله وله  <tei:num value="60" xml:lang="ar">٦٠</tei:num>  عضواً مواظبين و <tei:num value="24" xml:lang="ar">٢٤</tei:num> 
+                            عضواً بالشرف و <tei:num value="120" xml:lang="ar">١٢٠</tei:num>  عضواً مراسلين وكان أول رئيس له المستشرق الكبير هامر بورجستال. وأسس في فيينا سنة  <tei:num value="1704" xml:lang="ar">١٧٠٤</tei:num>  مجمع
                             للفنون الجميلة.</p>
                         <p>وفي بريطانيا العظمى وإيرلندا تطلق لفظة مجمع على المحال التي تعنى بالفنون الجميلة وما عداها من الجمعيات التي يشترك
                             فيها كثير من رجال العلم والأدب لمقصد يقصدونه وعلم ينمونه وأدب ينشدونه يدعى جمعيات فالجمعية الملكية في لندن لا
-                            تقل عن المجمع العلمي في باريز وبرلين ويرد عهد تأسيسها إلى سنة 1616 وقد كان شأن هذه الجمعية على عهد جان الأول
+                            تقل عن المجمع العلمي في باريز وبرلين ويرد عهد تأسيسها إلى سنة  <tei:num value="1616" xml:lang="ar">١٦١٦</tei:num>  وقد كان شأن هذه الجمعية على عهد جان الأول
                             وشارل الأول من الضعف على جانب. وكان باكون الفيلسوف اعتاد أن يجتمع هو وأصحابه من أهل العلم والحكمة في أكسفورد على
                             الدوام للبحث في الموضوعات التي لها علاقة بالعلوم العلمية ولما ارتقى شارك الأول إلى عرش إنكلترا أصدر إليهم أمراً
                             يعترف بجمعيتهم وعندها بدأ أمرها بالظهور وما زال شأن هذه الجمعية العلمية زاهراً طوال القرن الثامن عشر والتاسع عشر
                             واشترك فيها كثير من نبلاء البلاد الإنكليزية وجميع علمائها ولكن بدون أن يعطى النبلاء لقباً علمياً. وما برحت منذ
-                            سنة 1665 تنشر كتباً تحت عنوان القضايا الفلسفية وقد بلغت إلى الآن زهاء مائتي مجلد. وفي لندن مجمع للتصوير اسمه
-                            مجمع أدمبرغ وفي دوبلين عاصمة إيرلندا مجمع اسمه المجمع الملكي الإيرلندي أسس سنة 1786 بجانب كليتها وفيها مجمع
+                            سنة  <tei:num value="1665" xml:lang="ar">١٦٦٥</tei:num>  تنشر كتباً تحت عنوان القضايا الفلسفية وقد بلغت إلى الآن زهاء مائتي مجلد. وفي لندن مجمع للتصوير اسمه
+                            مجمع أدمبرغ وفي دوبلين عاصمة إيرلندا مجمع اسمه المجمع الملكي الإيرلندي أسس سنة  <tei:num value="1786" xml:lang="ar">١٧٨٦</tei:num>  بجانب كليتها وفيها مجمع
                             للفنون الجميلة. وفي بعض المستعمرات الإنكليزية مجامع علمية مثل المجمع العلمي في مدينة فكتوريا بأوستراليا.</p>
                         <p>وفي بلاد السويد والنرويج مجامع علمية كثيرة جروا فيها على قدم المجامع الفرنسوية وهي ناجحة للغاية. وفي استوكهلم
-                            ثلاثة مجامع فيها ثلاث شعب كالمجمع العلمي الباريزي وفيها مجمع علمي للفنون الجميلة أسس سنة 1733 وهو كمعظم المجامع
+                            ثلاثة مجامع فيها ثلاث شعب كالمجمع العلمي الباريزي وفيها مجمع علمي للفنون الجميلة أسس سنة  <tei:num value="1733" xml:lang="ar">١٧٣٣</tei:num>  وهو كمعظم المجامع
                             التي من شكله عبارة عن مدرسة للفنون الجميلة مع متحف وأساتذة وتلاميذ معدل عددهم أربعمائة.</p>
-                        <p>وفي استوكلهم مجمع علمي على مثال مجمع العلوم في باريز وبرلين أسس سنة 1735 على يد العالم تريوالد المشهور في عصره
+                        <p>وفي استوكلهم مجمع علمي على مثال مجمع العلوم في باريز وبرلين أسس سنة  <tei:num value="1735" xml:lang="ar">١٧٣٥</tei:num>  على يد العالم تريوالد المشهور في عصره
                             إجابة لدعوة أحد رجال تلك البلاد وعلى نفقاته وكان دعاه إلى إلقاء محاضرات عامة في الطبيعة العلمية فحذا حذو تريوالد
-                            كثير من أهل <pb ed="shamela"
-                   n="n30-p37"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1853.xhtml"/> الأدب حتى إذا كانت سنة
-                            1739 أنشأ هؤلاء العلماء في استوكهلم جمعية صغرى غايتها البحث في المباحث العلمية وتعميمها ثم انتظموا في شكل مجمع
+                            كثير من أهل <pb ed="shamela" n="n30-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1853.xhtml"/> الأدب حتى إذا كانت سنة
+                             <tei:num value="1739" xml:lang="ar">١٧٣٩</tei:num>  أنشأ هؤلاء العلماء في استوكهلم جمعية صغرى غايتها البحث في المباحث العلمية وتعميمها ثم انتظموا في شكل مجمع
                             علمي يجتمع في أوقات معلومة ولا يكتفي بالمحاضرات فنجح في شؤونه ونشر كما تنشر المجامع العلمية خلاصة بأعماله ونمي
                             خبره إلى فريدريك الرابع ملك السويد فجعله تحت حمايته ودعاه مجلس العلوم الإمبراطوري في السويد وإذ لم يغدق الملك
                             على هذا المجمع شيئاً من مال الحكومة بقي حراً في حكم نفسه بنفسه وإدارة شؤونه مستقلاً عن الحكومة وهو الآن يتناول
                             وارداته من الوصايا وممن يحسنون عليه بالأموال ويمنحونه المنح من أهل الخير. ويتعاقب الأعضاء المقيمون في استوكهلم
-                            رئاسة المجمع كل ثلاثة أشهر وأعضاؤه من السويديين وغيرهم من الأجانب. وكان هذا المجمع ينقسم سنة 1799 إلى سبعة أقسام
+                            رئاسة المجمع كل ثلاثة أشهر وأعضاؤه من السويديين وغيرهم من الأجانب. وكان هذا المجمع ينقسم سنة  <tei:num value="1799" xml:lang="ar">١٧٩٩</tei:num>  إلى سبعة أقسام
                             وهي الاقتصاد السياسي والزراعي والتجارة والصنائع الميكانيكية والطبيعية والتاريخ الطبيعي والوطني والطبيعة والتاريخ
                             الطبيعي الأجنبي والعلوم الرياضية والطب والأدب والتاريخ واللغات.</p>
-                        <p>وفي أوبسال أحد مدن السويد مجمع اسمع مجمع العلوم الإمبراطوري أسس سنة 1710 ولكنه لم يعترف به رسمياً إلا سنة 1728
-                            وكانت كيفية إنشائه غريبة وذلك أن طاعوناً جارفاً انتشر في أوبسال سنة 1710 فانفض طلاب مدرستها الجامعة وانقطعت
+                        <p>وفي أوبسال أحد مدن السويد مجمع اسمع مجمع العلوم الإمبراطوري أسس سنة  <tei:num value="1710" xml:lang="ar">١٧١٠</tei:num>  ولكنه لم يعترف به رسمياً إلا سنة  <tei:num value="1728" xml:lang="ar">١٧٢٨</tei:num> 
+                            وكانت كيفية إنشائه غريبة وذلك أن طاعوناً جارفاً انتشر في أوبسال سنة  <tei:num value="1710" xml:lang="ar">١٧١٠</tei:num>  فانفض طلاب مدرستها الجامعة وانقطعت
                             ألسنالمدرسين عن التدريس وخلت المنابر من أصوات الخطباء وساد الهلع والقلق في أربجاء البلاد فرأى أحد علماءها المدعو
                             أريك برزيلوس خازن كتب الكلية وهو مؤرخ وفقيه مشهور في قومه أن يجتمع أساتذة الكلية في المدرسة مرة في الأسبوع في
                             قاعة المكتبة ليقضوا الوقت في المحاورات الودية ويخوضوا في الموضوعات الأدبية ويطردوا عنهم كما قالوا شيطان الهموم
@@ -1010,64 +907,56 @@
                             تصدر مذكراتهم باللاتينية إلى اليوم وإن كان معظم الأعضاء يكتبون مقالاتهم بالألمانية أو بالإنكليزية أو
                             بالإفرنسية.</p>
                         <p>وفي بلاد النروج مجامع علمية وإن لم تكن في الغاية بموقعها فهي مفيدة وحرية بأن يشار إليها. ففي كرستيانيا مجمع أسس
-                            سنة 1857 ومثله في دورنتيم أسس سنة 1760 يعنى <pb ed="shamela"
-                   n="n30-p38"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1854.xhtml"/> بالبحث في الصنائع
-                            والتجارة لا بالعلم المحض. وفي كوبنهاغ مجمع العلوم الإمبراطوري أيضاً أسس سنة 1742 على عهد كرستيان السادسي. وهو
+                            سنة  <tei:num value="1857" xml:lang="ar">١٨٥٧</tei:num>  ومثله في دورنتيم أسس سنة  <tei:num value="1760" xml:lang="ar">١٧٦٠</tei:num>  يعنى <pb ed="shamela" n="n30-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1854.xhtml"/> بالبحث في الصنائع
+                            والتجارة لا بالعلم المحض. وفي كوبنهاغ مجمع العلوم الإمبراطوري أيضاً أسس سنة  <tei:num value="1742" xml:lang="ar">١٧٤٢</tei:num>  على عهد كرستيان السادسي. وهو
                             شعبتان الفلسفة والتاريخ والعلوم الرياضية الطبيعية وينشر مذكرات من أمتع ما يؤلف وينشر. وفيها أيضاً مجمع للفنون
-                            الجميلة أسس سنة 1738.</p>
-                        <p>وفي بطرسبرج عاصمة روسيا مجمع للعلوم كان الباديء بإنشائه بطرس الأكبر تأسس سنة 1724 من ثلاث شعب وهي الرياضيات
+                            الجميلة أسس سنة  <tei:num value="1738" xml:lang="ar">١٧٣٨</tei:num> .</p>
+                        <p>وفي بطرسبرج عاصمة روسيا مجمع للعلوم كان الباديء بإنشائه بطرس الأكبر تأسس سنة  <tei:num value="1724" xml:lang="ar">١٧٢٤</tei:num>  من ثلاث شعب وهي الرياضيات
                             والتاريخ الطبيعي والتاريخ والفقه ويقضي على أعضائه أن ينصرفوا للتعليم ويعنوا بتخريج تلاميذ يختارونهم من شبان
                             الصقالبة السلافيين الأجانب. وكان جميع أعضائه من غير الروسيين لأول أمره أي من السويسريين والألمان. وقد خدم تاريخ
                             روسيا وعلم آثارها أجلّ خدمة في منتصف القرن الثامن عشر وكان أول عضو روسي فيه الشاعر لومونوروف ورأسته الأميرة
-                            داشكوف من سنة 1883 إلى 1894 وهي التي نظمت جلساته وجعلتها باللغة الروسية وشرعت في نشر عدة مجلات بالروسية. وأنشئت
+                            داشكوف من سنة  <tei:num value="1883" xml:lang="ar">١٨٨٣</tei:num>  إلى  <tei:num value="1894" xml:lang="ar">١٨٩٤</tei:num>  وهي التي نظمت جلساته وجعلتها باللغة الروسية وشرعت في نشر عدة مجلات بالروسية. وأنشئت
                             فيه شعب للعلوم التاريخية والإحصائية والسياسية وقسم للغات الشرقية وقد خدم العلم أعظم خدمة ونشر عدة كتب ولاسيما
                             قاموسه السلافي الروسي وقل بعد ذلك عدد الأعضاء الروسيين فيه وقام بعدة بعثات علمية مهمة. وفي بطرسبرج أيضاً مجمع
-                            للفنون الجميلة أسس على عهد الإمبراطورة إليزابيت سنة 1757 وكان أساتذته من الأجانب لأول عهده.</p>
+                            للفنون الجميلة أسس على عهد الإمبراطورة إليزابيت سنة  <tei:num value="1757" xml:lang="ar">١٧٥٧</tei:num>  وكان أساتذته من الأجانب لأول عهده.</p>
                         <p>ولقد أنشأت الأمم النازلة في الجنوب الغربي من أوروبا في القرن التاسع عشر وهي الأمم التي أحرزت الاستقلال أو تحاول
                             نيله مجامع علمية لتدل بها على وطنيتها وتجمع شمل العلماء الذين يخاطبون أوروبا في امرها ومن تلك المجامع المجمع
-                            المجري أسس سنة 1831 وعاقته حوادث سنة 1848 فلم يصبح عاماً غلا في سنة 1858 ثم قام دعاة الوطنية وأخذوا يستوكفون
+                            المجري أسس سنة  <tei:num value="1831" xml:lang="ar">١٨٣١</tei:num>  وعاقته حوادث سنة  <tei:num value="1848" xml:lang="ar">١٨٤٨</tei:num>  فلم يصبح عاماً غلا في سنة  <tei:num value="1858" xml:lang="ar">١٨٥٨</tei:num>  ثم قام دعاة الوطنية وأخذوا يستوكفون
                             الأكف فاشترك في الجود له رجال تختلف طبقاتهم من البارون سينا الذي تبرع بثمانين ألف فلوريني إلى الخدام والخادمات
-                            الذين كانوا يجودون بالقروش الصغيرة فأنشيء المجمع من جديد وافتتح بناؤه سنة 1865 في بقعة من أجمل بقاع الأرض على
+                            الذين كانوا يجودون بالقروش الصغيرة فأنشيء المجمع من جديد وافتتح بناؤه سنة  <tei:num value="1865" xml:lang="ar">١٨٦٥</tei:num>  في بقعة من أجمل بقاع الأرض على
                             ضفاف الطونة بين مدينتي بود وبست. وهو خمسة أقسام قسم في أصل اللغات وآخر في التاريخ الأدبي وثالث في التاريخ
-                            والرابع في الاقتصاد السياسي وخامس <pb ed="shamela"
-                   n="n30-p39"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1855.xhtml"/> في الرياضيات والتاريخ
+                            والرابع في الاقتصاد السياسي وخامس <pb ed="shamela" n="n30-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1855.xhtml"/> في الرياضيات والتاريخ
                             الطبيعي وعلم الآثار وله دخل وافر يمكنه من السخاء على العلم وهو يعين ثلاث مجلات مجرية بقدر من المال. منها مجلة
                             بودابست وهي أشبه بالمجلات الإفرنسية تقوم على نشر العلم بين الطبقات المختلفة وتعطي جوائز كبعض المجامع العلمية لمن
                             يبرز في الأدب والعلوم.</p>
-                        <p>وقد أسس سنة 1767 في آغرام مجمع دعي المجمع الجنوبي السلافي في آغرام نشر كثيراً من لالكتب المهمة لقدماء كتاب
-                            الكرواسيين والصقلبيين. وفي بلغراد من بلاد الصرب مجمع أسس سنة 1846 يعنى بالتاريخ والعلم واللغة ولاسيما تاريخ بلاد
-                            الصرلب وجيولوجيتها وفي كراكوفيا مجمع لهم أنشيء سنة 1816 وجعل سنة 1872 مجمعاً على مثال المجامع العلمية. وأسست في
+                        <p>وقد أسس سنة  <tei:num value="1767" xml:lang="ar">١٧٦٧</tei:num>  في آغرام مجمع دعي المجمع الجنوبي السلافي في آغرام نشر كثيراً من لالكتب المهمة لقدماء كتاب
+                            الكرواسيين والصقلبيين. وفي بلغراد من بلاد الصرب مجمع أسس سنة  <tei:num value="1846" xml:lang="ar">١٨٤٦</tei:num>  يعنى بالتاريخ والعلم واللغة ولاسيما تاريخ بلاد
+                            الصرلب وجيولوجيتها وفي كراكوفيا مجمع لهم أنشيء سنة  <tei:num value="1816" xml:lang="ar">١٨١٦</tei:num>  وجعل سنة  <tei:num value="1872" xml:lang="ar">١٨٧٢</tei:num>  مجمعاً على مثال المجامع العلمية. وأسست في
                             بولونيا عدة مجامع في القرن الثامن عشر ولكنها لم تقم لها قائمة لأسباب سياسية وكانت تنحل بعد اجتماعها بقليل.</p>
                         <p>وفي رومانيا مجمع علمي أنشأه الوطنيون من الرومانيين لبيان الآداب الرومانية ووضع حدود لهذه اللغة وقواعد ثابتة لها
                             ولاسيما بعد أن انضمت إمارتا مودلافيا إلى الأفلاق واشتغل هذا المجمع زمناً بتحسين اللغة الرومانية وتصفيتها من
                             الشوائب والبحث في اللغة القديمة واللغة الحديثة.</p>
                         <p>وفي الولايات المتحدة عدة مجامع علمية مهمة منها مجمع نيويورك ومجمع الفنون الجميلة ومجمع الموسيقى.؟ وأول مجمع علمي
-                            أنشيء فيها كان على يد العالم فرنكلين سنة 1743 ارتأى تعميم المعارف الزراعية فأسس المجمع الفلسفي الأميركي وقد انضط
+                            أنشيء فيها كان على يد العالم فرنكلين سنة  <tei:num value="1743" xml:lang="ar">١٧٤٣</tei:num>  ارتأى تعميم المعارف الزراعية فأسس المجمع الفلسفي الأميركي وقد انضط
                             إليه مجمع آخر فتقوى به وما زال فرنكلين رئيسه يجدد انتخابه كل سنة حتى مات وللمجمع مكتبة فيها زهاء ثلاثين ألف مجلد
-                            وأسس سنة 1812 مجمع العلوم الطبيعية في فيلادلفيا. وهو من أهم المجامع الأميركية وقد جمع له متحف ومكتبة لا نظير
+                            وأسس سنة  <tei:num value="1812" xml:lang="ar">١٨١٢</tei:num>  مجمع العلوم الطبيعية في فيلادلفيا. وهو من أهم المجامع الأميركية وقد جمع له متحف ومكتبة لا نظير
                             لهما وفي خزانة كتبه زهاء ثلثمائة ألف مجلد وفيها كثير من الكتب في التاريخ الطبيعي للولايات المتحدةو ومتحفه مفرد
-                            في بابه. وأسس في بوستون مجمع للفنون والعلوم سنة 1780 سموه المجمع الأميركي وغايته تنشيط الدروس الأثرية ودرس
+                            في بابه. وأسس في بوستون مجمع للفنون والعلوم سنة  <tei:num value="1780" xml:lang="ar">١٧٨٠</tei:num>  سموه المجمع الأميركي وغايته تنشيط الدروس الأثرية ودرس
                             التاريخ الطبيعي وتطبيق المواد الطبيعية على صنائع البلاد وعلومها وله مكتبة فيها عشرون ألف مجلد وأقيم في بوستون
-                            أيضاً سنة 1874 مجمع للتاريخ الطبيعي ثم خلفه مجمع آخر سنة 1830 وله مكتبة مهمة ومتحف <pb ed="shamela"
-                   n="n30-p40"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1856.xhtml"/> وينشر كتباً ومفكرات وفي
+                            أيضاً سنة  <tei:num value="1874" xml:lang="ar">١٨٧٤</tei:num>  مجمع للتاريخ الطبيعي ثم خلفه مجمع آخر سنة  <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>  وله مكتبة مهمة ومتحف <pb ed="shamela" n="n30-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1856.xhtml"/> وينشر كتباً ومفكرات وفي
                             نوهافن مجمع للعلوم والفنون وفي نيويورك مجمع للعلوم.</p>
                         <p>وفي سالم من ولاية مساشوست مجمع للعلوم أنشأه الكريم بابودي فمنحه مائة وأربعين ألف دولار. وفي سان لوي مجمع للعلوم
                             وفي شيكاغو كذلك كما في سنيناتي مجمع للتاريخ الطبيعي وفي كليفورنيا كذلك ومجمع هذه يكبر بكثرة ما يمنح من عطايا
                             الأسخياء. وفي أيوفا مجمع للعلوم الطبيعية أسسته عقيلات دافانبور بمالهن. وفي فلادلفيا مجمع لترقية العلوم غرضه أن
                             يطوف أعضاؤه في البلاد ويتباحثوا ويتبادلوا الأفكار. وفي أميركا أيضاً مجمع للعلوم اسمه مجمع العلوم الوطني أعضاؤه
-                            مائة يجتمع في واشنطون وفي هذه المدينة المجمع السميثوني أسس سنة 1846 بما وقفه عليه جايمس سيمثون المتوفى سنة 1829
+                            مائة يجتمع في واشنطون وفي هذه المدينة المجمع السميثوني أسس سنة  <tei:num value="1846" xml:lang="ar">١٨٤٦</tei:num>  بما وقفه عليه جايمس سيمثون المتوفى سنة  <tei:num value="1829" xml:lang="ar">١٨٢٩</tei:num> 
                             وهو من أهم مجامع الولايات المتحدة وله متحف طبيعي من أعظم متاحف العالم قام بفضل سخاء الأسخياء عليه وهناك عشرات من
                             الجمعيات والمجامع في أمهات المدن الأميركية سواء كان في الكليات أو غيرها تنشر الكتب وتعنى ببث العلم والإفراد
                             يمنحونها المنائح السنية. هذه نبذة من المجامع على اختلاف مقاصدها في العالم المتمدن لخصناها عن دائرة المعارف
                             الفرنسوية الكبرى وربما زاد عددها الآن أكثر من ذلك فعسى أن يكون فيها للشرق درس نافع. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n30-p41"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1857.xhtml"/>
+                        <pb ed="shamela" n="n30-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1857.xhtml"/>
                         <head>كلمة معتبر</head>
                         <lg type="bayt">
                             <l>أقوى مصيق القوم والمربع </l>
@@ -1165,9 +1054,7 @@
                             <l>وبعضهم تمرع وديانه </l>
                             <l> وبعضهم واديه لا يمرع</l>
                         </lg>
-                        <p>قد يحسب الإنسان آماله <gap resp="#org_MS"/> والموت مصغ نحوه يسمع <pb ed="shamela"
-                   n="n30-p42"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1858.xhtml"/> حتى إذا أكمل حسبانها
+                        <p>قد يحسب الإنسان آماله <gap resp="#org_MS"/> والموت مصغ نحوه يسمع <pb ed="shamela" n="n30-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1858.xhtml"/> حتى إذا أكمل حسبانها
                             <gap resp="#org_MS"/> وافاه ما ليس له مدفع</p>
                         <lg type="bayt">
                             <l>فخرّ للجنب صريعاً به </l>
@@ -1253,9 +1140,7 @@
                         <p>معروف الرصافي </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n30-p43"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1859.xhtml"/>
+                        <pb ed="shamela" n="n30-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1859.xhtml"/>
                         <head>سير العلم والاجتماع</head>
                         <p>مستقبل علم الاجتماع</p>
                         <p>نشرت إحدى المجلات الاجتماعية آراء خمسة عشر عالماً من كبار علماء الاجتماع في أوروبا وأميركا سألتهم عن مستقبل هذا
@@ -1275,15 +1160,13 @@
                             الطبيعية.</p>
                         <p>سم الدخان</p>
                         <p>أنشأ باعة الدخان في فرنسا يبيعون دخاناً خالياً من النيكوتين أي المادة السمية الموجودة فيه وقد جرب أحد علمائهم هذا
-                            الدخان في اللفافات والغلايين فتبين له أنه لا يضر أصلاً <pb ed="shamela"
-                   n="n30-p44"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1860.xhtml"/> كالدخان الإنكليزي الذي
-                            حقن بمنقوعه بعض الحيوانات فأصيبت بعد 38 إلى 56 يوماً بالتهاب الشريان (الأبهر الشمالي) المزمن أما المحقونة
+                            الدخان في اللفافات والغلايين فتبين له أنه لا يضر أصلاً <pb ed="shamela" n="n30-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1860.xhtml"/> كالدخان الإنكليزي الذي
+                            حقن بمنقوعه بعض الحيوانات فأصيبت بعد  <tei:num value="38" xml:lang="ar">٣٨</tei:num>  إلى  <tei:num value="56" xml:lang="ar">٥٦</tei:num>  يوماً بالتهاب الشريان (الأبهر الشمالي) المزمن أما المحقونة
                             بالدخان الفرنسوي الخالي من النيكوتين فحقنت ستين مرة فلم تزد به إلا سمناً ولم يظهر عليها عرض من أعراض
                             الأمراض.</p>
                         <p>لغة الاسبرانتو</p>
                         <p>قبلت مدرسة فرنسا في باريز هذه اللغة التي اخترعها الدكتور زمنهوف الروسي منذ نحو عشرين سنة بصفتها لغة مساعدة عامة
-                            وقد أصبح الذين قبلوا هذه اللغة 307 جمعيات علمية وغيرها كما تعلمها 1011 عالماً من علماء الأرض على اختلاف جنسياتهم
+                            وقد أصبح الذين قبلوا هذه اللغة  <tei:num value="307" xml:lang="ar">٣٠٧</tei:num>  جمعيات علمية وغيرها كما تعلمها  <tei:num value="1011" xml:lang="ar">١٠١١</tei:num>  عالماً من علماء الأرض على اختلاف جنسياتهم
                             ولغاتهم.</p>
                         <p>حدائق الأطفال</p>
                         <p>أنشئت في منشستر حدائق من الرمل يلعب فيها صغار الأطفال الضعاف البنية فيحضرون إليها يحملون محافر وسطولاً (كرادل)
@@ -1298,9 +1181,7 @@
                             آدابهم القديمة مما يدعو إلى الأمل بأن التمثيل الهندي سيرجع عما قريب إلى صورته السالفة التي كان عليها أهل الصين
                             فإن الذي يغلب عليها في التشخيص ذكر الحياة اليومية وأحوالها والفقر ومشاكله المؤثرة وتصوير الصدق والخديعة ويرجى
                             للتمثيل في الصين ارتقاء لاسيما إذا دخلت البلاد بفضل الحركة الثورية التي تهز الآن عصابها في فتن وطنية كبرى.
-                            والتمثيل في سيام يجمع إلى <pb ed="shamela"
-                   n="n30-p45"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1861.xhtml"/> تمثيل الحقائق كما تمثلها
+                            والتمثيل في سيام يجمع إلى <pb ed="shamela" n="n30-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1861.xhtml"/> تمثيل الحقائق كما تمثلها
                             الصين والأفكار الدينية والفنية كما هي في الهند. وكوريا ممتازة بموسيقاها. أما يابان فإن التمثيل فيها صورة صحيحة
                             من صور المطامع التي تجول في صدور اليابانيين والأعمال التي تدور فليها حياتهم فتجده مثالاً من تقاتل الأفكار وعراك
                             الرجال وتأثيرات الجمال والشرف يظهر كل مرة بمظهر أمام المتفرجين. قال ومتى أكثر المترجمون في أوروبا من روايات
@@ -1319,49 +1200,43 @@
                             برطمة يدخلن شوكاً فيحدث فيها التهاب يؤدي إلى انبساط القلب المقرط. والفكوم في قبائل الولف في السنغال ناتئة كثيراً
                             ويزيدها نساؤهم نتوءاً بأن يكرهوا الثنايا عندما تطلع أن تكون بارزة للأمام وذلك بأن يضغطن عليها بألسنتهم. ومع أن
                             أنوف قبائل المالايو والقرغيز والهوتنوت والبوسهمين مفلطحة يزيدها نساؤهم فلطحة وقبائل الآينوس في جزيرة يزو على
-                            كثرة شعورهم فإن نساؤهم يزدن إنماء شعور وجوههن بواسطة خضاب لتكون لهن شنبات غزيرة وهنود أميركا على <pb ed="shamela"
-                   n="n30-p46"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1862.xhtml"/>
+                            كثرة شعورهم فإن نساؤهم يزدن إنماء شعور وجوههن بواسطة خضاب لتكون لهن شنبات غزيرة وهنود أميركا على <pb ed="shamela" n="n30-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1862.xhtml"/>
                             أن معظمهم جرد قليلو الشعر يتوفرون على نتف شنباتهم وسبلانهم ولحاهم على ما تفعل الأمم المتمدنة من الإفرنج. وأنف
                             الفارسي أقنى رقيق ومع هذا يزيده من ذلك بالضغط عليه كثيراً وللمصريين القدماء عيون نجل ومع هذا كانوا يزيدون شرطتها
                             بطلاء مخصوص والسياميون أرباب أهداب مقوسة ولا تعد المرأة جميلة عندهم إلا إذا كانت أهدابها كهلال القمر.</p>
                         <p>المعارف في روسيا</p>
                         <p>عرفت روسيا منذ خمسين سنة أنها كلما فتحت مدرسة في بلادها أغلق سجن من سجونها لأن المعارف خير ذريعة إلى التقوى
                             وإصلاح النفس ثم أدركت أن الغلب الحقيقي في معركة سادوفا بين الألمان والفرنسيس كان بفضل معلم المدرسة الجرماني
-                            فالمعلم يكوّن الأمة في سياستها واجتماعها ولذلك بدأت في الإنفاق على المعارف ولكن سكانها الآن 144 مليون وبلادها
+                            فالمعلم يكوّن الأمة في سياستها واجتماعها ولذلك بدأت في الإنفاق على المعارف ولكن سكانها الآن  <tei:num value="144" xml:lang="ar">١٤٤</tei:num>  مليون وبلادها
                             متنائية الأطراف واسعة المعالم والمجاهل يصعب إعداد معدات تعليمها في بضع سنين وعشرات ولا بد من أيام تمر وأجيال
                             تنقرض حتى يأتي من جمهور الأمة بأناس منورون على النحو الذي تريده الحكومة.</p>
                         <p>كانت روسيا لما بدأت في عدد أمييها دون إسبانيا وإيطاليا وعلى مستوى البلاد العثمانية فكانت مدارسها الابتدائية
                             والثانوية قليلة جداً وإن تكن كلياتها ومدارسها العالية غاصة بطلابها. فكانت روسيا في تعليمها أشبه ببيت زينت ظاهره
                             وبهرجت أدراجه وحوائطه وموهت سقوفه ولكنها لم تنظر إلى أساس الطبقة السفلى منه.</p>
-                        <p>بلغت المبالغ التي خصصتها روسيا للمدارس الابتدائية حتى سنة 1897 مبلغ 1484673 روبلاً وهو مبلغ زهيد جداً بالنسبة
-                            لذاك الملك الضخم فأصبحت سنة 1907 مبلغ 8285000 روبل ما عدا الاعتمادات التي تفتحها في الأحايين لإقامة المدارس وصار
-                            عدد مدارسها الابتدائية سنة 1904 تسعين ألف مدرسة فيها نحو مائتي ألف معلم ومعلمة بين كهنة وعامة (علمانيين أو
+                        <p>بلغت المبالغ التي خصصتها روسيا للمدارس الابتدائية حتى سنة  <tei:num value="1897" xml:lang="ar">١٨٩٧</tei:num>  مبلغ  <tei:num value="1484673" xml:lang="ar">١٤٨٤٦٧٣</tei:num>  روبلاً وهو مبلغ زهيد جداً بالنسبة
+                            لذاك الملك الضخم فأصبحت سنة  <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num>  مبلغ  <tei:num value="8285000" xml:lang="ar">٨٢٨٥٠٠٠</tei:num>  روبل ما عدا الاعتمادات التي تفتحها في الأحايين لإقامة المدارس وصار
+                            عدد مدارسها الابتدائية سنة  <tei:num value="1904" xml:lang="ar">١٩٠٤</tei:num>  تسعين ألف مدرسة فيها نحو مائتي ألف معلم ومعلمة بين كهنة وعامة (علمانيين أو
                             عالميين) ومجموع ما فيها من التلاميذ خمسة ملايين وثلثمائة وتسعون ألفاً. ومع هذا فإذا حسب حساب المتعلمين بالنسبة
                             للسكان كان الواجب أن يكون عددهم نحو ثلاثة عشر مليوناً.</p>
-                        <p>وقد طلب ناظر المعارف من مجلس الأمة الآن أن يقرر في الميزانية ستة ملايين وتسعمائة <pb ed="shamela"
-                   n="n30-p47"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1863.xhtml"/> ألف روبل زيادة على
+                        <p>وقد طلب ناظر المعارف من مجلس الأمة الآن أن يقرر في الميزانية ستة ملايين وتسعمائة <pb ed="shamela" n="n30-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1863.xhtml"/> ألف روبل زيادة على
                             ميزانية الكتاتيب لتكون أساسً في جعل التعليم إجبارياً في روسيا كما أن المجمع المقدس يصرف في السنة عشرة ملايين
                             روبل على مدارسه الدينية ويقول الخبيرون أن روسيا إذا ارادت جعل التعليم إجبارياً في بلادها كألمانيا وفرنسا مثلاً
-                            كان عليها أن تصرف كل سنة 120 روبلاً وهو ما لا تقوى ميزانيتها على تحمله هذا عدا ما يلزم لها من الأراضي وإقامة تلك
+                            كان عليها أن تصرف كل سنة  <tei:num value="120" xml:lang="ar">١٢٠</tei:num>  روبلاً وهو ما لا تقوى ميزانيتها على تحمله هذا عدا ما يلزم لها من الأراضي وإقامة تلك
                             المعاهد اللازمة والألوف من المعلمين ممن يقلون في أبنائها. وكيفما دارت الحال فإن روسيا تلوب على طرق تجبر الأفراد
                             فيها على التعلم قضهم وقضيضهم وذكورهم وإناثهم.</p>
                         <p>حبوب العالم</p>
-                        <p>أصدرت الغرافة التجارية في لندرا إحصاءً ذكرت فيه ما يستخرج من الحبوب في العالم فقالت أن محصول الحنظة 3160 مليون
-                            مكيال تعادل 86000000 طن (والمكيال عبارة 36 لتراً و35 ووزنه في الحنطة 27 كيلوغراماًَ وكسر قليل) ونصف هذا القدر
-                            تخرجه ثلاث ممالك فتغل الولايات المتحدة 660 مليون مكيال وتغل أملاك روسيا في أوروبا 541 مليوناً وتغل فرنسا 328
-                            مليوناً وأهم البلاد التي تغل النصف الآخر هي الهند تغلب 286 مليوناً وإيطاليا تغل 159 مليوناً وألمانيا تغل 128
-                            مليوناً والمجر تغل 120 مليوناً وإسبانيا 115 مليوناً والجمهورية الفضية 101 مليون والباقي تغله الممالك الأخرى.</p>
-                        <p>ويقدر محصول الذرة في العالم بـ 2896 مليون مكيال أو 73500007 طنات تغل الولايات المتحدة ثلاثة أرباعها أي 2286 مليون
-                            مكيال ويغل الهرطمان 3371 مليون مكيال أو 49000000 طن تخرج الولايات المتحدة منها 871 مليوناً وروسيا 825 مليوناً
-                            وألمانيا 494 وفرنسا 268 وكندا 204 والنمسا والمجر 196 وتغل روسيا من الشعير 297 مليون مكيال وألمانيا 145 والولايات
-                            المتحدة 114 واليابان 80 وتغل الصين من الأرز 24500000 طن والهند 12700000 ومحصول الأرز في العالم قريب من محصول
-                            الحنطة ويخرج من الدخن من بلاد الهند 542 مليون مكيال ومن الصين نحو 500 مليون ومن بلاد روسيا في أوروبا 78 ومن بلاد
-                            روسيا في آسيا 15 ومن اليابان 12 ومن الولايات المتحدة 5 وفي هذا الإحصاء لم يذكر لمصر والشام والعراق وآسيا الصغرى
-                            ولا لتونس والجزائر لأن محصولاتها في بعض هذه الحبوب تعد حقيرة جداً <pb ed="shamela"
-                   n="n30-p48"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1864.xhtml"/> بالنسبة لتلك المكاييل
+                        <p>أصدرت الغرافة التجارية في لندرا إحصاءً ذكرت فيه ما يستخرج من الحبوب في العالم فقالت أن محصول الحنظة  <tei:num value="3160" xml:lang="ar">٣١٦٠</tei:num>  مليون
+                            مكيال تعادل  <tei:num value="86000000" xml:lang="ar">٨٦٠٠٠٠٠٠</tei:num>  طن (والمكيال عبارة  <tei:num value="36" xml:lang="ar">٣٦</tei:num>  لتراً و <tei:num value="35" xml:lang="ar">٣٥</tei:num>  ووزنه في الحنطة  <tei:num value="27" xml:lang="ar">٢٧</tei:num>  كيلوغراماًَ وكسر قليل) ونصف هذا القدر
+                            تخرجه ثلاث ممالك فتغل الولايات المتحدة  <tei:num value="660" xml:lang="ar">٦٦٠</tei:num>  مليون مكيال وتغل أملاك روسيا في أوروبا  <tei:num value="541" xml:lang="ar">٥٤١</tei:num>  مليوناً وتغل فرنسا  <tei:num value="328" xml:lang="ar">٣٢٨</tei:num> 
+                            مليوناً وأهم البلاد التي تغل النصف الآخر هي الهند تغلب  <tei:num value="286" xml:lang="ar">٢٨٦</tei:num>  مليوناً وإيطاليا تغل  <tei:num value="159" xml:lang="ar">١٥٩</tei:num>  مليوناً وألمانيا تغل  <tei:num value="128" xml:lang="ar">١٢٨</tei:num> 
+                            مليوناً والمجر تغل  <tei:num value="120" xml:lang="ar">١٢٠</tei:num>  مليوناً وإسبانيا  <tei:num value="115" xml:lang="ar">١١٥</tei:num>  مليوناً والجمهورية الفضية  <tei:num value="101" xml:lang="ar">١٠١</tei:num>  مليون والباقي تغله الممالك الأخرى.</p>
+                        <p>ويقدر محصول الذرة في العالم بـ  <tei:num value="2896" xml:lang="ar">٢٨٩٦</tei:num>  مليون مكيال أو  <tei:num value="73500007" xml:lang="ar">٧٣٥٠٠٠٠٧</tei:num>  طنات تغل الولايات المتحدة ثلاثة أرباعها أي  <tei:num value="2286" xml:lang="ar">٢٢٨٦</tei:num>  مليون
+                            مكيال ويغل الهرطمان  <tei:num value="3371" xml:lang="ar">٣٣٧١</tei:num>  مليون مكيال أو  <tei:num value="49000000" xml:lang="ar">٤٩٠٠٠٠٠٠</tei:num>  طن تخرج الولايات المتحدة منها  <tei:num value="871" xml:lang="ar">٨٧١</tei:num>  مليوناً وروسيا  <tei:num value="825" xml:lang="ar">٨٢٥</tei:num>  مليوناً
+                            وألمانيا  <tei:num value="494" xml:lang="ar">٤٩٤</tei:num>  وفرنسا  <tei:num value="268" xml:lang="ar">٢٦٨</tei:num>  وكندا  <tei:num value="204" xml:lang="ar">٢٠٤</tei:num>  والنمسا والمجر  <tei:num value="196" xml:lang="ar">١٩٦</tei:num>  وتغل روسيا من الشعير  <tei:num value="297" xml:lang="ar">٢٩٧</tei:num>  مليون مكيال وألمانيا  <tei:num value="145" xml:lang="ar">١٤٥</tei:num>  والولايات
+                            المتحدة  <tei:num value="114" xml:lang="ar">١١٤</tei:num>  واليابان  <tei:num value="80" xml:lang="ar">٨٠</tei:num>  وتغل الصين من الأرز  <tei:num value="24500000" xml:lang="ar">٢٤٥٠٠٠٠٠</tei:num>  طن والهند  <tei:num value="12700000" xml:lang="ar">١٢٧٠٠٠٠٠</tei:num>  ومحصول الأرز في العالم قريب من محصول
+                            الحنطة ويخرج من الدخن من بلاد الهند  <tei:num value="542" xml:lang="ar">٥٤٢</tei:num>  مليون مكيال ومن الصين نحو  <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>  مليون ومن بلاد روسيا في أوروبا  <tei:num value="78" xml:lang="ar">٧٨</tei:num>  ومن بلاد
+                            روسيا في آسيا  <tei:num value="15" xml:lang="ar">١٥</tei:num>  ومن اليابان  <tei:num value="12" xml:lang="ar">١٢</tei:num>  ومن الولايات المتحدة  <tei:num value="5" xml:lang="ar">٥</tei:num>  وفي هذا الإحصاء لم يذكر لمصر والشام والعراق وآسيا الصغرى
+                            ولا لتونس والجزائر لأن محصولاتها في بعض هذه الحبوب تعد حقيرة جداً <pb ed="shamela" n="n30-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1864.xhtml"/> بالنسبة لتلك المكاييل
                             الضخمة في تلك الممالك الضخمة.</p>
                         <p>ثلاثة علماء</p>
                         <p>فقدت ألمانيا المستشرق إدوارغلازر المعروف بالآثار الكتابية التي استخرجها من جنوبي جزيرة العرب وفقدت فرنسا
@@ -1380,9 +1255,7 @@
                         <p>وأثبت المؤلف شاتوبريان في قصة رواها أن الدبابات تطرب لنغمات الموسيقى وأن بعض الأمم المتوحشة تستخدم الأغاني لتجلب
                             بها الحيات فتأكلها كما يفعل الهنود في صيد نوع من الزحافات يستطيبون لحمها. والضب يتلذذ كثيراً بصوت الموسيقى
                             ولاسيما الغناء الصغير. وسلحفاة البحر تبتهج للصفير وبه يتأتى صديها.</p>
-                        <p>والطيور تطرب كثيراً للأنغام ولا نعني بالطيور تلك التي هي مغنية من طبعها كالشحرور <pb ed="shamela"
-                   n="n30-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1865.xhtml"/> والبلبل والعصفور
+                        <p>والطيور تطرب كثيراً للأنغام ولا نعني بالطيور تلك التي هي مغنية من طبعها كالشحرور <pb ed="shamela" n="n30-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1865.xhtml"/> والبلبل والعصفور
                             المعدودة بهجة الغابات والحدائق بل هناك كثير من ضروبها تطرب إذا سمعت أنغامنا كالببغاء ومنها أجناس لا تستطيع
                             محاكاة الأصوات البشرية ولكنها مع ذلك تقلد صوت الآلات التي تسمعها. والحباشة الذي يألف البيوت إذا سمع نغماتنا لا
                             يلبث أن يهيج وينفخ صوته ويكرهه كأنه يريد أن يتمكن من الصوت الذي يسمعه وربما أمكن تعليمه بعض الألحان. والزرزور
@@ -1400,17 +1273,13 @@
                             الأسود فيقال أنها تطرب للأنغام وفي إنكلترا أسد جال البلاد وكان من أكثر المخلوقات تأثراً بنغمات البيانو وكانت
                             تظهر منه أعاجيب حين يشرع صاحبه في الضرب على هذه الآلة فيزمجر وتقذف عيونه شرراً حتى يخاف المتفرجون ويضطر صاحبه
                             إلى الكف عن الضرب على آلته.</p>
-                        <p>والهر قليل التأثر بالموسيقى وقيل أن بعض الهررة تموء عندما تسمع الأنغام. والكلب كثير <pb ed="shamela"
-                   n="n30-p50"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1866.xhtml"/> التأثر بالألحان
+                        <p>والهر قليل التأثر بالموسيقى وقيل أن بعض الهررة تموء عندما تسمع الأنغام. والكلب كثير <pb ed="shamela" n="n30-p50" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1866.xhtml"/> التأثر بالألحان
                             الموسيقية. والقرد يطرب للأنغام بل هو يتعلم الضرب بالآلات فيطرب بها كالإنسان.</p>
                         <p>وقد قال أحد من يكرهون الموسيقى أن الموسيقى هي الصناعة الوحيدة التي يتأثر بها الحيوانات والمجانين والبله. وبالجملة
                             فإن تأثر الحيوانات بالأنغام دليل واضح على أن الموسيقى عامة لجميع من له سمع. </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n30-p51"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1867.xhtml"/>
+                        <pb ed="shamela" n="n30-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1867.xhtml"/>
                         <head>مطبوعات ومخطوطات</head>
                         <p>معجم الأدباء</p>
                         <p>هو كتاب إرشاد الأريب إلى معرفة الأديب أو طبقات الأدباء تأليف ياقوت الرومي من أهل القرن السابع وهو صاحب الكتب
@@ -1429,10 +1298,8 @@
                             بالبداهة أنكم إذا توليتم من هذه الكتب ما يتولاه أولئك الأعاجم الغيورون منها لجاءت أكثر تحريفاً وتصحيفاً من
                             مطبوعاتهم وأحرى بمن يبادرون إلى النقد أن ينشروا للناس ولو كتاباً واحداً يكون في صحته على الرسم الذي يرسمونه
                             ليصدقهم أهل العلم.</p>
-                        <p>في هذا الجزء نحو 130 ترجمة لمن اسمهم إبراهيم أو أحمد منهم المشاهير الذين ترجموا في الكتب المطبوعة التي بين أيدينا
-                            ومنهم من لم نعثر على تراجم إلا فيه وقد صورهم <pb ed="shamela"
-                   n="n30-p52"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1868.xhtml"/> المؤلف تصويراً بديعاً لا
+                        <p>في هذا الجزء نحو  <tei:num value="130" xml:lang="ar">١٣٠</tei:num>  ترجمة لمن اسمهم إبراهيم أو أحمد منهم المشاهير الذين ترجموا في الكتب المطبوعة التي بين أيدينا
+                            ومنهم من لم نعثر على تراجم إلا فيه وقد صورهم <pb ed="shamela" n="n30-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1868.xhtml"/> المؤلف تصويراً بديعاً لا
                             يقل عن تصوير ابن خلكان وابن أبي أصيبعة وابن بسام والقفطي والسخاوي لمترجميهم إن لم نقل أنه يمتاز على بعضهم.</p>
                         <p>قال المؤلف: جمعت في هذا الكتاب ما وقع إليّ من أخبار النحويين واللغويين والنسابين والقراء المشهورين والإخباريين
                             والمؤرخين والوراقين المعروفين والكتاب المشهورين وأصحاب الرسائل المدونة وأرباب الخطوط المنسوبة والمعينة وكل من
@@ -1442,38 +1309,34 @@
                             أوانه فأورد من خبره ما أدت الاستطاعة إليه ووفقني النقل عليه في تردادي إلى البلاد ومخالطتي للعباد إلى أن قال: ولم
                             أقصد أدباء قطر ولا علماء عصر ولا إقليم معين ولا بلد مبين بل جمعت للبصريين والكوفيين والبغداديين والخراسانيين
                             والحجازيين واليمنيين والمصريين والشاميين والمغربيين وغيرهم على اختلاف البلدان وتفاوت الأزمان.</p>
-                        <p>وهذا الجزء في 424 صفحة مطبوعة بمطبعة هندية بمصر طبعاً نفيساً وقد طبع باسم جيب المستشرق وقد كانت العقيلة جيب أم
+                        <p>وهذا الجزء في  <tei:num value="424" xml:lang="ar">٤٢٤</tei:num>  صفحة مطبوعة بمطبعة هندية بمصر طبعاً نفيساً وقد طبع باسم جيب المستشرق وقد كانت العقيلة جيب أم
                             الياس جون ولكنسن جيب وقفت وقفاً بعد موت ابنها هذا وكان مغرماً بدرس علوم الشرق وفلسفته وتاريخه ليطبع بريعه ما
                             يعلي شأن المباحث الفلسفية والتاريخية والأدبية سواء كانت تلك المصنفات للترك أو للفرس أو للعرب وقد طبعت منذ سنة
-                            1901 ستة كتب ومنها معجم الأدباء وهي تعد سبعة عشر كتاباً آخراً للطبع.</p>
+                             <tei:num value="1901" xml:lang="ar">١٩٠١</tei:num>  ستة كتب ومنها معجم الأدباء وهي تعد سبعة عشر كتاباً آخراً للطبع.</p>
                         <p>لا جرم أن إحياء معجم الأدباء مما يقفنا على أمور كثيرة كنا نجهلها من قبل وفيه من الشعر والنثر والمحاضرات والنكات
                             ما هو مسرة للقلب وقرة للعين وإنك لترى ياقوتاً يأتيك بما قيل في المترجم ذماً ومدحاً ويترك للقارئ الحكم في ذلك.
                             فمعجم الأدباء كوفيات الأعيان كلاهما متمم لصاحبه فنشر لأسرة جيب هذه المبرة الخالدة كما نشكر للأستاذ مرجليوت
                             عنايته وغيرته.</p>
-                        <p>تقرير مصر والسودان <pb ed="shamela"
-                   n="n30-p53"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1869.xhtml"/> صدر تقرير السير ألدون
-                            غورست معتمد إنكلترا في هذا القطر عن سنة 1907 وهو في المالية والإدارة والحالة العامة في مصر وفي السودان وفيه
+                        <p>تقرير مصر والسودان <pb ed="shamela" n="n30-p53" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1869.xhtml"/> صدر تقرير السير ألدون
+                            غورست معتمد إنكلترا في هذا القطر عن سنة  <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num>  وهو في المالية والإدارة والحالة العامة في مصر وفي السودان وفيه
                             فوائد كثيرة عن القطرين في السنة الماضية لا يظفر بها الإنسان إلا في المظان البعيدة المنال ويؤخذ منه أن إيرادات
                             الحكومة المصرية زادت في مدة عشرين سنة نحو ستة ملايين جنيه ولكن ثلثي الزيادة حدث في السنوات الخمس الأخيرة والسبب
                             الأكبر في هذا النمو الارتفاع المستمر في أسعار القطن التي تضاعفت في السنوات العشر الأخيرة وكان متوسط قيمة
-                            الصادرات 30920000 ج م والواردات 25066000 ج م ومتوسط زيادة الوارد على الصادر من النقود 5061000 ج م ودفع أربعة
+                            الصادرات  <tei:num value="30920000" xml:lang="ar">٣٠٩٢٠٠٠٠</tei:num>  ج م والواردات  <tei:num value="25066000" xml:lang="ar">٢٥٠٦٦٠٠٠</tei:num>  ج م ومتوسط زيادة الوارد على الصادر من النقود  <tei:num value="5061000" xml:lang="ar">٥٠٦١٠٠٠</tei:num>  ج م ودفع أربعة
                             ملايين ونصف جنيه للأجانب من فوائد الدين المصري يدخل في خراج الدولة العلية ونفقات الخزان ونفقات جيش الاحتلال
-                            وكانت إيرادات الحكومة 16368000ج م ومصروفاتها الاعتيادية 13231000 والخصوصية 1049000 ومعظم الإيرادات في زيادة كما
+                            وكانت إيرادات الحكومة  <tei:num value="16368000" xml:lang="ar">١٦٣٦٨٠٠٠</tei:num> ج م ومصروفاتها الاعتيادية  <tei:num value="13231000" xml:lang="ar">١٣٢٣١٠٠٠</tei:num>  والخصوصية  <tei:num value="1049000" xml:lang="ar">١٠٤٩٠٠٠</tei:num>  ومعظم الإيرادات في زيادة كما
                             أن معظم النفقات كذلك.</p>
-                        <p>وبلغ مجموع الدين المصري 96. 181000 ج م في 31 ديسمبر سنة 1906 ومال الفائدة والاستهلاك 3699000 ج م وسدد من أصل
-                            الدين 347000 ج م فيكون الدين الباقي على مصر 95834000 ج م ومال الفائدة والاستهلاك السنوي 3641000 ج م وعند الحكومة
-                            وصندوق الدين سندات من أصل هذا الدين بقيمة 836000 فائدتها 317000 فمجموع الدين الذي كان الجمهور يتداول سنداته في
-                            آخر السنة بلغ 87448000 ج م والفائدة التي يدفعها سكان القطر 3324000 ج م.</p>
+                        <p>وبلغ مجموع الدين المصري  <tei:num value="96" xml:lang="ar">٩٦</tei:num> .  <tei:num value="181000" xml:lang="ar">١٨١٠٠٠</tei:num>  ج م في  <tei:num value="31" xml:lang="ar">٣١</tei:num>  ديسمبر سنة  <tei:num value="1906" xml:lang="ar">١٩٠٦</tei:num>  ومال الفائدة والاستهلاك  <tei:num value="3699000" xml:lang="ar">٣٦٩٩٠٠٠</tei:num>  ج م وسدد من أصل
+                            الدين  <tei:num value="347000" xml:lang="ar">٣٤٧٠٠٠</tei:num>  ج م فيكون الدين الباقي على مصر  <tei:num value="95834000" xml:lang="ar">٩٥٨٣٤٠٠٠</tei:num>  ج م ومال الفائدة والاستهلاك السنوي  <tei:num value="3641000" xml:lang="ar">٣٦٤١٠٠٠</tei:num>  ج م وعند الحكومة
+                            وصندوق الدين سندات من أصل هذا الدين بقيمة  <tei:num value="836000" xml:lang="ar">٨٣٦٠٠٠</tei:num>  فائدتها  <tei:num value="317000" xml:lang="ar">٣١٧٠٠٠</tei:num>  فمجموع الدين الذي كان الجمهور يتداول سنداته في
+                            آخر السنة بلغ  <tei:num value="87448000" xml:lang="ar">٨٧٤٤٨٠٠٠</tei:num>  ج م والفائدة التي يدفعها سكان القطر  <tei:num value="3324000" xml:lang="ar">٣٣٢٤٠٠٠</tei:num>  ج م.</p>
                         <p>ومما يدل على ميل الناس إلى التعلم والاستنارة أن عدد من زاروا حديقة الحيوانات في القاهرة بلغوا إلى آخر نوفمبر سنة
-                            1907، 228924 أي بزيادة 24228 عن مثله في السنة التي قبلها ومعظم الزائرين مصريون وكثيرون منهم من أهل الأرياف وبلغ
-                            عدد الذين دخلوا غرف القراءة في دار الكتب المصرية 18830 معظمهم مصريون.</p>
-                        <p>وبلغت جملة الواردات التجارية 26120777 ج م بعثت منها إنكلترا إلى مصر 8492847 وجاء من أملاكها في البحر المتوسط
-                            213070 ومن أملاكها في الشرق الأقصى 1086818 وجاء من فرنسا 3166890 ومن البلاد العثمانية 2973108 ومن النمسا والمجر
-                            2059423 ومن ألمانيا 1392381 ومن إيطاليا 1361457 ومن البلجيك <pb ed="shamela"
-                   n="n30-p54"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1870.xhtml"/> 1027590.</p>
-                        <p>وبلغت جملة الصادرات 28013185 أصاب بريطانيا منها نحو 54. 3 في المئة ويختلف نصيب كل من ألمانيا وأميركا والنمسا
+                             <tei:num value="1907" xml:lang="ar">١٩٠٧</tei:num> ،  <tei:num value="228924" xml:lang="ar">٢٢٨٩٢٤</tei:num>  أي بزيادة  <tei:num value="24228" xml:lang="ar">٢٤٢٢٨</tei:num>  عن مثله في السنة التي قبلها ومعظم الزائرين مصريون وكثيرون منهم من أهل الأرياف وبلغ
+                            عدد الذين دخلوا غرف القراءة في دار الكتب المصرية  <tei:num value="18830" xml:lang="ar">١٨٨٣٠</tei:num>  معظمهم مصريون.</p>
+                        <p>وبلغت جملة الواردات التجارية  <tei:num value="26120777" xml:lang="ar">٢٦١٢٠٧٧٧</tei:num>  ج م بعثت منها إنكلترا إلى مصر  <tei:num value="8492847" xml:lang="ar">٨٤٩٢٨٤٧</tei:num>  وجاء من أملاكها في البحر المتوسط
+                             <tei:num value="213070" xml:lang="ar">٢١٣٠٧٠</tei:num>  ومن أملاكها في الشرق الأقصى  <tei:num value="1086818" xml:lang="ar">١٠٨٦٨١٨</tei:num>  وجاء من فرنسا  <tei:num value="3166890" xml:lang="ar">٣١٦٦٨٩٠</tei:num>  ومن البلاد العثمانية  <tei:num value="2973108" xml:lang="ar">٢٩٧٣١٠٨</tei:num>  ومن النمسا والمجر
+                             <tei:num value="2059423" xml:lang="ar">٢٠٥٩٤٢٣</tei:num>  ومن ألمانيا  <tei:num value="1392381" xml:lang="ar">١٣٩٢٣٨١</tei:num>  ومن إيطاليا  <tei:num value="1361457" xml:lang="ar">١٣٦١٤٥٧</tei:num>  ومن البلجيك <pb ed="shamela" n="n30-p54" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P1870.xhtml"/>  <tei:num value="1027590" xml:lang="ar">١٠٢٧٥٩٠</tei:num> .</p>
+                        <p>وبلغت جملة الصادرات  <tei:num value="28013185" xml:lang="ar">٢٨٠١٣١٨٥</tei:num>  أصاب بريطانيا منها نحو  <tei:num value="54" xml:lang="ar">٥٤</tei:num> .  <tei:num value="3" xml:lang="ar">٣</tei:num>  في المئة ويختلف نصيب كل من ألمانيا وأميركا والنمسا
                             والمجر وفرنسا وروسيا من الصادرات بين مليون ومليونين وقد زادت جميعها إلا فرنسا فإنها نقصت قليلاً عن السنة التي
                             قبلها.</p>
                         <p>وفي التقرير فوائد لا يستغنى عنها ابن هذا القطر خصوصاً. وهو يطلب من إدارة المقطم بعشرة قروش. </p>

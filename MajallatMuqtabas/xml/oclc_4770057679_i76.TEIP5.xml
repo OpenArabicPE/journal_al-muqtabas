@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i76_text"
-         xml:lang="ar"
-         type="issue"
-         n="i76">
+   <text xml:id="oclc_4770057679_i76_text" xml:lang="ar" type="issue" n="i76">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,30 +202,26 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1912-06-01">بتاريخ: 1 - 6 - 1912</date>
-                                    <biblScope n="76" unit="issue">العدد 76</biblScope>
+                                    <date when="1912-06-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="6" xml:lang="ar">٦</tei:num>  -  <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> </date>
+                                    <biblScope n="76" unit="issue">العدد  <tei:num value="76" xml:lang="ar">٧٦</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             n=""
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5063.xhtml"/>
+                    <pb ed="shamela" n="" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5063.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="76" unit="issue">العدد 76</biblScope> 
-                  <date when="1912-06-01">بتاريخ: 1 - 6 -
-                            1912</date> 
+                  <biblScope n="76" unit="issue">العدد  <tei:num value="76" xml:lang="ar">٧٦</tei:num> </biblScope> 
+                  <date when="1912-06-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="6" xml:lang="ar">٦</tei:num>  -
+                             <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> </date> 
                </bibl> 
             </head>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n76-p1"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5064.xhtml"/>
+                        <pb ed="shamela" n="n76-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5064.xhtml"/>
                         <head>اللغة الانتقادية</head>
                         <p>هذه الرسالة الثانية في اللغة الانتقادية التي وعدت بها في رسالتي الأولى أسوقها محذوفاً منها ما لا حاجة إليه ومقفاة
                             بعض حروفها بما يعين للناشر قال المؤلف:</p>
@@ -274,9 +241,7 @@
                             أَليات ويقولون الرجل أَبردة بفتح الألف والصواب إِبردة بالكسر.</p>
                         <p>قلت الأَبردة برد الخوف.</p>
                         <p>ويقولون خذ لذلك الأمر هبته والصواب أن يقال أُهبته بإثبات الألف وضمها وإسكان الهاء ويقولون في صدره عَلَى حنة
-                            والصواب أن يقال إِحنة بالألف ويقولون عود يسر الذي <pb ed="shamela"
-                   n="n76-p2"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5065.xhtml"/> يوضع عَلَى بطن المأسور
+                            والصواب أن يقال إِحنة بالألف ويقولون عود يسر الذي <pb ed="shamela" n="n76-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5065.xhtml"/> يوضع عَلَى بطن المأسور
                             وهو الذي يحبس بوله والصواب أن يقال عود أُسر بإثبات الألف وضم السين ويقولون غلق الباب وهو مغلوق والصواب أن يقال
                             أغلت الباب وهو مغلوق ويقولون غليت الماء فهو مغلىً والصواب أن يقال أغليت الماء فهو مغلىً بإثبات الألف قال أبو
                             الأسود:</p>
@@ -303,9 +268,7 @@
                         <p>ويقولون هي الوزة (الطائر) والصواب الإوزة بالألف. ويقولون جبر القاضي رجلاً عَلَى قول كذا بغير ألف ويريدون قصره (أي
                             رده إليه) والصواب أَجبر بالألف. ويقولون شهدنا فلاس فلان بغير ألف والصواب أن يقول إفلاس فلان بالألف. ويقولون صار
                             فلان حدوثه والصواب أُحدوثه ويقولون هو الرز والصواب الأَرز بتشديد الزاي. ويقولون قد انتقع لون فلان بالنون وذلك
-                            غلط والصواب امتقع بالميم. ويقولون تولعت والصواب أُولعت بالصيد <pb ed="shamela"
-                   n="n76-p3"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5066.xhtml"/> بألف مضمومة. ويقولون
+                            غلط والصواب امتقع بالميم. ويقولون تولعت والصواب أُولعت بالصيد <pb ed="shamela" n="n76-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5066.xhtml"/> بألف مضمومة. ويقولون
                             شرعت باباً إلى الطريق بغير ألف والصواب أَشرعت بالألف. ويقولون هدرت دم الرجل بغير ألف والصواب أَهدرت بالألف.
                             ويقولون إذا كبر الرجل قد سن بغير ألف والصواب أَسن بالألف. ويقولون قلت الرجل في البيع بغير ألف والصواب أَقلت
                             بالألف.</p>
@@ -324,9 +287,7 @@
                             القمر من أولها إلى آخرها والعامة تقول الأيام البيض حتى أن بعض الفقهاء جرى في كتبه المصنفة عَلَى عادات العوام في
                             ذلك وهو خطأٌ لأن الأيام كلها بيض وقرأت عَلَى أبي المنصور اللغوي قال العرب تسمي كل ثلث من الليالي باسم. ويقولون
                             قد راحت الجيفة ويقولون والصواب أروحت. ويقولون أعرني سمعك والصواب ارعني ويقولون اللهم صل عَلَى محمد وذويه وهذا
-                            غلط لأن العرب لم تنطق <pb ed="shamela"
-                   n="n76-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5067.xhtml"/> بذي إلا مضافاً إلى اسم
+                            غلط لأن العرب لم تنطق <pb ed="shamela" n="n76-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5067.xhtml"/> بذي إلا مضافاً إلى اسم
                             جنس كقولهم ذو مال والصواب عَلَى محمد وآله أو أَهله وقال أبو هلال العسكري يقول العوام شيءٌ أزلي قديم ويصفون الله
                             بالأزلية وكل ذلك خطأ لا أصل له في العربية وإنما قول الناس لم يزل موجوداً ولا يزال بنوا منه هذا البناء.</p>
                         <p>قلت هذا عجب من أبي هلال فإن العلم لا بد أن يؤثر في اللغات ولا مفر من أن يزحزحها عن دائرة الجمود الضيقة فإن هذا
@@ -345,9 +306,7 @@
                         <p>ويقولون بطيخ بفتح الباء والصواب بطيخ بكسرها.</p>
                         <p>الزائد من كلام ابن الجوزي</p>
                         <p>ويقولون بزر وبزور لما يزرع ويؤكل وهو خطأ والصواب بذر وبذور قلت وقد دون اللغويون الاثنين بهذا المعنى ويقولون لما
-                            يعجل من الزرع والثمار هرَّفَ والصواب قد بكر وهو الباكورة. <pb ed="shamela"
-                   n="n76-p5"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5068.xhtml"/> قلت ويقول فلاح العراق
+                            يعجل من الزرع والثمار هرَّفَ والصواب قد بكر وهو الباكورة. <pb ed="shamela" n="n76-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5068.xhtml"/> قلت ويقول فلاح العراق
                             اليوم للمبكر من الزرع (هرفي) وهرف موجود في معاجم اللغة وكذلك أَهرف.</p>
                         <p>ويقولون هو البورق لهذا الذي يلقى في العجين بضم الباء والصواب البورق بفتحها لأنه ليس في الكلام فوعل بضم الفاء وكل
                             ما جاء عَلَى (فوعل) فهو مفتوح الفاء نحو جورب وروشن ويقولون هذا البخور بضم الباء والصواب فتحها ويقولون البهار
@@ -369,9 +328,7 @@
                             بالغالية (عطر) والصواب تغللت بالغالية.</p>
                         <p>الزائد من كلام ابن الجوزي</p>
                         <p>ويقولون ما هذا التباطي بالياء والصواب التباطؤ بالهمزة والواو ويقولون دابة لا تردف والصواب لا ترادف ويقولون هذه
-                            الشاة تشتر بالشين والصواب بالجيم ويقولون جاءت <pb ed="shamela"
-                   n="n76-p6"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5069.xhtml"/> المرأة بتوأم والصواب
+                            الشاة تشتر بالشين والصواب بالجيم ويقولون جاءت <pb ed="shamela" n="n76-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5069.xhtml"/> المرأة بتوأم والصواب
                             بتوأمين وإنما التوأم أحدهما ويقول تكريت للبلدة بكسر التاء والصواب بفتحها ويقولون ششتر ودوستر للبلدة المعروفة (من
                             بلدان إيران الجنوبية) بالدال والشين والصواب تستر بالتاء (والسين أيضاً) ويقولون التغار والصواب تيغار بياء بعد
                             التاء عَلَى وزن تفعال.</p>
@@ -391,9 +348,7 @@
                         <p>ويقولون رجل أثط بألف زائدة والصواب ثط بغير ألف (وهو الكوسج من الرجال) وربما قالوا ثدي الرجل وإنما هو ثدوة الرجل
                             قلت قيل إن الثدي عام وروي فيه الكسر أيضاً وقد تقدم أن الصواب الفتح.</p>
                         <p>ويقولون لما يكثر ثمنه هذا مثمن بكسر الميم الثانية وإنما المثمن الذي صار له ثمن والصواب ثمين كما يقال رجل لحيم لما
-                            كثر لحمه وشحيم لما كثر شحمه. <pb ed="shamela"
-                   n="n76-p7"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5070.xhtml"/> حرف الجيم</p>
+                            كثر لحمه وشحيم لما كثر شحمه. <pb ed="shamela" n="n76-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5070.xhtml"/> حرف الجيم</p>
                         <p>ويقولون جفن السيف بكسر الجيم صوابها بفتحها قلت والكسر مروى ويقولون جفيت الرجل بالياء صوابها جفوت بالواو ويقولون
                             عندي في جمام القدح ماء بفتح الجيم والصواب بكسر الجيم خاصة ويقولون جمام في الدقيق وغيره قلت الجمام أن يمتلئ
                             المكيال وروي مثلث الجيم ويقولون جنازة بفتح الجيم وهي لغة والصواب جنازة بالكسر ويقولون الجدي بكسر الجيم والصواب
@@ -410,9 +365,7 @@
                             نوادر الجمع ويقولون جهدت جهدي بكسر الهاء صوابها بفتحها ويقولون جرعت الماء والصواب الكسر ويقولون لبثرة تخرج في
                             العين الكدكد والصواب الجدجد بجيمين مكان الكافين وهي لغة تميم وربيعة تسميها القمع ويقول الجرد بالدال المهملة
                             والصواب بالذال المعجمة ويقولون لجمع جواب الكتب الجوابات والأجوبة وهو خطأ والصواب ألا يجمع لأنه كالذهاب قال
-                            سيبويه الجواب لا يجمع وقولهم جوابات كتبي وأجوبة كتبي مؤلف (مخترع) وإنما يقال جواب كتبي. <pb ed="shamela"
-                   n="n76-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5071.xhtml"/> حرف الحاء</p>
+                            سيبويه الجواب لا يجمع وقولهم جوابات كتبي وأجوبة كتبي مؤلف (مخترع) وإنما يقال جواب كتبي. <pb ed="shamela" n="n76-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5071.xhtml"/> حرف الحاء</p>
                         <p>وقع عَلَى حلاوة القضا بفتح الحاء صوابها ضمها ويقولون دقيق حواري بفتح الحاء والتخفيف من صوابها حواري بضم الحاء
                             وتشديد الواو قلت وهو الأبيض من الدقيق والمحور منه المبيض ويقولون في أسنانه حفر بفتح الحاء والفاء وصوابها بإسكان
                             الفاء ويقولون حنيت عَلَى الرجل إذا عطفت عليه بالياء صوابها بالواو ويقولون امرأة حصان بكسر الحاء صوابها بفتحها
@@ -430,9 +383,7 @@
                             بكسر اللام وإنما حلا في فمي (لا في عيني) فهذا من الحلاوة والأول من الحلية. ويقولون في عيني حور بكسر الحاء
                             وصوابها بفتحها قلت ويظهر من بعض المعاجم الضم فقط ويقولون قد حسن الشيء وحمض بكسر السين والميم والصواب بضمها
                             ويقولون في كنية الثعلب أبو الحسين والصواب أبو الحصين ويقولون للخارج من الحمام طاب حمامك خطأ صوابها طاب حميمك أو
-                            حمتك أي طاب عرقك لأن <pb ed="shamela"
-                   n="n76-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5072.xhtml"/> عرق الصحيح وعرق السقيم
+                            حمتك أي طاب عرقك لأن <pb ed="shamela" n="n76-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5072.xhtml"/> عرق الصحيح وعرق السقيم
                             خبيث ويقولون قد حدث أمر عظيم بضم الدال قياساً عَلَى قولهم أخذني ما قدم وما حدث ويقولون فلان يحث في السير وفي
                             الخير أيضاً صوابها أن يقال يحث في السير ويحض عَلَى الخير وقد فرق الخليل بن أحمد فقال الحث في السير والسوق والحض
                             فيما عداهما ويقولون أحميت المريض صوابها حميته بغير ألف ويقولون إذا وجدوا في أبدانهم سخونة أجد حمى وصوابها أجد
@@ -457,9 +408,7 @@
                             <l> إذا جرى في ميادين الصبا وخطا</l>
                         </lg>
                         <p>ويقولون لمن هلك له والد أو ولد أخلف الله عليك وهو خطأ ص أن يقال لمن هلك له من يتعوض عنه كالولد أخلف الله عليك
-                            ولمن لا يتعوض عنه كالوالد خلف الله عليك أي كان خليفة. <pb ed="shamela"
-                   n="n76-p10"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5073.xhtml"/> حرف الدال</p>
+                            ولمن لا يتعوض عنه كالوالد خلف الله عليك أي كان خليفة. <pb ed="shamela" n="n76-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5073.xhtml"/> حرف الدال</p>
                         <p>ويقولون الدهليز بفتح الدال ص بكسر الدال ويقولون دحية الكلبي بفتح الدال ص بكسر الدال ويقولون هو الدخان بتشديد
                             الدال والخاء ص بالتخفيف وجمعه دواخن والعامة تقول دخاخين ويقولون دم بتشديد الميم ص بالتخفيف ويقولون دنيت من الرجل
                             إذا قربت منه ص دنوت منه بالواو ويقولون دوخلة بتخفيف اللام ص دوخلة بالتشديد قلت والتخفيف منقول فيها وهي ما تصنعه
@@ -478,9 +427,7 @@
                         <p>حرف الذال لابن الجوزي</p>
                         <p>وتقول للجماعة القليلة من إناث الإبل ذود ولا يقال للذكور ذود والعامة لا تفرق دقن بالدال المهملة وإسكان القاف
                             وصوابها بالذال المعجمة المفتوحة وفتح القاف ويقولون ذبل الريحان بضم الباء ص فتحها ويقولون فعلت كيت وكيت وقلت كيت
-                            وكيت ولا يفرقون بين المقال والأفعال ص أن يقال ذيت وذيت كناية عن المقال وكيت وكيت كناية عن الأفعال. <pb ed="shamela"
-                   n="n76-p11"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5074.xhtml"/>
+                            وكيت ولا يفرقون بين المقال والأفعال ص أن يقال ذيت وذيت كناية عن المقال وكيت وكيت كناية عن الأفعال. <pb ed="shamela" n="n76-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5074.xhtml"/>
                             حرف الراء</p>
                         <p>ويقولون أرهنت الرهن بالألف ص بغير ألف ويقولون رميت بالقوس ص عن القوس ويقولون الرصاص بكسر الراء صوابها فتحها
                             ويقولون رصغ الدابة صوابها بالسين ويقولون رباعية بالتشديد صوابها بالتخفيف وكذلك رفاهية بالتخفيف ويقولون رقيت في
@@ -500,9 +447,7 @@
                             زوجان يعني بذلك الذكر والأنثى ويقولون الزيبق بفتح الباء من غير همز ص بكسر الباء والهمز ويقولون زهوت علينا بأرجل
                             بفتح الزاي وبالواو ص زهيت علينا بضم الزاي وكسر الهاء ويقولون هي: أَزحة جمع زج ص زججة بغير ألف قلت وزجاج
                             أيضاً</p>
-                        <p>الزائد من كلام ابن الجوزي <pb ed="shamela"
-                   n="n76-p12"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5075.xhtml"/> ويقولون هذا الزعرور
+                        <p>الزائد من كلام ابن الجوزي <pb ed="shamela" n="n76-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5075.xhtml"/> ويقولون هذا الزعرور
                             والزنبور بالفتح ص الضم والزبيل بفتح الزاي فإن كسرتها رددتها نوناً فقلت زنبيل والعامة تقول زنبيل بفتح الزاي
                             ويقولون زرنيخ بفتح الزاي ص كسرها ويقولون زهقت نفسه بفتح الزاء وكسر الهاءِ ص فتح الهاء ويقولون زيت الطعام إذا
                             جعلت فيه الزيت ص زِته والزهم من الطير والدجاج والبط والدسم من دهن السمسم والجوز واللوز والزيتون والودك من الإبل
@@ -526,15 +471,11 @@
                             أكلمك سائر اليوم أي ما بقي منه مأخوذ من سؤر الإناء وهو بقية ما فيه والعامة تشير بسائره إلى جميعه ويقولون للمرأة
                             سني قال ابن الإعرابي إن كان من السودد فسيدتي وإن كان من العدد فستتي ولا أعرف في اللغة لستي معنى قال شيخنا أو
                             منصور قد تأوله ابن الأنباري قال يريدون يا ست جهاتي وهو تأول بعيد مخالف للمراد ص سيدتي.</p>
-                        <p>يتبع <pb ed="shamela"
-                   n="n76-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5076.xhtml"/> النجف:</p>
+                        <p>يتبع <pb ed="shamela" n="n76-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5076.xhtml"/> النجف:</p>
                         <p>محمد رضا الشبيبي </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n76-p14"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5077.xhtml"/>
+                        <pb ed="shamela" n="n76-p14" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5077.xhtml"/>
                         <head>الروضة الفيحاء</head>
                         <p>في مشاهير النساء</p>
                         <p>هذا كتاب جليل صنفه الإمام العلامة أديب زمانه الشيخ يسن الخطيب ابن العلامة الشيخ خير الله بن محمود بن موسى
@@ -556,9 +497,7 @@
                             <l>كتاب في محاسنه سرور </l>
                             <l> مناجيه من الأحزان ناجِ</l>
                         </lg>
-                        <p>كراح في زجاج أو كروح <gap resp="#org_MS"/> سرت في جسم معتدل المزاج <pb ed="shamela"
-                   n="n76-p15"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5078.xhtml"/> قال وجعلت المقدمة في
+                        <p>كراح في زجاج أو كروح <gap resp="#org_MS"/> سرت في جسم معتدل المزاج <pb ed="shamela" n="n76-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5078.xhtml"/> قال وجعلت المقدمة في
                             فوائد لا يستغنى عنها ولا بد للمرء منها والمقالة الأولى في ذكر النساء بالصلاح والمقالة الثانية في ذكر نساءٍ
                             اشتهرن بغير ذلك والخاتمة في ذكر بعض أذكياء النساء مع فوائد أخر وبعد أن ذكر المقدمة بنحو ست صحائف قال:</p>
                         <p>المقالة الأولى في ذكر النساء الصالحات</p>
@@ -587,9 +526,7 @@
                             أبي سلمة وزينب أختها وأم كلثوم أختها الأخرى وأم جميل فاطمة أخت الفاروق رضي الله تعالى عنه وعاتكة بنت زيد بن
                             الخطاب والشفاء بنت عبد الله وسهلة بنت سهيل وحبيبة بنت عبد الله ربيبة الرسول صلى الله عليه وسلم وجمانة بنت جحش
                             وأختها أم حبيبة وأم قيس بنت محصن وأم عبد الله بنت الوليد وفاطمة وزينب ابنتي الفاروق رضي الله عنه وأم كلثوم بنت
-                            الإمام علي بن أبي طالب كرم الله وجهه وعائشة بنت طلحة اليتيمية وفاطمة بنت <pb ed="shamela"
-                   n="n76-p16"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5079.xhtml"/> الإمام الحسين رضي الله
+                            الإمام علي بن أبي طالب كرم الله وجهه وعائشة بنت طلحة اليتيمية وفاطمة بنت <pb ed="shamela" n="n76-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5079.xhtml"/> الإمام الحسين رضي الله
                             عنه والخيزرانة زوج المهدي العباسي وهي أم موسى الهادي وهرون الرشيد وفاطمة بنت عبد الملك لن مروان زوجة عمر بن عبد
                             العزيز. خولة بنت ثعلبة. حبيبة بنت سهل. السيدة نفيسة بنت الحسن بن زيد بن الحسن ين علي رضي الله عنهم دفينة مصر.
                             ميسون بنت بجدل أم زيد بن معاوية وأقامت عند معاوية ثلاثة أعوام ودخل عليها يوماً فوجدها تنشد:</p>
@@ -613,12 +550,10 @@
                         <p>أم خالد زوجة يزيد بن معاوية. قبيحة جارية المتوكل عَلَى الله الخليفة العباسي وتسميتها بذلك من باب تسمية الضد باسم
                             الضد. شغب جارية المعتضد بالله الخليفة العباسي. جميلة بنت ناصر الدولة الحسن بن عبد الله بن حمدان صاحب الموصل.
                             تركان زوجة السلطان ملكشاه بن ألب أرسلان السلجوقي. زمرد بنت جاولي صاحب الموصل تزوجها تاج الملك بن صاحب دمشق. زمرد
-                            زوجة الأمير طغتكين الأيوبي صاحب بلاد اليمن حنيفة بنت العادل أبي بكر بن أيوب ولدت في قلعة حلب سنة 581. ملكة بنت
+                            زوجة الأمير طغتكين الأيوبي صاحب بلاد اليمن حنيفة بنت العادل أبي بكر بن أيوب ولدت في قلعة حلب سنة  <tei:num value="581" xml:lang="ar">٥٨١</tei:num> . ملكة بنت
                             الملك العادل أبي بكر بن أيوب تزوجها الملك الظاهر بن صلاح الدين يوسف صاحب حلب. مملكة بنت الملك العادل أيضاً
                             تزوجها الملك المنصور محمد بن عبد الملك صاحب حماة ولما توفيت رثاها أحد شعراء عصره بقوله:</p>
-                        <p>الطرف في لجة والقلب في سعر <gap resp="#org_MS"/> له دخان زفير طار بالشرر <pb ed="shamela"
-                   n="n76-p17"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5080.xhtml"/> لو كان من مات يفدى قبلها
+                        <p>الطرف في لجة والقلب في سعر <gap resp="#org_MS"/> له دخان زفير طار بالشرر <pb ed="shamela" n="n76-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5080.xhtml"/> لو كان من مات يفدى قبلها
                             الفدى <gap resp="#org_MS"/> أم الظفر آلاف من البشر</p>
                         <lg type="bayt">
                             <l>ما كنت أن الشمس قد غربت </l>
@@ -668,9 +603,7 @@
                             في معقول ومنقول.</p>
                         <p>ثم قال: المقالة الثانية في ذكر من اشتهرن بغير الزهد والصلاح</p>
                         <p>ونذكر منهم دلوكة بنت الزباء قال وكانت في زمن موسى عليه السلام. وقطام وإقبال وكانتا من ثمود زمن صالح عليه السلام.
-                            ورقاش أخت جذيمة الأبرش. وعفيراء بنت عباد ويقال <pb ed="shamela"
-                   n="n76-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5081.xhtml"/> لها الشموس وهي أخت
+                            ورقاش أخت جذيمة الأبرش. وعفيراء بنت عباد ويقال <pb ed="shamela" n="n76-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5081.xhtml"/> لها الشموس وهي أخت
                             الأسود من قبيلة جديس. والنضيرة بنت الساطرون واسمه الضيزن ملك الحضر وهو من قبيلة قضاعة واصله من الجرامقة والزباء
                             بنت عمرو الملكة وسودة الكاهنة وزينب بنت الحارث اليهودية. وسجاج بنت الحارث التميمية ولها قصة مشهورة مع مسيلمة
                             الكذاب. وحبابة جارية يزيد بن عبد الملك بن مروان الأموي وقطام وهي امرأة من الخوارج من تيم الرباب. وست الملك بنت
@@ -699,14 +632,10 @@
                         <p>وقد امتد ذلك نحو عشر صفائح وبها تم الكتاب وجميع صحائفه مائتان وثمانون صفحة بقطع الربح نحو صحيفتنا هذه ومباحثه
                             كلها ممتعة فيها فوائد كثيرة استطرادية وأدب وافر وشعر باهر ونثر كالروض المزهر زاهر والكتاب شاهد عَلَى علو كعب
                             مصنفه في العلوم الأدبية وكمال معرفته بالفنون التاريخية تغمده الله برحمته.</p>
-                        <p>بغداد <pb ed="shamela"
-                   n="n76-p19"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5082.xhtml"/> محمود شكري الآلوسي </p>
+                        <p>بغداد <pb ed="shamela" n="n76-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5082.xhtml"/> محمود شكري الآلوسي </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n76-p20"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5083.xhtml"/>
+                        <pb ed="shamela" n="n76-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5083.xhtml"/>
                         <head>أبيات العادات</head>
                         <p>من أبيات العادات قول الشاعر:</p>
                         <lg type="bayt">
@@ -740,9 +669,7 @@
                         <p>الحجرة بالفتح الناحية والمراد بها هنا موضع الغنم وأصل العتر الذبح في رجب وكانت العرب تنذره لآلهتها فيقول أحدهم إن
                             رزقني الله مائة شاة ذبحت عن كل عشرة شاة في رجب ويسمى هذا الذبح العتيرة والرجيبة وهو مما نهى عنه الإسلام. والبيت
                             مبني عَلَى عادة كانت لهم وهي أن الرجل كان إذا ضن وبخل بما نذر صاد الظباء فذبحها عوضاً عن الشياه والمعنى أنكم
-                            تطالبوننا بذنوب غيرنا كما تذبح الظباء بدل الغنم. وقول كعب بن زهير في رثاء جويءٍ المزني: <pb ed="shamela"
-                   n="n76-p21"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5084.xhtml"/> لنذرك والنذر
+                            تطالبوننا بذنوب غيرنا كما تذبح الظباء بدل الغنم. وقول كعب بن زهير في رثاء جويءٍ المزني: <pb ed="shamela" n="n76-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5084.xhtml"/> لنذرك والنذر
                             لها وفاء <gap resp="#org_MS"/> إذا بلغ الخزاية بالغوها</p>
                         <lg type="bayt">
                             <l>كأنك كنت تعلم يوم بزت </l>
@@ -787,9 +714,7 @@
                             <l> محذفة الأذناب جلع المقادم</l>
                         </lg>
                         <p>يعني بالشاحبات البغال والمراد هنا التي للبريد كما في كامل المبرد. وأما الخيل فكانت خاصة ببرد ملوك العرب في
-                            الجاهلية ولهذا ذكر امرئ القيس في بيته المتقدم لأنه كان ملكاً <pb ed="shamela"
-                   n="n76-p22"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5085.xhtml"/> بريده الخيل أما تخصيصه
+                            الجاهلية ولهذا ذكر امرئ القيس في بيته المتقدم لأنه كان ملكاً <pb ed="shamela" n="n76-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5085.xhtml"/> بريده الخيل أما تخصيصه
                             خيل بربر بالذكر دون سواها من خيل العرب فقد قال عنه ابن رشيق في العمدة كانت الخيل البربرية تلهب أذنابها كالبغال
                             لتدخل مداخلها في خدمة البريد وليعلم إنها للملك اهـ قلت لعل ذلك كان لصلابتها كما قدمنا وأما قص أذنابها فربما
                             للإعلام بأنها للبريد ولا يبعد أنه كان طلباً للخفة في العدو كما كانوا يعقدون شعر الأعراف والأذناب في الحرب قال
@@ -832,9 +757,7 @@
                             <l>إني وعقلي سليكاً بعد مقتله </l>
                             <l> كالثور يضرب لما عاقت البقر</l>
                         </lg>
-                        <p>لأن العرب كانت إذا أوردت البقر فلم تشرب لكدر الماء أو لقلة العطش ضربوا الثور <pb ed="shamela"
-                   n="n76-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5086.xhtml"/> ليقتحم الماء لأن البقر
+                        <p>لأن العرب كانت إذا أوردت البقر فلم تشرب لكدر الماء أو لقلة العطش ضربوا الثور <pb ed="shamela" n="n76-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5086.xhtml"/> ليقتحم الماء لأن البقر
                             تتبعه كما تتبع الشول الفحل وكما تتبع أتن الوحش الحمار وكانوا يزعمون أن الجن هي التي تصد الثيران عن الماء حتى
                             تمسك البقر عن الشرب فتهلك. وقال الجوهري إذا البقر امتنعت عن شروعها في الماء لا تضرب لأنها ذات لبن وإنما يضرب
                             الثور لتفزع هي فتشرب اهـ. وقيل أراد بالثور ثور الماء وهو الطحلب فإذا أورد البقلر القطعة من البقر فعافت الماء
@@ -867,9 +790,7 @@
                             <l> لم يسلموه ولم تسنح له بقر</l>
                         </lg>
                         <p>وذلك لأن العرب كانت تتشاءم بالبقر لحدة قرونها.</p>
-                        <p>(ومنها) قول المثلم بن عمرو التنوخي: <pb ed="shamela"
-                   n="n76-p24"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5087.xhtml"/> يمنعني لذة الشراب وإن
+                        <p>(ومنها) قول المثلم بن عمرو التنوخي: <pb ed="shamela" n="n76-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5087.xhtml"/> يمنعني لذة الشراب وإن
                             <gap resp="#org_MS"/> كان قطاباً كأنه عسل</p>
                         <lg type="bayt">
                             <l>حتى أرى فارس الصموت عَلَى </l>
@@ -907,9 +828,7 @@
                         </lg>
                         <p>احتبى الرجل إذا جمع ظهره وساقيه بعمامته أو بيديه ومنه الحديث الإحتباء حيطان العرب أي ليس في البراري حيطان فإذا
                             أرادوا أن يستندوا احتبوا لأن الإحتباء يمنعهم من السقوط ويصير لهم كالجدار وقوله انتدى أي جلس في النادي والبيت
-                            مبني عَلَى عادة كانت لهم ذكرها التبريزي في شرح الحماسة وهي أنهم كانوا يحتبون بالسيوف عند عقد جوار أو <pb ed="shamela"
-                   n="n76-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5088.xhtml"/>
+                            مبني عَلَى عادة كانت لهم ذكرها التبريزي في شرح الحماسة وهي أنهم كانوا يحتبون بالسيوف عند عقد جوار أو <pb ed="shamela" n="n76-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5088.xhtml"/>
                             حرب أو تسويد رئيس وما يجري هذا المجرى لأن السيف في أمثال هذه الأحوال ربما مست الحاجة إليه ولذلك قال جرير:</p>
                         <lg type="bayt">
                             <l>ولا يحتبى عند عقد الجوار </l>
@@ -955,9 +874,7 @@
                         </lg>
                         <p>وبقي في هذه الأبيات جرهم لفظ حاتم والوجه رفعه عَلَى أنه فاعل تضن ولكنهم رووه هكذا تبعاً لقوافي القطعة وخرجوه
                             عَلَى أنه بدل من الهواء في وجوده ولهم في ذلك خلاف وكلام طويل الذيل ليس هنا موضع استيفائه ولو خيرت لكنت اختار
-                            رفعه عَلَى الإقواءِ تخلصاً مما تكلفوه. وقال التنوخي في الأقصى القريب ويروى (ضنت به نفس حاتم) ولا إشكال <pb ed="shamela"
-                   n="n76-p26"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5089.xhtml"/>
+                            رفعه عَلَى الإقواءِ تخلصاً مما تكلفوه. وقال التنوخي في الأقصى القريب ويروى (ضنت به نفس حاتم) ولا إشكال <pb ed="shamela" n="n76-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5089.xhtml"/>
                             حينئذ والظاهر أن هذا إصلاح لا رواية انتهى كلامه.</p>
                         <p>(ومنها) قول القائل:</p>
                         <lg type="bayt">
@@ -977,9 +894,7 @@
                         <p>أحمد تيمور </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n76-p27"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5090.xhtml"/>
+                        <pb ed="shamela" n="n76-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5090.xhtml"/>
                         <head>كتاب ألف با</head>
                         <p>وقعنا خريف السنة الفائتة عَلَى مخطوط عند الشيخ ناصر المخزومي العرابي من فضلاً، جبل نابلس المعروفين عنوانه الجزء
                             الأول من كتاب الألف باء نسخه ناسخة في ثالث رجب الفرد لسنة ألف وهو مما وقفه أحمد باشا الجزار عَلَى مدرسة جامعه
@@ -990,7 +905,7 @@
                             الأول والثاني من مكتبة سليم أفندي البخاري من علماء دمشق نتطالعها ونكتب عنها مبحثاً ولولا أن أعاد علينا هذا الطلب
                             وشجعنا بقوله: ما كل مخطوط مهم ولا كل مطبوع يعرفه الناس لما رأيتنا ننقل إلى قراء المقتبس بعض فصوله وهنا مجال لأن
                             نشكر الأستاذ البخاري عَلَى حواشيه التي علقها عَلَى الكتاب فجاءت كعقود نضيدة في جيد غادة حسناء أما المطبوع فقد
-                            طبع سنة 1287 هجرية عَلَى نفقة جمعية المعارف التي طبعت 1100 كتاب من طرزه.</p>
+                            طبع سنة  <tei:num value="1287" xml:lang="ar">١٢٨٧</tei:num>  هجرية عَلَى نفقة جمعية المعارف التي طبعت  <tei:num value="1100" xml:lang="ar">١١٠٠</tei:num>  كتاب من طرزه.</p>
                         <p>قال الشيخ الفقيه المحدث الزاهد أو الحجاج بن يوسف بن محمد البلوي عرف بابن الشيخ بعد البسملة والحمدلة والصلولة أما
                             بعد دام لنا ولكم السعد فإني عزمت بعد استخارة ذي الطول ومن بيده القوة والحول ورغبني إليه في السداد في العمل
                             والقول عَلَى أن أجمع في هذه الأوراق كل معنى رق أو راقٍ مما هو عندي مستحسن لا مستخشن ومستملح لا مستقج واثبت فيه
@@ -999,9 +914,7 @@
                             يجعله الله منهم ولا يقطع به عنهم فيكون إن شاء الله بقراءة هذا الكتاب في الو يادة عَلَى أن يلحق بالسادة. .</p>
                         <p>وبعد أن استطرد الكلام في أسباب تأليفه الكتاب عقب عليه بقوله:</p>
                         <p>إني أكرر الألف مع الباء وما شاكلها مراراً شتى ثم أشفعها بالوزن حتى تكون بيتاً بعد أن أضم إليها كلمتين متشاكلتين
-                            باسم القافية دامت لنا ولكم العافية ويكون الشكل في الكل واحداً <pb ed="shamela"
-                   n="n76-p28"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5091.xhtml"/> والمعنى عَلَى خلاف فأفهم
+                            باسم القافية دامت لنا ولكم العافية ويكون الشكل في الكل واحداً <pb ed="shamela" n="n76-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5091.xhtml"/> والمعنى عَلَى خلاف فأفهم
                             ثم افعل ذلك بالألف مع سائر حروف المعجم ليكبر الكتاب ويكثر الكلام وتعظم الفائدة وتعم المنفعة إلا أنه لم يصح لي
                             إلا بضم الأشكال المؤتلفة في حروف المعجم عَلَى تأليف بلادنا بعضها إلى بعض مثل الباء والتاء والثاء في بيت والجيم
                             والحاء والخاء في آخر والدال والذال وغير ذلك وبالحري باجتماعها فيكمل منها كلها بيت وبيت وربما يضيق بعض الأبيات عن
@@ -1023,9 +936,7 @@
                             <l> حق يراه ناقد غيره</l>
                         </lg>
                         <p>في أبيات ذكرتها بكمالها في كتاب سميته تكميل الأبيات وتتميم الحكايات مما اختصر للألبا في كتاب ألف با وقد ذكرت سببه
-                            في أوله فأنظرها هناك إن أردتها وبالله التوفيق وما <pb ed="shamela"
-                   n="n76-p29"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5092.xhtml"/> أحسن ما به أعتذر صاحب
+                            في أوله فأنظرها هناك إن أردتها وبالله التوفيق وما <pb ed="shamela" n="n76-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5092.xhtml"/> أحسن ما به أعتذر صاحب
                             كتاب الزهر إذ قال:</p>
                         <lg type="bayt">
                             <l>ويسيء بالإحسان ظناً لا كمن </l>
@@ -1059,9 +970,7 @@
                             أرجع إلى القافية فأفعل فيها مثل ذلك وربما كانت الواو من نفس الكلمة إذا لم أجد غيرها فأسوقها وأنبه عليها مثل وكل
                             الذي هو الرجل الضعيف العاجز سقته مع وكل اللفظة التي هي ضد بعض وكذلك وشل الماء الجاري من الجبل مع وشل بعض أنامله
                             وغير ذلك مما أقيم به شكل البيت ووزنه وربما جلبت فائدة ثانية وعكساً آخر يفيد علماً زائداً ثم أذكر مخارج الحروف
-                            <pb ed="shamela"
-                   n="n76-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5093.xhtml"/> وعملها إن كانت عاملة مع
+                            <pb ed="shamela" n="n76-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5093.xhtml"/> وعملها إن كانت عاملة مع
                             ما تشترك في قافية واحدة ليقرب المخرج وما يجعل عوض صاحبه في النطق ثم أذكر آخر البيت فصلاً من الكلام المطول يكون
                             أوله المعول وسيأتي تفسير هذا الفصل إن شاء الله فيما يستقبل فأقبل وقد اجتمع لي من ذلك تسعة وعشرون بيتاً عدد حروف
                             المعجم لكن منها ما تكرر معكوساً ومقلوباً ومنها ما لم يتكمل البيت إلا بمعكوسه لقلة دوره في الكلام وزدت في أول
@@ -1096,9 +1005,7 @@
                             <l>به عظيم الجهل </l>
                             <l> حتى يرى يا أهلي</l>
                         </lg>
-                        <p>بالقرب لا بالمهل <gap resp="#org_MS"/> يذوب ذوب المهل <pb ed="shamela"
-                   n="n76-p31"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5094.xhtml"/> صنعته من أجل <gap resp="#org_MS"/> عهد الرحيم نجلي</p>
+                        <p>بالقرب لا بالمهل <gap resp="#org_MS"/> يذوب ذوب المهل <pb ed="shamela" n="n76-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5094.xhtml"/> صنعته من أجل <gap resp="#org_MS"/> عهد الرحيم نجلي</p>
                         <lg type="bayt">
                             <l>وذاكم لعلي </l>
                             <l> اسقيه من ذا العل</l>
@@ -1191,9 +1098,7 @@
                             <l>إلا بضبط الرجل </l>
                             <l> بالقيد أو بالحجل</l>
                         </lg>
-                        <p>فارضع لبان الثفل <gap resp="#org_MS"/> واعلم بأن فعلي <pb ed="shamela"
-                   n="n76-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5095.xhtml"/> لم أره يا شبلي <gap resp="#org_MS"/> لأحد من قبلي</p>
+                        <p>فارضع لبان الثفل <gap resp="#org_MS"/> واعلم بأن فعلي <pb ed="shamela" n="n76-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5095.xhtml"/> لم أره يا شبلي <gap resp="#org_MS"/> لأحد من قبلي</p>
                         <lg type="bayt">
                             <l>جئت به في حفلي </l>
                             <l> مسبباً للنفل</l>
@@ -1286,9 +1191,7 @@
                             <l>مؤمناً من فصلي </l>
                             <l> لك متاح فضلي</l>
                         </lg>
-                        <p>لك مباح بذلي <gap resp="#org_MS"/> وبعد ذا أصلي <pb ed="shamela"
-                   n="n76-p33"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5096.xhtml"/> عَلَى الكريم الأصل <gap resp="#org_MS"/> أحمد خير الرسل</p>
+                        <p>لك مباح بذلي <gap resp="#org_MS"/> وبعد ذا أصلي <pb ed="shamela" n="n76-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5096.xhtml"/> عَلَى الكريم الأصل <gap resp="#org_MS"/> أحمد خير الرسل</p>
                         <lg type="bayt">
                             <l>وآله والنسل </l>
                             <l> والحمد وهو الكلي</l>
@@ -1319,9 +1222,7 @@
                             أنا لي حوبة أصلها ويقال الحق الله به الحوبة أي المسكنة والحاجة فلان يتحوب من كذا أي يتأثم والتحوب أيضاً التوجع
                             والحزن قال الشاعر:</p>
                         <p>من الغيظ في أكبادنا والتحوب</p>
-                        <p>وأما الأوب فيقال جاء القوم من كل أوب أي من كل وجه والتأويب في السير تباري <pb ed="shamela"
-                   n="n76-p34"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5097.xhtml"/> الركاب وفي القرآن العزيز
+                        <p>وأما الأوب فيقال جاء القوم من كل أوب أي من كل وجه والتأويب في السير تباري <pb ed="shamela" n="n76-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5097.xhtml"/> الركاب وفي القرآن العزيز
                             يا جبال أَوبي معه قيل المعنى سيري معه حيث شاء من التأويب الذي هو سير النهار وقيل من التأويب الذي هو الرجوح ومبيت
                             الرجل في منزله فعلى هذا يكون التأويب سير الليل والنهار واصله من سرعة رجع أيدي الأبل وأرجعها في السير الحثيث وقيل
                             معناه سجي ويكون معناه ترجيع التسبيح ومن الأوب الذي هو سرعة تقليب اليدين والرجلين في السير قال الشاعر:</p>
@@ -1360,9 +1261,7 @@
                             <l> ولنا الأب بها والمكرع</l>
                         </lg>
                         <p>يقال كرعت الماشية إذا شربت الماء وهي فيه واقفة ثم كثر ذلك حتى سمي كل شارب كارعاً.</p>
-                        <p>وأما أب فعلى وجوه شتى يقال أب الرجل يؤب إبابة إذا تهيأ للمسير وهو في إبابه أي <pb ed="shamela"
-                   n="n76-p35"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5098.xhtml"/> جهازه وأبت إبابة الشيء
+                        <p>وأما أب فعلى وجوه شتى يقال أب الرجل يؤب إبابة إذا تهيأ للمسير وهو في إبابه أي <pb ed="shamela" n="n76-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5098.xhtml"/> جهازه وأبت إبابة الشيء
                             طريقته وأب للشيء إذا تهيأ له قال الأعشى:</p>
                         <lg type="bayt">
                             <l>صرمت ولم أصرمكم كصارم </l>
@@ -1401,9 +1300,7 @@
                             <l>وفرع يغشى المتن اسود فاحم </l>
                             <l> أثيث كقنو النخلة المتعثكل</l>
                         </lg>
-                        <p>فرغ البيت وبقية قافيته وقد أخرتها إلى آخر بيت من هذا الباب ومما ضاق عنه ولو <pb ed="shamela"
-                   n="n76-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5099.xhtml"/> احتجته لأخذته مثل آت اسم
+                        <p>فرغ البيت وبقية قافيته وقد أخرتها إلى آخر بيت من هذا الباب ومما ضاق عنه ولو <pb ed="shamela" n="n76-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5099.xhtml"/> احتجته لأخذته مثل آت اسم
                             الفاعل من أتى يأتي وسيأتي الكلام عليه في باب أتا وآب اسم شهر من شهور العجم وهو أغثت.</p>
                         <p>ثم يأخذ بعد ذلك بسرد حكايات وأمثال لها صلة بالبحث ومن مروياته في فضل البلاغة وفضل العلم.</p>
                         <p>وصف يحيى بن زياد رجلاً بالبلاغة فقال أخذ بزمام الكلام فقاده أحسن مقاد وساق أحسن مساق فاسترجع به القلوب النافرة
@@ -1432,9 +1329,7 @@
                         <p>السبت شيار</p>
                         <p>الشهور</p>
                         <p>المحرم مؤتمر</p>
-                        <p>صفر ناجر <pb ed="shamela"
-                   n="n76-p37"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5100.xhtml"/> ربيعه الأول خوان</p>
+                        <p>صفر ناجر <pb ed="shamela" n="n76-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5100.xhtml"/> ربيعه الأول خوان</p>
                         <p>ربيع الآخر بصان وونصان</p>
                         <p>جمادى الأولى الحنين</p>
                         <p>جمادى الآخرة ربة أو ربى</p>
@@ -1445,7 +1340,7 @@
                         <p>ذو القعدة هواع</p>
                         <p>ذو الحجة بركا</p>
                         <p>ويسمي العرب كل ثلاث ليالي من الشهر باسم خاص.</p>
-                        <p>الثلاث الأولى (غرر) 3 نفل 3 تسع أو عفر 4 عشر 5 بيض 6 درع 7 ظلم 8 حنادس 9 دآدئ 10 محلق.</p>
+                        <p>الثلاث الأولى (غرر)  <tei:num value="3" xml:lang="ar">٣</tei:num>  نفل  <tei:num value="3" xml:lang="ar">٣</tei:num>  تسع أو عفر  <tei:num value="4" xml:lang="ar">٤</tei:num>  عشر  <tei:num value="5" xml:lang="ar">٥</tei:num>  بيض  <tei:num value="6" xml:lang="ar">٦</tei:num>  درع  <tei:num value="7" xml:lang="ar">٧</tei:num>  ظلم  <tei:num value="8" xml:lang="ar">٨</tei:num>  حنادس  <tei:num value="9" xml:lang="ar">٩</tei:num>  دآدئ  <tei:num value="10" xml:lang="ar">١٠</tei:num>  محلق.</p>
                         <p>وقوله رواية ما رؤيت قبور اشد تباعداً بعضها من بعض من قبور بني العباس بن عبد المطلب عم الرسول ولدتهم أمهم أم الفضل
                             في دار واحدة واستشهد الفضل بأجنادين ومات معبد وعبد الرحمن بأفريقية وتوفي عبد الله بالطائف وعبيد الله باليمن وقثم
                             بسمرقند وكثير وأمه سبا أخذته الذبحة بينبع رحمهم الله.</p>
@@ -1458,9 +1353,7 @@
                             <l>أتعرف أطلالاً شجونك بالخال </l>
                             <l> وعيشاً غزيراً كان في العصر الخالي</l>
                         </lg>
-                        <p>ليالي ريعان الشباب مسلط <gap resp="#org_MS"/> علي بعصيان الإمارة والخال <pb ed="shamela"
-                   n="n76-p38"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5101.xhtml"/> وإذ أنا خدن للغوي أخي
+                        <p>ليالي ريعان الشباب مسلط <gap resp="#org_MS"/> علي بعصيان الإمارة والخال <pb ed="shamela" n="n76-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5101.xhtml"/> وإذ أنا خدن للغوي أخي
                             الصبا <gap resp="#org_MS"/> وللغزل المريخ ذي اللهو والخال</p>
                         <lg type="bayt">
                             <l>وللخود تصطاد الرجال بفاحم </l>
@@ -1541,9 +1434,7 @@
                         <p>الحاء والظاء في غير لغة العرب</p>
                         <p>من الحروف حرفان تختص بهما العرب دون الخلق وهما الحاء والظاء وزعم آخرون أن الحاء في السريانية والعبرانية والحبشية
                             كثير وأن الطاء وحدها مقصورة عَلَى العرب ومنها ستة أحرف للعرب ولقليل من العجم وهي العين والصاد والضاد والقاف
-                            والطاء والثاء وما سوى الباقي فللخلق كلهم من العرب والعجم إلا الهمزة فهي ليست في كلام العجم <pb ed="shamela"
-                   n="n76-p39"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5102.xhtml"/> إلا في
+                            والطاء والثاء وما سوى الباقي فللخلق كلهم من العرب والعجم إلا الهمزة فهي ليست في كلام العجم <pb ed="shamela" n="n76-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5102.xhtml"/> إلا في
                             الابتداء وهذه الحروف تزيد عَلَى هذا العدد إذا استعملت فيها حروفاً لا تتكلم بها العرب إلا الضرورة فإذا اضطروا
                             إليها حولوها عند التكلم بها إلى أقرب الحروف من مخارجها فمن تلك الحروف الحرف الذي بين الباء والفاء مثل بور إذا
                             اضطروا إليها قالوا فور ومثل الحرف الذي بين القاف والكاف وبين الجيم والكاف وهي لغة سائرة في اليمن مثل جمل إذا
@@ -1567,9 +1458,7 @@
                             <l>لقد زدت أوضاحي امتدادً ولم أكن </l>
                             <l> بهيماً ولا أرضي من الأرض مجهلاً</l>
                         </lg>
-                        <p>ولكن أيادٍ صادفتني حسامها <gap resp="#org_MS"/> أغر فحلتني أغر محجلا <pb ed="shamela"
-                   n="n76-p40"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5103.xhtml"/> وقال بعضهم الأيادي ثلاثة
+                        <p>ولكن أيادٍ صادفتني حسامها <gap resp="#org_MS"/> أغر فحلتني أغر محجلا <pb ed="shamela" n="n76-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5103.xhtml"/> وقال بعضهم الأيادي ثلاثة
                             بيضاء وخضراء وسوداء فاليد البيضاء الابتداء بالمعروف واليد الخضراء المكافئة واليد السوداء المن بالمعروف.</p>
                         <p>الفرق بين القول والتكليم</p>
                         <p>إن التكليم لا يكون إلا ثناء وفضيلة كما قال تعالى وكلم الله موسى تكليما والقول قد يكون ذماً أو إبعاداً كما قال
@@ -1583,64 +1472,60 @@
                         <p>آنية الشراب</p>
                         <p>قال ابن الإعرابي:</p>
                         <p> 
-               <hi style="color:red;">1 - </hi>أول الأقداح الغمر بالضم وهو الذي لا يبلغ الري.</p>
+               <hi style="color:red;"> <tei:num value="1" xml:lang="ar">١</tei:num>  - </hi>أول الأقداح الغمر بالضم وهو الذي لا يبلغ الري.</p>
                         <p> 
-               <hi style="color:red;">2 - </hi>القعب بالفتح وهو قدر ري الرجل.</p>
+               <hi style="color:red;"> <tei:num value="2" xml:lang="ar">٢</tei:num>  - </hi>القعب بالفتح وهو قدر ري الرجل.</p>
                         <p> 
-               <hi style="color:red;">3 - </hi>القدح: وهو يروي الاثنين أو الثلاثة وعلى رأي بعض اللغويين لا يقال له قدح إلا إذا
+               <hi style="color:red;"> <tei:num value="3" xml:lang="ar">٣</tei:num>  - </hi>القدح: وهو يروي الاثنين أو الثلاثة وعلى رأي بعض اللغويين لا يقال له قدح إلا إذا
                             كان ملآنً بماءٍ أو غيره وإلا فيطلق عليه إناء.</p>
                         <p> 
-               <hi style="color:red;">4 - </hi>العس بالضم يعب فيه العدة.</p>
+               <hi style="color:red;"> <tei:num value="4" xml:lang="ar">٤</tei:num>  - </hi>العس بالضم يعب فيه العدة.</p>
                         <p> 
-               <hi style="color:red;">5 - </hi>الرفد: بالكسر أو بالفتح أكبر من العس.</p>
+               <hi style="color:red;"> <tei:num value="5" xml:lang="ar">٥</tei:num>  - </hi>الرفد: بالكسر أو بالفتح أكبر من العس.</p>
                         <p> 
-               <hi style="color:red;">6 - </hi>التبن: بالكسر أكبر من الرفد.</p>
+               <hi style="color:red;"> <tei:num value="6" xml:lang="ar">٦</tei:num>  - </hi>التبن: بالكسر أكبر من الرفد.</p>
                         <p> 
-               <hi style="color:red;">7 - </hi>الصحن: أكبر من الاثنين الأخيرين قال الشاعر</p>
+               <hi style="color:red;"> <tei:num value="7" xml:lang="ar">٧</tei:num>  - </hi>الصحن: أكبر من الاثنين الأخيرين قال الشاعر</p>
                         <p>ألا هبي بصحنك فأصبحينا</p>
                         <p> 
-               <hi style="color:red;">8 - </hi>العلبة: كالقدح الضخم يحلب فيها قال الشاعر <pb ed="shamela"
-                   n="n76-p41"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5104.xhtml"/> ولم تسق دعد بالعلب</p>
+               <hi style="color:red;"> <tei:num value="8" xml:lang="ar">٨</tei:num>  - </hi>العلبة: كالقدح الضخم يحلب فيها قال الشاعر <pb ed="shamela" n="n76-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5104.xhtml"/> ولم تسق دعد بالعلب</p>
                         <p> 
-               <hi style="color:red;">9 - </hi>الجنبة: أكبر من العلبة وهي تعمل من جلد البعير.</p>
+               <hi style="color:red;"> <tei:num value="9" xml:lang="ar">٩</tei:num>  - </hi>الجنبة: أكبر من العلبة وهي تعمل من جلد البعير.</p>
                         <p> 
-               <hi style="color:red;">10 - </hi>الجوباة: دلو واسعة ضخمة قال أبو زيد كل إناءٍ يدعى مهدى بكسر أوله مثل الجفنة
+               <hi style="color:red;"> <tei:num value="10" xml:lang="ar">١٠</tei:num>  - </hi>الجوباة: دلو واسعة ضخمة قال أبو زيد كل إناءٍ يدعى مهدى بكسر أوله مثل الجفنة
                             والقصة والقدح.</p>
                         <p> 
-               <hi style="color:red;">11 - </hi>الفرق: إناء يسع ثلاثة آصع والصاع أربعة أمداده إلى آخره.</p>
+               <hi style="color:red;"> <tei:num value="11" xml:lang="ar">١١</tei:num>  - </hi>الفرق: إناء يسع ثلاثة آصع والصاع أربعة أمداده إلى آخره.</p>
                         <p>آنية المداء</p>
-                        <p>قال الكسائي: (1) الصُّحيفة: تشبع الرجل. (2) المئكلة: تشبع الرجلين والثلاثة. (3) الصحفة: تشبع الخمسة. (4) القصة:
-                            تشبع العشرة. (5) الجفنة: أعظم القصاع.</p>
+                        <p>قال الكسائي: ( <tei:num value="1" xml:lang="ar">١</tei:num> ) الصُّحيفة: تشبع الرجل. ( <tei:num value="2" xml:lang="ar">٢</tei:num> ) المئكلة: تشبع الرجلين والثلاثة. ( <tei:num value="3" xml:lang="ar">٣</tei:num> ) الصحفة: تشبع الخمسة. ( <tei:num value="4" xml:lang="ar">٤</tei:num> ) القصة:
+                            تشبع العشرة. ( <tei:num value="5" xml:lang="ar">٥</tei:num> ) الجفنة: أعظم القصاع.</p>
                         <p>أوقات الشراب</p>
                         <p>الصبوح: شرب الغداة. القبل: الشرب نصف النهار. الغبوق: شرب العشي. الفحمة: الشرب بين المغرب والعشاء. الجاشرية: شرب
                             السحر. الصفح: الشرب في كل وقت.</p>
                         <p>ألعاب صبيان العرب</p>
-                        <p>(1) المفايلة: لعبة لفتيان الأعراب يخبئون الشيء في التراب ثم يقسمونه فإذا أخطئ المخطئ قيل له فال رأيك يقال منه رجل
+                        <p>( <tei:num value="1" xml:lang="ar">١</tei:num> ) المفايلة: لعبة لفتيان الأعراب يخبئون الشيء في التراب ثم يقسمونه فإذا أخطئ المخطئ قيل له فال رأيك يقال منه رجل
                             فال الرأي وفيل الرأي ويقال ما كنت أحب أن أرى في رأيك فيالة قال الكميت:</p>
                         <lg type="bayt">
                             <l>بنى رب الجواد فلا تفيلوا </l>
                             <l> فما أنتم فتعذركم لفيل</l>
                         </lg>
                         <p>أي لستم أولاد الضعيف الرأي وهو الفيل.</p>
-                        <p>(2) عظم وضاح: لعبة الصبيان بالليل وهو أن يأخذوا عظماً أبيض شديد البياض فيلقوه ثم يتفرقوا في طلبه فمن وجده ركب
+                        <p>( <tei:num value="2" xml:lang="ar">٢</tei:num> ) عظم وضاح: لعبة الصبيان بالليل وهو أن يأخذوا عظماً أبيض شديد البياض فيلقوه ثم يتفرقوا في طلبه فمن وجده ركب
                             أصحابه.</p>
-                        <p>(3) الخطرة: وهو بالمخراق.</p>
-                        <p>(4) الخراج: وهو أن يمسك أحدهم شيئاً بيده ويقول لسائرهم أخرجوا ما بيدي.</p>
-                        <p>(5) الضب: وهو أن يصور الضب في الأرض ثم يحول أحدهم وجهه ويقول ضع يدك عَلَى صورة الضب ثم يقال عَلَى أي موضع من الضب
+                        <p>( <tei:num value="3" xml:lang="ar">٣</tei:num> ) الخطرة: وهو بالمخراق.</p>
+                        <p>( <tei:num value="4" xml:lang="ar">٤</tei:num> ) الخراج: وهو أن يمسك أحدهم شيئاً بيده ويقول لسائرهم أخرجوا ما بيدي.</p>
+                        <p>( <tei:num value="5" xml:lang="ar">٥</tei:num> ) الضب: وهو أن يصور الضب في الأرض ثم يحول أحدهم وجهه ويقول ضع يدك عَلَى صورة الضب ثم يقال عَلَى أي موضع من الضب
                             وضعته فإن أصاب قمر بمعنى غلب.</p>
-                        <p>(6) النقيري: وهي بالتراب أيضاً يقال أنقر الصبيان فهم يتفرقون وقال الأصمعي في <pb ed="shamela"
-                   n="n76-p42"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5105.xhtml"/> رجزه:</p>
+                        <p>( <tei:num value="6" xml:lang="ar">٦</tei:num> ) النقيري: وهي بالتراب أيضاً يقال أنقر الصبيان فهم يتفرقون وقال الأصمعي في <pb ed="shamela" n="n76-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5105.xhtml"/> رجزه:</p>
                         <lg type="bayt">
                             <l>كأن آثار الضرابي تلتفث </l>
                             <l> حول نقيري الوليد المنبحث</l>
                         </lg>
                         <p>تراب ما هال عليك المجتدث</p>
-                        <p>(7) المبحثة: وهي تشبه الأولى ولعلها هي بعينها يخبئون شيئاً تحت الأرض في التراب ثم يصدع صدعين ثم يضرب الصبي بيده
+                        <p>( <tei:num value="7" xml:lang="ar">٧</tei:num> ) المبحثة: وهي تشبه الأولى ولعلها هي بعينها يخبئون شيئاً تحت الأرض في التراب ثم يصدع صدعين ثم يضرب الصبي بيده
                             عَلَى أحدهما أو عَلَى بعضه فإن قبض عَلَى الخبء فيه قمر.</p>
-                        <p>(8) المقلا والقلة: المقلا عود يلعب به الصبيان فيضربون به القلة بالتخفيف والقلة قطعة خشب صغيرة ينصبونها.</p>
-                        <p>(9) العرعار: لعبة أحرى.</p>
+                        <p>( <tei:num value="8" xml:lang="ar">٨</tei:num> ) المقلا والقلة: المقلا عود يلعب به الصبيان فيضربون به القلة بالتخفيف والقلة قطعة خشب صغيرة ينصبونها.</p>
+                        <p>( <tei:num value="9" xml:lang="ar">٩</tei:num> ) العرعار: لعبة أحرى.</p>
                         <p>الخيل المعروفة عند العرب</p>
                         <p>بنات الأعوج، الوجيف، لاحق، بنات المسجد، آل ذو العقال، داحس، الغبراء، الجرادة، الحبقاء، النعامة، الشماء، حافل،
                             الشقراء، الزعفران، الحرون، مكتوم، البطين، قرزل، الصريح، الذبير، وغلوي.</p>
@@ -1653,9 +1538,7 @@
                         <p>كنى الطيور</p>
                         <p>النسر أبو يحيى. الغراب أبو زاجر ويقال له ابن دابة. الديك أبو اليقظان وأبو حسان وأبو نبهان. أبو براقش طائر يتلون
                             ألواناً وتسمية العامة أم حبيش ويقال هي الحرباء. العقاب أم هيثم. الجرادة أم حبين. الحمامة أم عوف. الدجاجة أم
-                            مهدي. الهدهد أم حفص. <pb ed="shamela"
-                   n="n76-p43"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5106.xhtml"/> وصف العيون</p>
+                            مهدي. الهدهد أم حفص. <pb ed="shamela" n="n76-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5106.xhtml"/> وصف العيون</p>
                         <p>الأعشى الذي لا يرى إذا أظلم عليه الوقت بالليل. الأغطش الضعيف البصر. الأخفش كذلك يزيد عليه صغر العين. الأحول الذي
                             ينظر إلى المحاجر. الأقبل الذي ينظر إلى عرض أنفه. الأزرق الأخضر الحدقة. الأملج أشد من الزرق وهو الذي يضرب إلى
                             البياض. الأدعج الشديد سواد العين. الأحور الشديد سواد العين الشديد بياض الأبيض منها. الأنجل الواسع العينين في
@@ -1699,9 +1582,7 @@
                             سباحة من قوله تعالى كل في فلك يسبحون أي يسيرون وجد كل شيءٍ جانبه والجد أيضاً شاطئ النهر وهو الجدة وأكثر ما يقال
                             جده بالهاء وبها سميت جدة لأنها ساحل البحر.</p>
                         <p>والغريب أن الجد التي بمعنى بئر في الكلام لم ترد في كتاب البئر لبن الإعرابي من رجال القرن الثالث:</p>
-                        <p>والكتاب كله عَلَى هذا النحو من جزالة الأسلوب ومتانة المعنى وقد راينا من المناسب أن <pb ed="shamela"
-                   n="n76-p44"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5107.xhtml"/> نختم مبحثنا هذا بوصف
+                        <p>والكتاب كله عَلَى هذا النحو من جزالة الأسلوب ومتانة المعنى وقد راينا من المناسب أن <pb ed="shamela" n="n76-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5107.xhtml"/> نختم مبحثنا هذا بوصف
                             منارة الإسكندرية إحدى عجائب العالم السبع قال:</p>
                         <p>أما أنا فأخبرني مخبر الإسكندرية أن داخل سورها أربعة آلاف مسجد وقل آخر ستة آلاف وإن خارجها ألف مسجد وكان ذلك غذ
                             دخلتها سنة إحدى وستين وخمسمائة وهي أصغر مما كانت أولاً إذ بناها الإسكندر بأضعاف كثيرة رأيت بخارجها عَلَى نحو
@@ -1720,9 +1601,7 @@
                             كدور فم البرمة الكبيرة وهكذا أكثر تلك الحروف عَلَى هذا الشكل وباب المنارة مرتفع عن الأرض قد بني له ممشى طوله نحو
                             مائة باع وتحت الممشى قبة قسي شبه القنطرة يدخل الفارس تحت القوس منها ولو رفع يده ما أدرك السمك في الكبار منها
                             وعددها ستة عشر قوساً أولها قصير ثم كلما مضى ارتفع حتى يتصل آخرها بالباب وهو أرفعا سمكاً ودخلنا عَلَى الباب
-                            فمشينا نحو أربعين باعاً فوجدنا <pb ed="shamela"
-                   n="n76-p45"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5108.xhtml"/> عَلَى اليسار باباً
+                            فمشينا نحو أربعين باعاً فوجدنا <pb ed="shamela" n="n76-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5108.xhtml"/> عَلَى اليسار باباً
                             مغلقاً لم ندر ما فيه ومشينا نحو ستين باعاً فوجدنا باباً مفتوحاً فدخلنا من بيت إلى بيت ثمانية عشر بيتاً سوى
                             الزقاق التي تمشي فيها وهي بيوت ينفذ بعضها إلى بعض وحينئذ علمنا أن جوفه فارغ وإنما عددنا من عين يمين الزقاق
                             ويساره ومشينا ستين باعاً فوجدنا أربعة عشر بيتاً ومشينا أربعة وعشرين باعاً فوجدنا سبعة عشر بيتاً ومشينا خمسة
@@ -1741,9 +1620,7 @@
                             الأول المقفل يقال أن فيها مهاوي تنفذ إلى البحر وطول المنارة عَلَى هذا الحساب ثلاث وخمسون قامة ومن الأرض إلى
                             الماء خمس وتحت الماء الظاهر نحو القامة أو أكثر ترمي بالحجر من أعلاه فلا يقع إلى الأرض حتى يمس في الحائط لسعة
                             أسفله وضيق أعلاه وإنما بني هناك ليستدل به عَلَى البلد السائرون اليه في البحر وتوقد في أعلاه النار لأهل المراكب
-                            لئلا <pb ed="shamela"
-                   n="n76-p46"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5109.xhtml"/> يضلوا ولقد فاتنا رؤيته
+                            لئلا <pb ed="shamela" n="n76-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5109.xhtml"/> يضلوا ولقد فاتنا رؤيته
                             فلم نقدر مرسى البلد وكان رئيسنا أيضاً لم يكن دخله قبل ذلك فخفناه وراءنا وادخلتنا الريح في موضع ليس مرسى ثم سلم
                             الله بعد أن أشرفنا عَلَى الهلكة وخرجت إلينا القطائع من البلد فأدخلونا البلد يوماً آخر وكانت العافية والحمد لله
                             اهـ.</p>
@@ -1764,9 +1641,7 @@
                             (تاريخ الطبري) الطبري (شرح السيرة) أبو القاسم السهيلي (المقصورة) ابن دريد (التسلي عن الدنيا) أبو القاسم علي بن
                             محمد عبدوس (بعض التواريخ) إسحق بن الحسن (المعجم) البكري (الأموال) أبو عبيد (قوت القلوب) أبو طالب المكي
                             (الأربعين) الثقفي (شرح خطبة أدب الكاتب) ابن السيد (الهداية) المكي (المعلم) المازري (الأمالي وذيله) أبو علي
-                            (المعاني) النحاس (الجمهرة) ابن دريد <pb ed="shamela"
-                   n="n76-p47"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5110.xhtml"/> (التفسير) ابن عباس
+                            (المعاني) النحاس (الجمهرة) ابن دريد <pb ed="shamela" n="n76-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5110.xhtml"/> (التفسير) ابن عباس
                             (الفوائد) أبو قاسم الإدريسي (الأمثال) أبو عبيد القاسم بن سلام (شرح الأمثال) البكري (تاج اللغة) الجوهري (اللآلي
                             في شرح الأمالي) أبو عبيد البكري (شرح الحديث) يوسف الخطابي (المعجم) أبو عمر المقري (التفسير) ابن سلام (شرح السير)
                             عبد الرحمن الخثعمي (الكبير) ابن إسحاق (المسند) البزار (السير) ابن داود (تفضيل العرب وعيون الأخبار والمعارف) ابن
@@ -1782,18 +1657,16 @@
                         <p>عبد الله مخلص. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n76-p48"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5111.xhtml"/>
+                        <pb ed="shamela" n="n76-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5111.xhtml"/>
                         <head>نخبة الدهر في عجائب البر والبحر</head>
                         <p>كثير من كتبنا كادت تفقد بتة لو لم يتداركها الإفرنج بابتياعها منا أولاً وينشرها بالطبع ثانياً ومن جملة هذه
                             المخطوطات هذا الكتاب لشمس الدين أبي عبد الله محمد ابن أبي طالب الأنصاري الصوفي الدمشقي المعروف بشيخ الربوة.
                             فبينا نجد منة نسخ هذا التأليف أربع نسخ في شمال أوربا فقط الأولى في كوبنهاغ والثانية في ليدن والثالثة في بطرسبرغ
                             والرابعة في لندن وفي هذه عدة نسخ منه لا نجد من هذا الكتاب الذي ألف في دمشق بل ولا في سورية نسخة مخطوطة فيما نعلم
-                            حتى تداركه المستشرق فرين الروسي والمستشرق مهرن الدانيمركي وطبعاه سنة 1865م 1386هـ ونسخة طبعه اليوم غزيرة جداً
+                            حتى تداركه المستشرق فرين الروسي والمستشرق مهرن الدانيمركي وطبعاه سنة  <tei:num value="1865" xml:lang="ar">١٨٦٥</tei:num> م  <tei:num value="1386" xml:lang="ar">١٣٨٦</tei:num> هـ ونسخة طبعه اليوم غزيرة جداً
                             كسائر الكتب العربية التي يطبعها المستشرقون الأوربيون لمنفعتهم الخاصة في الأكثر.</p>
                         <p>وشيخ الربوة هذا كان من أعجيب الدهر معاصراً لأبي الفدا صاحب حماة العلامة المشهور قال فيه صاحب الدرر الكامنة أنه
-                            كان يصنف من كل علم سواءٌ عرفه أم لا لفرط ذكائه. قال الصفدي ولد سنة 645 وعانى الأشغال فمهر في علم الرمل والأوفاق
+                            كان يصنف من كل علم سواءٌ عرفه أم لا لفرط ذكائه. قال الصفدي ولد سنة  <tei:num value="645" xml:lang="ar">٦٤٥</tei:num>  وعانى الأشغال فمهر في علم الرمل والأوفاق
                             ونحو ذلك وكان ذكياً وعبارته حلوة ما تمل محاضرته وكان يدعي أنه يعرف الكيمياءَ ودخل عَلَى الأفرم فأوهمه شيئاً من
                             ذلك فولاه مشيخة الربوة وله السياسة في الفراسة مطبوع وله غيره مثل كتاب في الأصول ومن شعره:</p>
                         <lg type="bayt">
@@ -1804,15 +1677,13 @@
                             <l>كنحلة طرفاها في مقابلة </l>
                             <l> فيها من اللسع ما فيها من العسل</l>
                         </lg>
-                        <p>توفي في صفد سنة 727 بعد أن لحقه صمم قبل موته وذهبت عينه الواحدة وكان صبوراً عَلَى الفقر والوحدة كثير الآلام
+                        <p>توفي في صفد سنة  <tei:num value="727" xml:lang="ar">٧٢٧</tei:num>  بعد أن لحقه صمم قبل موته وذهبت عينه الواحدة وكان صبوراً عَلَى الفقر والوحدة كثير الآلام
                             والأوجاع وكتابه هذا في العلم بهيئة الأرض وأقاليمها وتقاسيمها واختلاف القدماء في ذلك وعلاماتها ومعمورها من البحار
                             المتصلة والمنفصلة والجزائر والجبال والأنهار والجرارات والآجام العظيمة والعيون والممالك ومسالكها والأمصار للكبار
                             ورساتيقها والآثار القديمة والعمائر العظيمة والعيون والآبار والينابيع العجيبة والحيوان النادر الشكل والنبات
                             الغريب والمعادن الذائبة المتطرقة وتوابعها في المعدنية والأحجار الشريفة الثمينة والتي تليها في الشرف والقيمة
                             والتي تلي ذلك مما هو ممتاز من التراب لوصف خاص أو خاصة ذاتها ووصف ألوان الأحجار الثمينة وطبائعها وخواصها ونعت
-                            بقاعها ومعادنها وذكر أسباب توليدها عَلَى ما ذكره الأقدمون وذكر مساحة <pb ed="shamela"
-                   n="n76-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5112.xhtml"/> الأرض ومسافات أقسامها
+                            بقاعها ومعادنها وذكر أسباب توليدها عَلَى ما ذكره الأقدمون وذكر مساحة <pb ed="shamela" n="n76-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5112.xhtml"/> الأرض ومسافات أقسامها
                             بالساعات والأميال والبرد والفراسخ والدرج الفلكية وأطوال الجبال وعرضها ونعت الأمم المبثوثين فيها وذكر معالم
                             أنسابهم وآبائهم الأولين وذكر عامة اختلاف الأمم المشهورين منهم ونعت خلقهم وذكر كخصائص البلاد المختصة ببقعة دون
                             بقعة وبلد دون بلد وذكر ظاهر خصائص البشر المشتركة فيها مع النوع الإنساني دون باقي الحيوانات ونعت معالم رسوم
@@ -1830,9 +1701,7 @@
                             جغرافية بلاد الشام بحيث يصور لك حالتها في القرن السابع والثامن والغالب أنه طافها كلها ولم يقتصر في جغرافية مصر
                             عن هذه الغاية. أما في بحثه عن الآثار فإنه في الغالب يتلقى كلامه عن الأفواه أو عمن ألفوا في القصص والحكايات
                             ليدهشوا العامة وهنا يؤخذ كلامه بالحذر خصوصاً وكتابه قد وسمه بعجائب البر والبحر فهو يحشوه من هذا القبيل ومنها
-                            المفيد من ذلك. <pb ed="shamela"
-                   n="n76-p50"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5113.xhtml"/> أما في الجغرافية فقد وصف
+                            المفيد من ذلك. <pb ed="shamela" n="n76-p50" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5113.xhtml"/> أما في الجغرافية فقد وصف
                             فيه بلاد السودان والزنج والبربر وغيرهم في أواسط أفريقية ما لم يطلع عليه علماء الجغرافية إلا في العهد الأخير وقد
                             وصف من أمم جزائر البحر المحيط الهندي وما والاه من الأمم وأورد من أسمائهم ما لا يعرف الآن ولعله قد حرف بالطبع لأن
                             طبع هذا الكتاب يغلب عليه التحريف في الأكثر أما في أوربا فقد ألم إلماماً خفيفاً ببعض مدن جنوبها أما شمالها فقد
@@ -1851,9 +1720,7 @@
                             باستيلاء الرياح العاصفة عَلَى بعض أجزاء الأرض بالكشف والحفر إلى أن يصير ما غلبت عليه صوراً ومن صحة ذلك أنه في
                             سنة تشع عشرة وسبعمائة كان الجبل الأقرع شجر زيتون كثير نيف عَلَى ثلاثمائة فحمله الريح إلى أرض بعيدة بترابه وكأنه
                             لم يكن مخلوقاً إلا من تلك الأرض وكأنه لم يكن عَلَى الجبل شجر مزروع قط وفي تلك السنة أيضاً حملت الريح ديراً قال
-                            له دير سمعان قريب من تلك الأرض بحجارته ورهبانه وما كان في الدير من قمحهم وخزينهم <pb ed="shamela"
-                   n="n76-p51"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5114.xhtml"/> وبقرهم ودوابهم وعددهم
+                            له دير سمعان قريب من تلك الأرض بحجارته ورهبانه وما كان في الدير من قمحهم وخزينهم <pb ed="shamela" n="n76-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5114.xhtml"/> وبقرهم ودوابهم وعددهم
                             حتى كأنهم لم يكونوا ولم يعلم لهم خبر ولم يطالع لهم عَلَى أثر وسطر بذلك محضر شرعي وطلعوا به إلى السلطان محمد بن
                             قلاوون خلد الله سلطانه ورحم ملوك المسلمين أجمعين. وفي سنة سبعمائة نزل جبل عالٍ شامخ في بيت المقدس بقرب من عين
                             فروج التي عَلَى الطريق فبقدر ما كان مرتفعاً توطأ في الأرض وهو الآن أرق مياه تتفق لها حركة عَلَى جزء من الأرض دون
@@ -1871,9 +1738,7 @@
                             وكان له سبحة فيها مائة حبة جوهر وزون كل حبة مثقال اشتريت كل حبة منها بألف مثقال. وأهدى بعض ملوك الهند إلى الرشيد
                             قضيب زمرد أطول من ذراع عَلَى رأسه تمثال طائر ياقوت أحمر لا قيمة له فقوّم هذا الطائر بمائة ألف دينار. ودفع مصعب
                             بن الزبير حين أس بالقتل إلى مولاه زياد فصاً من الياقوت الأحمر وقال: أُنج بهذا كانت قيمته ألف ألف درهم.</p>
-                        <p>وسقط من يد الرشيد فص من ارض كان يتصيد بها فاغتنم لفقده فذكر له فص ابتاعه صالح <pb ed="shamela"
-                   n="n76-p52"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5115.xhtml"/> صاحب المصلى بعشرين ألف
+                        <p>وسقط من يد الرشيد فص من ارض كان يتصيد بها فاغتنم لفقده فذكر له فص ابتاعه صالح <pb ed="shamela" n="n76-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5115.xhtml"/> صاحب المصلى بعشرين ألف
                             دينار فأحضره ليكون عوضاً عما سقط منه فلم يره عوضاً. ووهب المأمون للحسن بن سهل عقداً قيمته ألف ألف درهم ومائة ألف
                             درهم وشتة عشر ألف درهم. وكان فيما أَهدى ملك الهند إلى كسرى جام ياقوت أحمر فتحه شبر في شبر مملوء دراً قيمة كل درة
                             ألف وخمس مائة مثقال. وكان لمحمود صاحب غزنة حجر ياقوت كمصاب المرآة إذا ركب قبض عليه وبيمينه فتبين طرفاه من جانبي
@@ -1891,9 +1756,7 @@
                             المنسيتان في يد الملك الظاهر فقال ما كان إلا كاملاً فاستدعى بعريف سوق الصرف وأراه القطعتين وقال له إن مسكت من
                             هذا قطعة مع أحد الناس فعلت معك كل خير فما كان إلا قليلاً وأتى الغلام ليبيعها فمسك وأتي به إلى الملك الظاهر
                             فوجدوا الباقي معه فأخذه الظاهر بيبرس ودفع إلى الغلام عشرة آلاف درهم.</p>
-                        <p>ولما كان الملك المنصور قلاوون رحمه الله بدمشق سنة اثنين وثمانين وستمائة أُحضر إليه <pb ed="shamela"
-                   n="n76-p53"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5116.xhtml"/> من المدرسة الجوهرية
+                        <p>ولما كان الملك المنصور قلاوون رحمه الله بدمشق سنة اثنين وثمانين وستمائة أُحضر إليه <pb ed="shamela" n="n76-p53" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5116.xhtml"/> من المدرسة الجوهرية
                             مائدة ذهب وزنها ثمانية أرطال وربع بالدمشقي وعليها تمثال دجاجة من ذهب وصيصان من ذهب في منقار كل واحد لؤلؤة بقدر
                             الحمصة وفي منقار الدجاجة درة بقدر البندقة وفي وسط المائدة سكرجة من زمرد سعتها مثل كفة الميزان التي للدرهم السوقي
                             الكبير مملوءة حبات من الدر قيل أن الملك الناصر صاحب حلب أودعها لنجم الدين الجوهري فأكنزها بدهليز مدرسته فوشى بها
@@ -1911,9 +1774,7 @@
                             واللصوص وخلف مالاً عظيماً وقد حمل من تركته لأنه لم يعقب ما هذه نسخته: العين أربعمائة ألف وخمسة وأربعون ألفاً
                             وخمسمائة وسبعة وأربعون ديناراً الورق ثلاثمائة ألف وعشرون ألفاً وتسعمائة وسبعون مثقالاً. آنية الفضة ألف وتسعمائة
                             وخمس وسبعون رطلاً. ومما وزن بالشاهين من آنية الفضة ثلاثة عشر ألفاً وستمائة وخمس وخمسون درهماً ومن الند المعمول
-                            سبعة آلاف وأربعمائة مثقال ومن العود المصري أربعة آلاف وأربعمائة <pb ed="shamela"
-                   n="n76-p54"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5117.xhtml"/> وعشرون مثقالاً ومن
+                            سبعة آلاف وأربعمائة مثقال ومن العود المصري أربعة آلاف وأربعمائة <pb ed="shamela" n="n76-p54" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5117.xhtml"/> وعشرون مثقالاً ومن
                             العنبر خمسة آلاف وعشرون مثقالاً ومن نوافج المسك ثمانمائة وستون نافجة ومن المسك المنتور ألف وستمائة مثقال ومن
                             المسك ألفا ألف وستة وأربعون مثقالاً ومن البرمكية ألف وثلاثمائة وتسعة وتسعون مثقالاً ومن الغالية ثلاثمائة وستة
                             وستون مثقالاً ومن الثياب المنسوجة بالذهب ثمانية عشر ثوباً قيمة كل واحد ثلاثمائة دينار ومن السروج ثلاثة عشر سرجاً
@@ -1931,9 +1792,7 @@
                             جوهر مولى العبيديين ثلاثة آلاف ألف دينار ومائتي ألف ألف قال المعتنون بعلم ذلك أن سبب تقهقره أن الملوك لم تسمح
                             نفوسها بما كان يصرف في الرجال المتوكلين بحفر خلجانه وإصلاح جسوره ورزم قناطره وسد ترعه وكانوا عَلَى ما حكاه ابن
                             لهيعة مائة ألف رجل وعشرين ألف رجل مرتين عَلَى كور مصر سبعون ألفاً للصعيد وخمسون ألفاً لأسفل الأرض.</p>
-                        <p>ويقال أن ملوك القبط كانوا يقسمون الخراج أربعة أقسام قسم لخاصة الملك وقسم لأرزاق <pb ed="shamela"
-                   n="n76-p55"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5118.xhtml"/> الجند وقسم لمصالح الأرض
+                        <p>ويقال أن ملوك القبط كانوا يقسمون الخراج أربعة أقسام قسم لخاصة الملك وقسم لأرزاق <pb ed="shamela" n="n76-p55" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5118.xhtml"/> الجند وقسم لمصالح الأرض
                             وقسم آخر لحادثة تحدث ومسحت أرض مصر في أيام هشام بن عبد الملك بن مروان فكان ما يركبه الماءُ العامر والغامر مائة
                             ألف ألف فدان واعتبر أحمد بن المدير ما يصلح للزرع بمصر وقت ولايته فوجده أربعة وعشرين ألف ألف فدان والباقي قد
                             استجر وتلف واعتبر مدة الحرث فوجدها ستين يوماً والحرث الواحد يحرث خمسين فداناً فكانت محتاجة إلى أربعمائة ألف حراث
@@ -1953,9 +1812,7 @@
                             يؤخذ ارتفاعها يصرف في عمارة ترعها وجسورها والثالث لا يستأدى خراج كل صنف إلا منه عند استهلاله والسلام اهـ. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n76-p56"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5119.xhtml"/>
+                        <pb ed="shamela" n="n76-p56" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5119.xhtml"/>
                         <head>بضعة أيام في الجليل</head>
                         <p>لا تعرف البلاد كما هي إلا برؤية القرى والدساكر قبل القواعد والحواضر فالفلاح ميزان العمران إن سعد سعدت البلاد كلها
                             وإن شقي شقيت خصوصاً في مثل هذا القطر الذي يعول عَلَى الزراعة في حياته وتجارته وصناعاته ضعيفة ضئيلة.</p>
@@ -1976,9 +1833,7 @@
                         <p>بتنا ليلتنا في قرية ظاهر في عكا اسمها المكر ولعلها المقر. ومن الغد ركبنا ومعنا دليل يدلنا عَلَى طريق صفد فأعددنا
                             السير حتى وصلنا قرية الرامة وهي في منتصف الطريق عَلَى نحو خمس ساعات من عكا وخمس من صفد بعد أن مررنا بقرية مجد
                             الكروم وارض دير الأسد وبعن ونحف ويجور. وزراعة هذه البلاد الحنطة والشعير والكرسنة والحلبة والبطيخ وأشجارها التين
-                            والزيتون والليمون الحلو وهو في قرية الرامة فقط كما أن <pb ed="shamela"
-                   n="n76-p57"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5120.xhtml"/> زيتونها أجود ما وقعت
+                            والزيتون والليمون الحلو وهو في قرية الرامة فقط كما أن <pb ed="shamela" n="n76-p57" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5120.xhtml"/> زيتونها أجود ما وقعت
                             العين عليه في هذه الديار وما ذلك إلا لأن أهلها توافروا عَلَى العناية بأشجارهم وحموها من فؤوس المحتطبين وأسنان
                             المواشي وحوطوها وحرثوا أرضها وتلطفوا في قطف ثمرها حتى جادت غلة زيتونهم كل سنتين والزيتون هنا كما هو في معظم
                             البلدان يحمل سنة ويمحل أخرى وتضمن أعشار زيتون الرامة فقط بألف مائتي ليرة.</p>
@@ -1996,9 +1851,7 @@
                             ورأوا الخروج عن مألوف عادات الآباء في الاكتساب مما يقربهم من الفقر.</p>
                         <p>قال لنا ثقة أن ابن سعد هذا ينفق في السنة من فضل ماله عَلَى تعليم بعض أبناء طائفته وإقامة المعابد والمدارس لها في
                             القرى مبلغاً لا يستقل به وقد كانت زراعته ومعاصره خير مرشد لجيرانه ولاسيما المسيحيين فقلدوه وأصبحت المعامل
-                            القديمة تخرج الزيت أحسن من ذي قبل وتربح كذلك ونحن لو جرى الأغنياء عَلَى هذه الصورة في تحسين مزارعهم <pb ed="shamela"
-                   n="n76-p58"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5121.xhtml"/>
+                            القديمة تخرج الزيت أحسن من ذي قبل وتربح كذلك ونحن لو جرى الأغنياء عَلَى هذه الصورة في تحسين مزارعهم <pb ed="shamela" n="n76-p58" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5121.xhtml"/>
                             والإفضال من أموالهم بحسب الطاقة لرقيت البلاد في بضع سنين درجة مهمة في العمران ولكن من أغنيائنا من ابتلوا بالشح
                             الممقوت والجهل المطبق حتى أنهم ليضنون بالقرش في تعليم أولادهم ولا يستكثرون المئات ينفقونها عَلَى شهواتهم وتكبير
                             مظاهرهم بالباطل في عيون العامة والجهلاء.</p>
@@ -2017,9 +1870,7 @@
                         <p>إن الأسف عَلَى عقول لا يستفاد من ذكائها كالأسف عَلَى تربة لا يستفاد من زكائها وكم في البلاد من أراضٍ معطلة لا
                             يستطيع أكثر مالكيها تعهدها لكزازة في أيديهم وصغر في عقولهم وضعف في نظرهم. نحن لا نلوم الصهيونيين وغيرهم من
                             المستعمرين في بلاد الجليل وفلسطين بقدر ما نلوم أولئك الذين يملكون الأملاك الواسعة مما لو طبقت الحكومة عليهم
-                            قانونها القاضي بنزع الملك من صاحبه إذا لم يزرعه ثلاث سنين متوالية لنزعت <pb ed="shamela"
-                   n="n76-p59"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5122.xhtml"/> جانباً مهماً من الأراضي
+                            قانونها القاضي بنزع الملك من صاحبه إذا لم يزرعه ثلاث سنين متوالية لنزعت <pb ed="shamela" n="n76-p59" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5122.xhtml"/> جانباً مهماً من الأراضي
                             الزراعية في السهول والقيعان والجبال من يد مالكيها أو مغتصبيها.</p>
                         <p>نوجه هذا الكلام القارص إلى الأغنياء لأنهم هم مادة البلاد ولأنا لا نتوقع من الفقير عملاً يذكر وحكومته لم تربه
                             التربية المطلوبة في الأمس ليحسن العمل المطلوب منه اليوم. فقد مررنا في طريقنا إلى صفد بقرىً كثيرة وكنا نشهد الفرق
@@ -2038,9 +1889,7 @@
                             بلاد تدعي المدنية رجاء أن يجيء غداً موظف يعيش كلاً حَلَى عاتق الأمة تشهد الوجيه في غير المسلمين يعلم أولاده
                             الصناعات الحرة كالهندسة والزراعة والتجارة وغير ذلك ولك بهذا أن نحكم عَلَى مستقبل أولادهم وأولادنا.</p>
                         <p>نحن لا نعجب لارتقاء الزراعة في قرية الجاعونة من بلاد صفد ولا المجدل من أعمال طبرية ولا زمارين من عمل حيفا مثلاً
-                            لأنها ملك لجمعيات صهيونية غنية في الغرب تنفق <pb ed="shamela"
-                   n="n76-p60"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5123.xhtml"/> عليها لمقصد ديني سياسي
+                            لأنها ملك لجمعيات صهيونية غنية في الغرب تنفق <pb ed="shamela" n="n76-p60" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5123.xhtml"/> عليها لمقصد ديني سياسي
                             عن سعة. ولكننا نعجب كل العجب من مسلم لا يحذو في ترتيبه ومعاشه حذو أخيه المسيحي ففي مزارع الإسرائيليين تعمل رؤوس
                             أموال شركاتهم ومعارف أوربا في تجويد الزراعة وفي مزارع الوطنيين غير المسلمين يعمل حب الترتيب وحسن التربية وإرادة
                             الكسب والرفاهية فقط.</p>
@@ -2049,7 +1898,7 @@
                             قضاء صفد وبلادهم جبلية كما هي العادة. وأهم ما شهدناه قبل صفد بساعتين شلال ماء يسقي إحدى القرى هناك يجري من شاهق
                             جبلٍ عالٍ ويضيع بين الصخور في الطريق وهو بمائه دون شلال تل شهاب في حوران إلا أنه يمكن استخدامه فيما نحسب لتنوير
                             عكا وحيفا بالكهربائية وتسيير ترام كهربائي فيهما.</p>
-                        <p>وقد أصبحت بلاد صفد وهي 49 قرية ومزرعة جرداء من غاباتها بفضل الإهمال وكانت منذ عشرين سنة كثيرة ومنها الضخم تسد
+                        <p>وقد أصبحت بلاد صفد وهي  <tei:num value="49" xml:lang="ar">٤٩</tei:num>  قرية ومزرعة جرداء من غاباتها بفضل الإهمال وكانت منذ عشرين سنة كثيرة ومنها الضخم تسد
                             الحاجة وتلطف الهواء وتعد نزول الأمطار حتى أن القوم هنا يبحثون عن جذوع الحراج للوقود والتدفئة الآن وما ندري بم
                             يصطلون ويوقدون بعد سنين.</p>
                         <p>ومدينة صفد تربو نفوسها عَلَى ثلاثين ألفاً نصفهم من الإسرائيليين وهي عَلَى عدة قمم وآكام عالية وفيها المياه مثل
@@ -2058,24 +1907,20 @@
                             ليرة عَلَى طريق يربط صفد بطبرية والمسافة بينهما خمس ساعات أيضاً لاتصلت صفد بالخط الحجازي وأصبح ابن دمشق يأتي إلى
                             صفد في يوم واحد خصوصاً والعلائق التجارية والزراعية مستحكمة بين الصفديين وأهل ولاية سورية المتاخمة قضائهم لقضاء
                             القنيطرة حتى أن في صفد حياً خاصاً بالأكراد كما لهم في صالحية دمشق.</p>
-                        <p>وطول جبل الزابود المشهور في كتب وصف البلدان نصف ساعة من شمال ميرون للغرب <pb ed="shamela"
-                   n="n76-p61"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5124.xhtml"/> وفي قمته مياه عذبة
+                        <p>وطول جبل الزابود المشهور في كتب وصف البلدان نصف ساعة من شمال ميرون للغرب <pb ed="shamela" n="n76-p61" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5124.xhtml"/> وفي قمته مياه عذبة
                             ويناوحه من الجهة الثانية جبل كنعان وهو أخصب وأمرع وأنقى هواء فصفد بين منفرج هذين الجبلين ولكنها هي أيضاً مبنية
                             عَلَى رؤوس جبال أشبه بمدينة الآستانة ويذكرون أن في رأس وادي الطواحين غربي صفد عيناً اسمها عين جن يتجبس منها ماء
                             وينقطع في الساعة ولا تزال كذلك عَلَى الدهر وماؤها يدير مطحنة.</p>
                         <p>والطريق من صفد إلى طبرية كله انحدار قوي حتى يصل إلى بحيرة طبرية والهواء يختلف في الحال من البرودة إلى الحرارة
-                            لوقوع صفد في رؤوس الجبال وارتفاعه 838 متراً عن سطح البحر وهو أعلى ارتفاع في أرض الجليل ولانحطاط طبرية عن سطح
-                            البحر 208 أمتار. ولئن كانت صفد تعد من المدن المقدسة عند اليهود وينزل المسيح إلى الأرض منها بحسب رأيهم فإن
+                            لوقوع صفد في رؤوس الجبال وارتفاعه  <tei:num value="838" xml:lang="ar">٨٣٨</tei:num>  متراً عن سطح البحر وهو أعلى ارتفاع في أرض الجليل ولانحطاط طبرية عن سطح
+                            البحر  <tei:num value="208" xml:lang="ar">٢٠٨</tei:num>  أمتار. ولئن كانت صفد تعد من المدن المقدسة عند اليهود وينزل المسيح إلى الأرض منها بحسب رأيهم فإن
                             المستعمرين من الإسرائيليين لم ينزلوها إلا في القرن السادس عشر وقد استولى عليها الصليبيون واستخلصها منهم صلاح
-                            الدين يوسف ثم سقطت في يد الظاهر بيبرس واحتلها الفرنسيس سنة 1799 مدة قليلة وفي سنة 1837 أصابها زلزال جعل عاليها
+                            الدين يوسف ثم سقطت في يد الظاهر بيبرس واحتلها الفرنسيس سنة  <tei:num value="1799" xml:lang="ar">١٧٩٩</tei:num>  مدة قليلة وفي سنة  <tei:num value="1837" xml:lang="ar">١٨٣٧</tei:num>  أصابها زلزال جعل عاليها
                             سافلها ولم يعد إليها بعض الرونق إلا في العهد الأخير. ويقل الزيتون في قضاء طبرية اللهم إلا ما كان في قريتي حطين
-                            ولوبية وعدد قرى هذا القضاء 26 أكثرها ملك للصهيونيين ويوشكوا أن يبتاعوا البقية الباقية فيحيونها بعد مواتها. </p>
+                            ولوبية وعدد قرى هذا القضاء  <tei:num value="26" xml:lang="ar">٢٦</tei:num>  أكثرها ملك للصهيونيين ويوشكوا أن يبتاعوا البقية الباقية فيحيونها بعد مواتها. </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n76-p62"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5125.xhtml"/>
+                        <pb ed="shamela" n="n76-p62" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5125.xhtml"/>
                         <head>أخبار وأفكار</head>
                         <p>مخطوطات نادرة في مكتبة شيخ الإسلام بالمدينة المنورة</p>
                         <p>إتحاف الأخصا بفضائل المسجد الأقصى للشيخ إبراهيم بن محمد الأسيوطي. الأعلام بإعلام بلد الله الحرام للشيخ قطب الدين
@@ -2094,9 +1939,7 @@
                             الرحلة القدسية للشيخ عبد الغني النابلسي. الحقيقة والمجاز في رحلة بلاد الشام ومصر والحجاز له أيضاً. الحلية
                             الحقيقية لا المجازية في الرحلة الحجازية الثانية له أيضاً، ومنها أراد أن حلة الإحسان في الرحلة إلى جبل لبنان له
                             أيضاً. دار السحابة في بيان مواضع وفيات الصحابة للعلامة حسن بن محمد الصنعاني. درر الفرائد المنظومة في أخبار الحاج
-                            وطريق مكة المعظمة لعبد القادر بن ممد الأنصاري. الدرة المنصان (؟) فيما يحدث في دولة آل عثمان <pb ed="shamela"
-                   n="n76-p63"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5126.xhtml"/> لمحسن بن
+                            وطريق مكة المعظمة لعبد القادر بن ممد الأنصاري. الدرة المنصان (؟) فيما يحدث في دولة آل عثمان <pb ed="shamela" n="n76-p63" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5126.xhtml"/> لمحسن بن
                             كمال. رحلة الإمام الشافعي من مكة المكة إلى المدينة المنورة والتقاؤه بالإمام مالك لسيدي عبد الوهاب الشعراني.
                             رسالة في دعوى الشرف من جهة الأم هل تصح أم لا لإسماعيل تائب. الروض المعطار في أخبار الأقطار في السير والأخبار
                             لمحمد بن عبد المنعم الحميري. الروض المغرس في فضائل البيت المقدس لعبد الوهاب بن عمر الحسيني. الروضة المستطابة
@@ -2114,9 +1957,7 @@
                             في فضل الصحابة. محاضرة الأوائل ومسامرة الأواخر تلخيض كتاب الوسائل إلى معرفة الأوائل لعلي دده. المختصر في أخبار
                             البشر للملك المؤيد إسماعيل صاحب حماة. المذيل عَلَى الروضتين في اخبار الدولتين النورية والصلاحية لشهاب الدين
                             المقدسي المعروف بأبي شامة. المستجاد من فعلات الأجواد لأبي محسن بن علي التنوخي. المستقصى في فضائل المسجد الأقصى
-                            لنصر الدين المقدسي. مصباح الظلام في المستغيثين بخير الأنام لشمس الدين المزالي. منايح الكرم في <pb ed="shamela"
-                   n="n76-p64"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5127.xhtml"/> أخبار البيت
+                            لنصر الدين المقدسي. مصباح الظلام في المستغيثين بخير الأنام لشمس الدين المزالي. منايح الكرم في <pb ed="shamela" n="n76-p64" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5127.xhtml"/> أخبار البيت
                             وولاة الحرم لتقي الدين الناسي. نبذة في أمور النقود الإسلامية للمقريزي. النجوم الزواهر في معرفة الأواخر لأحمد بن
                             خليل الدمشقي الصالحي. اليمين في تاريخ عين الدولة السلطان محمود بن بكتكين للعتبي. الدر المنتظم في مناقب عارف
                             الحكم لإبراهيم أفندي بن أحمد أفندي. تاريخ المدينة للمراغي. المحاضرات والمحاورات للإمام السيوطي وبخطه كتاب
@@ -2124,183 +1965,169 @@
                         <p>أحمد إبراهيم خربوطلي.</p>
                         <p>الكبريات</p>
                         <p>أطول الأقنية في العالم</p>
-                        <p>أطول قناة في العالم قناة مونت سانت غوذرد (إيطاليا) طولها 48480 قدماً أو نحو عشرة أميال.</p>
-                        <p>وطول قناة مونت قينز (إيطاليا) 39840 قدماً أو نحو سبعة أميال.</p>
-                        <p>وطول قناة هوساكِ (ماستشوستس الولايات المتحدة) 25031 قدماً أو نحو أربعة أميال ونصف الميل.</p>
-                        <p>وطول قناة نوخستونغو 21659 قدماً أو نحو أربعة أميال.</p>
-                        <p>وطول قناة سيوترو 20028 قدماً أو أربعة أميال.</p>
-                        <p>وطول كل من قناتي بامسن وميدوي (إنكلترا) 1880 قدماً أو حوالى الميلين.</p>
+                        <p>أطول قناة في العالم قناة مونت سانت غوذرد (إيطاليا) طولها  <tei:num value="48480" xml:lang="ar">٤٨٤٨٠</tei:num>  قدماً أو نحو عشرة أميال.</p>
+                        <p>وطول قناة مونت قينز (إيطاليا)  <tei:num value="39840" xml:lang="ar">٣٩٨٤٠</tei:num>  قدماً أو نحو سبعة أميال.</p>
+                        <p>وطول قناة هوساكِ (ماستشوستس الولايات المتحدة)  <tei:num value="25031" xml:lang="ar">٢٥٠٣١</tei:num>  قدماً أو نحو أربعة أميال ونصف الميل.</p>
+                        <p>وطول قناة نوخستونغو  <tei:num value="21659" xml:lang="ar">٢١٦٥٩</tei:num>  قدماً أو نحو أربعة أميال.</p>
+                        <p>وطول قناة سيوترو  <tei:num value="20028" xml:lang="ar">٢٠٠٢٨</tei:num>  قدماً أو أربعة أميال.</p>
+                        <p>وطول كل من قناتي بامسن وميدوي (إنكلترا)  <tei:num value="1880" xml:lang="ar">١٨٨٠</tei:num>  قدماً أو حوالى الميلين.</p>
                         <p>أشهر جسور العالم</p>
-                        <p>جسر بروكلين - بوشر ببناء جسر بروكلين نيورك العظيم في سنة 1870 وأتم بناؤه في سنة 1883 وقد كلف خمسة عشر مليون
+                        <p>جسر بروكلين - بوشر ببناء جسر بروكلين نيورك العظيم في سنة  <tei:num value="1870" xml:lang="ar">١٨٧٠</tei:num>  وأتم بناؤه في سنة  <tei:num value="1883" xml:lang="ar">١٨٨٣</tei:num>  وقد كلف خمسة عشر مليون
                             دولار.</p>
-                        <p>جسر شلالات نياغارا - بني هذا الجسر الهائل فوق شلالات نياغارا الشهيرة (الولايات المتحدة) من الفولاذ طوله 910 أقدام
+                        <p>جسر شلالات نياغارا - بني هذا الجسر الهائل فوق شلالات نياغارا الشهيرة (الولايات المتحدة) من الفولاذ طوله  <tei:num value="910" xml:lang="ar">٩١٠</tei:num>  أقدام
                             وبلغ وزن الفولاذ الذي ذهب في سبيل بنائه اثني عشر ألف قنطار وبلغت نفقاته تسعمائة ألف دولار.</p>
-                        <p>ولهذه الشلالات العجيبة جسراً آخر شيد بين سنة 1852 وسنة 1853 طوله 821 قدماً ويعلو عن سطح البحر 245 قدماً ويتحمل
-                            ثقل أربعة آلاف وثمانمائة قنطار. <pb ed="shamela"
-                   n="n76-p65"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5128.xhtml"/> جسر الهافر - يبلغ طول
-                            ذلك الجسر 3271 قدماً وهو مقام عَلَى حجر سماقي من الصوان كلف عشرات الألوف من الدولارات.</p>
-                        <p>جسر بريطانيا - يقطع هذا الجسر الكبير ميناوالس عَلَى علو 103 أقدام عن سطح البحر طوله 1511 قدماً وقد أكمل في سنة
-                            1850 وكلف 3008000 دولار.</p>
-                        <p>جسر لندن - بوشر ببناء جسر لندن الجديدة في سنة 1824 وأتم في سنة 1831 وشيد من الصوان وبلغت نفقاته 7291000 دولار.
+                        <p>ولهذه الشلالات العجيبة جسراً آخر شيد بين سنة  <tei:num value="1852" xml:lang="ar">١٨٥٢</tei:num>  وسنة  <tei:num value="1853" xml:lang="ar">١٨٥٣</tei:num>  طوله  <tei:num value="821" xml:lang="ar">٨٢١</tei:num>  قدماً ويعلو عن سطح البحر  <tei:num value="245" xml:lang="ar">٢٤٥</tei:num>  قدماً ويتحمل
+                            ثقل أربعة آلاف وثمانمائة قنطار. <pb ed="shamela" n="n76-p65" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5128.xhtml"/> جسر الهافر - يبلغ طول
+                            ذلك الجسر  <tei:num value="3271" xml:lang="ar">٣٢٧١</tei:num>  قدماً وهو مقام عَلَى حجر سماقي من الصوان كلف عشرات الألوف من الدولارات.</p>
+                        <p>جسر بريطانيا - يقطع هذا الجسر الكبير ميناوالس عَلَى علو  <tei:num value="103" xml:lang="ar">١٠٣</tei:num>  أقدام عن سطح البحر طوله  <tei:num value="1511" xml:lang="ar">١٥١١</tei:num>  قدماً وقد أكمل في سنة
+                             <tei:num value="1850" xml:lang="ar">١٨٥٠</tei:num>  وكلف  <tei:num value="3008000" xml:lang="ar">٣٠٠٨٠٠٠</tei:num>  دولار.</p>
+                        <p>جسر لندن - بوشر ببناء جسر لندن الجديدة في سنة  <tei:num value="1824" xml:lang="ar">١٨٢٤</tei:num>  وأتم في سنة  <tei:num value="1831" xml:lang="ar">١٨٣١</tei:num>  وشيد من الصوان وبلغت نفقاته  <tei:num value="7291000" xml:lang="ar">٧٢٩١٠٠٠</tei:num>  دولار.
                             وهو أول جسر حجري أقيم في العالم.</p>
-                        <p>وجسر كولبرودال (إنكلترا) بني سنة 1779 وجسر بروتون (إنكلترا) البالغ طوله 1545 قدماً بني في القرن الثالث عشر
+                        <p>وجسر كولبرودال (إنكلترا) بني سنة  <tei:num value="1779" xml:lang="ar">١٧٧٩</tei:num>  وجسر بروتون (إنكلترا) البالغ طوله  <tei:num value="1545" xml:lang="ar">١٥٤٥</tei:num>  قدماً بني في القرن الثالث عشر
                             للميلاد.</p>
                         <p>جسر ريالتو (فينيقي) قيل أن بناء هذا الجسر هو عَلَى شكل أو هيئة الملك ميخائيل وهومبني من عقد واحد من الرخام طوله
-                            890 قدماً ونصف قدم وأتم بناؤه في سنة 1591 وأما جسر سايز (فينيقي) القاطع مسافة بين دار المجرمين ومكان الإعدام فقد
-                            بني سنة 1589.</p>
-                        <p>جسر الثالوث الأقدس - بني هذا الجسر في (فلورنس) سنة 1569 من الرخام الأبيض طوله 322 قدماً ولا ند له من حيث إحكام
+                             <tei:num value="890" xml:lang="ar">٨٩٠</tei:num>  قدماً ونصف قدم وأتم بناؤه في سنة  <tei:num value="1591" xml:lang="ar">١٥٩١</tei:num>  وأما جسر سايز (فينيقي) القاطع مسافة بين دار المجرمين ومكان الإعدام فقد
+                            بني سنة  <tei:num value="1589" xml:lang="ar">١٥٨٩</tei:num> .</p>
+                        <p>جسر الثالوث الأقدس - بني هذا الجسر في (فلورنس) سنة  <tei:num value="1569" xml:lang="ar">١٥٦٩</tei:num>  من الرخام الأبيض طوله  <tei:num value="322" xml:lang="ar">٣٢٢</tei:num>  قدماً ولا ند له من حيث إحكام
                             الصنعة وجمال الفن.</p>
                         <p>وجسر كوفد في (بافيا) بني في القرن الرابع عشر وله مئة عمود من الأعبل (الصوان) الجميل.</p>
-                        <p>جسر سنت لويس - هذا الجسر يقطع نهر ميسيسيبي العظيم في الولايات المتحدة طوله 1524 قدماً وعرضه 50 قدماً وله ثلاثة
-                            عقود كبرى من الفولاذ طول قطر وسطها 502 من الأقدام وارتفاعه 47 ونصف قدم وطول قطر العقد الثالث 502 من الأقدام
-                            وارتفاعه 46 قدماً ودعامات تلك العقود مركوزة عَلَى ركائز صخرية عَلَى عمق 136 قدماً في الماء.</p>
-                        <p>جسر شيكاغو - أقيم جسر شارع (رش) في شيكاغو (الولايات المتحدة) في سنة 1884 وكلف 132000 دولار وهو أكبر جسر يفتح
+                        <p>جسر سنت لويس - هذا الجسر يقطع نهر ميسيسيبي العظيم في الولايات المتحدة طوله  <tei:num value="1524" xml:lang="ar">١٥٢٤</tei:num>  قدماً وعرضه  <tei:num value="50" xml:lang="ar">٥٠</tei:num>  قدماً وله ثلاثة
+                            عقود كبرى من الفولاذ طول قطر وسطها  <tei:num value="502" xml:lang="ar">٥٠٢</tei:num>  من الأقدام وارتفاعه  <tei:num value="47" xml:lang="ar">٤٧</tei:num>  ونصف قدم وطول قطر العقد الثالث  <tei:num value="502" xml:lang="ar">٥٠٢</tei:num>  من الأقدام
+                            وارتفاعه  <tei:num value="46" xml:lang="ar">٤٦</tei:num>  قدماً ودعامات تلك العقود مركوزة عَلَى ركائز صخرية عَلَى عمق  <tei:num value="136" xml:lang="ar">١٣٦</tei:num>  قدماً في الماء.</p>
+                        <p>جسر شيكاغو - أقيم جسر شارع (رش) في شيكاغو (الولايات المتحدة) في سنة  <tei:num value="1884" xml:lang="ar">١٨٨٤</tei:num>  وكلف  <tei:num value="132000" xml:lang="ar">١٣٢٠٠٠</tei:num>  دولار وهو أكبر جسر يفتح
                             ويغلق في العالم للتجارة العامة.</p>
                         <p>جسر فكتوريا - بني هذا الجسر في مونتريال كندا وهو من اكبر وأشهر جسور العالم طوله نحو ميلين.</p>
-                        <p>جسر كليفلند أوهايو الولايات المتحدة طوله 3211 قدماً وعرضه 64 قدماً وسمكه 42 <pb ed="shamela"
-                   n="n76-p66"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5129.xhtml"/> قدماً.</p>
+                        <p>جسر كليفلند أوهايو الولايات المتحدة طوله  <tei:num value="3211" xml:lang="ar">٣٢١١</tei:num>  قدماً وعرضه  <tei:num value="64" xml:lang="ar">٦٤</tei:num>  قدماً وسمكه  <tei:num value="42" xml:lang="ar">٤٢</tei:num>  <pb ed="shamela" n="n76-p66" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5129.xhtml"/> قدماً.</p>
                         <p>أكبر أشجار العالم</p>
                         <p>أكبر أشجار العالم هي في قضائي كلفرس ومربوسا كلفرنيا الولايات المتحدة اكتشفها لأول مرة صياد اسمه (دود) في ربيع سنة
-                            1852 علو أصغرها 275 قدماً وعلو أكبرها 335 قدماً وقطرها 43 قدماً وهي غريبة الشكل ويبلغ عددها 427 شجرة.</p>
+                             <tei:num value="1852" xml:lang="ar">١٨٥٢</tei:num>  علو أصغرها  <tei:num value="275" xml:lang="ar">٢٧٥</tei:num>  قدماً وعلو أكبرها  <tei:num value="335" xml:lang="ar">٣٣٥</tei:num>  قدماً وقطرها  <tei:num value="43" xml:lang="ar">٤٣</tei:num>  قدماً وهي غريبة الشكل ويبلغ عددها  <tei:num value="427" xml:lang="ar">٤٢٧</tei:num>  شجرة.</p>
                         <p>أكبر حدائق العالم</p>
-                        <p>أكبر حدائق العالم حديقة الصخر الأصفر في غربي الولايات المتحدة طولها من الشمال إلى الجنوب 65 ميلاً ومن الشرق إلى
-                            الغرب 55 ميلاً فتكون مساحتها 3575 ميلاً مربعاً وتعلو عن سطح البحر أكثر من ستة آلاف قدم ومشاهدها الطبيعية لا مثيل
+                        <p>أكبر حدائق العالم حديقة الصخر الأصفر في غربي الولايات المتحدة طولها من الشمال إلى الجنوب  <tei:num value="65" xml:lang="ar">٦٥</tei:num>  ميلاً ومن الشرق إلى
+                            الغرب  <tei:num value="55" xml:lang="ar">٥٥</tei:num>  ميلاً فتكون مساحتها  <tei:num value="3575" xml:lang="ar">٣٥٧٥</tei:num>  ميلاً مربعاً وتعلو عن سطح البحر أكثر من ستة آلاف قدم ومشاهدها الطبيعية لا مثيل
                             لها في الدنيا.</p>
                         <p>علو أعظم الأنصاب والبنايات</p>
                         <p>قدم</p>
-                        <p>1000: علو برج إيفل (باريس).</p>
-                        <p>555: نصب واشنطن الولايات المتحدة</p>
-                        <p>545: بناية الأمة في فيلادلفيا</p>
-                        <p>485: أهرام مصر</p>
-                        <p>465: كاتدرائية انتيورب بلجيكا</p>
-                        <p>474: كاتدرائية ستراسبورغ فرنسا</p>
+                        <p> <tei:num value="1000" xml:lang="ar">١٠٠٠</tei:num> : علو برج إيفل (باريس).</p>
+                        <p> <tei:num value="555" xml:lang="ar">٥٥٥</tei:num> : نصب واشنطن الولايات المتحدة</p>
+                        <p> <tei:num value="545" xml:lang="ar">٥٤٥</tei:num> : بناية الأمة في فيلادلفيا</p>
+                        <p> <tei:num value="485" xml:lang="ar">٤٨٥</tei:num> : أهرام مصر</p>
+                        <p> <tei:num value="465" xml:lang="ar">٤٦٥</tei:num> : كاتدرائية انتيورب بلجيكا</p>
+                        <p> <tei:num value="474" xml:lang="ar">٤٧٤</tei:num> : كاتدرائية ستراسبورغ فرنسا</p>
                         <p>قدم</p>
-                        <p>448: كنيسة القديس بطرس رومية.</p>
-                        <p>411: كنيسة مارتن لاندشت ألمانيا.</p>
-                        <p>400: كاتدرائية سالبسري إنكلترا.</p>
-                        <p>465: كنيسة القديس بولس لندن</p>
-                        <p>386: كاتدرائية فلورنس إيطاليا</p>
-                        <p>386: كنيسة فربورغ ألمانيا. <pb ed="shamela"
-                   n="n76-p67"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5130.xhtml"/> 360: كاتدرائية سيفيل
+                        <p> <tei:num value="448" xml:lang="ar">٤٤٨</tei:num> : كنيسة القديس بطرس رومية.</p>
+                        <p> <tei:num value="411" xml:lang="ar">٤١١</tei:num> : كنيسة مارتن لاندشت ألمانيا.</p>
+                        <p> <tei:num value="400" xml:lang="ar">٤٠٠</tei:num> : كاتدرائية سالبسري إنكلترا.</p>
+                        <p> <tei:num value="465" xml:lang="ar">٤٦٥</tei:num> : كنيسة القديس بولس لندن</p>
+                        <p> <tei:num value="386" xml:lang="ar">٣٨٦</tei:num> : كاتدرائية فلورنس إيطاليا</p>
+                        <p> <tei:num value="386" xml:lang="ar">٣٨٦</tei:num> : كنيسة فربورغ ألمانيا. <pb ed="shamela" n="n76-p67" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5130.xhtml"/>  <tei:num value="360" xml:lang="ar">٣٦٠</tei:num> : كاتدرائية سيفيل
                             إسبانيا.</p>
-                        <p>355: كاتدرائية ميلان لومباردي</p>
-                        <p>365: كاتدرائية بورتست هولاندا.</p>
-                        <p>284: كنيسة الثالوث الأقدس نيورك.</p>
-                        <p>260: برج بروكتلي في نانكن الصين.</p>
-                        <p>224: كنيسة نوتردام في باريس</p>
-                        <p>221: نصب بانكرهل في مستشوشتس.</p>
-                        <p>179: برج لنن في إيطاليا.</p>
-                        <p>175: نصب واشنطن في بلتيمور الولايات المتحدة.</p>
-                        <p>153: نصب فندوم في باريس.</p>
+                        <p> <tei:num value="355" xml:lang="ar">٣٥٥</tei:num> : كاتدرائية ميلان لومباردي</p>
+                        <p> <tei:num value="365" xml:lang="ar">٣٦٥</tei:num> : كاتدرائية بورتست هولاندا.</p>
+                        <p> <tei:num value="284" xml:lang="ar">٢٨٤</tei:num> : كنيسة الثالوث الأقدس نيورك.</p>
+                        <p> <tei:num value="260" xml:lang="ar">٢٦٠</tei:num> : برج بروكتلي في نانكن الصين.</p>
+                        <p> <tei:num value="224" xml:lang="ar">٢٢٤</tei:num> : كنيسة نوتردام في باريس</p>
+                        <p> <tei:num value="221" xml:lang="ar">٢٢١</tei:num> : نصب بانكرهل في مستشوشتس.</p>
+                        <p> <tei:num value="179" xml:lang="ar">١٧٩</tei:num> : برج لنن في إيطاليا.</p>
+                        <p> <tei:num value="175" xml:lang="ar">١٧٥</tei:num> : نصب واشنطن في بلتيمور الولايات المتحدة.</p>
+                        <p> <tei:num value="153" xml:lang="ar">١٥٣</tei:num> : نصب فندوم في باريس.</p>
                         <p>أوسع المعابد والدور في العالم</p>
                         <p>نفس</p>
-                        <p>54000 تسع كاتدرائية القديس بطرس في رومية.</p>
-                        <p>37000: كاتدرائية ميلان.</p>
-                        <p>32000: كنيسة القديس بولس في رومية.</p>
-                        <p>25000: كاتدرائية القديس بولس في لندن.</p>
-                        <p>24000: كاتدرائية كنيسة القديس بترونيو في بولفانا.</p>
-                        <p>24000: كاتدرائية فلورنس في إيطاليا.</p>
-                        <p>24000: كاتدرائية أنتيورب.</p>
-                        <p>23000: جامع صوفيا في الآستانة.</p>
+                        <p> <tei:num value="54000" xml:lang="ar">٥٤٠٠٠</tei:num>  تسع كاتدرائية القديس بطرس في رومية.</p>
+                        <p> <tei:num value="37000" xml:lang="ar">٣٧٠٠٠</tei:num> : كاتدرائية ميلان.</p>
+                        <p> <tei:num value="32000" xml:lang="ar">٣٢٠٠٠</tei:num> : كنيسة القديس بولس في رومية.</p>
+                        <p> <tei:num value="25000" xml:lang="ar">٢٥٠٠٠</tei:num> : كاتدرائية القديس بولس في لندن.</p>
+                        <p> <tei:num value="24000" xml:lang="ar">٢٤٠٠٠</tei:num> : كاتدرائية كنيسة القديس بترونيو في بولفانا.</p>
+                        <p> <tei:num value="24000" xml:lang="ar">٢٤٠٠٠</tei:num> : كاتدرائية فلورنس في إيطاليا.</p>
+                        <p> <tei:num value="24000" xml:lang="ar">٢٤٠٠٠</tei:num> : كاتدرائية أنتيورب.</p>
+                        <p> <tei:num value="23000" xml:lang="ar">٢٣٠٠٠</tei:num> : جامع صوفيا في الآستانة.</p>
                         <p>نفس</p>
-                        <p>22000: كنيسة القديس يوحنا في رومية.</p>
-                        <p>21000: كاتدرائية نوتردام في باريس.</p>
+                        <p> <tei:num value="22000" xml:lang="ar">٢٢٠٠٠</tei:num> : كنيسة القديس يوحنا في رومية.</p>
+                        <p> <tei:num value="21000" xml:lang="ar">٢١٠٠٠</tei:num> : كاتدرائية نوتردام في باريس.</p>
                         <p>قدم</p>
-                        <p>12000: كنيسة القديس ستيفن في فينا. <pb ed="shamela"
-                   n="n76-p68"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5131.xhtml"/> 12000: كنيسة القديس
+                        <p> <tei:num value="12000" xml:lang="ar">١٢٠٠٠</tei:num> : كنيسة القديس ستيفن في فينا. <pb ed="shamela" n="n76-p68" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5131.xhtml"/>  <tei:num value="12000" xml:lang="ar">١٢٠٠٠</tei:num> : كنيسة القديس
                             دومينيك في بولفانا.</p>
-                        <p>11400: كنيسة القديس بطرس في بولفانا.</p>
-                        <p>11000: كاتدرائية فينا.</p>
-                        <p>10000: كاتدرائية القديس بطرس في مونتريال.</p>
-                        <p>8000: دار الخطابة في شيكاغو.</p>
+                        <p> <tei:num value="11400" xml:lang="ar">١١٤٠٠</tei:num> : كنيسة القديس بطرس في بولفانا.</p>
+                        <p> <tei:num value="11000" xml:lang="ar">١١٠٠٠</tei:num> : كاتدرائية فينا.</p>
+                        <p> <tei:num value="10000" xml:lang="ar">١٠٠٠٠</tei:num> : كاتدرائية القديس بطرس في مونتريال.</p>
+                        <p> <tei:num value="8000" xml:lang="ar">٨٠٠٠</tei:num> : دار الخطابة في شيكاغو.</p>
                         <p>أعلى جبال الدنيا</p>
-                        <p>28170 جبل حملايا</p>
-                        <p>25380: سوراتا أنداس.</p>
-                        <p>21780: إليمانيا بوليفيا.</p>
-                        <p>21444: خمبورازواكيدور.</p>
-                        <p>20600: هند وأفغانستان.</p>
-                        <p>19408: كوتوباكسي اكيودور.</p>
-                        <p>19550: أنتسيانا أكيوردور</p>
-                        <p>18000: سنت إيلياس أميركا</p>
-                        <p>17735: بوبوكا تابتل المكسيك.</p>
-                        <p>16000: راوا هاواي.</p>
-                        <p>15900: بردن.</p>
-                        <p>15776: مونت بلاس.</p>
-                        <p>15700: موناروس أوياهي.</p>
-                        <p>15550: روزا ألب ساروينيا.</p>
-                        <p>15200: نبخينكا أكيوردور.</p>
-                        <p>15000: هوتني كلفرنيا.</p>
+                        <p> <tei:num value="28170" xml:lang="ar">٢٨١٧٠</tei:num>  جبل حملايا</p>
+                        <p> <tei:num value="25380" xml:lang="ar">٢٥٣٨٠</tei:num> : سوراتا أنداس.</p>
+                        <p> <tei:num value="21780" xml:lang="ar">٢١٧٨٠</tei:num> : إليمانيا بوليفيا.</p>
+                        <p> <tei:num value="21444" xml:lang="ar">٢١٤٤٤</tei:num> : خمبورازواكيدور.</p>
+                        <p> <tei:num value="20600" xml:lang="ar">٢٠٦٠٠</tei:num> : هند وأفغانستان.</p>
+                        <p> <tei:num value="19408" xml:lang="ar">١٩٤٠٨</tei:num> : كوتوباكسي اكيودور.</p>
+                        <p> <tei:num value="19550" xml:lang="ar">١٩٥٥٠</tei:num> : أنتسيانا أكيوردور</p>
+                        <p> <tei:num value="18000" xml:lang="ar">١٨٠٠٠</tei:num> : سنت إيلياس أميركا</p>
+                        <p> <tei:num value="17735" xml:lang="ar">١٧٧٣٥</tei:num> : بوبوكا تابتل المكسيك.</p>
+                        <p> <tei:num value="16000" xml:lang="ar">١٦٠٠٠</tei:num> : راوا هاواي.</p>
+                        <p> <tei:num value="15900" xml:lang="ar">١٥٩٠٠</tei:num> : بردن.</p>
+                        <p> <tei:num value="15776" xml:lang="ar">١٥٧٧٦</tei:num> : مونت بلاس.</p>
+                        <p> <tei:num value="15700" xml:lang="ar">١٥٧٠٠</tei:num> : موناروس أوياهي.</p>
+                        <p> <tei:num value="15550" xml:lang="ar">١٥٥٥٠</tei:num> : روزا ألب ساروينيا.</p>
+                        <p> <tei:num value="15200" xml:lang="ar">١٥٢٠٠</tei:num> : نبخينكا أكيوردور.</p>
+                        <p> <tei:num value="15000" xml:lang="ar">١٥٠٠٠</tei:num> : هوتني كلفرنيا.</p>
                         <p>قدم</p>
-                        <p>14796: فيروز ألاسكا.</p>
-                        <p>14450: نشاستا كلفرنيا. <pb ed="shamela"
-                   n="n76-p69"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5132.xhtml"/> 14320: بيك بيك
+                        <p> <tei:num value="14796" xml:lang="ar">١٤٧٩٦</tei:num> : فيروز ألاسكا.</p>
+                        <p> <tei:num value="14450" xml:lang="ar">١٤٤٥٠</tei:num> : نشاستا كلفرنيا. <pb ed="shamela" n="n76-p69" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5132.xhtml"/>  <tei:num value="14320" xml:lang="ar">١٤٣٢٠</tei:num> : بيك بيك
                             كلوريدو.</p>
-                        <p>13800: أوفر سومطرة.</p>
-                        <p>13570: فرومونت بيك وايامن.</p>
-                        <p>13400: لونك بيك كانتوما.</p>
-                        <p>13000: رايز واشنطن.</p>
-                        <p>12700: أراراط أرمينية.</p>
-                        <p>12236: بيك أوف تزف جزائر كناري.</p>
-                        <p>12000: ميلتسن مراكش.</p>
-                        <p>11570: هوادوريغن.</p>
-                        <p>11542: سلبون ألب.</p>
-                        <p>11000: حرمون سورية.</p>
-                        <p>10950: بروديو فرنسا.</p>
-                        <p>10158: القديسة هيلانة أوريفن.</p>
-                        <p>10050: أتنا صقلية.</p>
-                        <p>9754: أُليمبس اليونان.</p>
-                        <p>9080: غوذار ألب.</p>
-                        <p>8000: سينا بلاد العرب.</p>
-                        <p>7677: بنديوس يونان.</p>
-                        <p>5467: بلاك كالدونيا الجديدة.</p>
-                        <p>6234: واشنطن نيو همشر.</p>
-                        <p>5467: مارس نيورك.</p>
-                        <p>4400: هياقلا أيسلندا.</p>
-                        <p>4400: بني نفس سكوتلاند.</p>
-                        <p>4280: مانسفيلد فرمونت.</p>
-                        <p>قدم <pb ed="shamela"
-                   n="n76-p70"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5133.xhtml"/> 4260: أوترييكس
+                        <p> <tei:num value="13800" xml:lang="ar">١٣٨٠٠</tei:num> : أوفر سومطرة.</p>
+                        <p> <tei:num value="13570" xml:lang="ar">١٣٥٧٠</tei:num> : فرومونت بيك وايامن.</p>
+                        <p> <tei:num value="13400" xml:lang="ar">١٣٤٠٠</tei:num> : لونك بيك كانتوما.</p>
+                        <p> <tei:num value="13000" xml:lang="ar">١٣٠٠٠</tei:num> : رايز واشنطن.</p>
+                        <p> <tei:num value="12700" xml:lang="ar">١٢٧٠٠</tei:num> : أراراط أرمينية.</p>
+                        <p> <tei:num value="12236" xml:lang="ar">١٢٢٣٦</tei:num> : بيك أوف تزف جزائر كناري.</p>
+                        <p> <tei:num value="12000" xml:lang="ar">١٢٠٠٠</tei:num> : ميلتسن مراكش.</p>
+                        <p> <tei:num value="11570" xml:lang="ar">١١٥٧٠</tei:num> : هوادوريغن.</p>
+                        <p> <tei:num value="11542" xml:lang="ar">١١٥٤٢</tei:num> : سلبون ألب.</p>
+                        <p> <tei:num value="11000" xml:lang="ar">١١٠٠٠</tei:num> : حرمون سورية.</p>
+                        <p> <tei:num value="10950" xml:lang="ar">١٠٩٥٠</tei:num> : بروديو فرنسا.</p>
+                        <p> <tei:num value="10158" xml:lang="ar">١٠١٥٨</tei:num> : القديسة هيلانة أوريفن.</p>
+                        <p> <tei:num value="10050" xml:lang="ar">١٠٠٥٠</tei:num> : أتنا صقلية.</p>
+                        <p> <tei:num value="9754" xml:lang="ar">٩٧٥٤</tei:num> : أُليمبس اليونان.</p>
+                        <p> <tei:num value="9080" xml:lang="ar">٩٠٨٠</tei:num> : غوذار ألب.</p>
+                        <p> <tei:num value="8000" xml:lang="ar">٨٠٠٠</tei:num> : سينا بلاد العرب.</p>
+                        <p> <tei:num value="7677" xml:lang="ar">٧٦٧٧</tei:num> : بنديوس يونان.</p>
+                        <p> <tei:num value="5467" xml:lang="ar">٥٤٦٧</tei:num> : بلاك كالدونيا الجديدة.</p>
+                        <p> <tei:num value="6234" xml:lang="ar">٦٢٣٤</tei:num> : واشنطن نيو همشر.</p>
+                        <p> <tei:num value="5467" xml:lang="ar">٥٤٦٧</tei:num> : مارس نيورك.</p>
+                        <p> <tei:num value="4400" xml:lang="ar">٤٤٠٠</tei:num> : هياقلا أيسلندا.</p>
+                        <p> <tei:num value="4400" xml:lang="ar">٤٤٠٠</tei:num> : بني نفس سكوتلاند.</p>
+                        <p> <tei:num value="4280" xml:lang="ar">٤٢٨٠</tei:num> : مانسفيلد فرمونت.</p>
+                        <p>قدم <pb ed="shamela" n="n76-p70" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5133.xhtml"/>  <tei:num value="4260" xml:lang="ar">٤٢٦٠</tei:num> : أوترييكس
                             فرجينيا.</p>
-                        <p>4030: بن لورس سكوتلاند.</p>
-                        <p>3850: بارناسيوس يونان.</p>
-                        <p>3930: فيسنس نابلس.</p>
-                        <p>3280: بن لوفند سكوتلاند.</p>
+                        <p> <tei:num value="4030" xml:lang="ar">٤٠٣٠</tei:num> : بن لورس سكوتلاند.</p>
+                        <p> <tei:num value="3850" xml:lang="ar">٣٨٥٠</tei:num> : بارناسيوس يونان.</p>
+                        <p> <tei:num value="3930" xml:lang="ar">٣٩٣٠</tei:num> : فيسنس نابلس.</p>
+                        <p> <tei:num value="3280" xml:lang="ar">٣٢٨٠</tei:num> : بن لوفند سكوتلاند.</p>
                         <p>أعلى براكين العالم</p>
-                        <p>23000 علو بركان شاهاما (بيريو).</p>
-                        <p>21000: ليوليلك (شلي).</p>
-                        <p>20500: أركيويبا (بيرو).</p>
-                        <p>19813: كيامبي (أكيوردور).</p>
-                        <p>19500: كوتوبكسي (بيرو).</p>
-                        <p>19200: أنتسينا (أكيوردور).</p>
-                        <p>18150: سان جوزي (شيلي).</p>
-                        <p>17900: سنت إيلياس (ألاسكا).</p>
-                        <p>17884: بوبكاتبتل (المكسيك).</p>
-                        <p>17370: أوزبزابا (المكسيك).</p>
-                        <p>17126: القبار (أكيوردور).</p>
-                        <p>17120: سانفي (أكيوردور).</p>
-                        <p>16512: كانتخيوسكيا (كامتخاكا).</p>
-                        <p>15700: أزتا كيون (المكسيك).</p>
-                        <p>15500: توليكا (المكسيك).</p>
-                        <p>14400: شاستا (الولايات المتحدة).</p>
-                        <p>14000: فيجياما (يابان).</p>
-                        <p>13953: مايوناكيا (جزائر سندوش).</p>
-                        <p>13760: مايانالوا (جزائر سندوش). <pb ed="shamela"
-                   n="n76-p71"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5134.xhtml"/> 12236: تاتريفي (جزائر
+                        <p> <tei:num value="23000" xml:lang="ar">٢٣٠٠٠</tei:num>  علو بركان شاهاما (بيريو).</p>
+                        <p> <tei:num value="21000" xml:lang="ar">٢١٠٠٠</tei:num> : ليوليلك (شلي).</p>
+                        <p> <tei:num value="20500" xml:lang="ar">٢٠٥٠٠</tei:num> : أركيويبا (بيرو).</p>
+                        <p> <tei:num value="19813" xml:lang="ar">١٩٨١٣</tei:num> : كيامبي (أكيوردور).</p>
+                        <p> <tei:num value="19500" xml:lang="ar">١٩٥٠٠</tei:num> : كوتوبكسي (بيرو).</p>
+                        <p> <tei:num value="19200" xml:lang="ar">١٩٢٠٠</tei:num> : أنتسينا (أكيوردور).</p>
+                        <p> <tei:num value="18150" xml:lang="ar">١٨١٥٠</tei:num> : سان جوزي (شيلي).</p>
+                        <p> <tei:num value="17900" xml:lang="ar">١٧٩٠٠</tei:num> : سنت إيلياس (ألاسكا).</p>
+                        <p> <tei:num value="17884" xml:lang="ar">١٧٨٨٤</tei:num> : بوبكاتبتل (المكسيك).</p>
+                        <p> <tei:num value="17370" xml:lang="ar">١٧٣٧٠</tei:num> : أوزبزابا (المكسيك).</p>
+                        <p> <tei:num value="17126" xml:lang="ar">١٧١٢٦</tei:num> : القبار (أكيوردور).</p>
+                        <p> <tei:num value="17120" xml:lang="ar">١٧١٢٠</tei:num> : سانفي (أكيوردور).</p>
+                        <p> <tei:num value="16512" xml:lang="ar">١٦٥١٢</tei:num> : كانتخيوسكيا (كامتخاكا).</p>
+                        <p> <tei:num value="15700" xml:lang="ar">١٥٧٠٠</tei:num> : أزتا كيون (المكسيك).</p>
+                        <p> <tei:num value="15500" xml:lang="ar">١٥٥٠٠</tei:num> : توليكا (المكسيك).</p>
+                        <p> <tei:num value="14400" xml:lang="ar">١٤٤٠٠</tei:num> : شاستا (الولايات المتحدة).</p>
+                        <p> <tei:num value="14000" xml:lang="ar">١٤٠٠٠</tei:num> : فيجياما (يابان).</p>
+                        <p> <tei:num value="13953" xml:lang="ar">١٣٩٥٣</tei:num> : مايوناكيا (جزائر سندوش).</p>
+                        <p> <tei:num value="13760" xml:lang="ar">١٣٧٦٠</tei:num> : مايانالوا (جزائر سندوش). <pb ed="shamela" n="n76-p71" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5134.xhtml"/>  <tei:num value="12236" xml:lang="ar">١٢٢٣٦</tei:num> : تاتريفي (جزائر
                             كناري).</p>
                         <p>قدم</p>
-                        <p>12000: القديسة هيلانة (الولايات المتحدة).</p>
-                        <p>11225: هود (الولايات المتحدة).</p>
-                        <p>10850: تاهيتي بيك (جزائر فرندلي).</p>
-                        <p>10874: أتنا (صقلية).</p>
-                        <p>ومن البراكين المشهورة في جميع أصقاع العالم بركان فيزوف علوه 3978 قدماً وبركان هيكلا علوه 1970 قدماً وبركان
-                            سترمبولي علوه 3000 قدم.</p>
+                        <p> <tei:num value="12000" xml:lang="ar">١٢٠٠٠</tei:num> : القديسة هيلانة (الولايات المتحدة).</p>
+                        <p> <tei:num value="11225" xml:lang="ar">١١٢٢٥</tei:num> : هود (الولايات المتحدة).</p>
+                        <p> <tei:num value="10850" xml:lang="ar">١٠٨٥٠</tei:num> : تاهيتي بيك (جزائر فرندلي).</p>
+                        <p> <tei:num value="10874" xml:lang="ar">١٠٨٧٤</tei:num> : أتنا (صقلية).</p>
+                        <p>ومن البراكين المشهورة في جميع أصقاع العالم بركان فيزوف علوه  <tei:num value="3978" xml:lang="ar">٣٩٧٨</tei:num>  قدماً وبركان هيكلا علوه  <tei:num value="1970" xml:lang="ar">١٩٧٠</tei:num>  قدماً وبركان
+                            سترمبولي علوه  <tei:num value="3000" xml:lang="ar">٣٠٠٠</tei:num>  قدم.</p>
                         <p>لنكلن نبراسكا (الولايات المتحدة):</p>
                         <p>يوسف جرجس زخم.</p>
                         <p>المسكرات في أوربا</p>
@@ -2310,14 +2137,12 @@
                         <p>ولقد انبرى أحد الكتاب لذكر هذا الخطر الوبيل وبيان تأثيره في الشعوب والممالك عَلَى ما عربه البصير فكانت إنكلترا في
                             مقدمة ما ذكر لكثرة اشتهارها بالخمر وإدمان شعبها إياها ولكنه أشار إلى كون السكر قد اخذ يتناقص فيها بمساعي الحكومة
                             نفسها دون الجمعيات وذلك لأنها فرضت عَلَى استخراج الخمر ضرائب شديدة فغلا ثمنها وقل المستخرج منها ولكن ويله مع ذلك
-                            يكون شديداً فيها لأن أهلها ينفقون عليها كل سنة نحو 155 مليون كما أنهم ينفقون من أرواحهم ما ينطبق عَلَى ذاك
+                            يكون شديداً فيها لأن أهلها ينفقون عليها كل سنة نحو  <tei:num value="155" xml:lang="ar">١٥٥</tei:num>  مليون كما أنهم ينفقون من أرواحهم ما ينطبق عَلَى ذاك
                             المقدار الجسيم ولهذا أخذ عددهم يقل وتناسلهم يضعف.</p>
-                        <p>ثم أشار إلى ألمانيا فذكر أن الخطر وذلك لأن أهلها ينفقون في السنة عَلَى خمورهم 150 مليون جنيه مع أنهم أقل ثروة من
-                            الشعب الإنكليزي كما أنه قد تبين من أمرهم أن الخمر بينهم عَلَى ازدياد متصل فإنه بعد أن كان الفرد منهم يستهلك 30
-                            ليتراً من الجعة في سنة <pb ed="shamela"
-                   n="n76-p72"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5135.xhtml"/> 1903 صار الآن يستهلك 124
-                            ليتراً بزيادة 37 بالمئة وقد دلت أحوالها الحاضرة عَلَى أن المستهلك فيها يزيد كل سنة 40 ليتراً لكل فرد من أهلها
+                        <p>ثم أشار إلى ألمانيا فذكر أن الخطر وذلك لأن أهلها ينفقون في السنة عَلَى خمورهم  <tei:num value="150" xml:lang="ar">١٥٠</tei:num>  مليون جنيه مع أنهم أقل ثروة من
+                            الشعب الإنكليزي كما أنه قد تبين من أمرهم أن الخمر بينهم عَلَى ازدياد متصل فإنه بعد أن كان الفرد منهم يستهلك  <tei:num value="30" xml:lang="ar">٣٠</tei:num> 
+                            ليتراً من الجعة في سنة <pb ed="shamela" n="n76-p72" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5135.xhtml"/>  <tei:num value="1903" xml:lang="ar">١٩٠٣</tei:num>  صار الآن يستهلك  <tei:num value="124" xml:lang="ar">١٢٤</tei:num> 
+                            ليتراً بزيادة  <tei:num value="37" xml:lang="ar">٣٧</tei:num>  بالمئة وقد دلت أحوالها الحاضرة عَلَى أن المستهلك فيها يزيد كل سنة  <tei:num value="40" xml:lang="ar">٤٠</tei:num>  ليتراً لكل فرد من أهلها
                             وهو ما ينسبونه إلى شدة التساهل من الحكومة بل إلى ترغيبها وتسويقها لأنها تجد من الخمور مورداً عظيماً لها يعينها
                             عَلَى الإنفاق الحربي كما أن نفس الشعب الألماني شديد الميل إلى الشرب ولذلك روي عن بسمارك أنه قال مرة أن الذي لا
                             يشرب الجعة لا يعد إنساناً وقد اجتمع مرةً بكريستي وزير إيطاليا قديماً وكان لا يشرب فقال له: عجب كيف أنت سياسي ولا
@@ -2325,22 +2150,20 @@
                         <p>ومما يقوله ذاك الكاتب أن بلجيكا تعتبر أشد الممالك استهلاكاً للخمور ولاسيما الجعة التي تفوقها المملكة ولذلك ارتاعت
                             حكومتها للأمر وأخذت تساعد جمعيات المنع بكل جهدها حتى أنها تمد جرائدها بالإسعاف وتعفيها من رسوم البريد قصد أن
                             تزداد انتشاراً بين الرعية ويزداد خوفهم من عواقب ما يفعلون.</p>
-                        <p>أما سويسرا فالأمر فيها أشد لأن أهلها يميلون إلى الكحول أكثر منهم إلى الخمور ولذلك حدثوا عنها أنه يموت بها10
-                            بالمئة من شبابها الذين فوق العشرين وإن 40 بالمئة من جرائمها تنسب إلى السكر. ولكن الدانمرك أشد منها ويلاً فإنه
-                            يموت من شبانها 22 بالمئة وقد جن فيها سنة 1899 - 1694 نفساً كان منهم 352 بسبب الخمور كما ظهر أن 43 بالمئة من
+                        <p>أما سويسرا فالأمر فيها أشد لأن أهلها يميلون إلى الكحول أكثر منهم إلى الخمور ولذلك حدثوا عنها أنه يموت بها <tei:num value="10" xml:lang="ar">١٠</tei:num> 
+                            بالمئة من شبابها الذين فوق العشرين وإن  <tei:num value="40" xml:lang="ar">٤٠</tei:num>  بالمئة من جرائمها تنسب إلى السكر. ولكن الدانمرك أشد منها ويلاً فإنه
+                            يموت من شبانها  <tei:num value="22" xml:lang="ar">٢٢</tei:num>  بالمئة وقد جن فيها سنة  <tei:num value="1899" xml:lang="ar">١٨٩٩</tei:num>  -  <tei:num value="1694" xml:lang="ar">١٦٩٤</tei:num>  نفساً كان منهم  <tei:num value="352" xml:lang="ar">٣٥٢</tei:num>  بسبب الخمور كما ظهر أن  <tei:num value="43" xml:lang="ar">٤٣</tei:num>  بالمئة من
                             جرائمها منسوب إلى السكر وعواقبه.</p>
                         <p>أما إيطاليا فلم يذكر عنها تقويماً ولكنه أشار إلى أن السكر يتزايد فيها بازدياد غنى أهلها عَلَى حين مشهور أن الفقير
                             هو الذي يشرب لأن أوقاته أطول وهمومه أكثر.</p>
-                        <p>أما فرنسا فقد ذكرت عنها أنها كانت من 50 سنة معدودة أقل الممالك استهلاكاً للخمر فصارت الآن في مقدمتها وذلك بسبب
+                        <p>أما فرنسا فقد ذكرت عنها أنها كانت من  <tei:num value="50" xml:lang="ar">٥٠</tei:num>  سنة معدودة أقل الممالك استهلاكاً للخمر فصارت الآن في مقدمتها وذلك بسبب
                             الإبسنت وحده فإنه عَلَى انتشار عظيم كما أنه مشروب شديد الفتك والأذى فقد كان الفرنسوي الفرد لا يشرب في السنة كلها
-                            منذ 50 سنة إلا ثلاثة بينتات ونصف (البينت 150 درهماً) فضار الآن يشرب 70 بينتاً قوة كحولها مئة درجة وهو مقدار
-                            يعادل 156 بينتاً من الكونياك.</p>
-                        <p>ولقد كان في فرنسا منذ 30 سنة خمارة واحدة لكل 109 من سكانها فصار الآن يوجد فيها خمارة لكل 40 نفساً. وقد بلغ عدد
-                            حانات باريس وحدها حسب التقويم الأخير 30 ألفاً مع لندن التي تبلغ ضعفيها لا يزيد عدد الخمارات عن ستة آلاف. ومما
-                            ذكره عن تأثير السكر <pb ed="shamela"
-                   n="n76-p73"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5136.xhtml"/> في فرنسا أنه يموت فيها
-                            كل سنة 50 ألف نفس بالسل الرئوي وقد ذكر الأطباء أن أكثر هذا العدد يذهب في ذمة السكر ولولاه لكان السل ضعيفاً بسبب
+                            منذ  <tei:num value="50" xml:lang="ar">٥٠</tei:num>  سنة إلا ثلاثة بينتات ونصف (البينت  <tei:num value="150" xml:lang="ar">١٥٠</tei:num>  درهماً) فضار الآن يشرب  <tei:num value="70" xml:lang="ar">٧٠</tei:num>  بينتاً قوة كحولها مئة درجة وهو مقدار
+                            يعادل  <tei:num value="156" xml:lang="ar">١٥٦</tei:num>  بينتاً من الكونياك.</p>
+                        <p>ولقد كان في فرنسا منذ  <tei:num value="30" xml:lang="ar">٣٠</tei:num>  سنة خمارة واحدة لكل  <tei:num value="109" xml:lang="ar">١٠٩</tei:num>  من سكانها فصار الآن يوجد فيها خمارة لكل  <tei:num value="40" xml:lang="ar">٤٠</tei:num>  نفساً. وقد بلغ عدد
+                            حانات باريس وحدها حسب التقويم الأخير  <tei:num value="30" xml:lang="ar">٣٠</tei:num>  ألفاً مع لندن التي تبلغ ضعفيها لا يزيد عدد الخمارات عن ستة آلاف. ومما
+                            ذكره عن تأثير السكر <pb ed="shamela" n="n76-p73" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5136.xhtml"/> في فرنسا أنه يموت فيها
+                            كل سنة  <tei:num value="50" xml:lang="ar">٥٠</tei:num>  ألف نفس بالسل الرئوي وقد ذكر الأطباء أن أكثر هذا العدد يذهب في ذمة السكر ولولاه لكان السل ضعيفاً بسبب
                             انتشار معرفة الصحة بين الجميع. ويقال أنه يندر أن يمضي يوم دون أن يسقط في شوارعها عدة أناس موتى فجأة بسبب تأثير
                             الإبسنت بالخصوص. أما أسوج ونروج فإنهما أقل الممالك سكراً لن حكومتيهما تقاومه بشدة وقد يكون ذلك لأنهما اقل الدول
                             تجهيزاً واستعدادً للحرب عَلَى خلاف سائر أوربا فإن اضطرارها الدائم للاستعداد قد صير أهلها عَلَى حرب دائمة مع
@@ -2359,14 +2182,12 @@
                             والكونياك وسائر المستقطرات القوية فإنه لم يثبت لهم أنها تكون غذاء للجسم إلا من جهة كونها تحترق فداء عما كان يجب
                             أن يحترق من الطعام نفسه أي أنها تحترق في الجسم كما يحترق المنديل المبلول بالسبيرتو فإنه حين يشتعل لا يحترق منه
                             أولاً إلا السبيرتو ويبقى المنديل سليماً فكان السبيرتو بذلك قد رد عن المنديل خطر الاحتراق إذ قام للنار مقامه ولكن
-                            المنديل مع بقاءه سليماً يصير <pb ed="shamela"
-                   n="n76-p74"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5137.xhtml"/> متشوهاً ضعيف النسيج وعلى
+                            المنديل مع بقاءه سليماً يصير <pb ed="shamela" n="n76-p74" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5137.xhtml"/> متشوهاً ضعيف النسيج وعلى
                             مثل هذا يكون الإنسان الذي يغذي جسمه بالكحول دون الطعام.</p>
                         <p>الزواج الهندي</p>
-                        <p>يعتبرون الزواج في بلاد الهند من الضروريات المبرمة التي تلحق تبعتها الأبوين ولذلك ظهر من إحصاءٍ أخير أن 250 ألفاً
+                        <p>يعتبرون الزواج في بلاد الهند من الضروريات المبرمة التي تلحق تبعتها الأبوين ولذلك ظهر من إحصاءٍ أخير أن  <tei:num value="250" xml:lang="ar">٢٥٠</tei:num>  ألفاً
                             من البنات ممن لم يتجاوزن الخامسة قد عقدن لهن وتزوجن ومليونان من الفتيات الهنديات أصبحن زوجات قبل العاشرة من سنهن
-                            وستة ملايين ممن تختلف أعمارهن من 10 إلى 15 وتسعة ملايين بين سن الـ 15 والـ 20 ومعلوم أن الخطبة والاحتفال بها متى
+                            وستة ملايين ممن تختلف أعمارهن من  <tei:num value="10" xml:lang="ar">١٠</tei:num>  إلى  <tei:num value="15" xml:lang="ar">١٥</tei:num>  وتسعة ملايين بين سن الـ  <tei:num value="15" xml:lang="ar">١٥</tei:num>  والـ  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  ومعلوم أن الخطبة والاحتفال بها متى
                             انتهى لا تسلم الفتاة لعروسها قبل العاشرة أو الثانية عشر من عمرها وبذلك كثير ما تشاهد في الهند أمهات في الثالثة
                             عشرة وجدات في الخامسة والعشرين.</p>
                         <p>حماية الأطفال في إنكلترا</p>
@@ -2380,19 +2201,17 @@
                             استعمال الدخان إن لم تتجاوز سنهم السادسة عشرة وكذلك يحظر عَلَى كل طفل أن يدخل حانة إن لم يكن تجاوز الرابعة عشرة
                             من عمره.</p>
                         <p>الصحافة في العالم</p>
-                        <p>تعد أميركا في مقدمة الدول بالنسبة لكثرة عدد الصحف فيها ففي الولايات المتحدة 21435 <pb ed="shamela"
-                   n="n76-p75"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5138.xhtml"/> جريدة منها 2500 يومية
-                            ومن هذه 700 تطبع باللغة الألمانية و20 باللغة الهولاندية والبقية بالإنكليزية. ويبلغ ثمن الورق الذي تنفقه الصحافة
-                            الأميركية 130 ميلوناً من الفرنكات في العام ويبلغ دخلها السنوي 900 مليون من الفرنكات منها 450 ميلوناً قيمة البيع
-                            والاشتراكات و500 مليون قيمة أجور الإعلانات. وفي كندا يبلغ عدد الجرائد 1200 منها مائة يومية وفي كل جمهوريات
-                            المكسيك والبرازيل وشيلي 300 وفي الجمهورية الفضية 750 وفي جمهورية فنزويلا 170 وفي جمهورية خط الاستواء 20.</p>
-                        <p>أما في أوربا فظهر في ألمانيا عشرة آلاف جريدة منها 1500 يومية ثم تليها فرنسا وفي النمسا 5600 وفي إنكلترا 4400 منها
-                            230 يومية وفي البلجيك 2000 منها عدداً كبيراً يصدر يومياً. وفي إيطاليا 3500 منها مائة يومية وفي إسبانيا 2000 وفي
-                            روسيا 2000 منها 200 يومية. وفي سويسرا 1200 منها 800 باللغة الألمانية و350 باللغة الفرنسوية و50 باللغة الإيطالية
-                            وفي الدانيمرك 1450 وفي أسوج 1000 وفي هولاندا 2000 وفي نروج 600 وفي العثمانية 300 وفي اليونان 160 وفي بلغاريا
-                            والبرتغال والصرب أقل من مائة جريدة وفي اليابان 3000 منها 400 يومية أما في مصر والجزائر وأفريقية الجنوبية فالصحف
-                            قليلة وفي أوستراليا 1000 وفي الهند الإنكليزية 1800 وفي سيبريا 20 وأما في الصين فلم يتيسر إحصاء جرائدها بوجه
+                        <p>تعد أميركا في مقدمة الدول بالنسبة لكثرة عدد الصحف فيها ففي الولايات المتحدة  <tei:num value="21435" xml:lang="ar">٢١٤٣٥</tei:num>  <pb ed="shamela" n="n76-p75" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5138.xhtml"/> جريدة منها  <tei:num value="2500" xml:lang="ar">٢٥٠٠</tei:num>  يومية
+                            ومن هذه  <tei:num value="700" xml:lang="ar">٧٠٠</tei:num>  تطبع باللغة الألمانية و <tei:num value="20" xml:lang="ar">٢٠</tei:num>  باللغة الهولاندية والبقية بالإنكليزية. ويبلغ ثمن الورق الذي تنفقه الصحافة
+                            الأميركية  <tei:num value="130" xml:lang="ar">١٣٠</tei:num>  ميلوناً من الفرنكات في العام ويبلغ دخلها السنوي  <tei:num value="900" xml:lang="ar">٩٠٠</tei:num>  مليون من الفرنكات منها  <tei:num value="450" xml:lang="ar">٤٥٠</tei:num>  ميلوناً قيمة البيع
+                            والاشتراكات و <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>  مليون قيمة أجور الإعلانات. وفي كندا يبلغ عدد الجرائد  <tei:num value="1200" xml:lang="ar">١٢٠٠</tei:num>  منها مائة يومية وفي كل جمهوريات
+                            المكسيك والبرازيل وشيلي  <tei:num value="300" xml:lang="ar">٣٠٠</tei:num>  وفي الجمهورية الفضية  <tei:num value="750" xml:lang="ar">٧٥٠</tei:num>  وفي جمهورية فنزويلا  <tei:num value="170" xml:lang="ar">١٧٠</tei:num>  وفي جمهورية خط الاستواء  <tei:num value="20" xml:lang="ar">٢٠</tei:num> .</p>
+                        <p>أما في أوربا فظهر في ألمانيا عشرة آلاف جريدة منها  <tei:num value="1500" xml:lang="ar">١٥٠٠</tei:num>  يومية ثم تليها فرنسا وفي النمسا  <tei:num value="5600" xml:lang="ar">٥٦٠٠</tei:num>  وفي إنكلترا  <tei:num value="4400" xml:lang="ar">٤٤٠٠</tei:num>  منها
+                             <tei:num value="230" xml:lang="ar">٢٣٠</tei:num>  يومية وفي البلجيك  <tei:num value="2000" xml:lang="ar">٢٠٠٠</tei:num>  منها عدداً كبيراً يصدر يومياً. وفي إيطاليا  <tei:num value="3500" xml:lang="ar">٣٥٠٠</tei:num>  منها مائة يومية وفي إسبانيا  <tei:num value="2000" xml:lang="ar">٢٠٠٠</tei:num>  وفي
+                            روسيا  <tei:num value="2000" xml:lang="ar">٢٠٠٠</tei:num>  منها  <tei:num value="200" xml:lang="ar">٢٠٠</tei:num>  يومية. وفي سويسرا  <tei:num value="1200" xml:lang="ar">١٢٠٠</tei:num>  منها  <tei:num value="800" xml:lang="ar">٨٠٠</tei:num>  باللغة الألمانية و <tei:num value="350" xml:lang="ar">٣٥٠</tei:num>  باللغة الفرنسوية و <tei:num value="50" xml:lang="ar">٥٠</tei:num>  باللغة الإيطالية
+                            وفي الدانيمرك  <tei:num value="1450" xml:lang="ar">١٤٥٠</tei:num>  وفي أسوج  <tei:num value="1000" xml:lang="ar">١٠٠٠</tei:num>  وفي هولاندا  <tei:num value="2000" xml:lang="ar">٢٠٠٠</tei:num>  وفي نروج  <tei:num value="600" xml:lang="ar">٦٠٠</tei:num>  وفي العثمانية  <tei:num value="300" xml:lang="ar">٣٠٠</tei:num>  وفي اليونان  <tei:num value="160" xml:lang="ar">١٦٠</tei:num>  وفي بلغاريا
+                            والبرتغال والصرب أقل من مائة جريدة وفي اليابان  <tei:num value="3000" xml:lang="ar">٣٠٠٠</tei:num>  منها  <tei:num value="400" xml:lang="ar">٤٠٠</tei:num>  يومية أما في مصر والجزائر وأفريقية الجنوبية فالصحف
+                            قليلة وفي أوستراليا  <tei:num value="1000" xml:lang="ar">١٠٠٠</tei:num>  وفي الهند الإنكليزية  <tei:num value="1800" xml:lang="ar">١٨٠٠</tei:num>  وفي سيبريا  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  وأما في الصين فلم يتيسر إحصاء جرائدها بوجه
                             التقريب وغنما يقال أن لكل مليونين فيها جريدة واحدة لأن فيها نحو مئتي جريدة.</p>
                         <p>واجب المدرسة</p>
                         <p>من المسائل التي لا ينازع عليها منازع أن من واجب المدرسة أن يعتني بها عناية عنايتها بالتعليم وأن المدارس تؤثر في
@@ -2401,9 +2220,7 @@
                         <p>ومن النظريات التي وضعها كبار أرباب العقول الراجحة في القرن الماضي أن نور العلم وحده يحرر العقل البشري من رقه
                             ويسعده ويصلحه ولكي تقوم المدرسة بواجبها في التربية يقتضي لها أن تقرن التربية بالتعليم بقطع النظر عن التمييز
                             بينهما فهي بتثقيفها العقل وتدريسها القضايا العلمية والنسب بينها يتأتى لها أن تقول أنها تعمل في تربية الإردَة.
-                            <pb ed="shamela"
-                   n="n76-p76"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5139.xhtml"/> ولا جرم أن حل مسألة
+                            <pb ed="shamela" n="n76-p76" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5139.xhtml"/> ولا جرم أن حل مسألة
                             التربية في المدرسة من المسائل التي لا تنحل بسرعة فقد تساءل روسو في القرن الثامن عشر عما إذا كان النجاح العقلي
                             ينتج الارتقاء الأخلاقي وزعم أن المدنية إذا أرادت الحصول عَلَى نتيجة حسنة بتحرير المرء من أوهام غريزية وتحويله
                             إلى عاقل حر عليها أن يقول القول الفصل فيها لغايات الأخلاق في الطبيعة الإنسانية وقد دلت التجربة وأحكام العقل أن
@@ -2422,9 +2239,7 @@
                             بل إن المدرسة تساعد عَلَى ذلك بكل ما فيها من قوة عَلَى صورة مساعدة معاونة لا مربية مسؤولة وحدها.</p>
                         <p>هب أن المعلمين كانوا من أخيار الناس وهذا مما يجب حتماً - في أخلاقهم - وأن حياهم وأشخاصهم وحشمتهم في مهنتهم وكل
                             أعمالهم وأقوالهم كل ذلك يكون منه تعليم أدبي نافع ألا وهو التعليم بالقدوة والمثال ولكن الأمر لا يقف عند هذا الحد
-                            لأن بين التعليم الذي هو مهذب مباشرة وبالضرورة وبين التربية التي ينظر إليها بأنها منفصلة عن التعليم نقطة <pb ed="shamela"
-                   n="n76-p77"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5140.xhtml"/>
+                            لأن بين التعليم الذي هو مهذب مباشرة وبالضرورة وبين التربية التي ينظر إليها بأنها منفصلة عن التعليم نقطة <pb ed="shamela" n="n76-p77" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5140.xhtml"/>
                             متوسطة ألا وهي التربية بالتعليم وهذا هو من واجب المعلم فإن وظيفته أن يعلم لا أن يعظ ولكن من مواد التعليم ما له
                             علاقة بالأخلاق مباشرة فيجب والحالة هذه أن لا يفوتنا أن المعرفة ليست أمراً عظيماً ولكن الفائدة في العمل وشتان بين
                             درس استظهره التلميذ بلا غلط وبين الجهد في تطبيق ما تعلمه بالعمل. فقد قال سقراط أن من تشبع بعلم الخير تشبعاً
@@ -2444,9 +2259,7 @@
                             هذه الأفكار نؤلف قانوناً نرى من الواجب أن لا نخونه وكلما اتسعت معلوماتنا وذهننا يتسع أساس أخلاقنا ويعظم جهادنا
                             ليكون لها اتساق وتماسك.</p>
                         <p>إن رجل العمل يعلم جد العلم أن الخير مناط بالشر في كل شيءٍ فيتقبل كل ذلك صبرة واحدة عَلَى شرط أن يكون الخير
-                            متغلباً عَلَى نقيضه. ولا يسع المربي إلا أن يعلم ما هو <pb ed="shamela"
-                   n="n76-p78"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5141.xhtml"/> موضوع قصورنا في الحياة
+                            متغلباً عَلَى نقيضه. ولا يسع المربي إلا أن يعلم ما هو <pb ed="shamela" n="n76-p78" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5141.xhtml"/> موضوع قصورنا في الحياة
                             الحقيقية فهو يأخذ أجمل التعابير عن الضمير الأدبي وامتنها عَلَى مثال الرجل الذي يعمل ويرى في حجر المجتمع ويبحث عن
                             التوفيق بينها ويوقن بأن المدنية التي اكتفى بها اليونان لا تكفي ابناء العصر الحديث وأن هؤلاء يرون أيضاً أموراً
                             جميلة في ذاتها في الأسرة والأخوة الإنسانية والعلم والعدل واحترام الشعور والحرية والعمل والمساواة ويلقي في العقول
@@ -2463,11 +2276,9 @@
                         <p>وما التربية الخالصة الساذجة إلا التي تصل إلى غايتها بدون تصنع بل بالوسائط التي يوحيها العقل أو الحب أو يعلمها
                             النظر والاختبار ويتأفف بعض مشاهير علم التربية والتعليم من هذه الطرق الطبيعية ويحاولون أن يحلوا محلها الأساليب
                             العلمية والصناعية فيرون أن الولد يطبع عَلَى نحو ما يريد مطبعه وأن الغاية تبرر الواسطة ولذلك لا يرون باساً
-                            باستعمال الحيل معه والكذب النافع عليه قال لوك (فيلسوف إنكليزي 1704) إذا أردت أن تأخذ بيد الأطفال للبحث عما
+                            باستعمال الحيل معه والكذب النافع عليه قال لوك (فيلسوف إنكليزي  <tei:num value="1704" xml:lang="ar">١٧٠٤</tei:num> ) إذا أردت أن تأخذ بيد الأطفال للبحث عما
                             ينفعهم فعليك أن تقدم بين أيديهم ما تريد تلقينهم إياه عَلَى نحو ما تقدم المسليات لا كما تعرض الواجبات وحتى يوقنوا
-                            أنك لا تتحزب لفكر <pb ed="shamela"
-                   n="n76-p79"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5142.xhtml"/> خاص عليك أن تنفرهم من كل
+                            أنك لا تتحزب لفكر <pb ed="shamela" n="n76-p79" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5142.xhtml"/> خاص عليك أن تنفرهم من كل
                             ما تريد أن يتقوه وذلك بحملهم عَلَى عمله بأساليب تستعملها حتى يتبعوا ويستسلموا لما تقرر لهم. إنك إذا شاهدت ابنك
                             يلعب كثيراً بالخذروف (الدوامة) فمره أن يلعب به عدة ساعات من النهار فلا يلبث أن يمل ويترك هذه التسلية فإذا عرفت
                             أن تلقي في نفسه عَلَى هذه الصورة كراهية الألعاب التي يحبها فصور لها العمل في صورة الأمر فلا تعتم أن تراه في
@@ -2480,105 +2291,97 @@
                             ومشاركة الطفل في الماء تبين أن البستاني هو الذي قطع البقلاء ولما سئل عن ذلك أجاب أي حق لكم أيها السادة أن تتدعوا
                             ما هو ملكي وتزرعوا في أرضي البقلاء بدل البطيخ غني أمنعكم فيما بعد أن تتنزهوا في حديقتي. وبهذا تم للمربي ما أراد
                             من تعليم إميل معنى الملك.</p>
-                        <p>ويرى بازدوو (أخلاقي ألماني 1790) أن لا تحدد حرية اللعب في الأولاد بل أن يعمل المعلم بحيث لا يختار الأولاد ألعاباً
+                        <p>ويرى بازدوو (أخلاقي ألماني  <tei:num value="1790" xml:lang="ar">١٧٩٠</tei:num> ) أن لا تحدد حرية اللعب في الأولاد بل أن يعمل المعلم بحيث لا يختار الأولاد ألعاباً
                             أخرى غير التي يريد أن يراهم يدرسونها وأن تحدد رغائب الولد وقمع نفسه عَلَى ما يكره فيمنع عنه الشيء ولا يقال له
                             السبب في منعه فإذا كان لا يحب اللعبة الفلانية يكره عَلَى لعبها أو الأكلة الفلانية يجوَّع ولا يقدم له غيرها وهكذا
                             حتى يعتاد الحرمان والتقشف وهذا ما سماه بالرجوع إلى الطبيعة بيد أن الواجب أن يجعل الأولاد أمام الحقائق وجهاً ولجه
                             لا أمام أشباح مصنعة في التربية. والحقيقة وحدها حرية بأن تعرض عليهم ولها قوة النفوذ إلى عقولهم وأي فرق في التأثير
                             بين تعليم ينظر فيه للأشياء كأنها ألفاظ وبين تعليم يبحث فيه تحت الألفاظ عن الأشياء فالقانون الذي يجب العمل به هو
-                            أن يكون المربي رجلاً ويحسن تربية الرجال أي الأطفال بتقريبهم من حجر <pb ed="shamela"
-                   n="n76-p80"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5143.xhtml"/> الإنسانية.</p>
+                            أن يكون المربي رجلاً ويحسن تربية الرجال أي الأطفال بتقريبهم من حجر <pb ed="shamela" n="n76-p80" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5143.xhtml"/> الإنسانية.</p>
                         <p>اليمن والدولة العلية</p>
                         <p>من الأخبار التي لها علاقة كبرى بالاجتماع والعمران في هذه الديار الاتفاق الذي وقع بين الإمام يحيى إمام الزيدية في
                             اليمن وعزت باشا قائد اليمن العام بعد أن تكبدت الأمة والدولة أموالاً وأرواحاً عشرات السنين واليك نص الوفاق ليحفظ
                             في التاريخ وثيقة:</p>
                         <p>بسم الله الرحمن الرحيم</p>
                         <p> 
-               <hi style="color:red;">1 - </hi>يجري الوفاق بين حضرة سمو الإمام المتوكل عَلَى رب العالمين يحيى بن محمد بن حميد
+               <hi style="color:red;"> <tei:num value="1" xml:lang="ar">١</tei:num>  - </hi>يجري الوفاق بين حضرة سمو الإمام المتوكل عَلَى رب العالمين يحيى بن محمد بن حميد
                             الدين وبين حضرة صاحب العطوفة قائد الحملة اليمانية عزت باشا المأذون من طرف الحكومة السنية عَلَى الوجه الآتي ويكون
                             تصديقه من المرجع العالي وذلك فيما تصلح به أحوال جبال اليمن الآتي بيانها التي تجري فيها الآن إدارة الحكومة السنية
                             العثمانية فعلاً وهي لواء صنعاء وما يحويه من أقضية صنعاء وعمران وحجة وكوكبان وحراز وما عدا صفعان وابن مقاتل ثم
                             آنس وذمار وبريم ورداع ومن بلواء تعز من الزيديين إن كانوا نصف الناحية فصاعداً.</p>
                         <p> 
-               <hi style="color:red;">2 - </hi>يكون أجزاء الأحكام الشرعية بين المتحاكمين ممن يسكن البلدان المذكورة آنفاص في
+               <hi style="color:red;"> <tei:num value="2" xml:lang="ar">٢</tei:num>  - </hi>يكون أجزاء الأحكام الشرعية بين المتحاكمين ممن يسكن البلدان المذكورة آنفاص في
                             جميع المواد وإقامة الحدود عَلَى كل مرتكب لأسبابها كل ذلك عَلَى المذهب الزيدي ويكون تعيين الحكام وتبديلهم من قبل
                             الإمام وذلك بأن يكتب الإمام للولاية كتاباً بتعيينهم وتطلب الولاية تصديق ذلك من الآستانة عَلَى أن لا تتأخر
                             مباشرتهم الوظيفة عندما يكتب الإمام وتنفذ الحكومة جميع الأحكام التي تصدر من حكام الشرع ابتداءً ومن حكم الاستئناف
                             إن لم يقنع المحكوم عليه وطلب الاستئناف.</p>
                         <p> 
-               <hi style="color:red;">3 - </hi>إذا لم تظلم أحد من محكمة الاستئناف واشتكى إلى الإمام يسأل سمو الإمام الحكومة عن
+               <hi style="color:red;"> <tei:num value="3" xml:lang="ar">٣</tei:num>  - </hi>إذا لم تظلم أحد من محكمة الاستئناف واشتكى إلى الإمام يسأل سمو الإمام الحكومة عن
                             حقيقة ذلك وإذا ظهر صدقه عَلَى صحته تظلمه أعيدت المحكمة.</p>
                         <p> 
-               <hi style="color:red;">4 - </hi>تؤلف محكمة الاستئناف في مركز الولاية من رئيس وأعضاء ينتخبهم الإمام وكما يصدق
+               <hi style="color:red;"> <tei:num value="4" xml:lang="ar">٤</tei:num>  - </hi>تؤلف محكمة الاستئناف في مركز الولاية من رئيس وأعضاء ينتخبهم الإمام وكما يصدق
                             عَلَى تعيين الحكام يصدق عَلَى تعينهم.</p>
                         <p> 
-               <hi style="color:red;">5 - </hi>إذا حكمت محكمة الاستئناف عَلَى الوجه المتقدم ذكره بالقصاص الشرعي الذي هو إعدام
-                            شخص قاتل قد لاستحق الحكم عليه بالإعدام شرعاً فعلى الحاكم أن يسعى أولاً في <pb ed="shamela"
-                   n="n76-p81"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5144.xhtml"/> طلب العفو عن القاتل من
+               <hi style="color:red;"> <tei:num value="5" xml:lang="ar">٥</tei:num>  - </hi>إذا حكمت محكمة الاستئناف عَلَى الوجه المتقدم ذكره بالقصاص الشرعي الذي هو إعدام
+                            شخص قاتل قد لاستحق الحكم عليه بالإعدام شرعاً فعلى الحاكم أن يسعى أولاً في <pb ed="shamela" n="n76-p81" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5144.xhtml"/> طلب العفو عن القاتل من
                             ورثة القتيل أو إرضائهم بقبول الدية من القاتل فإن لم يساعدوه رفعت المحكمة الاستئنافية الأمر إلى الآستانة وطلبت
                             الإذن بإجراء القصاص بعد التصريح بأن الحاكم قد بذل مجهوده عند الورثة في طلب العفو وقبول الدية فلم يعفوه بشرط أن
                             لا تزيد مدة صدور الإرادة في ذلك عَلَى أربعة أشهر من وقت إرسال تقرير المحكمة المذكورة.</p>
                         <p> 
-               <hi style="color:red;">6 - </hi>عند ظهور ما يستوجب تبديل الحاكم من سوء حاله فعلى الولاية أن تخبر الإمام بذلك مع
+               <hi style="color:red;"> <tei:num value="6" xml:lang="ar">٦</tei:num>  - </hi>عند ظهور ما يستوجب تبديل الحاكم من سوء حاله فعلى الولاية أن تخبر الإمام بذلك مع
                             تبيين الأسباب الموجبة لتبديله والدلائل الشرعية وعلى الإمام أن يبدل ذلك القاضي.</p>
                         <p> 
-               <hi style="color:red;">7 - </hi>للحكومة حق أن تنصب قضاة يحكمون بمذهب الإمام الأعظم أبي حنيفة النعمان بين من كان
+               <hi style="color:red;"> <tei:num value="7" xml:lang="ar">٧</tei:num>  - </hi>للحكومة حق أن تنصب قضاة يحكمون بمذهب الإمام الأعظم أبي حنيفة النعمان بين من كان
                             حنفياً من غير أهل جبال اليمن.</p>
                         <p> 
-               <hi style="color:red;">8 - </hi>إذا حصلت دعوى بين زيدي وآخر من أهل المذاهب الأخرى الإسلامية من غير أهل الجبال
+               <hi style="color:red;"> <tei:num value="8" xml:lang="ar">٨</tei:num>  - </hi>إذا حصلت دعوى بين زيدي وآخر من أهل المذاهب الأخرى الإسلامية من غير أهل الجبال
                             يكون الرجوع في تلك الدعوة إلى محكمة مختلطة تتألف من زيديين وحنفيين وإذا اختلفت القضاة في الحكم فالمعتبر حكم
                             القاضي الذي من جهة المدعى عليه.</p>
                         <p> 
-               <hi style="color:red;">9 - </hi>للقضاة المعينين في النواحي والأقضية أن يتخذوا لهم معاونين ممن يثقون بهم
+               <hi style="color:red;"> <tei:num value="9" xml:lang="ar">٩</tei:num>  - </hi>للقضاة المعينين في النواحي والأقضية أن يتخذوا لهم معاونين ممن يثقون بهم
                             تستخدمونهم في أمورهم والمحافظة عَلَى أنفسهم في إحضار الخصوم عَلَى شرط أن لا يزيد عددهم عن ستة رجال في النواحي
                             وثلاثة في الأقضية وعلى والحكومة أن تؤدي لهم رواتبهم بصفة مباشرين أو شرطيين أما إذا كان هؤلاء غير كافين فالحكومة
                             تمدهم بمعاونين من رجال الضبط بحسب ما تقتضيه الحال.</p>
                         <p> 
-               <hi style="color:red;">10 - </hi>ولاية الأوقاف والوصايا إلى الإمام.</p>
+               <hi style="color:red;"> <tei:num value="10" xml:lang="ar">١٠</tei:num>  - </hi>ولاية الأوقاف والوصايا إلى الإمام.</p>
                         <p> 
-               <hi style="color:red;">11 - </hi>تعفو الحكومة السنية عن كل ما سبق من أهالي الجبال المذكورة من الجرائم والبقايا
+               <hi style="color:red;"> <tei:num value="11" xml:lang="ar">١١</tei:num>  - </hi>تعفو الحكومة السنية عن كل ما سبق من أهالي الجبال المذكورة من الجرائم والبقايا
                             المقيدة إلى تاريخ هذا المقرر والمقصود من الجرائم هي السياسية التي وقعت أثناء الحرب وتفرعاتها.</p>
                         <p> 
-               <hi style="color:red;">12 - </hi>تعفو الحكومة السنية مثل عفوها عن أهل الجبال عن جميع السوابق والجرائم والبقايا
+               <hi style="color:red;"> <tei:num value="12" xml:lang="ar">١٢</tei:num>  - </hi>تعفو الحكومة السنية مثل عفوها عن أهل الجبال عن جميع السوابق والجرائم والبقايا
                             في خولان ونهم وأرحب مطلقاً وتعفو عن مقطوعيتهم إلى مدة عشر سنين بشرط توقف أهل هذه الجهات عن كل ما يورث نقصاً في
                             جانب مأموري الحكومة وعن التعرض لما يخل بالأمن العام في الطرق فإن حصل من أحد منهم أو جماعة منهم مخالفة لما ذكر
-                            <pb ed="shamela"
-                   n="n76-p82"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5145.xhtml"/> أدب المخالف بخصوصه بما
+                            <pb ed="shamela" n="n76-p82" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5145.xhtml"/> أدب المخالف بخصوصه بما
                             يستحقه شرعاًً وإذا صدرت المخالفة من أهل بلدٍ أو جهة بالاتفاق وثبت ذلك عليهم لزم تأديبهم وسقطوا من مزية استحقاق
                             العفو فيما بعد.</p>
                         <p> 
-               <hi style="color:red;">13 - </hi>لا يطالب أحد من أهالي الجبال المذكورة بشيء غير التكاليف الشرعية الاعيار
+               <hi style="color:red;"> <tei:num value="13" xml:lang="ar">١٣</tei:num>  - </hi>لا يطالب أحد من أهالي الجبال المذكورة بشيء غير التكاليف الشرعية الاعيار
                             (بالخرص) والأغنام وبقية النعام بالنصاب الشرعي.</p>
                         <p> 
-               <hi style="color:red;">14 - </hi>إذا وقعت شكاية إلى الحكومة أو إلى حاكم الجهة المعين بنصب الإمام من ظلم الجباة
+               <hi style="color:red;"> <tei:num value="14" xml:lang="ar">١٤</tei:num>  - </hi>إذا وقعت شكاية إلى الحكومة أو إلى حاكم الجهة المعين بنصب الإمام من ظلم الجباة
                             والحراصين (العشارين) أو تبين من هؤلاء شيء من سوء الاستعمال لزم أولاً تحقق الأمر من جهة الحاكم وأكبر موظف في
                             الحكومة المحلية وما ثبت بوجه شرعي كان الحكم به والإجراء من الحكومة.</p>
                         <p> 
-               <hi style="color:red;">15 - </hi>لا مانع لمن أراد أن يعطي الإمام شيئاً عن طيبة خاطر وذلك أن يسلمه لسمو الإمام
+               <hi style="color:red;"> <tei:num value="15" xml:lang="ar">١٥</tei:num>  - </hi>لا مانع لمن أراد أن يعطي الإمام شيئاً عن طيبة خاطر وذلك أن يسلمه لسمو الإمام
                             رأساً أو إلى مأموري الأوقاف أو أمناء الأراضي المرتبطة بالإمام أو بواسطة مشايخ الدولة المختارين من الأهالي أو
                             بواسطة الحكام.</p>
                         <p> 
-               <hi style="color:red;">16 - </hi>للإمام أن يأخذ بواسطة من يأتمنهم حاصلات الأراضي المرتبطة به وتأخذ الحكومة
+               <hi style="color:red;"> <tei:num value="16" xml:lang="ar">١٦</tei:num>  - </hi>للإمام أن يأخذ بواسطة من يأتمنهم حاصلات الأراضي المرتبطة به وتأخذ الحكومة
                             السنية أعشارها الشرعية.</p>
                         <p> 
-               <hi style="color:red;">17 - </hi>ناحية الحبل الشرقي التابعة لقضاء آتس المؤلفة من العزل التي هي جبل الشرق وينو
+               <hi style="color:red;"> <tei:num value="17" xml:lang="ar">١٧</tei:num>  - </hi>ناحية الحبل الشرقي التابعة لقضاء آتس المؤلفة من العزل التي هي جبل الشرق وينو
                             قشيب وبنو اسعد والمناورة وبنو خالد وبنو سويد تعفى من جميع التكاليف مدة عشر سنين وبعد انقضاء هذه المدة فعليها أن
                             تؤدي للحكومة الأعشار وسائر التكاليف الشرعية مثل غيرها من محلات الجبال.</p>
                         <p> 
-               <hi style="color:red;">18 - </hi>يطلق الإمام من عنده من رهائن جوار صنعاء وهي بنو الحارب وبنو حشيش وهمدان وبلاد
+               <hi style="color:red;"> <tei:num value="18" xml:lang="ar">١٨</tei:num>  - </hi>يطلق الإمام من عنده من رهائن جوار صنعاء وهي بنو الحارب وبنو حشيش وهمدان وبلاد
                             البستان وسنحان وبلاد الروس وبنو بهلول وكذلك رهائن لأهل حراز وعمران.</p>
                         <p> 
-               <hi style="color:red;">19 - </hi>تأمين أصحاب الإمام وأصحاب الحكومة وسائر الناس في ذهابهم وإيابهم بتجارة أو غيرها
+               <hi style="color:red;"> <tei:num value="19" xml:lang="ar">١٩</tei:num>  - </hi>تأمين أصحاب الإمام وأصحاب الحكومة وسائر الناس في ذهابهم وإيابهم بتجارة أو غيرها
                             وإذا اتهم أحد من الذين يدورون لاكتساب المعيشة بالسعي لما يسلب راحة الناس قبض عليه وسلم إلى حاكم الشرعية لتحقيق
                             حاله.</p>
                         <p> 
-               <hi style="color:red;">20 - </hi>بعض إمضاء هذا الوفاق لا يتعدى فريق عَلَى الآخر في ما هو في إدارته الآن.</p>
-                        <p>حرر في اليوم السابع والعشرين من ذي القعدة سنة تسع وعشرين وثلاثمائة وألف عربية <pb ed="shamela"
-                   n="n76-p83"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5146.xhtml"/> وفي السابع من تشرين
+               <hi style="color:red;"> <tei:num value="20" xml:lang="ar">٢٠</tei:num>  - </hi>بعض إمضاء هذا الوفاق لا يتعدى فريق عَلَى الآخر في ما هو في إدارته الآن.</p>
+                        <p>حرر في اليوم السابع والعشرين من ذي القعدة سنة تسع وعشرين وثلاثمائة وألف عربية <pb ed="shamela" n="n76-p83" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5146.xhtml"/> وفي السابع من تشرين
                             الأول سنة سنة سبع وعشرين وثلاثمائة وألف رومية اهـ.</p>
                         <p>الإصلاح المدرسي</p>
                         <p>يشتغل علماء التربية في النمسا منذ سنين في إصلاح التعليم الثانوي والابتدائي فقرروا بعد البحث والنزر أن يكون
@@ -2590,19 +2393,17 @@
                             أنواع البناء عليها للانتفاع منها.</p>
                         <p>أفكار الشبان</p>
                         <p>وضع أحد المولعين بالإحصاء سؤالاً عرضه عَلَى نحو ستمائة أستاذ من أساتذة الكليات في فرنسا وهو بأي رجل من رجال
-                            التاريخ أو أهل العصر الحاضر أو الأشخاص الذين تعرفهم تحب أن تتشبه وما السبب في ذلك. فأجاب عليه 1600 طالب عَلَى
+                            التاريخ أو أهل العصر الحاضر أو الأشخاص الذين تعرفهم تحب أن تتشبه وما السبب في ذلك. فأجاب عليه  <tei:num value="1600" xml:lang="ar">١٦٠٠</tei:num>  طالب عَلَى
                             اختلاف تفسيرهم الموضوع المقترح فبعضهم اختار أن يتشبهة برجال من أهل محيطه مثل أحد أترابه أو أقربائه ولاسيما
-                            أخواله أو معلموه وبعضهم آثر أن يتعلم الصنعة الفلانية فمن هؤلاء 380 تلميذاً فهموا السؤال كذلك فاختار منهم 58
-                            تلميذاً الجندية و50 الزراعة و37 الطب و30 الهندسة و40 التجارة وقليل منهم اختار التوظف والمحاماة والأدب. وستمائة
+                            أخواله أو معلموه وبعضهم آثر أن يتعلم الصنعة الفلانية فمن هؤلاء  <tei:num value="380" xml:lang="ar">٣٨٠</tei:num>  تلميذاً فهموا السؤال كذلك فاختار منهم  <tei:num value="58" xml:lang="ar">٥٨</tei:num> 
+                            تلميذاً الجندية و <tei:num value="50" xml:lang="ar">٥٠</tei:num>  الزراعة و <tei:num value="37" xml:lang="ar">٣٧</tei:num>  الطب و <tei:num value="30" xml:lang="ar">٣٠</tei:num>  الهندسة و <tei:num value="40" xml:lang="ar">٤٠</tei:num>  التجارة وقليل منهم اختار التوظف والمحاماة والأدب. وستمائة
                             طالب رأوا أن يكونوا كأحد رجال التاريخ فوزعوا أصواتهم بين أقدم رجال العصور الغابرة إلى عهدنا هذا فبدأوا بأورفيس
                             وسقراط وانتهوا بلوتي ولبين وفيهم الشعراء والقصصيون والأمراء ورجال السياسة والقواد والأقوياء والبطال وكان ذلك
-                            لباستور 57 صوتاً ولنابليون 42 ولفكتور هوغو 36 وللاماتين 18 ولغاميتا 17 وقد تبين لجامع هذه الآراء التي لا تتجاوز
+                            لباستور  <tei:num value="57" xml:lang="ar">٥٧</tei:num>  صوتاً ولنابليون  <tei:num value="42" xml:lang="ar">٤٢</tei:num>  ولفكتور هوغو  <tei:num value="36" xml:lang="ar">٣٦</tei:num>  وللاماتين  <tei:num value="18" xml:lang="ar">١٨</tei:num>  ولغاميتا  <tei:num value="17" xml:lang="ar">١٧</tei:num>  وقد تبين لجامع هذه الآراء التي لا تتجاوز
                             أعمار كاتبيها الخامسة عشرة أنهم اختاروا من اختاروا التشبه بهم والانتساب لصناعتهم لما رأوه فيها من مظاهر النفع
-                            والبهرجة فالذين اختاروا الجندية <pb ed="shamela"
-                   n="n76-p84"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5147.xhtml"/> أحبوها لأن فيها ثياباً
+                            والبهرجة فالذين اختاروا الجندية <pb ed="shamela" n="n76-p84" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P5147.xhtml"/> أحبوها لأن فيها ثياباً
                             براقة وخوذات لطيفة والذين اختاروا السياسة لأنها تؤهل صاحبها إلى أن يكون نائباً عن مقاطعته في مجلس النواب ويقبض
-                            15 ألف فرنك مسانهة وقد عللوا في أجوبتهم السبب في إيثارهم للأشخاص والصناعات وكلها يستدل منها عَلَى نقص الروح
+                             <tei:num value="15" xml:lang="ar">١٥</tei:num>  ألف فرنك مسانهة وقد عللوا في أجوبتهم السبب في إيثارهم للأشخاص والصناعات وكلها يستدل منها عَلَى نقص الروح
                             الأدبية مما يكتبون وشيوع الأنانية وفقدان الغيرة والأماني الكريمة وقد علل جامع هذه الأجوبة قلة عناية الطليعة
                             بالإنشاء بأن من العدل أن لا نطالب التلميذ بتجويد كتابته في عصر الماديات وعصر الطيارات والكهربائية وإن الروح
                             الأدبية في الكتابة كانت تحمد في القرون الماضية أما نحن فإنا إذا وضعنا هذا السؤال عَلَى مثل أولئك التلامذة فلا شك

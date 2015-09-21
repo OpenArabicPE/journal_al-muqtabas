@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i72_text"
-         xml:lang="ar"
-         type="issue"
-         n="i72">
+   <text xml:id="oclc_4770057679_i72_text" xml:lang="ar" type="issue" n="i72">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,33 +202,29 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1912-02-01">بتاريخ: 1 - 2 - 1912</date>
-                                    <biblScope n="72" unit="issue">العدد 72</biblScope>
+                                    <date when="1912-02-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="2" xml:lang="ar">٢</tei:num>  -  <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> </date>
+                                    <biblScope n="72" unit="issue">العدد  <tei:num value="72" xml:lang="ar">٧٢</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             n=""
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4734.xhtml"/>
+                    <pb ed="shamela" n="" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4734.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="72" unit="issue">العدد 72</biblScope> 
-                  <date when="1912-02-01">بتاريخ: 1 - 2 -
-                            1912</date> 
+                  <biblScope n="72" unit="issue">العدد  <tei:num value="72" xml:lang="ar">٧٢</tei:num> </biblScope> 
+                  <date when="1912-02-01">بتاريخ:  <tei:num value="1" xml:lang="ar">١</tei:num>  -  <tei:num value="2" xml:lang="ar">٢</tei:num>  -
+                             <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> </date> 
                </bibl> 
             </head>
                         <p> 
-               <pb ed="shamela"
-                   n="n72-p1"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4735.xhtml"/> بسم الله وبه ثقتي</p>
+               <pb ed="shamela" n="n72-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4735.xhtml"/> بسم الله وبه ثقتي</p>
                         <p>نحمدهُ تعالى عَلَى أن يسر لنا الوفاء بما وعدنا به يوم إنشاء هذه المجلة من إرادة التحسين في موضوعاتها وتكثير
                             موادها وتكبير حجمها وتجميل مظهرها بحسب سنة النمو الطبيعي. وها نحن أولاء نبدأ الآن بنشر السنة السابعة بزيادة عدد
-                            صفحات مجلد السنة بحيث يقع المجلد في 960 صفحة وكان كل مجلد في السنين الأربع الأخيرة يصدر في 800 وفي السنتين
-                            الأوليين في 672 وتوسيع الحجم يقتضي ولا جرم التوسع في الأبحاث وإشباعها نظراً وتدقيقاً.</p>
+                            صفحات مجلد السنة بحيث يقع المجلد في  <tei:num value="960" xml:lang="ar">٩٦٠</tei:num>  صفحة وكان كل مجلد في السنين الأربع الأخيرة يصدر في  <tei:num value="800" xml:lang="ar">٨٠٠</tei:num>  وفي السنتين
+                            الأوليين في  <tei:num value="672" xml:lang="ar">٦٧٢</tei:num>  وتوسيع الحجم يقتضي ولا جرم التوسع في الأبحاث وإشباعها نظراً وتدقيقاً.</p>
                         <p>لم نتفرغ كل التفرغ في السنين الماضية إلى الانقطاع لما نحب المبالغة في البحث فيه لتجويد تأليف هذه الصحيفة لأن
                             العمل في الصحف السياسية أضاع علينا جانباً من أوقاتنا بحكم الضرورة بيد أننا لم نغفل يوماً ونحن وسط ذاك العراك
                             الشديد عن اقتباس كل ما نعتقد فيه الغناء لفائدة القراء الأعزاء.</p>
@@ -269,16 +236,14 @@
                             التوفيق. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n72-p2"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4736.xhtml"/>
+                        <pb ed="shamela" n="n72-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4736.xhtml"/>
                         <head>ملقى السبيل</head>
                         <p>سانحة</p>
                         <p>المعري وشبنهاور</p>
                         <p>من عهد بعيد بحث كتاب الشرق والغرب عن حياة الشاعر الحكيم أبي العلاء المعري وتآليفه وعرفوه بما يستحقه من الإجلال
                             والتعظيم فلا حاجة لإيراد ترجمته هنا.</p>
                         <p>إلا أنّا لم نر أحداً أشار إلى المشابهة الغريبة الموجودة بين فلسفة المعري ومذهب شبنهاور الحكيم الجرماني.</p>
-                        <p>ولد أرثور شبنهاور بمدينة دنتسيغ بألمانيا سنة 1788 فاعتنت أمه بتثقيفه وكانت من مشاهير قصصي ذلك القرن فأحسنت
+                        <p>ولد أرثور شبنهاور بمدينة دنتسيغ بألمانيا سنة  <tei:num value="1788" xml:lang="ar">١٧٨٨</tei:num>  فاعتنت أمه بتثقيفه وكانت من مشاهير قصصي ذلك القرن فأحسنت
                             تربيته.</p>
                         <p>وبعد أن تلقى العلوم بجامعة برلين وحصل عَلَى أعلا شهاداتها أخذ يدون آراءه الفلسفية فألف عدة كتب أهمها (الإرادة في
                             الطبيعة) و (أساس الحكمة) وأشهرها (حقائق تتعلق بالحكمة في الحياة) وفيه جمع شبنهاور حكمه في أقوال موجزة وفصول قصار
@@ -287,14 +252,12 @@
                             والتلذذ بالحياة.</p>
                         <p>أوليس هذا رأي المعري عندما يقول: إنك إلى الدنيا مصغ. وحبها للبشر مطغ. لو أنك لشأنها ملغ. أبغاك ما تأمله مبغ؟
                             ولولا خوف الإطالة لأوردنا شيئاً كثيراً من تشابه أقوال الحكيمين.</p>
-                        <p>وتوفي أرثور شبنهاور بفرنكفورت عام 1860.</p>
+                        <p>وتوفي أرثور شبنهاور بفرنكفورت عام  <tei:num value="1860" xml:lang="ar">١٨٦٠</tei:num> .</p>
                         <p>ومن اطلع عَلَى طريقة هذا الفيلسوف الألماني تيقن أن معتقده ويأسه من الحياة وتشاؤمه المستمر يطابق كثيراً مذهب
                             المعري خصوصاً في فحصه أتعاب البشر وآلامهم وجسه أسقام الإنسان كالباحث الماهر والطبيب العارف من غير حنان ولا شفقة
                             عَلَى هذا النوع الإنساني وبدون أن يبين في وصف الأدوية التي ينبغي اتخاذها واستعمالها للاتقاء وتسلية تلك
                             المواجع.</p>
-                        <p>وهناك علاقة وتشابه آخر بين أبي العلاء وشبنهاور وهو كونهما لم يتزوجا وعاشا في <pb ed="shamela"
-                   n="n72-p3"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4737.xhtml"/> عزوبة مستمرة وعزلة
+                        <p>وهناك علاقة وتشابه آخر بين أبي العلاء وشبنهاور وهو كونهما لم يتزوجا وعاشا في <pb ed="shamela" n="n72-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4737.xhtml"/> عزوبة مستمرة وعزلة
                             وانقطاع مما أثر في طبيعتهما وجعلهما يتشاءمان وينتقدان الهيئة الاجتماعية ويتناولان أهل الدين وأرباب العشائر
                             والنساء والاعتقاد ويسيئان الظن بالدنيا وساكنيها.</p>
                         <p>والفرق بين العالمين هو كون شبنهاور استقل في علم الفلسفة ودراستها والتدوين فيها بخلاف المعري الذي لم يشتغل
@@ -302,7 +265,7 @@
                             وذهنه الحاد فتسبكها قريحته الشعرية في تلك القوالب لعجيبة التي تظهر من قصائده.</p>
                         <p>بقي أن نتكلم عن رسالة ملقى السبيل التي نقدمها اليوم إلى محبي الآثار العربية والمولعين بنثر شاعر الفلاسفة وفيلسوف
                             الشعراء ونظمه.</p>
-                        <p>يظهر من هيئة هاته الرسالة وإنشاءها أن المعري ألفها في الدور الأخير من حياته زمن عزلته وانقطاعه (حوالي سنة 430 هـ)
+                        <p>يظهر من هيئة هاته الرسالة وإنشاءها أن المعري ألفها في الدور الأخير من حياته زمن عزلته وانقطاعه (حوالي سنة  <tei:num value="430" xml:lang="ar">٤٣٠</tei:num>  هـ)
                             وقد زهد في الدنيا لكبره واقتراب أجله. فكأنه أراد الرجوع للمبادئ الدينية وسلك طريقة الوعظ والنسك وتمسك بالاعتقاد.
                             وأين قوله زمن صغره لما كان في غزارة قواه وعنفوان شبابه:</p>
                         <lg type="bayt">
@@ -320,9 +283,7 @@
                             خطيب بني إياد الذي قال فيه النبي صلى الله عليه وسلم رأيته بسوق عكاظ عَلَى جمل أحكر يقول: أيها الناس اجتمعوا
                             فاسمعوا وعوا. من عاش مات. ومن مات فات. وكل ما هو آتٍ آت. في هذه آيات محكمات. مطر ونبات. وآباءٌ وأمهات. وذاهب
                             وآت. ونجوم تمور. وبحور لا تغور. وسقف مرفوع. ومهاد موضوع. وليل داج. وسماء ذات أبراج. مالي أرى الناس يموتون ولا
-                            يرجعون. أرضوا فأقاموا. أم حبسوا فناموا. يا معشر إياد. أين ثمود وعاد. <pb ed="shamela"
-                   n="n72-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4738.xhtml"/> وأين الآباء والأجداد.
+                            يرجعون. أرضوا فأقاموا. أم حبسوا فناموا. يا معشر إياد. أين ثمود وعاد. <pb ed="shamela" n="n72-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4738.xhtml"/> وأين الآباء والأجداد.
                             أين المعروف الذي يشكر. والظلم الذي لم ينكر:</p>
                         <lg type="bayt">
                             <l>في الذاهبين الأولين </l>
@@ -345,21 +306,19 @@
                             <l> لة حيث صار القوم صائر</l>
                         </lg>
                         <p>وسوف يرى القارئُ ما بين الكلام المتقدم وحل المعري وعقده في ملقى السبيل من مطابقة المعنى ومشابهة اللهجة.</p>
-                        <p>أما النسخة التي اعتمدنا عليها في النقل فهي محفوظة بمكتبة الأسكوريال من بلاد الأندلس تحت نمرة 467 وهي بخط الراوي
+                        <p>أما النسخة التي اعتمدنا عليها في النقل فهي محفوظة بمكتبة الأسكوريال من بلاد الأندلس تحت نمرة  <tei:num value="467" xml:lang="ar">٤٦٧</tei:num>  وهي بخط الراوي
                             لها القاضي الإمام الشريف أبي محمد عبد الله ابن القاضي أبي الفضل عبد الرحمن بن يحيى الديباجي العثماني رسمها
                             بالإسكندرية أوائل القرن السادس وقد اعتنى برسمها وضبط جملها بطريقة ثابتة مدققة وهي فيما اعتقده أقدم نسخة لملقى
                             السبيل ولا يبعد أن تكون هي التي عول عليها أدباء الأندلس في معارضتهم لها فقد جاء في نفح الطيب أن الحافظ أبا
-                            الربيع الكلاعي الأندلسي المتوفى بالجهاد سنة 634 هـ. عارض هذه الرسالة بتأليف سماه مفاوضة القلب العليل ومنابذة
-                            الأمل الطويل بطريقة المعري في ملقى السبيل. كما تحتوي مكتبة الأسكوريال نفسها عَلَى كتب (نمرة 519) من وضع الكاتب
+                            الربيع الكلاعي الأندلسي المتوفى بالجهاد سنة  <tei:num value="634" xml:lang="ar">٦٣٤</tei:num>  هـ. عارض هذه الرسالة بتأليف سماه مفاوضة القلب العليل ومنابذة
+                            الأمل الطويل بطريقة المعري في ملقى السبيل. كما تحتوي مكتبة الأسكوريال نفسها عَلَى كتب (نمرة  <tei:num value="519" xml:lang="ar">٥١٩</tei:num> ) من وضع الكاتب
                             الشهير أبي عبد الله محمد بن أبي الخصال وزير يوسف بن تاشفين سلطان المرابطين عارض به ملقى السبيل أيضاً. ومن جهة
                             أخرى يوجد بمقدمة النسخة التي لدينا وهي كما قدمنا صورة فوتوغرافية من الأصل الأندلسي كثير من الإجازات تنبئ بقراءَة
                             هذه الرسالة عَلَى أساتذة متضلعين تلتحق رواياتهم بالراسم الأول نعني عبد الله الديباجي. وأقد توقيع من هذا النمط
-                            مؤرخ سنة 562 وهو مما يستدل به أيضاً عَلَى اهتمام الأندلسيين بتآليف المعري.</p>
+                            مؤرخ سنة  <tei:num value="562" xml:lang="ar">٥٦٢</tei:num>  وهو مما يستدل به أيضاً عَلَى اهتمام الأندلسيين بتآليف المعري.</p>
                         <p>وعسى أن ننشر فيما بعد رسائل أخرى من وضع هذا الفيلسوف الشاعر والله ولي التوفيق.</p>
-                        <p>تونس 10 ربيع الأنور 1329</p>
-                        <p>ح. ح. عبد الوهاب <pb ed="shamela"
-                   n="n72-p5"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4739.xhtml"/> بسم الله الرحمن
+                        <p>تونس  <tei:num value="10" xml:lang="ar">١٠</tei:num>  ربيع الأنور  <tei:num value="1329" xml:lang="ar">١٣٢٩</tei:num> </p>
+                        <p>ح. ح. عبد الوهاب <pb ed="shamela" n="n72-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4739.xhtml"/> بسم الله الرحمن
                             الرحيم</p>
                         <p>أخبرني بملقى السبيل هذه الشيخ أبو المظفر سعد بن أحمد بن حماد المعري رحمه الله عن أبيه أبي العلاء ناظمها وكتب عبد
                             الله بن عبد الرحمن العثماني.</p>
@@ -406,9 +365,7 @@
                         <p>الباء</p>
                         <p>يفتقر إلى الله الأرباب. وبالكافر يحل التباب. وتنقطع بالموت الأسباب. وفي الخالق تحار الألباب.</p>
                         <p>نظمه (رجز)</p>
-                        <p>دانت لرب الفلك الأرباب <gap resp="#org_MS"/> وبالكفور يلحق التباب <pb ed="shamela"
-                   n="n72-p6"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4740.xhtml"/> كم قطعت لميتة أسباب <gap resp="#org_MS"/> واقترفت برغمها الأسباب</p>
+                        <p>دانت لرب الفلك الأرباب <gap resp="#org_MS"/> وبالكفور يلحق التباب <pb ed="shamela" n="n72-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4740.xhtml"/> كم قطعت لميتة أسباب <gap resp="#org_MS"/> واقترفت برغمها الأسباب</p>
                         <p>التاء</p>
                         <p>النفس تصرفت وانصرفت. والأمضاء تألفت ثم تلفت. والأقضية بحق هتفت. ما أُعفيت المحلة لكن عفت. كم شفيت المدنفة فما
                             اشتفت.</p>
@@ -463,9 +420,7 @@
                             <l>رجا أُموراً فلم تقدر </l>
                             <l> وكل من في الحي الحياة راجي</l>
                         </lg>
-                        <p>الحاء <pb ed="shamela"
-                   n="n72-p7"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4741.xhtml"/> إن ابن آدم لشحيح. سوف
+                        <p>الحاء <pb ed="shamela" n="n72-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4741.xhtml"/> إن ابن آدم لشحيح. سوف
                             يمرض من القوم صحيح. تعصف بعقله ريح. فإذا هو لقيَ طريح. ثم يحفر له ضريح. أن ذلك هو التبريح.</p>
                         <p>نظمه (مخلع البسيط)</p>
                         <lg type="bayt">
@@ -531,9 +486,7 @@
                             <l>تصعد في المرتب غير وإن </l>
                             <l> وأحرزه عَلَى الرغم الصعيد</l>
                         </lg>
-                        <p>تفرقت الجيود فما حمته <gap resp="#org_MS"/> وأبطلت المواعيد والوعيد <pb ed="shamela"
-                   n="n72-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4742.xhtml"/> الذال</p>
+                        <p>تفرقت الجيود فما حمته <gap resp="#org_MS"/> وأبطلت المواعيد والوعيد <pb ed="shamela" n="n72-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4742.xhtml"/> الذال</p>
                         <p>أما العيش فيلذ. ولكن سببه يجذ.</p>
                         <p>نظمه (متقارب)</p>
                         <lg type="bayt">
@@ -589,9 +542,7 @@
                         </lg>
                         <p>الزاي</p>
                         <p>لا تبرزي يا غانية. فإنها الدنيا فانية. سترك بكلة والداك. فتمسك بالنسك بداك. الورع ذهب إبريز. والجدث حرز حريز. قد
-                            تهلك فتاة رود. وتلبث مسنة ترود. <pb ed="shamela"
-                   n="n72-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4743.xhtml"/> نظمه (مخلع البسيط)</p>
+                            تهلك فتاة رود. وتلبث مسنة ترود. <pb ed="shamela" n="n72-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4743.xhtml"/> نظمه (مخلع البسيط)</p>
                         <lg type="bayt">
                             <l>يموت قوم وراء قوم </l>
                             <l> ويثبت الأول العزيز</l>
@@ -656,9 +607,7 @@
                             <l>يحث بالنعش حاملوه </l>
                             <l> وشد ما سارت النعوش</l>
                         </lg>
-                        <p>لا حبذا الأنس والخطايا <gap resp="#org_MS"/> وحبذا النسك والوحوش <pb ed="shamela"
-                   n="n72-p10"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4744.xhtml"/> الصاد</p>
+                        <p>لا حبذا الأنس والخطايا <gap resp="#org_MS"/> وحبذا النسك والوحوش <pb ed="shamela" n="n72-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4744.xhtml"/> الصاد</p>
                         <p>المرء عما وجب ناكص. والشخص للحدث شاخص. إن ظل الفانية لقالص. فهل خلص إلى الله خالص. إن دينك لرديعة في المحار. إنما
                             يدرك بغوص البحار. وعُدِمَ دين في الأنام. وكان كالحلم في المنام.</p>
                         <p>نظمه (سريع)</p>
@@ -716,9 +665,7 @@
                         </lg>
                         <p>الطاء</p>
                         <p>فودك علاه الشمط. والمرء ينقص ويغمط. كالطفل كهلك فهلا يقمط. لقد عرف هذا النمط. والنفس تطعن ولا تضبط. وأَجر من كفر
-                            يحبط. أيبن موقف لا يغلط. والموت في العالم مسلط. وعائد الملك لا يقنط. <pb ed="shamela"
-                   n="n72-p11"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4745.xhtml"/> نظمه (هزج)</p>
+                            يحبط. أيبن موقف لا يغلط. والموت في العالم مسلط. وعائد الملك لا يقنط. <pb ed="shamela" n="n72-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4745.xhtml"/> نظمه (هزج)</p>
                         <p>إلا أحرص والرغبة في أشيب كالأشمط</p>
                         <lg type="bayt">
                             <l>وكالطفل إذا الكهل </l>
@@ -784,9 +731,7 @@
                             <l>كم أومض البارق في عارض </l>
                             <l> فألفي الكاذب إذ يلمع</l>
                         </lg>
-                        <p>سحب تجلى خالياً دجنها <gap resp="#org_MS"/> عنكم وسحب بعدها همع <pb ed="shamela"
-                   n="n72-p12"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4746.xhtml"/> الغين</p>
+                        <p>سحب تجلى خالياً دجنها <gap resp="#org_MS"/> عنكم وسحب بعدها همع <pb ed="shamela" n="n72-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4746.xhtml"/> الغين</p>
                         <p>إنك إلى الدنيا مصغ. وحبها للبشر مطغ. لو أنك لشأنها ملغ. أبغاك ما تأمله مبغ.</p>
                         <p>نظمه (خفيف)</p>
                         <lg type="bayt">
@@ -840,9 +785,7 @@
                             <l>تأسف إن أنفقت مالاً ولا </l>
                             <l> تأسف من عمرك إذ تنفق</l>
                         </lg>
-                        <p>تظل من فقد الغنا مشفقاً <gap resp="#org_MS"/> ومن قبيح الإثم لا تشفق <pb ed="shamela"
-                   n="n72-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4747.xhtml"/> مرتفقاً في وطن حافظاً
+                        <p>تظل من فقد الغنا مشفقاً <gap resp="#org_MS"/> ومن قبيح الإثم لا تشفق <pb ed="shamela" n="n72-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4747.xhtml"/> مرتفقاً في وطن حافظاً
                             <gap resp="#org_MS"/> تسأل ما هان فلا ترفق</p>
                         <lg type="bayt">
                             <l>يعود عن غيمك من شامه </l>
@@ -895,9 +838,7 @@
                         <p>أفي مسمعك حل الصمم. أم لبك أصاب اللمم. وتحسن للأنيس الهمم. وفي التراب تطوى الرمم. وفي الباطن تخاف الذمم. عَلَى
                             ذلك تمر الأمم.</p>
                         <p>نظمه (سريع)</p>
-                        <p>مالك لم تصغ إلى عاذل <gap resp="#org_MS"/> أحل في المسمع منك الصمم <pb ed="shamela"
-                   n="n72-p14"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4748.xhtml"/> أجاهل أنت فتلحى عَلَى
+                        <p>مالك لم تصغ إلى عاذل <gap resp="#org_MS"/> أحل في المسمع منك الصمم <pb ed="shamela" n="n72-p14" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4748.xhtml"/> أجاهل أنت فتلحى عَلَى
                             العصيان أم مس حجاك اللمم</p>
                         <lg type="bayt">
                             <l>همتك العليا هوت في الثرى </l>
@@ -947,9 +888,7 @@
                             <l>وهت عقود كانفي عصره </l>
                             <l> أحكمها لا عاقد ما وهى</l>
                         </lg>
-                        <p>ما شهوات الحي إلا أذى <gap resp="#org_MS"/> إن نال من مدته ما اشتهى <pb ed="shamela"
-                   n="n72-p15"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4749.xhtml"/> كأن يرى في غزل دائماً
+                        <p>ما شهوات الحي إلا أذى <gap resp="#org_MS"/> إن نال من مدته ما اشتهى <pb ed="shamela" n="n72-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4749.xhtml"/> كأن يرى في غزل دائماً
                             <gap resp="#org_MS"/> ما بين غزلان له أو مهى</p>
                         <p>دهاه بالمقدور لم يدفع الخطب عن مهجته إذ دهى</p>
                         <lg type="bayt">
@@ -1013,9 +952,7 @@
                             <l>لم تأتنا منكم رسل مخبرة </l>
                             <l> ولا كتاب إلينا منكم وصلا</l>
                         </lg>
-                        <p>الياء <pb ed="shamela"
-                   n="n72-p16"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4750.xhtml"/> الحي بعد العيشة رديء.
+                        <p>الياء <pb ed="shamela" n="n72-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4750.xhtml"/> الحي بعد العيشة رديء.
                             وجاءه القدر فيما فدي. وشخصه بالقاضية ردي. لم يرزق النهل إن صدي. لكنه عن ذلك عدي. أظلته العاجلة فما هدي. وجادته
                             الاسمية فما ندي. وقتلته الحادثات فما ودي.</p>
                         <p>نظمه (سريع)</p>
@@ -1054,9 +991,7 @@
                         <p>نجزت والحمد لله وحده. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n72-p17"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4751.xhtml"/>
+                        <pb ed="shamela" n="n72-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4751.xhtml"/>
                         <head>هل تسترد اللغة مجدها القديم</head>
                         <p>يستطيع التاريخ الأدبي أن يبين حدود النشأة الحقيقية لكثير من اللغات الميتة والحية ولكنه لا يستطيع أو عَلَى الأقل
                             لم يستطع إلى الآن أن يبين شيئاً من ذلك بالقياس إلى اللغة العربية التي ينطق بها من أهل الشرق الخلق الكثير.</p>
@@ -1074,9 +1009,7 @@
                             الفكر صغير العقل ولست أقول هذا القول يدبيجاً للفظ أو مبالغة فيه وإنما هي الحقيقة الثابتة التي ليس فيها مجال لشك
                             ولا جدال فإن هذه اللغة هي أول غصن نبت من لغة سام بن نوح عليهما السلام وقد قطعت مع الإنسان هذا القدر من الزمان
                             وعمرت معه منذ كان طفلاً إلى أن صار كهلاً وها أنتم أولاء تسمعونها مني فتشعرون بأنها لا تزال حية قوية تثبت بأجلى
-                            بيان أنها أطول اللغات عمراً وأشدها أسراً وأعظماه قوة عَلَى الخطوب وصبراً عَلَى الأحداث. <pb ed="shamela"
-                   n="n72-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4752.xhtml"/> فكم ماتت
+                            بيان أنها أطول اللغات عمراً وأشدها أسراً وأعظماه قوة عَلَى الخطوب وصبراً عَلَى الأحداث. <pb ed="shamela" n="n72-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4752.xhtml"/> فكم ماتت
                             اللغات وهي حية وفنيت اللهجات وهي باقية وكم حاربها الدهر فحربته وغالبها فغلبته ورامها بالسوء فامتنعت عليه.</p>
                         <p>وقد أدركت هذه اللغة نضرة اللغات وذبولها وإشراقها وأفولها وشهدت مصارع أخوتها الساميات وهن يتفانين سراعاً ويتهاوين
                             تباعاً حتى عمهن الموت وشملهن الفناء هنالك عاشت فذة فريدة تتمثل قول شاعر أبناءها المجيدين</p>
@@ -1098,9 +1031,7 @@
                             حرف متحرك كباء الجر ولامه وكاف التشبيه وأحرف القسم وهمزة الاستفهام.</p>
                         <p>ثم تركت هذه الألفاظ بتركب معانيها ومرونة الألسنة عَلَى النطق والحركة فبلغت مقطعين وثلاثة إلى أن استقرت في نصابها
                             المعروف فلم تنقص في الاسم والفعل عن ثلاثة أحرف أصول لم تزد في الأول عن خمسة وفي الثاني عن أربعة إلا بحروف غير
-                            لازمة وهي الزوائد عَلَى أن هذه الحروف لم تستطع أن تبلغ بالفعل أكثر من ستة وبالاسم أكثر من <pb ed="shamela"
-                   n="n72-p19"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4753.xhtml"/> سبعة غير
+                            لازمة وهي الزوائد عَلَى أن هذه الحروف لم تستطع أن تبلغ بالفعل أكثر من ستة وبالاسم أكثر من <pb ed="shamela" n="n72-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4753.xhtml"/> سبعة غير
                             الحركات التي لا تحسب عند العرب حروفاً كما تحسب عند غيرهم من الفرنج. .</p>
                         <p>والحقيقة أن هذا المذهب لا يصح إلا إذا قلنا أن العرب ليسوا من بني آدم أبي البشر وإنما هم أبناء رجل آخر نشأ في
                             جزيرة العرب من غير أم ولا أب ونشأت منه زوجة واستقر نسلهما في الجزيرة لا يخالط الناس حتى تكونت لغته وضمنت لنفسها
@@ -1119,9 +1050,7 @@
                         <p>كذلك لا نستطيع معرفة نشأة اللغة العربية حتى نعرف اللغة السامية الأولى التي هي أصلها ولكنها مع الأسف قد بادت
                             واندمجت في بناتها قبل التاريخ فلم يبق لنا إليها من سبيل.</p>
                         <p>الثاني أن ضياع الأصل لا يقطع الرجاء في الوصول إلى بعض حقائق اللغة في نشأتها إذ استطعنا أن نستعين عَلَى البحث
-                            بالمقابلة بينها وبين أخواتها من اللغات الأخرى ولكنا مع <pb ed="shamela"
-                   n="n72-p20"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4754.xhtml"/> الأسف لم نفعل شيئاً من
+                            بالمقابلة بينها وبين أخواتها من اللغات الأخرى ولكنا مع <pb ed="shamela" n="n72-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4754.xhtml"/> الأسف لم نفعل شيئاً من
                             ذلك ولم نفكر فيه فقد كان أئمة اللغة رحمهم الله في عصر يمكنهم من ذلك لأن كثيراً من اللغات السامية كانت لا تزال
                             حية عَلَى عهدهم ولكنهم قد عكفوا عَلَى جمع اللغة وتدوينها من غير أن يفكروا في البحث عن أصلها وقد أخذت تلك البقية
                             الباقية تندمج في اللغة العربية بحكم القهر والتغلب الفطري حتى لم يبق لها من الأثر إلا قليل.</p>
@@ -1154,9 +1083,7 @@
                         <p>السبب الثالث أن العرب ولاسيما أهل الحجاز الذين نبحث عن لغتهم الآن قد كانوا أمة بادية لم تشترك مع غيرها من الأمم
                             في تكوين الحضارة الإنسانية اشتركاً حقيقياً إلا بعد ظهور الإسلام فكانت في جاهليتها محتجبة عن التاريخ ولذلك لم
                             يحفظ عنها إلا أساطير حظ الظن منها أكبر من حظ اليقين.</p>
-                        <p>اللغة العربية في الجاهلية <pb ed="shamela"
-                   n="n72-p21"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4755.xhtml"/> نشأت هذه اللغة وتكونت
+                        <p>اللغة العربية في الجاهلية <pb ed="shamela" n="n72-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4755.xhtml"/> نشأت هذه اللغة وتكونت
                             ألفاظها وأساليبها وهي بمعزل عن الناس قد جعلت البداوة بينها وبين التاريخ حجاباً مستوراً وكأنها قد سئمت الخفاء
                             والاحتجاب ورغبت في الظهور ومجاراة اللغات الحية وظهرت للتاريخ في القرن الخامس لميلاد المسيح ومنتصف القرن الثاني
                             قبل الهجرة فإذا لغة ضخمة الألفاظ فخمة المعاني متينة الأساليب رصينة التراكيب قد تم خلقها وكملت قواها فأصبحت قادرة
@@ -1192,9 +1119,7 @@
                             <l>يغط غطيط البكر شد خناقه </l>
                             <l> ليقتلني والمرءُ ليس بقتال</l>
                         </lg>
-                        <p>أيقتلني والمشر في مضاجعي <gap resp="#org_MS"/> ومسنونة زرق كأنياب أغوال <pb ed="shamela"
-                   n="n72-p22"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4756.xhtml"/> أستحي أن أقارن هذا الشعر
+                        <p>أيقتلني والمشر في مضاجعي <gap resp="#org_MS"/> ومسنونة زرق كأنياب أغوال <pb ed="shamela" n="n72-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4756.xhtml"/> أستحي أن أقارن هذا الشعر
                             الفخم الذي يمثل القوة والعزم ويظهر قائله مظهر المتسلط القاهر وبين ذلكم الغناء المصري القائل - يالموني يالموني
                             ياللي في حبك ظلموني - يالموني وأنا أحب الخص يالموني ولا آكل الخص يالموني وحبيبي في مصر يالموني عَلَى مين
                             يجيبولي. . .</p>
@@ -1221,9 +1146,7 @@
                         <p>كلا أيها السادة ليس تأثير الحضارة والبداوة في هذا الأمر كبيراً فإن الحضارة الصالحة لا تقتل عاطفة الغيرة من قلب
                             الإنسان ولعلكم سمعتم خبر ذلكم الشاعر العباسي الناشئ في الحضارة إذا اشتدت به الغيرة عَلَى حبيبته حتى أشفق عليها
                             من الهواء فقتلها وقال يرثيها</p>
-                        <p>يا طلعة الحمام عليها <gap resp="#org_MS"/> فجنى لها ثمر الردى بيديها <pb ed="shamela"
-                   n="n72-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4757.xhtml"/> حكمت سيفي في مجال وشاحها
+                        <p>يا طلعة الحمام عليها <gap resp="#org_MS"/> فجنى لها ثمر الردى بيديها <pb ed="shamela" n="n72-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4757.xhtml"/> حكمت سيفي في مجال وشاحها
                             <gap resp="#org_MS"/> ومدامعي تجري عَلَى خديها</p>
                         <lg type="bayt">
                             <l>رويت من دمها الثرى ولطالما </l>
@@ -1256,9 +1179,7 @@
                         <p>وهذا المثل المصري القائل الخنفسة عند أمها عطارة والقرد عند أمه غزال.</p>
                         <p>كفى كفى أيها السادة فقد أثبتت المقارنة بالدليل والبرهان إنا لم نصل من الرقي الأدبي إلى ما وصل إليه أولئكم الأعراب
                             وإن كنا أولي حضارة ومدنية وأصحاب علوم وآداب وذوي شريعة ودين.</p>
-                        <p>آداب اللغة العربية ومادتها في الجاهلية <pb ed="shamela"
-                   n="n72-p24"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4758.xhtml"/> ارتقت آداب اللغة العربية
+                        <p>آداب اللغة العربية ومادتها في الجاهلية <pb ed="shamela" n="n72-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4758.xhtml"/> ارتقت آداب اللغة العربية
                             في السادس لميلاد المسيح بمخالطة العرب لأهل العراق والشام فقد أخذوا عنهم يهودية موسى ونصرانية المسيح وربما انتقلت
                             إليهم بعض الآراء الفلسفية التي أدخلها القسيسون في الديانة المسيحية كما في قول الأعشى</p>
                         <lg type="bayt">
@@ -1280,9 +1201,7 @@
                             سبيل إلى اتفاقهم في المنطق فقد تباعدت اللغات واختلفت اللهجات لتعدد الأوضاع وتباعدت الأصقاع حتى أنهم كانوا لا
                             يفهم بعضهم بعضاً.</p>
                         <p>وقد وفد أعرابي عَلَى ملك من ملوك حمير فقال له الملك ثب يريد الجلوس فظن الأعرابي أنه يأمره بالقفز كما هي لغة
-                            الحجاز فوثب من أعَلَى الجبل حتى تردى في أسفله فلما سأل الملك عن ذلك واطلع طلع الرجل قال من دخل ظفار حمر. . . <pb ed="shamela"
-                   n="n72-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4759.xhtml"/>
+                            الحجاز فوثب من أعَلَى الجبل حتى تردى في أسفله فلما سأل الملك عن ذلك واطلع طلع الرجل قال من دخل ظفار حمر. . . <pb ed="shamela" n="n72-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4759.xhtml"/>
                             وقد أحس العرب من أنفسهم هذا الداء في أواخر القرن السادس لميلاد المسيح فأخذوا يطبون له وبعبارة جلية أخذوا يتهيئون
                             لنهضتهم الجديدة في اللغة والدين والاجتماع فماذا صنعوا. .؟</p>
                         <p>مقدمات النهضة العربية</p>
@@ -1302,9 +1221,7 @@
                         <p>الشعر</p>
                         <p>في ذلك العصر التهبت جذوة الشعر واستطار شرره فالتهم كل شيءٍ واحتكم في كل إنسان ولم تكن حكمة الإله ولا رأي الاع +
                             ولا اعتماد إلا عليه وكان يكفي للشاعر أن يمدح الوضيع فيرفعه أو يذم الرفيع فيضعه أو يغري بالحرب فتتهالك النفوس
-                            وتتفانى القوى أو <pb ed="shamela"
-                   n="n72-p26"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4760.xhtml"/> يدعوا إلى السلم فتصبح
+                            وتتفانى القوى أو <pb ed="shamela" n="n72-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4760.xhtml"/> يدعوا إلى السلم فتصبح
                             الضغائن والأحقاد نسياً منسياً.</p>
                         <p>اختلفت قبيلتان من قبائل العرب عَلَى بئر من الآبار حتى ذكت بينهما نار الحرب فلم يكن إلا أن وقف شاعر أحدهما
                             وقال:</p>
@@ -1342,9 +1259,7 @@
                             <l>إن الفرزدق برزت أحسابه </l>
                             <l> عفواً وغودر في الغبار جرير</l>
                         </lg>
-                        <p>فأمر بشر أن تكتب هذه البيات إلى جرير وأن يؤخذ بالإجابة عليها فلما وصلت الأبيات <pb ed="shamela"
-                   n="n72-p27"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4761.xhtml"/> إلى جرير خلا إلى نفسه
+                        <p>فأمر بشر أن تكتب هذه البيات إلى جرير وأن يؤخذ بالإجابة عليها فلما وصلت الأبيات <pb ed="shamela" n="n72-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4761.xhtml"/> إلى جرير خلا إلى نفسه
                             سواد الليل فلم يصنع شيئاً فلما كاد يأخذه اليأس سمع قائلاً يقول في زاوية من زوايا البيت ويحك يا جرير غبت عنك ليلة
                             فلم تصنع شيئاً هلا قلت</p>
                         <lg type="bayt">
@@ -1356,9 +1271,7 @@
                             لا تشرف ولا ينبه ذكرها إلا إذا كان لها شاعر وخطيب. الباقي للآتي </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n72-p28"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4762.xhtml"/>
+                        <pb ed="shamela" n="n72-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4762.xhtml"/>
                         <head>النهضة الفكرية في سورية</head>
                         <p>الإقبال عَلَى الآداب منظومها ومنشورها أول ما تنصرف إليه وجوه الأمم الآخذة بالنهوض ثم تنبعث الرغبة في الفنون
                             والعلوم بحسب الحاجة والدواعي. وبعد أن اضمحلت الآداب في سورية فبلغت حداً غريباً من الابتذال في القرن الثاني عشر
@@ -1378,9 +1291,7 @@
                             عَلَى الأغلب عَلَى يد أُناس من العرب تعلموا التركية في المدارس الملكية والعسكرية في الولايات السورية أو في
                             الآستانة وهؤلاء في الأكثر تعلموا ما تعلموا ليصبحوا موظفين وغايتهم أن يتدرجوا في سلك المراتب والمناصب ليعيشوا عيش
                             الراحة والاتكال. ولولا نفر منهم تداركوا أمرهم بعد نيل الشهادات المؤُذنة بكفاءاتهم من المدارس الأميرية فأخذوا
-                            يحاولون أن يكتبوا بلغتهم <pb ed="shamela"
-                   n="n72-p29"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4763.xhtml"/> ويتذوقوا أدبياتها ليلموا
+                            يحاولون أن يكتبوا بلغتهم <pb ed="shamela" n="n72-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4763.xhtml"/> ويتذوقوا أدبياتها ليلموا
                             عَلَى أمتهم بعض ما غلب عليهم من المعارف الجديدة لقلنا أن تلك المدارس لم تأتنا بخير إلا بكونها صاغت من سورية
                             موظفين آخرين فزادت الدولة بهم عبثاً فوق عبثها الثقيل من الأتراك الذين جعلوا وظائف الحكومة أقصى ما يبلغونه من
                             درجات الكمال وسعادة الحال والمآل.</p>
@@ -1399,9 +1310,7 @@
                             مارونية ولا أرثوذوكسية ولا برتستانتية ولا إسرائيلية ولا درزية وبهذا صح أن نقول أن سورية بابل اللغات واللهجات كما
                             هي بابل الأديان والمذاهب وإن النهضة في أصقاعها كأجوائها في التلون وأغوارها في الحرارة ونجادها في البرودة.</p>
                         <p>لم تنشأ في البلاد مدارس أهلية إلا في دمشق وبيروت وحمص وطرابلس وصيدا مثلاً منذ عهد قريب وهي لم تطل أعمارها بعد حتى
-                            يتخرج منها تلاميذ يكون واحدهم بألف في <pb ed="shamela"
-                   n="n72-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4764.xhtml"/> غنائه وكفاءته ويبذ
+                            يتخرج منها تلاميذ يكون واحدهم بألف في <pb ed="shamela" n="n72-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4764.xhtml"/> غنائه وكفاءته ويبذ
                             المتعلمين في مدارس الأجانب ومدارس الحكومة معاً ويتلقن في مدرسته أن المقصود من العلم إنارة المتعلم نفسه وذويه
                             ونفع قومه ولغته وأمته.</p>
                         <p>وممن يساعدون اليوم عَلَى ترقية الأفكار وإزالة غشاوة الأوهام بعض الصحف وفئة من ناشئة الشام تتلقى العلوم المختلفة
@@ -1421,9 +1330,7 @@
                             وإن كانت الأولى تفوق الثانية بكثرة الناهضين للتعليم من أبنائها وحمص تشبه طرابلس والصلت تشبه بعلبك ولكن هناك نحو
                             مئة بلدة لا تقل نفوس الواحدة منها عَلَى بضعة ألوف من السكان وهي لا تخرج في نهوضها الفكري عن أحقر المزارع وذلك
                             مثل دومة وجوبر وعربيل وداريا في غوطة دمشق ويبرود وجيرود ودير عطية والنبك في جبل سنير (قلمون) وحاصبيا وراشيا في
-                            وادي التيم والسويداء والرمتا ودرعا ونوى <pb ed="shamela"
-                   n="n72-p31"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4765.xhtml"/> وبصرى في حوران وغيرها من
+                            وادي التيم والسويداء والرمتا ودرعا ونوى <pb ed="shamela" n="n72-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4765.xhtml"/> وبصرى في حوران وغيرها من
                             أُمهات القصبات في ولايات سورية وحلب وبيروت ومتصرفيات لبنان والقدس والزور وهي جماع أقاليم بلاد الشام.</p>
                         <p>قلنا أن نهضة سورية ذات ألوان كثيرة وذلك لاختلاف مصالح الأمم الغربية في هذه الديار وللسياسة والدين تأثير شديد في
                             هذه الحركة ولولاهما ما رأينا تلك المدارس المبثوثة في القدس والناصرة وبيروت ولبنان ودمشق وحلب ومرعش. بل في بعض
@@ -1441,9 +1348,7 @@
                         <p>نعم تسير الأيام الطويلة ولا تشهد السكان إلا كما كانوا منذ بضعة قرون تجتاز تدمر وجرش وبلاد موآب وأرض الشراة
                             والبلقاء وارض منبج وحران والرقة وبلاد الجولان وارض الصفا واللجاة وغيرها فلا تكاد ترى مدرسة أهلية تذكر ماضي هذه
                             الأقاليم فلا تلبث أن تنهل عبراتك عَلَى بلاد نام عليها رعاتها وأقاليم كل منها بمساحته وخصبه وذكاء أهله ومضائهم لا
-                            يقل عن أحسن أقاليم قارتي أوربا وأميركا. <pb ed="shamela"
-                   n="n72-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4766.xhtml"/> ربما توهم واهم أن الحرية
+                            يقل عن أحسن أقاليم قارتي أوربا وأميركا. <pb ed="shamela" n="n72-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4766.xhtml"/> ربما توهم واهم أن الحرية
                             العثمانية أبرزت من القوى ما كان كامناً في النفوس ولكننا لم نشهد من علائمها شيئاً يستحق الذكر اللهم إلا أولئك
                             النفر من المتأدبين الذين جربوا أنفسهم في نشر الصحف والمجلات وتأليف الأسفار والمترجمات يحاولون منها الرزق أولاً
                             فخسر أكثرهم عَلَى أن معظم ما نشر في السنين الأربع الأخيرة من المصنفات والمقالات يدل عَلَى أن الأمة هنا لم تزل في
@@ -1462,9 +1367,7 @@
                             من أبناء سورية لا نعرف بضعة أشخاص يستحقون أن تنشر مكتوباتهم في مطابع الغرب إلا بعد أن ينظر فيها أبناء تلك اللغة
                             وينمقونها ويتعاورونها بالحذف والإثبات.</p>
                         <p>وبعد فإن النهضة الفكرية لا تكون عَلَى أتمها إلا بالتعليم وهذا التعليم مفقود من سورية اللهم إلا علة مناحي الفرنسيس
-                            والأميركان وغيرهم ولذلك كانت النهضة السورية أشبه بجنين لم <pb ed="shamela"
-                   n="n72-p33"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4767.xhtml"/> تظهر سحنته وتتم خلقته.
+                            والأميركان وغيرهم ولذلك كانت النهضة السورية أشبه بجنين لم <pb ed="shamela" n="n72-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4767.xhtml"/> تظهر سحنته وتتم خلقته.
                             وما دام التفرنج من جهة والتترك من أخرى يستحيل عَلَى بلاد الشام أن تدعي بأن فيها نهضة فكرية عربية ولا يفعل أكثر
                             من يتعلمون إلا أنهم ينقلون أنفسهم إلى أبناء اللغة التي يتعلمونها وينسلخون من قوميتهم.</p>
                         <p>وربما يقول بعضهم ما هذا الغلو في تقدير هذا الخطر المداهم والمتعلمون أفراد والسواد الأعظم لا في العير ولا في
@@ -1477,11 +1380,9 @@
                             الجراثيم وتنتقل من دور الحضانة إلى دور الطفولة والفتوة في قليل من السنين. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n72-p34"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4768.xhtml"/>
+                        <pb ed="shamela" n="n72-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4768.xhtml"/>
                         <head>اليمن وسكانها</head>
-                        <p>(1)</p>
+                        <p>( <tei:num value="1" xml:lang="ar">١</tei:num> )</p>
                         <p>كيف عرفها وعرفهم علماء العرب</p>
                         <p>مضى معظم السنة الماضية والدولة العلية تسير إلى اليمن الحملة تلو الحملة لإخضاع المتنقضين الثائرين من رجال الشيخ
                             أحمد الإدريسي الشافعي في جهات عسير والإمام يحيى بن حميد الدين الزيدي في جهات صنعاءَ وقد أُغمدت السيوف الآن بعد
@@ -1493,14 +1394,12 @@
                             وولاية صنعاء وولاية عسير وقد جربت الدولة في السنة الماضية فسلخت لواء عسير فجعلته متصرفية قائمة برأسها تخاطب
                             الآستانة مباشرة في أمورها كلواء القدس والزور فأتى ذلك بنتائج حسنة ولا عجب إذا أكثرت الدولة من مراكز الحكومات فمن
                             الأقضية هناك ما تسير فيها أياماً وفيه من القرى ما لا تجد مثله في ولاية من الولايات العامرة في الدولة وإن عدد
-                            القرى الداخلة تحت حكم العثمانيين مباشرة يبلغ 8692 قرية و289 عزلة و227 قبيلة وكل هذا القدر العظيم المنقول عن
-                            تقويم الدولة الرسمي يحكمه 28 قضاء و56 ناحية ومن الغريب أن الأمية تكاد تكون مفقودة في اليمن بالنسبة لسائر البلاد
+                            القرى الداخلة تحت حكم العثمانيين مباشرة يبلغ  <tei:num value="8692" xml:lang="ar">٨٦٩٢</tei:num>  قرية و <tei:num value="289" xml:lang="ar">٢٨٩</tei:num>  عزلة و <tei:num value="227" xml:lang="ar">٢٢٧</tei:num>  قبيلة وكل هذا القدر العظيم المنقول عن
+                            تقويم الدولة الرسمي يحكمه  <tei:num value="28" xml:lang="ar">٢٨</tei:num>  قضاء و <tei:num value="56" xml:lang="ar">٥٦</tei:num>  ناحية ومن الغريب أن الأمية تكاد تكون مفقودة في اليمن بالنسبة لسائر البلاد
                             العثمانية وأهلها مع كل ما ابتلوا به من الفتن التي جرتها عليهم تلاعب رؤسائهم ورداءة العمال ولا يزالون يعلمون
                             أبناءهم القراءة والكتابة ويقدرون اليوم نفوس اليمن بنحو خمسة ملايين لو ارتقوا وعلموا لأتي منهم أعظم جيش محارب
                             محضر نافع. وإليك الآن كيف عرفهم وعرف بلادهم علماء العرب اقرأه وأعجب في سر ما صارت إليه أرضهم من الانحطاط:</p>
-                        <p>صفة اليمن <pb ed="shamela"
-                   n="n72-p35"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4769.xhtml"/> قال الهمذاني سميت اليمن
+                        <p>صفة اليمن <pb ed="shamela" n="n72-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4769.xhtml"/> قال الهمذاني سميت اليمن
                             الخضراء لكثرة أشجارها وثمارها وزروعها والبحر بها من المشرق إلى الجنوب فراجعاً إلى المغرب ويفصل بينها وبين باقي
                             جزيرة العرب خط واحد من حدود عمان ويبرين إلى حد ما بين اليمن واليمامة إلى حدود الهجيرة وتثليث وأنهار جُرش وكتنة
                             منحدراً في السراة عَلَى شعف عنز إلى تهامة عَلَى أم جحدم إلى البحر حذاء جبل يقال كدمل بالقرب من حمضة وذلك حد ما
@@ -1518,9 +1417,7 @@
                             ملوك اليمن كذي يزن وذي نواس وذي منار وغير ذلك مضافة إلى مواضع وإلى أفعال لهم وسير وحروب وغيرها من سمات لهم
                             تميزهم عن غيرهم.</p>
                         <p>فاليمن كما قال ابن خلدون صقع جليل ومملكةٌ عظيمة يشتمل عَلَى أربعة وعشرين مخلافاً (وفي رواية أربعة وثمانون عَلَى
-                            ما يجيءُ) والمخاليف الكور وكان اليمن في صدر الإسلام <pb ed="shamela"
-                   n="n72-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4770.xhtml"/> عَلَى ثلاثة أقسام كل قسم
+                            ما يجيءُ) والمخاليف الكور وكان اليمن في صدر الإسلام <pb ed="shamela" n="n72-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4770.xhtml"/> عَلَى ثلاثة أقسام كل قسم
                             منها في يد ملك أحد الأقسام قصبته صنعاء والآخر قصبته الجند والآخر قصبته ظفار والذي يعطيه التحديد أنه ينقسم عَلَى
                             قسمين أحدهما تهامية والأخرى نجدية فالتهامية قصبتها زبيد وبها يكون السلطان والجبد وهي مدينة مسورة وعليها سبعة
                             خنادق ولها نهر يجري إليها من الجبال وساحل يسمى علافقة ومن البلاد التهامية قحمة ولها نهر يأتيها من جبل يسمى فرع
@@ -1538,9 +1435,7 @@
                             ومدينة الدحلوة وهي قلعة عَلَى ذرى شامخ وعر وقد امتلأت من أموال ملوك يمن وكبرائها تبراً ولجيناً يجمع المال بها
                             والمدينة كالربض وتسمى أيضاً الجرد ومن حصون السلطان أيضاً باليمن أيضاً قلعة أنور وهي في ناحية تسمى وادي السيول
                             يشتمل عَلَى قرى مشتبكة العمائر وقلعة مثوة وهي في ناحية زبيد كثيرة القرى وقلعة العروسين وهي في ناحية تعرف بعلوان
-                            الكردي كثيرة القرى ومن بلاد اليمن ذمار وهي مدينة مسورة <pb ed="shamela"
-                   n="n72-p37"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4771.xhtml"/> لها عيون وبساتين ومدينة
+                            الكردي كثيرة القرى ومن بلاد اليمن ذمار وهي مدينة مسورة <pb ed="shamela" n="n72-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4771.xhtml"/> لها عيون وبساتين ومدينة
                             صعدة وخيوان بها خانات وحمامات وأماكن وعمائر ومدينة مأرب بها عرش بلقيس وهي أساطين في غاية الغلظ والارتفاع ولها
                             كورة بين صنعاء وحضر موت وبالقرب منها جبل شق عليه سد تجتمع إليه مياه الأمطار والعيون وإذا أرادوا سقي القرى فتحوا
                             منه بقدر حاجتهم ثم يسدونه بآلات لهم أحكموا ومن بلاد الجبل أيضاً السروان أحدهما سرو جبل لبن والآخر سرو ميل وهما
@@ -1558,9 +1453,7 @@
                             نجداً قصبتها صنعاء ومن مدنها صعدة نجران جُرش العرف جبلان الجند ذمار نسقان يحصب السحول المذيخرة.</p>
                         <p>فزبيد قصبة تهامة وهو أحد المصرين لأنه مستقر ملوك اليمن بلد جليل حسن البنيان يسمونه بغداد اليمن لهم اذنى ظرف وبه
                             تجار وكبار وعلماء وأدباء مفيد لمن دخله مبارك عَلَى من سكنه آبارهم حلوة وحماماتهم نظيفة عليه حصن من الطين بأربعة
-                            أبواب وحولها قرى ومزارع أعمر من مكة واكبر وارفق وأكثر بنيانهم الآجر ومنازلهم فسيحة طيبة وهو <pb ed="shamela"
-                   n="n72-p38"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4772.xhtml"/> بلد نفيس ليس
+                            أبواب وحولها قرى ومزارع أعمر من مكة واكبر وارفق وأكثر بنيانهم الآجر ومنازلهم فسيحة طيبة وهو <pb ed="shamela" n="n72-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4772.xhtml"/> بلد نفيس ليس
                             باليمن مثله غير أن أسواقه ضيقة والأسعار بها غالية والثمار قليلة. ومعقر عَلَى جادة عدن وكذلك عبرة وعارة والمخنف
                             وكلهن صغار وعدن بلد جليل عامر آهل حصين خفيف دهليز الصين وفرضة اليمن وخزانة المغرب معدن التجارات كثير القصر مبارك
                             عَلَى من دخله مثر لمن سكنه مساجد حسان ومعايش واسعة وأخلاق طاهرة ونعم ظاهرة قد أحاط به جبل بما يدور إلى البحر
@@ -1579,15 +1472,13 @@
                             اليمن مثلهم هيئة وعقلاً. ثم بلد رحب كثير الفواكه رخيص الأسعار. أخباز حسنة وتجارات مفيدة أكبر من زبيد ولا تسل عن
                             طيب الهواء فإنه عجب ومع ذلك رفق معف. وصعدة أصغر من صنعاء عامرة في الجبال بها تصنع الركاء الجيدة والأنطاع الحسنة
                             ومناه يرتفع ادم الجلد وهي مدينة العلوية وعملهم. وجُرش مدينة وسطة ذات نخل واليمن ليس ببلد النخيل ونجران مثل جُرش
-                            وهما دون صعدة وأكثر ما ترى من <pb ed="shamela"
-                   n="n72-p39"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4773.xhtml"/> الإدم فمن هذه المدن.
+                            وهما دون صعدة وأكثر ما ترى من <pb ed="shamela" n="n72-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4773.xhtml"/> الإدم فمن هذه المدن.
                             والحميري هو بلد قحطان بن زبيد وصنعاء كثير القرى وسبأ بلد خلف هذه النواحي عامر المدينة خرب العمل.</p>
-                        <p>هذا وصف بلاد اليمن وفي رواية أن مساحتها السطحية 256 ألف كيلومتر مربع أما المسافات عَلَى تقدير العرب فهي من صنعاء
-                            إلى صداء 42 فرسخاً من صنعاء إلى حضر موت 74 فرسخاً ومن صنعاء إلى ذمار 16 فرسخاً ثم إلى نسفان وكحلان مرحلة ثم إلى
-                            حجر وبدر 20 فرسخاً ثم إلى عدن 64 فرسخاً ومن ذمار إلى يحصب مرحلة ثم إلى السحول مرحلة ثم إلى النجة مثلها ثم إلى
-                            الجند مثلها ومن صنعاء إلى الجند 48 فرسخاً ومن صنعاء إلى العرف مرحلة ثم إلى الهان 10 فراسخ ثم إلى جبلان 14 ثم إلى
-                            زبيد 12 ومن صنعاء إلى شبام مرحلة ومن صنعاء إلى عثر 10 مراحل ومن عدن إلى أَبين 3 فراسخ.</p>
+                        <p>هذا وصف بلاد اليمن وفي رواية أن مساحتها السطحية  <tei:num value="256" xml:lang="ar">٢٥٦</tei:num>  ألف كيلومتر مربع أما المسافات عَلَى تقدير العرب فهي من صنعاء
+                            إلى صداء  <tei:num value="42" xml:lang="ar">٤٢</tei:num>  فرسخاً من صنعاء إلى حضر موت  <tei:num value="74" xml:lang="ar">٧٤</tei:num>  فرسخاً ومن صنعاء إلى ذمار  <tei:num value="16" xml:lang="ar">١٦</tei:num>  فرسخاً ثم إلى نسفان وكحلان مرحلة ثم إلى
+                            حجر وبدر  <tei:num value="20" xml:lang="ar">٢٠</tei:num>  فرسخاً ثم إلى عدن  <tei:num value="64" xml:lang="ar">٦٤</tei:num>  فرسخاً ومن ذمار إلى يحصب مرحلة ثم إلى السحول مرحلة ثم إلى النجة مثلها ثم إلى
+                            الجند مثلها ومن صنعاء إلى الجند  <tei:num value="48" xml:lang="ar">٤٨</tei:num>  فرسخاً ومن صنعاء إلى العرف مرحلة ثم إلى الهان  <tei:num value="10" xml:lang="ar">١٠</tei:num>  فراسخ ثم إلى جبلان  <tei:num value="14" xml:lang="ar">١٤</tei:num>  ثم إلى
+                            زبيد  <tei:num value="12" xml:lang="ar">١٢</tei:num>  ومن صنعاء إلى شبام مرحلة ومن صنعاء إلى عثر  <tei:num value="10" xml:lang="ar">١٠</tei:num>  مراحل ومن عدن إلى أَبين  <tei:num value="3" xml:lang="ar">٣</tei:num>  فراسخ.</p>
                         <p>مخالبف اليمن</p>
                         <p>كور بلاد اليمن تسمى مخاليف وهي أربعة وثمانون في رواية وفي رواية أربعة وعشرون قال ابن خرداذبة مخلاف صنعاء والخشب
                             ورحابة ومرمل وبصنعاء كان غمدان مسكن سيف بن ذي يزن الحميري وفيه يقول أمية بن أبي الصلت الثقفي:</p>
@@ -1601,9 +1492,7 @@
                             وفيها ريام النار التي كان يعبدها أهل اليمن. وعَلَى اليمين من صنعاء مخلاف شاكر ووداعة ويام وأَرحب ومخلاف الحردة
                             وهمدان ومخلاف جوف همدان ومخلاف جوف مراد ومخلاف شنوءة وصدى وجعفي ومخلاف الجسرة ومخلاف المشرق وبوشان وغدر وفيه
                             ناعط ومخلاف أعلا وأنعم والمصنعتين وبني غطيف وقرية مأرب قال النابغة الجعدي</p>
-                        <p>أو سبأَ الحاضرين مأرب إذ <gap resp="#org_MS"/> يبنون من دونه سيله العرما <pb ed="shamela"
-                   n="n72-p40"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4774.xhtml"/> وبمأرب قصر سليمان
+                        <p>أو سبأَ الحاضرين مأرب إذ <gap resp="#org_MS"/> يبنون من دونه سيله العرما <pb ed="shamela" n="n72-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4774.xhtml"/> وبمأرب قصر سليمان
                             والقشيب وقصر بلقيس قال ابن ذي جدن:</p>
                         <lg type="bayt">
                             <l>أتغر من أهله القشيب </l>
@@ -1631,9 +1520,7 @@
                             الجند ثمانية فراسخ فمن صنعاء إلى الجند ثمانية وأربعون فرسخاً. وذات الشمال راجعاً إلى صنعاء مخلاف ذي شعبين ومخلاف
                             الزيادي ومخلاف المعافر ومخلاف بني محيد وفيه البقراني الجيد ومخلاف الكرب ومخلاف صلب ونفد والإيغار ومخلاف
                             المناخيين وفيه المذيخرة قلعة حصينة يسكنها آل ذي مناخ وفيها منزل ابن أبي جعفر المناخي من حمير ومخلاف حمل ودمث
-                            وشرعب ومخلاف عنة <pb ed="shamela"
-                   n="n72-p41"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4775.xhtml"/> وعنابة ورجيع ومخلاف
+                            وشرعب ومخلاف عنة <pb ed="shamela" n="n72-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4775.xhtml"/> وعنابة ورجيع ومخلاف
                             السحول وبني صعب ومخلاف حاظة ومخلاف سفل يحصب ومخلاف علو يحصب ومخلاف القفاعة والوزيرة والحجر ومخلاف زبيد وبغزائه
                             ساحل غلافقة وساحل المندب ومخلاف رفع ومخلاف مقري ومخلاف أَلهان ومخلاف جبلان وفيه الجبلان من آل ذي شرح وجبلان ضقان
                             شق الطاعة وشق المعصية ومخلاف ذي جرَة ومخلاف الحقلين ومخلاف العرف والأخروت.</p>
@@ -1660,9 +1547,7 @@
                             حية والكوذن ومخلاف مسح ومخلاف كندة والسكون وهي حضر موت عَلَى الإبل تسع سكك.</p>
                         <p>مدن اليمن تهامية ونجدية عدن كما قال الهمداني جنوبي تهامية وهي أقدم أسواق العرب وهي ساحل يحيط به جبل لم يكن فيه
                             طريق فقطع في الجبل باب بزُبر الحديد وصار لها طريقاً إلى البر ودرباً سكنياً المرَبون والحماحميون والملاحيون. ولحج
-                            وأَبين وبها مدينة <pb ed="shamela"
-                   n="n72-p42"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4776.xhtml"/> خنفر والروَّاغ وموزع
+                            وأَبين وبها مدينة <pb ed="shamela" n="n72-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4776.xhtml"/> خنفر والروَّاغ وموزع
                             والشقاق والمندب والحصيب وهي قرية زبيد وقرى بواديها حيس والقحمة والكدراءُ ثم المهجم وهي مدينة سرود ومور وبه مدينة
                             تسمى بلحة ثم الساعد والسقيقتان والهجر قرية ضمد وجازان وفي بلد حكم قرى كثيرة يقال لها المخازف وصبيا ثم يبش وساحله
                             عثر وهو سوق عظيم شأنها وقد تثقله العرب فيقولون عثر وأُم جحدم قرية بين كنانة والأزد وهي حد اليمن.</p>
@@ -1683,18 +1568,16 @@
                             إلى قبيلة. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n72-p44"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4777.xhtml"/>
+                        <pb ed="shamela" n="n72-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4777.xhtml"/>
                         <head>بعض معاهد بيروت</head>
                         <p>الصحافة البيروتية</p>
-                        <p>سبقت بيروت غيرها من مدمن الشام بإصدار الجرائد ففيها صدرت سنة 1858م أول صحيفة عربية في هذه الديار باسم حديقة
+                        <p>سبقت بيروت غيرها من مدمن الشام بإصدار الجرائد ففيها صدرت سنة  <tei:num value="1858" xml:lang="ar">١٨٥٨</tei:num> م أول صحيفة عربية في هذه الديار باسم حديقة
                             الأخبار ثم صدرت جرائد ومجلات أُخرى عَلَى عهد السلطان عبد العزيز وأوائل عهد السلطان عبد الحميد المخلوع ومناه ما
                             كتبه الأكفاء أمثال البستاني والأحدب وبوست وصروف ونمر واليازجي والحوراني وغيرهم. ولما قويت شأَفة المراقبة عَلَى
                             المطبوعات ولاسيما في الثلث الأخير من عهد المخلوع تراجعت الصحافة البيروتية وكان بعضها قد أقفل وبعضها نقل إلى قطر
                             آخر وبعضها ثبت ولكن عَلَى مضدد وضعف لا يكاد يوصف.</p>
-                        <p>حتى إذا انتشرت الحرية كثرت الصحافة حتى بلغ ما صدر منها مجدداً 56 جريدة ومجلة أكثر من نصفها لم يزل ينشر وبها بلغ
-                            عدد الجرائد البيروتية 25 جريدة ومنها ثماني ويومية والباقيات أسبوعية ونصف أسبوعيات وبلغ عدد المجلات 12 مجلة حية
+                        <p>حتى إذا انتشرت الحرية كثرت الصحافة حتى بلغ ما صدر منها مجدداً  <tei:num value="56" xml:lang="ar">٥٦</tei:num>  جريدة ومجلة أكثر من نصفها لم يزل ينشر وبها بلغ
+                            عدد الجرائد البيروتية  <tei:num value="25" xml:lang="ar">٢٥</tei:num>  جريدة ومنها ثماني ويومية والباقيات أسبوعية ونصف أسبوعيات وبلغ عدد المجلات  <tei:num value="12" xml:lang="ar">١٢</tei:num>  مجلة حية
                             وهو عدد كثير عَلَى سكان مدينة لا يتجاوزون المئة وخمسين ألفاً عَلَى حين لا يصدر في جميع بلاد الشام وبيروت في
                             الجملة أكثر من مئة صحيفة بين يومية وأسبوعية ومجلة شهرية ونصف شهرية أو مرة في الشهرين عَلَى اختلاف النزعات ومنها
                             الجدي الخباري ومنها الفكاهي الهزلي.</p>
@@ -1704,9 +1587,7 @@
                             تهجموا عليها عَلَى غير استعداد مادي وأدبي أنهم كانوا في غرور بأقدامهم عَلَى بث أفكارهم عَلَى رؤُوس الأشهاد
                             واقتحامهم المنافسة مع الأكفاء بحث أضروا بهم وبأنفسهم معاً وستدعو الحاجة بعد إلى تراجع بعض هذه الصحف فيبقى منها
                             الأصلح بحسب سنة الكون في الأعمال.</p>
-                        <p>نقول الحاجة لأن قراء الصحف في سورية محدود عددهم وقد أَصبحوا يجبهون ليشتركوا <pb ed="shamela"
-                   n="n72-p45"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4778.xhtml"/> حتى اضطر كثر من أرباب
+                        <p>نقول الحاجة لأن قراء الصحف في سورية محدود عددهم وقد أَصبحوا يجبهون ليشتركوا <pb ed="shamela" n="n72-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4778.xhtml"/> حتى اضطر كثر من أرباب
                             المظاهر أن يتناولوا عَلَى الرغم منهم عدة صحف في آن واحد ومعظمها متحد النزعة والمعنى تكفي منها الواحدة والثنتان
                             وما زاد عن ذلك فضول وإضاعة وقت. ووطد معظم المشتركين أنفسهم عَلَى قطع اشتراكاتهم السنة بعد الأخرى فكان الوارد
                             عَلَى إرادات الصحف لا يسد نفقات الطبع ويعول القائمين بها في الجملة فاضطرت إلى الاقتصاد غير المحمود حتى أصبحت
@@ -1724,9 +1605,7 @@
                             مطبوعاتنا في دور جديد يصح أن يلحق بالراقي من مطبوعات الأوربيين والأميركيين.</p>
                         <p>إن بيروت التي اعتادت أن تصرف جرائدها في أقطار الشام لا تلبث إذا كانت لها صحافة راقية أن يقبل الناس عليها في جميع
                             بلاد القطر وإلا فتظل كل ولاية بل كل لواء بل كل قضاء مكتفية بصحفها كما هو المشهد الآن في القدس ويافا وحيفا وصيدا
-                            وبعبدا وعاليه وجزين وطرابلس واللاذقية وحلب وحماة وحمص ومرج عيون والقنيطرة وزحلة ودمشق <pb ed="shamela"
-                   n="n72-p46"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4779.xhtml"/> فتكاد لا تبع
+                            وبعبدا وعاليه وجزين وطرابلس واللاذقية وحلب وحماة وحمص ومرج عيون والقنيطرة وزحلة ودمشق <pb ed="shamela" n="n72-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4779.xhtml"/> فتكاد لا تبع
                             فيها الصحف الراقية إلا أعداداً معينة سيتناقص عددها مع الزمن وصدور الأحسن فالأحسن.</p>
                         <p>ولا مشاحة في أن الصحافة مثال من أمثلة ارتقاءِ الأمة وانحطاطها وإن صحافتنا يجب أن تقود إليها الناس بالحق والصدق لا
                             أن تنقاد إلى أهواء الناس والعامة منهم الخاصة فإن بعض الصحف جارت العامة مثلاً عَلَى ما يريدون في نقل أخبار هذه
@@ -1744,9 +1623,7 @@
                         <p>إذا كانت بيروت تعد اكبر معاهدها العلمية المسيحية كلية الأميركان وكلية اليسوعيين فإن من الواجب أن تعد اكبر المدارس
                             الإسلامية فيها الكلية العثمانية الإسلامية ودار العلوم والميزة بين المعهدين الأولين والمعهدين الآخرين أن الغرض في
                             الأولين خدمة فكر خاص أقل ما يقال فيه تزهيد نفوس أكثر المتخرجين منهما في خدمة بلادهم وإضعاف الشعور الوطني أما
-                            الحالة في المدرستين الناجحتين فهي عَلَى خلاف ذلك تنمي العاطفة الوطنية <pb ed="shamela"
-                   n="n72-p47"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4780.xhtml"/> وتهيئُ رجالاً يبقون في
+                            الحالة في المدرستين الناجحتين فهي عَلَى خلاف ذلك تنمي العاطفة الوطنية <pb ed="shamela" n="n72-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4780.xhtml"/> وتهيئُ رجالاً يبقون في
                             بلادهم يخدمونها بما تصل إليهم طاقتهم. وهذا من أعظم ما تمدح عليه المدرستان الإسلاميتان.</p>
                         <p>نشأت الكلية العثمانية منذ سبع عشرة سنة بهمة رجل أزهري لقي الأمرّين في سبيل مشروعه وقاومه أعداء الإصلاح والتجديد
                             وأنصار المنافسة والحسد ما وسعتهم المقاومة فكان بثباته معلماً للمعلمين كيف يكون الصبر عَلَى ما أخذوا النفس به.
@@ -1761,16 +1638,14 @@
                             متمثلاً في أرجائها والعناية بتربية جسم الطفل وعقله غايتها فهي في أجمل بقعة وأعلاها من أحياء بيروت (برج أبو حيدر)
                             تطل عَلَى لبنان وقراه وبيروت وحدائقها الغناء لو تم لها ما يريده لها أحبابها أن تملك البنايات التي قامت فيها وأوى
                             إليها أساتذتها لكانت كاملة في مادياتها كما كملت أو كادت بمعنوياتها.</p>
-                        <p>نعم لو كانت لها دار قوراءُ وقصور تؤوي الداخليين والخارجيين من تلامذتها لبلغ تلاميذها ضعف ما هم الآن (370) منهم
-                            (140) داخلياً من أبناء بيروت وأنحاء سورية وغيرهم ولكن المسلمين ليسوا من القوة عَلَى الأعمال بحيث يهتمون
+                        <p>نعم لو كانت لها دار قوراءُ وقصور تؤوي الداخليين والخارجيين من تلامذتها لبلغ تلاميذها ضعف ما هم الآن ( <tei:num value="370" xml:lang="ar">٣٧٠</tei:num> ) منهم
+                            ( <tei:num value="140" xml:lang="ar">١٤٠</tei:num> ) داخلياً من أبناء بيروت وأنحاء سورية وغيرهم ولكن المسلمين ليسوا من القوة عَلَى الأعمال بحيث يهتمون
                             لمشروعاتهم العملية اهتمام الغربيين لها وليس الفقر وحده هو الذي يقعد بهم عن مجاراة الأمم الحية وإلا فإننا نرى
                             أضعف منهم بما لا يقاس يهتمون لمثل هذه الأمور أكثر منهم عَلَى أن كثيراً في رجال نهضتنا يودون عَلَى الأقل لو سكت
-                            عنهم قومهم وخلصوا من أعمالهم لا عليهم ولا لهم لا تنشيط ولا تثبيط وهذا سر من أسرار انحطاطنا العجيب. <pb ed="shamela"
-                   n="n72-p48"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4781.xhtml"/>
-                            في الكلية العثمانية اليوم 30 أستاذاً فيهم العربي والتركي والإفرنجي و30 موظفاً في أعمالها المختلفة وتقسم مدة
+                            عنهم قومهم وخلصوا من أعمالهم لا عليهم ولا لهم لا تنشيط ولا تثبيط وهذا سر من أسرار انحطاطنا العجيب. <pb ed="shamela" n="n72-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4781.xhtml"/>
+                            في الكلية العثمانية اليوم  <tei:num value="30" xml:lang="ar">٣٠</tei:num>  أستاذاً فيهم العربي والتركي والإفرنجي و <tei:num value="30" xml:lang="ar">٣٠</tei:num>  موظفاً في أعمالها المختلفة وتقسم مدة
                             التعليم فيها إلى ثلاثة أقسام القسم الابتدائي ومدته سنتان والقسم الاستعدادي ومدته أربع سنين والقسم العلمي ومدته
-                            أربع سنين أيضاً وفيها قسم للصغار من سن الخامسة إلى العاشرة يبلغ عددهم 3 طفلاً تقوم عَلَى تربيتهم معلمة مسيحية
+                            أربع سنين أيضاً وفيها قسم للصغار من سن الخامسة إلى العاشرة يبلغ عددهم  <tei:num value="3" xml:lang="ar">٣</tei:num>  طفلاً تقوم عَلَى تربيتهم معلمة مسيحية
                             ومربية (قهرمانة) أخرى تنام معهم وتعنى بشؤونهم كما تعنى الأم بشؤون أطفالها.</p>
                         <p>ينال المتخرجون من هذه الديار شهادة تعادل شهادة البكلوريا في المدارس الأخرى العالية وأهم ما يتعلم فيها من المعارف
                             والعلوم واللغات وتعليم النافع من الآداب الدينية العالية وإعداد أذهان المتعلمين إلى قبول النور الجديد ممزوجاً
@@ -1787,9 +1662,7 @@
                             يلائمنا من أوضاع الغرب.</p>
                         <p>لا أعلم مدرسة إسلامية في سورية تعلم صغار الطلبة المبادئ العلمية بالعمل مثل دار العلوم فطريقتها في تعليمهم طريقة
                             السكسونيين في حدائق الأطفال (كندر جاردين) تترك التلميذ يختار له بقعة من حديقة المدرسة يحرثها ويزرعها ويسقيها
-                            بنفسه وينظر فيما يلائم <pb ed="shamela"
-                   n="n72-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4782.xhtml"/> مغروساته ومستنبتاته ثم
+                            بنفسه وينظر فيما يلائم <pb ed="shamela" n="n72-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4782.xhtml"/> مغروساته ومستنبتاته ثم
                             يعلم مبادئ الجغرافيا والطبيعيات والرياضيات بالعمل دون النظر ومنه يتطرق إلى النظريات.</p>
                         <p>كان يبلغنا من نجاح صغار الأولاد في القديم والحديث أمور كثيرة وها نحن رأينا اليوم صورة من صور الارتقاء المهم في
                             تثقيف عقول الأطفال بحيث لا نغالي إذا قلنا أن صغار أبناء دار العلوم يعرفون من مبادئ الأشياء وحوادث الكون الصحيحة
@@ -1804,37 +1677,33 @@
                         <p>مدرسة دار العلوم الخارجية والسعي لها متواصل لابتياع أرض لها واسعة تقام عليها بناية المدرسة ومما أعجبني فيها
                             فتاتان مسلمتان تتعلمان بجانب الفتيان وبهما وبما رأيته من نجاحهما ذكرت طريقة الأميركان في التربية المشتركة فعسى
                             أن تكون الفتاتان مقدمة لهذه الطريقة التي ثبت غناؤها في ديار الغرب فيذكرنا بما كان من دروس المحدثات والقارئات في
-                            عصور ارتقاء المسلمين في المساجد والجوامع وإنا لنرجو أن يزيد عدد طالبيها بمرور الزمن وعددهم الآن 170 طالباً
+                            عصور ارتقاء المسلمين في المساجد والجوامع وإنا لنرجو أن يزيد عدد طالبيها بمرور الزمن وعددهم الآن  <tei:num value="170" xml:lang="ar">١٧٠</tei:num>  طالباً
                             يتخرجون عَلَى أدب النفس وأدب الدرس.</p>
                         <p>ربما يتبادر للذهن شيء من قصور معنى الكلية الإسلامية وليس أحسن في الجواب عَلَى ذلك من نقل ما تقوله هذه الدار عن
-                            نفسها في بيانها السنوي سنة 1223 - 1911 قالت:</p>
-                        <p>نعني بالكلية العثمانية الإسلامية معهداً علمياً راقياً يدرس جميع العلوم والفنون التي تخول <pb ed="shamela"
-                   n="n72-p50"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4783.xhtml"/> المتخرج منه
+                            نفسها في بيانها السنوي سنة  <tei:num value="1223" xml:lang="ar">١٢٢٣</tei:num>  -  <tei:num value="1911" xml:lang="ar">١٩١١</tei:num>  قالت:</p>
+                        <p>نعني بالكلية العثمانية الإسلامية معهداً علمياً راقياً يدرس جميع العلوم والفنون التي تخول <pb ed="shamela" n="n72-p50" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4783.xhtml"/> المتخرج منه
                             أن يكون حاصلاً عَلَى شهادة البكلوريا - أن يكون رجلاً تام الأدوات علماً وأدباً - وأن يكون ذلك الرجل الذي تحتاجه
                             هذه البلاد بعلم راسخ وحقائق راهنة متزوداً حسن الخلق بعرى الوطنية متسلحاً بسلاح العلم والمعرفة.</p>
                         <p>هذه غاية العمدة. وهذه هي الإصلاحات التي أدخلت إلى المدرسة</p>
-                        <p>(1) إصلاح التدريس الابتدائي وجعله سنتين مفردتين عن التدريس الاستعدادي والعلمي - ثم إتباع طريقة المشاهدة والحس في
+                        <p>( <tei:num value="1" xml:lang="ar">١</tei:num> ) إصلاح التدريس الابتدائي وجعله سنتين مفردتين عن التدريس الاستعدادي والعلمي - ثم إتباع طريقة المشاهدة والحس في
                             التعليم فيه - وتقوية مفكرة الشباب وتعويده عَلَى الاستنتاج - وأن يكون أغلب التعليم في هذا القسم باللغة العربية
                             كما سيظهره بروغرام التدريس المفصل.</p>
-                        <p>(2) يجب أن يرقى التعليم الاستعدادي وأن تفصل إدارته ثم أن ينظر في الكتب التدريسية وخصوصاً العربية وأن تتبع لأساتذة
+                        <p>( <tei:num value="2" xml:lang="ar">٢</tei:num> ) يجب أن يرقى التعليم الاستعدادي وأن تفصل إدارته ثم أن ينظر في الكتب التدريسية وخصوصاً العربية وأن تتبع لأساتذة
                             الطرق الحديثة في التربية والتعليم - وقد سافر الأستاذ الرئيس إلى مصر وزار معظم مدارسها الميرية والأهلية من
                             ابتدائية وثانوية وعالية وشاهد طرقهم في التعليم وبحث في الكتب المدرسية في اللغة والفنون واستصحب معه كتباً جمة تفي
                             بالحاجة وتقوم بالمطلوب.</p>
-                        <p>(3) السعي الحثيث في أن يكون تدريس العلوم باللغة العربية مستعملة لذلك الكتب المؤلفة أما الموضوعات التي يؤلف فيها
+                        <p>( <tei:num value="3" xml:lang="ar">٣</tei:num> ) السعي الحثيث في أن يكون تدريس العلوم باللغة العربية مستعملة لذلك الكتب المؤلفة أما الموضوعات التي يؤلف فيها
                             حتى الآن فإن الكلية ستقوم بها وتستعمل الأساتذة طريقة إلقاء المحاضرات وطبعها في مطابع جلاتينية تسهيلاً للتلامذة
                             وحفظاً لتلك المحاضرات.</p>
-                        <p>(4) أوقات التعليم لا تزيد عن خمس ساعات يومياً مع زيادة الاعتناء في الرياضة البدنية والحركات الجمبازية التي تدرس
+                        <p>( <tei:num value="4" xml:lang="ar">٤</tei:num> ) أوقات التعليم لا تزيد عن خمس ساعات يومياً مع زيادة الاعتناء في الرياضة البدنية والحركات الجمبازية التي تدرس
                             تدريساً خاصاً.</p>
-                        <p>(5) تعين الكلية قهرمانة للاعتناء بالتلامذة الصغار في القسم الابتدائي وملاحظة ثيابهم ونظافتهم.</p>
-                        <p>(6) العلوم والفنون والموضوعات التي زيدت: الفلسفة الأدبية والأخلاق الدينية. المطالعة العربية لعامة الصفوف في
+                        <p>( <tei:num value="5" xml:lang="ar">٥</tei:num> ) تعين الكلية قهرمانة للاعتناء بالتلامذة الصغار في القسم الابتدائي وملاحظة ثيابهم ونظافتهم.</p>
+                        <p>( <tei:num value="6" xml:lang="ar">٦</tei:num> ) العلوم والفنون والموضوعات التي زيدت: الفلسفة الأدبية والأخلاق الدينية. المطالعة العربية لعامة الصفوف في
                             الأقسام الثلاثة. تاريخ الآداب العربي. النقد التاريخي. علم المثلثات. علم الفلك. الفلسفة العقلية. علم الرسم. أصول
                             التجارة والمراسلات فيها وجغرافيتها.</p>
-                        <p>(7) زيادة أوقات التعليم العملي في الكيميا والطبيعيات. وجلب الأدوات اللازمة لذلك. <pb ed="shamela"
-                   n="n72-p51"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4784.xhtml"/> (8) يجب أن يكون التدريس
+                        <p>( <tei:num value="7" xml:lang="ar">٧</tei:num> ) زيادة أوقات التعليم العملي في الكيميا والطبيعيات. وجلب الأدوات اللازمة لذلك. <pb ed="shamela" n="n72-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4784.xhtml"/> ( <tei:num value="8" xml:lang="ar">٨</tei:num> ) يجب أن يكون التدريس
                             والكلام سواء من الأساتذة أو التلاميذ بالعربية الفصحى.</p>
-                        <p>(9) تخصيص قطعة من الأرض لبعض التجارب النباتية والزراعية.</p>
+                        <p>( <tei:num value="9" xml:lang="ar">٩</tei:num> ) تخصيص قطعة من الأرض لبعض التجارب النباتية والزراعية.</p>
                         <p>اللغة العربية: هي الأساسية في الكلية يدرسها التلميذ في كل صف من صفوفها في الاستعدادية والعلمية عَلَى أن التعليم
                             الابتدائي إن لم يكن كله فجله فيها وذلك لأن اللغة العربية هي اللغة الأساسية الأصلية فإذا تمكن الشاب من لغته
                             الأصلية يمكنه أن يتفرغ بعد ذلك إلى بقية اللغات الأجنبية - فتعين لها الكلية الأوقات اللازمة لإتقان الصرف والنحو
@@ -1850,42 +1719,38 @@
                             وتاريخ علم الأدب الإفرنسي.</p>
                         <p>إن ما سبق ذكره من اللغات هي إجبارية في المدرسة واللغة الاختيارية هي الإنكليزية أو الألمانية فتعلم منها الصرف
                             والنحو والترجمة والإنشاء والمراسلات.</p>
-                        <p>وعلوم الكلية (1) العلوم الدينية. القرآن الشريف. التوحيد. الفقه. عملاً وعلماً من عبادات وفرائض ومعاملات (مجلة
+                        <p>وعلوم الكلية ( <tei:num value="1" xml:lang="ar">١</tei:num> ) العلوم الدينية. القرآن الشريف. التوحيد. الفقه. عملاً وعلماً من عبادات وفرائض ومعاملات (مجلة
                             الأحكام الشرعية) وعلم أصول الفقه. والفلسفة الأدبية من القرآن الكريم والحديث الشريف.</p>
-                        <p>(2) التاريخ من قديم وأجيال متوسطة وحديث وحاضر. والسيرة النبوية. وتاريخ العرب. <pb ed="shamela"
-                   n="n72-p52"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4785.xhtml"/> (3) الجغرافيا. الرسم
+                        <p>( <tei:num value="2" xml:lang="ar">٢</tei:num> ) التاريخ من قديم وأجيال متوسطة وحديث وحاضر. والسيرة النبوية. وتاريخ العرب. <pb ed="shamela" n="n72-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4785.xhtml"/> ( <tei:num value="3" xml:lang="ar">٣</tei:num> ) الجغرافيا. الرسم
                             الجغرافي. الجغرافيا التجارية. والجغرافيا الاقتصادية سيما كل ما يتعلق بالمملكة العثمانية والدول الشرقية.</p>
-                        <p>(4) الرياضيات. الحساب. الجبر. الهندسة. علم الفلك. المثلثات. مسك الدفاتر.</p>
-                        <p>(5) العلوم الطبيعية من مواليد ثلاثة (حيوان نبات جماد) علم خواص الطبيعة. الكيمياء. حفظ الصحة.</p>
-                        <p>(6) الرسم. حسن الخط. الموسيقى.</p>
-                        <p>(7) المنطق. الفلسفة. الاقتصاد السياسي. علم الأخلاق.</p>
-                        <p>(8) تاريخ الأدب العربي. خطب في روح الاجتماع والعمران. فن الخطابة والإلقاء.</p>
-                        <p>أما دار العلوم فلها الآن أربعُ مدارس: (1) المدرسة التأسيسية (2) المدرسة الابتدائية (3) المدرسة الاستعدادية (4)
+                        <p>( <tei:num value="4" xml:lang="ar">٤</tei:num> ) الرياضيات. الحساب. الجبر. الهندسة. علم الفلك. المثلثات. مسك الدفاتر.</p>
+                        <p>( <tei:num value="5" xml:lang="ar">٥</tei:num> ) العلوم الطبيعية من مواليد ثلاثة (حيوان نبات جماد) علم خواص الطبيعة. الكيمياء. حفظ الصحة.</p>
+                        <p>( <tei:num value="6" xml:lang="ar">٦</tei:num> ) الرسم. حسن الخط. الموسيقى.</p>
+                        <p>( <tei:num value="7" xml:lang="ar">٧</tei:num> ) المنطق. الفلسفة. الاقتصاد السياسي. علم الأخلاق.</p>
+                        <p>( <tei:num value="8" xml:lang="ar">٨</tei:num> ) تاريخ الأدب العربي. خطب في روح الاجتماع والعمران. فن الخطابة والإلقاء.</p>
+                        <p>أما دار العلوم فلها الآن أربعُ مدارس: ( <tei:num value="1" xml:lang="ar">١</tei:num> ) المدرسة التأسيسية ( <tei:num value="2" xml:lang="ar">٢</tei:num> ) المدرسة الابتدائية ( <tei:num value="3" xml:lang="ar">٣</tei:num> ) المدرسة الاستعدادية ( <tei:num value="4" xml:lang="ar">٤</tei:num> )
                             المدرسة الصيفية.</p>
-                        <p>(1) المدرسة التأسيسية - يراجع الرئيس بشأن هذه المدرسة.</p>
-                        <p>(2) المدرسة الابتدائية - هذه تؤهل طلبتها للمدرسة الاستعدادية.</p>
-                        <p>فهي تعلمهم الدروس الأولية في الموضوعات الآتية: - (1) القرآن الكريم والتعليم الديني (2) اللغات - العربية والتركية
-                            والإنكليزية والإفرنسية مع علم آدابها وفن الخطابة (3) الرياضيات - الحساب وأشكال هندسية بسيطة (4) الجغرافيا
-                            الوطنية والطبيعية (5) التاريخ - حياة النبي صلى الله عليه وسلم وقصص وتاريخ حياة بعض عظماء الرجال والنساء. (6)
+                        <p>( <tei:num value="1" xml:lang="ar">١</tei:num> ) المدرسة التأسيسية - يراجع الرئيس بشأن هذه المدرسة.</p>
+                        <p>( <tei:num value="2" xml:lang="ar">٢</tei:num> ) المدرسة الابتدائية - هذه تؤهل طلبتها للمدرسة الاستعدادية.</p>
+                        <p>فهي تعلمهم الدروس الأولية في الموضوعات الآتية: - ( <tei:num value="1" xml:lang="ar">١</tei:num> ) القرآن الكريم والتعليم الديني ( <tei:num value="2" xml:lang="ar">٢</tei:num> ) اللغات - العربية والتركية
+                            والإنكليزية والإفرنسية مع علم آدابها وفن الخطابة ( <tei:num value="3" xml:lang="ar">٣</tei:num> ) الرياضيات - الحساب وأشكال هندسية بسيطة ( <tei:num value="4" xml:lang="ar">٤</tei:num> ) الجغرافيا
+                            الوطنية والطبيعية ( <tei:num value="5" xml:lang="ar">٥</tei:num> ) التاريخ - حياة النبي صلى الله عليه وسلم وقصص وتاريخ حياة بعض عظماء الرجال والنساء. ( <tei:num value="6" xml:lang="ar">٦</tei:num> )
                             علوم عصرية - مبادئ في معرفة المحيط القريب. إشارات في الموضوعات الأساسية من علم الحيوان والنبات وطبقات الأرض
-                            والأتربة والمعادن والكيمياء والحكمة الطبيعية والفلك ومنافع أعضاء الإنسان وحفظ الصحة والهيئة الاجتماعية الخ. (7)
-                            الرسم (8) التمرين العسكري العثماني وألعاب رياضية. وهذه المدرسة تستغرق أربع سنين مدرسية ولغة التعليم فيها هي
+                            والأتربة والمعادن والكيمياء والحكمة الطبيعية والفلك ومنافع أعضاء الإنسان وحفظ الصحة والهيئة الاجتماعية الخ. ( <tei:num value="7" xml:lang="ar">٧</tei:num> )
+                            الرسم ( <tei:num value="8" xml:lang="ar">٨</tei:num> ) التمرين العسكري العثماني وألعاب رياضية. وهذه المدرسة تستغرق أربع سنين مدرسية ولغة التعليم فيها هي
                             العربية فقط.</p>
-                        <p>(3) المدرسة الاستعدادية - يقصد بها تهيئة طلبتها لدخول المدارس العالية والكليات في الوطن وفي الخارج فهي تتقن
+                        <p>( <tei:num value="3" xml:lang="ar">٣</tei:num> ) المدرسة الاستعدادية - يقصد بها تهيئة طلبتها لدخول المدارس العالية والكليات في الوطن وفي الخارج فهي تتقن
                             الدروس الابتدائية في الموضوعات المشروع بها في المدرسة الابتدائية مع زيادة تفصيل ودقة وترتيب وتزيد عليها كما هو
-                            مبين أدناه: (1) التفسير والحديث وعلم الأديان وعلم الأخلاق ومبادئ أساسية من حكمة الإسلام. (2) <pb ed="shamela"
-                   n="n72-p53"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4786.xhtml"/> دروس أعَلَى
-                            في اللغات وعلم آدابها وممارسة أكثر في الإنشاء والخطابة (3) مراجعة الحساب ودروس في مبادئ الجبر والهندسة (4)
-                            جغرافيا المملكة العثمانية المفصلة والجغرافيا السياسية العامة. (5) تاريخ حياة النبي صلى الله عليه وسلم وتاريخ
+                            مبين أدناه: ( <tei:num value="1" xml:lang="ar">١</tei:num> ) التفسير والحديث وعلم الأديان وعلم الأخلاق ومبادئ أساسية من حكمة الإسلام. ( <tei:num value="2" xml:lang="ar">٢</tei:num> ) <pb ed="shamela" n="n72-p53" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4786.xhtml"/> دروس أعَلَى
+                            في اللغات وعلم آدابها وممارسة أكثر في الإنشاء والخطابة ( <tei:num value="3" xml:lang="ar">٣</tei:num> ) مراجعة الحساب ودروس في مبادئ الجبر والهندسة ( <tei:num value="4" xml:lang="ar">٤</tei:num> )
+                            جغرافيا المملكة العثمانية المفصلة والجغرافيا السياسية العامة. ( <tei:num value="5" xml:lang="ar">٥</tei:num> ) تاريخ حياة النبي صلى الله عليه وسلم وتاريخ
                             الإسلام والخلفاء الأربعة رضي الله عنهم وتاريخ المملكة العثمانية ومختصر تاريخ أوروبا القديم والحديث. علوم عصرية -
                             حث عَلَى إمعان النظر في الطبيعة والمحيط القريب وإيضاحات في الموضوعات الأساسية من علم الحيوان والنبات وطبقات
-                            الأرض والأتربة والمعادن والكيمياء (6) والحكمة الطبيعية والفلك ومنافع أعضاء الإنسان وحفظ الصحة والهيئة الاجتماعية
-                            البسيطة (7) الرسم بالألوان (8) إتقان التمرين والتهذيب العسكري العثماني وبالاختصار يربى الطالب من كل الوجوه.</p>
+                            الأرض والأتربة والمعادن والكيمياء ( <tei:num value="6" xml:lang="ar">٦</tei:num> ) والحكمة الطبيعية والفلك ومنافع أعضاء الإنسان وحفظ الصحة والهيئة الاجتماعية
+                            البسيطة ( <tei:num value="7" xml:lang="ar">٧</tei:num> ) الرسم بالألوان ( <tei:num value="8" xml:lang="ar">٨</tei:num> ) إتقان التمرين والتهذيب العسكري العثماني وبالاختصار يربى الطالب من كل الوجوه.</p>
                         <p>وهذه المدرسة تستغرق سنتين مدرسية. أما لغة التعليم فتكون غالباً اللغة العربية إلا في العلوم العصرية وغيرها من
                             الموضوعات التي لم تترق بعد في العربية والتركية.</p>
-                        <p>(4) المدرسة الصيفية - هذه أنشئت خصوصاً للطلبة المقصرين الذين يرغبون في تعويض ما نقصهم والتخلص من جزاء لتقصيرهم
+                        <p>( <tei:num value="4" xml:lang="ar">٤</tei:num> ) المدرسة الصيفية - هذه أنشئت خصوصاً للطلبة المقصرين الذين يرغبون في تعويض ما نقصهم والتخلص من جزاء لتقصيرهم
                             ليرتقوا صفوفاً أعَلَى وأيضاً للطلبة الذين ليس لهم عند أهلهم أشغال نافعة ويرغبون في تقوية أنفسهم لدروس السنة
                             الآتية.</p>
                         <p>العربية في الكلية</p>
@@ -1896,9 +1761,7 @@
                             جنب.</p>
                         <p>وهذا الخلاف هو الذي حمل فقيدي العلم والآداب الدكتورين كرنيليوس فانديك ويوحنا ورتبات عَلَى مغادرة منابر التدريس في
                             صفوف الكلية وكانا من أعظم عمدتها العاملين لأنهما أيقنا أن التعليم بالإنكليزية مؤخر لنشر العلم في هذه البلاد وداع
-                            إلى تراجع الكلية عَلَى ما هو المشاهد اليوم وإذا قل النافعون النابغون في المتخرجين من هذا المعهد العلمي <pb ed="shamela"
-                   n="n72-p54"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4787.xhtml"/>
+                            إلى تراجع الكلية عَلَى ما هو المشاهد اليوم وإذا قل النافعون النابغون في المتخرجين من هذا المعهد العلمي <pb ed="shamela" n="n72-p54" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4787.xhtml"/>
                             العظيم وانصرفت وجهة نظر المعلمين إلى الاستخدام في مصر والسودان وأميركا فهاجر إليها خيار أبنائنا كانت الكلية معهم
                             أشبه بمحطة توضع فيها البضائع أياماً تنقل إلى قطر آخر فليس لبيروت بل لسورية من هذه الكلية إلا أنها موطن لتعليم
                             أولادنا عَلَى الطريقة التي تريدها تلك الكلية ثم الرحلة بهم إلى حيث تروج بضائعهم رحلة أبدية ووقتية.</p>
@@ -1917,9 +1780,7 @@
                             رأينا أساتذة العربية في الكلية الأميركية ثبت لنا أن مرسلي البرتستانت ليسوا أقل سطوة عَلَى نفوس مرؤوسيهم من أولئك
                             الرهابين وما نظن أن معلمي العربية متى أيقنوا أن المدرسة محتاجة إليهم أكثر من احتياجهم إليها تعاكسهم في إصلاح
                             طريق تعليم العربية وإحكام ملكتها بالصحف والكتب والخطب والدروس.</p>
-                        <p>ومن الأسف أن تكون الكتب المخطوطة والمطبوعات العربية في مكتبة الكلية أقل من <pb ed="shamela"
-                   n="n72-p55"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4788.xhtml"/> عشر المطبوعات الإنكليزية
+                        <p>ومن الأسف أن تكون الكتب المخطوطة والمطبوعات العربية في مكتبة الكلية أقل من <pb ed="shamela" n="n72-p55" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4788.xhtml"/> عشر المطبوعات الإنكليزية
                             بل لا تكاد تبلغ بمكانتها جزءاً من عشرين جزءاً من مكانة الكتب الإفرنجية وإن ما في مكتبة الكلية من قمطر الكتب أدنى
                             إلى أن يكون مكتبة فرد صغيرة منه إلى أن يكون مكتبة جمعية كبرى لها في المصارف المالية نحو أربعمائة ألف ليرة تتقاضى
                             يعها السنوي.</p>
@@ -1939,9 +1800,7 @@
                             من الإخلاص وإرادة الخير حتى يكون في سلبهما أبناءَنا بتعليمهم لغات الأجانب بعض التعزية في تعلميهم لغة أمهاتهم
                             وآبائهم ليقووا عَلَى بث الفكر المقصود بين أهل جيلهم وقبيلهم.</p>
                         <p>معامل السيوفي</p>
-                        <p>كما تأَمل الناظر في الأعمال الكبرى التي قامت بهمم الأفراد في هذه البلاد لا يراها تخرج <pb ed="shamela"
-                   n="n72-p56"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4789.xhtml"/> عن القاعدة
+                        <p>كما تأَمل الناظر في الأعمال الكبرى التي قامت بهمم الأفراد في هذه البلاد لا يراها تخرج <pb ed="shamela" n="n72-p56" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4789.xhtml"/> عن القاعدة
                             التي جرت عليها عند أهل الحضارة الحديثة والقديمة فينجح في العادة من تمرنوا سنين عَلَى العمل الذي يريدون أن
                             يتمحضوا له وعرفوه بدقيقه وجليله وفروعه وأصوله. فالناجح في أرباب المطابع هو الذي سبق له وتعلم في صباه صناعة تنضيد
                             الحروف واستعمال الأدوات والكتابة عَلَى الحجر. والناجح في زراعته هو الذي يحسن معرفة الحرث والكرث بيده ويجيد البذر
@@ -1960,13 +1819,11 @@
                             الخارجية في الجملة.</p>
                         <p>دلت معامل السيوفي أن الشرقي بمفرده أمة وأن الأمة بمجموعها ضعيفة بمعنى أن الشرقي يعمل مفرداً أحسن من عمله مجتمعاً
                             وذلك لفقد التربية المشتركة بين المشارقة يرجعون إليها وتضم عراهم. فلو كان معمل الغزل في دمشق لفرد واحد منذ إنشائه
-                            له خيره وعليه شره لما اضمحل هذا الاضمحلال الذي نراه عليه اليوم ولو كانت معامل السيوفي في <pb ed="shamela"
-                   n="n72-p57"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4790.xhtml"/> بيروت لشركة
+                            له خيره وعليه شره لما اضمحل هذا الاضمحلال الذي نراه عليه اليوم ولو كانت معامل السيوفي في <pb ed="shamela" n="n72-p57" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4790.xhtml"/> بيروت لشركة
                             لما رأينا فيها هذا النظام والنجاح وبذلك صح لنا إثبات ما قدمناه من أن الشرقي أمة بمفرده والأمة ضعيفة بمجموعها وأن
                             لا سبيل إلى قيام الأعمال الكبرى في بلادنا وإن نقدر لها النجح المطلوب إلا إذا اتحدت مناحينا وتعلمنا تعليماً
                             وطنياً اقتصادياً واحداً.</p>
-                        <p>وأي دليل عَلَى ذلك أفضل من أن نقول بأن صاحب هذا المعمل بدأ منذ 24 سنة وهو في الثالثة عشرة من عمره لا يملك غير
+                        <p>وأي دليل عَلَى ذلك أفضل من أن نقول بأن صاحب هذا المعمل بدأ منذ  <tei:num value="24" xml:lang="ar">٢٤</tei:num>  سنة وهو في الثالثة عشرة من عمره لا يملك غير
                             ثمانمائة قرش ومعلومات جزئية في التجارة تعلمها في الممارسة ومنها ما أحرزه بقانون الوراثة لأن والده كان يعمل
                             بالحرير وجده دمشقي يجلو السيوف في دمشق إن صح أن تؤثر الوراثة في الميل إلى الصناعة. ولا شك أن هذا الميل نما فيه
                             مع الزمن وزيارة أوربا وما فيها من آثار العاملين والمفنيين فكان يتوسع في معمله بحسب سنة النمو التدريجي حتى بلغ
@@ -1980,9 +1837,7 @@
                             بحروف عربية وفي آخر اليوم أو الأسبوع يرجع إليها مدير العمل ويحسب المتأخر من المتقدم ويحسبون ذلك بموجب نظام خاص
                             لم جروا فيه عَلَى مثال نظام العمال في سويسرا والبلجيك والنمسا وألمانيا ومن قوانين العملة في هذه الممالك اختار
                             مؤسس المعمل أحسن ما يلاءم هذه البلاد وينفع في نجاح عملته ويعود عليه وعليهم بالربح واقتصاد الوقت.</p>
-                        <p>وهذه الساعة من أنفع ما يجب استخدامه في معاملنا ومطابعنا ودواوين أعمالنا وبيوتنا <pb ed="shamela"
-                   n="n72-p58"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4791.xhtml"/> التجارية والمالية
+                        <p>وهذه الساعة من أنفع ما يجب استخدامه في معاملنا ومطابعنا ودواوين أعمالنا وبيوتنا <pb ed="shamela" n="n72-p58" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4791.xhtml"/> التجارية والمالية
                             ودوائرنا العسكرية والملكة ليتعلم قومنا مراعاة الوقت والتدقيق في حسابه حتى يبارك لهم بساعات العمل وأيام الحياة
                             ويتعلموا أن التدقيق في المواعيد أحد دعائم التنظيم في فروع الأعمال ومن أهم أساليب النجاح الذي غفل عنه معظم سكان
                             هذه الديار وعدوا من ينظم أوقاته ويدقق في وعوده واستقبال خاصته ومن لهم علاقة به في ساعات محددة متكبراً أو
@@ -1992,19 +1847,17 @@
                             يعملون في بعض البلاد كبلجيكا مثلاً زهاء اثنتي عشر ساعة ولكن للمحيط وكثرة الأيدي العاملة والعادة والإقليم دخلاً
                             كبيراً في هذا الاصطلاح ولو لم تكثر هجرة المسيحيين بعد الدستور لوجوب الخدمة في الجندية عليهم وجوباً عَلَى إخوانهم
                             المسلمين فانسل معظم من هم في سن العسكرية إلى أميركا أو غيرها من أبناء الطبقة الدنيا خصوصاً لما قلَّ بذلك عدد
-                            العملة في معامل السيوفي فليس فيها اليوم في حي الشرفية وداخل المدينة أكثر من 280 عاملاً مع أن الأدوات والأعمال
+                            العملة في معامل السيوفي فليس فيها اليوم في حي الشرفية وداخل المدينة أكثر من  <tei:num value="280" xml:lang="ar">٢٨٠</tei:num>  عاملاً مع أن الأدوات والأعمال
                             التي اقتناها صاحبنا تشغل ضعفي هذا العدد فيستفيدون ويفيدون.</p>
                         <p>أكثر ما يعمل في هذه المعامل منجورات الدور الخشبية وأنواع الفرش وأثاث البيوت ففيها تعمل كما تعمل في الغرب فتتأنق
                             الأيدي والعيون في تجويدها وتساعدها الأدوات التي تدار بالفحم الحجري وتبلغ نحو الستين آلة ومناه لقطع الخشب وصقله
                             وحفره وتقويره وتنشيفه فترى في خشب الجوز والزان من واردات الروم - (أناضول) والأكاجو من كوبا وشوح النمسا وسنديان
                             أميركا والخشب البياسي من قيلقية (أطنة) تعمل في تلك الأدوات الحجرية وتحركها تلك المحركات والآلات كأنها العجين في
                             يد خبازه أو الملاط بيد البناء الحاذق.</p>
-                        <p>قال لنا صاحب المعمل أن الآلة الكبرى المحركة في معمله هي بقوة مئة حصان تنفق في النهار 13 فرنكاً من الفحم وكانت
+                        <p>قال لنا صاحب المعمل أن الآلة الكبرى المحركة في معمله هي بقوة مئة حصان تنفق في النهار  <tei:num value="13" xml:lang="ar">١٣</tei:num>  فرنكاً من الفحم وكانت
                             الآلات التي هي أصغر منها تصرف من قبل أكثر منذ ذلك وبهذا يستدل أيضاً أن نفقات المعامل الكبيرة أدنى إلى الاقتصاد
                             وأعمالها أقرب إلى الجودة من مصنوعات المعامل الصغيرة لاسيما والمعامل الكبرى تتجلى فيها قاعدة تقسيم الأعمال فنجد
-                            العملة في معامل السيوفي مقسومين إلى عدة أقسام قسم الأدوات وله وكيلان <pb ed="shamela"
-                   n="n72-p59"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4792.xhtml"/> وقسم النجارة وله وكيلان
+                            العملة في معامل السيوفي مقسومين إلى عدة أقسام قسم الأدوات وله وكيلان <pb ed="shamela" n="n72-p59" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4792.xhtml"/> وقسم النجارة وله وكيلان
                             وقسم الحفر وله وكيل وقسم البرداخ وله وكيل وفي هذا القسم نحو أربعين ابنة تعمل فيه وللمحل رسام خاص وكلهم من أبناء
                             العرب ليس بينهم إفرنجي حتى الأدوات قد جعلت في مواضعها بمعرفة صاحب المعمل دون الاستعانة بأحد من غير أبناء
                             وطنه.</p>
@@ -2017,22 +1870,20 @@
                             ومما رايته خارج المعمل من النظام رصف الطريق الموصلة إليه عَلَى نفقة صاحب المعمل وغرس بعض الأشجار عَلَى جانبيها
                             ويبلغ طولها نحو كيلومترين.</p>
                         <p>هذا ما رأيته في معامل السيوفي من النظام الذي لا أبالغ بأني قلما رأيته في معمل يرأسه شرقي ولذلك بصفق لصاحبه لأنه
-                            بدأ به صغيراً سنة 1888 في مدينة بيروت وكبره سنة 1908 في حي الأشرفية عَلَى الصورة التي رأيناها اليوم ونفقة عمارته
+                            بدأ به صغيراً سنة  <tei:num value="1888" xml:lang="ar">١٨٨٨</tei:num>  في مدينة بيروت وكبره سنة  <tei:num value="1908" xml:lang="ar">١٩٠٨</tei:num>  في حي الأشرفية عَلَى الصورة التي رأيناها اليوم ونفقة عمارته
                             وأرضه وأدواته تساوي خمسة وعشرين ألف ليرة ولكن لا يتيسر لمن معه مئة ألف ليرة أن يقيم مثله بأدواته ونظامه إذا لم
                             تسبق له معرفة كمعرفة السيوفي ولم يقض سنين مثله في النجارة ويحيط بما جل وقل من أساليب العمل وتجويده فليت كل
                             أعمالنا تجري عَلَى هذا المثال من النظام البليغ والنجاح الأكيد. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n72-p60"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4793.xhtml"/>
+                        <pb ed="shamela" n="n72-p60" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4793.xhtml"/>
                         <head>جنون الاستعمار</head>
                         <p>إذا قيل أن السياسة لا قلب لها فيقال أن جنون الاستعمار فنون فقد ساق الغرور دولة إيطاليا إلى أن تخرق العهود وقوانين
                             الدول وتبعث إلى طرابلس الغرب وبرقة بمدرعاتها وجيوشها للاستيلاء بدون مسوغ قانوني عَلَى بلاد طرابلس وبرقة من يد
                             صاحبتها الشرعية دولتنا العثمانية ولو أتت دولة شرقية مع دولة غربية ما أتته إيطاليا مع العثمانية لقامت الدول
                             الكبرى يداً واحدة والله أعلم أي تعريض كن يقضين عَلَى المعتدية به ولكن السياسة لا قلب لها وجنون الاستعمار
                             فنون.</p>
-                        <p>قال الرحالة روهلفس الألماني وقد زار صحراء أفريقية مرة ثانية سنة 1877: إن طرابلس الغرب مفتاح أفريقية فمن يملكها
+                        <p>قال الرحالة روهلفس الألماني وقد زار صحراء أفريقية مرة ثانية سنة  <tei:num value="1877" xml:lang="ar">١٨٧٧</tei:num> : إن طرابلس الغرب مفتاح أفريقية فمن يملكها
                             يملك السودان كله وفي الواقع أن البحر المتوسط يكاد يمس الصحراء من طرابلس وإليها تنتهي ثلاثة أو أربعة طرق من الطرق
                             المهمة في الصحراء فمن طريق غدامس يوصل إلى السودان الغربي ماراً ببلاد توات وتومبكتو ومن طريق مرزوق وغات ينتهي
                             الطريق إلى بحيرة تشاد وطريق بنغازي (برقة) يؤدي إلى النيل ودارفور ولكن هذه الطرق لا أمن فيها وخصوصاً في جهات فزان
@@ -2046,9 +1897,7 @@
                         <p>بيد أن إيطاليا تحلم بالاستيلاء عَلَى طرابلس قبل أن تؤلف وحدتها لتكون لها مركزاً تعتمد عليه بين جزيرة كورس
                             الفرنسوية وثغر برزت التونسي وجزيرة مالطة الإنكليزية وثغر تريسته النمسوي فتجعل طبروق من إقليم برقة مرفأً حربياً
                             في نقطة وسطى بين تلك الجزائر والثغور. ويقول أنصار إيطاليا أنهم إذا تم لهم ما تريد فإنها تنتفع من الوجهة
-                            الاقتصادية من برقة عَلَى الخصوص لأنها تشبه تونس بعمرانها وقد غرس اليونان الكرم <pb ed="shamela"
-                   n="n72-p61"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4794.xhtml"/> والزيتون في أرضها وفيها
+                            الاقتصادية من برقة عَلَى الخصوص لأنها تشبه تونس بعمرانها وقد غرس اليونان الكرم <pb ed="shamela" n="n72-p61" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4794.xhtml"/> والزيتون في أرضها وفيها
                             من غلات الإسفنج شيء كثير فتصرف فيها وفي غيرها مصنوعات معامل بيمون ولومبارديا وبالنظر لقرب طرابلس وبرقة من جزيرة
                             صقلية الإيطالية ولكثرة سكان هذه الجزيرة يجيء بعض أهلها يستنبتون الحقول ويستثمرون المعادن في طرابلس.</p>
                         <p>ولكن فات أولئك الباعثين أن ذاك الحلم عَلَى فرض تحقيقه والرجاء أن يخيب أن إيطاليا كانت تستطيع الوصول إلى هذا الغرض
@@ -2065,10 +1914,8 @@
                             والعاجزات.</p>
                         <p>لمثل هؤلاء القوم يستعد الخاصة من الطليان كما تقول إحدى مجلاتهم منذ الزمن الأطول للسياسة الاستعمارية ومعظم الشعب
                             الإيطالي لا يهتم بتاتاً بمستقبل المستعمرات الإيطالية كأرتيرة والصومال بل يتجشمون البحار إلى أميركا الشمالية
-                            والجنوبية هناك يعملون ويرتزقون. فقد بدأ الخاصة سنة 1905 يلقون محاضرات عَلَى الاستعمار وبعد سنتين أنشئ ديوان
-                            الزراعة الاستعمارية الإيطالي وغايته أن يوجه الإيطاليون وجهتهم إلى <pb ed="shamela"
-                   n="n72-p62"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4795.xhtml"/> المستعمرات الإيطالية
+                            والجنوبية هناك يعملون ويرتزقون. فقد بدأ الخاصة سنة  <tei:num value="1905" xml:lang="ar">١٩٠٥</tei:num>  يلقون محاضرات عَلَى الاستعمار وبعد سنتين أنشئ ديوان
+                            الزراعة الاستعمارية الإيطالي وغايته أن يوجه الإيطاليون وجهتهم إلى <pb ed="shamela" n="n72-p62" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4795.xhtml"/> المستعمرات الإيطالية
                             ويتخلون عن قصد أميركا وغيرها من ديار الأجانب فأُنشئت لذلك حدائق للنبات الاستعماري في مدينتي رومية وبلرمة وهذا
                             الديوان يتلقى من المصادر المختلفة معلومات عن زراعة البلاد التي يراد استعمارها وحيواناتها وموادها ومناخها ومقدار
                             المطار التي تهطل فيها ويقوم بأبحاث جيولوجية من حيث مساحة الأراضي وخصائص شعوبها وأحوالها الاجتماعية والاقتصادية
@@ -2081,15 +1928,13 @@
                             الإيطاليين الذين يدعون أنهم من نسل غاريبالدي ومازيني وميكل آنجل وليونارد دي فنسي ورافاييل سانتريو وأمثالهم من
                             أرباب الصناعات النفسية ورجال الإدارة والسياسة.</p>
                         <p>نحن نعلم أن الطليان كثير نسلهم يباكرون إلى الزوج رجالاً ونساءً وإن نسبة السكان منهم إلى كل كيلومتر مربع أكثر من
-                            نسبتها في ألمانية ففي الكيلو متر المربع في إيطاليا 117 ساكناً وفي ألمانيا 104 أشخاص وقد ارتقت التجارة الإيطالية
+                            نسبتها في ألمانية ففي الكيلو متر المربع في إيطاليا  <tei:num value="117" xml:lang="ar">١١٧</tei:num>  ساكناً وفي ألمانيا  <tei:num value="104" xml:lang="ar">١٠٤</tei:num>  أشخاص وقد ارتقت التجارة الإيطالية
                             ارتقاء مهماً ولاسيما بعد أن توطدت أركان الوحدة الإيطالية وتألفت من تلك الممالك الصغرى البندقية وطوسكانيا وجنوة
                             وغيرها هذه المملكة الكبيرة وإن دين إيطاليا قليل بالنسبة لسائر الممالك الممدنة ولكن كل هذه الصفات لا تبرر عملها
                             عند العقلاء وسوف تعلم أنها لو صرفت نصف ما صرفته حتى الآن من المال والرجال في الأعمال العمرانية سواءٌ كان في
                             بلادها أو خارجها لكان أحسن لها وأبقى.</p>
                         <p>وما نظن أن إيطاليا تستطيعان تنزع من أرباب الأملاك أملاكهم في طرابلس مهما نوعت أساليب الحيل ففرنسا بعد استعمار
-                            الجزائر منذ سنة 1830 عَلَى شدتها في استعمارها لم <pb ed="shamela"
-                   n="n72-p63"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4796.xhtml"/> تتمكن من الاستيلاء عَلَى
+                            الجزائر منذ سنة  <tei:num value="1830" xml:lang="ar">١٨٣٠</tei:num>  عَلَى شدتها في استعمارها لم <pb ed="shamela" n="n72-p63" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4796.xhtml"/> تتمكن من الاستيلاء عَلَى
                             ما تحب من الأراضي كما يفعل الرومانيون في البلاد التي يفتحونها وينزعون من المالكين ويستعمرونها بأبنائهم غالباً
                             والرومانيون أجداد الإيطاليون الأول وإلى اليوم لم تربح حكومة فرنسا من الجزائر بل هي تخسر عليها.</p>
                         <p>فهل يعقل أن تتحقق أماني إيطاليا في طرابلس والخصب فيها في أماكن معينة وعي ملك لأهلها ولطالما دافعوا عنها دفاعهم
@@ -2099,17 +1944,15 @@
                             سكان بلجكا وقد تضيق أرض بسكانها حتى يقل الرزق عليهم فيها فتضطر حكوماتهم أن تمتلك بلاداً أخرى كثيرة الخيرات قليلة
                             السكان حتى تسهل عَلَى الفاضل من أهاليها المهاجرة إلى تلك البلاد والارتزاق فيها كما فعلت إنكلترا وهولاندا وجرت
                             فرنسا وألمانيا مجراهما. ولكن إيطاليا لم تعمر كل بلادها حتى الآن فليس بها حاجة إلى فتح بلدان أخرى وتعميرها
-                            للارتزاق منها فإن عندها جزيرة سردينيا مساحتها أكثر من 9300 ميل مربع وليس فيها من السكان سوى 810000 نفس مع أن
+                            للارتزاق منها فإن عندها جزيرة سردينيا مساحتها أكثر من  <tei:num value="9300" xml:lang="ar">٩٣٠٠</tei:num>  ميل مربع وليس فيها من السكان سوى  <tei:num value="810000" xml:lang="ar">٨١٠٠٠٠</tei:num>  نفس مع أن
                             صقليا تماثلها مساحة وسكانها أكثر من ثلاثة ملايين ونصف وعندها مستعمرة ارتريا في أفريقية عَلَى حدود السودان
-                            ومساحتها 45800 ميل مربع أي نحو نصف مساحة إيطاليا كلها وهي من أغنى بلاد الدنيا بالمناجم والحراج وليس فيها من
-                            السكان نصف مليون نفس وعندها بلاد الصومال ومساحتها نحو 140000 ميل مربع أي أكثر من مساحة إيطاليا بنحو ثلاثين في
-                            المئة وسكانها نحو 400000 نفس وهي بلاد زراعية كثيرة الخيرات فعَلَى م لا يهاجر الإيطاليون إلى هذين البلادين
+                            ومساحتها  <tei:num value="45800" xml:lang="ar">٤٥٨٠٠</tei:num>  ميل مربع أي نحو نصف مساحة إيطاليا كلها وهي من أغنى بلاد الدنيا بالمناجم والحراج وليس فيها من
+                            السكان نصف مليون نفس وعندها بلاد الصومال ومساحتها نحو  <tei:num value="140000" xml:lang="ar">١٤٠٠٠٠</tei:num>  ميل مربع أي أكثر من مساحة إيطاليا بنحو ثلاثين في
+                            المئة وسكانها نحو  <tei:num value="400000" xml:lang="ar">٤٠٠٠٠٠</tei:num>  نفس وهي بلاد زراعية كثيرة الخيرات فعَلَى م لا يهاجر الإيطاليون إلى هذين البلادين
                             ويعمرونها إن كانت بلادهم قد ضاقت عليهم.</p>
                         <p>وهب أن إيطاليا اهتمت بإصلاح طرابلس الغرب واستثمار خيراتها فهي إما أن تستأثر بذلك لتنحصر الفائدة فيها وفي سكان
                             طرابلس فتكون قد جرت مجرى إسبانيا والبرتغال في استعمارهما فتفشل فشلهما لأنهما فشلتا فشلاً تاماً في كل البلدان
-                            التي امتلكتاها وحاولتا استعمارها ومنعتا غيرهما من مشاركتهما في النفع وأما أن تجري مجرى إنكلترا وهو فتح <pb ed="shamela"
-                   n="n72-p64"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4797.xhtml"/>
+                            التي امتلكتاها وحاولتا استعمارها ومنعتا غيرهما من مشاركتهما في النفع وأما أن تجري مجرى إنكلترا وهو فتح <pb ed="shamela" n="n72-p64" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4797.xhtml"/>
                             أبواب مستعمراتها لتجارات كل الأمم وحينئذ لا يكون السبق للإيطاليين بل للإنكليز والألمان لأن السبق في المناظرة
                             التجارية للأغنى مالاً والأوفر علماً والأمهر صناعة. وهيهات أن تعيش إيطاليا في طرابلس الغرب بتعب غيرها وإعنات
                             أهلها فإذا فعلت يحل بها الخراب كما حل برومية في أيامها الخالية.</p>
@@ -2123,34 +1966,30 @@
                             سيرة إحياء الشعور الوطني كما كانت تفعل الحكومة عندنا في كتب الجغرافيا التركية فتذكر فيها من أملاكنا ما فقدناه من
                             نحو مئة سنة ولم يبق لنا حق من الحقوق الدولية والشرعية فيه.</p>
                         <p>تظن إيطاليا أنها تحمل المهاجرين من أبنائها بمئات الألوف إلى طرابلس وفاتها أن هذه البلاد حتى اليوم عَلَى قربها من
-                            أوربا ليس فيها سوى 2200 مالطي و1000 إيطالي و700 فرنسوي و600 إنكليزي و150 إسبانيولياً وبعض الهولانديين
+                            أوربا ليس فيها سوى  <tei:num value="2200" xml:lang="ar">٢٢٠٠</tei:num>  مالطي و <tei:num value="1000" xml:lang="ar">١٠٠٠</tei:num>  إيطالي و <tei:num value="700" xml:lang="ar">٧٠٠</tei:num>  فرنسوي و <tei:num value="600" xml:lang="ar">٦٠٠</tei:num>  إنكليزي و <tei:num value="150" xml:lang="ar">١٥٠</tei:num>  إسبانيولياً وبعض الهولانديين
                             والنمساويين واليونان والألمان والأميركان لا يبلغ مجموعهم كلهم خمسة آلاف نسمة وإن أكفأ الناس في التجارة والصناعة
                             والزراعة واقدر الأمم بالملل والرجال هم يستثمرون الأرض فأين هم من الألمان فقد بلغ من حذقهم أن استولوا عَلَى كثير
                             من أعمال التجارة في لندن ونيويورك بل في باريز نفسها وناهيك بكره الفرنسيس لأعدائهم الألمان ولقد قدروا مؤخراً عدد
                             الألمان في باريز وضاحيتها بمئة وأربعين ألفا يتجرون في نفس عاصمة الفرنسيس بجميع أنواع التجارة وينافسون الفرنسويين
                             في أرباحهم فتجد منهم الكتبيين والخياطين والجوهريين والفرائين وشركات الضمان والصيارف وغير ذلك من فروع العمل فلو
-                            تدبرت إيطاليا أو <pb ed="shamela"
-                   n="n72-p65"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4798.xhtml"/> خاصتها المفكرة لعلمت
+                            تدبرت إيطاليا أو <pb ed="shamela" n="n72-p65" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4798.xhtml"/> خاصتها المفكرة لعلمت
                             أنها قادمة عَلَى معترك شديد في طرابلس وبرقة ولو سلم لها ما تنويه من الغوائل الأهلية ولو سلم من كل ذلك لكانت
                             العاقبة في الاستعمار لأرقى الأمم في مذاهب المعاش وأعرفها بطرق الانتفاع والنفع ولكن هو فساد الإدارة وجنون
                             الاستعمار تركب الأمم في سبيلهما العار وتهوي في مهاوي الدمار والبوار. </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n72-p66"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4799.xhtml"/>
+                        <pb ed="shamela" n="n72-p66" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4799.xhtml"/>
                         <head>مخطوطات ومطبوعات</head>
                         <p>طبقات الأمم</p>
                         <p>عرف الأب لويس شيخو اليسوعي مدير مجلة المشرق بما نشره من كتب العرب في اللغة والتاريخ والأدب دع عنك ما خدم به
-                            طائفته وجمعيته وآخر ما أظهر إلى الوجود كتاب طبقات المم لأبي القاسم صاعد بن أحمد بن صاعد الأندلسي المتوفى سنة 462
+                            طائفته وجمعيته وآخر ما أظهر إلى الوجود كتاب طبقات المم لأبي القاسم صاعد بن أحمد بن صاعد الأندلسي المتوفى سنة  <tei:num value="462" xml:lang="ar">٤٦٢</tei:num> 
                             ظفر بنسخة منه عند أحد الوراقين بدمشق والتحريف غالب عليها لأن ناسخها الأصلي منذ نحو مائتي سنة عامي لا يحسن النقل
                             فعارض الناشر أكثر فصولها وردها إلى أصولها عَلَى كتب عربية من مطبوعات علماء المشرقيات مثل الفهرست لابن نديم
                             وتاريخ الحكماء لابن القفطي وطبقات الحكماء لابن أبي أُصبعة ووعد في آخر جزء من المشرق أن ينشر الكتاب عَلَى حدة مع
                             الفهارس اللازمة له.</p>
                         <p>وقد رأينا أن نلفت نظر الناشر الباحث إلى أغلاط وقعت له أو للناسخ الأصلي ولم يعمل الناشر في نظره فيها فجاءت مشوهة
                             لطلعة هذا الكتاب النفيس عله يتداركها فيلحق بها جدولاً في آخر الكتاب فيستحق شكر المعارف والآداب.</p>
-                        <p>فقد ضبط (ص 567 - 862) المرية بكسر الميم وسكون الراء وفتح الياء والصواب بفتح الميم ثم الكسر وتشديد الياء بنقطتين
+                        <p>فقد ضبط (ص  <tei:num value="567" xml:lang="ar">٥٦٧</tei:num>  -  <tei:num value="862" xml:lang="ar">٨٦٢</tei:num> ) المرية بكسر الميم وسكون الراء وفتح الياء والصواب بفتح الميم ثم الكسر وتشديد الياء بنقطتين
                             من تحتها وهي مدينة كبيرة من كورة البيرة من أعمال الأندلس وكانت كما قال ياقوت هي وبجانة بأبي الشرق منها يركب
                             التجار وفيها تحل مراكبهم قال القسطلي:</p>
                         <lg type="bayt">
@@ -2167,82 +2006,74 @@
                             <l> عَلَى المرية والأنفاس تظهره</l>
                         </lg>
                         <p>والمرية بالكسر (والضم أيضاً) الشك والجدال.</p>
-                        <p>وفي (ص 568) الشابران وقد وضع عليها علامة استفهام إشارة إلى أنه هكذا وجدها وهي من مدن أرمينية والران وأذربيجان
-                            ذكرها الاصطخري في المسالك والممالك (طبعة ليدن) ونيشابور والصواب نيسابور. (ص 569) يتجستان والصواب سجستان كما قال
-                            في <pb ed="shamela"
-                   n="n72-p67"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4800.xhtml"/> الحاشية وقعت ألفاظ من
+                        <p>وفي (ص  <tei:num value="568" xml:lang="ar">٥٦٨</tei:num> ) الشابران وقد وضع عليها علامة استفهام إشارة إلى أنه هكذا وجدها وهي من مدن أرمينية والران وأذربيجان
+                            ذكرها الاصطخري في المسالك والممالك (طبعة ليدن) ونيشابور والصواب نيسابور. (ص  <tei:num value="569" xml:lang="ar">٥٦٩</tei:num> ) يتجستان والصواب سجستان كما قال
+                            في <pb ed="shamela" n="n72-p67" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4800.xhtml"/> الحاشية وقعت ألفاظ من
                             مثل هذه في هذا السفر أثبت الناشر الرواية الضعيفة في المتن وترك الرواية الصحيحة للحاشية وكان الأولى أن يعكس
                             ليصب.</p>
-                        <p>(570) خ بحر أقيابس ص أقيانس خ ولا رؤيت بها ص رؤيت لها.</p>
-                        <p>(571) خ يدور فيها مناجم الأمم ص مماجد أو محامد (572) خ وخلقه إلى نهاية المعمورة ص وخلفه خ السمت (بضم السين) ص فتح
+                        <p>( <tei:num value="570" xml:lang="ar">٥٧٠</tei:num> ) خ بحر أقيابس ص أقيانس خ ولا رؤيت بها ص رؤيت لها.</p>
+                        <p>( <tei:num value="571" xml:lang="ar">٥٧١</tei:num> ) خ يدور فيها مناجم الأمم ص مماجد أو محامد ( <tei:num value="572" xml:lang="ar">٥٧٢</tei:num> ) خ وخلقه إلى نهاية المعمورة ص وخلفه خ السمت (بضم السين) ص فتح
                             السين وهو الطريق خ لأنهم أجمعين مشتركون لأنهم أجمعون. ولا معنى لجملة: هذا التأليف الأليف العقل.</p>
-                        <p>(573) خ السباع التي تغاضي الإنسان أقدامها ص تقاضي خ وكذلك قالت العرب ص ولذلك (584) خ ولأنها حازت عَلَى الملوك وسط
+                        <p>( <tei:num value="573" xml:lang="ar">٥٧٣</tei:num> ) خ السباع التي تغاضي الإنسان أقدامها ص تقاضي خ وكذلك قالت العرب ص ولذلك ( <tei:num value="584" xml:lang="ar">٥٨٤</tei:num> ) خ ولأنها حازت عَلَى الملوك وسط
                             ص ولأنها فازت عَلَى. خ وأشدهم أسرا ص وأشدهم أشراً والأَشر البطر والنشاط.</p>
-                        <p>(575) ليستحبوا بذلك قواها ص ليستجلبوا أو ليسحبوا (576) في الفرقتين الأولتين (كذا) ص الأوليين وكان عليه أن يثبت
-                            الصواب وقد تكرر رسم الأولتين في مكان آخر (670) خفي المقالتين الأولتين ص الأوليين خ في المقالتين الآخرتين ص
+                        <p>( <tei:num value="575" xml:lang="ar">٥٧٥</tei:num> ) ليستحبوا بذلك قواها ص ليستجلبوا أو ليسحبوا ( <tei:num value="576" xml:lang="ar">٥٧٦</tei:num> ) في الفرقتين الأولتين (كذا) ص الأوليين وكان عليه أن يثبت
+                            الصواب وقد تكرر رسم الأولتين في مكان آخر ( <tei:num value="670" xml:lang="ar">٦٧٠</tei:num> ) خفي المقالتين الأولتين ص الأوليين خ في المقالتين الآخرتين ص
                             الآخريين.</p>
-                        <p>(577) خ أوجز حساب واحضره ص وأخصره خ ي حسن التواليد ص حسن التوليد خ في تقدمة المعرفة ص تقدم المعرفة (578) خ
+                        <p>( <tei:num value="577" xml:lang="ar">٥٧٧</tei:num> ) خ أوجز حساب واحضره ص وأخصره خ ي حسن التواليد ص حسن التوليد خ في تقدمة المعرفة ص تقدم المعرفة ( <tei:num value="578" xml:lang="ar">٥٧٨</tei:num> ) خ
                             وتحملهم (بتشديد الميم) من الأمور ص وتحملهم بكسر الميم بدن تمديد خ وأحسن التئام ص حسن التئام خ أول ملوك بني
-                            إسرائيل ص أول ملوك بني سامان أو ساسان (579) خ يزدجرو بن شهريار ص يزدجرد بن شهريار خ وجود التدبير ص وجودة التدبير
-                            (581) خ وكان عرضه ألف وخمسمائة ذراع ص وكان عرضه ألفاً خ وكان بعد الطوفان عدة منهم عدة ذوو معرفة ص وكان بعد
-                            الطوفان (665) خ الثغور الخزروية ص الثغور الخزرية (668) خ طيماوش الروحاني ص طيماوس ومثلها نيقوماخوش والصواب
-                            نيقوماخوس (669) خ وجعها آلة ص وجعلها آلة.</p>
-                        <p>(671) خ مثبتة أساسها مزمومة قواعدها وثيق بنيانها ص مدعومة قواعدها خ اليد الحليلة ص اليد الجليلة.</p>
-                        <p>(672) خ ومنها رسالته جاوبه بها ص ومنها رسالته التي جاوبه بها خ الذي كان فيه البدرة (وقال في الحاشية لعله أراد
-                            البودة) والبودة متعين خ أقصدهم بكتب الفلسفة ص <pb ed="shamela"
-                   n="n72-p68"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4801.xhtml"/> أقعدهم.</p>
-                        <p>(673) خ وراد عليهم آراءهم بالحجاج (كذا) الصحيحة ص بالحجاج الصحيح أو بالحجج الصحيحة (675) خ أوعشطش ص أوغسطس (676)
+                            إسرائيل ص أول ملوك بني سامان أو ساسان ( <tei:num value="579" xml:lang="ar">٥٧٩</tei:num> ) خ يزدجرو بن شهريار ص يزدجرد بن شهريار خ وجود التدبير ص وجودة التدبير
+                            ( <tei:num value="581" xml:lang="ar">٥٨١</tei:num> ) خ وكان عرضه ألف وخمسمائة ذراع ص وكان عرضه ألفاً خ وكان بعد الطوفان عدة منهم عدة ذوو معرفة ص وكان بعد
+                            الطوفان ( <tei:num value="665" xml:lang="ar">٦٦٥</tei:num> ) خ الثغور الخزروية ص الثغور الخزرية ( <tei:num value="668" xml:lang="ar">٦٦٨</tei:num> ) خ طيماوش الروحاني ص طيماوس ومثلها نيقوماخوش والصواب
+                            نيقوماخوس ( <tei:num value="669" xml:lang="ar">٦٦٩</tei:num> ) خ وجعها آلة ص وجعلها آلة.</p>
+                        <p>( <tei:num value="671" xml:lang="ar">٦٧١</tei:num> ) خ مثبتة أساسها مزمومة قواعدها وثيق بنيانها ص مدعومة قواعدها خ اليد الحليلة ص اليد الجليلة.</p>
+                        <p>( <tei:num value="672" xml:lang="ar">٦٧٢</tei:num> ) خ ومنها رسالته جاوبه بها ص ومنها رسالته التي جاوبه بها خ الذي كان فيه البدرة (وقال في الحاشية لعله أراد
+                            البودة) والبودة متعين خ أقصدهم بكتب الفلسفة ص <pb ed="shamela" n="n72-p68" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4801.xhtml"/> أقعدهم.</p>
+                        <p>( <tei:num value="673" xml:lang="ar">٦٧٣</tei:num> ) خ وراد عليهم آراءهم بالحجاج (كذا) الصحيحة ص بالحجاج الصحيح أو بالحجج الصحيحة ( <tei:num value="675" xml:lang="ar">٦٧٥</tei:num> ) خ أوعشطش ص أوغسطس ( <tei:num value="676" xml:lang="ar">٦٧٦</tei:num> )
                             في غاية العلماء من بعده التي يحيرون. إليها وضع الناشر في الحاشية يجرون إليها مع أداة استفهام مع أن يجرون متحتم
                             أو يقال يصيرون خ إلا ما لا خطب له ص خطر له خ اشتقت لها من سبعة أشياء ص من سبعة أسماء.</p>
-                        <p>(678) خ ونحل مذاهب الحكماء ص ونخل بالأعجام خ بأن يجمع العالم في واحد ص أن يجمع (680) خ في عدد اليونانيين ص في
+                        <p>( <tei:num value="678" xml:lang="ar">٦٧٨</tei:num> ) خ ونحل مذاهب الحكماء ص ونخل بالأعجام خ بأن يجمع العالم في واحد ص أن يجمع ( <tei:num value="680" xml:lang="ar">٦٨٠</tei:num> ) خ في عدد اليونانيين ص في
                             عداد.</p>
-                        <p>(754) خ فإن كان ذلك حق عنهم في أبعدهم في هذا الرأي من نظام الحكمة ص فإن كان ذلك حقاً فما أبعدهم (758) خ فلا
+                        <p>( <tei:num value="754" xml:lang="ar">٧٥٤</tei:num> ) خ فإن كان ذلك حق عنهم في أبعدهم في هذا الرأي من نظام الحكمة ص فإن كان ذلك حقاً فما أبعدهم ( <tei:num value="758" xml:lang="ar">٧٥٨</tei:num> ) خ فلا
                             يزالون في حل وترحال ص في حال وترحال.</p>
-                        <p>(759) خ وآراء الفرق مع أن عبدة الأوثان ص من أن عبدة الأوثان خ ولا واربة صاحب العقل ص ور دان به صاحب العقل. خ ما
-                            تعبدهم (بضم الباء وتشديدها) إلا ليقربونا إلى الله زلفى ص ما نعبدهم (760) خ والعرب أصحاب حفظة ورواية ص حفظ ورواية
-                            (762) رؤبت إلى أقاصي الأرض فأريت مشارقها وسيبلغ ملك أمتي مارؤي لي منها ص زويت لي أقاصي الأرض. . . . مازوي. وفي
+                        <p>( <tei:num value="759" xml:lang="ar">٧٥٩</tei:num> ) خ وآراء الفرق مع أن عبدة الأوثان ص من أن عبدة الأوثان خ ولا واربة صاحب العقل ص ور دان به صاحب العقل. خ ما
+                            تعبدهم (بضم الباء وتشديدها) إلا ليقربونا إلى الله زلفى ص ما نعبدهم ( <tei:num value="760" xml:lang="ar">٧٦٠</tei:num> ) خ والعرب أصحاب حفظة ورواية ص حفظ ورواية
+                            ( <tei:num value="762" xml:lang="ar">٧٦٢</tei:num> ) رؤبت إلى أقاصي الأرض فأريت مشارقها وسيبلغ ملك أمتي مارؤي لي منها ص زويت لي أقاصي الأرض. . . . مازوي. وفي
                             النهاية لابن الأثير (طبعة مصر) زويت لي الأرض فرأيت مشارقها ومغاربها أي جمعت يقال زويته أزويه زوياً. خ حكم من
                             الله ماضياً وقضاه منه نافذاً ص حكمً من الله تعالى ماضياً وقضاء منه نافذاً.</p>
-                        <p>(763) خ من أحصائه لمنتحليها ص أخصائه (767) وقلما يشفع بها في العلوم ص ينتفع بها (768) خ ودنا أقواماً ص دانى
-                            أقواماً (769) خ وكان أبو نصر الفارابي معاصراً لأبي بشر متى بن يونس في علم المنطق تعديل العلماء ص لأبي متى بشر بن
+                        <p>( <tei:num value="763" xml:lang="ar">٧٦٣</tei:num> ) خ من أحصائه لمنتحليها ص أخصائه ( <tei:num value="767" xml:lang="ar">٧٦٧</tei:num> ) وقلما يشفع بها في العلوم ص ينتفع بها ( <tei:num value="768" xml:lang="ar">٧٦٨</tei:num> ) خ ودنا أقواماً ص دانى
+                            أقواماً ( <tei:num value="769" xml:lang="ar">٧٦٩</tei:num> ) خ وكان أبو نصر الفارابي معاصراً لأبي بشر متى بن يونس في علم المنطق تعديل العلماء ص لأبي متى بشر بن
                             يونس وعَلَى تأليفه في علم المنطق تعديل العلماء.</p>
-                        <p>(846) خ عبد الله المرورزي ص لعله المروَزي أو المروُّذي كما في المشتبه في أسماء الرجال للذهبي (طبعة ليدن) (847) خ
-                            وكان ذلك (صبياً؟) إلى التمرس بها ص سبباً إلى التمرس بها (848) خ ذي نؤاس ص ذي نواس ومثلها التي بعدها بسطر (849) خ
-                            المرآي المحرقة ص المرائي المحرقة. خ وكان (مذهب منه إلى مذاهب ص وكان يذهب <pb ed="shamela"
-                   n="n72-p69"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4802.xhtml"/> فيه مذاهب. خ والجماعة
+                        <p>( <tei:num value="846" xml:lang="ar">٨٤٦</tei:num> ) خ عبد الله المرورزي ص لعله المروَزي أو المروُّذي كما في المشتبه في أسماء الرجال للذهبي (طبعة ليدن) ( <tei:num value="847" xml:lang="ar">٨٤٧</tei:num> ) خ
+                            وكان ذلك (صبياً؟) إلى التمرس بها ص سبباً إلى التمرس بها ( <tei:num value="848" xml:lang="ar">٨٤٨</tei:num> ) خ ذي نؤاس ص ذي نواس ومثلها التي بعدها بسطر ( <tei:num value="849" xml:lang="ar">٨٤٩</tei:num> ) خ
+                            المرآي المحرقة ص المرائي المحرقة. خ وكان (مذهب منه إلى مذاهب ص وكان يذهب <pb ed="shamela" n="n72-p69" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4802.xhtml"/> فيه مذاهب. خ والجماعة
                             سواهم ص وجماعة.</p>
-                        <p>(852) خ واتخذ القوط مدينة طليطلة مدائنها العتيقة قاعدة لملكهم ص من مدائنها خ ولم تزل مركز الملك المسلمين ص ولم
+                        <p>( <tei:num value="852" xml:lang="ar">٨٥٢</tei:num> ) خ واتخذ القوط مدينة طليطلة مدائنها العتيقة قاعدة لملكهم ص من مدائنها خ ولم تزل مركز الملك المسلمين ص ولم
                             تزل مركزاً لملك. خ عظيم ملوك الأندلس. وأهل بلاد الأندلس عرض المدينة المعروفة الجزيرة الخضراء ص عظيم ملوك الأندلس
                             وأهل بلاد الأندلس. عرض الخ أي بدون نقطة بين ملوك الأندلس وأهل بلاد الأندلس وعرض المدينة الخ راجع إلى ما قبل
-                            أربعة أسطر وعرضها (طليطلة) 39 درجة الخ.</p>
-                        <p>(853) خ وكان عالماً لحركات الكواكب ص بحركات خ وبمصر من الزني (كذا) والربيع بن سليمان ص المزني وهو من الأئمة
-                            المجتهدين في مصر توفي سنة 264 واسمه أبو إبراهيم إسمعيل بن يحيى (راجع ترجمته في حسن المحاضرة للسيوطي طبعة
+                            أربعة أسطر وعرضها (طليطلة)  <tei:num value="39" xml:lang="ar">٣٩</tei:num>  درجة الخ.</p>
+                        <p>( <tei:num value="853" xml:lang="ar">٨٥٣</tei:num> ) خ وكان عالماً لحركات الكواكب ص بحركات خ وبمصر من الزني (كذا) والربيع بن سليمان ص المزني وهو من الأئمة
+                            المجتهدين في مصر توفي سنة  <tei:num value="264" xml:lang="ar">٢٦٤</tei:num>  واسمه أبو إبراهيم إسمعيل بن يحيى (راجع ترجمته في حسن المحاضرة للسيوطي طبعة
                             مصر).</p>
-                        <p>(854) خ أنا كفرت بما قالا وما فعلا ص أني كفرت الخ خ وذلك في أيام أبيه إلى الغاية بالعلوم وإلى الثبار أهليها ص لم
-                            نفهم معنى الثبار وفي الجملة تشويش ومثله في (856) فداول عناية الحكم ذلك لم يظهر لنا فليحرر (861) خ كان بصيراً
+                        <p>( <tei:num value="854" xml:lang="ar">٨٥٤</tei:num> ) خ أنا كفرت بما قالا وما فعلا ص أني كفرت الخ خ وذلك في أيام أبيه إلى الغاية بالعلوم وإلى الثبار أهليها ص لم
+                            نفهم معنى الثبار وفي الجملة تشويش ومثله في ( <tei:num value="856" xml:lang="ar">٨٥٦</tei:num> ) فداول عناية الحكم ذلك لم يظهر لنا فليحرر ( <tei:num value="861" xml:lang="ar">٨٦١</tei:num> ) خ كان بصيراً
                             بالهندسة في النجوم متقدماً في اللغة ص كان بصيراً بالهندسة نافذاً في النجوم أو ما في معناها خ وولي القضاء الزتية
                             آخر دولة زهيرة العامري ص وولي قضاء المرية آخر دولة زهير العامري. وذلك لأن زهير العامري تغلب عَلَى المرية
                             وأعمالها وذاك الرسم المحرف أدنى إلى أن يكون المرية (راجع المعجب في تلخيص أخبار المغرب لعبد الواحد المراكشي طبعة
                             ليدن مصر).</p>
-                        <p>(862) خ بعلوم البرهان واللسان والمسائلة. ص ومسائله خ نال هناك دنيساً عريضه ص نال هناك دنيا عريضة (863) خ له مع
+                        <p>( <tei:num value="862" xml:lang="ar">٨٦٢</tei:num> ) خ بعلوم البرهان واللسان والمسائلة. ص ومسائله خ نال هناك دنيساً عريضه ص نال هناك دنيا عريضة ( <tei:num value="863" xml:lang="ar">٨٦٣</tei:num> ) خ له مع
                             ذلك نقود في العربية ص نفوذ في العربية خ كانوا مشهورين بأسمائهم عندنا بالأندلس إلى هنا وفي وزماننا ص (إلى هنا)
-                            زائدة زادها منضد الحروف كما كرر سطراً بعد ذلك (924) خ أفراد من الأحداث متندبون بعلم الفلسفة ص أفراد من الأحداث
-                            مبتدئون بعلم الفلسفة لا منتدبون ولا متندبون (952) خ وصنف في مصنفات كثيرة ص وصنف فيها (العلوم الشرعية) (926) خ
-                            ولأبي محمد بن حزم بعد تصنيف وافر في علم النحو ص نصيب وافر (928) خ تمكنه في العلم وتحققه مذاهب للقدماء ص تحققه في
-                            مذاهب (930) خ ودخل البصرة ومصر ودبر مارستانهما ص ودبر <pb ed="shamela"
-                   n="n72-p70"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4803.xhtml"/> مارستانيهما. خ وكان في
+                            زائدة زادها منضد الحروف كما كرر سطراً بعد ذلك ( <tei:num value="924" xml:lang="ar">٩٢٤</tei:num> ) خ أفراد من الأحداث متندبون بعلم الفلسفة ص أفراد من الأحداث
+                            مبتدئون بعلم الفلسفة لا منتدبون ولا متندبون ( <tei:num value="952" xml:lang="ar">٩٥٢</tei:num> ) خ وصنف في مصنفات كثيرة ص وصنف فيها (العلوم الشرعية) ( <tei:num value="926" xml:lang="ar">٩٢٦</tei:num> ) خ
+                            ولأبي محمد بن حزم بعد تصنيف وافر في علم النحو ص نصيب وافر ( <tei:num value="928" xml:lang="ar">٩٢٨</tei:num> ) خ تمكنه في العلم وتحققه مذاهب للقدماء ص تحققه في
+                            مذاهب ( <tei:num value="930" xml:lang="ar">٩٣٠</tei:num> ) خ ودخل البصرة ومصر ودبر مارستانهما ص ودبر <pb ed="shamela" n="n72-p70" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4803.xhtml"/> مارستانيهما. خ وكان في
                             زمان ابن عبدون وبعده إلى آخر الدولة العامرة ص الدولة العامرية. وهي إحدى حكومات الطوائف بالأندلس جدها عامر الداخل
                             إلى الأندلس مع طارق وجاور الخلفاء منهم بقرطبة جماعة أحدهم أبو عامر محمد بن الوليد الذي عرف آل عامر طراً به وساد
                             بعده ولده عامر (راجع أخبارهم في البيان المغرب في أخبار المغرب لابن عذارى المراكشي طبعة ليدن).</p>
-                        <p>(931) خ حسن التوليد والتنتيج ص ولعله الاستنتاج. خ ولم يكن أحد بعد محمد ابن عبدون أبوزي أبا العرب ص يوازي أبا
-                            العرب (934) خ تطريقه للفضول وتطريفه لما غلظ ص تطريته للفضول (936) خ أعلم الناس بأخبار الأنبياء وبدء الخليفة ص
+                        <p>( <tei:num value="931" xml:lang="ar">٩٣١</tei:num> ) خ حسن التوليد والتنتيج ص ولعله الاستنتاج. خ ولم يكن أحد بعد محمد ابن عبدون أبوزي أبا العرب ص يوازي أبا
+                            العرب ( <tei:num value="934" xml:lang="ar">٩٣٤</tei:num> ) خ تطريقه للفضول وتطريفه لما غلظ ص تطريته للفضول ( <tei:num value="936" xml:lang="ar">٩٣٦</tei:num> ) خ أعلم الناس بأخبار الأنبياء وبدء الخليفة ص
                             بدء الخليقة. خ يسمون كل تسعة عشر سنة ص كل تسع عشرة سنة خ الحادية عشر والرابعة عشر والسابعة عشر والتاسعة عشر ص
                             الحادية عشرة بإثبات تاء التأنيث فيها كلها لأن الضمير يعود إلى السنة.</p>
-                        <p>(937) خ تفرقوا في البلاد ودخلوا الأمم ص وداخلوا الأمم خ لطيف الذهن حسن النظر أخفر ص لعله اضر لأن أخفر لا معنى لها
+                        <p>( <tei:num value="937" xml:lang="ar">٩٣٧</tei:num> ) خ تفرقوا في البلاد ودخلوا الأمم ص وداخلوا الأمم خ لطيف الذهن حسن النظر أخفر ص لعله اضر لأن أخفر لا معنى لها
                             هنا خ واتصلت به العناية فسيوفي علي صناعة الفلسفة ويستوجب فنون الحكمة ص فسيوفي لا معنى لها والأولى يستوعب بدل
                             يستوجب لمطابقته للمعنى خ والتعريف بنبذ من تواليفهم ص والتعريف بنبذة بفتح النون وضمها ولا تجمع ويغلط فيها
                             كثيرون.</p>
@@ -2251,11 +2082,9 @@
                             السلف.</p>
                         <p>المعارف</p>
                         <p>(الكتاب الأول في علم الفلك)</p>
-                        <p>تأليف عبد الوهاب أفندي سليم التنير ومحمد طاهر أفندي التنير طبع في المطبعة الأهلية في بيروت سنة 1329 ص 82</p>
+                        <p>تأليف عبد الوهاب أفندي سليم التنير ومحمد طاهر أفندي التنير طبع في المطبعة الأهلية في بيروت سنة  <tei:num value="1329" xml:lang="ar">١٣٢٩</tei:num>  ص  <tei:num value="82" xml:lang="ar">٨٢</tei:num> </p>
                         <p>لمؤَلفي هذا الكتاب يد طولى في العلوم واضطلاع بالنقل عن الإفرنج في الموضوعات التي تهم هذه الديار وتفيدها وفد أَلفا
-                            الآن مختصرات في علم الفلك والطبيعيات والكيمياء <pb ed="shamela"
-                   n="n72-p71"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4804.xhtml"/> والظواهر الجوية
+                            الآن مختصرات في علم الفلك والطبيعيات والكيمياء <pb ed="shamela" n="n72-p71" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4804.xhtml"/> والظواهر الجوية
                             والجغرافية الطبيعية والحيوان والنبات ونشرا القسم الأول والغرض منها إحياء قو التصور في الولد لمعرفة قدرة الله
                             تعالى وتنبيه إلى ما قد سخر الله تعالى من الأشياء المفيدة فلا يشب حتى يشمر عن ساعد الجد فينقب عن الكثير منها مما
                             لا يزال مجهولاً فيكتشف فينفع الخلق وتنبيه إلى النظر والملاحظة إذ بذلك يزداد إدراكه فيرى حقيقة قدرة الله تعالى
@@ -2275,52 +2104,46 @@
                             كل علم وكل لغة من لغات الغرب. فللمؤلفين الفاضلين جزيل الشكر من خدمة العلوم بالعربية لثم معرفتها أهلها وكنا نود
                             لو انتبهنا قليلاً لبعض الأغلاط النحوية والصرفية والبيانية التي وقعت في الكتاب ونود تصحيحها في الطبعة الثانية كما
                             نرجو أن تكون تتمة السلسلة خالية من مثل ذلك ليكون العمل تاماً من كل وجه عَلَى أن مثل ذلك لا يقدح في نفعه ولكن ما
-                            ينشر ينبغي <pb ed="shamela"
-                   n="n72-p72"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4805.xhtml"/> أن يكون إلى الصحة ما
+                            ينشر ينبغي <pb ed="shamela" n="n72-p72" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4805.xhtml"/> أن يكون إلى الصحة ما
                             أمكن حتى لا يعتاد أولادنا غير الفصيح فتكون كتب العلم من جملة المساعدات عَلَى إحكام ملكة البيان أيضاً.</p>
                         <p>تقويم البشير</p>
                         <p>تأليف الأب لويس معلوف اليسوعي طبع بمطبعة الآباء اليسوعيين في بيروت سنة</p>
-                        <p>1911 ض204</p>
+                        <p> <tei:num value="1911" xml:lang="ar">١٩١١</tei:num>  ض <tei:num value="204" xml:lang="ar">٢٠٤</tei:num> </p>
                         <p>اعتادت هذه المطبعة في بيروت منذ خمس وثلاثين سنة أن تصدر تقويماً سنوياً يعنى بتأليفه أحد الآباء اليسوعيين فجاء
                             تقويمها هذه السنة حافلاً بالفوائد ونحو ثلثه ينفع المسيحيين خاصة والكاثوليك عَلَى الأخص كتقويم السنين والأعياد
                             والأصوام والإقطاعات وذكر الرؤساء الروحيين ومجامعهم ودواوينهم وجداول في السنة الشمسية والقمرية والمالية وتحويل
                             النقود ثم مختصر في التقسيمات الإدارية في الدولة العثمانية وقد أطلق عَلَى الروم إيلي (تركية أوربة) وهو اصطلاح
                             إفرنجي سقيم لا يجوز أن يطلق عَلَى بلاد الدولة العلية لأن المملكة ليست للأتراك وحدهم بل هي لاثني عشر عنصراً ومنهم
                             العرب نصف هذه العناصر فالأولى أن يقال لها روم إيلي تركية آسيا الأناضول أو آسيا الصغرى كما قال المؤَلف وقد تابع
-                            تقويم غوتا في إحصاء سكان الولايات ومساحتها ونظن بعضه مبالغاً فيه وبعضه دون الواقع كقوله أن سكان مدينة دمشق 200
-                            ألف وسكان بيروت 85 ألفاً وسكان حلب 35 ألفاً فإذا اعتبرنا الإحصاء الرسمي في دمشق مثلاً نراها أكثر من ذلك وهي لا
+                            تقويم غوتا في إحصاء سكان الولايات ومساحتها ونظن بعضه مبالغاً فيه وبعضه دون الواقع كقوله أن سكان مدينة دمشق  <tei:num value="200" xml:lang="ar">٢٠٠</tei:num> 
+                            ألف وسكان بيروت  <tei:num value="85" xml:lang="ar">٨٥</tei:num>  ألفاً وسكان حلب  <tei:num value="35" xml:lang="ar">٣٥</tei:num>  ألفاً فإذا اعتبرنا الإحصاء الرسمي في دمشق مثلاً نراها أكثر من ذلك وهي لا
                             تقل في الحقيقة عن ربع مليون وبيروت لا تبلغ في الإحصاء الرسمي هذا القدر. وتوسع في الكلام عَلَى لبنان وبيروت
                             وإدارتهما وحكومتها حتى ذكر بجانب اسم كل موظف لبناني دينه وأفرد جدولاً بأسماء جرائد سورية ومجلاتها الباقية
                             والزائلة وأسماء قناصل الدول في المملكة العثمانية وأماكنهم وفوائد وأمثالاً وبعض قوانين جديدة مثل قانون المطبوعات
                             والمطابع والجمعيات وغير ذلك من الفوائد فنثني عَلَى مؤلفه ونرجو أن يزيده فوائد تاريخية وأثرية عن سورية ليسد في
                             السنين المقبلة بعض الحاجة ويغني عن التقاويم الرسمية (سالنامات) التي كانت تصدرها ولايات بيروت وحلب وسورية قبل
                             حرية المطبوعات الأخيرة وتضمنها من المواد ما يستفاد من أكثره ولاسيما ما يتعلق بالحركة العمرانية في البلاد أما
-                            الأخذ عن تقويم غوتا فلا يبرر العمل في اقتباس مواد هي منا عَلَى <pb ed="shamela"
-                   n="n72-p73"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4806.xhtml"/> طرف الثمام لا تحتاج إلا
+                            الأخذ عن تقويم غوتا فلا يبرر العمل في اقتباس مواد هي منا عَلَى <pb ed="shamela" n="n72-p73" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4806.xhtml"/> طرف الثمام لا تحتاج إلا
                             إلى قليل من البحث والعناية.</p>
                         <p>كتب ورسائل مختلفة</p>
                         <p>سلم الدروس العربية للمكاتب الابتدائية وهو الحلقة الأولى من كتاب الدروس العربي يشتمل عَلَى الأهم من أصول الصرف
                             والنحو مع الأمثلة والتمرينات ويليه الحلقة الثانية وقد طبعت بعنوان القسم التمهيدي تأليف الشيخ مصطفى الغلايني طبع
-                            في المطبع الأهلية في بيروت عدد صفحاته 64.</p>
+                            في المطبع الأهلية في بيروت عدد صفحاته  <tei:num value="64" xml:lang="ar">٦٤</tei:num> .</p>
                         <p>بشرى العالم بترك المحاربات واتفاق الأمم - تتضمن البشارات الإلهية والبراهين العقلية بقرب حصول السلام بين الأنام
-                            تأليف فرج الله أفندي زكي الكردي طبع بمطبعة كردستان العلمية بمصر سنة 1329 هـ ص 111.</p>
-                        <p>الإنجيل الشريف - بحث نظري تاريخي نقدي للأب أنطوان رباط اليسوعي طبع في المطبعة الكاثوليكية في بيروت سنة 1912.</p>
+                            تأليف فرج الله أفندي زكي الكردي طبع بمطبعة كردستان العلمية بمصر سنة  <tei:num value="1329" xml:lang="ar">١٣٢٩</tei:num>  هـ ص  <tei:num value="111" xml:lang="ar">١١١</tei:num> .</p>
+                        <p>الإنجيل الشريف - بحث نظري تاريخي نقدي للأب أنطوان رباط اليسوعي طبع في المطبعة الكاثوليكية في بيروت سنة  <tei:num value="1912" xml:lang="ar">١٩١٢</tei:num> .</p>
                         <p>باكورة الكرم - خطابان وقصيدة تليت في احتفال غرف القراءة الوطنية في بحمدون (لبنان) طبعة بمطبعة الحسناء في
                             بيروت.</p>
                         <p>الجامعة المصرية - كراسة باللغة الإفرنسية ذكر فيها رئيس لجامعة المصرية الأمير أحمد فؤاد باشا خلاصة أعمال هذه
                             الكلية العربية الجامعة مدة ثلاث سنين طبعت بالقاهرة.</p>
-                        <p>رسالة تسهيل المنطق - تأليف الشيخ أحمد الصابوني طبعت بمطبعة حماة سنة 1329.</p>
-                        <p>خليل الخوري - سيرة هذا الشاعر جمعت باهتمام إدارة حديقة الأخبار في بيروت وطبعت في مطبعتها سنة 1910. </p>
+                        <p>رسالة تسهيل المنطق - تأليف الشيخ أحمد الصابوني طبعت بمطبعة حماة سنة  <tei:num value="1329" xml:lang="ar">١٣٢٩</tei:num> .</p>
+                        <p>خليل الخوري - سيرة هذا الشاعر جمعت باهتمام إدارة حديقة الأخبار في بيروت وطبعت في مطبعتها سنة  <tei:num value="1910" xml:lang="ar">١٩١٠</tei:num> . </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n72-p74"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4807.xhtml"/>
+                        <pb ed="shamela" n="n72-p74" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4807.xhtml"/>
                         <head>أخبار وأفكار</head>
                         <p>بحر الصحراء</p>
-                        <p>اقترح بعض العلماء منذ 29 سنة أن يسعى بتحويل صحراء أفريقية إلى بحر داخلي قائلاً أن هذه الصحراء الرملية ليست سوى
+                        <p>اقترح بعض العلماء منذ  <tei:num value="29" xml:lang="ar">٢٩</tei:num>  سنة أن يسعى بتحويل صحراء أفريقية إلى بحر داخلي قائلاً أن هذه الصحراء الرملية ليست سوى
                             سطح قديم من بحر جف وهو عَلَى طول ألفي كيلومتر فوق مستوى المحيط الأتلانتيكي وقد زيف بعضهم هذا الاقتراح وعده رابع
                             المستحيلات إلا أن أحد العلماء عاد فجدد اليوم هذه النغمة مبيناً منافع هذا المشروع وأن الوصول إليه لا يقتضي له
                             صعوبات ميكانيكية مهمة فتمتد بذلك المياه عَلَى محيط من الأرض يوازي نصف مساحة البحر المتوسط فتخصب بالبحر وهوائه
@@ -2331,15 +2154,13 @@
                             كوائن وأحداث جوية وأرضية ليست في البال. فحتام تحيل مدينة الغرب البحر براً والبر بحراً.</p>
                         <p>المحسن كارنيجي</p>
                         <p>ضاقت الولايات المتحدة عَلَى رحبها عن استيعاب حسنات المحسنين من أبنائها عَلَى العلم والإنسانية وأخر ما جادت به يد
-                            المستر كارنيجي المثري الشهير 125 مليون فرنك لنشر التعليم في الولايات المتحدة هذا عَلَى حين كان حتى اليوم الباسط
-                            يده بالعطاء عَلَى كل مشروع خيري وعلمي حتى بلغت عطاياه 1129 مليوناً في حين بلغت هبات روكفلر الغني الأميركي 813
+                            المستر كارنيجي المثري الشهير  <tei:num value="125" xml:lang="ar">١٢٥</tei:num>  مليون فرنك لنشر التعليم في الولايات المتحدة هذا عَلَى حين كان حتى اليوم الباسط
+                            يده بالعطاء عَلَى كل مشروع خيري وعلمي حتى بلغت عطاياه  <tei:num value="1129" xml:lang="ar">١١٢٩</tei:num>  مليوناً في حين بلغت هبات روكفلر الغني الأميركي  <tei:num value="813" xml:lang="ar">٨١٣</tei:num> 
                             مليون فرنك فقط ومازال كارنيجي يتوسل بكل ما يمكن من الذرائع ليرد للأمة ما كسبه من خيرها ويود لو قضى نحبه وهو لا
                             يملك ريالاً واحداً قائلاً: من أعظم الجنايات أن يموت المرء غنياً.</p>
                         <p>آثار في السامرة</p>
-                        <p>تتوفر في كلية هارفرد الأميركية عَلَى الحفر في فلسطين برئاسة الأستاذ ليون للبحث عن <pb ed="shamela"
-                   n="n72-p75"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4808.xhtml"/> الآثار وآخر ما ظفر به
-                            أحد أساتذة هذه البعثة الأثرية نموذجات من الخط العبراني أقدم كثيراً مما عرف من نوعها حتى الآن وهي عبارة عن 75
+                        <p>تتوفر في كلية هارفرد الأميركية عَلَى الحفر في فلسطين برئاسة الأستاذ ليون للبحث عن <pb ed="shamela" n="n72-p75" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4808.xhtml"/> الآثار وآخر ما ظفر به
+                            أحد أساتذة هذه البعثة الأثرية نموذجات من الخط العبراني أقدم كثيراً مما عرف من نوعها حتى الآن وهي عبارة عن  <tei:num value="75" xml:lang="ar">٧٥</tei:num> 
                             قطعة تشير كل منها إلى جودة الخمر والزيت المحفوظ في أوان منوعة الحجم ويرد تاريخها إلى ستة قرون قبل المسيح وقد
                             وجدت في قصر الملك أشاب من بلاد السامرة (نابلس) والخط المرسوم بالحمرة وبالقلم هو فينيقي ويختلف كل الاختلاف عن
                             الحروف المربعة المعروفة في النسخ الخطية من التوراة. ويرى رئيس هذه البعثة أن هذا النموذج مستند مهم في حل المسألة
@@ -2357,9 +2178,7 @@
                             وهاهي اليوم امرأة شريفة متزوجة.</p>
                         <p>وقصة فتاة زنجية قصة فقالت أن نفسها كانت حدثتها أن تقتل من تبنوها ونزعت من قلبها كل خلق شريف وبعد بضع سنين من
                             دخولها دار الإصلاح تغيرت بالمرة ولما غادرتها ذهبت تدرس في كلية العبيد وهاهي اليوم تخص حياتها وفكرها لنشر الدعوة
-                            إلى المدنية بين بنات جنسها. <pb ed="shamela"
-                   n="n72-p76"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4809.xhtml"/> وقد وردت في هذه الدار
+                            إلى المدنية بين بنات جنسها. <pb ed="shamela" n="n72-p76" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4809.xhtml"/> وقد وردت في هذه الدار
                             جملة تلامذتها القدماء رئيسة أمينات المال في إحدى المصارف الكبرى ومحامية مشهورة بأنها من نساء السياسة المنظورين
                             إليهن ولولا دخولها في هذا المعهد لما استطاعت تلك الأمينة ولا تلك المحامية أن تتوقيا محيط اجتراح الجرائم الذي
                             قضتا فيه شبيهتهما ولكانت كلتاهما سقطتا في الطبقة السافلة من ساكنات المدن العظمى.</p>
@@ -2378,16 +2197,14 @@
                             والعشرين إلا البنات بحيث يؤمن عليهن بما يتهيأ لهن من الدرس ولاسيما بما لقن من حسن السيرة والأخرق والنظام أن
                             يجرين في المستقبل عَلَى حياة منظمة وكثيرات منهم بعد تخرجهن في هذه الدار يستخدمن خادمات في بيوت خاصة وكثيرات
                             يستخدمن في محال تجارية ويكن مربيات ومشتغلات بالفنون النفيسة. وشعار هذه الدار أن تنبه في تلميذاتها العواطف
-                            الشريفة التي كانت أطفئت جذوتها بالإهمال الذي كان أَليفهن بين ذويهن. <pb ed="shamela"
-                   n="n72-p77"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4810.xhtml"/> أولادهم أولادنا</p>
+                            الشريفة التي كانت أطفئت جذوتها بالإهمال الذي كان أَليفهن بين ذويهن. <pb ed="shamela" n="n72-p77" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4810.xhtml"/> أولادهم أولادنا</p>
                         <p>ولو كلن الغرب يكيل لأبنائه بمثل الكيل الذي يكيل به لأبنائنا في الشرق لقلت الفروق ومشى البشر خطوات مهمة نحو الإخاء
                             العام والسلام الشامل هكذا شان مرسليهم في مدارسهم في الشرق وهكذا شان حكوماتهم في البلاد التي امتلكوها في آسيا
                             وافريقية وجزر المحيطين. وإنا لنلوم الكلية الأميركية في بيروت كلما توفر العناية بأبناء البلاد فقد عزلتهم في مكان
                             خاص ووضعت لهم أساتذة خصوصيين يعلمونهم غير التعالم التي يعلمونها أبناء البلاد كان العلم كالطعام في بيت شحيح يطعم
                             من أنواعه ما طاب له ويمنع عن خدمته وإجراءه الأطايب ويقتصر فيه عَلَى الرخيص نفعهم أو لم ينفعهم وهكذا رأينا
                             إنكلترا التي تحكم الهند منذ نحو قرنين وحياتها متوقفة عَلَى غنى تلك البلاد وتعليم أبنائها لا تفكر في تعليمهم
-                            وترقيتهم كما تفكر في ترقية اقل إنكليزي ولو كان خلاسياً أي دمه من هنود وبريطانيين فقد قدروا أن في بلاد الهند 300
+                            وترقيتهم كما تفكر في ترقية اقل إنكليزي ولو كان خلاسياً أي دمه من هنود وبريطانيين فقد قدروا أن في بلاد الهند  <tei:num value="300" xml:lang="ar">٣٠٠</tei:num> 
                             ألف من عرق إنكليزي أو أوربي ليس بينهم سوى عشرة في المئة خرجوا من درجة الأمية فهل من اللائق أن يتركوا بدون تعليم
                             كما يترك الوطنيون أم كيف السبيل؟ وإبذ قد لاحظوا أن الكاثوليك وهؤلاء الأوربيين يعلمهم مرسلوهم ولكن البرتستانت
                             محرومون ممن يسهر عَلَى تربية أبنائهم فرأت الكنائس البرتستانتية أن تجمع ربع مليون جنيه لإقامة مدارس خاصة بأبناء
@@ -2398,9 +2215,7 @@
                             عاداتها الضارة في القرون الوسطى وتسعى إلى تعديلها وإصلاحها مع الزمن من ذلك أن لعقوبات الجسدية في مدارس لندِرا لا
                             تزال مستعملة حتى اليوم فحذفت هذه العادة المضرة من مدارس أوربا ولكن مدارس لندرا حسنتها حتى أن لبعض المدارس
                             الراقية هناك أسواطاً ميكانيكية تضرب المذنب بشدة أو بغير شدة بحسب الذنب الذي اجترحه. ويضيفون إلى هذا السوط الضارب
-                            آلة فوتوغراف تردد بعض آيات من التوراة وبعض النصائح الأدبية بصوت عال وذلك ليعلموا المضروب ويخفوا صراخه <pb ed="shamela"
-                   n="n72-p78"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4811.xhtml"/>
+                            آلة فوتوغراف تردد بعض آيات من التوراة وبعض النصائح الأدبية بصوت عال وذلك ليعلموا المضروب ويخفوا صراخه <pb ed="shamela" n="n72-p78" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4811.xhtml"/>
                             من آلامه.</p>
                         <p>حصاد البشر</p>
                         <p>بينا نسمع علماء الاجتماع ينادون بمضار الحروب وينددون بها نشاهد رجال السياسة يصمون آذانهم عن سماع أقوالهم ويرسلون
@@ -2419,13 +2234,11 @@
                             فنتائجها سيئة دع عنك إنها تثير في العالم الهواء الشريرة ولا يجب أن يعمد إلى الحرب إلا في أحوال خاصة لا مناص
                             منها.</p>
                         <p>الفحم الحجري</p>
-                        <p>يقول أحد رجال الإنكليز أن إسراف إنكلترا في الفحم الحجري من بلادها يدعو إلى نفاذه بعد 175 سنة. وقالت إحدى المجلات
-                            الألمانية أن أميركا التي تصدر ما يربو عَلَى نصف <pb ed="shamela"
-                   n="n72-p79"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4812.xhtml"/> مليون طن من الفحم الحجري
+                        <p>يقول أحد رجال الإنكليز أن إسراف إنكلترا في الفحم الحجري من بلادها يدعو إلى نفاذه بعد  <tei:num value="175" xml:lang="ar">١٧٥</tei:num>  سنة. وقالت إحدى المجلات
+                            الألمانية أن أميركا التي تصدر ما يربو عَلَى نصف <pb ed="shamela" n="n72-p79" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4812.xhtml"/> مليون طن من الفحم الحجري
                             قد بدأت تشعر بنقص ولا بد أن يكون حظها كحظ إنكلترا بعد قرنين وكذلك الحال في شمالي إنكلترا فإن آبار الفحم الحجري
-                            ستغلق هناك في سنة 2100م كما أنه ينفذ في أواسط فرنسا وبوهيميا نحو نصف القرن الحادي والعشرين وسيدوم استخراج الفحم
-                            الحجري من شمال فرنسا وحوض سارابروك في ألمانيا ما بعد 400 أو 500 سنة وسيكون حظ البلجيك ووستفاليا وسيلزيا العليا
+                            ستغلق هناك في سنة  <tei:num value="2100" xml:lang="ar">٢١٠٠</tei:num> م كما أنه ينفذ في أواسط فرنسا وبوهيميا نحو نصف القرن الحادي والعشرين وسيدوم استخراج الفحم
+                            الحجري من شمال فرنسا وحوض سارابروك في ألمانيا ما بعد  <tei:num value="400" xml:lang="ar">٤٠٠</tei:num>  أو  <tei:num value="500" xml:lang="ar">٥٠٠</tei:num>  سنة وسيكون حظ البلجيك ووستفاليا وسيلزيا العليا
                             أحسن من ذلك فسيطول تعدين فحمها أكثر وسيطول عمر معدن سيلزيا البروسي ألف سنة أخرى فلا خوف عَلَى المدنية من ثم
                             اليوم بنضوب الفحم الحجري ولعل العلم يوصل إلى اختراع مادة تقوم مقامه في إجماء المداخن في المعامل والسفن والبيوت
                             وغير ذلك.</p>
@@ -2442,18 +2255,16 @@
                         <p>تحاذر أوربا وأميركا من الخطر الأصفر أي نهضة الصين واليابان وزحفهما عَلَى بلاد الغرب لفتحها كما فعل المغول ودمروا
                             المدنية في هذا الشرق الأقرب وفي الشرق الأوسط. وتحاذر ألمانيا اليوم من الخطر الأسود وهو أن فرنسا التي تقل نفوسها
                             وألمانيا التي يتناسل أبنائها كثيراً لا بد أن تنتبه ذات يوم وتجند من أبناء مستعمراتها في شمالي أفريقية أناساً
-                            خلقوا للطعان أكثر مما خلقوا للعيش من زراعتهم وكدحهم فتستطيع فرنسا أن تجند من <pb ed="shamela"
-                   n="n72-p80"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4813.xhtml"/> السنغاليين وغيرهم مليون
+                            خلقوا للطعان أكثر مما خلقوا للعيش من زراعتهم وكدحهم فتستطيع فرنسا أن تجند من <pb ed="shamela" n="n72-p80" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4813.xhtml"/> السنغاليين وغيرهم مليون
                             جندي وتسوقهم بما تنشئه من الخطوط الحديدية العسكرية ثم تقلهم في بواخرها إلى مرسيليا أو بوردو في مدة لا تتجاوز
                             الأسبوع فإذا فعلت فرنسا ذلك أوجست ألمانيا خفية من جارتها أكثر مما توجس هذه من تلك وقد جربت فرنسا عَلَى عهد
                             نابوليون وغيره استخدام طوابير من الجند الأسود في حروبها.</p>
                         <p>الصحافة الألمانية</p>
                         <p>اشتهرت الصحافة الإنكليزية بوفرة أخبارها واتساع مادتها وتحريها الصدق في الجملة في مرواياتها وقد نشر أحدهم في
                             المجلة الكبرى الأفرنسية مقالة في وصف الصحافة الألمانية قال فيها أنها عَلَى وجه العام محتشمة كثيرة موارد الأخبار
-                            نافعة للصناعة والمالية بما تنشره من الأخبار الاقتصادية الدقيقة ويبلغ عدد الصحف التي تصدرها ألمانيا اليوم 4000
-                            صحيفة كان فيها سنة 1905 - 2159 محلاً للطبع منها 1307 لها صحيفة خاصة والصحافة الألمانية تامة الأدوات من حيث
-                            الأمور النافعة في الصناعة وافرة الأخبار بحيث فيها 200 شركة تقدم للصحف ما يلزمها من المقالات الافتتاحية والأخبار
+                            نافعة للصناعة والمالية بما تنشره من الأخبار الاقتصادية الدقيقة ويبلغ عدد الصحف التي تصدرها ألمانيا اليوم  <tei:num value="4000" xml:lang="ar">٤٠٠٠</tei:num> 
+                            صحيفة كان فيها سنة  <tei:num value="1905" xml:lang="ar">١٩٠٥</tei:num>  -  <tei:num value="2159" xml:lang="ar">٢١٥٩</tei:num>  محلاً للطبع منها  <tei:num value="1307" xml:lang="ar">١٣٠٧</tei:num>  لها صحيفة خاصة والصحافة الألمانية تامة الأدوات من حيث
+                            الأمور النافعة في الصناعة وافرة الأخبار بحيث فيها  <tei:num value="200" xml:lang="ar">٢٠٠</tei:num>  شركة تقدم للصحف ما يلزمها من المقالات الافتتاحية والأخبار
                             والانتقادات والحوادث والنكات. وللإعلانات في الصحافة الألمانية مكان رفيع كما لها في فرنسا.</p>
                         <p>والصحافي الألماني أقل اعتباراً في قومه من الصحافي الإنكليزي أو الإفرنسي وكم نشأ في إنكلترا وفرنسا كبار رجال
                             السياسة من مقاعد التحرير أما ألمانيا فلا تجوَّز أن يكون النائب مثلاً صحافياً وإذا كانت مقالات الصحف تنشر مغفلة
@@ -2463,16 +2274,14 @@
                             الألمانية معادية للحكومة فهي تحرص عَلَى رضاها لتعطيها هذه الأخبار بسرعة ولئن كانت جريدة نوردتش ألمان زيتونغ هي
                             لسان حال ألمانيا فإن كثيراً من الصحف الألمان تنطق أيضاً بلسان حكومتها من هذا القبيل.</p>
                         <p>المستشفيات</p>
-                        <p>في ظل المعابد قامت عَلَى أوائل الأُسرات الأولى من فراعنة مصر بعض الملاجئ ليأوي <pb ed="shamela"
-                   n="n72-p81"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4814.xhtml"/> إليها المرضى يطبهم
+                        <p>في ظل المعابد قامت عَلَى أوائل الأُسرات الأولى من فراعنة مصر بعض الملاجئ ليأوي <pb ed="shamela" n="n72-p81" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4814.xhtml"/> إليها المرضى يطبهم
                             الكهنة بالعزائم والرقى وهذه كانت المستشفيات الأولى التي عرفت فأصبحت هذه الأماكن المقدسة مدارس حقيقية للتداوي ثم
                             أضيفت إليها حجر لتكون مستوصفات وقد كان معبد سيرابيس في منفيس مشهوراً من هذه الوجهة وزاره اسكندر الكبير لاستشارة
                             أطبائه. وكان في أرض يونان لكل بيت غني غرفة أو غرفتان تحوي ما يلزم لمعالجة الأحباب من العقاقير وكان في يونان
                             أيضاً مستشفيات تطب الغرباء ويهرع إليها الناس من القاصية يستشفون وكذلك كان في رومية مستشفيات وكان الأطباء يطبون
                             الأغنياء بالاشتراك السنوي كما كان في رومية مستشفيات للجند فدثرت عندما غار برابرة الشمال عَلَى بلادهم ولم تعد إلى
                             الانتفاع منها إلا بعد انتشار النصرانية فأُنشئت رهبنات تعنى بشفاء المرضى وتمريضهم ومن أقدم المستشفيات مستشفى
-                            سالرن في إيطاليا ومستشفى مونبليه في فرنسا الذي أنشئ سنة 1195 - قالته إحدى المجلات الإيطالية.</p>
+                            سالرن في إيطاليا ومستشفى مونبليه في فرنسا الذي أنشئ سنة  <tei:num value="1195" xml:lang="ar">١١٩٥</tei:num>  - قالته إحدى المجلات الإيطالية.</p>
                         <p>رمال تتغنى</p>
                         <p>للرمل في جزيرة كاياواي من أرخبيل هاواي وفي صحراء كولورادو خاصية غريبة إذا أثاره الريح فإنك تسمع له صوتاً يتغنى أو
                             يطن وإذا قبضت عَلَى حفنة من الرمل وعركته بين يديك تسمع له صوتاً كصوت البومة وإذا وضعت منه في كيس وهززته بقوة

@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
-     xmlns:opf="http://www.idpf.org/2007/opf"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:xi="http://www.w3.org/2001/XInclude"
-     xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://rawgit.com/tillgrallert/TeachingTei/master/schema/tei_jaraid.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
@@ -127,14 +119,8 @@
                 <calendar xml:id="cal_islamic">
                     <p>Islamic <hi>hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates differ between locations as
                         the beginning of the month is based on sightings of the new moon.</p>
-                    <p>E.g. <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1841-05-23"
-                        when-custom="1257-04-01">1 Rab II
-                        1257, Sunday</date>, <date calendar="#cal_islamic"
-                        datingMethod="#cal_islamic"
-                        when="1908-03-05"
-                        when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01">1 Rab II
+                        1257, Sunday</date>, <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01">1 Ṣaf 1326, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_julian">
                     <p>Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to as
@@ -145,14 +131,8 @@
                         between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
                         difference between the Gregorian calendar, on the one hand, and the <hi>mālī</hi> and <hi>rūmī</hi> calendars, on
                         the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315 M (13 March 1900) onwards.</p>
-                    <p>E.g. <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1841-05-23"
-                        when-custom="1841-05-11">11 Ayyār
-                        1841, Sunday</date>, <date calendar="#cal_julian"
-                        datingMethod="#cal_julian"
-                        when="1908-03-05"
-                        when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11">11 Ayyār
+                        1841, Sunday</date>, <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21">21 Shub 1908, Thursday</date>.</p>
                 </calendar>
                 <calendar xml:id="cal_ottomanfiscal">
                     <p>Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the Year with 1
@@ -163,13 +143,7 @@
                         repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi>mālī</hi> and <hi>hijrī</hi> years was
                         henceforth abolished. As <hi>mālī</hi> years began with 1 March, <hi>mālī</hi> leap years preceded their
                         <hi>rūmī</hi> and Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p>E.g. <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1841-05-23"
-                        when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal"
-                        datingMethod="#cal_ottomanfiscal"
-                        when="1908-03-05"
-                        when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
+                    <p>E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11">11 Māyis 1257, Sunday</date>, <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21">21 Shub 1323, Thursday</date>.</p>
                 </calendar>
             </calendarDesc>
             <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
@@ -190,7 +164,7 @@
                 <language ident="fr-Arab-AR">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2015-09-21">Wrapped all numerals in <tei:gi>num</tei:gi> with <tei:att>value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG">Marked all original <gi>pb</gi> as <att>ed</att>="shamela" as they do not correspond to
@@ -219,10 +193,7 @@
             <change when="2015-08-24" who="#pers_TG">Created this TEI P5 file by automatic conversion from ePub using custom XSLT.</change>
         </revisionDesc>
     </teiHeader>
-   <text xml:id="oclc_4770057679_i2_text"
-         xml:lang="ar"
-         type="issue"
-         n="i2">
+   <text xml:id="oclc_4770057679_i2_text" xml:lang="ar" type="issue" n="i2">
                 <front>
                     <div>
                         <biblStruct>
@@ -231,31 +202,28 @@
                                 <editor><persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName></editor>
                                 <imprint>
                                     <pubPlace><placeName xml:lang="ar">دمشق</placeName></pubPlace>
-                                    <date when="1906-03-26">بتاريخ: 26 - 3 - 1906</date>
-                                    <biblScope n="2" unit="issue">العدد 2</biblScope>
+                                    <date when="1906-03-26">بتاريخ:  <tei:num value="26" xml:lang="ar">٢٦</tei:num>  -  <tei:num value="3" xml:lang="ar">٣</tei:num>  -  <tei:num value="1906" xml:lang="ar">١٩٠٦</tei:num> </date>
+                                    <biblScope n="2" unit="issue">العدد  <tei:num value="2" xml:lang="ar">٢</tei:num> </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
                     </div>
                 </front>
                 <body>
-                    <pb ed="shamela"
-             corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P77.xhtml"/>
+                    <pb ed="shamela" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P77.xhtml"/>
                     <div>
                         <head> 
                <bibl> 
-                  <biblScope n="2" unit="issue">العدد 2</biblScope> 
-                  <date when="1906-03-26">بتاريخ: 26 - 3 - 1906</date>
+                  <biblScope n="2" unit="issue">العدد  <tei:num value="2" xml:lang="ar">٢</tei:num> </biblScope> 
+                  <date when="1906-03-26">بتاريخ:  <tei:num value="26" xml:lang="ar">٢٦</tei:num>  -  <tei:num value="3" xml:lang="ar">٣</tei:num>  -  <tei:num value="1906" xml:lang="ar">١٩٠٦</tei:num> </date>
                             </bibl> 
             </head>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p1"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P78.xhtml"/>
+                        <pb ed="shamela" n="n2-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P78.xhtml"/>
                         <head>صدور المشارقة والمغاربة</head>
                         <p>كارلايل</p>
-                        <p>ولد سنة 1795م وتوفي سنة 1881</p>
+                        <p>ولد سنة  <tei:num value="1795" xml:lang="ar">١٧٩٥</tei:num> م وتوفي سنة  <tei:num value="1881" xml:lang="ar">١٨٨١</tei:num> </p>
                         <p>هو أحد فلاسفة القرن الماضي في بلاد الإنكليز وأوحد رجال القلم وأرباب التاريخ منهم. كان أهله من صغار المزارعين
                             فبعثوا به إلى كلية ادمبرغ المشهورة فامتاز فيها بالرياضيات وبذَّ فيها أترابه ولما أتم سني الدراسة عين معلماً في
                             إحدى المدارس إلا أن صناعة التعليم لم ترقه فاقتصد شيئاً من الدراهم يستعين بها على درس الحقوق واللاهوت في الكلية
@@ -266,16 +234,14 @@
                             وآدابها وقد نقل عنها شيئاً إلى الإنكليزية ثم اضطر إلى معاودة صناعة التعليم قياماً بأود عياله. وكان في خلال ذلك
                             ترجم شعر شيلر الألماني فلم يحز قبول العلماء وأهل الأدب.</p>
                         <p>تزوج كارلايل بفتاة ايكوسية عرفت بعقلها وجمالها بيد أنها كانت تشكو كل الشكوى من سكوته وأثرته. ولم يكن زواج العالم
-                            سعيداً لضيق ذات اليد وعموم الحاجة وأشياء داخلية هو الأصل فيها. ولقد كتب سنة 1835 أن الأدب لم يأته بفلس منذ ثلاثة
+                            سعيداً لضيق ذات اليد وعموم الحاجة وأشياء داخلية هو الأصل فيها. ولقد كتب سنة  <tei:num value="1835" xml:lang="ar">١٨٣٥</tei:num>  أن الأدب لم يأته بفلس منذ ثلاثة
                             وعشرين شهراً ومع هذا كان من الثبات والانكماش آية الآيات، وغاية الغايات. وفي تلك السنة أتم الجزء الأول من كتابه
                             الثورة الفرنسية وبعث بمسودته إلى ستوارت ميل الكاتب المشهور ينظر فيها فما هو إلا أن جاءه كتاب منه يقول فيه: إن
                             خادمة له خرقاء ألقت بكتابه إلى النار فأصبح رماداً تذروه الرياح. فكاد كارلايل يجن بهذا النبأ حتى أنه ظل ثلاثة
                             أيام لم يأكل ولم يشرب وطاش عقله حتى هام على وجهه في الفلاة وبقي ثلاثة أشهر لا يعي على شيء إلا ما كان من تصفحه
                             بعض الروايات على سبيل الفكاهة. ثم عاود كتابة ما سلف له في هذا الموضوع معزياً نفسه بقوله: لعل الأقدار أرادت أن
                             تعاملني في كتابي كما يعامل الأستاذ تلميذه إذا فرض عليه فرضاً ولم يجد فيه فيقول: عد إلى كتابته ثانية لأنه لا
-                            يصلح. <pb ed="shamela"
-                   n="n2-p2"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P79.xhtml"/> ولما أتم موضوعه كان
+                            يصلح. <pb ed="shamela" n="n2-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P79.xhtml"/> ولما أتم موضوعه كان
                             الطابعون يخطبون ما كتب من كل صوب وارب يريد كل منهم أن يستأثر بما كانوا لا يرتاحون إلى النظر فيه منذ سنين لقلة
                             شهرة صاحبه.</p>
                         <p>وكتب المترجم به مقالات في انتقاد المجتمع الإنكليزي تحزب في بعضها للألمان. وكان بعد عودته إلى لندن يخطب في الأدب
@@ -290,9 +256,7 @@
                             الرجل العظيم. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p3"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P80.xhtml"/>
+                        <pb ed="shamela" n="n2-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P80.xhtml"/>
                         <head>الصحافة العربية</head>
                         <p>مضت نحو ثمانية عقود من السنين منذ أنشئت أول صحيفة عربية أنشأها محمد علي الكبير في هذه العاصمة وسماها الوقائع
                             المصرية وأنشأ رفاعة الطهطاوي أول مجلة علمية سماها روضة المدارس. دامت الوقائع إلى اليوم وانقطع نشر الثانية بعد أن
@@ -313,9 +277,7 @@
                             البشرية أن الشرقي ذكي مفطور على حب التقليد خصوصاً إذا تهيأت له الأسباب فقد نجد المصري أو السوري يتعلم شيئاً من
                             لغات الغربيين فلا يعتم أن يقلدهم في مناحيهم وأطوارهم أما من ذهب إلى بلادهم ودخل مدارسهم فإنه يكون مثلهم إلا
                             القليل. غير أن تقليدنا الغربيين في صحافتهم قد أبطأ وكان من حقه أن يتقدم كل تقليد. ذلك أن المجلات الدورية على ما
-                            في أكثرها من <pb ed="shamela"
-                   n="n2-p4"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P81.xhtml"/> المحاسن والفوائد لا يزال
+                            في أكثرها من <pb ed="shamela" n="n2-p4" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P81.xhtml"/> المحاسن والفوائد لا يزال
                             بعضها يعرف بالتقليد ويكتب بلسان التقية على أن العالم لا دين له ولا نزعة. أما الجرائد السياسية فتكاد تكون نمطاً
                             واحداً في إنشائها وأخبارها. ناهيك بما في بعضها من التضارب في الآراء والمذاهب. ولو خلت من هذه الشائبة وكان لها
                             مواد وافرة تستعيض بها عن تجسيم الأخبار وبناء قبة من حبة لكان فيها خير ذخر ينفع العقول ويقودها إلى مهيع السداد
@@ -333,9 +295,7 @@
                             والصحيح أن التاجر الماهر يصرف ضروب السلع في معرض بضاعته إذا أجاد مصنوعاته وأحسن بياعاته. ألا ترى إلى رواج أنواع
                             من الصحف ما كان يحلم برواجها. تهيأ لها الرواج عندما صحت عزائم القائمين بها وأخلصوا القصد في نشرها ولا يضر العمل
                             الصالح إذا تصدى بعض ضعاف العقول إلى التزهيد في خطته فما قط اجتمعت كلمة العامة والخاصة على استحسان شيء وكذلك لا
-                            يضر الصحف <pb ed="shamela"
-                   n="n2-p5"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P82.xhtml"/> ويحول دون انتشارها وما
+                            يضر الصحف <pb ed="shamela" n="n2-p5" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P82.xhtml"/> ويحول دون انتشارها وما
                             يوعز به بعض أنصار التقليد في العلم إلى اليوم من الرغبة عن مطالعتها لأنها مفسدة منقصة فإن أمثال هؤلاء المثبطين عن
                             كل جديد نافع هم الحلمة الطفيلية في العمران، وكل من حال دون أسباب العلم والعرفان، هو العضو المؤوف في جسم
                             الإنسان.</p>
@@ -354,9 +314,7 @@
                             اللغة والأدب والعلم والسياسة لأن غرضه لم يكن مادياً محضاً. وأن ما نراه اليوم من ارتقاء بعض الصحف السياسية فالفضل
                             له فيه لأنه واضع أساسها الحقيقي وما نراه من انحطاط بعضها فمنشأوه أولئك العامة الذين أنشأوا الجرائد في الدور
                             الأول وغرضهم الدنيا من أي الطرق أتت وما نشهده من ارتقاء بعض المجلات فمصدره رفاعة الطهطاوي في مجلته روضة المدارس
-                            <pb ed="shamela"
-                   n="n2-p6"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P83.xhtml"/>
+                            <pb ed="shamela" n="n2-p6" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P83.xhtml"/>
                             وما منزلة رفاعة في العلم بخافية على دارس تاريخ النهضة العلمية في هذه الديار.</p>
                         <p>ولقد قامت بعد ذاك العهد مئات من الصحف الإخبارية والعلمية ثم سقطت وانتشرت ثم انتثرت شأن كل نهضة في أولها خصوصاً في
                             بلاد يغلب على أهلها القول حتى إذا حقت كلمة الفعل تضاءلت نفوسها أبنائها وأعوزهم الثبات والصبر. وما عهد في تاريخ
@@ -371,9 +329,7 @@
                             مدالس ولا مؤالس والله يعلم وأنتم لا تعلمون. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p7"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P84.xhtml"/>
+                        <pb ed="shamela" n="n2-p7" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P84.xhtml"/>
                         <head>تأثير الآداب</head>
                         <p>للآداب معان كثيرة فمعناها اللغوي حسن الأخلاق وفعل المكارم وأطلقه المولدون في الإسلام على علوم العربية وأعني به
                             هنا المنظوم والمنثور من الكلام ومنزلته من الفصاحة والبلاغة ليفعل في الأرواح فعل الراح. ولكل أمة أدب بحسب
@@ -393,9 +349,7 @@
                             وخدمة الحضارة والغضارة.</p>
                         <p>وهكذا لو بحثت في تاريخ كل أمة لألفيت الآداب روادها، إلى مسالك إسعادها، وقوادها، إلى ذرى رقيها وإصعادها، كان هذا
                             شأن الفرس واليونان والرومان في القرون الماضية بل وشأن الترك والعرب في القرون الحديثة فإنهم لم ينبغ لهم في
-                            التاريخ والسياسة وفنون الحرب والطبيعة والرياضة والفلسفة رجال أحرياء بالاعتبار بالنسبة لمحيطهم وأسبابهم <pb ed="shamela"
-                   n="n2-p8"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P85.xhtml"/> حتى
+                            التاريخ والسياسة وفنون الحرب والطبيعة والرياضة والفلسفة رجال أحرياء بالاعتبار بالنسبة لمحيطهم وأسبابهم <pb ed="shamela" n="n2-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P85.xhtml"/> حتى
                             نبغ بينهم أهل آداب أمثال منال وضيا وناجي والأبياري والفاروقي والأسير والأحدب واليازجي وكرامة والجندي والهلالي
                             ومراش والشدياق والبربير وأمثالهم ممن بيضوا الصحف بما سودوه في القرطاس من رائع آدابهم وفيض قرائحهم وخفة
                             أرواحهم.</p>
@@ -415,9 +369,7 @@
                         <p>قلت وهذا ملك عظيم في الحديث أثر فيه شاعر أمته أحسن تأثير على أنه الأدب يلطف الشعور ويحسن العواطف ولقد كان جد هذا
                             الإمبراطور فريدريك الكبير لما عزم على إنهاض أمته من كبوتها يوعز إلى الشعراء بواسطة بعض وزرائه أن ينظموا قصائد
                             حماسة ترقق الإحساس وتكبر النفوس وتدعوها إلى المعالي فكانت هذه القصائد سبباً في إنهاض ألمانيا ووحدتها على ما قيل.
-                            <pb ed="shamela"
-                   n="n2-p9"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P86.xhtml"/>
+                            <pb ed="shamela" n="n2-p9" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P86.xhtml"/>
                             وإليك مثالاً من تأثير الآداب في القديم قال معاوية بن أبي سفيان اجعلوا الشعر أكبر همكم وأكثر آدابكم فإن فيه مآثر
                             أسلافكم ومواضع إرشادكم فلقد رأيتني يوم الهزيمة وقد عزمت على الفرار فما ردني إلا قول ابن الإطنابة الأنصاري:</p>
                         <lg type="bayt">
@@ -438,9 +390,7 @@
                         </lg>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p10"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P87.xhtml"/>
+                        <pb ed="shamela" n="n2-p10" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P87.xhtml"/>
                         <head>البشر والشعوب</head>
                         <p>معرب عن الفرنسية</p>
                         <p>علم خصوصيات الشعوب - يعمر الأرض ناس قلما يتشابهون، يختلفون بالطول وهيئة الأعضاء والرأس وسيماء الوجه ولون العيون
@@ -462,9 +412,7 @@
                             فلح وحرث ألفوا الإقامة وجنحوا للسلم. أديمهم مشبع، وشعرهم قصير أثيث، وشفاههم مبرطمة، ولا يعلم على التحقيق من أين
                             منبعثهم. ولم تتفق آراء العلماء على تسميتهم فيدعونهم تارة كوشيين وأخرى شاميين. وقد انسالت من جبال آسيا بين القرن
                             العشرين والخامس والعشرين ق. م عصابات من الرعاة أهل غارة وزعماء فتنة فانتشروا في أطراف أوربا كافة وفي غرب آسيا.
-                            ويقسمهم العلماء إلى قسمين آريين وساميين. <pb ed="shamela"
-                   n="n2-p11"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P88.xhtml"/> الآريون والساميون - ليس
+                            ويقسمهم العلماء إلى قسمين آريين وساميين. <pb ed="shamela" n="n2-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P88.xhtml"/> الآريون والساميون - ليس
                             بين هذين الجنسين من علامة خارجية جلية فكلاهما من الجنس الأبيض: اهليلجية سحناتهم، متناسبة أعضاؤهم، صافية جلودهم،
                             أثيثة شعورهم، نُجل عيونهم، رقيقة شفاههم، منتصبة أرنبتهم، وهم في الأصل رعاةٌ من سكان الجبال يألفون الارتحال
                             والقتال. ساميّهم من أرمينية، وآريّهم من وراء جبال حملايا وهم يمتازون بالعقل واللسان خاصة امتيازهم بالديانة
@@ -483,9 +431,7 @@
                             الآرية والسامية. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p12"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P89.xhtml"/>
+                        <pb ed="shamela" n="n2-p12" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P89.xhtml"/>
                         <head>التاريخ</head>
                         <p>الأساطير - نقلت أساطير الأولين عن روايات متسلسلة طالما تحدث الناس بها قبل أن يدونوها لذلك تراها مشوبة بحكايات
                             وخرافات. فتحدث اليونان أن أقدم أبطالهم أبادوا الغيلان وقاتلوا الجبابرة وكافحوا الآلهة وزعم الرومان أن روملس ربته
@@ -505,9 +451,7 @@
                             الاضمحلال ولا هي حديثة لأن التمدن الحديث لم يتكون بعد. وهذا ما يدعى بالجيل المتوسط.</p>
                         <p>مصادر تاريخ الحضارة القديمة - ليس في الوجود اليوم آشوريون ولا يونان ولا رومان فقد بادت الشعوب القديمة كافة وما
                             خلفوه من العاديات هي فهرست نستفتيه للبحث عن أديانهم وأخلاقهم وصنائعهم. والعاديات هي الكتب والرسوم والآثار
-                            واللغات. هذه عدتنا في دراسة الحضارة القديمة وهي تدعى مصادر لأنا نستقي منها معلوماتنا. والتاريخ القديم <pb ed="shamela"
-                   n="n2-p13"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P90.xhtml"/>
+                            واللغات. هذه عدتنا في دراسة الحضارة القديمة وهي تدعى مصادر لأنا نستقي منها معلوماتنا. والتاريخ القديم <pb ed="shamela" n="n2-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P90.xhtml"/>
                             يتفرع من هذه الأصول.</p>
                         <p>الكتب - وضع القدماء الكتب أيام عرفوا الكتابة فكان لبعضهم مثل الفرس واليهود والهنود كتب مقدسة وخلف الرومان
                             واليونان تواريخ وقصائد وخطباً ومقالات فلسفية. وقلما نجد في الكتب المواد اللازمة لمباحثنا إذ ليس لدينا كتاب آشوري
@@ -526,11 +470,9 @@
                             التقدير والقياس لإقامة البناء. وما عنوا بنزع الردم من أماكنه بل كانوا يركمون الأنقاض ويبنون عليها ولا ينزعونها
                             حتى إذا أشرف البناء الجديد على السقوط تنضم أنقاضه إلى أطلال أخواتها القديمة وهكذا تتألف طبقات عديدة من الأنقاض.
                             وقد جاز أحد السياح المدعو شيلمان بحفرة في مكان مدينة طروادة خمس طبقات من الأطلال إذ كان ثمة خمس مدن خربة كلها
-                            وأعتقها على عمق خمسة عشر متراً. وما برحوا <pb ed="shamela"
-                   n="n2-p14"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P91.xhtml"/> يعثرون في رومية في
+                            وأعتقها على عمق خمسة عشر متراً. وما برحوا <pb ed="shamela" n="n2-p14" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P91.xhtml"/> يعثرون في رومية في
                             الأحايين على ثلاث بنايات منضدة بعضها فوق بعض وقد تراكمت عليها الأطلال فعلا التراب في سفح التلال بضعة أمتار.</p>
-                        <p>بقيت مدينة برمتها لم تمسسها طوارق الحدثان وذلك بحادث طبيعي جرى عام 79 للمسيح وهو أن بركان فيزوف في إيطاليا قذف
+                        <p>بقيت مدينة برمتها لم تمسسها طوارق الحدثان وذلك بحادث طبيعي جرى عام  <tei:num value="79" xml:lang="ar">٧٩</tei:num>  للمسيح وهو أن بركان فيزوف في إيطاليا قذف
                             سيلاً من الحمم مائعة أمطرت رماداً فانكشفت للحال مدينتان رومانيتان كانتا مدفونتين وهما هيركولانوم وبومبيه. وكانت
                             الأولى تحت الحمم السائلة والثانية تحت الرماد. وقد أحرقت الحمم المتاع وغشاها الرماد وحفظها من الهواء فبقيت سالمة.
                             وكلما أزيح الرماد تظهر مدينة بومبيه للأعين على نحو ما كانت عليه منذ ثمانية عشر قرناً. وإنك لترى في بلاطها بعد
@@ -547,15 +489,11 @@
                             لينكستيك.</p>
                         <p>النواقص - لا يذهبن ذاهب إلى أن الكتب والمعاهد والأطلال واللغات تكفي للإحاطة بتاريخ القرون السالفة فإن فيها تفاصيل
                             جمة يمكن الاستغناء عنها وما ترغب نفوس الباحثين في استبطان حقيقته قد يعز عليها ويفر منها. وما برح العلماء يحفرون
-                            ويحلون <pb ed="shamela"
-                   n="n2-p15"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P92.xhtml"/> ويظفرون كل يوم بأطلال
+                            ويحلون <pb ed="shamela" n="n2-p15" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P92.xhtml"/> ويظفرون كل يوم بأطلال
                             ومعاهد لم تعرف من قبل وقد بقيت مع هذا نواقص وسيبقى كذلك أبد الدهر. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p16"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P93.xhtml"/>
+                        <pb ed="shamela" n="n2-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P93.xhtml"/>
                         <head>الأمية في الغرب</head>
                         <p>ليس لدينا ما يركن إليه من الإحصاءات في نسبة عدد الأميين في بلاد الغرب إلى المتعلمين من أبنائهم إذ أن إحصاء اليوم
                             قد لا ينطبق عليه إحصاء غدٍ. والذي علم بالتحقيق أن الممالك الأوربية الصغرى كالدانمرك والبلجيك وهولندا واسوج ونروج
@@ -574,9 +512,7 @@
                             الأولى وأبقينا الثانية في الجهل لكن تعذر ذلك وملازمة الخير للشر في الشخص الواحد تدعونا إلى القول بجعل الكل تحت
                             نظام واحد فإما جهل مطبق للجميع وإما علم للجميع ولا وسط بينهما.</p>
                         <p>على أن الدواء في الضرر نفسه لأن المعارف لا تساعد الأشرار على شرورهم إلا إذا اختصوا بها لكن إذا عمت سهل على غيرهم
-                            أن يعرفوا حبائلهم فيسقط تأثيرها. ألا ترى أن <pb ed="shamela"
-                   n="n2-p17"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P94.xhtml"/> الأمم في أزمان الجهل ما
+                            أن يعرفوا حبائلهم فيسقط تأثيرها. ألا ترى أن <pb ed="shamela" n="n2-p17" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P94.xhtml"/> الأمم في أزمان الجهل ما
                             كانت تعرف من السميات إلا ما تسقي به أسنة رماحها ولكن الأمم المتمدنة عرفت جميع أنواع السميات وعرفت أيضاً كيف
                             تقابلها بما يدفع ضررها. كل إنسان يمكنه أن يفعل جريمة ما وذو المعارف وحده هو الذي يتمكن من وضع قانون لمنعها وكلما
                             قصرت معارف المرء صار ميالاً إلى فصل منفعته عن منافع الغير وكلما ارتفعت مداركه وسمت معارفه علم الجامعة بين
@@ -595,9 +531,7 @@
                         <p>ولطالما كان الملك الفريد الأكبر يشكو من أنه لا يوجد في البلاد الواقعة بين نهري هومبير والتايمس أحد من القديسين
                             يفهم الدعوات القديسية بلغتها الأصلية ويتمكن من ترجمة العبارات السهلة من اللاتينية. وسبب ذلك ندرة الكتب وعدم
                             انتشارها وذلك أن الرومانيين كانوا يكتبون كتبهم على جلود مصقولة أو على رق قشر البردي ويقال له أيضاً ورق النيل
-                            لأنه كان يأتي إليهم من مصر ولما كان ورق البردي أرخص كان استعماله عندهم أكثر من <pb ed="shamela"
-                   n="n2-p18"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P95.xhtml"/> الجلود. وبعد أن فتح
+                            لأنه كان يأتي إليهم من مصر ولما كان ورق البردي أرخص كان استعماله عندهم أكثر من <pb ed="shamela" n="n2-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P95.xhtml"/> الجلود. وبعد أن فتح
                             المسلمون بلاد مصر انقطعت الصلات بين أهل مصر وأهل إيطاليا وغيرهم عن أمم أوربا فاضطر الناس أن يكتبوا جميع الكتب
                             على الجلود فأصبحت نادرة. وقد مضت القرون على أوربا والكتابة والكتب نادرة عزيزة في كل أقطارها حتى أن لويز الحادي
                             عشر لما استعار من جمعية الطب البشري بباريس مؤلفات الفخر الرازي أحد فلاسفة المسلمين اضطر أن يرهن مقداراً جسيماً
@@ -617,14 +551,10 @@
                             ليس في نظر المجتمع الإنساني دون ذاك العالم الذي يحمل شهادته في العلم والأدب بل هو فوقه. وما صح منذ نحو ثلاثين
                             سنة للفرنسيين لا يصح لهم أن يتعاطوه اليوم والحياة الاجتماعية في تبدل مستمر والحضارة تصير من يوم إلى يوم حضارة
                             صناعية علمية. وقد قال جول سيمون أحد فلاسفة الفرنسيين ينبغي أن نكون أبناء أحرياء بهذا العصر كما قال العرب خلقوا
-                            أولادكم بغير أخلاقكم فإنهم خلقوا لزمان غير <pb ed="shamela"
-                   n="n2-p19"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P96.xhtml"/> زمانكم. </p>
+                            أولادكم بغير أخلاقكم فإنهم خلقوا لزمان غير <pb ed="shamela" n="n2-p19" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P96.xhtml"/> زمانكم. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p20"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P97.xhtml"/>
+                        <pb ed="shamela" n="n2-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P97.xhtml"/>
                         <head>الغناء المصري</head>
                         <p>الغناء صوت النفس وهو في كل أمة صورة آدابها وأخلاقها وعاداتها فبينا ترى الوحشيَّ في مفازة تمشي الرياح بها حيرى
                             مولهة وهو يتغنى بذكر الشمس والماء والشراب والعربيَّ تحت القبة الزرقاء يتغنى بذكر البدر والليل والخيل إذا أنت
@@ -645,9 +575,7 @@
                         <p>ما للشمول لطمت خدي وللشمال</p>
                         <p>هبت فمال غصن اعتدال ضمه بردي</p>
                         <p>مما أباد القلوبا يمشي لنا مستريباً يا لحظه رد ثوباً</p>
-                        <p>ويا لماه الشنيا برد غليل صب عليل <pb ed="shamela"
-                   n="n2-p21"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P98.xhtml"/> لا يستميل فيه عن عهدي ولا
+                        <p>ويا لماه الشنيا برد غليل صب عليل <pb ed="shamela" n="n2-p21" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P98.xhtml"/> لا يستميل فيه عن عهدي ولا
                             يزال</p>
                         <p>في كل حال يرجو الوصال وهو في الصد</p>
                         <p>وإعجاب الناس في مصر بالغناء شديد وليس هذا الإعجاب لجمال في الشعر الذي يتغنى به ولكنه لبراعة المغني في التوقيع
@@ -674,9 +602,7 @@
                         <p>محمد لطفي جمعة </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p22"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P99.xhtml"/>
+                        <pb ed="shamela" n="n2-p22" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P99.xhtml"/>
                         <head>فتيان يؤلفون</head>
                         <p>تناقلت الصحف الدورية في الغرب هذه الأيام رأياً للمسيو إميل فاغي من رجال العلم في فرنسا وأحد الأعضاء الأربعين في
                             المجمع العلمي الباريسي قال فيه: أنه لا ينبغي للكاتب أن ينشر ما كتب لينفع به الناس قبل أن يبلغ الثلاثين من عمره
@@ -705,9 +631,7 @@
                         </lg>
                         <p>واستظهر الوزير أبو القاسم المغربي من أهل القرن الرابع القرآن العزيز والكتب المجردة في النحو واللغة ونحو خمسة عشر
                             ألف بيت من مختار الشعر القديم ونظم الشعر وتصرف في النثر وبلغ من الحظ ما يقصر عنه نظراؤه من حساب المواليد والجبر
-                            والمقابلة إلى ما يستقل بدونه الكاتب وذلك كله قبل استكماله أربع عشرة سنة واختصر كتاب إصلاح <pb ed="shamela"
-                   n="n2-p23"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P100.xhtml"/> المنطق فتناهى
+                            والمقابلة إلى ما يستقل بدونه الكاتب وذلك كله قبل استكماله أربع عشرة سنة واختصر كتاب إصلاح <pb ed="shamela" n="n2-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P100.xhtml"/> المنطق فتناهى
                             في اختصاره وأوفى على جميع فوائده حتى لم يفته شيء من ألفاظه وكان ذلك قبل أن يستكمل سبع عشرة سنة.</p>
                         <p>ونظم الوزير إسماعيل بن حبيب النظم الفاتق والنثر الرائق قال في. . .: وأبو جعفر بن الأبار هو الذي صقل مرآته، وأقام
                             قناته، وأطلعه شهاباً ثاقباً، يرسلك به إلى فنون الآداب طريقاً لا حباً، وله كتاب سماه بالبديع في فصل الربيع جمع
@@ -723,15 +647,13 @@
                         </lg>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p24"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P101.xhtml"/>
+                        <pb ed="shamela" n="n2-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P101.xhtml"/>
                         <head>الجنون بالكتب</head>
                         <p>الغالب أن عشاق الكتب كعشاق الجمال أو هم أضل سبيلاً، فتراهم هائمين خاملين لا يعون على شيء في الأرض ولا يحفلون
                             بعظائم الأمور فضلاً عن صغارها، يحملون الكتب روحهم وراحهم وريحانهم، بل فروضهم ونوافلهم وأحاديثهم وأشغالهم. وكل
                             شيء إذا جاوز الحد انقلب إلى الضد. وكذلك الحال بعاشق الأسفار فربما جوَّز لنفسه السرقة ولكن سرقة الكتب بل وربما
                             أفتى بحل ذلك لمن يستفتيه. ولقد قرأت فصلاً لأحد كتاب الفرنجة فآثرت تلخيصه كما يلي: أقر أحد عشاق الكتب يوماً في
-                            إنكلترا عن نفسه واسمه ديبدن (1776_1847) أنه همّ يوماً أن يسرق وحمد لله على أن خلا بنفسه في خزانة كتب ستراسبورغ
+                            إنكلترا عن نفسه واسمه ديبدن ( <tei:num value="1776" xml:lang="ar">١٧٧٦</tei:num> _ <tei:num value="1847" xml:lang="ar">١٨٤٧</tei:num> ) أنه همّ يوماً أن يسرق وحمد لله على أن خلا بنفسه في خزانة كتب ستراسبورغ
                             ولم تحدثه نفسه بسرقة كتاب منها. وكان خطر على بال رجلين في إنكلترا أن يطبعا لأنفسهما خاصة كتاباً يكون آية في طبعه
                             ووضعه وصوره وورقه وتجليده ولم يطبعا منه غير نسختين. فما كان إلا كلا ولا حتى حدثت أحدهما نفسه بأن يذهب لي دار
                             صاحبه ويستأثر دونه بالنسخة فيسرق بعض صورها حتى تكون نسخته هي التي يرجع إليها فراح في غياب صاحبه إلى زوجه وطلب
@@ -739,64 +661,56 @@
                             في جيبه وانصرف فلما عاد صاحبه ارتاب في مجيء صاحبه وقلب أوراق الكتاب فرأى ما فعله فرفع عليه قضية حكمت له فيها
                             جمعية الكتب بألفي جنيه تعويضاً.</p>
                         <p>وقد راودت أحد هؤلاء الغلاة يوماً نفسه أن يحرق مكتبته بعد أن زار مكتبة الدوك دومال ابن لويز فيليب أحد ملوك فرنسا
-                            المتوفى سنة 1897 إذ مزق الحسد والطمع والغيرة أحشاء ذاك الرجل. بيد أن العريق في محبة الكتب الحقيقي هو محب الآداب
+                            المتوفى سنة  <tei:num value="1897" xml:lang="ar">١٨٩٧</tei:num>  إذ مزق الحسد والطمع والغيرة أحشاء ذاك الرجل. بيد أن العريق في محبة الكتب الحقيقي هو محب الآداب
                             أيضاً وعضد المعارف فيغتبط إذا ظفر غيره بكتب لم يسعده الحظ بمثلها ويأمل أن يكون من ورائها مغنم كبير للمطالعين
                             والدارسين.</p>
-                        <p>ومن غرائب هؤلاء العشاق غليوم بودي (1467 - 1540) قال إنه اغتنم الفرصة يوم عرسه فمر بكتبه قبل أن يبني بعرسه ومع هذا
+                        <p>ومن غرائب هؤلاء العشاق غليوم بودي ( <tei:num value="1467" xml:lang="ar">١٤٦٧</tei:num>  -  <tei:num value="1540" xml:lang="ar">١٥٤٠</tei:num> ) قال إنه اغتنم الفرصة يوم عرسه فمر بكتبه قبل أن يبني بعرسه ومع هذا
                             رزق بنين وبنات وهو الذي يروى عنه أن خادمه جاءه يوماً وهو يلهث فقال أن لسان اللهيب أخذ يندلع على البيت وكان أمام
                             كتبه بالطبع فأجابه قل لزوجي وهلا تعرف أنني لا أتداخل في أمور المنزل.</p>
-                        <p>وأغرب من هذا ما أجراه أدرين تورنيب من مشاهير اليونان وأحد فلاسفة القرن السادس <pb ed="shamela"
-                   n="n2-p25"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P102.xhtml"/> عشر (1512 - 1565) فإنه
+                        <p>وأغرب من هذا ما أجراه أدرين تورنيب من مشاهير اليونان وأحد فلاسفة القرن السادس <pb ed="shamela" n="n2-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P102.xhtml"/> عشر ( <tei:num value="1512" xml:lang="ar">١٥١٢</tei:num>  -  <tei:num value="1565" xml:lang="ar">١٥٦٥</tei:num> ) فإنه
                             نسي يوم عرسه الذي يقضى عليه بأن يجتمع في يومه بالناس. وكذلك كان أمر فردريك مورل لجون من علماء فرنسا المشتغلين
                             وكان يبحث في أخبار ليبانيوس السفسطائي اليوناني فجاءه رسول يقول له أن زوجته تريد أن تكلمه بضع كلمات وكان يحبها
                             حباً جماً فقال له دعني الآن انظر هاتين الكلمتين لكن المهلة التي طلبها طالت واسبطرت فبعثت إليه برسول آخر قال له
                             إن زوجتك كادت تفارق الحياة فحوقل وامتدح منها وردد بعض مآثرها وسيرتها الصالحة وعاد يغوص في بحر كتبه.</p>
-                        <p>ومات القس كوجي (1697 - 1767) حزناً لأنه أكره على بيع كتبه. ويروى مثل ذلك عن سكاليجر العالم الطلياني المتوفى سنة
-                            1558 وباترو الفقيه الفرنسي المتوفى سنة 1681 فقد قال الأول إن رمت أن تصاب بأعظم خطوب الأرض فبع كتبك تلق الشقاء
-                            ومن رام أن يجمع على رأسه ضروب البلايا صفقة واحدة فما عليه إلا أن يبيعه كتبه. ورأى يعقوب غوبيل (1564) من مشاهير
+                        <p>ومات القس كوجي ( <tei:num value="1697" xml:lang="ar">١٦٩٧</tei:num>  -  <tei:num value="1767" xml:lang="ar">١٧٦٧</tei:num> ) حزناً لأنه أكره على بيع كتبه. ويروى مثل ذلك عن سكاليجر العالم الطلياني المتوفى سنة
+                             <tei:num value="1558" xml:lang="ar">١٥٥٨</tei:num>  وباترو الفقيه الفرنسي المتوفى سنة  <tei:num value="1681" xml:lang="ar">١٦٨١</tei:num>  فقد قال الأول إن رمت أن تصاب بأعظم خطوب الأرض فبع كتبك تلق الشقاء
+                            ومن رام أن يجمع على رأسه ضروب البلايا صفقة واحدة فما عليه إلا أن يبيعه كتبه. ورأى يعقوب غوبيل ( <tei:num value="1564" xml:lang="ar">١٥٦٤</tei:num> ) من مشاهير
                             فرنسا مكتبته نهب أيدي الضياع والسلب في فتنة عصابات الكاثوليك فمات يائساً بائساً. وحزن العالم الكتبي كولنه دورافل
                             الفرنسي حزناً ولا حزن يعقوب على يوسف لما رأى كتب الأبرشية تطفو على نهر السين وكان يقدر قيمتها حق قدرها لأنه
                             رتبها وبوبها.</p>
-                        <p>واضطرت الحاجة اللغويَّ برونك من ستراسبورغ (1729 - 1803) أن يبيع جانباً من مكتبته واشتد حزنه عليها حتى كان إذا ذكر
+                        <p>واضطرت الحاجة اللغويَّ برونك من ستراسبورغ ( <tei:num value="1729" xml:lang="ar">١٧٢٩</tei:num>  -  <tei:num value="1803" xml:lang="ar">١٨٠٣</tei:num> ) أن يبيع جانباً من مكتبته واشتد حزنه عليها حتى كان إذا ذكر
                             أمامه مؤلف اقتناه وباعه في جملة ما أباعه تنحدر عبراته على خديه طوعاً كرهاً. واضطر الأمير كاميراتا في القرن
                             التاسع عشر أن يبيع أسفاره في المزاد العلني ولم تكد توزع على مبتاعيها حتى انتحر بيده وقال بيدي لا بيد عمرو. ويقرب
                             من ذلك ما فعله الكونت لابيدويير فإنه توهم أن كتبه أتعبته فباعها فما هو إلا يوم وليلة حتى عاد يشتريها ثانية بكل
                             مرتخص وغال فأشبه في حاله ولداً مبذراً غادر بيت أبيه.</p>
                         <p>وحدث أن أحد الأميركيين المستر بريان وهب إحدى المكاتب مجاميع نفيسة من روايات نادرة فلم تمض أيام حتى عاد إلى قيم
                             المكتبة يطلب إليه أن يرى كتبه فأخذ يحدق بها ويصوب في جلودها ويصعد فظن القيم أن صاحبه ينوي أن يسترجع ما وهب ولكن
-                            راح المسكين فانتحر بعد يومين وعزَّ عليه أن يفعل فعلته قبل أن يودع محبوباته قديماً ويرعى <pb ed="shamela"
-                   n="n2-p26"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P103.xhtml"/> لهن ذمامهن.
+                            راح المسكين فانتحر بعد يومين وعزَّ عليه أن يفعل فعلته قبل أن يودع محبوباته قديماً ويرعى <pb ed="shamela" n="n2-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P103.xhtml"/> لهن ذمامهن.
                             ومات المركيز شالابر في القرن التاسع عشر قانطاً مخفقاً لكونه لم يتمكن من ابتياع نسخة من التوراة ثمينة. قيل إنه
                             كان في محفظة جعلت في جلدها أوراق مالية بأربعين ألف فرنك فعثر عليها الكتبي لما اشتراها من صاحبتها فأعادها إليها.
-                            وقضى بيترارك (1304_1374) في مجلسه ولما استبطأه أصحابه أطلوا عليه فوجدوه ميتاً والكتاب في حجره. وكذلك مات الصحافي
-                            ارمندبرتين (1801_1854) مدير جريدة الديبا وكان له مجاميع من أجمل القنيات والكنوز ذكروا أنه مات بين كتبه عقيب وفاة
+                            وقضى بيترارك ( <tei:num value="1304" xml:lang="ar">١٣٠٤</tei:num> _ <tei:num value="1374" xml:lang="ar">١٣٧٤</tei:num> ) في مجلسه ولما استبطأه أصحابه أطلوا عليه فوجدوه ميتاً والكتاب في حجره. وكذلك مات الصحافي
+                            ارمندبرتين ( <tei:num value="1801" xml:lang="ar">١٨٠١</tei:num> _ <tei:num value="1854" xml:lang="ar">١٨٥٤</tei:num> ) مدير جريدة الديبا وكان له مجاميع من أجمل القنيات والكنوز ذكروا أنه مات بين كتبه عقيب وفاة
                             حليلته فوجدوه ماسكاً بكتاب كانت هي تحبه في حياتها فجاء الموت وهو على هذه الحال.</p>
-                        <p>ومات المؤلف يعقوب برونه (1780_1867) وهو على كرسيه وبين كتبه بعد أن عمر طويلاً ولا شغل له غير الدرس والتبحر. وقضى
+                        <p>ومات المؤلف يعقوب برونه ( <tei:num value="1780" xml:lang="ar">١٧٨٠</tei:num> _ <tei:num value="1867" xml:lang="ar">١٨٦٧</tei:num> ) وهو على كرسيه وبين كتبه بعد أن عمر طويلاً ولا شغل له غير الدرس والتبحر. وقضى
                             الجماعة موبللي منذ نحو نصف قرن وكانت مكتبته تساوي مائة ألف فرنك ولم يوجد عنده من الدراهم ما يكفي نفقات دفنه. ومن
-                            عشاق الكتب من سقطوا عن سلالم مكاتبهم فقضوا نحبهم ومنهم اييرت (1791_1834) من غلاة الكتب في درسد والمركيز مورانت
-                            (1808_1868) الإسباني وروفر وغيرهم. والمؤرخ الكاتب تيودور مومسان الألماني (1817_1903) ذهب إلى خزانة كتبه ذات يوم
+                            عشاق الكتب من سقطوا عن سلالم مكاتبهم فقضوا نحبهم ومنهم اييرت ( <tei:num value="1791" xml:lang="ar">١٧٩١</tei:num> _ <tei:num value="1834" xml:lang="ar">١٨٣٤</tei:num> ) من غلاة الكتب في درسد والمركيز مورانت
+                            ( <tei:num value="1808" xml:lang="ar">١٨٠٨</tei:num> _ <tei:num value="1868" xml:lang="ar">١٨٦٨</tei:num> ) الإسباني وروفر وغيرهم. والمؤرخ الكاتب تيودور مومسان الألماني ( <tei:num value="1817" xml:lang="ar">١٨١٧</tei:num> _ <tei:num value="1903" xml:lang="ar">١٩٠٣</tei:num> ) ذهب إلى خزانة كتبه ذات يوم
                             والشمعة بيده فسرى لهيبها إلى لحيته البيضاء وقضى بعد شهر متأثراً.</p>
-                        <p>وأعجوبة المولعين بالأسفار انطون ماكليابيشي (1633_1714) من مدينة فلورنسا فقد خدم لأول أمره في دكان فاكهانية وأخذ
+                        <p>وأعجوبة المولعين بالأسفار انطون ماكليابيشي ( <tei:num value="1633" xml:lang="ar">١٦٣٣</tei:num> _ <tei:num value="1714" xml:lang="ar">١٧١٤</tei:num> ) من مدينة فلورنسا فقد خدم لأول أمره في دكان فاكهانية وأخذ
                             ينظر في الأوراق التي تصر بها الفاكهة فوقع في نفسه أن يتعلم القراءة فاتصل بكتبي ولم يعدم من يدرسه ويعلمه وكان ذا
                             ذاكرة قوية ما حفظ شيئاً ونسيه وحفظ من أسماء الكتب ومظانها حتى أصبح عبارة عن مكتبة سيارة ثم اتصل بالغراندوق كوسم
                             الثالث وجعله قيماً على كتبه ولم تكن هذه الكتب لتشفي مطامعه بل أخذ يطالع فهارس المكاتب الأوربية مطبوعها ومخطوطها
                             ويسأل كبار العلماء السياح عن نوادرها حتى صار يعرف كل دقيق وجليل من أحوال الكتب وكانت له طريقة غريبة في المطالعة
                             فإذا أخذ كتاباً لم يكن طالعه من قبل ينظر في اسمه وفهرسته ومقدمته وتقدمته ويتصفح أوائل فصوله وبعد دقائق يقول لك
                             رأيه في موضوع الكتاب والمصادر التي أخذ منها مؤلفه ولا ينسى ذلك على الدهر. ولم تكن له عناية بهندامه ونظام معيشته
-                            بل كان في ليله ونهاره مستغرقاً في أسفاره لا يخرج إلا إلى مكتبته. وكان أعلى بيته وأسفله ومدخله <pb ed="shamela"
-                   n="n2-p27"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P104.xhtml"/> وحجره ونوافذه
+                            بل كان في ليله ونهاره مستغرقاً في أسفاره لا يخرج إلا إلى مكتبته. وكان أعلى بيته وأسفله ومدخله <pb ed="shamela" n="n2-p27" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P104.xhtml"/> وحجره ونوافذه
                             كلها ملأى بالكتب. وهو غريب في خموله حتى كان يأكل في الغالب بيضاً وخبزاً وماء - والخبز والماء أكل العلماء كما قيل
                             - ولطالما سرق له خدامه وخدام جيرانه دراهم من خزانة بقربه كان يضع فيها البيض والدراهم معاً وقد أراده البابا
                             والملك أن يتمثل بين أيديهما فتجاهل ما أمرا به وعاش على كسله إحدى وثمانين سنة وأوصى بمكتبته لبلده وكانت تبلغ
                             ثلاثين ألف مجلد وجعل لها مورداً تعيش به ومازالت معروفة به إلى الآن. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p28"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P105.xhtml"/>
+                        <pb ed="shamela" n="n2-p28" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P105.xhtml"/>
                         <head>الميت الحي</head>
                         <lg type="bayt">
                             <l>تكاد عيوني تقرأ الغيب في الدجى </l>
@@ -851,14 +765,12 @@
                         <p>محمد إمام العبد </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p29"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P106.xhtml"/>
+                        <pb ed="shamela" n="n2-p29" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P106.xhtml"/>
                         <head>سيئات القرن الماضي</head>
                         <p>التسمم بالتبغ هو أيضاً من الجراحات الاجتماعية التي صيرها هذا العصر نغارة. فالتبغ هو ذاك المسلي الذي يستعمله
                             الجندي والملاح والزارع والصانع والعامل والعالم. يدفع ببعضهم إلى العمل ويسكن في بعضهم شيئاً من انفعالات النفس.
                             ومن العجيب أن الأوربي الذي ذهب إلى أميركا يبث نور المدينة في عقول برابرتها قد أسفَّ إلى الأخذ عنهم فاقتبس منهم
-                            عادة التدخين مع علمه أنهم دونه في الذكاء والعلم. فقد نقل الإسبانيون سنة 1560 عادة التبغ من المكسيك إلى لشبونة
+                            عادة التدخين مع علمه أنهم دونه في الذكاء والعلم. فقد نقل الإسبانيون سنة  <tei:num value="1560" xml:lang="ar">١٥٦٠</tei:num>  عادة التبغ من المكسيك إلى لشبونة
                             ومنها انتقلت إلى الديار الأوربية فأولعت النفوس بها. حتى إنه ليصرف على التدخين وما يلحقه من الثقاب (الكبريت)
                             والعلب والغلايين والورق والأنابيب مبالغ جسيمة لو صرفت في تطهير المدن الكبرى وترقية المعارف العمومية وإنشاء دور
                             لعجزة العملة لأتت المجتمع الإنساني بفوائد لا تقدر ولئن كان الضرر المشاهد من التدخين أقل من ضرر المسكر فإن مما لا
@@ -874,9 +786,7 @@
                             انتقال العدوى والمصابون بالسل هم بين العشرين والخمسة والعشرين من عامة الوفيات في سائر الأمراض ويصيب الشبان
                             والشيوخ غالباً. ومما يساعد على كثرة فتكه ماعدا انتقاله بالوراثة سوء العناية بالصحة كما هو المشاهد في البلاد
                             الكبيرة فإن الأقدام تزدحم في الأحياء الضيقة والبيوت المظلمة التي لا تنفذ إليها الشمس ولا يتجدد فيها الهواء فتحدث
-                            في <pb ed="shamela"
-                   n="n2-p30"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P107.xhtml"/> الأجسام ما تحدث. أضف إلى
+                            في <pb ed="shamela" n="n2-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P107.xhtml"/> الأجسام ما تحدث. أضف إلى
                             هذا كمية الغذاء وكيفيته على النحو الذي يتناوله العملة مما لا نسبة بيته وبين الأعمال الشاقة التي يتعاطونها ويقتضي
                             لها من معوضات القوة ما يكفي ويشفي.</p>
                         <p>ومن الأوصاب التي شاعت في النصف الأخير من القرن في بلاد التمدن أمراض من دواعيها الاضطراب في التغذية والإكثار من
@@ -889,16 +799,14 @@
                             العلماء والساسة والماليين وأرباب الصنائع والأشغال والصيارف ممن حملوا أنفسهم فوق طاقتها.</p>
                         <p>وهناك كثير من الأمراض الحديثة التي جاءت مع الحضارة وهي من مفسدت الدم كالخنازير وأنواع الفقر الدموي وغيرها. فكما
                             أن الكوليرا انتقلت إلى أوربا من آسيا فكذلك نقل أهل أوربا إلى أميركا وآسيا وجزء من إفريقية الحمى التيفوئيدية
-                            فإنها وإن عرفها القدماء باسم حمى خبيثة عفنية لم تعرف في أوربا إلا في سنة 1820. وقد انتشرت الدفثيريا أو الخناق في
+                            فإنها وإن عرفها القدماء باسم حمى خبيثة عفنية لم تعرف في أوربا إلا في سنة  <tei:num value="1820" xml:lang="ar">١٨٢٠</tei:num> . وقد انتشرت الدفثيريا أو الخناق في
                             هذه السنين انتشاراً وبيلاً حتى صار مرض الدفثيريا إحدى المصائب المهلكة للأطفال يشترك في التلقيح بجراثيمها أبناء
                             القرى والمدن معاً وذلك لما يبذل من القوى العصبية في جهاد الحياة وبفضل تعدد طرق المواصلات واختصار الأبعاد فتنقل
                             جراثيم عدواها بسرعة من البلاد الموبوءة بها إلى البلاد السليمة منها. والنزلات قد اشتدت وطأتها كثيراً وصارت وبائية
                             وافدة تفتك فتكاً ذريعاً. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p31"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P108.xhtml"/>
+                        <pb ed="shamela" n="n2-p31" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P108.xhtml"/>
                         <head>المومياء المصرية</head>
                         <p>لحكمة غابت عن الباحثين حنط قدماء المصريين جثث موتاهم وجعلوها مومياء منذ نحو سبعين قرناً. عثر علماء الآثار المصرية
                             على أكثرها في نواويس ومدافن ووضعوا بعضها في المتاحف ودور العاديات لتشهد لتلك الحضارة القديمة بالرسوخ والارتقاء.
@@ -917,9 +825,7 @@
                             قرون. كان الهر مقدساً عند قدماء المصريين ولذلك عثر على كثير منه محنطاً وقد تجد بين القططة ما ولد حديثاً وما هي
                             أجنة في بطون أمهاتها. والهر المصري نوعان داجن ووحشي وهذا هو الذي كانوا يحنطونه ويقدسونه.</p>
                         <p>وبعد فقد قدس المصريون اللقلق لأنه يأكل الهوام التي كانت تغير على شواطئ النيل وكان من هذا اللقلق الأبيض والأسود
-                            وعثر على كثير من الأسود في المدافن القديمة محنطاً أما <pb ed="shamela"
-                   n="n2-p32"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P109.xhtml"/> الأبيض فانقرض منذ مائة
+                            وعثر على كثير من الأسود في المدافن القديمة محنطاً أما <pb ed="shamela" n="n2-p32" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P109.xhtml"/> الأبيض فانقرض منذ مائة
                             سنة وهو موجود في الحبشة بكثرة ولعل النيل كان يأتي به. وقدس المصريون الغنم وهو نوعان ادعى بعضهم أن أحدهما جاء من
                             آسيا على نحو ما جرت العادة أن ينسب لهذه القارة كل نوع من إنسان وحيوان ونبات وتوصف بأنها مبعث جماع الحضارة ومهد
                             الكائنات. اتفقت الأديان وبعض الفلاسفة وجملة من الأساطير على أن الشرق مقيل أرقى الكائنات الحية. إلا أن العالمين
@@ -932,9 +838,7 @@
                             المباحث طافحة بالفوائد في تاريخ الحضارة خاصة وتاريخ الكائنات عامة. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p33"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P110.xhtml"/>
+                        <pb ed="shamela" n="n2-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P110.xhtml"/>
                         <head>صحف منسية</head>
                         <p>شعر ابن حزم</p>
                         <p>قال الفقيه أبو عبد الله الحميدي قال كان لشيخنا الفقيه أبي محمد بن حزم في الشعر والأدب نفس واسع وباع طويل وما رأيت
@@ -1006,9 +910,7 @@
                             <l>ولكن لي في يوسف خير أسوة </l>
                             <l> وليس على من بالنبي ائتسى ذنب</l>
                         </lg>
-                        <p>يقول وقال الحق والصدق إنني <gap resp="#org_MS"/> حفيظ عليم ما على صادق عتب <pb ed="shamela"
-                   n="n2-p34"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P111.xhtml"/> وأنشدني لنفسه</p>
+                        <p>يقول وقال الحق والصدق إنني <gap resp="#org_MS"/> حفيظ عليم ما على صادق عتب <pb ed="shamela" n="n2-p34" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P111.xhtml"/> وأنشدني لنفسه</p>
                         <lg type="bayt">
                             <l>لا يشتمن حاسدي إن نكبة عرضت </l>
                             <l> فالدهر ليس على حال بمترك</l>
@@ -1079,9 +981,7 @@
                             <l>وإنني مولع بالنص لست إلى </l>
                             <l> سواه أنحو ولا في نصره أهن</l>
                         </lg>
-                        <p>لا انثني نحو آراء يقال بها <gap resp="#org_MS"/> في الدين بل حسبي القرآن والسنن <pb ed="shamela"
-                   n="n2-p35"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P112.xhtml"/> يا برد ذا القول في قلبي
+                        <p>لا انثني نحو آراء يقال بها <gap resp="#org_MS"/> في الدين بل حسبي القرآن والسنن <pb ed="shamela" n="n2-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P112.xhtml"/> يا برد ذا القول في قلبي
                             وفي كبدي <gap resp="#org_MS"/> ويا سروري به لو أنهم فطنوا</p>
                         <lg type="bayt">
                             <l>دعهم يعضوا على صم الحصا كمداً </l>
@@ -1175,15 +1075,11 @@
                             <l>لو استطعت منحت الناس كلهم </l>
                             <l> ما قد تجمع في حفظي وفي كتبي</l>
                         </lg>
-                        <p>أأبذل المال يفني البذل حاصله <gap resp="#org_MS"/> ولست أبذل ما ينمى على النهب <pb ed="shamela"
-                   n="n2-p36"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P113.xhtml"/> سائل بأي علوم العالمين
+                        <p>أأبذل المال يفني البذل حاصله <gap resp="#org_MS"/> ولست أبذل ما ينمى على النهب <pb ed="shamela" n="n2-p36" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P113.xhtml"/> سائل بأي علوم العالمين
                             تجد <gap resp="#org_MS"/> عندي ينابيع ذاك العلم من كتبي </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p37"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P114.xhtml"/>
+                        <pb ed="shamela" n="n2-p37" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P114.xhtml"/>
                         <head>التعليم والتربية</head>
                         <p>الإسراف وسوء السلوك</p>
                         <p>معربة من كتاب نصائح العملة</p>
@@ -1202,9 +1098,7 @@
                             الانحراف عن جادة الفضيلة لأول أمره. ومن الهين اللين أن يسقط الإنسان من الطيش إلى الاضطراب ومن هذا إلى سوء
                             السلوك. وا رحمتاه لمن لا يحسن مقاومة شهواته الأولى فإن الهواء الذي يستنشق في المجتمعات وقد ركب الطيش أجزاءه ليحل
                             في تضاعيفه اضطراباً وبحراناً في الحواس وينتهي بضرب من السكر الأدبي ويصعب تبديد شمله بقدر ما ترتاح النفس إليه.
-                            ومع هذا فقد يرجو الطائشون عبثاً إصلاح نفوسهم من هذا السكر وأنه موقت لا يلبث المنغمسون فيه أن يرجعوا عن غيهم. <pb ed="shamela"
-                   n="n2-p38"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P115.xhtml"/>
+                            ومع هذا فقد يرجو الطائشون عبثاً إصلاح نفوسهم من هذا السكر وأنه موقت لا يلبث المنغمسون فيه أن يرجعوا عن غيهم. <pb ed="shamela" n="n2-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P115.xhtml"/>
                             ولكن تجيء الأيام تلو الأيام والأسابيع تلو الأسابيع والشهور عقيب الشهور والنفس لا ترجع عن غيها وغلوائها.</p>
                         <p>ولقد أنشئت في إنكلترا وأميركا جمعيات دعيت جمعيات الاعتدال بغية إنقاذ العامل بل اضطراره إلى عدم إهمال العمل وسوء
                             استعمال أوقات فراغه فأسفرت هذه الجمعيات عن بعض النجاح فيقضى على من يريد الانخراط في سلك هذه الجمعيات أن يقسم
@@ -1226,9 +1120,7 @@
                             على أبناء السبيل تدفعهم إلى ذلك عوامل الخمار.</p>
                         <p>إلا وأن سوء السلوك لتستوحش منه النفوس ويفسد القلوب بما يصحبه من الإفراط الذي ينهك الصحة فيعجل الهرم ويهيئ السبل
                             للأمراض العضالة. إفراط تتلبس به النفس فيقودها من ضلال إلى آخر حتى يتناسى صاحبها ما يقضي به الشرف ويحيد حياداً
-                            ظاهراً عن مهيع الشرائع. وعقاب سوء السلوك بسيط فهو يميت القلب ويقتل في صاحبه التوبة <pb ed="shamela"
-                   n="n2-p39"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P116.xhtml"/> والإنابة وما هو إلا أن
+                            ظاهراً عن مهيع الشرائع. وعقاب سوء السلوك بسيط فهو يميت القلب ويقتل في صاحبه التوبة <pb ed="shamela" n="n2-p39" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P116.xhtml"/> والإنابة وما هو إلا أن
                             يضعف النفس عن الإحساس الطيب والأفكار الصالحة ويميت في نفسه كل شعور حي. يعمل ولكن من دون لذة. بل مكرهاً وما هو
                             إلا كلا ولا حتى تصير البطالة في عينه عبئاً ثقيلاً والعمل عذاباً أليماً فيبلغ حالة لا يبلغها من المرء اعدى أعدائه
                             وهل أشد خطراً من عدو داخلي ينهك القوى ويهدم الأسس. وقد قبل اعدى عدوك نفسك التي بين جنبيك والانكى من ذلك أن من
@@ -1247,16 +1139,12 @@
                         <p>وبعد فإني أتقدم إلى من استرسلوا في هوى النفس أن يصلحوها ولا يقولوا الصيف ضيعت اللبن ولكن جئت في الزمن الأخير فإن
                             إصلاح النفس يتأتى في الكبر كما يتأتى في الصغر. ومن لا يضبط نفسه زمان الفتوة وهو عهد العقل وسن الأماني الطاهرة
                             والإخلاص الشريف هيهات أن يجيء منه ما ينفع أمته وينتفع هو به. فإصلاح النفس لازم في الكبر أكثر فإذا استقام أمر
-                            المرء شهوراً بل أياماً قبل موته لابد أن ينال اعتبار الجمهور <pb ed="shamela"
-                   n="n2-p40"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P117.xhtml"/> بل الإنابة مطلوبة فيمن
+                            المرء شهوراً بل أياماً قبل موته لابد أن ينال اعتبار الجمهور <pb ed="shamela" n="n2-p40" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P117.xhtml"/> بل الإنابة مطلوبة فيمن
                             أبيض شعره حتى لا يجمع إلى الشيخوخة إهانة الناس وما على من ابتلوا منذ شبيبتهم بهذه المساوئ إلا أن يحاولوا الإقلاع
                             عنها وتصح عزائمهم على ذلك فللإرادة شأن في سلوك الإنسان ومن لا إرادة له لا يعد في البشر. </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n2-p41"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P118.xhtml"/>
+                        <pb ed="shamela" n="n2-p41" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P118.xhtml"/>
                         <head>مطبوعات ومخطوطات</head>
                         <p>العربية ولهجاتها</p>
                         <p>وهي رسالة كتبها بالفرنسية حضرة العالم المدقق الكنت دي لاندنبرغ الأسوجي وقدمها إلى علماء المشرقيات في المؤتمر
@@ -1275,10 +1163,8 @@
                             اليمانية.</p>
                         <p>ومما استدل به على وجود علاقة بين اللغة الفصحى والعامية وأن العامية كان يتكلم بها في بعض أنحاء الجزيرة أن الإعراب
                             والتنوين قد ظهرا كل الظهور في الخط المسند البابلي الذي عثر عليه حديثاً في شريعة حمورابي وأن الإعراب والتنوين
-                            معروفان قبل تلك الكتابة ويقول بعض الباحثين في اللغة الآشورية أن عهد ذلك يرد إلى سنة 2800 ق. م ويرده آخرون إلى
-                            3750 ق. م. <pb ed="shamela"
-                   n="n2-p42"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P119.xhtml"/> ومن رأيه أن التنوين
+                            معروفان قبل تلك الكتابة ويقول بعض الباحثين في اللغة الآشورية أن عهد ذلك يرد إلى سنة  <tei:num value="2800" xml:lang="ar">٢٨٠٠</tei:num>  ق. م ويرده آخرون إلى
+                             <tei:num value="3750" xml:lang="ar">٣٧٥٠</tei:num>  ق. م. <pb ed="shamela" n="n2-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P119.xhtml"/> ومن رأيه أن التنوين
                             والإعراب لو حذفا من العربية لأصبح نحوها عبارة عن مائة صفحة مثل نحو لهجة عربية حديثة ولا تبقى كل تلك التراكيب
                             قال: وبعد فلم يرفع من بناء العربية حجر واحد ولكن ربما أضاف إليه علماء النحو أحجاراً كثيرة على أن العلم قاصر عن
                             الإحاطة بالقديم الذي كان قبل الارتقاء الإسلامي العظيم وبالحديث منه. وإن هذه اللغة لتعيش أيضاً على رقتها وما فيها
@@ -1300,9 +1186,7 @@
                         </lg>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n2-p43"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P120.xhtml"/>
+                        <pb ed="shamela" n="n2-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P120.xhtml"/>
                         <head>تدبير الصحة</head>
                         <p>التوقي من البرد</p>
                         <p>جاء زمن الكن والكانون وبرد الجو وتغيرت الأهوية فكثرت بذلك الأدواء ولاسيما النزلات فارتأى أحد أطباء فرنسا أن خير
@@ -1320,9 +1204,7 @@
                             إلى ثمانين أو خمس وثمانين سنة وربما إلى أكثر من ذلك أحياناً. </p>
                     </div>
                     <div type="section">
-                        <pb ed="shamela"
-                n="n2-p44"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P121.xhtml"/>
+                        <pb ed="shamela" n="n2-p44" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P121.xhtml"/>
                         <head>سير العلم</head>
                         <p>مسمعة</p>
                         <p>هذه المسمعة واسمها كوستيكون هي عبارة عن آلة تلفونية تسمع الصم اخترعها أحد الأمريكان وجربها في عدة محال للتمثيل
@@ -1342,9 +1224,7 @@
                             مؤونة أسبوع ويكتفي الفقير به للدفء ويشفي من الأمراض بإهلاكه جراثيم العفن. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p45"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P122.xhtml"/>
+                        <pb ed="shamela" n="n2-p45" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P122.xhtml"/>
                         <head>المجلات الإفرنجية والعربية</head>
                         <p>الموسيقى العربية</p>
                         <p>ما برحت المجلة الفرنسية تأتيها الآراء بشأن الموسيقى الشرقية وأحسن ما ورد عليها من ذلك رأي يقول فيه صاحبه أن العرب
@@ -1356,7 +1236,7 @@
                             في التعليم معقولة عملية وذلك بأن تلاحظ الحياة البشرية ونشوءها.</p>
                         <p>التبشير</p>
                         <p>الهلال - نشر مذكرات لدكتور فانديك في أعماله وأعمال المرسلين الأمريكان في سورية وصف فيها بيروت وصفاً مجملاً عند
-                            دخوله إليها سنة 1840 وكانت قليلة السكان والمنازل وقال أن دروز رأس بيروت تنصروا تخلصاً من الجندية وتتجلى في هذه
+                            دخوله إليها سنة  <tei:num value="1840" xml:lang="ar">١٨٤٠</tei:num>  وكانت قليلة السكان والمنازل وقال أن دروز رأس بيروت تنصروا تخلصاً من الجندية وتتجلى في هذه
                             المفكرات روح البحث والتفاني في المصلحة.</p>
                         <p>تاريخ المورو</p>
                         <p>المقتطف - قرظ كتاب تاريخ المورو أي مسلمي فيليبين الذي وضعه بالإنكليزية حضرة الفاضل الدكتور نجيب صليبي معاون حاكم
@@ -1364,18 +1244,14 @@
                             خرافي تناقلوه خلفاً عن سلف ولم يعن أحد بتدوينه ولكن ملا جاء الإسلام إلى تلك الجزائر جاء منه العلم والعمران
                             فانتظمت الأحكام ودونت التواريخ ووضعت التراسيل وهي عندهم كشجرات الأنساب عندنا. والتراسيل بلغة مجندنا ولكنها
                             مكتوبة بحروف عربية. ومعنى مجندنا هو البلاد المروية لأن فيها نهراً يفيض عليها ويرويها فأطلق هذا الاسم على البلاد
-                            وعلى سكانها. وكان بدء دخول الإسلام إليها في نحو سنة 1475 للميلاد. قال والمورو <pb ed="shamela"
-                   n="n2-p46"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P123.xhtml"/> الموصفون بالقسوة والشمم
+                            وعلى سكانها. وكان بدء دخول الإسلام إليها في نحو سنة  <tei:num value="1475" xml:lang="ar">١٤٧٥</tei:num>  للميلاد. قال والمورو <pb ed="shamela" n="n2-p46" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P123.xhtml"/> الموصفون بالقسوة والشمم
                             أرقى جداً من الوثنيين الذين يسكنون سائر البلاد مع أنهم جميعهم من أصل واحد لكن الإسلام علمهم وهذبهم وأوصل بينهم
                             وبين غيرهم من الأمم. والكتاب مله ينبئ عن روح صاحبه الشريفة التي تهذبت وأخذت ترى الحقائق بالعين المجردة وقد كان
                             العامل الأعظم في تهذيب المسلمين في تلك الجزر فابتاع لهم منذ مدة كثيراً من المصاحف وكتب العبادة وأخذ يدرسهم فيها
                             حاثاً لهم على التمسك بالإسلام وأقنع حكومة الولايات المتحدة بذلك من الوجهة السياسية جزاه الله خير الجزاء. </p>
                     </div>
                     <div type="article">
-                        <pb ed="shamela"
-                n="n2-p47"
-                corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P124.xhtml"/>
+                        <pb ed="shamela" n="n2-p47" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P124.xhtml"/>
                         <head>نفاضة الجراب</head>
                         <p>تفقه في ساعة</p>
                         <p>من مضحكات الوهراني مقامة في قصة عجوز تزوجت بإسكافي فجعلته بتعليمها فقيهاً وقالت له كن فقيهاً فكان. قال عيسى بن
@@ -1395,9 +1271,7 @@
                             الفقهاء ذقنك، وباكر المدرسة عند الصباح، وسابقهم في الرواح، وإن غلبوك في العلم فلا يغلبوك عند الصياح، فقال والك،
                             أخاف أن افتل باللوالك ولكن أوصيني فقالت خذ اللفظ بأناملك بين شفتيك، وزاحم الفقهاء بمنكبيك، وازعق في وجه الشيخ
                             ولا جناح عليك. قال فهاتي إذا شيئاً من قماشك، أرد به صفع الشماشك، فقالت اجسر على القوم، فما هو الأبياض اليوم،
-                            واعلم أن الفقه ليس هو إلا النفاق والزعاق، وتلويث وجه <pb ed="shamela"
-                   n="n2-p48"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P125.xhtml"/> الخصم بالبزاق، فقال لها
+                            واعلم أن الفقه ليس هو إلا النفاق والزعاق، وتلويث وجه <pb ed="shamela" n="n2-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P125.xhtml"/> الخصم بالبزاق، فقال لها
                             إن صدقت، فأنا أكون أمام الوقت، وقام في ذلك الأوان، حتى دخل على الفقهاء في الإيوان، فهايته قلوب الجماعة، وخافوا
                             أن يكون من أهل البراعة، فأنصفوه في السلام، وبسطوه في الكلام، وآنسوه بالمحاضرة، حتى جاء وقت المناظرة.</p>
                         <p>شكر المقتبس</p>
@@ -1416,9 +1290,7 @@
                             منه النصائح في باب المطبوعات وكان يحسن أن يذكر في باب واحد من هذا الجزء وكذلك يقال في تكرار ذكر الوهراني والكلام
                             في العملة. ومنها أن ما ذكره من النصائح لم يعد من الصحف المنسية وقد طبع الكتاب قبل وجود المجلة. فإن أراد بالصحف
                             المنسية ما أهمل الناس العمل به فالباب واسع يدخل فيه كثير من المجلدات العظيمة في التفسير والحديث والرقائق وغير
-                            ذلك فالانتقاد على الباب نفسه أولى. ومنها أنه لم يكن يحسن ذكر منشآت الوهراني <pb ed="shamela"
-                   n="n2-p49"
-                   corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P126.xhtml"/> والتشويق إليها والتصريح
+                            ذلك فالانتقاد على الباب نفسه أولى. ومنها أنه لم يكن يحسن ذكر منشآت الوهراني <pb ed="shamela" n="n2-p49" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P126.xhtml"/> والتشويق إليها والتصريح
                             بتعمد كتمان مكانها لأن هذا يغري أهل الولوع بأمثال هذه المسائل إلى البحث عنها ومن بحث عن الموجود ظفر به غالباً.
                             ومنها أن بعض المباحث لم توضع في الأبواب التي هي أليق بها فقد أدخل في باب التربية والتعليم الكلام في العملة
                             والصناع وأخرج منه بحث تعليم اللغات. وذكر شيئاً من مقاطيع الشعر في باب النقالات دون باب الصحف المنسية. ومنها أن
