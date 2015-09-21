@@ -1,0 +1,162 @@
+/* make sure not to color etc. entities in heads. The !important flag is brutal and overrides any more specific rules */
+head *:not(.cFnMark) {
+    color:inherit !important;
+    background-color: inherit !important;
+    font-size: inherit !important;
+    font-style: inherit !important;
+    font-weight: inherit !important;
+}
+
+/* have heads stick to the borders of the html */
+div > head{
+    text-indent:0;
+    display: block;
+    position: relative;
+   	padding-right: 0.5em;
+	padding-left: 0.5em;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.3) inset;
+	/* width:inherit; */
+	/* right: 0em; */
+}
+
+/* build fancy-looking heads */
+/* must be different for rtl and ltr */
+/* color, size and margin-left/ margin-right should depend on the level of the head */
+
+/* levels of heads: color and font size */
+
+body > div > head {
+	font-size: 2em;
+	background-color: #BD4007;
+	width: 90%;
+	padding-top: 16px;
+    padding-bottom: 16px;
+}
+body > div > div > head {
+	font-size: 1.5em;
+	background-color: #EE530A;
+	width: 85%;
+	padding-top: 12px;
+    padding-bottom: 12px;
+}
+body > div > div > div > head {
+	font-size: 1.3em;
+	background-color: #ED8816;
+	width: 80%;
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+body > div > div > div > div > head {
+	font-size: 1.1em;
+	width: 80%;
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* levels of heads: margin-right for Arabic */
+body > div > head[lang="ar"], text[lang="ar"] body > div > head {
+	margin-right: -100px;
+}
+body > div > div > head[lang="ar"], text[lang="ar"] body > div > div > head {
+	margin-right: -80px;
+}
+body > div > div > div > head[lang="ar"], text[lang="ar"] body > div > div > div > head {
+	margin-right: -60px;
+}
+body > div > div > div > div > head[lang="ar"], text[lang="ar"] body > div > div > div > div > head {
+	margin-right: -60px;
+}
+
+/* general styling */
+head, text[lang="en"] head, text[lang="fr"] head, text[lang="de"] head {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 0px;
+    margin-left: -100px;
+
+    padding-right: 10px;
+    padding-left: 80px;
+
+    border-top-left-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+}
+head[lang="ar"], text[lang="ar"] head {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* margin-right: -100px; */
+    margin-left: 0px;
+
+    padding-right: 80px;
+    padding-left: 10px;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+}
+
+
+/* try and draw these tiny triangles */
+/* body > div > head::after {
+    width: 0px;
+    height: 0px;
+    line-height: 0;
+    border-left: 33px solid transparent;
+        border-left-width: 33px;
+        border-left-style: solid;
+        border-left-color: transparent;
+    border-top: 20px solid #A0000F;
+        border-top-width: 20px;
+        border-top-style: solid;
+        border-top-color: #A0000F;
+    top: 100%;
+    left: -1px;
+    position: absolute;
+}
+.arrowh3 {
+    width: 0px;
+    height: 0px;
+    line-height: 0;
+    border-left: 23px solid transparent;
+        border-left-width: 23px;
+        border-left-style: solid;
+        border-left-color: transparent;
+    border-top: 17px solid #000;
+        border-top-width: 17px;
+        border-top-style: solid;
+        border-top-color: #000;
+    top: 100%;
+    left: -1px;
+    position: absolute;
+}
+ .arrowh4 {
+    width: 0px;
+    height: 0px;
+    line-height: 0;
+    border-left: 16px solid transparent;
+        border-left-width: 16px;
+        border-left-style: solid;
+        border-left-color: transparent;
+    border-top: 15px solid #006561;
+        border-top-width: 15px;
+        border-top-style: solid;
+        border-top-color: #006561;
+    top: 100%;
+    left: 1px;
+    position: absolute;
+} */
+
+/* link back to the top of the page */
+
+a.cBackToTop {
+	display: block;
+	padding-top: 0.5em;
+	text-align: left;
+	font-size: 0.5em;
+}
+
+a.cBackToTop:after {
+	content: "back to top"
+}

@@ -1,0 +1,47 @@
+/* render Arabic as rtl */
+[lang = "ar"]{
+    direction:rtl;
+    text-align:right;
+    /*keep in mind that relative sizes (%, em) accumulate for nested elements and must thus be avoided */
+    font-size:18px;
+}
+[lang = "en"]{
+    direction:ltr;
+    text-align:left;
+    font-size:14px;
+}
+[lang="ar-Latn-x-ijmes"] {
+    font-style:italic;
+}
+/* change markers for quotes based on language */
+q[lang="ar"] {
+    quotes: "\00AB" "\00BB";
+}
+
+/* account for qaṣīdas */
+lg[type="bayt"]{
+    clear:both;
+    margin-right:3em;
+}
+lg[type = "bayt"] > l{
+    /*position:relative;*/
+    display:block;
+    float:right;
+    width:10em;
+    padding-left:1em;
+    padding-right:1em;
+}
+lg[type = "bayt"] > l:first-child{
+    clear:right;
+}
+lg[type = "bayt"] > l:last-child{
+    clear:left;
+}
+div,
+p, ab {
+    clear:both;
+}
+/* omit shemala page breaks */
+pb[ed = "shamela"]{
+    display:none;
+}

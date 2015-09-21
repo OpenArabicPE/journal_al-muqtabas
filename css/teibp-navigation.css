@@ -1,0 +1,133 @@
+/* the navigation bar */
+/* ---------------------------------
+structure of <nav/>
+<nav>
+	<ul>
+		<li><a/></li>
+		<li><a/>
+			<ul>
+				<li><a/></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+------------------------------------*/
+/* from a side bar */
+/*nav{
+    background:#fbfbfb;
+    border-right:1px solid #e5e5e5;
+    position:fixed;
+    top:0;
+    bottom:0;
+    height:100%;
+    left:0;
+    width:2em;
+    overflow:hidden;
+    -webkit-transition:width .05s linear;
+    transition:width .05s linear;
+    -webkit-transform:translateZ(0) scale(1, 1);
+    z-index:1000;
+}*/
+/* from the top right corner */
+nav{
+    background-color:white;
+    border:1px solid #e5e5e5;
+    position:fixed;
+    /* top:1em;
+    height:2em;
+    right:1em;
+    width:2em; */
+    top:0em;
+    height:2em;
+    right:0em;
+    width:2em;
+    margin:0;
+    overflow:hidden;
+    -webkit-transition:width .05s linear;
+    transition:width .05s linear;
+    -webkit-transform:translateZ(0) scale(1, 1);
+    z-index:1000;
+}
+/* providing the standard menu symbol of three horizontal bars */
+nav:before{
+    content:"\2261";
+    font-size:2em;
+    padding-left:0.2em;
+    padding-right:0.2em;
+    position:fixed;
+}
+nav ul{
+    display:none;
+    background-color:inherit;
+    width:1em;
+    height:inherit;
+    position:relative;
+}
+nav li{
+    display:none;
+    width:inherit;
+    height:inherit;
+}
+nav a{
+    background-color:inherit;
+    text-decoration:none;
+    font-size:16px;
+    color:#999;
+}
+nav:hover{
+    width:10em;
+    height:auto;
+    overflow:visible;
+    display:block;
+}
+/* deal with the first level */
+nav:hover > ul{
+    display:block;
+    width:10em;
+}
+nav:hover li > ul{
+    width:1em;
+}
+/* second level */
+nav:hover li:hover > ul{
+    display:block;
+    width:10em;
+    right:7em;
+    top:0em;
+    z-index:2000;
+}
+/* all levels */
+nav:hover ul{
+    outline:0;
+    margin:0;
+    padding:0;
+    position:fixed;
+}
+nav:hover li{
+    outline:0;
+    margin:0;
+    padding:0;
+    width:inherit;
+    position:relative;
+    display:block;
+    background-color:inherit;
+}
+nav:hover li > a{
+    position:relative;
+    display:block;
+    padding-left:0.5em;
+    padding-right:0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    width: inherit;
+    line-height: 1.3em;
+    color:#999;
+    border:1px solid #e5e5e5;
+}
+nav:hover li > a:hover{
+	display:block;
+	width: inherit;
+    background-color:highlight;
+    color:highlighttext;
+    text-decoration:none;
+}
