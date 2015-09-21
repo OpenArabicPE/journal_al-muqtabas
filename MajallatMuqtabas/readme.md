@@ -9,19 +9,20 @@ date: 2015-08-24
 ## Conceptual level
 
 - URI design: each part of the edition down to, at least, the paragraph level should be addressable for reference in scholarly work.
-    1. The URI should resamble a sequence of key-value pairs
+    1. General principle: The URI should resamble a sequence of key-value pairs
         + key and value are deliminated by `_`
         + key-value pairs are deliminate dy `-`
-    1. I decided to start with an existing identifier for *al-Muqtabas*, the OCLC number: `oclc_4770057679`, and
-    2. a continuous issue counter from 1 to 96: `oclc_4770057679-i_60`
-    3. Volumes run from 1 to 9: `oclc_4770057679-v_6`
-
-    + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="oclc_4770057679-v_6-pb_176" n="176"/>`
+    1. File names:
+        + I decided to start with an existing identifier for *al-Muqtabas*, the OCLC number: `oclc_4770057679`, and
+        + a continuous issue counter from 1 to 96: `oclc_4770057679-i_60`
+        + Volumes run from 1 to 9: `oclc_4770057679-v_6`
+    3. Elements inside the files"
+    + Make use of `@xml:base` on the `<tei:TEI>` allows for shorter internal `@xml:id`s
+    + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>`
     + facsimiles:
         * current state volumes: `facs_v6_808`, `facs_v6_808_g_1`
-        * should be issues: `facs-i_61-facs_93`
-        * graphics:
-            - should be: `i_61-facs_93-g_1`
+        * should be issues: `facs_93`
+        * graphics: `facs_93-g_1`
 
     
 - Semantic web: it would be great to link at least references to books to existing records or to provide a means to do so.
