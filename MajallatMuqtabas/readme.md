@@ -21,7 +21,7 @@ date: 2015-08-24
     + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>`
     + facsimiles:
         * current state volumes: `facs_v6_808`, `facs_v6_808_g_1`
-        * should be issues: `facs_93`
+        * issues: `facs_93`
         * graphics: `facs_93-g_1`
 
     
