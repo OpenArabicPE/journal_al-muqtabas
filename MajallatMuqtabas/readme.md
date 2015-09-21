@@ -9,7 +9,7 @@ date: 2015-08-24
 ## Conceptual level
 
 - URI design: each part of the edition down to, at least, the paragraph level should be addressable for reference in scholarly work.
-    1. General principle: The URI should resamble a sequence of key-value pairs
+    1. General principle: The URI should resemble a sequence of key-value pairs
         + key and value are deliminated by `_`
         + key-value pairs are deliminate dy `-`
     1. File names:
