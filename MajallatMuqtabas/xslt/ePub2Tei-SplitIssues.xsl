@@ -26,7 +26,7 @@
     
     <!-- the templates -->
     <xsl:template match="/">
-        <xsl:result-document href="{ substring-before(base-uri(),'.TEIP5')}-SplitNumbers.TEIP5.xml">
+        <xsl:result-document href="{ substring-before(base-uri(),'.TEIP5')}-SplitIssues.TEIP5.xml">
             <xsl:apply-templates/>
         </xsl:result-document>
     </xsl:template>
