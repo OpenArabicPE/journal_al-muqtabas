@@ -171,13 +171,11 @@ The edition should be conceived of as a corpus of tei files that are grouped by 
         2. `</p><p>`
         3. delete all empty parapragphs: `<p>\s*</p>`
 
-## Presentation by means of TEI Boilerplate
 
-I chose TEI Boilerplate for a first display of the TEI files in the browser without need for pre-processed HTML. I have adapted TEI Boilerplate to my needs and made significant alterations to the functionality and look. For a first impression see [here](https://rawgit.com/tillgrallert/ArabicTeiEdition/boilerplate/MajallatMuqtabas/xml/oclc_4770057679_i60.TEIP5.xml).
 
-# Web display
+# Web display: TEI Boilerplate
 
-To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate]() and host this heavily altered boilerplate view as a seperate branch of the GitHub repository.
+To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/) for a first display of the TEI files in the browser without need for pre-processed HTML and host this heavily customised boilerplate view as a seperate branch of the GitHub repository. For a first impression see [here](https://rawgit.com/tillgrallert/ArabicTeiEdition/boilerplate/MajallatMuqtabas/xml/oclc_4770057679_i60.TEIP5.xml).
 
 ## Bibliographic metadata
 
