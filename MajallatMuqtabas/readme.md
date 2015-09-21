@@ -17,11 +17,11 @@ date: 2015-08-24
         + a continuous issue counter from 1 to 96: `oclc_4770057679-i_60`
         + Volumes run from 1 to 9: `oclc_4770057679-v_6`
     3. Elements inside the files"
-    + Make use of `@xml:base` on the `<tei:TEI>` allows for shorter internal `@xml:id`s
-    + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>`
-    + facsimiles:
-        * current state volumes: `facs_v6_808`, `facs_v6_808_g_1`
-        * issues: `facs_93`
+        + Make use of `@xml:base` on the `<tei:TEI>` allows for shorter internal `@xml:id`s
+        + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>`
+        + facsimiles:
+            * current state volumes: `facs_v6_808`, `facs_v6_808_g_1`
+            * issues: `facs_93`
         * graphics: `facs_93-g_1`
 
     
