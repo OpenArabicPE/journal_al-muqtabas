@@ -15,9 +15,9 @@
 
     <!-- safe as new file -->
     <xsl:template match="/">
-        <xsl:result-document href="{substring-before(base-uri(),'.TEIP5.xml')}.md" format="txt">
+        <!--<xsl:result-document href="{substring-before(base-uri(),'.TEIP5.xml')}.md" format="txt">-->
             <xsl:apply-templates/>
-        </xsl:result-document>
+        <!--</xsl:result-document>-->
     </xsl:template>
 
     <!-- provide the content of the TEI file -->
