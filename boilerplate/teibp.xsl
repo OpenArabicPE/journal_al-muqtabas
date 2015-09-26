@@ -168,6 +168,20 @@
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
+    <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
+        <xd:desc>
+            <xd:p>Template for adding footer to html document.</xd:p>
+        </xd:desc>
+    </xd:doc>
+    <xsl:variable name="htmlFooter">
+        <footer> Powered by <a href="{$teibpHome}">TEI Boilerplate</a>. TEI Boilerplate is licensed
+            under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+                Attribution 3.0 Unported License</a>. <a
+                    href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons
+                        License" src="http://i.creativecommons.org/l/by/3.0/80x15.png"
+                        style="border-width:0;"/></a>
+        </footer>
+    </xsl:variable>
     <xd:doc>
         <xd:desc>
             <xd:p>Transforms TEI ref element to html a (link) element.</xd:p>
@@ -373,20 +387,7 @@
         </xsl:if>
         <xsl:value-of select="concat('{ ', normalize-space(.), '}&#x000A;')"/>
     </xsl:template>
-    <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
-        <xd:desc>
-            <xd:p>Template for adding footer to html document.</xd:p>
-        </xd:desc>
-    </xd:doc>
-    <xsl:variable name="htmlFooter">
-        <footer> Powered by <a href="{$teibpHome}">TEI Boilerplate</a>. TEI Boilerplate is licensed
-            under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
-                Attribution 3.0 Unported License</a>. <a
-                href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons
-                    License" src="http://i.creativecommons.org/l/by/3.0/80x15.png"
-                    style="border-width:0;"/></a>
-        </footer>
-    </xsl:variable>
+
     <xsl:template name="teibpToolbox">
         <div id="teibpToolbox">
             <h1>Toolbox</h1>
@@ -558,6 +559,17 @@
     <xsl:template match="tei:head" mode="mToc">
         <a href="#{generate-id()}">
             <xsl:apply-templates/>
+            <!-- add author names if available -->
+            <xsl:if test="parent::tei:div/tei:byline/tei:persName">
+                <xsl:text> (</xsl:text>
+                <xsl:choose>
+                    <xsl:when test="parent::tei:div/@xml:lang='ar'">
+                        <xsl:text>مؤلف: </xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:apply-templates select="parent::tei:div/tei:byline/tei:persName"/>
+                <xsl:text>)</xsl:text>
+            </xsl:if>
         </a>
     </xsl:template>
     <!-- omit all nodes that are not explicitly dealt with -->
@@ -577,7 +589,7 @@
         <a class="cBackToTop cInterface" href="#" title="To the top of this page"> </a>
     </xsl:template>
 
-    <!-- do something with notes -->
+    <!-- deal with notes -->
     <xsl:variable name="vNotes">
         <div id="teibp_notes">
             <xsl:apply-templates select="/descendant::tei:body/descendant::tei:note" mode="mNotes"/>

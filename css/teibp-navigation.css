@@ -37,15 +37,16 @@ nav{
     height:2em;
     right:1em;
     width:2em; */
-    top:0em;
+    top:0px;
     height:2em;
-    right:0em;
+    right:0px;
     width:2em;
     margin:0;
     overflow:hidden;
-    -webkit-transition:width .05s linear;
+    /* The transition somehow causes different displays in different browsers */
+    /* -webkit-transition:width .05s linear;
     transition:width .05s linear;
-    -webkit-transform:translateZ(0) scale(1, 1);
+    -webkit-transform:translateZ(0) scale(1, 1);*/
     z-index:1000;
 }
 /* providing the standard menu symbol of three horizontal bars */
@@ -60,8 +61,13 @@ nav ul{
     display:none;
     background-color:inherit;
     width:1em;
+    top:inherit;
+    right: inherit;
     height:inherit;
-    position:relative;
+    position:fixed;
+    /* swith off standard behavour */
+    -moz-padding-start:0px;
+
 }
 nav li{
     display:none;
@@ -75,7 +81,7 @@ nav a{
     color:#999;
 }
 nav:hover{
-    width:10em;
+    /*width:160px;*/
     height:auto;
     overflow:visible;
     display:block;
@@ -83,18 +89,25 @@ nav:hover{
 /* deal with the first level */
 nav:hover > ul{
     display:block;
-    width:10em;
-}
-nav:hover li > ul{
-    width:1em;
+    width:160px;
 }
 /* second level */
-nav:hover li:hover > ul{
+nav:hover >ul> li:hover > ul{
     display:block;
-    width:10em;
-    right:7em;
-    top:0em;
+    width:160px;
+    /* if we say "top:inherit", the ul can be only marginally indented, as it will be displayed below the selected li */
+    top:inherit;
+    right:50px;
     z-index:2000;
+}
+/* third level */
+nav:hover >ul> li:hover > ul > li:hover > ul {
+    display:block;
+    width:160px;
+    /* if we say "top:inherit", the ul can be only marginally indented, as it will be displayed below the selected li */
+    top:inherit;
+    right:100px;
+    z-index:3000;
 }
 /* all levels */
 nav:hover ul{
@@ -107,9 +120,10 @@ nav:hover li{
     outline:0;
     margin:0;
     padding:0;
-    width:inherit;
     position:relative;
     display:block;
+    /*fixed with or relative ?*/
+    width:160px;
     background-color:inherit;
 }
 nav:hover li > a{
@@ -119,14 +133,16 @@ nav:hover li > a{
     padding-right:0.5em;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    width: inherit;
+    /*fixed with or relative ?*/
+    width:160px;
     line-height: 1.3em;
     color:#999;
     border:1px solid #e5e5e5;
 }
 nav:hover li > a:hover{
-	display:block;
-	width: inherit;
+    display:block;
+    /*fixed with or relative ?*/
+    width:inherit;
     background-color:highlight;
     color:highlighttext;
     text-decoration:none;

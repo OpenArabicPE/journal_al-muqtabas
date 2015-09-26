@@ -99,7 +99,7 @@
                     </xsl:for-each>
                 </span>
             </xsl:if>
-            <!-- publiser and place of publication -->
+            <!-- publisher and place of publication -->
             <span class="cImprint">
                 <xsl:text>, </xsl:text>
                 <xsl:apply-templates
