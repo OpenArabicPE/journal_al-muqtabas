@@ -177,9 +177,9 @@
         <footer> Powered by <a href="{$teibpHome}">TEI Boilerplate</a>. TEI Boilerplate is licensed
             under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
                 Attribution 3.0 Unported License</a>. <a
-                    href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons
-                        License" src="http://i.creativecommons.org/l/by/3.0/80x15.png"
-                        style="border-width:0;"/></a>
+                href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons
+                    License" src="http://i.creativecommons.org/l/by/3.0/80x15.png"
+                    style="border-width:0;"/></a>
         </footer>
     </xsl:variable>
     <xd:doc>
@@ -505,10 +505,12 @@
 			<xsl:value-of select="."/>
 		</xsl:comment>
     </xsl:template>
-    
+
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
         <xd:desc>
-            <xd:p>This template adds support for rtl-languages such as Arabic. It generates a HTML @lang attribute based on the containing element's @xml:lang attribute. It is called in the for every element in the "teipb-default" template</xd:p>
+            <xd:p>This template adds support for rtl-languages such as Arabic. It generates a HTML
+                @lang attribute based on the containing element's @xml:lang attribute. It is called
+                in the for every element in the "teipb-default" template</xd:p>
         </xd:desc>
         <xd:param name="pInput">Any node() or text()</xd:param>
     </xd:doc>
@@ -559,17 +561,29 @@
     <xsl:template match="tei:head" mode="mToc">
         <a href="#{generate-id()}">
             <xsl:apply-templates/>
-            <!-- add author names if available -->
+
+            <xsl:text> (</xsl:text>
+            <!-- add author names and pages if available -->
             <xsl:if test="parent::tei:div/tei:byline/tei:persName">
-                <xsl:text> (</xsl:text>
                 <xsl:choose>
-                    <xsl:when test="parent::tei:div/@xml:lang='ar'">
+                    <xsl:when test="parent::tei:div/@xml:lang = 'ar'">
                         <xsl:text>مؤلف: </xsl:text>
                     </xsl:when>
                 </xsl:choose>
                 <xsl:apply-templates select="parent::tei:div/tei:byline/tei:persName"/>
-                <xsl:text>)</xsl:text>
+                <xsl:text>،</xsl:text>
             </xsl:if>
+            <!-- add page numbers -->
+            <xsl:choose>
+                <xsl:when test="parent::tei:div/@xml:lang = 'ar'">
+                    <xsl:text>ص </xsl:text>
+                    <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
+                    <!--<xsl:text> - </xsl:text>
+                    <xsl:value-of select="parent::tei:div/following::tei:div/preceding::tei:pb[@ed = 'print'][1]"
+                    />-->
+                </xsl:when>
+            </xsl:choose>
+            <xsl:text>)</xsl:text>
         </a>
     </xsl:template>
     <!-- omit all nodes that are not explicitly dealt with -->
