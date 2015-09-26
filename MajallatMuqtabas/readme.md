@@ -7,23 +7,6 @@ date: 2015-08-24
 # To do
 
 ## Conceptual level
-
-- URI design: each part of the edition down to, at least, the paragraph level should be addressable for reference in scholarly work.
-    1. General principle: The URI should resemble a sequence of key-value pairs
-        + key and value are deliminated by `_`
-        + key-value pairs are deliminate dy `-`
-    1. File names:
-        + I decided to start with an existing identifier for *al-Muqtabas*, the OCLC number: `oclc_4770057679`, and
-        + a continuous issue counter from 1 to 96: `oclc_4770057679-i_60`
-        + Volumes run from 1 to 9: `oclc_4770057679-v_6`
-    3. Elements inside the files"
-        + Make use of `@xml:base` on the `<tei:TEI>` allows for shorter internal `@xml:id`s
-        + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>`
-        + facsimiles:
-            * current state volumes: `facs_v6_808`, `facs_v6_808_g_1`
-            * issues: `facs_93`
-        * graphics: `facs_93-g_1`
-
     
 - Semantic web: it would be great to link at least references to books to existing records or to provide a means to do so.
 
@@ -34,6 +17,12 @@ date: 2015-08-24
     - splitting articles into sections and sections into individual articles
     - mark-up of authors with `<byline>`
 2. Text-image linking: while the links to the facsimiles can be automatically generated for each issue, establishing page breaks (`<pb>`) must be done manually for all 6.000+ of them
+
+# The journal *al-Muqtabas*
+
+Muḥammad Kurd ʿAlī published the monthly journal *al-Muqtabas* between 1906 and 1914(1916). The publication schedule followed the Muslim *hijrī* calendar and in the journal's third year (1908) publication moved from Cairo to Damascus after the Young Turk Revolution.
+
+In addition to the original edition, at least one reprint appeared: In 1992 Dār Ṣādir in Beirut published a facsimile edition, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the original, it appeared to be a facsimile reprint: pagination, font, layout --- everything is identical. But as Samir Seikaly remarked in 1981 that he used "two separate compilations of *al-Muqtabas* [...] in this study" there must be at least one other print edition that I have not yet seen.^[{Seikaly 1981@128}]
 
 # Digital imagery
 
