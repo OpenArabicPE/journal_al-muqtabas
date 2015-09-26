@@ -73,17 +73,18 @@ The common structure of an issue would be a mix of `<div @type="article">` and `
 ## Page, line, and column breaks
 
 Only page breaks should are recorded (`<pb>`). The page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the origial printed copies. They were therefore marked as `<pb ed="shamila">`. The page breaks corresponding to the original printed edition are identified by `@ed="print"`.
-Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the originl, it appeared to be a facsimile reprint: pagination, font, layout --- everything is identical.
+Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the original, it appeared to be a facsimile reprint: pagination, font, layout --- everything is identical.
 
 1. Printed original copy: `<pb ed="print"/>`
 2. Transcription from *al-maktaba al-shāmila*: `<pb ed="shamela"/>`
 
 ## Lists
 
+Lists have been encoded as `<list>` independent of their original formating (only rarely were lists indentend etc.). In case lists apear with numbered labels in the original, i.e. "(الخامس)", "(٢)", the labels have been encoded with `<label>`.
+
 ## Notes
 
 Unfortunately, *al-maktaba al-shāmila* did NOT include the sometimes abundant footnotes in their transcription.
-
 
 ## Tables
 
@@ -114,6 +115,25 @@ How should this be encoded?
     <l>هالٍ خليل خلال ذاك رغاء</l>
 </lg>
 ~~~
+
+# URIs
+
+each part of the edition down to, at least, the paragraph level should be addressable for reference in scholarly work.
+
+1. General principle: The URI should resemble a sequence of key-value pairs
+    + key and value are deliminated by `_`
+    + key-value pairs are deliminate dy `-`
+1. File names:
+    + I decided to start with an existing identifier for *al-Muqtabas*, the OCLC number: `oclc_4770057679`, and
+    + a continuous issue counter from 1 to 96: `oclc_4770057679-i_60`
+    + Volumes run from 1 to 9: `oclc_4770057679-v_6`
+3. Elements inside the files"
+    + Make use of `@xml:base` on the `<tei:TEI>` allows for shorter internal `@xml:id`s
+    + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>`
+    + facsimiles:
+        * current state volumes: `facs_v6_808`, `facs_v6_808_g_1`
+        * issues: `facs_93`
+    * graphics: `facs_93-g_1`
 
 # Facsimiles
 
@@ -379,5 +399,50 @@ References to intellectual works, such as books, periodicals, laws, etc. should 
 2. Periodicals: `<rs type="work" subtype="periodical">`
 3. Laws, bills: `<rs type="work" subtype="bill">`
 
+## Dictionary-like entries
 
+How to encode the following?
 
+>(طاولة اللعب) نرد، (عماص) غمص أن سال، رمص أن جمد، الغمص ما سال من الرمص غمصت العين كفرح فهو أغمص والرمص وسخ أبيض، يجتمع في الموق رمصت عينه كفرح فهو أرمص والتقييد من وضع الأستاذ الشيخ حمزة.
+
+>عود الفرن محش، المحش حديدة تحش بها النار أي تحرك كالمحشة
+
+>مصلحة الفرن المطردة، المطردة خرقة تبل ويمسح بها التنور ومثلها الطريدة.
+
+>(هلب السفينة) انجر كلوب، الانجر مرساة السفينة وهو خشبات يفرغ بينها الرصاص المذاب فتصير كصخرة إذا رست معرب لنكر، والكلوب من وضع الأستاذ الشيخ حمزة قال في شرح القاموس ومن المجاز كلاليب الباز مخالبه جمع كلوب.
+
+>(هلب البئر) حصرم، الحصرم الحديدة يخرج بها الدلو من البئر.
+
+>(هباب اللمبة) سناج، السناج أثر دخان السراج في الحائط.
+
+Or a list like that:
+
+>(١) - الرياضيات (mathématiques)
+>(٢) - الهيأة (الفلك) (Astronomie)
+>(٣) - الفلسفة الطبيعية - (Physique)
+>(٤) - الكيمياء (Chimie)
+>(٥) - الفلسفة العضوية (Physique organique)
+>(٦) - الفلسفة الاجتماعية (Physique sociale)
+
+~~~{.xml}
+<list xml:lang="ar">
+    <item xml:lang="ar"><label>( <tei:num value="1" xml:lang="ar">١</tei:num>
+            )</label> - الرياضيات (<foreign xml:lang="fr"
+            >mathématiques</foreign>)</item>
+    <item xml:lang="ar"><label>( <tei:num value="2" xml:lang="ar">٢</tei:num>
+            )</label> - الهيأة (الفلك) (<foreign xml:lang="fr"
+            >Astronomie</foreign>)</item>
+    <item xml:lang="ar"><label>( <tei:num value="3" xml:lang="ar">٣</tei:num>
+            )</label> - الفلسفة الطبيعية - (<foreign xml:lang="fr"
+            >Physique</foreign>)</item>
+    <item xml:lang="ar"><label>( <tei:num value="4" xml:lang="ar">٤</tei:num>
+            )</label> - الكيمياء (<foreign xml:lang="fr"
+        >Chimie</foreign>)</item>
+    <item xml:lang="ar"><label>( <tei:num value="5" xml:lang="ar">٥</tei:num>
+            )</label> - الفلسفة العضوية (<foreign xml:lang="fr">Physique
+            organique</foreign>)</item>
+    <item xml:lang="ar"><label>( <tei:num value="6" xml:lang="ar">٦</tei:num>
+            )</label> - الفلسفة الاجتماعية (<foreign xml:lang="fr">Physique
+            sociale</foreign>)</item>
+</list>
+~~~
