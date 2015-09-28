@@ -18,18 +18,19 @@
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
     
-    <xsl:variable name="vHathTrustId" select="'njp.32101073250910'"/>
+    <xsl:variable name="vHathTrustId" select="'umn.319510029968632'"/>
     <xsl:variable name="vFileName" select="concat(translate($vHathTrustId,'.','-'),'_img-')"/>
-    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v6/'"/>
+    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v4/'"/>
     <xsl:variable name="vFileUrl" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathTrustId,';seq=')"/>
-    <xsl:variable name="vImgStart" select="445"/>
-    <xsl:variable name="vNumberPages" select="64"/>
+    <xsl:variable name="vImgStart" select="741"/>
+    <xsl:variable name="vNumberPages" select="85"/>
     <xsl:variable name="vFacsId" select="'facs_'"/>
     
     <xsl:template match="tei:TEI">
         <xsl:copy>
             <xsl:apply-templates select="child::tei:teiHeader"/>
             <xsl:element name="tei:facsimile">
+                <xsl:attribute name="xml:id" select="'facs'"/>
                 <xsl:call-template name="templCreateFacs">
                     <xsl:with-param name="pStart" select="$vImgStart"/>
                     <xsl:with-param name="pStop" select="$vImgStart + $vNumberPages -1"/>
@@ -50,7 +51,7 @@
         <xsl:copy>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:text>Created facsimile for </xsl:text>
+                <xsl:text>Created </xsl:text><tei:gi>facsimile</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
                 <xsl:text> pages with references to a local copy of .tif and .jpeg as well as to the online resource for each page.</xsl:text>
             </xsl:element>
