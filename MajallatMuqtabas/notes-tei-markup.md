@@ -343,7 +343,11 @@ The use of language codes as values for `@xml:id` follows [BCP 47](http://www.ia
 
 ### Words in other alphabets than Arabic
 
-Unfortunately, *al-maktaba al-shāmila* did NOT include these words, often technical terms in articles on science and medicine, in their transcription.
+Unfortunately, *al-maktaba al-shāmila* did NOT include these words, often technical terms in articles on science and medicine, in their transcription. These terms should be encoded as
+
+~~~{.xml}
+<foreign xml:lang="fr">Physique</foreign>
+~~~
 
 # non-structural phenomena of interest to the historian
 
@@ -372,7 +376,7 @@ Imagine, someone bought <measureGrp><measure commodity="wheat" quantity="2" unit
 1. Persons:`<persName>`
     + How to encode this string: "حسين كاظم بك والي حلب الحالي" ? Should the information on his position be included in the `<persName>`?
 2. Places: `<placeName>`
-    + How to encode this string: "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"? الفيحاء or الشهباء are clearly references to places by name, but are they a `<placeName>`?
+    + How to encode this string: "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"? الفيحاء or الشهباء are clearly references to places by name, i.e. Damascus and Aleppo, but are they a `<placeName>`?
 3. Organisations: `<orgName>`
 
 ## Dates and calendars
