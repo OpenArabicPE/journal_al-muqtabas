@@ -181,4 +181,4 @@ The edition should be conceived of as a corpus of tei files that are grouped by 
 
 # Web display: TEI Boilerplate
 
-To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/) for a first display of the TEI files in the browser without need for pre-processed HTML and host this heavily customised boilerplate view as a seperate branch of the GitHub repository. For a first impression see [here](https://rawgit.com/tillgrallert/ArabicTeiEdition/boilerplate/MajallatMuqtabas/xml/oclc_4770057679_i60.TEIP5.xml).
+To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/) for a first display of the TEI files in the browser without need for pre-processed HTML and host this heavily customised boilerplate view as a seperate branch of the GitHub repository. For a first impression see [here](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_60.TEIP5.xml).
