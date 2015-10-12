@@ -561,7 +561,6 @@
     <xsl:template match="tei:head" mode="mToc">
         <a href="#{generate-id()}">
             <xsl:apply-templates/>
-
             <xsl:text> (</xsl:text>
             <!-- add author names and pages if available -->
             <xsl:if test="parent::tei:div/tei:byline/tei:persName">
@@ -577,13 +576,13 @@
             <xsl:choose>
                 <xsl:when test="parent::tei:div/@xml:lang = 'ar'">
                     <xsl:text>ص </xsl:text>
-                    <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
-                    <xsl:if test="preceding::tei:pb[@ed = 'print'][1]/@n!=parent::tei:div/descendant::tei:pb[@ed = 'print'][last()]/@n">
-                        <xsl:text>–</xsl:text>
-                        <xsl:value-of select="parent::tei:div/descendant::tei:pb[@ed = 'print'][last()]/@n"/>
-                    </xsl:if>
                 </xsl:when>
             </xsl:choose>
+            <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
+            <xsl:if test="preceding::tei:pb[@ed = 'print'][1]/@n!=parent::tei:div/descendant::tei:pb[@ed = 'print'][last()]/@n">
+                <xsl:text>–</xsl:text>
+                <xsl:value-of select="parent::tei:div/descendant::tei:pb[@ed = 'print'][last()]/@n"/>
+            </xsl:if>
             <xsl:text>)</xsl:text>
         </a>
     </xsl:template>
