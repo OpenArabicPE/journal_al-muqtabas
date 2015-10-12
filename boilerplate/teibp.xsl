@@ -578,9 +578,10 @@
                 <xsl:when test="parent::tei:div/@xml:lang = 'ar'">
                     <xsl:text>ص </xsl:text>
                     <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
-                    <!--<xsl:text> - </xsl:text>
-                    <xsl:value-of select="parent::tei:div/following::tei:div/preceding::tei:pb[@ed = 'print'][1]"
-                    />-->
+                    <xsl:if test="preceding::tei:pb[@ed = 'print'][1]/@n!=parent::tei:div/descendant::tei:pb[@ed = 'print'][last()]/@n">
+                        <xsl:text>–</xsl:text>
+                        <xsl:value-of select="parent::tei:div/descendant::tei:pb[@ed = 'print'][last()]/@n"/>
+                    </xsl:if>
                 </xsl:when>
             </xsl:choose>
             <xsl:text>)</xsl:text>
