@@ -18,6 +18,14 @@ date: 2015-08-24
     - mark-up of authors with `<byline>`
 2. Text-image linking: while the links to the facsimiles can be automatically generated for each issue, establishing page breaks (`<pb>`) must be done manually for all 6.000+ of them
 
+# Scope of the project
+
+The purpose and scope of the project is to provide an open, collaborative, referencable, scholarly digital edition of Muḥammad Kurd ʿAlī's journal *al-Muqtabas*, which includes the full text, semantic mark-up, and digital imagery.
+
+The digital edition will be provided as TEI P5 XML with its own schema. All files are hosted on [GitHub](https://www.github.com) 
+
+The project will open avenues for re-purposing code for similar projects, i.e. for transforming full-text transcriptions from some HTML or XML source, such as [*al-Maktaba al-Shamela*](http://www.shamela.ws), into TEI P5 XML, linking them to digital imagery from other open repositories, such as [HathiTrust](https://www.hathitrust.org), and generating a web display by, for instance, adapting the code base of [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/). The most likely candidate for such a follow-up project is Rashīd Riḍā's journal *al-Manār* ([full text from shamela](http://shamela.ws/index.php/book/6947), [imagery from hathitrust](http://catalog.hathitrust.org/Record/008882663),[imagery / PDFs from the Internet Archive](https://archive.org/details/almanaralmanar), which are linked from [*al-Maktaba al-Waqfiyya*](http://waqfeya.com/book.php?bid=7374)). 
+
 # The journal *al-Muqtabas*
 
 Muḥammad Kurd ʿAlī published the monthly journal *al-Muqtabas* between 1906 and 1914(1916). The publication schedule followed the Muslim *hijrī* calendar and in the journal's third year (1908) publication moved from Cairo to Damascus after the Young Turk Revolution.
@@ -53,7 +61,7 @@ Image files are available from [Hathitrust](http://catalog.hathitrust.org/Record
 
 # Full text
 
-Somebody took the pains to create fully searchable text files and uploaded everything to [al-Maktaba al-Shamela](http://shamela.ws/index.php/book/26523) and to [WikiSource](https://ar.wikisource.org/wiki/%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D9%85%D9%82%D8%AA%D8%A8%D8%B3/%D8%A7%D9%84%D8%B9%D8%AF%D8%AF_1).
+Somebody took the pains to create fully searchable text files and uploaded everything to [al-Maktaba al-Shamela](http://shamela.ws/index.php/book/26523) and  [WikiSource](https://ar.wikisource.org/wiki/%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D9%85%D9%82%D8%AA%D8%A8%D8%B3/%D8%A7%D9%84%D8%B9%D8%AF%D8%AF_1).
 
 
 ## [al-Maktaba al-Shāmila](http://www.shamela.ws)
