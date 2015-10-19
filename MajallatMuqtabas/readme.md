@@ -1,5 +1,5 @@
 ---
-title: "TEI edition of *al-majallat al-muqtabas*"
+title: "TEI edition of *majallat al-muqtabas*"
 author: Till Grallert
 date: 2015-08-24
 ---
