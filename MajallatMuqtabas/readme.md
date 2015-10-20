@@ -11,7 +11,18 @@ The purpose and scope of the project is to provide an open, collaborative, refer
 
 The digital edition will be provided as TEI P5 XML with its own schema. All files are hosted on [GitHub](https://www.github.com) 
 
-The project will open avenues for re-purposing code for similar projects, i.e. for transforming full-text transcriptions from some HTML or XML source, such as [*al-Maktaba al-Shamela*](http://www.shamela.ws), into TEI P5 XML, linking them to digital imagery from other open repositories, such as [HathiTrust](https://www.hathitrust.org), and generating a web display by, for instance, adapting the code base of [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/). The most likely candidate for such a follow-up project is Rashīd Riḍā's journal *al-Manār* ([full text from shamela](http://shamela.ws/index.php/book/6947), [imagery from hathitrust](http://catalog.hathitrust.org/Record/008882663),[imagery / PDFs from the Internet Archive](https://archive.org/details/almanaralmanar), which are linked from [*al-Maktaba al-Waqfiyya*](http://waqfeya.com/book.php?bid=7374)). 
+The project will open avenues for re-purposing code for similar projects, i.e. for transforming full-text transcriptions from some HTML or XML source, such as [*al-Maktaba al-Shamela*](http://www.shamela.ws), into TEI P5 XML, linking them to digital imagery from other open repositories, such as [HathiTrust](https://www.hathitrust.org), and generating a web display by, for instance, adapting the code base of [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/). 
+
+The most likely candidates for such follow-up projects are 
+
+- Muḥammad Rashīd Riḍā's journal *al-Manār* 
+    + [full text from shamela](http://shamela.ws/index.php/book/6947): 8605 views
+    + [imagery from hathitrust](http://catalog.hathitrust.org/Record/008882663),[imagery / PDFs from the Internet Archive](https://archive.org/details/almanaralmanar), which are linked from [*al-Maktaba al-Waqfiyya*](http://waqfeya.com/book.php?bid=7374)
+- ʿAbdallah al-Nadīm's *majallat al-ustādh*, Cairo, 24 Aug 1892
+    + [full text from shamela](http://shamela.ws/index.php/book/35118): 11337 views.
+- ʿAbd al-Qādir bin Muḥammad Salīm al-Kaylānī al-Iskandarānī's *majallat al-ḥaqāʾiq (al-dimashqiyya)*, 1910
+    + [full text from shamela](http://shamela.ws/index.php/book/29676): 5134 views.
+
 
 # To do
 
@@ -29,7 +40,7 @@ The project will open avenues for re-purposing code for similar projects, i.e. f
 
 # The journal *al-Muqtabas*
 
-Muḥammad Kurd ʿAlī published the monthly journal *al-Muqtabas* between 1906 and 1914(1916). The publication schedule followed the Muslim *hijrī* calendar and after the Young Turk Revolution of July 1908, publication moved from Cairo to Damascus in the journal's third year.
+Muḥammad Kurd ʿAlī published the monthly journal *al-Muqtabas* between 1906 and 1914(1916). The publication schedule followed the Muslim *hijrī* calendar and, after the Young Turk Revolution of July 1908, publication moved from Cairo to Damascus in the journal's third year.
 
 There is some confusion as to the counting of issues and their publication dates. According to the masthead and the cover sheet, *al-Muqtabas* was published following the Islamic *hijrī* calendar (from the journal itself it must remain open whether the recorded publication dates were the actual publication dates). Sometimes the printers made errors: issue 2 of volume 4, for instance, carries Rab I 1327 as publication date on the cover sheet, but Ṣaf 1327 in its masthead. The latter would correspond to the official publication schedule.
 
