@@ -10,13 +10,9 @@
          variables, and parameters from teibp.xsl 
          to be overridden here. -->
     <xsl:import href="teibp.xsl"/>
+    
 
     <!-- provide information based on the sourceDesc -->
-    <!--    <xsl:template match="tei:sourceDesc">
-        <div class="cSource">
-            <xsl:apply-templates select="descendant::tei:biblStruct"/>
-        </div>
-    </xsl:template>-->
     <xsl:template match="tei:biblStruct[tei:monogr/tei:title[@level = 'j']]">
         <div class="cSource">
             <xsl:for-each select="tei:monogr/tei:title[@level = 'j'][not(@type = 'sub')]">
