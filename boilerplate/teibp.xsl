@@ -5,6 +5,7 @@
     xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Nov 17, 2011</xd:p>
@@ -14,8 +15,12 @@
                 html/browser environment.</xd:p>
         </xd:desc>
     </xd:doc>
+    <!-- import the stylesheet formatting all bibliographic metadata -->
+    <xsl:include href="bibl.xsl"/>
     <xsl:include href="xml-to-string.xsl"/>
+    
     <xsl:output encoding="UTF-8" method="xml" omit-xml-declaration="yes"/>
+    
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
     <xsl:param name="inlineCSS" select="true()"/>
     <xsl:param name="includeToolbox" select="false()"/>
@@ -64,6 +69,7 @@
     </xd:doc>
     <xsl:key match="//*" name="ids" use="@xml:id"/>
     <xsl:template match="/" name="htmlShell" priority="99">
+      
         <html>
             <xsl:call-template name="htmlHead"/>
             <body>
@@ -71,6 +77,8 @@
                     <xsl:call-template name="teibpToolbox"/>
                 </xsl:if>
                 <xsl:copy-of select="$vNav"/>
+                <!-- the button design is not yet done -->
+                <!--<xsl:copy-of select="$vButtons"/>-->
                 <div id="tei_wrapper">
                     <xsl:apply-templates/>
                 </div>
@@ -168,20 +176,6 @@
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
-    <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
-        <xd:desc>
-            <xd:p>Template for adding footer to html document.</xd:p>
-        </xd:desc>
-    </xd:doc>
-    <xsl:variable name="htmlFooter">
-        <footer> Powered by <a href="{$teibpHome}">TEI Boilerplate</a>. TEI Boilerplate is licensed
-            under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
-                Attribution 3.0 Unported License</a>. <a
-                href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons
-                    License" src="http://i.creativecommons.org/l/by/3.0/80x15.png"
-                    style="border-width:0;"/></a>
-        </footer>
-    </xsl:variable>
     <xd:doc>
         <xd:desc>
             <xd:p>Transforms TEI ref element to html a (link) element.</xd:p>
@@ -309,6 +303,7 @@
     <xsl:template name="htmlHead">
         <head>
             <meta charset="UTF-8"/>
+            <xsl:call-template name="tMetadataDCFile"/>
             <link href="{$teibpCSS}" id="maincss" rel="stylesheet" type="text/css"/>
             <link href="{$customCSS}" id="customcss" rel="stylesheet" type="text/css"/>
             <script src="{$jqueryJS}" type="text/javascript"/>
@@ -387,7 +382,22 @@
         </xsl:if>
         <xsl:value-of select="concat('{ ', normalize-space(.), '}&#x000A;')"/>
     </xsl:template>
-
+    <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
+        <xd:desc>
+            <xd:p>Template for adding footer to html document.</xd:p>
+        </xd:desc>
+    </xd:doc>
+    <xsl:variable name="htmlFooter">
+        <footer> 
+            <span>Powered by <a href="{$teibpHome}">TEI Boilerplate</a>. TEI Boilerplate is licensed
+            under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+                Attribution 3.0 Unported License</a>. <a
+                href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons
+                    License" src="http://i.creativecommons.org/l/by/3.0/80x15.png"
+                    style="border-width:0;"/></a></span>
+            <span><a href="http://www.tei-c.org/"><img src="http://www.tei-c.org/About/Badges/We-use-TEI.png" alt="We use TEI" style="border-width:0;"/></a></span>
+        </footer>
+    </xsl:variable>
     <xsl:template name="teibpToolbox">
         <div id="teibpToolbox">
             <h1>Toolbox</h1>
@@ -505,12 +515,10 @@
 			<xsl:value-of select="."/>
 		</xsl:comment>
     </xsl:template>
-
+    
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
         <xd:desc>
-            <xd:p>This template adds support for rtl-languages such as Arabic. It generates a HTML
-                @lang attribute based on the containing element's @xml:lang attribute. It is called
-                in the for every element in the "teipb-default" template</xd:p>
+            <xd:p>This template adds support for rtl-languages such as Arabic. It generates a HTML @lang attribute based on the containing element's @xml:lang attribute. It is called in the for every element in the "teipb-default" template</xd:p>
         </xd:desc>
         <xd:param name="pInput">Any node() or text()</xd:param>
     </xd:doc>
@@ -603,7 +611,7 @@
         <a class="cBackToTop cInterface" href="#" title="To the top of this page"> </a>
     </xsl:template>
 
-    <!-- deal with notes -->
+    <!-- do something with notes -->
     <xsl:variable name="vNotes">
         <div id="teibp_notes">
             <xsl:apply-templates select="/descendant::tei:body/descendant::tei:note" mode="mNotes"/>
@@ -625,4 +633,15 @@
             <xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/>
         </a>
     </xsl:template>
+    <!-- Sidebar buttons -->
+    <xsl:variable name="vButtons">
+        <!-- link to Github -->
+        <div id="XmlSourceLink" class="cSidebarButton">
+            <!-- xml: https://github.com/tillgrallert/ArabicTeiEdition/blob/master/MajallatMuqtabas/xml/oclc_4770057679-i_1.TEIP5.xml
+                boilerplate: https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_60.TEIP5.xml-->
+            <ul>
+                <li><a href="https://github.com/tillgrallert/ArabicTeiEdition/blob/master/MajallatMuqtabas/xml/{tei:TEI/@xml:id}.TEIP5.xml"><!--<img src="http://www.tei-c.org/About/Logos/TEI-175.jpg" alt="TEI"/>-->TEI source on GitHub</a></li>
+            </ul>
+        </div>
+    </xsl:variable>
 </xsl:stylesheet>
