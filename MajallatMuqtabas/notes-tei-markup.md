@@ -76,6 +76,7 @@ Only page breaks should are recorded (`<pb>`). The page breaks found in *al-makt
 Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the original, it appeared to be a facsimile reprint: pagination, font, layout --- everything is identical.
 
 1. Printed original copy: `<pb ed="print"/>`
+    - These pagebreaks are then linked through the `@facs` attribute to the `@xml:id` of a `<surface>` element; i.e. `<pb ed="print" facs="#facs_78"/>`
 2. Transcription from *al-maktaba al-shāmila*: `<pb ed="shamela"/>`
 
 ## Lists
@@ -132,8 +133,9 @@ each part of the edition down to, at least, the paragraph level should be addres
     + facsimiles: they are simply identified by combining a short string signifying facsimiles (i.e. "facs_") with the image number provided by HathiTrust. `facs_93` thus identifies a `<surface>` element with `<graphic>` children pointing to different file formats and locations.
     + graphics: `facs_93-g_1`
     + all other elements:
-        * combine the element's name as key and an automatically generated ID (through XPath function `generate-id()`): div_d1e1895
-        * the process of assigning IDs is automated through the XSLT "Tei-GenerateIds.xsl"
+        * combine the element's name as key with the position of the element in the document tree and an automatically generated ID (through XPath function `generate-id()`) separated by a period: `div_12.d1e1895`
+        * note that the first number after the underscore cannot and should be used to identify the position of an element in the tree, as these will most certainly change over time, while the `@xml:id` shall be stable.
+        * the process of assigning IDs is automated through the XSLT "Tei-GenerateIds.xsl" and it needs to be run everytime someone has added mark-up to the file.
 <!-- + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>` -->
 
 # Facsimiles
