@@ -11,7 +11,7 @@
     
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p>This stylesheet generates a <tei:att>xml:id</tei:att> on the root note in accordance with my URI scheme and changes the file names accordingly.</xd:p>
+            <xd:p>This stylesheet generates a <tei:att>xml:id</tei:att> for every node based on its name, position in the document and generate-id(). The position is used to provide leverage against the slight chance that generate-id() generates an ID already present in the document.</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
@@ -19,14 +19,14 @@
     <xsl:variable name="vFileName" select="substring-before(base-uri(),'.TEIP5')"/>
     <xsl:variable name="vElement" select="'head'"/>
     
-    
-    <xsl:template match="/">
+    <!-- create new file -->
+    <!--<xsl:template match="/">
         <xsl:result-document href="{$vFileName}-IDs.TEIP5.xml">
             <xsl:copy>
                 <xsl:apply-templates select="node()"/>
             </xsl:copy>
         </xsl:result-document>
-    </xsl:template>
+    </xsl:template>-->
     
     <!-- reproduce everything as is -->
     <xsl:template match="@* |node()">
@@ -47,7 +47,7 @@
                 <xsl:otherwise>
                     <xsl:apply-templates select="@* "/>
                     <xsl:attribute name="xml:id">
-                        <xsl:value-of select="concat($vName,'_',generate-id())"/>
+                        <xsl:value-of select="concat($vName,'_',count(preceding::node()[name()=$vName]),'.',generate-id())"/>
                     </xsl:attribute>
                     <xsl:apply-templates select="node()"/>
                 </xsl:otherwise>
