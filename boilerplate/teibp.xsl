@@ -567,7 +567,18 @@
     </xsl:template>
     <!-- create the clickable links to heads in the  toc -->
     <xsl:template match="tei:head" mode="mToc">
-        <a href="#{generate-id()}">
+        <a>
+            <!-- generate IDs on the fly if there are non existing. The link should point to the parent::tei:div and not the head -->
+            <xsl:attribute name="href">
+                <xsl:choose>
+                    <xsl:when test="parent::tei:div/@xml:id">
+                        <xsl:value-of select="concat('#',parent::tei:div/@xml:id)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="concat('#',generate-id())"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>
             <xsl:apply-templates/>
             <xsl:text> (</xsl:text>
             <!-- add author names and pages if available -->
