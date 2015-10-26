@@ -12,7 +12,7 @@
     
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p>This stylesheet generates a <tei:att>xml:id</tei:att> on the root note in accordance with my URI scheme and changed the file names accordingly.</xd:p>
+            <xd:p>This stylesheet generates a <tei:att>xml:id</tei:att> on the root note in accordance with my URI scheme and changes the file names accordingly.</xd:p>
         </xd:desc>
     </xd:doc>
     
