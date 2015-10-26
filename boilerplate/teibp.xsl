@@ -61,6 +61,7 @@
     <xsl:param name="theme.default" select="concat($filePrefix, '/css/teibp.css')"/>
     <xsl:param name="theme.sleepytime" select="concat($filePrefix, '/css/sleepy.css')"/>
     <xsl:param name="theme.terminal" select="concat($filePrefix, '/css/terminal.css')"/>
+    <xsl:param name="pgOnlineFacs" select="true()"/>
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
         <xd:desc>
             <xd:p>Match document root and create and html5 wrapper for the TEI document, which is
@@ -437,9 +438,19 @@
                 <xsl:when test="starts-with($facs, '#')">
                     <xsl:variable name="vFacsID" select="substring-after($facs, '#')"/>
                     <xsl:variable name="vMimeType" select="'image/jpeg'"/>
-                    <xsl:value-of
-                        select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[@mimeType = $vMimeType][1]/@url"
-                    />
+                    <!-- here could be an option to select the image hosted on HathiTrust -->
+                    <xsl:choose>
+                        <xsl:when test="$pgOnlineFacs = true()">
+                            <xsl:value-of
+                                select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url,'http')][1]/@url"
+                            />
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of
+                                select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[@mimeType = $vMimeType][1]/@url"
+                            />
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="$facs"/>
