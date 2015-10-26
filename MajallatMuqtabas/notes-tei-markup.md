@@ -118,7 +118,7 @@ How should this be encoded?
 
 # URIs
 
-each part of the edition down to, at least, the paragraph level should be addressable for reference in scholarly work.
+each part of the edition down to, at least, the paragraph level should be addressable for reference in scholarly work with stable `@xml:id`s
 
 1. General principle: The URI should resemble a sequence of key-value pairs
     + key and value are deliminated by `_`
@@ -127,13 +127,14 @@ each part of the edition down to, at least, the paragraph level should be addres
     + I decided to start with an existing identifier for *al-Muqtabas*, the OCLC number: `oclc_4770057679`, and
     + a continuous issue counter from 1 to 96: `oclc_4770057679-i_60`
     + Volumes run from 1 to 9: `oclc_4770057679-v_6`
-3. Elements inside the files"
+3. Elements inside the files:
     + Make use of `@xml:base` on the `<tei:TEI>` allows for shorter internal `@xml:id`s
-    + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>`
-    + facsimiles:
-        * current state volumes: `facs_v6_808`, `facs_v6_808_g_1`
-        * issues: `facs_93`
-    * graphics: `facs_93-g_1`
+    + facsimiles: they are simply identified by combining a short string signifying facsimiles (i.e. "facs_") with the image number provided by HathiTrust. `facs_93` thus identifies a `<surface>` element with `<graphic>` children pointing to different file formats and locations.
+    + graphics: `facs_93-g_1`
+    + all other elements:
+        * combine the element's name as key and an automatically generated ID (through XPath function `generate-id()`): div_d1e1895
+        * the process of assigning IDs is automated through the XSLT "Tei-GenerateIds.xsl"
+<!-- + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>` -->
 
 # Facsimiles
 
@@ -165,10 +166,10 @@ Facsimiles are linked through the `<facsimile>` child of `<TEI>`:
 
 ~~~{.xml}
 <facsimile>
-    <surface xml:id="facs_v6_i1_445">
-        <graphic xml:id="facs_v6_i1_445_g_1" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.tif" mimeType="image/tiff"/>
-        <graphic xml:id="facs_v6_i1_445_g_2" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.jpg" mimeType="image/jpeg"/>
-        <graphic xml:id="facs_v6_i1_445_g_3" url="http://babel.hathitrust.org/cgi/imgsrv/image?id=njp.32101073250910;seq=445" mimeType="image/jpeg"/>
+    <surface xml:id="facs_445">
+        <graphic xml:id="facs_445-g_1" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.tif" mimeType="image/tiff"/>
+        <graphic xml:id="facs_445-g_2" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.jpg" mimeType="image/jpeg"/>
+        <graphic xml:id="facs_445-g_3" url="http://babel.hathitrust.org/cgi/imgsrv/image?id=njp.32101073250910;seq=445" mimeType="image/jpeg"/>
 </facsimile>
 ~~~
 
