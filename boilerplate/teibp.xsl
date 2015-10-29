@@ -73,7 +73,7 @@
       
         <html>
             <xsl:call-template name="htmlHead"/>
-            <body>
+            <body ontouchstart="">
                 <xsl:if test="$includeToolbox = true()">
                     <xsl:call-template name="teibpToolbox"/>
                 </xsl:if>
