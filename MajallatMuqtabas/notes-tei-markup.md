@@ -1,13 +1,15 @@
 ---
-title: "Notes for TEI mark-up"
+title: "Notes for TEI mark-up of *majallat al-muqtabas*"
 author: Till Grallert
-date: 2015-08-27
+date: 2015-11-02
 ---
 
 # Issues to be solved
 ## Serialised articles
 
 While the technical linking by means of attributes is simple, how should the human-readible information contained in the print copies be encoded?
+
+I suggest encoding this information with `<ref>` or an XPointer.
 
 ## Typographic marks
 
@@ -86,6 +88,8 @@ Lists have been encoded as `<list>` independent of their original formating (onl
 ## Notes
 
 Unfortunately, *al-maktaba al-shāmila* did NOT include the sometimes abundant footnotes in their transcription.
+
+Notes should be encoded with `<note>` at the location it appears in the text. The super-scripted number is recorded in the `@n` attribute. A further `@type="footnote"` attribute specifies that this note appeared in the actual print edition, as opposed to potential editorial notes added by various editors of the digital edition, which should carry `@type="editorial"` and a `@resp` attribute pointing to the responsible editor. 
 
 ## Tables
 
