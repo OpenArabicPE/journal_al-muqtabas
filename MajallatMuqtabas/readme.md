@@ -4,6 +4,13 @@ author: Till Grallert
 date: 2015-08-24
 ---
 
+In the context of the current onslaught cultural artifacts in the Middle East face from the iconoclasts of the Islamic State, from the institutional neglect of states and elites, and from poverty and war, digital preservation efforts promise some relief as well as potential counter narratives. They might also be the only resolve for future education and rebuilding efforts once the wars in Syria, Iraq or Yemen come to an end. 
+
+Early Arabic periodicals, such as Butrus al-Bustānī's _al-Jinān_ (Beirut, 1876--86), Yaʿqūb Ṣarrūf, Fāris Nimr, and Shāhīn Makāriyūs' _al-Muqtaṭaf_ (Beirut and Cairo, 1876--1952), Muḥammad Kurd ʿAlī's _al-Muqtabas_ (Cairo and Damascus, 1906--16) or Rashīd Riḍā's _al-Manār_ (Cairo, 1898--1941) are at the core of the Arabic renaissance (_al-nahḍa_), Arab nationalism, and the Islamic reform movement. Due to the state of Arabic OCR and the particular difficulties of low-quality fonts, inks, and paper employed at the turn of the twentieth century, they can only be digitised by human transcription. Yet despite of their cultural significance and unlike for valuable manuscripts and high-brow literature, funds for transcribing the tens to hundreds of thousands of pages of an average mundane periodical are simply not available. Consequently, we still have not a single digital scholarly edition of any of these journals. But some of the best-funded scanning projects, such as [Hathitrust](http://catalog.hathitrust.org/), produced digital imagery of numerous Arabic periodicals, while gray online-libraries of Arabic literature, namely [_shamela.ws_](http://shamela.ws/), provide access to a vast body of Arabic texts including transcriptions of unknown provinence, editorial principals, and quality for some of the mentioned periodicals. In addition, these gray "editions" lack information linking the digital representation to material originals, namely bibliographic meta-data and page breaks, which makes them almost impossible to employ for scholarly research.
+
+With the [GitHub-hosted TEI edition of _Majallat al-Muqtabas_](https://github.com/tillgrallert/ArabicTeiEdition/tree/master/MajallatMuqtabas 'current state of the project') we want to show that through re-purposing available and well-established open software and by bridging the gap between immensely popular, but non-academic (and, at least under US copyright laws, occasionally illegal) online libraries of volunteers and academic scanning efforts as well as editorial expertise, one can produce scholarly editions that remedy the short-comings of either world with very small funds: We use [digital texts from _shamela.ws_](http://shamela.ws/index.php/book/26523), transform them into TEI XML, add light structural mark-up for articles, sections, authors, and bibliographic metadata, and link them to [facsimiles provided through HathiTrust](http://catalog.hathitrust.org/Record/100658549) (in the process of which we also make first corrections to the transcription). The digital edition (TEI XML and a basic web display) is then hosted as a GitHub repository with a [CC BY-SA 4.0 licence](http://creativecommons.org/licenses/by-sa/4.0/).
+
+By linking images to the digital text, every reader can validate the quality of the transcription against the original, thus overcoming the greatest limitation of crowd-sourced or gray transcriptions and the main source of disciplinary contempt among historians and scholars of the Middle East. Improvements of the transcription and mark-up can be crowd-sourced with clear attribution of authorship and version control using .git and GitHub's core functionality. Editions are referencable down to the word level for scholarly citations, annotation layers, as well as web-applications through a documented URI scheme. The web-display is implemented through a customised adaptation of the TEI Boilerplate XSLT stylesheets; it can be downloaded, distributed and run locally without any internet connection---a necessity for societies outside the global North. Finally, by sharing all our code (mostly XSLT) in addition to the XML files, we hope to facilitate similar projects and digital editions of further periodicals, namely Rashīd Riḍā's _al-Manār_.
 
 # Scope of the project
 
@@ -23,20 +30,6 @@ The most likely candidates for such follow-up projects are
 - ʿAbd al-Qādir bin Muḥammad Salīm al-Kaylānī al-Iskandarānī's *majallat al-ḥaqāʾiq (al-dimashqiyya)*, 1910
     + [full text from shamela](http://shamela.ws/index.php/book/29676): 5134 views.
 
-
-# To do
-
-## Conceptual level
-    
-- Semantic web: it would be great to link at least references to books to existing records or to provide a means to do so.
-
-## Mark-up
-
-1. Mark-up: The basic structural mark-up of individual issues is far from complete
-    - headlines
-    - splitting articles into sections and sections into individual articles
-    - mark-up of authors with `<byline>`
-2. Text-image linking: while the links to the facsimiles can be automatically generated for each issue, establishing page breaks (`<pb>`) must be done manually for all 6.000+ of them
 
 # The journal *al-Muqtabas*
 
@@ -93,14 +86,25 @@ It seems that somebody took the pains to upload the tet from *shamela* to WikiSo
 
 The main challenge is to combine the full text and the images in a TEI edition. As *al-maktabat al-shāmila* did not reproduce page breaks true to the print edition, every single one of the more than 6000 page breaks must be added manually and linked to the digital image of the page.
 
-## Quality control
-
-A simple way of controlling the quality of the basic structural mark-up would be to cross check any automatically generated table of content or index against the published tables of content at the end of each volume and against the index of *al-Muqtabas* published by [Riyāḍ ʿAbd al-Ḥamīd Murād in 1977](http://hdl.handle.net/2027/umn.31951d008457474). 
-
 ## General design
 
 The edition should be conceived of as a corpus of tei files that are grouped by means of xinclude. This way, volumes can be constructed as single TEI files containing a `<group/>` of TEI files and a volume specific `<front/>` and `<back/>`
 
+Detailled description and notes on the mark-up are kept in a separate [file](notes-tei-markup.md).
+
+## Quality control
+
+A simple way of controlling the quality of the basic structural mark-up would be to cross check any automatically generated table of content or index against the published tables of content at the end of each volume and against the index of *al-Muqtabas* published by [Riyāḍ ʿAbd al-Ḥamīd Murād in 1977](http://hdl.handle.net/2027/umn.31951d008457474). 
+
+
 # Web display: TEI Boilerplate
 
 To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/) for a first display of the TEI files in the browser without need for pre-processed HTML and host this heavily customised boilerplate view as a seperate branch of the GitHub repository. For a first impression see [here](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_60.TEIP5.xml).
+
+# To do
+## Mark-up
+
+1. Mark-up: The basic structural mark-up of individual issues is far from complete. All features encoded in HTML by *shamela.ws* have been translated into TEI XML, but these are limited to the main article / section headers. What needs to be done is:
+    - splitting articles into sections and sections into individual articles
+    - mark-up of authors with `<byline>`
+2. Text-image linking: while the links to the facsimiles can be automatically generated for each issue, establishing page breaks (`<pb>`) must be done manually for all 6.000+ of them
