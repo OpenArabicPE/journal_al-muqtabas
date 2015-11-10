@@ -23,7 +23,7 @@
     <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v6/'"/>
     <xsl:variable name="vFileUrlHathi" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
     <xsl:variable name="vEapVolumeId" select="'5'"/>
-    <xsl:variable name="vEapIssueId" select="'191103'"/>
+    <xsl:variable name="vEapIssueId" select="'191105'"/>
     <xsl:variable name="vFileUrlEap" select="concat('http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_',$vEapVolumeId,'-EAP119_muq',$vEapIssueId)"/>
     <xsl:variable name="vPageStart" as="xs:integer">
         <xsl:choose>
@@ -46,7 +46,8 @@
         </xsl:choose>
     </xsl:variable>
     <xsl:variable name="vImgStartHathi" select="5" as="xs:integer"/>
-    <xsl:variable name="vImgStartHathiDifference" select="$vImgStartHathi - $vPageStart" as="xs:integer"/>
+    <!-- $vImgStartHathi - $vPageStart -->
+    <xsl:variable name="vImgStartHathiDifference" select="4" as="xs:integer"/>
     <xsl:variable name="vFacsId" select="'facs_'"/>
     
     <xsl:template match="tei:TEI">
@@ -74,9 +75,13 @@
         <xsl:copy>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:text>Created </xsl:text><tei:gi>facsimile</tei:gi><xsl:text> for </xsl:text>
+                <xsl:attribute name="who" select="'#pers_TG'"/>
+                <xsl:text>add </xsl:text><tei:gi>graphic</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
-                <xsl:text> pages with references to a local copy of .tif and .jpeg as well as to the online resource for each page.</xsl:text>
+                <xsl:text> pages with references to digital images at EAP.</xsl:text>
+                <!--<xsl:text>Created </xsl:text><tei:gi>facsimile</tei:gi><xsl:text> for </xsl:text>
+                <xsl:value-of select="$vNumberPages"/>
+                <xsl:text> pages with references to a local copy of .tif and .jpeg as well as to the online resource for each page.</xsl:text>-->
             </xsl:element>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
