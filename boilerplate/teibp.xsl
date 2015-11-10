@@ -442,7 +442,7 @@
                     <xsl:choose>
                         <xsl:when test="$pgOnlineFacs = true()">
                             <xsl:value-of
-                                select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url,'http')][1]/@url"
+                                select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url,'http://eap.')][1]/@url"
                             />
                         </xsl:when>
                         <xsl:otherwise>
