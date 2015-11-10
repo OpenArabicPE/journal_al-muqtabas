@@ -23,7 +23,7 @@
     <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v6/'"/>
     <xsl:variable name="vFileUrlHathi" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
     <xsl:variable name="vEapVolumeId" select="'5'"/>
-    <xsl:variable name="vEapIssueId" select="'191102'"/>
+    <xsl:variable name="vEapIssueId" select="'191103'"/>
     <xsl:variable name="vFileUrlEap" select="concat('http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_',$vEapVolumeId,'-EAP119_muq',$vEapIssueId)"/>
     <xsl:variable name="vPageStart" as="xs:integer">
         <xsl:choose>
