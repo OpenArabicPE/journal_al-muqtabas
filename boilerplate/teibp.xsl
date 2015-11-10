@@ -441,9 +441,16 @@
                     <!-- here could be an option to select the image hosted on HathiTrust -->
                     <xsl:choose>
                         <xsl:when test="$pgOnlineFacs = true()">
-                            <xsl:value-of
-                                select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url,'http://eap.')][1]/@url"
-                            />
+                            <xsl:choose>
+                                <xsl:when test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url,'http://eap.')]">
+                                    <xsl:value-of
+                                        select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url,'http://eap.')][1]/@url"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of
+                                        select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url,'http://')][1]/@url"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of
