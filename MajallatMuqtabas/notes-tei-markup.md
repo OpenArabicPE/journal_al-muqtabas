@@ -144,7 +144,20 @@ each part of the edition down to, at least, the paragraph level should be addres
 
 # Facsimiles
 
-Image files are available from [Hathitrust](http://catalog.hathitrust.org/Record/100658549) or [Institut du Monde Arabe](http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=9C82C139F9785E99D30089727B40A269).
+Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem through the British Library's "Endangered Archives Project" (vols. 2-7)](http://eap.bl.uk/database/overview_project.a4d?projID=EAP119;r=63), [HathiTrust (vols. 1-6, 8)](http://catalog.hathitrust.org/Record/100658549), and [Institut du Monde Arabe](http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=9C82C139F9785E99D30089727B40A269). Due to its open access licence, preference is given to facsimiles from EAP.
+
+## EAP119
+
+- links to volumes:
+    + [Vol. 2](http://eap.bl.uk/database/overview_item.a4d?catId=809;r=12316)
+    + [Vol. 3](http://eap.bl.uk/database/overview_item.a4d?catId=812;r=3035)
+    + [Vol. 4](http://eap.bl.uk/database/overview_item.a4d?catId=813;r=22190)
+    + [Vol. 5](http://eap.bl.uk/database/overview_item.a4d?catId=814;r=1842)
+    + [Vol. 6](http://eap.bl.uk/database/overview_item.a4d?catId=810;r=288)
+    + [Vol. 7](http://eap.bl.uk/database/overview_item.a4d?catId=811;r=30106)
+- access:
+    + the journal is in the public domain and the images can be freely accessed without restrictions. EAP does not provide a download button.
+    + Terms of access for material provided by the British Library can be found [here](http://www.bl.uk/aboutus/terms/index.html)
 
 ##  HathiTrust
 
@@ -161,10 +174,8 @@ Image files are available from [Hathitrust](http://catalog.hathitrust.org/Record
     + The journal is in the public domain in the US and can be freely accessed and downloaded
     + Outside the US, access is restricted.
     + Formal [licence](https://www.hathitrust.org/access_use#pd-us-google): 
-
 > Public Domain or Public Domain in the United States, Google-digitized: In addition to the terms for works that are in the Public Domain or in the Public Domain in the United States above, the following statement applies: The digital images and OCR of this work were produced by Google, Inc. (indicated by a watermark on each page in the PageTurner). Google requests that the images and OCR not be re-hosted, redistributed or used commercially. The images are provided for educational, scholarly, non-commercial purposes.
-> 
->Note: There are no restrictions on use of text transcribed from the images, or paraphrased or translated using the images.
+> Note: There are no restrictions on use of text transcribed from the images, or paraphrased or translated using the images.
 
 ## Mark-up
 
