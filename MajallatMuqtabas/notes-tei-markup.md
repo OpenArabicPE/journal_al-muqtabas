@@ -174,6 +174,7 @@ Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem t
     + The journal is in the public domain in the US and can be freely accessed and downloaded
     + Outside the US, access is restricted.
     + Formal [licence](https://www.hathitrust.org/access_use#pd-us-google): 
+
 > Public Domain or Public Domain in the United States, Google-digitized: In addition to the terms for works that are in the Public Domain or in the Public Domain in the United States above, the following statement applies: The digital images and OCR of this work were produced by Google, Inc. (indicated by a watermark on each page in the PageTurner). Google requests that the images and OCR not be re-hosted, redistributed or used commercially. The images are provided for educational, scholarly, non-commercial purposes.
 > Note: There are no restrictions on use of text transcribed from the images, or paraphrased or translated using the images.
 
