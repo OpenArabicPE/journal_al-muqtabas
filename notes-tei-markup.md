@@ -67,23 +67,25 @@ Divisions can be of various types (`@type`), using a semi-controlled vocabulary 
 - verse
 
 <!-- needs revisions -->
-As paragraphs (`<p>`) cannot interlace with `<div>`s after the first `<div>` child of a parent `<div>`, `<div @type="article">` is commonly the lowest level of tesselation but in the case of very long articles that might themselves contain `@type="section"` children.
+As paragraphs (`<p>`) cannot interlace with `<div>`s after the first `<div>` child of a parent `<div>`, `<div @type="article">` is commonly the lowest level of tessellation but in the case of very long articles that might themselves contain `@type="section"` children.
 
 The common structure of an issue would be a mix of `<div @type="article">` and `<div @type="section">`
 
 
 ## Page, line, and column breaks
 
-Only page breaks should are recorded (`<pb>`). The page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the origial printed copies. They were therefore marked as `<pb ed="shamila">`. The page breaks corresponding to the original printed edition are identified by `@ed="print"`.
+Only page breaks should are recorded (`<pb>`). The page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the original printed copies. They were therefore marked as `<pb ed="shamila">`. The page breaks corresponding to the original printed edition are identified by `@ed="print"`.
 Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the original, it appeared to be a facsimile reprint: pagination, font, layout --- everything is identical.
 
 1. Printed original copy: `<pb ed="print"/>`
-    - These pagebreaks are then linked through the `@facs` attribute to the `@xml:id` of a `<surface>` element; i.e. `<pb ed="print" facs="#facs_78"/>`
+    - These page breaks are then linked through the `@facs` attribute to the `@xml:id` of a `<surface>` element; i.e. `<pb ed="print" facs="#facs_78"/>`
 2. Transcription from *al-maktaba al-shāmila*: `<pb ed="shamela"/>`
+
+The current state of mark-up for page breaks is kept in a [second file](notes-tei-markup-pb.md).
 
 ## Lists
 
-Lists have been encoded as `<list>` independent of their original formating (only rarely were lists indentend etc.). In case lists apear with numbered labels in the original, i.e. "(الخامس)", "(٢)", the labels have been encoded with `<label>`.
+Lists have been encoded as `<list>` independent of their original formating (only rarely were lists indented etc.). In case lists apear with numbered labels in the original, i.e. "(الخامس)", "(٢)", the labels have been encoded with `<label>`.
 
 ## Notes
 
@@ -139,7 +141,7 @@ each part of the edition down to, at least, the paragraph level should be addres
     + all other elements:
         * combine the element's name as key with the position of the element in the document tree and an automatically generated ID (through XPath function `generate-id()`) separated by a period: `div_12.d1e1895`
         * note that the first number after the underscore cannot and should be used to identify the position of an element in the tree, as these will most certainly change over time, while the `@xml:id` shall be stable.
-        * the process of assigning IDs is automated through the XSLT "Tei-GenerateIds.xsl" and it needs to be run everytime someone has added mark-up to the file.
+        * the process of assigning IDs is automated through the XSLT [Tei-GenerateIds](xslt/Tei-GenerateIds.xsl) and it needs to be run everytime someone has added mark-up to the file.
 <!-- + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>` -->
 
 # Facsimiles
@@ -188,6 +190,8 @@ Facsimiles are linked through the `<facsimile>` child of `<TEI>`:
         <graphic xml:id="facs_445-g_1" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.tif" mimeType="image/tiff"/>
         <graphic xml:id="facs_445-g_2" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.jpg" mimeType="image/jpeg"/>
         <graphic xml:id="facs_445-g_3" url="http://babel.hathitrust.org/cgi/imgsrv/image?id=njp.32101073250910;seq=445" mimeType="image/jpeg"/>
+        <graphic xml:id="facs_445-g_4" url="http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_5-EAP119_muq191108_441_L.jpg" mimeType="image/jpeg"/>
+    </surface>
 </facsimile>
 ~~~
 
@@ -226,6 +230,8 @@ All information on the individual issue is part of the *monographic* level of bi
 Current structure of the `<biblStruct>` in `<sourceDesc>`:
 
 ~~~{.xml}
+<teiHeader>
+<!-- ... -->
 <biblStruct>
     <monogr>
         <title level="j" xml:lang="ar">المقتبس</title>
@@ -272,11 +278,15 @@ Current structure of the `<biblStruct>` in `<sourceDesc>`:
     <idno type="aucr">07201136864</idno>
     <idno type="shamela">26523</idno>
 </biblStruct>
+<!-- ... -->
+</teiHeader>
 ~~~
 
 Better and shorter idea, without loosing any information:
 
 ~~~{.xml}
+<teiHeader>
+<!-- ... -->
 <biblStruct>
     <monogr>
         <title level="j" xml:lang="ar">المقتبس</title>
@@ -319,9 +329,14 @@ Better and shorter idea, without loosing any information:
     <idno type="aucr">07201136864</idno>
     <idno type="shamela">26523</idno>
 </biblStruct>
+<!-- ... -->
+</teiHeader>
 ~~~
 
 ~~~{.xml}
+<text>
+    <front>
+<!-- ... -->
 <biblStruct>
     <monogr>
         <title level="j">المقتبس</title>
@@ -336,11 +351,14 @@ Better and shorter idea, without loosing any information:
         <biblScope unit="page" from="1" to="88"/>
     </monogr>
 </biblStruct>
+<!-- ... -->
+    </front>
+</text>
 ~~~
 
-## Languages: `@xml:id`
+## Languages: `@xml:lang`
 
-The use of language codes as values for `@xml:id` follows [BCP 47](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) and specifies that the language code is to be followed by information on the script, if the latter is not the common script for this language, followed by information on the transribing convention.
+The use of language codes as values for `@xml:lang` follows [BCP 47](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) and specifies that the language code is to be followed by information on the script, if the latter is not the common script for this language, followed by information on the transcribing convention. Use of languages is declared in the `<langUsage>` descendant of the `<teiHeader>`:
 
 ~~~{.xml}
 <langUsage>
@@ -359,6 +377,19 @@ The use of language codes as values for `@xml:id` follows [BCP 47](http://www.ia
     <language ident="tr">Turkish</language>
 </langUsage>
 ~~~
+
+These codes can then be referenced throughout the file by means of the `@xml:lang` pointing to them; e.g.
+
+~~~{.xml}
+<title level="j" xml:lang="ar">المقتبس</title>
+<title level="j" type="sub" xml:lang="ar">مجلة تبحث في التربية والتعليم والاجتماع والاقتصاد والاداب والتاريخ والآثار واللغة و تدبير المنزل والصحة والكتب وحضارة العرب والغرب</title>
+<title level="j" type="sub" xml:lang="ar">تصدر في كل شهر عربي بدمشق</title>
+<title level="j" xml:lang="ar-Latn-x-ijmes">[Majallat] al-Muqtabas</title>
+<title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla tabḥath fī al-tarbiyya wa-l-taʿlīm wa-l-ijtimāʿ wa-l-iqtiṣād wa-l-adab wa-l-tārīkh wa-l-āthār wa-l-llugha wa tadbīr al-manzil wa-l-ṣaḥḥa wa-l-kutub wa ḥaḍāra al-ʿarab wa ḥadāra al-gharb</title>
+<title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">tuṣadir fī kull shar ʿarabī bi-Dimashq</title>
+~~~
+
+A small XSLT ([Tei-GenerateXmlLang](xslt/Tei-GenerateXmlLang.xsl)) goes through the files and checks for every node if `@xml:lang` is present; if not, `@xml:lang` is generated based on the `@xml:lang` of the closest predecessor.
 
 ### Words in other alphabets than Arabic
 
@@ -389,6 +420,13 @@ Imagine, someone bought <measureGrp><measure commodity="wheat" quantity="2" unit
     + $measg expands into `<measureGrp/>`and copies the content of the clipboard between the tags
     + $price expands into `<measure commodity="currency">` etc. and copies the content of the clipboard between the tags
     + $meas expands into `<measure commodity="">` etc. and copies the content of the clipboard between the tags
+
+## Numbers and numerals
+
+The transcribers at *shamela.ws* transcribed all numbers---the originals use the eastern Arabic numerals common in the Levant---into Arabic numerals; i.e. when the original read "١٢٨٥" the transcription recorded "1285". To reconstruct the original without loosing the convenience of machine-readability, I wrote a small XSLT script ([Tei-MarkupNumerals](xslt/Tei-MarkupNumerals.xsl)) that uses regex to identify all numerical values in `<tei:text>`. It wraps the result in a `<num>` element with the original value as `@value` and converts the number to eastern Arabic numerals; e.g.
+
+- original: 1285
+- markup: `<num value="1285">١٢٨٥</num>` 
 
 ## Persons, Places, Organisations
 
