@@ -13,6 +13,7 @@
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p>This stylesheet generates a <tei:facsimile/> node with a pre-defined number of <tei:surface/> children. All parameters can be set through the group of variables at the beginning of the stylesheet.</xd:p>
+            <xd:p>The variable $vEapIssueId must be changed for every issue of Muqtabas</xd:p>
         </xd:desc>
     </xd:doc>
     
@@ -23,7 +24,7 @@
     <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v6/'"/>
     <xsl:variable name="vFileUrlHathi" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
     <xsl:variable name="vEapVolumeId" select="'5'"/>
-    <xsl:variable name="vEapIssueId" select="'191105'"/>
+    <xsl:variable name="vEapIssueId" select="'191109'"/>
     <xsl:variable name="vFileUrlEap" select="concat('http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_',$vEapVolumeId,'-EAP119_muq',$vEapIssueId)"/>
     <xsl:variable name="vPageStart" as="xs:integer">
         <xsl:choose>
@@ -76,7 +77,7 @@
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
                 <xsl:attribute name="who" select="'#pers_TG'"/>
-                <xsl:text>add </xsl:text><tei:gi>graphic</tei:gi><xsl:text> for </xsl:text>
+                <xsl:text>Added </xsl:text><tei:gi>graphic</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
                 <xsl:text> pages with references to digital images at EAP.</xsl:text>
                 <!--<xsl:text>Created </xsl:text><tei:gi>facsimile</tei:gi><xsl:text> for </xsl:text>
