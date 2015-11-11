@@ -7,7 +7,7 @@ date: 2015-11-02
 # Issues to be solved
 ## Serialised articles
 
-While the technical linking by means of attributes is simple, how should the human-readible information contained in the print copies be encoded?
+While the technical linking by means of attributes is simple, how should the human-readable information contained in the print copies be encoded?
 
 I suggest encoding this information with `<ref>` or an XPointer.
 
@@ -17,7 +17,7 @@ Early-twentieth century periodicals contain a lot of typographic markers indicat
 
 # Gaps in the transcription
 
-Gaps in the transcription as copied from shamela are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`. Many, if not most of these originated as the gap between two halves of a single line of a *qaṣīda*.
+Gaps in the transcription as copied from *shamela.ws* are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`. Many, if not most of these originated as the gap between two halves of a single line of a *qaṣīda*.
 
 Sometimes shamela's transcribers could not read a word and marked such omissions with ellipses:
 
@@ -389,7 +389,7 @@ These codes can then be referenced throughout the file by means of the `@xml:lan
 <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">tuṣadir fī kull shar ʿarabī bi-Dimashq</title>
 ~~~
 
-A small XSLT ([Tei-GenerateXmlLang](xslt/Tei-GenerateXmlLang.xsl)) goes through the files and checks for every node if `@xml:lang` is present; if not, `@xml:lang` is generated based on the `@xml:lang` of the closest predecessor.
+A small XSLT ([Tei-GenerateXmlLang](xslt/Tei-GenerateXmlLang.xsl)) goes through the files and checks for every node if `@xml:lang` is present; if not, `@xml:lang` is generated based on the `@xml:lang` of the closest ancestor.
 
 ### Words in other alphabets than Arabic
 
