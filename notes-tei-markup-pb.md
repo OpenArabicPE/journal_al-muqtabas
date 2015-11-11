@@ -1,0 +1,34 @@
+---
+title: "List of files with complete mark-up of page breaks"
+author: Till Grallert
+date: 2015-11-11
+---
+
+# Mark-up of pagebreaks
+
+Mark-up of page breaks mirroring the print edition with `<pb ed="print">` and linking them to the facsimiles has been completed for the following files
+
+- oclc_4770057679-i_66.TEIP5.xml
+- oclc_4770057679-i_65.TEIP5.xml
+- oclc_4770057679-i_64.TEIP5.xml
+- oclc_4770057679-i_63.TEIP5.xml
+- oclc_4770057679-i_62.TEIP5.xml
+- oclc_4770057679-i_61.TEIP5.xml
+- oclc_4770057679-i_60.TEIP5.xml
+
+# Adding facsimiles
+
+Links to local and online facsimiles / digital imagery have been added to the following issues:
+
+- oclc_4770057679-i_71.TEIP5.xml
+- oclc_4770057679-i_70.TEIP5.xml
+- oclc_4770057679-i_69.TEIP5.xml
+- oclc_4770057679-i_68.TEIP5.xml
+- oclc_4770057679-i_67.TEIP5.xml
+- oclc_4770057679-i_66.TEIP5.xml
+- oclc_4770057679-i_65.TEIP5.xml
+- oclc_4770057679-i_64.TEIP5.xml
+- oclc_4770057679-i_63.TEIP5.xml
+- oclc_4770057679-i_62.TEIP5.xml
+- oclc_4770057679-i_61.TEIP5.xml
+- oclc_4770057679-i_60.TEIP5.xml
