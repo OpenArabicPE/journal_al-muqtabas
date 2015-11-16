@@ -53,6 +53,7 @@
     
     <xsl:template match="tei:TEI">
         <xsl:copy>
+            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="child::tei:teiHeader"/>
             <xsl:element name="tei:facsimile">
                 <xsl:attribute name="xml:id" select="'facs'"/>

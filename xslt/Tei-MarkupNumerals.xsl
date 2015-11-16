@@ -24,14 +24,14 @@
     <xsl:variable name="vStringTranscribeFromIjmes" select="'btḥḫjdrzsṣḍṭẓʿfqklmnhāūīwy0123456789'"/>
     <xsl:variable name="vStringTranscribeToArabic" select="'بتحخجدرزسصضطظعفقكلمنهاويوي٠١٢٣٤٥٦٧٨٩'"/>
     
-    <!-- safe as new file -->
+<!--    <!-\- safe as new file -\->
     <xsl:template match="/">
-        <!--<xsl:result-document href="{substring-before(base-uri(),'.TEIP5.xml')}_MarkupNumerals.TEIP5.xml">-->
+        <!-\-<xsl:result-document href="{substring-before(base-uri(),'.TEIP5.xml')}_MarkupNumerals.TEIP5.xml">-\->
             <xsl:copy>
                 <xsl:apply-templates select="node()"/>
             </xsl:copy>
-        <!--</xsl:result-document>-->
-    </xsl:template>
+        <!-\-</xsl:result-document>-\->
+    </xsl:template>-->
     <!-- reproduce everything -->
     <xsl:template match="@* | node()">
         <xsl:copy>

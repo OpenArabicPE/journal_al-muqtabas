@@ -22,7 +22,7 @@
     <xsl:template match="/">
         <!--<xsl:result-document href="{substring-before(base-uri(),'.TEIP5.xml')}_BaseUri.TEIP5.xml">-->
             <xsl:copy>
-                <xsl:apply-templates select="node()"/>
+                <xsl:apply-templates select="@* | node()"/>
             </xsl:copy>
         <!--</xsl:result-document>-->
     </xsl:template>
