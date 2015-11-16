@@ -39,7 +39,11 @@
     <xsl:template match="tei:pb[@ed='print']">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:attribute name="facs" select="concat('#facs_', @n + $pPageSetOff)"/>
+            <xsl:choose>
+                <xsl:when test="not(@facs)">
+                    <xsl:attribute name="facs" select="concat('#facs_', @n + $pPageSetOff)"/>
+                </xsl:when>
+            </xsl:choose>
         </xsl:copy>
     </xsl:template>
     
