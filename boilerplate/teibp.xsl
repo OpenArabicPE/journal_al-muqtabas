@@ -597,7 +597,9 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:attribute>
-            <xsl:apply-templates/>
+            <!-- provide content of head -->
+            <!--<xsl:apply-templates/>-->
+            <xsl:value-of select="descendant-or-self::text()"/>
             <xsl:text> (</xsl:text>
             <!-- add author names and pages if available -->
             <xsl:if test="parent::tei:div/tei:byline/tei:persName">
@@ -638,6 +640,11 @@
         </xsl:element>
         <!-- link to the top of the page, content can be provided by css -->
         <a class="cBackToTop cInterface" href="#" title="To the top of this page"> </a>
+    </xsl:template>
+    
+    <!-- omit line breaks in heads -->
+    <xsl:template match="tei:head/tei:lb | tei:head/tei:cb">
+        <xsl:text> </xsl:text>
     </xsl:template>
 
     <!-- do something with notes -->
