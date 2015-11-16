@@ -44,11 +44,26 @@ back{
     counter-reset:p;
 }
 /* count paragraphs */
-p{
+
+/*p{
     counter-increment:p;
 }
 text p:before{
     content:"§ " counter(p) " ";
+    direction:ltr;
+    /\* vertical-align:top; *\/
+    font-size:0.5em;
+    display:block;
+    position:absolute;
+    padding-right:0.5em;
+    padding-left:0.5em;
+    margin-top:0.5em;
+    margin-right:-40px;
+    color:gray;
+}*/
+
+/* new explicit counting */
+p>span.cId{
     direction:ltr;
     /* vertical-align:top; */
     font-size:0.5em;
@@ -59,6 +74,10 @@ text p:before{
     margin-top:0.5em;
     margin-right:-40px;
     color:gray;
+}
+p>span.cId:before {
+    content:"§ ";
+    direction:ltr;
 }
 /* anonymous blocks <ab> */
 ab{

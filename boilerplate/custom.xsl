@@ -5,13 +5,14 @@
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:fn="http://www.w3.org/2005/xpath-functions"
     extension-element-prefixes="exsl msxsl" xmlns="http://www.w3.org/1999/xhtml"
     xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="xsl tei xd eg fn #default">
-
+    
     <!-- import teibp.xsl, which allows templates, 
          variables, and parameters from teibp.xsl 
          to be overridden here. -->
     <xsl:import href="teibp.xsl"/>
     
-
+    <!-- to translate numerical strings into Eastern Arabic numerals use "translate($vCount,'1234567890','١٢٣٤٥٦٧٨٩٠')" -->
+    
     <!-- provide information based on the sourceDesc -->
     <xsl:template match="tei:biblStruct[tei:monogr/tei:title[@level = 'j']]">
         <div class="cSource">
@@ -108,5 +109,37 @@
                     select="parent::tei:monogr/tei:imprint/tei:date[@xml:lang = $vLang]"/>
             </span>
         </div>
+    </xsl:template>
+    
+    <!-- provide paragraph count independent of css implementation -->
+    <xsl:template match="tei:p">
+        <xsl:variable name="vCount" select="count(preceding::tei:p[ancestor::tei:body])+1"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <span class="cId cNumber">
+                <xsl:choose>
+                    <xsl:when test="@xml:id">
+                        <a href="#{@xml:id}" class="cLinkSelf cNumber"><xsl:value-of select="$vCount"/></a>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="$vCount"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </span> 
+            <xsl:apply-templates select="node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="tei:head">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+                <xsl:choose>
+                    <xsl:when test="@xml:id">
+                        <a href="#{parent::node()/@xml:id}" class="cLinkSelf"><xsl:apply-templates select="node()"/></a>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="node()"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+        </xsl:copy>
     </xsl:template>
 </xsl:stylesheet>
