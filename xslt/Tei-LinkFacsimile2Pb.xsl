@@ -17,7 +17,7 @@
     </xd:doc>
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
-    <xsl:variable name="vgPageSetOff" select="28"/>
+    <xsl:param name="pPageSetOff" select="4"/>
     
     <!-- copy everything -->
     <xsl:template match="@* | node()">
@@ -39,7 +39,7 @@
     <xsl:template match="tei:pb">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:attribute name="facs" select="concat('#facs_', @n + $vgPageSetOff)"/>
+            <xsl:attribute name="facs" select="concat('#facs_', @n + $pPageSetOff)"/>
         </xsl:copy>
     </xsl:template>
     
