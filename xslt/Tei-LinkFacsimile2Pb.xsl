@@ -36,7 +36,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:pb">
+    <xsl:template match="tei:pb[@ed='print']">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:attribute name="facs" select="concat('#facs_', @n + $pPageSetOff)"/>
