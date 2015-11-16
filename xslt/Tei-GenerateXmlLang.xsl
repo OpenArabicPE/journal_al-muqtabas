@@ -17,6 +17,7 @@
     </xd:doc>
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
+    
     <!-- generate a new file -->
     <xsl:template match="/">
         <!--<xsl:result-document href="{substring-before(base-uri(),'.TEIP5.xml')}_lang-codes.TEIP5.xml">-->
@@ -25,6 +26,7 @@
             </xsl:copy>
         <!--</xsl:result-document>-->
     </xsl:template>
+
     <!-- reproduce everything -->
     <xsl:template match="@* | node()">
         <xsl:copy>
@@ -52,5 +54,4 @@
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
-
 </xsl:stylesheet>
