@@ -662,6 +662,9 @@
             <xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/>
         </a>
     </xsl:template>
+    <!-- the file's id -->
+    <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
+    <xsl:variable name="vFileIssueNo" select="substring-after($vFileId,'-i_')"/>
     <!-- Sidebar buttons -->
     <xsl:variable name="vButtons">
         <!-- link to Github -->
@@ -678,7 +681,7 @@
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:value-of
-                                        select="concat('https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/', tei:TEI/@xml:id, '.TEIP5.xml')"
+                                        select="concat('https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/',$vFileId,'.TEIP5.xml')"
                                     />
                                 </xsl:otherwise>
                             </xsl:choose>
@@ -686,6 +689,22 @@
                         <!--<img src="http://www.tei-c.org/About/Logos/TEI-175.jpg" alt="TEI"/>-->
                         <xsl:text>TEI source on GitHub</xsl:text>
                     </a>
+                </li>
+               
+            </ul>
+        </div>
+        <!-- links to previous and next issues -->
+        <div id="NextIssue" class="cSidebarButton">
+            <ul>
+                <li>
+                    <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo +1,'.TEIP5.xml')}">Next issue</a>
+                </li>
+            </ul>
+        </div>
+        <div id="PrevIssue" class="cSidebarButton">
+            <ul>
+                <li>
+                    <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo -1,'.TEIP5.xml')}">Previous issue</a>
                 </li>
             </ul>
         </div>
