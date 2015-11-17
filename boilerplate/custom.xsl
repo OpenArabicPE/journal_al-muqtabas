@@ -129,17 +129,18 @@
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
+    <!--<!-\- link heads back to themselves -\->
     <xsl:template match="tei:head">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
                 <xsl:choose>
                     <xsl:when test="@xml:id">
-                        <a href="#{parent::node()/@xml:id}" class="cLinkSelf"><xsl:apply-templates select="node()"/></a>
+                        <a href="#{parent::node()/@xml:id}" class="cLinkSelf"><xsl:apply-templates select="."/></a>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:apply-templates select="node()"/>
+                        <xsl:apply-templates select="."/>
                     </xsl:otherwise>
                 </xsl:choose>
         </xsl:copy>
-    </xsl:template>
+    </xsl:template>-->
 </xsl:stylesheet>

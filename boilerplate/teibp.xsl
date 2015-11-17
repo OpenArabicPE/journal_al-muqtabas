@@ -158,14 +158,7 @@
         </xsl:if>
     </xsl:template>
     <xsl:template match="@xml:id">
-        <!-- @xml:id is copied to @id, which browsers can use
-			for internal links.
-		-->
-        <!--
-		<xsl:attribute name="xml:id">
-			<xsl:value-of select="."/>
-		</xsl:attribute>
-		-->
+        <!-- @xml:id is copied to @id, which browsers can use for internal links. -->
         <xsl:attribute name="id">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -568,7 +561,46 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
-            <xsl:apply-templates select="./tei:head" mode="mToc"/>
+            <!--<xsl:apply-templates select="./tei:head" mode="mToc"/>-->
+            <a>
+                <!-- generate IDs on the fly if there are non existing. The link should point to the parent::tei:div and not the head -->
+                <xsl:attribute name="href">
+                    <xsl:choose>
+                        <xsl:when test="@xml:id">
+                            <xsl:value-of select="concat('#', @xml:id)"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="concat('#', generate-id())"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+                <!-- provide content of head -->
+                <!--<xsl:apply-templates/>-->
+                <xsl:value-of select="child::tei:head/descendant-or-self::node()"/>
+                <xsl:text> (</xsl:text>
+                <!-- add author names and pages if available -->
+                <xsl:if test="tei:byline/tei:persName">
+                    <xsl:choose>
+                        <xsl:when test="@xml:lang = 'ar'">
+                            <xsl:text>مؤلف: </xsl:text>
+                        </xsl:when>
+                    </xsl:choose>
+                    <xsl:apply-templates select="tei:byline/tei:persName"/>
+                    <xsl:text>،</xsl:text>
+                </xsl:if>
+                <!-- add page numbers -->
+                <xsl:choose>
+                    <xsl:when test="/@xml:lang = 'ar'">
+                        <xsl:text>ص </xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
+                <xsl:if test="preceding::tei:pb[@ed = 'print'][1]/@n != descendant::tei:pb[@ed = 'print'][last()]/@n">
+                    <xsl:text>–</xsl:text>
+                    <xsl:value-of select="descendant::tei:pb[@ed = 'print'][last()]/@n"/>
+                </xsl:if>
+                <xsl:text>)</xsl:text>
+            </a>
             <xsl:if test="./tei:div">
                 <ul>
                     <xsl:apply-templates select="./tei:div" mode="mToc"/>
@@ -576,6 +608,7 @@
             </xsl:if>
         </li>
     </xsl:template>
+    
     <!-- create the clickable links to heads in the  toc -->
     <xsl:template match="tei:head" mode="mToc">
         <a>
@@ -618,19 +651,43 @@
             <xsl:text>)</xsl:text>
         </a>
     </xsl:template>
+    
     <!-- omit all nodes that are not explicitly dealt with -->
     <xsl:template match="node()" mode="mToc"/>
+    
     <!-- create the anchors in the text -->
-    <xsl:template match="tei:div/tei:head">
-        <xsl:element name="{local-name()}">
+    <xsl:template match="tei:div">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
             <xsl:attribute name="id">
-                <xsl:value-of select="generate-id()"/>
+                <xsl:choose>
+                    <xsl:when test="@xml:id">
+                        <xsl:value-of select="@xml:id"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="generate-id()"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:attribute>
             <!-- with a slide-out navigation back links are not necessary -->
             <!--<a href="#toc-{generate-id()}">-->
             <xsl:apply-templates/>
             <!--</a>-->
-        </xsl:element>
+        </xsl:copy>
+    </xsl:template>
+    <!-- link heads back to themselves -->
+    <xsl:template match="tei:head">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:choose>
+                <xsl:when test="@xml:id">
+                    <a href="#{parent::node()/@xml:id}" class="cLinkSelf"><xsl:apply-templates /></a>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:copy>
         <!-- link to the top of the page, content can be provided by css -->
         <a class="cBackToTop cInterface" href="#" title="To the top of this page"> </a>
     </xsl:template>
