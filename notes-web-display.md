@@ -7,13 +7,17 @@ date: 2015-09-26
 To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/) for a first display of the TEI files in the browser without need for pre-processed HTML and host this heavily customised boilerplate view as part of the [GitHub repository]()https://www.github.com/tillgrallert/digital-muqtabas). For a first impression see [here](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml).
 
 # Navigation
-
+## Inside the file
 I implemented a simple navigation with `<ul>` and `<li>` inside the native HTML `<nav>` tag. 
 It provides hierarchival links to all `tei:div/tei:head` in the source XML using either already existing `@xml:id` or IDs generated on the fly through the `generate-id()` XPath function.
 
 All heads link back to themselves using the stable URL based on their `@xml:id` if available. This URL can be used for reference and pointers in external sites and scholarly works.
 
 The XLST also generates paragraph numbers computing every paragraph's position as descendant of `<tei:body>`. Again back links use the stable URL based on the paragraph's `@xml:id` and can be used for external reference.
+
+## outside the file
+
+Small buttons providing links to the previous and following issues were implemented in the same style as the internal navigation.
 
 # Bibliographic metadata
 
