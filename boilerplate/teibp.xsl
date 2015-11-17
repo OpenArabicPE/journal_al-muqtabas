@@ -576,7 +576,7 @@
                 </xsl:attribute>
                 <!-- provide content of head -->
                 <!--<xsl:apply-templates/>-->
-                <xsl:value-of select="child::tei:head/descendant-or-self::node()"/>
+                <xsl:apply-templates select="child::tei:head" mode="mToc"/>
                 <xsl:text> (</xsl:text>
                 <!-- add author names and pages if available -->
                 <xsl:if test="tei:byline/tei:persName">
@@ -609,51 +609,14 @@
         </li>
     </xsl:template>
     
-    <!-- create the clickable links to heads in the  toc -->
-    <xsl:template match="tei:head" mode="mToc">
-        <a>
-            <!-- generate IDs on the fly if there are non existing. The link should point to the parent::tei:div and not the head -->
-            <xsl:attribute name="href">
-                <xsl:choose>
-                    <xsl:when test="parent::tei:div/@xml:id">
-                        <xsl:value-of select="concat('#', parent::tei:div/@xml:id)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="concat('#', generate-id())"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:attribute>
-            <!-- provide content of head -->
-            <!--<xsl:apply-templates/>-->
-            <xsl:value-of select="descendant-or-self::node()"/>
-            <xsl:text> (</xsl:text>
-            <!-- add author names and pages if available -->
-            <xsl:if test="parent::tei:div/tei:byline/tei:persName">
-                <xsl:choose>
-                    <xsl:when test="parent::tei:div/@xml:lang = 'ar'">
-                        <xsl:text>مؤلف: </xsl:text>
-                    </xsl:when>
-                </xsl:choose>
-                <xsl:apply-templates select="parent::tei:div/tei:byline/tei:persName"/>
-                <xsl:text>،</xsl:text>
-            </xsl:if>
-            <!-- add page numbers -->
-            <xsl:choose>
-                <xsl:when test="parent::tei:div/@xml:lang = 'ar'">
-                    <xsl:text>ص </xsl:text>
-                </xsl:when>
-            </xsl:choose>
-            <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
-            <xsl:if test="preceding::tei:pb[@ed = 'print'][1]/@n != parent::tei:div/descendant::tei:pb[@ed = 'print'][last()]/@n">
-                <xsl:text>–</xsl:text>
-                <xsl:value-of select="parent::tei:div/descendant::tei:pb[@ed = 'print'][last()]/@n"/>
-            </xsl:if>
-            <xsl:text>)</xsl:text>
-        </a>
-    </xsl:template>
-    
     <!-- omit all nodes that are not explicitly dealt with -->
-    <xsl:template match="node()" mode="mToc"/>
+    <xsl:template match="tei:head" mode="mToc">
+       <xsl:apply-templates mode="mToc"/>
+    </xsl:template>
+    <xsl:template match="tei:note" mode="mToc"/>
+    <xsl:template match="tei:lb" mode="mToc">
+        <xsl:text> </xsl:text>
+    </xsl:template>
     
     <!-- create the anchors in the text -->
     <xsl:template match="tei:div">
