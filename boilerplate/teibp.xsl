@@ -592,7 +592,7 @@
             </xsl:attribute>
             <!-- provide content of head -->
             <!--<xsl:apply-templates/>-->
-            <xsl:value-of select="descendant-or-self::text()"/>
+            <xsl:value-of select="descendant-or-self::node()"/>
             <xsl:text> (</xsl:text>
             <!-- add author names and pages if available -->
             <xsl:if test="parent::tei:div/tei:byline/tei:persName">
