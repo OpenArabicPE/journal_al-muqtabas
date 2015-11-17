@@ -16,6 +16,7 @@ Mark-up of page breaks mirroring the print edition with `<pb ed="print">` and li
 - oclc_4770057679-i_62.TEIP5.xml
 - oclc_4770057679-i_61.TEIP5.xml
 - oclc_4770057679-i_60.TEIP5.xml
+- oclc_4770057679-i_37.TEIP5.xml; October 11, 2015
 
 # Adding facsimiles
 
@@ -33,3 +34,4 @@ Links to local and online facsimiles / digital imagery have been added to the fo
 - oclc_4770057679-i_62.TEIP5.xml
 - oclc_4770057679-i_61.TEIP5.xml
 - oclc_4770057679-i_60.TEIP5.xml
+- oclc_4770057679-i_37.TEIP5.xml
