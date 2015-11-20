@@ -55,7 +55,7 @@
     <xsl:variable name="vImgStartHathi" select="1" as="xs:integer"/>
     <!-- $vImgStartHathi - $vPageStart -->
     <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
-    <xsl:variable name="vImgStartHathiDifference" select="0" as="xs:integer"/>
+    <xsl:variable name="vImgStartHathiDifference" select="12" as="xs:integer"/>
     <xsl:variable name="vFacsId" select="'facs_'"/>
     
     <xsl:template match="tei:TEI">
