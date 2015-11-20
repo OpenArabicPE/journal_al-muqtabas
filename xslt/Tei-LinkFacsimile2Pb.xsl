@@ -17,7 +17,12 @@
     </xd:doc>
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
-    <xsl:param name="pPageSetOff" select="4"/>
+    <!-- the page set-off is condition by the scans from HathiTrust and different for each volume:
+        - vol. 4: 12
+        - vol. 6: 4 -->
+    <xsl:param name="pPageSetOff" select="12"/>
+    <!-- identify the author of the change by means of a @xml:id -->
+    <xsl:param name="pAuthorXmlId" select="'pers_TG'"/>
     
     <!-- copy everything -->
     <xsl:template match="@* | node()">
@@ -30,7 +35,8 @@
         <xsl:copy>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:text>Linked all </xsl:text><tei:gi>pb</tei:gi><xsl:text> to the corresponding facsimile</xsl:text>
+                <xsl:attribute name="who" select="concat('#',$pAuthorXmlId)"/>
+                <xsl:text>Linked all </xsl:text><tei:tag>pb ed="print"</tei:tag><xsl:text> to the corresponding facsimile</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
