@@ -428,6 +428,11 @@ The transcribers at *shamela.ws* transcribed all numbers---the originals use the
 - original: 1285
 - markup: `<num value="1285">١٢٨٥</num>` 
 
+**important**: I did not notice that many original numericals were recorded with a dot every three digits and thus the XSLT marked every continuous sequence of digits (regex `\d+`) with a `<num>`, which now must be joined in a future operation:
+
+- original 1.000.245
+- markup: `<num value="1">١</num> . <num value="000">٠٠٠</num> . <num value="245">٢٤٥</num>`, which is displayed as ١ . ٠٠٠ . ٢٤٥
+
 ## Persons, Places, Organisations
 
 1. Persons:`<persName>`
