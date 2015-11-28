@@ -141,7 +141,7 @@
                 <language ident="fr-Arab-AR" xml:lang="en">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc><tei:change when="2015-11-16">Created <tei:att>xml:id</tei:att> for <tei:gi>TEI</tei:gi> and added <tei:tag>idno type="url"</tei:tag> containing the file's URL on GitHub to <tei:gi>publicationStmt</tei:gi></tei:change><tei:change when="2015-10-11">Created <tei:att>xml:id</tei:att> for <tei:gi>tei:TEI</tei:gi> and changed the file name to reflect my URI design.</tei:change><tei:change when="2015-09-21">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><tei:change when="2015-09-21" xml:lang="en">Wrapped all numerals in <tei:gi xml:lang="en">num</tei:gi> with <tei:att xml:lang="en">value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
+        <revisionDesc><tei:change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><tei:change when="2015-11-16">Created <tei:att>xml:id</tei:att> for <tei:gi>TEI</tei:gi> and added <tei:tag>idno type="url"</tei:tag> containing the file's URL on GitHub to <tei:gi>publicationStmt</tei:gi></tei:change><tei:change when="2015-10-11">Created <tei:att>xml:id</tei:att> for <tei:gi>tei:TEI</tei:gi> and changed the file name to reflect my URI design.</tei:change><tei:change when="2015-09-21">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><tei:change when="2015-09-21" xml:lang="en">Wrapped all numerals in <tei:gi xml:lang="en">num</tei:gi> with <tei:att xml:lang="en">value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
             <change when="2015-09-12" who="#pers_TG" xml:lang="en">Made significant changes to the bibliographic information in <gi xml:lang="en">biblStruct</gi> in the <gi xml:lang="en">teiHeader</gi> and added some language information for English and French in Arabic script</change>
             <change when="2015-09-03" who="#pers_TG" xml:lang="en">Added structural mark-up: split all sections into articles, provided <gi xml:lang="en">head</gi>s,
                 etc.</change>
@@ -548,8 +548,8 @@
                             <pubPlace xml:lang="ar">القاهرة</pubPlace>
                             <publisher xml:lang="ar">المطبعة الظاهر</publisher>
                             <publisher xml:lang="ar">المطبعة العمومية</publisher>
-                            <date when-custom="1324-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1906-02-25" xml:lang="ar"> <tei:num value="1" xml:lang="ar">١</tei:num>  محرم
-                                 <tei:num value="١٣٢٤" xml:lang="ar">١٣٢٤</tei:num> </date>
+                            <date when-custom="1324-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1906-02-25" xml:lang="ar"> <tei:num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar">١</tei:num>  محرم
+                                 <tei:num type="auto-markup" resp="#pers_TG" value="١٣٢٤" xml:lang="ar">١٣٢٤</tei:num> </date>
                         </imprint>
                         <biblScope n="1" unit="issue" xml:lang="ar">الجزء الاول</biblScope>
                             <biblScope unit="volume" n="1" xml:lang="ar">المجلد الاول</biblScope>
@@ -581,7 +581,7 @@
                 <pb ed="shamela" n="n1-p2" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P29.xhtml"/>
                 <head xml:lang="ar">صدور المشارقة والمغاربة</head>
                 <p xml:lang="ar">ابن حزم</p>
-                <p xml:lang="ar">ولد سنة  <tei:num value="384" xml:lang="ar">٣٨٤</tei:num>  وتوفي سنة  <tei:num value="456" xml:lang="ar">٤٥٦</tei:num> هـ</p>
+                <p xml:lang="ar">ولد سنة  <tei:num type="auto-markup" resp="#pers_TG" value="384" xml:lang="ar">٣٨٤</tei:num>  وتوفي سنة  <tei:num type="auto-markup" resp="#pers_TG" value="456" xml:lang="ar">٤٥٦</tei:num> هـ</p>
                 <p xml:lang="ar">في الناس من يفادون بنفوسهم حباً بنفع يرجون أن يجنيه أهلهم وعشيرتهم ويتعزون عن ذلك بما يصيبونه من مغنم ديني أو دنيوي ومن
                     هذه الفئة ابن حزم الأندلسي. فقد ترك وزارة المستظهر بالله اختياراً لما آنس من نفسه الغناء في العلم، وأقبل على القراءة
                     وتقييد الآثار والسنن، فنال من ذلك ما لم ينله أحد قبله بالأندلس حتى عد قريع دهره، ووحيد قطره، وألف من كتب الأدب، والدين
@@ -720,12 +720,12 @@
                     المجانين في أوروبا وأميركا زيادة عظيمة في أواخر القرن الماضي. والجنون على الجملة أربع طبقات: جنون مطبق، وجنون خبل، وجنون
                     ناتج من خبال الشيخوخة، والبلاهة والتغفل والجنون كما قالوا فنون ويكون جنون الخبل ناتجاً من تعاطي الكحول فإن المدمنين
                     للشراب ما برحوا ينمون نمواً عجيباً. وإنكلترا أكثر البلاد التي زاد فيها الجنون في هذه الأثناء. فقد كان عدد المعتوهين فيها
-                    سنة  <tei:num value="1866" xml:lang="ar">١٨٦٦</tei:num>  -  <tei:num value="53" xml:lang="ar">٥٣</tei:num>  ألفاً فصار سنة  <tei:num value="1897" xml:lang="ar">١٨٩٧</tei:num>  -  <tei:num value="99" xml:lang="ar">٩٩</tei:num>  ألفاً فالمعتوهون الآن واحد في كل  <tei:num value="293" xml:lang="ar">٢٩٣</tei:num>  بإنكلترا. وقد ثبت لدى أدباء بريطانيا أن
-                    مجانينهم كثروا بكثرة انهماك القوم في تناول الأشربة الروحية فإن  <tei:num value="33" xml:lang="ar">٣٣</tei:num>  في المائة من المعتوهين هم ممن يتعاطون المسكرات عندهم.
+                    سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1866" xml:lang="ar">١٨٦٦</tei:num>  -  <tei:num type="auto-markup" resp="#pers_TG" value="53" xml:lang="ar">٥٣</tei:num>  ألفاً فصار سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1897" xml:lang="ar">١٨٩٧</tei:num>  -  <tei:num type="auto-markup" resp="#pers_TG" value="99" xml:lang="ar">٩٩</tei:num>  ألفاً فالمعتوهون الآن واحد في كل  <tei:num type="auto-markup" resp="#pers_TG" value="293" xml:lang="ar">٢٩٣</tei:num>  بإنكلترا. وقد ثبت لدى أدباء بريطانيا أن
+                    مجانينهم كثروا بكثرة انهماك القوم في تناول الأشربة الروحية فإن  <tei:num type="auto-markup" resp="#pers_TG" value="33" xml:lang="ar">٣٣</tei:num>  في المائة من المعتوهين هم ممن يتعاطون المسكرات عندهم.
                     <pb ed="shamela" n="n1-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P35.xhtml"/> وقد نشر
                     حديثاً أحد نُطس الأطباء بحثاً دقيقاً في الجنون بالولايات المتحدة فثبت عنده بالإحصاء أن أكثر الولايات عرضة للجنون هي التي
                     كثر تعاطي الأعمال الصناعية فيها في جنوبي البلاد. أما البلاد الزراعية فإن المصابين بها أقل من ذلك فتجد في مقاطعة
-                    الماساشوست مجنوناً في كل  <tei:num value="348" xml:lang="ar">٣٤٨</tei:num>  ساكناً على أنك لا تجد غير مجنون واحد في كل  <tei:num value="935" xml:lang="ar">٩٣٥</tei:num>  من مقاطعة الأركانساس. والجنون بين السود أقل
+                    الماساشوست مجنوناً في كل  <tei:num type="auto-markup" resp="#pers_TG" value="348" xml:lang="ar">٣٤٨</tei:num>  ساكناً على أنك لا تجد غير مجنون واحد في كل  <tei:num type="auto-markup" resp="#pers_TG" value="935" xml:lang="ar">٩٣٥</tei:num>  من مقاطعة الأركانساس. والجنون بين السود أقل
                     انتشاراً منه بين البيض. ومادام الزنوج نازلين في الأرياف فهم في مأمن من ضياع العقل ولكن متى نزلوا الحواضر وأخذوا في
                     مجاراة البيض ومجاذبتهم حبل الجهاد الاجتماعي يكثر فيهم هذا الداء فيملؤون البيمارستانات والمستشفيات.</p>
                 <p xml:lang="ar">ومن أمراض هذا القرن ما عرفه أطباء الأمريكان من مرض دعوه نوراستينا أو ضعف المجموع العصبي. مرض يكثر انتشاره في البلاد التي
@@ -745,7 +745,7 @@
                 <p xml:lang="ar">ومن مفسدات الجنس البشري في هذا القرن التسمم بالكحول فقد زاد صرف المشروبات الروحية في النصف الأخير منه حتى قدر أحدهم خمسة
                     من المائة يموتون في مستشفيات باريس من فعل الكحول. وأوربا سواء في استعمال الخمور اللهم إلا الأقاليم الشمالية الباردة
                     والرطبة منها مثل روسيا والسويد ونروج وبلجيكا فإن شرب الكحول مألوف فيها كل الألفة ويفرط السكان في تناوله وخصوصاً طبقات
-                    العملة منهم. فقد أصاب الفرد في فرنسا سنة  <tei:num value="1876" xml:lang="ar">١٨٧٦</tei:num>  أربعة ليترات من الكحول في السنة وأصاب الفرد في ألمانيا خمسة وفي إنكلترا
+                    العملة منهم. فقد أصاب الفرد في فرنسا سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1876" xml:lang="ar">١٨٧٦</tei:num>  أربعة ليترات من الكحول في السنة وأصاب الفرد في ألمانيا خمسة وفي إنكلترا
                     ستة وفي روسيا عشرة إلى اثنتي عشر إلى عشرين لتراً بحسب الولايات والصناعات. ولم يجد فرنسا إكثارها من وضع الضرائب على
                     الكحول إذ لم ينقص شاربوه.</p>
                 <p xml:lang="ar">والتسمم بالمسكرات أخف وطأة في البلاد التي تجود فيها الكروم مثل إسبانيا وإيطاليا والبرتغال وجنوبي فرنسا وقلما يصيب الفرد
@@ -812,9 +812,9 @@
                     ناسخين مستظهرين ناسين. وطريقة برليتز هذه أن يستعمل أولاً اللغة المتعلمة خاصة وأن يتابع التصور في اللغة الغريبة مباشرة
                     بدون وساطة اللغة الأصلية وأن تُعلَّم أسماء الأعيان بقوة الحس وتعلم أسماء المعاني بتتابع التصور ويدرس النحو بالأمثلة
                     والشواهد. <pb ed="shamela" n="n1-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P40.xhtml"/> هذا مذهب الأستاذ برليتز في إتقان
-                    ملكة اللغات وقد انتقل من نيويورك إلى باريس عام  <tei:num value="1889" xml:lang="ar">١٨٨٩</tei:num>  فأسست في هذه العاصمة أول مدرسة على تلك الطريقة وانتقل هذا المذاهب في
+                    ملكة اللغات وقد انتقل من نيويورك إلى باريس عام  <tei:num type="auto-markup" resp="#pers_TG" value="1889" xml:lang="ar">١٨٨٩</tei:num>  فأسست في هذه العاصمة أول مدرسة على تلك الطريقة وانتقل هذا المذاهب في
                     تلك السنة إلى إنكلترا وألمانيا فأسست في كل من لندن وبرلين مدارس لهذا الغرض. وما برحت مدارسها تتكاثر في الأصقاع الأوربية
-                    حتى كانت في بدء هذه السنة  <tei:num value="242" xml:lang="ar">٢٤٢</tei:num>  مدرسة في أوربا وحدها وكلها أسفرت عن ارتقاء واقتصاد في الوقت والمال وطريقة القائمين بهذا
+                    حتى كانت في بدء هذه السنة  <tei:num type="auto-markup" resp="#pers_TG" value="242" xml:lang="ar">٢٤٢</tei:num>  مدرسة في أوربا وحدها وكلها أسفرت عن ارتقاء واقتصاد في الوقت والمال وطريقة القائمين بهذا
                     الأمر أن يكون لكل تلميذ أستاذه الخاص به فيأخذ هذا يعلم تلميذه ما يقع نظره عليه في قاعة الدرس من منضدة وكرسي وكتاب وباب
                     ونافذة يلفظها بلغتها ولا يزال يكررها المتعلم حتى يتقن التلفظ فإذا نفذت المسميات لدى الأستاذ في الغرفة يعمد إلى صور سهلة
                     واضحة رسمت على صفحات مجموعة رسوم فما هو إلا أن يتعلم التلميذ أسماء الأشياء الواقعة تحت حسه مع الألوان التي يمتاز بها كل
@@ -922,7 +922,7 @@
                     لأن لهم خيالات وتصورات خصوا بها دون سائر الأمم ونقل الأوربيون التمثيل عن اليونان لأنهم أرادوا أن يتشبهوا بهم حذو القذة
                     بالقدة. وهناك أسباب أخرى زهدت المسلمين في التمثيل <pb ed="shamela" n="n1-p18" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P45.xhtml"/> ذلك لأنهم أمة لم تنقل عن غيرها إلا
                     ما مست حاجتها إليه وانطبق مع عاداتها وليس العرب أمة خيال بل أمة حس وحقيقة.</p>
-                <p xml:lang="ar">هذا ما قاله العالمان المشار إليهما. وأنت ترى أن التمثيل في بلادنا حديث النشأة. كانت بعثته الأولى سنة  <tei:num value="1382" xml:lang="ar">١٣٨٢</tei:num> هـ في سورية
+                <p xml:lang="ar">هذا ما قاله العالمان المشار إليهما. وأنت ترى أن التمثيل في بلادنا حديث النشأة. كانت بعثته الأولى سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1382" xml:lang="ar">١٣٨٢</tei:num> هـ في سورية
                     ومنها انتقل إلى مصر. وما برحت حاله تتقلب بين هبوط وصعود وإن لم يعد ذلك صعوداً بالنسبة للأمم الراقية. وليس ذلك فيما أحسب
                     إلا لانقطاع الرغبات في الآداب العربية واقتصار القوم من التمثيل على الأغاني والمناظر لا على المعنويات والجواهر. </p>
             </div>
@@ -946,7 +946,7 @@
                     الطوارئ مما لم يسبق له مثيل في تاريخ الجنس البشري.</p>
                 <p xml:lang="ar">بيد أن من غيروا مساكنهم وراحوا إلى داخلية البلاد منهم أمسوا يرزقون من الأولاد كأكثر المتناسلين وكثير فيهم من بلغ ولده
                     العشرة.</p>
-                <p xml:lang="ar">وفي غاليسيا اليوم أسرة عدد أعضائها  <tei:num value="326" xml:lang="ar">٣٢٦</tei:num>  كلها من الجيل الأول والثاني وهي أكبر أسرة <pb ed="shamela" n="n1-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P47.xhtml"/> في العالم. وربها من شيعة المورمون
+                <p xml:lang="ar">وفي غاليسيا اليوم أسرة عدد أعضائها  <tei:num type="auto-markup" resp="#pers_TG" value="326" xml:lang="ar">٣٢٦</tei:num>  كلها من الجيل الأول والثاني وهي أكبر أسرة <pb ed="shamela" n="n1-p20" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P47.xhtml"/> في العالم. وربها من شيعة المورمون
                     القائلة بتعدد الزوجات. ويكثر بين اليابانيين حتى في المدن من يرزق عشرة بنين وبنات أما في القرى فيكثر من يكون له عشرون
                     ولداً. والروس كثير نسلهم. وقد عرض أحدهم ذات يوم على الإمبراطورة كاترينا الثانية تسعين ولداً من صلبه. وفي قازان خمس
                     وعشرون أسرة فيها ثلاثون ولداً أحياء. ومن الدلائل على كثرة تناسل الروسيين أن إحدى نسائهم ولدت ولدها الثامن عشر وهي في
@@ -1196,7 +1196,7 @@
                         ممتعين بأسنان بيضاء صافية سالمة في الغالب. فالسكر هو بمثابة فحم تحمى به الأعصاب وتستعيد به الصحة قواها بعد العناء.
                         وقد جرب استعماله مدة في عشرين جندياً في ألمانيا فكان من استعملوه أسمن وأحسن ممن انقطعوا عنه حتى أن المدمن له ليصعد
                         العقبة الكؤود أسرع من كل من ألف التصعيد في الجبال والنجاد. ويحسن أن يذاب في الماء أو في شاي خفيف ولا بأس باستعماله
-                        مع الليمون وإذا أذيب  <tei:num value="150" xml:lang="ar">١٥٠</tei:num>  غراماً منه في لتر من الماء أو الشاي فينفع في الهضم ويدب النشاط في الجسم.</p>
+                        مع الليمون وإذا أذيب  <tei:num type="auto-markup" resp="#pers_TG" value="150" xml:lang="ar">١٥٠</tei:num>  غراماً منه في لتر من الماء أو الشاي فينفع في الهضم ويدب النشاط في الجسم.</p>
                 </div>
                 <div type="section" xml:lang="ar">
                     <head xml:lang="ar">حياة الفقير</head>
@@ -1278,7 +1278,7 @@
                         يمت به صناعة الإنشاء فلما دخل البلاد ورأى بها القاضي الفاضل وعماد الدين الأصبهاني الكاتب وتلك الحلبة علم من نفسه أنه
                         ليس من طبقتهم ولا تنفق سلعته مع وجودهم فعدل عن طريق الجد وسلك طريق الهزل وعمل المنامات والرسائل المشهورة به
                         والمنسوبة إليه وفيها دلالة على خفة روحه ورقة حاشيته وكمال ظرفه. وقد تولى الوهراني الخطابة بداريا إحدى أمهات قرى
-                        الغوطة بدمشق وتوفي بها سنة  <tei:num value="575" xml:lang="ar">٥٧٥</tei:num> هـ.</p>
+                        الغوطة بدمشق وتوفي بها سنة  <tei:num type="auto-markup" resp="#pers_TG" value="575" xml:lang="ar">٥٧٥</tei:num> هـ.</p>
                     <p xml:lang="ar">هذا هو المؤلف ومصنفه أنموذج يقول بأن الرقاعة ارتقت في ذاك العصر كما ارتقت البلاغة وأن الدولة الصلاحية بما اشتهر عنها
                         من الانطلاق وانتشار المعارف اتسع صدرها لمثل الوهراني اتساعه لأمثال البيساني للتين قوم وللجميز أقوام وكلام المؤلف على
                         خلطه وخبطه يضحك العبوس وقلما تنقبض منه النفوس إلا لدن سماع بعض الألفاظ السخيفة التي تنبو عنها الأذواق السليمة في هذا
@@ -1353,7 +1353,7 @@
                 </div>
                 <div type="article" xml:lang="ar">
                     <head xml:lang="ar">جزيرة مغمورة</head>
-                    <p xml:lang="ar">تركت إنكلترا لألمانيا سنة  <tei:num value="1890" xml:lang="ar">١٨٩٠</tei:num>  جزيرة ايليكولاندا في البحر الشمالي وأخذت عوضاً عنها جزيرة زنجبار لكن تلك الجزيرة أخذت
+                    <p xml:lang="ar">تركت إنكلترا لألمانيا سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1890" xml:lang="ar">١٨٩٠</tei:num>  جزيرة ايليكولاندا في البحر الشمالي وأخذت عوضاً عنها جزيرة زنجبار لكن تلك الجزيرة أخذت
                         تغمرها المياه فلم يبق منها غير ربعها على ما بذل من العناية في كفّ عادية المياه عنها ولا تلبث ايليكولاندا أن تصبح في
                         خبر كان يضمها اليمُّ إلى صدره ويدرجها في قاعه وقعره.</p>
                 </div>
@@ -1361,8 +1361,8 @@
                     <head xml:lang="ar">ولوع اليابان بالمحسوسات</head>
                     <p xml:lang="ar">ليس اليابان في ولوعهم بالمحسوسات بأقل من الصينيين إذا صحَّ الحكم على أخلاقهم من مطالعة الكتب التي تتداولها أيديهم
                         وترغب في تصفحها نفوسهم. ففي خزانة كتب طوكيو عاصمة الإمبراطورية اليابانية قلما يطالع المختلفون إليها الروايات والقصص
-                        فقد يتداول القراء في السنة  <tei:num value="16" xml:lang="ar">١٦</tei:num>  في المائة من الكتب الدينية الموجودة في تلك المكتبة و <tei:num value="21" xml:lang="ar">٢١</tei:num>  في المائة من الكتب الرياضية
-                        وعلوم الطب و <tei:num value="20" xml:lang="ar">٢٠</tei:num>  في المائة من كتب الأدب و <tei:num value="18" xml:lang="ar">١٨</tei:num>  في المائة من كتب الجغرافيا والرحلات.</p>
+                        فقد يتداول القراء في السنة  <tei:num type="auto-markup" resp="#pers_TG" value="16" xml:lang="ar">١٦</tei:num>  في المائة من الكتب الدينية الموجودة في تلك المكتبة و <tei:num type="auto-markup" resp="#pers_TG" value="21" xml:lang="ar">٢١</tei:num>  في المائة من الكتب الرياضية
+                        وعلوم الطب و <tei:num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar">٢٠</tei:num>  في المائة من كتب الأدب و <tei:num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar">١٨</tei:num>  في المائة من كتب الجغرافيا والرحلات.</p>
                 </div>
                 <div type="article" xml:lang="ar">
                     <head xml:lang="ar">أخلاق الأمريكان</head>
@@ -1375,7 +1375,7 @@
                     <head xml:lang="ar">اكتشاف مصري</head>
                     <p xml:lang="ar">عثر العملة أثناء عمارة المرفأ الشرقي في الإسكندرية على قبر في سفح أكمة أم القبة بالقرب من البحر يرد عهده إلى زمن
                         بعيد. وهو منحوت في الصخر وذو مدخل مساحته عشرون قدماً مربعاً يمتد منها ستة إلى داخله وعليها شيد المذبح والقبر قائم
-                        الزوايا وطوله تسع أقدام وعلوه كذلك أما أعلاه فمصور وفيه  <tei:num value="81" xml:lang="ar">٨١</tei:num>  أيقونة مربعة فيها صور ورسوم مجهولة في الأكثر والجدران
+                        الزوايا وطوله تسع أقدام وعلوه كذلك أما أعلاه فمصور وفيه  <tei:num type="auto-markup" resp="#pers_TG" value="81" xml:lang="ar">٨١</tei:num>  أيقونة مربعة فيها صور ورسوم مجهولة في الأكثر والجدران
                         مصورة أيضاً ومنقوشة ومعظمها إما بكرور الأيام أو بمعادل أرباب المقالع. وقد قام في أطراف الشمال الشرقي والجنوب الغربي
                         من المدخل ناووس من صخر يشغل عرض القبر وأقيمت في طرفيه صخرتان عظيمتان جعلت إحداهما على الأخرى على شكل وسادة وهذه
                         الصخور منقوشة كسائر ما في القبر وداخل الناووس.</p>
@@ -1410,7 +1410,7 @@
                 <div type="article" xml:lang="ar">
                     <head xml:lang="ar">أعلى جسر</head>
                     <p xml:lang="ar">فيكتوريا نيانزا أعظم بحيرة في إفريقية الوسطى وثاني بحيرة في العالم وقد أنشأت جمعية إنكليزية خطاً حديداً على مصبها في
-                        نهر زامبير وأقامت عليها جسراً كان أعظم جسر في العالم علوه  <tei:num value="140" xml:lang="ar">١٤٠</tei:num>  متراً وقد بني في  <tei:num value="90" xml:lang="ar">٩٠</tei:num>  أسبوعاً. ومما جعلته الشركة في
+                        نهر زامبير وأقامت عليها جسراً كان أعظم جسر في العالم علوه  <tei:num type="auto-markup" resp="#pers_TG" value="140" xml:lang="ar">١٤٠</tei:num>  متراً وقد بني في  <tei:num type="auto-markup" resp="#pers_TG" value="90" xml:lang="ar">٩٠</tei:num>  أسبوعاً. ومما جعلته الشركة في
                         أسفله شبكة عظيمة تتلقى من يتفق سقوطهم من العملة من حالق لينزلوا بلا خطر.</p>
                 </div>
                 <div type="article" xml:lang="ar">
@@ -1419,7 +1419,7 @@
                         بعضهم يحسون كثيراً بالأصوات الشديدة على حين ترى في آذانهم وقراً لا يسمعون تلك الحروف الصوتية المنبعثة من أصوات حادة
                         على عكس ما تسمع الأذن المعتادة. قال ويصعب إسماع من أصيبوا بالصمم على هذه الصورة بخلاف غيرهم ممن لا ترى فيهم هذه
                         العوارض فإنهم يتوصلون بواسطة السماعة وبعض تمرينات يقومون بها إلى سماع الصوت البشري أحسن سماع وهذه الملاحظات تفيد في
-                        أنها تدعم ما ادعاه هلمهولتيز في نظرياته. وهلمهولتيز من علماء منافع الأعضاء من الألمان توفي سنة  <tei:num value="1894" xml:lang="ar">١٨٩٤</tei:num> . <pb ed="shamela" n="n1-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P70.xhtml"/> </p>
+                        أنها تدعم ما ادعاه هلمهولتيز في نظرياته. وهلمهولتيز من علماء منافع الأعضاء من الألمان توفي سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1894" xml:lang="ar">١٨٩٤</tei:num> . <pb ed="shamela" n="n1-p43" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P70.xhtml"/> </p>
                 </div>
                 <div type="article" xml:lang="ar">
                     <head xml:lang="ar">المرأة الطليانية</head>
@@ -1429,14 +1429,14 @@
                 </div>
                 <div type="article" xml:lang="ar">
                     <head xml:lang="ar">النوام أو مرض النوم</head>
-                    <p xml:lang="ar">نشر الأميرالاي بروس الذي عهدت إليه الحكومة الإنكليزية منذ عام  <tei:num value="1902" xml:lang="ar">١٩٠٢</tei:num>  بالبحث عن أسباب مرض النوام ودواعي انتشاره في أواسط
+                    <p xml:lang="ar">نشر الأميرالاي بروس الذي عهدت إليه الحكومة الإنكليزية منذ عام  <tei:num type="auto-markup" resp="#pers_TG" value="1902" xml:lang="ar">١٩٠٢</tei:num>  بالبحث عن أسباب مرض النوام ودواعي انتشاره في أواسط
                         إفريقية كتاباً قال فيه أنه لم يبق شك بأن هذا المرض ناتج من ذباب سام يتناول السم من دم الحيوان المصاب ويعض أو يقرص من
                         هو عرضة له من الناس وتمتص الذبابة المادة المعروفة القتالة وتبقى في معدتها إلى أن تقذف بها بواسطة خرطومها عندما تمس
                         جزءاً من جسم الإنسان. واللدغة تكاد لا يشعر بها بادئ بدءٍ حتى أن المرء لا يشعر بها في حينها إلا بعد مدة طويلة وربما
                         بعد أن يمضي عليها حولان أو ثلاثة فتنسد الأوعية الدموية في الدماغ وتحرم جوهره من المادة وتصاب به الغدد الليمفاوية
                         خاصة.</p>
                     <p xml:lang="ar">علم ذلك من تجارب في هذا المعنى أجريت على القرود. وينتشر مرض النوام خاصة في أقاليم ذات بطائح على شاطئ الأنهار
-                        والبحيرات وذبابه قلما يبتعد عن مقره أكثر من مائة متر ولكنه غزير جداً بحيث أنه هلك في أوغندا من سنة  <tei:num value="1901" xml:lang="ar">١٩٠١</tei:num>  إلى سنة  <tei:num value="1904" xml:lang="ar">١٩٠٤</tei:num> 
+                        والبحيرات وذبابه قلما يبتعد عن مقره أكثر من مائة متر ولكنه غزير جداً بحيث أنه هلك في أوغندا من سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1901" xml:lang="ar">١٩٠١</tei:num>  إلى سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1904" xml:lang="ar">١٩٠٤</tei:num> 
                         زهاء مائة ألف نسمة من هذا المرض. قال الباحث المشار إليه وسبب هذه الزيادة الهائلة أن أهل البلاد يحاذرون اتخاذ الأسباب
                         الصحية ولا يعتقدون بخطر تلك اللدغة القتالة التي لا يشعرون بها أولاً حتى إنك ترى سكان إقليم فيكتوريا نيانزا لا يحفلون
                         بالذباب الذي يغطي سوقهم عندما يغتسلون. وقد جرب السليماني في مداواة هذا المرض فخفف بعض الألم وإن لم يكن فيه الشفاء
@@ -1450,13 +1450,13 @@
                     <head xml:lang="ar">إعارة الكتب</head>
                     <p xml:lang="ar">في إحدى المجلات الروسية أنه أُسست منذ خمس سنين خزانة كتب في بلدة نيجني نوفكرود ليطالع فيها صغار المزارعين والحفاة
                         العراة من الفقراء المنقطعين عن الأعمال فكانت رغبة المطالعين مصروفة أولاً إلى تلاوة الصحف ويليها الروايات وكتب
-                        التقاويم والرحلات والزراعة وانه أعير في هذه الحقبة من الزمن  <tei:num value="175" xml:lang="ar">١٧٥</tei:num>  ألف عارية لم يفقد منها سوى مجلدين مما يؤيد أن للكتب
+                        التقاويم والرحلات والزراعة وانه أعير في هذه الحقبة من الزمن  <tei:num type="auto-markup" resp="#pers_TG" value="175" xml:lang="ar">١٧٥</tei:num>  ألف عارية لم يفقد منها سوى مجلدين مما يؤيد أن للكتب
                         من قلوب الشعب الروسي مقاماً جليلاً وإن كان بعضهم يقول بسلب أرباب الأملاك أملاكهم.</p>
                 </div>
                 <div type="article" xml:lang="ar">
                     <head xml:lang="ar">موظفو الأمريكان</head>
-                    <p xml:lang="ar">نشرت إحدى الصحف الروسية بحثاً مستفيضاً في وصف الموظفين في الولايات المتحدة فقالت أنهم يبلغون مليون موظف ومنهم  <tei:num value="117" xml:lang="ar">١١٧</tei:num>  ألف
-                        من حراس المدن يقبضون في الشهر من  <tei:num value="60" xml:lang="ar">٦٠</tei:num>  إلى  <tei:num value="100" xml:lang="ar">١٠٠</tei:num>  دولار أي من ثلثمائة إلى خمسمائة فرنك وأن للموظفين حقوقاً في النفوذ لا
+                    <p xml:lang="ar">نشرت إحدى الصحف الروسية بحثاً مستفيضاً في وصف الموظفين في الولايات المتحدة فقالت أنهم يبلغون مليون موظف ومنهم  <tei:num type="auto-markup" resp="#pers_TG" value="117" xml:lang="ar">١١٧</tei:num>  ألف
+                        من حراس المدن يقبضون في الشهر من  <tei:num type="auto-markup" resp="#pers_TG" value="60" xml:lang="ar">٦٠</tei:num>  إلى  <tei:num type="auto-markup" resp="#pers_TG" value="100" xml:lang="ar">١٠٠</tei:num>  دولار أي من ثلثمائة إلى خمسمائة فرنك وأن للموظفين حقوقاً في النفوذ لا
                         تشبه حقوق أمثالهم في بعض الممالك الأوربية.</p>
                 </div>
                 <div type="article" xml:lang="ar">
@@ -1503,8 +1503,8 @@
                             القدماء استخدموا التمثيل لمقاصد دينية ولإخضاع الشعب وتربيته ومن رأيه أن التمثيل قبل الإسلام لم يكن اللهم إلا إذا
                             اعتبر ما كان العرب يقومون به في الكعبة وحولها من الطواف والرقص من قبيل التمثيل. وعدّ من التمثيل الديني ما يقوم
                             به الشيعة من تمثيل مقتل الحسين كما عدّ ما يجربه بعض أرباب الطرق من التمثيل الديني أيضاً. وقال أن أول من أدخل
-                            التمثيل بالعربية مارون النقاش من أهل بيروت سنة  <tei:num value="1855" xml:lang="ar">١٨٥٥</tei:num>  أدخله إلى بيروت وعمه سليم النقاش أول من مثل الروايات العربية
-                            في مصر سنة  <tei:num value="1867" xml:lang="ar">١٨٦٧</tei:num> .</p>
+                            التمثيل بالعربية مارون النقاش من أهل بيروت سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1855" xml:lang="ar">١٨٥٥</tei:num>  أدخله إلى بيروت وعمه سليم النقاش أول من مثل الروايات العربية
+                            في مصر سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1867" xml:lang="ar">١٨٦٧</tei:num> .</p>
                     </div>
                     <div type="article" xml:lang="ar">
                         <head xml:lang="ar">اختلاف الشرائع وغرائبها</head>
@@ -1554,7 +1554,7 @@
                 <div type="section" xml:lang="ar">
                     <head xml:lang="ar">الشاعر والشعير</head>
                     <p xml:lang="ar">كتب سبط ابن التعاويذي - الشاعر المطبوع الذي يقول فيه ابن خلكان أنه لم يكن قبله بمائتي سنة من يضاهيه في جودة الشعر
-                        ورقة المعاني ودقتها ( <tei:num value="553" xml:lang="ar">٥٥٣</tei:num> ) - إلى عضد الدين أبي الفرج محمد بن المظفر وهو من أبناء مواليه يطلب منه شعيراً لفرسه.</p>
+                        ورقة المعاني ودقتها ( <tei:num type="auto-markup" resp="#pers_TG" value="553" xml:lang="ar">٥٥٣</tei:num> ) - إلى عضد الدين أبي الفرج محمد بن المظفر وهو من أبناء مواليه يطلب منه شعيراً لفرسه.</p>
                     <lg type="bayt" xml:lang="ar">
                         <l xml:lang="ar">مولاي يا من له أياد </l>
                         <l xml:lang="ar"> ليس إلى عدها سبيل</l>
