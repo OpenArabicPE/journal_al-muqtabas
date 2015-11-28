@@ -56,7 +56,7 @@
 
     <!-- test for commatta in numbers -->
     <xsl:template
-        match="tei:num[following-sibling::node()[1] = '. ' and name(following-sibling::node()[2]) = 'tei:num']">
+        match="tei:num[following-sibling::node()[1] = '. ' and name(following-sibling::node()[2]) = 'tei:num']" priority="15">
         <xsl:variable name="val1" select="@value"/>
         <xsl:variable name="val2" select="following-sibling::node()[2]/@value"/>
         <xsl:variable name="value" select="number(concat($val1, '.', $val2))"/>
@@ -70,7 +70,7 @@
     </xsl:template>
     <!-- omit output for following tei:num -->
     <xsl:template
-        match="tei:num[preceding-sibling::node()[1] = '. ' and name(preceding-sibling::node()[2]) = 'tei:num']"/>
+        match="tei:num[preceding-sibling::node()[1] = '. ' and name(preceding-sibling::node()[2]) = 'tei:num']" priority="16"/>
     <!-- omit output for following text()='. ' -->
     <xsl:template
         match="node()[self::text() = '. ' and name(preceding-sibling::node()[1]) = 'tei:num' and name(following-sibling::node()[1]) = 'tei:num']"/>
