@@ -15,6 +15,12 @@ I suggest encoding this information with `<ref>` or an XPointer.
 
 Early-twentieth century periodicals contain a lot of typographic markers indicating foreign words, technical terms, proper names, and the end of a section.
 
+### section dividers
+
+The pages contain a large number of different graphic dividers. Sometimes they indicate the end or the beginning of a sections. Sometimes they are followed by a new headline, sometimes they are not. In order not to infer too much from these visual dividers and as they were not transcribed by *shamela.ws*, I have decided to encode them as "anonymous blocks": `<ab>`
+
+Most of these blocks are centered and thus they carry a `@rend="centered"` attribute, which, at a later stage could be used to be automatically translated into a formal `@rendition` statement.
+
 # Gaps in the transcription
 
 Gaps in the transcription as copied from *shamela.ws* are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`. Many, if not most of these originated as the gap between two halves of a single line of a *qaṣīda*.
@@ -83,6 +89,8 @@ Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked 
 
 The current state of mark-up for page breaks is kept in a [second file](notes-tei-markup-pb.md).
 
+
+
 ## Lists
 
 Lists have been encoded as `<list>` independent of their original formating (only rarely were lists indented etc.). In case lists apear with numbered labels in the original, i.e. "(الخامس)", "(٢)", the labels have been encoded with `<label>`.
@@ -122,6 +130,24 @@ How should this be encoded?
     <l>هالٍ خليل خلال ذاك رغاء</l>
 </lg>
 ~~~
+
+# Punctuation
+
+There are two problems with punctuation in this corpus:
+
+1. The original prints show an inconsistent use of punctuation marks
+    - the many quotes are sometimes wrapped in quotation marks, sometimes in brackets, but mostly they are not typographically marked
+    - many quotes are preceded by a leading colon.
+    - words in foreign languages are sometimes wrapped in quotation marks or brackets.
+2. The *shamela.ws* transcribers inconsistently transcribed existing punctuation marks and added some of their own, particularly full stops. 
+
+## encoding in TEI
+
+Punctuation marks are not consistently transcribed into TEI in consequence. I have chosen to retain all existing punctuation from *shamela.ws*. In some cases I have added encoding for quotation marks and quotations:
+
+1. `<q>`: material visually marked by some sort of quotation marks, but which not necessarily constitute a quotation
+2. `<quote>`: a phrase or passage attributed by the narrator or author to some agency external to the text.
+
 
 # URIs
 
