@@ -139,7 +139,10 @@
                     practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc><tei:change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
+        <revisionDesc>
+            <change when="2015-11-29" who="#pers_TG">Corrected mark-up of the section on new
+                publications to include the full <gi>bibl</gi> in the <gi>head</gi> of the
+                    <gi>div</gi>.</change><tei:change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
             <change when="2015-11-17" who="#pers_TG">Added automated <att>xml:id</att> s for every element that is a descendant of
                 <gi>tei:text</gi> and had no existing <att>xml:id</att> following the pattern "name()_generate-id()"</change>
             <tei:change when="2015-11-17" who="#pers_TG">Added <tei:gi>graphic</tei:gi> for 72 pages with references to digital images at
@@ -2432,12 +2435,22 @@
             <div type="section" xml:id="div_32.d1e4068" xml:lang="ar">
                 <head xml:id="head_30.d1e4070" xml:lang="ar">مطبوعات ومخطوطات</head>
                 <div type="article" xml:id="div_32.d1e4073" xml:lang="ar">
-                    <head xml:id="head_31.d1e4075" xml:lang="ar">التربية الاستقلالية <lb xml:id="lb_1.d1e4077"/> أو أميل القرن التاسع
-                        عشر</head>
-                    <p xml:id="p_181.d1e4080" xml:lang="ar"> <bibl xml:id="bibl_3.d1e4081" xml:lang="ar">ل <author xml:id="author_4.d1e4083" xml:lang="ar"> <persName xml:id="persName_11.d1e4084" xml:lang="ar">الفونس اسكيروس</persName></author> <respStmt xml:id="respStmt_3.d1e4087" xml:lang="ar">
-                        <resp xml:id="resp_3.d1e4089" xml:lang="ar">ترجمه</resp>
-                        <persName xml:id="persName_12.d1e4092" xml:lang="ar">عبد العزيز أفندي محمد</persName>
-                        </respStmt>وطبع ب <publisher xml:id="publisher_3.d1e4096" xml:lang="ar"> <orgName xml:id="orgName_4.d1e4097" xml:lang="ar">مطبعة المنار</orgName></publisher>ب <pubPlace xml:id="pubPlace_4.d1e4100" xml:lang="ar"> <placeName xml:id="placeName_9.d1e4101" xml:lang="ar">مصر</placeName></pubPlace> <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1326" xml:id="date_13.d1e4104" xml:lang="ar">سنة <tei:num type="auto-markup" resp="#pers_TG" value="1326" xml:id="num_1.d1e4106" xml:lang="ar">١٣٢٦</tei:num></date>: ص <tei:num type="auto-markup" resp="#pers_TG" value="466" xml:id="num_1.d1e4110" xml:lang="ar">٤٦٦</tei:num></bibl> </p>
+                    <head xml:id="head_31.d1e4075" xml:lang="ar"><bibl xml:lang="ar"><title
+                                level="m">التربية الاستقلالية <lb/> أو أميل القرن التاسع
+                            عشر</title><lb/>ل <author xml:lang="ar">
+                                <persName xml:lang="ar">الفونس اسكيروس</persName></author>
+                            <respStmt xml:lang="ar">
+                                <resp xml:lang="ar">ترجمه</resp>
+                                <persName xml:lang="ar">عبد العزيز أفندي محمد</persName>
+                            </respStmt>وطبع ب <publisher xml:lang="ar">
+                                <orgName xml:lang="ar">مطبعة المنار</orgName></publisher>ب <pubPlace
+                                xml:lang="ar">
+                                <placeName xml:lang="ar">مصر</placeName></pubPlace>
+                            <date calendar="#cal_islamic" datingMethod="#cal_islamic"
+                                when-custom="1326" xml:lang="ar">سنة <tei:num type="auto-markup"
+                                    resp="#pers_TG" value="1326" xml:lang="ar"
+                            >١٣٢٦</tei:num></date>: ص <tei:num type="auto-markup" resp="#pers_TG"
+                                value="466" xml:lang="ar">٤٦٦</tei:num></bibl></head>
                     <p xml:id="p_182.d1e4114" xml:lang="ar">هذا السفر من أجل كتب التربية عند الإفرنسيس جرى فيه مؤلفه على أسلوب أميل القرن
                         الثامن عشر لجان جاك روسو وصاغه في قالب رسائل ملذة حوت خزانة أفكار ترقي في المرء أدب النفس وأدب الدرس. وقد قدم له
                         رصيفنا صاحب المنار مقدمة ذكر فيها غرض المؤلف وفائدة كتابه وكذلك فعل مترجمه الأديب. وكان نشر هذا الكتاب تباعاً في
@@ -2446,25 +2459,58 @@
                         بالفرع كما انتفع بالأصل وأن يلهم العارفون لغات الأجانب منا إلى تعريب مثل هذه الأسفار النافعة.</p>
                 </div>
                 <div type="article" xml:id="div_33.d1e4118" xml:lang="ar">
-                    <head xml:id="head_32.d1e4120" xml:lang="ar">دلائل التوحيد</head>
-                    <p xml:id="p_183.d1e4123" xml:lang="ar"> <bibl xml:id="bibl_4.d1e4124" xml:lang="ar">تأليف <author xml:id="author_5.d1e4126" xml:lang="ar"> <persName xml:id="persName_13.d1e4127" xml:lang="ar">الشيخ محمد جمال الدين
-                        القاسمي الدمشقي</persName></author>طبع ب <publisher xml:id="publisher_4.d1e4130" xml:lang="ar"> <orgName xml:id="orgName_5.d1e4131" xml:lang="ar">مطبعة الفيحاء</orgName></publisher>ب <pubPlace xml:id="pubPlace_5.d1e4134" xml:lang="ar"> <placeName xml:id="placeName_10.d1e4135" xml:lang="ar">دمشق</placeName></pubPlace>(ص <tei:num type="auto-markup" resp="#pers_TG" value="207" xml:id="num_1.d1e4138" xml:lang="ar">٢٠٧</tei:num> )</bibl> </p>
+                    <head xml:id="head_32.d1e4120" xml:lang="ar"><bibl xml:id="bibl_4.d1e4124"
+                            xml:lang="ar"><title level="m">دلائل التوحيد</title><lb/> تأليف <author
+                                xml:id="author_5.d1e4126" xml:lang="ar">
+                                <persName xml:id="persName_13.d1e4127" xml:lang="ar">الشيخ محمد جمال
+                                    الدين القاسمي الدمشقي</persName></author>طبع ب <publisher
+                                xml:id="publisher_4.d1e4130" xml:lang="ar">
+                                <orgName xml:id="orgName_5.d1e4131" xml:lang="ar">مطبعة
+                                    الفيحاء</orgName></publisher>ب <pubPlace
+                                xml:id="pubPlace_5.d1e4134" xml:lang="ar">
+                                <placeName xml:id="placeName_10.d1e4135" xml:lang="ar"
+                                    >دمشق</placeName></pubPlace>(ص <tei:num type="auto-markup"
+                                resp="#pers_TG" value="207" xml:id="num_1.d1e4138" xml:lang="ar"
+                                >٢٠٧</tei:num> )</bibl></head>
                     <p xml:id="p_184.d1e4142" xml:lang="ar">عرف مؤلف هذا الكتاب بالهمة العالية في التأليف والنشر والنظر في الفنون الإسلامية
                         واللسانية. وكتابه هذا حوى من أدلة الكلاميين والفلاسفة الإلهيين ما تدحض به حجج المبطلين والسفسطائيين ولنحل به شبهات
                         الجامدين من الماديين وقد التزم في حجاجهم جانب الأدب والحكمة فلا يدفع الشبهة إلا بالحجة ولا يدفع الباطل إلا بسلطان
                         الحق عازياً بعض الشواهد لأربابها مغفلاً الآخر على حسب المال.</p>
                 </div>
                 <div type="article" xml:id="div_34.d1e4146" xml:lang="ar">
-                    <head xml:id="head_33.d1e4148" xml:lang="ar">دواني القطوف <lb xml:id="lb_2.d1e4150"/> في تاريخ بني المعلوف</head>
-                    <p xml:id="p_185.d1e4153" xml:lang="ar"> <bibl xml:id="bibl_5.d1e4154" xml:lang="ar">تأليف <author xml:id="author_6.d1e4156" xml:lang="ar"> <persName xml:id="persName_14.d1e4157" xml:lang="ar">عيسى أفندي اسكندر
-                        المعلوف</persName></author>. طبع في <pubPlace xml:id="pubPlace_6.d1e4160" xml:lang="ar"> <orgName xml:id="orgName_6.d1e4161" xml:lang="ar">المطبعة العثمانية</orgName></pubPlace>في <pubPlace xml:id="pubPlace_7.d1e4164" xml:lang="ar"> <placeName xml:id="placeName_11.d1e4165" xml:lang="ar">بعبدا</placeName></pubPlace>( <placeName xml:id="placeName_12.d1e4168" xml:lang="ar">لبنان</placeName> ) <date notAfter="1908" notBefore="1907" xml:id="date_14.d1e4171" xml:lang="ar"> سنة <tei:num type="auto-markup" resp="#pers_TG" value="1907" xml:id="num_1.d1e4173" xml:lang="ar">١٩٠٧</tei:num> ـ <tei:num type="auto-markup" resp="#pers_TG" value="1908" xml:id="num_1.d1e4176" xml:lang="ar">١٩٠٨</tei:num></date>(ص <tei:num type="auto-markup" resp="#pers_TG" value="749" xml:id="num_1.d1e4180" xml:lang="ar">٧٤٩</tei:num> )</bibl> </p>
+                    <head xml:id="head_33.d1e4148" xml:lang="ar"><bibl xml:id="bibl_5.d1e4154"
+                            xml:lang="ar"><title level="m">دواني القطوف <lb xml:id="lb_2.d1e4150"/>
+                                في تاريخ بني المعلوف</title><lb/>تأليف <author
+                                xml:id="author_6.d1e4156" xml:lang="ar">
+                                <persName xml:id="persName_14.d1e4157" xml:lang="ar">عيسى أفندي
+                                    اسكندر المعلوف</persName></author>. طبع في <pubPlace
+                                xml:id="pubPlace_6.d1e4160" xml:lang="ar">
+                                <orgName xml:id="orgName_6.d1e4161" xml:lang="ar">المطبعة
+                                    العثمانية</orgName></pubPlace>في <pubPlace
+                                xml:id="pubPlace_7.d1e4164" xml:lang="ar">
+                                <placeName xml:id="placeName_11.d1e4165" xml:lang="ar"
+                                    >بعبدا</placeName></pubPlace>( <placeName
+                                xml:id="placeName_12.d1e4168" xml:lang="ar">لبنان</placeName> )
+                                <date notAfter="1908" notBefore="1907" xml:id="date_14.d1e4171"
+                                xml:lang="ar"> سنة <tei:num type="auto-markup" resp="#pers_TG"
+                                    value="1907" xml:id="num_1.d1e4173" xml:lang="ar">١٩٠٧</tei:num>
+                                ـ <tei:num type="auto-markup" resp="#pers_TG" value="1908"
+                                    xml:id="num_1.d1e4176" xml:lang="ar">١٩٠٨</tei:num></date>(ص
+                                <tei:num type="auto-markup" resp="#pers_TG" value="749"
+                                xml:id="num_1.d1e4180" xml:lang="ar">٧٤٩</tei:num> )</bibl></head>
                     <p xml:id="p_186.d1e4184" xml:lang="ar"> <pb corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2349.xhtml" ed="shamela" n="n37-p60" xml:id="pb_125.d1e4186"/>هذا المؤلف من كتاب العربية وشعرائها المجيدين ترجم وكتب كثيراً فعد من <pb ed="print" facs="#facs_80" n="68" xml:id="pb_126.d1e4188"/> جملة من خدموا الآداب العربية وقد اختص هذا التأليف بوصف أسرته الكبرى
                         خاصة وبعض الأسر السورية ولاسيما المسيحية عامة وألمَّ بتاريخ معظم أصقاع سورية قديمها وحديثها ومناشئ سكانها وأصولهم
                         وعاداتهم وحكوماتهم آخذاً عن الشيوخ مشافهة ومن بطون الدفاتر والكتب المطبوعة والمخطوطة مما يصعب وصول كل باحث إليه فجمع
                         شتيتاً من الحوادث والكوائن خدم بها تاريخ البلاد خدمة يشكر عليها وتاريخ الأفراد هو تاريخ السياسة.</p>
                 </div>
                 <div type="article" xml:id="div_35.d1e4192" xml:lang="ar">
-                    <head xml:id="head_34.d1e4194" xml:lang="ar">تقرير جمعية العروة الوثقى <lb xml:id="lb_3.d1e4196"/> سنة <tei:num type="auto-markup" resp="#pers_TG" value="1906" xml:id="num_1.d1e4198" xml:lang="ar">١٩٠٦</tei:num> ـ <tei:num type="auto-markup" resp="#pers_TG" value="1907" xml:id="num_1.d1e4201" xml:lang="ar">١٩٠٧</tei:num></head>
+                    <head xml:id="head_34.d1e4194" xml:lang="ar"><bibl><title level="m">تقرير جمعية
+                                العروة الوثقى <lb xml:id="lb_3.d1e4196"/> سنة <tei:num
+                                    type="auto-markup" resp="#pers_TG" value="1906"
+                                    xml:id="num_1.d1e4198" xml:lang="ar">١٩٠٦</tei:num> ـ <tei:num
+                                    type="auto-markup" resp="#pers_TG" value="1907"
+                                    xml:id="num_1.d1e4201" xml:lang="ar"
+                            >١٩٠٧</tei:num></title></bibl></head>
                     <p xml:id="p_187.d1e4205" xml:lang="ar">في القطر المصري جمعيتان إسلاميتان قامتا بأجل الأعمال النافعة من تربية البنين
                         والبنات إحداهما الجمعية الخيرية الإسلامية في القاهرة والثانية جمعية العروة الوثقى الخيرية الإسلامية بالإسكندرية.
                         وأمامنا الآن تقرير الثانية الأخير وفيه أن عدد مدارس الذكور التي أسستها كان في السنة الماضية <tei:num type="auto-markup" resp="#pers_TG" value="11" xml:id="num_1.d1e4207" xml:lang="ar">١١</tei:num> مدرسة فيها <tei:num type="auto-markup" resp="#pers_TG" value="910" xml:id="num_1.d1e4210" xml:lang="ar">٩١٠</tei:num> أولاد ومدارس البنات <tei:num type="auto-markup" resp="#pers_TG" value="6" xml:id="num_1.d1e4213" xml:lang="ar">٦</tei:num>
@@ -2475,9 +2521,27 @@
                         التعليم <tei:num type="auto-markup" resp="#pers_TG" value="5646" xml:id="num_1.d1e4219" xml:lang="ar">٥٦٤٦</tei:num> فبلغت النفقات الحقيقية <tei:num type="auto-markup" resp="#pers_TG" value="5730" xml:id="num_1.d1e4223" xml:lang="ar">٥٧٣٠</tei:num> ج و <tei:num type="auto-markup" resp="#pers_TG" value="86" xml:id="num_1.d1e4226" xml:lang="ar">٨٦</tei:num> م.</p>
                 </div>
                 <div type="article" xml:id="div_36.d1e4232" xml:lang="ar">
-                    <head xml:id="head_35.d1e4234" xml:lang="ar">رحلة الحبشة</head>
-                    <p xml:id="p_188.d1e4237" xml:lang="ar"> <bibl xml:id="bibl_6.d1e4238" xml:lang="ar">ل <author xml:id="author_7.d1e4240" xml:lang="ar"> <persName xml:id="persName_15.d1e4241" xml:lang="ar">صادق باشا المؤيد</persName></author>وتعريب
-                        <persName xml:id="persName_16.d1e4244" xml:lang="ar">رفيق بك العظم</persName> و <persName xml:id="persName_17.d1e4247" xml:lang="ar">حقي بك العظم</persName> . طبعت ب <publisher xml:id="publisher_5.d1e4250" xml:lang="ar"> <orgName xml:id="orgName_7.d1e4251" xml:lang="ar">مطبعة الجريدة</orgName></publisher>ب <pubPlace xml:id="pubPlace_8.d1e4254" xml:lang="ar"> <placeName xml:id="placeName_13.d1e4255" xml:lang="ar">مصر</placeName></pubPlace> <date when="1908" xml:id="date_15.d1e4259" xml:lang="ar">سنة <tei:num type="auto-markup" resp="#pers_TG" value="1326" xml:id="num_1.d1e4261" xml:lang="ar">١٣٢٦</tei:num> ـ <tei:num type="auto-markup" resp="#pers_TG" value="1908" xml:id="num_1.d1e4264" xml:lang="ar">١٩٠٨</tei:num></date>(ص <tei:num type="auto-markup" resp="#pers_TG" value="335" xml:id="num_1.d1e4267" xml:lang="ar">٣٣٥</tei:num> )</bibl> </p>
+                    <head xml:id="head_35.d1e4234" xml:lang="ar"><bibl xml:id="bibl_6.d1e4238"
+                            xml:lang="ar"><title level="m">رحلة الحبشة</title><lb/>ل <author
+                                xml:id="author_7.d1e4240" xml:lang="ar">
+                                <persName xml:id="persName_15.d1e4241" xml:lang="ar">صادق باشا
+                                    المؤيد</persName></author>وتعريب <persName
+                                xml:id="persName_16.d1e4244" xml:lang="ar">رفيق بك العظم</persName>
+                            و <persName xml:id="persName_17.d1e4247" xml:lang="ar">حقي بك
+                                العظم</persName> . طبعت ب <publisher xml:id="publisher_5.d1e4250"
+                                xml:lang="ar">
+                                <orgName xml:id="orgName_7.d1e4251" xml:lang="ar">مطبعة
+                                    الجريدة</orgName></publisher>ب <pubPlace
+                                xml:id="pubPlace_8.d1e4254" xml:lang="ar">
+                                <placeName xml:id="placeName_13.d1e4255" xml:lang="ar"
+                                    >مصر</placeName></pubPlace>
+                            <date when="1908" xml:id="date_15.d1e4259" xml:lang="ar">سنة <tei:num
+                                    type="auto-markup" resp="#pers_TG" value="1326"
+                                    xml:id="num_1.d1e4261" xml:lang="ar">١٣٢٦</tei:num> ـ <tei:num
+                                    type="auto-markup" resp="#pers_TG" value="1908"
+                                    xml:id="num_1.d1e4264" xml:lang="ar">١٩٠٨</tei:num></date>(ص
+                                <tei:num type="auto-markup" resp="#pers_TG" value="335"
+                                xml:id="num_1.d1e4267" xml:lang="ar">٣٣٥</tei:num> )</bibl></head>
                     <p xml:id="p_189.d1e4271" xml:lang="ar">المؤلف والمعربان ممن اشتهروا بالآداب وخدمة الأقلام. والمؤلف هو أحد أفراد أسرة
                         تعلم معظمهم التعليم العصري وبرزوا في الفنون التي أحكموها. وقد كانت الحكومة العثمانية انتدبته في مهمات السياسة فرحل
                         إلى جغبوب مقر الشيخ السنوسي كما رحل إلى كفرة <pb corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2350.xhtml" ed="shamela" n="n37-p61" xml:id="pb_127.d1e4273"/> وآسيا الصغرى والحجاز وآخر رحلاته رحلته إلى بلاد الحبشة <pb ed="print" facs="#facs_81" n="69" xml:id="pb_128.d1e4275"/> في مهمة من السلطان العثماني إلى الإمبراطور منليك الحبشي فلم يشأ أن يضيع رحلاته في
@@ -2489,10 +2553,20 @@
                         الإفرنجية.</p>
                 </div>
                 <div type="article" xml:id="div_37.d1e4279" xml:lang="ar">
-                    <head xml:id="head_36.d1e4281" xml:lang="ar">تركيا الجديدة</head>
-                    <p xml:id="p_190.d1e4284" xml:lang="ar"> <bibl xml:id="bibl_7.d1e4285" xml:lang="ar">ل <author xml:id="author_8.d1e4287" xml:lang="ar"> <persName xml:id="persName_18.d1e4288" xml:lang="ar">جميل أفندي معلوف</persName></author>طبع ب
-                        <publisher xml:id="publisher_6.d1e4291" xml:lang="ar"> <orgName xml:id="orgName_8.d1e4292" xml:lang="ar">مطبعة
-                        المناظر</orgName></publisher>في <pubPlace xml:id="pubPlace_9.d1e4295" xml:lang="ar"> <placeName xml:id="placeName_14.d1e4296" xml:lang="ar">سان باولو</placeName></pubPlace>من <placeName xml:id="placeName_15.d1e4299" xml:lang="ar">بلاد برازيل</placeName> (ص <tei:num type="auto-markup" resp="#pers_TG" value="154" xml:id="num_1.d1e4302" xml:lang="ar">١٥٤</tei:num> )</bibl> </p>
+                    <head xml:id="head_36.d1e4281" xml:lang="ar"><bibl xml:id="bibl_7.d1e4285"
+                            xml:lang="ar"><title level="m">تركيا الجديدة</title><lb/>ل <author
+                                xml:id="author_8.d1e4287" xml:lang="ar">
+                                <persName xml:id="persName_18.d1e4288" xml:lang="ar">جميل أفندي
+                                    معلوف</persName></author>طبع ب <publisher
+                                xml:id="publisher_6.d1e4291" xml:lang="ar">
+                                <orgName xml:id="orgName_8.d1e4292" xml:lang="ar">مطبعة
+                                    المناظر</orgName></publisher>في <pubPlace
+                                xml:id="pubPlace_9.d1e4295" xml:lang="ar">
+                                <placeName xml:id="placeName_14.d1e4296" xml:lang="ar">سان
+                                    باولو</placeName></pubPlace>من <placeName
+                                xml:id="placeName_15.d1e4299" xml:lang="ar">بلاد برازيل</placeName>
+                            (ص <tei:num type="auto-markup" resp="#pers_TG" value="154"
+                                xml:id="num_1.d1e4302" xml:lang="ar">١٥٤</tei:num> )</bibl></head>
                     <p xml:id="p_191.d1e4306" xml:lang="ar">كتاب أجاد مؤلفه في وضعه أتى فيه على أسباب الانقلاب العثماني وتاريخه وقسمه إلى
                         ستة كتب الكتاب الأول في أسباب الانحطاط في الشرق والثاني في تفرنج الشرقيين والثالث في التعليم والرابع في القانون
                         الأساسي والخامس في الديانة السياسية والسادس أبقاءٌ أم فناء. كل ذلك مكتوب بقلم يدل على أن للمؤلف جولة في المسائل
@@ -2506,18 +2580,46 @@
                 </div>
                 <pb ed="print" facs="#facs_82" n="70" xml:id="pb_130.d1e4315"/>
                 <div type="article" xml:id="div_38.d1e4317" xml:lang="ar">
-                    <head xml:id="head_37.d1e4319" xml:lang="ar">الفتاوى والنظم</head>
-                    <p xml:id="p_193.d1e4322" xml:lang="ar"> <bibl xml:id="bibl_8.d1e4323" xml:lang="ar">تأليف <author xml:id="author_9.d1e4325" xml:lang="ar"> <persName xml:id="persName_19.d1e4326" xml:lang="ar">محمود أفندي
-                        الحمزاوي</persName></author>طبع ب <publisher xml:id="publisher_7.d1e4329" xml:lang="ar"> <orgName xml:id="orgName_9.d1e4330" xml:lang="ar">مطبعة روضة</orgName></publisher>جلق ب <pubPlace xml:id="pubPlace_10.d1e4333" xml:lang="ar"> <placeName xml:id="placeName_16.d1e4334" xml:lang="ar">دمشق</placeName></pubPlace> <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1326" xml:id="date_16.d1e4337" xml:lang="ar">سنة <tei:num type="auto-markup" resp="#pers_TG" value="1326" xml:id="num_1.d1e4339" xml:lang="ar">١٣٢٦</tei:num>
-                        هـ</date>(ص <tei:num type="auto-markup" resp="#pers_TG" value="86" xml:id="num_1.d1e4343" xml:lang="ar">٨٦</tei:num> )</bibl> </p>
+                    <head xml:id="head_37.d1e4319" xml:lang="ar"><bibl xml:id="bibl_8.d1e4323"
+                            xml:lang="ar"><title level="m">الفتاوى والنظم</title><lb/>تأليف <author
+                                xml:id="author_9.d1e4325" xml:lang="ar">
+                                <persName xml:id="persName_19.d1e4326" xml:lang="ar">محمود أفندي
+                                    الحمزاوي</persName></author>طبع ب <publisher
+                                xml:id="publisher_7.d1e4329" xml:lang="ar">
+                                <orgName xml:id="orgName_9.d1e4330" xml:lang="ar">مطبعة
+                                    روضة</orgName></publisher>جلق ب <pubPlace
+                                xml:id="pubPlace_10.d1e4333" xml:lang="ar">
+                                <placeName xml:id="placeName_16.d1e4334" xml:lang="ar"
+                                    >دمشق</placeName></pubPlace>
+                            <date calendar="#cal_islamic" datingMethod="#cal_islamic"
+                                when-custom="1326" xml:id="date_16.d1e4337" xml:lang="ar">سنة
+                                    <tei:num type="auto-markup" resp="#pers_TG" value="1326"
+                                    xml:id="num_1.d1e4339" xml:lang="ar">١٣٢٦</tei:num> هـ</date>(ص
+                                <tei:num type="auto-markup" resp="#pers_TG" value="86"
+                                xml:id="num_1.d1e4343" xml:lang="ar">٨٦</tei:num> )</bibl></head>
                     <p xml:id="p_194.d1e4347" xml:lang="ar">هي رسالة منظومة في قسم المعاملات من الفقه الحنفي فيها فوائد كثيرة لا يستغني عنها
                         مستفت. ونظم المؤلف وسط ولعله أرقى من كثير من منظوم الفقهاء والمحدثين والمؤلف أحد مفاتي دمشق الذين تفاخر بهم لم يشتهر
                         بالنظم اشتهاره بالفقه والحديث وله رسائل وكتب طبع بعضها وبعضها لم يطبع.</p>
                 </div>
                 <div type="article" xml:id="div_39.d1e4351" xml:lang="ar">
-                    <head xml:id="head_38.d1e4353" xml:lang="ar">نخبة عقد الأجياد <lb xml:id="lb_4.d1e4355"/> في الصافنات الجياد</head>
-                    <p xml:id="p_195.d1e4358" xml:lang="ar"> <bibl xml:id="bibl_9.d1e4359" xml:lang="ar">تأليف <author xml:id="author_10.d1e4361" xml:lang="ar"> <persName xml:id="persName_20.d1e4362" xml:lang="ar">الأمير محمد باشا
-                        الحسني الجزائري</persName></author>طبع على نفقة <publisher xml:id="publisher_8.d1e4365" xml:lang="ar"> <orgName xml:id="orgName_10.d1e4366" xml:lang="ar">المطبعة الأهلية</orgName></publisher>في <pubPlace xml:id="pubPlace_11.d1e4369" xml:lang="ar"> <placeName xml:id="placeName_17.d1e4370" xml:lang="ar">بيروت</placeName></pubPlace> <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1322" xml:id="date_17.d1e4373" xml:lang="ar">سنة <tei:num type="auto-markup" resp="#pers_TG" value="1322" xml:id="num_1.d1e4375" xml:lang="ar">١٣٢٢</tei:num></date>(ص <tei:num type="auto-markup" resp="#pers_TG" value="304" xml:id="num_1.d1e4378" xml:lang="ar">٣٠٤</tei:num> )</bibl> </p>
+                    <head xml:id="head_38.d1e4353" xml:lang="ar"><bibl xml:id="bibl_9.d1e4359"
+                            xml:lang="ar"><title level="m">نخبة عقد الأجياد <lb
+                                    xml:id="lb_4.d1e4355"/> في الصافنات الجياد</title><lb/>تأليف
+                                <author xml:id="author_10.d1e4361" xml:lang="ar">
+                                <persName xml:id="persName_20.d1e4362" xml:lang="ar">الأمير محمد
+                                    باشا الحسني الجزائري</persName></author>طبع على نفقة <publisher
+                                xml:id="publisher_8.d1e4365" xml:lang="ar">
+                                <orgName xml:id="orgName_10.d1e4366" xml:lang="ar">المطبعة
+                                    الأهلية</orgName></publisher>في <pubPlace
+                                xml:id="pubPlace_11.d1e4369" xml:lang="ar">
+                                <placeName xml:id="placeName_17.d1e4370" xml:lang="ar"
+                                    >بيروت</placeName></pubPlace>
+                            <date calendar="#cal_islamic" datingMethod="#cal_islamic"
+                                when-custom="1322" xml:id="date_17.d1e4373" xml:lang="ar">سنة
+                                    <tei:num type="auto-markup" resp="#pers_TG" value="1322"
+                                    xml:id="num_1.d1e4375" xml:lang="ar">١٣٢٢</tei:num></date>(ص
+                                <tei:num type="auto-markup" resp="#pers_TG" value="304"
+                                xml:id="num_1.d1e4378" xml:lang="ar">٣٠٤</tei:num> )</bibl></head>
                     <p xml:id="p_196.d1e4382" xml:lang="ar">هو كتاب موجز من سفر مطول بهذا الاسم ذكر فيه المؤلف نشأة الخيل ونضلها وتكريمها
                         والقول في لحومها وأنواعها وألوانها وأعضائها وصفاتها وتقفيزها وأطوارها وخدمتها والإنفاق عليها وتأديبها وكيفية تضميرها
                         والسباق وما يتعلق به إلى غير ذلك من الفوائد المهمة التي لا يستغنى عنها في هذا الباب فنشكر للأمير المؤلف هديته ونرجو
@@ -2577,9 +2679,19 @@
                         تستحق.</p>
                 </div>
                 <div type="article" xml:id="div_42.d1e4635" xml:lang="ar">
-                    <head xml:id="head_41.d1e4637" xml:lang="ar">المنجد</head>
-                    <p xml:id="p_202.d1e4640" xml:lang="ar"> <bibl xml:id="bibl_23.d1e4641" xml:lang="ar">لل <author xml:id="author_11.d1e4643" xml:lang="ar"> <persName xml:id="persName_43.d1e4644" xml:lang="ar">أب لويس
-                        معلوف</persName></author>اليسوعي طبع ب <publisher xml:id="publisher_9.d1e4647" xml:lang="ar"> <orgName xml:id="orgName_11.d1e4648" xml:lang="ar">المطبعة الكاثوليكية</orgName></publisher>في <pubPlace xml:id="pubPlace_19.d1e4651" xml:lang="ar"> <placeName xml:id="placeName_24.d1e4652" xml:lang="ar">بيروت</placeName></pubPlace>(ص <tei:num type="auto-markup" resp="#pers_TG" value="737" xml:id="num_1.d1e4655" xml:lang="ar">٧٣٧</tei:num> )</bibl> </p>
+                    <head xml:id="head_41.d1e4637" xml:lang="ar"><bibl xml:id="bibl_23.d1e4641"
+                            xml:lang="ar"><title level="m">المنجد</title><lb/>لل <author
+                                xml:id="author_11.d1e4643" xml:lang="ar">
+                                <persName xml:id="persName_43.d1e4644" xml:lang="ar">أب لويس
+                                    معلوف</persName></author>اليسوعي طبع ب <publisher
+                                xml:id="publisher_9.d1e4647" xml:lang="ar">
+                                <orgName xml:id="orgName_11.d1e4648" xml:lang="ar">المطبعة
+                                    الكاثوليكية</orgName></publisher>في <pubPlace
+                                xml:id="pubPlace_19.d1e4651" xml:lang="ar">
+                                <placeName xml:id="placeName_24.d1e4652" xml:lang="ar"
+                                    >بيروت</placeName></pubPlace>(ص <tei:num type="auto-markup"
+                                resp="#pers_TG" value="737" xml:id="num_1.d1e4655" xml:lang="ar"
+                                >٧٣٧</tei:num> )</bibl></head>
                     <p xml:id="p_203.d1e4659" xml:lang="ar">هو معجم عربي مدرسي موجز مرتب على الأسلوب الحديث مزين بصور بعض الحيوانات
                         والنباتات والأدوات والأعضاء قدم له المؤلف الاصطلاحات التي اختارها وفيها فوائد كثيرة وكنا نود لو كان هذا المعجم أوسع
                         مما هو عليه لئلا تفوته بعض الفصح وأن تكون بعض ألفاظه معززة بالشواهد الخفيفة لتكون اعلق في الذهن. وقد تحرى المؤلف كما
