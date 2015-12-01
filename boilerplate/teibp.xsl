@@ -58,7 +58,8 @@
     <xsl:param name="theme.default" select="concat($filePrefix, '/css/teibp.css')"/>
     <xsl:param name="theme.sleepytime" select="concat($filePrefix, '/css/sleepy.css')"/>
     <xsl:param name="theme.terminal" select="concat($filePrefix, '/css/terminal.css')"/>
-    <xsl:param name="pgOnlineFacs" select="true()"/>
+    <!-- select whether or not you want to display online facsimiles -->
+    <xsl:param name="pgOnlineFacs" select="false()"/>
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
         <xd:desc>
             <xd:p>Match document root and create and html5 wrapper for the TEI document, which is copied, with some modification, into the
@@ -632,9 +633,10 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:attribute>
-            <!-- with a slide-out navigation back links are not necessary -->
-            <!--<a href="#toc-{generate-id()}">-->
-            <xsl:apply-templates/>
+            <xsl:call-template name="templHtmlAttrLang">
+                <xsl:with-param name="pInput" select="."/>
+            </xsl:call-template>
+            <xsl:apply-templates select="node()"/>
             <!--</a>-->
         </xsl:copy>
     </xsl:template>
@@ -642,12 +644,15 @@
     <xsl:template match="tei:head">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
+            <xsl:call-template name="templHtmlAttrLang">
+                <xsl:with-param name="pInput" select="."/>
+            </xsl:call-template>
             <xsl:choose>
-                <xsl:when test="@xml:id">
-                    <a href="#{parent::node()/@xml:id}" class="cLinkSelf"><xsl:apply-templates /></a>
+                <xsl:when test="parent::node()/@xml:id">
+                    <a href="#{parent::node()/@xml:id}" class="cLinkSelf"><xsl:apply-templates select="node()"/></a>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:apply-templates/>
+                    <xsl:apply-templates select="node()"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:copy>
@@ -658,6 +663,28 @@
     <!-- omit line breaks in heads -->
     <xsl:template match="tei:head/tei:lb | tei:head/tei:cb">
         <xsl:text> </xsl:text>
+    </xsl:template>
+    
+    <!-- provide paragraph count independent of css implementation -->
+    <xsl:template match="tei:p">
+        <xsl:variable name="vCount" select="count(preceding::tei:p[ancestor::tei:body])+1"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:call-template name="templHtmlAttrLang">
+                <xsl:with-param name="pInput" select="."/>
+            </xsl:call-template>
+            <span class="cId cNumber">
+                <xsl:choose>
+                    <xsl:when test="@xml:id">
+                        <a href="#{@xml:id}" class="cLinkSelf cNumber"><xsl:value-of select="$vCount"/></a>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$vCount"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </span>
+            <xsl:apply-templates select="node()"/>
+        </xsl:copy>
     </xsl:template>
 
     <!-- do something with notes -->

@@ -111,24 +111,7 @@
         </div>
     </xsl:template>
     
-    <!-- provide paragraph count independent of css implementation -->
-    <xsl:template match="tei:p">
-        <xsl:variable name="vCount" select="count(preceding::tei:p[ancestor::tei:body])+1"/>
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <span class="cId cNumber">
-                <xsl:choose>
-                    <xsl:when test="@xml:id">
-                        <a href="#{@xml:id}" class="cLinkSelf cNumber"><xsl:value-of select="$vCount"/></a>
-                    </xsl:when>
-                    <xsl:otherwise>
-                      <xsl:value-of select="$vCount"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </span> 
-            <xsl:apply-templates select="node()"/>
-        </xsl:copy>
-    </xsl:template>
+    
     <!--<!-\- link heads back to themselves -\->
     <xsl:template match="tei:head">
         <xsl:copy>
