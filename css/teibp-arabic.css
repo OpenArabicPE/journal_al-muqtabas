@@ -1,16 +1,19 @@
 /* render Arabic as rtl */
-[lang = "ar"]{
+[lang = "ar"],[lang = "ota"],[lang = "fa"],[lang = "he"],[lang *= "-Arab-Ar"]{
     direction:rtl;
     text-align:right;
-    /*keep in mind that relative sizes (%, em) accumulate for nested elements and must thus be avoided */
-    font-size:18px;
+    /*keep in mind that relative sizes (%, em) 
+    accumulate for nested elements and must thus be avoided. 
+    At the moment almost everything is tailored to 18px */
+    font-size:20px;
 }
-[lang = "en"]{
+/* display latin scripts in a smaller font */
+[lang = "en"],[lang = "fr"],[lang = "de"],[lang = "it"],[lang *= "ar-Latn-"],[lang *= "ota-Latn-"]{
     direction:ltr;
     text-align:left;
     font-size:14px;
 }
-[lang="ar-Latn-x-ijmes"] {
+[lang *= "ar-Latn-"],[lang *= "ota-Latn-"]{
     font-style:italic;
 }
 /* change markers for quotes based on language */
