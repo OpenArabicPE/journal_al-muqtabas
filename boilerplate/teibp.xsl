@@ -59,7 +59,7 @@
     <xsl:param name="theme.sleepytime" select="concat($filePrefix, '/css/sleepy.css')"/>
     <xsl:param name="theme.terminal" select="concat($filePrefix, '/css/terminal.css')"/>
     <!-- select whether or not you want to display online facsimiles -->
-    <xsl:param name="pgOnlineFacs" select="false()"/>
+    <xsl:param name="pgOnlineFacs" select="true()"/>
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
         <xd:desc>
             <xd:p>Match document root and create and html5 wrapper for the TEI document, which is copied, with some modification, into the
