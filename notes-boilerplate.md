@@ -4,10 +4,81 @@ author: Till Grallert
 date: 2015-12-01 17:44:26
 ---
 
+# Select which facsimile to display
+
+This can be donw with javascript, jQuery, and a radio box HTML form. Somewhere at the top of the page, a form should be embedded:
+
+~~~{.html}
+<form id="select-facs">
+    <input type="radio" name="facs" value="off" checked>none</input>
+    <input type="radio" name="facs" value="local">local</input>
+    <input type="radio" name="facs" value="online">online</input>
+</form>
+~~~
+
+The spans for the facsimiles could look thus (building upon the original TEI boilerplate code):
+
+~~~{.html}
+<span xmlns="http://www.w3.org/1999/xhtml" lang="en" class="-teibp-pb" id="pb_2.d1e1545">
+    <span class="-teibp-pageNum">
+        <span lang="en" class="-teibp-pbNote">
+            <text>page: </text>
+        </span>2 
+    </span>
+    <span class="-teibp-pbFacs">
+        <a class="gallery-facs" rel="prettyPhoto[gallery1]" onclick="showFacs('2','http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_5-EAP119_muq191102_002_L.jpg','pb_2.d1e1545')">
+            <img alt="view page image(s)" class="-teibp-thumbnail cFacs-1" src="http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_5-EAP119_muq191102_002_L.jpg"/>
+            <img alt="view page image(s)" class="-teibp-thumbnail  cFacs-2" src="http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_5-EAP119_muq191102_003_L.jpg"/>
+        </a>
+    </span>
+</span>
+~~~
+
+The javascript in the `<head>` of the page should look like this:
+
+~~~{.javascript}
+$(document).ready(function(){
+// deal with facsimiles
+    var radioValue = $('input[name="facs"]:checked').val();        
+    //alert(radioValue); 
+    if (radioValue == 'off'){
+        $('.cFacs-1').hide();
+        $('.cFacs-2').hide();
+    }
+    else {
+        if (radioValue =='local'){
+            $('.cFacs-1').show();
+            $('.cFacs-2').hide();
+        }
+        else{
+            $('.cFacs-1').hide();
+            $('.cFacs-2').show();
+        }
+    }
+    $('input[name="facs"]').on('change', function() {
+        var radioValue = $('input[name="facs"]:checked').val();        
+        //alert(radioValue); 
+        if (radioValue == 'off'){
+            $('.cFacs-1').hide();
+            $('.cFacs-2').hide();
+        }
+        else {
+            if (radioValue =='local'){
+                $('.cFacs-1').show();
+                $('.cFacs-2').hide();
+            }
+            else{
+                $('.cFacs-1').hide();
+                $('.cFacs-2').show();
+            }
+        }
+    });
+});  
+~~~
 
 # sticky headers
 
-It would be nice to make headers sticky once, they reach the top of the page. As the [Google developer blog](https://developers.google.com/web/updates/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit) noted, this can be done in WebKit with CSS only:
+It would be nice to make headers sticky once, they reach the top of the page. As the [Google developer blog](https://developers.google.com/web/updates/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit) noted, this can be done in modern browsers with CSS3 only and has been implemented:
 
 ~~~{.css}
 .sticky {
@@ -15,6 +86,7 @@ It would be nice to make headers sticky once, they reach the top of the page. As
   position: -moz-sticky;
   position: -ms-sticky;
   position: -o-sticky;
+  position: sticky;
   top: 15px;
 }
 ~~~
@@ -62,6 +134,10 @@ h1.sticky {
 }
 ~~~
 
+
+# Unicode symbols for navigation
+
+See this [link](http://tutorialzine.com/2014/12/you-dont-need-icons-here-are-100-unicode-symbols-that-you-can-use/)
 
 # Problem: not jumping to the correct page
 
