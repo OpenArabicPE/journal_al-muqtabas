@@ -5,6 +5,64 @@ date: 2015-12-01 17:44:26
 ---
 
 
+# sticky headers
+
+It would be nice to make headers sticky once, they reach the top of the page. As the [Google developer blog](https://developers.google.com/web/updates/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit) noted, this can be done in WebKit with CSS only:
+
+~~~{.css}
+.sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top: 15px;
+}
+~~~
+
+Another option is to change classes with javascript and jQuery:
+
+~~~{.javascript}
+    $(document).ready(function(){
+        // sticky headers
+        $(window).scroll(function() {
+        if ($(this).scrollTop() > 1){  
+            $('h1').addClass("sticky");
+          }
+          else{
+            $('h1').removeClass("sticky");
+          }
+        });
+    });
+~~~
+
+And then style the two states differently as 
+
+~~~{.css}
+h1 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 72px;
+  line-height: 108px;
+  height: 108px;
+  background: #335C7D;
+  color: #fff;
+  font-family: 'PT Sans', sans-serif;
+  transition: all 0.4s ease;
+}
+
+h1.sticky {
+    position: fixed;
+  font-size: 24px;
+  line-height: 48px;
+  height: 48px;
+  background: #efc47D;
+  text-align: left;
+  padding-left: 20px;
+}
+~~~
+
+
 # Problem: not jumping to the correct page
 
 ## "solution"
