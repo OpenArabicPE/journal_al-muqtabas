@@ -78,7 +78,7 @@ $(document).ready(function(){
 
 # sticky headers
 
-It would be nice to make headers sticky once, they reach the top of the page. As the [Google developer blog](https://developers.google.com/web/updates/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit) noted, this can be done in modern browsers with CSS3 only and has been implemented:
+It would be nice to make headers sticky once, they reach the top of the page. As the [Google developer blog](https://developers.google.com/web/updates/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit) noted, this can be done in modern browsers with CSS3 only and is gradually implemented:
 
 ~~~{.css}
 .sticky {
@@ -90,6 +90,8 @@ It would be nice to make headers sticky once, they reach the top of the page. As
   top: 15px;
 }
 ~~~
+
+However, in current (2015-12-02) iterations of Firefox "sticky" elements are all stacked above one another, i.e. the previous `<head>` does not continue slide upwards with the arrival of a new `<head>`, instead it remains below the new arrival. It the latter is small than the former, the edges of the former remain visible.
 
 Another option is to change classes with javascript and jQuery:
 
