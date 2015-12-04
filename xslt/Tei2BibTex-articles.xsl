@@ -16,21 +16,9 @@
         select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>
     <xsl:variable name="vN" select="'&#x0A;'"/>
 
-    <!--<xsl:template match="tei:TEI">
-        <xsl:result-document href="{substring-before(base-uri(),'.TEIP5')}.TSS.xml" method="xml">
-            <xsl:element name="tss:senteContainer">
-                <xsl:attribute name="version">1.0</xsl:attribute>
-                <xsl:element name="tss:library">
-                    <xsl:element name="tss:references">
-                        <xsl:apply-templates select="child::tei:text/tei:body/descendant::tei:div" mode="mBiblSente"/>
-                    </xsl:element>
-                </xsl:element>
-            </xsl:element>
-        </xsl:result-document>
-        <xsl:result-document href="{substring-before(base-uri(),'.TEIP5')}.bib" method="text">
-            <xsl:apply-templates select="child::tei:text/tei:body/descendant::tei:div" mode="mBiblBibTex"/>
-        </xsl:result-document>
-    </xsl:template>-->
+    <xsl:template match="tei:TEI">
+            <xsl:apply-templates select="child::tei:text/tei:body/descendant::tei:div"/>
+    </xsl:template>
 
     
     <xsl:template
