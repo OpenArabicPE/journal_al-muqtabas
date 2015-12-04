@@ -6,9 +6,7 @@
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no" name="xml"/>
     <xsl:output method="text" encoding="UTF-8" indent="yes" name="text"/>
 
-    <!-- This transformation maps the bibliographic metadate of articles in the TEI edition of Arabic periodicals to Sente XML -->
-    <!-- TO DO:
-        - If all elements in the TEI source, especially <tei:div>s, which are mapped to <tss:reference>, had an @xml:id attribute, one could construct a URL of the full text to be linked to from the Sente XML -->
+    <!-- this stylesheet generates a Bibtex file with bibliographic metadata for each <div> in the body of the TEI source file. File names are based on the source's @xml:id and the @xml:id of the <div>. -->
 
 
     <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
@@ -117,6 +115,10 @@
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>year = {</xsl:text>
             <xsl:value-of select="year-from-date($vPublDate/@when)"/>
+            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
+            <!-- URL -->
+            <xsl:text>url = {</xsl:text>
+            <xsl:value-of select="$vUrl"/>
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>}</xsl:text><xsl:value-of select="$vN"/>
         </xsl:result-document>
