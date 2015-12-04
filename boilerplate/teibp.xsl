@@ -660,7 +660,7 @@
             </xsl:choose>
             <span class="cLinks">
                 <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
-                <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
+                <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" download="{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
             </span>
         </xsl:copy>
         <!-- link to the top of the page, content can be provided by css; moved to the side navigation -->
