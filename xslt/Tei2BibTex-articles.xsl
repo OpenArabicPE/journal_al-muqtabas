@@ -11,7 +11,7 @@
         - If all elements in the TEI source, especially <tei:div>s, which are mapped to <tss:reference>, had an @xml:id attribute, one could construct a URL of the full text to be linked to from the Sente XML -->
 
 
-    <xsl:variable name="vgFileName" select="substring-before(tokenize(base-uri(), '/')[last()],'.TEIP5.')" />
+    <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
     <xsl:variable name="vgFileUrl"
         select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>
     <xsl:variable name="vN" select="'&#x0A;'"/>
@@ -66,11 +66,11 @@
             select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = 'en']"/>
         <xsl:variable name="vPublisher" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
         
-        <xsl:result-document href="../metadata/{concat($vgFileName,'-',@xml:id)}.bib">
+        <xsl:result-document href="../metadata/{concat($vFileId,'-',@xml:id)}.bib">
             <!-- construct BibText -->
             <xsl:text>@ARTICLE{</xsl:text>
             <!-- BibTextKey -->
-            <xsl:value-of select="concat($vgFileName,'-',@xml:id)"/><xsl:text>, </xsl:text><xsl:value-of select="$vN"/>
+            <xsl:value-of select="concat($vFileId,'-',@xml:id)"/><xsl:text>, </xsl:text><xsl:value-of select="$vN"/>
             <!-- author information -->
             <xsl:if test="child::tei:byline/tei:persName">
                 <xsl:text>author = {</xsl:text>
