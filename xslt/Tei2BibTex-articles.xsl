@@ -3,8 +3,7 @@
     xmlns:tss="http://www.thirdstreetsoftware.com/SenteXML-1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     version="2.0">
-    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no" name="xml"/>
-    <xsl:output method="text" encoding="UTF-8" indent="yes" name="text"/>
+    <xsl:output method="text" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" name="text"/>
 
     <!-- this stylesheet generates a Bibtex file with bibliographic metadata for each <div> in the body of the TEI source file. File names are based on the source's @xml:id and the @xml:id of the <div>. -->
 
@@ -14,8 +13,8 @@
         select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>
     <xsl:variable name="vN" select="'&#x0A;'"/>
 
-    <xsl:template match="tei:TEI">
-            <xsl:apply-templates select="child::tei:text/tei:body/descendant::tei:div"/>
+    <xsl:template match="/">
+            <xsl:apply-templates select="descendant::tei:text/tei:body/descendant::tei:div"/>
     </xsl:template>
 
     
@@ -52,7 +51,7 @@
             select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = 'en']"/>
         <xsl:variable name="vPublisher" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
         
-        <xsl:result-document href="../metadata/{concat($vFileId,'-',@xml:id)}.bib">
+        <xsl:result-document href="../metadata/{concat($vFileId,'-',@xml:id)}.bib" method="text">
             <!-- construct BibText -->
             <xsl:text>@ARTICLE{</xsl:text>
             <!-- BibTextKey -->
