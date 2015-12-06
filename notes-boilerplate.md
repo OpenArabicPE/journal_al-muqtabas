@@ -4,6 +4,10 @@ author: Till Grallert
 date: 2015-12-01 17:44:26
 ---
 
+# TO DO
+
+- remove the BibTeX links from subheaders of `<div type="bill">`
+
 # Select which facsimile to display
 
 This can be donw with javascript, jQuery, and a radio box HTML form. Somewhere at the top of the page, a form should be embedded:
