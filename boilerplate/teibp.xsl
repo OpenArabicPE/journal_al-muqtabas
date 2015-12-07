@@ -60,6 +60,8 @@
     <xsl:param name="theme.terminal" select="concat($filePrefix, '/css/terminal.css')"/>
     <!-- select whether or not you want to display online facsimiles -->
     <xsl:param name="pgOnlineFacs" select="true()"/>
+    <!-- variables -->
+    <xsl:variable name="vMimeType" select="'image/jpeg'"/>
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
         <xd:desc>
             <xd:p>Match document root and create and html5 wrapper for the TEI document, which is copied, with some modification, into the
@@ -413,7 +415,7 @@
 		  })();
 		</script>
     </xsl:template>
-    <xsl:template name="pb-handler">
+    <xsl:template name="templPbHandler">
         <xsl:param name="n"/>
         <xsl:param name="facs"/>
         <xsl:param name="id"/>
@@ -422,7 +424,6 @@
             <xsl:choose>
                 <xsl:when test="starts-with($facs, '#')">
                     <xsl:variable name="vFacsID" select="substring-after($facs, '#')"/>
-                    <xsl:variable name="vMimeType" select="'image/jpeg'"/>
                     <!-- here could be an option to select the image hosted on HathiTrust -->
                     <xsl:choose>
                         <xsl:when test="$pgOnlineFacs = true()">
@@ -480,7 +481,7 @@
                 <!-- add @lang="en" to ensure correct ltr rendering -->
                 <span class="-teibp-pb" lang="en">
                     <xsl:call-template name="addID"/>
-                    <xsl:call-template name="pb-handler">
+                    <xsl:call-template name="templPbHandler">
                         <xsl:with-param name="n" select="@n"/>
                         <xsl:with-param name="facs" select="@facs"/>
                         <xsl:with-param name="id">
