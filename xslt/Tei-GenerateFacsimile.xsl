@@ -29,7 +29,7 @@
     <xsl:variable name="vEapVolumeId" select="'4'"/>
     <xsl:variable name="vFileName" select="concat(translate($vHathiTrustId,'.','-'),'_img-')"/>
     <!-- local path to folder containing the images of this issue -->
-    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v4/'"/>
+    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v5/'"/>
     <!-- URL to Hathi, this is always the same -->
     <xsl:variable name="vFileUrlHathi" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
     
