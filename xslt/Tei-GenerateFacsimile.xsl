@@ -19,19 +19,23 @@
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
     
+    <!-- ID / date of issue in EAP: these are formatted as yyyymm and need to be set for each issue. the volumes commence with yyyy02 -->
+    <xsl:param name="pEapIssueId" select="'191002'"/>
+    <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
+    <xsl:param name="pImgStartHathiDifference" select="12" as="xs:integer"/>
     <!-- volume in HathTrust collection -->
-    <xsl:variable name="vHathiTrustId" select="'umn.319510029968632'"/>
+    <xsl:variable name="vHathiTrustId" select="'umn.319510029968640'"/>
+    <!-- volume in EAP collection: needs to be set  -->
+    <xsl:variable name="vEapVolumeId" select="'4'"/>
     <xsl:variable name="vFileName" select="concat(translate($vHathiTrustId,'.','-'),'_img-')"/>
     <!-- local path to folder containing the images of this issue -->
     <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v4/'"/>
     <!-- URL to Hathi, this is always the same -->
     <xsl:variable name="vFileUrlHathi" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
-    <!-- volume in EAP collection: needs to be set  -->
-    <xsl:variable name="vEapVolumeId" select="'3'"/>
-    <!-- ID / date of issue in EAP: needs to be set for each issue -->
-    <xsl:variable name="vEapIssueId" select="'190902'"/>
+    
+    
     <!-- URL to EAP, always the same -->
-    <xsl:variable name="vFileUrlEap" select="concat('http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_',$vEapVolumeId,'-EAP119_muq',$vEapIssueId)"/>
+    <xsl:variable name="vFileUrlEap" select="concat('http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_',$vEapVolumeId,'-EAP119_muq',$pEapIssueId)"/>
     <xsl:variable name="vPageStart" as="xs:integer">
         <xsl:choose>
             <xsl:when test="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='page']/@from">
@@ -54,8 +58,7 @@
     </xsl:variable>
     <xsl:variable name="vImgStartHathi" select="1" as="xs:integer"/>
     <!-- $vImgStartHathi - $vPageStart -->
-    <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
-    <xsl:variable name="vImgStartHathiDifference" select="12" as="xs:integer"/>
+    
     <xsl:variable name="vFacsId" select="'facs_'"/>
     
     <xsl:template match="tei:TEI">
@@ -87,7 +90,7 @@
                 <xsl:attribute name="who" select="'#pers_TG'"/>
                 <xsl:text>Added </xsl:text><tei:gi>graphic</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
-                <xsl:text> pages with references to digital images at EAP.</xsl:text>
+                <xsl:text> pages with references to digital images at HathiTrust and EAP.</xsl:text>
                 <!--<xsl:text>Created </xsl:text><tei:gi>facsimile</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
                 <xsl:text> pages with references to a local copy of .tif and .jpeg as well as to the online resource for each page.</xsl:text>-->
@@ -100,7 +103,7 @@
     <xsl:template name="templCreateFacs">
         <xsl:param name="pStart" select="1"/>
         <xsl:param name="pStop" select="20"/>
-        <xsl:variable name="vStartHathi" select="$pStart + $vImgStartHathiDifference"/>
+        <xsl:variable name="vStartHathi" select="$pStart + $pImgStartHathiDifference"/>
         <xsl:element name="tei:surface">
             <xsl:attribute name="xml:id" select="concat($vFacsId,$vStartHathi)"/>
             <xsl:element name="tei:graphic">
