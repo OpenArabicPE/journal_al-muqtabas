@@ -59,7 +59,7 @@
     <xsl:param name="theme.sleepytime" select="concat($filePrefix, '/css/sleepy.css')"/>
     <xsl:param name="theme.terminal" select="concat($filePrefix, '/css/terminal.css')"/>
     <!-- select whether or not you want to display online facsimiles -->
-    <xsl:param name="pgOnlineFacs" select="false()"/>
+    <xsl:param name="pgOnlineFacs" select="true()"/>
     <!-- variables -->
     <xsl:variable name="vMimeType" select="'image/jpeg'"/>
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
