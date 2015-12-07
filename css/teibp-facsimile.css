@@ -1,0 +1,43 @@
+/* Move the text right and the facsimile left */
+
+TEI > text {
+	width: 550px;
+	float: right;
+	/*padding-left: 2em;
+	border-left: 5px dotted #EBEBEB;*/
+}
+/* everything should "clear:right" but for <l>, which are already floating */
+TEI > text div >* {
+	clear: right !important;
+}
+
+/* the span containing the entire <pb> information */
+span.-teibp-pb {
+	display: block;
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: inherit;
+	padding-right: inherit;
+	border-top: 5px dotted #EBEBEB;
+	/* clear: none is not necessary here */
+	/*clear: none;*/
+}
+
+/* the actual images */
+span.-teibp-pb img {
+	display: block;
+	float: left;
+	width: 400px;
+	height: 100% !important;
+	max-height: 100% !important;
+	border-style: none;
+	border-right: 5px dotted #EBEBEB;
+}
+/* the page number */
+span.-teibp-pageNum {
+	display: block;
+}
+span.-teibp-pbNote {
+	display: inline;
+}
