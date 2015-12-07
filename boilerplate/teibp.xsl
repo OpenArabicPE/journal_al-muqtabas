@@ -37,7 +37,7 @@
             <xsl:attribute name="lang">
                 <xsl:text>en</xsl:text>
             </xsl:attribute>
-            <text>page: </text>
+            <xsl:text>page: </xsl:text>
         </span>
     </xsl:param>
     <xsl:param name="altTextPbFacs">
@@ -59,7 +59,7 @@
     <xsl:param name="theme.sleepytime" select="concat($filePrefix, '/css/sleepy.css')"/>
     <xsl:param name="theme.terminal" select="concat($filePrefix, '/css/terminal.css')"/>
     <!-- select whether or not you want to display online facsimiles -->
-    <xsl:param name="pgOnlineFacs" select="true()"/>
+    <xsl:param name="pgOnlineFacs" select="false()"/>
     <!-- variables -->
     <xsl:variable name="vMimeType" select="'image/jpeg'"/>
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
@@ -453,7 +453,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <span class="-teibp-pageNum">
+        <span class="-teibp-pageNum" lang="en">
             <!-- <xsl:call-template name="atts"/> -->
             <xsl:copy-of select="$pbNote"/>
             <xsl:value-of select="@n"/>
