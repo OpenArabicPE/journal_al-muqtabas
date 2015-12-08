@@ -100,10 +100,10 @@
             <span class="cImprint">
                 <xsl:text>, </xsl:text>
                 <xsl:apply-templates
-                    select="parent::tei:monogr/tei:imprint/tei:pubPlace[@xml:lang = $vLang]"/>
+                    select="parent::tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
                 <xsl:text>, </xsl:text>
                 <xsl:apply-templates
-                    select="parent::tei:monogr/tei:imprint/tei:publisher[@xml:lang = $vLang]"/>
+                    select="parent::tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
                 <xsl:text>, </xsl:text>
                 <xsl:apply-templates
                     select="parent::tei:monogr/tei:imprint/tei:date[@xml:lang = $vLang]"/>
