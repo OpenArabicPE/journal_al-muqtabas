@@ -28,12 +28,22 @@ span.-teibp-pb {
 span.-teibp-pb img {
 	display: block;
 	float: left;
-	width: 400px;
+	width: 430px;
 	height: 100% !important;
 	max-height: 100% !important;
 	border-style: none;
 	border-right: 5px dotted #EBEBEB;
+	 /* make images sticky: "position: sticky" does not seem to work with floating elements */
+    /*position: -webkit-sticky;
+    top: -8px;*/
 }
+/* clip the scans that always contain a lot of empty space around the text block
+but do so conservatively
+top, right, bottom, left */
+span.-teibp-pb img {
+	clip-path: inset(0px 30px 0px 30px);
+}
+
 /* the page number */
 span.-teibp-pageNum {
 	display: block;
