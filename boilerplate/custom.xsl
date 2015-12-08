@@ -72,6 +72,25 @@
                     <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'issue']/@n"/>
                 </span>
             </xsl:if>
+            <xsl:if test="parent::tei:monogr/tei:biblScope[@unit = 'page']">
+                <xsl:text>, </xsl:text>
+                <span class="cBiblScope">
+                    <xsl:choose>
+                        <xsl:when test="$vLang = 'ar'">
+                            <xsl:text>ص </xsl:text>
+                        </xsl:when>
+                        <xsl:when test="$vLang = 'en'">
+                            <xsl:text>pp. </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>pp. </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'page']/@from"/>
+                    <xsl:text>–</xsl:text>
+                    <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'page']/@to"/>
+                </span>
+            </xsl:if>
             <!-- editors -->
             <xsl:if test="parent::tei:monogr/tei:editor[./tei:persName/@xml:lang = $vLang]">
                 <span class="cAuthors">
