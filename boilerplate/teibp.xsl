@@ -672,6 +672,12 @@
                         <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" download="{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
                     </span>
                 </xsl:when>
+                <xsl:when test="parent::tei:div[@type='bill']">
+                    <span class="cLinks">
+                        <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
+                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" download="{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
+                    </span>
+                </xsl:when>
             </xsl:choose>
         </xsl:copy>
         <!-- link to the top of the page, content can be provided by css; moved to the side navigation -->
