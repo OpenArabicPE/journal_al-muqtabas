@@ -587,7 +587,7 @@
                             <xsl:text>مؤلف: </xsl:text>
                         </xsl:when>
                     </xsl:choose>
-                    <xsl:apply-templates select="tei:byline/tei:persName"/>
+                    <xsl:value-of select="tei:byline/tei:persName"/>
                     <xsl:text>،</xsl:text>
                 </xsl:if>
                 <!-- add page numbers -->
