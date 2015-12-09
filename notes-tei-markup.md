@@ -66,16 +66,28 @@ The bibliographic meta-data in the `<front>` is not necessarily found in the iss
 
 Divisions can be of various types (`@type`), using a semi-controlled vocabulary of attribute values
 
-- advert
-- article
-- bill
-- section
-- verse
+- structual information
+    + `section`
+    + `article` (?)
+- genre information
+    - `advert`
+    - `article`
+    - `bill`
+
 
 <!-- needs revisions -->
 As paragraphs (`<p>`) cannot interlace with `<div>`s after the first `<div>` child of a parent `<div>`, `<div @type="article">` is commonly the lowest level of tessellation but in the case of very long articles that might themselves contain `@type="section"` children.
 
 The common structure of an issue would be a mix of `<div @type="article">` and `<div @type="section">`
+
+### legal texts, bills
+
+It is quite common to find legal texts in late nineteenth, early twentieth century periodicals and I would like to differenciate them by means of the `@type="bill"` attribute because they can be nested inside an article or appear as free-standing chunk of text on the article level. Legal texts are commonly structured into sections / chapters, articles, and paragraphs and shall be encoded thus; i.e. as `<div type="section">`, `<div type="article">`, and `<p>`.
+
+This encoding however mixes structural `@type` attributes such as `section` and `article` with semantic assumptions as to the genre of the text, i.e. `bill`. In future iterations of the schema / encoding this should be tackled and changed.
+
+
+In some cases the legal text itself is accompanied by a commentary intersecting with the legal text on the article level. they could be encoded in various ways, but the important thing is to link the commentary to the corresponding article by means of an attribute.
 
 
 ## Page, line, and column breaks
@@ -540,3 +552,11 @@ Or a list like that:
             sociale</foreign>)</item>
 </list>
 ~~~
+
+Or this 
+
+>الاجتماع الخاص - الذي لا يسوغ لكل الناس الاشتراك به لغير المدعوين مثل الضيافات بأنواعها. وهذه حرة عندنا بدون قيد أو شرط.
+>الاجتماع الدنيوي - هذا الاجتماع بالجوامع والكنائس. لإقامة الشعائر واستماع النصائح. وهذه الاجتماعات أيضا غير تابعة بصور وشروط قانونية.
+>الاجتماع المشروع - ما كان موافقا للقوانين. وأما الغير المشروع الغير موافق للقوانين الأخرى.
+>الاجتماع المهيأ - الذي يكون مبنيا على نية معلومة وقصد محدود معين.
+>الاجتماع المشوش - هو الذي يكون من قبيل التصادف أو التشويق الوقتي.
