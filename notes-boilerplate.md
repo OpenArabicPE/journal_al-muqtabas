@@ -6,7 +6,8 @@ date: 2015-12-01 17:44:26
 
 # TO DO
 
-- remove the BibTeX links from subheaders of `<div type="bill">`
+- add back-links to page breaks
+- add link to the main page of the repository
 
 # Select which facsimile to display
 
