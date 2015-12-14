@@ -9,7 +9,7 @@
             <xd:p>This stylesheet produces a simple markdown file from TEI XML input</xd:p>
         </xd:desc>
     </xd:doc>
-    <xsl:output encoding="UTF-8" indent="no" method="text" name="txt" media-type="text/plain"/>
+    <xsl:output encoding="UTF-8" indent="no" method="text" name="txt" media-type="text/plain" omit-xml-declaration="yes"/>
     <xsl:strip-space elements="*"/>
 
 
@@ -74,13 +74,18 @@
 
     <!-- provide a YAML header -->
     <xsl:template match="tei:teiHeader">
+        <xsl:variable name="vLang" select="'ar'"/>
+        <xsl:variable name="vSourceBibl" select="./tei:fileDesc/tei:sourceDesc/tei:biblStruct"/>
+        <xsl:variable name="vPubTitle" select="$vSourceBibl/tei:monogr/tei:title[@xml:lang=$vLang][not(@type='sub')][1]"/>
+        <xsl:variable name="vAuthor" select="$vSourceBibl/tei:monogr/tei:editor/tei:persName[@xml:lang=$vLang]"/>
+        <xsl:variable name="vPubDate" select="$vSourceBibl/tei:monogr/tei:imprint/tei:date[1]/@when"/>
 <xsl:text>---
 </xsl:text>
-<xsl:text>title: "</xsl:text><xsl:value-of select="./tei:fileDesc/tei:titleStmt/tei:title[1]"/>'<xsl:text>"</xsl:text>
-        <xsl:for-each select="./tei:fileDesc/tei:titleStmt/tei:author">
+<xsl:text>title: "</xsl:text><xsl:value-of select="$vPubTitle"/><xsl:text>"</xsl:text>
 <xsl:text>
-author: </xsl:text><xsl:apply-templates/>   
-        </xsl:for-each>
+author: </xsl:text><xsl:value-of select="$vAuthor"/>
+<xsl:text>
+date: </xsl:text><xsl:value-of select="$vPubDate"/>
 <xsl:text>
 ---
 
