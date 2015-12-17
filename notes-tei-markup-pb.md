@@ -24,6 +24,18 @@ Mark-up of page breaks mirroring the print edition with `<pb ed="print">` and li
 
 Links to local and online facsimiles / digital imagery have been added to the following issues:
 
+- oclc_4770057679-i_48.TEIP5.xml
+- oclc_4770057679-i_49.TEIP5.xml
+- oclc_4770057679-i_50.TEIP5.xml
+- oclc_4770057679-i_51.TEIP5.xml
+- oclc_4770057679-i_52.TEIP5.xml
+- oclc_4770057679-i_53.TEIP5.xml
+- oclc_4770057679-i_54.TEIP5.xml
+- oclc_4770057679-i_55.TEIP5.xml
+- oclc_4770057679-i_56.TEIP5.xml
+- oclc_4770057679-i_57.TEIP5.xml
+- oclc_4770057679-i_58.TEIP5.xml
+- oclc_4770057679-i_59.TEIP5.xml
 - oclc_4770057679-i_71.TEIP5.xml
 - oclc_4770057679-i_70.TEIP5.xml
 - oclc_4770057679-i_69.TEIP5.xml
