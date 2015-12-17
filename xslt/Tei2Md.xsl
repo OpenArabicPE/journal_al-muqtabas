@@ -12,12 +12,13 @@
     <xsl:output encoding="UTF-8" indent="no" method="text" name="txt" media-type="text/plain" omit-xml-declaration="yes"/>
     <xsl:strip-space elements="*"/>
 
+    <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
 
     <!-- safe as new file -->
     <xsl:template match="/">
-        <!--<xsl:result-document href="{substring-before(base-uri(),'.TEIP5.xml')}.md" format="txt">-->
+        <xsl:result-document href="../md/{$vFileId}.md" format="txt">
             <xsl:apply-templates/>
-        <!--</xsl:result-document>-->
+        </xsl:result-document>
     </xsl:template>
 
     <!-- provide the content of the TEI file -->
