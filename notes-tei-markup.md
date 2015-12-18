@@ -143,6 +143,18 @@ How should this be encoded?
 </lg>
 ~~~
 
+
+Update: after some talk with Mathew Miller from the Persian Digital Library and their TEI files of Persian poetry, I decided to follow their encoding of *bayt* as `<l type="bayt">` with two `<seg>` children
+
+~~~ {.xml}
+<l type="bayt">
+    <seg>أبرموا أمرهم عشاء فلما </seg> <seg> أصبحوا أصبحت لهم ضوضاء</seg>
+</l>
+<l type="bayt">
+    <seg>من منادٍ ومن مجيبٍ ومن تص</seg><seg>هالٍ خليل خلال ذاك رغاء</seg>
+</l>
+~~~
+
 # Punctuation
 
 There are two problems with punctuation in this corpus:
