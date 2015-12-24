@@ -33,3 +33,13 @@ the `<meta>` tag in the HTML head allows to include RDF ontologies such as [Dubl
 # Images
 
 Images are still displayed using TEI boilerplate's standard behaviour, which means that clicking on a thumbnail image opens a new browser window/ tab.
+
+# Index / content of all volumes
+
+I began writing an XSLT stylesheet for producing a static toc / index: `Tei2Html-toc.xsl`
+
+- to do:
+    + information on volume and issue for the entries
+    + author information is not coming through
+    + heads for the different lists are still missing
+    + long lists should be broken down along the beginning letter
