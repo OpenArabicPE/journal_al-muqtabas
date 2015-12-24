@@ -34,7 +34,7 @@
                     <!-- alphabetically sorted list of all heads -->
                     <ul lang="ar">
                         <xsl:apply-templates select="descendant::tei:div[child::tei:head]" mode="mToc">
-                        <xsl:sort select="if(starts-with(child::tei:head, 'ال')) then(substring-after(child::tei:head, 'ال')) else(child::tei:head)"/>
+                        <xsl:sort select="if(starts-with(child::tei:head[1], 'ال')) then(substring-after(child::tei:head[1], 'ال')) else(child::tei:head[1])"/>
                     </xsl:apply-templates>
                     </ul>
                     <!-- alphabetically sorted list of authors -->
