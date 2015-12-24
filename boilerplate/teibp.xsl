@@ -592,7 +592,7 @@
                 </xsl:if>
                 <!-- add page numbers -->
                 <xsl:choose>
-                    <xsl:when test="/@xml:lang = 'ar'">
+                    <xsl:when test="@xml:lang = 'ar'">
                         <xsl:text>ص </xsl:text>
                     </xsl:when>
                 </xsl:choose>
@@ -714,6 +714,7 @@
     <!-- do something with notes -->
     <xsl:variable name="vNotes">
         <div id="teibp_notes">
+            <head lang="ar">ملاحظات</head>
             <xsl:apply-templates select="/descendant::tei:body/descendant::tei:note" mode="mNotes"/>
         </div>
     </xsl:variable>
