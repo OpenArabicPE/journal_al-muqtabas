@@ -98,9 +98,15 @@
     
     <!-- omit all nodes that are not explicitly dealt with -->
     <xsl:template match="tei:head">
+        <!-- variables -->
+        <xsl:variable name="vBiblStructSource"
+            select="ancestor::tei:TEI[1]/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct"/>
+        <xsl:variable name="vIssue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
+        <xsl:variable name="vVolume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>
+        <!-- text() of the head -->
         <xsl:apply-templates/>
         <!-- add information on section -->
-        <xsl:if test="ancestor::tei:div[@type='section']">
+        <xsl:if test="ancestor::tei:div[2][@type='section']">
             <xsl:choose>
                 <xsl:when test="@xml:lang = 'ar'">
                     <xsl:text>، </xsl:text>
@@ -110,15 +116,28 @@
         </xsl:if>
         <xsl:text> (</xsl:text>
         <!-- add author names and pages if available -->
-        <xsl:if test="tei:byline/tei:persName">
+        <xsl:if test="parent::tei:div/tei:byline/tei:persName">
             <xsl:choose>
                 <xsl:when test="@xml:lang = 'ar'">
                     <xsl:text>مؤلف: </xsl:text>
                 </xsl:when>
             </xsl:choose>
-            <xsl:value-of select="tei:byline/tei:persName"/>
+            <xsl:value-of select="parent::tei:div/tei:byline/tei:persName"/>
             <xsl:text>،</xsl:text>
         </xsl:if>
+        <!-- information on volume, issue etc.  -->
+        <xsl:choose>
+            <xsl:when test="@xml:lang = 'ar'">
+                <xsl:text>م </xsl:text>
+            </xsl:when>
+        </xsl:choose>
+        <xsl:value-of select="$vVolume"/>
+        <xsl:choose>
+            <xsl:when test="@xml:lang = 'ar'">
+                <xsl:text>ج </xsl:text>
+            </xsl:when>
+        </xsl:choose>
+        <xsl:value-of select="$vIssue"/>
         <!-- add page numbers -->
         <xsl:choose>
             <xsl:when test="@xml:lang = 'ar'">
