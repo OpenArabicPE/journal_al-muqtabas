@@ -6,6 +6,9 @@
     <xsl:output method="text" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" name="text"/>
 
     <!-- this stylesheet generates a Bibtex file with bibliographic metadata for each <div> in the body of the TEI source file. File names are based on the source's @xml:id and the @xml:id of the <div>. -->
+    <!-- to do:
+        + add information on edition: i.e. TEI edition
+        + add information on collaborators on the digital edition -->
 
     <xsl:param name="pLang" select="'ar-Latn-x-ijmes'"/>
 
