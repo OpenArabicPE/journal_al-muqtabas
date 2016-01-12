@@ -144,16 +144,22 @@ How should this be encoded?
 ~~~
 
 
-Update: after some talk with Mathew Miller from the Persian Digital Library and their TEI files of Persian poetry, I decided to follow their encoding of *bayt* as `<l type="bayt">` with two `<seg>` children
+### Update
+
+After some talk with Mathew Miller from the Persian Digital Library and their TEI files of Persian poetry, I decided to follow their encoding of *bayt* as `<l type="bayt">` with two `<seg>` children. Successive lines are then wrapped in `<lg>`:
 
 ~~~ {.xml}
-<l type="bayt">
-    <seg>أبرموا أمرهم عشاء فلما </seg> <seg> أصبحوا أصبحت لهم ضوضاء</seg>
-</l>
-<l type="bayt">
-    <seg>من منادٍ ومن مجيبٍ ومن تص</seg><seg>هالٍ خليل خلال ذاك رغاء</seg>
-</l>
+<lg>
+    <l type="bayt">
+        <seg>أبرموا أمرهم عشاء فلما </seg> <seg> أصبحوا أصبحت لهم ضوضاء</seg>
+    </l>
+    <l type="bayt">
+        <seg>من منادٍ ومن مجيبٍ ومن تص</seg><seg>هالٍ خليل خلال ذاك رغاء</seg>
+    </l>
+</lg>
 ~~~
+
+I also updated the XSLT stylesheet "ePub2Tei-qasidas.xsl" accordingly.
 
 # Punctuation
 
