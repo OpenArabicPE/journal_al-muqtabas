@@ -29,7 +29,8 @@
                     <licence target="http://creativecommons.org/licenses/by-sa/4.0/" xml:lang="en">Distributed under a Creative Commons Attribution-ShareAlike 4.0
                         International (CC BY-SA 4.0) license</licence>
                 </availability>
-            <tei:idno type="url">https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/oclc_4770057679-i_70.TEIP5.xml</tei:idno></publicationStmt>
+            <tei:idno type="url">https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/oclc_4770057679-i_70.TEIP5.xml</tei:idno>
+         </publicationStmt>
             <sourceDesc xml:lang="en">
                 <biblStruct xml:lang="en">
                     <monogr xml:lang="en">
@@ -193,7 +194,12 @@
                     following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc><change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><tei:change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><tei:change when="2015-11-16">Created <tei:att>xml:id</tei:att> for <tei:gi>TEI</tei:gi> and added <tei:tag>idno type="url"</tei:tag> containing the file's URL on GitHub to <tei:gi>publicationStmt</tei:gi></tei:change>
+        <revisionDesc><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+         <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
+         <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+         <tei:change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
+         <tei:change when="2015-11-16">Created <tei:att>xml:id</tei:att> for <tei:gi>TEI</tei:gi> and added <tei:tag>idno type="url"</tei:tag> containing the file's URL on GitHub to <tei:gi>publicationStmt</tei:gi>
+         </tei:change>
             <tei:change when="2015-11-11" who="#pers_TG">Added <tei:gi>graphic</tei:gi> for 56 pages
                 with references to digital images at EAP.</tei:change>
             <tei:change when="2015-10-11">Created <tei:att>xml:id</tei:att> for
@@ -619,8 +625,10 @@
                 <head xml:lang="ar" xml:id="head_1.d1e1328">رسالة في أسماء الأضداد</head>
                 <note xml:lang="ar" xml:id="note_1.d1e1331">
                     <bibl xml:lang="ar" xml:id="bibl_1.d1e1333">لملا جامي المتوفى سنة <tei:num type="auto-markup" resp="#pers_TG" value="898" xml:lang="ar" xml:id="num_1.d1e1335">٨٩٨</tei:num>
-                        <lb xml:id="lb_1.d1e1338"/>عني بنشرها من مجموع <editor xml:lang="ar" xml:id="editor_3.d1e1340"><persName xml:lang="ar" xml:id="persName_6.d1e1341">قديم
-                                محمد جميل افندي الشطي</persName></editor> في دمشق</bibl>
+                        <lb xml:id="lb_1.d1e1338"/>عني بنشرها من مجموع <editor xml:lang="ar" xml:id="editor_3.d1e1340">
+                     <persName xml:lang="ar" xml:id="persName_6.d1e1341">قديم
+                                محمد جميل افندي الشطي</persName>
+                  </editor> في دمشق</bibl>
                 </note>
                 <salute xml:lang="ar" xml:id="salute_1.d1e1346">بسم الله الرحمن الرحيم</salute>
                 <p xml:lang="ar" xml:id="p_15.d1e1349">حامداً لمن خلق الأشياء أضداد. . . ومصلياً على نبي نهى الناس عن
@@ -929,30 +937,37 @@
                         الحلبية.</p>
                     <p xml:lang="ar" xml:id="p_52.d1e1505">(الأثارب) قلعة معروفة بين حلب وإنطاكية بينها وبين حلب نحو ثلاثة
                         فراسخ وفيها يقول محمد بن نصر بن صغير القيسراني:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_1.d1e1508">
-                        <l xml:lang="ar" xml:id="l_1.d1e1510">عرجاً بالأثارب </l>
-                        <l xml:lang="ar" xml:id="l_2.d1e1513"> كي أقضر مآربي</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_2.d1e1517">
-                        <l xml:lang="ar" xml:id="l_3.d1e1519">واسرقا نوم مقلتي </l>
-                        <l xml:lang="ar" xml:id="l_4.d1e1522"> من جفون الكواعب</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_3.d1e1527">
-                        <l xml:lang="ar" xml:id="l_5.d1e1529">واعجاً من ضلالتي</l>
-                        <l xml:lang="ar" xml:id="l_6.d1e1532">بين عين وحاجب</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1544">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1546">
+                        <seg xml:lang="ar" xml:id="seg_1.d1e1548">عرجاً بالأثارب </seg>
+                        <seg xml:lang="ar" xml:id="seg_2.d1e1551"> كي أقضر مآربي</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1555">
+                        <seg xml:lang="ar" xml:id="seg_3.d1e1557">واسرقا نوم مقلتي </seg>
+                        <seg xml:lang="ar" xml:id="seg_4.d1e1560"> من جفون الكواعب</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1564">
+                        <seg xml:lang="ar" xml:id="seg_5.d1e1566">واعجاً من ضلالتي</seg>
+                        <seg xml:lang="ar" xml:id="seg_6.d1e1569">بين عين وحاجب</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
                     <p xml:lang="ar" xml:id="p_53.d1e1536">
                         <pb ed="shamela" n="n70-p13" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4623.xhtml" xml:id="pb_13.d1e1538"/> (الأحص وشبيث) ويقال الأولى الحص الآن بالقرب من مملحة جبول وهما موضعان
                         والغالب أنهما بالقرب من قنسرين وأنشد الأصمعي في كتاب جزيرة العربلرجل من طيء
                         يقال له الخليل بن قردة وكان ابن زافر وكان قد مات بالشام:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_4.d1e1541">
-                        <l xml:lang="ar" xml:id="l_7.d1e1543">ولا آب ركب من دمشق وأهله </l>
-                        <l xml:lang="ar" xml:id="l_8.d1e1546"> ولا حمص إذ لم يأت في الكرب زافر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_5.d1e1550">
-                        <l xml:lang="ar" xml:id="l_9.d1e1552">ولا من شبيث والأحص ومنتهى ال </l>
-                        <l xml:lang="ar" xml:id="l_10.d1e1555"> مطايا بقنسرين ين أو بخناصر</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1580">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1582">
+                        <seg xml:lang="ar" xml:id="seg_7.d1e1584">ولا آب ركب من دمشق وأهله </seg>
+                        <seg xml:lang="ar" xml:id="seg_8.d1e1587"> ولا حمص إذ لم يأت في الكرب زافر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1591">
+                        <seg xml:lang="ar" xml:id="seg_9.d1e1593">ولا من شبيث والأحص ومنتهى ال </seg>
+                        <seg xml:lang="ar" xml:id="seg_10.d1e1596"> مطايا بقنسرين ين أو بخناصر</seg>
+                    </tei:l>
+               </tei:lg>
+                    
                     <p xml:lang="ar" xml:id="p_54.d1e1559">(الأرتيق) كورة من أعمال حلب ارتاح حصن منيع كان مر العواصم وهو
                         أعمال حارم (ارفاد) قربة كبيرة من نواحي حلب ثم من نواحي عزاز يقال لها رفاد
                         (أرمناز) بليدة قديمكة من نواحي حلب بينهما نحو خمسة فراسخ يعمل بها قدور
@@ -997,10 +1012,12 @@
                     <p xml:lang="ar" xml:id="p_59.d1e1583">(براق) من قرى حلب بينهما نحو فرسخ وهي اليوم ناحية برق من
                         أعمالها قضاء الباب من أعمالها نحو خمسين قرية (برج الرصاص) قلعة ولها رساتيق
                         من أعمال حلب قرب إنطاكيا وإياها عنى أبو فراس بقوله:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_6.d1e1586">
-                        <l xml:lang="ar" xml:id="l_11.d1e1588">فأوقع في جلباط بالروم وقعة </l>
-                        <l xml:lang="ar" xml:id="l_12.d1e1591"> بها العمق واللكام والربرج فاخر</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1628">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1630">
+                        <seg xml:lang="ar" xml:id="seg_11.d1e1632">فأوقع في جلباط بالروم وقعة </seg>
+                        <seg xml:lang="ar" xml:id="seg_12.d1e1635"> بها العمق واللكام والربرج فاخر</seg>
+                    </tei:l>
+               </tei:lg>
                     <p xml:lang="ar" xml:id="p_60.d1e1595">(الرزمان) قلعة من العواصم من نواحي حلب (بسرفوت) حصن من أعمال
                         حلب في جبل بني عليم (بزاعة) بلدة من أعمال حلب في وادي جاربة وأسواق حسنة وهي
                         اليوم قرية.</p>
@@ -1017,40 +1034,50 @@
                         صغيرة ذات سوق وحمام ومسجد وجامع ولها بساتين كثيرة نزهة وأما بزاعا فضويعة من
                         أعمال حلب في الجهة الشمالية الشرقية وفي بساتينها يقول المنازي وقد اجتاز
                         بها:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_7.d1e1604">
-                        <l xml:lang="ar" xml:id="l_13.d1e1606">لقانا لفتحة الرمضاء واد </l>
-                        <l xml:lang="ar" xml:id="l_14.d1e1609"> وقاه مضاعف النبت العميم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_8.d1e1613">
-                        <l xml:lang="ar" xml:id="l_15.d1e1615">يصد الشمس إلى واجهتنا </l>
-                        <l xml:lang="ar" xml:id="l_16.d1e1618"> فيحجبها ويأذن للنسيم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_9.d1e1622">
-                        <l xml:lang="ar" xml:id="l_17.d1e1624">يروع حصاه حالية العذر </l>
-                        <l xml:lang="ar" xml:id="l_18.d1e1627"> فتلمس جانب العقد النظيم</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1648">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1650">
+                        <seg xml:lang="ar" xml:id="seg_13.d1e1652">لقانا لفتحة الرمضاء واد </seg>
+                        <seg xml:lang="ar" xml:id="seg_14.d1e1655"> وقاه مضاعف النبت العميم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1659">
+                        <seg xml:lang="ar" xml:id="seg_15.d1e1661">يصد الشمس إلى واجهتنا </seg>
+                        <seg xml:lang="ar" xml:id="seg_16.d1e1664"> فيحجبها ويأذن للنسيم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1668">
+                        <seg xml:lang="ar" xml:id="seg_17.d1e1670">يروع حصاه حالية العذر </seg>
+                        <seg xml:lang="ar" xml:id="seg_18.d1e1673"> فتلمس جانب العقد النظيم</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
                     <p xml:lang="ar" xml:id="p_62.d1e1631">ووجدنا هذا البيت في مكان آخر:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_10.d1e1634">
-                        <l xml:lang="ar" xml:id="l_19.d1e1636">نزلنا دوحة فحنا علينا </l>
-                        <l xml:lang="ar" xml:id="l_20.d1e1639"> حنو الوالدات على الفطيم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_11.d1e1644">
-                        <l xml:lang="ar" xml:id="l_21.d1e1646">وأرشفنا على ظماء زلالا </l>
-                        <l xml:lang="ar" xml:id="l_22.d1e1649"> ألذ من المدامة للنديم</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1682">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1684">
+                        <seg xml:lang="ar" xml:id="seg_19.d1e1686">نزلنا دوحة فحنا علينا </seg>
+                        <seg xml:lang="ar" xml:id="seg_20.d1e1689"> حنو الوالدات على الفطيم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1693">
+                        <seg xml:lang="ar" xml:id="seg_21.d1e1695">وأرشفنا على ظماء زلالا </seg>
+                        <seg xml:lang="ar" xml:id="seg_22.d1e1698"> ألذ من المدامة للنديم</seg>
+                    </tei:l>
+               </tei:lg>
+                    
                     <p xml:lang="ar" xml:id="p_63.d1e1653">(بغراس) مدينة في لحف جبل اللكام بينها وبين إنطاكيا أربعة فراسخ
                         على يمين القاصد إلى إنطاكيا من حلب في البلاد المطلة على نواحي طوسوس قال
                         البلاذري وكانت أرض بغرس لمسلمة بن عبد الملك ووقفها على سبيل البر وكانت بيد
                         الفرنج ففتحها صلاح الدين يوسف بن أيوب في سنة <tei:num type="auto-markup" resp="#pers_TG" value="485" xml:lang="ar" xml:id="num_1.d1e1655">٤٨٥</tei:num> وقد ذكرها البحتري في شعر مدح به أحمد بن
                         طولون.</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_12.d1e1659">
-                        <l xml:lang="ar" xml:id="l_23.d1e1661">سيوف لها من كل دار غادً درى </l>
-                        <l xml:lang="ar" xml:id="l_24.d1e1664"> وخيل لها من كل دار غداً نهب</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_13.d1e1668">
-                        <l xml:lang="ar" xml:id="l_25.d1e1670">علب فوق بغراس فضاقت بماجنت </l>
-                        <l xml:lang="ar" xml:id="l_26.d1e1673"> صدور رجال حين ضاق بها درب</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1709">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1711">
+                        <seg xml:lang="ar" xml:id="seg_23.d1e1713">سيوف لها من كل دار غادً درى </seg>
+                        <seg xml:lang="ar" xml:id="seg_24.d1e1716"> وخيل لها من كل دار غداً نهب</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1720">
+                        <seg xml:lang="ar" xml:id="seg_25.d1e1722">علب فوق بغراس فضاقت بماجنت </seg>
+                        <seg xml:lang="ar" xml:id="seg_26.d1e1725"> صدور رجال حين ضاق بها درب</seg>
+                    </tei:l>
+               </tei:lg>
+                    
                     <p xml:lang="ar" xml:id="p_64.d1e1677">قال يحيى بن سعدي ين يخيى الإنطاكي أن نقفور ملك الروم نزل على
                         إنطاكية سنة <tei:num type="auto-markup" resp="#pers_TG" value="357" xml:lang="ar" xml:id="num_1.d1e1679">٣٥٧</tei:num> وأقام عليا
                         يومين وفتح العرة وحماه وحمص وطرابلس وعرفة وجبلة واللاذقية وانطرسوس <pb ed="shamela" n="n70-p16" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4626.xhtml" xml:id="pb_16.d1e1682"/> وخرب قرى كثيرة وبنى حصن بغراس مقابل إنطاكية في فم الدرب (إدلب).</p>
@@ -1070,10 +1097,12 @@
                         والغرب عن سروج.</p>
                     <p xml:lang="ar" xml:id="p_68.d1e1695">(البضاء) أمم لمدينة حلب لبياض تربتها (تاذف) قرية بين حلب وبينها
                         أربعة فراسخ من وادي بطنان من ناحية بزاعة ذكرها أمرؤ القيس في شعره فقال:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_14.d1e1698">
-                        <l xml:lang="ar" xml:id="l_27.d1e1700">ويا رب يوم صالح قد شهدته </l>
-                        <l xml:lang="ar" xml:id="l_28.d1e1703"> بتادف ذات التل من فوق طرطرا</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1751">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1753">
+                        <seg xml:lang="ar" xml:id="seg_27.d1e1755">ويا رب يوم صالح قد شهدته </seg>
+                        <seg xml:lang="ar" xml:id="seg_28.d1e1758"> بتادف ذات التل من فوق طرطرا</seg>
+                    </tei:l>
+               </tei:lg>
                     <p xml:lang="ar" xml:id="p_69.d1e1707">ويقال لهذه البلدة اليوم تاتف وهي على نصف ساعة من الباب ولا يقل
                         نفوسها عن خمسة آلاف نسمة وفيها اليوم كنيس لليهود وبضع أرسات منهم يسكنونها
                         بنيت فيما يقال قبل <tei:num type="auto-markup" resp="#pers_TG" value="2200" xml:lang="ar" xml:id="num_1.d1e1709">٢٢٠٠</tei:num> سنة
@@ -1093,38 +1122,47 @@
                         ما كان من عيون ليست بالكثيرة في مواضع مخصوصة ولذلك تنبت فيه جميع أشجار
                         الفواكه وغيرها حتى المشمش والقطن والسمسم وغير ذلك وقيل أنه سمي بذلك لكثرة ما
                         ينبت فيه من السماق قال عيسى ين سعدان:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_15.d1e1718">
-                        <l xml:lang="ar" xml:id="l_29.d1e1720">وقولها وشعاع الشمس منخرط </l>
-                        <l xml:lang="ar" xml:id="l_30.d1e1723"> حييت يا جبل السماق من جبل</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_16.d1e1728">
-                        <l xml:lang="ar" xml:id="l_31.d1e1730">ياحبذا التلعات الخضر من حلب </l>
-                        <l xml:lang="ar" xml:id="l_32.d1e1733"> وحبذا طلل بالفسح من طلل</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_17.d1e1737">
-                        <l xml:lang="ar" xml:id="l_33.d1e1739">يا ساكني البلد الأقصى عسى نفس </l>
-                        <l xml:lang="ar" xml:id="l_34.d1e1742"> من سفح جوش يطفي لاعج الغلل</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_18.d1e1746">
-                        <l xml:lang="ar" xml:id="l_35.d1e1748">طال المقام فوا شواقا إلى وطن </l>
-                        <l xml:lang="ar" xml:id="l_36.d1e1751"> بين الأحص وبين الصحيح الرمل</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1774">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1776">
+                        <seg xml:lang="ar" xml:id="seg_29.d1e1778">وقولها وشعاع الشمس منخرط </seg>
+                        <seg xml:lang="ar" xml:id="seg_30.d1e1781"> حييت يا جبل السماق من جبل</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1785">
+                        <seg xml:lang="ar" xml:id="seg_31.d1e1787">ياحبذا التلعات الخضر من حلب </seg>
+                        <seg xml:lang="ar" xml:id="seg_32.d1e1790"> وحبذا طلل بالفسح من طلل</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1794">
+                        <seg xml:lang="ar" xml:id="seg_33.d1e1796">يا ساكني البلد الأقصى عسى نفس </seg>
+                        <seg xml:lang="ar" xml:id="seg_34.d1e1799"> من سفح جوش يطفي لاعج الغلل</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1803">
+                        <seg xml:lang="ar" xml:id="seg_35.d1e1805">طال المقام فوا شواقا إلى وطن </seg>
+                        <seg xml:lang="ar" xml:id="seg_36.d1e1808"> بين الأحص وبين الصحيح الرمل</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
+                    
                     <p xml:lang="ar" xml:id="p_70.d1e1755">(الجبول) قرية كبيرة إلى جنب ملاحة حلب وفي الجيول يصل نهر بطنان
                         وهو نهر الذهب ثم يجمد ملحاً فيمتار منه أكثر بلدان الشام وبعض الجزيرة ويضمن
                         بمائة وعشرين ألف درهم في كل عام ويجتمع على هذه الملاحة أنواع كثيرة من الطير
                         قبل جمودها وصفها حسن الساسكوني الحموي بقوله:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_19.d1e1758">
-                        <l xml:lang="ar" xml:id="l_37.d1e1760">قد جبل الجيول من راحة </l>
-                        <l xml:lang="ar" xml:id="l_38.d1e1763"> فليس تعرو ساكنيها هموم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_20.d1e1767">
-                        <l xml:lang="ar" xml:id="l_39.d1e1769">كأنما الماء وأطياره </l>
-                        <l xml:lang="ar" xml:id="l_40.d1e1772"> فيه سماء زينت بالنجوم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_21.d1e1777">
-                        <l xml:lang="ar" xml:id="l_41.d1e1779">كأن سود الطير في بيضها </l>
-                        <l xml:lang="ar" xml:id="l_42.d1e1782"> خليط جيش بين زنج وروم</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1817">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1819">
+                        <seg xml:lang="ar" xml:id="seg_37.d1e1821">قد جبل الجيول من راحة </seg>
+                        <seg xml:lang="ar" xml:id="seg_38.d1e1824"> فليس تعرو ساكنيها هموم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1828">
+                        <seg xml:lang="ar" xml:id="seg_39.d1e1830">كأنما الماء وأطياره </seg>
+                        <seg xml:lang="ar" xml:id="seg_40.d1e1833"> فيه سماء زينت بالنجوم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1837">
+                        <seg xml:lang="ar" xml:id="seg_41.d1e1839">كأن سود الطير في بيضها </seg>
+                        <seg xml:lang="ar" xml:id="seg_42.d1e1842"> خليط جيش بين زنج وروم</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
                     <p xml:lang="ar" xml:id="p_71.d1e1786">قال ياقوت في نهر الذهب أن أهل حلب يزعمون أن وادي بطنان الذي يمر
                         ببزاعة وهو الذي يقال له عجائب الدنيا ثلاثة دير الكلب ونهر الذهب وقلعة حلب
                         والعجب فيه أن أوله يباع بالميزان وآخراه بالكيل وتفسير ذلك أن أوله يزرع على
@@ -1171,31 +1209,39 @@
                         حلب بين حلب وكفر طاب. (دركوش) حصن قرب إنطاكية من أعمال العواصم (دلوك) بليدة
                         من نواحي حلب بالعواصم كانت بها وقعة لأبي فرا بن حمدان مع الروم قال بعضهم
                         بذكرها:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_22.d1e1815">
-                        <l xml:lang="ar" xml:id="l_43.d1e1817">وإني إن نزلت على دلوك </l>
-                        <l xml:lang="ar" xml:id="l_44.d1e1820"> تركتك غير متصل النظام</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1876">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1878">
+                        <seg xml:lang="ar" xml:id="seg_43.d1e1880">وإني إن نزلت على دلوك </seg>
+                        <seg xml:lang="ar" xml:id="seg_44.d1e1883"> تركتك غير متصل النظام</seg>
+                    </tei:l>
+               </tei:lg>
                     <p xml:lang="ar" xml:id="p_77.d1e1824">وقال عدي بن الرقاع:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_23.d1e1827">
-                        <l xml:lang="ar" xml:id="l_45.d1e1829">أهم سرلي أم غار للغيث غاثر </l>
-                        <l xml:lang="ar" xml:id="l_46.d1e1832"> أم انثابها من آخر الليل زائر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_24.d1e1836">
-                        <l xml:lang="ar" xml:id="l_47.d1e1838">ونحن بأرض قلا يجسم السرة </l>
-                        <l xml:lang="ar" xml:id="l_48.d1e1841"> بها العربيات الحسان الحرائر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_25.d1e1845">
-                        <l xml:lang="ar" xml:id="l_49.d1e1847">كثير بها الأعداء يحسر دونها </l>
-                        <l xml:lang="ar" xml:id="l_50.d1e1850"> بريد الإمام المستحث المثابر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_26.d1e1855">
-                        <l xml:lang="ar" xml:id="l_51.d1e1857">فقلت لها كيف أهتديت ودوننا </l>
-                        <l xml:lang="ar" xml:id="l_52.d1e1860"> دلوك وأشرف الجبال القواهر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_27.d1e1864">
-                        <l xml:lang="ar" xml:id="l_53.d1e1866">وجيحان جيحان الجيوش وألس </l>
-                        <l xml:lang="ar" xml:id="l_54.d1e1869"> وحزم حزاز والشعوب القواسر</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1891">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1893">
+                        <seg xml:lang="ar" xml:id="seg_45.d1e1895">أهم سرلي أم غار للغيث غاثر </seg>
+                        <seg xml:lang="ar" xml:id="seg_46.d1e1898"> أم انثابها من آخر الليل زائر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1902">
+                        <seg xml:lang="ar" xml:id="seg_47.d1e1904">ونحن بأرض قلا يجسم السرة </seg>
+                        <seg xml:lang="ar" xml:id="seg_48.d1e1907"> بها العربيات الحسان الحرائر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1911">
+                        <seg xml:lang="ar" xml:id="seg_49.d1e1913">كثير بها الأعداء يحسر دونها </seg>
+                        <seg xml:lang="ar" xml:id="seg_50.d1e1916"> بريد الإمام المستحث المثابر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1920">
+                        <seg xml:lang="ar" xml:id="seg_51.d1e1922">فقلت لها كيف أهتديت ودوننا </seg>
+                        <seg xml:lang="ar" xml:id="seg_52.d1e1925"> دلوك وأشرف الجبال القواهر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1929">
+                        <seg xml:lang="ar" xml:id="seg_53.d1e1931">وجيحان جيحان الجيوش وألس </seg>
+                        <seg xml:lang="ar" xml:id="seg_54.d1e1934"> وحزم حزاز والشعوب القواسر</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
+                    
+                    
                     <p xml:lang="ar" xml:id="p_78.d1e1873">(الواندان) قلعة حصينة وكورة طيبة معشبة مشجرة من نواحي حلب قال
                         أبو الفدا أنها قلعة حصينة عالية على جبل مرتفع أبيض ولها أعين وبساتين وفواكه
                         وواد حسن ويمر تحتتها نهر عفرين وهي في الغرب والشمال عن حلب وبينهما نحو
@@ -1219,22 +1265,27 @@
                     <p xml:lang="ar" xml:id="p_83.d1e1896">(سات) بليدة بظاهر معرة النعمان وهي القديمة والمعرة اليوم محدثة
                         اجتاز بها القاضي أبو يلعي عبد الباقي بن حصن العري والناس ينقضون بنيانها
                         ليعمروا به موضعاً آخر فقال:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_28.d1e1899">
-                        <l xml:lang="ar" xml:id="l_55.d1e1901">مررت برمم في سيات فراعني </l>
-                        <l xml:lang="ar" xml:id="l_56.d1e1904"> به زجل الأحجار تحت المعلول</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_29.d1e1908">
-                        <l xml:lang="ar" xml:id="l_57.d1e1910">تناولها عبل الذراع كأنما </l>
-                        <l xml:lang="ar" xml:id="l_58.d1e1913"> رمى الدهر فيما بينهم خرب وائل</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_30.d1e1917">
-                        <l xml:lang="ar" xml:id="l_59.d1e1919">انتقلها شلت يمينك خلها </l>
-                        <l xml:lang="ar" xml:id="l_60.d1e1922"> لمعتبر أو زائر أو مسائل</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_31.d1e1926">
-                        <l xml:lang="ar" xml:id="l_61.d1e1928">منازل قوم حدثتنا حديهم </l>
-                        <l xml:lang="ar" xml:id="l_62.d1e1931"> ولم أر أحلى من حديث المنازل</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1965">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1967">
+                        <seg xml:lang="ar" xml:id="seg_55.d1e1969">مررت برمم في سيات فراعني </seg>
+                        <seg xml:lang="ar" xml:id="seg_56.d1e1972"> به زجل الأحجار تحت المعلول</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1976">
+                        <seg xml:lang="ar" xml:id="seg_57.d1e1978">تناولها عبل الذراع كأنما </seg>
+                        <seg xml:lang="ar" xml:id="seg_58.d1e1981"> رمى الدهر فيما بينهم خرب وائل</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1985">
+                        <seg xml:lang="ar" xml:id="seg_59.d1e1987">انتقلها شلت يمينك خلها </seg>
+                        <seg xml:lang="ar" xml:id="seg_60.d1e1990"> لمعتبر أو زائر أو مسائل</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1994">
+                        <seg xml:lang="ar" xml:id="seg_61.d1e1996">منازل قوم حدثتنا حديهم </seg>
+                        <seg xml:lang="ar" xml:id="seg_62.d1e1999"> ولم أر أحلى من حديث المنازل</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
+                    
                     <p xml:lang="ar" xml:id="p_84.d1e1936">(الشغر) قلعة حصينة مقابلها أخرى يقال لها بكاس على رأس جبلين
                         بينهما واد كالخندق لهما واحدة تناوح الأخرى وهما قرب إنطاكية قال أبو الفدا:
                         الشغر وبكاس قلعتان حصينتان بينهما رمية سهم على جبل مستطيل وتحتهما نهر يجري
@@ -1248,22 +1299,27 @@
                         بينهما يوم وهي طيبة الهواء عذبة الماء. (عما) صقع في برية خساف بالس وحلب.
                         العميق كورة بنواحي الشام وكان ألاً من نواحي إنطاكية. ومنه أكثر ميرة إنطاكية
                         وإياه عنى أبو الطيب المتنبي حيث قال:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_32.d1e1944">
-                        <l xml:lang="ar" xml:id="l_63.d1e1946">وما أخشى نبوك عن طرق </l>
-                        <l xml:lang="ar" xml:id="l_64.d1e1949"> وسف الدولة الماضي الصقيل</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_33.d1e1953">
-                        <l xml:lang="ar" xml:id="l_65.d1e1955">وكل شواة غطريف تمنى </l>
-                        <l xml:lang="ar" xml:id="l_66.d1e1958"> لسيرك أن مفرقها السبيل</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_34.d1e1962">
-                        <l xml:lang="ar" xml:id="l_67.d1e1964">ومثل العمق مملوء دماءً </l>
-                        <l xml:lang="ar" xml:id="l_68.d1e1967"> مشت بك في مجاريه الخيول</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_35.d1e1971">
-                        <l xml:lang="ar" xml:id="l_69.d1e1973">إذا اعتاد الفتى خوض المنايا </l>
-                        <l xml:lang="ar" xml:id="l_70.d1e1976"> فأول ما يمر به الوحول</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2013">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2015">
+                        <seg xml:lang="ar" xml:id="seg_63.d1e2017">وما أخشى نبوك عن طرق </seg>
+                        <seg xml:lang="ar" xml:id="seg_64.d1e2020"> وسف الدولة الماضي الصقيل</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2024">
+                        <seg xml:lang="ar" xml:id="seg_65.d1e2026">وكل شواة غطريف تمنى </seg>
+                        <seg xml:lang="ar" xml:id="seg_66.d1e2029"> لسيرك أن مفرقها السبيل</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2033">
+                        <seg xml:lang="ar" xml:id="seg_67.d1e2035">ومثل العمق مملوء دماءً </seg>
+                        <seg xml:lang="ar" xml:id="seg_68.d1e2038"> مشت بك في مجاريه الخيول</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2042">
+                        <seg xml:lang="ar" xml:id="seg_69.d1e2044">إذا اعتاد الفتى خوض المنايا </seg>
+                        <seg xml:lang="ar" xml:id="seg_70.d1e2047"> فأول ما يمر به الوحول</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
+                    
                     <p xml:lang="ar" xml:id="p_86.d1e1981">(عين تاب) قلعة حصينة ورستق بين حلب وإنطاكية وكانت تعرف بدلوك
                         ودلوك رستاقها وهي الآن من أعمال حلب.</p>
                     <p xml:lang="ar" xml:id="p_87.d1e1984">ويقول أبو الفدا أنها بلدة حسنة كبيرة ولها قلعة منقوبة في الصخر
@@ -1298,36 +1354,46 @@
                         عامرة (كفرطاب) بلدة بين العرة ومدينة حلب في برية معطشة ليس لهم شرب إلا من
                         مياهع الأمطار في الصهاريج وبلغني (ياقوت) أنهم حفروا نحو ثلثمائة ذراع فلم
                         ينبط لهم ماء فيها يقول أبو عبد الله ين سنان الخفاجي:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_36.d1e2007">
-                        <l xml:lang="ar" xml:id="l_71.d1e2009">بالله يا حادي المطايا </l>
-                        <l xml:lang="ar" xml:id="l_72.d1e2012"> بين حناك وارصنايا</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_37.d1e2017">
-                        <l xml:lang="ar" xml:id="l_73.d1e2019">عرج على أهل كفر طاب </l>
-                        <l xml:lang="ar" xml:id="l_74.d1e2022"> وحيها أحسن التحايا</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_38.d1e2026">
-                        <l xml:lang="ar" xml:id="l_75.d1e2028">وأهدلها الماء فهي ممن </l>
-                        <l xml:lang="ar" xml:id="l_76.d1e2031"> يفرح بالماء في الهدايا</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2079">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2081">
+                        <seg xml:lang="ar" xml:id="seg_71.d1e2083">بالله يا حادي المطايا </seg>
+                        <seg xml:lang="ar" xml:id="seg_72.d1e2086"> بين حناك وارصنايا</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2090">
+                        <seg xml:lang="ar" xml:id="seg_73.d1e2092">عرج على أهل كفر طاب </seg>
+                        <seg xml:lang="ar" xml:id="seg_74.d1e2095"> وحيها أحسن التحايا</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2099">
+                        <seg xml:lang="ar" xml:id="seg_75.d1e2101">وأهدلها الماء فهي ممن </seg>
+                        <seg xml:lang="ar" xml:id="seg_76.d1e2104"> يفرح بالماء في الهدايا</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
                     <p xml:lang="ar" xml:id="p_91.d1e2035">وقال عبد الرحمن بن محسن المعري:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_39.d1e2038">
-                        <l xml:lang="ar" xml:id="l_77.d1e2040">أقسمت بالرب الحرام ومن </l>
-                        <l xml:lang="ar" xml:id="l_78.d1e2043"> أهل معتمراً من حوله وسعى</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_40.d1e2047">
-                        <l xml:lang="ar" xml:id="l_79.d1e2049">آن الأوان بنواحي الغوطتين وآن </l>
-                        <l xml:lang="ar" xml:id="l_80.d1e2052"> شط المزاربهم يوماًُ وإن شسعا</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_41.d1e2056">
-                        <l xml:lang="ar" xml:id="l_81.d1e2058">أشهى إلى ناظري من كل ما نظرت</l>
-                        <l xml:lang="ar" xml:id="l_82.d1e2061">عيني وفي مسمعي من كل ماسمعا</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2112">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2114">
+                        <seg xml:lang="ar" xml:id="seg_77.d1e2116">أقسمت بالرب الحرام ومن </seg>
+                        <seg xml:lang="ar" xml:id="seg_78.d1e2119"> أهل معتمراً من حوله وسعى</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2123">
+                        <seg xml:lang="ar" xml:id="seg_79.d1e2125">آن الأوان بنواحي الغوطتين وآن </seg>
+                        <seg xml:lang="ar" xml:id="seg_80.d1e2128"> شط المزاربهم يوماًُ وإن شسعا</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2132">
+                        <seg xml:lang="ar" xml:id="seg_81.d1e2134">أشهى إلى ناظري من كل ما نظرت</seg>
+                        <seg xml:lang="ar" xml:id="seg_82.d1e2137">عيني وفي مسمعي من كل ماسمعا</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
                     <pb ed="shamela" n="n70-p23" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4633.xhtml" xml:id="pb_24.d1e2066"/>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_42.d1e2068">
-                        <l xml:lang="ar" xml:id="l_83.d1e2070">ولا كفر طاب عندي بالجمة عوضاً</l>
-                        <l xml:lang="ar" xml:id="l_84.d1e2073">نعم سقى الله سكان الحمى ورعا</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2144">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2146">
+                        <seg xml:lang="ar" xml:id="seg_83.d1e2148">ولا كفر طاب عندي بالجمة عوضاً</seg>
+                        <seg xml:lang="ar" xml:id="seg_84.d1e2151">نعم سقى الله سكان الحمى ورعا</seg>
+                    </tei:l>
+               </tei:lg>
                     <p xml:lang="ar" xml:id="p_92.d1e2077">قال أبو الفدا أنها بلد صغيرة كالقرية قليلة الماء يعمل فيها
                         القدور الخزف وتجلب إلى غيرها وهي قاعدة ذات ولاية ولها عمل وهي على الطريق بين
                         المعرة وشيزر قال في العزيزي ومدينة كفر طاب أخلاط من اليمن وبينهما وبين سيزر
@@ -1338,58 +1404,72 @@
                         (مرعش) مدينة في الثغور بين الشام وبلاد الروم لها سوران وخندق وفي وسطها حصن
                         عليه سور يعرف بالمرواني ثم احدث بعده سائر المدينة وبها رابض يعرف بالهارونية
                         وهو مما يلي باب الحدث وقد ذكرها شاعر الحماسة فقال:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_43.d1e2083">
-                        <l xml:lang="ar" xml:id="l_85.d1e2085">فلو شهدت أم القديد طعاننا </l>
-                        <l xml:lang="ar" xml:id="l_86.d1e2088"> بمرعش خيل الأرمي أونت</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_44.d1e2092">
-                        <l xml:lang="ar" xml:id="l_87.d1e2094">عشية أرمى جمعهم بلبانه </l>
-                        <l xml:lang="ar" xml:id="l_88.d1e2097"> ونفسي قد وطنتها فأطمأنت</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_45.d1e2102">
-                        <l xml:lang="ar" xml:id="l_89.d1e2104">ولاحقة الآطال أسندت صفها </l>
-                        <l xml:lang="ar" xml:id="l_90.d1e2107"> إلى صف أخرى من عدة فاقشعرت</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2163">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2165">
+                        <seg xml:lang="ar" xml:id="seg_85.d1e2167">فلو شهدت أم القديد طعاننا </seg>
+                        <seg xml:lang="ar" xml:id="seg_86.d1e2170"> بمرعش خيل الأرمي أونت</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2174">
+                        <seg xml:lang="ar" xml:id="seg_87.d1e2176">عشية أرمى جمعهم بلبانه </seg>
+                        <seg xml:lang="ar" xml:id="seg_88.d1e2179"> ونفسي قد وطنتها فأطمأنت</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2183">
+                        <seg xml:lang="ar" xml:id="seg_89.d1e2185">ولاحقة الآطال أسندت صفها </seg>
+                        <seg xml:lang="ar" xml:id="seg_90.d1e2188"> إلى صف أخرى من عدة فاقشعرت</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
                     <p xml:lang="ar" xml:id="p_94.d1e2111">قال ابن حوقل: الحدث ومرعش مدينتان صغيرتان عامرتان فيهما مياه
                         وزرع وأشجار وهما ثغران قال في العزيزي وبينهما وبين إنطاكية ثمانية وسبعون
                         ميلاً وبينهما وبين مخاضة العلوي على نهر جيحان أثنا عشر ميلاً.</p>
                     <p xml:lang="ar" xml:id="p_95.d1e2114">(معرة مصرين) بليدة وكورة بنواحي حلب ومن أعمالها بينهما نحو خمسة
                         فراسخ قال حمدان بن عبد الرحيم يذكرها:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_46.d1e2117">
-                        <l xml:lang="ar" xml:id="l_91.d1e2119">جادت معرة مصرين من الديم </l>
-                        <l xml:lang="ar" xml:id="l_92.d1e2122"> مثل الذي من دمعي لبينهم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_47.d1e2126">
-                        <l xml:lang="ar" xml:id="l_93.d1e2128">وسألتها الليالي في تغيرها </l>
-                        <l xml:lang="ar" xml:id="l_94.d1e2131"> وصافحتها بد الآلاء والنعيم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_48.d1e2135">
-                        <l xml:lang="ar" xml:id="l_95.d1e2137">ولا تناوحت الإعصار عاصفة </l>
-                        <l xml:lang="ar" xml:id="l_96.d1e2140"> بعرصتها كما هبت على آرم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_49.d1e2145">
-                        <l xml:lang="ar" xml:id="l_97.d1e2147">حاكت يد القطر في أفنائها حللاً </l>
-                        <l xml:lang="ar" xml:id="l_98.d1e2150"> من كل نور شنيب الثغر مبتسم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_50.d1e2154">
-                        <l xml:lang="ar" xml:id="l_99.d1e2156">إذا الصبا حركت أوارها اعتنقت </l>
-                        <l xml:lang="ar" xml:id="l_100.d1e2159"> ومثلت بعضها بعضاً فماً لفم</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_51.d1e2163">
-                        <l xml:lang="ar" xml:id="l_101.d1e2165">فطال ما نشرت كف الربيع بها</l>
-                        <l xml:lang="ar" xml:id="l_102.d1e2168">بهار كسرى مليك العرب والعجم</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2199">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2201">
+                        <seg xml:lang="ar" xml:id="seg_91.d1e2203">جادت معرة مصرين من الديم </seg>
+                        <seg xml:lang="ar" xml:id="seg_92.d1e2206"> مثل الذي من دمعي لبينهم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2210">
+                        <seg xml:lang="ar" xml:id="seg_93.d1e2212">وسألتها الليالي في تغيرها </seg>
+                        <seg xml:lang="ar" xml:id="seg_94.d1e2215"> وصافحتها بد الآلاء والنعيم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2219">
+                        <seg xml:lang="ar" xml:id="seg_95.d1e2221">ولا تناوحت الإعصار عاصفة </seg>
+                        <seg xml:lang="ar" xml:id="seg_96.d1e2224"> بعرصتها كما هبت على آرم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2228">
+                        <seg xml:lang="ar" xml:id="seg_97.d1e2230">حاكت يد القطر في أفنائها حللاً </seg>
+                        <seg xml:lang="ar" xml:id="seg_98.d1e2233"> من كل نور شنيب الثغر مبتسم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2237">
+                        <seg xml:lang="ar" xml:id="seg_99.d1e2239">إذا الصبا حركت أوارها اعتنقت </seg>
+                        <seg xml:lang="ar" xml:id="seg_100.d1e2242"> ومثلت بعضها بعضاً فماً لفم</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2247">
+                        <seg xml:lang="ar" xml:id="seg_101.d1e2249">فطال ما نشرت كف الربيع بها</seg>
+                        <seg xml:lang="ar" xml:id="seg_102.d1e2252">بهار كسرى مليك العرب والعجم</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
+                    
+                    
+                    
                     <p xml:lang="ar" xml:id="p_96.d1e2172">
                         <pb ed="shamela" n="n70-p24" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4634.xhtml" xml:id="pb_25.d1e2174"/> (معرة النعمان) مدينة كبيرة قديمة مشهورة من أعمال حمص بين حلب وحماه وماؤهم
                         من الآبار وعندهم الزيتون الكثير والتين قال أبو العلاء المعري:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_52.d1e2177">
-                        <l xml:lang="ar" xml:id="l_103.d1e2179">فيا برق ليس الكرخ داري وإنما </l>
-                        <l xml:lang="ar" xml:id="l_104.d1e2182"> رماني إليها الدهر منذ ليال</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_53.d1e2186">
-                        <l xml:lang="ar" xml:id="l_105.d1e2188">فهل فيك من ماء المعرة قطرة </l>
-                        <l xml:lang="ar" xml:id="l_106.d1e2191"> تغيب بها ظمآن ليس بالي</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2263">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2265">
+                        <seg xml:lang="ar" xml:id="seg_103.d1e2267">فيا برق ليس الكرخ داري وإنما </seg>
+                        <seg xml:lang="ar" xml:id="seg_104.d1e2270"> رماني إليها الدهر منذ ليال</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2274">
+                        <seg xml:lang="ar" xml:id="seg_105.d1e2276">فهل فيك من ماء المعرة قطرة </seg>
+                        <seg xml:lang="ar" xml:id="seg_106.d1e2279"> تغيب بها ظمآن ليس بالي</seg>
+                    </tei:l>
+               </tei:lg>
+                    
                     <p xml:lang="ar" xml:id="p_97.d1e2196">ونقل أبو الفدا عن السمعاني أن النسبة إلى المعرة معرتي قال لأن
                         معرتي معرة النعمان ومعرة نسرين فالنسبة إلى الأولى معرتي وإلى الثانية معرنسي
                         غير أ، أكثر أهل العلم لا يعرف ذلك.</p>
@@ -1612,14 +1692,17 @@
                         بلاد بابل ولا يصل من مائه إلى الخليج البصرة شيء وكان تجار بابل يحملون بضائع
                         الأناضول (الروم) من قفقاسيا في قوارب معمولة من جلود البقر إلى مدينة بابل.
                         والنهر الثاني من أنهار هذه الولاية نهر العاصي وارنط الأرند) قال البحتري:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_54.d1e2349">
-                        <l xml:lang="ar" xml:id="l_107.d1e2351">وكم نفست من حمص من متأسف </l>
-                        <l xml:lang="ar" xml:id="l_108.d1e2354"> غدا الموت منها آخذاً بالمخنق</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_55.d1e2358">
-                        <l xml:lang="ar" xml:id="l_109.d1e2360">وكم قطعت أرض الأرند إليهم </l>
-                        <l xml:lang="ar" xml:id="l_110.d1e2363"> كتائب تزجي فيلقاً بعد فيلق</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2437">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2439">
+                        <seg xml:lang="ar" xml:id="seg_107.d1e2441">وكم نفست من حمص من متأسف </seg>
+                        <seg xml:lang="ar" xml:id="seg_108.d1e2444"> غدا الموت منها آخذاً بالمخنق</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2448">
+                        <seg xml:lang="ar" xml:id="seg_109.d1e2450">وكم قطعت أرض الأرند إليهم </seg>
+                        <seg xml:lang="ar" xml:id="seg_110.d1e2453"> كتائب تزجي فيلقاً بعد فيلق</seg>
+                    </tei:l>
+               </tei:lg>
+                    
                     <p xml:lang="ar" xml:id="p_125.d1e2368">وهو يخرج من عين اللبوة في جبل لبنان وبعد أن يجري إلى حمص وحماه
                         ينتهي إلى سهل العمق ويجتاز قصبتي إنطاكية وجسر الشغر إلى أن يبلغ فرضة
                         السويدية فيصب في البحر الرومي وكان يقال له في القديم الأورنت ثم أطلق عليه
@@ -2011,108 +2094,135 @@
             <pb ed="print" n="727" xml:id="pb_49.d1e3254"/>
             <div type="article" xml:lang="ar" xml:id="div_11.d1e3256">
                 <head xml:lang="ar" xml:id="head_10.d1e3258">في القطار<lb xml:id="lb_2.d1e3260"/>من بيروت إلى زحلة</head>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_56.d1e3263">
-                    <l xml:lang="ar" xml:id="l_111.d1e3265">وناقلتي حيث يحلو في الهوى النقل </l>
-                    <l xml:lang="ar" xml:id="l_112.d1e3268"> يمشي به الدفعان الشوق والأمل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_57.d1e3272">
-                    <l xml:lang="ar" xml:id="l_113.d1e3274">كأنه جبل يشمي على جبل </l>
-                    <l xml:lang="ar" xml:id="l_114.d1e3277"> يرسو إذا شاء طوراً ثم ينتقل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_58.d1e3281">
-                    <l xml:lang="ar" xml:id="l_115.d1e3283">كأنه عند ما يجري على عجلٍ </l>
-                    <l xml:lang="ar" xml:id="l_116.d1e3286"> يجري على عجل يجري بها الأمل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_59.d1e3290">
-                    <l xml:lang="ar" xml:id="l_117.d1e3292">كالطير ليس يزيد السهل سرعته </l>
-                    <l xml:lang="ar" xml:id="l_118.d1e3295"> ولا يؤخره في سيره جبل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_60.d1e3300">
-                    <l xml:lang="ar" xml:id="l_119.d1e3302">لو سابق الأرض نحو الشمس ما اطلعت </l>
-                    <l xml:lang="ar" xml:id="l_120.d1e3305"> إلا وقد جازها في الغرب تغتسل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_61.d1e3309">
-                    <l xml:lang="ar" xml:id="l_121.d1e3311">أو طارد الزهر في ألفلاكها غلساً </l>
-                    <l xml:lang="ar" xml:id="l_122.d1e3314"> ما حط إلا ومن أرتاله زحل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_62.d1e3318">
-                    <l xml:lang="ar" xml:id="l_123.d1e3320">ما عاقه في السري برد ولا مطر </l>
-                    <l xml:lang="ar" xml:id="l_124.d1e3323"> كأن لعلم الحيا في وجهه قبل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_63.d1e3327">
-                    <l xml:lang="ar" xml:id="l_125.d1e3329">لا أنس فيه ركوبي والحبيب وقد </l>
-                    <l xml:lang="ar" xml:id="l_126.d1e3332"> بنتا وكل بصهباء اللقا ثمل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_64.d1e3336">
-                    <l xml:lang="ar" xml:id="l_127.d1e3338">قمنا عن (البور) والأفلاك قد غمضت </l>
-                    <l xml:lang="ar" xml:id="l_128.d1e3341"> منها وقد سهرت طول الدجى المقل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_65.d1e3345">
-                    <l xml:lang="ar" xml:id="l_129.d1e3347">يمشي نحو الشآم المل مكتملاً </l>
-                    <l xml:lang="ar" xml:id="l_130.d1e3350"> إلا وجفن الضحى بالنور مكتحل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_66.d1e3355">
-                    <l xml:lang="ar" xml:id="l_131.d1e3357">ينساب كالصل حرَّان الحشاشة حي </l>
-                    <l xml:lang="ar" xml:id="l_132.d1e3360"> ر وأنا كمن قطعت في وجهه السبل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_67.d1e3364">
-                    <l xml:lang="ar" xml:id="l_133.d1e3366">طوراً تخف إلى استقباله قلل </l>
-                    <l xml:lang="ar" xml:id="l_134.d1e3369"> وتارة كما قطعت في وزجهه السبل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_68.d1e3373">
-                    <l xml:lang="ar" xml:id="l_135.d1e3375">يمر كالسهم في الأنفاق مخترقاً </l>
-                    <l xml:lang="ar" xml:id="l_136.d1e3378"> حشاشة الأرض لا يلوي به الرجل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_69.d1e3382">
-                    <l xml:lang="ar" xml:id="l_137.d1e3384">خلو من الحب لا ينفك منتحباً </l>
-                    <l xml:lang="ar" xml:id="l_138.d1e3387"> يشكو ويبكي وما في جسمه علل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_70.d1e3391">
-                    <l xml:lang="ar" xml:id="l_139.d1e3393">مصعد زفرات كلما عصفت </l>
-                    <l xml:lang="ar" xml:id="l_140.d1e3396"> حسبتها طغمات الجن تنتقل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_71.d1e3400">
-                    <l xml:lang="ar" xml:id="l_141.d1e3402">تلتقي على الأرض من أبوابه بصراً </l>
-                    <l xml:lang="ar" xml:id="l_142.d1e3405"> يرده فشل في الطرق لا كلل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_72.d1e3410">
-                    <l xml:lang="ar" xml:id="l_143.d1e3412">لا يستقر على شيء لسرعته </l>
-                    <l xml:lang="ar" xml:id="l_144.d1e3415"> فلا ترى الأرض إلا عند ما يصل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_73.d1e3419">
-                    <l xml:lang="ar" xml:id="l_145.d1e3421">حتى إذا ما إنجلى سهل البقاع لنا </l>
-                    <l xml:lang="ar" xml:id="l_146.d1e3424"> بحراً يرى كل بحر عنده وشل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_74.d1e3428">
-                    <l xml:lang="ar" xml:id="l_147.d1e3430">أواجه الخضر بالأزهار مزبدة </l>
-                    <l xml:lang="ar" xml:id="l_148.d1e3433"> مثل الحلي إذا ازدانت بها الحلل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_75.d1e3437">
-                    <l xml:lang="ar" xml:id="l_149.d1e3439">عدا ومن خلفه ما لاحت له عجلن </l>
-                    <l xml:lang="ar" xml:id="l_150.d1e3442"> كأننا في سفين مالها عجل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_76.d1e3446">
-                    <l xml:lang="ar" xml:id="l_151.d1e3448">والكرم عن جانبيه مطرق خجل </l>
-                    <l xml:lang="ar" xml:id="l_152.d1e3451"> كالغيد خف إليها فارس بطل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_77.d1e3455">
-                    <l xml:lang="ar" xml:id="l_153.d1e3457">ترى العناقيد من أعناقها برزت </l>
-                    <l xml:lang="ar" xml:id="l_154.d1e3460"> مثل <orig resp="#pers_TG" xml:lang="ar" xml:id="orig_1.d1e3462">النهود</orig> لكن درها
-                        عسل</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_78.d1e3468">
-                    <l xml:lang="ar" xml:id="l_155.d1e3470">حتى إذا الأرض من حر الهجير غدت </l>
-                    <l xml:lang="ar" xml:id="l_156.d1e3473">كأنها كبد بالهجر تشتعل</l>
-                </lg>
+                <tei:lg xml:id="lg_1.d1e3354">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3356">
+                    <seg xml:lang="ar" xml:id="seg_111.d1e3358">وناقلتي حيث يحلو في الهوى النقل </seg>
+                    <seg xml:lang="ar" xml:id="seg_112.d1e3361"> يمشي به الدفعان الشوق والأمل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3365">
+                    <seg xml:lang="ar" xml:id="seg_113.d1e3367">كأنه جبل يشمي على جبل </seg>
+                    <seg xml:lang="ar" xml:id="seg_114.d1e3370"> يرسو إذا شاء طوراً ثم ينتقل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3374">
+                    <seg xml:lang="ar" xml:id="seg_115.d1e3376">كأنه عند ما يجري على عجلٍ </seg>
+                    <seg xml:lang="ar" xml:id="seg_116.d1e3379"> يجري على عجل يجري بها الأمل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3383">
+                    <seg xml:lang="ar" xml:id="seg_117.d1e3385">كالطير ليس يزيد السهل سرعته </seg>
+                    <seg xml:lang="ar" xml:id="seg_118.d1e3388"> ولا يؤخره في سيره جبل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3392">
+                    <seg xml:lang="ar" xml:id="seg_119.d1e3394">لو سابق الأرض نحو الشمس ما اطلعت </seg>
+                    <seg xml:lang="ar" xml:id="seg_120.d1e3397"> إلا وقد جازها في الغرب تغتسل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3402">
+                    <seg xml:lang="ar" xml:id="seg_121.d1e3404">أو طارد الزهر في ألفلاكها غلساً </seg>
+                    <seg xml:lang="ar" xml:id="seg_122.d1e3407"> ما حط إلا ومن أرتاله زحل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3411">
+                    <seg xml:lang="ar" xml:id="seg_123.d1e3413">ما عاقه في السري برد ولا مطر </seg>
+                    <seg xml:lang="ar" xml:id="seg_124.d1e3416"> كأن لعلم الحيا في وجهه قبل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3420">
+                    <seg xml:lang="ar" xml:id="seg_125.d1e3422">لا أنس فيه ركوبي والحبيب وقد </seg>
+                    <seg xml:lang="ar" xml:id="seg_126.d1e3425"> بنتا وكل بصهباء اللقا ثمل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3429">
+                    <seg xml:lang="ar" xml:id="seg_127.d1e3431">قمنا عن (البور) والأفلاك قد غمضت </seg>
+                    <seg xml:lang="ar" xml:id="seg_128.d1e3434"> منها وقد سهرت طول الدجى المقل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3438">
+                    <seg xml:lang="ar" xml:id="seg_129.d1e3440">يمشي نحو الشآم المل مكتملاً </seg>
+                    <seg xml:lang="ar" xml:id="seg_130.d1e3443"> إلا وجفن الضحى بالنور مكتحل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3447">
+                    <seg xml:lang="ar" xml:id="seg_131.d1e3449">ينساب كالصل حرَّان الحشاشة حي </seg>
+                    <seg xml:lang="ar" xml:id="seg_132.d1e3452"> ر وأنا كمن قطعت في وجهه السبل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3457">
+                    <seg xml:lang="ar" xml:id="seg_133.d1e3459">طوراً تخف إلى استقباله قلل </seg>
+                    <seg xml:lang="ar" xml:id="seg_134.d1e3462"> وتارة كما قطعت في وزجهه السبل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3466">
+                    <seg xml:lang="ar" xml:id="seg_135.d1e3468">يمر كالسهم في الأنفاق مخترقاً </seg>
+                    <seg xml:lang="ar" xml:id="seg_136.d1e3471"> حشاشة الأرض لا يلوي به الرجل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3475">
+                    <seg xml:lang="ar" xml:id="seg_137.d1e3477">خلو من الحب لا ينفك منتحباً </seg>
+                    <seg xml:lang="ar" xml:id="seg_138.d1e3480"> يشكو ويبكي وما في جسمه علل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3484">
+                    <seg xml:lang="ar" xml:id="seg_139.d1e3486">مصعد زفرات كلما عصفت </seg>
+                    <seg xml:lang="ar" xml:id="seg_140.d1e3489"> حسبتها طغمات الجن تنتقل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3493">
+                    <seg xml:lang="ar" xml:id="seg_141.d1e3495">تلتقي على الأرض من أبوابه بصراً </seg>
+                    <seg xml:lang="ar" xml:id="seg_142.d1e3498"> يرده فشل في الطرق لا كلل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3502">
+                    <seg xml:lang="ar" xml:id="seg_143.d1e3504">لا يستقر على شيء لسرعته </seg>
+                    <seg xml:lang="ar" xml:id="seg_144.d1e3507"> فلا ترى الأرض إلا عند ما يصل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3512">
+                    <seg xml:lang="ar" xml:id="seg_145.d1e3514">حتى إذا ما إنجلى سهل البقاع لنا </seg>
+                    <seg xml:lang="ar" xml:id="seg_146.d1e3517"> بحراً يرى كل بحر عنده وشل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3521">
+                    <seg xml:lang="ar" xml:id="seg_147.d1e3523">أواجه الخضر بالأزهار مزبدة </seg>
+                    <seg xml:lang="ar" xml:id="seg_148.d1e3526"> مثل الحلي إذا ازدانت بها الحلل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3530">
+                    <seg xml:lang="ar" xml:id="seg_149.d1e3532">عدا ومن خلفه ما لاحت له عجلن </seg>
+                    <seg xml:lang="ar" xml:id="seg_150.d1e3535"> كأننا في سفين مالها عجل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3539">
+                    <seg xml:lang="ar" xml:id="seg_151.d1e3541">والكرم عن جانبيه مطرق خجل </seg>
+                    <seg xml:lang="ar" xml:id="seg_152.d1e3544"> كالغيد خف إليها فارس بطل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3548">
+                    <seg xml:lang="ar" xml:id="seg_153.d1e3550">ترى العناقيد من أعناقها برزت </seg>
+                    <seg xml:lang="ar" xml:id="seg_154.d1e3553"> مثل <orig resp="#pers_TG" xml:lang="ar" xml:id="orig_1.d1e3462">النهود</orig> لكن درها
+                        عسل</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3560">
+                    <seg xml:lang="ar" xml:id="seg_155.d1e3562">حتى إذا الأرض من حر الهجير غدت </seg>
+                    <seg xml:lang="ar" xml:id="seg_156.d1e3565">كأنها كبد بالهجر تشتعل</seg>
+                </tei:l>
+            </tei:lg>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <pb ed="shamela" n="n70-p48" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4658.xhtml" xml:id="pb_50.d1e3477"/>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_79.d1e3479">
-                    <l xml:lang="ar" xml:id="l_157.d1e3481"> صرنا إلى زحلة فالبعض قد ركبوا</l>
-                    <l xml:lang="ar" xml:id="l_158.d1e3484">منها وكنت أنا من بعض من نزولوا</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_80.d1e3488">
-                    <l xml:lang="ar" xml:id="l_159.d1e3490">يا من له هوس في كل ذي قدم </l>
-                    <l xml:lang="ar" xml:id="l_160.d1e3493"> هذا القطار فأين البغل والجمل؟!!</l>
-                </lg>
+                <tei:lg xml:id="lg_1.d1e3572">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3574">
+                    <seg xml:lang="ar" xml:id="seg_157.d1e3576"> صرنا إلى زحلة فالبعض قد ركبوا</seg>
+                    <seg xml:lang="ar" xml:id="seg_158.d1e3579">منها وكنت أنا من بعض من نزولوا</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e3583">
+                    <seg xml:lang="ar" xml:id="seg_159.d1e3585">يا من له هوس في كل ذي قدم </seg>
+                    <seg xml:lang="ar" xml:id="seg_160.d1e3588"> هذا القطار فأين البغل والجمل؟!!</seg>
+                </tei:l>
+            </tei:lg>
+                
                 <byline xml:lang="ar" xml:id="byline_2.d1e3497">
                     <persName xml:lang="ar" xml:id="persName_7.d1e3499">رشيد الخوري</persName>
                 </byline>
@@ -2315,9 +2425,15 @@
                 <div type="article" xml:lang="ar" xml:id="div_26.d1e3747">
                     <head xml:lang="ar" xml:id="head_26.d1e3749">نظام القضاء والإدارة</head>
                     <p xml:lang="ar" xml:id="p_189.d1e3752">
-                        <bibl xml:lang="ar" xml:id="bibl_2.d1e3754">تأليف <author xml:lang="ar" xml:id="author_3.d1e3756"><persName xml:lang="ar" xml:id="persName_8.d1e3757">أحمد
-                                    بك قمحة</persName></author> طبع ب<publisher xml:lang="ar" xml:id="publisher_3.d1e3760"><orgName xml:lang="ar" xml:id="orgName_4.d1e3761">مطبعة الجريدة</orgName></publisher> في
-                                <pubPlace xml:lang="ar" xml:id="pubPlace_4.d1e3764"><placeName xml:lang="ar" xml:id="placeName_4.d1e3765">مصر</placeName></pubPlace>
+                        <bibl xml:lang="ar" xml:id="bibl_2.d1e3754">تأليف <author xml:lang="ar" xml:id="author_3.d1e3756">
+                        <persName xml:lang="ar" xml:id="persName_8.d1e3757">أحمد
+                                    بك قمحة</persName>
+                     </author> طبع ب<publisher xml:lang="ar" xml:id="publisher_3.d1e3760">
+                        <orgName xml:lang="ar" xml:id="orgName_4.d1e3761">مطبعة الجريدة</orgName>
+                     </publisher> في
+                                <pubPlace xml:lang="ar" xml:id="pubPlace_4.d1e3764">
+                        <placeName xml:lang="ar" xml:id="placeName_4.d1e3765">مصر</placeName>
+                     </pubPlace>
                             <date xml:lang="ar" xml:id="date_12.d1e3768">سنة <tei:num type="auto-markup" resp="#pers_TG" value="1328" xml:lang="ar" xml:id="num_1.d1e3770">١٣٢٨</tei:num> هـ</date> - <date when="1910" xml:lang="ar" xml:id="date_13.d1e3774">
                                 <tei:num type="auto-markup" resp="#pers_TG" value="1910" xml:lang="ar" xml:id="num_1.d1e3776">١٩١٠</tei:num> م</date> ص
                                 <tei:num type="auto-markup" resp="#pers_TG" value="343" xml:lang="ar" xml:id="num_1.d1e3781">٣٤٣</tei:num>
@@ -2370,9 +2486,15 @@
                     <head xml:lang="ar" xml:id="head_27.d1e3821">تاريخ حرب فرنسا وألمانيا <lb xml:id="lb_3.d1e3823"/>سنة <tei:num type="auto-markup" resp="#pers_TG" value="1870" xml:lang="ar" xml:id="num_1.d1e3825">١٨٧٠</tei:num> - <tei:num type="auto-markup" resp="#pers_TG" value="1871" xml:lang="ar" xml:id="num_1.d1e3828">١٨٧١</tei:num>
                     </head>
                     <p xml:lang="ar" xml:id="p_193.d1e3832">
-                        <bibl xml:lang="ar" xml:id="bibl_3.d1e3834">ل<author xml:lang="ar" xml:id="author_4.d1e3836"><persName xml:lang="ar" xml:id="persName_9.d1e3837">جرجي
-                                    أفندي يني</persName></author> طبع على نفقة <publisher xml:lang="ar" xml:id="publisher_4.d1e3840"><persName xml:lang="ar" xml:id="persName_10.d1e3841">يوسف
-                                البستاني</persName></publisher> ب<pubPlace xml:lang="ar" xml:id="pubPlace_5.d1e3844"><placeName xml:lang="ar" xml:id="placeName_5.d1e3845">مصر</placeName></pubPlace>
+                        <bibl xml:lang="ar" xml:id="bibl_3.d1e3834">ل<author xml:lang="ar" xml:id="author_4.d1e3836">
+                        <persName xml:lang="ar" xml:id="persName_9.d1e3837">جرجي
+                                    أفندي يني</persName>
+                     </author> طبع على نفقة <publisher xml:lang="ar" xml:id="publisher_4.d1e3840">
+                        <persName xml:lang="ar" xml:id="persName_10.d1e3841">يوسف
+                                البستاني</persName>
+                     </publisher> ب<pubPlace xml:lang="ar" xml:id="pubPlace_5.d1e3844">
+                        <placeName xml:lang="ar" xml:id="placeName_5.d1e3845">مصر</placeName>
+                     </pubPlace>
                             <date xml:lang="ar" xml:id="date_14.d1e3848">سنة <tei:num type="auto-markup" resp="#pers_TG" value="1911" xml:lang="ar" xml:id="num_1.d1e3850">١٩١١</tei:num>
                             </date> ص <tei:num type="auto-markup" resp="#pers_TG" value="216" xml:lang="ar" xml:id="num_1.d1e3854">٢١٦</tei:num>
                         </bibl>
@@ -2382,14 +2504,19 @@
                         أيام صدورها في بيروت وقد كتب المؤلف عدة أبحاث تاريخية في بعض المجلات ولا
                         سيما في المقتطف أبانت عن تضلعه من هذا الفن الجميل وتاريخه هذا من أنفع ما
                         يكون لأبناء العربية في تلك الحرب ولذلك أحسن ناشره في تجريده ونشره للناس عل
-                        هذه الصورة فلمؤلفه الرصيف أحسن الثناء على هممه وحسن بلائه. <pb ed="shamela" n="n70-p57" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4667.xhtml" xml:id="pb_60.d1e3861"/></p>
+                        هذه الصورة فلمؤلفه الرصيف أحسن الثناء على هممه وحسن بلائه. <pb ed="shamela" n="n70-p57" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4667.xhtml" xml:id="pb_60.d1e3861"/>
+               </p>
                 </div>
                 <div type="article" xml:lang="ar" xml:id="div_28.d1e3864">
                     <head xml:lang="ar" xml:id="head_28.d1e3866">مطبوعات مختلفة</head>
-                    <p xml:lang="ar" xml:id="p_195.d1e3869"><bibl xml:lang="ar" xml:id="bibl_4.d1e3870"><title xml:lang="ar" xml:id="title_14.d1e3871">القراءة العربية في
+                    <p xml:lang="ar" xml:id="p_195.d1e3869">
+                  <bibl xml:lang="ar" xml:id="bibl_4.d1e3870">
+                     <title xml:lang="ar" xml:id="title_14.d1e3871">القراءة العربية في
                                 المعلومات المدنية</title> - عربه من التركية السيد عبد القادر المبارك
                             وفيه ما يلزم كل عثماني من المعلومات عن حالة حكومته</bibl>.</p>
-                    <p xml:lang="ar" xml:id="p_196.d1e3876"><bibl xml:lang="ar" xml:id="bibl_5.d1e3877"><title xml:lang="ar" xml:id="title_15.d1e3878">قانون أصول المحاكمات
+                    <p xml:lang="ar" xml:id="p_196.d1e3876">
+                  <bibl xml:lang="ar" xml:id="bibl_5.d1e3877">
+                     <title xml:lang="ar" xml:id="title_15.d1e3878">قانون أصول المحاكمات
                                 الحقيقية وذيله الجديد</title> الذي صدرت الإرادة السنية آذنة بالعمل
                             به بعد التصديق عليه من مجلس الأمة وقانون الجزاء الجديد وفيه القانون
                             القديم والمواد والذيول الجديدة التي أضافها مجلس الأمة وبعض تعليقات معربة
@@ -2398,19 +2525,25 @@
                         وهما من فضلاء دمشق معروفين بالأدب وطول الباع فعساهما يتوفران على تعريب كل ما
                         كان من هذا القبيل ليطلع العثمانيون العرب على ما يسن بالتركية من القوانين
                         ويكتب من الكتب النافعة في تقوية الشورى في النفوس.</p>
-                    <p xml:lang="ar" xml:id="p_198.d1e3886"><bibl xml:lang="ar" xml:id="bibl_6.d1e3887"><title xml:lang="ar" xml:id="title_16.d1e3888">الجغرافيا
+                    <p xml:lang="ar" xml:id="p_198.d1e3886">
+                  <bibl xml:lang="ar" xml:id="bibl_6.d1e3887">
+                     <title xml:lang="ar" xml:id="title_16.d1e3888">الجغرافيا
                                 الطبيعية</title> - لجامعة عبد الله أفندي عمر التنير وهو يبحث في
                             التربة والتلال والجبال والأودية والأنهار والبرك والبحيرات والأوقيانوس
                             والهواء وغير ذلك من الأبحاث التي تنشئ التلميذ الصغير على حب العلوم
                             والصناعات طبع في بيروت سنة <tei:num type="auto-markup" resp="#pers_TG" value="1329" xml:lang="ar" xml:id="num_1.d1e3891">١٣٢٩</tei:num> في <tei:num type="auto-markup" resp="#pers_TG" value="116" xml:lang="ar" xml:id="num_1.d1e3894">١١٦</tei:num>
                             صفحة مع بعض الرسوم</bibl>.</p>
-                    <p xml:lang="ar" xml:id="p_199.d1e3900"><bibl xml:lang="ar" xml:id="bibl_7.d1e3901"><title xml:lang="ar" xml:id="title_17.d1e3902">تحريم نقل
+                    <p xml:lang="ar" xml:id="p_199.d1e3900">
+                  <bibl xml:lang="ar" xml:id="bibl_7.d1e3901">
+                     <title xml:lang="ar" xml:id="title_17.d1e3902">تحريم نقل
                                 الجنائز</title> - رسالة لمؤلفها السيد هبة الدين الشهرستاني صاحب مجلة
                             العلم في النجف الأشرف في العراق ذكر فيها رأيه ونصوص علماء الشيعة في
                             تحريم نقل الجنائز من مكان لآخر كما يفعل بعض العامة من الشيعة فيأتون إلى
                             كربلاء واللغري بموتاهم من أطراف العراق وفارس يدفنوها هناك وقد أجاد
                             الرصيف في التنفير وهذه العادة المضرة الملتبسة شعار الدين</bibl>.</p>
-                    <p xml:lang="ar" xml:id="p_200.d1e3907"><bibl xml:lang="ar" xml:id="bibl_8.d1e3908"><title xml:lang="ar" xml:id="title_18.d1e3909">أسماء البنات</title> -
+                    <p xml:lang="ar" xml:id="p_200.d1e3907">
+                  <bibl xml:lang="ar" xml:id="bibl_8.d1e3908">
+                     <title xml:lang="ar" xml:id="title_18.d1e3909">أسماء البنات</title> -
                             معانيها وعلاقتها التاريخية وأشهر نساءٍ دعين بها تأليف أمين أفندي والغريب
                             صاحب جريدة الحارس البيروتية وفيه كلام نافع في فلسفة الأسماء ولا سيما
                             الإفرنجية والقديمة</bibl>. </p>

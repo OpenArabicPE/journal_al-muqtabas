@@ -29,7 +29,8 @@
                     <licence target="http://creativecommons.org/licenses/by-sa/4.0/" xml:lang="en">Distributed under a Creative Commons Attribution-ShareAlike 4.0
                         International (CC BY-SA 4.0) license</licence>
                 </availability>
-            <tei:idno type="url">https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/oclc_4770057679-i_71.TEIP5.xml</tei:idno></publicationStmt>
+            <tei:idno type="url">https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/oclc_4770057679-i_71.TEIP5.xml</tei:idno>
+         </publicationStmt>
             <sourceDesc xml:lang="en">
                 <biblStruct xml:lang="en">
                     <monogr xml:lang="en">
@@ -193,7 +194,12 @@
                     following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc><change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><tei:change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><tei:change when="2015-11-16">Created <tei:att>xml:id</tei:att> for <tei:gi>TEI</tei:gi> and added <tei:tag>idno type="url"</tei:tag> containing the file's URL on GitHub to <tei:gi>publicationStmt</tei:gi></tei:change>
+        <revisionDesc><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+         <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
+         <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+         <tei:change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
+         <tei:change when="2015-11-16">Created <tei:att>xml:id</tei:att> for <tei:gi>TEI</tei:gi> and added <tei:tag>idno type="url"</tei:tag> containing the file's URL on GitHub to <tei:gi>publicationStmt</tei:gi>
+         </tei:change>
             <tei:change when="2015-11-11" who="#pers_TG">Added <tei:gi>graphic</tei:gi> for 64 pages
                 with references to digital images at EAP.</tei:change>
             <tei:change when="2015-10-11">Created <tei:att>xml:id</tei:att> for
@@ -664,18 +670,22 @@
             <pb ed="print" n="737" facs="#facs_741" xml:id="pb_2.d1e1412"/>
             <div type="article" xml:lang="ar" xml:id="div_2.d1e1414">
                 <head xml:lang="ar" xml:id="head_1.d1e1416">أعداء الإصلاح</head>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_1.d1e1419">
-                    <l xml:lang="ar" xml:id="l_1.d1e1421">الطرق شتى وطرق الحق مفردة </l>
-                    <l xml:lang="ar" xml:id="l_2.d1e1424"> والسالكون طريق الحق أفراد</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_2.d1e1428">
-                    <l xml:lang="ar" xml:id="l_3.d1e1430">لا يعرفون ولا تدري مقاصدهم </l>
-                    <l xml:lang="ar" xml:id="l_4.d1e1433"> فهم على مهل يمشون قصاد</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_3.d1e1437">
-                    <l xml:lang="ar" xml:id="l_5.d1e1439">والناس في غفلة عما يراد بهم </l>
-                    <l xml:lang="ar" xml:id="l_6.d1e1442"> فجلهم عن سبيل الحق رقاد</l>
-                </lg>
+                <tei:lg xml:id="lg_1.d1e1453">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1455">
+                    <seg xml:lang="ar" xml:id="seg_1.d1e1457">الطرق شتى وطرق الحق مفردة </seg>
+                    <seg xml:lang="ar" xml:id="seg_2.d1e1460"> والسالكون طريق الحق أفراد</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1464">
+                    <seg xml:lang="ar" xml:id="seg_3.d1e1466">لا يعرفون ولا تدري مقاصدهم </seg>
+                    <seg xml:lang="ar" xml:id="seg_4.d1e1469"> فهم على مهل يمشون قصاد</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1473">
+                    <seg xml:lang="ar" xml:id="seg_5.d1e1475">والناس في غفلة عما يراد بهم </seg>
+                    <seg xml:lang="ar" xml:id="seg_6.d1e1478"> فجلهم عن سبيل الحق رقاد</seg>
+                </tei:l>
+            </tei:lg>
+                
+                
                 <p xml:lang="ar" xml:id="p_15.d1e1446">ما خلا عصر من عصور الإسلام من أعدء لكل جديد ومن جامدين ينكرون ما
                     بلا يألفون. فقد لقي المعتزلة والفلاسفة والمتكلمون والنظار من أعداء العقل كل شدة
                     في القرون الراقية وكان عقل الملوك هو الذي يحول على الأغلب بين الجامدين وبين ما
@@ -694,14 +704,17 @@
                     وكان أكثرهم على جانب من الجهل والغباوة لا يهمهم الإرضاء المشعوذين بالدين ليحولوا
                     العامة أليهم فيقوى بهم ضعفهم وستعينون بهم على تكبير رقعة ممالكهم وبسط ظل سلطانهم
                     على النفوس فيستمتعون بشهواتهم وبذخهم ورفاهيتهم.</p>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_4.d1e1456">
-                    <l xml:lang="ar" xml:id="l_7.d1e1458">عجبت لمتاع الضلالة بالمدى </l>
-                    <l xml:lang="ar" xml:id="l_8.d1e1461"> ومن يشتري دنياه بالدين أعجب</l>
-                </lg>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_5.d1e1465">
-                    <l xml:lang="ar" xml:id="l_9.d1e1467">وأعجب من هذين من باع دينه </l>
-                    <l xml:lang="ar" xml:id="l_10.d1e1470"> بدنيا سواه فهو من ذين أعجب</l>
-                </lg>
+                <tei:lg xml:id="lg_1.d1e1493">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1495">
+                    <seg xml:lang="ar" xml:id="seg_7.d1e1497">عجبت لمتاع الضلالة بالمدى </seg>
+                    <seg xml:lang="ar" xml:id="seg_8.d1e1500"> ومن يشتري دنياه بالدين أعجب</seg>
+                </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1504">
+                    <seg xml:lang="ar" xml:id="seg_9.d1e1506">وأعجب من هذين من باع دينه </seg>
+                    <seg xml:lang="ar" xml:id="seg_10.d1e1509"> بدنيا سواه فهو من ذين أعجب</seg>
+                </tei:l>
+            </tei:lg>
+                
                 <p xml:lang="ar" xml:id="p_18.d1e1474">ساعد على الانتقام من العالمين العاملين ناس من أرباب المذاهب سرت
                     أحكامهم بقوة أربابها فكان الحكم يجري على المبتدعة وأرباب الأهواء بزعمهم بموجب
                     قوانين لهم سنوها ومنها المذهب المالكي الذي كان يحكم قاضيه بقتل أكبر عالم في
@@ -730,10 +743,12 @@
                     الرئاسات والزعامات وسجلوا على أنفسهم العار للبت فيما ينزل به السلطان وجازوا أحد
                     الشرع وهم يتظاهرون بأنهم المئتمنون عليه ومنهم ومن أعمالهم يشكو ويئن كما تشكو
                     المدينة والإنسانية.</p>
-                <lg type="bayt" xml:lang="ar" xml:id="lg_6.d1e1495">
-                    <l xml:lang="ar" xml:id="l_11.d1e1497">نهل أفسد الدين إلا الملو </l>
-                    <l xml:lang="ar" xml:id="l_12.d1e1500">ك وأحبار سوءٍ ورهبانها</l>
-                </lg>
+                <tei:lg xml:id="lg_1.d1e1535">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1537">
+                    <seg xml:lang="ar" xml:id="seg_11.d1e1539">نهل أفسد الدين إلا الملو </seg>
+                    <seg xml:lang="ar" xml:id="seg_12.d1e1542">ك وأحبار سوءٍ ورهبانها</seg>
+                </tei:l>
+            </tei:lg>
                 <p xml:lang="ar" xml:id="p_24.d1e1504">
                     <pb ed="shamela" n="n71-p3" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4671.xhtml" xml:id="pb_4.d1e1506"/> إن من يتظاهرون بالدين واطنهم منه برئ أضر على الدين ممن يعقونه. ومن يدعو في
                     الغالب إلى لاإصلاح ويتخذ التقية أمام العامة درعه يكون أقرب إلى ال، حلال والضلال
@@ -844,39 +859,48 @@
                         من الأرض لها بحيرة حلوة يشقها النهر المقلوب (العاصي) وقال ياقوت أن أفامية
                         مدينة كبيرة وكورة من سواحل حمص وقد ياق للها أفامية قال عيسى ين سعدان الحلبي
                         يذكرها:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_7.d1e1550">
-                        <l xml:lang="ar" xml:id="l_13.d1e1552">يا دار علوة ما جيدي يمنعطف </l>
-                        <l xml:lang="ar" xml:id="l_14.d1e1555"> إلى سواك ولا قلبي بنجذب</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_8.d1e1559">
-                        <l xml:lang="ar" xml:id="l_15.d1e1561">ويا قرى الشام من ليلون لا نحلت </l>
-                        <l xml:lang="ar" xml:id="l_16.d1e1564"> على بلادكم هالة السحب</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_9.d1e1568">
-                        <l xml:lang="ar" xml:id="l_17.d1e1570">ما مر برقك مجتازاً على بصري </l>
-                        <l xml:lang="ar" xml:id="l_18.d1e1573"> إلا وذكرني الدارين من حلب</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_10.d1e1578">
-                        <l xml:lang="ar" xml:id="l_19.d1e1580">ليت العواصم من شرقي فامية </l>
-                        <l xml:lang="ar" xml:id="l_20.d1e1583"> أهدت إلي نسيم البان والغرب</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_11.d1e1587">
-                        <l xml:lang="ar" xml:id="l_21.d1e1589">ما كان أطيب أيامي بقربهم </l>
-                        <l xml:lang="ar" xml:id="l_22.d1e1592"> حتى رمتني عوادي الدهر من كثب</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1593">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1595">
+                        <seg xml:lang="ar" xml:id="seg_13.d1e1597">يا دار علوة ما جيدي يمنعطف </seg>
+                        <seg xml:lang="ar" xml:id="seg_14.d1e1600"> إلى سواك ولا قلبي بنجذب</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1604">
+                        <seg xml:lang="ar" xml:id="seg_15.d1e1606">ويا قرى الشام من ليلون لا نحلت </seg>
+                        <seg xml:lang="ar" xml:id="seg_16.d1e1609"> على بلادكم هالة السحب</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1613">
+                        <seg xml:lang="ar" xml:id="seg_17.d1e1615">ما مر برقك مجتازاً على بصري </seg>
+                        <seg xml:lang="ar" xml:id="seg_18.d1e1618"> إلا وذكرني الدارين من حلب</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1622">
+                        <seg xml:lang="ar" xml:id="seg_19.d1e1624">ليت العواصم من شرقي فامية </seg>
+                        <seg xml:lang="ar" xml:id="seg_20.d1e1627"> أهدت إلي نسيم البان والغرب</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1631">
+                        <seg xml:lang="ar" xml:id="seg_21.d1e1633">ما كان أطيب أيامي بقربهم </seg>
+                        <seg xml:lang="ar" xml:id="seg_22.d1e1636"> حتى رمتني عوادي الدهر من كثب</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
+                    
+                    
                     <p xml:lang="ar" xml:id="p_32.d1e1596">وهذا دليل على أن أفامية كانت من المدن العوفة غير حماة يؤيد ذلك
                         أن حماة معروفة بهذا الاسم في الجهلية فكان الشاعر حرياً بأن يذكرها بلفظها
                         التعارف.</p>
                     <p xml:lang="ar" xml:id="p_33.d1e1599">افتتح حماة أبو عبيدة سنة <tei:num type="auto-markup" resp="#pers_TG" value="17" xml:lang="ar" xml:id="num_1.d1e1601">١٧</tei:num> وكانت معروفة ف يالجاهلية بهذا الاسم وذكرها امرؤ القيس في
                         شعره بقوله:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_12.d1e1605">
-                        <l xml:lang="ar" xml:id="l_23.d1e1607">تقطع أسباب اللبانة والهوى </l>
-                        <l xml:lang="ar" xml:id="l_24.d1e1610"> عشية رحنا من حماة وشيزرا</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_13.d1e1614">
-                        <l xml:lang="ar" xml:id="l_25.d1e1616">بسير يضج العود منه يمنه </l>
-                        <l xml:lang="ar" xml:id="l_26.d1e1619"> أخو الجهد لا يلوي على من تعذرا</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1651">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1653">
+                        <seg xml:lang="ar" xml:id="seg_23.d1e1655">تقطع أسباب اللبانة والهوى </seg>
+                        <seg xml:lang="ar" xml:id="seg_24.d1e1658"> عشية رحنا من حماة وشيزرا</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1662">
+                        <seg xml:lang="ar" xml:id="seg_25.d1e1664">بسير يضج العود منه يمنه </seg>
+                        <seg xml:lang="ar" xml:id="seg_26.d1e1667"> أخو الجهد لا يلوي على من تعذرا</seg>
+                    </tei:l>
+               </tei:lg>
+                    
                     <p xml:lang="ar" xml:id="p_34.d1e1624">قال ابن حوقل أن شيزر وحماة مدينتان صغيرتان نزهتان كثيرتا المياه
                         والشجر والزروع والفواكه وقال ياقوت إن حماة كبيرة عظيمة كثيرة الخيرات رخيصة
                         الأسعار واسعة الرقعة حفلة الأسواق محكم وبظاهر السور حاصر كبير جداً فيه أسواق
@@ -1167,14 +1191,17 @@
                         الشمال وجوسية من الجنوب والقريتين ومهين حوارين وتدمر من الشرق كانت من أهم
                         عمالاتها قال أبو نخيلة يمدح بني العباس ويشير إلى أنهم دكوا آثاراً الأمويين
                         في الشام:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_14.d1e1851">
-                        <l xml:lang="ar" xml:id="l_27.d1e1853">وأمست الأنبار داراً تعمر </l>
-                        <l xml:lang="ar" xml:id="l_28.d1e1856"> وخربت من الشآم أدورُ</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_15.d1e1860">
-                        <l xml:lang="ar" xml:id="l_29.d1e1862">حمص وباب اليتن والموقر </l>
-                        <l xml:lang="ar" xml:id="l_30.d1e1865"> ودمرت بعد امتناع تدمر</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1900">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1902">
+                        <seg xml:lang="ar" xml:id="seg_27.d1e1904">وأمست الأنبار داراً تعمر </seg>
+                        <seg xml:lang="ar" xml:id="seg_28.d1e1907"> وخربت من الشآم أدورُ</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1911">
+                        <seg xml:lang="ar" xml:id="seg_29.d1e1913">حمص وباب اليتن والموقر </seg>
+                        <seg xml:lang="ar" xml:id="seg_30.d1e1916"> ودمرت بعد امتناع تدمر</seg>
+                    </tei:l>
+               </tei:lg>
+                    
                     <p xml:lang="ar" xml:id="p_82.d1e1869">والموقر حصن بالبلقان وكان ينزله الأمويين وكذلك حمص وباب التين
                         وتدمر وإنا إذا أخضنا عياب معجم البلدان تقرأ فيه أساء مدن كثيرة أكثرها داثر
                         اليوم فمنها مدينة المؤتفكة كانت بقر سليمة وعلى آثارها بنيت هذه وسليمة اليوم
@@ -1183,10 +1210,12 @@
                         الجند واقطعهم القطائع ولطمين كورة بحمص لها حصن وكفر نغد ولعلها كفرنان
                         والقرشية قرية بسواحل حمص وهي آخر أعمالها وفوز من قرى حمص ولعلها محرفة عن
                         فيروزة وغنثر واد بين حمص وسلمية والشام في قول أبي الطيب:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_16.d1e1873">
-                        <l xml:lang="ar" xml:id="l_31.d1e1875">غطا بالغثر البيداء حتى </l>
-                        <l xml:lang="ar" xml:id="l_32.d1e1878"> تحيرت المتالي والعشار</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1924">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1926">
+                        <seg xml:lang="ar" xml:id="seg_31.d1e1928">غطا بالغثر البيداء حتى </seg>
+                        <seg xml:lang="ar" xml:id="seg_32.d1e1931"> تحيرت المتالي والعشار</seg>
+                    </tei:l>
+               </tei:lg>
                     <p xml:lang="ar" xml:id="p_83.d1e1882">وعقيربات ناحية بحمص لا تزال موجودة والطوبان وصوران اسم كورة
                         بحمص وجبل وشيزر بينهما وبين حماة يوم كانت تعد في كورة حمص وسلمية كانت تعد من
                         عمل حمص كذلك ورفينة كورة ومدينة من أعمال حمص يقال لها رفينة تدمر. والرستن
@@ -1205,25 +1234,31 @@
                         فإن وعر حمص كبير فيه آثار مهمة وهو يمتد من حمص إلى قرب طرابلس وأكثره وعرة
                         ومن حمص إلى قرب حماه فما بعد ودير إسحاق غير موجود وهو بين حمص وسلمية في أحسن
                         موضع وأنزهه وبقربه ضيعة كبيرة يقال لها جدر التي ذكرها الأخطر فقال:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_17.d1e1890">
-                        <l xml:lang="ar" xml:id="l_33.d1e1892">كأنني شارب يوم استبد بهم </l>
-                        <l xml:lang="ar" xml:id="l_34.d1e1895"> من قرقف ضمنتها حمص أو جدر</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1945">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1947">
+                        <seg xml:lang="ar" xml:id="seg_33.d1e1949">كأنني شارب يوم استبد بهم </seg>
+                        <seg xml:lang="ar" xml:id="seg_34.d1e1952"> من قرقف ضمنتها حمص أو جدر</seg>
+                    </tei:l>
+               </tei:lg>
                     <p xml:lang="ar" xml:id="p_85.d1e1899">ولأهل القصف والشعراء فيه أشعار كثيرة.</p>
                     <p xml:lang="ar" xml:id="p_86.d1e1902">وحوط قرية بحمص أو بجبلة من ساحل الشام غير معروفة والحص غير
                         موجودة وهو موضع بنواحي حمص تنسب إليه الخمر قال أبو محجن الثقفي:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_18.d1e1906">
-                        <l xml:lang="ar" xml:id="l_35.d1e1908">إذا مت فأدفني إلى جنب كرمة </l>
-                        <l xml:lang="ar" xml:id="l_36.d1e1911"> تروي عظامي بعد موتي عروقها</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_19.d1e1915">
-                        <l xml:lang="ar" xml:id="l_37.d1e1917">ولا تدفني بالفلا فإنني </l>
-                        <l xml:lang="ar" xml:id="l_38.d1e1920"> أخاف إذا ما مت لا أذوقها</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_20.d1e1924">
-                        <l xml:lang="ar" xml:id="l_39.d1e1926">وتروي بخمر الحص لحدي فإنني </l>
-                        <l xml:lang="ar" xml:id="l_40.d1e1929"> أسير لها من بعد ما قد أسوقها</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e1963">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1965">
+                        <seg xml:lang="ar" xml:id="seg_35.d1e1967">إذا مت فأدفني إلى جنب كرمة </seg>
+                        <seg xml:lang="ar" xml:id="seg_36.d1e1970"> تروي عظامي بعد موتي عروقها</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1974">
+                        <seg xml:lang="ar" xml:id="seg_37.d1e1976">ولا تدفني بالفلا فإنني </seg>
+                        <seg xml:lang="ar" xml:id="seg_38.d1e1979"> أخاف إذا ما مت لا أذوقها</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1983">
+                        <seg xml:lang="ar" xml:id="seg_39.d1e1985">وتروي بخمر الحص لحدي فإنني </seg>
+                        <seg xml:lang="ar" xml:id="seg_40.d1e1988"> أسير لها من بعد ما قد أسوقها</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
                     <p xml:lang="ar" xml:id="p_87.d1e1933">وكانت أنطرطوس أول أعمال حمص وهي من سواحل بحر الشام وكذلك أفامية
                         كورة من كور حمص على الساحل وأعناز بلد بين حمص والساحل. وعن ابن واضح معرة
                         النعامان وتل منس وما والاها من إقليم حمص. والجبل كروة بخمص ويبرين من قرى حمص
@@ -1660,8 +1695,12 @@
                 <div type="article" xml:lang="ar" xml:id="div_13.d1e2180">
                     <head xml:lang="ar" xml:id="head_13.d1e2182">إرشاد الخلق<lb xml:id="lb_1.d1e2184"/>إلى العمل بخبر البرق</head>
                     <p xml:lang="ar" xml:id="p_130.d1e2187">
-                        <bibl xml:lang="ar" xml:id="bibl_1.d1e2189">تأليف <author xml:lang="ar" xml:id="author_3.d1e2191"><persName xml:lang="ar" xml:id="persName_6.d1e2192">الشيخ جمال الدين القاسمي</persName></author> طبع ب<publisher xml:lang="ar" xml:id="publisher_3.d1e2195"><orgName xml:lang="ar" xml:id="orgName_4.d1e2196">مطبعة
-                                المقتبس</orgName></publisher>
+                        <bibl xml:lang="ar" xml:id="bibl_1.d1e2189">تأليف <author xml:lang="ar" xml:id="author_3.d1e2191">
+                        <persName xml:lang="ar" xml:id="persName_6.d1e2192">الشيخ جمال الدين القاسمي</persName>
+                     </author> طبع ب<publisher xml:lang="ar" xml:id="publisher_3.d1e2195">
+                        <orgName xml:lang="ar" xml:id="orgName_4.d1e2196">مطبعة
+                                المقتبس</orgName>
+                     </publisher>
                             <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1329" xml:lang="ar" xml:id="date_12.d1e2199">سنة <tei:num type="auto-markup" resp="#pers_TG" value="1329" xml:lang="ar" xml:id="num_1.d1e2201">١٣٢٩</tei:num>
                             </date> ص <tei:num type="auto-markup" resp="#pers_TG" value="104" xml:lang="ar" xml:id="num_1.d1e2205">١٠٤</tei:num>
                         </bibl>
@@ -1697,10 +1736,16 @@
                 <div type="article" xml:lang="ar" xml:id="div_14.d1e2219">
                     <head xml:lang="ar" xml:id="head_14.d1e2221">كتاب القضاة<lb xml:id="lb_2.d1e2223"/>الذين ولوا قضاء مصر</head>
                     <p xml:lang="ar" xml:id="p_133.d1e2226">
-                        <bibl xml:lang="ar" xml:id="bibl_2.d1e2228">تأليف <author xml:lang="ar" xml:id="author_4.d1e2230"><persName xml:lang="ar" xml:id="persName_7.d1e2231">أبي
-                                    محمد بن يوسف بن يعقوب الكندي</persName></author> وذيله ل<author xml:lang="ar" xml:id="author_5.d1e2234"><persName xml:lang="ar" xml:id="persName_8.d1e2235">أبي الحسن أحمد بن عبد الرحمن
-                                    ابن برد</persName></author> نشره <publisher xml:lang="ar" xml:id="publisher_4.d1e2238"><persName xml:lang="ar" xml:id="persName_9.d1e2239">الأستاذ ريشارد
-                                غوتهل</persName></publisher> من <orgName xml:lang="ar" xml:id="orgName_5.d1e2242">جامعة
+                        <bibl xml:lang="ar" xml:id="bibl_2.d1e2228">تأليف <author xml:lang="ar" xml:id="author_4.d1e2230">
+                        <persName xml:lang="ar" xml:id="persName_7.d1e2231">أبي
+                                    محمد بن يوسف بن يعقوب الكندي</persName>
+                     </author> وذيله ل<author xml:lang="ar" xml:id="author_5.d1e2234">
+                        <persName xml:lang="ar" xml:id="persName_8.d1e2235">أبي الحسن أحمد بن عبد الرحمن
+                                    ابن برد</persName>
+                     </author> نشره <publisher xml:lang="ar" xml:id="publisher_4.d1e2238">
+                        <persName xml:lang="ar" xml:id="persName_9.d1e2239">الأستاذ ريشارد
+                                غوتهل</persName>
+                     </publisher> من <orgName xml:lang="ar" xml:id="orgName_5.d1e2242">جامعة
                                 كولمبيا</orgName> في <placeName xml:lang="ar" xml:id="placeName_4.d1e2245">نيويورك</placeName>
                             وطبعه بول كوتنر في باريز في مدينة رومية العظمى <date when="1908" xml:lang="ar" xml:id="date_13.d1e2249">سنة <tei:num type="auto-markup" resp="#pers_TG" value="1908" xml:lang="ar" xml:id="num_1.d1e2251">١٩٠٨</tei:num>
                             </date>م ص <tei:num type="auto-markup" resp="#pers_TG" value="167" xml:lang="ar" xml:id="num_1.d1e2255">١٦٧</tei:num>
@@ -1738,22 +1783,27 @@
                         من ذلك وفرق بينهما يزيد ابن حاتم حدثنا محمد بن يوسف قال حدثني أبن قديد عن
                         عبيد الله عن أبيه قال، قال عبد الأعلى بن سعيد الجيشاني لما فرق يزيد بين
                         الكلالية وبينه:</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_21.d1e2272">
-                        <l xml:lang="ar" xml:id="l_41.d1e2274">وأعلنت الفواحش في البوادي </l>
-                        <l xml:lang="ar" xml:id="l_42.d1e2277"> وصار الناس أعوان المريب</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_22.d1e2281">
-                        <l xml:lang="ar" xml:id="l_43.d1e2283">إذا ما عبتهم عابوا مقالي </l>
-                        <l xml:lang="ar" xml:id="l_44.d1e2286"> لما في القوم من تلك العيوب</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_23.d1e2290">
-                        <l xml:lang="ar" xml:id="l_45.d1e2292">وودوا لو كفرنا فاستوينا </l>
-                        <l xml:lang="ar" xml:id="l_46.d1e2295"> وصار الناس كالشيء المشوب</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_24.d1e2299">
-                        <l xml:lang="ar" xml:id="l_47.d1e2301">وكنا نستطيب إذا مرضنا </l>
-                        <l xml:lang="ar" xml:id="l_48.d1e2304"> فصار هلاكنا بيد الطبيب</l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2342">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2344">
+                        <seg xml:lang="ar" xml:id="seg_41.d1e2346">وأعلنت الفواحش في البوادي </seg>
+                        <seg xml:lang="ar" xml:id="seg_42.d1e2349"> وصار الناس أعوان المريب</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2353">
+                        <seg xml:lang="ar" xml:id="seg_43.d1e2355">إذا ما عبتهم عابوا مقالي </seg>
+                        <seg xml:lang="ar" xml:id="seg_44.d1e2358"> لما في القوم من تلك العيوب</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2362">
+                        <seg xml:lang="ar" xml:id="seg_45.d1e2364">وودوا لو كفرنا فاستوينا </seg>
+                        <seg xml:lang="ar" xml:id="seg_46.d1e2367"> وصار الناس كالشيء المشوب</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2371">
+                        <seg xml:lang="ar" xml:id="seg_47.d1e2373">وكنا نستطيب إذا مرضنا </seg>
+                        <seg xml:lang="ar" xml:id="seg_48.d1e2376"> فصار هلاكنا بيد الطبيب</seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
+                    
                     <p xml:lang="ar" xml:id="p_137.d1e2308">وذكر المؤلف في ترجمة عبد الرحمن العمري الذي ولي قضاء مصر من قبل
                         هارون الرشيد سنة خمس وثمانين ومائة أنه كان لا يشدد بأطراف الغناء على مغاني
                         أهل المدينة ويبرز كثيراً في مجالسه ولا يتحاشى أن يقول هذا غناء ابن سرح وهذا
@@ -1818,50 +1868,62 @@
                         الشيوخ يومئذ في أيدي الصبيان والرعاع يلعبون بها وكانوا بعد ذلك لا يدخلون إلى
                         ابن أبي الليث ولا يحضرون مجلسه في قلنسوة. وانتدبنا اسمعيل بن اسحق بن إبراهيم
                         تميم للجمل</p>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_25.d1e2324">
-                        <l xml:lang="ar" xml:id="l_49.d1e2326">وأخفت أيام الطوال وأهلها </l>
-                        <l xml:lang="ar" xml:id="l_50.d1e2329"> فرموا بكل طويلة لم تقصر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_26.d1e2333">
-                        <l xml:lang="ar" xml:id="l_51.d1e2335">ما زلت تأخذهم بطرح طوالهم </l>
-                        <l xml:lang="ar" xml:id="l_52.d1e2338"> والمشي نحوك بالرؤوس الحسر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_27.d1e2342">
-                        <l xml:lang="ar" xml:id="l_53.d1e2344">حتى تركتهم برون لباسهم </l>
-                        <l xml:lang="ar" xml:id="l_54.d1e2347"> بعد الجمال خطيئة لم تغفر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_28.d1e2351">
-                        <l xml:lang="ar" xml:id="l_55.d1e2353">يتفرعون بكل قطعة خرقة </l>
-                        <l xml:lang="ar" xml:id="l_56.d1e2356"> يجدونها من أعين ومخبر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_29.d1e2360">
-                        <l xml:lang="ar" xml:id="l_57.d1e2362">فإذا خلا بهم المكان مشوا بها </l>
-                        <l xml:lang="ar" xml:id="l_58.d1e2365"> وتأبطوها في المكان الأعمر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_30.d1e2370">
-                        <l xml:lang="ar" xml:id="l_59.d1e2372">فلئن ذعرت طوالهم فطال ما </l>
-                        <l xml:lang="ar" xml:id="l_60.d1e2375"> ذعرت ومن مرا بها لم يذعر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_31.d1e2379">
-                        <l xml:lang="ar" xml:id="l_61.d1e2381">كانوا إذا ألفوا بهن لفضل </l>
-                        <l xml:lang="ar" xml:id="l_62.d1e2384"> أمضي عليه من الوشيح الأسمر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_32.d1e2388">
-                        <l xml:lang="ar" xml:id="l_63.d1e2390">كم موسر أفقرته كم مفقر </l>
-                        <l xml:lang="ar" xml:id="l_64.d1e2393"> أغنيته من بعد جهد مفقر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_33.d1e2397">
-                        <l xml:lang="ar" xml:id="l_65.d1e2399">ما أن عليك لقيت منهم واحداً </l>
-                        <l xml:lang="ar" xml:id="l_66.d1e2402"> أو في العجاج مدججاً في مغفر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_34.d1e2406">
-                        <l xml:lang="ar" xml:id="l_67.d1e2408">لبسوا الطوال لكل يوم شهادة </l>
-                        <l xml:lang="ar" xml:id="l_68.d1e2411"> ولقوا القضاة بمشية بتبختر</l>
-                    </lg>
-                    <lg type="bayt" xml:lang="ar" xml:id="lg_35.d1e2415">
-                        <l xml:lang="ar" xml:id="l_69.d1e2417">مالي أراهم مطرقين كأنهما </l>
-                        <l xml:lang="ar" xml:id="l_70.d1e2420"> دمغت رؤوسهم بحمى خيبر </l>
-                    </lg>
+                    <tei:lg xml:id="lg_1.d1e2396">
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2398">
+                        <seg xml:lang="ar" xml:id="seg_49.d1e2400">وأخفت أيام الطوال وأهلها </seg>
+                        <seg xml:lang="ar" xml:id="seg_50.d1e2403"> فرموا بكل طويلة لم تقصر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2407">
+                        <seg xml:lang="ar" xml:id="seg_51.d1e2409">ما زلت تأخذهم بطرح طوالهم </seg>
+                        <seg xml:lang="ar" xml:id="seg_52.d1e2412"> والمشي نحوك بالرؤوس الحسر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2416">
+                        <seg xml:lang="ar" xml:id="seg_53.d1e2418">حتى تركتهم برون لباسهم </seg>
+                        <seg xml:lang="ar" xml:id="seg_54.d1e2421"> بعد الجمال خطيئة لم تغفر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2425">
+                        <seg xml:lang="ar" xml:id="seg_55.d1e2427">يتفرعون بكل قطعة خرقة </seg>
+                        <seg xml:lang="ar" xml:id="seg_56.d1e2430"> يجدونها من أعين ومخبر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2434">
+                        <seg xml:lang="ar" xml:id="seg_57.d1e2436">فإذا خلا بهم المكان مشوا بها </seg>
+                        <seg xml:lang="ar" xml:id="seg_58.d1e2439"> وتأبطوها في المكان الأعمر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2444">
+                        <seg xml:lang="ar" xml:id="seg_59.d1e2446">فلئن ذعرت طوالهم فطال ما </seg>
+                        <seg xml:lang="ar" xml:id="seg_60.d1e2449"> ذعرت ومن مرا بها لم يذعر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2453">
+                        <seg xml:lang="ar" xml:id="seg_61.d1e2455">كانوا إذا ألفوا بهن لفضل </seg>
+                        <seg xml:lang="ar" xml:id="seg_62.d1e2458"> أمضي عليه من الوشيح الأسمر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2462">
+                        <seg xml:lang="ar" xml:id="seg_63.d1e2464">كم موسر أفقرته كم مفقر </seg>
+                        <seg xml:lang="ar" xml:id="seg_64.d1e2467"> أغنيته من بعد جهد مفقر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2471">
+                        <seg xml:lang="ar" xml:id="seg_65.d1e2473">ما أن عليك لقيت منهم واحداً </seg>
+                        <seg xml:lang="ar" xml:id="seg_66.d1e2476"> أو في العجاج مدججاً في مغفر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2480">
+                        <seg xml:lang="ar" xml:id="seg_67.d1e2482">لبسوا الطوال لكل يوم شهادة </seg>
+                        <seg xml:lang="ar" xml:id="seg_68.d1e2485"> ولقوا القضاة بمشية بتبختر</seg>
+                    </tei:l>
+                  <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e2489">
+                        <seg xml:lang="ar" xml:id="seg_69.d1e2491">مالي أراهم مطرقين كأنهما </seg>
+                        <seg xml:lang="ar" xml:id="seg_70.d1e2494"> دمغت رؤوسهم بحمى خيبر </seg>
+                    </tei:l>
+               </tei:lg>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 </div>
             </div>
             <pb ed="shamela" n="n71-p42" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4710.xhtml" xml:id="pb_43.d1e2426"/>
@@ -2427,8 +2489,10 @@
                         بالنابغين الآخرين من الحاملين.</p>
                 </div>
                 <div type="article" xml:lang="ar" xml:id="div_38.d1e3127">
-                    <head xml:lang="ar" xml:id="head_38.d1e3129">الفيل في <placeName xml:lang="ar" xml:id="placeName_5.d1e3131">الكونغو</placeName></head>
-                    <p xml:lang="ar" xml:id="p_192.d1e3134"><pb ed="shamela" n="n71-p61" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4729.xhtml" xml:id="pb_62.d1e3135"/> يقدرن عدد الفيلة في إفريقية من ثلثمائة إلى أربعمائة ألف فيل يقتل منها كل
+                    <head xml:lang="ar" xml:id="head_38.d1e3129">الفيل في <placeName xml:lang="ar" xml:id="placeName_5.d1e3131">الكونغو</placeName>
+               </head>
+                    <p xml:lang="ar" xml:id="p_192.d1e3134">
+                  <pb ed="shamela" n="n71-p61" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P4729.xhtml" xml:id="pb_62.d1e3135"/> يقدرن عدد الفيلة في إفريقية من ثلثمائة إلى أربعمائة ألف فيل يقتل منها كل
                         سنة نحو خمسين ألفاً لأخذ العاج منها وقد أخذت أساليب كثيرة لوقايتها مخافة أن
                         ينقرض نسلها فحظرت بعض الحكومات إفريقية من الأوروبيين صيدها بالنار أو بشراك
                         وأن يقتل إناثها وصغارها التي يكون نابها أقل في خمسة كيلوغرامات وعلى الفيلة

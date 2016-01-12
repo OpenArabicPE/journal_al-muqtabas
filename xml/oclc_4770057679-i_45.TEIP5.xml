@@ -29,7 +29,8 @@
                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/" xml:lang="en">Distributed under a Creative Commons
                        Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
                </availability>
-           <tei:idno type="url">https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/oclc_4770057679-i_45.TEIP5.xml</tei:idno></publicationStmt>
+           <tei:idno type="url">https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/oclc_4770057679-i_45.TEIP5.xml</tei:idno>
+         </publicationStmt>
            <sourceDesc xml:lang="en">
                <biblStruct xml:lang="en">
                    <monogr xml:lang="en">
@@ -157,7 +158,15 @@
                 <language ident="fr-Arab-AR" xml:lang="en">French transcribed into Arabic script following common Levantine Arabic practices</language>
             </langUsage>
         </profileDesc>
-        <revisionDesc><change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><tei:change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><tei:change when="2015-11-16">Created <tei:att>xml:id</tei:att> for <tei:gi>TEI</tei:gi> and added <tei:tag>idno type="url"</tei:tag> containing the file's URL on GitHub to <tei:gi>publicationStmt</tei:gi></tei:change><tei:change when="2015-10-11">Created <tei:att>xml:id</tei:att> for <tei:gi>tei:TEI</tei:gi> and changed the file name to reflect my URI design.</tei:change><tei:change when="2015-09-21">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><tei:change when="2015-09-21" xml:lang="en">Wrapped all numerals in <tei:gi xml:lang="en">num</tei:gi> with <tei:att xml:lang="en">value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
+        <revisionDesc><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+         <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
+         <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+         <tei:change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
+         <tei:change when="2015-11-16">Created <tei:att>xml:id</tei:att> for <tei:gi>TEI</tei:gi> and added <tei:tag>idno type="url"</tei:tag> containing the file's URL on GitHub to <tei:gi>publicationStmt</tei:gi>
+         </tei:change>
+         <tei:change when="2015-10-11">Created <tei:att>xml:id</tei:att> for <tei:gi>tei:TEI</tei:gi> and changed the file name to reflect my URI design.</tei:change>
+         <tei:change when="2015-09-21">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change>
+         <tei:change when="2015-09-21" xml:lang="en">Wrapped all numerals in <tei:gi xml:lang="en">num</tei:gi> with <tei:att xml:lang="en">value</tei:att> recording their value in standardised form and converted them into Arabic numerals to reflect the original text.</tei:change>
          <change when="2015-09-12" who="#pers_TG" xml:lang="en">Made significant changes to the bibliographic information in <gi xml:lang="en">biblStruct</gi> in the <gi xml:lang="en">teiHeader</gi> and added some language information for English and French in Arabic script</change>
          <change when="2015-08-25" who="#pers_TG" xml:lang="en">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml" xml:lang="en">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <change when="2015-08-25" who="#pers_TG" xml:lang="en">Marked all original <gi xml:lang="en">pb</gi> as <att xml:lang="en">ed</att>="shamela" as they do not correspond to
@@ -192,11 +201,20 @@
                         <biblStruct xml:lang="ar" xml:id="biblStruct_2.d1e615">
                             <monogr xml:lang="ar" xml:id="monogr_2.d1e617">
                                 <title level="j" xml:lang="ar" xml:id="title_9.d1e619">المقتبس</title>
-                                <editor xml:lang="ar" xml:id="editor_2.d1e622"><persName xml:lang="ar" xml:id="persName_5.d1e623"><forename xml:lang="ar" xml:id="forename_4.d1e624">محمد</forename> <surname xml:lang="ar" xml:id="surname_4.d1e627">كرد علي</surname></persName></editor>
+                                <editor xml:lang="ar" xml:id="editor_2.d1e622">
+                     <persName xml:lang="ar" xml:id="persName_5.d1e623">
+                        <forename xml:lang="ar" xml:id="forename_4.d1e624">محمد</forename> 
+                        <surname xml:lang="ar" xml:id="surname_4.d1e627">كرد علي</surname>
+                     </persName>
+                  </editor>
                                 <imprint xml:lang="ar" xml:id="imprint_2.d1e630">
-                                    <pubPlace xml:lang="ar" xml:id="pubPlace_3.d1e632"><placeName xml:lang="ar" xml:id="placeName_3.d1e633">دمشق</placeName></pubPlace>
-                                    <date when="1909-11-01" xml:lang="ar" xml:id="date_12.d1e636">بتاريخ:  <tei:num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e638">١</tei:num>  -  <tei:num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e641">١١</tei:num>  -  <tei:num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e644">١٩٠٩</tei:num> </date>
-                                    <biblScope n="45" unit="issue" xml:lang="ar" xml:id="biblScope_4.d1e648">العدد  <tei:num type="auto-markup" resp="#pers_TG" value="45" xml:lang="ar" xml:id="num_1.d1e650">٤٥</tei:num> </biblScope>
+                                    <pubPlace xml:lang="ar" xml:id="pubPlace_3.d1e632">
+                        <placeName xml:lang="ar" xml:id="placeName_3.d1e633">دمشق</placeName>
+                     </pubPlace>
+                                    <date when="1909-11-01" xml:lang="ar" xml:id="date_12.d1e636">بتاريخ:  <tei:num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e638">١</tei:num>  -  <tei:num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e641">١١</tei:num>  -  <tei:num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e644">١٩٠٩</tei:num> 
+                     </date>
+                                    <biblScope n="45" unit="issue" xml:lang="ar" xml:id="biblScope_4.d1e648">العدد  <tei:num type="auto-markup" resp="#pers_TG" value="45" xml:lang="ar" xml:id="num_1.d1e650">٤٥</tei:num> 
+                     </biblScope>
                                 </imprint>
                             </monogr>
                         </biblStruct>
@@ -207,16 +225,20 @@
                     <div xml:lang="ar" xml:id="div_2.d1e663">
                         <head xml:lang="ar" xml:id="head_1.d1e665"> 
                <bibl xml:lang="ar" xml:id="bibl_1.d1e667"> 
-                  <biblScope n="45" unit="issue" xml:lang="ar" xml:id="biblScope_5.d1e669">العدد  <tei:num type="auto-markup" resp="#pers_TG" value="45" xml:lang="ar" xml:id="num_1.d1e671">٤٥</tei:num> </biblScope> 
+                  <biblScope n="45" unit="issue" xml:lang="ar" xml:id="biblScope_5.d1e669">العدد  <tei:num type="auto-markup" resp="#pers_TG" value="45" xml:lang="ar" xml:id="num_1.d1e671">٤٥</tei:num> 
+                  </biblScope> 
                   <date when="1909-11-01" xml:lang="ar" xml:id="date_13.d1e675">بتاريخ:  <tei:num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e677">١</tei:num>  -  <tei:num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e680">١١</tei:num>  -
-                             <tei:num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e683">١٩٠٩</tei:num> </date> 
+                             <tei:num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e683">١٩٠٩</tei:num> 
+                  </date> 
                </bibl> 
             </head>
                     </div>
                     <div type="article" xml:lang="ar" xml:id="div_3.d1e690">
                         <pb ed="shamela" n="n45-p1" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2884.xhtml" xml:id="pb_2.d1e692"/>
                         <head xml:lang="ar" xml:id="head_2.d1e694">القضاة والنواب</head>
-                        <p xml:lang="ar" xml:id="p_15.d1e697"> <tei:num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e699">١</tei:num> </p>
+                        <p xml:lang="ar" xml:id="p_15.d1e697"> 
+               <tei:num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e699">١</tei:num> 
+            </p>
                         <p xml:lang="ar" xml:id="p_16.d1e703">صحيفة من تاريخ القضاء</p>
                         <p xml:lang="ar" xml:id="p_17.d1e706">ترى الناس على اختلاف مذاهبهم ونحلهم وأجناسهم مجمعين على انتقاد أعمال القضاة والنواب شاكين كل حين من ظلمهم وغدرهم
                             على أن العدل والأمن والراحة العامة وتأمين الحقوق في أيديهم وحياة الأمة وعمران الوطن وسعادته تتوقف على إصلاحهم
@@ -247,7 +269,9 @@
                             وإياك والقلق والضجر والتأفف بالخصوم فإن استقرار الحق في مواطن الحق يعظم الله به الأجر ويحسن به الذكر
                             والسلام.</p>
                         <p xml:lang="ar" xml:id="p_24.d1e731">القضاء في الدولة العثمانية</p>
-                        <p xml:lang="ar" xml:id="p_25.d1e734"> <tei:num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_1.d1e736">٣</tei:num> </p>
+                        <p xml:lang="ar" xml:id="p_25.d1e734"> 
+               <tei:num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_1.d1e736">٣</tei:num> 
+            </p>
                         <p xml:lang="ar" xml:id="p_26.d1e740">كان السلطان عثمان الغازي مؤسس هذه الدولة ورعاً ديناً يستخدم قضاةً وحكاماً للنظر في الأمور الشرعية والقيام
                             بأحكامها ولما تولى الملك ابنه أورخان الغازي طلب من الشيخ علاء الدين الأسودي رجلاً يقوم بمصالح الناس الشرعية في
                             أسفاره فأوصاه بقره خليل أفندي جنوره لي فاتخذه قاضياً لبروسة عاصمة ملكه ثم جعله قاضياً على العسكر وخصه بأمورهم
@@ -296,7 +320,9 @@
                             والدعاوى الوقفية المتعلقة برقبة المسقفات والمستغلات والكدكات من الأوقاف الصحيحة التي هي من ذات الإجارة الواحدة
                             أو ذات الاجارتين هذه الدعاوي في الأمور الشرعية مشوشة من حيث المرجع تحتاج إلى إصلاح حقيقي.</p>
                         <p xml:lang="ar" xml:id="p_35.d1e786">أوصاف القضاة الشرعية</p>
-                        <p xml:lang="ar" xml:id="p_36.d1e790"> <tei:num type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar" xml:id="num_1.d1e792">٤</tei:num> </p>
+                        <p xml:lang="ar" xml:id="p_36.d1e790"> 
+               <tei:num type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar" xml:id="num_1.d1e792">٤</tei:num> 
+            </p>
                         <p xml:lang="ar" xml:id="p_37.d1e796">القضاءُ فرض كفاية وسنة مثبتة لا يجوز أن يقلد إلا من تكاملت فيه شروطه وذلك بان يكون رجلاً بالغاً عاقلاً صحيح
                             التمييز جيد الفطنة بعيداً عن السهو والغفلة حراً مسلماً عادلاً صادق اللهجة ظاهر الأمانة عفيفاً عن المحارم متوقياً
                             المآتم بعيداً عن الريب مأموناً في الرضى والغضب صاحب مروءة في دينه ودنياه سالم السمع والبصر ليصح بهما إثبات
@@ -346,7 +372,9 @@
                             عَلَى جهل فهو في النار فانظر إلى ما كانت عليه أحوال القضاة وأحكامهم تعلم منازلهم.</p>
                         <p xml:lang="ar" xml:id="p_47.d1e831">ويسرنا أن نرى الحكومة الدستورية أخذت تعنى بانتخاب من توفرت فيهم الشروط الشرعية وفقها الله. <pb ed="shamela" n="n45-p8" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2891.xhtml" xml:id="pb_9.d1e833"/> أحوالهم
                             الأخيرة</p>
-                        <p xml:lang="ar" xml:id="p_48.d1e837"> <tei:num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e839">٥</tei:num> </p>
+                        <p xml:lang="ar" xml:id="p_48.d1e837"> 
+               <tei:num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e839">٥</tei:num> 
+            </p>
                         <p xml:lang="ar" xml:id="p_49.d1e843">في المقالة الثالثة أن مدرسة النواب أسست لتخريج نواب قادرين عَلَى القيام بما يعهد إليهم من الوظائف عارفين بأحكام
                             الشريعة غير أنني حتى الآن لم أصادف بين من اجتمعت بهم من المتخرجين في المدرسة المذكورة عالماً بوظائفه وأحكام
                             الشريعة كما يجب إلا القليل منهم وهذا مما يدل عَلَى أن ذلك المعهد العلمي غير كاف وفي حاجة عظيمة إلى الإصلاح ومع
@@ -402,7 +430,9 @@
                             الفقهاء صرحوا بأن القضاء يقام في أكبر الجوامع أو في محل خاص في منتصف البلدة فلو نظرنا إلى التاريخ لعلمنا أن أهم
                             المدارس بدمشق كانت مقراً للقضاة وأن المدرسة العادلية كانت مقراً لقاضي المذهب الشافعي <pb ed="shamela" n="n45-p11" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2894.xhtml" xml:id="pb_12.d1e871"/> نظرة في
                             إصلاحهم</p>
-                        <p xml:lang="ar" xml:id="p_57.d1e874"> <tei:num type="auto-markup" resp="#pers_TG" value="6" xml:lang="ar" xml:id="num_1.d1e876">٦</tei:num> </p>
+                        <p xml:lang="ar" xml:id="p_57.d1e874"> 
+               <tei:num type="auto-markup" resp="#pers_TG" value="6" xml:lang="ar" xml:id="num_1.d1e876">٦</tei:num> 
+            </p>
                         <p xml:lang="ar" xml:id="p_58.d1e880">ذكرنا أن المشيخة الإسلامية عبارة عن الفتيا والفتيا والقضاء من حقوق الخلافة والإمامة الكبرى وأن المفتي يخبر عن
                             الحكم الشرعي والقاضي يلزم به عَلَى أن كل عالم يستطيع أن يفتي بما يفتي به المفتي لأن الفتوى لا تتضمن الحكم
                             والإلزام ولا يجوز لعالم ولا لمفتٍ أن يحكم بما حكم به القاضي مع أن للقاضي أن يفتي ويستخلف أمناء ونواباً ولم أر
@@ -652,181 +682,230 @@
                             بعضهم بأنه شاعر المقتبس ولا عجب فهذه المجلة تفاخر بهذه النسبة. وقد طبع هذه المرة ديوانه وأكثر من ثلاثة أرباعه
                             مما نشر في هذه المجلة عني بتبويبه الشيخ محي الدين الخياط من أفاضل بيروت وقدم له مقدمة رائقة وجعله في أربعة أبواب
                             الكونيات والاجتماعيات والتاريخيات والوصفيات ومن شعر الرصافي الأخير من قصيدة في جرائد الأستانة.</p>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_1.d1e1107">
-                            <l xml:lang="ar" xml:id="l_1.d1e1109">ولم يكفها هذا الخلاف وإنما </l>
-                            <l xml:lang="ar" xml:id="l_2.d1e1112"> أطافت بنقصٍ للحقيقةِ زائد</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_2.d1e1117">
-                            <l xml:lang="ar" xml:id="l_3.d1e1119">فما بين مكذوب عليه وكاذب </l>
-                            <l xml:lang="ar" xml:id="l_4.d1e1122"> وما بين محجود عليه وجاحد</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_3.d1e1126">
-                            <l xml:lang="ar" xml:id="l_5.d1e1128">ترى في فروق اليوم قراء صحفها </l>
-                            <l xml:lang="ar" xml:id="l_6.d1e1131"> فريقين من ذي حجة ومعاند</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_4.d1e1135">
-                            <l xml:lang="ar" xml:id="l_7.d1e1137">جدال عَلَى مر الجديدين دائم </l>
-                            <l xml:lang="ar" xml:id="l_8.d1e1140"> بتفنيد رأي أو بتنقيد ناقد</l>
-                        </lg>
+                        <tei:lg xml:id="lg_1.d1e1151">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1153">
+                            <seg xml:lang="ar" xml:id="seg_1.d1e1155">ولم يكفها هذا الخلاف وإنما </seg>
+                            <seg xml:lang="ar" xml:id="seg_2.d1e1158"> أطافت بنقصٍ للحقيقةِ زائد</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1162">
+                            <seg xml:lang="ar" xml:id="seg_3.d1e1164">فما بين مكذوب عليه وكاذب </seg>
+                            <seg xml:lang="ar" xml:id="seg_4.d1e1167"> وما بين محجود عليه وجاحد</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1171">
+                            <seg xml:lang="ar" xml:id="seg_5.d1e1173">ترى في فروق اليوم قراء صحفها </seg>
+                            <seg xml:lang="ar" xml:id="seg_6.d1e1176"> فريقين من ذي حجة ومعاند</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1180">
+                            <seg xml:lang="ar" xml:id="seg_7.d1e1182">جدال عَلَى مر الجديدين دائم </seg>
+                            <seg xml:lang="ar" xml:id="seg_8.d1e1185"> بتفنيد رأي أو بتنقيد ناقد</seg>
+                        </tei:l>
+            </tei:lg>
+                        
+                        
+                        
                         <p xml:lang="ar" xml:id="p_116.d1e1144">وقال فيها:</p>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_5.d1e1147">
-                            <l xml:lang="ar" xml:id="l_9.d1e1149">ولم أر شيئاً كالجرائد عندهم </l>
-                            <l xml:lang="ar" xml:id="l_10.d1e1152"> مبادئه منقوضة بالمقاصد</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_6.d1e1156">
-                            <l xml:lang="ar" xml:id="l_11.d1e1158">يقولون نحن المصلحون ولم أجد </l>
-                            <l xml:lang="ar" xml:id="l_12.d1e1161"> لهم في مجال القول غير المفاسد</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_7.d1e1166">
-                            <l xml:lang="ar" xml:id="l_13.d1e1168">وكيفيبين الحق من نفثاتهم </l>
-                            <l xml:lang="ar" xml:id="l_14.d1e1171"> وكل له في الحق نفثة مارد</l>
-                        </lg>
+                        <tei:lg xml:id="lg_1.d1e1194">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1196">
+                            <seg xml:lang="ar" xml:id="seg_9.d1e1198">ولم أر شيئاً كالجرائد عندهم </seg>
+                            <seg xml:lang="ar" xml:id="seg_10.d1e1201"> مبادئه منقوضة بالمقاصد</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1205">
+                            <seg xml:lang="ar" xml:id="seg_11.d1e1207">يقولون نحن المصلحون ولم أجد </seg>
+                            <seg xml:lang="ar" xml:id="seg_12.d1e1210"> لهم في مجال القول غير المفاسد</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1214">
+                            <seg xml:lang="ar" xml:id="seg_13.d1e1216">وكيفيبين الحق من نفثاتهم </seg>
+                            <seg xml:lang="ar" xml:id="seg_14.d1e1219"> وكل له في الحق نفثة مارد</seg>
+                        </tei:l>
+            </tei:lg>
+                        
+                        
                         <p xml:lang="ar" xml:id="p_117.d1e1175">وقال من قصيدة في وصف لبنان:</p>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_8.d1e1178">
-                            <l xml:lang="ar" xml:id="l_15.d1e1180">لبنان تفعل بالحياة جنانة </l>
-                            <l xml:lang="ar" xml:id="l_16.d1e1183"> فعل الزلال بغلة الظمآن</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_9.d1e1187">
-                            <l xml:lang="ar" xml:id="l_17.d1e1189">وترد غصن العيش بعد ذبوله </l>
-                            <l xml:lang="ar" xml:id="l_18.d1e1192"> غضاً يميد بفرعه الفينان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_10.d1e1196">
-                            <l xml:lang="ar" xml:id="l_19.d1e1198">فكأن لبنانا عروس إذ غدا </l>
-                            <l xml:lang="ar" xml:id="l_20.d1e1201"> يزهو بنشر غدائر الأغصان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_11.d1e1205">
-                            <l xml:lang="ar" xml:id="l_21.d1e1207">وكأنما البحر الخضم سجنجل </l>
-                            <l xml:lang="ar" xml:id="l_22.d1e1210"> يبدي خيال جمالها الفتان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_12.d1e1215">
-                            <l xml:lang="ar" xml:id="l_23.d1e1217">جبل سمت منه الفروع وأصله </l>
-                            <l xml:lang="ar" xml:id="l_24.d1e1220"> تحت البسيطةِ راسخ الأركان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_13.d1e1224">
-                            <l xml:lang="ar" xml:id="l_25.d1e1226">تهفو الغصون به النهار وفي الدجى </l>
-                            <l xml:lang="ar" xml:id="l_26.d1e1229"> تهفو عليه ذوائب النيران</l>
-                        </lg>
+                        <tei:lg xml:id="lg_1.d1e1227">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1229">
+                            <seg xml:lang="ar" xml:id="seg_15.d1e1231">لبنان تفعل بالحياة جنانة </seg>
+                            <seg xml:lang="ar" xml:id="seg_16.d1e1234"> فعل الزلال بغلة الظمآن</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1238">
+                            <seg xml:lang="ar" xml:id="seg_17.d1e1240">وترد غصن العيش بعد ذبوله </seg>
+                            <seg xml:lang="ar" xml:id="seg_18.d1e1243"> غضاً يميد بفرعه الفينان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1247">
+                            <seg xml:lang="ar" xml:id="seg_19.d1e1249">فكأن لبنانا عروس إذ غدا </seg>
+                            <seg xml:lang="ar" xml:id="seg_20.d1e1252"> يزهو بنشر غدائر الأغصان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1256">
+                            <seg xml:lang="ar" xml:id="seg_21.d1e1258">وكأنما البحر الخضم سجنجل </seg>
+                            <seg xml:lang="ar" xml:id="seg_22.d1e1261"> يبدي خيال جمالها الفتان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1265">
+                            <seg xml:lang="ar" xml:id="seg_23.d1e1267">جبل سمت منه الفروع وأصله </seg>
+                            <seg xml:lang="ar" xml:id="seg_24.d1e1270"> تحت البسيطةِ راسخ الأركان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1275">
+                            <seg xml:lang="ar" xml:id="seg_25.d1e1277">تهفو الغصون به النهار وفي الدجى </seg>
+                            <seg xml:lang="ar" xml:id="seg_26.d1e1280"> تهفو عليه ذوائب النيران</seg>
+                        </tei:l>
+            </tei:lg>
+                        
+                        
+                        
+                        
+                        
                         <p xml:lang="ar" xml:id="p_118.d1e1233">وترى النجوم عَلَى ذراهُ كأنها <gap resp="#org_MS" xml:id="gap_1.d1e1235"/> من فوقه درر عَلَى تيجان <pb ed="shamela" n="n45-p25" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2908.xhtml" xml:id="pb_26.d1e1237"/> إلى أن قال:</p>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_14.d1e1240">
-                            <l xml:lang="ar" xml:id="l_27.d1e1242">لبست ربى لبنان ثوباً اخضراً </l>
-                            <l xml:lang="ar" xml:id="l_28.d1e1245"> وزهت بحيث الحسن أحمر قان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_15.d1e1249">
-                            <l xml:lang="ar" xml:id="l_29.d1e1251">نشر الربيع بهن زهراً مونقاً </l>
-                            <l xml:lang="ar" xml:id="l_30.d1e1254"> يزري بنظم قلائد العقيان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_16.d1e1258">
-                            <l xml:lang="ar" xml:id="l_31.d1e1260">فبرزن من وشي الطبيعة بالحلى </l>
-                            <l xml:lang="ar" xml:id="l_32.d1e1263"> فكأنهن بحسنهن غوان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_17.d1e1268">
-                            <l xml:lang="ar" xml:id="l_33.d1e1270">وكأن صنيناً أطل مراقباً </l>
-                            <l xml:lang="ar" xml:id="l_34.d1e1273"> يرنو لهن بمقلة الغيران</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_18.d1e1277">
-                            <l xml:lang="ar" xml:id="l_35.d1e1279">تلك الربى أما الجما فواحد </l>
-                            <l xml:lang="ar" xml:id="l_36.d1e1282"> فيها وأما أهلها فاثنان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_19.d1e1286">
-                            <l xml:lang="ar" xml:id="l_37.d1e1288">رجل يسير إلى النجاح وآخر </l>
-                            <l xml:lang="ar" xml:id="l_38.d1e1291"> يسعى وغايتهإلى الخسران</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_20.d1e1295">
-                            <l xml:lang="ar" xml:id="l_39.d1e1297">متخاذلين بها وهم اعوانها </l>
-                            <l xml:lang="ar" xml:id="l_40.d1e1300"> ومن البلاء تخاذل الأعوان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_21.d1e1304">
-                            <l xml:lang="ar" xml:id="l_41.d1e1306">ضعفت مباني كل أمر عندهم </l>
-                            <l xml:lang="ar" xml:id="l_42.d1e1309"> ما بين هادمها وبين الباني</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_22.d1e1313">
-                            <l xml:lang="ar" xml:id="l_43.d1e1315">وتفرقوا دنيا كأن لم يكفهم </l>
-                            <l xml:lang="ar" xml:id="l_44.d1e1318"> في النائبات تفرق الأديان</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_23.d1e1323">
-                            <l xml:lang="ar" xml:id="l_45.d1e1325">وسعوا فرادى للنجاح وفاتهم </l>
-                            <l xml:lang="ar" xml:id="l_46.d1e1328"> أن التضامن رائد العمران</l>
-                        </lg>
+                        <tei:lg xml:id="lg_1.d1e1292">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1294">
+                            <seg xml:lang="ar" xml:id="seg_27.d1e1296">لبست ربى لبنان ثوباً اخضراً </seg>
+                            <seg xml:lang="ar" xml:id="seg_28.d1e1299"> وزهت بحيث الحسن أحمر قان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1303">
+                            <seg xml:lang="ar" xml:id="seg_29.d1e1305">نشر الربيع بهن زهراً مونقاً </seg>
+                            <seg xml:lang="ar" xml:id="seg_30.d1e1308"> يزري بنظم قلائد العقيان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1312">
+                            <seg xml:lang="ar" xml:id="seg_31.d1e1314">فبرزن من وشي الطبيعة بالحلى </seg>
+                            <seg xml:lang="ar" xml:id="seg_32.d1e1317"> فكأنهن بحسنهن غوان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1321">
+                            <seg xml:lang="ar" xml:id="seg_33.d1e1323">وكأن صنيناً أطل مراقباً </seg>
+                            <seg xml:lang="ar" xml:id="seg_34.d1e1326"> يرنو لهن بمقلة الغيران</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1330">
+                            <seg xml:lang="ar" xml:id="seg_35.d1e1332">تلك الربى أما الجما فواحد </seg>
+                            <seg xml:lang="ar" xml:id="seg_36.d1e1335"> فيها وأما أهلها فاثنان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1340">
+                            <seg xml:lang="ar" xml:id="seg_37.d1e1342">رجل يسير إلى النجاح وآخر </seg>
+                            <seg xml:lang="ar" xml:id="seg_38.d1e1345"> يسعى وغايتهإلى الخسران</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1349">
+                            <seg xml:lang="ar" xml:id="seg_39.d1e1351">متخاذلين بها وهم اعوانها </seg>
+                            <seg xml:lang="ar" xml:id="seg_40.d1e1354"> ومن البلاء تخاذل الأعوان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1358">
+                            <seg xml:lang="ar" xml:id="seg_41.d1e1360">ضعفت مباني كل أمر عندهم </seg>
+                            <seg xml:lang="ar" xml:id="seg_42.d1e1363"> ما بين هادمها وبين الباني</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1367">
+                            <seg xml:lang="ar" xml:id="seg_43.d1e1369">وتفرقوا دنيا كأن لم يكفهم </seg>
+                            <seg xml:lang="ar" xml:id="seg_44.d1e1372"> في النائبات تفرق الأديان</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1376">
+                            <seg xml:lang="ar" xml:id="seg_45.d1e1378">وسعوا فرادى للنجاح وفاتهم </seg>
+                            <seg xml:lang="ar" xml:id="seg_46.d1e1381"> أن التضامن رائد العمران</seg>
+                        </tei:l>
+            </tei:lg>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <p xml:lang="ar" xml:id="p_119.d1e1332">وقال من قصيدة حول البوسفور:</p>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_24.d1e1335">
-                            <l xml:lang="ar" xml:id="l_47.d1e1337">سفوح جبال بعضها فوق بعضها </l>
-                            <l xml:lang="ar" xml:id="l_48.d1e1340"> مكللة حافاتهن بأشجار</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_25.d1e1344">
-                            <l xml:lang="ar" xml:id="l_49.d1e1346">يروق بجنبيها خرير مياهها </l>
-                            <l xml:lang="ar" xml:id="l_50.d1e1349"> ويشجي بقطريها ترنم أطيار</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_26.d1e1353">
-                            <l xml:lang="ar" xml:id="l_51.d1e1355">ويجري النسيم الرطب فيها كأنه </l>
-                            <l xml:lang="ar" xml:id="l_52.d1e1358"> تبختر بيضاء الترائب معطار</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_27.d1e1362">
-                            <l xml:lang="ar" xml:id="l_53.d1e1364">معاهد زرها في الهواجر تلقها </l>
-                            <l xml:lang="ar" xml:id="l_54.d1e1367"> موشحة فيها برقة أسحار</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_28.d1e1372">
-                            <l xml:lang="ar" xml:id="l_55.d1e1374">نزلنا بها والشمس من فوق أرسلت </l>
-                            <l xml:lang="ar" xml:id="l_56.d1e1377"> على منحنى الوادي ذوائب أنوار</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_29.d1e1381">
-                            <l xml:lang="ar" xml:id="l_57.d1e1383">وقد ظل من بين الغصون شعاعها </l>
-                            <l xml:lang="ar" xml:id="l_58.d1e1386"> يوقع ديناراً لنا جنب دينار</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_30.d1e1390">
-                            <l xml:lang="ar" xml:id="l_59.d1e1392">كأن التفاف الدوح والنور بينها </l>
-                            <l xml:lang="ar" xml:id="l_60.d1e1395"> جيوب من الأنوار زرت بأزرار</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_31.d1e1399">
-                            <l xml:lang="ar" xml:id="l_61.d1e1401">تميل إذا هبَّ النسيم غصونها </l>
-                            <l xml:lang="ar" xml:id="l_62.d1e1404"> فتأتي بظل في الجوانب موار</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_32.d1e1408">
-                            <l xml:lang="ar" xml:id="l_63.d1e1410">ترانا إذا ما الطير في الدوح غردت </l>
-                            <l xml:lang="ar" xml:id="l_64.d1e1413"> تميل بأسماع إليها وأبصار</l>
-                        </lg>
+                        <tei:lg xml:id="lg_1.d1e1390">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1392">
+                            <seg xml:lang="ar" xml:id="seg_47.d1e1394">سفوح جبال بعضها فوق بعضها </seg>
+                            <seg xml:lang="ar" xml:id="seg_48.d1e1397"> مكللة حافاتهن بأشجار</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1401">
+                            <seg xml:lang="ar" xml:id="seg_49.d1e1403">يروق بجنبيها خرير مياهها </seg>
+                            <seg xml:lang="ar" xml:id="seg_50.d1e1406"> ويشجي بقطريها ترنم أطيار</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1410">
+                            <seg xml:lang="ar" xml:id="seg_51.d1e1412">ويجري النسيم الرطب فيها كأنه </seg>
+                            <seg xml:lang="ar" xml:id="seg_52.d1e1415"> تبختر بيضاء الترائب معطار</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1419">
+                            <seg xml:lang="ar" xml:id="seg_53.d1e1421">معاهد زرها في الهواجر تلقها </seg>
+                            <seg xml:lang="ar" xml:id="seg_54.d1e1424"> موشحة فيها برقة أسحار</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1428">
+                            <seg xml:lang="ar" xml:id="seg_55.d1e1430">نزلنا بها والشمس من فوق أرسلت </seg>
+                            <seg xml:lang="ar" xml:id="seg_56.d1e1433"> على منحنى الوادي ذوائب أنوار</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1438">
+                            <seg xml:lang="ar" xml:id="seg_57.d1e1440">وقد ظل من بين الغصون شعاعها </seg>
+                            <seg xml:lang="ar" xml:id="seg_58.d1e1443"> يوقع ديناراً لنا جنب دينار</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1447">
+                            <seg xml:lang="ar" xml:id="seg_59.d1e1449">كأن التفاف الدوح والنور بينها </seg>
+                            <seg xml:lang="ar" xml:id="seg_60.d1e1452"> جيوب من الأنوار زرت بأزرار</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1456">
+                            <seg xml:lang="ar" xml:id="seg_61.d1e1458">تميل إذا هبَّ النسيم غصونها </seg>
+                            <seg xml:lang="ar" xml:id="seg_62.d1e1461"> فتأتي بظل في الجوانب موار</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1465">
+                            <seg xml:lang="ar" xml:id="seg_63.d1e1467">ترانا إذا ما الطير في الدوح غردت </seg>
+                            <seg xml:lang="ar" xml:id="seg_64.d1e1470"> تميل بأسماع إليها وأبصار</seg>
+                        </tei:l>
+            </tei:lg>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <p xml:lang="ar" xml:id="p_120.d1e1417">وقال من قصيدة في التربية بعد أن شاهد مسرح الحيوانات في بيروت:</p>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_33.d1e1421">
-                            <l xml:lang="ar" xml:id="l_65.d1e1423">كأنما الليث لم يخلق أخا ظفر </l>
-                            <l xml:lang="ar" xml:id="l_66.d1e1426"> محدد الناب قذافاً إلى العطب</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_34.d1e1430">
-                            <l xml:lang="ar" xml:id="l_67.d1e1432">شاهدته مشهداً بدعاً علمت به </l>
-                            <l xml:lang="ar" xml:id="l_68.d1e1435"> أن الغرائز لم تطبع عَلى شغب</l>
-                        </lg>
+                        <tei:lg xml:id="lg_1.d1e1478">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1480">
+                            <seg xml:lang="ar" xml:id="seg_65.d1e1482">كأنما الليث لم يخلق أخا ظفر </seg>
+                            <seg xml:lang="ar" xml:id="seg_66.d1e1485"> محدد الناب قذافاً إلى العطب</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1489">
+                            <seg xml:lang="ar" xml:id="seg_67.d1e1491">شاهدته مشهداً بدعاً علمت به </seg>
+                            <seg xml:lang="ar" xml:id="seg_68.d1e1494"> أن الغرائز لم تطبع عَلى شغب</seg>
+                        </tei:l>
+            </tei:lg>
+                        
                         <p xml:lang="ar" xml:id="p_121.d1e1439">وإن خبث البرايا في طبائعها <gap resp="#org_MS" xml:id="gap_2.d1e1441"/> لا بد فيه سوى الأطباع من سبب <pb ed="shamela" n="n45-p26" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2909.xhtml" xml:id="pb_27.d1e1443"/> وإن ليث الشرى ما صيغ
                             مفترساً <gap resp="#org_MS" xml:id="gap_3.d1e1445"/> لكن احالته فراساً يد السغب</p>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_35.d1e1448">
-                            <l xml:lang="ar" xml:id="l_69.d1e1450">وكم من الناس من قد راح مندفعاً </l>
-                            <l xml:lang="ar" xml:id="l_70.d1e1453"> بدافع الجوع نحو القتل والسلب</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_36.d1e1457">
-                            <l xml:lang="ar" xml:id="l_71.d1e1459">وان تربية الإنسان يرجعه </l>
-                            <l xml:lang="ar" xml:id="l_72.d1e1462"> إكسيرها وهو من ترب إلى الذهب</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_37.d1e1466">
-                            <l xml:lang="ar" xml:id="l_73.d1e1468">هذا إذا حسنت أما إذا قبحت </l>
-                            <l xml:lang="ar" xml:id="l_74.d1e1471"> كالمندلي بها يمسي من الحطب</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_38.d1e1476">
-                            <l xml:lang="ar" xml:id="l_75.d1e1478">فكل ماهو في الإنسان مكتسب </l>
-                            <l xml:lang="ar" xml:id="l_76.d1e1481"> فلا تقل فيه شيء غير مكتسب</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_39.d1e1485">
-                            <l xml:lang="ar" xml:id="l_77.d1e1487">أني أرى أسوأ الآباء تربية </l>
-                            <l xml:lang="ar" xml:id="l_78.d1e1490"> للابن أحرى بأن يدعى اعقاب</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_40.d1e1494">
-                            <l xml:lang="ar" xml:id="l_79.d1e1496">والمرء كالنبت ينمو حسب تربته </l>
-                            <l xml:lang="ar" xml:id="l_80.d1e1499"> وليس ينبت نبع منبت الغرب</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_41.d1e1503">
-                            <l xml:lang="ar" xml:id="l_81.d1e1505">من عاش في الوسط الزاكي زكا خلقاً </l>
-                            <l xml:lang="ar" xml:id="l_82.d1e1508"> حتى علا في المعالي ارفع الرتب</l>
-                        </lg>
-                        <lg type="bayt" xml:lang="ar" xml:id="lg_42.d1e1512">
-                            <l xml:lang="ar" xml:id="l_83.d1e1514">فاحرس عَلَى أدب تحيا النفوس به </l>
-                            <l xml:lang="ar" xml:id="l_84.d1e1517"> فإنما قيمة الإنسان بالأدب</l>
-                        </lg>
+                        <tei:lg xml:id="lg_1.d1e1508">
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1510">
+                            <seg xml:lang="ar" xml:id="seg_69.d1e1512">وكم من الناس من قد راح مندفعاً </seg>
+                            <seg xml:lang="ar" xml:id="seg_70.d1e1515"> بدافع الجوع نحو القتل والسلب</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1519">
+                            <seg xml:lang="ar" xml:id="seg_71.d1e1521">وان تربية الإنسان يرجعه </seg>
+                            <seg xml:lang="ar" xml:id="seg_72.d1e1524"> إكسيرها وهو من ترب إلى الذهب</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1528">
+                            <seg xml:lang="ar" xml:id="seg_73.d1e1530">هذا إذا حسنت أما إذا قبحت </seg>
+                            <seg xml:lang="ar" xml:id="seg_74.d1e1533"> كالمندلي بها يمسي من الحطب</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1537">
+                            <seg xml:lang="ar" xml:id="seg_75.d1e1539">فكل ماهو في الإنسان مكتسب </seg>
+                            <seg xml:lang="ar" xml:id="seg_76.d1e1542"> فلا تقل فيه شيء غير مكتسب</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1546">
+                            <seg xml:lang="ar" xml:id="seg_77.d1e1548">أني أرى أسوأ الآباء تربية </seg>
+                            <seg xml:lang="ar" xml:id="seg_78.d1e1551"> للابن أحرى بأن يدعى اعقاب</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1556">
+                            <seg xml:lang="ar" xml:id="seg_79.d1e1558">والمرء كالنبت ينمو حسب تربته </seg>
+                            <seg xml:lang="ar" xml:id="seg_80.d1e1561"> وليس ينبت نبع منبت الغرب</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1565">
+                            <seg xml:lang="ar" xml:id="seg_81.d1e1567">من عاش في الوسط الزاكي زكا خلقاً </seg>
+                            <seg xml:lang="ar" xml:id="seg_82.d1e1570"> حتى علا في المعالي ارفع الرتب</seg>
+                        </tei:l>
+               <tei:l type="bayt" xml:lang="ar" xml:id="l_1.d1e1574">
+                            <seg xml:lang="ar" xml:id="seg_83.d1e1576">فاحرس عَلَى أدب تحيا النفوس به </seg>
+                            <seg xml:lang="ar" xml:id="seg_84.d1e1579"> فإنما قيمة الإنسان بالأدب</seg>
+                        </tei:l>
+            </tei:lg>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <p xml:lang="ar" xml:id="p_122.d1e1521">وقد عني بتفسير ألفاظه اللغوية الشيخ مصطفى الغلاييني منشئ مجلة النبراس الشهير فجاء الديوان موفور الخيرات من كل
                             الجهات حرياً بكل من ذاق لماظه من الأدب أن يقتنيه ويتدارسه فشعر الرصافي هو النموذج الراقي من شعر هذا العصر. </p>
                     </div>
@@ -890,7 +969,9 @@
                         <pb ed="shamela" n="n45-p30" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2913.xhtml" xml:id="pb_31.d1e1695"/>
                         <head xml:lang="ar" xml:id="head_6.d1e1697">غرائب الغرب</head>
                         <p xml:lang="ar" xml:id="p_172.d1e1700">تاريخ عمران باريز</p>
-                        <p xml:lang="ar" xml:id="p_173.d1e1703"> <tei:num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e1705">١١</tei:num> </p>
+                        <p xml:lang="ar" xml:id="p_173.d1e1703"> 
+               <tei:num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e1705">١١</tei:num> 
+            </p>
                         <p xml:lang="ar" xml:id="p_174.d1e1709">لعل باريز في الأصل إحدى تلك الضياع التي كان الغاليون ينشؤنها في جزر الأنهار الكبرى أيام كان يسهل عليهم أن ينشؤا
                             جسوراً يتخذونها مجازاً إلى طرق مهمة وأول ذكر ورد لها ولسكانها في التاريخ كان  <tei:num type="auto-markup" resp="#pers_TG" value="53" xml:lang="ar" xml:id="num_1.d1e1711">٥٣</tei:num>  ق. م فدعا القيصر ساكنيها باريزيا
                             كما دعا المدينة لوتيتيا وضم إليها سنة  <tei:num type="auto-markup" resp="#pers_TG" value="53" xml:lang="ar" xml:id="num_1.d1e1714">٥٣</tei:num>  نواب الأمم الخاضعة.</p>
@@ -939,12 +1020,16 @@
                             تذكاراً لمرور مئة سنة على الثورة الفرنسوية الأولى أعظم مظهر من مظاهر الصناعة عند الفرنسيس وأول دليل عَلَى
                             ارتقائهم التدريجي الذي لم يقف قط عن الجري.</p>
                         <p xml:lang="ar" xml:id="p_184.d1e1829">إجماليات في عمران باريز</p>
-                        <p xml:lang="ar" xml:id="p_185.d1e1832"> <tei:num type="auto-markup" resp="#pers_TG" value="12" xml:lang="ar" xml:id="num_1.d1e1834">١٢</tei:num> </p>
-                        <p xml:lang="ar" xml:id="p_186.d1e1838">باريز واقعة في الدرجة <tei:num type="auto-markup" resp="#pers_TG" value="0" xml:lang="ar" xml:id="num_1.d1e1840">٠</tei:num> ،  <tei:num type="auto-markup" resp="#pers_TG" value="48" xml:lang="ar" xml:id="num_1.d1e1843">٤٨</tei:num>   <tei:num type="auto-markup" resp="#pers_TG" value="49" xml:lang="ar" xml:id="num_1.d1e1846">٤٩</tei:num> ،  <tei:num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e1849">٥</tei:num>  من العرض يشقها نهر السين إلى قسمين غير متساويين من الشرق والجنوب الشرقي ويتخللها
+                        <p xml:lang="ar" xml:id="p_185.d1e1832"> 
+               <tei:num type="auto-markup" resp="#pers_TG" value="12" xml:lang="ar" xml:id="num_1.d1e1834">١٢</tei:num> 
+            </p>
+                        <p xml:lang="ar" xml:id="p_186.d1e1838">باريز واقعة في الدرجة <tei:num type="auto-markup" resp="#pers_TG" value="0" xml:lang="ar" xml:id="num_1.d1e1840">٠</tei:num> ،  <tei:num type="auto-markup" resp="#pers_TG" value="48" xml:lang="ar" xml:id="num_1.d1e1843">٤٨</tei:num>   
+               <tei:num type="auto-markup" resp="#pers_TG" value="49" xml:lang="ar" xml:id="num_1.d1e1846">٤٩</tei:num> ،  <tei:num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e1849">٥</tei:num>  من العرض يشقها نهر السين إلى قسمين غير متساويين من الشرق والجنوب الشرقي ويتخللها
                             في وسطها عدة آكام وجبال مهدتها حتى غدت كأنها بعض أجزائها منها يبلغ ارتفاعه  <tei:num type="auto-markup" resp="#pers_TG" value="101" xml:lang="ar" xml:id="num_1.d1e1852">١٠١</tei:num>  متر ومنها  <tei:num type="auto-markup" resp="#pers_TG" value="128" xml:lang="ar" xml:id="num_1.d1e1856">١٢٨</tei:num>  ومنها  <tei:num type="auto-markup" resp="#pers_TG" value="136" xml:lang="ar" xml:id="num_1.d1e1859">١٣٦</tei:num>  ومنها أقل
                             من ذلك وتبلغ مساحتها  <tei:num type="auto-markup" resp="#pers_TG" value="7802" xml:lang="ar" xml:id="num_1.d1e1862">٧٨٠٢</tei:num>  هكتار ومحيطها  <tei:num type="auto-markup" resp="#pers_TG" value="36" xml:lang="ar" xml:id="num_1.d1e1865">٣٦</tei:num>  كيلومتراً.</p>
                         <p xml:lang="ar" xml:id="p_187.d1e1870">وطولها من الشرق إلى الغرب نحو  <tei:num type="auto-markup" resp="#pers_TG" value="12" xml:lang="ar" xml:id="num_1.d1e1872">١٢</tei:num>  كيلومتراً وعرضها من الشمال إلى الجنوب نحو تسعة كيلومترات وطول طرقها العامة
-                             <tei:num type="auto-markup" resp="#pers_TG" value="888000" xml:lang="ar" xml:id="num_1.d1e1875">٨٨٨٠٠٠</tei:num>  متر فيكون مجموع مساحتها السطحية <pb ed="shamela" n="n45-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2916.xhtml" xml:id="pb_34.d1e1878"/>  <tei:num type="auto-markup" resp="#pers_TG" value="1532" xml:lang="ar" xml:id="num_1.d1e1880">١٥٣٢</tei:num>  هكتاراً ولها  <tei:num type="auto-markup" resp="#pers_TG" value="70" xml:lang="ar" xml:id="num_1.d1e1883">٧٠</tei:num> 
+                             <tei:num type="auto-markup" resp="#pers_TG" value="888000" xml:lang="ar" xml:id="num_1.d1e1875">٨٨٨٠٠٠</tei:num>  متر فيكون مجموع مساحتها السطحية <pb ed="shamela" n="n45-p33" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2916.xhtml" xml:id="pb_34.d1e1878"/>  
+               <tei:num type="auto-markup" resp="#pers_TG" value="1532" xml:lang="ar" xml:id="num_1.d1e1880">١٥٣٢</tei:num>  هكتاراً ولها  <tei:num type="auto-markup" resp="#pers_TG" value="70" xml:lang="ar" xml:id="num_1.d1e1883">٧٠</tei:num> 
                             باباً أو منفذاً منها  <tei:num type="auto-markup" resp="#pers_TG" value="57" xml:lang="ar" xml:id="num_1.d1e1887">٥٧</tei:num>  باباً و <tei:num type="auto-markup" resp="#pers_TG" value="9" xml:lang="ar" xml:id="num_1.d1e1890">٩</tei:num>  طرق للسكة الحديدية وطريقان لمجرى السين وطريقان لترعة سان ديني ولورك وعدد سكانها
                             بحسب الإحصاء الأخير  <tei:num type="auto-markup" resp="#pers_TG" value="2763393" xml:lang="ar" xml:id="num_1.d1e1893">٢٧٦٣٣٩٣</tei:num>  وباريز بالنسبة لحجمها أكثر المدن ازدحاماً إذا قيست بالمدن الأوربية ومعدل الزواج فيها
                             كل سنة  <tei:num type="auto-markup" resp="#pers_TG" value="25" xml:lang="ar" xml:id="num_1.d1e1896">٢٥</tei:num>  ألفاً والولادات  <tei:num type="auto-markup" resp="#pers_TG" value="65000" xml:lang="ar" xml:id="num_1.d1e1899">٦٥٠٠٠</tei:num>  والوفيات  <tei:num type="auto-markup" resp="#pers_TG" value="50000" xml:lang="ar" xml:id="num_1.d1e1902">٥٠٠٠٠</tei:num> .</p>
@@ -982,7 +1067,9 @@
                             ويذرون فيه المواد المضادة للتعفن وقد يتأذى بالركوب فيه بعض ضعاف المزاج ولكن ذلك من كثرة الازدحام فيه لا من شيء
                             آخر.</p>
                         <p xml:lang="ar" xml:id="p_193.d1e2134">علم المشرقيات</p>
-                        <p xml:lang="ar" xml:id="p_194.d1e2137"> <tei:num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_1.d1e2139">١٣</tei:num>  <pb ed="shamela" n="n45-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2918.xhtml" xml:id="pb_36.d1e2142"/> لا يتأتى لغريب عن أمة أن
+                        <p xml:lang="ar" xml:id="p_194.d1e2137"> 
+               <tei:num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_1.d1e2139">١٣</tei:num>  
+               <pb ed="shamela" n="n45-p35" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2918.xhtml" xml:id="pb_36.d1e2142"/> لا يتأتى لغريب عن أمة أن
                             يعرفها حق المعرفة إلا إذا درس لغتها وتاريخها وآدابها. واللغة مفتاح باب كل معرفة ومقدمة بين يدي كل عمل. ولذلك كان
                             من الراغبين في درس أحوال الشرق من أهل أوربا أن يدرسوا لغاته ليحيطوا خبراً بأهله وكان للغة العربية المقام الأول
                             بين تلك اللغات لأنها لغة أمة ذات حضارة باهرة ودين دان به أهل الأقطار المعتدلة من صميم الشرق.</p>
@@ -1038,7 +1125,9 @@
                             عَلَى هذه الحال أمثال المستشرقين الأول من أبنائها الذين باهت بهم الأمم <pb ed="shamela" n="n45-p38" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2921.xhtml" xml:id="pb_39.d1e2228"/> مادامت سوق الشفاعات
                             رائجة عندها.</p>
                         <p xml:lang="ar" xml:id="p_205.d1e2232">درس من سلانيك</p>
-                        <p xml:lang="ar" xml:id="p_206.d1e2235"> <tei:num type="auto-markup" resp="#pers_TG" value="14" xml:lang="ar" xml:id="num_1.d1e2237">١٤</tei:num> </p>
+                        <p xml:lang="ar" xml:id="p_206.d1e2235"> 
+               <tei:num type="auto-markup" resp="#pers_TG" value="14" xml:lang="ar" xml:id="num_1.d1e2237">١٤</tei:num> 
+            </p>
                         <p xml:lang="ar" xml:id="p_207.d1e2241">بينما كنت مأخوذاً بما أشاهده من مظاهر عظمة الأمة الفرنسوية وأقرأ مثالاً مجسماً من الارتقاء الغربي ولا أفرغ ليلي
                             ولا نهاري من زيارة المعاهد العلمية وحضور الدروس الاجتماعية والاقتصادية والسياسية وأغوص في مكاتب باريز ولا سيما
                             مكتبة الأمة ومكتبة السوربون وبينا تكاثرت عليَّ المواد وأنا لا أعرف بأي لسان أعبر ولا بأي قلم أحبر وبينا أنا أفكر
@@ -1260,7 +1349,8 @@
                             عَلَى أن جمال أقاليمها هو أهم مورد لغناها. ولذلك تراها تنشيءُ كل يوم العمارات الجديدة التي تستوفي فيها شروط
                             الراحة والرفاهية فلا يلبث المال الذي يدخل تلك الفنادق أن يتسرب إلى جيوب الفلاحين في أصغر قرية. وفي الفنادق
                             السويسرية من أنواع البذخ ومعدات الحضارة مالا تكاد تجد مثله في نيس ومونتيكارلو وقد كان عدد أعضاء جمعية أرباب
-                            الفنادق السويسرية سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1900" xml:lang="ar" xml:id="num_1.d1e2736">١٩٠٠</tei:num>   <tei:num type="auto-markup" resp="#pers_TG" value="828" xml:lang="ar" xml:id="num_1.d1e2740">٨٢٨</tei:num>  عضواً ولها  <tei:num type="auto-markup" resp="#pers_TG" value="65" xml:lang="ar" xml:id="num_1.d1e2743">٦٥</tei:num> ،  <tei:num type="auto-markup" resp="#pers_TG" value="220" xml:lang="ar" xml:id="num_1.d1e2746">٢٢٠</tei:num>  سريراً للسياح وتصدر باسمها جرائد وتنشر صور بلاد سويسرا الجميلة
+                            الفنادق السويسرية سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1900" xml:lang="ar" xml:id="num_1.d1e2736">١٩٠٠</tei:num>   
+               <tei:num type="auto-markup" resp="#pers_TG" value="828" xml:lang="ar" xml:id="num_1.d1e2740">٨٢٨</tei:num>  عضواً ولها  <tei:num type="auto-markup" resp="#pers_TG" value="65" xml:lang="ar" xml:id="num_1.d1e2743">٦٥</tei:num> ،  <tei:num type="auto-markup" resp="#pers_TG" value="220" xml:lang="ar" xml:id="num_1.d1e2746">٢٢٠</tei:num>  سريراً للسياح وتصدر باسمها جرائد وتنشر صور بلاد سويسرا الجميلة
                             عَلَى جدران العالم المتمدن وتفرق بالألوان كتباً تدل السائح عَلَى ما في سويسرا من مظاهر الراحة والظرف والصحة. ولو
                             أحذت سورية هذا المثال لما أتت بضع سنين إلا <pb ed="shamela" n="n45-p51" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2934.xhtml" xml:id="pb_52.d1e2749"/> وهي من أغنى أقطار
                             الأرض.</p>
@@ -1284,7 +1374,8 @@
                             ومدارس زوريخ وجنيف يضرب بها المثل بكثرتها وإتقانها ولليابان  <tei:num type="auto-markup" resp="#pers_TG" value="38" xml:lang="ar" xml:id="num_1.d1e2833">٣٨</tei:num>  مدرسة للصناعة فيها أربعة آلاف طالب وفي مدارسها
                             الزراعية  <tei:num type="auto-markup" resp="#pers_TG" value="62" xml:lang="ar" xml:id="num_1.d1e2836">٦٢</tei:num>  ألف طالب وفي مدارسها التجارية  <tei:num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_1.d1e2839">١٣</tei:num>  ألف طالب <pb ed="shamela" n="n45-p52" corresp="zip:file:/BachUni/projekte/XML/EPub2Tei/26523.epub!/OEBPS/xhtml/P2935.xhtml" xml:id="pb_53.d1e2842"/> ومدارس المعامل خاصة بصنع
                             الزهور الصناعية والتطريز وليس من تلميذ في المدارس الصناعية في السابعة من عمره إلا وهو يعرف بصور زهرة أو حشرة أو
-                            غصناً ولا عجب من ثم إذا زادت تجارة يابان زيادة كبرى فكانت تجارتها الخارجية سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1897" xml:lang="ar" xml:id="num_1.d1e2844">١٨٩٧</tei:num>   <tei:num type="auto-markup" resp="#pers_TG" value="986" xml:lang="ar" xml:id="num_1.d1e2848">٩٨٦</tei:num>  ملون فرنك فأصبحت سنة
+                            غصناً ولا عجب من ثم إذا زادت تجارة يابان زيادة كبرى فكانت تجارتها الخارجية سنة  <tei:num type="auto-markup" resp="#pers_TG" value="1897" xml:lang="ar" xml:id="num_1.d1e2844">١٨٩٧</tei:num>   
+               <tei:num type="auto-markup" resp="#pers_TG" value="986" xml:lang="ar" xml:id="num_1.d1e2848">٩٨٦</tei:num>  ملون فرنك فأصبحت سنة
                              <tei:num type="auto-markup" resp="#pers_TG" value="1906" xml:lang="ar" xml:id="num_1.d1e2851">١٩٠٦</tei:num>  مليارين و <tei:num type="auto-markup" resp="#pers_TG" value="195" xml:lang="ar" xml:id="num_1.d1e2854">١٩٥</tei:num>  مليون فرنك.</p>
                         <p xml:lang="ar" xml:id="p_260.d1e2859">التكاليف أو الضرائب</p>
                         <p xml:lang="ar" xml:id="p_261.d1e2862">قالت مجلة الاقتصاديين الفرنسوية ما ملخصه: من القواعد الاقتصادية المعروفة أن يكون أبناء الوطن الواحد سواءً في تحمل
