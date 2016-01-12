@@ -6,6 +6,10 @@ date: 2015-09-26
 
 To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/) for a first display of the TEI files in the browser without need for pre-processed HTML and to host this heavily customised boilerplate view as part of the [GitHub repository]()https://www.github.com/tillgrallert/digital-muqtabas). For a first impression see [here](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml). It is important to note that at the moment there is no front-end beyond the GitHub repository that allows for searching and browsing across files.
 
+# to do
+
+1. Notes section: Some elements are omitted from display. Why?
+
 # Navigation
 ## Inside the file
 I implemented a simple navigation with `<ul>` and `<li>` inside the native HTML `<nav>` tag. 
@@ -21,7 +25,7 @@ Small buttons providing links to the previous and following issues were implemen
 
 # Bibliographic metadata
 
-The web display should contain automatically generated metadata down to the article level to ease harvesting/ crawling of bibliographic metadata.
+The web display links to automatically generated metadata down to the article level to ease harvesting/ crawling of bibliographic metadata.
 
 ## the `<meta>` tag
 
