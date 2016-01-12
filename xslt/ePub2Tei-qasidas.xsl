@@ -38,17 +38,17 @@
     </xsl:template>
     
     <xsl:template match="tei:p[count(child::node())=3][child::tei:gap[@resp='#org_MS']]">
-        <lg type="bayt">
+        <l type="bayt">
             <xsl:for-each select="child::text()">
-                <l><xsl:value-of select="."/></l>
+                <seg><xsl:value-of select="."/></seg>
             </xsl:for-each>
-        </lg>
+        </l>
     </xsl:template>
     
     <!-- document changes -->
     <xsl:template match="tei:revisionDesc">
         <xsl:copy>
-            <change when="{format-date( current-date(),'[Y0001]-[M01]-[D01]')}">Converted the mark-up of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <gi>p</gi>s divided by a <gi>gap</gi> to <gi>lg</gi> of <att>type</att>="bayt" comprising two <gi>l</gi> nodes.</change>
+            <change when="{format-date( current-date(),'[Y0001]-[M01]-[D01]')}">Converted the mark-up of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <gi>p</gi>s divided by a <gi>gap</gi> to <gi>l</gi> of <att>type</att>="bayt" comprising two <gi>seg</gi> nodes.</change>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
