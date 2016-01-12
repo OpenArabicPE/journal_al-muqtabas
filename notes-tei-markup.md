@@ -159,7 +159,7 @@ After some talk with Mathew Miller from the Persian Digital Library and their TE
 </lg>
 ~~~
 
-I also updated the XSLT stylesheet "ePub2Tei-qasidas.xsl" accordingly.
+**to do**: the schema must be updated accordingly and `<seg>` must be able to contain `<note>`
 
 # Punctuation
 
