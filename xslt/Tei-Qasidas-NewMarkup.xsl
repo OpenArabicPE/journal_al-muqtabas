@@ -23,35 +23,35 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- wrap single lines in <lg> -->
-    <xsl:template match="tei:lg[@type='bayt'][not(preceding-sibling::*[1][self::tei:lg])][not(following-sibling::*[1][self::tei:lg])]">
-        <lg>
-            <l type="bayt">
-                <xsl:apply-templates select="@*[not(name()='xml:id')] | node()"/>
-            </l>
-        </lg>
+    <!-- instantiate the iteration through the lines on the first line -->
+    <xsl:template match="tei:lg[@type='bayt'][not(preceding-sibling::*[1][self::tei:lg])]">
+        <xsl:element name="tei:lg">
+        <xsl:element name="tei:l">
+            <xsl:attribute name="type" select="'bayt'"/>
+            <xsl:apply-templates select="@*[not(name()='xml:id')]"/>
+            <xsl:apply-templates select="node()" mode="mLines2Segs"/>
+        </xsl:element>
+        <xsl:apply-templates select="following-sibling::*[1][self::tei:lg]" mode="mConsecutiveLines"/>
+        </xsl:element>
     </xsl:template>
-    <!-- find the first line in a line group -->
-    <xsl:template match="tei:lg[@type='bayt'][not(preceding-sibling::*[1][self::tei:lg])][following-sibling::*[1][self::tei:lg]]">
-        <lg>
-            <l type="bayt">
-                <xsl:apply-templates select="@*[not(name()='xml:id')] | node()"/>
-            </l>
-            <xsl:for-each select="following-sibling::*[1][self::tei:lg][preceding-sibling::*[1][self::tei:lg]]">
-                <l type="bayt">
-                    <xsl:apply-templates select="@*[not(name()='xml:id')] | node()"/>
-                </l>
-            </xsl:for-each>
-        </lg>
+    <!-- continue on consecutive lines -->
+    <xsl:template match="tei:lg[@type='bayt']" mode="mConsecutiveLines">
+        <xsl:element name="tei:l">
+            <xsl:attribute name="type" select="'bayt'"/>
+            <xsl:apply-templates select="@*[not(name()='xml:id')]"/>
+            <xsl:apply-templates select="node()" mode="mLines2Segs"/>
+        </xsl:element>
+        <xsl:apply-templates select="following-sibling::*[1][self::tei:lg]" mode="mConsecutiveLines"/>
     </xsl:template>
-    <!-- this seems not to prevent output on the last  -->
-    <xsl:template match="tei:lg[@type='bayt'][preceding-sibling::*[1][self::tei:lg]][not(following-sibling::*[1][self::tei:lg])]"/>
+    <!-- prevent renewed output on the last line -->
+    <xsl:template match="tei:lg[@type='bayt'][preceding-sibling::*[1][self::tei:lg]]"/>
+   
     
     <!-- convert <l> to <seg> -->
-    <xsl:template match="tei:l[parent::tei:lg[@type='bayt']]">
-        <seg>
+    <xsl:template match="tei:l[parent::tei:lg[@type='bayt']]" mode="mLines2Segs">
+        <xsl:element name="seg">
             <xsl:apply-templates select="@*[not(name()='xml:id')] | node()"/>
-        </seg>
+        </xsl:element>
     </xsl:template>
     
     
