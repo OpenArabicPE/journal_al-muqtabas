@@ -24,7 +24,7 @@
     </xsl:template>
     
     <!-- wrap single lines in <lg> -->
-    <xsl:template match="tei:lg[@type='bayt'][not(preceding-sibling::node()[not(text())][1]=tei:lg[@type='bayt'])][not(following-sibling::node()[not(text())][1]=tei:lg[@type='bayt'])]">
+    <xsl:template match="tei:lg[@type='bayt'][not(preceding-sibling::*[1][self::tei:lg])][not(following-sibling::*[1][self::tei:lg])]">
         <lg>
             <l type="bayt">
                 <xsl:apply-templates select="@*[not(name()='xml:id')] | node()"/>
@@ -32,19 +32,19 @@
         </lg>
     </xsl:template>
     <!-- find the first line in a line group -->
-    <xsl:template match="tei:lg[@type='bayt'][not(preceding-sibling::node()[not(text())][1]=tei:lg[@type='bayt'])][following-sibling::node()[not(text())][1]=tei:lg[@type='bayt']]">
+    <xsl:template match="tei:lg[@type='bayt'][not(preceding-sibling::*[1][self::tei:lg])][following-sibling::*[1][self::tei:lg]]">
         <lg>
             <l type="bayt">
                 <xsl:apply-templates select="@*[not(name()='xml:id')] | node()"/>
             </l>
-            <xsl:for-each select="following-sibling::tei:lg[@type='bayt'][preceding-sibling::node()[not(text())][1]=tei:lg[@type='bayt']]">
+            <xsl:for-each select="following-sibling::*[1][self::tei:lg][preceding-sibling::*[1][self::tei:lg]]">
                 <l type="bayt">
                     <xsl:apply-templates select="@*[not(name()='xml:id')] | node()"/>
                 </l>
             </xsl:for-each>
         </lg>
     </xsl:template>
-    <xsl:template match="tei:lg[@type='bayt'][preceding-sibling::node()[not(text())][1]=tei:lg[@type='bayt']][not(following-sibling::node()[not(text())][1]=tei:lg[@type='bayt'])]"/>
+    <xsl:template match="tei:lg[@type='bayt'][preceding-sibling::*[1][self::tei:lg]][not(following-sibling::*[1][self::tei:lg])]"/>
     
     <!-- convert <l> to <seg> -->
     <xsl:template match="tei:lg[@type='bayt']/tei:l">
