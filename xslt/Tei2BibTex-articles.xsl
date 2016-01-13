@@ -98,7 +98,7 @@
             <xsl:text>volume = {</xsl:text>
             <xsl:value-of select="$vVolume"/>
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <xsl:text>issue = {</xsl:text>
+            <xsl:text>number = {</xsl:text>
             <xsl:value-of select="$vIssue"/>
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>pages = {</xsl:text>
