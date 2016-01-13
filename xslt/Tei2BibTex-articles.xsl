@@ -25,6 +25,10 @@
     <xsl:template
         match="tei:div[@type = 'section'][not(ancestor::tei:div[@type = 'article'])] | tei:div[@type = 'article'][not(ancestor::tei:div[@type = 'bill'])] | tei:div[@type = 'bill']">
         <xsl:variable name="vLang" select="$pLang"/>
+        <!-- variables identifying the digital surrogate -->
+        <xsl:variable name="vTitleStmt" select="ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt"/>
+        <!-- Need information on edition, date of edition, editors, transcribers etc.  -->
+        <!-- variables identifying the original source -->
         <xsl:variable name="vBiblStructSource"
             select="ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct"/>
         <xsl:variable name="vPublDate"
