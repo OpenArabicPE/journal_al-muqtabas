@@ -1,10 +1,10 @@
 ---
-title: "TEI edition of *majallat al-muqtabas*"
+title: "Readme: Digial Muqtabas"
 author: Till Grallert
-date: 2015-11-12
+date: 2016-01-14
 ---
 
-# Digital *Muqtabas*: Open, collaborative, and scholarly digital edition of an early Arabic periodical
+# Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1916)
 
 In the context of the current onslaught cultural artifacts in the Middle East face from the iconoclasts of the Islamic State, from the institutional neglect of states and elites, and from poverty and war, digital preservation efforts promise some relief as well as potential counter narratives. They might also be the only resolve for future education and rebuilding efforts once the wars in Syria, Iraq or Yemen come to an end. 
 
@@ -35,7 +35,7 @@ The most likely candidates for such follow-up projects are
 
 # The journal *al-Muqtabas*
 
-Muḥammad Kurd ʿAlī published the monthly journal *al-Muqtabas* between 1906 and 1914(1916). The publication schedule followed the Muslim *hijrī* calendar and, after the Young Turk Revolution of July 1908, publication moved from Cairo to Damascus in the journal's third year.
+Muḥammad Kurd ʿAlī published the monthly journal *al-Muqtabas* between 1906 and 1916. The publication schedule followed the Muslim *hijrī* calendar and, after the Young Turk Revolution of July 1908, publication moved from Cairo to Damascus in the journal's third year.
 
 There is some confusion as to the counting of issues and their publication dates. Samir Seikaly argues that Muḥammad Kurd ʿAlī was wrong in stating in his memoirs that he published 8 volumes of 12 issues each and two independent issues.^[{Seikaly 1981@128}] But the actual hard copies at the [Orient-Institut Beirut](http://www.orient-institut.org) and the digital facsimiles from HathiTrust show that Kurd ʿAlī was right insofar as volume 9 existed and comprised 2 issues only. As it turns out, *al-Muqtabas* also published a number of double issues: [Vol. 4 no. 5/6](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_41.TEIP5.xml) and [Vol. 8 no. 11/12](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_94.TEIP5.xml).
 
