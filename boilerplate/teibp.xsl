@@ -20,7 +20,7 @@
     <xsl:output encoding="UTF-8" method="xml" omit-xml-declaration="yes"/>
 
     <!-- select whether or not you want to display online facsimiles -->
-    <xsl:param name="pgOnlineFacs" select="false()"/>
+    <xsl:param name="pgOnlineFacs" select="true()"/>
 
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
     <xsl:param name="inlineCSS" select="true()"/>
