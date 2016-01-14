@@ -293,7 +293,7 @@
     <xsl:template name="htmlHead">
         <head>
             <meta charset="UTF-8"/>
-            <xsl:call-template name="tMetadataDCFile"/>
+            <xsl:call-template name="templMetadataDCFile"/>
             <link href="{$teibpCSS}" id="maincss" rel="stylesheet" type="text/css"/>
             <link href="{$customCSS}" id="customcss" rel="stylesheet" type="text/css"/>
             <script src="{$jqueryJS}" type="text/javascript"/>
