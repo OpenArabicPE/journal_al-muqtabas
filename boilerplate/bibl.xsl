@@ -19,7 +19,7 @@
     <xsl:variable name="vgPublicationDate" select="$vgBiblStructSource/tei:monogr/tei:imprint/tei:date[1]/@when"/>
     <xsl:variable name="vgEditor" select="$vgBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang=$pgLang]"/>
     
-    <xsl:template name="tMetadataDCFile">
+    <xsl:template name="templMetadataDCFile">
         <xsl:param name="pLang" select="$pgLang"/>
         <meta name="dc.language" content="{$pLang}" />
         <meta name="dc.type" content="text" />
@@ -28,7 +28,7 @@
         <meta name="dc.date" content="{$vgPublicationDate}" />
     </xsl:template>
     
-    <xsl:template name="tMetadataDCArticle">
+    <xsl:template name="templMetadataDCArticle">
         <xsl:param name="pInput"/>
         <xsl:variable name="vArticleTitle" select="./tei:head"/>
         <xsl:variable name="vAuthor" select="./tei:byline/descendant::tei:persName"/>
