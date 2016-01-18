@@ -120,10 +120,8 @@ To allow a quick review of the mark-up and read the journal's content, I decided
 A detailed description of the web display is available [here](notes-web-display.md).
 
 # To do
-## Mark-up
 
 1. Mark-up: The basic structural mark-up of individual issues is far from complete. All features encoded in HTML by *shamela.ws* have been translated into TEI XML, but these are limited to the main article / section headers. What needs to be done is:
     - splitting articles into sections and sections into individual articles
     - mark-up of authors with `<byline>`
 2. Text-image linking: while the links to the facsimiles can be automatically generated for each issue, establishing page breaks (`<pb>`) must be done manually for all 6.000+ of them
-3. Add links to the imagery from EAP, which should be given preference over HathiTrust due to its open access policy.
