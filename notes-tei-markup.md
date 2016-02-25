@@ -507,7 +507,21 @@ A second XSLT stylesheet ([Tei-MarkupNumerals-Correction](xslt/Tei-MarkupNumeral
 4. `@calendar="#cal_ottomanfiscal"`
 
 ## references to intellectual works
-### 1. encoding with `<title>`
+### 1. encoding with `<bibl>` and its children
+
+Almost all issues of *Muqtabas* contain review sections titled "مخطوطات ومطبوعات" on recent books or "مقالات المجلات", "المجلات الإفرنجية والعربية" on recent articles in (scholarly or scientific) journals.
+
+Often times a full bibliographic reference is given in the title of the review article:
+
+~~~{.xml}
+<div type="article">
+    <head>
+        <bibl><title level="m">الجوهر المحبوك في نظم السلوك</title> <author>لسيد علاء الدين علي الملقب بعلوان الحسيني الحموي</author></bibl>
+    </head>
+</div>
+~~~
+
+### 2. encoding with `<title>`
 
 References to titles of intellectual works, such as books, periodicals etc., could be encoded with `<title>` using the `@level` attribute for some granularity.
 
@@ -515,7 +529,7 @@ References to titles of intellectual works, such as books, periodicals etc., cou
 حتى بلغ المطبوع منها مليون نسخة وأصبحت اليوم تطبع مليوناً ومائتي ألف نسخة في حين تطبع <title level="j">التيمس</title> 55 ألفاً فقط و<title level="j">الديلي اكسبرس</title> 700 ألف و<title level="j">الديلي تلغراف</title> 350 ألفاً والديلي نيوز 300 ألف والمورنن ليدر 350 والستاندارد 120 ألفاً
 ~~~
 
-### 2. encoding with `<rs>`
+### 3. encoding with `<rs>`
 
 References to intellectual works, such as books, periodicals, laws, etc. should be encoded using `<rs>` with the `@type="work"` and a more specific `@subtype` attribute:
 
