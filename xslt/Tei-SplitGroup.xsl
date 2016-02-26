@@ -51,11 +51,11 @@
     <xsl:template match="tei:group/tei:text" mode="mFile">
         <xsl:result-document href="{concat($vFileNameBase,@n,'.TEIP5.xml')}">
             <TEI>
-                <!-- dopy the original header -->
+                <!-- copy the original header -->
                 <xsl:apply-templates select="ancestor::tei:TEI/tei:teiHeader"/>
                 <!-- copy the current <text> node -->
                 <xsl:copy>
-                    <xsl:attribute name="xml:id" select="concat($vFileNameBase,@n,'_text')"/>
+                    <xsl:attribute name="xml:id" select="'text'"/>
                     <xsl:attribute name="xml:lang" select="'ar'"/>
                     <xsl:attribute name="type" select="'issue'"/>
                     <xsl:apply-templates select="@* | node()"/>
