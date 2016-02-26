@@ -19,7 +19,7 @@
     
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes" encoding="UTF-8"/>
     
-    <xsl:include href="ePub2Tei%20pages.xsl"/>
+    <xsl:include href="ePub2Tei-pages.xsl"/>
     
     <!-- some variables -->
     <xsl:variable name="vDateTodayIso" select="format-date( current-date(),'[Y0001]-[M01]-[D01]')"/>
@@ -30,7 +30,7 @@
     </xsl:template>
     
     <xsl:template match="opf:package">
-        <xsl:result-document href="/BachUni/projekte/XML/EPub2Tei/output/a.TEIP5.xml">
+        <xsl:result-document href="{child::opf:metadata/dc:identifier[@opf:scheme='UUID']}.TEIP5.xml">
             <TEI>
                 <teiHeader>
                     <fileDesc>
