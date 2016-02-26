@@ -89,7 +89,7 @@ date: 2015-08-24
         2. `$3$1 $2$4`
     + split numbers into divs
         1. `(<div><head>العدد\s*\d+\s*</head>)`
-        2. `</div><div>$1`
+        2. `</div><div type="issue">$1`
     + normalisation and mark-up for publication dates
         1. `(<head>)(العدد\s*)(\d+)(\s*</head>\s*<p>)(.+)(بتاريخ:\s*)(\d{1,2})\s\-\s(\d{1,2})\s\-\s(\d{4})`
         2. `<head><bibl><biblScope n="$3" unit="issue">$2$3</biblScope> <date when="$9-$8-$7">$6$7 - $8 - $9</date></bibl></head><p>`
@@ -99,3 +99,22 @@ date: 2015-08-24
         1. `<lb/>`
         2. `</p><p>`
         3. delete all empty parapragphs: `<p>\s*</p>`
+
+- regex for Ḥaqāʾiq
+    + split numbers into divs
+        1. `(<head>العدد\s*\d+\s*</head>)`
+        2. `</div><div type="issue">$1`
+    + normalisation and mark-up for publication dates
+        1. `(<head>)(العدد\s*)(\d+)(\s*</head>\s*<p>)(.+)(بتاريخ:\s*)(\d{1,2})\s\-\s(\d{1,2})\s\-\s(\d{4})`
+        2. `<head><bibl><biblScope n="$3" unit="issue">$2$3</biblScope> <date when="$9-$8-$7">$6$7 - $8 - $9</date></bibl></head>`
+        3. e.g. `<head>العدد 2</head><p> - بتاريخ: 26 - 3 - 1906`
+        4. e.g. `<head><bibl><biblScope n="9" unit="issue">العدد 9</biblScope> <date when="1906-10-18">بتاريخ: 18 - 10 - 1906</date></bibl></head>`
+    + look for all `<head>` that are not the issue head
+        * `(<head>\s*.[^<]+</head>)`
+        * `<div type="article">$1<p>`
+    + provide the closing tags
+        * `(</div>)`
+        * `</p></div>$1`
+        * 
+    + correct all dates
+        * `(when="\d{4}-)(\d{1})(-)(\d{1})`
