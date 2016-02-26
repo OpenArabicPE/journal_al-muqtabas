@@ -1,7 +1,7 @@
 ---
 title: "Readme: Digial Muqtabas"
 author: Till Grallert
-date: 2016-01-14
+date: 2016-02-26
 ---
 
 # Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1917/18)
@@ -16,11 +16,17 @@ By linking images to the digital text, every reader can validate the quality of 
 
 [^3]:Currently we provide stable URLs down to the paragraph level. For more details see the [documentation of the mark-up](notes-tei-markup.md)
 
-# Scope of the project
+# Scope and deliverables of the project
 
-The purpose and scope of the project is to provide an open, collaborative, referencable, scholarly digital edition of Muḥammad Kurd ʿAlī's journal *al-Muqtabas*, which includes the full text, semantic mark-up, and digital imagery.
+The purpose and scope of the project is to provide an open, collaborative, referencable, and scholarly digital edition of Muḥammad Kurd ʿAlī's journal *al-Muqtabas*, which includes the full text, semantic mark-up, bibliographic metadata, and digital imagery. All files but the digital facsimiles are hosted on [GitHub](https://www.github.com).
 
-The digital edition will be provided as TEI P5 XML with its own schema. All files are hosted on [GitHub](https://www.github.com) 
+- Current deliverables:
+    - Full text of 96 issues (c. 7000 pages) with semantic mark-up as TEI P5 XML with its own schema.
+    - The text of digital edition links to open-access digital facsimiles if available (see below).
+    - [A rudimentary webview](https://github.com/tillgrallert/tei-boilerplate-arabic-editions), based on [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/), shows digital text and images side by side. It provides an automatically generated table of content and links to the bibliographic metadata of every article.
+    - Bibliographic metadata for every article in *Majallat al-Muqtabas* is provided as individual BibTeX file in the sub-folder `metadata`. The metadata includes a URL pointing to the webview of this item.
+- Possible / planned deliverables
+    + Scans of issues not currently available in open-access repositories, namely of vol. 9, which we hold at [Orient-Institut Beirut](http://www.orient-institut.org).
 
 The project will open avenues for re-purposing code for similar projects, i.e. for transforming full-text transcriptions from some HTML or XML source, such as [*al-Maktaba al-Shamela*](http://www.shamela.ws), into TEI P5 XML, linking them to digital imagery from other open repositories, such as [EAP](http://eap.bl.uk/) and [HathiTrust](https://www.hathitrust.org), and generating a web display by, for instance, adapting the code base of [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/). 
 
@@ -29,10 +35,11 @@ The most likely candidates for such follow-up projects are
 - Muḥammad Rashīd Riḍā's journal *al-Manār*. A stub is already available on [GitHub](https://www.github.com/tillgrallert/digital-manar)
     + [full text from shamela](http://shamela.ws/index.php/book/6947): 8605 views
     + [imagery from hathitrust](http://catalog.hathitrust.org/Record/008882663),[imagery / PDFs from the Internet Archive](https://archive.org/details/almanaralmanar), which are linked from [*al-Maktaba al-Waqfiyya*](http://waqfeya.com/book.php?bid=7374)
+- ʿAbd al-Qādir bin Muḥammad Salīm al-Kaylānī al-Iskandarānī's *majallat al-ḥaqāʾiq (al-dimashqiyya)*, 1910. A stub is already available on [GitHub](https://www.github.com/tillgrallert/digital-haqaiq)
+    + [full text from shamela](http://shamela.ws/index.php/book/29676): 5134 views.
+    + [imagery of vol. 1 (1910) from hathitrust](http://hdl.handle.net/2027/njp.32101036074001), vol. 2 and 3 available at AUB.
 - ʿAbdallah al-Nadīm's *majallat al-ustādh*, Cairo, 24 Aug 1892
     + [full text from shamela](http://shamela.ws/index.php/book/35118): 11337 views.
-- ʿAbd al-Qādir bin Muḥammad Salīm al-Kaylānī al-Iskandarānī's *majallat al-ḥaqāʾiq (al-dimashqiyya)*, 1910
-    + [full text from shamela](http://shamela.ws/index.php/book/29676): 5134 views.
 
 
 # The journal *al-Muqtabas*
@@ -43,21 +50,26 @@ There is some confusion as to the counting of issues and their publication dates
 
 [^1]:{KurdʿAlī 1928@424}, {Seikaly 1981@128}
 
-According to the masthead and the cover sheet, *al-Muqtabas*'s publication schedule followed the Islamic *hijrī* calendar (from the journal itself it must remain open whether the recorded publication dates were the actual publication dates). Sometimes the printers made errors: [issue 2 of volume 4](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_38.TEIP5.xml), for instance, carries Rab I 1327 aH as publication date on the cover sheet, but Ṣaf 1327 aH in its masthead. The latter would correspond to the official publication schedule. External sources, such as reports in the daily newspaper *al-Muqtabas*, also published by Muḥammad Kurd ʿAlī in Damascus, indicate that the actual publication sequence was indeed not too tightly tied to the monthly publication schedule:
+According to the masthead and the cover sheet, *al-Muqtabas*'s publication schedule followed the Islamic *hijrī* calendar (from the journal itself it must remain open whether the recorded publication dates were the actual publication dates). Sometimes the printers made errors: [issue 2 of volume 4](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_38.TEIP5.xml), for instance, carries Rab I 1327 aH as publication date on the cover sheet, but Ṣaf 1327 aH in its masthead. The latter would correspond to the official publication schedule. External sources, such as reports in the daily newspaper *al-Muqtabas*, also published by Muḥammad Kurd ʿAlī in Damascus, indicate that the actual publication sequence was indeed not too tightly tied to the monthly publication schedule already at the very beginning:
 
-- *Thamarāt al-Funūn* 29 Jan. 1906 / 4 Dhu II 1323 aH (#1548) announced the publication of [no.2 of *Majallat al-Muqtabas*](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_2.TEIP5.xml) two months earlier than the date indicated in the issue's masthead: Ṣafar 1324 aH.[^5] This also contradicts Muḥammad Kurd ʿAlī's memoirs, where he states that publication of *Muqtabas* commenced in early 1324 aH.[^11]
+*Thamarāt al-Funūn* 29 Jan. 1906 / 4 Dhu II 1323 aH (#1548) announced the publication of [no.2 of *Majallat al-Muqtabas*](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_2.TEIP5.xml) two months earlier than the date indicated in the issue's masthead: Ṣafar 1324 aH.[^5] This also contradicts Muḥammad Kurd ʿAlī's memoirs, where he states that publication of *Muqtabas* commenced in early 1324 aH.[^11]
 
 [^11]:{KurdʿAlī 1928@415}
 
-- *al-Muqtabas* 16 May 1910 / 7 Jum I 1328 aH (#371) announced the publication of a "no. 10" of *Majallat al-Muqtabas*. [No.10 of the fifth volume](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_57.TEIP5.xml) would have been published for/in Shaw 1328 aH (Oct/Nov 1910), thus the short note must refer to [no.10 of the fourth volume](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_45.TEIP5.xml) that should have been published for/in Shaw 1327 aH (Oct/Nov 1909)! This assumption is confirmed by the short description of the issue's content provided in the announcement.[^4]
-- *al-Muqtabas* 2 Jul. 1910 (#411) confirmed the overall delay in publication and announced [issue 12 of vol.4](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_47.TEIP5.xml), which should have appeared for/in Dhu II 1327 aH (Dec 1909/ Jan 1910).[^6]
+By Summer 1909, *al-Muqtabas* was lagging severely behind its publication schedule. [No. 4/7](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_42.TEIP5.xml), scheduled for Rajab 1327 aH (Jul/Aug 1909) was published only in the first week of April 1910. It took only another week for [No. 4/8](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_43.TEIP5.xml) to appear.[^14] No. 4/9 and [4/10](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_45.TEIP5.xml) were then published within another month.[^4] Nevertheless there were still rather late (the latter should have been published in Shawwāl 1327 aH (Oct/Nov 1909)). [No. 4/12 (Dhu II 1327 aH [Dec 1909/ Jan 1910])](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_47.TEIP5.xml) was published at the beginning of July 1910, some seven months behind the schedule.[^6]
 
-- Muḥammad Kurd ʿAlī and his staff seemingly entered a productive period in fall 1910, publishing eight "monthly" issues in three months:
-    - *al-Muqtabas* 13 Sep. 1910 (#473) announced [no.3 of vol. 5](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_50.TEIP5.xml) that should have been published for/in Rab I 1328 aH (Mar/Apr 1910).[^7] But publication speed picked up and
-    - only eleven days later, *al-Muqtabas* 24 Sep. 1910 (#482) announced the publication of [no.4 of vol.5](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_51.TEIP5.xml).[^8]
-    - *al-Muqtabas* 12 Dec. 1910 (#548) announced the publication of [no.10 of vol.5](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_57.TEIP5.xml) of Shaw 1328 aH (Oct/Nov 1910).[^9]
-- *al-Muqtabas* 18 Jun. 1911 (#706) advertised Jamāl al-Dīn al-Qāsimī's three-partite article *al-fatwā fī al-islām* ([part one](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_61.TEIP5.xml#div_2.d1e1517), [two](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml#div_2.d1e1491), and [three](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_63.TEIP5.xml#div_7.d1e1810)) published from no.2 of vol.6 (Ṣafar 1329 / Feb 1911) onwards and mentioned that the copy of *Majallat al-Muqtabas* was sold for 1.5 *beşlik*s.[^10]
-- *al-Muqtabas* 1 Jul. 1911 / 4 Raj 1329 aH (#717) announced the publication of two issues, [no.5](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_64.TEIP5.xml) and [6 of vol.6](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_65.TEIP5.xml), which according to the publication schedule should have been published in late April and late May respectively.[^2]
+[^14]:[{muqtabas 76-eap@3}](http://eap.bl.uk/database/overview_item.a4d?catId=6831;r=10426)
+
+Muḥammad Kurd ʿAlī and his staff seemingly entered another productive period in fall 1910, publishing eight "monthly" issues in three months:
+
+- *al-Muqtabas* 13 Sep. 1910 (#473) announced [no. 5/3](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_50.TEIP5.xml) that should have been published for/in Rab I 1328 aH (Mar/Apr 1910).[^7] But publication speed picked up and
+- only eleven days later, *al-Muqtabas* 24 Sep. 1910 (#482) announced the publication of [no. 5/4](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_51.TEIP5.xml).[^8]
+- *al-Muqtabas* 12 Dec. 1910 (#548) announced the publication of [no. 5/10](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_57.TEIP5.xml) of Shaw 1328 aH (Oct/Nov 1910).[^9]
+
+Production seemingly followed a monthly pattern as it took slightly less then six months to publish the next six issues (5/11 - 6/4):
+
+- *al-Muqtabas* 18 Jun. 1911 (#706) advertised Jamāl al-Dīn al-Qāsimī's three-partite article *al-fatwā fī al-islām* ([part one](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_61.TEIP5.xml#div_2.d1e1517), [two](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml#div_2.d1e1491), and [three](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_63.TEIP5.xml#div_7.d1e1810)) published in [no. 6/2 (Ṣafar 1329 / Feb 1911)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_61.TEIP5.xml), [6/3](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml), and [6/4](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_63.TEIP5.xml) and mentioned that the copy of *Majallat al-Muqtabas* was sold for 1.5 *beşlik*s.[^10]
+- *al-Muqtabas* 1 Jul. 1911 / 4 Raj 1329 aH (#717) announced the publication of two issues, [no.6/5](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_64.TEIP5.xml) and [6/6](https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_65.TEIP5.xml), which according to the publication schedule should have been published in late April and late May respectively.[^2]
 
 [^10]:[{muqtabas 274-eap@3}](http://eap.bl.uk/database/overview_item.a4d?catId=7029;r=17843)
 [^2]:[{muqtabas 283-eap@3}](http://eap.bl.uk/database/overview_item.a4d?catId=7038;r=9551)
@@ -78,7 +90,7 @@ In addition to the original edition, at least one reprint appeared: In 1992 Dār
 
 Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem through the British Library's "Endangered Archives Project" (vols. 2-7)](http://eap.bl.uk/database/overview_project.a4d?projID=EAP119;r=63), [HathiTrust (vols. 1-6, 8)](http://catalog.hathitrust.org/Record/100658549), and [Institut du Monde Arabe](http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=9C82C139F9785E99D30089727B40A269). Due to its open access licence, preference is given to facsimiles from EAP.
 
-## EAP119
+## [EAP119](http://eap.bl.uk/)
 
 - links to volumes:
     + [Vol. 2](http://eap.bl.uk/database/overview_item.a4d?catId=809;r=12316)
@@ -91,7 +103,7 @@ Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem t
     + the journal is in the public domain and the images can be freely accessed without restrictions. EAP does not provide a download button.
     + Terms of access for material provided by the British Library can be found [here](http://www.bl.uk/aboutus/terms/index.html)
 
-##  HathiTrust
+## [HathiTrust](https://www.hathitrust.org/)
 
 - links to volumes
     + [Vol. 1](http://hdl.handle.net/2027/umn.319510029968608)
