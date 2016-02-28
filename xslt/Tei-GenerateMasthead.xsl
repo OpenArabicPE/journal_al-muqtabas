@@ -24,25 +24,67 @@
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
+    <!-- set language -->
+    <xsl:variable name="vLang" select="'ar'"/>
     <!-- retrieve bibliographic information from the teiHeader -->
     <xsl:variable name="vBiblSource" select="tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct"/>
     <!-- move the first page break before the <front> -->
     <xsl:template match="tei:text">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:copy-of select="tei:pb[@ed='print'][1]"/>
+            <xsl:copy-of select="following::tei:pb[@ed='print'][1]"/>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="tei:pb[@ed='print'][1]"/>
+    <xsl:template match="tei:pb[@ed='print']">
+        <!-- supress the first tei:pb in tei:text -->
+            <xsl:if test="preceding::tei:pb[@ed='print']">
+                <xsl:copy>
+                    <xsl:apply-templates select="@*"/>
+                </xsl:copy>
+            </xsl:if> 
+    </xsl:template>
+
     <!-- generate a new <front> -->
     <xsl:template match="tei:front">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <div type="masthead">
                 <bibl>
-                    <xsl:copy-of select="$vBiblSource//tei:biblScope[@unit='issue']"/>
-                    <xsl:copy-of select="$vBiblSource//tei:biblScope[@unit='volume']"/>
+                    <!--<xsl:copy-of select="$vBiblSource//tei:biblScope[@unit='issue']"/>-->
+                    <xsl:element name="tei:biblScope">
+                        <xsl:attribute name="unit" select="'issue'"/>
+                        <xsl:attribute name="n" select="$vBiblSource//tei:biblScope[@unit='issue']/@n"/>
+                        <xsl:choose>
+                            <xsl:when test="$vLang = 'ar'">
+                                <xsl:text>الجزء </xsl:text>
+                            </xsl:when>
+                            <xsl:when test="$vLang = 'en'">
+                                <xsl:text>issue </xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>issue </xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:value-of select="$vBiblSource//tei:biblScope[@unit='issue']/@n"/>
+                    </xsl:element>
+<!--                    <xsl:copy-of select="$vBiblSource//tei:biblScope[@unit='volume']"/>-->
+                    <xsl:element name="tei:biblScope">
+                        <xsl:attribute name="unit" select="'volume'"/>
+                        <xsl:attribute name="n" select="$vBiblSource//tei:biblScope[@unit='volume']/@n"/>
+                        <xsl:choose>
+                            <xsl:when test="$vLang = 'ar'">
+                                <xsl:text>المجلد </xsl:text>
+                            </xsl:when>
+                            <xsl:when test="$vLang = 'en'">
+                                <xsl:text>volume </xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>volume </xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:value-of select="$vBiblSource//tei:biblScope[@unit='volume']/@n"/>
+                    </xsl:element>
                     <lb/>
                     <xsl:copy-of select="$vBiblSource//tei:title[@level='j'][@xml:lang='ar'][not(@type='sub')]"/>
                 </bibl>
