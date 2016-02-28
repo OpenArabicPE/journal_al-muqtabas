@@ -40,9 +40,7 @@ The main structural unit are `<div>`s, as usual.
 ~~~{.xml}
 <text type="issue">
     <front>
-        <div type="masthead">
-            <!-- some bibliographic data commonly found in the masthead -->
-        </div>
+    <!-- some bibliographic data commonly found in the masthead -->
     </front>
     <body>
         <div type="article">
