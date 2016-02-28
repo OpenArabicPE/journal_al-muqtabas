@@ -23,8 +23,6 @@
 
     <xsl:output encoding="UTF-8" method="xml" omit-xml-declaration="yes"/>
 
-    
-
     <!-- variables -->
     <xsl:variable name="vMimeType" select="'image/jpeg'"/>
     <xd:doc>
