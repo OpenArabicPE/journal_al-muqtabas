@@ -12,14 +12,18 @@
         </xd:desc>
     </xd:doc>
 
-    <!-- select whether or not you want to display online facsimiles -->
-    <xsl:param name="pgOnlineFacs" select="false()"/>
-
-    <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
-    <xsl:param name="inlineCSS" select="true()"/>
-    <xsl:param name="includeToolbox" select="false()"/>
-    <xsl:param name="includeAnalytics" select="true()"/>
+    <!-- select whether you want to display facsimiles -->
     <xsl:param name="displayPageBreaks" select="true()"/>
+    <!-- select whether or not you want to display online or local facsimiles -->
+    <xsl:param name="pgOnlineFacs" select="false()"/>
+    <!-- select whether you want to use inline CSS for the display -->
+    <xsl:param name="inlineCSS" select="true()"/>
+
+    <!-- origianal TEI Boileplate stuff -->
+    <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
+    <xsl:param name="includeToolbox" select="false()"/>
+    <xsl:param name="includeAnalytics" select="false()"/>
+  
     <!-- special characters -->
     <xsl:param name="quot">
         <text>"</text>
@@ -45,10 +49,9 @@
         </span>
     </xsl:param>
     <!-- parameters for file paths or URLs -->
-    <!-- modify filePrefix to point to files on your own server, 
-		or to specify a relatie path, e.g.:
+    <!-- modify filePrefix to point to boilerplate files on your own server, 
+		or to specify a relative path, e.g.:
 		<xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>
-		
 	-->
     <xsl:param name="filePrefix" select="'https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/online'"/>
     <xsl:param name="teibpCSS" select="concat($filePrefix, '/css/teibp.css')"/>
