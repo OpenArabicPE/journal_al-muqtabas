@@ -32,7 +32,7 @@
     <xsl:template match="tei:text">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:copy-of select="following::tei:pb[@ed='print'][1]"/>
+            <xsl:copy-of select="descendant::tei:pb[@ed='print'][1]"/>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
