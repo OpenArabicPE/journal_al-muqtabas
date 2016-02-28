@@ -15,7 +15,7 @@
     <!-- select whether you want to display facsimiles -->
     <xsl:param name="displayPageBreaks" select="true()"/>
     <!-- select whether or not you want to display online or local facsimiles -->
-    <xsl:param name="pgOnlineFacs" select="false()"/>
+    <xsl:param name="pgOnlineFacs" select="true()"/>
     <!-- select whether you want to use inline CSS for the display -->
     <xsl:param name="inlineCSS" select="true()"/>
 
