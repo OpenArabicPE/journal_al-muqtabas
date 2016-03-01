@@ -35,7 +35,7 @@ The most likely candidates for such follow-up projects are
 - Muḥammad Rashīd Riḍā's journal *al-Manār*. A stub is already available on [GitHub](https://www.github.com/tillgrallert/digital-manar)
     + [full text from shamela](http://shamela.ws/index.php/book/6947): 8605 views
     + [imagery from hathitrust](http://catalog.hathitrust.org/Record/008882663),[imagery / PDFs from the Internet Archive](https://archive.org/details/almanaralmanar), which are linked from [*al-Maktaba al-Waqfiyya*](http://waqfeya.com/book.php?bid=7374)
-- ʿAbd al-Qādir bin Muḥammad Salīm al-Kaylānī al-Iskandarānī's *majallat al-ḥaqāʾiq (al-dimashqiyya)*, 1910. A stub is already available on [GitHub](https://www.github.com/tillgrallert/digital-haqaiq)
+- ʿAbd al-Qādir bin Muḥammad Salīm al-Kaylānī al-Iskandarānī's *majallat al-ḥaqāʾiq (al-dimashqiyya)*, 1910. Using the code and experiences from *Digital Muqtabas*, [*Digital Ḥaqāʾiq*](https://www.github.com/tillgrallert/digital-haqaiq) was created within only a single days work.
     + [full text from shamela](http://shamela.ws/index.php/book/29676): 5134 views.
     + [imagery of vol. 1 (1910) from hathitrust](http://hdl.handle.net/2027/njp.32101036074001), vol. 2 and 3 available at AUB.
 - ʿAbdallah al-Nadīm's *majallat al-ustādh*, Cairo, 24 Aug 1892
