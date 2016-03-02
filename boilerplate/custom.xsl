@@ -7,7 +7,8 @@
     <!-- import teibp.xsl, which allows templates, 
          variables, and parameters from teibp.xsl 
          to be overridden here. -->
-    <xsl:import href="teibp.xsl"/>
+    
+    <!-- <xsl:import href="teibp.xsl"/> -->
 
     <!-- to translate numerical strings into Eastern Arabic numerals use "translate($vCount,'1234567890','١٢٣٤٥٦٧٨٩٠')" -->
 
