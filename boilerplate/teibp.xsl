@@ -13,10 +13,13 @@
                 to javascript and other features from the html/browser environment.</xd:p>
         </xd:desc>
     </xd:doc>
+        <!-- import the standard TEI Boilerplate stylesheets -->
+    <xsl:include href="custom.xsl"/>
+    <xsl:include href="xml-to-string.xsl"/>
     <!-- import the stylesheet formatting all bibliographic metadata -->
     <xsl:include href="bibl.xsl"/>
-    <xsl:include href="xml-to-string.xsl"/>
-    <!-- import stylesheet responsible for display of page breaks and facsimiles -->
+
+    <!-- import the stylesheet dealing with the display of <pb> and facsimiles -->
     <xsl:include href="pb.xsl"/>
     <!-- import stylesheet setting all the parameters -->
     <xsl:include href="parameters.xsl"/>
