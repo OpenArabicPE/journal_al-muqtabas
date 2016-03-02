@@ -56,6 +56,11 @@
                                         select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://eap.')][1]/@url"
                                     />
                                 </xsl:when>
+                                <xsl:when test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://')]">
+                                    <xsl:value-of
+                                        select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://')][1]/@url"
+                                    />
+                                </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:value-of
                                         select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://')][1]/@url"
@@ -81,9 +86,21 @@
                     <!-- here could be an option to select the image hosted on HathiTrust -->
                     <xsl:choose>
                         <xsl:when
+                            test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://eap.')]">
+                            <xsl:value-of
+                                select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://eap.')][1]/@url"
+                            />
+                        </xsl:when>
+                        <xsl:when
                             test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://eap.')]">
                             <xsl:value-of
                                 select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://eap.')][1]/@url"
+                            />
+                        </xsl:when>
+                        <xsl:when
+                            test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://babel.hathitrust.org')]">
+                            <xsl:value-of
+                                select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://babel.hathitrust.org')][1]/@url"
                             />
                         </xsl:when>
                         <xsl:when
@@ -102,8 +119,16 @@
         <xsl:variable name="vFacsSource">
             <xsl:choose>
                 <xsl:when
+                    test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://eap.')]">
+                    <xsl:text>EAP</xsl:text>
+                </xsl:when>
+                <xsl:when
                     test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://eap.')]">
                     <xsl:text>EAP</xsl:text>
+                </xsl:when>
+                <xsl:when
+                    test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://babel.hathitrust.org')]">
+                    <xsl:text>HathiTrust</xsl:text>
                 </xsl:when>
                 <xsl:when
                     test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://babel.hathitrust.org')]">
