@@ -117,14 +117,19 @@ Notes should be encoded with `<note>` at the location it appears in the text. Th
 
 ## Verse
 
-Each line of a *qaṣīda* is encoded as `<lg type="bayt"/>`
+Many articles contain *qaṣīda*s with the characteristic printing of the two *bayt*s on each line as two columns. After some talk with Mathew Miller from the Persian Digital Library and their TEI files of Persian poetry, I decided to follow their encoding of *bayt* as `<l type="bayt">` with two `<seg>` children. Successive lines are then wrapped in `<lg>`:
 
 ~~~ {.xml}
-<lg type="bayt">
-    <l>وكذا الزراعة والصناعة والتجارة</l>
-    <l>عززت في نجمها مبداكِ</l>
+<lg>
+    <l type="bayt">
+        <seg>أبرموا أمرهم عشاء فلما </seg> <seg>أصبحوا أصبحت لهم ضوضاء</seg>
+    </l>
+    <l type="bayt">
+        <seg>من منادٍ ومن مجيبٍ ومن تص</seg><seg>هالٍ خليل خلال ذاك رغاء</seg>
+    </l>
 </lg>
 ~~~
+
 
 There are cases when words are split between the two lines of the *qaṣīda*:
 
@@ -133,33 +138,15 @@ There are cases when words are split between the two lines of the *qaṣīda*:
 How should this be encoded?
 
 ~~~ {.xml}
-<lg type="bayt">
-    <l>أبرموا أمرهم عشاء فلما </l>
-    <l> أصبحوا أصبحت لهم ضوضاء</l>
-</lg>
-<lg type="bayt">
-    <l>من منادٍ ومن مجيبٍ ومن تص</l>
-    <l>هالٍ خليل خلال ذاك رغاء</l>
-</lg>
+<l type="bayt">
+    <seg>أبرموا أمرهم عشاء فلما </seg>
+    <seg> أصبحوا أصبحت لهم ضوضاء</seg>
+</l>
+<l type="bayt">
+    <seg>من منادٍ ومن مجيبٍ ومن تص</seg>
+    <seg>هالٍ خليل خلال ذاك رغاء</seg>
+</l>
 ~~~
-
-
-### Update
-
-After some talk with Mathew Miller from the Persian Digital Library and their TEI files of Persian poetry, I decided to follow their encoding of *bayt* as `<l type="bayt">` with two `<seg>` children. Successive lines are then wrapped in `<lg>`:
-
-~~~ {.xml}
-<lg>
-    <l type="bayt">
-        <seg>أبرموا أمرهم عشاء فلما </seg> <seg> أصبحوا أصبحت لهم ضوضاء</seg>
-    </l>
-    <l type="bayt">
-        <seg>من منادٍ ومن مجيبٍ ومن تص</seg><seg>هالٍ خليل خلال ذاك رغاء</seg>
-    </l>
-</lg>
-~~~
-
-**to do**: the schema must be updated accordingly and `<seg>` must be able to contain `<note>`
 
 # Punctuation
 
