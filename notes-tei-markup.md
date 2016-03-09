@@ -286,61 +286,6 @@ Current structure of the `<biblStruct>` in `<sourceDesc>`:
         <title level="j" xml:lang="fr">Al-Moktabas</title>
         <title level="j" type="sub" xml:lang="fr">Revue mensuelle paraissant à Damas (Syrie)</title>
         <title level="j" type="sub" xml:lang="fr">Pédagogie, sociologie, économie politique, littérature, histoire, archéologie, philologie, ménagerie, hygiène, bibliographie, civilisation arabe et occidentale</title>
-        <editor xml:lang="ar">
-            <persName>
-                <forename>محمد</forename>
-                <surname>كرد علي</surname>
-            </persName>
-        </editor>
-        <editor xml:lang="ar-Latn-x-ijmes" ref="https://viaf.org/viaf/32272677">
-            <forename>Muḥammad</forename>
-            <surname>Kurd ʿAlī</surname>
-        </editor>
-        <imprint>
-            <publisher notAfter="1914" notBefore="1908" xml:lang="ar">
-                <orgName>مطبعة المقتبس</orgName>
-            </publisher>
-            <publisher notAfter="1914" notBefore="1908">
-                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Muqtabas</orgName>
-            </publisher>
-            <pubPlace xml:lang="ar" notBefore="1908" notAfter="1914">
-                <placeName>دمشق</placeName>
-            </pubPlace>
-            <pubPlace xml:lang="en" notBefore="1908" notAfter="1914">
-                <placeName>Damascus</placeName>
-            </pubPlace>
-            <date xml:lang="ar" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">١ محرم ١٣٢٩</date>
-            <date xml:lang="ar-Latn-x-ijmes" when-custom="1329-01-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-01-02">1 Muḥ 1329</date>
-        </imprint>
-        <biblScope unit="volume" n="6"/>
-        <biblScope unit="issue" n="1"/>
-        <biblScope unit="page" from="1" to="88"/>
-    </monogr>
-    <idno type="oclc">4770057679</idno>
-    <idno type="oclc">79440195</idno>
-    <idno type="aucr">07201136864</idno>
-    <idno type="shamela">26523</idno>
-</biblStruct>
-<!-- ... -->
-</teiHeader>
-~~~
-
-Better and shorter idea, without loosing any information:
-
-~~~{.xml}
-<teiHeader>
-<!-- ... -->
-<biblStruct>
-    <monogr>
-        <title level="j" xml:lang="ar">المقتبس</title>
-        <title level="j" type="sub" xml:lang="ar">مجلة تبحث في التربية والتعليم والاجتماع والاقتصاد والاداب والتاريخ والآثار واللغة و تدبير المنزل والصحة والكتب وحضارة العرب والغرب</title>
-        <title level="j" type="sub" xml:lang="ar">تصدر في كل شهر عربي بدمشق</title>
-        <title level="j" xml:lang="ar-Latn-x-ijmes">[Majallat] al-Muqtabas</title>
-        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla tabḥath fī al-tarbiyya wa-l-taʿlīm wa-l-ijtimāʿ wa-l-iqtiṣād wa-l-adab wa-l-tārīkh wa-l-āthār wa-l-llugha wa tadbīr al-manzil wa-l-ṣaḥḥa wa-l-kutub wa ḥaḍāra al-ʿarab wa ḥadāra al-gharb</title>
-        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">tuṣadir fī kull shar ʿarabī bi-Dimashq</title>
-        <title level="j" xml:lang="fr">Al-Moktabas</title>
-        <title level="j" type="sub" xml:lang="fr">Revue mensuelle paraissant à Damas (Syrie)</title>
-        <title level="j" type="sub" xml:lang="fr">Pédagogie, sociologie, économie politique, littérature, histoire, archéologie, philologie, ménagerie, hygiène, bibliographie, civilisation arabe et occidentale</title>
         <editor ref="https://viaf.org/viaf/32272677">
             <persName xml:lang="ar">
                 <forename>محمد</forename>
