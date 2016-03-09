@@ -4,6 +4,8 @@ author: Till Grallert
 date: 2016-02-26
 ---
 
+Quick links: [Webview *al-Muqtabas* 6(1) (text, facsimile)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml), [Zotero group "Digital Muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/digital-muqtabas/items/)
+
 # Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1917/18)
 
 In the context of the current onslaught cultural artifacts in the Middle East face from the iconoclasts of the Islamic State, from the institutional neglect of states and elites, and from poverty and war, digital preservation efforts promise some relief as well as potential counter narratives. They might also be the only resolve for future education and rebuilding efforts once the wars in Syria, Iraq or Yemen come to an end. 
@@ -23,8 +25,9 @@ The purpose and scope of the project is to provide an open, collaborative, refer
 - Current deliverables:
     - Full text of 96 issues (c. 7000 pages) with semantic mark-up as TEI P5 XML with its own schema.
     - The text of digital edition links to open-access digital facsimiles if available (see below).
-    - [A rudimentary webview](https://github.com/tillgrallert/tei-boilerplate-arabic-editions), based on [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/), shows digital text and images side by side. It provides an automatically generated table of content and links to the bibliographic metadata of every article.
-    - Bibliographic metadata for every article in *Majallat al-Muqtabas* is provided as individual BibTeX file in the sub-folder `metadata`. The metadata includes a URL pointing to the webview of this item.
+    - [A webview](https://github.com/tillgrallert/tei-boilerplate-arabic-editions), based on [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/), shows digital text and images side by side. It provides an automatically generated table of content and links to the bibliographic metadata of every article.
+    - Bibliographic metadata for every article in *Majallat al-Muqtabas* is provided as individual BibTeX file in the sub-folder `metadata`. The metadata includes a URL pointing to the webview of this item and the webview includes a link to the BibTeX file for every article.
+        + To ease browsing the journal, we have set up the public Zotero group [Digital Muqtabas](https://www.zotero.org/groups/digital-muqtabas/items). This group is updated by means of the BibTeX files.
 - Possible / planned deliverables
     + Scans of issues not currently available in open-access repositories, namely of vol. 9, which we hold at [Orient-Institut Beirut](http://www.orient-institut.org).
 
@@ -35,9 +38,9 @@ The most likely candidates for such follow-up projects are
 - Muḥammad Rashīd Riḍā's journal *al-Manār*. A stub is already available on [GitHub](https://www.github.com/tillgrallert/digital-manar)
     + [full text from shamela](http://shamela.ws/index.php/book/6947): 8605 views
     + [imagery from hathitrust](http://catalog.hathitrust.org/Record/008882663),[imagery / PDFs from the Internet Archive](https://archive.org/details/almanaralmanar), which are linked from [*al-Maktaba al-Waqfiyya*](http://waqfeya.com/book.php?bid=7374)
-- ʿAbd al-Qādir bin Muḥammad Salīm al-Kaylānī al-Iskandarānī's *majallat al-ḥaqāʾiq (al-dimashqiyya)*, 1910. Using the code and experiences from *Digital Muqtabas*, [*Digital Ḥaqāʾiq*](https://www.github.com/tillgrallert/digital-haqaiq) was created within only a single days work.
+- ʿAbd al-Qādir bin Muḥammad Salīm al-Kaylānī al-Iskandarānī's *majallat al-ḥaqāʾiq (al-dimashqiyya)*, 1910. Using the code and experiences from *Digital Muqtabas*, [*Digital Ḥaqāʾiq*](https://www.github.com/tillgrallert/digital-haqaiq) was created within only a single day's work.
     + [full text from shamela](http://shamela.ws/index.php/book/29676): 5134 views.
-    + [imagery of vol. 1 (1910) from hathitrust](http://hdl.handle.net/2027/njp.32101036074001), vol. 2 and 3 available at AUB.
+    + [imagery of vol. 1 (1910) from hathitrust](http://hdl.handle.net/2027/njp.32101036074001), vol. 2 and 3 are available at AUB.
 - ʿAbdallah al-Nadīm's *majallat al-ustādh*, Cairo, 24 Aug 1892
     + [full text from shamela](http://shamela.ws/index.php/book/35118): 11337 views.
 
