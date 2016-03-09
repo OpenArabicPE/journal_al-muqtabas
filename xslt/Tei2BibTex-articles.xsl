@@ -9,9 +9,12 @@
     <!-- this stylesheet generates a Bibtex file with bibliographic metadata for each <div> in the body of the TEI source file. File names are based on the source's @xml:id and the @xml:id of the <div>. -->
     <!-- to do:
         + add information on edition: i.e. TEI edition
-        + add information on collaborators on the digital edition -->
-
-    <xsl:param name="pLang" select="'ar-Latn-x-ijmes'"/>
+        + add information on collaborators on the digital edition
+        comment: this information cannot be added to BibTeX for articles appart from the generic "annote" tag -->
+    
+    
+    <!-- parameter to select the language of some fields (if available): 'ar-Latn-x-ijmes', 'ar', 'en' etc. -->
+    <xsl:param name="pLang" select="'ar'"/>
 
     <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
     <xsl:variable name="vgFileUrl"
@@ -57,10 +60,14 @@
             </xsl:if>
         </xsl:variable>
         <xsl:variable name="vPubPlace"
-            select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = 'en']"/>
+            select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
         <xsl:variable name="vPublisher" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
         
         <xsl:result-document href="../metadata/{concat($vFileId,'-',@xml:id)}.bib" method="text">
+            <!-- some metadata on the file itself -->
+            <xsl:text>%% This BibTeX bibliography file was created by automatic conversion from TEI XML</xsl:text><xsl:value-of select="$vN"/>
+            <xsl:text>%% Created at </xsl:text><xsl:value-of select="current-dateTime()"/><xsl:value-of select="$vN"/>
+            <xsl:text>%% Saved with string encoding Unicode (UTF-8) </xsl:text><xsl:value-of select="$vN"/><xsl:value-of select="$vN"/>
             <!-- construct BibText -->
             <xsl:text>@ARTICLE{</xsl:text>
             <!-- BibTextKey -->
@@ -127,6 +134,10 @@
             <!-- URL -->
             <xsl:text>url = {</xsl:text>
             <xsl:value-of select="$vUrl"/>
+            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
+            <!-- add information on digital edition as a note -->
+            <xsl:text>annote = {</xsl:text>
+            <xsl:text>digital TEI edition, </xsl:text><xsl:value-of select="year-from-date(current-date())"/>
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>}</xsl:text><xsl:value-of select="$vN"/>
         </xsl:result-document>
