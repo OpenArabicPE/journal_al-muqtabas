@@ -13,7 +13,13 @@ Zotero, for instance, imports the following formats:
 - Refer/BibIX
 - Unqualified Dublin Core RDF
 
-BibTeX, which has been around for more than 30 years seems to be the safest bet to preserve and exchange bibliographic data. The standard or at least the tools implementin it aren't really strict and only basic information can be included (in BibTeX' conception, there are no editions of periodicals, for instance.)
+BibTeX, which has been around for more than 30 years seems to be the safest bet to preserve and exchange bibliographic data. There are, however, a number of problems:
+
+- The standard or at least the tools implementing it aren't really strict
+- Only basic information can be included: 
+    + information on publication dates is commonly limited to year and month only
+    + periodicals are not perceived as having different editions or print runs
+    + non-Gregorian calendars cannot be added.
 
 # MODS (Metadata Object Description Schema)
 
