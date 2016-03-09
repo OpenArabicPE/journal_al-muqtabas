@@ -18,7 +18,7 @@ By linking images to the digital text, every reader can validate the quality of 
 
 [^3]:Currently we provide stable URLs down to the paragraph level. For more details see the [documentation of the mark-up](notes-tei-markup.md)
 
-# Scope and deliverables of the project
+# 1. Scope and deliverables of the project
 
 The purpose and scope of the project is to provide an open, collaborative, referencable, and scholarly digital edition of Muḥammad Kurd ʿAlī's journal *al-Muqtabas*, which includes the full text, semantic mark-up, bibliographic metadata, and digital imagery. All files but the digital facsimiles are hosted on [GitHub](https://www.github.com).
 
@@ -45,7 +45,7 @@ The most likely candidates for such follow-up projects are
     + [full text from shamela](http://shamela.ws/index.php/book/35118): 11337 views.
 
 
-# The journal *al-Muqtabas*
+# 2. The journal *al-Muqtabas*
 
 Muḥammad Kurd ʿAlī published the monthly journal *al-Muqtabas* between 1906 and 1917/18. After the Young Turk Revolution of July 1908, publication moved from Cairo to Damascus in the journal's third year.
 
@@ -89,11 +89,12 @@ In addition to the original edition, at least one reprint appeared: In 1992 Dār
 
 [^12]:{Seikaly 1981@128}
 
-# Digital imagery
+# 3. Input: 
+## 3.1 Digital imagery
 
 Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem through the British Library's "Endangered Archives Project" (vols. 2-7)](http://eap.bl.uk/database/overview_project.a4d?projID=EAP119;r=63), [HathiTrust (vols. 1-6, 8)](http://catalog.hathitrust.org/Record/100658549), and [Institut du Monde Arabe](http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=9C82C139F9785E99D30089727B40A269). Due to its open access licence, preference is given to facsimiles from EAP.
 
-## [EAP119](http://eap.bl.uk/)
+### 3.1.1 [EAP119](http://eap.bl.uk/)
 
 - links to volumes:
     + [Vol. 2](http://eap.bl.uk/database/overview_item.a4d?catId=809;r=12316)
@@ -106,7 +107,7 @@ Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem t
     + the journal is in the public domain and the images can be freely accessed without restrictions. EAP does not provide a download button.
     + Terms of access for material provided by the British Library can be found [here](http://www.bl.uk/aboutus/terms/index.html)
 
-## [HathiTrust](https://www.hathitrust.org/)
+### 3.1.2 [HathiTrust](https://www.hathitrust.org/)
 
 - links to volumes
     + [Vol. 1](http://hdl.handle.net/2027/umn.319510029968608)
@@ -127,12 +128,12 @@ Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem t
 > Note: There are no restrictions on use of text transcribed from the images, or paraphrased or translated using the images.
 
 
-# Full text
+## 3.2 Full text
 
 Somebody took the pains to create fully searchable text files and uploaded everything to [al-Maktaba al-Shamela](http://shamela.ws/index.php/book/26523) and  [WikiSource](https://ar.wikisource.org/wiki/%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D9%85%D9%82%D8%AA%D8%A8%D8%B3/%D8%A7%D9%84%D8%B9%D8%AF%D8%AF_1).
 
 
-## [al-Maktaba al-Shāmila](http://www.shamela.ws)
+### 3.2.1 [al-Maktaba al-Shāmila](http://www.shamela.ws)
 
 - Extent: According to the main [entry](http://shamela.ws/index.php/book/26523), *shamela* has all 96 issues. 
 - Transcribers, editors: Apparently, they have been typed and copy-edited by unnamed humans. 
@@ -141,34 +142,35 @@ Somebody took the pains to create fully searchable text files and uploaded every
     + all issues can be browsed for headlines and searched
     + all pages can be individually adressed in the browser: [http://shamela.ws/browse.php/book-26523#page-2290](http://shamela.ws/browse.php/book-26523#page-2290)
 
-## WikiSource
+### 3.2.2 WikiSource
 
 Sombody uploaded the text from *shamela* to WikiSource. Unfortunately it is impossible to browse the entire journal. Instead one has to adress each individual and consecutively numbered issue, e.g. Vol. 4, No. 1 is listed as [No. 37](https://ar.wikisource.org/wiki/%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D9%85%D9%82%D8%AA%D8%A8%D8%B3/%D8%A7%D9%84%D8%B9%D8%AF%D8%AF_37)
 
-# TEI edition
+# 4. TEI edition
 
 The main challenge is to combine the full text and the images in a TEI edition. As *al-maktabat al-shāmila* did not reproduce page breaks true to the print edition, every single one of the more than 6000 page breaks must be added manually and linked to the digital image of the page.
 
-## General design
+## 4.1 General design
 
 The edition should be conceived of as a corpus of tei files that are grouped by means of xinclude. This way, volumes can be constructed as single TEI files containing a `<group/>` of TEI files and a volume specific `<front/>` and `<back/>`
 
 Detailled description and notes on the mark-up are kept in a separate [file](notes-tei-markup.md).
 
-## Quality control
+## 4.2 Quality control
 
 A simple way of controlling the quality of the basic structural mark-up would be to cross check any automatically generated table of content or index against the published tables of content at the end of each volume and against the index of *al-Muqtabas* published by [Riyāḍ ʿAbd al-Ḥamīd Murād in 1977](http://hdl.handle.net/2027/umn.31951d008457474). 
 
-
-# [Web display](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml): TEI Boilerplate
-
-To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/) for a first display of the TEI files in the browser without need for pre-processed HTML and to host this heavily customised boilerplate view as another [GitHub repository](https://www.github.com/tillgrallert/tei-boilerplate-arabic-editions) to be re-used. For a first impression see [here](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml). It is important to note that at the moment there is no front-end beyond the GitHub repository that allows for searching and browsing across files.
-
-A detailed description of the web display is available [here](notes-web-display.md).
-
-# To do
+## 4.3 To do
 
 1. Mark-up: The basic structural mark-up of individual issues is far from complete. All features encoded in HTML by *shamela.ws* have been translated into TEI XML, but these are limited to the main article / section headers. What needs to be done is:
     - splitting articles into sections and sections into individual articles
     - mark-up of authors with `<byline>`
 2. Text-image linking: while the links to the facsimiles can be automatically generated for each issue, establishing page breaks (`<pb>`) must be done manually for all 6.000+ of them
+
+
+# 5. [Web display](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml): TEI Boilerplate
+
+To allow a quick review of the mark-up and read the journal's content, I decided to customise [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/) for a first display of the TEI files in the browser without need for pre-processed HTML and to host this heavily customised boilerplate view as another [GitHub repository](https://www.github.com/tillgrallert/tei-boilerplate-arabic-editions) to be re-used. For a first impression see [here](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml). It is important to note that at the moment there is no front-end beyond the GitHub repository that allows for searching and browsing across files.
+
+A detailed description of the web display is available [here](notes-web-display.md).
+
