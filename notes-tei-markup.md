@@ -439,6 +439,11 @@ A second XSLT stylesheet ([Tei-MarkupNumerals-Correction](xslt/Tei-MarkupNumeral
 4. `@calendar="#cal_ottomanfiscal"`
 
 ## references to intellectual works
+
+There are two types of references to intellectual works: explicit and implicit ones. Take for example the reference in [*al-Muqtabas* 6/2](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_23.TEIP5.xml#div_34.d1e3136) to a book by an American author from 1888 that had described a technocratic utopia at the end of the 20th century. This, obviously is a direct, yet implicit, reference to Bellamy's "Looking backward, 2000-1887". How should that be encoded?
+
+Explicit references are much easier case:
+
 ### 1. encoding with `<bibl>` and its children
 
 Almost all issues of *Muqtabas* contain review sections titled "مخطوطات ومطبوعات" on recent books or "مقالات المجلات", "المجلات الإفرنجية والعربية" on recent articles in (scholarly or scientific) journals.
