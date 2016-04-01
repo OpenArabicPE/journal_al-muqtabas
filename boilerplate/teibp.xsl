@@ -575,7 +575,7 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
-            <span class="cId cNumber">
+            <span class="cId cNumber" lang="en">
                 <xsl:choose>
                     <xsl:when test="@xml:id">
                         <a href="#{@xml:id}" class="cLinkSelf cNumber"><xsl:value-of select="$vCount"/></a>
