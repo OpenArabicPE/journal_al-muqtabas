@@ -48,6 +48,18 @@
             </xsl:if>
             <xsl:apply-templates select="./tei:head" mode="mPlainText"/>
         </xsl:variable>
+        <xsl:variable name="vAuthor">
+                <xsl:choose>
+                    <xsl:when test="child::tei:byline/tei:persName/tei:surname">
+                        <xsl:value-of select="child::tei:byline/tei:persName/tei:surname"/>
+                        <xsl:text>, </xsl:text>
+                        <xsl:value-of select="child::tei:byline/tei:persName/tei:forename"/>
+                    </xsl:when>
+                    <xsl:when test="child::tei:byline/tei:persName">
+                        <xsl:value-of select="child::tei:byline/tei:persName"/>
+                    </xsl:when>
+                </xsl:choose>
+        </xsl:variable>
         <xsl:variable name="vUrl" select="concat($vgFileUrl, '#', @xml:id)"/>
         <xsl:variable name="vIssue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
         <xsl:variable name="vVolume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>
