@@ -82,7 +82,7 @@
             select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
         <xsl:variable name="vPublisher" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
         
-        <xsl:result-document href="../jekyll/posts/{concat($vPublDate/@when,'-',translate($vArticleTitle,' ','-'),'-',$vFileId,'-',@xml:id)}.md" method="text">
+        <xsl:result-document href="../jekyll/_posts/{concat($vPublDate/@when,'-',translate($vArticleTitle,' ','-'),'-',$vFileId,'-',@xml:id)}.md" method="text">
             <!-- some metadata on the file itself: YAML -->
             <xsl:text>---</xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>title: "*</xsl:text><xsl:value-of select="$vArticleTitle"/><xsl:text>*. </xsl:text><xsl:value-of select="$vPublicationTitle"/><xsl:text> </xsl:text><xsl:value-of select="$vVolume"/><xsl:text>(</xsl:text><xsl:value-of select="$vIssue"/><xsl:text>)</xsl:text><xsl:text>"</xsl:text><xsl:value-of select="$vN"/>
