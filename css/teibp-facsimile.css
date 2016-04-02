@@ -1,19 +1,60 @@
+/*********************
+This stylesheet provides a two-column view,
+displaying the facsimiles on the left
+and the text on the right.
+**********************/
+
 /* provide a new and broader width and override other settings */
 html {
 	width: 1100px !important;
 }
 
-/* Move the text right and the facsimile left */
-
 TEI > text {
 	width: 550px;
+}
+
+/* Move rtl text right and the facsimile left */
+
+TEI > text[lang = "ar"],
+TEI > text[lang = "ota"],
+TEI > text[lang = "fa"],
+TEI > text[lang = "he"],
+TEI > text[lang *= "-Arab-Ar"] {
+	/*width: 550px;*/
 	float: right;
 	/*padding-left: 2em;
 	border-left: 5px dotted #EBEBEB;*/
 }
 /* everything should "clear:right" but for <l>, which are already floating */
-TEI > text div >* {
+TEI > text[lang = "ar"] div >*,
+TEI > text[lang = "ota"] div >*,
+TEI > text[lang = "fa"] div >*,
+TEI > text[lang = "he"] div >*,
+TEI > text[lang *= "-Arab-Ar"] div >* {
 	clear: right !important;
+}
+
+/* Move ltr text left and the facsimile right */
+
+TEI > text[lang = "en"],
+TEI > text[lang = "fr"],
+TEI > text[lang = "de"],
+TEI > text[lang = "it"],
+TEI > text[lang *= "ar-Latn-"],
+TEI > text[lang *= "ota-Latn-"] {
+	/*width: 550px;*/
+	float: left;
+	/*padding-left: 2em;
+	border-left: 5px dotted #EBEBEB;*/
+}
+/* everything should "clear:right" but for <l>, which are already floating */
+TEI > text[lang = "en"] div >*,
+TEI > text[lang = "fr"] div >*,
+TEI > text[lang = "de"] div >*,
+TEI > text[lang = "it"] div >*,
+TEI > text[lang *= "ar-Latn-"] div >*,
+TEI > text[lang *= "ota-Latn-"] div >* {
+	clear: left !important;
 }
 
 /* the span containing the entire <pb> information */
@@ -29,8 +70,25 @@ span.-teibp-pb {
 	margin-bottom: 0px;
 	margin-top: 0px;
 	border-top: 5px dotted #EBEBEB;
+}
+
+TEI > text[lang = "ar"] span.-teibp-pb,
+TEI > text[lang = "ota"] span.-teibp-pb,
+TEI > text[lang = "fa"] span.-teibp-pb,
+TEI > text[lang = "he"] span.-teibp-pb,
+TEI > text[lang *= "-Arab-Ar"] span.-teibp-pb {
 	/* clear: left is necessary here if facsimiles are larger than the space occupied by the transcription */
 	clear: left;
+}
+
+TEI > text[lang = "en"] span.-teibp-pb,
+TEI > text[lang = "fr"] span.-teibp-pb,
+TEI > text[lang = "de"] span.-teibp-pb,
+TEI > text[lang = "it"] span.-teibp-pb,
+TEI > text[lang *= "ar-Latn-"] span.-teibp-pb,
+TEI > text[lang *= "ota-Latn-"] span.-teibp-pb {
+	/* clear: right is necessary here if facsimiles are larger than the space occupied by the transcription */
+	clear: right;
 }
 
 /* the actual images */
@@ -40,19 +98,15 @@ span.-teibp-pb {
 }*/
 span.-teibp-pb img {
 	display: block;
-	float: left;
 	width:430px;
 	height: 100% !important;
 	max-height: 100% !important;
 	border-style: none;
-	border-right: 5px dotted #EBEBEB;
-	clear: left;
-	 /* make images sticky: "position: sticky" does not seem to work with floating elements */
+	/* make images sticky: "position: sticky" does not seem to work with floating elements */
     /*position: -webkit-sticky;
     top: -8px;*/
-    clear: left;
+	}
 
-}
 /* clip the scans that always contain a lot of empty space around the text block
 but do so conservatively
 syntax: top, right, bottom, left */
@@ -64,6 +118,26 @@ vendor-specific prefix */
 -webkit-clip-path: inset(0px 20px 0px 20px);
 clip-path: inset(0px 20px 0px 20px);
 }*/
+
+TEI > text[lang = "ar"] span.-teibp-pb img,
+TEI > text[lang = "ota"] span.-teibp-pb img,
+TEI > text[lang = "fa"] span.-teibp-pb img,
+TEI > text[lang = "he"] span.-teibp-pb img,
+TEI > text[lang *= "-Arab-Ar"] span.-teibp-pb img {
+	float: left;
+	clear: left;
+	border-right: 5px dotted #EBEBEB;
+}
+TEI > text[lang = "en"] span.-teibp-pb img,
+TEI > text[lang = "fr"] span.-teibp-pb img,
+TEI > text[lang = "de"] span.-teibp-pb img,
+TEI > text[lang = "it"] span.-teibp-pb img,
+TEI > text[lang *= "ar-Latn-"] span.-teibp-pb img,
+TEI > text[lang *= "ota-Latn-"] span.-teibp-pb img {
+	float: right;
+	clear: right;
+	border-left: 5px dotted #EBEBEB;
+}
 
 
 /* the page number */
