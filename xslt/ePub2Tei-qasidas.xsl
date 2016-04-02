@@ -37,12 +37,47 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:p[count(child::node())=3][child::tei:gap[@resp='#org_MS']]">
+    <xsl:template match="tei:div">
+        <xsl:variable name="vPreprocessedText">
+            <xsl:apply-templates select="." mode="mPreproccessed"/>
+        </xsl:variable>
+        <xsl:apply-templates select="$vPreprocessedText"/>
+    </xsl:template>
+    
+    <xsl:template match="@* | node()" mode="mPreproccessed">
+        <xsl:copy>
+            <xsl:apply-templates select="@* | node()" mode="mPreproccessed"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="tei:p[count(child::node())=3][child::tei:gap[@resp='#org_MS']]" mode="mPreproccessed">
         <l type="bayt">
             <xsl:for-each select="child::text()">
                 <seg><xsl:value-of select="."/></seg>
             </xsl:for-each>
         </l>
+    </xsl:template>
+    
+    <!-- wrap single lines in <lg> -->
+    <xsl:template match="tei:l[@type='bayt'][not(preceding-sibling::node()[1]=tei:l[@type='bayt'])][not(following-sibling::node()[1]=tei:l[@type='bayt'])]">
+        <lg>
+            <xsl:copy>
+                <xsl:apply-templates select="@* | node()"/>
+            </xsl:copy>
+        </lg>
+    </xsl:template>
+    <!-- find the first line in a line group -->
+    <xsl:template match="tei:l[@type='bayt'][not(preceding-sibling::node()[1]=tei:l[@type='bayt'])][following-sibling::node()[1]=tei:l[@type='bayt']]">
+        <lg>
+            <xsl:copy>
+                <xsl:apply-templates select="@* | node()"/>
+            </xsl:copy>
+            <xsl:for-each select="following-sibling::tei:l[@type='bayt'][preceding-sibling::node()[1]=tei:l[@type='bayt']]">
+                <xsl:copy>
+                    <xsl:apply-templates select="@* | node()"/>
+                </xsl:copy>
+            </xsl:for-each>
+        </lg>
     </xsl:template>
     
     <!-- document changes -->
