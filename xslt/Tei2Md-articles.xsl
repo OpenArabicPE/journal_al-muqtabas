@@ -8,23 +8,16 @@
     version="2.0">
     <xsl:output method="text" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" name="text"/>
     <xsl:strip-space elements="*"/>
-
-    <!-- this stylesheet generates a plain text file for each <div> in the body of the TEI source file following the markdown syntax -->
-   
-    
-  
     
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p>This stylesheet produces a simple markdown file from TEI XML input</xd:p>
+            <xd:p>This stylesheet produces a simple markdown file from TEI XML input for every div in the body of the document</xd:p>
         </xd:desc>
     </xd:doc>
-    <xsl:output encoding="UTF-8" indent="no" method="text" name="txt" media-type="text/plain" omit-xml-declaration="yes"/>
-    <xsl:strip-space elements="*"/>
 
     <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
     <xsl:variable name="vgFileUrl"
-        select="concat('https://rawgit.com/tillgrallert/digital-haqaiq/master/xml/', tokenize(base-uri(), '/')[last()])"/>
+        select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>
     <xsl:variable name="vN" select="'&#x0A;'"/>
     <xsl:param name="pLang" select="'ar'"/>
 
@@ -116,7 +109,7 @@
         <xsl:text> </xsl:text>
     </xsl:template>
     <xsl:template match="text()" mode="mPlainText">
-        <xsl:text> </xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text> </xsl:text>
+        <!--<xsl:text> </xsl:text>--><xsl:value-of select="normalize-space(.)"/><!--<xsl:text> </xsl:text>-->
     </xsl:template>
 
     <!-- prevent notes in div/head from producing output -->
