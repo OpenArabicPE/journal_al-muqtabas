@@ -32,8 +32,10 @@ Duncan Paterson pointed me to the Zotero fork [Juris-M](https://juris-m.github.i
 
 # MODS (Metadata Object Description Schema)
 
-The standard is maintained by the [Network Development and MARC Standards Office](http://www.loc.gov/marc/ndmso.html) of the Library of Congress with input from users.
-It is written in XML
+The [MODS standard](http://www.loc.gov/standards/mods/) is maintained by the [Network Development and MARC Standards Office](http://www.loc.gov/marc/ndmso.html) of the Library of Congress with input from users.
+It is written in XML.
+
+I have written an XSLT stylesheet to generate MODS from the TEI source: [`Tei2Mods-issues.xsl`](xslt/Tei2Mods-issues.xsl)
 
 # BibTeX
 
