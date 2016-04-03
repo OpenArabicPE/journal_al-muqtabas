@@ -26,13 +26,11 @@
 
     <xsl:template match="/">
         <xsl:result-document href="../metadata/{$vFileId}.MODS.XML" method="xml">
-            <!--<xsl:element name="modsCollection">
-                <xsl:attribute name="xsi:schemaLocation" select="'http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd'"/>-->
             <modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
                 <!-- construct MODS -->
                 <xsl:apply-templates select="descendant::tei:text/tei:body/descendant::tei:div"/>
             </modsCollection>
-<!---->        </xsl:result-document>
+        </xsl:result-document>
     </xsl:template>
 
 
@@ -65,7 +63,7 @@
         <xsl:variable name="vPublisher"
             select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
 
-        <mods id="{concat(@xml:id,'-mods')}">
+        <mods id="{concat($vFileId,'-',@xml:id,'-mods')}">
             <titleInfo xml:lang="{$vLang}">
                 <title>
                     <xsl:value-of select="$vArticleTitle"/>
