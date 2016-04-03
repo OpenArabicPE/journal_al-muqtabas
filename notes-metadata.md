@@ -32,10 +32,15 @@ Duncan Paterson pointed me to the Zotero fork [Juris-M](https://juris-m.github.i
 
 # MODS (Metadata Object Description Schema)
 
-The [MODS standard](http://www.loc.gov/standards/mods/) is maintained by the [Network Development and MARC Standards Office](http://www.loc.gov/marc/ndmso.html) of the Library of Congress with input from users.
-It is written in XML.
+The [MODS standard](http://www.loc.gov/standards/mods/) is expressed in XML and maintained by the [Network Development and MARC Standards Office](http://www.loc.gov/marc/ndmso.html) of the Library of Congress with input from users. Compared to BibTeX MODS has he advantage of being properly standardised, human and machine readable, and much better suited to include all the needed bibliographic information.
 
 I have written an XSLT stylesheet to generate MODS from the TEI source: [`Tei2Mods-issues.xsl`](xslt/Tei2Mods-issues.xsl)
+
+MODS also serves as the intermediary format for the free [bibutils suite](https://sourceforge.net/projects/bibutils/) of conversions between bibliographic metadata formats (including BibTeX) which is under constant development and released under a GNU/GPL (General Public License). `Tei2Mods-issues.xsl` and `bibutils` provide a means to automatically generate a large number of bibliographic formats to suit the reference manager one is working with; e.g. to generate EndNote (refer-format) one only needs the following terminal command:
+
+~~~
+$xml2end MODS.xml > output_file.end
+~~~
 
 # BibTeX
 
