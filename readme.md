@@ -183,7 +183,9 @@ A detailed description of the web display is available [here](notes-web-display.
 
 # 6. Deliverable: Bibliographic metadata / index
 
-Bibliographic metadata for every article in Majallat al-Muqtabas is provided as individual BibTeX file in the sub-folder [`metadata`](metadata/). The metadata includes a URL pointing to the webview of this item and the webview, in turn, includes a link to the BibTeX file for every article.
+Bibliographic metadata for every article in Majallat al-Muqtabas is provided in two formats: BibTeX and MODS in the sub-folder [`metadata`](metadata/). The metadata includes a URL pointing to the webview of this item and the webview, in turn, includes links to the metadata files for every article.
+
+## 6.1 BibTeX
 
 <!-- Added reference to principles of minimal computing etc.  -->
 [BibTeX](http://www.bibtex.org/Format/) is a plain text format which has been around for more than 30 years and which is widely supported by reference managers. Thus it seems to be a safe bet to preserve and exchange minimal bibliographic data. The repository currently contains two XSLT stylesheets to automatically generate BibTeX files from the TEI source:
@@ -201,7 +203,15 @@ There are, however, a number of problems with the format:
     + periodicals are not perceived as having different editions or print-runs
     + non-Gregorian calendars cannot be added.
 
-As the webview or reading edition is implemented on the issue level and as we have currently no plans to implement and host a database on the backend, *Digital Muqtabas* needed a way to navigate and browse all articles, authors etc. To this end, we have set up the public [Zotero group "Digital Muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/digital-muqtabas/items/). It is updated by means of the BibTeX files.
+## 6.2 MODS (Metadata Object Description Schema)
+
+The [MODS standard](http://www.loc.gov/standards/mods/) is expressed in XML and maintained by the [Network Development and MARC Standards Office](http://www.loc.gov/marc/ndmso.html) of the Library of Congress with input from users.
+
+I have written an XSLT stylesheet to generate MODS from the TEI source: [`Tei2Mods-issues.xsl`](xslt/Tei2Mods-issues.xsl)
+
+## 6.3 Index by means of a Zotero group
+
+As the webview or reading edition is implemented on the issue level and as we have currently no plans to implement and host a database on the backend, *Digital Muqtabas* needed a way to navigate and browse all articles, authors etc. To this end, we have set up the public [Zotero group "Digital Muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/digital-muqtabas/items/). It can updated by means of the MODS or BibTeX files. Updating from MODS is the preferred method since it is the more expressive format.
 
 [Zotero groups](https://www.zotero.org/groups) are great way to share bibliographic metadata. Hosted by the Roy Rosenzweig Center for History and Media, they allow for public access to structured bibliographic metadata through a web interface. Of course they also integrate with the free and open-source reference manager [Zotero](https://www.zotero.org). All one needs is a free Zotero account and either the Zotero plug-in for the Firefox and Chrome browsers or the Zotero standalone version for Mac OSX and Linux. One can then join the group and sync all data to the local installation of Zotero, which means that, similar to the webview and all other components of this edition, bibliographic metadata can be browsed and searched through a graphical user interface without a continuous internet connection.
 
