@@ -1,7 +1,7 @@
 ---
 title: "Readme: Digial Muqtabas"
 author: Till Grallert
-date: 2016-02-26
+date: 2016-04-04 01:42:27
 ---
 
 Quick links: [Webview *al-Muqtabas* 6(1) (text, facsimile)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml), [Zotero group "Digital Muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/digital-muqtabas/items/)
