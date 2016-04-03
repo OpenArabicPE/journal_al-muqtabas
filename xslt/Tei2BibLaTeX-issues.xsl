@@ -11,8 +11,8 @@
         + add information on edition: i.e. TEI edition
         + add information on collaborators on the digital edition
         comment: this information cannot be added to BibTeX for articles appart from the generic "annote" tag -->
-    
-    
+
+
     <!-- parameter to select the language of some fields (if available): 'ar-Latn-x-ijmes', 'ar', 'en' etc. -->
     <xsl:param name="pLang" select="'ar'"/>
 
@@ -23,21 +23,27 @@
 
     <xsl:template match="/">
         <xsl:result-document href="../metadata/{$vFileId}.bib" method="text">
-            <xsl:text>%% This BibLaTeX bibliography file was created by automatic conversion from TEI XML</xsl:text><xsl:value-of select="$vN"/>
+            <xsl:text>%% This BibLaTeX bibliography file was created by automatic conversion from TEI XML</xsl:text>
+            <xsl:value-of select="$vN"/>
             <!-- some metadata on the file itself -->
-            <xsl:text>%% Created at </xsl:text><xsl:value-of select="current-dateTime()"/><xsl:value-of select="$vN"/>
-            <xsl:text>%% Saved with string encoding Unicode (UTF-8) </xsl:text><xsl:value-of select="$vN"/><xsl:value-of select="$vN"/>
+            <xsl:text>%% Created at </xsl:text>
+            <xsl:value-of select="current-dateTime()"/>
+            <xsl:value-of select="$vN"/>
+            <xsl:text>%% Saved with string encoding Unicode (UTF-8) </xsl:text>
+            <xsl:value-of select="$vN"/>
+            <xsl:value-of select="$vN"/>
             <!-- construct BibText -->
             <xsl:apply-templates select="descendant::tei:text/tei:body/descendant::tei:div"/>
         </xsl:result-document>
     </xsl:template>
 
-    
+
     <xsl:template
         match="tei:div[@type = 'section'][not(ancestor::tei:div[@type = 'article'])] | tei:div[@type = 'article'][not(ancestor::tei:div[@type = 'bill'])] | tei:div[@type = 'bill']">
         <xsl:variable name="vLang" select="$pLang"/>
         <!-- variables identifying the digital surrogate -->
-        <xsl:variable name="vTitleStmt" select="ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt"/>
+        <xsl:variable name="vFileDesc"
+            select="ancestor::tei:TEI/tei:teiHeader/tei:fileDesc"/>
         <!-- Need information on edition, date of edition, editors, transcribers etc.  -->
         <!-- variables identifying the original source -->
         <xsl:variable name="vBiblStructSource"
@@ -80,17 +86,18 @@
         </xsl:variable>
         <xsl:variable name="vPubPlace"
             select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
-        <xsl:variable name="vPublisher" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
+        <xsl:variable name="vPublisher"
+            select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
         <!-- unfortunately BibLaTeX uses a controlled vocabulary for languages that is not the same as @xml:lang or @lang -->
         <xsl:variable name="vLangSource">
             <xsl:choose>
-                <xsl:when test="@xml:lang='ar'">
+                <xsl:when test="@xml:lang = 'ar'">
                     <xsl:text>arabic</xsl:text>
                 </xsl:when>
-                <xsl:when test="@xml:lang='en'">
+                <xsl:when test="@xml:lang = 'en'">
                     <xsl:text>english</xsl:text>
                 </xsl:when>
-                <xsl:when test="@xml:lang='fr'">
+                <xsl:when test="@xml:lang = 'fr'">
                     <xsl:text>french</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
@@ -99,66 +106,89 @@
             </xsl:choose>
         </xsl:variable>
 
-            <xsl:text>@ARTICLE{</xsl:text>
-            <!-- BibTextKey -->
-            <xsl:value-of select="concat($vFileId,'-',@xml:id)"/><xsl:text>, </xsl:text><xsl:value-of select="$vN"/>
-            <!-- author information -->
-            <xsl:if test="child::tei:byline/tei:persName">
-                <xsl:text>author = {</xsl:text>
-                <xsl:value-of select="$vAuthor"/>
-                <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            </xsl:if>
-            <!-- editor information -->
-            <xsl:text>editor = {</xsl:text>
-            <xsl:value-of
-                select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]/tei:surname"/>
-            <xsl:text>, </xsl:text>
-            <xsl:value-of
-                select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]/tei:forename"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <!-- titles -->
-            <xsl:text>title = {</xsl:text>
-            <xsl:value-of select="$vArticleTitle"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <xsl:text>journaltitle = {</xsl:text>
-            <xsl:value-of select="$vPublicationTitle"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <!-- imprint -->
-            <xsl:text>volume = {</xsl:text>
-            <xsl:value-of select="$vVolume"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <xsl:text>number = {</xsl:text>
-            <xsl:value-of select="$vIssue"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <xsl:text>pages = {</xsl:text>
-            <xsl:value-of select="$vPages"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <xsl:text>publisher = {</xsl:text>
-            <xsl:value-of select="$vPublisher"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <xsl:text>location = {</xsl:text>
-            <xsl:value-of select="$vPubPlace"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <xsl:text>langid = {</xsl:text>
-            <xsl:value-of select="$vLangSource"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <!-- publication dates -->
-            <xsl:text>date = {</xsl:text>
-            <xsl:value-of select="$vPublDate/@when"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <!-- URL -->
-            <xsl:text>url = {</xsl:text>
-            <xsl:value-of select="$vUrl"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-             <xsl:text>urldate = {</xsl:text>
-             <xsl:value-of select=" format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <!-- add information on digital edition -->
-            <xsl:text>edition = {</xsl:text>
-            <xsl:text>digital TEI edition, </xsl:text><xsl:value-of select="year-from-date(current-date())"/>
-            <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
-            <!-- closing the entry -->
-            <xsl:text>}</xsl:text><xsl:value-of select="$vN"/>
+        <xsl:text>@ARTICLE{</xsl:text>
+        <!-- BibTextKey -->
+        <xsl:value-of select="concat($vFileId, '-', @xml:id)"/>
+        <xsl:text>, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <!-- author information -->
+        <xsl:if test="child::tei:byline/tei:persName">
+            <xsl:text>author = {</xsl:text>
+            <xsl:value-of select="$vAuthor"/>
+            <xsl:text>}, </xsl:text>
+            <xsl:value-of select="$vN"/>
+        </xsl:if>
+        <!-- editor information -->
+        <xsl:text>editor = {</xsl:text>
+        <xsl:value-of
+            select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]/tei:surname"/>
+        <xsl:text>, </xsl:text>
+        <xsl:value-of
+            select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]/tei:forename"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <!-- titles -->
+        <xsl:text>title = {</xsl:text>
+        <xsl:value-of select="$vArticleTitle"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <xsl:text>journaltitle = {</xsl:text>
+        <xsl:value-of select="$vPublicationTitle"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <!-- imprint -->
+        <xsl:text>volume = {</xsl:text>
+        <xsl:value-of select="$vVolume"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <xsl:text>number = {</xsl:text>
+        <xsl:value-of select="$vIssue"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <xsl:text>pages = {</xsl:text>
+        <xsl:value-of select="$vPages"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <xsl:text>publisher = {</xsl:text>
+        <xsl:value-of select="$vPublisher"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <xsl:text>location = {</xsl:text>
+        <xsl:value-of select="$vPubPlace"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <xsl:text>langid = {</xsl:text>
+        <xsl:value-of select="$vLangSource"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <!-- publication dates -->
+        <xsl:text>date = {</xsl:text>
+        <xsl:value-of select="$vPublDate/@when"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <!-- URL -->
+        <xsl:text>url = {</xsl:text>
+        <xsl:value-of select="$vUrl"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <xsl:text>urldate = {</xsl:text>
+        <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <!-- add information on digital edition -->
+        <xsl:text>edition = {</xsl:text>
+        <xsl:text>digital TEI edition, </xsl:text>
+        <xsl:value-of select="year-from-date(current-date())"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <!-- information on licence -->
+        <xsl:text>rights = {</xsl:text>
+        <xsl:value-of select="$vFileDesc/tei:publicationStmt/tei:availability/tei:licence/@target"/>
+        <xsl:text>}, </xsl:text>
+        <xsl:value-of select="$vN"/>
+        <!-- closing the entry -->
+        <xsl:text>}</xsl:text>
+        <xsl:value-of select="$vN"/>
         <xsl:value-of select="$vN"/>
     </xsl:template>
 
