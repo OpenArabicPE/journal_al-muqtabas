@@ -4,15 +4,25 @@
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:fn="http://www.w3.org/2005/xpath-functions" extension-element-prefixes="exsl msxsl"
     xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="xsl tei xd eg fn #default">
 
-    <!-- import teibp.xsl, which allows templates, 
-         variables, and parameters from teibp.xsl 
-         to be overridden here. -->
-    
-    <!-- <xsl:import href="teibp.xsl"/> -->
-
-    <!-- to translate numerical strings into Eastern Arabic numerals use "translate($vCount,'1234567890','١٢٣٤٥٦٧٨٩٠')" -->
-
     <!-- provide information based on the sourceDesc in the teiHeader-->
+
+    <xsl:template match="tei:sourceDesc">
+        <div>
+            <xsl:apply-templates/>
+            <!-- $vFileId has been defined in the main stylesheet -->
+            <span class="cLinks" lang="en">
+                    <xsl:text>Bibliographic metadata for this item: </xsl:text>
+                    <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
+                    <a href="../metadata/{$vFileId}.bib" download="{$vFileId}.bib" class="cLinkBibTex">BibTeX</a>
+                    <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
+                    <a href="../metadata/{$vFileId}.MODS.xml" download="{$vFileId}.MODS.xml" class="cLinkBibTex">MODS</a>
+            </span>
+            <span class="cLinks" lang="en">
+                <a href="{ancestor::tei:fileDesc/tei:publicationStmt/tei:availability/tei:licence/@target}">Licence information</a>
+            </span>
+        </div>
+    </xsl:template>
+    
     <xsl:template match="tei:sourceDesc/tei:biblStruct[child::tei:monogr/tei:title[@level = 'j']]">
         <div class="cSource">
             <xsl:for-each select="child::tei:monogr/tei:title[@level = 'j'][not(@type = 'sub')]">
