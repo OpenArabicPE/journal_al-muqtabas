@@ -19,11 +19,6 @@
     <xsl:variable name="vgFileUrl"
         select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>
     <xsl:variable name="vN" select="'&#x0A;'"/>
-
-    <xsl:template match="/">
-            <xsl:apply-templates select="descendant::tei:text/tei:body/descendant::tei:div"/>
-    </xsl:template>
-
     
     <xsl:template name="tDiv2Bib">
         <xsl:param name="pInput"/>
