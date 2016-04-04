@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:tss="http://www.thirdstreetsoftware.com/SenteXML-1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:mods="http://www.loc.gov/mods/v3"
     xmlns="http://www.loc.gov/mods/v3"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -22,20 +21,10 @@
     <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
     <xsl:variable name="vgFileUrl"
         select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>
-    <xsl:variable name="vN" select="'&#x0A;'"/>
-
-    <xsl:template match="/">
-        <xsl:result-document href="../metadata/{$vFileId}.MODS.XML" method="xml">
-            <modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
-                <!-- construct MODS -->
-                <xsl:apply-templates select="descendant::tei:text/tei:body/descendant::tei:div"/>
-            </modsCollection>
-        </xsl:result-document>
-    </xsl:template>
 
 
-    <xsl:template
-        match="tei:div[@type = 'section'][not(ancestor::tei:div[@type = 'article'])] | tei:div[@type = 'article'][not(ancestor::tei:div[@type = 'bill'])] | tei:div[@type = 'bill']">
+    <xsl:template name="tDiv2Mods">
+        <xsl:param name="pInput"/>
         <xsl:variable name="vLang" select="$pLang"/>
         <!-- variables identifying the digital surrogate -->
         <xsl:variable name="vFileDesc" select="ancestor::tei:TEI/tei:teiHeader/tei:fileDesc"/>
