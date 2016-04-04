@@ -12,15 +12,20 @@
 
     <!-- to translate numerical strings into Eastern Arabic numerals use "translate($vCount,'1234567890','١٢٣٤٥٦٧٨٩٠')" -->
 
-    <!-- provide information based on the sourceDesc -->
-    <xsl:template match="tei:biblStruct[tei:monogr/tei:title[@level = 'j']]">
+    <!-- provide information based on the sourceDesc in the teiHeader-->
+    <xsl:template match="tei:sourceDesc/tei:biblStruct[child::tei:monogr/tei:title[@level = 'j']]">
         <div class="cSource">
-            <xsl:for-each select="tei:monogr/tei:title[@level = 'j'][not(@type = 'sub')]">
-                <xsl:apply-templates select="."/>
+            <xsl:for-each select="child::tei:monogr/tei:title[@level = 'j'][not(@type = 'sub')]">
+                <xsl:apply-templates select="." mode="mBibl"/>
             </xsl:for-each>
         </div>
     </xsl:template>
-    <xsl:template match="tei:monogr/tei:title[@level = 'j'][not(@type = 'sub')]">
+    
+<!--    <xsl:template match="tei:monogr/tei:title[@level = 'j'][not(@type = 'sub')]">
+        <xsl:text>hello</xsl:text>
+    </xsl:template>-->
+    
+    <xsl:template match="tei:monogr/tei:title[@level = 'j'][not(@type = 'sub')]" mode="mBibl">
         <xsl:variable name="vLang" select="@xml:lang"/>
         <div>
             <xsl:call-template name="templHtmlAttrLang">
