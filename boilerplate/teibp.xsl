@@ -539,21 +539,27 @@
             </xsl:choose>
             <xsl:choose>
                 <xsl:when test="parent::tei:div[@type='section'] and not(ancestor::tei:div[@type='article']) and not(ancestor::tei:div[@type='bill'])">
-                    <span class="cLinks">
+                    <span class="cLinks" lang="en">
                         <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
                         <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" download="{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
+                        <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
+                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.MODS.xml" download="{$vFileId}-{parent::node()/@xml:id}.MODS.xml" class="cLinkBibTex">MODS</a>
                     </span>
                 </xsl:when>
                 <xsl:when test="parent::tei:div[@type='article'] and not(ancestor::tei:div[@type='bill'])">
-                    <span class="cLinks">
+                    <span class="cLinks" lang="en">
                         <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
                         <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" download="{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
+                        <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
+                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.MODS.xml" download="{$vFileId}-{parent::node()/@xml:id}.MODS.xml" class="cLinkBibTex">MODS</a>
                     </span>
                 </xsl:when>
                 <xsl:when test="parent::tei:div[@type='bill']">
-                    <span class="cLinks">
+                    <span class="cLinks" lang="en">
                         <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
                         <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" download="{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
+                        <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
+                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.MODS.xml" download="{$vFileId}-{parent::node()/@xml:id}.MODS.xml" class="cLinkBibTex">MODS</a>
                     </span>
                 </xsl:when>
             </xsl:choose>
@@ -575,7 +581,7 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
-            <span class="cId cNumber">
+            <span class="cId cNumber" lang="en">
                 <xsl:choose>
                     <xsl:when test="@xml:id">
                         <a href="#{@xml:id}" class="cLinkSelf cNumber"><xsl:value-of select="$vCount"/></a>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns="http://www.tei-c.org/ns/1.0"
+<xsl:stylesheet 
+    xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xd="http://www.pnp-software.com/XSLTdoc" 
+    xmlns="http://www.tei-c.org/ns/1.0"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs xd html"
     version="2.0">
 
@@ -11,16 +15,16 @@
                     <tei:gi>num</tei:gi> element with the <tei:att>value</tei:att> attribute stating
                 the value in normalised form. The numeral is then converted into Arabic script to
                 reflect the original type-setting conventions of the time.</xd:p>
+            <xd:p>IMPORTANT NOTE: The stylesheet only works reliably if all <tei:gi>num</tei:gi> elements are not prefixed by "tei:"</xd:p>
         </xd:desc>
     </xd:doc>
-    <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no"
-        version="1.0"/>
+    <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
 
-    <xsl:param name="pUrlInput" select="'../xml'"/>
+<!--    <xsl:param name="pUrlInput" select="'../xml'"/>-->
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:param name="pAuthorXmlId" select="'pers_TG'"/>
     
-    <xsl:variable name="vUrlInput" select="concat($pUrlInput, '?select=*.xml;recurse=yes')"/>
+   <!-- <xsl:variable name="vUrlInput" select="concat($pUrlInput, '?select=*.xml;recurse=yes')"/>-->
 
 
     <xsl:variable name="vStringTranscribeFromIjmes" select="'btḥḫjdrzsṣḍṭẓʿfqklmnhāūīwy0123456789'"/>
@@ -56,7 +60,7 @@
 
     <!-- test for commatta in numbers -->
     <xsl:template
-        match="tei:num[following-sibling::node()[1] = '. ' and name(following-sibling::node()[2]) = 'tei:num']" priority="15">
+        match="tei:num[following-sibling::node()[1] = '. ' and name(following-sibling::node()[2]) = 'num']" priority="150">
         <xsl:variable name="val1" select="@value"/>
         <xsl:variable name="val2" select="following-sibling::node()[2]/@value"/>
         <xsl:variable name="value" select="number(concat($val1, '.', $val2))"/>
@@ -70,15 +74,15 @@
     </xsl:template>
     <!-- omit output for following tei:num -->
     <xsl:template
-        match="tei:num[preceding-sibling::node()[1] = '. ' and name(preceding-sibling::node()[2]) = 'tei:num']" priority="16"/>
+        match="tei:num[preceding-sibling::node()[1] = '. ' and name(preceding-sibling::node()[2]) = 'num']" priority="160"/>
     <!-- omit output for following text()='. ' -->
     <xsl:template
-        match="node()[self::text() = '. ' and name(preceding-sibling::node()[1]) = 'tei:num' and name(following-sibling::node()[1]) = 'tei:num']"/>
+        match="node()[self::text() = '. ' and name(preceding-sibling::node()[1]) = 'num' and name(following-sibling::node()[1]) = 'num']"/>
 
     <!-- test for large numbers divided into groups of three integers by a point. -->
     <xsl:template
-        match="tei:num[following-sibling::node()[1] = ' . ' and name(following-sibling::node()[2]) = 'tei:num']"
-        priority="6">
+        match="tei:num[following-sibling::node()[1] = ' . ' and name(following-sibling::node()[2]) = 'num']"
+        priority="60">
         <xsl:variable name="val1" select="@value"/>
         <xsl:variable name="val2" select="following-sibling::node()[2]/@value"/>
         <xsl:variable name="value" select="number(concat($val1, $val2))"/>
@@ -91,8 +95,8 @@
         </xsl:element>
     </xsl:template>
     <xsl:template
-        match="tei:num[following-sibling::node()[1] = ' . ' and name(following-sibling::node()[2]) = 'tei:num' and following-sibling::node()[3] = ' . ' and name(following-sibling::node()[4]) = 'tei:num']"
-        priority="8">
+        match="tei:num[following-sibling::node()[1] = ' . ' and name(following-sibling::node()[2]) = 'num' and following-sibling::node()[3] = ' . ' and name(following-sibling::node()[4]) = 'num']"
+        priority="80">
         <xsl:variable name="val1" select="@value"/>
         <xsl:variable name="val2" select="following-sibling::node()[2]/@value"/>
         <xsl:variable name="val3" select="following-sibling::node()[4]/@value"/>
@@ -106,8 +110,8 @@
         </xsl:element>
     </xsl:template>
     <xsl:template
-        match="tei:num[following-sibling::node()[1] = ' . ' and name(following-sibling::node()[2]) = 'tei:num' and following-sibling::node()[3] = ' . ' and name(following-sibling::node()[4]) = 'tei:num' and following-sibling::node()[5] = ' . ' and name(following-sibling::node()[6]) = 'tei:num']"
-        priority="10">
+        match="tei:num[following-sibling::node()[1] = ' . ' and name(following-sibling::node()[2]) = 'num' and following-sibling::node()[3] = ' . ' and name(following-sibling::node()[4]) = 'num' and following-sibling::node()[5] = ' . ' and name(following-sibling::node()[6]) = 'num']"
+        priority="100">
         <xsl:variable name="val1" select="@value"/>
         <xsl:variable name="val2" select="following-sibling::node()[2]/@value"/>
         <xsl:variable name="val3" select="following-sibling::node()[4]/@value"/>
@@ -124,18 +128,18 @@
     
     <!-- omit output for following tei:num -->
     <xsl:template
-        match="tei:num[preceding-sibling::node()[1] = ' . ' and name(preceding-sibling::node()[2]) = 'tei:num']" priority="7"/>
+        match="tei:num[preceding-sibling::node()[1] = ' . ' and name(preceding-sibling::node()[2]) = 'num']" priority="70"/>
     <xsl:template
-        match="tei:num[preceding-sibling::node()[1] = ' . ' and name(preceding-sibling::node()[2]) = 'tei:num' and preceding-sibling::node()[3] = ' . ' and name(preceding-sibling::node()[4]) = 'tei:num']" priority="9"/>
+        match="tei:num[preceding-sibling::node()[1] = ' . ' and name(preceding-sibling::node()[2]) = 'num' and preceding-sibling::node()[3] = ' . ' and name(preceding-sibling::node()[4]) = 'num']" priority="90"/>
     <xsl:template
-        match="tei:num[preceding-sibling::node()[1] = ' . ' and name(preceding-sibling::node()[2]) = 'tei:num' and preceding-sibling::node()[3] = ' . ' and name(preceding-sibling::node()[4]) = 'tei:num' and preceding-sibling::node()[5] = ' . ' and name(preceding-sibling::node()[6]) = 'tei:num']" priority="11"/>
+        match="tei:num[preceding-sibling::node()[1] = ' . ' and name(preceding-sibling::node()[2]) = 'num' and preceding-sibling::node()[3] = ' . ' and name(preceding-sibling::node()[4]) = 'num' and preceding-sibling::node()[5] = ' . ' and name(preceding-sibling::node()[6]) = 'num']" priority="110"/>
     
     <!-- omit output for following text()=' . ' -->
     <xsl:template
-        match="node()[self::text() = ' . ' and name(preceding-sibling::node()[1]) = 'tei:num' and name(following-sibling::node()[1]) = 'tei:num']"/>
+        match="node()[self::text() = ' . ' and name(preceding-sibling::node()[1]) = 'num' and name(following-sibling::node()[1]) = 'num']"/>
     
     <!-- add the additional attributes to existing tei:num -->
-    <xsl:template match="tei:num" priority="1">
+    <xsl:template match="tei:num" priority="10">
         <xsl:copy>
             <xsl:attribute name="type" select="'auto-markup'"/>
             <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>

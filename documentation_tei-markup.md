@@ -184,7 +184,8 @@ each part of the edition down to, at least, the paragraph level should be addres
     + all other elements:
         * combine the element's name as key with the position of the element in the document tree and an automatically generated ID (through XPath function `generate-id()`) separated by a period: `div_12.d1e1895`
         * note that the first number after the underscore cannot and should be used to identify the position of an element in the tree, as these will most certainly change over time, while the `@xml:id` shall be stable.
-        * the process of assigning IDs is automated through the XSLT [Tei-GenerateIds](xslt/Tei-GenerateIds.xsl) and it needs to be run everytime someone has added mark-up to the file.
+        * the process of assigning IDs is automated through the XSLT [`Tei-GenerateIds.xsl`](xslt/Tei-GenerateIds.xsl) and it needs to be run everytime someone has added mark-up to the file.
+
 <!-- + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>` -->
 
 # Facsimiles
@@ -411,7 +412,7 @@ Imagine, someone bought <measureGrp><measure commodity="wheat" quantity="2" unit
 
 ## Numbers and numerals
 
-The transcribers at *shamela.ws* transcribed all numbers---the originals use the eastern Arabic numerals common in the Levant---into Arabic numerals; i.e. when the original read "١٢٨٥" the transcription recorded "1285". To reconstruct the original without loosing the convenience of machine-readability, I wrote a small XSLT script ([Tei-MarkupNumerals](xslt/Tei-MarkupNumerals.xsl)) that uses regex to identify all numerical values in `<tei:text>`. It wraps the result in a `<num>` element with the original value as `@value` and converts the number to eastern Arabic numerals. It also indicates the responsible editor with `@resp` and the method of generating the mark-up as `@type="auto-markup"` e.g.
+The transcribers at *shamela.ws* transcribed all numbers---the originals use the eastern Arabic numerals common in the Levant---into Arabic numerals; i.e. when the original read "١٢٨٥" the transcription recorded "1285". To reconstruct the original without loosing the convenience of machine-readability, I wrote a small XSLT script ([`Tei-MarkupNumerals`](xslt/Tei-MarkupNumerals.xsl)) that uses regex to identify all numerical values in `<tei:text>`. It wraps the result in a `<num>` element with the original value as `@value` and converts the number to eastern Arabic numerals. It also indicates the responsible editor with `@resp` and the method of generating the mark-up as `@type="auto-markup"` e.g.
 
 - original: 1285
 - markup: `<num resp="#pers_TG" type="auto-markup" value="1285" xml:lang="ar">١٢٨٥</num>` 
@@ -421,7 +422,7 @@ The transcribers at *shamela.ws* transcribed all numbers---the originals use the
 - original 1.000.245
 - markup: `<num value="1">١</num> . <num value="000">٠٠٠</num> . <num value="245">٢٤٥</num>`, which is displayed as ١ . ٠٠٠ . ٢٤٥
 
-A second XSLT stylesheet ([Tei-MarkupNumerals-Correction](xslt/Tei-MarkupNumerals-Correction.xsl))) corrects this fault in the original conversion.
+A second XSLT stylesheet ([`Tei-MarkupNumerals-Correction`](xslt/Tei-MarkupNumerals-Correction.xsl)) corrects this fault in the original conversion.
 
 ## Persons, Places, Organisations
 
@@ -442,7 +443,7 @@ A second XSLT stylesheet ([Tei-MarkupNumerals-Correction](xslt/Tei-MarkupNumeral
 
 There are two types of references to intellectual works: explicit and implicit ones. Take for example the reference in [*al-Muqtabas* 6/2](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_23.TEIP5.xml#div_34.d1e3136) to a book by an American author from 1888 that had described a technocratic utopia at the end of the 20th century. This, obviously is a direct, yet implicit, reference to Bellamy's "Looking backward, 2000-1887". How should that be encoded?
 
-Explicit references are much easier case:
+Explicit references are the much easier case:
 
 ### 1. encoding with `<bibl>` and its children
 
