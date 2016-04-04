@@ -152,8 +152,8 @@
                 <xsl:value-of select="$vFacsSource"/>
             </a>
         </span>
-        <span class="-teibp-pbFacs">
-            <a class="gallery-facs" rel="prettyPhoto[gallery1]">
+        <span class="-teibp-pbFacs" lang="en">
+            <a class="gallery-facs" rel="prettyPhoto[gallery1]" lang="en">
                 <xsl:attribute name="onclick">
                     <xsl:value-of select="concat('showFacs(', $apos, $n, $apos, ',', $apos, $vFacsUrl, $apos, ',', $apos, $id, $apos, ')')"/>
                 </xsl:attribute>
