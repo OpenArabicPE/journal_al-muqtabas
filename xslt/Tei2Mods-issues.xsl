@@ -6,7 +6,7 @@
     xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" name="xml"
         version="1.0" xpath-default-namespace="http://www.loc.gov/mods/v3"/>
-    <xsl:strip-space elements="*"/>
+
 
 
     <!-- this stylesheet generates a MODS XML file with bibliographic metadata for each <div> in the body of the TEI source file. File names are based on the source's @xml:id and the @xml:id of the <div>. -->
@@ -19,8 +19,8 @@
         select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>-->
 
     <xsl:template match="/">
-        <xsl:result-document href="../metadata/{$vFileId}.MODS.XML" method="xml">
-            <modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
+        <xsl:result-document href="../metadata/{$vgFileId}.MODS.XML" method="xml">
+            <modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 {$vgSchemaLocation}">
                 <!-- construct MODS -->
                 <xsl:apply-templates select="descendant::tei:text/tei:body/descendant::tei:div"/>
             </modsCollection>
