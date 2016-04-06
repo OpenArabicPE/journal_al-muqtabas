@@ -22,6 +22,10 @@ By linking images to the digital text, every reader can validate the quality of 
 
 The purpose and scope of the project is to provide an open, collaborative, referencable, and scholarly digital edition of Muḥammad Kurd ʿAlī's journal *al-Muqtabas*, which includes the full text, semantic mark-up, bibliographic metadata, and digital imagery. All files but the digital facsimiles are hosted on [GitHub](https://www.github.com).
 
+All deliverables and milestones will be covered in more detail in the following sections of this `readme.md`.
+
+## 1.1 Deliverables
+
 - Current deliverables:
     - Full text of 96 issues (c. 7000 pages) with semantic mark-up as TEI P5 XML with its own schema.
     - The text of digital edition links to open-access digital facsimiles if available (see below).
@@ -43,6 +47,41 @@ The most likely candidates for such follow-up projects are
     + [imagery of vol. 1 (1910) from hathitrust](http://hdl.handle.net/2027/njp.32101036074001), vol. 2 and 3 are available at AUB.
 - ʿAbdallah al-Nadīm's *majallat al-ustādh*, Cairo, 24 Aug 1892
     + [full text from shamela](http://shamela.ws/index.php/book/35118): 11337 views.
+
+## 1.2 Milestones
+
+1. Design a basic TEI schema; *done*
+2. Import everything from shamela and convert it to TEI XML; *done*
+3. Improve TEI mark-up: The following steps are independent of each other, need to be done on the issue / file level, and can be distributed across different editors. 
+    - Bibliographic metadata: volume, issue, page range
+    - Basic structural mark-up: sections, articles, heads, authors
+    - Page breaks and links to facsimiles
+4. Adapt TEI Boilerplate to the needs of Arabic periodicals; *done*
+5. Write XSLT to extract bibliographic metadata for every article in *al-Muqtabas*
+    1. Basic: BibTeX; *done*
+    2. Advanced: MODS; *done*
+6. Presentations to solicit feedback
+    - Leipzig, December : DH Workshop Persian and Arabic 
+
+## 1.3 Timeline / scheduled releases
+
+There is no proper release schedule yet but I conceive of version 1.0 as the first complete edition. 
+
+- version 0.1 shall be the first "official" release. It is scheduled for May/June 2016 and will include
+    1. TEI files of all at least one volume of *al-Muqtabas* (i.e. 12 issues / files) with structural mark-up of mastheads, sections, articles, and with page breaks linked to the facsimiles; for no other reason but interes in their content, we have started work on vol. 5 and 6, which are therefore the most likely release candidates;
+    2. MODS / BibTeX files for all issues, sections, and articles;
+    3. XSLT stylesheets for all necessary initial and periodic conversions;
+    4. XSLT, JS, and CSS for a webview.
+- versions 0.1 - 0.x: each completed volume of 11 to 12 issues / TEI files will warant an incremental release.
+- version 1.0 shall include
+    1. TEI files of all 96 issues of *al-Muqtabas* with structural mark-up of mastheads, sections, articles, and with page breaks linked to the facsimiles;
+    2. all the components of version 0.1
+
+<!-- - Project start: August 2015
+- Initial schema design: August 2015
+- Initial conversion: August 2015
+- Improvement of TEI XML: since September 2015
+- Initial adaptation of TEI Boilerplate: September/October 2015 -->
 
 
 # 2. The journal *al-Muqtabas*
