@@ -44,13 +44,13 @@
         </xsl:variable>
         <xsl:variable name="vAuthor">
                 <xsl:choose>
-                    <xsl:when test="child::tei:byline/tei:persName/tei:surname">
-                        <xsl:value-of select="child::tei:byline/tei:persName/tei:surname"/>
+                    <xsl:when test="tei:byline/descendant::tei:persName/tei:surname">
+                        <xsl:value-of select="tei:byline/descendant::tei:persName/tei:surname"/>
                         <xsl:text>, </xsl:text>
-                        <xsl:value-of select="child::tei:byline/tei:persName/tei:forename"/>
+                        <xsl:value-of select="tei:byline/descendant::tei:persName/tei:forename"/>
                     </xsl:when>
-                    <xsl:when test="child::tei:byline/tei:persName">
-                        <xsl:value-of select="child::tei:byline/tei:persName"/>
+                    <xsl:when test="tei:byline/descendant::tei:persName">
+                        <xsl:value-of select="tei:byline/descendant::tei:persName"/>
                     </xsl:when>
                 </xsl:choose>
         </xsl:variable>

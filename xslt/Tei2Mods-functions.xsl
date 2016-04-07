@@ -71,7 +71,7 @@
             <genre authority="local" xml:lang="en">journalArticle</genre>
             <genre authority="marcgt" xml:lang="en">article</genre>
             <!-- for each author -->
-            <xsl:for-each select="child::tei:byline/tei:persName">
+            <xsl:for-each select="child::tei:byline/descendant::tei:persName">
                 <name type="personal" xml:lang="{$vLang}">
                     <xsl:choose>
                         <xsl:when test="child::tei:surname">
