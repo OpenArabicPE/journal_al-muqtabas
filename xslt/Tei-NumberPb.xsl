@@ -16,9 +16,10 @@
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
 
     <xsl:param name="pEditor" select="'pers_TG'"/>
-    <xsl:variable name="vFirstPage" select="if(//tei:pb[not(@ed='shamela')][1]/@n) then(//tei:pb[not(@ed='shamela')][1]/@n) else(tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct//tei:biblScope[@unit='page']/@from)"/>
+    <!--<xsl:variable name="vFirstPage" select="if(//tei:pb[not(@ed='shamela')][1]/@n) then(//tei:pb[not(@ed='shamela')][1]/@n) else(tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct//tei:biblScope[@unit='page']/@from)"/>-->
 
     <xsl:template match="tei:pb[not(@ed = 'shamela')]">
+        <xsl:variable name="vFirstPage" select="if(ancestor::tei:text/descendant::tei:pb[not(@ed='shamela')][1]/@n) then(ancestor::tei:text/descendant::tei:pb[not(@ed='shamela')][1]/@n) else(tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct//tei:biblScope[@unit='page']/@from)"/>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:attribute name="ed">
