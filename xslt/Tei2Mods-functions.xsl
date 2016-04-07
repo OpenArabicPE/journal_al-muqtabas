@@ -25,7 +25,7 @@
     <xsl:variable name="vgSchemaLocation" select="'http://www.loc.gov/standards/mods/v3/mods-3-6.xsd'"/>
 
 
-    <xsl:template name="tDiv2Mods">
+    <xsl:template name="templDiv2Mods">
         <xsl:param name="pInput"/>
         <xsl:variable name="vLang" select="$pLang"/>
         <!-- variables identifying the digital surrogate -->

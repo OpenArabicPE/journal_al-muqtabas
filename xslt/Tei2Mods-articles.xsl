@@ -21,7 +21,7 @@
         <xsl:result-document href="../metadata/{concat($vgFileId,'-',@xml:id)}.MODS.xml" method="xml">
             <xsl:element name="modsCollection">
                 <xsl:attribute name="xsi:schemaLocation" select="concat('http://www.loc.gov/mods/v3 ',$vgSchemaLocation)"/>
-                <xsl:call-template name="tDiv2Mods">
+                <xsl:call-template name="templDiv2Mods">
                     <xsl:with-param name="pInput" select="."/>
                 </xsl:call-template>
             </xsl:element>

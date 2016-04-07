@@ -19,7 +19,7 @@
         select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>-->
 
     <xsl:template match="/">
-        <xsl:result-document href="../metadata/{$vgFileId}.MODS.XML" method="xml">
+        <xsl:result-document href="../metadata/{$vgFileId}.MODS.xml" method="xml">
             <modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 {$vgSchemaLocation}">
                 <!-- construct MODS -->
                 <xsl:apply-templates select="descendant::tei:text/tei:body/descendant::tei:div"/>
@@ -29,7 +29,7 @@
 
     <xsl:template
         match="tei:div[@type = 'section'][not(ancestor::tei:div[@type = 'article'])] | tei:div[@type = 'article'][not(ancestor::tei:div[@type = 'bill'])] | tei:div[@type = 'bill']">
-        <xsl:call-template name="tDiv2Mods">
+        <xsl:call-template name="templDiv2Mods">
             <xsl:with-param name="pInput" select="."/>
         </xsl:call-template>
     </xsl:template>
