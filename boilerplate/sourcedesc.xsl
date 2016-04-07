@@ -10,13 +10,10 @@
         <div>
             <xsl:apply-templates/>
             <!-- $vFileId has been defined in the main stylesheet -->
-            <span class="cLinks" lang="en">
-                    <xsl:text>Bibliographic metadata for this item: </xsl:text>
-                    <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
-                    <a href="../metadata/{$vFileId}.bib" download="{$vFileId}.bib" class="cLinkBibTex">BibTeX</a>
-                    <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
-                    <a href="../metadata/{$vFileId}.MODS.xml" download="{$vFileId}.MODS.xml" class="cLinkBibTex">MODS</a>
-            </span>
+            <xsl:call-template name="templBiblDataLinks">
+                <xsl:with-param name="pBiblUrl" select="concat('../metadata/',$vFileId)"/>
+                <xsl:with-param name="pLabelText" select="'Bibliographic metadata for this item: '"/>
+            </xsl:call-template>
             <span class="cLinks" lang="en">
                 <a href="{ancestor::tei:fileDesc/tei:publicationStmt/tei:availability/tei:licence/@target}">Licence information</a>
             </span>

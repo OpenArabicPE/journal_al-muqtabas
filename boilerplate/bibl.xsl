@@ -12,6 +12,8 @@
     xmlns:html="http://www.w3.org/1999/xhtml" 
     exclude-result-prefixes="xsl tei xd eg fn #default">
     
+    <!-- This stylesheet provides structured bibliographic metat data and links to such data -->
+    
     
     <xsl:param name="pgLang" select="'ar'"/>
     <xsl:variable name="vgBiblStructSource" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct"/>
@@ -45,5 +47,17 @@
             </xsl:attribute>
         </meta>
         <meta name="dc.date" content="{$vgPublicationDate}" />
+    </xsl:template>
+    
+    <xsl:template name="templBiblDataLinks">
+        <xsl:param name="pBiblUrl"/>
+        <xsl:param name="pLabelText"/>
+        <span class="cLinks" lang="en">
+            <xsl:value-of select="$pLabelText"/>
+            <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
+            <a href="{$pBiblUrl}.bib" download="{$pBiblUrl}.bib" target="_blank" class="cLinkBibTex">BibTeX</a>
+            <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
+            <a href="{$pBiblUrl}.MODS.xml" download="{$pBiblUrl}.MODS.xml" target="_blank" class="cLinkBibTex">MODS</a>
+        </span>
     </xsl:template>
 </xsl:stylesheet>
