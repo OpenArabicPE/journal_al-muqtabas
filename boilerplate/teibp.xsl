@@ -14,7 +14,7 @@
         </xd:desc>
     </xd:doc>
         <!-- import the standard TEI Boilerplate stylesheets -->
-    <xsl:include href="custom.xsl"/>
+    <xsl:include href="sourcedesc.xsl"/>
     <xsl:include href="xml-to-string.xsl"/>
     <!-- import the stylesheet formatting all bibliographic metadata -->
     <xsl:include href="bibl.xsl"/>
