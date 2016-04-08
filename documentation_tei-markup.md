@@ -429,7 +429,9 @@ A second XSLT stylesheet ([`Tei-MarkupNumerals-Correction`](xslt/Tei-MarkupNumer
 1. Persons:`<persName>`
     + How to encode this string: "حسين كاظم بك والي حلب الحالي" ? Should the information on his position be included in the `<persName>`?
 2. Places: `<placeName>`
-    + How to encode this string: "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"? الفيحاء or الشهباء are clearly references to places by name, i.e. Damascus and Aleppo, but are they a `<placeName>`?
+    + How to encode this string: "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"?
+    +  الفيحاء (*al-fayḥāʾ*) and الشهباء (*al-shahbāʾ*) are clearly references to places by name, i.e. Damascus and Aleppo, but are they a `<placeName>`?
+    +  Beirut is commonly referred to as الثغر (*al-thaghr*), the seaport.
 3. Organisations: `<orgName>`
 
 ## Dates and calendars
