@@ -331,7 +331,7 @@
     </xsl:template>
 
     <!-- prevent output from sections of articles and divisions of legal texts -->
-    <xsl:template match="tei:div[ancestor::tei:div[@type = 'article']] | tei:div[ancestor::tei:div[@type = 'bill']]"/>
+    <xsl:template match="tei:div[ancestor::tei:div[@type = 'article']] | tei:div[ancestor::tei:div[@type = 'bill']] | tei:div[not(@type)]"/>
 
     <!-- plain text output -->
     <xsl:template match="text()" mode="mPlainText">
