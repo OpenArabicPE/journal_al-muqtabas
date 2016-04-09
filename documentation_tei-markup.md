@@ -133,7 +133,7 @@ Many articles contain *qaṣīda*s with the characteristic printing of the two *
 
 There are cases when words are split between the two lines of the *qaṣīda*:
 
-![example for split line of a *qaṣīda*](material/qasida-bayt.png)
+![example for split line of a *qaṣīda*](assets/images/qasida-bayt.png)
 
 How should this be encoded?
 
