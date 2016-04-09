@@ -4,9 +4,8 @@
     xmlns="http://www.loc.gov/mods/v3"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
-    <xsl:output method="xml" encoding="UTF-8" indent="yes"  omit-xml-declaration="no" name="xml"
-        version="1.0" xpath-default-namespace="http://www.loc.gov/mods/v3"/>
-    <xsl:strip-space elements="*"/>
+    <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" version="1.0"/>
+    <!--<xsl:strip-space elements="*"/>-->
     <xsl:preserve-space elements="tei:head tei:bibl"/>
 
 
