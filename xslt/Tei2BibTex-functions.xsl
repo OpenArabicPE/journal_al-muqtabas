@@ -145,7 +145,7 @@
     </xsl:template>
 
     <!-- prevent output from sections of articles -->
-    <xsl:template match="tei:div[@type = 'section'][ancestor::tei:div[@type = 'article']]"/>
+    <xsl:template match="tei:div[ancestor::tei:div[@type = 'article']] | tei:div[ancestor::tei:div[@type = 'bill']]"/>
 
     <xsl:template match="tei:lb | tei:cb | tei:pb" mode="mPlainText">
         <xsl:text> </xsl:text>

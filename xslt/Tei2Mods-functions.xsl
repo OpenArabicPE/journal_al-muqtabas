@@ -330,8 +330,8 @@
             </xsl:element>-->
     </xsl:template>
 
-    <!-- prevent output from sections of articles -->
-    <xsl:template match="tei:div[@type = 'section'][ancestor::tei:div[@type = 'article']]"/>
+    <!-- prevent output from sections of articles and divisions of legal texts -->
+    <xsl:template match="tei:div[ancestor::tei:div[@type = 'article']] | tei:div[ancestor::tei:div[@type = 'bill']]"/>
 
     <!-- plain text output -->
     <xsl:template match="text()" mode="mPlainText">
