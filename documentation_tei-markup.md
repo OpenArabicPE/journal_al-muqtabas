@@ -2,6 +2,10 @@
 title: "Notes for TEI mark-up of *majallat al-muqtabas*"
 author: Till Grallert
 date: 2015-11-02
+tags:
+- documentation
+- tei
+- xml
 ---
 
 # Issues to be solved
