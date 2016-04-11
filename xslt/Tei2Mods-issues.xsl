@@ -4,8 +4,7 @@
     xmlns="http://www.loc.gov/mods/v3"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
-    <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" name="xml"
-        version="1.0" xpath-default-namespace="http://www.loc.gov/mods/v3"/>
+    <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" version="1.0"/>
 
 
 
@@ -19,7 +18,7 @@
         select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>-->
 
     <xsl:template match="/">
-        <xsl:result-document href="../metadata/{$vgFileId}.MODS.XML" method="xml">
+        <xsl:result-document href="../metadata/{$vgFileId}.MODS.xml">
             <modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 {$vgSchemaLocation}">
                 <!-- construct MODS -->
                 <xsl:apply-templates select="descendant::tei:text/tei:body/descendant::tei:div"/>
@@ -28,8 +27,8 @@
     </xsl:template>
 
     <xsl:template
-        match="tei:div[@type = 'section'][not(ancestor::tei:div[@type = 'article'])] | tei:div[@type = 'article'][not(ancestor::tei:div[@type = 'bill'])] | tei:div[@type = 'bill']">
-        <xsl:call-template name="tDiv2Mods">
+        match="tei:div[@type = 'section'][not(ancestor::tei:div[@type = 'article'])][not(ancestor::tei:div[@type = 'bill'])] | tei:div[@type = 'article'][not(ancestor::tei:div[@type = 'bill'])] | tei:div[@type = 'bill']">
+        <xsl:call-template name="templDiv2Mods">
             <xsl:with-param name="pInput" select="."/>
         </xsl:call-template>
     </xsl:template>

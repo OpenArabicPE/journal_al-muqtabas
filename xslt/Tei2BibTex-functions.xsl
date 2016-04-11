@@ -44,13 +44,13 @@
         </xsl:variable>
         <xsl:variable name="vAuthor">
                 <xsl:choose>
-                    <xsl:when test="child::tei:byline/tei:persName/tei:surname">
-                        <xsl:value-of select="child::tei:byline/tei:persName/tei:surname"/>
+                    <xsl:when test="tei:byline/descendant::tei:persName/tei:surname">
+                        <xsl:value-of select="tei:byline/descendant::tei:persName/tei:surname"/>
                         <xsl:text>, </xsl:text>
-                        <xsl:value-of select="child::tei:byline/tei:persName/tei:forename"/>
+                        <xsl:value-of select="tei:byline/descendant::tei:persName/tei:forename"/>
                     </xsl:when>
-                    <xsl:when test="child::tei:byline/tei:persName">
-                        <xsl:value-of select="child::tei:byline/tei:persName"/>
+                    <xsl:when test="tei:byline/descendant::tei:persName">
+                        <xsl:value-of select="tei:byline/descendant::tei:persName"/>
                     </xsl:when>
                 </xsl:choose>
         </xsl:variable>
@@ -145,7 +145,7 @@
     </xsl:template>
 
     <!-- prevent output from sections of articles -->
-    <xsl:template match="tei:div[@type = 'section'][ancestor::tei:div[@type = 'article']]"/>
+    <xsl:template match="tei:div[ancestor::tei:div[@type = 'article']] | tei:div[ancestor::tei:div[@type = 'bill']] | tei:div[not(@type)]"/>
 
     <xsl:template match="tei:lb | tei:cb | tei:pb" mode="mPlainText">
         <xsl:text> </xsl:text>
