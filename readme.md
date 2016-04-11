@@ -213,9 +213,9 @@ To allow a quick review of the mark-up and read the journal's content, I decided
 
 The webview provides a parallel display of either online or local facsimiles and the text of *al-Muqtabas*. It includes a fully functional table of contents, stable links to all section and article heads, and links to bibliographic metadata for every article. For a first impression see [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml). 
 
-![webview of [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml)](assets/images/webview-1.jpg)
+![webview of [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml)](assets/images/boilerplate_muqtabas-1.jpg)
 
-![webview of [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml) with expanded table of content](assets/images/webview-2.jpg)
+![webview of [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml) with expanded table of content](assets/images/boilerplate_muqtabas-2.jpg)
 
 A detailed description of the web display is available [here](notes-web-display.md).
 
