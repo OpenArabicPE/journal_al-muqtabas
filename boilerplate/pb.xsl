@@ -5,7 +5,8 @@
     xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     
-    <xsl:template match="tei:pb[@facs]">
+    <!-- could also select pb[@facs] -->
+    <xsl:template match="tei:pb[@ed='print']">
         <xsl:param name="pn">
             <xsl:number count="//tei:pb" level="any"/>
         </xsl:param>
@@ -144,14 +145,17 @@
             <!-- <xsl:call-template name="atts"/> -->
             <xsl:copy-of select="$pbNote"/>
             <xsl:value-of select="@n"/>
-            <xsl:text> - </xsl:text> 
             <!-- provide link to online facsimile no matter what -->
-            <a href="{$vFacsUrlOnline}" target="_blank">
-                <xsl:value-of select="$altTextPbFacs"/>
-                <xsl:text> on </xsl:text>
-                <xsl:value-of select="$vFacsSource"/>
-            </a>
+            <xsl:if test="$facs=true()">
+                <xsl:text> - </xsl:text> 
+                <a href="{$vFacsUrlOnline}" target="_blank">
+                    <xsl:value-of select="$altTextPbFacs"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="$vFacsSource"/>
+                </a>
+            </xsl:if>
         </span>
+        <xsl:if test="$facs=true()">
         <span class="-teibp-pbFacs" lang="en">
             <a class="gallery-facs" rel="prettyPhoto[gallery1]" lang="en">
                 <xsl:attribute name="onclick">
@@ -164,6 +168,7 @@
                 </img>
             </a>
         </span>
+        </xsl:if>
     </xsl:template>
     
 </xsl:stylesheet>
