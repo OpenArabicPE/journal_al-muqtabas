@@ -518,7 +518,27 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
-            <xsl:apply-templates select="node()"/>
+            <!-- head -->
+            <xsl:apply-templates select="tei:head"/>
+            <!-- inject some author information -->
+            <span lang="ar" class="cAuthor">
+                <!-- add author names and pages if available -->
+                <xsl:if test="tei:byline/descendant::tei:persName">
+                    <xsl:text>[</xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="@xml:lang = 'ar'">
+                            <xsl:text>مؤلف: </xsl:text>
+                        </xsl:when>
+                        <xsl:when test="@xml:lang = 'en'">
+                            <xsl:text>author: </xsl:text>
+                        </xsl:when>
+                    </xsl:choose>
+                    <xsl:value-of select="tei:byline/descendant::tei:persName"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:if>
+            </span>
+            <!-- body of the div -->
+            <xsl:apply-templates select="node()[not(self::tei:head)]"/>
             <!--</a>-->
         </xsl:copy>
     </xsl:template>
