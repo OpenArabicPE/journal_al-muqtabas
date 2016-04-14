@@ -166,7 +166,9 @@
         </profileDesc>
         <revisionDesc>
             <change who="#pers_TG" when="2016-04-14">Corrected the structural mark-up of the first
-                and the third article</change><tei:change when="2016-04-02" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
+                and the third article. Added automated <att>xml:id</att>s for every element that is
+                a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the
+                pattern "name()_generate-id()".</change><tei:change when="2016-04-02" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
          <change when="2016-02-29" who="#pers_TG">Generated a new <tei:gi>front</tei:gi> based on the <tei:gi>sourceDesc</tei:gi> that matches the information found in the masthead of the actual issues.</change>
          <change when="2016-01-13" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
             <change when="2016-01-13" who="#pers_TG">Added page breaks for the entire issue,
@@ -611,12 +613,12 @@
     <text xml:id="text" xml:lang="ar" type="issue" n="i56">
       <pb ed="print" n="545" facs="#facs_561" xml:id="pb_1.d1e1394"/>
         <front xml:lang="ar" xml:id="front_1.d1e1338">
-         <div type="masthead">
-            <bibl>
-               <tei:biblScope unit="issue" n="9">الجزء 9</tei:biblScope>
-               <tei:biblScope unit="volume" n="5">المجلد 5</tei:biblScope>
-               <lb/>
-               <title level="j" xml:lang="ar">المقتبس</title>
+         <div type="masthead" xml:id="div_1.d1e1454">
+            <bibl xml:id="bibl_1.d1e1456">
+               <tei:biblScope unit="issue" n="9" xml:id="biblScope_4.d1e1458">الجزء 9</tei:biblScope>
+               <tei:biblScope unit="volume" n="5" xml:id="biblScope_4.d1e1461">المجلد 5</tei:biblScope>
+               <lb xml:id="lb_1.d1e1464"/>
+               <title level="j" xml:lang="ar" xml:id="title_8.d1e1466">المقتبس</title>
             </bibl>
          </div>
       </front>
@@ -624,20 +626,17 @@
             
             <pb ed="shamela" n="n56-p1" corresp="file:../epub/26523/OEBPS/xhtml/P3643.xhtml" xml:id="pb_2.d1e1396"/>
             <div type="article" xml:lang="ar" xml:id="div_2.d1e1398">
-                <head xml:lang="ar" xml:id="head_1.d1e1400">رسالة ابن القارح<lb/>إلى <persName
-                        xml:id="persName_6.d1e1405">أبي العلاء المعري</persName>
+                <head xml:lang="ar" xml:id="head_1.d1e1400">رسالة ابن القارح<lb xml:id="lb_2.d1e1480"/>إلى <persName xml:id="persName_6.d1e1405">أبي العلاء المعري</persName>
                 </head>
                 <div type="section" xml:id="div_2.d1e1408">
-                    <p xml:lang="ar" xml:id="p_15.d1e1410">(إلى القارئ <bibl>مخطوطاً من أندر
-                            المخطوطات ظفرنا به في خزانة كتب أستاذانا <persName>الشيخ طاهر
-                                الجزائري</persName> كتبه <author><persName>أبو حسن علي بن منصور
-                                    الحلبي المعروف بالقارح</persName></author> إلى <persName>أبي
+                    <p xml:lang="ar" xml:id="p_15.d1e1410">(إلى القارئ <bibl xml:id="bibl_2.d1e1490">مخطوطاً من أندر
+                            المخطوطات ظفرنا به في خزانة كتب أستاذانا <persName xml:id="persName_8.d1e1492">الشيخ طاهر
+                                الجزائري</persName> كتبه <author xml:id="author_2.d1e1495"><persName xml:id="persName_9.d1e1496">أبو حسن علي بن منصور
+                                    الحلبي المعروف بالقارح</persName></author> إلى <persName xml:id="persName_10.d1e1499">أبي
                                 العلاء المعري</persName> فأجاب عنها هذا في رسالة خاصة سماها رسالة
-                            الغفران طبعت بمصر <date>سنة <tei:num type="auto-markup" resp="#pers_TG"
-                                    value="1321" xml:lang="ar" xml:id="num_1.d1e1412">١٣٢١</tei:num>
-                                _ <tei:num type="auto-markup" resp="#pers_TG" value="1903"
-                                    xml:lang="ar" xml:id="num_1.d1e1415">١٩٠٣</tei:num></date> في
-                                    <publisher><orgName>مطبعة هندية</orgName></publisher></bibl>.
+                            الغفران طبعت بمصر <date xml:id="date_10.d1e1502">سنة <tei:num type="auto-markup" resp="#pers_TG" value="1321" xml:lang="ar" xml:id="num_1.d1e1412">١٣٢١</tei:num>
+                                _ <tei:num type="auto-markup" resp="#pers_TG" value="1903" xml:lang="ar" xml:id="num_1.d1e1415">١٩٠٣</tei:num></date> في
+                                    <publisher xml:id="publisher_2.d1e1510"><orgName xml:id="orgName_4.d1e1511">مطبعة هندية</orgName></publisher></bibl>.
                         أما ابن القارح وكان يلقب بدوخلة فكان شيخاً من هل الأدب رواية للأخبار حافظاً
                         لقطعة كبيرة من اللغة والأشعار قؤوماً بالنحو وكان ممن خدم أبا علي فارس في
                         داره وهو صبي ثم لازمه وقرأ عليه وكانت معيشته التعليم بالشام ومصر. قال ابن
@@ -649,7 +648,7 @@
                         أبو العلاء برسالة الغفران وذكر اسمه فيها).</p>
                 </div>
                 <div type="section" xml:id="div_3.d1e1420">
-                    <salute>بسم الله الرحمن الرحيم</salute>
+                    <salute xml:id="salute_1.d1e1518">بسم الله الرحمن الرحيم</salute>
                     <p xml:lang="ar" xml:id="p_16.d1e1425">استفتاحاً باسمه واستنتاجاً ببركته والحمد
                         لله المبتدي بالنعم المنفرد بالقدم الذي جل عن شبه المخلوقين وصفات المحدثين
                         ولي الحسنات المبرأ من السيئات العادل في أفعاله الصادق في أقواله خالق الخلق
@@ -1755,10 +1754,7 @@
                         بالمسائل التجارية والصناعية والرابعة بمسائل الصادرات وتعنى الخامسة بالدروس
                         ولها أيضاً تسع لجان إدارية تشتغل بدور البورصة ومدارس التجارية والمكتبات. . .
                         . ولها ديوان يتولى كتابة تقاريرها الأسبوعية وقد نظمت هذه الغرفة خلال سنتي
-                            <tei:num type="auto-markup" resp="#pers_TG" value="1901" xml:lang="ar"
-                            xml:id="num_1.d1e2519">١٩٠١</tei:num> و <tei:num type="auto-markup"
-                            resp="#pers_TG" value="1902" xml:lang="ar" xml:id="num_1.d1e2522"
-                            >١٩٠٢</tei:num> ستة وسبعين ومائة تقرير في مسائل شتى واتحدت مع عدة لجان
+                            <tei:num type="auto-markup" resp="#pers_TG" value="1901" xml:lang="ar" xml:id="num_1.d1e2519">١٩٠١</tei:num> و <tei:num type="auto-markup" resp="#pers_TG" value="1902" xml:lang="ar" xml:id="num_1.d1e2522">١٩٠٢</tei:num> ستة وسبعين ومائة تقرير في مسائل شتى واتحدت مع عدة لجان
                         أُلفت في النظارات وأوفدت منها أعضاء إلى المؤتمرات الأجنبية.</p>
                     <p xml:lang="ar" xml:id="p_123.d1e2526">وتنفق كل عام أربعة وخمسين ألف فرنك على
                         الدائرة الوطنية للتجارة الخارجية وستة وستين ألفاً على مدرسة التجارة ومئة
@@ -1766,25 +1762,14 @@
                         الليلية وأربعين على دور البورصة وثلاثين ألفاً على الأوضاع والأعمال المفيدة
                         للتجارة.</p>
                     <p xml:lang="ar" xml:id="p_124.d1e2529">وتتولى غرفة التجارة الباريزية إدارة كل
-                        من مدرسة العلوم التجارية العالية التي أنشئت سنة <tei:num type="auto-markup"
-                            resp="#pers_TG" value="1881" xml:lang="ar" xml:id="num_1.d1e2531"
-                            >١٨٨١</tei:num> وموازنتها <tei:num type="auto-markup" resp="#pers_TG"
-                            value="527" xml:lang="ar" xml:id="num_1.d1e2534">٥٢٧</tei:num> ألف فرنك
-                        ومدرسة التجارة العالية التي أنشئت سنة <tei:num type="auto-markup"
-                            resp="#pers_TG" value="1820" xml:lang="ar" xml:id="num_1.d1e2537"
-                            >١٨٢٠</tei:num> وموازنتها ( <tei:num type="auto-markup" resp="#pers_TG"
-                            value="510" xml:lang="ar" xml:id="num_1.d1e2540">٥١٠</tei:num> ) آلاف
-                        فرنك ومدرسة التجارة التي أسست عام <tei:num type="auto-markup"
-                            resp="#pers_TG" value="1863" xml:lang="ar" xml:id="num_1.d1e2543"
-                            >١٨٦٣</tei:num>
+                        من مدرسة العلوم التجارية العالية التي أنشئت سنة <tei:num type="auto-markup" resp="#pers_TG" value="1881" xml:lang="ar" xml:id="num_1.d1e2531">١٨٨١</tei:num> وموازنتها <tei:num type="auto-markup" resp="#pers_TG" value="527" xml:lang="ar" xml:id="num_1.d1e2534">٥٢٧</tei:num> ألف فرنك
+                        ومدرسة التجارة العالية التي أنشئت سنة <tei:num type="auto-markup" resp="#pers_TG" value="1820" xml:lang="ar" xml:id="num_1.d1e2537">١٨٢٠</tei:num> وموازنتها ( <tei:num type="auto-markup" resp="#pers_TG" value="510" xml:lang="ar" xml:id="num_1.d1e2540">٥١٠</tei:num> ) آلاف
+                        فرنك ومدرسة التجارة التي أسست عام <tei:num type="auto-markup" resp="#pers_TG" value="1863" xml:lang="ar" xml:id="num_1.d1e2543">١٨٦٣</tei:num>
                         <pb n="570" ed="print" facs="#facs_586" xml:id="pb_53.d1e2848"/> وموازنتها
-                            <tei:num type="auto-markup" resp="#pers_TG" value="235" xml:lang="ar"
-                            xml:id="num_1.d1e2547">٢٣٥</tei:num> ألف فرنك وتحت حماية غرفة تجارة
+                            <tei:num type="auto-markup" resp="#pers_TG" value="235" xml:lang="ar" xml:id="num_1.d1e2547">٢٣٥</tei:num> ألف فرنك وتحت حماية غرفة تجارة
                         باريز الجمعية التجارية لتعليم الألسنة الأجنبية وجمعية الترغيب في إصدار
-                        الأموال التجارية الفرنسوية وقد أسستا عام <tei:num type="auto-markup"
-                            resp="#pers_TG" value="1881" xml:lang="ar" xml:id="num_1.d1e2550"
-                            >١٨٨١</tei:num> .</p>
-                    <ab>* * *</ab>
+                        الأموال التجارية الفرنسوية وقد أسستا عام <tei:num type="auto-markup" resp="#pers_TG" value="1881" xml:lang="ar" xml:id="num_1.d1e2550">١٨٨١</tei:num> .</p>
+                    <ab xml:id="ab_1.d1e2917">* * *</ab>
                 </div>
                 <div type="section" xml:id="div_7.d1e2558">
                     <p xml:lang="ar" xml:id="p_126.d1e2560">ذكرنا أوضاع الغرف الفرنسوية عامة والغرفة
@@ -1871,7 +1856,7 @@
                             <tei:num type="auto-markup" resp="#pers_TG" value="1831" xml:lang="ar" xml:id="num_1.d1e2633">١٨٣١</tei:num> الفرنسوي وقد عملت بموجب هذا الحق
                         وسنت نظامها الداخلي إلا أنها دفعته إلى الدوائر الإيجابية ثم قرنته بإدارة
                         سنية بلا ضرورة نظامية.</p>
-                    <ab>* * *</ab>
+                    <ab xml:id="ab_2.d1e3018">* * *</ab>
                 </div>
                 <div type="section" xml:id="div_8.d1e2641">
                     <p xml:lang="ar" xml:id="p_139.d1e2643">يعبر النظام الداخلي غرفة التجارة مصدر
