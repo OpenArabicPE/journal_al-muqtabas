@@ -4,9 +4,8 @@
     xmlns="http://www.loc.gov/mods/v3"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
-    <xsl:output method="xml" encoding="UTF-8" indent="yes"  omit-xml-declaration="no" name="xml"
-        version="1.0" xpath-default-namespace="http://www.loc.gov/mods/v3"/>
-    <xsl:strip-space elements="*"/>
+    <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" version="1.0"/>
+    <!--<xsl:strip-space elements="*"/>-->
     <xsl:preserve-space elements="tei:head tei:bibl"/>
 
 
@@ -25,7 +24,7 @@
     <xsl:variable name="vgSchemaLocation" select="'http://www.loc.gov/standards/mods/v3/mods-3-6.xsd'"/>
 
 
-    <xsl:template name="tDiv2Mods">
+    <xsl:template name="templDiv2Mods">
         <xsl:param name="pInput"/>
         <xsl:variable name="vLang" select="$pLang"/>
         <!-- variables identifying the digital surrogate -->
@@ -71,7 +70,7 @@
             <genre authority="local" xml:lang="en">journalArticle</genre>
             <genre authority="marcgt" xml:lang="en">article</genre>
             <!-- for each author -->
-            <xsl:for-each select="child::tei:byline/tei:persName">
+            <xsl:for-each select="child::tei:byline/descendant::tei:persName">
                 <name type="personal" xml:lang="{$vLang}">
                     <xsl:choose>
                         <xsl:when test="child::tei:surname">
@@ -331,8 +330,8 @@
             </xsl:element>-->
     </xsl:template>
 
-    <!-- prevent output from sections of articles -->
-    <xsl:template match="tei:div[@type = 'section'][ancestor::tei:div[@type = 'article']]"/>
+    <!-- prevent output from sections of articles and divisions of legal texts -->
+    <xsl:template match="tei:div[ancestor::tei:div[@type = 'article']] | tei:div[ancestor::tei:div[@type = 'bill']] | tei:div[not(@type)]"/>
 
     <!-- plain text output -->
     <xsl:template match="text()" mode="mPlainText">

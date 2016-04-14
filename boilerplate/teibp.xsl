@@ -459,13 +459,13 @@
                 <xsl:apply-templates select="child::tei:head" mode="mToc"/>
                 <xsl:text> (</xsl:text>
                 <!-- add author names and pages if available -->
-                <xsl:if test="tei:byline/tei:persName">
+                <xsl:if test="tei:byline/descendant::tei:persName">
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
                             <xsl:text>مؤلف: </xsl:text>
                         </xsl:when>
                     </xsl:choose>
-                    <xsl:value-of select="tei:byline/tei:persName"/>
+                    <xsl:value-of select="tei:byline/descendant::tei:persName"/>
                     <xsl:text>،</xsl:text>
                 </xsl:if>
                 <!-- add page numbers -->
@@ -518,7 +518,27 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
-            <xsl:apply-templates select="node()"/>
+            <!-- head -->
+            <xsl:apply-templates select="tei:head"/>
+            <!-- inject some author information -->
+            <span lang="ar" class="cAuthor">
+                <!-- add author names and pages if available -->
+                <xsl:if test="tei:byline/descendant::tei:persName">
+                    <xsl:text>[</xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="@xml:lang = 'ar'">
+                            <xsl:text>مؤلف: </xsl:text>
+                        </xsl:when>
+                        <xsl:when test="@xml:lang = 'en'">
+                            <xsl:text>author: </xsl:text>
+                        </xsl:when>
+                    </xsl:choose>
+                    <xsl:value-of select="tei:byline/descendant::tei:persName"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:if>
+            </span>
+            <!-- body of the div -->
+            <xsl:apply-templates select="node()[not(self::tei:head)]"/>
             <!--</a>-->
         </xsl:copy>
     </xsl:template>
@@ -537,36 +557,29 @@
                     <xsl:apply-templates select="node()"/>
                 </xsl:otherwise>
             </xsl:choose>
+            <xsl:variable name="vBiblUrl" select="concat('../metadata/',$vFileId,'-',parent::node()/@xml:id)"/>
             <xsl:choose>
                 <xsl:when test="parent::tei:div[@type='section'] and not(ancestor::tei:div[@type='article']) and not(ancestor::tei:div[@type='bill'])">
-                    <span class="cLinks" lang="en">
-                        <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
-                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" download="{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
-                        <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
-                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.MODS.xml" download="{$vFileId}-{parent::node()/@xml:id}.MODS.xml" class="cLinkBibTex">MODS</a>
-                    </span>
+                    <xsl:call-template name="templBiblDataLinks">
+                        <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
+                    </xsl:call-template>
                 </xsl:when>
                 <xsl:when test="parent::tei:div[@type='article'] and not(ancestor::tei:div[@type='bill'])">
-                    <span class="cLinks" lang="en">
-                        <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
-                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" download="{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
-                        <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
-                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.MODS.xml" download="{$vFileId}-{parent::node()/@xml:id}.MODS.xml" class="cLinkBibTex">MODS</a>
-                    </span>
+                    <xsl:call-template name="templBiblDataLinks">
+                        <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
+                    </xsl:call-template>
                 </xsl:when>
                 <xsl:when test="parent::tei:div[@type='bill']">
-                    <span class="cLinks" lang="en">
-                        <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
-                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.bib" download="{$vFileId}-{parent::node()/@xml:id}.bib" class="cLinkBibTex">BibTeX</a>
-                        <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
-                        <a href="../metadata/{$vFileId}-{parent::node()/@xml:id}.MODS.xml" download="{$vFileId}-{parent::node()/@xml:id}.MODS.xml" class="cLinkBibTex">MODS</a>
-                    </span>
+                    <xsl:call-template name="templBiblDataLinks">
+                        <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
+                    </xsl:call-template>
                 </xsl:when>
             </xsl:choose>
         </xsl:copy>
         <!-- link to the top of the page, content can be provided by css; moved to the side navigation -->
         <!--<a class="cBackToTop cInterface" href="#" title="To the top of this page"> </a>-->
     </xsl:template>
+    
 
     <!-- omit line breaks in heads: all breaks have been omitted -->
   <!--  <xsl:template match="tei:head/tei:lb | tei:head/tei:cb">

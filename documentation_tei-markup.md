@@ -2,6 +2,10 @@
 title: "Notes for TEI mark-up of *majallat al-muqtabas*"
 author: Till Grallert
 date: 2015-11-02
+tags:
+- documentation
+- tei
+- xml
 ---
 
 # Issues to be solved
@@ -92,11 +96,13 @@ In some cases the legal text itself is accompanied by a commentary intersecting 
 
 ## Page, line, and column breaks
 
-Only page breaks should are recorded (`<pb>`). The page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the original printed copies. They were therefore marked as `<pb ed="shamila">`. The page breaks corresponding to the original printed edition are identified by `@ed="print"`.
+Currently, only page breaks are recorded. They are marked up with the empty milestone element `<pb/>`. Page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the original printed copies. They were therefore marked as `<pb ed="shamila">`. Page breaks corresponding to the original printed edition are identified by `@ed="print"`.
+
 Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the original, it appeared to be a facsimile reprint: pagination, font, layout --- everything is identical.
 
 1. Printed original copy: `<pb ed="print"/>`
-    - These page breaks are then linked through the `@facs` attribute to the `@xml:id` of a `<surface>` element; i.e. `<pb ed="print" facs="#facs_78"/>`
+    - the page number is recorded in the `@n` attribute
+    - These page breaks are then linked through the `@facs` attribute to the `@xml:id` of a `<surface>` element; i.e. `<pb ed="print" n="78" facs="#facs_78"/>`
 2. Transcription from *al-maktaba al-shāmila*: `<pb ed="shamela"/>`
 
 The current state of mark-up for page breaks is kept in a [second file](notes-tei-markup-pb.md).
@@ -133,7 +139,7 @@ Many articles contain *qaṣīda*s with the characteristic printing of the two *
 
 There are cases when words are split between the two lines of the *qaṣīda*:
 
-![example for split line of a *qaṣīda*](material/qasida-bayt.png)
+![example for split line of a *qaṣīda*](assets/images/qasida-bayt.png)
 
 How should this be encoded?
 
@@ -429,7 +435,9 @@ A second XSLT stylesheet ([`Tei-MarkupNumerals-Correction`](xslt/Tei-MarkupNumer
 1. Persons:`<persName>`
     + How to encode this string: "حسين كاظم بك والي حلب الحالي" ? Should the information on his position be included in the `<persName>`?
 2. Places: `<placeName>`
-    + How to encode this string: "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"? الفيحاء or الشهباء are clearly references to places by name, i.e. Damascus and Aleppo, but are they a `<placeName>`?
+    + How to encode this string: "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"?
+    +  الفيحاء (*al-fayḥāʾ*) and الشهباء (*al-shahbāʾ*) are clearly references to places by name, i.e. Damascus and Aleppo, but are they a `<placeName>`?
+    +  Beirut is commonly referred to as الثغر (*al-thaghr*), the seaport.
 3. Organisations: `<orgName>`
 
 ## Dates and calendars

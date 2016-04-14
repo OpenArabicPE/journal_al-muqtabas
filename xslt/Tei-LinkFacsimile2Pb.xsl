@@ -17,10 +17,11 @@
     </xd:doc>
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
-    <!-- the page set-off is condition by the scans from HathiTrust and different for each volume:
+    <!-- new and much better approach: instead of trying to establish the link through @n, a set-off parameter, and @xml:id, one could just go by the sequence of <pb> and <surface> -->
+    <!--<!-\- the page set-off is condition by the scans from HathiTrust and different for each volume:
         - vol. 4: 12
-        - vol. 6: 4 -->
-    <xsl:param name="pPageSetOff" select="12"/>
+        - vol. 6: 4 -\->
+    <xsl:param name="pPageSetOff" select="12"/>-->
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:param name="pAuthorXmlId" select="'pers_TG'"/>
     
@@ -43,14 +44,19 @@
     </xsl:template>
     
     <xsl:template match="tei:pb[@ed='print']">
+        <xsl:variable name="vPosPb" select="count(preceding::tei:pb[@ed = 'print']) +1"/>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:choose>
                 <xsl:when test="not(@facs)">
-                    <xsl:attribute name="facs" select="concat('#facs_', @n + $pPageSetOff)"/>
+                    <!--<xsl:attribute name="facs" select="concat('#facs_', @n + $pPageSetOff)"/>-->
+                    <xsl:attribute name="facs">
+                        <xsl:value-of select="concat('#',$vFacs/descendant::tei:surface[$vPosPb]/@xml:id)"/>
+                    </xsl:attribute>
                 </xsl:when>
             </xsl:choose>
         </xsl:copy>
     </xsl:template>
     
+    <xsl:variable name="vFacs" select="//tei:facsimile"/>
 </xsl:stylesheet>
