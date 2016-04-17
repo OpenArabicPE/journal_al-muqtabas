@@ -462,7 +462,7 @@
                 <xsl:if test="tei:byline/descendant::tei:persName">
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
-                            <xsl:text>مؤلف: </xsl:text>
+                            <xsl:text>تأليف: </xsl:text>
                         </xsl:when>
                     </xsl:choose>
                     <xsl:value-of select="tei:byline/descendant::tei:persName"/>
@@ -527,7 +527,7 @@
                     <xsl:text>[</xsl:text>
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
-                            <xsl:text>مؤلف: </xsl:text>
+                            <xsl:text>تأليف: </xsl:text>
                         </xsl:when>
                         <xsl:when test="@xml:lang = 'en'">
                             <xsl:text>author: </xsl:text>
