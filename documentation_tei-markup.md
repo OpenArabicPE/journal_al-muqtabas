@@ -84,6 +84,24 @@ As paragraphs (`<p>`) cannot interlace with `<div>`s after the first `<div>` chi
 
 The common structure of an issue would be a mix of `<div @type="article">` and `<div @type="section">`
 
+### heads
+
+Sections and articles are commonly introduced by a clearly distinguishable heading. These are marked-up as `<head>`. Some articles might also have sub headings, which should be marked up as `<head type="sub">`. 
+
+See for example [i_50](xml/oclc_4770057679-i_50.TEIP5.xml#div_5.d1e2312):
+
+~~~{.xml}
+<div type="article">
+    <head>الاتكال الشرقي</head>
+    <head type="sub">نصيحة غربي</head>
+    <p>
+        <!-- -->
+    </p>
+</div>
+~~~
+
+Beware that what looks like a sub heading, might also be a section heading introducing a sub section of an article.
+
 ### legal texts, bills
 
 It is quite common to find legal texts in late nineteenth, early twentieth century periodicals and I would like to differenciate them by means of the `@type="bill"` attribute because they can be nested inside an article or appear as free-standing chunk of text on the article level. Legal texts are commonly structured into sections / chapters, articles, and paragraphs and shall be encoded thus; i.e. as `<div type="section">`, `<div type="article">`, and `<p>`.
