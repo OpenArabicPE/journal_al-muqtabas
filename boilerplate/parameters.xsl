@@ -45,7 +45,7 @@
             <xsl:attribute name="lang">
                 <xsl:text>en</xsl:text>
             </xsl:attribute>
-        <xsl:text>view facsimile</xsl:text>
+        <xsl:text>view facsimile at</xsl:text>
         </span>
     </xsl:param>
     <!-- parameters for file paths or URLs -->

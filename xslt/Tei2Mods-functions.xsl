@@ -77,14 +77,13 @@
                             <namePart type="family" xml:lang="{$vLang}">
                                 <xsl:value-of select="child::tei:surname"/>
                             </namePart>
-                        </xsl:when>
-                        <xsl:when test="child::tei:forename">
                             <namePart type="given" xml:lang="{$vLang}">
                                 <xsl:value-of select="child::tei:forename"/>
                             </namePart>
                         </xsl:when>
                         <xsl:otherwise>
                             <!-- what should happen if there is neither surname nor forename? -->
+                            <xsl:value-of select="."/>
                         </xsl:otherwise>
                     </xsl:choose>
                     <role>
