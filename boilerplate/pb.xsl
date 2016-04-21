@@ -5,6 +5,17 @@
     xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     
+    <!-- construct the image URL on the fly -->
+    <xsl:variable name="vgVolume" select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit='volume']/@n"/>
+    <xsl:variable name="vgIssue" select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit='issue']/@n"/>
+    <xsl:variable name="vgFacsUrl-Sakhrit">
+        <xsl:text>http://archive.sakhrit.co/MagazinePages/Magazine_JPG/AL_moqtabs/Al_moqtabs_</xsl:text>
+        <xsl:value-of select="number($vgVolume)+1905"/>
+        <xsl:text>/Issue_</xsl:text>
+        <xsl:value-of select="$vgIssue"/>
+        <xsl:text>/</xsl:text>
+    </xsl:variable>
+
     <!-- could also select pb[@facs] -->
     <xsl:template match="tei:pb[@ed='print']">
         <xsl:param name="pn">
@@ -164,6 +175,10 @@
                 <img alt="{$altTextPbFacs}" class="-teibp-thumbnail">
                     <xsl:attribute name="src">
                         <xsl:value-of select="$vFacsUrl"/>
+                        <!-- test -->
+                        <!-- <xsl:value-of select="$vgFacsUrl-Sakhrit"/>
+                        <xsl:value-of select="format-number(@n,'000')"/>
+                        <xsl:text>.JPG</xsl:text> -->
                     </xsl:attribute>
                 </img>
             </a>
