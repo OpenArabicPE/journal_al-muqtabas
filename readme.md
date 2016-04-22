@@ -167,6 +167,43 @@ Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem t
 > Note: There are no restrictions on use of text transcribed from the images, or paraphrased or translated using the images.
 
 
+### 3.1.3 [arshīf al-majallāt al-adabiyya wa-l-thaqafiyya al-ʿarabiyya (archive.sakhrit.co)](archive.sakhrit.co)
+
+Recently, a colleague pointed me to another gray online library of Arabic material---one that was entirely dedicated to cultural and litrary journals. They seemingly scanned a large number of Arabic journals over very long publication periods
+
+They provide:
+
+1. Partially watermarked digital imagery
+2. Functional tables of content for each issue, including author, title, page number
+3. Some bibliographic metadata on the issue level
+
+They do not provide a digital, machine-readable text.
+
+The focus is on cultural and scientific journals of the 20th century but they also have some journals of the late 19th and early 20th centuries, among them:
+
+- Cairo
+    + [al-Muqtaṭaf](http://archive.sakhrit.co/newmagazineYears.aspx?MID=107)
+    + [al-Ustādh](http://archive.sakhrit.co/newmagazineYears.aspx?MID=106)
+    - [al-Hilāl](http://archive.sakhrit.co/newmagazineYears.aspx?MID=134)
+    + [al-Bayān](http://archive.sakhrit.co/newmagazineYears.aspx?MID=161)
+    + [al-Manār](http://archive.sakhrit.co/newmagazineYears.aspx?MID=33)
+    + [al-Jāmiʿa (al-ʿUthmāniyya)](http://archive.sakhrit.co/newmagazineYears.aspx?MID=114)
+    + [al-Zuhūr](http://archive.sakhrit.co/newmagazineYears.aspx?MID=40)
+- Lebanon
+    - [al-Mashriq](http://archive.sakhrit.co/newmagazineYears.aspx?MID=108)
+- Syria
+    - [al-Muqtabas](http://archive.sakhrit.co/newmagazineYears.aspx?MID=125)
+
+As with other gray libraries, such as shamela.ws, the website is quiet about the personnel or company behind it. It remains unclear where the originals came from, who scanned them, who transcribed the heads, authors, and page numbers seemingly available for every article. The rather illegal / gray nature of the endeavour becomes clear from the shift from a `.com` to a `.co` domain (country code top-level domain for Colombia) documented by the watermark in the imagery that still refers to the `http://Archivebeta.Sakhrit.com` domain.
+
+I have assessed the quality of their "scans" of *al-Muqtabas*. Some volumes/ issues have been scanned from the original or a facsimile edition. Others, such as at least volumes [4](http://archive.sakhrit.co/MagazinePages/Magazine_JPG/AL_moqtabs/Al_moqtabs_1909/Issue_1/001.JPG) and  [5](http://archive.sakhrit.co/MagazinePages/Magazine_JPG/AL_moqtabs/Al_moqtabs_1910/Issue_1/001.JPG), were indeed rendered from a modern digital text, namely shamela's transcription. This is supported by the strikingly similar absence of all footnotes and non-Arabic script; a modern interpunction not present in the original; paragraph breaks that mirror shamela's transcription; and the ellipsis between the two sections of a *bayt*, as provided by shamela (e.g. [archive.sakhrit](http://archive.sakhrit.co/MagazinePages/Magazine_JPG/AL_moqtabs/AL_moqtabs_1910/Issue_7/597.JPG) and [shamela](http://shamela.ws/browse.php/book-26523#page-3548)). The final evidence to prove this argument is that an uncommented gap of almost three pages in shamela's transcription of volume 5(7) is reproduced in archive.sakhrit's supposed facsimiles (compare the issue on[digital-muqtabas](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_54.TEIP5.xml#pb_61.d1e2036), [shamela](http://shamela.ws/browse.php/book-26523#page-3554), and [archive.sakhrit](http://archive.sakhrit.co/MagazinePages/Magazine_JPG/AL_moqtabs/AL_moqtabs_1910/Issue_7/605.JPG)). 
+
+Another, rather common, problem if archive.sakhrit's bibliographic metadata on both the article and the issue level. The first is obviously poised by the reference to image renderings of shamela's transcription, whose pagination does not correspond to the printed original. In addition, the tables of content provide only an eclectic selection of articles and sections and many articles are mis-attributed (for an example compare [the MODS file for out digital edition of Muqtabas 4(1)](https://rawgit.com/tillgrallert/digital-muqtabas/master/metadata/oclc_4770057679-i_37.MODS.xml) with [archive.sakhrit's *fihris* of the same issue](http://archive.sakhrit.co/contents.aspx?CID=5685)).
+The second issue relates to the publication dates. For *al-Muqtabas*, archive.sakhrit assumes a publication schedule in which volumes correspond to Gregorian years and issues correspond to Gregorian months (i.e. according to archive.sakhrit Muqtabas 1(1) was published on [1 January 1906](http://archive.sakhrit.co/contents.aspx?CID=5649)). This is despite the fact that *al-Muqtabas* clearly states its publication schedule on the front page of every volume as adhering to the *hijrī* calendar for both volumes and issues (e.g. [archive.sakhrit's facsimile of this issue's first page](http://archive.sakhrit.co/MagazinePages/Magazine_JPG/AL_moqtabs/AL_moqtabs_1906/Issue_1/001.JPG). As a consequence, bibliographic data obtained from archive.sakhrit cannot be considered reliable in any sense.
+
+Therefore archive.sakhrit is even more problematic than shamela in terms of scholarly use. The user is always aware of reading a derivative with an unknown relation to an assumed original while accessing a text from shamela. At archive.sakhrit, on the other hand, the user is deceived by a seemingly faithful representation of a fake original.
+
+
 ## 3.2 Full text
 
 Somebody took the pains to create fully searchable text files and uploaded everything to [al-Maktaba al-Shamela](http://shamela.ws/index.php/book/26523) and  [WikiSource](https://ar.wikisource.org/wiki/%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D9%85%D9%82%D8%AA%D8%A8%D8%B3/%D8%A7%D9%84%D8%B9%D8%AF%D8%AF_1).
