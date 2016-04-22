@@ -685,4 +685,27 @@
             </ul>
         </div>
     </xsl:variable>
+
+    <!-- translate tei tables to html tables, which isn't really necessary -->
+    <!-- <xsl:template match="tei:table">
+        <table>
+            <xsl:apply-templates/>
+        </table>
+    </xsl:template>
+    <xsl:template match="tei:row">
+        <tr>
+            <xsl:apply-templates/>
+        </tr>
+    </xsl:template>
+    <xsl:template match="tei:row[@role='label']/tei:cell">
+        <th>
+            <xsl:apply-templates/>
+        </th>
+    </xsl:template>
+    <xsl:template match="tei:row[@role='data']/tei:cell">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template> -->
+    
 </xsl:stylesheet>
