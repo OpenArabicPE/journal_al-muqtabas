@@ -541,9 +541,9 @@ date[when]:empty:before {
   content: attr(when);
 }
 div {
-    margin-top:1em;
-    margin-bottom:1em;
-    padding-bottom:1em;
+/*    margin-top:1em;
+    margin-bottom:1em;*/
+    /*padding-bottom:1em;*/
 }
 /* e */
 egXML {
@@ -805,9 +805,7 @@ kinesic {
 }
 /* l */
 l {
-  display: block;
-  padding-left: 2em;
-  text-indent: -2em;
+/* Empty Rule Set */
 }
 list[type="gloss"] > label {
   display: block;
@@ -1111,9 +1109,9 @@ origin {
 }
 /* p */
 p {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  /*display: block;*/
+/*  margin-top: 1em;
+  margin-bottom: 1em;*/
   text-align: justify;
 }
 *[rendition~="#center"] p {
@@ -1134,15 +1132,8 @@ particDesc {
 pause {
   /* Empty Rule Set*/
 }
-pb {
-  display: block;
-  width: 100%;
-  text-align: right;
-  color: gray;
-  margin: 2em 0 2em 0;
-  font-size: 11pt;
-}
-.pb {
+/* these rules are not used due to the html design of page breaks*/
+pb, .pb {
   display: block;
   width: 100%;
   text-align: right;
@@ -1681,22 +1672,22 @@ textDesc {
 }
 /* title */
 /* Need TEI ancestor to distinguish TEI title from HTML title */
-TEI title {
+TEI title, body title {
   display: inline;
 }
-TEI title[level=a] {
+title[level=a] {
   quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d";
 }
-TEI title[level=a]:before {
+title[level=a]:before {
   content: open-quote;
 }
-TEI title[level=a]:after {
+title[level=a]:after {
   content: close-quote;
 }
-TEI title[level=a][next]:after {
+title[level=a][next]:after {
   content: "" !important;
 }
-TEI title[level=a][prev]:before {
+title[level=a][prev]:before {
   content: "" !important;
 }
 title[level=m] {
