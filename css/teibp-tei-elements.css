@@ -142,17 +142,47 @@ gap:after{
 foreign {
     font-style: italic;
 }
-/* tables */
+/*------------------
+ tables
+------------------- */
 table{
+    display: table;
     border-collapse:collapse;
     width:80%;
     margin-right:auto;
     margin-left:auto;
 }
+row {
+  display: table-row;
+}
+row[role="label"] {
+  font-weight: bold;
+  border-bottom: double #959595;
+}
+
 cell{
     display:table-cell;
     width:auto;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    border-right: 1px solid #959595;
+    border-left: 1px solid #959595;
 }
+cell:first-child{
+    border-right: none !important;
+}
+cell:last-child{
+    border-left: none !important;
+}
+
+cell {
+  /*
+border-left: 2px solid @border-color;
+border-top:2px solid @border-color;
+*/
+}
+
+
 /*------------------
  named entities
 -------------------- */
