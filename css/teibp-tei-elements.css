@@ -1,3 +1,7 @@
+/** {
+    border: 1px solid red !important;
+}*/
+
 /*-----------------------
 teipb, the main stylesheet surpresses the display of quite a few tei elements
 -------------------------*/
@@ -44,10 +48,31 @@ back{
     counter-reset:p;
 }
 
+/*--------------------
+block level elements
+----------------------*/
+
+/* all */
+
+div, p, ab, lg, l {
+    clear:right;
+    display: block;
+    /* what about left and right margins? */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0 0 5px 0;
+    border: 0 0 0 0;
+    height: 100%;
+}
+
+/* divisions */
+
+div {
+}
+
 /* paragraphs */
 p {
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
+    text-indent: 10px;
 }
 /* count paragraphs */
 
@@ -101,7 +126,9 @@ ab{
 /* byline */
 byline{
     display:block;
-    text-align:left;
+}
+byline[lang="ar"]{
+    margin-right: 100px;
 }
 /* gaps */
 gap{
@@ -132,39 +159,72 @@ cell{
 text persName{
     /* color:#1B8500; */
     /*background-color: #C9F6C5;*/
-    border-bottom: 5px dotted #C9F6C5;
+    /*border-bottom: 5px dotted #C9F6C5;*/
 }
+
 text placeName{
     /* color:#9525A1; */
     /*background-color: #FADDFF;*/
-    border-bottom: 5px dotted #FADDFF;
+    /*border-bottom: 5px dotted #FADDFF;*/
 }
 text orgName{
     /* color:#5F789E; */
     /*background-color: #E4E8FF;*/
-    border-bottom: 5px dotted #E4E8FF;
-
+    /*border-bottom: 5px dotted #E4E8FF;*/
 }
+
+text persName, text placeName, text orgName {
+  display: inline-block;
+  position: relative;
+}
+text persName::after, text placeName::after, text orgName::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  margin-top: 7px;
+}
+
+text persName::after {
+    border-bottom: 3px dotted #C9F6C5;
+}
+
+text placeName::after{
+    border-bottom: 3px dotted #FADDFF;
+}
+text orgName::after{
+    border-bottom: 3px dotted #E4E8FF;
+}
+
 /* display tooltip-like information on the tag */
 text[lang = "ar"] persName:hover:after,
 text[lang = "ar"] placeName:hover:after,
 text[lang = "ar"] orgName:hover:after{
     display:inline-block;
     font-size:10px;
+    text-align: center;
+    direction: ltr;
+    font-family: Helvetica, Arial, sans-serif;
     color:black;
     background-color:white;
+    border-bottom: none;
     padding-right:0.5em;
     padding-left:0.5em;
     padding-top:0.5em;
     padding-bottom:0.5em;
-    position:absolute;
-    margin-right:-50px;
-    margin-top:-30px;
+    border: 0 0 0 0;
     border-top-left-radius:3px;
     border-top-right-radius:3px;
     border-bottom-right-radius:3px;
     border-bottom-left-radius:3px;
     box-shadow:0px 1px 5px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.3) inset;
+    min-width: 60px;
+    /* position the pop over */
+    position:absolute;
+    margin:-2em 0 0 0;
+    z-index: 10000;
 }
 text[lang = "ar"] persName:hover:after{
     content:"persName"
@@ -176,9 +236,9 @@ text[lang = "ar"] orgName:hover:after{
     content:"orgName"
 }
 
-/**************************
+/*------------------------
 editorial changes
-**************************/
+------------------------*/
 
 supplied:before {
     content:"[";
