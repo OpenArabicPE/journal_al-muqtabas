@@ -25,8 +25,10 @@
     </xsl:template>
     
     <xsl:template match="tei:list/tei:p">
-        <xsl:element name="tei:item">
-            <xsl:apply-templates select="@* | node()"/>
+        <xsl:element name="item">
+            <xsl:element name="bibl">
+                <xsl:apply-templates select="node()"/>
+            </xsl:element>
         </xsl:element>
     </xsl:template>
 </xsl:stylesheet>
