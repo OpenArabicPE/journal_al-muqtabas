@@ -14,7 +14,7 @@ Mark-up of page breaks mirroring the print edition with `<pb ed="print">` and li
 - vol. 4:
     - oclc_4770057679-i_38.TEIP5.xml; November 29, 2015
     - oclc_4770057679-i_37.TEIP5.xml; October 11, 2015
-- vol. 5:
+- vol. 5: i_48 to i_59
     + oclc_4770057679-i_48.TEIP5.xml; 19 February 2016     
     + i_49: needs corrections
     + i_50: needs corrections
