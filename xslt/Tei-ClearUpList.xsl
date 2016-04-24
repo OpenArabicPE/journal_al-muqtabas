@@ -26,9 +26,9 @@
     
     <xsl:template match="tei:list/tei:p">
         <xsl:element name="item">
-            <xsl:element name="bibl">
+<!--            <xsl:element name="p">-->
                 <xsl:apply-templates select="node()"/>
-            </xsl:element>
+            <!--</xsl:element>-->
         </xsl:element>
     </xsl:template>
     
