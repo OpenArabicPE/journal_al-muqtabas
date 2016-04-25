@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:mods="http://www.loc.gov/mods/v3"
-    xmlns="http://www.loc.gov/mods/v3"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:mods="http://www.loc.gov/mods/v3" 
+    xmlns="http://www.loc.gov/mods/v3"  
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" version="1.0"/>
-    <!--<xsl:strip-space elements="*"/>-->
+    <xsl:strip-space elements="tei:persName"/>
     <xsl:preserve-space elements="tei:head tei:bibl"/>
 
 
@@ -31,32 +32,188 @@
         <xsl:variable name="vFileDesc" select="ancestor::tei:TEI/tei:teiHeader/tei:fileDesc"/>
         <!-- Need information on edition, date of edition, editors, transcribers etc.  -->
         <!-- variables identifying the original source -->
-        <xsl:variable name="vBiblStructSource"
-            select="$vFileDesc/tei:sourceDesc/tei:biblStruct"/>
-        <xsl:variable name="vPublDate"
-            select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>
-        <xsl:variable name="vPublicationTitle"
-            select="$vBiblStructSource/tei:monogr/tei:title[@level = 'j'][@xml:lang = $vLang][not(@type = 'sub')]"/>
-        <xsl:variable name="vArticleTitle">
+        <xsl:variable name="vBiblStructSource" select="$vFileDesc/tei:sourceDesc/tei:biblStruct"/>
+        <!--        <xsl:variable name="vPublDate" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>-->
+        <!-- <xsl:variable name="vPublicationTitle"
+            select="$vBiblStructSource/tei:monogr/tei:title[@level = 'j'][@xml:lang = $vLang][not(@type = 'sub')]"/>-->
+        <!--<xsl:variable name="vArticleTitle">
             <xsl:if test="@type = 'article' and ancestor::tei:div[@type = 'section']">
                 <xsl:apply-templates select="ancestor::tei:div[@type = 'section']/tei:head"
-                    mode="mPlainText"/>
+                    mode="m_plain-text"/>
                 <xsl:text>: </xsl:text>
             </xsl:if>
-            <xsl:apply-templates select="./tei:head" mode="mPlainText"/>
-        </xsl:variable>
-        <xsl:variable name="vUrl" select="concat($vgFileUrl, '#', @xml:id)"/>
-        <xsl:variable name="vIssue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
-        <xsl:variable name="vVolume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>
-        <xsl:variable name="vPubPlace"
+            <xsl:apply-templates select="./tei:head" mode="m_plain-text"/>
+        </xsl:variable>-->
+        <!--        <xsl:variable name="vUrl" select="concat($vgFileUrl, '#', @xml:id)"/>-->
+        <!--<xsl:variable name="vIssue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
+        <xsl:variable name="vVolume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>-->
+        <!--<xsl:variable name="vPubPlace"
             select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
         <xsl:variable name="vPublisher"
-            select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
+            select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>-->
+        <xsl:call-template name="t_bibl-mods">
+            <xsl:with-param name="p_lang" select="$pLang"/>
+            <xsl:with-param name="p_title-publication" select="$vBiblStructSource/tei:monogr/tei:title[@level = 'j'][@xml:lang = $vLang][not(@type = 'sub')]"/>
+            <xsl:with-param name="p_title-article">
+                <xsl:if test="@type = 'article' and ancestor::tei:div[@type = 'section']">
+                    <xsl:apply-templates select="ancestor::tei:div[@type = 'section']/tei:head" mode="m_plain-text"/>
+                    <xsl:text>: </xsl:text>
+                </xsl:if>
+                <xsl:apply-templates select="./tei:head" mode="m_plain-text"/>
+            </xsl:with-param>
+            <xsl:with-param name="p_url-self" select="concat($vgFileUrl, '#', @xml:id)"/>
+            <xsl:with-param name="p_url-licence" select="$vFileDesc/tei:publicationStmt/tei:availability/tei:licence/@target"/>
+            <xsl:with-param name="p_volume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>
+            <xsl:with-param name="p_issue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
+            <xsl:with-param name="p_date-publication" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]/@when"/>
+            <xsl:with-param name="p_publisher"
+                select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
+            <xsl:with-param name="p_place-publication"
+                select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
+            <xsl:with-param name="p_author" select="tei:byline/descendant::tei:persName"/>
+            <xsl:with-param name="p_editor" select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]"/>
+            <xsl:with-param name="p_pages">
+                <tei:biblScope unit="pages">
+                    <xsl:attribute name="from" select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
+                    <xsl:attribute name="to">
+                        <xsl:choose>
+                            <xsl:when test="preceding::tei:pb[@ed = 'print'][1]/@n != descendant::tei:pb[@ed = 'print'][last()]/@n">
+                                <xsl:value-of select="descendant::tei:pb[@ed = 'print'][last()]/@n"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:attribute>
+                </tei:biblScope>
+            </xsl:with-param>
+            <xsl:with-param name="p_idno" select="$vBiblStructSource/tei:idno"/>
+        </xsl:call-template>
+    </xsl:template>
+
+    <!-- prevent output from sections of articles and divisions of legal texts -->
+    <xsl:template match="tei:div[ancestor::tei:div[@type = 'article']] | tei:div[ancestor::tei:div[@type = 'bill']] | tei:div[not(@type)]"/>
+
+    <!-- the MODS output -->
+    <xsl:template name="t_bibl-mods">
+        <!-- possible values are 'a' and 'm' similar to the @level attribute on <tei:title>  -->
+        <xsl:param name="p_type" select="'a'"/>
+        <xsl:param name="p_lang" select="'ar'"/>
+        <xsl:param name="p_title-article"/>
+        <xsl:param name="p_title-publication"/>
+        <xsl:param name="p_publisher"/>
+        <!-- dates are formatted as iso compliant yyyy-mm-yy or yyyy -->
+        <xsl:param name="p_date-publication"/>
+        <xsl:param name="p_place-publication"/>
+        <xsl:param name="p_volume"/>
+        <xsl:param name="p_issue"/>
+        <!-- page range is formatted as <tei:biblScope unit="page" from="1" to="10"> -->
+        <xsl:param name="p_pages"/>
+        <!-- children: tei:persName -->
+        <xsl:param name="p_author"/>
+        <xsl:param name="p_editor"/>
+
+        <!-- these must be resolving URLs -->
+        <xsl:param name="p_url-licence" select="'url to licence'"/>
+        <xsl:param name="p_url-self" select="'url to file'"/>
+        <xsl:param name="p_idno"/>
+        
+        <!-- variables -->
+        <xsl:variable name="v_originInfo">
+            <originInfo>
+                <!-- information on the edition: it would be weird to mix data of the original source and the digital edition -->
+                <edition xml:lang="en">
+                    <xsl:text>digital TEI edition, </xsl:text>
+                    <xsl:value-of select="year-from-date(current-date())"/>
+                </edition>
+                <place>
+                    <placeTerm type="text" xml:lang="{$p_lang}">
+                        <xsl:value-of select="$p_place-publication"/>
+                    </placeTerm>
+                </place>
+                <publisher xml:lang="{$p_lang}">
+                    <xsl:value-of select="$p_publisher"/>
+                </publisher>
+                <dateIssued>
+                    <xsl:value-of select="$p_date-publication"/>
+                </dateIssued>
+                <issuance>
+                    <xsl:choose>
+                        <xsl:when test="$p_type='a' or $p_type='j'">                        
+                            <xsl:text>continuing</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="$p_type='m'">
+                            <issuance>monographic</issuance>
+                        </xsl:when>
+                    </xsl:choose>
+                </issuance>
+            </originInfo>
+        </xsl:variable>
+        <xsl:variable name="v_part">
+            <part>
+                <detail type="volume">
+                    <number>
+                        <xsl:value-of select="$p_volume"/>
+                    </number>
+                </detail>
+                <detail type="issue">
+                    <number>
+                        <xsl:value-of select="$p_issue"/>
+                    </number>
+                </detail>
+                <xsl:if test="$p_pages/descendant-or-self::tei:biblScope[@from][@to]">
+                    <extent unit="pages">
+                        <start>
+                            <xsl:value-of select="$p_pages/descendant-or-self::tei:biblScope/@from"/>
+                        </start>
+                        <end>
+                            <xsl:value-of select="$p_pages/descendant-or-self::tei:biblScope/@to"/>
+                        </end>
+                    </extent>
+                </xsl:if>
+            </part>
+        </xsl:variable>
+        <xsl:variable name="v_editor">
+            <!-- pull in information on editor -->
+            <!-- for each editor -->
+            <xsl:if test="$p_editor/descendant-or-self::tei:persName">
+                <xsl:for-each select="$p_editor/descendant-or-self::tei:persName">
+                    <name type="personal" xml:lang="{$p_lang}">
+                        <xsl:choose>
+                            <xsl:when test="tei:surname">
+                                <xsl:apply-templates select="tei:surname" mode="m_tei2mods">
+                                    <xsl:with-param name="p_lang" select="$p_lang"/>
+                                </xsl:apply-templates>
+                                <xsl:apply-templates select="tei:forename" mode="m_tei2mods">
+                                    <xsl:with-param name="p_lang" select="$p_lang"/>
+                                </xsl:apply-templates>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- what should happen if there is neither surname nor forename? -->
+                                <xsl:apply-templates select="self::tei:persName" mode="m_tei2mods">
+                                    <xsl:with-param name="p_lang" select="$p_lang"/>
+                                </xsl:apply-templates>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <role>
+                            <roleTerm authority="marcrelator" type="code">edt</roleTerm>
+                        </role>
+                    </name>
+                </xsl:for-each>
+            </xsl:if>
+        </xsl:variable>
 
         <mods ID="{concat($vgFileId,'-',@xml:id,'-mods')}">
-            <titleInfo xml:lang="{$vLang}">
+            <titleInfo xml:lang="{$p_lang}">
                 <title>
-                    <xsl:value-of select="$vArticleTitle"/>
+                    <xsl:choose>
+                        <xsl:when test="$p_type='a'">
+                            <xsl:value-of select="$p_title-article"/>
+                        </xsl:when>
+                        <xsl:when test="$p_type='m' or $p_type='j'">
+                            <xsl:value-of select="$p_title-publication"/>
+                        </xsl:when>
+                    </xsl:choose>
                 </title>
             </titleInfo>
             <!--<mods:titleInfo>
@@ -67,281 +224,121 @@
             <typeOfResource>
                 <xsl:text>text</xsl:text>
             </typeOfResource>
-            <genre authority="local" xml:lang="en">journalArticle</genre>
-            <genre authority="marcgt" xml:lang="en">article</genre>
+            <xsl:choose>
+                <xsl:when test="$p_type='a'">                        
+                    <genre authority="local" xml:lang="en">journalArticle</genre>
+                    <genre authority="marcgt" xml:lang="en">article</genre>
+                </xsl:when>
+                <xsl:when test="$p_type='m'">
+                    <genre authority="local">book</genre>
+                    <genre authority="marcgt">book</genre>
+                </xsl:when>
+                <xsl:when test="$p_type='j'">
+                    <genre authority="local">journal</genre>
+                    <genre authority="marcgt">journal</genre>
+                </xsl:when>
+            </xsl:choose>
             <!-- for each author -->
-            <xsl:for-each select="child::tei:byline/descendant::tei:persName">
-                <name type="personal" xml:lang="{$vLang}">
-                    <xsl:choose>
-                        <xsl:when test="child::tei:surname">
-                            <namePart type="family" xml:lang="{$vLang}">
-                                <xsl:value-of select="child::tei:surname"/>
-                            </namePart>
-                            <namePart type="given" xml:lang="{$vLang}">
-                                <xsl:value-of select="child::tei:forename"/>
-                            </namePart>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <!-- what should happen if there is neither surname nor forename? -->
-                            <xsl:value-of select="."/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                    <role>
-                        <roleTerm authority="marcrelator" type="code">aut</roleTerm>
-                    </role>
-                </name>
-            </xsl:for-each>
-            <accessCondition>
-                <xsl:value-of
-                    select="$vFileDesc/tei:publicationStmt/tei:availability/tei:licence/@target"/>
-            </accessCondition>
-            <location>
-                <url dateLastAccessed="{format-date(current-date(),'[Y0001]-[M01]-[D01]')}"
-                    usage="primary display">
-                    <xsl:value-of select="$vUrl"/>
-                </url>
-            </location>
-            <language>
-                <languageTerm type="code" authorityURI="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">
-                    <xsl:value-of select="@xml:lang"/>
-                </languageTerm>
-            </language>
-            <relatedItem type="host">
-                <titleInfo>
-                    <title xml:lang="{$vLang}">
-                        <xsl:value-of select="$vPublicationTitle"/>
-                    </title>
-                </titleInfo>
-                <genre authority="marcgt">journal</genre>
-                <!-- pull in information on editor -->
-                <name type="personal">
-                    <namePart type="family" xml:lang="{$vLang}">
-                        <xsl:value-of
-                            select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]/tei:surname"
-                        />
-                    </namePart>
-                    <namePart type="given" xml:lang="{$vLang}">
-                        <xsl:value-of
-                            select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]/tei:forename"
-                        />
-                    </namePart>
-                    <role>
-                        <roleTerm authority="marcrelator" type="code">edt</roleTerm>
-                    </role>
-                </name>
-                <originInfo>
-                    <!-- information on the edition: it would be weird to mix data of the original source and the digital edition -->
-                    <edition xml:lang="en">
-                        <xsl:text>digital TEI edition, </xsl:text>
-                        <xsl:value-of select="year-from-date(current-date())"/>
-                    </edition>
-                    <place>
-                        <placeTerm type="text" xml:lang="{$vLang}">
-                            <xsl:value-of select="$vPubPlace"/>
-                        </placeTerm>
-                    </place>
-                    <publisher  xml:lang="{$vLang}">
-                        <xsl:value-of select="$vPublisher"/>
-                    </publisher>
-                    <dateIssued>
-                        <xsl:value-of select="$vPublDate/@when"/>
-                    </dateIssued>
-                    <issuance>
-                        <xsl:text>continuing</xsl:text>
-                    </issuance>
-                </originInfo>
-                <part>
-                    <detail type="volume">
-                        <number>
-                            <xsl:value-of select="$vVolume"/>
-                        </number>
-                    </detail>
-                    <detail type="issue">
-                        <number>
-                            <xsl:value-of select="$vIssue"/>
-                        </number>
-                    </detail>
-                    <extent unit="pages">
-                        <start>
-                            <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
-                        </start>
-                        <end>
+            <xsl:if test="$p_author/descendant-or-self::tei:persName">
+                <xsl:for-each select="$p_author/descendant-or-self::tei:persName">
+                    <name type="personal" xml:lang="{$p_lang}">
                         <xsl:choose>
-                            <xsl:when
-                            test="preceding::tei:pb[@ed = 'print'][1]/@n != descendant::tei:pb[@ed = 'print'][last()]/@n">
-                                <xsl:value-of select="descendant::tei:pb[@ed = 'print'][last()]/@n"
-                                />
-                        </xsl:when>
+                            <xsl:when test="tei:surname">
+                                <xsl:apply-templates select="tei:surname" mode="m_tei2mods">
+                                    <xsl:with-param name="p_lang" select="$p_lang"/>
+                                </xsl:apply-templates>
+                                <xsl:apply-templates select="tei:forename" mode="m_tei2mods">
+                                    <xsl:with-param name="p_lang" select="$p_lang"/>
+                                </xsl:apply-templates>
+                            </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
+                                <!-- what should happen if there is neither surname nor forename? -->
+                                <xsl:apply-templates select="self::tei:persName" mode="m_tei2mods">
+                                    <xsl:with-param name="p_lang" select="$p_lang"/>
+                                </xsl:apply-templates>
                             </xsl:otherwise>
                         </xsl:choose>
-                        </end>
-                    </extent>
-                </part>
-                <xsl:for-each select="$vBiblStructSource/tei:idno">
-                    <identifier type="{@type}"><xsl:value-of select="."/></identifier>
+                        <role>
+                            <roleTerm authority="marcrelator" type="code">aut</roleTerm>
+                        </role>
+                    </name>
                 </xsl:for-each>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="$p_type='a'">
+            <relatedItem type="host">
+                <titleInfo>
+                    <title xml:lang="{$p_lang}">
+                        <xsl:value-of select="$p_title-publication"/>
+                    </title>
+                </titleInfo>
+                <genre authority="marcgt">journal</genre>
+                <xsl:copy-of select="$v_editor"/>
+                <xsl:copy-of select="$v_originInfo"/>
+                <xsl:copy-of select="$v_part"/>
+                <xsl:apply-templates select="$p_idno/descendant-or-self::tei:idno" mode="m_tei2mods"/>
             </relatedItem>
-        </mods>
-           <!-- <xsl:element name="mods">
-                <xsl:attribute name="ID" select="concat($vgFileId,'-',@xml:id,'-mods')"/>
-                <xsl:element name="titleInfo">
-                    <xsl:attribute name="xml:lang" select="$vLang"/>
-                    <xsl:element name="title">
-                        <xsl:value-of select="$vArticleTitle"/>
-                    </xsl:element>
-                </xsl:element>
-
-            <!-\-<mods:titleInfo>
-                <mods:title type="abbreviated">
-                    <xsl:value-of select="$vShortTitle"/>
-                </mods:title>
-            </mods:titleInfo>-\->
-                <xsl:element name="typeOfResource">
-                    <xsl:text>text</xsl:text>
-                </xsl:element>
-                <xsl:element name="genre">
-                    <xsl:attribute name="authority" select="'local'"/>
-                    <xsl:attribute name="xml:lang" select="'en'"/>
-                    <xsl:text>journalArticle</xsl:text>
-                </xsl:element>
-                <xsl:element name="genre">
-                    <xsl:attribute name="authority" select="'marcgt'"/>
-                    <xsl:attribute name="xml:lang" select="'en'"/>
-                    <xsl:text>article</xsl:text>
-                </xsl:element>
-            <!-\- for each author -\->
-            <xsl:for-each select="child::tei:byline/tei:persName">
-                <name type="personal" xml:lang="{$vLang}">
-                    <xsl:choose>
-                        <xsl:when test="child::tei:surname">
-                            <namePart type="family" xml:lang="{$vLang}">
-                                <xsl:value-of select="child::tei:surname"/>
-                            </namePart>
-                        </xsl:when>
-                        <xsl:when test="child::tei:forename">
-                            <namePart type="given" xml:lang="{$vLang}">
-                                <xsl:value-of select="child::tei:forename"/>
-                            </namePart>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <!-\- what should happen if there is neither surname nor forename? -\->
-                        </xsl:otherwise>
-                    </xsl:choose>
-                    <role>
-                        <roleTerm authority="marcrelator" type="code">aut</roleTerm>
-                    </role>
-                </name>
-            </xsl:for-each>
+                </xsl:when>
+                <xsl:when test="$p_type='m'">
+                    <xsl:copy-of select="$v_editor"/>
+                    <xsl:copy-of select="$v_originInfo"/>
+                    <xsl:copy-of select="$v_part"/>
+                </xsl:when>
+            </xsl:choose>
             <accessCondition>
-                <xsl:value-of
-                    select="$vFileDesc/tei:publicationStmt/tei:availability/tei:licence/@target"/>
+                <xsl:value-of select="$p_url-licence"/>
             </accessCondition>
             <location>
-                <url dateLastAccessed="{format-date(current-date(),'[Y0001]-[M01]-[D01]')}"
-                    usage="primary display">
-                    <xsl:value-of select="$vUrl"/>
+                <url dateLastAccessed="{format-date(current-date(),'[Y0001]-[M01]-[D01]')}" usage="primary display">
+                    <xsl:value-of select="$p_url-self"/>
                 </url>
             </location>
             <language>
                 <languageTerm type="code" authorityURI="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">
-                    <xsl:value-of select="@xml:lang"/>
+                    <xsl:value-of select="$p_lang"/>
                 </languageTerm>
             </language>
-            <relatedItem type="host">
-                <titleInfo>
-                    <title xml:lang="{$vLang}">
-                        <xsl:value-of select="$vPublicationTitle"/>
-                    </title>
-                </titleInfo>
-                <genre authority="marcgt">journal</genre>
-                <!-\- pull in information on editor -\->
-                <name type="personal">
-                    <namePart type="family" xml:lang="{$vLang}">
-                        <xsl:value-of
-                            select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]/tei:surname"
-                        />
-                    </namePart>
-                    <namePart type="given" xml:lang="{$vLang}">
-                        <xsl:value-of
-                            select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]/tei:forename"
-                        />
-                    </namePart>
-                    <role>
-                        <roleTerm authority="marcrelator" type="code">edt</roleTerm>
-                    </role>
-                </name>
-                <originInfo>
-                    <!-\- information on the edition: it would be weird to mix data of the original source and the digital edition -\->
-                    <edition xml:lang="en">
-                        <xsl:text>digital TEI edition, </xsl:text>
-                        <xsl:value-of select="year-from-date(current-date())"/>
-                    </edition>
-                    <place>
-                        <placeTerm type="text" xml:lang="{$vLang}">
-                            <xsl:value-of select="$vPubPlace"/>
-                        </placeTerm>
-                    </place>
-                    <publisher  xml:lang="{$vLang}">
-                        <xsl:value-of select="$vPublisher"/>
-                    </publisher>
-                    <dateIssued>
-                        <xsl:value-of select="$vPublDate/@when"/>
-                    </dateIssued>
-                    <issuance>
-                        <xsl:text>continuing</xsl:text>
-                    </issuance>
-                </originInfo>
-                <part>
-                    <detail type="volume">
-                        <number>
-                            <xsl:value-of select="$vVolume"/>
-                        </number>
-                    </detail>
-                    <detail type="issue">
-                        <number>
-                            <xsl:value-of select="$vIssue"/>
-                        </number>
-                    </detail>
-                    <extent unit="pages">
-                        <start>
-                            <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
-                        </start>
-                        <end>
-                            <xsl:choose>
-                                <xsl:when
-                                    test="preceding::tei:pb[@ed = 'print'][1]/@n != descendant::tei:pb[@ed = 'print'][last()]/@n">
-                                    <xsl:value-of select="descendant::tei:pb[@ed = 'print'][last()]/@n"
-                                    />
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </end>
-                    </extent>
-                </part>
-                <xsl:for-each select="$vBiblStructSource/tei:idno">
-                    <identifier type="{@type}"><xsl:value-of select="."/></identifier>
-                </xsl:for-each>
-            </relatedItem>
-            </xsl:element>-->
+        </mods>
     </xsl:template>
-
-    <!-- prevent output from sections of articles and divisions of legal texts -->
-    <xsl:template match="tei:div[ancestor::tei:div[@type = 'article']] | tei:div[ancestor::tei:div[@type = 'bill']] | tei:div[not(@type)]"/>
 
     <!-- plain text output -->
-    <xsl:template match="text()" mode="mPlainText">
-        <!--<xsl:text> </xsl:text>--><xsl:value-of select="normalize-space(.)"/><!--<xsl:text> </xsl:text>-->
+    <xsl:template match="text()" mode="m_plain-text">
+        <!--<xsl:text> </xsl:text>-->
+        <xsl:value-of select="normalize-space(.)"/>
+        <!--<xsl:text> </xsl:text>-->
     </xsl:template>
-    <xsl:template match="tei:lb | tei:cb | tei:pb" mode="mPlainText">
+    <xsl:template match="tei:lb | tei:cb | tei:pb" mode="m_plain-text">
         <xsl:text> </xsl:text>
     </xsl:template>
 
     <!-- prevent notes in div/head from producing output -->
-    <xsl:template match="tei:head/tei:note" mode="mPlainText"/>
+    <xsl:template match="tei:head/tei:note" mode="m_plain-text"/>
+
+    <!-- transform TEI names to MODS -->
+    <xsl:template match="tei:surname" mode="m_tei2mods">
+        <xsl:param name="p_lang"/>
+        <namePart type="family" xml:lang="{$p_lang}">
+            <xsl:value-of select="."/>
+        </namePart>
+    </xsl:template>
+    <xsl:template match="tei:forename" mode="m_tei2mods">
+        <xsl:param name="p_lang"/>
+        <namePart type="given" xml:lang="{$p_lang}">
+            <xsl:value-of select="."/>
+        </namePart>
+    </xsl:template>
+    <xsl:template match="tei:persName" mode="m_tei2mods">
+        <xsl:param name="p_lang"/>
+        <namePart type="family" xml:lang="{$p_lang}">
+            <xsl:value-of select="."/>
+        </namePart>
+    </xsl:template>
+    <!--  -->
+    <xsl:template match="tei:idno" mode="m_tei2mods">
+        <identifier type="{@type}">
+            <xsl:value-of select="."/>
+        </identifier>
+    </xsl:template>
 
 
 </xsl:stylesheet>
