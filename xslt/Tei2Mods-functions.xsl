@@ -114,8 +114,13 @@
         <xsl:param name="p_editor"/>
 
         <!-- these must be resolving URLs -->
-        <xsl:param name="p_url-licence" select="'url to licence'"/>
-        <xsl:param name="p_url-self" select="'url to file'"/>
+        <xsl:param name="p_url-licence"/>
+        <xsl:param name="p_url-self"/>
+        <!--  -->
+        <xsl:param name="p_edition">
+            <xsl:text>digital TEI edition, </xsl:text>
+            <xsl:value-of select="year-from-date(current-date())"/>
+        </xsl:param>
         <xsl:param name="p_idno"/>
         
         <!-- variables -->
@@ -123,8 +128,7 @@
             <originInfo>
                 <!-- information on the edition: it would be weird to mix data of the original source and the digital edition -->
                 <edition xml:lang="en">
-                    <xsl:text>digital TEI edition, </xsl:text>
-                    <xsl:value-of select="year-from-date(current-date())"/>
+                    <xsl:value-of select="$p_edition"/>
                 </edition>
                 <place>
                     <placeTerm type="text" xml:lang="{$p_lang}">
@@ -143,7 +147,7 @@
                             <xsl:text>continuing</xsl:text>
                         </xsl:when>
                         <xsl:when test="$p_type='m'">
-                            <issuance>monographic</issuance>
+                            <xsl:text>monographic</xsl:text>
                         </xsl:when>
                     </xsl:choose>
                 </issuance>
@@ -234,8 +238,8 @@
                     <genre authority="marcgt">book</genre>
                 </xsl:when>
                 <xsl:when test="$p_type='j'">
-                    <genre authority="local">journal</genre>
-                    <genre authority="marcgt">journal</genre>
+                    <genre authority="local">periodical</genre>
+                    <genre authority="marcgt">periodical</genre>
                 </xsl:when>
             </xsl:choose>
             <!-- for each author -->
@@ -279,7 +283,7 @@
                 <xsl:apply-templates select="$p_idno/descendant-or-self::tei:idno" mode="m_tei2mods"/>
             </relatedItem>
                 </xsl:when>
-                <xsl:when test="$p_type='m'">
+                <xsl:when test="$p_type='m' or $p_type='j'">
                     <xsl:copy-of select="$v_editor"/>
                     <xsl:copy-of select="$v_originInfo"/>
                     <xsl:copy-of select="$v_part"/>
