@@ -4,6 +4,11 @@ displaying the facsimiles on the left
 and the text on the right.
 **********************/
 
+/* omit shamela page breaks */
+pb[ed = "shamela"]{
+    display:none;
+}
+
 /* provide a new and broader width and override other settings */
 html {
 	width: 1100px !important;
@@ -59,16 +64,14 @@ TEI > text[lang *= "ota-Latn-"] div >* {
 
 /* the span containing the entire <pb> information */
 span.-teibp-pb {
+	clear: both !important;
 	display: block;
 	width: 1000px;
 	margin-right: auto;
 	margin-left: auto;
-	padding-left: inherit;
-	padding-right: inherit;
-	padding-top: 0px;
-	padding-bottom: 0px;
 	margin-bottom: 0px;
-	margin-top: 0px;
+	margin-top: 10px;
+	padding-top: 0 0 0 0;
 	border-top: 5px dotted #EBEBEB;
 }
 

@@ -16,7 +16,7 @@
         </xd:desc>
     </xd:doc>
     
-    <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
+    <xsl:output encoding="UTF-8" indent="yes" method="xml"  omit-xml-declaration="no" version="1.0"/>
     
     <xsl:template match="@* | node()">
         <xsl:copy>
@@ -25,8 +25,20 @@
     </xsl:template>
     
     <xsl:template match="tei:list/tei:p">
-        <xsl:element name="tei:item">
-            <xsl:apply-templates select="@* | node()"/>
+        <xsl:element name="item">
+<!--            <xsl:element name="p">-->
+                <xsl:apply-templates select="node()"/>
+            <!--</xsl:element>-->
+        </xsl:element>
+    </xsl:template>
+    
+    <!-- correct tables -->
+    <xsl:template match="tei:table/tei:p">
+        <xsl:element name="row">
+            <xsl:attribute name="role" select="'data'"/>
+            <xsl:element name="cell">
+                <xsl:apply-templates select="node()"/>
+            </xsl:element>
         </xsl:element>
     </xsl:template>
 </xsl:stylesheet>

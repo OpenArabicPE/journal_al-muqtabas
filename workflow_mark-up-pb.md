@@ -1,9 +1,11 @@
 ---
+layout: post
 title: "Workflow: Mark-up of page breaks"
 author: Till Grallert
 date: 2016-04-11 16:51:31
 tags:
 - documentation
+- how to
 - tei
 - workflow
 - xml
@@ -19,7 +21,27 @@ Note that running XSLT 2.0 stylesheets requires some processing engine, most lik
 
 ## 1.1 Page breaks
 
-Page breaks are recorded with the empty milestone element `<pb/>`.  Page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the original printed copies. They were therefore marked as `<pb ed="shamila">`. Page breaks corresponding to the original printed edition are identified by `@ed="print"`.
+Page breaks are recorded with the empty milestone element `<pb/>`. If a page break separates block level elements such as `<div>`, `<p>` or `<lg>`, the empty `<pb/>` is placed between the two elements and on the same level within the XML tree.
+
+~~~{.xml}
+<pb/>
+<div>
+    <p>Some text in a paragraph <pb/> that spans across pages</p>
+    <p>Some text in a paragraph that does not span across pages</p>
+    <pb/>
+    <p>
+        <!--  -->
+    </p>
+</div>
+<pb/>
+<div>
+    <p></p>
+    <!-- -->
+</div>
+~~~
+
+
+Page breaks found in *al-maktaba al-shāmila* do not correspond to those in the original printed copies. They were therefore marked as `<pb ed="shamila">`. Page breaks corresponding to the original printed edition are identified by `@ed="print"`.
 
 Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the original, it appeared to be a facsimile reprint: pagination, font, layout --- everything is identical.
 

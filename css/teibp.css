@@ -374,19 +374,7 @@ cb:before {
   content: "[column break]";
 }
 cell {
-  display: table-cell;
-  padding: 1em 1.5em 1em 1em;
-  /*
-border-left: 2px solid @border-color;
-border-top:2px solid @border-color;
-*/
-
-  border: 1px dotted #aaaaaa;
-  width: 100%;
-}
-/* for cell or row with @role = label */
-[role=label] {
-  font-weight: bold;
+  /* removed to a specialised stylesheet */
 }
 certainty {
   /* Empty Rule Set */
@@ -541,9 +529,9 @@ date[when]:empty:before {
   content: attr(when);
 }
 div {
-    margin-top:1em;
-    margin-bottom:1em;
-    padding-bottom:1em;
+/*    margin-top:1em;
+    margin-bottom:1em;*/
+    /*padding-bottom:1em;*/
 }
 /* e */
 egXML {
@@ -805,9 +793,7 @@ kinesic {
 }
 /* l */
 l {
-  display: block;
-  padding-left: 2em;
-  text-indent: -2em;
+/* Empty Rule Set */
 }
 list[type="gloss"] > label {
   display: block;
@@ -1111,9 +1097,9 @@ origin {
 }
 /* p */
 p {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  /*display: block;*/
+/*  margin-top: 1em;
+  margin-bottom: 1em;*/
   text-align: justify;
 }
 *[rendition~="#center"] p {
@@ -1134,15 +1120,8 @@ particDesc {
 pause {
   /* Empty Rule Set*/
 }
-pb {
-  display: block;
-  width: 100%;
-  text-align: right;
-  color: gray;
-  margin: 2em 0 2em 0;
-  font-size: 11pt;
-}
-.pb {
+/* these rules are not used due to the html design of page breaks*/
+pb, .pb {
   display: block;
   width: 100%;
   text-align: right;
@@ -1349,10 +1328,13 @@ residence {
 resp {
   /* Empty Rule Set */
 }
-respStmt {
+teiHeader respStmt {
   display: block;
-  margin-top: 0;
-  margin-bottom: 0;
+/*  margin-top: 0;
+  margin-bottom: 0;*/
+}
+.teibp_notes respStmt, TEI text respStmt {
+  display:inline;
 }
 /* hide */
 restore {
@@ -1377,7 +1359,7 @@ root {
   /* don't know */
 }
 row {
-  display: table-row;
+  /*removed to a specialised rule set*/
 }
 rs {
   /* Empty Rule Set */
@@ -1638,18 +1620,14 @@ TEI {
   display: block;
 }
 table {
-  border-collapse: separate;
-  border-spacing: 2px;
+ /* removed to a specialised rule set */
 }
 /* Why is this selector "TEI table" instead of just "table"? */
 TEI table {
-  display: block;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  font-size: 12pt;
+ /* removed to a specialised rule set */
 }
 table > head {
-  text-align: center;
+ /* removed to a specialised rule set */
 }
 teiHeader {
   display: block;
@@ -1681,22 +1659,22 @@ textDesc {
 }
 /* title */
 /* Need TEI ancestor to distinguish TEI title from HTML title */
-TEI title {
+TEI title, body title {
   display: inline;
 }
-TEI title[level=a] {
+title[level=a] {
   quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d";
 }
-TEI title[level=a]:before {
+title[level=a]:before {
   content: open-quote;
 }
-TEI title[level=a]:after {
+title[level=a]:after {
   content: close-quote;
 }
-TEI title[level=a][next]:after {
+title[level=a][next]:after {
   content: "" !important;
 }
-TEI title[level=a][prev]:before {
+title[level=a][prev]:before {
   content: "" !important;
 }
 title[level=m] {
