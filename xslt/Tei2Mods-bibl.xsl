@@ -3,11 +3,11 @@
     xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" version="1.0"/>
-    <!--<xsl:strip-space elements="*"/>-->
+    <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:head tei:bibl"/>
 
     <xsl:include href="Tei2Mods-functions.xsl"/>
-    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
+    <!--<xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
 
     <xsl:template match="tei:bibl">
         <xsl:variable name="v_type">
@@ -48,22 +48,8 @@
             <xsl:with-param name="p_publisher" select="descendant::tei:publisher"/>
             <xsl:with-param name="p_place-publication" select="descendant::tei:pubPlace"/>
             <!-- this needs to be changed to reflect the changes in the called template -->
-            <xsl:with-param name="p_date-publication">
-                <xsl:choose>
-                    <xsl:when test="descendant::tei:date[1]/@when != ''">
-                        <xsl:value-of select="descendant::tei:date[1]/@when"/>
-                    </xsl:when>
-                    <xsl:when test="descendant::tei:date[1][@when-custom]/@calendar = '#cal_islamic'">
-                        <xsl:analyze-string select="descendant::tei:date[1][@calendar = '#cal_islamic']/@when-custom" regex="(\d{{4}})">
-                            <xsl:matching-substring>
-                                <xsl:call-template name="funcDateHY2G">
-                                    <xsl:with-param name="pYearH" select="regex-group(1)"/>
-                                </xsl:call-template>
-                            </xsl:matching-substring>
-                        </xsl:analyze-string>
-                    </xsl:when>
-                </xsl:choose>
-            </xsl:with-param>
+            <xsl:with-param name="p_date-publication" select="descendant::tei:date[1]"/>
+            <xsl:with-param name="p_date-accessed" select="ancestor::tei:TEI/tei:teiHeader/tei:revisionDesc/tei:change[1]/@when"/>
             <xsl:with-param name="p_volume" select="descendant::tei:biblScope[@unit = 'volume']/@n"/>
             <xsl:with-param name="p_issue" select="descendant::tei:biblScope[@unit = 'issue']/@n"/>
             <xsl:with-param name="p_pages" select="descendant::tei:biblScope[@unit = 'page']"/>

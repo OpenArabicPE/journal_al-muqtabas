@@ -6,7 +6,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" version="1.0"/>
-    <xsl:strip-space elements="tei:persName"/>
+    <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:head tei:bibl"/>
 
 
@@ -47,7 +47,8 @@
             <xsl:with-param name="p_url-licence" select="$vFileDesc/tei:publicationStmt/tei:availability/tei:licence/@target"/>
             <xsl:with-param name="p_volume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>
             <xsl:with-param name="p_issue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
-            <xsl:with-param name="p_date-publication" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]/@when"/>
+            <xsl:with-param name="p_date-publication" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>
+            <xsl:with-param name="p_date-accessed" select="ancestor::tei:TEI/tei:teiHeader/tei:revisionDesc/tei:change[1]/@when"/>
             <xsl:with-param name="p_publisher"
                 select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
             <xsl:with-param name="p_place-publication"
@@ -84,8 +85,9 @@
         <xsl:param name="p_title-article"/>
         <xsl:param name="p_title-publication"/>
         <xsl:param name="p_publisher"/>
-        <!-- dates are formatted as <tei:date when="" calendar="" when-custom=""/> -->
+        <!-- publication dates are formatted as <tei:date when="" calendar="" when-custom=""/> -->
         <xsl:param name="p_date-publication"/>
+        <xsl:param name="p_date-accessed" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
         <xsl:param name="p_place-publication"/>
         <xsl:param name="p_volume"/>
         <xsl:param name="p_issue"/>
@@ -135,13 +137,30 @@
                     <dateOther>
                         <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom"/>
                         <xsl:text> [</xsl:text>
-                           <xsl:analyze-string select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom" regex="(\d{{4}})">
-                                <xsl:matching-substring>
-                                    <xsl:call-template name="funcDateHY2G">
-                                        <xsl:with-param name="pYearH" select="regex-group(1)"/>
-                                    </xsl:call-template>
-                                </xsl:matching-substring>
-                            </xsl:analyze-string>
+                        <xsl:choose>
+                            <xsl:when test="$p_date-publication[@calendar = '#cal_islamic']/@when">
+                                <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:analyze-string select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom" regex="(\d{{4}})$|(\d{{4}}-\d{{2}}-\d{{2}})$">
+                                    <xsl:matching-substring>
+                                        <xsl:if test="regex-group(1)">
+                                            <xsl:call-template name="funcDateHY2G">
+                                                <xsl:with-param name="pYearH" select="regex-group(1)"/>
+                                            </xsl:call-template>
+                                        </xsl:if>
+                                        <xsl:if test="regex-group(2)">
+                                            <xsl:call-template name="funcDateH2G">
+                                                <xsl:with-param name="pDateH" select="regex-group(2)"/>
+                                            </xsl:call-template>
+                                        </xsl:if>
+                                    </xsl:matching-substring>
+                                    <xsl:non-matching-substring>
+                                        <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom"/>
+                                    </xsl:non-matching-substring>
+                                </xsl:analyze-string>
+                            </xsl:otherwise>
+                        </xsl:choose>
                         <xsl:text>]</xsl:text>
                     </dateOther>
                 </xsl:if>
@@ -297,7 +316,7 @@
                 <xsl:value-of select="$p_url-licence"/>
             </accessCondition>
             <location>
-                <url dateLastAccessed="{format-date(current-date(),'[Y0001]-[M01]-[D01]')}" usage="primary display">
+                <url dateLastAccessed="{$p_date-accessed}" usage="primary display">
                     <xsl:value-of select="$p_url-self"/>
                 </url>
             </location>
