@@ -138,11 +138,11 @@
                         <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom"/>
                         <xsl:text> [</xsl:text>
                         <xsl:choose>
-                            <xsl:when test="$p_date-publication[@calendar = '#cal_islamic']/@when">
-                                <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when"/>
+                            <xsl:when test="$p_date-publication[@calendar = '#cal_islamic'][@when-custom]/@when">
+                                <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic'][@when-custom]/@when"/>
                             </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:analyze-string select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom" regex="(\d{{4}})$|(\d{{4}}-\d{{2}}-\d{{2}})$">
+                            <xsl:when test="$p_date-publication[@calendar = '#cal_islamic'][@when-custom]">
+                                <xsl:analyze-string select="$p_date-publication[@calendar = '#cal_islamic'][@when-custom]/@when-custom" regex="(\d{{4}})$|(\d{{4}}-\d{{2}}-\d{{2}})$">
                                     <xsl:matching-substring>
                                         <xsl:if test="regex-group(1)">
                                             <xsl:call-template name="funcDateHY2G">
@@ -159,7 +159,7 @@
                                         <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom"/>
                                     </xsl:non-matching-substring>
                                 </xsl:analyze-string>
-                            </xsl:otherwise>
+                            </xsl:when>
                         </xsl:choose>
                         <xsl:text>]</xsl:text>
                     </dateOther>
