@@ -8,6 +8,8 @@
 
     <xsl:include href="Tei2Mods-functions.xsl"/>
     <!--<xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
+    
+    <xsl:param name="pg_head-section" select="'مخطوطات ومطبوعات'"/>
 
     <xsl:template match="tei:bibl">
         <xsl:variable name="v_type">
@@ -40,8 +42,10 @@
                     </xsl:when>
                     <xsl:when test="$v_type = 'j' or $v_type = 'a'">
                         <xsl:value-of select="descendant::tei:title[@level = 'j'][not(@type='sub')]"/>
-                        <xsl:text>: </xsl:text>
-                        <xsl:value-of select="descendant::tei:title[@level = 'j'][@type='sub']"/>
+                        <xsl:if test="descendant::tei:title[@level = 'j'][@type='sub']">
+                            <xsl:text>: </xsl:text>
+                            <xsl:value-of select="descendant::tei:title[@level = 'j'][@type='sub']"/>
+                        </xsl:if>
                     </xsl:when>
                 </xsl:choose>
             </xsl:with-param>
@@ -67,7 +71,8 @@
         <xsl:result-document href="../metadata/{$vgFileId}-bibl.MODS.xml">
             <xsl:value-of select="'&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;../boilerplate/mods-bp.xsl&quot;?&gt;'" disable-output-escaping="yes"/>
             <modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 {$vgSchemaLocation}">
-                <xsl:apply-templates select=".//tei:body//tei:bibl[ancestor::tei:div/tei:head/text() = 'مخطوطات ومطبوعات']"/>
+                <!--<xsl:apply-templates select=".//tei:body//tei:bibl[contains(ancestor::tei:div/tei:head/text(),$pg_head-section)]"/>-->
+                <xsl:apply-templates select=".//tei:body//tei:bibl[descendant::tei:title]"/>
             </modsCollection>
         </xsl:result-document>
     </xsl:template>
