@@ -6,8 +6,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" version="1.0"/>
-    <xsl:strip-space elements="*"/>
-    <xsl:preserve-space elements="tei:head tei:bibl"/>
+<!--    <xsl:strip-space elements="*"/>-->
+<!--    <xsl:preserve-space elements="tei:head tei:bibl"/>-->
 
 
     <!-- this stylesheet generates a MODS XML file with bibliographic metadata for each <div> in the body of the TEI source file. File names are based on the source's @xml:id and the @xml:id of the <div>. -->
@@ -112,15 +112,15 @@
             <originInfo>
                 <!-- information on the edition: it would be weird to mix data of the original source and the digital edition -->
                 <edition xml:lang="en">
-                    <xsl:value-of select="$p_edition"/>
+                    <xsl:apply-templates select="$p_edition" mode="m_plain-text"/>
                 </edition>
                 <place>
                     <placeTerm type="text" xml:lang="{$p_lang}">
-                        <xsl:value-of select="$p_place-publication"/>
+                        <xsl:apply-templates select="$p_place-publication" mode="m_plain-text"/>
                     </placeTerm>
                 </place>
                 <publisher xml:lang="{$p_lang}">
-                    <xsl:value-of select="$p_publisher"/>
+                    <xsl:apply-templates select="$p_publisher" mode="m_plain-text"/>
                 </publisher>
                 <dateIssued>
                     <xsl:if test="$p_date-publication/@when!=''">
@@ -235,10 +235,10 @@
                 <title>
                     <xsl:choose>
                         <xsl:when test="$p_type='a'">
-                            <xsl:value-of select="$p_title-article"/>
+                            <xsl:apply-templates select="$p_title-article" mode="m_plain-text"/>
                         </xsl:when>
                         <xsl:when test="$p_type='m' or $p_type='j'">
-                            <xsl:value-of select="$p_title-publication"/>
+                            <xsl:apply-templates select="$p_title-publication" mode="m_plain-text"/>
                         </xsl:when>
                     </xsl:choose>
                 </title>
@@ -296,7 +296,7 @@
             <relatedItem type="host">
                 <titleInfo>
                     <title xml:lang="{$p_lang}">
-                        <xsl:value-of select="$p_title-publication"/>
+                        <xsl:apply-templates select="$p_title-publication" mode="m_plain-text"/>
                     </title>
                 </titleInfo>
                 <genre authority="marcgt">journal</genre>
@@ -342,28 +342,28 @@
     <xsl:template match="tei:head/tei:note" mode="m_plain-text"/>
 
     <!-- transform TEI names to MODS -->
-    <xsl:template match="tei:surname" mode="m_tei2mods">
+    <xsl:template match="tei:surname | tei:persName" mode="m_tei2mods">
         <xsl:param name="p_lang"/>
         <namePart type="family" xml:lang="{$p_lang}">
-            <xsl:value-of select="."/>
+            <xsl:apply-templates select="." mode="m_plain-text"/>
         </namePart>
     </xsl:template>
     <xsl:template match="tei:forename" mode="m_tei2mods">
         <xsl:param name="p_lang"/>
         <namePart type="given" xml:lang="{$p_lang}">
-            <xsl:value-of select="."/>
+            <xsl:apply-templates select="." mode="m_plain-text"/>
         </namePart>
     </xsl:template>
-    <xsl:template match="tei:persName" mode="m_tei2mods">
+<!--    <xsl:template match="tei:persName" mode="m_tei2mods">
         <xsl:param name="p_lang"/>
         <namePart type="family" xml:lang="{$p_lang}">
             <xsl:value-of select="."/>
         </namePart>
-    </xsl:template>
+    </xsl:template>-->
     <!--  -->
     <xsl:template match="tei:idno" mode="m_tei2mods">
         <identifier type="{@type}">
-            <xsl:value-of select="."/>
+            <xsl:apply-templates select="." mode="m_plain-text"/>
         </identifier>
     </xsl:template>
 
