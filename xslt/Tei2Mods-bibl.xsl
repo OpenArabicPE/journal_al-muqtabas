@@ -47,6 +47,7 @@
             </xsl:with-param>
             <xsl:with-param name="p_publisher" select="descendant::tei:publisher"/>
             <xsl:with-param name="p_place-publication" select="descendant::tei:pubPlace"/>
+            <!-- this needs to be changed to reflect the changes in the called template -->
             <xsl:with-param name="p_date-publication">
                 <xsl:choose>
                     <xsl:when test="descendant::tei:date[1]/@when != ''">

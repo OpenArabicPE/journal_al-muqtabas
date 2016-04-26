@@ -14,6 +14,7 @@
     <!-- to do:
         + add information on edition: i.e. TEI edition
         + add information on collaborators on the digital edition -->
+    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
 
 
     <!-- parameter to select the language of some fields (if available): 'ar-Latn-x-ijmes', 'ar', 'en' etc. -->
@@ -30,27 +31,8 @@
         <xsl:variable name="vLang" select="$pLang"/>
         <!-- variables identifying the digital surrogate -->
         <xsl:variable name="vFileDesc" select="ancestor::tei:TEI/tei:teiHeader/tei:fileDesc"/>
-        <!-- Need information on edition, date of edition, editors, transcribers etc.  -->
         <!-- variables identifying the original source -->
         <xsl:variable name="vBiblStructSource" select="$vFileDesc/tei:sourceDesc/tei:biblStruct"/>
-        <!--        <xsl:variable name="vPublDate" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>-->
-        <!-- <xsl:variable name="vPublicationTitle"
-            select="$vBiblStructSource/tei:monogr/tei:title[@level = 'j'][@xml:lang = $vLang][not(@type = 'sub')]"/>-->
-        <!--<xsl:variable name="vArticleTitle">
-            <xsl:if test="@type = 'article' and ancestor::tei:div[@type = 'section']">
-                <xsl:apply-templates select="ancestor::tei:div[@type = 'section']/tei:head"
-                    mode="m_plain-text"/>
-                <xsl:text>: </xsl:text>
-            </xsl:if>
-            <xsl:apply-templates select="./tei:head" mode="m_plain-text"/>
-        </xsl:variable>-->
-        <!--        <xsl:variable name="vUrl" select="concat($vgFileUrl, '#', @xml:id)"/>-->
-        <!--<xsl:variable name="vIssue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
-        <xsl:variable name="vVolume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>-->
-        <!--<xsl:variable name="vPubPlace"
-            select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
-        <xsl:variable name="vPublisher"
-            select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>-->
         <xsl:call-template name="t_bibl-mods">
             <xsl:with-param name="p_lang" select="$pLang"/>
             <xsl:with-param name="p_title-publication" select="$vBiblStructSource/tei:monogr/tei:title[@level = 'j'][@xml:lang = $vLang][not(@type = 'sub')]"/>
@@ -102,7 +84,7 @@
         <xsl:param name="p_title-article"/>
         <xsl:param name="p_title-publication"/>
         <xsl:param name="p_publisher"/>
-        <!-- dates are formatted as iso compliant yyyy-mm-yy or yyyy -->
+        <!-- dates are formatted as <tei:date when="" calendar="" when-custom=""/> -->
         <xsl:param name="p_date-publication"/>
         <xsl:param name="p_place-publication"/>
         <xsl:param name="p_volume"/>
@@ -139,8 +121,30 @@
                     <xsl:value-of select="$p_publisher"/>
                 </publisher>
                 <dateIssued>
-                    <xsl:value-of select="$p_date-publication"/>
+                    <xsl:if test="$p_date-publication/@when!=''">
+                        <xsl:attribute name="encoding" select="'w3cdtf'"/>
+                    </xsl:if>
+                    <xsl:value-of select="$p_date-publication/@when"/>
                 </dateIssued>
+                <!-- add hijri dates -->
+                <xsl:if test="$p_date-publication/@calendar='#cal_islamic'">
+                    <dateOther type="hijri">
+                        <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom"/>
+                    </dateOther>
+                    <!-- this still needs work -->
+                    <dateOther>
+                        <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom"/>
+                        <xsl:text> [</xsl:text>
+                           <xsl:analyze-string select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom" regex="(\d{{4}})">
+                                <xsl:matching-substring>
+                                    <xsl:call-template name="funcDateHY2G">
+                                        <xsl:with-param name="pYearH" select="regex-group(1)"/>
+                                    </xsl:call-template>
+                                </xsl:matching-substring>
+                            </xsl:analyze-string>
+                        <xsl:text>]</xsl:text>
+                    </dateOther>
+                </xsl:if>
                 <issuance>
                     <xsl:choose>
                         <xsl:when test="$p_type='a' or $p_type='j'">                        
