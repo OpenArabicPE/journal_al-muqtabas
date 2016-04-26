@@ -212,6 +212,7 @@
 <!--        <xsl:text>: </xsl:text>-->
         <xsl:apply-templates select="mods:publisher"/>
         <xsl:apply-templates select="mods:dateIssued"/>
+        <xsl:apply-templates select="mods:dateOther"/>
     </xsl:template>
     
     <xsl:template match="mods:name">
