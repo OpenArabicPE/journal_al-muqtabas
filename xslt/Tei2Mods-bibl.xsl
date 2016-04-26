@@ -36,12 +36,12 @@
             <xsl:with-param name="p_title-publication">
                 <xsl:choose>
                     <xsl:when test="$v_type = 'm'">
-                        <xsl:copy-of select="descendant::tei:title[@level = 'm']"/>
+                        <xsl:value-of select="descendant::tei:title[@level = 'm']"/>
                     </xsl:when>
                     <xsl:when test="$v_type = 'j' or $v_type = 'a'">
-                        <xsl:copy-of select="descendant::tei:title[@level = 'j'][not(@type='sub')]"/>
+                        <xsl:value-of select="descendant::tei:title[@level = 'j'][not(@type='sub')]"/>
                         <xsl:text>: </xsl:text>
-                        <xsl:copy-of select="descendant::tei:title[@level = 'j'][@type='sub']"/>
+                        <xsl:value-of select="descendant::tei:title[@level = 'j'][@type='sub']"/>
                     </xsl:when>
                 </xsl:choose>
             </xsl:with-param>
