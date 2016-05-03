@@ -19,7 +19,7 @@ Mark-up of page breaks mirroring the print edition with `<pb ed="print">` and li
     + i_49: needs corrections
     + i_50: needs corrections
     + oclc_4770057679-i_56.TEIP5.xml; January 13, 2016
-- vol. 6: i_60 to i_68
+- vol. 6: i_60 to i_69
 
 
 # Adding facsimiles
