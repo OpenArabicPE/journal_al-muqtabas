@@ -231,8 +231,8 @@
         </xsl:variable>
 
         <mods ID="{concat($vgFileId,'-',@xml:id,'-mods')}">
-            <titleInfo xml:lang="{$p_lang}">
-                <title>
+            <titleInfo>
+                <title  xml:lang="{$p_lang}">
                     <xsl:choose>
                         <xsl:when test="$p_type='a'">
                             <xsl:apply-templates select="$p_title-article" mode="m_plain-text"/>
