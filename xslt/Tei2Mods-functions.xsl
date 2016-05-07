@@ -7,7 +7,7 @@
     xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="no" version="1.0"/>
 <!--    <xsl:strip-space elements="*"/>-->
-<!--    <xsl:preserve-space elements="tei:head tei:bibl"/>-->
+    <xsl:preserve-space elements="tei:head tei:bibl"/>
 
 
     <!-- this stylesheet generates a MODS XML file with bibliographic metadata for each <div> in the body of the TEI source file. File names are based on the source's @xml:id and the @xml:id of the <div>. -->
@@ -41,7 +41,7 @@
                     <xsl:apply-templates select="ancestor::tei:div[@type = 'section']/tei:head" mode="m_plain-text"/>
                     <xsl:text>: </xsl:text>
                 </xsl:if>
-                <xsl:apply-templates select="./tei:head" mode="m_plain-text"/>
+                <xsl:apply-templates select="tei:head" mode="m_plain-text"/>
             </xsl:with-param>
             <xsl:with-param name="p_url-self" select="concat($vgFileUrl, '#', @xml:id)"/>
             <xsl:with-param name="p_url-licence" select="$vFileDesc/tei:publicationStmt/tei:availability/tei:licence/@target"/>
@@ -231,8 +231,8 @@
         </xsl:variable>
 
         <mods ID="{concat($vgFileId,'-',@xml:id,'-mods')}">
-            <titleInfo xml:lang="{$p_lang}">
-                <title>
+            <titleInfo>
+                <title  xml:lang="{$p_lang}">
                     <xsl:choose>
                         <xsl:when test="$p_type='a'">
                             <xsl:apply-templates select="$p_title-article" mode="m_plain-text"/>
@@ -328,18 +328,20 @@
         </mods>
     </xsl:template>
 
-    <!-- plain text output -->
+    <!-- plain text output: beware that heavily marked up nodes will have most whitespace omitted -->
     <xsl:template match="text()" mode="m_plain-text">
-        <!--<xsl:text> </xsl:text>-->
-        <xsl:value-of select="normalize-space(.)"/>
+<!--        <xsl:text> </xsl:text>-->
+<!--        <xsl:value-of select="normalize-space(.)"/>-->
+        <xsl:value-of select="replace(.,'(\w)[\s|\n]+','$1 ')"/>
         <!--<xsl:text> </xsl:text>-->
     </xsl:template>
     <xsl:template match="tei:lb | tei:cb | tei:pb" mode="m_plain-text">
         <xsl:text> </xsl:text>
     </xsl:template>
 
+    <!-- add whitespace around descendants of tei:head -->
     <!-- prevent notes in div/head from producing output -->
-    <xsl:template match="tei:head/tei:note" mode="m_plain-text"/>
+    <xsl:template match="tei:head/tei:note" mode="m_plain-text" priority="100"/>
 
     <!-- transform TEI names to MODS -->
     <xsl:template match="tei:surname | tei:persName" mode="m_tei2mods">
