@@ -62,7 +62,10 @@ The most likely candidates for such follow-up projects are
     1. Basic: BibTeX; *done*
     2. Advanced: MODS; *done*
 6. Presentations to solicit feedback
-    - Leipzig, December : DH Workshop Persian and Arabic 
+    - Leipzig, December 2015: DH Workshop Persian and Arabic 
+    - Cologne, March 2016: DiXiT convention 2
+    - Beirut, May 2016: Conference "Books in Motion: Exploring Concepts of Mobility in Cross-Cultual Studies of the Book"
+    - Krakow, July 2016: DH2016
 
 ## 1.3 Timeline / scheduled releases
 
