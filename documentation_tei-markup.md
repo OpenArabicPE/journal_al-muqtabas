@@ -11,9 +11,11 @@ tags:
 # Issues to be solved
 ## Serialised articles
 
-While the technical linking by means of attributes is simple, how should the human-readable information contained in the print copies be encoded?
+The information that an article / work / book was serialised can be either explicit or implicit. 
 
-I suggest encoding this information with `<ref>` or an XPointer.
+1. The explicit, human-readable pointer is encoded with `<ref>` and the `@target` attribute pointing to the `@xml:id` of another element.
+2. The implicit information that a section, encoded as `<div>`, is not indeed a discreet `<div>` but rather continues text from another location can be encoded with the help of the `@next` and `@prev` attributes.
+
 
 ## Typographic marks
 
