@@ -27,6 +27,20 @@ The pages contain a large number of different graphic dividers. Sometimes they i
 
 Most of these blocks are centered and thus they carry a `@rend="centered"` attribute, which, at a later stage could be used to be automatically translated into a formal `@rendition` statement.
 
+# changes to the schema
+## 1. additions
+
+1. `tei:num/@subtype`
+2. `tei:div/@next` and `tei:div/@prev`
+
+## 2. deletions
+
+- `tei:num/@cert`
+- `tei:num/@confidence`
+- `tei:num/@copyOf`
+- `tei:num/@sameAs`
+- `tei:num/@facs`
+
 # Gaps in the transcription
 
 Gaps in the transcription as copied from *shamela.ws* are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`. Many, if not most of these originated as the gap between two halves of a single line of a *qaṣīda*.
