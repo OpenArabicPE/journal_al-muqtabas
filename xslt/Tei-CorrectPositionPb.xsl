@@ -35,20 +35,20 @@
         </xsl:copy>
     </xsl:template>
     <!-- Block level elements that end with a tei:pb children: -->
-     <xsl:template match="tei:div[child::node()[not(name()='')][last()]=tei:pb] | tei:p[child::node()[last()]=tei:pb]">
+     <xsl:template match="tei:p[child::node()[position()=last()]=tei:pb]">
         <xsl:copy>
             <xsl:apply-templates select="@* |node()"/>
         </xsl:copy>
-        <xsl:copy-of select="child::tei:pb[last()]"/>
+        <xsl:copy-of select="child::tei:pb[position()=last()]"/>
     </xsl:template>
-    
-    <xsl:template match="tei:pb">
+    <!-- output for the relocated pbs must be prevented, which particularly difficult for the trailing pbs -->
+    <xsl:template match="tei:pb[parent::tei:div | parent::tei:p]">
         <xsl:variable name="v_self" select="."/>
         <xsl:choose>
             <xsl:when test="parent::tei:div/child::node()[not(name()='')][1]=$v_self"/>
-            <xsl:when test="parent::tei:p/child::node()[1]=$v_self"/>
-            <xsl:when test="parent::tei:div/child::node()[not(name()='')][last()]=."/>
-            <xsl:when test="parent::tei:p/child::node()[last()]=."/>
+            <xsl:when test="parent::tei:p and position()=1"/>
+           <!-- <xsl:when test="parent::tei:div/child::node()[not(name()='')][last()]=$v_self"/>-->
+            <xsl:when test="parent::tei:p and position()=last()"/>
             <xsl:otherwise>
                 <xsl:copy>
                     <xsl:apply-templates select="@*  | node()"/>
