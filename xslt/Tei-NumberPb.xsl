@@ -19,7 +19,7 @@
     <!--<xsl:variable name="vFirstPage" select="if(//tei:pb[not(@ed='shamela')][1]/@n) then(//tei:pb[not(@ed='shamela')][1]/@n) else(tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct//tei:biblScope[@unit='page']/@from)"/>-->
 
     <xsl:template match="tei:pb[not(@ed = 'shamela')]">
-        <xsl:variable name="vFirstPage" select="if(ancestor::tei:text/descendant::tei:pb[not(@ed='shamela')][1]/@n) then(ancestor::tei:text/descendant::tei:pb[not(@ed='shamela')][1]/@n) else(tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct//tei:biblScope[@unit='page']/@from)"/>
+        <xsl:variable name="v_page-first" select="if(ancestor::tei:text/descendant::tei:pb[not(@ed='shamela')][1]/@n) then(ancestor::tei:text/descendant::tei:pb[not(@ed='shamela')][1]/@n) else(ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct//tei:biblScope[@unit='page']/@from)"/>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:attribute name="ed">
@@ -28,7 +28,7 @@
             <xsl:choose>
                 <xsl:when test="not(@n)">
                     <xsl:attribute name="n">
-                        <xsl:value-of select="count(preceding::tei:pb[not(@ed = 'shamela')]) + $vFirstPage"/>
+                        <xsl:value-of select="count(preceding::tei:pb[not(@ed = 'shamela')]) + $v_page-first"/>
                     </xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
