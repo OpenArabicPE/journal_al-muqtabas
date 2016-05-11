@@ -20,16 +20,16 @@
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
     
     <!-- ID / date of issue in EAP: these are formatted as yyyymm and need to be set for each issue. the volumes commence with yyyy02 -->
-    <xsl:param name="pEapIssueId" select="'191002'"/>
+    <xsl:param name="pEapIssueId" select="'190602'"/>
     <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
-    <xsl:param name="pImgStartHathiDifference" select="12" as="xs:integer"/>
+    <xsl:param name="pImgStartHathiDifference" select="16" as="xs:integer"/>
     <!-- volume in HathTrust collection -->
-    <xsl:variable name="vHathiTrustId" select="'umn.319510029968640'"/>
+    <xsl:variable name="vHathiTrustId" select="'umn.319510029968608'"/>
     <!-- volume in EAP collection: needs to be set  -->
-    <xsl:variable name="vEapVolumeId" select="'4'"/>
-    <xsl:variable name="vFileName" select="concat(translate($vHathiTrustId,'.','-'),'_img-')"/>
+    <xsl:variable name="vEapVolumeId" select="'1'"/>
+    <xsl:variable name="vFileName" select="concat(translate($vHathiTrustId,'.','-'),'-img_')"/>
     <!-- local path to folder containing the images of this issue -->
-    <xsl:variable name="vFilePath" select="'../images/oclc-4770057679_v5/'"/>
+    <xsl:variable name="vFilePath" select="'../images/oclc_4770057679-v_1/'"/>
     <!-- URL to Hathi, this is always the same -->
     <xsl:variable name="vFileUrlHathi" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
     
@@ -90,7 +90,7 @@
                 <xsl:attribute name="who" select="'#pers_TG'"/>
                 <xsl:text>Added </xsl:text><tei:gi>graphic</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
-                <xsl:text> pages with references to digital images at HathiTrust and EAP.</xsl:text>
+                <xsl:text> pages with references to digital images at HathiTrust</xsl:text><xsl:text> and EAP.</xsl:text>
                 <!--<xsl:text>Created </xsl:text><tei:gi>facsimile</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
                 <xsl:text> pages with references to a local copy of .tif and .jpeg as well as to the online resource for each page.</xsl:text>-->
