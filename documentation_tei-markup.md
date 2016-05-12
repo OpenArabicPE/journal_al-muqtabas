@@ -155,7 +155,7 @@ Notes should be encoded with `<note>` at the location it appears in the text. Th
 
 ## Tables
 
-## Verse
+## Verse: bayt
 
 Many articles contain *qaṣīda*s with the characteristic printing of the two *bayt*s on each line as two columns. After some talk with Mathew Miller from the Persian Digital Library and their TEI files of Persian poetry, I decided to follow their encoding of *bayt* as `<l type="bayt">` with two `<seg>` children. Successive lines are then wrapped in `<lg>`:
 
@@ -187,6 +187,12 @@ How should this be encoded?
     <seg>هالٍ خليل خلال ذاك رغاء</seg>
 </l>
 ~~~
+
+## Verse: 3 columns
+
+In rare cases we find lines of poetry that are formatted in three colums of text:
+
+![example from *Muqtabas* 1(2)](images/oclc_4770057679-v_1/umn-319510029968608-img_097.jpg)
 
 # Punctuation
 
