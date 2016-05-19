@@ -90,7 +90,7 @@
                 <xsl:attribute name="who" select="'#pers_TG'"/>
                 <xsl:text>Added </xsl:text><tei:gi>graphic</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
-                <xsl:text> pages with references to digital images at HathiTrust</xsl:text><xsl:text> and EAP.</xsl:text>
+                <xsl:text> pages with references to digital images at HathiTrust</xsl:text><!--<xsl:text> and EAP.</xsl:text>-->
                 <!--<xsl:text>Created </xsl:text><tei:gi>facsimile</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
                 <xsl:text> pages with references to a local copy of .tif and .jpeg as well as to the online resource for each page.</xsl:text>-->
@@ -123,11 +123,11 @@
                 <xsl:attribute name="mimeType" select="'image/jpeg'"/>
             </xsl:element>
             <!-- link to EAP119 -->
-            <xsl:element name="tei:graphic">
+            <!--<xsl:element name="tei:graphic">
                 <xsl:attribute name="xml:id" select="concat($vFacsId,$vStartHathi,'-g_4')"/>
                 <xsl:attribute name="url" select="concat($vFileUrlEap,'_',format-number($pStart,'000'),'_L.jpg')"/>
                 <xsl:attribute name="mimeType" select="'image/jpeg'"/>
-            </xsl:element>
+            </xsl:element>-->
         </xsl:element>
         <xsl:if test="$pStart lt $pStop">
             <xsl:call-template name="templCreateFacs">
