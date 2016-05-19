@@ -14,7 +14,7 @@
     <!-- to do:
         + add information on edition: i.e. TEI edition
         + add information on collaborators on the digital edition -->
-    <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
+    <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
 
 
     <!-- parameter to select the language of some fields (if available): 'ar-Latn-x-ijmes', 'ar', 'en' etc. -->
