@@ -133,16 +133,17 @@
         <!-- construct the final output -->
         <span class="-teibp-pageNum" lang="en">
             <!-- <xsl:call-template name="atts"/> -->
-            <xsl:copy-of select="$pbNote"/>
+            <xsl:copy-of select="$p_text-page"/>
+            <xsl:text> </xsl:text>
             <xsl:value-of select="@n"/>
             <!-- provide link to online facsimile no matter what -->
             <xsl:if test="$p_facs = true()">
                 <xsl:text> - </xsl:text>
-                <xsl:value-of select="$altTextPbFacs"/>
+                <xsl:copy-of select="$p_text-facs-link"/>
                 <xsl:text> </xsl:text>
                 <xsl:copy-of select="$v_facs-a"/>
                 <!--<a href="{$v_url-facs-online}" target="_blank">
-                    <xsl:value-of select="$altTextPbFacs"/>
+                    <xsl:value-of select="$p_text-facs-link"/>
                     <xsl:text> </xsl:text>
                     <xsl:value-of select="$v_facs-source"/>
                 </a>-->
@@ -155,7 +156,7 @@
                     <!-- <xsl:attribute name="onclick">
                     <xsl:value-of select="concat('showFacs(', $apos, $p_n, $apos, ',', $apos, $v_url-facs, $apos, ',', $apos, $p_id, $apos, ')')"/>
                 </xsl:attribute> -->
-                    <img alt="{$altTextPbFacs}" class="-teibp-thumbnail">
+                    <img alt="{$p_text-facs-link}" class="-teibp-thumbnail">
                         <xsl:attribute name="src">
                             <xsl:value-of select="$v_url-facs"/>
                         </xsl:attribute>
