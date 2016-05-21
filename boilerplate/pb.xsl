@@ -115,7 +115,7 @@
             </xsl:for-each>
         </xsl:variable>
         <!-- construct the final output -->
-        <span class="-teibp-pageNum" lang="en">
+        <span class="-teibp-pageNum" lang="{$v_lang-interface}">
             <xsl:copy-of select="$p_text-page"/>
             <xsl:text> </xsl:text>
             <xsl:value-of select="@n"/>
