@@ -101,22 +101,6 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <!--<xsl:variable name="v_facs-source">
-            <xsl:choose>
-                <xsl:when test="$v_graphic[contains(@url, '://eap.')]">
-                    <xsl:text>EAP</xsl:text>
-                </xsl:when>
-                <xsl:when test="$v_graphic[contains(@url, '://archive.sakhrit.co')]">
-                    <xsl:text>archive.sakhrit.co</xsl:text>
-                </xsl:when>
-                <xsl:when test="$v_graphic[contains(@url, '://babel.hathitrust.org')]">
-                    <xsl:text>HathiTrust</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:text>source</xsl:text>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>-->
         <!-- constructing a link for every graphic element -->
         <xsl:variable name="v_facs-a">
             <xsl:for-each select="$v_graphic[starts-with(@url, 'http')]">
@@ -132,7 +116,6 @@
         </xsl:variable>
         <!-- construct the final output -->
         <span class="-teibp-pageNum" lang="en">
-            <!-- <xsl:call-template name="atts"/> -->
             <xsl:copy-of select="$p_text-page"/>
             <xsl:text> </xsl:text>
             <xsl:value-of select="@n"/>
@@ -142,26 +125,12 @@
                 <xsl:copy-of select="$p_text-facs-link"/>
                 <xsl:text> </xsl:text>
                 <xsl:copy-of select="$v_facs-a"/>
-                <!--<a href="{$v_url-facs-online}" target="_blank">
-                    <xsl:value-of select="$p_text-facs-link"/>
-                    <xsl:text> </xsl:text>
-                    <xsl:value-of select="$v_facs-source"/>
-                </a>-->
             </xsl:if>
         </span>
         <xsl:if test="$p_facs = true()">
             <span class="-teibp-pbFacs" lang="en">
                 <a class="gallery-facs" lang="en" href="{$v_url-facs}" target="_blank">
-                    <!-- <a class="gallery-facs" rel="prettyPhoto[gallery1]" lang="en"> -->
-                    <!-- <xsl:attribute name="onclick">
-                    <xsl:value-of select="concat('showFacs(', $apos, $p_n, $apos, ',', $apos, $v_url-facs, $apos, ',', $apos, $p_id, $apos, ')')"/>
-                </xsl:attribute> -->
                     <img src="{$v_url-facs}" class="-teibp-thumbnail"/>
-                    <!--<img alt="{$p_text-facs-link}" class="-teibp-thumbnail">
-                        <xsl:attribute name="src">
-                            <xsl:value-of select="$v_url-facs"/>
-                        </xsl:attribute>
-                    </img>-->
                 </a>
             </span>
         </xsl:if>
