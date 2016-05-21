@@ -156,11 +156,12 @@
                     <!-- <xsl:attribute name="onclick">
                     <xsl:value-of select="concat('showFacs(', $apos, $p_n, $apos, ',', $apos, $v_url-facs, $apos, ',', $apos, $p_id, $apos, ')')"/>
                 </xsl:attribute> -->
-                    <img alt="{$p_text-facs-link}" class="-teibp-thumbnail">
+                    <img src="{$v_url-facs}" class="-teibp-thumbnail"/>
+                    <!--<img alt="{$p_text-facs-link}" class="-teibp-thumbnail">
                         <xsl:attribute name="src">
                             <xsl:value-of select="$v_url-facs"/>
                         </xsl:attribute>
-                    </img>
+                    </img>-->
                 </a>
             </span>
         </xsl:if>
