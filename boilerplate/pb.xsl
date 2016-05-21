@@ -140,16 +140,16 @@
         <xsl:param name="p_input"/>
         <xsl:choose>
             <xsl:when test="contains($p_input, '://eap.')">
-                <xsl:text>EAP</xsl:text>
+                <span lang="en">EAP</span>
             </xsl:when>
             <xsl:when test="contains($p_input, '://archive.sakhrit.co')">
-                <xsl:text>archive.sakhrit.co</xsl:text>
+                <span lang="en">archive.sakhrit.co</span>
             </xsl:when>
             <xsl:when test="contains($p_input, '://babel.hathitrust.org')">
-                <xsl:text>HathiTrust</xsl:text>
+                <span lang="en">HathiTrust</span>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="substring-before(substring-after($p_input,'://'),'/')"/>
+                <span lang="en"><xsl:value-of select="substring-before(substring-after($p_input,'://'),'/')"/></span>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
