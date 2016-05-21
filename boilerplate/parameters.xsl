@@ -18,6 +18,8 @@
     <xsl:param name="pgOnlineFacs" select="false()"/>
     <!-- select whether you want to use inline CSS for the display -->
     <xsl:param name="inlineCSS" select="true()"/>
+    <!-- select whether the language of the interface should follow the main language of the text -->
+    <xsl:param name="p_lang-interface-same-as-text" select="false()"/>
 
     <!-- original TEI Boilerplate stuff -->
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
@@ -32,7 +34,6 @@
         <text>'</text>
     </xsl:param>
     <!-- language selector -->
-    <xsl:param name="p_lang-interface-same-as-text" select="false()"/>
     <xsl:variable name="v_lang-interface">
         <xsl:choose>
             <xsl:when test="$p_lang-interface-same-as-text= true() and /tei:TEI/tei:text/@xml:lang">
