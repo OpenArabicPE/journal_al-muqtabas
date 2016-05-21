@@ -115,25 +115,27 @@
             </xsl:for-each>
         </xsl:variable>
         <!-- construct the final output -->
-        <span class="-teibp-pageNum" lang="{$v_lang-interface}">
-            <xsl:copy-of select="$p_text-page"/>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="@n"/>
-            <!-- provide link to online facsimile no matter what -->
-            <xsl:if test="$p_facs = true()">
-                <xsl:text> - </xsl:text>
-                <xsl:copy-of select="$p_text-facs-link"/>
+        <span class="-teibp-pbImgInfo">
+            <span class="-teibp-pageNum" lang="{$v_lang-interface}">
+                <xsl:copy-of select="$p_text-page"/>
                 <xsl:text> </xsl:text>
-                <xsl:copy-of select="$v_facs-a"/>
+                <xsl:value-of select="@n"/>
+                <!-- provide link to online facsimile no matter what -->
+                <xsl:if test="$p_facs = true()">
+                    <xsl:text> - </xsl:text>
+                    <xsl:copy-of select="$p_text-facs-link"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:copy-of select="$v_facs-a"/>
+                </xsl:if>
+            </span>
+            <xsl:if test="$p_facs = true()">
+                <span class="-teibp-pbFacs" lang="en">
+                    <a class="gallery-facs" lang="en" href="{$v_url-facs}" target="_blank">
+                        <img src="{$v_url-facs}" class="-teibp-thumbnail"/>
+                    </a>
+                </span>
             </xsl:if>
         </span>
-        <xsl:if test="$p_facs = true()">
-            <span class="-teibp-pbFacs" lang="en">
-                <a class="gallery-facs" lang="en" href="{$v_url-facs}" target="_blank">
-                    <img src="{$v_url-facs}" class="-teibp-thumbnail"/>
-                </a>
-            </span>
-        </xsl:if>
     </xsl:template>
     
     <xsl:template name="t_url-to-name">
