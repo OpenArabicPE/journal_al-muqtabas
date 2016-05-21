@@ -8,13 +8,6 @@
     <!-- construct the image URL on the fly -->
     <xsl:variable name="vgVolume" select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit='volume']/@n"/>
     <xsl:variable name="vgIssue" select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit='issue']/@n"/>
-    <xsl:variable name="vgFacsUrl-Sakhrit">
-        <xsl:text>http://archive.sakhrit.co/MagazinePages/Magazine_JPG/AL_moqtabs/Al_moqtabs_</xsl:text>
-        <xsl:value-of select="number($vgVolume)+1905"/>
-        <xsl:text>/Issue_</xsl:text>
-        <xsl:value-of select="$vgIssue"/>
-        <xsl:text>/</xsl:text>
-    </xsl:variable>
 
     <!-- could also select pb[@facs] -->
     <xsl:template match="tei:pb[@ed='print']">
@@ -121,6 +114,11 @@
                                 select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://babel.hathitrust.org')][1]/@url"
                             />
                         </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of
+                                select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http')][1]/@url"
+                            />
+                        </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
                 <xsl:otherwise>
@@ -131,25 +129,28 @@
         <xsl:variable name="vFacsSource">
             <xsl:choose>
                 <xsl:when
-                    test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://eap.')]">
+                    test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[contains(@url, '://eap.')]">
                     <xsl:text>EAP</xsl:text>
                 </xsl:when>
-                <xsl:when
+                <!-- <xsl:when
                     test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://eap.')]">
                     <xsl:text>EAP</xsl:text>
-                </xsl:when>
+                </xsl:when> -->
                 <xsl:when
-                    test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'https://babel.hathitrust.org')]">
+                    test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[contains(@url, '://babel.hathitrust.org')]">
                     <xsl:text>HathiTrust</xsl:text>
                 </xsl:when>
-                <xsl:when
+                <!-- <xsl:when
                     test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://babel.hathitrust.org')]">
                     <xsl:text>HathiTrust</xsl:text>
-                </xsl:when>
+                </xsl:when> -->
                 <!--<xsl:when
                     test="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $vFacsID]/tei:graphic[starts-with(@url, 'http://')]">
                     <xsl:text>HathiTrust</xsl:text>
                 </xsl:when>-->
+                <xsl:otherwise>
+                    <xsl:text>source</xsl:text>
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <span class="-teibp-pageNum" lang="en">
@@ -168,17 +169,14 @@
         </span>
         <xsl:if test="$facs=true()">
         <span class="-teibp-pbFacs" lang="en">
-            <a class="gallery-facs" rel="prettyPhoto[gallery1]" lang="en">
-                <xsl:attribute name="onclick">
+            <a class="gallery-facs" lang="en" href="{$vFacsUrl}" target="_blank">
+            <!-- <a class="gallery-facs" rel="prettyPhoto[gallery1]" lang="en"> -->
+                <!-- <xsl:attribute name="onclick">
                     <xsl:value-of select="concat('showFacs(', $apos, $n, $apos, ',', $apos, $vFacsUrl, $apos, ',', $apos, $id, $apos, ')')"/>
-                </xsl:attribute>
+                </xsl:attribute> -->
                 <img alt="{$altTextPbFacs}" class="-teibp-thumbnail">
                     <xsl:attribute name="src">
                         <xsl:value-of select="$vFacsUrl"/>
-                        <!-- test -->
-                        <!-- <xsl:value-of select="$vgFacsUrl-Sakhrit"/>
-                        <xsl:value-of select="format-number(@n,'000')"/>
-                        <xsl:text>.JPG</xsl:text> -->
                     </xsl:attribute>
                 </img>
             </a>
