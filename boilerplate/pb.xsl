@@ -45,6 +45,7 @@
         <xsl:param name="p_n"/>
         <xsl:param name="p_facs"/>
         <xsl:param name="p_id"/>
+        <xsl:variable name="v_mimetype" select="'image/jpeg'"/>
         <xsl:variable name="v_id-facs" select="substring-after($p_facs, '#')"/>
         <xsl:variable name="v_graphic" select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $v_id-facs]/tei:graphic"/>
         <!-- select which online facsimile to display based on the order of preference: EAP, sakhrit, HathiTrust, other; and https over http -->
@@ -81,7 +82,7 @@
                         </xsl:when>
                         <!-- select the local file -->
                         <xsl:otherwise>
-                            <xsl:value-of select="$v_graphic[@mimeType = $vMimeType][1]/@url"/>
+                            <xsl:value-of select="$v_graphic[@mimeType = $v_mimetype][1]/@url"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
@@ -100,7 +101,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="v_facs-source">
+        <!--<xsl:variable name="v_facs-source">
             <xsl:choose>
                 <xsl:when test="$v_graphic[contains(@url, '://eap.')]">
                     <xsl:text>EAP</xsl:text>
@@ -115,7 +116,21 @@
                     <xsl:text>source</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
+        </xsl:variable>-->
+        <!-- constructing a link for every graphic element -->
+        <xsl:variable name="v_facs-a">
+            <xsl:for-each select="$v_graphic[starts-with(@url, 'http')]">
+                <a href="{@url}" target="_blank">
+                    <xsl:call-template name="t_url-to-name">
+                        <xsl:with-param name="p_input" select="@url"/>
+                    </xsl:call-template>
+                </a>
+                <xsl:if test="position()!=last()">
+                    <xsl:text>, </xsl:text>
+                </xsl:if>
+            </xsl:for-each>
         </xsl:variable>
+        <!-- construct the final output -->
         <span class="-teibp-pageNum" lang="en">
             <!-- <xsl:call-template name="atts"/> -->
             <xsl:copy-of select="$pbNote"/>
@@ -123,11 +138,14 @@
             <!-- provide link to online facsimile no matter what -->
             <xsl:if test="$p_facs = true()">
                 <xsl:text> - </xsl:text>
-                <a href="{$v_url-facs-online}" target="_blank">
+                <xsl:value-of select="$altTextPbFacs"/>
+                <xsl:text> </xsl:text>
+                <xsl:copy-of select="$v_facs-a"/>
+                <!--<a href="{$v_url-facs-online}" target="_blank">
                     <xsl:value-of select="$altTextPbFacs"/>
                     <xsl:text> </xsl:text>
                     <xsl:value-of select="$v_facs-source"/>
-                </a>
+                </a>-->
             </xsl:if>
         </span>
         <xsl:if test="$p_facs = true()">
@@ -145,6 +163,24 @@
                 </a>
             </span>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="t_url-to-name">
+        <xsl:param name="p_input"/>
+        <xsl:choose>
+            <xsl:when test="contains($p_input, '://eap.')">
+                <xsl:text>EAP</xsl:text>
+            </xsl:when>
+            <xsl:when test="contains($p_input, '://archive.sakhrit.co')">
+                <xsl:text>archive.sakhrit.co</xsl:text>
+            </xsl:when>
+            <xsl:when test="contains($p_input, '://babel.hathitrust.org')">
+                <xsl:text>HathiTrust</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="substring-before(substring-after($p_input,'://'),'/')"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
 </xsl:stylesheet>

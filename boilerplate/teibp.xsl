@@ -25,9 +25,7 @@
     <xsl:include href="parameters.xsl"/>
 
     <xsl:output encoding="UTF-8" method="xml" omit-xml-declaration="yes"/>
-
-    <!-- variables -->
-    <xsl:variable name="vMimeType" select="'image/jpeg'"/>
+    
     <xd:doc>
         <xd:desc>
             <xd:p>Match document root and create and html5 wrapper for the TEI document, which is copied, with some modification, into the
