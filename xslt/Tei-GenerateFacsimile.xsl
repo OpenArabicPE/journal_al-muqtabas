@@ -17,26 +17,18 @@
         </xd:desc>
     </xd:doc>
     
-    <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
+    <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
     
-    <!-- ID / date of issue in EAP: these are formatted as yyyymm and need to be set for each issue. the volumes commence with yyyy02 -->
-    <xsl:param name="pEapIssueId" select="'190602'"/>
-    <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
-    <xsl:param name="pImgStartHathiDifference" select="16" as="xs:integer"/>
-    <!-- volume in HathTrust collection -->
-    <xsl:variable name="vHathiTrustId" select="'umn.319510029968608'"/>
-    <!-- volume in EAP collection: needs to be set  -->
-    <xsl:variable name="vEapVolumeId" select="'1'"/>
-    <xsl:variable name="vFileName" select="concat(translate($vHathiTrustId,'.','-'),'-img_')"/>
-    <!-- local path to folder containing the images of this issue -->
-    <xsl:variable name="vFilePath" select="'../images/oclc_4770057679-v_1/'"/>
-    <!-- URL to Hathi, this is always the same -->
-    <xsl:variable name="vFileUrlHathi" select="concat('http://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
+    <!-- params to toggle certain links -->
+    <xsl:param name="p_file-local" select="true()"/>
+    <xsl:param name="p_file-hathi" select="true()"/>
+    <xsl:param name="p_file-eap" select="false()"/>
+    <xsl:param name="p_file-sakhrit" select="true()"/>
     
-    
-    <!-- URL to EAP, always the same -->
-    <xsl:variable name="vFileUrlEap" select="concat('http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_',$vEapVolumeId,'-EAP119_muq',$pEapIssueId)"/>
-    <xsl:variable name="vPageStart" as="xs:integer">
+    <!-- variables based on the input file -->
+    <xsl:variable name="v_volume" select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='volume']/@n"/>
+    <xsl:variable name="v_issue" select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='issue']/@n"/>
+    <xsl:variable name="v_page-start" as="xs:integer">
         <xsl:choose>
             <xsl:when test="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='page']/@from">
                 <xsl:value-of select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='page']/@from"/>
@@ -46,7 +38,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
-    <xsl:variable name="vNumberPages" as="xs:integer">
+    <xsl:variable name="v_pages" as="xs:integer">
         <xsl:choose>
             <xsl:when test="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='page']/@from and //tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='page']/@to">
                 <xsl:value-of select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='page']/@to - //tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='page']/@from + 1"/>
@@ -56,10 +48,36 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
-    <xsl:variable name="vImgStartHathi" select="1" as="xs:integer"/>
-    <!-- $vImgStartHathi - $vPageStart -->
     
-    <xsl:variable name="vFacsId" select="'facs_'"/>
+    <!-- ID / date of issue in EAP: these are formatted as yyyymm and need to be set for each issue. the volumes commence with yyyy02 -->
+    <xsl:param name="pEapIssueId" select="'190602'"/>
+    <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
+    <xsl:param name="pImgStartHathiDifference" select="16" as="xs:integer"/>
+    <!-- volume in HathTrust collection -->
+    <xsl:variable name="vHathiTrustId" select="'umn.319510029968608'"/>
+    <!-- volume in EAP collection: needs to be set  -->
+    <xsl:variable name="vEapVolumeId" select="'1'"/>
+    
+    <!-- URL to Hathi, this is always the same -->
+    <xsl:variable name="vFileUrlHathi" select="concat('https://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
+    
+    <!-- URL to archive.sakhrit -->
+    <xsl:variable name="v_url-sakhrit-base" select="'http://archive.sakhrit.co/MagazinePages/Magazine_JPG/'"/>
+    <xsl:variable name="v_journal-title-sakhrit" select="'AL_moqtabs'"/>
+    <xsl:param name="p_year-sakhrit" select="'1906'"></xsl:param>
+    <xsl:variable name="v_url-sakhrit" select="concat($v_url-sakhrit-base,$v_journal-title-sakhrit,'/',$v_journal-title-sakhrit,'_',$p_year-sakhrit,'/Issue_',$v_issue,'/')"/>    
+    
+    <!-- URL to EAP, always the same -->
+    <xsl:variable name="vFileUrlEap" select="concat('https://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_',$vEapVolumeId,'-EAP119_muq',$pEapIssueId)"/>
+    
+    <!-- Path to local files -->
+    <xsl:variable name="v_name-file" select="concat(translate($vHathiTrustId,'.','-'),'-img_')"/>
+    <!-- local path to folder containing the images of this issue -->
+    <xsl:variable name="v_path-base" select="'../images/oclc_4770057679-v_1/'"/>
+    <xsl:variable name="v_path-file" select="concat($v_path-base, $v_name-file)"/>
+
+    
+    <xsl:variable name="v_id-facs" select="'facs_'"/>
     
     <xsl:template match="tei:TEI">
         <xsl:copy>
@@ -68,8 +86,8 @@
             <xsl:element name="tei:facsimile">
                 <xsl:attribute name="xml:id" select="'facs'"/>
                 <xsl:call-template name="templCreateFacs">
-                    <xsl:with-param name="pStart" select="number($vPageStart)"/>
-                    <xsl:with-param name="pStop" select="number($vPageStart + $vNumberPages -1)"/>
+                    <xsl:with-param name="p_page-start" select="number($v_page-start)"/>
+                    <xsl:with-param name="p_page-stop" select="number($v_page-start + $v_pages -1)"/>
                 </xsl:call-template>
             </xsl:element>
             <xsl:apply-templates select="child::tei:text"/>
@@ -89,8 +107,8 @@
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
                 <xsl:attribute name="who" select="'#pers_TG'"/>
                 <xsl:text>Added </xsl:text><tei:gi>graphic</tei:gi><xsl:text> for </xsl:text>
-                <xsl:value-of select="$vNumberPages"/>
-                <xsl:text> pages with references to digital images at HathiTrust</xsl:text><!--<xsl:text> and EAP.</xsl:text>-->
+                <xsl:value-of select="$v_pages"/>
+                <xsl:text> pages with references to digital images.</xsl:text><!--<xsl:text> at HathiTrust and EAP.</xsl:text>-->
                 <!--<xsl:text>Created </xsl:text><tei:gi>facsimile</tei:gi><xsl:text> for </xsl:text>
                 <xsl:value-of select="$vNumberPages"/>
                 <xsl:text> pages with references to a local copy of .tif and .jpeg as well as to the online resource for each page.</xsl:text>-->
@@ -101,38 +119,52 @@
     
     <!-- generate the facsimile -->
     <xsl:template name="templCreateFacs">
-        <xsl:param name="pStart" select="1"/>
-        <xsl:param name="pStop" select="20"/>
-        <xsl:variable name="vStartHathi" select="$pStart + $pImgStartHathiDifference"/>
+        <xsl:param name="p_page-start" select="1"/>
+        <xsl:param name="p_page-stop" select="20"/>
+        <xsl:variable name="vStartHathi" select="$p_page-start + $pImgStartHathiDifference"/>
         <xsl:element name="tei:surface">
-            <xsl:attribute name="xml:id" select="concat($vFacsId,$vStartHathi)"/>
-            <xsl:element name="tei:graphic">
-                <xsl:attribute name="xml:id" select="concat($vFacsId,$vStartHathi,'-g_1')"/>
-                <xsl:attribute name="url" select="concat($vFilePath,$vFileName,format-number($vStartHathi,'000'),'.tif')"/>
-                <xsl:attribute name="mimeType" select="'image/tiff'"/>
-            </xsl:element>
-            <xsl:element name="tei:graphic">
-                <xsl:attribute name="xml:id" select="concat($vFacsId,$vStartHathi,'-g_2')"/>
-                <xsl:attribute name="url" select="concat($vFilePath,$vFileName,format-number($vStartHathi,'000'),'.jpg')"/>
-                <xsl:attribute name="mimeType" select="'image/jpeg'"/>
-            </xsl:element>
+            <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start)"/>
+            <xsl:if test="$p_file-local = true()">
+                <xsl:element name="tei:graphic">
+                    <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_1')"/>
+                    <xsl:attribute name="url" select="concat($v_path-file,format-number($vStartHathi,'000'),'.tif')"/>
+                    <xsl:attribute name="mimeType" select="'image/tiff'"/>
+                </xsl:element>
+                <xsl:element name="tei:graphic">
+                    <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_2')"/>
+                    <xsl:attribute name="url" select="concat($v_path-file,format-number($vStartHathi,'000'),'.jpg')"/>
+                    <xsl:attribute name="mimeType" select="'image/jpeg'"/>
+                </xsl:element>
+            </xsl:if>
             <!-- link to Hathi -->
+            <xsl:if test="$p_file-hathi = true()">
             <xsl:element name="tei:graphic">
-                <xsl:attribute name="xml:id" select="concat($vFacsId,$vStartHathi,'-g_3')"/>
+                <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_3')"/>
                 <xsl:attribute name="url" select="concat($vFileUrlHathi,$vStartHathi)"/>
                 <xsl:attribute name="mimeType" select="'image/jpeg'"/>
             </xsl:element>
+            </xsl:if>
             <!-- link to EAP119 -->
-            <!--<xsl:element name="tei:graphic">
-                <xsl:attribute name="xml:id" select="concat($vFacsId,$vStartHathi,'-g_4')"/>
-                <xsl:attribute name="url" select="concat($vFileUrlEap,'_',format-number($pStart,'000'),'_L.jpg')"/>
+            <xsl:if test="$p_file-eap = true()">
+            <xsl:element name="tei:graphic">
+                <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_4')"/>
+                <xsl:attribute name="url" select="concat($vFileUrlEap,'_',format-number($p_page-start,'000'),'_L.jpg')"/>
                 <xsl:attribute name="mimeType" select="'image/jpeg'"/>
-            </xsl:element>-->
+            </xsl:element>
+            </xsl:if>
+            <!-- link to archive.sakhrit -->
+            <xsl:if test="$p_file-sakhrit = true()">
+                <xsl:element name="tei:graphic">
+                    <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_5')"/>
+                    <xsl:attribute name="url" select="concat($v_url-sakhrit,format-number($p_page-start,'000'),'.jpg')"/>
+                    <xsl:attribute name="mimeType" select="'image/jpeg'"/>
+                </xsl:element>
+            </xsl:if>
         </xsl:element>
-        <xsl:if test="$pStart lt $pStop">
+        <xsl:if test="$p_page-start lt $p_page-stop">
             <xsl:call-template name="templCreateFacs">
-                <xsl:with-param name="pStart" select="$pStart +1"/>
-                <xsl:with-param name="pStop" select="$pStop"/>
+                <xsl:with-param name="p_page-start" select="$p_page-start +1"/>
+                <xsl:with-param name="p_page-stop" select="$p_page-stop"/>
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
