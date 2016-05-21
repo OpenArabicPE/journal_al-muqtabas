@@ -15,11 +15,11 @@
     <!-- select whether you want to display facsimiles -->
     <xsl:param name="displayPageBreaks" select="true()"/>
     <!-- select whether or not you want to display online or local facsimiles -->
-    <xsl:param name="pgOnlineFacs" select="true()"/>
+    <xsl:param name="pgOnlineFacs" select="false()"/>
     <!-- select whether you want to use inline CSS for the display -->
     <xsl:param name="inlineCSS" select="true()"/>
 
-    <!-- origianal TEI Boileplate stuff -->
+    <!-- original TEI Boilerplate stuff -->
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
     <xsl:param name="includeToolbox" select="false()"/>
     <xsl:param name="includeAnalytics" select="false()"/>
@@ -31,21 +31,47 @@
     <xsl:param name="apos">
         <text>'</text>
     </xsl:param>
+    <!-- language selector -->
+    <xsl:param name="p_lang-interface-same-as-text" select="false()"/>
+    <xsl:variable name="v_lang-interface">
+        <xsl:choose>
+            <xsl:when test="$p_lang-interface-same-as-text= true() and /tei:TEI/tei:text/@xml:lang">
+                <xsl:value-of select="/tei:TEI/tei:text/@xml:lang"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>en</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
     <!-- interface text -->
-    <xsl:param name="pbNote">
+    <xsl:param name="p_text-page">
         <span class="-teibp-pbNote">
             <xsl:attribute name="lang">
-                <xsl:text>en</xsl:text>
+                <xsl:value-of select="$v_lang-interface"/>
             </xsl:attribute>
-            <xsl:text>page: </xsl:text>
+            <xsl:choose>
+                <xsl:when test="$v_lang-interface = 'ar'">
+                    <xsl:text>صفحة</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>page</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
         </span>
     </xsl:param>
-    <xsl:param name="altTextPbFacs">
+    <xsl:param name="p_text-facs-link">
         <span class="-teibp-pbNote">
             <xsl:attribute name="lang">
-                <xsl:text>en</xsl:text>
+                <xsl:value-of select="$v_lang-interface"/>
             </xsl:attribute>
-        <xsl:text>view facsimile at</xsl:text>
+            <xsl:choose>
+                <xsl:when test="$v_lang-interface = 'ar'">
+                    <xsl:text>انظر الى هذه الصورة في</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>view facsimile(s) at</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
         </span>
     </xsl:param>
     <!-- parameters for file paths or URLs -->
