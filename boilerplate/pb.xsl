@@ -100,7 +100,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="vFacsSource">
+        <xsl:variable name="v_facs-source">
             <xsl:choose>
                 <xsl:when test="$v_graphic[contains(@url, '://eap.')]">
                     <xsl:text>EAP</xsl:text>
@@ -126,7 +126,7 @@
                 <a href="{$v_url-facs-online}" target="_blank">
                     <xsl:value-of select="$altTextPbFacs"/>
                     <xsl:text> </xsl:text>
-                    <xsl:value-of select="$vFacsSource"/>
+                    <xsl:value-of select="$v_facs-source"/>
                 </a>
             </xsl:if>
         </span>
