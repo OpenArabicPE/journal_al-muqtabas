@@ -16,8 +16,16 @@
     <xsl:param name="pLang" select="'ar'"/>
 
     <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
-    <xsl:variable name="vgFileUrl"
-        select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>
+    <xsl:variable name="vgFileUrl">
+        <xsl:choose>
+            <xsl:when test=" contains(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type='url'],'github.com/')">
+                <xsl:value-of select=" replace(replace(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type='url'],'github.com', 'rawgit.com'),'blob/','')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
     <xsl:variable name="vN" select="'&#x0A;'"/>
     
     <xsl:template name="tDiv2Bib">

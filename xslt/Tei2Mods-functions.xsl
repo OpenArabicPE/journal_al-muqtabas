@@ -43,7 +43,9 @@
                 </xsl:if>
                 <xsl:apply-templates select="tei:head" mode="m_plain-text"/>
             </xsl:with-param>
-            <xsl:with-param name="p_url-self" select="concat($vgFileUrl, '#', @xml:id)"/>
+            <xsl:with-param name="p_xml-id" select="@xml:id"/>
+            <xsl:with-param name="p_url-file" select="replace(replace($vFileDesc/tei:publicationStmt/tei:idno[@type='url'],'github.com', 'rawgit.com'),'blob/','')"/>
+<!--            <xsl:with-param name="p_url-self" select="concat($vgFileUrl, '#', @xml:id)"/>-->
             <xsl:with-param name="p_url-licence" select="$vFileDesc/tei:publicationStmt/tei:availability/tei:licence/@target"/>
             <xsl:with-param name="p_volume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>
             <xsl:with-param name="p_issue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
@@ -96,10 +98,13 @@
         <!-- children: tei:persName -->
         <xsl:param name="p_author"/>
         <xsl:param name="p_editor"/>
+        <xsl:param name="p_xml-id"/>
 
         <!-- these must be resolving URLs -->
         <xsl:param name="p_url-licence"/>
-        <xsl:param name="p_url-self"/>
+        <!-- file url -->
+        <xsl:param name="p_url-file"/>
+        <xsl:param name="p_url-self" select="concat($p_url-file, '#',$p_xml-id)"/>
         <!--  -->
         <xsl:param name="p_edition">
             <xsl:text>digital TEI edition, </xsl:text>
