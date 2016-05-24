@@ -55,9 +55,9 @@
                         <xsl:when test="$vLang = 'ar'">
                             <xsl:text>المجلد </xsl:text>
                         </xsl:when>
-                        <xsl:when test="$vLang = 'en'">
+                        <!--<xsl:when test="$vLang = 'en'">
                             <xsl:text>volume </xsl:text>
-                        </xsl:when>
+                        </xsl:when>-->
                         <xsl:otherwise>
                             <xsl:text>volume </xsl:text>
                         </xsl:otherwise>
@@ -72,9 +72,9 @@
                         <xsl:when test="$vLang = 'ar'">
                             <xsl:text>الجزء </xsl:text>
                         </xsl:when>
-                        <xsl:when test="$vLang = 'en'">
+                        <!--<xsl:when test="$vLang = 'en'">
                             <xsl:text>issue </xsl:text>
-                        </xsl:when>
+                        </xsl:when>-->
                         <xsl:otherwise>
                             <xsl:text>issue </xsl:text>
                         </xsl:otherwise>
@@ -89,9 +89,9 @@
                         <xsl:when test="$vLang = 'ar'">
                             <xsl:text>ص </xsl:text>
                         </xsl:when>
-                        <xsl:when test="$vLang = 'en'">
+                        <!--<xsl:when test="$vLang = 'en'">
                             <xsl:text>pp. </xsl:text>
-                        </xsl:when>
+                        </xsl:when>-->
                         <xsl:otherwise>
                             <xsl:text>pp. </xsl:text>
                         </xsl:otherwise>
@@ -133,7 +133,7 @@
                 <xsl:apply-templates select="parent::tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
                 <xsl:text>, </xsl:text>
                 <!-- publication date -->
-                <xsl:apply-templates select="parent::tei:monogr/tei:imprint/tei:date[1]" mode="mBibl">
+                <xsl:apply-templates select="parent::tei:monogr/tei:imprint/tei:date" mode="mBibl">
                     <xsl:with-param name="pLang" select="$vLang"/>
                 </xsl:apply-templates>
             </span>
