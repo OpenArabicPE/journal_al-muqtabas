@@ -27,19 +27,19 @@
         </xsl:variable>
         <xsl:copy>
             <xsl:apply-templates select="@when"/>
-            <xsl:attribute name="calendar" select="'cal_gregorian'"/>
-            <xsl:attribute name="datingMethod" select="'cal_gregorian'"/>
+            <xsl:attribute name="calendar" select="'#cal_gregorian'"/>
+            <xsl:attribute name="datingMethod" select="'#cal_gregorian'"/>
         </xsl:copy>
         <xsl:element name="date">
             <xsl:apply-templates select="@when"/>
-            <xsl:attribute name="calendar" select="'cal_islamic'"/>
-            <xsl:attribute name="datingMethod" select="'cal_islamic'"/>
+            <xsl:attribute name="calendar" select="'#cal_islamic'"/>
+            <xsl:attribute name="datingMethod" select="'#cal_islamic'"/>
             <xsl:attribute name="when-custom" select="$v_date-h"/>
         </xsl:element>
         <xsl:element name="date">
             <xsl:apply-templates select="@when"/>
-            <xsl:attribute name="calendar" select="'cal_ottomanfiscal'"/>
-            <xsl:attribute name="datingMethod" select="'cal_ottomanfiscal'"/>
+            <xsl:attribute name="calendar" select="'#cal_ottomanfiscal'"/>
+            <xsl:attribute name="datingMethod" select="'#cal_ottomanfiscal'"/>
             <xsl:attribute name="when-custom" select="$v_date-m"/>
         </xsl:element>
     </xsl:template>
