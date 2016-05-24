@@ -53,8 +53,8 @@ let $v_hits :=
                            <!--  {$v_pb-preceding} -->
                         <div type="article">
                             {$v_head}
-                            <!-- link to complete issue -->
-                            <a href="../xml/{$v_id-div}" target="_blank" lang="en">source</a>
+                            <!-- link to div in the online version -->
+                            <a href="https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/{$v_id-div}" target="_blank" lang="en">source</a>
                             {for $v_node in $v_div/descendant::node()[not(self::tei:div)][ft:query(., $v_query, $v_ft-query-option)]
                                 let $v_pb-preceding := $v_node/preceding::tei:pb[@ed='print'][1]
                                 return 
