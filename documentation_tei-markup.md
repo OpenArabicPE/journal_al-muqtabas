@@ -8,7 +8,7 @@ tags:
 - xml
 ---
 
-# Issues to be solved
+# 1.  Issues to be solved
 ## Serialised articles
 
 The information that an article / work / book was serialised can be either explicit or implicit. 
@@ -27,7 +27,23 @@ The pages contain a large number of different graphic dividers. Sometimes they i
 
 Most of these blocks are centered and thus they carry a `@rend="centered"` attribute, which, at a later stage could be used to be automatically translated into a formal `@rendition` statement.
 
-# changes to the schema
+## bibliographic references and links to external sources
+
+How to encode this?
+
+>حجاب المرأة في الإسلام
+
+>تحت هذا العنوان قرأنا في المقتبس عدد ٥٩٣ و ٥٩٤ مقالة للكاتب المغربي ذكر فيها ما محصله
+
+beyond
+
+~~~{.xml}
+<head>حجاب المرأة في الإسلام</head>
+<p>تحت هذا العنوان قرأنا في المقتبس عدد ٥٩٣ و ٥٩٤ مقالة للكاتب المغربي ذكر فيها ما محصله</p>
+~~~
+
+
+# 2. changes to the schema
 ## 1. additions
 
 1. `tei:num/@subtype`
@@ -41,6 +57,12 @@ Most of these blocks are centered and thus they carry a `@rend="centered"` attri
 - `tei:num/@sameAs`
 - `tei:num/@facs`
 
+## 3. additions
+
+- allow `@subtype` on `<num>`
+
+
+# 3. current mark-up
 # Gaps in the transcription
 
 Gaps in the transcription as copied from *shamela.ws* are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`. Many, if not most of these originated as the gap between two halves of a single line of a *qaṣīda*.
@@ -489,11 +511,17 @@ A second XSLT stylesheet ([`Tei-MarkupNumerals-Correction`](xslt/Tei-MarkupNumer
 
 ## references to intellectual works
 
-There are two types of references to intellectual works: explicit and implicit ones. Take for example the reference in [*al-Muqtabas* 6/2](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_23.TEIP5.xml#div_34.d1e3136) to a book by an American author from 1888 that had described a technocratic utopia at the end of the 20th century. This, obviously is a direct, yet implicit, reference to Bellamy's "Looking backward, 2000-1887". How should that be encoded?
+There are two types of references to intellectual works: explicit and implicit ones. Take for example the reference in [*al-Muqtabas* 6/2](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_23.TEIP5.xml#div_34.d1e3136) to a book by an American author from 1888 that had described a technocratic utopia at the end of the 20th century. This, obviously is a direct, yet implicit, reference to Bellamy's "Looking backward, 2000-1887".
+
+Such implicit references can always be encoded with the attribute `@corresp` that can point to relative or absolute URLs.
 
 Explicit references are the much easier case:
 
-### 1. encoding with `<bibl>` and its children
+### 1. references to articles in the same periodical: `<ref>`
+
+Use `<ref>` and `@target` to encode explicit references to articles in the same periodical.
+
+### 2. encoding with `<bibl>` and its children
 
 Almost all issues of *Muqtabas* contain review sections titled "مخطوطات ومطبوعات" on recent books or "مقالات المجلات", "المجلات الإفرنجية والعربية" on recent articles in (scholarly or scientific) journals.
 
@@ -507,7 +535,9 @@ Often times a full bibliographic reference is given in the title of the review a
 </div>
 ~~~
 
-### 2. encoding with `<title>`
+Whenever it is possible to point to an external resource, use `@corresp` to do so.
+
+### 3. encoding with `<title>`
 
 References to titles of intellectual works, such as books, periodicals etc., could be encoded with `<title>` using the `@level` attribute for some granularity.
 
@@ -515,7 +545,9 @@ References to titles of intellectual works, such as books, periodicals etc., cou
 حتى بلغ المطبوع منها مليون نسخة وأصبحت اليوم تطبع مليوناً ومائتي ألف نسخة في حين تطبع <title level="j">التيمس</title> 55 ألفاً فقط و<title level="j">الديلي اكسبرس</title> 700 ألف و<title level="j">الديلي تلغراف</title> 350 ألفاً والديلي نيوز 300 ألف والمورنن ليدر 350 والستاندارد 120 ألفاً
 ~~~
 
-### 3. encoding with `<rs>`
+Whenever it is possible to point to an external resource, use `@corresp` to do so.
+
+### 4. encoding with `<rs>`
 
 References to intellectual works, such as books, periodicals, laws, etc. should be encoded using `<rs>` with the `@type="work"` and a more specific `@subtype` attribute:
 
