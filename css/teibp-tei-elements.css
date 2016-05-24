@@ -203,11 +203,11 @@ text orgName{
     /*border-bottom: 5px dotted #E4E8FF;*/
 }
 
-text persName, text placeName, text orgName {
+text persName, text placeName, text orgName, text>body title {
   display: inline-block;
   position: relative;
 }
-text persName::after, text placeName::after, text orgName::after {
+text persName::after, text placeName::after, text orgName::after, text>body title::after {
   content: '';
   position: absolute;
   left: 0;
@@ -229,9 +229,10 @@ text orgName::after{
 }
 
 /* display tooltip-like information on the tag */
-text[lang = "ar"] persName:hover:after,
-text[lang = "ar"] placeName:hover:after,
-text[lang = "ar"] orgName:hover:after{
+text persName:hover:after,
+text placeName:hover:after,
+text orgName:hover:after,
+text>body title:hover:after{
     display:inline-block;
     font-size:10px;
     text-align: center;
@@ -253,14 +254,17 @@ text[lang = "ar"] orgName:hover:after{
     margin:-2em 0 0 0;
     /*z-index: 10000;*/
 }
-text[lang = "ar"] persName:hover:after{
+text persName:hover:after{
     content:"persName"
 }
-text[lang = "ar"] placeName:hover:after{
+text placeName:hover:after{
     content:"placeName"
 }
-text[lang = "ar"] orgName:hover:after{
+text orgName:hover:after{
     content:"orgName"
+}
+text>body title:hover:after {
+    content: "title"
 }
 
 /*------------------------
@@ -279,4 +283,10 @@ sic {
 sic:after {
     content: " [sic]";
     color: red;
+}
+/*------------------------
+bibliographic information
+------------------------*/
+bibl, text>body title {
+    color:#F35024;
 }
