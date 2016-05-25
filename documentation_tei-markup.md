@@ -42,6 +42,7 @@ beyond
 <p>تحت هذا العنوان قرأنا في المقتبس عدد ٥٩٣ و ٥٩٤ مقالة للكاتب المغربي ذكر فيها ما محصله</p>
 ~~~
 
+Regularly entire articles are reprinted verbatim or in translation. The source is either provided at the beginning or the end. How to mark this up?
 
 # 2. changes to the schema
 ## 1. additions
@@ -60,6 +61,7 @@ beyond
 ## 3. additions
 
 - allow `@subtype` on `<num>`
+- allow `<bibl>` as child of `<opener>`,`<byline>`, `<closer>`
 
 
 # 3. current mark-up
