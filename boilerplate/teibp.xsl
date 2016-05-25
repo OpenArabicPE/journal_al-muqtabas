@@ -636,7 +636,7 @@
         </a>
     </xsl:template>
     <!-- the file's id -->
-    <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
+    <xsl:variable name="vFileId" select="/descendant-or-self::tei:TEI/@xml:id"/>
     <xsl:variable name="vFileIssueNo" select="substring-after($vFileId,'-i_')"/>
     <!-- Sidebar buttons -->
     <xsl:variable name="vButtons">
