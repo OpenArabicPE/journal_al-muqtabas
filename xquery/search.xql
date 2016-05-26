@@ -14,7 +14,7 @@ import module namespace kwic="http://exist-db.org/xquery/kwic";
 (: try to search for terms using lucence and kwic :)
 
 (: the term(s) to be searched for :)
-let $v_collection :=request:get-parameter('col','haqaiq')
+let $v_collection :=request:get-parameter('col','muqtabas')
 let $v_title := request:get-parameter('title','المقتبس')
 
 (: Call data sources :)
@@ -25,14 +25,14 @@ let $v_teis := $v_library/descendant-or-self::tei:TEI[tei:teiHeader/tei:fileDesc
 (: let $v_divs := $v_library/descendant::tei:body/descendant::tei:div[@type='article'] :)
 
 (: link to edition: https://rawgit.com/tillgrallert/digital-muqtabas/master , file:///Volumes/Dessau%20HD/BachUni/BachBibliothek/GitHub/digital-muqtabas :)
-let $v_url-base := '..'
+let $v_url-base := 'https://rawgit.com/tillgrallert/digital-muqtabas/master'
 
 (: call stylesheet :)
 let $v_teibp := doc('/db/DAPE/boilerplate/teibp.xsl')
 
 (: the search function :)
 let $v_query := request:get-parameter('search', 'المرأة')
-let $v_node-search := 'node()'
+let $v_node-name := request:get-parameter('node','p')
 (: this defines the leading wildcard option of ft:query, which, however seems not to work with kwic :)
 let $v_ft-query-option := <options><default-operator>and</default-operator><leading-wildcard>yes</leading-wildcard></options>
 (: what are the properties of ft:query? it allows for Bolean operators! ft:query(., $v_query, $v_ft-query-option) :)
@@ -44,6 +44,8 @@ let $v_form-search :=
         <form action="search.xql" method="get">
             <tei:p>
                 <span lang="en">Search: </span>
+                <input lang="ar" type="text" name="node" size="7" value="{$v_node-name}"/>
+                <span lang="en"> elements in </span>
                 <input lang="ar" type="text" name="title" size="10" value="{$v_title}"/>
                 <span lang="en"> for </span> 
                 <input lang="ar" type="text" name="search" size="80" value="{$v_query}"/>
@@ -56,9 +58,12 @@ let $v_hits :=
     <tei:teiCorpus xmlns:tei="http://www.tei-c.org/ns/1.0">
         {$v_form-search}
         <tei:teiHeader xml:lang="en"/>
-            {for $v_tei in $v_teis[ft:query(descendant::tei:div[@type='article']/descendant::node()[not(self::tei:div)], $v_query, $v_ft-query-option)]
+            {for $v_tei in $v_teis[ft:query(descendant::tei:div[@type='article']/descendant::node()[name()=$v_node-name][not(self::tei:div)], $v_query, $v_ft-query-option)]
                 let $v_id := string($v_tei/@xml:id)
-                order by $v_id
+                let $v_source := $v_tei/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct
+                let $v_volume := $v_source/descendant::tei:biblScope[@unit='volume']
+                let $v_issue := $v_source/descendant::tei:biblScope[@unit='issue']
+                order by number($v_volume/@n) ascending, number($v_issue/@n) ascending
                 return 
                 <tei:TEI xml:id="{$v_id}">
                 {$v_tei/tei:teiHeader, $v_tei/tei:facsimile}
@@ -68,7 +73,7 @@ let $v_hits :=
                      </tei:front>
                     <tei:body>
                     {
-                    for $v_div in $v_tei/descendant::tei:div[@type='article'][ft:query(descendant::node()[not(self::tei:div)], $v_query, $v_ft-query-option)]
+                    for $v_div in $v_tei/descendant::tei:div[@type='article'][ft:query(descendant::node()[name()=$v_node-name][not(self::tei:div)], $v_query, $v_ft-query-option)]
                         let $v_head := $v_div/tei:head[1]
                         let $v_id-div := concat($v_id,'.TEIP5.xml#',$v_div/@xml:id)
                         let $v_pb-preceding := $v_div/preceding::tei:pb[@ed='print'][1]
@@ -80,7 +85,7 @@ let $v_hits :=
                             {$v_div/tei:head}
                             <!-- link to complete issue -->
                             <a href="{$v_url-base}/xml/{$v_id-div}" target="_blank" lang="en">source</a>
-                            {for $v_node in $v_div/descendant::node()[not(self::tei:div)][ft:query(., $v_query, $v_ft-query-option)]
+                            {for $v_node in $v_div/descendant::node()[name()=$v_node-name][not(self::tei:div)][ft:query(., $v_query, $v_ft-query-option)]
                                 let $v_pb-preceding := $v_node/preceding::tei:pb[@ed='print'][1]
                                 return 
                                 ($v_pb-preceding, $v_node)
