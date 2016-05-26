@@ -133,7 +133,7 @@
                 <xsl:apply-templates select="parent::tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
                 <xsl:text>, </xsl:text>
                 <!-- publication date(s) -->
-                <xsl:apply-templates select="parent::tei:monogr/tei:imprint/tei:date[@calendar='#cal_islamic']" mode="mBibl">
+                <xsl:apply-templates select="parent::tei:monogr/tei:imprint/tei:date[@calendar='#cal_islamic'][1]" mode="mBibl">
                     <xsl:with-param name="pLang" select="$vLang"/>
                 </xsl:apply-templates>
             </span>
