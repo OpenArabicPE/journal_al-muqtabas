@@ -44,6 +44,10 @@ beyond
 
 Regularly entire articles are reprinted verbatim or in translation. The source is either provided at the beginning or the end. How to mark this up?
 
+معرباً بتصرف من مقالة لجان فينو في المجلة الباريزية.
+ 
+دمشق: جرجي الحداد 
+
 # 2. changes to the schema
 ## 1. additions
 
