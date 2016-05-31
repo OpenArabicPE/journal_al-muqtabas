@@ -22,8 +22,8 @@
     <!-- params to toggle certain links -->
     <xsl:param name="p_file-local" select="true()"/>
     <xsl:param name="p_file-hathi" select="true()"/>
-    <xsl:param name="p_file-eap" select="false()"/>
-    <xsl:param name="p_file-sakhrit" select="true()"/>
+    <xsl:param name="p_file-eap" select="true()"/>
+    <xsl:param name="p_file-sakhrit" select="false()"/>
     
     <!-- variables based on the input file -->
     <xsl:variable name="v_volume" select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='volume']/@n"/>
@@ -54,9 +54,9 @@
     <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
     <xsl:param name="pImgStartHathiDifference" select="16" as="xs:integer"/>
     <!-- volume in HathTrust collection -->
-    <xsl:variable name="vHathiTrustId" select="'umn.319510029968608'"/>
+    <xsl:variable name="vHathiTrustId" select="'njp.32101073250910'"/>
     <!-- volume in EAP collection: needs to be set  -->
-    <xsl:variable name="vEapVolumeId" select="'1'"/>
+    <xsl:variable name="vEapVolumeId" select="'5'"/>
     
     <!-- URL to Hathi, this is always the same -->
     <xsl:variable name="vFileUrlHathi" select="concat('https://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
@@ -64,7 +64,7 @@
     <!-- URL to archive.sakhrit -->
     <xsl:variable name="v_url-sakhrit-base" select="'http://archive.sakhrit.co/MagazinePages/Magazine_JPG/'"/>
     <xsl:variable name="v_journal-title-sakhrit" select="'AL_moqtabs'"/>
-    <xsl:param name="p_year-sakhrit" select="'1906'"></xsl:param>
+    <xsl:param name="p_year-sakhrit" select="'1906'"/>
     <xsl:variable name="v_url-sakhrit" select="concat($v_url-sakhrit-base,$v_journal-title-sakhrit,'/',$v_journal-title-sakhrit,'_',$p_year-sakhrit,'/Issue_',$v_issue,'/')"/>    
     
     <!-- URL to EAP, always the same -->
@@ -73,7 +73,7 @@
     <!-- Path to local files -->
     <xsl:variable name="v_name-file" select="concat(translate($vHathiTrustId,'.','-'),'-img_')"/>
     <!-- local path to folder containing the images of this issue -->
-    <xsl:variable name="v_path-base" select="'../images/oclc_4770057679-v_1/'"/>
+    <xsl:variable name="v_path-base" select="concat('../images/oclc_4770057679-v_',$v_volume,'/')"/>
     <xsl:variable name="v_path-file" select="concat($v_path-base, $v_name-file)"/>
 
     
