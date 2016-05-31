@@ -44,11 +44,10 @@
             select="$vBiblStructSource/tei:monogr/tei:title[@level = 'j'][@xml:lang = $vLang][not(@type = 'sub')]"/>
         <xsl:variable name="vArticleTitle">
             <xsl:if test="@type = 'article' and ancestor::tei:div[@type = 'section']">
-                <xsl:apply-templates select="ancestor::tei:div[@type = 'section']/tei:head"
-                    mode="mPlainText"/>
+                <xsl:apply-templates select="ancestor::tei:div[@type = 'section']/tei:head" mode="m_plain-text"/>
                 <xsl:text>: </xsl:text>
             </xsl:if>
-            <xsl:apply-templates select="./tei:head" mode="mPlainText"/>
+            <xsl:apply-templates select="./tei:head" mode="m_plain-text"/>
         </xsl:variable>
         <xsl:variable name="vAuthor">
                 <xsl:choose>
@@ -155,18 +154,26 @@
     <!-- prevent output from sections of articles -->
     <xsl:template match="tei:div[ancestor::tei:div[@type = 'article']] | tei:div[ancestor::tei:div[@type = 'bill']] | tei:div[not(@type)]"/>
 
-    <xsl:template match="tei:lb | tei:cb | tei:pb" mode="mPlainText">
+    <xsl:template match="tei:lb | tei:cb | tei:pb" mode="m_plain-text">
         <xsl:text> </xsl:text>
     </xsl:template>
 
     <!-- prevent notes in div/head from producing output -->
-    <xsl:template match="tei:head/tei:note" mode="mPlainText"/>
+    <xsl:template match="tei:head/tei:note" mode="m_plain-text"/>
+    <xsl:template match="tei:head" mode="m_plain-text">
+        <xsl:apply-templates mode="m_plain-text"/>
+    </xsl:template>
+    
+    <!-- plain text output: beware that heavily marked up nodes will have most whitespace omitted -->
+    <xsl:template match="text()" mode="m_plain-text">
+                <xsl:value-of select="replace(.,'[\s|\n]+',' ')"/>
+    </xsl:template>
 
     <!-- construct the head of the BibTeX file -->
     <xsl:template name="tBibHead">
         <!-- some metadata on the file itself -->
         <xsl:text>%% This BibTeX bibliography file was created by automatic conversion from TEI XML</xsl:text><xsl:value-of select="$vN"/>
-        <xsl:text>%% Created at </xsl:text><xsl:value-of select="current-dateTime()"/><xsl:value-of select="$vN"/>
+        <!--<xsl:text>%% Created at </xsl:text><xsl:value-of select="current-dateTime()"/><xsl:value-of select="$vN"/>-->
         <xsl:text>%% Saved with string encoding Unicode (UTF-8) </xsl:text><xsl:value-of select="$vN"/><xsl:value-of select="$vN"/>
     </xsl:template>
 
