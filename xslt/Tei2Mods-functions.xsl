@@ -335,9 +335,9 @@
 
     <!-- plain text output: beware that heavily marked up nodes will have most whitespace omitted -->
     <xsl:template match="text()" mode="m_plain-text">
+        <xsl:value-of select="replace(.,'(\w)[\s|\n]+','$1 ')"/>
 <!--        <xsl:text> </xsl:text>-->
 <!--        <xsl:value-of select="normalize-space(.)"/>-->
-        <xsl:value-of select="replace(.,'(\w)[\s|\n]+','$1 ')"/>
         <!--<xsl:text> </xsl:text>-->
     </xsl:template>
     <xsl:template match="tei:lb | tei:cb | tei:pb" mode="m_plain-text">
