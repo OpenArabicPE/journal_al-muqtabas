@@ -38,7 +38,6 @@ let $v_ft-query-option := <options><default-operator>and</default-operator><lead
 (: what are the properties of ft:query? it allows for Bolean operators! ft:query(., $v_query, $v_ft-query-option) :)
 
 (: construct a search form :)
-
 let $v_form-search :=
     <tei:div xml:lang="en">
         <form action="search.xql" method="get">
@@ -46,14 +45,15 @@ let $v_form-search :=
                 <span lang="en">Search: </span>
                 <input lang="ar" type="text" name="node" size="7" value="{$v_node-name}"/>
                 <span lang="en"> elements in </span>
-                <input lang="ar" type="text" name="title" size="10" value="{$v_title}"/>
+                <input lang="ar" type="text" name="title" size="10" value="{$v_title}" style="text-align:right;direction: rtl;"/>
                 <span lang="en"> for </span> 
-                <input lang="ar" type="text" name="search" size="80" value="{$v_query}"/>
+                <input lang="ar" type="text" name="search" size="80" value="{$v_query}" style="text-align:right;direction: rtl;"/>
                 <input class="gobox" type="submit" value="GO" />
                 </tei:p>
         </form>
     </tei:div>
 
+(: produce the final output :)
 let $v_hits := 
     <tei:teiCorpus xmlns:tei="http://www.tei-c.org/ns/1.0">
         {$v_form-search}
