@@ -630,17 +630,17 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
-            <a href="#fn-mark-{generate-id()}" class="cFnMark cContent">
+            <a href="#fn-mark-{generate-id()}" class="c_fn-mark cContent">
                 <xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/>
             </a>
             <xsl:apply-templates/>
         </p>
     </xsl:template>
     <xsl:template match="tei:body//tei:note">
-        <a href="#fn-{generate-id()}" id="fn-mark-{generate-id()}" class="cFn cContent">
+        <a href="#fn-{generate-id()}" id="fn-mark-{generate-id()}" class="c_fn cContent">
             <!-- one should have the full text of the note hidden by CSS -->
-            <span class="cFnMark"><xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/></span>
-            <span class="cFnContent c_hidden">
+            <span class="c_fn-mark" lang="en"><xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/></span>
+            <span class="c_fn-content c_hidden">
                 <xsl:apply-templates/>
             </span>
         </a>
