@@ -14,7 +14,7 @@
                 <xsl:with-param name="pBiblUrl" select="concat('../metadata/',$vFileId)"/>
                 <xsl:with-param name="pLabelText" select="'Bibliographic metadata for this item: '"/>
             </xsl:call-template>
-            <span class="cLinks" lang="en">
+            <span class="c_links" lang="en">
                 <a href="{ancestor::tei:fileDesc/tei:publicationStmt/tei:availability/tei:licence/@target}">Licence information</a>
             </span>
         </div>
