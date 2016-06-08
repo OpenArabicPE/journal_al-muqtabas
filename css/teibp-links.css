@@ -1,4 +1,4 @@
-/*------------------
+------------------
 This stylesheet governs the display of links
 -------------------*/
 
@@ -28,12 +28,50 @@ head a.cLinkSelf {
 
 
 /* footnote anchors */
-a.cFnMark{
+.cFnMark {
     vertical-align:top;
-    font-size:0.7em;
+    font-size:0.6em;
     padding-left:0.5em;
     padding-right:0.5em;
 }
+
+/* hide content of links that is marked as hidden */
+a .c_hidden {
+	display: none;
+}
+
+/* hide the content of the fn but while hovering */
+/*a.cFn .cFnContent {
+	display: none;
+}*/
+
+a:hover .c_hidden {
+	display:inline-block;
+	font-size:10px;
+	background-color: white;
+	color: black;
+	padding-left:0.5em;
+    padding-right:0.5em;
+	border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    border-bottom-right-radius:3px;
+    border-bottom-left-radius:3px;
+    border: solid #62A401 1px;
+    box-shadow:0px 1px 5px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.3) inset;
+    min-width: 60px;
+    /* position the pop over */
+    position:absolute;
+    margin:-2em 0 0 0;
+    /*z-index: 10000;*/
+}
+/* the display of IDs and Links should not flow 
+beyond the screens's borders */
+/*.c_id:hover .c_hidden {
+	display: block;
+}
+.c_id:hover .cNumber {
+	display: hidden;
+}*/
 
 /* link back to the top of the page: have been removed from the <head>s */
 
@@ -63,4 +101,4 @@ a.cLinkBibTex, a.cLinkMods {
 }
 /*a.cLinkBibText::after{
 	content: "BibTeX";
-}*/
+}

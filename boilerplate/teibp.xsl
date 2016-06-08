@@ -157,12 +157,12 @@
             <xsl:value-of select="normalize-space(@target)"/>
         </a>
     </xsl:template>
-    <!-- wrap all elements with @corresp in a link -->
-    <xsl:template match="tei:*[@corresp]">
+    <!-- wrap all elements with @corresp in a link: this is a bad idea! Sometimes entire <div>s would become links -->
+    <!--<xsl:template match="tei:*[@corresp]">
         <a href="{@corresp}" class="c_corresp">
             <xsl:apply-templates/>
         </a>
-    </xsl:template>
+    </xsl:template>-->
     <!-- need something else for images with captions -->
     <xd:doc>
         <xd:desc>
@@ -598,10 +598,13 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
-            <span class="cId cNumber" lang="en">
+            <span class="c_id" lang="en">
                 <xsl:choose>
                     <xsl:when test="@xml:id">
-                        <a href="#{@xml:id}" class="cLinkSelf cNumber"><xsl:value-of select="$vCount"/></a>
+                        <a href="#{@xml:id}" class="cLinkSelf cNumber">
+                            <span class="cLinkSelf cNumber"><xsl:value-of select="$vCount"/></span>
+                            <span class="cLinkSelf c_id c_hidden"><xsl:value-of select="concat($v_url-file,'#',@xml:id)"/></span>
+                        </a>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="$vCount"/>
@@ -631,13 +634,30 @@
         </p>
     </xsl:template>
     <xsl:template match="tei:body//tei:note">
-        <a href="#fn-{generate-id()}" id="fn-mark-{generate-id()}" class="cFnMark cContent">
-            <xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/>
+        <a href="#fn-{generate-id()}" id="fn-mark-{generate-id()}" class="cFn cContent">
+            <!-- one should have the full text of the note hidden by CSS -->
+            <span class="cFnMark"><xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/></span>
+            <span class="cFnContent c_hidden">
+                <xsl:apply-templates/>
+            </span>
         </a>
     </xsl:template>
     <!-- the file's id -->
     <xsl:variable name="vFileId" select="/descendant-or-self::tei:TEI/@xml:id"/>
     <xsl:variable name="vFileIssueNo" select="substring-after($vFileId,'-i_')"/>
+    <!-- the file's url -->
+    <xsl:variable name="v_url-file">
+        <xsl:choose>
+            <xsl:when test="tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type = 'url']">
+                <xsl:value-of select="tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type = 'url']"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of
+                    select="concat('https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/',$vFileId,'.TEIP5.xml')"
+                />
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
     <!-- Sidebar buttons -->
     <xsl:variable name="vButtons">
         <!-- link to Github -->
@@ -646,19 +666,7 @@
                 boilerplate: https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_60.TEIP5.xml-->
             <ul>
                 <li>
-                    <a>
-                        <xsl:attribute name="href">
-                            <xsl:choose>
-                                <xsl:when test="tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type = 'url']">
-                                    <xsl:value-of select="tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type = 'url']"/>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of
-                                        select="concat('https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/',$vFileId,'.TEIP5.xml')"
-                                    />
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:attribute>
+                    <a href="{$v_url-file}">
                         <!--<img src="http://www.tei-c.org/About/Logos/TEI-175.jpg" alt="TEI"/>-->
                         <xsl:text>TEI source on GitHub</xsl:text>
                     </a>
