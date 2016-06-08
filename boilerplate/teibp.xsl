@@ -602,8 +602,11 @@
                 <xsl:choose>
                     <xsl:when test="@xml:id">
                         <a href="#{@xml:id}" class="c_link-self">
-                            <span class="c_link-self c_number"><xsl:value-of select="$vCount"/></span>
-                            <span class="c_link-self c_id c_hidden"><xsl:value-of select="concat($v_url-file,'#',@xml:id)"/></span>
+                            <span class="c_link-self c_number" lang="en"><xsl:value-of select="$vCount"/></span>
+                            <span class="c_link-self c_id c_hidden" lang="en">
+                                <!--<xsl:value-of select="concat($v_url-file,'#',@xml:id)"/>-->
+                                <xsl:value-of select="concat('#',@xml:id)"/>
+                            </span>
                         </a>
                     </xsl:when>
                     <xsl:otherwise>
