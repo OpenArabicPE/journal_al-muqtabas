@@ -55,9 +55,9 @@
         <span class="c_links" lang="en">
             <xsl:value-of select="$pLabelText"/>
             <!-- link to the BibTex file for this article. NOTE: these must have been pregenerated -->
-            <a href="{$pBiblUrl}.bib" download="{$pBiblUrl}.bib" target="_blank" class="c_links cLinkBibTex">BibTeX</a>
+            <a href="{$pBiblUrl}.bib" download="{$pBiblUrl}.bib" target="_blank" class="c_links c_link-bibtex">BibTeX</a>
             <!-- link to the MODS file for this article. NOTE: these must have been pregenerated -->
-            <a href="{$pBiblUrl}.MODS.xml" download="{$pBiblUrl}.MODS.xml" target="_blank" class="c_links cLinkBibTex">MODS</a>
+            <a href="{$pBiblUrl}.MODS.xml" download="{$pBiblUrl}.MODS.xml" target="_blank" class="c_links c_link-bibtex">MODS</a>
         </span>
     </xsl:template>
 </xsl:stylesheet>
