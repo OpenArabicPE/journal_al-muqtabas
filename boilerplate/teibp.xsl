@@ -630,10 +630,15 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
-            <a href="#fn-mark-{generate-id()}" class="c_fn-mark cContent">
+            <a href="#fn-mark-{generate-id()}" class="c_fn-mark" lang="en">
                 <xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/>
             </a>
             <xsl:apply-templates/>
+            <!-- add a back link with arrow -->
+            <a href="#fn-mark-{generate-id()}" class="c_fn-back">
+<!--                <xsl:text>&#x21A9;</xsl:text>-->
+               <!-- <xsl:text>&#x21AA;</xsl:text>-->
+            </a>
         </p>
     </xsl:template>
     <xsl:template match="tei:body//tei:note">
@@ -641,7 +646,18 @@
             <!-- one should have the full text of the note hidden by CSS -->
             <span class="c_fn-mark" lang="en"><xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/></span>
             <span class="c_fn-content c_hidden">
-                <xsl:apply-templates/>
+                <xsl:call-template name="templHtmlAttrLang">
+                    <xsl:with-param name="pInput" select="."/>
+                </xsl:call-template>
+                <xsl:choose>
+                    <xsl:when test="string-length(.) &gt; 150">
+                        <xsl:value-of select="substring(.,1,150)"/>
+                        <xsl:text> [...]</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="."/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </span>
         </a>
     </xsl:template>
