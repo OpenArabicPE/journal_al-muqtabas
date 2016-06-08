@@ -555,7 +555,7 @@
             </xsl:call-template>
             <xsl:choose>
                 <xsl:when test="parent::node()/@xml:id">
-                    <a href="#{parent::node()/@xml:id}" class="cLinkSelf"><xsl:apply-templates select="node()"/></a>
+                    <a href="#{parent::node()/@xml:id}" class="c_link-self"><xsl:apply-templates select="node()"/></a>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:apply-templates select="node()"/>
@@ -601,9 +601,9 @@
             <span class="c_id" lang="en">
                 <xsl:choose>
                     <xsl:when test="@xml:id">
-                        <a href="#{@xml:id}" class="cLinkSelf cNumber">
-                            <span class="cLinkSelf cNumber"><xsl:value-of select="$vCount"/></span>
-                            <span class="cLinkSelf c_id c_hidden"><xsl:value-of select="concat($v_url-file,'#',@xml:id)"/></span>
+                        <a href="#{@xml:id}" class="c_link-self">
+                            <span class="c_link-self c_number"><xsl:value-of select="$vCount"/></span>
+                            <span class="c_link-self c_id c_hidden"><xsl:value-of select="concat($v_url-file,'#',@xml:id)"/></span>
                         </a>
                     </xsl:when>
                     <xsl:otherwise>
