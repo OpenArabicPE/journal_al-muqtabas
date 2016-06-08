@@ -661,7 +661,7 @@
     <!-- Sidebar buttons -->
     <xsl:variable name="vButtons">
         <!-- link to Github -->
-        <div id="XmlSourceLink" class="cSidebarButton">
+        <div id="XmlSourceLink" class="c_button-sidebar">
             <!-- xml: https://github.com/tillgrallert/ArabicTeiEdition/blob/master/MajallatMuqtabas/xml/oclc_4770057679-i_1.TEIP5.xml
                 boilerplate: https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_60.TEIP5.xml-->
             <ul>
@@ -675,21 +675,21 @@
             </ul>
         </div>
         <!-- links to previous and next issues -->
-        <div id="NextIssue" class="cSidebarButton">
+        <div id="NextIssue" class="c_button-sidebar">
             <ul>
                 <li>
                     <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo +1,'.TEIP5.xml')}">Next issue</a>
                 </li>
             </ul>
         </div>
-        <div id="PrevIssue" class="cSidebarButton">
+        <div id="PrevIssue" class="c_button-sidebar">
             <ul>
                 <li>
                     <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo -1,'.TEIP5.xml')}">Previous issue</a>
                 </li>
             </ul>
         </div>
-        <div id="BackToTop" class="cSidebarButton">
+        <div id="BackToTop" class="c_button-sidebar">
             <ul>
                 <li>
                     <a href="#">Top of the page</a>
