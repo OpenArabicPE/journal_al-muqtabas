@@ -18,18 +18,7 @@
     
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:param name="pAuthorXmlId" select="'pers_TG'"/>
-    
-    <xsl:variable name="vFileName" select="substring-before(base-uri(),'.TEIP5')"/>
-    <xsl:variable name="vElement" select="'head'"/>
-    
-    <!-- create new file -->
-    <!--<xsl:template match="/">
-        <xsl:result-document href="{$vFileName}-IDs.TEIP5.xml">
-            <xsl:copy>
-                <xsl:apply-templates select="node()"/>
-            </xsl:copy>
-        </xsl:result-document>
-    </xsl:template>-->
+   
     
     <!-- reproduce everything as is -->
     <xsl:template match="@* |node()">
@@ -39,7 +28,7 @@
     </xsl:template>
     
     <!-- number the selected element -->
-    <xsl:template match="tei:TEI//node()">
+    <xsl:template match="tei:text//node()">
         <xsl:variable name="vName" select="if(starts-with(name(),'tei:')) then(substring-after(name(),'tei:')) else(name())"/>
         <xsl:copy>
             <xsl:choose>
