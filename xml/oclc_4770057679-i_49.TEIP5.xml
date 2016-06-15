@@ -106,8 +106,70 @@
                     <gi xml:lang="en">gap</gi> into <gi xml:lang="en">lg</gi> of <att xml:lang="en">type</att> ="bayt" with <gi xml:lang="en">l</gi> child elements. All other red spans have been retained as <gi xml:lang="en">hi</gi> .</p>
             </editorialDecl>
         </encodingDesc>
-        <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2016-06-15" who="pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
+        <profileDesc xml:lang="en">
+            <!-- as we deal with sources from an area and period which also used non-Latin scripts and preferred a number of calenders over the Gregorian, this should be declared here -->
+            <calendarDesc xml:lang="en">
+                <calendar xml:id="cal_gregorian" xml:lang="en">
+                    <p xml:lang="en">Following the hegemonial approach of standards rooted in the English language, the Gregorian calendar
+                        is presumed as the norm and must not be specified.</p>
+                    <p xml:lang="en">The <att xml:lang="en">when</att> attribute always provides W3C dates, while the <att xml:lang="en">when-custom</att> attribute follows the inherent logic of the chosen calendar.</p>
+                    <p xml:lang="en">E.g. <date when="1841-05-23" xml:lang="en">23 May 1841, Sunday</date> , <date when="1908-03-05" xml:lang="en">5 Mar 1908, Thursday</date> .</p>
+                </calendar>
+                <calendar xml:id="cal_islamic" xml:lang="en">
+                    <p xml:lang="en">Islamic <hi xml:lang="en">hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates
+                        differ between locations as the beginning of the month is based on sightings of the new moon.</p>
+                    <p xml:lang="en">E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01" xml:lang="en">1 Rab II 1257, Sunday</date> , <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01" xml:lang="en">1 Ṣaf 1326, Thursday</date>
+                        .</p>
+                </calendar>
+                <calendar xml:id="cal_julian" xml:lang="en">
+                    <p xml:lang="en">Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to
+                        as <hi xml:lang="en">rūmī</hi> . Arabic newspapers usually labelled this calendar as <hi xml:lang="en">sharqī</hi>
+                        .</p>
+                    <p xml:lang="en">All solar calendars add an intercalated 366th day every fourth (and, in the case of Gregorian and rūmī
+                        calendars, even-numbered) year at the end of February (the last day of the old Julian calendar). The Gregorian
+                        calendar suppresses this rule in centesimal years that cannot be divided by 400. This difference creates a growing
+                        offset between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
+                        difference between the Gregorian calendar, on the one hand, and the <hi xml:lang="en">mālī</hi> and <hi xml:lang="en">rūmī</hi> calendars, on the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315
+                        M (13 March 1900) onwards.</p>
+                    <p xml:lang="en">E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11" xml:lang="en">11 Ayyār 1841, Sunday</date> , <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21" xml:lang="en">21 Shub 1908, Thursday</date> .</p>
+                </calendar>
+                <calendar xml:id="cal_ottomanfiscal" xml:lang="en">
+                    <p xml:lang="en">Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the
+                        Year with 1 March. Introduced as fiscal calendar in 1676 and in the Ottoman context usually referred to as <hi xml:lang="en">mālī</hi> and sometimes, confusingly, also as <hi xml:lang="en">rūmī</hi> . Every 33 lunar years, a
+                        <hi xml:lang="en">hijrī</hi> year would complete within a single solar <hi xml:lang="en">mālī</hi> year. In this
+                        case the counting of the <hi xml:lang="en">mālī</hi> years skipped a year to catch up with the faster <hi xml:lang="en">hijrī</hi> calendar. Due to a printing error in the coupon booklets for the consolidated debt
+                        repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi xml:lang="en">mālī</hi> and <hi xml:lang="en">hijrī</hi> years was henceforth abolished. As <hi xml:lang="en">mālī</hi> years began with 1 March,
+                        <hi xml:lang="en">mālī</hi> leap years preceded their <hi xml:lang="en">rūmī</hi> and Gregorian counterpart (the
+                        leap year 1315 M commenced on 13 March 1899).</p>
+                    <p xml:lang="en">E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11" xml:lang="en">11 Māyis 1257, Sunday</date> , <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21" xml:lang="en">21 Shub 1323,
+                        Thursday</date> .</p>
+                </calendar>
+            </calendarDesc>
+            <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
+               IJMES transcription of Arabic in Latin script. -->
+            <langUsage xml:lang="en">
+                <language ident="ar" xml:lang="en">Arabic</language>
+                <language ident="ar-Latn-x-ijmes" xml:lang="en">Arabic transcribed into Latin script following the IJMES
+                    conventions</language>
+                <language ident="ar-Latn-EN" xml:lang="en">Arabic transcribed into Latin script following common English
+                    practices</language>
+                <language ident="ar-Latn-FR" xml:lang="en">Arabic transcribed into Latin script following common French practices</language>
+                <language ident="en" xml:lang="en">English</language>
+                <language ident="fa" xml:lang="en">Farsi</language>
+                <language ident="fa-Latn-x-ijmes" xml:lang="en">Farsi transcribed into Latin script following the IJMES
+                    conventions</language>
+                <language ident="fr" xml:lang="en">French</language>
+                <language ident="ota" xml:lang="en">Ottoman</language>
+                <language ident="ota-Latn-x-ijmes" xml:lang="en">Ottoman transcribed into Latin script following the IJMES
+                    conventions</language>
+                <language ident="tr" xml:lang="en">Turkish</language>
+                <language ident="en-Arab-AR" xml:lang="en">English transcribed into Arabic script following common Levantine Arabic
+                    practices</language>
+                <language ident="fr-Arab-AR" xml:lang="en">French transcribed into Arabic script following common Levantine Arabic
+                    practices</language>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc><change when="2016-05-09" who="pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
             <change when="2016-04-18" who="#pers_TG">Added semantic and structural mark-up, particularly for bibliographic metadata. Added
                 automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing
                     <att>xml:id</att>following the pattern "name()_generate-id()".</change><tei:change when="2016-04-15" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><change when="2016-04-02" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
@@ -1539,7 +1601,10 @@
                 <head xml:lang="ar" xml:id="head_2.d1e2900">نشوءُ اللغات الإسلامية</head>
                 <p xml:lang="ar" xml:id="p_126.d1e2903">تتمة <ref target="oclc_4770057679-i_48.TEIP5.xml#div_3.d1e1801" xml:id="ref_6.d1e3244">ما ورد في الجزء
                         الماضي</ref></p>
-                <p xml:lang="ar" xml:id="p_127.d1e2906">دعت ضرورة إيجاد ألفاظ جديدة للتعبير عن أفكار حديثة أن تأخذ اللغة العربية من اللغات الأجنبية أو أن تعمد إلى معجمها بأن تصيغ ألفاظاً جديدة أو بأن تضع معاني جديدة للألفاظ التي تجدها في متن اللغة. ولم يكن في العربية سهولة اللغات الرومانية بأن تعمد إلى اللاتينية أو اليونانية لتصيغ التعابير الجديدة وبهذا تألف حزبان حزب يقول بأخذ الألفاظ الإفرنجية والآخر لا يرضى إلا بالرجوع إلى الاشتقاق من متن اللغة. والظاهر أن الحزب الأول قد كتبت له الغلبة أولاً ولاسيما في بلاد الجزائر وذلك لجهل المترجمين أو لغلبة الكسل عليهم فبدلاً من أن يبحثوا في إيجاد لفظ يقابل اللفظ الفرنسوي اكتفوا بنقله عَلَى ما هو بدون أن يحدثوا فيه تغييراً ثم إن عدم وجود صحافة وطنية مما ساعد عَلَى ذلك أيضاً فإن <bibl>جريدة <title level="j">المبشر</title> الرسمية ما برحت إلى عهد قريب هي الجريدة الوحيدة في <pubPlace><placeName>الجزائر</placeName></pubPlace></bibl> أما جرائد البلاد الخارجية فلم يكن دخولها إليها إلا من المتعذرات. وقد ذكر المسيو واشنطون سويرس من جملة الألفاظ الأعجمية التي دخلت عَلَى اللغة الجزائرية لفظة شامبيت ويجمعونها عَلَى شامابيت أي حارس الحقل بدلاً من عسس الفحص وفي الوراق الرسمية السيد الكوفرنور جنرال أي سيدي الحاكم العام في حين كان من السهل جداً أن يقال سعادة والي مملكة الجزائر وقد أنحى برسنيه في كتابه الملح العربية عَلَى هذا النقل الرديء وحق له أن ينحي عليه قال لأنه لا يفهم له معنى حتى عند الفرنسيس أنفسهم.</p>
+                <p xml:lang="ar" xml:id="p_127.d1e2906"
+                    >دعت ضرورة إيجاد ألفاظ جديدة للتعبير عن أفكار حديثة أن تأخذ اللغة العربية من اللغات الأجنبية أو أن تعمد إلى معجمها بأن تصيغ ألفاظاً جديدة أو بأن تضع معاني جديدة للألفاظ التي تجدها في متن اللغة. ولم يكن في العربية سهولة اللغات الرومانية بأن تعمد إلى اللاتينية أو اليونانية لتصيغ التعابير الجديدة وبهذا تألف حزبان حزب يقول بأخذ الألفاظ الإفرنجية والآخر لا يرضى إلا بالرجوع إلى الاشتقاق من متن اللغة. والظاهر أن الحزب الأول قد كتبت له الغلبة أولاً ولاسيما في بلاد الجزائر وذلك لجهل المترجمين أو لغلبة الكسل عليهم فبدلاً من أن يبحثوا في إيجاد لفظ يقابل اللفظ الفرنسوي اكتفوا بنقله عَلَى ما هو بدون أن يحدثوا فيه تغييراً ثم إن عدم وجود صحافة وطنية مما ساعد عَلَى ذلك أيضاً فإن <bibl>جريدة <title
+                    level="j"
+                    >المبشر</title> الرسمية ما برحت إلى عهد قريب هي الجريدة الوحيدة في <pubPlace><placeName>الجزائر</placeName></pubPlace></bibl> أما جرائد البلاد الخارجية فلم يكن دخولها إليها إلا من المتعذرات. وقد ذكر المسيو واشنطون سويرس من جملة الألفاظ الأعجمية التي دخلت عَلَى اللغة الجزائرية لفظة شامبيت ويجمعونها عَلَى شامابيت أي حارس الحقل بدلاً من عسس الفحص وفي الوراق الرسمية السيد الكوفرنور جنرال أي سيدي الحاكم العام في حين كان من السهل جداً أن يقال سعادة والي مملكة الجزائر وقد أنحى برسنيه في كتابه الملح العربية عَلَى هذا النقل الرديء وحق له أن ينحي عليه قال لأنه لا يفهم له معنى حتى عند الفرنسيس أنفسهم.</p>
                 <p xml:lang="ar" xml:id="p_128.d1e2909">ويا ليته يرى ما سرى إلى لسان العامة من الجزائريين وفي مكاتباتهم من الألفاظ الفرنسوية المحرفة تحريفاً تتعذر
                     أحياناً معرفته. وفقد جاء في كتاب الرسائل العربية المخطوطة الذي نشره المسيو دلفين لفظة لانتوراليزه فرانسه بمعنى المتجنس
                     بالجنسية الفرنسوية ولفظة كاتارفاويتبدلاً من لفظة <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8">ثمانية</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="80">ثمانين</num>. ونحن لا نورد ألفاظاً كثيرة من هذا القبيل من الألفاظ
@@ -1600,8 +1665,16 @@
                     هاجمت الألفاظ الأجنبية اللغة ولم تكن هذه الألفاظ مأخوذة عن أقرب الأمم من فارس كما كان المنتظر ولا من أكثرهن نفوذاً فيها
                     من حيث السياسة والاقتصاد بل إن اللغة الفرنسوية هي التي دخلت عَلَى أهل الجيل الحاضر بأفكارها ومصطلحاتها اللازمة للتعبير
                     عن الألفاظ الحديثة في الشرق.</p>
-                <p xml:lang="ar" xml:id="p_137.d1e2950">بحث في هذا الموضوع <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> كبار رجال فارس المرزا علي <persName>خان ذكاء الملك</persName> مدير <orgName>مدرسة السياسة</orgName> في <placeName>طهران</placeName> في محاضرة له ألقاها في مدرسة <orgName>الاتحاد الإسرائيلي</orgName> في عاصمة <placeName>إيران</placeName>
-                    <pb corresp="file:../epub/26523/OEBPS/xhtml/P3182.xhtml" ed="shamela" n="n49-p19" xml:id="pb_20.d1e2952"/> يوم <date when="1907-04-13"><num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_1.d1e2954">١٣</num> نيسان <num type="auto-markup" resp="#pers_TG" value="1907" xml:lang="ar" xml:id="num_1.d1e2957">١٩٠٧</num></date> ونشرت محاضراته في المجلة <title level="j">الزرقاء</title> تكلم فيها بعد أن أورد بعض الملاحظات عَلَى الألفاظ العربية والتركية والهندية التي أخذتها الفارسية عَلَى نشوء<pb ed="print" n="109" facs="#facs_123" xml:id="pb_40.d1e3271"/> لغته الحديث فقال أن اللغة الروسية واللغة الإنكليزية لم يسر منهما إلى الفارسية إلا ألفاظ قليلة جداً.</p>
+                <p xml:lang="ar" xml:id="p_137.d1e2950">بحث في هذا الموضوع <num xml:lang="ar" type="auto-markup" subtype="d1"
+                    resp="#pers_TG" value="1"
+                    >أحد</num> كبار رجال فارس المرزا علي <persName>خان ذكاء الملك</persName> مدير <orgName>مدرسة السياسة</orgName> في <placeName>طهران</placeName> في محاضرة له ألقاها في مدرسة <orgName>الاتحاد الإسرائيلي</orgName> في عاصمة <placeName>إيران</placeName>
+                    <pb corresp="file:../epub/26523/OEBPS/xhtml/P3182.xhtml" ed="shamela" n="n49-p19" xml:id="pb_20.d1e2952"/> يوم <date
+                    when="1907-04-13"><num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_1.d1e2954"
+                    >١٣</num> نيسان <num type="auto-markup" resp="#pers_TG" value="1907" xml:lang="ar" xml:id="num_1.d1e2957"
+                    >١٩٠٧</num></date> ونشرت محاضراته في المجلة <title level="j"
+                    >الزرقاء</title> تكلم فيها بعد أن أورد بعض الملاحظات عَلَى الألفاظ العربية والتركية والهندية التي أخذتها الفارسية عَلَى نشوء<pb
+                    ed="print" n="109" facs="#facs_123" xml:id="pb_40.d1e3271"
+                    /> لغته الحديث فقال أن اللغة الروسية واللغة الإنكليزية لم يسر منهما إلى الفارسية إلا ألفاظ قليلة جداً.</p>
                 <p xml:lang="ar" xml:id="p_138.d1e2961">وربما وجد الناظر في لغة أهل طوريس ورشت بعض ألفاظ روسية في اللغة الدارجة ولكنها قليلة للغاية وهذا مما يدل
                     عَلَى أن الروس قد أخذوا ألفاظاً كثيرة من لغتهم عن الأجانب مثل الفرنسويين والألمان والإنكليز والطليان فلم تستعر الفارسية
                     من الروسية إلا لفظ سماور واستكان طاس ودروخكا عربة وكاليسكه كاليش (وهي عربة ذات <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> دواليب) وتارنتاس وباراخود للسفينة
@@ -1669,7 +1742,19 @@
                     النسافة (توربيدو) وهي من الإيطالية وبالإفرنسية (توربل) و (غانيوط) أي سفينة مدفعية وهي من الإنكليزية (كونبوت).</p>
                 <p xml:lang="ar" xml:id="p_149.d1e3005">أما المصطلحات العلمية فتكاد تكون تقريباً بأجمعها تركية أو فارسية أو عربية ويعمد إلى الفرنسوية واللاتينية في
                     النادر ولا تستعمل الإنكليزية ولا الألمانية.</p>
-                <p xml:lang="ar" xml:id="p_150.d1e3008">أما سائر اللهجات الشرقية التي تأثرت من اللغات العثمانية باللغات الأوربية فإن اللغة الروسية تكاد تكون وحدها منفردة بهذا الامتياز ولا يشاهد ذلك إلا في اللغة التتارية خاصة والظاهر أن ذلك بدأ في النصف الأول من القرن التاسع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> فإنك تجد في القصص الهزلية التي ألفها أليرزا فتح العلي آخوان زاده التي كتبت بين سنتي <num type="auto-markup" resp="#pers_TG" value="1850" xml:lang="ar" xml:id="num_1.d1e3010">١٨٥٠</num> و <num type="auto-markup" resp="#pers_TG" value="1860" xml:lang="ar" xml:id="num_1.d1e3013">١٨٦٠</num> بعض الألفاظ لم تكن روسية فتكون قد سرت إلى التتارية من اللغة الروسية مثل (زاكون) <pb corresp="file:../epub/26523/OEBPS/xhtml/P3186.xhtml" ed="shamela" n="n49-p23" xml:id="pb_24.d1e3016"/> قانون (بيلت) من (بيله) الفرنسوية أي تذكرة و (باشور) من (باسور) أي جواز و (مدال) من ميدال أي نوط ولا تكاد الآن تفتح جريدة مثل <bibl><title level="j">ترجمان</title> التي تصدر في <pubPlace><placeName>بعجه سراي</placeName></pubPlace></bibl> و<bibl><title level="j">ترقي</title> التي تصدر في <pubPlace><placeName>باكو</placeName></pubPlace></bibl> و<bibl>جريدة <title level="j">قازان مخبري</title></bibl> <pb ed="print" n="113" facs="#facs_127" xml:id="pb_48.d1e3337"/> إلا وتدهش مما تراه من كثرة الألفاظ الروسية أو المصبوغة بالصبغة الروسية لأن كثيراً منها من أصل فرنسوي أو ألماني أو إيطالي.</p>
+                <p xml:lang="ar" xml:id="p_150.d1e3008"
+                    >أما سائر اللهجات الشرقية التي تأثرت من اللغات العثمانية باللغات الأوربية فإن اللغة الروسية تكاد تكون وحدها منفردة بهذا الامتياز ولا يشاهد ذلك إلا في اللغة التتارية خاصة والظاهر أن ذلك بدأ في النصف الأول من القرن التاسع <num
+                    xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                    >عشر</num> فإنك تجد في القصص الهزلية التي ألفها أليرزا فتح العلي آخوان زاده التي كتبت بين سنتي <num type="auto-markup"
+                    resp="#pers_TG" value="1850" xml:lang="ar" xml:id="num_1.d1e3010">١٨٥٠</num> و <num type="auto-markup" resp="#pers_TG"
+                    value="1860" xml:lang="ar" xml:id="num_1.d1e3013"
+                    >١٨٦٠</num> بعض الألفاظ لم تكن روسية فتكون قد سرت إلى التتارية من اللغة الروسية مثل (زاكون) <pb
+                    corresp="file:../epub/26523/OEBPS/xhtml/P3186.xhtml" ed="shamela" n="n49-p23" xml:id="pb_24.d1e3016"
+                    /> قانون (بيلت) من (بيله) الفرنسوية أي تذكرة و (باشور) من (باسور) أي جواز و (مدال) من ميدال أي نوط ولا تكاد الآن تفتح جريدة مثل <bibl><title
+                    level="j">ترجمان</title> التي تصدر في <pubPlace><placeName>بعجه سراي</placeName></pubPlace></bibl> و<bibl><title
+                    level="j">ترقي</title> التي تصدر في <pubPlace><placeName>باكو</placeName></pubPlace></bibl> و<bibl>جريدة <title
+                    level="j">قازان مخبري</title></bibl> <pb ed="print" n="113" facs="#facs_127" xml:id="pb_48.d1e3337"
+                    /> إلا وتدهش مما تراه من كثرة الألفاظ الروسية أو المصبوغة بالصبغة الروسية لأن كثيراً منها من أصل فرنسوي أو ألماني أو إيطالي.</p>
                 <p xml:lang="ar" xml:id="p_151.d1e3019">إذا عرفت من هذا فما هو مستقبل اللغة التركية؟ إنا نشهد الآن لجنة المعارف العمومية في مجلس النواب الروسي تعنى
                     بالكتب المؤلفة باللغة المحلية للمدارس وقد رفضت الاستعاضة عن اللفظ التتري باللفظ التركي وذلك ليحولوا دون الجامعة التركيةز
                     ولكن من أين نشأت هذه المخاوف؟</p>
@@ -1696,7 +1781,27 @@
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P3188.xhtml" ed="shamela" n="n49-p25" xml:id="pb_26.d1e3032"/>
             <div type="article" xml:lang="ar" xml:id="div_4.d1e3034">
                 <head xml:lang="ar" xml:id="head_3.d1e3036">المالية العثمانية</head>
-                <p xml:lang="ar" xml:id="p_154.d1e3039">لا شيء يشغل بال العارفين من العثمانيين مثل إصلاح ميزانية الدولة وبينا النفوس متطلعة إلى ما يجري في مجلسنا النيابي بشأنها وردت <bibl>مجلة <title level="j">العالمين</title> الباريزية وفيها مقالة بقلم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> الأخصائيين في هذا المعنى</bibl> قال فيها أن واردات السلطان سليم الأول كانت تقدر سنة <num type="auto-markup" resp="#pers_TG" value="1508" xml:lang="ar" xml:id="num_1.d1e3044">١٥٠٨</num> بـ <num type="auto-markup" resp="#pers_TG" value="3.13E6" xml:lang="ar" xml:id="num_1.d1e3047">٣.١٣٠.٠٠٠</num> دوكا وبلغت سنة <num type="auto-markup" resp="#pers_TG" value="1553" xml:lang="ar" xml:id="num_1.d1e3050">١٥٥٣</num> <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e3053">١٥</num> مليون دوكا وبعد ذلك عاد ارتقاؤها انحطاطاً وقوتها ضعفاً مشهوداً بالاقتراض فأصبحت المملكة في قبضة أرباب المصارف من الماليين ولا تزال حتى يوم الناس هذا. فليت شعري هل ينهض أحرار الأمة العثمانية المجددون لإنهاض ماليتهم من كبوتها؟ فالجواب عَلَى ذلك اقتصدوا عَلَى وجه حسن تحسن ماليتكم لأن هذه لا تستمد إلا من الاقتصاد عَلَى أن الحالة الزراعية والصناعية والتجارية في السلطنة العثمانية ليست عَلَى ما يرام بالنظر لمثل هذه المملكة الواسعة الرباع والأصقاع. فقد خرجت المملكة سنة <num type="auto-markup" resp="#pers_TG" value="1905" xml:lang="ar" xml:id="num_1.d1e3057">١٩٠٥</num> <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e3060">١٨</num> مليون قنطار من الحنطة و <num type="auto-markup" resp="#pers_TG" value="34" xml:lang="ar" xml:id="num_1.d1e3063">٣٤</num> مليون قنطار من الشعير والجاودار (الحنطة السوداء) والقرطمان والذرة. ويستخرج من اليمن قهوة حسنة معروفة منزلتها. وتبلغ مساحة الغابات<pb ed="print" n="115" facs="#facs_129" xml:id="pb_52.d1e3390"/> التي خربتها المواشي <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ملايين هكتار. ويصدر من ولاية بورصة ولواء أزميد نحو <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> طن من الفيالج (الشرانق) وكثير من المواد الطبيعية عَلَى ظاهر الأرض وباطنها لم تستثمر إلى الآن لقلة رؤوس الأموال والمهندسين. وتقدر صادرات المملكة ووارداتها بنحو <num type="auto-markup" resp="#pers_TG" value="1150" xml:lang="ar" xml:id="num_1.d1e3066">١١٥٠</num> مليون فرنك تكاد تنقسم نصفين وطول سككها الحديدية <num type="auto-markup" resp="#pers_TG" value="6600" xml:lang="ar" xml:id="num_1.d1e3069">٦٦٠٠</num> كيلومتر.</p>
+                <p xml:lang="ar" xml:id="p_154.d1e3039"
+                    >لا شيء يشغل بال العارفين من العثمانيين مثل إصلاح ميزانية الدولة وبينا النفوس متطلعة إلى ما يجري في مجلسنا النيابي بشأنها وردت <bibl>مجلة <title
+                    level="j">العالمين</title> الباريزية وفيها مقالة بقلم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG"
+                    value="1">أحد</num> الأخصائيين في هذا المعنى</bibl> قال فيها أن واردات السلطان سليم الأول كانت تقدر سنة <num
+                    type="auto-markup" resp="#pers_TG" value="1508" xml:lang="ar" xml:id="num_1.d1e3044">١٥٠٨</num> بـ <num
+                    type="auto-markup" resp="#pers_TG" value="3.13E6" xml:lang="ar" xml:id="num_1.d1e3047"
+                    >٣.١٣٠.٠٠٠</num> دوكا وبلغت سنة <num type="auto-markup" resp="#pers_TG" value="1553" xml:lang="ar"
+                    xml:id="num_1.d1e3050">١٥٥٣</num> <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar"
+                    xml:id="num_1.d1e3053"
+                    >١٥</num> مليون دوكا وبعد ذلك عاد ارتقاؤها انحطاطاً وقوتها ضعفاً مشهوداً بالاقتراض فأصبحت المملكة في قبضة أرباب المصارف من الماليين ولا تزال حتى يوم الناس هذا. فليت شعري هل ينهض أحرار الأمة العثمانية المجددون لإنهاض ماليتهم من كبوتها؟ فالجواب عَلَى ذلك اقتصدوا عَلَى وجه حسن تحسن ماليتكم لأن هذه لا تستمد إلا من الاقتصاد عَلَى أن الحالة الزراعية والصناعية والتجارية في السلطنة العثمانية ليست عَلَى ما يرام بالنظر لمثل هذه المملكة الواسعة الرباع والأصقاع. فقد خرجت المملكة سنة <num
+                    type="auto-markup" resp="#pers_TG" value="1905" xml:lang="ar" xml:id="num_1.d1e3057">١٩٠٥</num> <num type="auto-markup"
+                    resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e3060">١٨</num> مليون قنطار من الحنطة و <num type="auto-markup"
+                    resp="#pers_TG" value="34" xml:lang="ar" xml:id="num_1.d1e3063"
+                    >٣٤</num> مليون قنطار من الشعير والجاودار (الحنطة السوداء) والقرطمان والذرة. ويستخرج من اليمن قهوة حسنة معروفة منزلتها. وتبلغ مساحة الغابات<pb
+                    ed="print" n="115" facs="#facs_129" xml:id="pb_52.d1e3390"/> التي خربتها المواشي <num xml:lang="ar" type="auto-markup"
+                    subtype="d2" resp="#pers_TG" value="10">عشرة</num> ملايين هكتار. ويصدر من ولاية بورصة ولواء أزميد نحو <num xml:lang="ar"
+                    type="auto-markup" subtype="d4" resp="#pers_TG" value="1000"
+                    >ألف</num> طن من الفيالج (الشرانق) وكثير من المواد الطبيعية عَلَى ظاهر الأرض وباطنها لم تستثمر إلى الآن لقلة رؤوس الأموال والمهندسين. وتقدر صادرات المملكة ووارداتها بنحو <num
+                    type="auto-markup" resp="#pers_TG" value="1150" xml:lang="ar" xml:id="num_1.d1e3066"
+                    >١١٥٠</num> مليون فرنك تكاد تنقسم نصفين وطول سككها الحديدية <num type="auto-markup" resp="#pers_TG" value="6600"
+                    xml:lang="ar" xml:id="num_1.d1e3069">٦٦٠٠</num> كيلومتر.</p>
                 <p xml:lang="ar" xml:id="p_155.d1e3073">هذا ما قاله صاحب هذا المبحث وقال إن إصلاح المالية العثمانية ليس بالأمر المتعذر فإنها إذا لم تحدث للدولة
                     مشاكل خارجية تستطيع أن تلم شعثها بعد بضع سنين إذا أحسن الأحرار السياسة والإدارة. وهو قول يشبه ما يردده ناظر ماليتنا
                     عَلَى أنه مثل بعض الماليين لا يرى عَلَى الدولة حرجاً في الاقتراض لسد العجز من ميزانيتها لأن الدولة تقترض من جهة وتوفي
@@ -1932,7 +2037,14 @@
                     يقيدوا آثار بعثتهم وقد أخذ <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> أعضاء البعثة صورة<pb ed="print" n="126" facs="#facs_140" xml:id="pb_74.d1e3795"/> طوبوغرافية من خط هذه الرحلة وفوائد فلكية في عدة نقاط وآب بمجموعة من
                     الحشرات والحيوانات تغني المتحف الطبيعي وبصور كثيرة عرضت بالفانوس السحري عَلَى الحضور تلك الليلة حتى لكأنهم ذهبوا بأنفسهم
                     إلى تلك الأصقاع النائية.</p>
-                <p xml:lang="ar" xml:id="p_218.d1e3451">هذه المحاضرة الأولى التي تكهرب بها جسمي وتأثرت عواطفي وسمعت بها مهانة أمتي بأذني. والمحاضرة الثانية التي ألقاها المسيو تارديو من كبار السياسيين الفرنسويين وصاحب المقالات الافتتاحية في جريدة <title level="j">الطان</title> في <placeName>الدولة العثمانية</placeName> فهو أول أخصائي في سياسة الشرق ولاسيما دولتنا يقلب القلم بين أصابعه كما تشاء حكومته. حضرت خطبة له في مدرسة اللغات الشرقية الحية ألقاها عَلَى طلبة تلك المدرسة العالية ممن يتخرجون الآن ليذهبوا إلى الشرق فيما بعد لخدمة حكومتهم ويكون منهم التراجمة والقناصل والسفراءُ ببيان لم أسمع من العرب ولا من العجم أبلغ منه لم يتمتم ولم يعطس ولم يكرر وقلما رأيت إنساناً درس موضوعه وأعد له المواد التاريخية والمستندات أكثر من ذلك ولكن سياسة المنافع والمصالح كانت تلوح صراحة من خلال كلام الخطيب فكان عجبي بتحامله عَلَى <pb corresp="file:../epub/26523/OEBPS/xhtml/P3200.xhtml" ed="shamela" n="n49-p37" xml:id="pb_38.d1e3453"/> الدولة أكثر من عجبي بذلاقة لسان فقد تكلم عَلَى علاقة فرنسا بالشرق ولاسيما الدولة العلية فقال أن فرنسا صاحبة الفكر الأول في الحروب الصليبية قد أتى عليها زمن حالفت فيه الدولة العلية أيام قوتها لتستخدمها لأغراضها وقد جنى الفرنسيس ثمار هذا الوفاق ثم لما مضت سنون والدولة لم تر خيراً لها من تلك المحالفة نزعت يدها من يد حليفتها ثم عادت فرنسا فبعثت أبناءها إلى القريم ليحابوا مع الإنكليز والعثمانيين جيوش الروس لأن مصلحتها اقتضت إذ ذاك وأفاض في نشأة الامتيازات<pb ed="print" n="127" facs="#facs_141" xml:id="pb_76.d1e3802"/> الأجنبية في البلاد المصرية والعثمانية وقال أن فرنسا في كل دور من أدوارها استخدمت الدولة العلية لمقاصدها وأن لها اليد الطولى في المسألة الشرقية أي استقلال بلاد البلقان واليونان وأنها لا تقصر كل حين في بتر عضو من أعضاء هذه الدولة حتى تموت وتفنى.</p>
+                <p xml:lang="ar" xml:id="p_218.d1e3451"
+                    >هذه المحاضرة الأولى التي تكهرب بها جسمي وتأثرت عواطفي وسمعت بها مهانة أمتي بأذني. والمحاضرة الثانية التي ألقاها المسيو تارديو من كبار السياسيين الفرنسويين وصاحب المقالات الافتتاحية في جريدة <title
+                    level="j"
+                    >الطان</title> في <placeName>الدولة العثمانية</placeName> فهو أول أخصائي في سياسة الشرق ولاسيما دولتنا يقلب القلم بين أصابعه كما تشاء حكومته. حضرت خطبة له في مدرسة اللغات الشرقية الحية ألقاها عَلَى طلبة تلك المدرسة العالية ممن يتخرجون الآن ليذهبوا إلى الشرق فيما بعد لخدمة حكومتهم ويكون منهم التراجمة والقناصل والسفراءُ ببيان لم أسمع من العرب ولا من العجم أبلغ منه لم يتمتم ولم يعطس ولم يكرر وقلما رأيت إنساناً درس موضوعه وأعد له المواد التاريخية والمستندات أكثر من ذلك ولكن سياسة المنافع والمصالح كانت تلوح صراحة من خلال كلام الخطيب فكان عجبي بتحامله عَلَى <pb
+                    corresp="file:../epub/26523/OEBPS/xhtml/P3200.xhtml" ed="shamela" n="n49-p37" xml:id="pb_38.d1e3453"
+                    /> الدولة أكثر من عجبي بذلاقة لسان فقد تكلم عَلَى علاقة فرنسا بالشرق ولاسيما الدولة العلية فقال أن فرنسا صاحبة الفكر الأول في الحروب الصليبية قد أتى عليها زمن حالفت فيه الدولة العلية أيام قوتها لتستخدمها لأغراضها وقد جنى الفرنسيس ثمار هذا الوفاق ثم لما مضت سنون والدولة لم تر خيراً لها من تلك المحالفة نزعت يدها من يد حليفتها ثم عادت فرنسا فبعثت أبناءها إلى القريم ليحابوا مع الإنكليز والعثمانيين جيوش الروس لأن مصلحتها اقتضت إذ ذاك وأفاض في نشأة الامتيازات<pb
+                    ed="print" n="127" facs="#facs_141" xml:id="pb_76.d1e3802"
+                    /> الأجنبية في البلاد المصرية والعثمانية وقال أن فرنسا في كل دور من أدوارها استخدمت الدولة العلية لمقاصدها وأن لها اليد الطولى في المسألة الشرقية أي استقلال بلاد البلقان واليونان وأنها لا تقصر كل حين في بتر عضو من أعضاء هذه الدولة حتى تموت وتفنى.</p>
                 <p xml:lang="ar" xml:id="p_219.d1e3456">فيا أخواني وسادتي أيسمع عثماني هذا الكلام ولا يجهش نفسه بالبكاء ولا تذوب كمداً وحسرة وتسود الدنيا في
                     عينيه؟</p>
                 <p xml:lang="ar" xml:id="p_220.d1e3459">هذا بعض ما يعده الغرب للشرق فمإذا يعد الشرق للغرب؟</p>
@@ -2008,8 +2120,10 @@
                     جملة المدارس التي زرتها في فرنسا وتأثرت أيضاً بنظامها مدرسة جزيرة فرنسا في مقاطعة الواز. زرتها بدعوة من صديقي مرسي أفندي
                     محمود <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> كتاب مصر فكانت زيارتها وزيارة مدرسة كرنيون من اسعد الأيام التي قضيتها في أرض الفرنسيس وإني أحب أن أقص عليكم
                     قصة هذه المدرسة لتعرفوا الغرض منها فأقول:</p>
-                <p xml:lang="ar" xml:id="p_236.d1e3518">قام منذ <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> سنين في فرنسا رجل من رجال الصحافة اسمه <persName xml:lang="fr-Arab-AR"><forename>أديمون</forename>
-                    <surname>ديمولانس</surname></persName> درس طرق الحضارة والتعليم والتربية عند الألمان والإنكليز والأميركان وقابل بين طرائقهم وأخلاقهم وعاداتهم وبين ما عند الفرنسيس منها ووضع لذلك الكتب وكتب المقالات وأنشأ مجلة العلم الاجتماعي التي تدور عَلَى هذا الغرض ومن جملة كتبه سر تقدم الإنكليز السكسونيين الذي نقل إلى<pb ed="print" n="133" facs="#facs_147" xml:id="pb_86.d1e3879"/> العربية فعمت فائدته العرب كما عمت الإفرنج.</p>
+                <p xml:lang="ar" xml:id="p_236.d1e3518">قام منذ <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG"
+                    value="10">عشر</num> سنين في فرنسا رجل من رجال الصحافة اسمه <persName xml:lang="fr-Arab-AR"><forename>أديمون</forename>
+                    <surname>ديمولانس</surname></persName> درس طرق الحضارة والتعليم والتربية عند الألمان والإنكليز والأميركان وقابل بين طرائقهم وأخلاقهم وعاداتهم وبين ما عند الفرنسيس منها ووضع لذلك الكتب وكتب المقالات وأنشأ مجلة العلم الاجتماعي التي تدور عَلَى هذا الغرض ومن جملة كتبه سر تقدم الإنكليز السكسونيين الذي نقل إلى<pb
+                    ed="print" n="133" facs="#facs_147" xml:id="pb_86.d1e3879"/> العربية فعمت فائدته العرب كما عمت الإفرنج.</p>
                 <p xml:lang="ar" xml:id="p_237.d1e3521">وقد وفق ديمولانس صاحب تلك الدعوة بأنه التف حوله أناس من أرباب الغيرة عَلَى ارتقاء بلادهم والاهتمام
                     بمستقبلها فكانوا يعطونه بالمئات لقيان الغرض الذي حاول بلوغه وتربية أبناء الفرنسيس عَلَى الطريقة الأنكلو سكسونية العملية
                     فأسست لذلك <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> مدارس كبرى عقيب دعوته الأولى مدرسة بروش أسست سنة <num type="auto-markup" resp="#pers_TG" value="1899" xml:lang="ar" xml:id="num_1.d1e3523">١٨٩٩</num> باسم جماعة من المساهمين وأخرى في إقليم نورمانديا لجماعة من كبار الصناع منها
@@ -2203,7 +2317,14 @@
                 </div>
                 <div type="article" xml:id="div_21.d1e4036">
                     <head xml:id="head_21.d1e4038">العالم في الصور</head>
-                    <p xml:lang="ar" xml:id="p_268.d1e3653"><bibl>كتبت <author>الآنسة برس</author> في مجلة التربية مقالة</bibl> قالت فيها: إن أول من رأس تسهيل الدرس عَلَى الأطفال بوضع صور في الكتب المدرسية هو <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> قدماء العلماء آموس كومينوس ( <num type="auto-markup" resp="#pers_TG" value="1592" xml:lang="ar" xml:id="num_1.d1e3655">١٥٩٢</num> _ <num type="auto-markup" resp="#pers_TG" value="1671" xml:lang="ar" xml:id="num_1.d1e3658">١٦٧١</num> ) وما برحت طريقته تنتشر ولكن عَلَى ضعف حتى العهد الأخير وقد غدت الكتب المدرسية وغيرها مصورة كلها بل أفرطوا في بعضها حتى قال بعضهم أن كثرة <pb corresp="file:../epub/26523/OEBPS/xhtml/P3214.xhtml" ed="shamela" n="n49-p51" xml:id="pb_52.d1e3661"/> الصور توشك أن تأتي عَلَى كل اجتهاد للفهم وتفكر الإنسان بنفسه في موضوع بمجرد وصفه وصفاً بسيطاً. ولكن الذاهبين إلى أن الصور تضعف قوة التصور هم عَلَى خطأ في دعواهم فإن الصورة تقوي الجهاد للفهم وذلك بأن تجعل الحواس والذهن تتحرك بنفسها منذ الصغر ويتسع أمام الطفل عالم العلم المنوع وتعلق بواسطته مبادئ من العلم غير قليلة وبذلك يكون الفكر في سعة من الوقت والقوة اللازمة للبحث في أمور أخرى لا يتأتى التمكن منها بالنظر. نعم إن الصور توضح كل شيءٍ بحيث تكتفي أرباب أرباب العقول العادية بما فيها وهي مفيدة تفتح لأرباب الأفكار العالية أموراً جديدة أخرى. ولعمري أليس التصوير من حيث الجملة هو سبب ونتيجة لاتساع الانتباه العقلي في السنين الأخيرة.</p>
+                    <p xml:lang="ar" xml:id="p_268.d1e3653"
+                        ><bibl>كتبت <author>الآنسة برس</author> في مجلة التربية مقالة</bibl> قالت فيها: إن أول من رأس تسهيل الدرس عَلَى الأطفال بوضع صور في الكتب المدرسية هو <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> قدماء العلماء آموس كومينوس ( <num
+                        type="auto-markup" resp="#pers_TG" value="1592" xml:lang="ar" xml:id="num_1.d1e3655">١٥٩٢</num> _ <num
+                        type="auto-markup" resp="#pers_TG" value="1671" xml:lang="ar" xml:id="num_1.d1e3658"
+                        >١٦٧١</num> ) وما برحت طريقته تنتشر ولكن عَلَى ضعف حتى العهد الأخير وقد غدت الكتب المدرسية وغيرها مصورة كلها بل أفرطوا في بعضها حتى قال بعضهم أن كثرة <pb
+                        corresp="file:../epub/26523/OEBPS/xhtml/P3214.xhtml" ed="shamela" n="n49-p51" xml:id="pb_52.d1e3661"
+                        /> الصور توشك أن تأتي عَلَى كل اجتهاد للفهم وتفكر الإنسان بنفسه في موضوع بمجرد وصفه وصفاً بسيطاً. ولكن الذاهبين إلى أن الصور تضعف قوة التصور هم عَلَى خطأ في دعواهم فإن الصورة تقوي الجهاد للفهم وذلك بأن تجعل الحواس والذهن تتحرك بنفسها منذ الصغر ويتسع أمام الطفل عالم العلم المنوع وتعلق بواسطته مبادئ من العلم غير قليلة وبذلك يكون الفكر في سعة من الوقت والقوة اللازمة للبحث في أمور أخرى لا يتأتى التمكن منها بالنظر. نعم إن الصور توضح كل شيءٍ بحيث تكتفي أرباب أرباب العقول العادية بما فيها وهي مفيدة تفتح لأرباب الأفكار العالية أموراً جديدة أخرى. ولعمري أليس التصوير من حيث الجملة هو سبب ونتيجة لاتساع الانتباه العقلي في السنين الأخيرة.</p>
                     <p xml:lang="ar" xml:id="p_269.d1e3664">فالواجب أن تري الجغرافيا عيوننا صوراً من
                         بلاد العالم لم نراها ولن نراها. وأن يكون التاريخ معرضاً صور لكل عصر أو لكل
                         القصص التي تعظم قيمتها لقلة صحتها لأنها تعبر عن حالة الأفكار العامة لزمن أو
@@ -2234,7 +2355,8 @@
                 </div>
                 <div type="article" xml:id="div_22.d1e4066">
                     <head xml:id="head_22.d1e4068">صحة العين</head>
-                    <p xml:lang="ar" xml:id="p_273.d1e3678"><bibl>نشر <author>الدكتور <persName><surname>دوفور</surname></persName></author> في مجلة التربية مقالة في صحة العين في البيوت المدارس</bibl> قال فيها:</p>
+                    <p xml:lang="ar" xml:id="p_273.d1e3678"
+                        ><bibl>نشر <author>الدكتور <persName><surname>دوفور</surname></persName></author> في مجلة التربية مقالة في صحة العين في البيوت المدارس</bibl> قال فيها:</p>
                     <p xml:lang="ar" xml:id="p_274.d1e3682">إن الواجب تنظيف عيون الأولاد والعمل لما
                         فيه وقايتها لا أن يمدوا أيديهم إليها وهي وسخة فلا تستعمل لها اسفنجة ولا خرقة
                         استعملت في سائر أجزاء الجسد ولا أن تغل عيون الأولاد بما استحموا به. لأن
@@ -2323,7 +2445,20 @@
                 </div>
                 <div type="article" xml:id="div_23.d1e4159">
                     <head xml:id="head_23.d1e4161">تربية بيوت الضاحية</head>
-                    <p xml:lang="ar" xml:id="p_282.d1e3763">اشتهر <persName>الدكتور ليز</persName> في ألمانيا بإنشاء مدارس سماها بهذا الاسم وشاعت طريقتها في أوربا وأميركا عَلَى نحو ما كانت شاعت منذ بضع سنين كتب إديمون ديمولانس في فرنسا القائل باتخاذ التربية السكسونية. وقد <bibl>كتبت مجلة التربية الفرنسوية يصف طريقة مدارسه</bibl> قال: إننا أنشأنا خلال ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> السنين الأخيرة من بيوت التربية <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> وهي في الضواحي بعيدة عن المدن يتربى فيها التلميذ ممتعاً بكل قواه الطبيعية والدينية والأدبية فيعيش في محيط ملائم لتربية شخصيته عَلَى القوة والنشاط عَلَى صورة تعرف فيها قيمة الحياة وأفراحها وتكون جديرة بأن تساعد عَلَى سعادة الخلق فيقوم المعلمون في هذه المدارس بوظيفة المربي الحقيقي يعيشون مع الفتيان الذين عهدت إليهم تربيتهم كما يعيش الأصحاب ويعينونهم ما أمكن عَلَى إتمام تربيتهم الشخصية فيلعبون ويعملون معهم ويقاسمونهم اللذائذ والأعمال الجدية ويؤثرون فيهم بالمثل والقدوة وبما يبثونه في قلوبهم من حب الميل إلى كل الصور الشريفة والنافعة في العمل. وللتربية العملية المقام الأول في هذه<pb ed="print" n="149" facs="#facs_163" xml:id="pb_116.d1e4166"/> التربية فيمكنون الطفل أن يعيش في الهواء الطلق وما يتحتم عليه القيام به من أنواع الرياضات البدنية يكون متناسباً مع نموه ويعمل به بدون إفراط فيوصونه بالمشي والعدو وأعمال الرياضة وركوب الدراجة وهذه الرياضة الأخيرة تكون في السنة الحادية <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ومن جملة <pb corresp="file:../epub/26523/OEBPS/xhtml/P3219.xhtml" ed="shamela" n="n49-p56" xml:id="pb_57.d1e3765"/> الأعمال التي تقوي جسمه زراعة البقول والزروع والنجارة وهي من الصناعات التي كتبت لها المدرسة فضل التقدم وإذ كان الدكتور وايز يعلق شأناً عظيماً عَلَى تأثير جمال الأقاليم في التلميذ أسس مدارسه ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أقاليم بهجة من بلاد ألمانيا أما الأشغال العقلية فيجب أن يعلمها الطفل عَلَى صورة مقبولة ويتقبلها بفرح فينبه ما فيه من الميل الفطري وهباته في النظر وقوته في التفكر كما تربي فيه العواطف الدينية والأدبية والوطنية وتفي بما يحفظ نظام الحياة وسذاجتها وإخلاصها المطلق نحو الواجب.</p>
+                    <p xml:lang="ar" xml:id="p_282.d1e3763"
+                        >اشتهر <persName>الدكتور ليز</persName> في ألمانيا بإنشاء مدارس سماها بهذا الاسم وشاعت طريقتها في أوربا وأميركا عَلَى نحو ما كانت شاعت منذ بضع سنين كتب إديمون ديمولانس في فرنسا القائل باتخاذ التربية السكسونية. وقد <bibl>كتبت مجلة التربية الفرنسوية يصف طريقة مدارسه</bibl> قال: إننا أنشأنا خلال ال<num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشر</num> السنين الأخيرة من بيوت التربية <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG"
+                        value="3"
+                        >ثلاثة</num> وهي في الضواحي بعيدة عن المدن يتربى فيها التلميذ ممتعاً بكل قواه الطبيعية والدينية والأدبية فيعيش في محيط ملائم لتربية شخصيته عَلَى القوة والنشاط عَلَى صورة تعرف فيها قيمة الحياة وأفراحها وتكون جديرة بأن تساعد عَلَى سعادة الخلق فيقوم المعلمون في هذه المدارس بوظيفة المربي الحقيقي يعيشون مع الفتيان الذين عهدت إليهم تربيتهم كما يعيش الأصحاب ويعينونهم ما أمكن عَلَى إتمام تربيتهم الشخصية فيلعبون ويعملون معهم ويقاسمونهم اللذائذ والأعمال الجدية ويؤثرون فيهم بالمثل والقدوة وبما يبثونه في قلوبهم من حب الميل إلى كل الصور الشريفة والنافعة في العمل. وللتربية العملية المقام الأول في هذه<pb
+                        ed="print" n="149" facs="#facs_163" xml:id="pb_116.d1e4166"
+                        /> التربية فيمكنون الطفل أن يعيش في الهواء الطلق وما يتحتم عليه القيام به من أنواع الرياضات البدنية يكون متناسباً مع نموه ويعمل به بدون إفراط فيوصونه بالمشي والعدو وأعمال الرياضة وركوب الدراجة وهذه الرياضة الأخيرة تكون في السنة الحادية <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ومن جملة <pb
+                        corresp="file:../epub/26523/OEBPS/xhtml/P3219.xhtml" ed="shamela" n="n49-p56" xml:id="pb_57.d1e3765"
+                        /> الأعمال التي تقوي جسمه زراعة البقول والزروع والنجارة وهي من الصناعات التي كتبت لها المدرسة فضل التقدم وإذ كان الدكتور وايز يعلق شأناً عظيماً عَلَى تأثير جمال الأقاليم في التلميذ أسس مدارسه ال<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> في <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
+                        >ثلاثة</num> أقاليم بهجة من بلاد ألمانيا أما الأشغال العقلية فيجب أن يعلمها الطفل عَلَى صورة مقبولة ويتقبلها بفرح فينبه ما فيه من الميل الفطري وهباته في النظر وقوته في التفكر كما تربي فيه العواطف الدينية والأدبية والوطنية وتفي بما يحفظ نظام الحياة وسذاجتها وإخلاصها المطلق نحو الواجب.</p>
                     <p xml:lang="ar" xml:id="p_283.d1e3768">قال لقد أنشأنا في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أقاليم بهجة من
                         بلاد ألمانيا (في هارز تورنغ ورون) <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> دور للتربية للأطفال والمتوسطين
                         والكبار وذلك ليكون أبناء كل سن مع أبناء سنهم ويخلصوا من حبسهم في مدارس
@@ -2513,7 +2648,10 @@
                 </div>
                 <div type="article" xml:id="div_28.d1e4330">
                     <head xml:id="head_28.d1e4332">محصول الذهب</head>
-                    <p xml:lang="ar" xml:id="p_305.d1e3905">قال <bibl>مجلة <title level="j">الاقتصاديين</title></bibl>: ما برح محصول الذهب في العالم يزيد سنة عن سنة وليس هو الذي زاد غلاء المعيشة بل إن الغلاء ناشيء بطبيعة الحال من التدابير السياسية والقوانين الاجتماعية وهاك جدولاً بمحصوله سنة <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e3907">١٩٠٩</num> ومنه تفهم أن الولية قد فازت بها الترنسفال في هذا الباب.</p>
+                    <p xml:lang="ar" xml:id="p_305.d1e3905">قال <bibl>مجلة <title level="j"
+                        >الاقتصاديين</title></bibl>: ما برح محصول الذهب في العالم يزيد سنة عن سنة وليس هو الذي زاد غلاء المعيشة بل إن الغلاء ناشيء بطبيعة الحال من التدابير السياسية والقوانين الاجتماعية وهاك جدولاً بمحصوله سنة <num
+                        type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e3907"
+                        >١٩٠٩</num> ومنه تفهم أن الولية قد فازت بها الترنسفال في هذا الباب.</p>
                     <table xml:lang="ar" xml:id="table_2.d1e4429">
                         <row role="label" xml:id="row_7.d1e4431">
                             <cell xml:id="cell_13.d1e4433">فرنك</cell>

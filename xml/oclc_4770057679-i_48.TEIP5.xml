@@ -96,8 +96,70 @@
                     <gi xml:lang="en">gap</gi> into <gi xml:lang="en">lg</gi> of <att xml:lang="en">type</att> ="bayt" with <gi xml:lang="en">l</gi> child elements. All other red spans have been retained as <gi xml:lang="en">hi</gi> .</p>
             </editorialDecl>
         </encodingDesc>
-        <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2016-06-15" who="pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-04-18" who="pers_TG">Updated mark-up of bibliographic data. Added automated <att>xml:id</att>s for every element that is
+        <profileDesc xml:lang="en">
+            <!-- as we deal with sources from an area and period which also used non-Latin scripts and preferred a number of calenders over the Gregorian, this should be declared here -->
+            <calendarDesc xml:lang="en">
+                <calendar xml:id="cal_gregorian" xml:lang="en">
+                    <p xml:lang="en">Following the hegemonial approach of standards rooted in the English language, the Gregorian calendar
+                        is presumed as the norm and must not be specified.</p>
+                    <p xml:lang="en">The <att xml:lang="en">when</att> attribute always provides W3C dates, while the <att xml:lang="en">when-custom</att> attribute follows the inherent logic of the chosen calendar.</p>
+                    <p xml:lang="en">E.g. <date when="1841-05-23" xml:lang="en">23 May 1841, Sunday</date> , <date when="1908-03-05" xml:lang="en">5 Mar 1908, Thursday</date> .</p>
+                </calendar>
+                <calendar xml:id="cal_islamic" xml:lang="en">
+                    <p xml:lang="en">Islamic <hi xml:lang="en">hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates
+                        differ between locations as the beginning of the month is based on sightings of the new moon.</p>
+                    <p xml:lang="en">E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01" xml:lang="en">1 Rab II 1257, Sunday</date> , <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01" xml:lang="en">1 Ṣaf 1326, Thursday</date>
+                        .</p>
+                </calendar>
+                <calendar xml:id="cal_julian" xml:lang="en">
+                    <p xml:lang="en">Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to
+                        as <hi xml:lang="en">rūmī</hi> . Arabic newspapers usually labelled this calendar as <hi xml:lang="en">sharqī</hi>
+                        .</p>
+                    <p xml:lang="en">All solar calendars add an intercalated 366th day every fourth (and, in the case of Gregorian and rūmī
+                        calendars, even-numbered) year at the end of February (the last day of the old Julian calendar). The Gregorian
+                        calendar suppresses this rule in centesimal years that cannot be divided by 400. This difference creates a growing
+                        offset between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
+                        difference between the Gregorian calendar, on the one hand, and the <hi xml:lang="en">mālī</hi> and <hi xml:lang="en">rūmī</hi> calendars, on the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315
+                        M (13 March 1900) onwards.</p>
+                    <p xml:lang="en">E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11" xml:lang="en">11 Ayyār 1841, Sunday</date> , <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21" xml:lang="en">21 Shub 1908, Thursday</date> .</p>
+                </calendar>
+                <calendar xml:id="cal_ottomanfiscal" xml:lang="en">
+                    <p xml:lang="en">Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the
+                        Year with 1 March. Introduced as fiscal calendar in 1676 and in the Ottoman context usually referred to as <hi xml:lang="en">mālī</hi> and sometimes, confusingly, also as <hi xml:lang="en">rūmī</hi> . Every 33 lunar years, a
+                        <hi xml:lang="en">hijrī</hi> year would complete within a single solar <hi xml:lang="en">mālī</hi> year. In this
+                        case the counting of the <hi xml:lang="en">mālī</hi> years skipped a year to catch up with the faster <hi xml:lang="en">hijrī</hi> calendar. Due to a printing error in the coupon booklets for the consolidated debt
+                        repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi xml:lang="en">mālī</hi> and <hi xml:lang="en">hijrī</hi> years was henceforth abolished. As <hi xml:lang="en">mālī</hi> years began with 1 March,
+                        <hi xml:lang="en">mālī</hi> leap years preceded their <hi xml:lang="en">rūmī</hi> and Gregorian counterpart (the
+                        leap year 1315 M commenced on 13 March 1899).</p>
+                    <p xml:lang="en">E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11" xml:lang="en">11 Māyis 1257, Sunday</date> , <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21" xml:lang="en">21 Shub 1323,
+                        Thursday</date> .</p>
+                </calendar>
+            </calendarDesc>
+            <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
+               IJMES transcription of Arabic in Latin script. -->
+            <langUsage xml:lang="en">
+                <language ident="ar" xml:lang="en">Arabic</language>
+                <language ident="ar-Latn-x-ijmes" xml:lang="en">Arabic transcribed into Latin script following the IJMES
+                    conventions</language>
+                <language ident="ar-Latn-EN" xml:lang="en">Arabic transcribed into Latin script following common English
+                    practices</language>
+                <language ident="ar-Latn-FR" xml:lang="en">Arabic transcribed into Latin script following common French practices</language>
+                <language ident="en" xml:lang="en">English</language>
+                <language ident="fa" xml:lang="en">Farsi</language>
+                <language ident="fa-Latn-x-ijmes" xml:lang="en">Farsi transcribed into Latin script following the IJMES
+                    conventions</language>
+                <language ident="fr" xml:lang="en">French</language>
+                <language ident="ota" xml:lang="en">Ottoman</language>
+                <language ident="ota-Latn-x-ijmes" xml:lang="en">Ottoman transcribed into Latin script following the IJMES
+                    conventions</language>
+                <language ident="tr" xml:lang="en">Turkish</language>
+                <language ident="en-Arab-AR" xml:lang="en">English transcribed into Arabic script following common Levantine Arabic
+                    practices</language>
+                <language ident="fr-Arab-AR" xml:lang="en">French transcribed into Arabic script following common Levantine Arabic
+                    practices</language>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc><change when="2016-05-09" who="pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-04-18" who="pers_TG">Updated mark-up of bibliographic data. Added automated <att>xml:id</att>s for every element that is
                 a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()".</change><tei:change when="2016-04-15" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
             <change when="2016-02-19" who="#pers_TG">Added page breaks and footnotes (but for pages
                 22-30). Linked all <tag>pb ed="print"</tag> to the corresponding facsimile.
@@ -2360,7 +2422,29 @@
                         ملماً بالاقتصاد السياسي وعلم النفس ومحيطاً بعالم المالية والصناعة والتجارة
                         والجرائد والمجلات وكان ذا هبة بالتفنن والأدب والخطابة حاسباً كاتباً مقنعاً
                         يعرف التفنن في المسائل الحاضرة أو يحسن علم الحال.</p>
-                    <p xml:lang="ar" xml:id="p_201.d1e3729">ولا تعيش معظم الجرائد والمجلات الكبرى إلا بأجور إعلاناتها حتى أن أجرة صفحة واحدة مرة واحدة في <bibl>جريدة <title level="j" xml:lang="en-Arab-AR">لادي هوم جورنال</title></bibl> تؤجر بألف جنيه. ويؤخذ من إحصاء صدر سنة <num type="auto-markup" resp="#pers_TG" value="1900" xml:lang="ar" xml:id="num_1.d1e3731">١٩٠٠</num> أن في الولايات المتحدة <num type="auto-markup" resp="#pers_TG" value="18226" xml:lang="ar" xml:id="num_1.d1e3734">١٨٢٢٦</num> جريدة ومجلة بلغ مجموع ما يطبع من أعدادها من كل نسخة <num type="auto-markup" resp="#pers_TG" value="1.14229334E8" xml:lang="ar" xml:id="num_1.d1e3737">١١٤.٢٢٩.٣٣٤</num> ومجموع ما تطبعه في السنة <num type="auto-markup" resp="#pers_TG" value="8.168148749E9" xml:lang="ar" xml:id="num_1.d1e3740">٨.١٦٨.١٤٨.٧٤٩</num> <num type="auto-markup" resp="#pers_TG" value="1.68148749E8" xml:lang="ar" xml:id="num_1.d1e3743">١٦٨.١٤٨.٧٤٩</num> وبلغ مجموع إيرادها تلك السنة <num type="auto-markup" resp="#pers_TG" value="8.7894825E8" xml:lang="ar" xml:id="num_1.d1e3747">٨٧٨.٩٤٨.٢٥٠</num> فرنكاً منها <num type="auto-markup" resp="#pers_TG" value="4.79305635E8" xml:lang="ar" xml:id="num_1.d1e3750">٤٧٩.٣٠٥.٦٣٥</num> فرنكاً من أجور الإعلانات أي <num type="auto-markup" resp="#pers_TG" value="545" xml:lang="ar" xml:id="num_1.d1e3753">٥٤٥</num> في ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100">مئة</num> من مجموع دخلها وتطبع بعض الجرائد نسخاً خاصة بنشر الإعلانات فقط وتوزعها على مشتركيها ومن الجرائد ما لا يطبع غير الإعلانات وتوزع مجاناً. ويصرف <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> بيوت الثياب في فيلادلفيا نصف مليون فرنك في السنة أجرة صفحة واحدة من <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">إحدى</num> الجرائد الكبرى في تلك المدينة اسمها لروكورد ويصرف مخزن آخر يريد منافسته مليون فرنك على <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربع</num> جرائد. ومن كتاب الإعلانات <pb corresp="file:../epub/26523/OEBPS/xhtml/P3124.xhtml" ed="shamela" n="n48-p39" xml:id="pb_40.d1e3756"/> من يرزق <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> ليرة في السنة.</p>
+                    <p xml:lang="ar" xml:id="p_201.d1e3729"
+                        >ولا تعيش معظم الجرائد والمجلات الكبرى إلا بأجور إعلاناتها حتى أن أجرة صفحة واحدة مرة واحدة في <bibl>جريدة <title
+                        level="j" xml:lang="en-Arab-AR">لادي هوم جورنال</title></bibl> تؤجر بألف جنيه. ويؤخذ من إحصاء صدر سنة <num
+                        type="auto-markup" resp="#pers_TG" value="1900" xml:lang="ar" xml:id="num_1.d1e3731"
+                        >١٩٠٠</num> أن في الولايات المتحدة <num type="auto-markup" resp="#pers_TG" value="18226" xml:lang="ar"
+                        xml:id="num_1.d1e3734">١٨٢٢٦</num> جريدة ومجلة بلغ مجموع ما يطبع من أعدادها من كل نسخة <num type="auto-markup"
+                        resp="#pers_TG" value="1.14229334E8" xml:lang="ar" xml:id="num_1.d1e3737"
+                        >١١٤.٢٢٩.٣٣٤</num> ومجموع ما تطبعه في السنة <num type="auto-markup" resp="#pers_TG" value="8.168148749E9"
+                        xml:lang="ar" xml:id="num_1.d1e3740">٨.١٦٨.١٤٨.٧٤٩</num> <num type="auto-markup" resp="#pers_TG"
+                        value="1.68148749E8" xml:lang="ar" xml:id="num_1.d1e3743">١٦٨.١٤٨.٧٤٩</num> وبلغ مجموع إيرادها تلك السنة <num
+                        type="auto-markup" resp="#pers_TG" value="8.7894825E8" xml:lang="ar" xml:id="num_1.d1e3747"
+                        >٨٧٨.٩٤٨.٢٥٠</num> فرنكاً منها <num type="auto-markup" resp="#pers_TG" value="4.79305635E8" xml:lang="ar"
+                        xml:id="num_1.d1e3750">٤٧٩.٣٠٥.٦٣٥</num> فرنكاً من أجور الإعلانات أي <num type="auto-markup" resp="#pers_TG"
+                        value="545" xml:lang="ar" xml:id="num_1.d1e3753">٥٤٥</num> في ال<num xml:lang="ar" type="auto-markup" subtype="d3"
+                        resp="#pers_TG" value="100"
+                        >مئة</num> من مجموع دخلها وتطبع بعض الجرائد نسخاً خاصة بنشر الإعلانات فقط وتوزعها على مشتركيها ومن الجرائد ما لا يطبع غير الإعلانات وتوزع مجاناً. ويصرف <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >أحد</num> بيوت الثياب في فيلادلفيا نصف مليون فرنك في السنة أجرة صفحة واحدة من <num xml:lang="ar" type="auto-markup"
+                        subtype="d1" resp="#pers_TG" value="1"
+                        >إحدى</num> الجرائد الكبرى في تلك المدينة اسمها لروكورد ويصرف مخزن آخر يريد منافسته مليون فرنك على <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربع</num> جرائد. ومن كتاب الإعلانات <pb
+                        corresp="file:../epub/26523/OEBPS/xhtml/P3124.xhtml" ed="shamela" n="n48-p39" xml:id="pb_40.d1e3756"/> من يرزق <num
+                        xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> ليرة في السنة.</p>
                     <p xml:lang="ar" xml:id="p_202.d1e3759">ومن الإعلان الغريب أن بعض التجار لهم
                         بيوت ولا مخازن بل هم يطبعون إعلانات وينشرونها في قوائم خاصة وعلى صفحات الصحف
                         والكتب والرسائل فيرسل الطالبون بالبريد يطلبون منهم ما يشاؤن من بضائع <pb ed="print" n="46" facs="#facs_58" xml:id="pb_83.d1e4210"/>ومأكولات وهم يرسلونها إليهم بالبريد
@@ -2897,7 +2981,11 @@
                 <pb ed="print" n="70" facs="#facs_84" xml:id="pb_125.d1e4609"/>
                 <div type="article" xml:id="div_20.d1e4102">
                     <head xml:id="head_21.d1e4104">تعلم اللغات الحية</head>
-                    <p xml:lang="ar" xml:id="p_262.d1e4107"><bibl>نشر <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> ضباط الإنكليز في الجيش الهندي مقالة في <title level="j">المجلة المدرسية</title></bibl> ذكر فيها أن حكومته أرسلته مع الحامية إلى تخوم الشمال الشرقي من مستعمرة الهند بين قبائل متوحشة تتكلم بلهجة هندية صينية ليس لها قواعد ولا معجم مفردات مكتوبة فقاده الاتفاق إلى أن صارت له صلة مع <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> شيوخ ذاك الصقع يستعمل السحر والكهانة فأنشأ بادئ بدء يستمع لما يلقيه ذاك الساحر من القصص مشفوعاً بإشارات ورموز واضحة تجلب النظر فلم يمض زمن طويل إلا وقد توصل إلى إدراك المعاني التي يريدها الساحر وما هو إلا قليل أيضاً حتى دهش من نفسه وقد أخذ يألف الكلمات التي يدمدم بها الشيخ المتوحش وأصبحت له من هذه اللغة البربرية معرفة واسعة لم يتعب في تحصيلها كأنه تعلمها من كتاب. واستنتج بعد ذلك بأن خير طريقة يجب اتباعها في تعليم الأحداث لغة لا يعرفونها أن يسير العلمون لها على الطريقة التي تعلم بها صاحبنا الإنكليزي لغة الهند الصينية.</p>
+                    <p xml:lang="ar" xml:id="p_262.d1e4107"><bibl>نشر <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG"
+                        value="1">أحد</num> ضباط الإنكليز في الجيش الهندي مقالة في <title level="j"
+                        >المجلة المدرسية</title></bibl> ذكر فيها أن حكومته أرسلته مع الحامية إلى تخوم الشمال الشرقي من مستعمرة الهند بين قبائل متوحشة تتكلم بلهجة هندية صينية ليس لها قواعد ولا معجم مفردات مكتوبة فقاده الاتفاق إلى أن صارت له صلة مع <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >أحد</num> شيوخ ذاك الصقع يستعمل السحر والكهانة فأنشأ بادئ بدء يستمع لما يلقيه ذاك الساحر من القصص مشفوعاً بإشارات ورموز واضحة تجلب النظر فلم يمض زمن طويل إلا وقد توصل إلى إدراك المعاني التي يريدها الساحر وما هو إلا قليل أيضاً حتى دهش من نفسه وقد أخذ يألف الكلمات التي يدمدم بها الشيخ المتوحش وأصبحت له من هذه اللغة البربرية معرفة واسعة لم يتعب في تحصيلها كأنه تعلمها من كتاب. واستنتج بعد ذلك بأن خير طريقة يجب اتباعها في تعليم الأحداث لغة لا يعرفونها أن يسير العلمون لها على الطريقة التي تعلم بها صاحبنا الإنكليزي لغة الهند الصينية.</p>
                 </div>
                 <div type="article" xml:id="div_21.d1e4111">
                     <head xml:id="head_22.d1e4113">الأخلاق بالطعام</head>
@@ -2949,7 +3037,15 @@
                 </div>
                 <div type="article" xml:id="div_25.d1e4168">
                     <head xml:id="head_26.d1e4170">صفات السياسي</head>
-                    <p xml:lang="ar" xml:id="p_267.d1e4173">نشرت <title level="j">مجلة الاجتماع الدولية</title> مقالة في الأخلاق التي يجب أن يكون عليها الساسة فمما <pb corresp="file:../epub/26523/OEBPS/xhtml/P3144.xhtml" ed="shamela" n="n48-p59" xml:id="pb_60.d1e4175"/> قالته أن الناس يزعمون بأن أحسن سياسي أكثرهم جربذة واحتيالاً وقد أبان استورنل كونستان فساد هذا الرأي مؤكداً بأن الثقة والسلطة والاعتبار حليفة أهل الحشمة والوقار من الناس أما النجاح المؤقت الذي يأتي به بعض الظرف فهو من شأن الساسة <pb ed="print" n="72" facs="#facs_86" xml:id="pb_129.d1e4693"/>السطحيين وولاة المنحطين. فمن يجيد السلام يسلم عليه ولكن لا يعد شيئاً عند التحقيق. ومن النقائص المضرة جداً في السياسي أن يكون واسع الفكر ورديء النية فعليه إذا أحب النجاح أن يتحامى إدهاش المجتمع بفضيلته. كما أن الواجب عليه أن لا يعيش عيش الفقراء بل أن يكون له مسكن في المدينة التي يقيم فيها وواحد في الضاحية وآخر في بلده الأصلي وأحياناً مسكن في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">إحدى</num> الولايات والإنفاق على <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> بيوت يحتاج إلى البذل كثيراً ولكن ذلك ضروري لمن يحب أن يقوم بوظيفته حق القيام على صورة محتشمة. وختم الكاتب مقالته بأن السياسة مثل سائر المسالك والأوضاع آخذة بالنشوء والابتعاد عن التقاليد القديمة من دس الدسائس واستعمال الشدة وغايتها الآن العمل لما فيه نشر السلام بين الأنام.</p>
+                    <p xml:lang="ar" xml:id="p_267.d1e4173">نشرت <title level="j"
+                        >مجلة الاجتماع الدولية</title> مقالة في الأخلاق التي يجب أن يكون عليها الساسة فمما <pb
+                        corresp="file:../epub/26523/OEBPS/xhtml/P3144.xhtml" ed="shamela" n="n48-p59" xml:id="pb_60.d1e4175"
+                        /> قالته أن الناس يزعمون بأن أحسن سياسي أكثرهم جربذة واحتيالاً وقد أبان استورنل كونستان فساد هذا الرأي مؤكداً بأن الثقة والسلطة والاعتبار حليفة أهل الحشمة والوقار من الناس أما النجاح المؤقت الذي يأتي به بعض الظرف فهو من شأن الساسة <pb
+                        ed="print" n="72" facs="#facs_86" xml:id="pb_129.d1e4693"
+                        />السطحيين وولاة المنحطين. فمن يجيد السلام يسلم عليه ولكن لا يعد شيئاً عند التحقيق. ومن النقائص المضرة جداً في السياسي أن يكون واسع الفكر ورديء النية فعليه إذا أحب النجاح أن يتحامى إدهاش المجتمع بفضيلته. كما أن الواجب عليه أن لا يعيش عيش الفقراء بل أن يكون له مسكن في المدينة التي يقيم فيها وواحد في الضاحية وآخر في بلده الأصلي وأحياناً مسكن في <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">إحدى</num> الولايات والإنفاق على <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4"
+                        >أربعة</num> بيوت يحتاج إلى البذل كثيراً ولكن ذلك ضروري لمن يحب أن يقوم بوظيفته حق القيام على صورة محتشمة. وختم الكاتب مقالته بأن السياسة مثل سائر المسالك والأوضاع آخذة بالنشوء والابتعاد عن التقاليد القديمة من دس الدسائس واستعمال الشدة وغايتها الآن العمل لما فيه نشر السلام بين الأنام.</p>
                 </div>
                 <div type="article" xml:id="div_26.d1e4179">
                     <head xml:id="head_27.d1e4181">المعادن الشفافة</head>
@@ -3177,8 +3273,13 @@
                 </div>
                 <div type="article" xml:id="div_36.d1e4515">
                     <head xml:id="head_37.d1e4517">الاستشفاء في الشمس</head>
-                    <p xml:lang="ar" xml:id="p_293.d1e4520"><bibl>كتب <author><persName>الدكتور <surname>تريمولير</surname></persName></author> في <title level="j">مجلة مطالعاتنا في البيوت</title></bibl> ما مثاله معرباً: جاءت الشهور التي يستشفى بها بالشمس العجيبة فلنفتح لها أبوابنا ونوافذنا ولا يكفي تسخين المساكن بأشعتها وإنارة زواياها بحرارتها فإن الشمس في تلك الحالة لا تزيد الجراثيم التي تنمو في الرطوبة والظلمة إلا نضوجاً ولا يقتصر عَلَى الاستحمام بنورها المحرق المذهب خلال الارتياض والخروج للنزهة بل الواجب إدخال أشعتها إلى جسمنا وهو عريان لتطهر أشعتها جثماننا وتحيي أنسجتنا وتحول المادة الحية المكتئبة إلى مواد حيوية طاهرة تحوي في مطاويها النشاط والقوة.</p>
-                    <p xml:lang="ar" xml:id="p_294.d1e4523">فقد أوصى اسكولاب المشهور في الأساطير القديمة الذي احترم الأطباء في كل عصر أقواله — كل من ضعفت وظائفهم أن يعيشوا عراة في الشمس بوقاية رؤوسهم من ضربات الشمس. وكان الرومان يقتطعون منن مساكنهم أو مدنهم أماكن يختصونها بحمامات الشمس والهواء الطلق يدعونها سولاريوم بذلك حسن نسل اليونان واللاتين. قصد الإسكندر الكبير ديوجنس الكلبي ذات يوم وهو خارج من برميله يستحم عَلَى مهل بنور الشمس فسأله الملك <pb corresp="file:../epub/26523/OEBPS/xhtml/P3151.xhtml" ed="shamela" n="n48-p66" xml:id="pb_67.d1e4525"/> أي غرض تريد أن أقضيه يا فيلسوف فأجابه هذا أريد أن تبعد من طريق شمسي.</p>
+                    <p xml:lang="ar" xml:id="p_293.d1e4520"
+                        ><bibl>كتب <author><persName>الدكتور <surname>تريمولير</surname></persName></author> في <title level="j"
+                        >مجلة مطالعاتنا في البيوت</title></bibl> ما مثاله معرباً: جاءت الشهور التي يستشفى بها بالشمس العجيبة فلنفتح لها أبوابنا ونوافذنا ولا يكفي تسخين المساكن بأشعتها وإنارة زواياها بحرارتها فإن الشمس في تلك الحالة لا تزيد الجراثيم التي تنمو في الرطوبة والظلمة إلا نضوجاً ولا يقتصر عَلَى الاستحمام بنورها المحرق المذهب خلال الارتياض والخروج للنزهة بل الواجب إدخال أشعتها إلى جسمنا وهو عريان لتطهر أشعتها جثماننا وتحيي أنسجتنا وتحول المادة الحية المكتئبة إلى مواد حيوية طاهرة تحوي في مطاويها النشاط والقوة.</p>
+                    <p xml:lang="ar" xml:id="p_294.d1e4523"
+                        >فقد أوصى اسكولاب المشهور في الأساطير القديمة الذي احترم الأطباء في كل عصر أقواله — كل من ضعفت وظائفهم أن يعيشوا عراة في الشمس بوقاية رؤوسهم من ضربات الشمس. وكان الرومان يقتطعون منن مساكنهم أو مدنهم أماكن يختصونها بحمامات الشمس والهواء الطلق يدعونها سولاريوم بذلك حسن نسل اليونان واللاتين. قصد الإسكندر الكبير ديوجنس الكلبي ذات يوم وهو خارج من برميله يستحم عَلَى مهل بنور الشمس فسأله الملك <pb
+                        corresp="file:../epub/26523/OEBPS/xhtml/P3151.xhtml" ed="shamela" n="n48-p66" xml:id="pb_67.d1e4525"
+                        /> أي غرض تريد أن أقضيه يا فيلسوف فأجابه هذا أريد أن تبعد من طريق شمسي.</p>
                     <p xml:lang="ar" xml:id="p_295.d1e4528">وقد اتفق الأطباء في عصرنا عَلَى هذه
                         المسألة وجاءت من كل مكان أخبار فوائد أشعة الشمس. وحدث أن رجل كان مصاباً
                         بخراجين نغارين من الخنازير فعرض أحدهما للشمس فشفي أما الثاني فلما لم يحسن
@@ -3283,7 +3384,31 @@
                 </div>
                 <div type="article" xml:id="div_43.d1e4687">
                     <head xml:id="head_44.d1e4689">التعليم الحديث في الصين</head>
-                    <p xml:lang="ar" xml:id="p_304.d1e4692">أخذت الصين منذ سنة <num type="auto-markup" resp="#pers_TG" value="1900" xml:lang="ar" xml:id="num_1.d1e4694">١٩٠٠</num> تعنى كل العناية بإصلاح التعليم في الصين فنظمت كلية بكين وقسمتها إلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8">ثمانية</num> أقسام ثم أسست مدرسة للغات الغربية وفي سنة <num type="auto-markup" resp="#pers_TG" value="1903" xml:lang="ar" xml:id="num_1.d1e4697">١٩٠٣</num> وضعت مشروع قانون لجعل التعليم عصرياً محضاً فأخذ الطالب يشرع في الدرس في السنة السادسة ولا يخرج من المدرسة الثانوية إلا في سن ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20">عشرين</num> وبعد ذلك يتمرن <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> سنين في المدرسة العليا في عواصم الولايات قبل أن يخصي في مدرسة بكين في <pb ed="print" n="82" facs="#facs_96" xml:id="pb_149.d1e5249"/>علم و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> وهذه المدرسة تعد رجالاً أكفاء ل<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6">ستة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="40">أربعين</num> مسلكاً. ويصرفون جزءاً مهماً من الوقت في المدرسة الابتدائية لتعليم اللغة الصينية وقراءة كتب الأقدمين من كتاب الصين أما في المدارس الأخرى فيدرسون العلم واللغات الحية خاصة وهذه اللغات تعلم عَلَى الترتيب الآتي: اللغة الإنكليزية اللغة اليابانية اللغة الفرنسوية اللغة الألمانية اللغة الروسية. والتلامذة أنفسهم يلاحظون في كل مدرسة أمر مدرستهم ويحق لهم الإشراف عليها. ولم تكد تنشر اللوائح الجديدة في التعليم حتى وضعت موضع العمل وقام الصينيون كلهم يطلبون إنشاء مدارس لهم وقد فتحت في ولاية بتشيلي وحدها <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="3000">ثلاثة آلاف</num> مدرسة في آن و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> وحولت كثيراً من المعابد البوذية إلى مدارس للتعليم عَلَى الصول الحديثة وقد أوعزهم المعلمون أولاً حتى أصبحوا يقبلون المتعلم بعض من لا يحسنونه إلا أن الصين لم تلبث أن بعثت إلى يابان سنة <num type="auto-markup" resp="#pers_TG" value="1904" xml:lang="ar" xml:id="num_1.d1e4700">١٩٠٤</num> بألفي طالب يتعلمون في مدارسها العالية وزاد عددهم حتى بلغوا سنة <pb corresp="file:../epub/26523/OEBPS/xhtml/P3155.xhtml" ed="shamela" n="n48-p70" xml:id="pb_71.d1e4703"/> <num type="auto-markup" resp="#pers_TG" value="1906" xml:lang="ar" xml:id="num_1.d1e4705">١٩٠٦</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">آلاف</num> طالب وكل من يعود منهم توظف إليه الوظائف السامية في التدريس وغيره (من <bibl>مجلة <title level="j">العالمين</title> الفرنسوية</bibl>).</p>
+                    <p xml:lang="ar" xml:id="p_304.d1e4692">أخذت الصين منذ سنة <num type="auto-markup" resp="#pers_TG" value="1900"
+                        xml:lang="ar" xml:id="num_1.d1e4694"
+                        >١٩٠٠</num> تعنى كل العناية بإصلاح التعليم في الصين فنظمت كلية بكين وقسمتها إلى <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="8"
+                        >ثمانية</num> أقسام ثم أسست مدرسة للغات الغربية وفي سنة <num type="auto-markup" resp="#pers_TG" value="1903"
+                        xml:lang="ar" xml:id="num_1.d1e4697"
+                        >١٩٠٣</num> وضعت مشروع قانون لجعل التعليم عصرياً محضاً فأخذ الطالب يشرع في الدرس في السنة السادسة ولا يخرج من المدرسة الثانوية إلا في سن ال<num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20">عشرين</num> وبعد ذلك يتمرن <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
+                        >ثلاث</num> سنين في المدرسة العليا في عواصم الولايات قبل أن يخصي في مدرسة بكين في <pb ed="print" n="82"
+                        facs="#facs_96" xml:id="pb_149.d1e5249"/>علم و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG"
+                        value="1">احد</num> وهذه المدرسة تعد رجالاً أكفاء ل<num xml:lang="ar" type="auto-markup" subtype="d1"
+                        resp="#pers_TG" value="6">ستة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="40"
+                        >أربعين</num> مسلكاً. ويصرفون جزءاً مهماً من الوقت في المدرسة الابتدائية لتعليم اللغة الصينية وقراءة كتب الأقدمين من كتاب الصين أما في المدارس الأخرى فيدرسون العلم واللغات الحية خاصة وهذه اللغات تعلم عَلَى الترتيب الآتي: اللغة الإنكليزية اللغة اليابانية اللغة الفرنسوية اللغة الألمانية اللغة الروسية. والتلامذة أنفسهم يلاحظون في كل مدرسة أمر مدرستهم ويحق لهم الإشراف عليها. ولم تكد تنشر اللوائح الجديدة في التعليم حتى وضعت موضع العمل وقام الصينيون كلهم يطلبون إنشاء مدارس لهم وقد فتحت في ولاية بتشيلي وحدها <num
+                        xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="3000">ثلاثة آلاف</num> مدرسة في آن و<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> وحولت كثيراً من المعابد البوذية إلى مدارس للتعليم عَلَى الصول الحديثة وقد أوعزهم المعلمون أولاً حتى أصبحوا يقبلون المتعلم بعض من لا يحسنونه إلا أن الصين لم تلبث أن بعثت إلى يابان سنة <num
+                        type="auto-markup" resp="#pers_TG" value="1904" xml:lang="ar" xml:id="num_1.d1e4700"
+                        >١٩٠٤</num> بألفي طالب يتعلمون في مدارسها العالية وزاد عددهم حتى بلغوا سنة <pb
+                        corresp="file:../epub/26523/OEBPS/xhtml/P3155.xhtml" ed="shamela" n="n48-p70" xml:id="pb_71.d1e4703"/> <num
+                        type="auto-markup" resp="#pers_TG" value="1906" xml:lang="ar" xml:id="num_1.d1e4705">١٩٠٦</num> <num xml:lang="ar"
+                        type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> <num xml:lang="ar" type="auto-markup"
+                        subtype="d4" resp="#pers_TG" value="1000"
+                        >آلاف</num> طالب وكل من يعود منهم توظف إليه الوظائف السامية في التدريس وغيره (من <bibl>مجلة <title level="j"
+                        >العالمين</title> الفرنسوية</bibl>).</p>
                 </div>
                 <div type="article" xml:id="div_44.d1e4710">
                     <head xml:id="head_45.d1e4712">التعليم في ألمانيا</head>
@@ -3488,10 +3613,25 @@
                 <div type="article" xml:id="div_59.d1e5004">
                     <head xml:id="head_60.d1e5006">مجلتان جديدتان</head>
                     <list xml:id="list_5.d1e5009">
-                        <item xml:id="item_89.d1e5011"> <bibl xml:id="bibl_1.d1e5013"> <title level="j" xml:id="title_9.d1e5015">العلم</title> —  هي أول مجلة عربية نشرت في <pubPlace xml:id="pubPlace_4.d1e5018"> <placeName xml:id="placeName_6.d1e5020">العراق</placeName> </pubPlace>لمنشئها <editor xml:id="editor_3.d1e5023"> <persName xml:id="persName_8.d1e5025">السيد محمد علي هبة الدين</persName> </editor>الشهر ستاني في <pubPlace xml:id="pubPlace_5.d1e5028"> <placeName xml:id="placeName_7.d1e5030">النجف</placeName>
-                            </pubPlace>وتطبع في بغداد وهي شهرية دينية فلسفية سياسية علمية صناعية ومؤلفها مشهور من القديم بكتاباته ورسائله وقيمة اشتراكها <num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e5033">٢٠</num> قرشاً في محلها وريال ونصف في سائر الأقطار.</bibl> </item>
-                        <item xml:id="item_90.d1e5038"> <bibl xml:id="bibl_2.d1e5040"> <title level="j" xml:id="title_10.d1e5042">النجف</title> —  هي أول مجلة فارسية ظهرت في <pubPlace xml:id="pubPlace_6.d1e5045"> <placeName xml:id="placeName_8.d1e5047">العراق</placeName> </pubPlace>أنشأها <editor xml:id="editor_4.d1e5050"> <persName xml:id="persName_9.d1e5052">آغا محمد المحلاتي</persName> </editor>تصدر في <pubPlace xml:id="pubPlace_7.d1e5055">
-                            <placeName xml:id="placeName_9.d1e5057">النجف</placeName> </pubPlace>مرة في الشهر في <num type="auto-markup" resp="#pers_TG" value="64" xml:lang="ar" xml:id="num_1.d1e5060">٦٤</num> صفحة <measureGrp xml:id="measureGrp_1.d1e5064"> و <measure commodity="newspaper" quantity="1" unit="issue" xml:id="measure_1.d1e5066">ثمنها</measure> <measure commodity="curreny" xml:id="measure_2.d1e5069">ثمانية بشالك</measure> </measureGrp>وهي تبحث في موضوعات <pb corresp="file:../epub/26523/OEBPS/xhtml/P3162.xhtml" ed="shamela" n="n48-p77" xml:id="pb_78.d1e5072"/> دينية ومدنية.</bibl> </item>
+                        <item xml:id="item_89.d1e5011"> <bibl xml:id="bibl_1.d1e5013"> <title level="j" xml:id="title_9.d1e5015"
+                            >العلم</title> —  هي أول مجلة عربية نشرت في <pubPlace xml:id="pubPlace_4.d1e5018"> <placeName
+                            xml:id="placeName_6.d1e5020">العراق</placeName> </pubPlace>لمنشئها <editor xml:id="editor_3.d1e5023"> <persName
+                            xml:id="persName_8.d1e5025">السيد محمد علي هبة الدين</persName> </editor>الشهر ستاني في <pubPlace
+                            xml:id="pubPlace_5.d1e5028"> <placeName xml:id="placeName_7.d1e5030">النجف</placeName>
+                            </pubPlace>وتطبع في بغداد وهي شهرية دينية فلسفية سياسية علمية صناعية ومؤلفها مشهور من القديم بكتاباته ورسائله وقيمة اشتراكها <num
+                            type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e5033"
+                            >٢٠</num> قرشاً في محلها وريال ونصف في سائر الأقطار.</bibl> </item>
+                        <item xml:id="item_90.d1e5038"> <bibl xml:id="bibl_2.d1e5040"> <title level="j" xml:id="title_10.d1e5042"
+                            >النجف</title> —  هي أول مجلة فارسية ظهرت في <pubPlace xml:id="pubPlace_6.d1e5045"> <placeName
+                            xml:id="placeName_8.d1e5047">العراق</placeName> </pubPlace>أنشأها <editor xml:id="editor_4.d1e5050"> <persName
+                            xml:id="persName_9.d1e5052">آغا محمد المحلاتي</persName> </editor>تصدر في <pubPlace xml:id="pubPlace_7.d1e5055">
+                            <placeName xml:id="placeName_9.d1e5057">النجف</placeName> </pubPlace>مرة في الشهر في <num type="auto-markup"
+                            resp="#pers_TG" value="64" xml:lang="ar" xml:id="num_1.d1e5060">٦٤</num> صفحة <measureGrp
+                            xml:id="measureGrp_1.d1e5064"> و <measure commodity="newspaper" quantity="1" unit="issue"
+                            xml:id="measure_1.d1e5066">ثمنها</measure> <measure commodity="curreny" xml:id="measure_2.d1e5069"
+                            >ثمانية بشالك</measure> </measureGrp>وهي تبحث في موضوعات <pb
+                            corresp="file:../epub/26523/OEBPS/xhtml/P3162.xhtml" ed="shamela" n="n48-p77" xml:id="pb_78.d1e5072"
+                            /> دينية ومدنية.</bibl> </item>
                     </list>
                 </div>
             </div>
