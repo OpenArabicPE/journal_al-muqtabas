@@ -115,83 +115,8 @@
                     .</p>
             </editorialDecl>
         </encodingDesc>
-        <profileDesc xml:lang="en">
-            <!-- as we deal with sources from an area and period which also used non-Latin scripts and preferred a number of calenders over the Gregorian, this should be declared here -->
-            <calendarDesc xml:lang="en">
-                <calendar xml:id="cal_gregorian" xml:lang="en">
-                    <p xml:lang="en">Following the hegemonial approach of standards rooted in the
-                        English language, the Gregorian calendar is presumed as the norm and must
-                        not be specified.</p>
-                    <p xml:lang="en">The <att xml:lang="en">when</att> attribute always provides W3C
-                        dates, while the <att xml:lang="en">when-custom</att> attribute follows the
-                        inherent logic of the chosen calendar.</p>
-                    <p xml:lang="en">E.g. <date when="1841-05-23" xml:lang="en">23 May 1841,
-                            Sunday</date> , <date when="1908-03-05" xml:lang="en">5 Mar 1908,
-                            Thursday</date> .</p>
-                </calendar>
-                <calendar xml:id="cal_islamic" xml:lang="en">
-                    <p xml:lang="en">Islamic <hi xml:lang="en">hijrī</hi> calendar: lunar calendar
-                        beginning the Year with 1 Muḥarram. Dates differ between locations as the
-                        beginning of the month is based on sightings of the new moon.</p>
-                    <p xml:lang="en">E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01" xml:lang="en">1 Rab II 1257,
-                            Sunday</date> , <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01" xml:lang="en">1 Ṣaf 1326, Thursday</date> .</p>
-                </calendar>
-                <calendar xml:id="cal_julian" xml:lang="en">
-                    <p xml:lang="en">Reformed Julian calendar beginning the Year with 1 January. In
-                        the Ottoman context usually referred to as <hi xml:lang="en">rūmī</hi> .
-                        Arabic newspapers usually labelled this calendar as <hi xml:lang="en">sharqī</hi> .</p>
-                    <p xml:lang="en">All solar calendars add an intercalated 366th day every fourth
-                        (and, in the case of Gregorian and rūmī calendars, even-numbered) year at
-                        the end of February (the last day of the old Julian calendar). The Gregorian
-                        calendar suppresses this rule in centesimal years that cannot be divided by
-                        400. This difference creates a growing offset between Gregorian and Julian
-                        calendars: while 1900 R was a leap year, 1900 was not, which in turn caused
-                        the difference between the Gregorian calendar, on the one hand, and the <hi xml:lang="en">mālī</hi> and <hi xml:lang="en">rūmī</hi> calendars, on
-                        the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R /
-                        1315 M (13 March 1900) onwards.</p>
-                    <p xml:lang="en">E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11" xml:lang="en">11 Ayyār 1841,
-                            Sunday</date> , <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21" xml:lang="en">21 Shub 1908,
-                            Thursday</date> .</p>
-                </calendar>
-                <calendar xml:id="cal_ottomanfiscal" xml:lang="en">
-                    <p xml:lang="en">Ottoman fiscal calendar: a lunosolar calendar. It is based on
-                        the Old Julian calendar beginning the Year with 1 March. Introduced as
-                        fiscal calendar in 1676 and in the Ottoman context usually referred to as
-                            <hi xml:lang="en">mālī</hi> and sometimes, confusingly, also as <hi xml:lang="en">rūmī</hi> . Every 33 lunar years, a <hi xml:lang="en">hijrī</hi> year would complete within a single solar <hi xml:lang="en">mālī</hi> year. In this case the counting of the <hi xml:lang="en">mālī</hi> years skipped a year to catch up with the faster <hi xml:lang="en">hijrī</hi> calendar. Due to a printing error in the coupon
-                        booklets for the consolidated debt repayment program for 1872 (1288 M
-                        instead of 1289 M), synchronisation of <hi xml:lang="en">mālī</hi> and <hi xml:lang="en">hijrī</hi> years was henceforth abolished. As <hi xml:lang="en">mālī</hi> years began with 1 March, <hi xml:lang="en">mālī</hi> leap years preceded their <hi xml:lang="en">rūmī</hi> and
-                        Gregorian counterpart (the leap year 1315 M commenced on 13 March 1899).</p>
-                    <p xml:lang="en">E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11" xml:lang="en">11 Māyis 1257, Sunday</date> ,
-                            <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21" xml:lang="en">21 Shub 1323,
-                            Thursday</date> .</p>
-                </calendar>
-            </calendarDesc>
-            <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
-               IJMES transcription of Arabic in Latin script. -->
-            <langUsage xml:lang="en">
-                <language ident="ar" xml:lang="en">Arabic</language>
-                <language ident="ar-Latn-x-ijmes" xml:lang="en">Arabic transcribed into Latin script
-                    following the IJMES conventions</language>
-                <language ident="ar-Latn-EN" xml:lang="en">Arabic transcribed into Latin script
-                    following common English practices</language>
-                <language ident="ar-Latn-FR" xml:lang="en">Arabic transcribed into Latin script
-                    following common French practices</language>
-                <language ident="en" xml:lang="en">English</language>
-                <language ident="fa" xml:lang="en">Farsi</language>
-                <language ident="fa-Latn-x-ijmes" xml:lang="en">Farsi transcribed into Latin script
-                    following the IJMES conventions</language>
-                <language ident="fr" xml:lang="en">French</language>
-                <language ident="ota" xml:lang="en">Ottoman</language>
-                <language ident="ota-Latn-x-ijmes" xml:lang="en">Ottoman transcribed into Latin
-                    script following the IJMES conventions</language>
-                <language ident="tr" xml:lang="en">Turkish</language>
-                <language ident="en-Arab-AR" xml:lang="en">English transcribed into Arabic script
-                    following common Levantine Arabic practices</language>
-                <language ident="fr-Arab-AR" xml:lang="en">French transcribed into Arabic script
-                    following common Levantine Arabic practices</language>
-            </langUsage>
-        </profileDesc>
-        <revisionDesc><change when="2016-05-09" who="pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
+        <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
+        <revisionDesc><change when="2016-06-15" who="pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
             <change when="2016-04-17" who="#pers_TG">Added mark-up of bibliographic informations.
                 Made further corrections to the existing mark-up.</change>
             <tei:change when="2016-04-15" who="#pers_TG">Corrected the faulty mark-up of numbers
@@ -707,31 +632,9 @@
                     جرائد الولايات العربية الرسمية فإنها كلما طال عليها الزمن تنحط مكانتها لأنها
                     كانت ولا تزال تقدس أعمال الولاة وتزكيهم إلا قليلاً وجرائدٌ هذا حالها كيف يرضيك
                     خبرها ومخبرها.</p>
-                <p xml:lang="ar" xml:id="p_16.d1e1411">للحكومة العثمانية <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG"
-                    value="2">اثنتا</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
-                    >عشرة</num> ولاية (أو لواء) عربية تصدر فيها <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar"
-                    xml:id="num_1.d1e1413"
-                    >١١</num> جريدة رسمية أسوة سائر الولايات في <placeName>آسيا الصغرى</placeName> و<placeName>الروم إيلي</placeName> وهي <title
-                    level="j">طرابلس الغرب</title>، <title level="j">بيروت</title> <title level="j">جبل لبنان</title>، <title level="j"
-                    >القدس</title>، <title level="j">سورية</title>، <title level="j">حلب</title>، <title level="j">الموصل</title>، <title
-                    level="j">بغداد</title>، <title level="j">البصرة</title>، <title level="j">الحجاز</title>، <title level="j"
-                    >اليمن</title> تصدر مرة في الأسبوع لتقريظ أعمال الولاة والمتصرفين ونشر بعض أوامر الحكومة باللغتين العربية والتركية لأن الأولى لغة البلاد والثانية لغة الحكومة والعربية منقولة عن التركية بالحرف ولكنه قل لا تقدر أن تقول عنه عربياً ولا مولداً وأحر به أن يكون لغة خاصة يكاد لا يفهمها إلا قلائل ممن ألفوها أو ممن يعرفون التركية فإذا <num
-                    xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
-                    >عشر</num> عليهم فهم عبارة قلبوا الوجه التركي من الجريدة فقرأوا الأصل لينحل معهم الإشكال.</p>
-                <p xml:lang="ar" xml:id="p_17.d1e1417"
-                    >إن هذه الدركة من الانحطاط بلغت لغة الجرائد بفسادها ولو كانت منتشرة بين طبقات القوم انتشار سائر الجرائد العربية لأفسدت من ملكة الأدب العربي فساداً لا يشبهه فساد ولكن من حسن الطالع أن قراءها محصورون أو يكادون يعدون على الأصابع وأقدمها أنشئ منذ <num
-                    xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمس</num> و<num xml:lang="ar" type="auto-markup"
-                    subtype="d2" resp="#pers_TG" value="40">أربعين</num> سنة وأحدثها منذ سنتين و<num xml:lang="ar" type="auto-markup"
-                    subtype="d1" resp="#pers_TG" value="2">اثنتان</num> منها وهي <title level="j"
-                    >الزوراء</title> جريدة <placeName>بغداد</placeName> و<placeName>الموصل</placeName> تصدران بالتركية الصرفة كأن الحكومة اعتبرت الجزيرة والعراق من الأقاليم التركية أو أنها أرادت أن توفر على اللغة العربية بعض الألفاظ والتراكيب الرديئة تصدر عن أعظم العواصم العربية القديمة أو أنها لم تجد في دار<pb
-                    ed="print" n="162" xml:id="pb_3.d1e1480" facs="#facs_176"/> السلام و<placeName>الموصل</placeName>
-                    <placeName><placeName>الحدباء</placeName></placeName> من يعرب لها جريدتها الرسمية. و<bibl>جريدة <title level="j"
-                    >لبنان</title> تصدر بالعربية فقط</bibl> وهي أحسن الجرائد الرسمية عبارة. ولذا فإن كلامنا اليوم مقصور على <num
-                    xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9">تسع</num> جرائد ل<num xml:lang="ar"
-                    type="auto-markup" subtype="d1" resp="#pers_TG" value="9"
-                    >تسع</num> ولايات كبرى كل منها حرية بأن تدعى مملكة لا ولاية لاتساع بقاعها وكثرة نفوسها وقديم مجدها ونكتفي بإيراد جملة من جرادها الرسمية ننقلها نموذجاً على انحطاط أسلوبها وتراكيبها نلتقطها من صفحة واحدة من كل واحدة ولا نشير إلى الجريدة حرصاً على كرامة القائمين بها وإن كان معظمهم لا يعرفون من العربية جملة ولا من قواعدها قاعدة وهم عامة يكتبون وينشرون بدون مبالاة بما يفسدون به لغة العامة والخاصة وإن كانت تتفاوت تلك الجرائد في عباراتها. <pb
-                    corresp="file:../epub/26523/OEBPS/xhtml/P3235.xhtml" ed="shamela" n="n50-p2" xml:id="pb_3.d1e1419"
-                    /> فما ورد في إحداها قولها: صورة التحريرات الواردة بالشرف وهي تعريب عن الأصل التركي بالحرف ولفظ التحريرات لم يسبق في الفصيح استعماله كما لم يسبق للعرب استعمال خطاب بمعنى كتاب المستعملة بين المصريين ويجمعونها على خطابات قال في التاج وتحرير الكتاب وغيره تقويمه وتخليصه بإقامة حروفه وتحسينه بإصلاح سقطه وتحرير الحساب إثباته مستوياً لا غلث فه ولا سقط ولا محو فالتحرير يجمع على تحارير وليس هو مقابل لفظ رسالة وألوكة أو كتاب. أما تركيب الواردة بالشرف فمن أسمج التركيب.</p>
+                <p xml:lang="ar" xml:id="p_16.d1e1411">للحكومة العثمانية <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2">اثنتا</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ولاية (أو لواء) عربية تصدر فيها <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e1413">١١</num> جريدة رسمية أسوة سائر الولايات في <placeName>آسيا الصغرى</placeName> و<placeName>الروم إيلي</placeName> وهي <title level="j">طرابلس الغرب</title>، <title level="j">بيروت</title> <title level="j">جبل لبنان</title>، <title level="j">القدس</title>، <title level="j">سورية</title>، <title level="j">حلب</title>، <title level="j">الموصل</title>، <title level="j">بغداد</title>، <title level="j">البصرة</title>، <title level="j">الحجاز</title>، <title level="j">اليمن</title> تصدر مرة في الأسبوع لتقريظ أعمال الولاة والمتصرفين ونشر بعض أوامر الحكومة باللغتين العربية والتركية لأن الأولى لغة البلاد والثانية لغة الحكومة والعربية منقولة عن التركية بالحرف ولكنه قل لا تقدر أن تقول عنه عربياً ولا مولداً وأحر به أن يكون لغة خاصة يكاد لا يفهمها إلا قلائل ممن ألفوها أو ممن يعرفون التركية فإذا <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> عليهم فهم عبارة قلبوا الوجه التركي من الجريدة فقرأوا الأصل لينحل معهم الإشكال.</p>
+                <p xml:lang="ar" xml:id="p_17.d1e1417">إن هذه الدركة من الانحطاط بلغت لغة الجرائد بفسادها ولو كانت منتشرة بين طبقات القوم انتشار سائر الجرائد العربية لأفسدت من ملكة الأدب العربي فساداً لا يشبهه فساد ولكن من حسن الطالع أن قراءها محصورون أو يكادون يعدون على الأصابع وأقدمها أنشئ منذ <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمس</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="40">أربعين</num> سنة وأحدثها منذ سنتين و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2">اثنتان</num> منها وهي <title level="j">الزوراء</title> جريدة <placeName>بغداد</placeName> و<placeName>الموصل</placeName> تصدران بالتركية الصرفة كأن الحكومة اعتبرت الجزيرة والعراق من الأقاليم التركية أو أنها أرادت أن توفر على اللغة العربية بعض الألفاظ والتراكيب الرديئة تصدر عن أعظم العواصم العربية القديمة أو أنها لم تجد في دار<pb ed="print" n="162" xml:id="pb_3.d1e1480" facs="#facs_176"/> السلام و<placeName>الموصل</placeName>
+                    <placeName><placeName>الحدباء</placeName></placeName> من يعرب لها جريدتها الرسمية. و<bibl>جريدة <title level="j">لبنان</title> تصدر بالعربية فقط</bibl> وهي أحسن الجرائد الرسمية عبارة. ولذا فإن كلامنا اليوم مقصور على <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9">تسع</num> جرائد ل<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9">تسع</num> ولايات كبرى كل منها حرية بأن تدعى مملكة لا ولاية لاتساع بقاعها وكثرة نفوسها وقديم مجدها ونكتفي بإيراد جملة من جرادها الرسمية ننقلها نموذجاً على انحطاط أسلوبها وتراكيبها نلتقطها من صفحة واحدة من كل واحدة ولا نشير إلى الجريدة حرصاً على كرامة القائمين بها وإن كان معظمهم لا يعرفون من العربية جملة ولا من قواعدها قاعدة وهم عامة يكتبون وينشرون بدون مبالاة بما يفسدون به لغة العامة والخاصة وإن كانت تتفاوت تلك الجرائد في عباراتها. <pb corresp="file:../epub/26523/OEBPS/xhtml/P3235.xhtml" ed="shamela" n="n50-p2" xml:id="pb_3.d1e1419"/> فما ورد في إحداها قولها: صورة التحريرات الواردة بالشرف وهي تعريب عن الأصل التركي بالحرف ولفظ التحريرات لم يسبق في الفصيح استعماله كما لم يسبق للعرب استعمال خطاب بمعنى كتاب المستعملة بين المصريين ويجمعونها على خطابات قال في التاج وتحرير الكتاب وغيره تقويمه وتخليصه بإقامة حروفه وتحسينه بإصلاح سقطه وتحرير الحساب إثباته مستوياً لا غلث فه ولا سقط ولا محو فالتحرير يجمع على تحارير وليس هو مقابل لفظ رسالة وألوكة أو كتاب. أما تركيب الواردة بالشرف فمن أسمج التركيب.</p>
                 <p xml:lang="ar" xml:id="p_18.d1e1422">وقال: إن التشتت والافتراق هما يسببان ويحدثان
                     الغوائل والمشكلات الداخلية ويؤديان إلى انقراض الهيئة المعظمة واضمحلالها كما تشهد
                     بها مثالها التاريخية ولا يحصل لها السلامة والسعادة والترقي والتعالي إلا باتحاد
@@ -1948,18 +1851,7 @@
                     استحكمت بين روسيا واليابان فاستحق على عمله جائزة السلام لنوبل وعينه مجمع العلوم
                     السياسية والأخلاقية في باريز عضواً مراسلاً له دلالة على اعتبار أوربا
                     لأعماله.</p>
-                <p xml:lang="ar" xml:id="p_143.d1e2329"
-                    >ولما لم يرض <persName>المستر روزفلت</persName> أن يعاد انتخابه لرئاسة الجمهورية للمرة الثالثة عملاً بالتقليد المأثور عن الرئيس واشنطون و<persName>جفرسون</persName> رأى أن يهجر البلاد مدة ليخلو الجو للرئيس تافت الجديد فرحل إلى أفريقية الشرقية ليكمل نفسه في العلم والتجارب ويفيد أمته من رحلته حتى إذا عاد إلى <placeName>نيويورك</placeName> يوسد إليه تحرير <bibl>مجلة <title
-                    level="j">الأوتلوك</title> الأسبوعية</bibl><pb ed="print" n="196" xml:id="pb_72.d1e2549" facs="#facs_210"
-                    /> وهكذا يرجع الرئيس من زعامة <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5"
-                    >خمسة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="80"
-                    >ثمانين</num> مليوناً من البشر الراقي إلى رئاسة تحرير مجلة. وناهيك بمنتصب العلم من منصب. <pb
-                    corresp="file:../epub/26523/OEBPS/xhtml/P3270.xhtml" ed="shamela" n="n50-p37" xml:id="pb_38.d1e2331"
-                    /> خطب المستر روزفلت في الخرطوم قاعدة السودان جماعة من طلبة المصريين والسوريين في دار <num xml:lang="ar"
-                    type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> مراسلي الأميركان في شهر ربيع الأول <num
-                    type="auto-markup" resp="#pers_TG" value="1328" xml:lang="ar" xml:id="num_1.d1e2333">١٣٢٨</num> — <num
-                    type="auto-markup" resp="#pers_TG" value="1910" xml:lang="ar" xml:id="num_1.d1e2336"
-                    >١٩١٠</num> وانتقد ما يرمي إليه كثير من الشبان في أوربا وأميركا وأفريقية من الرغبة في التولف وخدمة الحكومة فأرادهم على ترك الاتكال والعمل في أعمال المعاش على طريق الاستقلال قال:</p>
+                <p xml:lang="ar" xml:id="p_143.d1e2329">ولما لم يرض <persName>المستر روزفلت</persName> أن يعاد انتخابه لرئاسة الجمهورية للمرة الثالثة عملاً بالتقليد المأثور عن الرئيس واشنطون و<persName>جفرسون</persName> رأى أن يهجر البلاد مدة ليخلو الجو للرئيس تافت الجديد فرحل إلى أفريقية الشرقية ليكمل نفسه في العلم والتجارب ويفيد أمته من رحلته حتى إذا عاد إلى <placeName>نيويورك</placeName> يوسد إليه تحرير <bibl>مجلة <title level="j">الأوتلوك</title> الأسبوعية</bibl><pb ed="print" n="196" xml:id="pb_72.d1e2549" facs="#facs_210"/> وهكذا يرجع الرئيس من زعامة <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="80">ثمانين</num> مليوناً من البشر الراقي إلى رئاسة تحرير مجلة. وناهيك بمنتصب العلم من منصب. <pb corresp="file:../epub/26523/OEBPS/xhtml/P3270.xhtml" ed="shamela" n="n50-p37" xml:id="pb_38.d1e2331"/> خطب المستر روزفلت في الخرطوم قاعدة السودان جماعة من طلبة المصريين والسوريين في دار <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> مراسلي الأميركان في شهر ربيع الأول <num type="auto-markup" resp="#pers_TG" value="1328" xml:lang="ar" xml:id="num_1.d1e2333">١٣٢٨</num> — <num type="auto-markup" resp="#pers_TG" value="1910" xml:lang="ar" xml:id="num_1.d1e2336">١٩١٠</num> وانتقد ما يرمي إليه كثير من الشبان في أوربا وأميركا وأفريقية من الرغبة في التولف وخدمة الحكومة فأرادهم على ترك الاتكال والعمل في أعمال المعاش على طريق الاستقلال قال:</p>
                 <p xml:lang="ar" xml:id="p_144.d1e2340">فمتى قلت لكم أنه يجب عليكم أن تؤيدوا الحكومة
                     لا أريد أن يخطر لكم أنني أريد من قولي هذا أنكم مضطرون إلى السعي وراء أحرز
                     الوظائف فيها (ضحك) بل إن الأمر على عكس ذلك. وأرجو يا حضرة الدكتور جفن (رئيس
@@ -2316,16 +2208,7 @@
             <pb ed="print" n="208" xml:id="pb_97.d1e2795" facs="#facs_222"/>
             <div type="article" xml:lang="ar" xml:id="div_7.d1e2557">
                 <head xml:lang="ar" xml:id="head_6.d1e2561">مصطلحات آلات الطرب وأغاني العرب</head>
-                <p xml:lang="ar" xml:id="p_198.d1e2564"
-                    >كل من طالع كتاب الأغاني وبعض كتب الأدب القديمة التي تذكر بالغناء وأنواعه وآلات الطرب وملاهيه يقع على ألفاظ علمية اصطلاحية إذ نقر عنها في دواوينه اللغة ومعاجمها المطولة لا يرجع عنها إلا ما رجع بها حنين. ولقد حاول المستشرقون غير مرة البحث عنها في الكتب الأدبية التي ألفت في الصدور في الصدر الأول من زهو اللغة فلم يعثروا على ضالتهم كما لم يعثر عليها أدباء الشرق وعلماؤه. وقد وفق العاجز في هذه الآونة إلى وجود الضالة نبهاً في كتاب مخطوط كنت قد وصفته في <bibl><title
-                    level="j">المقتبس</title> <biblScope unit="volume"><num value="2">٢</num></biblScope>:<biblScope unit="page" from="282"
-                    ><num type="auto-markup" resp="#pers_TG" value="282" xml:lang="ar" xml:id="num_1.d1e2566">٢٨٢</num> — <num
-                    type="auto-markup" resp="#pers_TG" value="386" xml:lang="ar" xml:id="num_1.d1e2569"
-                    >٣٨٦</num></biblScope> وعنوان البحث في كتابنا المذكور هو: <title level="a"
-                    >العود ومصطلحاته</title></bibl> وها نحن أولاء ننقل إلى الأدباء قراء <title level="j"
-                    >المقتبس</title> الأغر ما جاء من البحث تعميماً للفائدة ونتشاً لشوكة الجهل الناشبة في أذهاننا من هذا القبيل. قال <bibl>صاحب الكتاب: <title
-                    level="m">العود ومصطلحاته</title> في <biblScope unit="page" n="221">الصفحة <num type="auto-markup" resp="#pers_TG"
-                    value="221" xml:lang="ar" xml:id="num_1.d1e2572">٢٢١</num></biblScope> من المخطوط</bibl> وما يليها:</p>
+                <p xml:lang="ar" xml:id="p_198.d1e2564">كل من طالع كتاب الأغاني وبعض كتب الأدب القديمة التي تذكر بالغناء وأنواعه وآلات الطرب وملاهيه يقع على ألفاظ علمية اصطلاحية إذ نقر عنها في دواوينه اللغة ومعاجمها المطولة لا يرجع عنها إلا ما رجع بها حنين. ولقد حاول المستشرقون غير مرة البحث عنها في الكتب الأدبية التي ألفت في الصدور في الصدر الأول من زهو اللغة فلم يعثروا على ضالتهم كما لم يعثر عليها أدباء الشرق وعلماؤه. وقد وفق العاجز في هذه الآونة إلى وجود الضالة نبهاً في كتاب مخطوط كنت قد وصفته في <bibl><title level="j">المقتبس</title> <biblScope unit="volume"><num value="2">٢</num></biblScope>:<biblScope unit="page" from="282"><num type="auto-markup" resp="#pers_TG" value="282" xml:lang="ar" xml:id="num_1.d1e2566">٢٨٢</num> — <num type="auto-markup" resp="#pers_TG" value="386" xml:lang="ar" xml:id="num_1.d1e2569">٣٨٦</num></biblScope> وعنوان البحث في كتابنا المذكور هو: <title level="a">العود ومصطلحاته</title></bibl> وها نحن أولاء ننقل إلى الأدباء قراء <title level="j">المقتبس</title> الأغر ما جاء من البحث تعميماً للفائدة ونتشاً لشوكة الجهل الناشبة في أذهاننا من هذا القبيل. قال <bibl>صاحب الكتاب: <title level="m">العود ومصطلحاته</title> في <biblScope unit="page" n="221">الصفحة <num type="auto-markup" resp="#pers_TG" value="221" xml:lang="ar" xml:id="num_1.d1e2572">٢٢١</num></biblScope> من المخطوط</bibl> وما يليها:</p>
                 <p xml:lang="ar" xml:id="p_199.d1e2576">كثيراً ما كنت أطالع في كتاب الأغاني ألفاظاً
                     في مصطلح الغناء وما كنت أتوصل إلى فهمها حتى ظفرت أخيراً برسالة لعبد القادر بن
                     غيبي الحافظ المراغي المشهور بعلم الألحان فأخذت عنه ما يتعلق بفتح مغلق الكلام
@@ -2560,10 +2443,7 @@
                         ابن بسام التي هي أبهى من سجع الحمام بل وناهيك ما يقع عليه اختياره من نظيم
                         الكلام ونثاره ومن هذه الأجزاء يؤخذ ديوان إنشاء في السلطانيات والأخوانيات
                         والتهنئات والتعزيات<pb ed="print" n="216" xml:id="pb_114.d1e3011" facs="#facs_232"/> والشفاعات والوسائل والجهاد وفي مقاصد شتى.</p>
-                    <p xml:lang="ar" xml:id="p_239.d1e2755">فيا حبذا لو تصدى لطبعه <num xml:lang="ar" type="auto-markup" subtype="d1"
-                        resp="#pers_TG" value="1"
-                        >أحد</num> أئمة المشرقيات في الغرب ليخدم بذلك التاريخ والأدب العربي. وفي مكتبة هذه المجلة النصف الأول من هذا الكتاب وهو بخط بمغربي ينفع في المعارضة إذا كتب الطبع للكتاب ونحن نقدمه لمن يتصدى لطبعه مع الشكر وقد اقتبسنا منه عدة تراجم في مجلدات <title
-                        level="j">المقتبس</title> الماضية مع بعض الصعوبة لغلبة التحريف عليه.</p>
+                    <p xml:lang="ar" xml:id="p_239.d1e2755">فيا حبذا لو تصدى لطبعه <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> أئمة المشرقيات في الغرب ليخدم بذلك التاريخ والأدب العربي. وفي مكتبة هذه المجلة النصف الأول من هذا الكتاب وهو بخط بمغربي ينفع في المعارضة إذا كتب الطبع للكتاب ونحن نقدمه لمن يتصدى لطبعه مع الشكر وقد اقتبسنا منه عدة تراجم في مجلدات <title level="j">المقتبس</title> الماضية مع بعض الصعوبة لغلبة التحريف عليه.</p>
                 </div>
                 <div type="article" xml:id="div_22.d1e3018">
                     <head xml:id="head_22.d1e3020"><bibl><title>ديوان</title>

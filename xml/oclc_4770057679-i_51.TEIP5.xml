@@ -106,70 +106,8 @@
                     <gi xml:lang="en">gap</gi> into <gi xml:lang="en">lg</gi> of <att xml:lang="en">type</att> ="bayt" with <gi xml:lang="en">l</gi> child elements. All other red spans have been retained as <gi xml:lang="en">hi</gi> .</p>
             </editorialDecl>
         </encodingDesc>
-        <profileDesc xml:lang="en">
-            <!-- as we deal with sources from an area and period which also used non-Latin scripts and preferred a number of calenders over the Gregorian, this should be declared here -->
-            <calendarDesc xml:lang="en">
-                <calendar xml:id="cal_gregorian" xml:lang="en">
-                    <p xml:lang="en">Following the hegemonial approach of standards rooted in the English language, the Gregorian calendar
-                        is presumed as the norm and must not be specified.</p>
-                    <p xml:lang="en">The <att xml:lang="en">when</att> attribute always provides W3C dates, while the <att xml:lang="en">when-custom</att> attribute follows the inherent logic of the chosen calendar.</p>
-                    <p xml:lang="en">E.g. <date when="1841-05-23" xml:lang="en">23 May 1841, Sunday</date> , <date when="1908-03-05" xml:lang="en">5 Mar 1908, Thursday</date> .</p>
-                </calendar>
-                <calendar xml:id="cal_islamic" xml:lang="en">
-                    <p xml:lang="en">Islamic <hi xml:lang="en">hijrī</hi> calendar: lunar calendar beginning the Year with 1 Muḥarram. Dates
-                        differ between locations as the beginning of the month is based on sightings of the new moon.</p>
-                    <p xml:lang="en">E.g. <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1841-05-23" when-custom="1257-04-01" xml:lang="en">1 Rab II 1257, Sunday</date> , <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-03-05" when-custom="1326-02-01" xml:lang="en">1 Ṣaf 1326, Thursday</date>
-                        .</p>
-                </calendar>
-                <calendar xml:id="cal_julian" xml:lang="en">
-                    <p xml:lang="en">Reformed Julian calendar beginning the Year with 1 January. In the Ottoman context usually referred to
-                        as <hi xml:lang="en">rūmī</hi> . Arabic newspapers usually labelled this calendar as <hi xml:lang="en">sharqī</hi>
-                        .</p>
-                    <p xml:lang="en">All solar calendars add an intercalated 366th day every fourth (and, in the case of Gregorian and rūmī
-                        calendars, even-numbered) year at the end of February (the last day of the old Julian calendar). The Gregorian
-                        calendar suppresses this rule in centesimal years that cannot be divided by 400. This difference creates a growing
-                        offset between Gregorian and Julian calendars: while 1900 R was a leap year, 1900 was not, which in turn caused the
-                        difference between the Gregorian calendar, on the one hand, and the <hi xml:lang="en">mālī</hi> and <hi xml:lang="en">rūmī</hi> calendars, on the other, to grow from 12 to 13 days from 29 Shubāṭ (February) 1900 R / 1315
-                        M (13 March 1900) onwards.</p>
-                    <p xml:lang="en">E.g. <date calendar="#cal_julian" datingMethod="#cal_julian" when="1841-05-23" when-custom="1841-05-11" xml:lang="en">11 Ayyār 1841, Sunday</date> , <date calendar="#cal_julian" datingMethod="#cal_julian" when="1908-03-05" when-custom="1908-02-21" xml:lang="en">21 Shub 1908, Thursday</date> .</p>
-                </calendar>
-                <calendar xml:id="cal_ottomanfiscal" xml:lang="en">
-                    <p xml:lang="en">Ottoman fiscal calendar: a lunosolar calendar. It is based on the Old Julian calendar beginning the
-                        Year with 1 March. Introduced as fiscal calendar in 1676 and in the Ottoman context usually referred to as <hi xml:lang="en">mālī</hi> and sometimes, confusingly, also as <hi xml:lang="en">rūmī</hi> . Every 33 lunar years, a
-                        <hi xml:lang="en">hijrī</hi> year would complete within a single solar <hi xml:lang="en">mālī</hi> year. In this
-                        case the counting of the <hi xml:lang="en">mālī</hi> years skipped a year to catch up with the faster <hi xml:lang="en">hijrī</hi> calendar. Due to a printing error in the coupon booklets for the consolidated debt
-                        repayment program for 1872 (1288 M instead of 1289 M), synchronisation of <hi xml:lang="en">mālī</hi> and <hi xml:lang="en">hijrī</hi> years was henceforth abolished. As <hi xml:lang="en">mālī</hi> years began with 1 March,
-                        <hi xml:lang="en">mālī</hi> leap years preceded their <hi xml:lang="en">rūmī</hi> and Gregorian counterpart (the
-                        leap year 1315 M commenced on 13 March 1899).</p>
-                    <p xml:lang="en">E.g. <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1841-05-23" when-custom="1257-03-11" xml:lang="en">11 Māyis 1257, Sunday</date> , <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" when="1908-03-05" when-custom="1323-12-21" xml:lang="en">21 Shub 1323,
-                        Thursday</date> .</p>
-                </calendar>
-            </calendarDesc>
-            <!-- According to TEI P5 @xml:lang should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
-               IJMES transcription of Arabic in Latin script. -->
-            <langUsage xml:lang="en">
-                <language ident="ar" xml:lang="en">Arabic</language>
-                <language ident="ar-Latn-x-ijmes" xml:lang="en">Arabic transcribed into Latin script following the IJMES
-                    conventions</language>
-                <language ident="ar-Latn-EN" xml:lang="en">Arabic transcribed into Latin script following common English
-                    practices</language>
-                <language ident="ar-Latn-FR" xml:lang="en">Arabic transcribed into Latin script following common French practices</language>
-                <language ident="en" xml:lang="en">English</language>
-                <language ident="fa" xml:lang="en">Farsi</language>
-                <language ident="fa-Latn-x-ijmes" xml:lang="en">Farsi transcribed into Latin script following the IJMES
-                    conventions</language>
-                <language ident="fr" xml:lang="en">French</language>
-                <language ident="ota" xml:lang="en">Ottoman</language>
-                <language ident="ota-Latn-x-ijmes" xml:lang="en">Ottoman transcribed into Latin script following the IJMES
-                    conventions</language>
-                <language ident="tr" xml:lang="en">Turkish</language>
-                <language ident="en-Arab-AR" xml:lang="en">English transcribed into Arabic script following common Levantine Arabic
-                    practices</language>
-                <language ident="fr-Arab-AR" xml:lang="en">French transcribed into Arabic script following common Levantine Arabic
-                    practices</language>
-            </langUsage>
-        </profileDesc>
-        <revisionDesc><change when="2016-05-09" who="pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><tei:change when="2016-04-15" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><change when="2016-04-07" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+        <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
+        <revisionDesc><change when="2016-06-15" who="pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><tei:change when="2016-04-15" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><change when="2016-04-07" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
             <change when="2016-04-07" who="#pers_TG">Made substantial additions to the mark-up of the legal text and the section on new
                 publications. Added footnotes.</change><change when="2016-04-07" who="#pers_TG">Linked all <tag>pb ed="print"</tag> to the corresponding facsimile</change>
             <change when="2016-04-06" who="#pers_DD">Added page breaks and structural mark-up</change>
@@ -1179,16 +1117,10 @@
                     بفعلاتهم يحولون دون امتداد العمران في أطراف هذه الولاية ولولاها لاستفاض عمرانها ولاسيما من جهة الشرق والجنوب عمراناً
                     تزيد مساحته على ولاية عظمى من الأرض المنبتة ولكفت ملايين من المهاجرين وأهل البادية.</p>
                 <pb ed="print" n="250" facs="#facs_266" xml:id="pb_52.d1e2111"/>
-                <p xml:lang="ar" xml:id="p_118.d1e1917"
-                    >أما الفوائد التي ستنجم من إدخالهم حظيرة الطاعة فامتداد العمران ال الجنوب مراحل كثيرة حتى يبلغ من الأزرق إلى بلاد الكرك بل قرى الملح إلى الجوف فينتفع بما فيها من المياه المعطلة ويمتد من جهة الشرق إلى تدمر مسافة <num
-                    xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> أيام. وتدمر هيب المدينة المعروفة بتاريخها المجيد. ويتصل بجهة الشمال ببلاد <choice>
+                <p xml:lang="ar" xml:id="p_118.d1e1917">أما الفوائد التي ستنجم من إدخالهم حظيرة الطاعة فامتداد العمران ال الجنوب مراحل كثيرة حتى يبلغ من الأزرق إلى بلاد الكرك بل قرى الملح إلى الجوف فينتفع بما فيها من المياه المعطلة ويمتد من جهة الشرق إلى تدمر مسافة <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> أيام. وتدمر هيب المدينة المعروفة بتاريخها المجيد. ويتصل بجهة الشمال ببلاد <choice>
                     <orig>حماة</orig>
                     <corr>حماه</corr>
-                    </choice> وحلب. ولعل هذا المبحث لا يصدر إلا وقد أخلد أولئك العصاة إلى السكون بهمة قائد الحملة العام سامي باشا الفاروقي فيضع لهم <pb
-                    corresp="file:../epub/26523/OEBPS/xhtml/P3328.xhtml" ed="shamela" n="n51-p27" xml:id="pb_28.d1e1919"
-                    /> أساساً راسخاً في الإصلاح لا يتمكن أحدهم من نقض عروته ويعاملون في عهد الدستور بما لم تكن الدولة تعاملهم به في عهد الاستبداد ويشرط هذا الجرح النغار بل الآكلة المزمنة في جسم سورية بمشراط الجراح الماهر الذي أحسنت الحكومة ظنها به في هذه المهمة فيصبح جبلهم منتاب المصطافين كما أصبح جبل لبنان من قبل فجبل حوران ليس دون جبل الشيخ وجبل قلمون جبل اللكام وغيره من الجبال السورية بهوائه و<num
-                    xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100"
-                    >مائه</num> ويزيد عليه خصب تربته وبعده عن الرطوبة هذا ويقل الماء الجاري في جبل حوران وأكثره ينابيع قليلة تكاد تك في لشرب الشفة فقط أما الزروع فلا تنمو بالسقيا بل تنمو بماء السماء كسائر بلاد حوران وحدث ما شئت أن تحدث عن خصب التربة فإن الحبوب تجود فيه كل الجودة وتقل الأشجار فيهم اللهم إلا الكرم والتين وبعض السنديان والزان وأكثر الغابات لم يبق منها إلا جذوع أشجارها تجدها بالقرب من السويداء وسهوة الخضر وسهوة بلاطة ومياماس وابي زريق وساله وقنوات وعتيل في ذروة الجبل أي في طرف قليب حوران ولم يبق إلا شجرات معدودات بين قنوات والجبل والله أعلم. </p>
+                    </choice> وحلب. ولعل هذا المبحث لا يصدر إلا وقد أخلد أولئك العصاة إلى السكون بهمة قائد الحملة العام سامي باشا الفاروقي فيضع لهم <pb corresp="file:../epub/26523/OEBPS/xhtml/P3328.xhtml" ed="shamela" n="n51-p27" xml:id="pb_28.d1e1919"/> أساساً راسخاً في الإصلاح لا يتمكن أحدهم من نقض عروته ويعاملون في عهد الدستور بما لم تكن الدولة تعاملهم به في عهد الاستبداد ويشرط هذا الجرح النغار بل الآكلة المزمنة في جسم سورية بمشراط الجراح الماهر الذي أحسنت الحكومة ظنها به في هذه المهمة فيصبح جبلهم منتاب المصطافين كما أصبح جبل لبنان من قبل فجبل حوران ليس دون جبل الشيخ وجبل قلمون جبل اللكام وغيره من الجبال السورية بهوائه و<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100">مائه</num> ويزيد عليه خصب تربته وبعده عن الرطوبة هذا ويقل الماء الجاري في جبل حوران وأكثره ينابيع قليلة تكاد تك في لشرب الشفة فقط أما الزروع فلا تنمو بالسقيا بل تنمو بماء السماء كسائر بلاد حوران وحدث ما شئت أن تحدث عن خصب التربة فإن الحبوب تجود فيه كل الجودة وتقل الأشجار فيهم اللهم إلا الكرم والتين وبعض السنديان والزان وأكثر الغابات لم يبق منها إلا جذوع أشجارها تجدها بالقرب من السويداء وسهوة الخضر وسهوة بلاطة ومياماس وابي زريق وساله وقنوات وعتيل في ذروة الجبل أي في طرف قليب حوران ولم يبق إلا شجرات معدودات بين قنوات والجبل والله أعلم. </p>
             </div>
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P3329.xhtml" ed="shamela" n="n51-p28" xml:id="pb_29.d1e1925"/>
             <div type="article" xml:lang="ar" xml:id="div_6.d1e1923">
@@ -2099,12 +2031,9 @@
                         تحفه.</p>
                 </div>
                 <div type="article" xml:id="div_56.d1e3344">
-                    <head xml:id="head_56.d1e3346"><bibl xml:id="bibl_9.d1e3347"><title level="m" xml:id="title_15.d1e3348"
-                        >غرائب الغرب</title><lb xml:id="lb_13.d1e3350"/> لصاحب <title level="j" xml:id="title_16.d1e3354">المقتبس</title>
+                    <head xml:id="head_56.d1e3346"><bibl xml:id="bibl_9.d1e3347"><title level="m" xml:id="title_15.d1e3348">غرائب الغرب</title><lb xml:id="lb_13.d1e3350"/> لصاحب <title level="j" xml:id="title_16.d1e3354">المقتبس</title>
                         <author xml:id="author_8.d1e3352"><supplied><persName><forename>محمد</forename>
-                        <surname>كرد علي</surname></persName></supplied></author> طبع ب<publisher xml:id="publisher_4.d1e3357"
-                        >مطبعته</publisher> <biblScope unit="page" from="1" to="204" xml:id="biblScope_6.d1e3360">ص <num type="auto-markup"
-                        resp="#pers_TG" value="204" xml:lang="ar" xml:id="num_1.d1e2762">٢٠٤</num></biblScope></bibl> </head>
+                        <surname>كرد علي</surname></persName></supplied></author> طبع ب<publisher xml:id="publisher_4.d1e3357">مطبعته</publisher> <biblScope unit="page" from="1" to="204" xml:id="biblScope_6.d1e3360">ص <num type="auto-markup" resp="#pers_TG" value="204" xml:lang="ar" xml:id="num_1.d1e2762">٢٠٤</num></biblScope></bibl> </head>
                     <p xml:lang="ar" xml:id="p_280.d1e2765">هي بعض ما شاهده وعرفه صاحب هذه المجلة عن ديار الغرب نشر أولاً في بعض أجزاءه هذه
                         السنة والسنة الماضية وجردناه على حدة وهذه مقدمته وهي تنم عن الغرض من نشره:</p>
                     <p xml:lang="ar" xml:id="p_281.d1e2768">هذه فصول ومقالات بل آهات وتأوهات كتبتها في وصف معالم الغرب وما لقيته فيه وثقفته
@@ -2229,20 +2158,7 @@
                 </div>
                 <div type="article" xml:id="div_64.d1e3671">
                     <head xml:id="head_64.d1e3673">مسألة قلة النفوس</head>
-                    <p xml:lang="ar" xml:id="p_304.d1e2915">وضعت <bibl>مجلة <title level="j"
-                        >الاقتصاديين</title></bibl> مقالة قالت فيها أنه يكاد لا يعرف كبير أمر عن مسألة النفوس<pb ed="print" n="287"
-                        facs="#facs_303" xml:id="pb_130.d1e3678"
-                        /> لأن الأمم القديمة قد دثرت كلها تقريباً ونوشك أن لا نعرف إلا أموراً طفيفة عن حالة الآشوريين كما نحن كذلك في تصور اليونان والرومان فإن الرجال الممتازين قواداً كانوا أو فلاسفة ممن اشتهروا قديماً لم يتركوا عقباً فلا يمكن أن يقال أنهم هلكوا في حروب أهلية أو خارجية وأن قد خلفتهم شعوب أخرى مثل البورغونيين والفانداليين والغوتيين الذين نشئوا من جرمانيا والهونسيين والمجريين الذين جاؤوا من آسيا فالماضي يمثل لأعيننا تعاقب الأمم التي تناقلت حسنات المدنية خلفاً عن سلف. <pb
-                        corresp="file:../epub/26523/OEBPS/xhtml/P3369.xhtml" ed="shamela" n="n51-p68" xml:id="pb_69.d1e2917"
-                        /> ومسألة قلة النفوس اليوم ينظر فيها في كل مكان ولاسيما في فرنسا فالشعب الفرنسوي اليوم <num type="auto-markup"
-                        resp="#pers_TG" value="39" xml:lang="ar" xml:id="num_1.d1e2919"
-                        >٣٩</num> مليوناً ويجب أن يزيد كل سنة مليون نسمة ولذلك رأى أحدهم أن يعطي كل أب وأم فرنسويتين ما شاءا من الوظائف لأن لهم ميلاً خاصاً إليها على شرطك أن يكون لهما <num
-                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
-                        >ثلاثة</num> أولاد أحياء أو أكثر بدون النظر إلى كفاءتهما وأن تخصص الحكومة مكافأة مالية قدرها <num xml:lang="ar"
-                        type="auto-markup" subtype="d3" resp="#pers_TG" value="500"
-                        >خمسمائة</num> فرنك تدفع دفعتين إذا ولد للأبوين الولد الثالث وهو حي وبذلك تنفق الحكومة في السنة من <num
-                        type="auto-markup" resp="#pers_TG" value="150" xml:lang="ar" xml:id="num_1.d1e2922">١٥٠</num> إلى <num
-                        type="auto-markup" resp="#pers_TG" value="175" xml:lang="ar" xml:id="num_1.d1e2925">١٧٥</num> مليون فرنك.</p>
+                    <p xml:lang="ar" xml:id="p_304.d1e2915">وضعت <bibl>مجلة <title level="j">الاقتصاديين</title></bibl> مقالة قالت فيها أنه يكاد لا يعرف كبير أمر عن مسألة النفوس<pb ed="print" n="287" facs="#facs_303" xml:id="pb_130.d1e3678"/> لأن الأمم القديمة قد دثرت كلها تقريباً ونوشك أن لا نعرف إلا أموراً طفيفة عن حالة الآشوريين كما نحن كذلك في تصور اليونان والرومان فإن الرجال الممتازين قواداً كانوا أو فلاسفة ممن اشتهروا قديماً لم يتركوا عقباً فلا يمكن أن يقال أنهم هلكوا في حروب أهلية أو خارجية وأن قد خلفتهم شعوب أخرى مثل البورغونيين والفانداليين والغوتيين الذين نشئوا من جرمانيا والهونسيين والمجريين الذين جاؤوا من آسيا فالماضي يمثل لأعيننا تعاقب الأمم التي تناقلت حسنات المدنية خلفاً عن سلف. <pb corresp="file:../epub/26523/OEBPS/xhtml/P3369.xhtml" ed="shamela" n="n51-p68" xml:id="pb_69.d1e2917"/> ومسألة قلة النفوس اليوم ينظر فيها في كل مكان ولاسيما في فرنسا فالشعب الفرنسوي اليوم <num type="auto-markup" resp="#pers_TG" value="39" xml:lang="ar" xml:id="num_1.d1e2919">٣٩</num> مليوناً ويجب أن يزيد كل سنة مليون نسمة ولذلك رأى أحدهم أن يعطي كل أب وأم فرنسويتين ما شاءا من الوظائف لأن لهم ميلاً خاصاً إليها على شرطك أن يكون لهما <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أولاد أحياء أو أكثر بدون النظر إلى كفاءتهما وأن تخصص الحكومة مكافأة مالية قدرها <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="500">خمسمائة</num> فرنك تدفع دفعتين إذا ولد للأبوين الولد الثالث وهو حي وبذلك تنفق الحكومة في السنة من <num type="auto-markup" resp="#pers_TG" value="150" xml:lang="ar" xml:id="num_1.d1e2922">١٥٠</num> إلى <num type="auto-markup" resp="#pers_TG" value="175" xml:lang="ar" xml:id="num_1.d1e2925">١٧٥</num> مليون فرنك.</p>
                     <p xml:lang="ar" xml:id="p_305.d1e2929">فردت المجلة على هذا الفكر وقالت أن الأولاد والعجزة الذين يولدون على تلك الصفة
                         مدة <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> سنين يزيد عددهم ملايين وهم لا يعملون عملاً ويفتقر السكان من جباية هذه الضريبة منهم أي مبلغ <num type="auto-markup" resp="#pers_TG" value="175" xml:lang="ar" xml:id="num_1.d1e2931">١٧٥</num> مليوناً كل سنة
                         الذي يقضي عليه أداؤه وما قط كانت زيادة الضرائب مغنية لأمة ومن ذلك ينشأ فقر متتابع لأن مائتي مليون فرنك لا تكفي
