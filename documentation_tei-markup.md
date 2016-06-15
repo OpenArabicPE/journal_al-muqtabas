@@ -515,11 +515,33 @@ A second XSLT stylesheet ([`Tei-MarkupNumerals-Correction`](xslt/Tei-MarkupNumer
 3. `@calendar="#cal_julian"`
 4. `@calendar="#cal_ottomanfiscal"`
 
+## references to internal or external URIs
+
+The TEI provides a means to employ private URIs as values of all attributes that belong to att.canonical which are then dereferenced by means of a `<prefixDef>`:
+
+~~~{.xml}
+<listPrefixDef>
+    <prefixDef ident="oclc"
+        matchPattern="(\d+?)"
+        replacementPattern="https://www.worldcat.org/oclc/$1">
+        <p>Private URIs using the <code>oclc</code> prefix are pointers to bibliographic items in worldcat. For example, <code>oclc:4770057679</code> dereferences to <code>https://www.worldcat.org/oclc/4770057679</code>.</p>
+    </prefixDef>
+    <prefixDef ident="viaf"
+        matchPattern="(\d+?)"
+        replacementPattern="https://viaf.org/viaf/$1">
+        <p>Private URIs using the <code>viaf</code> prefix are pointers to entities in the Virtual International Authority File (VIAF). For example, <code>viaf:32272677</code> dereferences to <code>https://viaf.org/32272677</code>.</p>
+    </prefixDef>
+</listPrefixDef>
+~~~
+
+The private URIs can then be used as values of `@ref`, `@corresp` etc.
+
+
 ## references to intellectual works
 
 There are two types of references to intellectual works: explicit and implicit ones. Take for example the reference in [*al-Muqtabas* 6/2](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_23.TEIP5.xml#div_34.d1e3136) to a book by an American author from 1888 that had described a technocratic utopia at the end of the 20th century. This, obviously is a direct, yet implicit, reference to Bellamy's "Looking backward, 2000-1887".
 
-Such implicit references can always be encoded with the attribute `@corresp` that can point to relative or absolute URLs.
+Such implicit references can always be encoded with the attribute `@ref` pointing to an entry in Worldcat or VIAF, i.e. `@ref="viaf:187002650`. VIAF is always the better reference for abstract references to a *work* as it should not contain duplicate entries, while Worldcat should be used to reference a specific *edition*.
 
 Explicit references are the much easier case:
 
