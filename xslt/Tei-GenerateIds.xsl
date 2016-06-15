@@ -39,7 +39,7 @@
     </xsl:template>
     
     <!-- number the selected element -->
-    <xsl:template match="tei:text//node()">
+    <xsl:template match="tei:TEI//node()">
         <xsl:variable name="vName" select="if(starts-with(name(),'tei:')) then(substring-after(name(),'tei:')) else(name())"/>
         <xsl:copy>
             <xsl:choose>
