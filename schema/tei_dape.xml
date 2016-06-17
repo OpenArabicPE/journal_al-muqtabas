@@ -39,16 +39,7 @@
                 <moduleRef key="figures" except="formula notatedMusic"/>
                 <moduleRef key="transcr"
                     except="addSpan damage damageSpan delSpan handNotes handShift line listTranspose mod redo restore retrace secl sourceDoc subst substJoin surplus transpose undo"/>
-                <specGrp>
-                    <classSpec ident="att.global.linking" module="linking" mode="change" type="atts">
-                        <attList>
-                            <attDef ident="copyOf" mode="delete"/>
-                            <attDef ident="exclude" mode="delete"/>
-                            <attDef ident="sameAs" mode="delete"/>
-                            <attDef ident="select" mode="delete"/>
-                            <attDef ident="synch" mode="delete"/>
-                        </attList>
-                    </classSpec>
+                <specGrp xml:id="mods_classes">
                     <classSpec ident="att.canonical" module="tei" mode="change" type="atts">
                         <attList>
                             <attDef ident="key" mode="delete"/>
@@ -59,6 +50,7 @@
                             <attDef ident="xml:base" mode="delete"/>
                             <attDef ident="xml:space" mode="delete"/>
                             <attDef ident="xml:lang" mode="change">
+                                <defaultVal>ar</defaultVal>
                                 <valList mode="replace" type="semi">
                                     <valItem ident="ar">
                                         <desc>Arabic in Arabic script</desc>
@@ -124,6 +116,16 @@
                             </attDef>
                         </attList>
                     </classSpec>
+                    <classSpec ident="att.global.linking" module="linking" mode="change" type="atts">
+                        <attList>
+                            <attDef ident="copyOf" mode="delete"/>
+                            <attDef ident="exclude" mode="delete"/>
+                            <attDef ident="sameAs" mode="delete"/>
+                            <attDef ident="select" mode="delete"/>
+                            <attDef ident="synch" mode="delete"/>
+                        </attList>
+                    </classSpec>
+                    <classSpec ident="att.global.change" mode="delete" module="transcr" type="atts"/>
                     <classSpec ident="att.datable" mode="change" type="atts" module="tei">
                         <attList>
                             <attDef ident="period" mode="delete"/>
@@ -134,8 +136,39 @@
                             <attDef ident="datingPoint" mode="delete"/>
                         </attList>
                     </classSpec>
+                    <classSpec ident="att.divLike" mode="change" module="tei" type="atts">
+                        <attList>
+                            <attDef ident="org" mode="delete"/>
+                            <attDef ident="sample" mode="delete"/>
+                        </attList>
+                    </classSpec>
+                    <classSpec ident="att.declaring" mode="delete" module="tei" type="atts"/>
+                    <classSpec ident="att.tableDecoration" mode="change" module="tei" type="atts">
+                        <attList>
+                            <attDef ident="role" mode="change" usage="opt">
+                                <defaultVal>data</defaultVal>
+                                <valList mode="replace" type="closed">
+                                    <valItem ident="data"/>
+                                    <valItem ident="label"/>
+                                </valList>
+                            </attDef>
+                        </attList>
+                    </classSpec>
+                    <classSpec ident="att.timed" mode="change" module="tei" type="atts">
+                        <attList>
+                            <attDef ident="end" mode="delete"/>
+                            <attDef ident="start" mode="delete"/>
+                        </attList>
+                    </classSpec>
+                    <classSpec ident="att.textCritical" mode="change" module="textcrit" type="atts">
+                        <attList>
+                            <attDef ident="cause" mode="delete"/>
+                            <attDef ident="hand" mode="delete"/>
+                            <attDef ident="varSeq" mode="delete"/>
+                        </attList>
+                    </classSpec>
                 </specGrp>
-                <specGrp>
+                <specGrp xml:id="mods_elements">
                     <elementSpec ident="div" mode="change" module="textstructure">
                         <attList>
                             <attDef ident="type" mode="change">
@@ -162,6 +195,13 @@
                             </attDef>
                         </attList>
                     </elementSpec>
+                    <elementSpec ident="gap" module="core" mode="change">
+                        <attList>
+                            <attDef ident="resp" mode="change" usage="req">
+                                <defaultVal>#org_MS</defaultVal>
+                            </attDef>
+                        </attList>
+                    </elementSpec>
                     <elementSpec ident="l" module="core" mode="change">
                         <classes mode="replace">
                             <memberOf key="model.lLike"/>
@@ -171,11 +211,11 @@
                             <memberOf key="att.typed" mode="add"/>
                         </classes>
                         <attList>
-                            <attDef ident="type" mode="change">
-                                <valList type="semi" mode="replace">
+                            <attDef ident="type" mode="change" usage="rec">
+                                <defaultVal>bayt</defaultVal>
+                                <valList type="closed">
                                     <valItem ident="bayt">
-                                        <desc>Two-partite line of an Arabic Qasida. The parts are
-                                        encoded as <gi>seg</gi>.</desc>
+                                        <desc>Two-partite line of an Arabic Qasida. The parts are encoded as <gi>seg</gi>.</desc>
                                     </valItem>
                                 </valList>
                             </attDef>
@@ -183,7 +223,11 @@
                     </elementSpec>
                     <elementSpec ident="note" module="core" mode="change">
                         <attList>
+                            <attDef ident="n" mode="change">
+                                <defaultVal>1</defaultVal>
+                            </attDef>
                             <attDef ident="type" mode="change">
+                                <defaultVal>footnote</defaultVal>
                                 <valList type="semi" mode="replace">
                                     <valItem ident="endnote"/>
                                     <valItem ident="footnote"/>
@@ -195,11 +239,17 @@
                     <elementSpec ident="pb" module="core" mode="change">
                         <attList>
                             <attDef ident="ed" mode="change">
+                                <defaultVal>print</defaultVal>
                                 <valList type="semi" mode="replace">
                                     <valItem ident="print"/>
                                     <valItem ident="shamela"/>
                                 </valList>
                             </attDef>
+                        </attList>
+                    </elementSpec>
+                    <elementSpec ident="supplied" module="transcr">
+                        <attList>
+                            <attDef ident="resp" mode="change" usage="req"/>
                         </attList>
                     </elementSpec>
                 </specGrp>
