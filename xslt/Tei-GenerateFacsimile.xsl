@@ -52,11 +52,11 @@
     <!-- ID / date of issue in EAP: these are formatted as yyyymm and need to be set for each issue. the volumes commence with yyyy02 -->
     <xsl:param name="pEapIssueId" select="'190602'"/>
     <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
-    <xsl:param name="pImgStartHathiDifference" select="16" as="xs:integer"/>
+    <xsl:param name="pImgStartHathiDifference" select="14" as="xs:integer"/>
     <!-- volume in HathTrust collection -->
-    <xsl:variable name="vHathiTrustId" select="'njp.32101073250910'"/>
+    <xsl:variable name="vHathiTrustId" select="'umn.319510029968632'"/>
     <!-- volume in EAP collection: needs to be set  -->
-    <xsl:variable name="vEapVolumeId" select="'5'"/>
+    <xsl:variable name="vEapVolumeId" select="'4'"/>
     
     <!-- URL to Hathi, this is always the same -->
     <xsl:variable name="vFileUrlHathi" select="concat('https://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
@@ -125,11 +125,11 @@
         <xsl:element name="tei:surface">
             <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start)"/>
             <xsl:if test="$p_file-local = true()">
-                <xsl:element name="tei:graphic">
+                <!--<xsl:element name="tei:graphic">
                     <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_1')"/>
                     <xsl:attribute name="url" select="concat($v_path-file,format-number($vStartHathi,'000'),'.tif')"/>
                     <xsl:attribute name="mimeType" select="'image/tiff'"/>
-                </xsl:element>
+                </xsl:element>-->
                 <xsl:element name="tei:graphic">
                     <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_2')"/>
                     <xsl:attribute name="url" select="concat($v_path-file,format-number($vStartHathi,'000'),'.jpg')"/>
