@@ -51,21 +51,14 @@ Regularly entire articles are reprinted verbatim or in translation. The source i
 # 2. changes to the schema
 ## 1. additions
 
-1. `tei:num/@subtype`
-2. `tei:div/@next` and `tei:div/@prev`
+- allow `<bibl>` as child of `<opener>`,`<byline>`, `<closer>`
+
 
 ## 2. deletions
 
 - `tei:num/@cert`
 - `tei:num/@confidence`
-- `tei:num/@copyOf`
-- `tei:num/@sameAs`
 - `tei:num/@facs`
-
-## 3. additions
-
-- allow `@subtype` on `<num>`
-- allow `<bibl>` as child of `<opener>`,`<byline>`, `<closer>`
 
 
 # 3. current mark-up
@@ -509,6 +502,11 @@ A second XSLT stylesheet ([`Tei-MarkupNumerals-Correction`](xslt/Tei-MarkupNumer
 3. Organisations: `<orgName>`
 
 ## Dates and calendars
+
+There are two attributes that specify the dating system used in an element:
+
+1. `@calendar` specifies the dating system of the *text* content of a `<date>` element
+2. `@datingMethod` specifies the dating system of the normalisation in the  `@...-custom` attributes of the `<date>` element. This means that the normalisation is only available with `@datingMethod`.
 
 1. `@calendar="#cal_gregorian"`
 2. `@calendar="#cal_islamic"`
