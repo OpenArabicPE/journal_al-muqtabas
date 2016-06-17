@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>dape</title>
+                <author>Till Grallert</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>for use by whoever wants it</p>
+            </publicationStmt>
+            <notesStmt>
+                <note type="ns">https://tillgrallert.github.io/ns/tei_dape</note>
+            </notesStmt>
+            <sourceDesc>
+                <p>created on Friday 17th June 2016 02:20:14 PM</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <front>
+            <divGen type="toc"/>
+        </front>
+        <body>
+            <p>My TEI Customization&#xD;
+	starts with modules tei, core, textstructure and header</p>
+            <schemaSpec ident="tei_dape" docLang="en" prefix="dape_" xml:lang="en">
+                <moduleRef key="core"
+                    except="addrLine address analytic binaryObject desc distinct divGen email emph gloss headItem headLabel media meeting mentioned postBox postCode relatedItem soCalled sp speaker stage street textLang"/>
+                <moduleRef key="tei" except=""/>
+                <moduleRef key="header"
+                    except="abstract appInfo application cRefPattern catDesc catRef category classCode classDecl creation extent geoDecl handNote interpretation keywords listChange namespace normalization principal scriptNote sponsor stdVals styleDefDecl tagUsage tagsDecl taxonomy textClass typeNote xenoData"/>
+                <moduleRef key="textstructure"
+                    except="argument div1 div2 div3 div4 div5 div6 div7 docAuthor docDate docEdition docImprint docTitle imprimatur signed titlePage titlePart"/>
+                <moduleRef key="tagdocs"
+                    except="altIdent alternate attDef attList attRef classRef classSpec classes constraint constraintSpec content dataRef dataSpec datatype defaultVal eg egXML elementRef elementSpec equiv exemplum ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition param paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList textNode val valDesc valItem valList"/>
+                <moduleRef key="namesdates" except="langKnowledge langKnown"/>
+                <moduleRef key="linking" except="alt altGrp anchor join joinGrp link linkGrp timeline when"/>
+                <moduleRef key="figures" except="formula notatedMusic"/>
+                <moduleRef key="transcr"
+                    except="addSpan damage damageSpan delSpan handNotes handShift line listTranspose mod redo restore retrace secl sourceDoc subst substJoin surplus transpose undo"/>
+                <classSpec ident="att.global.linking" module="linking" mode="change" type="atts">
+                    <attList>
+                        <attDef ident="copyOf" mode="delete"/>
+                        <attDef ident="exclude" mode="delete"/>
+                        <attDef ident="sameAs" mode="delete"/>
+                        <attDef ident="select" mode="delete"/>
+                        <attDef ident="synch" mode="delete"/>
+                    </attList>
+                </classSpec>
+                <classSpec ident="att.canonical" module="tei" mode="change" type="atts">
+                    <attList>
+                        <attDef ident="key" mode="delete"/>
+                    </attList>
+                </classSpec>
+                <classSpec ident="att.global" mode="change" type="atts" module="tei">
+                    <attList>
+                        <attDef ident="xml:base" mode="delete"/>
+                        <attDef ident="xml:space" mode="delete"/>
+                        <attDef ident="xml:lang" mode="change">
+                            <valList mode="replace" type="semi">
+                                <valItem ident="ar">
+                                    <desc>Arabic in Arabic script</desc>
+                                </valItem>
+                                <valItem ident="ota">
+                                    <desc>Ottoman in Arabic script</desc>
+                                </valItem>
+                                <valItem ident="tr">
+                                    <desc>Modern Turkish</desc>
+                                </valItem>
+                                <valItem ident="en">
+                                    <desc>English</desc>
+                                </valItem>
+                                <valItem ident="fr">
+                                    <desc>French</desc>
+                                </valItem>
+                                <valItem ident="de">
+                                    <desc>German</desc>
+                                </valItem>
+                                <valItem ident="he">
+                                    <desc>Hebrew in Hebrew script</desc>
+                                </valItem>
+                                <valItem ident="fa">
+                                    <desc>Farsi in Arabic script</desc>
+                                </valItem>
+                                <valItem ident="ar-Latn-x-ijmes">
+                                    <desc>Arabic in Latin script following the IJMES
+                                        transcription</desc>
+                                </valItem>
+                                <valItem ident="ota-Latn-x-ijmes">
+                                    <desc>Ottoman in Latin script following the IJMES
+                                        transcription</desc>
+                                </valItem>
+                                <valItem ident="ota-Latn-TR">
+                                    <desc>Ottoman in Latin script following common Turkish
+                                        conventions</desc>
+                                </valItem>
+                                <valItem ident="fa-Latn-x-ijmes">
+                                    <desc>Farsi in Latin script following the IJMES
+                                        transcription</desc>
+                                </valItem>
+                                <valItem ident="ar-Latn-EN">
+                                    <desc>Arabic in Latin script following common English
+                                        conventions</desc>
+                                </valItem>
+                                <valItem ident="ar-Latn-FR">
+                                    <desc>Arabic in Latin script following common French
+                                        conventions</desc>
+                                </valItem>
+                                <valItem ident="ar-Latn-x-dmg">
+                                    <desc>Arabic in Latin script following the DMG
+                                        transcription</desc>
+                                </valItem>
+                                <valItem ident="en-Arab-AR">
+                                    <desc>English transcribed into Arabic script following
+                                        common Levantine Arabic practices</desc>
+                                </valItem>
+                                <valItem ident="fr-Arab-AR">
+                                    <desc>French transcribed into Arabic script following common
+                                        Levantine Arabic practices</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </classSpec>
+                <classSpec ident="att.datable" mode="change" type="atts" module="tei">
+                    <attList>
+                        <attDef ident="period" mode="delete"/>
+                    </attList>
+                </classSpec>
+                <classSpec ident="att.datable.custom" mode="change" type="atts" module="namesdates">
+                    <attList>
+                        <attDef ident="datingPoint" mode="delete"/>
+                    </attList>
+                </classSpec>
+                <elementSpec ident="div" mode="change" module="textstructure">
+                    <attList>
+                        <attDef ident="type" mode="change">
+                            <valList mode="replace" type="semi">
+                                <valItem ident="article">
+                                    <desc>article in a periodical or of a bill</desc>
+                                </valItem>
+                                <valItem ident="section">
+                                    <desc>section of a newspaper issue or bill</desc>
+                                </valItem>
+                                <valItem ident="volume"/>
+                                <valItem ident="issue"/>
+                                <valItem ident="bill">
+                                    <desc>a legal text</desc>
+                                </valItem>
+                                <valItem ident="advert">
+                                    <desc>an advertisement</desc>
+                                </valItem>
+                                <valItem ident="letter">
+                                    <desc>a letter</desc>
+                                </valItem>
+                                <valItem ident="verse"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+            </schemaSpec>
+        </body>
+    </text>
+</TEI>
