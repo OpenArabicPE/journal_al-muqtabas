@@ -515,13 +515,27 @@ A second XSLT stylesheet ([`Tei-MarkupNumerals-Correction`](xslt/Tei-MarkupNumer
 
 ## Persons, Places, Organisations
 
-1. Persons:`<persName>`
-    + How to encode this string: "حسين كاظم بك والي حلب الحالي" ? Should the information on his position be included in the `<persName>`?
-2. Places: `<placeName>`
-    + How to encode this string: "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"?
+### 1. Persons:`<persName>`
+
+How to encode this string: "حسين كاظم بك والي حلب الحالي" ? Should the information on his position be included in the `<persName>`?
+
+### 2. Places: `<placeName>`
+
+All references to places with an explicit name (toponyms) including geographic names such as "Taurus Mountains", "Euphrates River" and geo-political names such as "Province of Aleppo" are encoded as `<placeName>`. The `<geogName>` tag is not used in this project.  `<placeName>` can self nest.
+
+- examples:
+
+~~~{.xml}
+أجمع الجغرافيون من العرب والإفرنج أن حد الشام من عريش مصر إلى <placeName xml:id="placeName_1.d1e1343">الفرات</placeName> ومن البحر الرومي إلى جبال طي ولكن مما يشوش الذهن أن جميع أعمال <placeName xml:id="placeName_5.d1e1346">حلب</placeName> اليوم هل هي داخلة حدود سورية أم بعضها خارج عنها يعد من آسيا الصغرى فقد قال بوليه في معجمه الجغرافي التاريخي أن حد سورية شمالاً إلى آسيا الصغرى من خليج <placeName xml:id="placeName_6.d1e1349">اسكندرونة</placeName> إلى <placeName xml:id="placeName_2.d1e1352">نهر <placeName xml:id="placeName_2.d1e1354">الفرات</placeName></placeName> وشرقاً <placeName xml:id="placeName_4.d1e1357">نهر <placeName xml:id="placeName_4.d1e1359">الفرات</placeName></placeName> والبادية إلى بلاد العرب وجنوباً قسم من العربية 
+~~~
+
+
+- Many of the large cities have epithets:
+    + "فبفطر الراكب في الصباح في الفيحاء ويتعشى في حاضرة سورية البيضاء"?
     +  الفيحاء (*al-fayḥāʾ*) and الشهباء (*al-shahbāʾ*) are clearly references to places by name, i.e. Damascus and Aleppo, but are they a `<placeName>`?
     +  Beirut is commonly referred to as الثغر (*al-thaghr*), the seaport.
-3. Organisations: `<orgName>`
+
+### 3. Organisations: `<orgName>`
 
 ## Dates and calendars
 
