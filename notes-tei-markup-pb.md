@@ -8,7 +8,7 @@ date: 2016-06-23
 
 Mark-up of page breaks mirroring the print edition with `<pb ed="print">` and linking them to the facsimiles is done through manually adding the `<pb>` element with `@ed="print"` and `@n` providing the page number. The digital facsimiles are then linked automatically to `<surface>` children of `<facsimile>` with the help of the XSLT stylesheet [Tei-LinkFacsimile2Pb](xslt/Tei-LinkFacsimile2Pb.xsl). This has been completed for the following files.
 
-- vol. 1:
+- vol. 1: i_1 to i_2
 - vol. 2:
 - vol. 3:
 - vol. 4:
@@ -22,6 +22,7 @@ Mark-up of page breaks mirroring the print edition with `<pb ed="print">` and li
 
 Links to local and online facsimiles / digital imagery have been added to the following issues:
 
+- vol. 1: *done*
 - vol. 4: *done*
 - vol. 5: *done*
 - vol. 6: *done*
