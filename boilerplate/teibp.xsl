@@ -463,13 +463,13 @@
                 <xsl:apply-templates select="child::tei:head" mode="mToc"/>
                 <xsl:text> (</xsl:text>
                 <!-- add author names and pages if available -->
-                <xsl:if test="tei:byline/descendant::tei:persName">
+                <xsl:if test="tei:byline/descendant::tei:persName or tei:opener/tei:byline/descendant::tei:persName">
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
                             <xsl:text>تأليف: </xsl:text>
                         </xsl:when>
                     </xsl:choose>
-                    <xsl:value-of select="tei:byline/descendant::tei:persName"/>
+                    <xsl:value-of select="descendant::tei:byline/descendant::tei:persName"/>
                     <xsl:text>،</xsl:text>
                 </xsl:if>
                 <!-- add page numbers -->
