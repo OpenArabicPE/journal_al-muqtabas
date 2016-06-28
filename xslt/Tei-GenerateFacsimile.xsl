@@ -56,7 +56,7 @@
     <!-- volume in HathTrust collection -->
     <xsl:variable name="vHathiTrustId" select="'umn.319510029968632'"/>
     <!-- volume in EAP collection: needs to be set  -->
-    <xsl:variable name="vEapVolumeId" select="'4'"/>
+    <xsl:variable name="vEapVolumeId" select="'3'"/>
     
     <!-- URL to Hathi, this is always the same -->
     <xsl:variable name="vFileUrlHathi" select="concat('https://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
@@ -68,7 +68,7 @@
     <xsl:variable name="v_url-sakhrit" select="concat($v_url-sakhrit-base,$v_journal-title-sakhrit,'/',$v_journal-title-sakhrit,'_',$p_year-sakhrit,'/Issue_',$v_issue,'/')"/>    
     
     <!-- URL to EAP, always the same -->
-    <xsl:variable name="vFileUrlEap" select="concat('https://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_',$vEapVolumeId,'-EAP119_muq',$pEapIssueId)"/>
+    <xsl:variable name="vFileUrlEap" select="concat('http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_',$vEapVolumeId,'-EAP119_muq',$pEapIssueId)"/>
     
     <!-- Path to local files -->
     <xsl:variable name="v_name-file" select="concat(translate($vHathiTrustId,'.','-'),'-img_')"/>
