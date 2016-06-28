@@ -48,6 +48,16 @@ Regularly entire articles are reprinted verbatim or in translation. The source i
  
 دمشق: جرجي الحداد 
 
+## question and anwser sections
+
+The structure is as follows
+
+- section title
+    + question 1
+    + answer 1
+    + question 2
+    + answer 2
+
 # 2. changes to the schema
 ## 1. additions
 
