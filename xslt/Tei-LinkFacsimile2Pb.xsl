@@ -47,14 +47,17 @@
         <xsl:variable name="vPosPb" select="count(preceding::tei:pb[@ed = 'print']) +1"/>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:choose>
+            <xsl:attribute name="facs">
+                <xsl:value-of select="concat('#',$vFacs/descendant::tei:surface[$vPosPb]/@xml:id)"/>
+            </xsl:attribute>
+            <!--<xsl:choose>
                 <xsl:when test="not(@facs)">
-                    <!--<xsl:attribute name="facs" select="concat('#facs_', @n + $pPageSetOff)"/>-->
+                    <!-\-<xsl:attribute name="facs" select="concat('#facs_', @n + $pPageSetOff)"/>-\->
                     <xsl:attribute name="facs">
                         <xsl:value-of select="concat('#',$vFacs/descendant::tei:surface[$vPosPb]/@xml:id)"/>
                     </xsl:attribute>
                 </xsl:when>
-            </xsl:choose>
+            </xsl:choose>-->
         </xsl:copy>
     </xsl:template>
     

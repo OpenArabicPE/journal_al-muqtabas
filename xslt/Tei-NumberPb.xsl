@@ -25,7 +25,10 @@
             <xsl:attribute name="ed">
                 <xsl:text>print</xsl:text>
             </xsl:attribute>
-            <xsl:choose>
+            <xsl:attribute name="n">
+                <xsl:value-of select="count(preceding::tei:pb[not(@ed = 'shamela')]) + $v_page-first"/>
+            </xsl:attribute>
+            <!--<xsl:choose>
                 <xsl:when test="not(@n)">
                     <xsl:attribute name="n">
                         <xsl:value-of select="count(preceding::tei:pb[not(@ed = 'shamela')]) + $v_page-first"/>
@@ -34,7 +37,7 @@
                 <xsl:otherwise>
                     <xsl:apply-templates select="@n"/>
                 </xsl:otherwise>
-            </xsl:choose>
+            </xsl:choose>-->
         </xsl:copy>
     </xsl:template>
 
