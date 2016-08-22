@@ -57,11 +57,10 @@
                         </xsl:when>
                         <xsl:when test="$v_date/@from or $v_date/@from-custom">
                             <xsl:element name="tei:date">
-                                <xsl:attribute name="when" select="'1908-08-09'"/>
-                                <!--<xsl:attribute name="when" select="$v_date/@from"/>
+                                <xsl:attribute name="when" select="$v_date/@from"/>
                                 <xsl:attribute name="when-custom" select="$v_date/@from-custom"/>
                                 <xsl:attribute name="calendar" select="$v_date/@calendar"/>
-                                <xsl:attribute name="datingMethod" select="$v_date/@datingMethod"/>-->
+                                <xsl:attribute name="datingMethod" select="$v_date/@datingMethod"/>
                                 <xsl:value-of select="$v_date"/>
                             </xsl:element>
                         </xsl:when>
@@ -128,6 +127,10 @@
             <xsl:value-of select="year-from-date(current-date())"/>
         </xsl:param>
         <xsl:param name="p_idno"/>
+        <!-- debugging section -->
+        <!--<xsl:message>
+            <xsl:copy-of select="$p_date-publication"/>
+        </xsl:message>-->
         
         <!-- variables -->
         <xsl:variable name="v_originInfo">
@@ -145,26 +148,26 @@
                     <xsl:apply-templates select="$p_publisher" mode="m_plain-text"/>
                 </publisher>
                 <dateIssued>
-                    <xsl:if test="$p_date-publication/@when!=''">
+                    <xsl:if test="$p_date-publication/descendant-or-self::tei:date/@when!=''">
                         <xsl:attribute name="encoding" select="'w3cdtf'"/>
                     </xsl:if>
-                    <xsl:value-of select="$p_date-publication/@when"/>
+                    <xsl:value-of select="$p_date-publication/descendant-or-self::tei:date/@when"/>
                 </dateIssued>
                 <!-- add hijri dates -->
-                <xsl:if test="$p_date-publication/@calendar='#cal_islamic'">
+                <xsl:if test="$p_date-publication/descendant-or-self::tei:date/@calendar='#cal_islamic'">
                     <dateOther type="hijri">
-                        <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom"/>
+                        <xsl:value-of select="$p_date-publication/descendant-or-self::tei:date[@calendar = '#cal_islamic']/@when-custom"/>
                     </dateOther>
                     <!-- this still needs work -->
                     <dateOther>
-                        <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom"/>
+                        <xsl:value-of select="$p_date-publication/descendant-or-self::tei:date[@calendar = '#cal_islamic']/@when-custom"/>
                         <xsl:text> [</xsl:text>
                         <xsl:choose>
-                            <xsl:when test="$p_date-publication[@calendar = '#cal_islamic'][@when-custom]/@when">
-                                <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic'][@when-custom]/@when"/>
+                            <xsl:when test="$p_date-publication/descendant-or-self::tei:date[@calendar = '#cal_islamic'][@when-custom]/@when">
+                                <xsl:value-of select="$p_date-publication/descendant-or-self::tei:date[@calendar = '#cal_islamic'][@when-custom]/@when"/>
                             </xsl:when>
-                            <xsl:when test="$p_date-publication[@calendar = '#cal_islamic'][@when-custom]">
-                                <xsl:analyze-string select="$p_date-publication[@calendar = '#cal_islamic'][@when-custom]/@when-custom" regex="(\d{{4}})$|(\d{{4}}-\d{{2}}-\d{{2}})$">
+                            <xsl:when test="$p_date-publication/descendant-or-self::tei:date[@calendar = '#cal_islamic'][@when-custom]">
+                                <xsl:analyze-string select="$p_date-publication/descendant-or-self::tei:date[@calendar = '#cal_islamic'][@when-custom]/@when-custom" regex="(\d{{4}})$|(\d{{4}}-\d{{2}}-\d{{2}})$">
                                     <xsl:matching-substring>
                                         <xsl:if test="regex-group(1)">
                                             <xsl:call-template name="funcDateHY2G">
@@ -178,7 +181,7 @@
                                         </xsl:if>
                                     </xsl:matching-substring>
                                     <xsl:non-matching-substring>
-                                        <xsl:value-of select="$p_date-publication[@calendar = '#cal_islamic']/@when-custom"/>
+                                        <xsl:value-of select="$p_date-publication/descendant-or-self::tei:date[@calendar = '#cal_islamic']/@when-custom"/>
                                     </xsl:non-matching-substring>
                                 </xsl:analyze-string>
                             </xsl:when>

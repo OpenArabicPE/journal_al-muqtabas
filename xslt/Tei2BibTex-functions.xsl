@@ -37,7 +37,7 @@
         <!-- variables identifying the original source -->
         <xsl:variable name="vBiblStructSource"
             select="ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct"/>
-        <xsl:variable name="vPublDate">
+        <xsl:variable name="v_date-publication">
             <xsl:variable name="v_date" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>
             <xsl:choose>
                 <xsl:when test="$v_date/@when or $v_date/@when-custom">
@@ -146,13 +146,13 @@
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <!-- publication dates -->
             <xsl:text>day = {</xsl:text>
-            <xsl:value-of select="day-from-date($vPublDate/@when)"/>
+            <xsl:value-of select="day-from-date($v_date-publication/descendant-or-self::tei:date/@when)"/>
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>month = {</xsl:text>
-            <xsl:value-of select="month-from-date($vPublDate/@when)"/>
+            <xsl:value-of select="month-from-date($v_date-publication/descendant-or-self::tei:date/@when)"/>
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>year = {</xsl:text>
-            <xsl:value-of select="year-from-date($vPublDate/@when)"/>
+            <xsl:value-of select="year-from-date($v_date-publication/descendant-or-self::tei:date/@when)"/>
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <!-- URL -->
             <xsl:text>url = {</xsl:text>
