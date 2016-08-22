@@ -77,7 +77,18 @@
                 </xsl:choose>
         </xsl:variable>
         <xsl:variable name="vUrl" select="concat($vgFileUrl, '#', @xml:id)"/>
-        <xsl:variable name="vIssue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
+        <xsl:variable name="v_issue">
+            <xsl:choose>
+                <xsl:when test="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n">
+                    <xsl:value-of select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
+                </xsl:when>
+                <xsl:when test="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@from">
+                    <xsl:value-of select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@from"/>
+                    <xsl:text>/</xsl:text>
+                    <xsl:value-of select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@to"/>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:variable name="vVolume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>
         <xsl:variable name="vPages">
             <xsl:value-of select="preceding::tei:pb[@ed = 'print'][1]/@n"/>
@@ -130,7 +141,7 @@
             <xsl:value-of select="$vVolume"/>
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>number = {</xsl:text>
-            <xsl:value-of select="$vIssue"/>
+            <xsl:value-of select="$v_issue"/>
             <xsl:text>}, </xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>pages = {</xsl:text>
             <xsl:value-of select="$vPages"/>

@@ -48,7 +48,18 @@
 <!--            <xsl:with-param name="p_url-self" select="concat($vgFileUrl, '#', @xml:id)"/>-->
             <xsl:with-param name="p_url-licence" select="$vFileDesc/tei:publicationStmt/tei:availability/tei:licence/@target"/>
             <xsl:with-param name="p_volume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>
-            <xsl:with-param name="p_issue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
+            <xsl:with-param name="p_issue">
+                <xsl:choose>
+                    <xsl:when test="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n">
+                        <xsl:value-of select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
+                    </xsl:when>
+                    <xsl:when test="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@from">
+                        <xsl:value-of select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@from"/>
+                        <xsl:text>/</xsl:text>
+                        <xsl:value-of select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@to"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:with-param>
             <xsl:with-param name="p_date-publication">
                 <xsl:variable name="v_date" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>
                     <xsl:choose>
