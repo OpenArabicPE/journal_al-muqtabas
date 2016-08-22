@@ -49,7 +49,24 @@
             <xsl:with-param name="p_url-licence" select="$vFileDesc/tei:publicationStmt/tei:availability/tei:licence/@target"/>
             <xsl:with-param name="p_volume" select="$vBiblStructSource//tei:biblScope[@unit = 'volume']/@n"/>
             <xsl:with-param name="p_issue" select="$vBiblStructSource//tei:biblScope[@unit = 'issue']/@n"/>
-            <xsl:with-param name="p_date-publication" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>
+            <xsl:with-param name="p_date-publication">
+                <xsl:variable name="v_date" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>
+                    <xsl:choose>
+                        <xsl:when test="$v_date/@when or $v_date/@when-custom">
+                            <xsl:copy-of select="$v_date"/>
+                        </xsl:when>
+                        <xsl:when test="$v_date/@from or $v_date/@from-custom">
+                            <xsl:element name="tei:date">
+                                <xsl:attribute name="when" select="'1908-08-09'"/>
+                                <!--<xsl:attribute name="when" select="$v_date/@from"/>
+                                <xsl:attribute name="when-custom" select="$v_date/@from-custom"/>
+                                <xsl:attribute name="calendar" select="$v_date/@calendar"/>
+                                <xsl:attribute name="datingMethod" select="$v_date/@datingMethod"/>-->
+                                <xsl:value-of select="$v_date"/>
+                            </xsl:element>
+                        </xsl:when>
+                </xsl:choose>
+            </xsl:with-param>
             <xsl:with-param name="p_date-accessed" select="ancestor::tei:TEI/tei:teiHeader/tei:revisionDesc/tei:change[1]/@when"/>
             <xsl:with-param name="p_publisher"
                 select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>

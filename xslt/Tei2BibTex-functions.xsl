@@ -37,8 +37,23 @@
         <!-- variables identifying the original source -->
         <xsl:variable name="vBiblStructSource"
             select="ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct"/>
-        <xsl:variable name="vPublDate"
-            select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>
+        <xsl:variable name="vPublDate">
+            <xsl:variable name="v_date" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:date[1]"/>
+            <xsl:choose>
+                <xsl:when test="$v_date/@when or $v_date/@when-custom">
+                    <xsl:copy-of select="$v_date"/>
+                </xsl:when>
+                <xsl:when test="$v_date/@from or $v_date/@from-custom">
+                    <xsl:element name="tei:date">
+                        <xsl:attribute name="when" select="$v_date/@from"/>
+                        <xsl:attribute name="when-custom" select="$v_date/@from-custom"/>
+                        <xsl:attribute name="calendar" select="$v_date/@calendar"/>
+                        <xsl:attribute name="datingMethod" select="$v_date/@datingMethod"/>
+                        <xsl:value-of select="$v_date"/>
+                    </xsl:element>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:variable name="vPublicationType" select="'Newspaper article'"/>
         <xsl:variable name="vPublicationTitle"
             select="$vBiblStructSource/tei:monogr/tei:title[@level = 'j'][@xml:lang = $vLang][not(@type = 'sub')]"/>
