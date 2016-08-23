@@ -73,6 +73,20 @@
         </xsl:for-each>-->
     </xsl:template>
     
+    <!-- link existing placeNames to Geonames -->
+    <xsl:template match="tei:placeName[ancestor::tei:text]">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:if test="not(@ref)">
+                <xsl:variable name="v_id">
+                    <xsl:value-of select="$p_master-toponyms/descendant::tei:place[child::tei:placeName=.]/tei:idno[@type='geon']"/>
+                </xsl:variable>
+                <xsl:attribute name="ref" select="concat('geon:',$v_id)"/>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    
     <!-- generate documentation of change -->
     <xsl:template match="tei:revisionDesc">
         <xsl:copy>
