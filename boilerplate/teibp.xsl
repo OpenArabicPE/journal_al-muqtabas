@@ -739,4 +739,38 @@
         </td>
     </xsl:template> -->
     
+    <xsl:template match="tei:*[@ref][ancestor::tei:text]">
+        <xsl:copy>
+            <xsl:apply-templates/>
+        </xsl:copy>
+        <!-- do something with private urls -->
+        <a class="c_linked-data" target="_blank" lang="en">
+        <xsl:choose>
+            <xsl:when test="starts-with(@ref,'geon')">
+                <xsl:attribute name="href">
+                    <xsl:value-of select="concat('https://www.geonames.org/',substring-after(@ref,'geon:'))"/>
+                </xsl:attribute>
+                <xsl:text>geonames</xsl:text>
+            </xsl:when>
+            <xsl:when test="starts-with(@ref,'oclc')">
+                <xsl:attribute name="href">
+                    <xsl:value-of select="concat('https://www.worldcat.org/oclc/',substring-after(@ref,'oclc:'))"/>
+                </xsl:attribute>
+                <xsl:text>oclc</xsl:text>
+            </xsl:when>
+            <xsl:when test="starts-with(@ref,'viaf')">
+              <xsl:attribute name="href">
+                  <xsl:value-of select="concat('https://viaf.org/viaf/',substring-after(@ref,'viaf:'))"/>
+              </xsl:attribute>
+                <xsl:text>viaf</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:attribute name="href">
+                    <xsl:value-of select="@ref"/>
+                </xsl:attribute>
+                <xsl:text>link</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+        </a>
+    </xsl:template>
 </xsl:stylesheet>
