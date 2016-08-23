@@ -545,6 +545,8 @@ All references to places with an explicit name (toponyms) including geographic n
     +  الفيحاء (*al-fayḥāʾ*) and الشهباء (*al-shahbāʾ*) are clearly references to places by name, i.e. Damascus and Aleppo, but are they a `<placeName>`?
     +  Beirut is commonly referred to as الثغر (*al-thaghr*), the seaport.
 
+- In order to automatically tag as many toponyms as possible, one can make use of the GeoNames.org API, which allows for a "findnearby" search such as: `http://api.geonames.org/findNearby?lat=33.5102&lng=36.29128&radius=300&featureClass=P&style=FULL&maxRows=100000&username=tardigradae&lang=ar`. This query will return all names of inhabited places within a radius of 250km around Damascus and their corresponding locations.
+
 ### 3. Organisations: `<orgName>`
 
 ## Dates and calendars
