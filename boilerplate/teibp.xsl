@@ -748,7 +748,7 @@
         <xsl:choose>
             <xsl:when test="starts-with(@ref,'geon')">
                 <xsl:attribute name="href">
-                    <xsl:value-of select="concat('https://www.geonames.org/',substring-after(@ref,'geon:'))"/>
+                    <xsl:value-of select="concat('http://www.geonames.org/',substring-after(@ref,'geon:'))"/>
                 </xsl:attribute>
                 <xsl:text>geonames</xsl:text>
             </xsl:when>
