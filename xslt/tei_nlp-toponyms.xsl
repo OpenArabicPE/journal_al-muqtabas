@@ -9,7 +9,7 @@
     <xsl:preserve-space elements="*"/>
     
     <!-- $p_master-toponyms is a TEI XML file containing <listPlace> <place> and <placeName> entities -->
-    <xsl:param name="p_master-toponyms" select="doc('masterFiles/toponyms_test.TEIP5.xml')/descendant::tei:listPlace"/>
+    <xsl:param name="p_master-toponyms" select="doc('../xml/toponyms_Damascus-radius_200.TEIP5.xml')/descendant::tei:listPlace"/>
     <xsl:param name="p_id-author" select="'pers_TG'"/>
     
     <xsl:template match="/">
@@ -23,7 +23,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="text()[ancestor-or-self::tei:text]">
+    <xsl:template match="text()[ancestor-or-self::tei:text][not(ancestor::tei:placeName)]">
         <xsl:variable name="v_text" select="."/>
         <xsl:variable name="v_toponyms">
             <xsl:for-each select="$p_master-toponyms/descendant::tei:placeName[@xml:lang='ar']">
@@ -40,7 +40,7 @@
                 </xsl:message>-->
                 <xsl:variable name="v_toponym" select="regex-group(2)"/>
                 <xsl:variable name="v_id">
-                    <xsl:value-of select="$p_master-toponyms/descendant::tei:place[child::tei:placeName=$v_toponym]/tei:idno[@type='geonames']"/>
+                    <xsl:value-of select="$p_master-toponyms/descendant::tei:place[child::tei:placeName=$v_toponym]/tei:idno[@type='geon']"/>
                 </xsl:variable>
                 <xsl:element name="tei:placeName">
                     <xsl:attribute name="type" select="'auto-markup'"/>
