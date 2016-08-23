@@ -42,12 +42,14 @@
                 <xsl:variable name="v_id">
                     <xsl:value-of select="$p_master-toponyms/descendant::tei:place[child::tei:placeName=$v_toponym]/tei:idno[@type='geon']"/>
                 </xsl:variable>
+                <xsl:value-of select="regex-group(1)"/>
                 <xsl:element name="tei:placeName">
                     <xsl:attribute name="type" select="'auto-markup'"/>
                     <xsl:attribute name="resp" select="concat('#',$p_id-author)"/>
                     <xsl:attribute name="ref" select="concat('geon:',$v_id)"/>
                     <xsl:value-of select="$v_toponym"/>
                 </xsl:element>
+                <xsl:value-of select="regex-group(3)"/>
             </xsl:matching-substring>
             <xsl:non-matching-substring>
                 <xsl:value-of select="."/>
