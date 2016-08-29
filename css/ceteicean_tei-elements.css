@@ -1,0 +1,305 @@
+/** {
+    border: 1px solid red !important;
+}*/
+
+/*-----------------------
+teipb, the main stylesheet surpresses the display of quite a few tei elements
+-------------------------*/
+/*-----------------------
+display the information on a file's source
+-------------------------*/
+/* a) by means of sourceDesc */
+tei-sourceDesc,
+tei-sourceDesc > *{
+    display:block;
+}
+tei-sourceDesc tei-bibl,
+tei-sourceDesc tei-biblStruct,
+tei-sourceDesc tei-bibl > *,
+tei-sourceDesc tei-biblStruct > *,
+tei-sourceDesc tei-biblStruct tei-monogr > *,
+tei-sourceDesc tei-biblStruct tei-imprint > *{
+    display:block;
+}
+tei-sourceDesc tei-title{
+    font-size:1.5em;
+    font-weight:bold;
+}
+tei-sourceDesc tei-title[type = "sub"]{
+    font-size:1.2em;
+    font-weight:bold;
+}
+tei-sourceDesc tei-editor:after{
+    content:" (ed.)"
+}
+/* b) by means of .cSource */
+div.cSource,
+div.cSource > div{
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+}
+/*-----------------------
+elements in the text
+-------------------------*/
+tei-text,
+tei-body,
+tei-front,
+tei-back{
+    counter-reset:p;
+}
+
+/** {
+    font-size: inherit;
+}*/
+
+/*--------------------
+block level elements
+----------------------*/
+
+/* all */
+
+tei-div, tei-p, tei-ab, tei-lg, tei-l {
+    clear:right;
+    display: block;
+    /* what about left and right margins? */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0 0 5px 0;
+    border: 0 0 0 0;
+    /*height: 100%;*/
+}
+
+/* divisions */
+
+tei-div {
+}
+
+/* paragraphs */
+tei-p {
+    text-indent: 10px;
+}
+/* count paragraphs */
+
+/*p{
+    counter-increment:p;
+}
+text p:before{
+    content:"§ " counter(p) " ";
+    direction:ltr;
+    /\* vertical-align:top; *\/
+    font-size:0.5em;
+    display:block;
+    position:absolute;
+    padding-right:0.5em;
+    padding-left:0.5em;
+    margin-top:0.5em;
+    margin-right:-40px;
+    color:gray;
+}*/
+
+/* new explicit counting */
+tei-p > span.c_id{
+    direction:ltr;
+    /* vertical-align:top; */
+    font-size:0.5em;
+    display:block;
+    position:absolute;
+    padding-right:0.5em;
+    padding-left:0.5em;
+    margin-top:0.5em;
+    color:gray;
+}
+/* for ltr languages*/
+tei-p > span.c_id{
+    margin-left: -4em;
+}
+/* for rtl languages*/
+tei-p[lang = "ar"]>span.c_id, tei-p[lang = "ota"]>span.c_id, tei-p[lang = "fa"]>span.c_id, tei-p[lang = "he"]>span.c_id, tei-p[lang *= "-Arab-Ar"]>span.c_id{
+    margin-right: -4em;
+}
+
+tei-p>span.c_id:before {
+    content:"§ ";
+    direction:ltr;
+}
+/* anonymous blocks <ab> */
+tei-ab{
+    margin-right:auto;
+    margin-left:auto;
+}
+/* byline */
+tei-byline{
+    display:block;
+}
+tei-byline[lang="ar"],
+tei-byline[lang="ota"]{
+    margin-right: 100px;
+}
+tei-byline{
+    margin-left: 100px;
+}
+/* gaps */
+tei-gap{
+    display:inline;
+}
+tei-gap:after{
+    content:" [...] "
+}
+
+/* foreign words */
+tei-foreign {
+    font-style: italic;
+}
+/*------------------
+ tables
+------------------- */
+tei-table{
+    display: block;
+    border-collapse:collapse;
+    width:80%;
+}
+tei-row, tr {
+  display: table-row;
+  /* this is to mirror the indent of l*/
+  /*margin-right: 25px;*/
+}
+tei-row[role="label"], th {
+  font-weight: bold;
+  border-bottom: double #959595;
+}
+
+tei-cell,td {
+    display:table-cell;
+    width:auto;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    border-right: 1px solid #959595;
+    border-left: 1px solid #959595;
+}
+tei-cell:first-child, td:first-child{
+    border-right: none !important;
+}
+tei-cell:last-child, td:last-child{
+    border-left: none !important;
+}
+
+tei-cell {
+  /*
+border-left: 2px solid @border-color;
+border-top:2px solid @border-color;
+*/
+}
+
+
+/*------------------
+ named entities
+-------------------- */
+tei-text tei-persName{
+    /* color:#1B8500; */
+    /*background-color: #C9F6C5;*/
+    /*border-bottom: 5px dotted #C9F6C5;*/
+}
+
+tei-text tei-placeName{
+    /* color:#9525A1; */
+    /*background-color: #FADDFF;*/
+    /*border-bottom: 5px dotted #FADDFF;*/
+}
+tei-text tei-orgName{
+    /* color:#5F789E; */
+    /*background-color: #E4E8FF;*/
+    /*border-bottom: 5px dotted #E4E8FF;*/
+}
+
+tei-text tei-persName, tei-text tei-placeName, tei-text tei-orgName, tei-text > tei-body tei-title {
+  display: inline;
+  position: relative;
+}
+tei-text tei-persName::after, tei-text tei-placeName::after, tei-text tei-orgName::after, tei-text > tei-body tei-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  margin-top: 7px;
+}
+
+tei-text tei-persName::after {
+    border-bottom: 3px dotted #C9F6C5;
+}
+
+tei-text tei-placeName::after{
+    border-bottom: 3px dotted #FADDFF;
+}
+tei-text tei-orgName::after{
+    border-bottom: 3px dotted #E4E8FF;
+}
+
+/* display tooltip-like information on the tag */
+tei-text tei-persName:hover:after,
+tei-text tei-placeName:hover:after,
+tei-text tei-orgName:hover:after,
+tei-text > tei-body tei-title:hover:after{
+    display:inline-block;
+    font-size:10px;
+    text-align: center;
+    text-indent: 0;
+    direction: ltr;
+    font-family: Helvetica, Arial, sans-serif;
+    color:black;
+    background-color:white;
+    border-bottom: none;
+    padding: 0.5em 0 0.5em 0;
+    border: 0 0 0 0;
+    border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    border-bottom-right-radius:3px;
+    border-bottom-left-radius:3px;
+    box-shadow:0px 1px 5px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.3) inset;
+    min-width: 60px;
+    width: 100%;
+    /* position the pop over */
+    position:absolute;
+    margin:-2em 0 0 0;
+    /*z-index: 10000;*/
+}
+tei-text tei-persName:hover:after{
+    content:"persName"
+}
+tei-text tei-placeName:hover:after{
+    content:"placeName"
+}
+tei-text tei-orgName:hover:after{
+    content:"orgName"
+}
+tei-text > tei-body tei-title:hover:after {
+    content: "title"
+}
+
+/*------------------------
+editorial changes
+------------------------*/
+
+tei-choice > tei-corr:before, tei-supplied:before {
+    content:"[";
+}
+tei-choice > tei-corr:after, tei-supplied:after {
+    content: "]";
+}
+tei-choice > tei-corr[resp = "#org_MS"], tei-supplied[resp = "#org_MS"]{
+    display: none;
+}
+tei-sic {
+    color: red;
+}
+tei-sic:after {
+    content: " [sic]";
+    color: red;
+}
+/*------------------------
+bibliographic information
+------------------------*/
+tei-text > tei-body tei-title {
+    color:#F35024;
+}

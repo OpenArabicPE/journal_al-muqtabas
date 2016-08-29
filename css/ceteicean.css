@@ -1,0 +1,1906 @@
+@import url('http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|Gentium+Book+Basic:400,400italic,700,700italic');
+/* imports */
+/* @import url("shell.css"); */
+/* namespaces */
+/* @namespace "http://www.tei-c.org/ns/1.0"; */
+/* @namespace with prefix, as below, throws and error in less. */
+/* @namespace html "http://www.w3.org/1999/xhtml"; */
+/* Less variables */
+.note-like {
+  display: block;
+  margin: 1.5em auto 1.5em auto;
+  padding: .5em 1.5em 1.5em 1.5em;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 325px;
+  position: relative;
+  border: 1px solid #aaaaaa;
+  background: #fafafa;
+  /* reset text-indent for note with <l> ancestors. */
+
+  text-indent: 0;
+  font-size: 85%;
+  text-align: justify;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+}
+/* US Style Quotes */
+.quotesUS {
+  quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d";
+}
+/* UK-Style Quotes */
+.quotesUK {
+  quotes: "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019";
+}
+.quotes {
+  quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d";
+}
+.block-margins {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+/* teibp classes */
+.-teibp-thumbnail {
+  max-height: 60px;
+}
+.-teibp-pb {
+  display: block;
+  width: 100%;
+  text-align: right;
+  color: gray;
+  margin: 2em 0 2em 0;
+  font-size: 11pt;
+}
+.box-shadow {
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+}
+.hide {
+  display: none;
+}
+.mono {
+  font-family: Courier,monospace;
+}
+.page-setup {
+  margin-left: 2em;
+  margin-right: 4em;
+  padding: 2.5em;
+  font-family: "Gentium Book Basic", Cochin, Georgia, Serif;
+  font-size: 14pt;
+  background-color: #ebebeb;
+  color: #292929;
+  width: 33em;
+}
+.table-border {
+  /*
+border-left: 2px solid @border-color;
+border-top:2px solid @border-color;
+*/
+
+  border: 1px dotted #aaaaaa;
+}
+/* Choice elements */
+tei-choice tei-abbr + tei-expan:before,
+tei-choice tei-expan + tei-abbr:before,
+tei-choice tei-sic + tei-corr:before,
+tei-choice tei-corr + tei-sic:before,
+tei-choice tei-orig + tei-reg:before,
+tei-choice tei-reg + tei-orig:before {
+  content: " (";
+}
+tei-choice tei-abbr + tei-expan:after,
+tei-choice tei-expan + tei-abbr:after,
+tei-choice tei-sic + tei-corr:after,
+tei-choice tei-corr + tei-sic:after,
+tei-choice tei-orig + tei-reg:after,
+tei-choice tei-reg + tei-orig:after {
+  content: ")";
+}
+/* A */
+tei-ab {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-accMat {
+  display: block;
+}
+tei-accMat:before {
+  content: "accompanying materials: ";
+}
+tei-acquisition {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+tei-acquisition:before {
+  font-weight: bold;
+  content: "acquisition";
+}
+tei-activity {
+  display: block;
+}
+tei-activity:before {
+  content: "activity: ";
+}
+tei-actor {
+  /* Empty Rule Set */
+}
+/* add */
+/* Could add other [place=] variations */
+tei-add {
+  vertical-align: super;
+  font-size: 90%;
+}
+tei-add[place=below] {
+  vertical-align: sub;
+  font-size: 90%;
+}
+tei-addName {
+  /* Empty Rule Set */
+}
+tei-addSpan {
+  /* Empty Rule Set */
+}
+tei-additional {
+  display: block;
+}
+tei-additions {
+  display: block;
+}
+tei-additions:before {
+  content: "Significant additions within the document: ";
+}
+tei-addrLine {
+  display: block;
+}
+tei-address {
+  /* Empty Rule Set */
+}
+tei-address[rend~="block"],
+tei-addresss[rendition~="#block"] {
+  display: block;
+}
+tei-adminInfo {
+  display: block;
+}
+tei-affiliation {
+  /* Empty Rule Set */
+}
+tei-age {
+  /* Empty Rule Set */
+}
+tei-alt {
+  /* Empty Rule Set */
+}
+tei-altGrp {
+  /* Empty Rule Set */
+}
+tei-altIdent {
+  /* Empty Rule Set */
+}
+tei-altIdentifier {
+  display: block;
+}
+tei-altIdentifier:before {
+  content: "Alternate ID: ";
+}
+tei-am {
+  /* Empty Rule Set */
+}
+tei-analytic {
+  /* Empty Rule Set */
+}
+tei-anchor {
+  /* Empty Rule Set */
+}
+tei-app {
+  display: block;
+}
+tei-appInfo {
+  display: block;
+}
+tei-appInfo:before {
+  content: "Application information: ";
+}
+tei-application {
+  display: block;
+}
+tei-application:after {
+  content: " " attr(version);
+}
+tei-arc {
+  /* Empty Rule Set */
+}
+tei-argument {
+  display: block;
+}
+tei-att {
+  font-family: Courier,monospace;
+}
+tei-att:before {
+  content: "@";
+}
+tei-attDef {
+  /* Empty Rule Set */
+}
+tei-attList {
+  /* Empty Rule Set */
+}
+tei-attRef {
+  /* Empty Rule Set */
+}
+tei-author {
+  /* Empty Rule Set */
+}
+tei-titleStmt > tei-author {
+  display: block;
+  font-family: Arvo, sans-serif;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+tei-authority {
+  /* Empty Rule Set */
+}
+tei-publicationStmt > tei-availability {
+  font-size: 80%;
+}
+tei-publicationStmt > tei-availability:before {
+  font-weight: bold;
+  content: "Availability: ";
+}
+tei-publicationStmt > tei-availability[status]:before {
+  font-weight: bold;
+  content: "Availability (" attr(status) "): ";
+}
+/* B */
+tei-back {
+  display: block;
+}
+tei-bibl {
+  /* Empty Rule Set */
+}
+/*bibl[rend~="block"],
+bibl[rendition~="#block"] {
+  display: block;
+  padding-left: 2em;
+  text-indent: -2em;
+}*/
+tei-biblFull {
+  display: block;
+}
+tei-biblScope {
+  /* Empty Rule Set */
+}
+tei-biblStruct {
+  /* Empty Rule Set */
+}
+tei-bicond {
+  /* Empty Rule Set */
+}
+tei-binary {
+  /* Empty Rule Set */
+}
+tei-binaryObject {
+  /* Empty Rule Set */
+}
+tei-binding {
+  display: block;
+}
+tei-binding:before {
+  content: "Binding: \a";
+  white-space: pre-wrap;
+}
+tei-binding[contemporary]:before {
+  content: "Binding: \A" "Contemporary: " attr(contemporary) "\A";
+  white-space: pre-wrap;
+}
+tei-bindingDesc {
+  display: block;
+}
+tei-bindngDesc:before {
+  content: "Binding Description: \A";
+}
+tei-birth {
+  display: block;
+}
+tei-birth:before {
+  content: "Birth: ";
+}
+tei-bloc {
+  /* Empty Rule Set */
+}
+tei-broadcast {
+  /* Empty Rule Set */
+}
+tei-byline {
+  /* Empty Rule Set */
+}
+/* c */
+tei-c {
+  /* Empty Rule Set */
+}
+tei-cRefPattern {
+  display: none;
+}
+tei-caesura {
+  /* Empty Rule Set */
+}
+tei-camera {
+  /* Empty Rule Set */
+}
+tei-caption {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-case[value]:before {
+  font-weight: bold;
+  content: attr(value) " ";
+}
+tei-castGroup {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-castItem {
+  display: list-item;
+  list-style-type: none;
+}
+tei-castList {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+}
+tei-catDesc {
+  /* Empty Rule Set */
+}
+tei-catRef {
+  /* Empty Rule Set */
+}
+tei-category {
+  /* Empty Rule Set */
+}
+tei-cb {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-cb:before {
+  content: "[column break]";
+}
+tei-cell {
+  /* removed to a specialised stylesheet */
+}
+tei-certainty {
+  /* Empty Rule Set */
+}
+tei-change {
+  /* Empty Rule Set */
+}
+tei-channel {
+  /* Empty Rule Set */
+}
+tei-charDecl {
+  display: none;
+}
+tei-charName {
+  /* Empty Rule Set */
+}
+tei-charProp {
+  /* Empty Rule Set */
+}
+tei-choice {
+  /* Empty Rule Set */
+}
+tei-cit {
+  /* Empty Rule Set */
+}
+tei-cl {
+  /* Empty Rule Set */
+}
+tei-classCode {
+  /* Empty Rule Set */
+}
+tei-classDecl {
+  /* Empty Rule Set */
+}
+tei-classRef {
+  /* Empty Rule Set */
+}
+tei-classSpec {
+  /* Empty Rule Set */
+}
+tei-classes {
+  /* Empty Rule Set */
+}
+tei-climate {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-climate:before {
+  font-weight: bold;
+  content: "Climate: ";
+}
+tei-closer {
+  /* Empty Rule Set */
+}
+tei-code {
+  font-family: Courier,monospace;
+}
+/* jawalsh:
+For things like collation, condition, etc. that can have text or paragraphs as 
+children, we should use margins, when the content is text, and no margins when there 
+are child paragraphs (or other block elements). Otherwise we end up with double 
+margins. */
+tei-collation {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-collection {
+  /* Empty Rule Set */
+}
+tei-colloc {
+  /* Empty Rule Set */
+}
+tei-colophon {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-cond {
+  /* Empty Rule Set */
+}
+tei-condition {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-constitution {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-constitution:before {
+  font-weight: bold;
+  content: "Constitution: ";
+}
+tei-constitution[type] {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-constitution[type]:before {
+  font-weight: bold;
+  content: "Constitution (" attr(type) "): ";
+}
+tei-constitution[type=frags] {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-constitution[type=frags]:before {
+  font-weight: bold;
+  content: "Constitution (fragments): ";
+}
+tei-constraint {
+  /* Empty Rule Set */
+}
+tei-constraintSpec {
+  /* Empty Rule Set */
+}
+tei-content {
+  /* Empty Rule Set */
+}
+/* jawalsh:
+Need to discuss and coordinate handling of sic/corr, abbr/expan, and orig/reg */
+tei-corr {
+  /* Empty Rule Set */
+}
+tei-correction {
+  /* Empty Rule Set */
+}
+tei-country {
+  /* Empty Rule Set */
+}
+tei-creation {
+  /* Empty Rule Set */
+}
+/*jawalsh:
+Need to handle attributes for custEvent. All the att.datable* attributes will be tricky. 
+custodialHist and custEvent may normally be hidden along with other header metadata, but
+we'll have other datable elements that may be tricky. */
+tei-custEvent {
+  display: list-item;
+}
+tei-custodialHist {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+/* d */
+/*date[when]:empty:before {
+  content: attr(when);
+}*/
+tei-div {
+/*    margin-top:1em;
+    margin-bottom:1em;*/
+    /*padding-bottom:1em;*/
+}
+/* e */
+tei-egXML {
+  display: block;
+  font-size: 80%;
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 1px solid #aaaaaa;
+  margin-top: .75em;
+  margin-bottom: .75em;
+  padding-top: .75em;
+  padding-bottom: .75em;
+  font-family: monospace;
+  white-space: pre;
+}
+tei-encodingDesc {
+  display: none;
+}
+tei-epigraph {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-fileDesc > tei-extent {
+  display: none;
+}
+/* f */
+tei-figure {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* g */
+tei-g {
+  /* Empty Rule Set */
+}
+tei-gap {
+  /* GLS: Depending upon how we handle gap and lacuna, we may want to enclose in [] */
+
+}
+tei-gb {
+  /* Empty Rule Set */
+}
+tei-gen {
+  /* Empty Rule Set */
+}
+tei-genName {
+  /* Empty Rule Set */
+}
+tei-geo {
+  /* Empty Rule Set */
+}
+tei-geoDecl {
+  /* Empty Rule Set */
+}
+tei-geogFeat {
+  /* Empty Rule Set */
+}
+tei-geogName {
+  /* Empty Rule Set */
+}
+tei-gi {
+  font-family: Courier,monospace;
+}
+tei-gi:before {
+  content: "<";
+}
+tei-gi:after {
+  content: ">";
+}
+tei-gloss {
+  /* Empty Rule Set */
+}
+tei-glyph {
+  /* Empty Rule Set */
+}
+tei-glyphName {
+  /* Empty Rule Set */
+}
+tei-gram {
+  /* Empty Rule Set */
+}
+tei-gramGrp {
+  /* Empty Rule Set */
+}
+tei-graph {
+  /* Empty for now */
+
+}
+tei-graphic {
+  display: none;
+}
+tei-group {
+  /* Empty Rule Set */
+}
+/* h */
+tei-handDesc {
+  /* Empty Rule Set */
+}
+tei-handNote {
+  /* Empty Rule Set */
+}
+tei-handNotes {
+  /* Empty Rule Set */
+}
+tei-handShift {
+  /* Empty Rule Set */
+}
+/* Need head with TEI parent to distinguish from HTML head */
+tei-TEI tei-head {
+  display: block;
+  font-family: Arvo, sans-serif;
+  font-weight: normal;
+}
+tei-body > tei-head {
+  font-size: 180%;
+  text-indent: -0.5em;
+}
+tei-div > tei-head {
+  font-size: 170%;
+  text-indent: -0.5em;
+}
+tei-div > tei-div > tei-head {
+  font-size: 155%;
+}
+tei-div > tei-div > tei-div > tei-head {
+  font-size: 140%;
+}
+tei-div > tei-div > tei-div > tei-div > tei-head,
+tei-list > tei-head {
+  font-size: 130%;
+}
+tei-div > tei-div > tei-div > tei-div > tei-div > tei-head {
+  font-size: 120%;
+}
+tei-div > tei-div > tei-div > tei-div > tei-div > tei-div tei-head {
+  font-size: 110%;
+}
+tei-figure > tei-head {
+  display: block;
+  margin: 1.5em auto 1.5em auto;
+  padding: .5em 1.5em 1.5em 1.5em;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 325px;
+  position: relative;
+  border: 1px solid #aaaaaa;
+  background: #fafafa;
+  /* reset text-indent for note with <l> ancestors. */
+
+  text-indent: 0;
+  font-size: 85%;
+  text-align: justify;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  width: 85%;
+  font-family: "Gentium Book Basic", Cochin, Georgia, Serif;
+  font-size: 14pt;
+}
+tei-headItem {
+  /* Empty Rule Set */
+}
+tei-headLabel {
+  /* Empty Rule Set */
+}
+tei-height {
+  /* Empty Rule Set */
+}
+tei-heraldry {
+  /* Empty Rule Set */
+}
+tei-hi {
+  /* GLS: do we want to bold this or change the background color? */
+
+}
+tei-history {
+  /* Empty Rule Set */
+}
+tei-hom {
+  /* Empty Rule Set */
+}
+tei-hyph {
+  /* Empty Rule Set */
+}
+tei-hyphenation {
+  /* Empty Rule Set */
+}
+/* i */
+tei-iNode {
+  /* Empty Rule Set */
+}
+tei-iType {
+  /* Empty Rule Set */
+}
+tei-ident {
+  font-family: Courier,monospace;
+}
+tei-idno {
+  /* Empty Rule Set */
+}
+tei-if {
+  /* Empty Rule Set */
+}
+tei-iff {
+  /* Empty Rule Set */
+}
+tei-imprimatur {
+  /* Empty Rule Set */
+}
+tei-imprint {
+  /* Empty Rule Set */
+}
+tei-incident {
+  /* Empty Rule Set */
+}
+tei-incipit {
+  /* Empty Rule Set */
+}
+tei-index {
+  /* Empty Rule Set */
+}
+tei-institution {
+  /* Empty Rule Set */
+}
+tei-interaction {
+  /* Empty Rule Set */
+}
+tei-interpGrp {
+  /* Empty Rule Set */
+}
+tei-interpretation {
+  /* Empty Rule Set */
+}
+tei-item {
+  display: list-item;
+  margin-left: 1em;
+}
+tei-cell tei-item {
+  margin-left: 1em;
+}
+tei-list[type="gloss"] > tei-item {
+  margin-left: 2em;
+}
+/* j */
+tei-join {
+  /* Empty Rule Set */
+}
+tei-joinGrp {
+  /* Empty Rule Set */
+}
+/* k */
+tei-keywords {
+  /* Empty Rule Set */
+}
+tei-kinesic {
+  /* Empty Rule Set */
+}
+/* l */
+tei-l {
+/* Empty Rule Set */
+}
+tei-list[type="gloss"] > tei-label {
+  display: block;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  font-weight: bold;
+}
+tei-lacunaEnd {
+  /* Empty Rule Set */
+}
+tei-lacunaStart {
+  /* Empty Rule Set */
+}
+tei-lang {
+  /* Empty Rule Set */
+}
+tei-langKnowledge {
+  /* Empty Rule Set */
+}
+tei-langKnown {
+  /* Empty Rule Set */
+}
+tei-langUsage {
+  /* Empty Rule Set */
+}
+tei-language {
+  /* Empty Rule Set */
+}
+tei-layout {
+  /* Empty Rule Set */
+}
+tei-layoutDesc {
+  /* Empty Rule Set */
+}
+tei-lb {
+  /* Empty Rule Set */
+}
+tei-lb:after {
+  content: '\a';
+  white-space: pre;
+}
+tei-lbl {
+  /* Empty Rule Set */
+}
+tei-leaf {
+  /* Empty Rule Set */
+}
+tei-lem {
+  /* Empty Rule Set */
+}
+tei-lg {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-link {
+  /* Empty Rule Set */
+}
+tei-linkGrp {
+  /* Empty Rule Set */
+}
+tei-list {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-item > list {
+  margin-top: 0;
+}
+/* Match only lists that are descendants of 
+text. Otherwise they show up in the header. */
+tei-text tei-list[type=simple] {
+  list-style-type: none;
+}
+tei-text tei-list[type=bulleted] {
+  list-style-type: disc;
+}
+tei-text tei-list[type=ordered] {
+  list-style-type: none;
+  counter-reset: items 0;
+}
+tei-text tei-list[type=ordered] > item {
+  display: list-item;
+  margin-left: 0;
+  list-style-type: none;
+  counter-increment: items;
+}
+tei-item > tei-list[type=ordered] {
+  margin-left: 1em;
+}
+tei-text tei-list[type=ordered] > tei-item:before {
+  content: counter(items, decimal) ". ";
+}
+tei-text tei-list[type=gloss] {
+  list-style-type: none;
+}
+tei-item > tei-list[type=ordered] {
+  margin-left: 1em;
+}
+tei-localName {
+  /* Empty Rule Set */
+}
+tei-locale {
+  /* Empty Rule Set */
+}
+tei-location {
+  /* Empty Rule Set */
+}
+tei-locus {
+  /* Empty Rule Set */
+}
+tei-locusGrp {
+  /* Empty Rule Set */
+}
+/* m */
+tei-m {
+  /* Empty Rule Set */
+}
+tei-macroRef {
+  /* Empty Rule Set NOT SURE WHAT EXACTLY*/
+}
+tei-macroSpec {
+  /* dunno */
+}
+tei-mapping {
+  /* not sure, maybe create rends for a few standard types, maybe hide */
+}
+tei-material {
+  /* Empty Rule Set */
+}
+tei-measure {
+  /* Empty Rule Set */
+}
+tei-measureGrp {
+  /* probably want to display attributes, at least units and type */
+}
+tei-meeting {
+  /*Block */
+}
+tei-memberOf {
+  /* Empty Rule Set */
+}
+tei-mentioned {
+  /* think do nothing, not real clear on function, maybe hide? */
+}
+tei-metDecl {
+  /* Empty Rule Set */
+}
+tei-metSym {
+  /* Empty Rule Set */
+}
+tei-milestone {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+tei-milestone:before {
+  content: "* * * * *";
+}
+tei-moduleRef {
+  /* probably hide, not sure how we want to deal */
+}
+tei-moduleSpec {
+  /* probably hide, not sure how we want to deal */
+}
+tei-monogr {
+  /* block with space above, below */
+}
+tei-mood {
+  /* Empty Rule Set */
+}
+tei-move {
+  /* not sure, block, maybe just ital, maybe in parenths*/
+}
+tei-msContents .block-margins {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-msDesc {
+  /* block with space above, below */
+}
+tei-msIdentifier {
+  /* block */
+}
+tei-msItem {
+  /* block */
+}
+tei-msItemStruct {
+  /* block */
+}
+tei-msName {
+  /* Empty Rule Set */
+}
+tei-msPart {
+  /* not sure, think block */
+}
+tei-musicNotation {
+  font-weight: bold;
+}
+tei-musicNotation:before {
+  font-weight: bold;
+  content: "Musical Notation: ";
+}
+/* n */
+tei-name {
+  /* Empty Rule Set */
+}
+tei-nameLink {
+  /* Empty Rule Set */
+}
+tei-namespace {
+  /* not sure, hide? */
+}
+tei-nationality {
+  /* Empty Rule Set */
+}
+tei-node {
+  display: none;
+}
+tei-normalization {
+  /* Empty Rule Set */
+}
+tei-note {
+  display: block;
+  margin: 1.5em auto 1.5em auto;
+  padding: .5em 1.5em 1.5em 1.5em;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 325px;
+  position: relative;
+  border: 1px solid #aaaaaa;
+  background: #fafafa;
+  /* reset text-indent for note with <l> ancestors. */
+
+  text-indent: 0;
+  font-size: 85%;
+  text-align: justify;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+}
+tei-notesStmt {
+  /* do we want to box each individual <note> if they're in a <notesStmt>? */
+
+  display: none;
+}
+tei-num {
+  /* Empty Rule Set */
+}
+tei-number {
+  /* Empty Rule Set */
+}
+tei-numeric {
+  /* not sure, depends how we're dealing with <f>'s */
+}
+tei-nym {
+  /* not really sure here */
+}
+/* o */
+tei-oRef {
+  /* not sure, think do nothing */
+}
+tei-oVar {
+  font-style: italic;
+}
+tei-objectDesc {
+  /* Empty Rule Set */
+}
+tei-objectType {
+  /* Empty Rule Set */
+}
+tei-occupation {
+  /* Empty Rule Set */
+}
+tei-offset {
+  /* Empty Rule Set */
+}
+tei-opener {
+  /* Empty Rule Set */
+}
+tei-org {
+  /* Empty Rule Set */
+}
+tei-orgName {
+  /* Empty Rule Set */
+}
+tei-origDate {
+  /* Empty Rule Set */
+}
+tei-origPlace {
+  font-weight: bold;
+}
+tei-origPlace:before {
+  font-weight: bold;
+  content: "Place of Origin: ";
+}
+tei-origin {
+  /* Empty Rule Set */
+}
+/* p */
+tei-p {
+  /*display: block;*/
+/*  margin-top: 1em;
+  margin-bottom: 1em;*/
+  text-align: justify;
+}
+*[rendition~="#center"] tei-p {
+  text-align: center;
+}
+tei-availability > tei-p:first-child {
+  margin-top: 0em;
+}
+tei-pRef {
+  /* rend attribute target */
+}
+tei-pVar {
+  /* rend attribute target */
+}
+tei-particDesc {
+  /* Empty Rule Set */
+}
+tei-pause {
+  /* Empty Rule Set*/
+}
+/* these rules are not used due to the html design of page breaks*/
+tei-pb, .pb {
+  display: block;
+  width: 100%;
+  text-align: right;
+  color: gray;
+  margin: 2em 0 2em 0;
+  font-size: 11pt;
+}
+tei-pb:before {
+  content: "page:\a0" attr(n);
+}
+tei-pc {
+  /* Empty Rule Set */
+}
+tei-per {
+  /* don't know, check back */
+}
+tei-performance {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-persName {
+  /* Empty Rule Set */
+}
+tei-person {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-personGrp {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-phr {
+  /* Empty Rule Set */
+}
+tei-physDesc {
+  /* Empty Rule Set */
+}
+tei-place {
+  /* Empty Rule Set */
+}
+tei-placeName {
+  /* Empty Rule Set */
+}
+tei-population {
+  /* dunno with this one */
+}
+tei-pos {
+  /* Empty Rule Set */
+}
+tei-postBox {
+  /* Empty Rule Set */
+}
+tei-postCode {
+  /* Empty Rule Set */
+}
+tei-postscript {
+  display: block;
+  margin-top: 2em;
+}
+tei-precision {
+  /* Empty Rule Set */
+}
+tei-preparedness {
+  /* Empty Rule Set */
+}
+tei-principal {
+  font-weight: bold;
+}
+tei-principal:before {
+  font-weight: bold;
+  content: "Principal: ";
+}
+tei-profileDesc {
+  display: none;
+}
+tei-projectDesc {
+  /* Empty Rule Set */
+}
+tei-prologue {
+  /* Empty Rule Set */
+}
+tei-pron {
+  /* Empty Rule Set */
+}
+tei-provenance {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+tei-ptr {
+  /* dunno */
+}
+tei-pubPlace {
+  /* Empty Rule Set */
+}
+tei-publicationStmt > * {
+  display: none;
+}
+tei-publicationStmt {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-publicationStmt > tei-date {
+  display: none;
+}
+tei-publicationStmt > tei-publisher {
+  display: none;
+}
+tei-purpose {
+  /* Empty Rule Set */
+}
+/* q */
+tei-q {
+  quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d";
+}
+tei-q:before {
+  content: open-quote;
+}
+tei-q:after {
+  content: close-quote;
+}
+tei-q[next]:after {
+  content: "" !important;
+}
+tei-q[prev]:before {
+  content: "" !important;
+}
+tei-quotation {
+  /* Empty Rule Set */
+}
+tei-quote {
+  quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d";
+}
+tei-quote:before {
+  content: open-quote;
+}
+tei-quote:after {
+  content: close-quote;
+}
+tei-quote[next]:after {
+  content: "" !important;
+}
+tei-quote[prev]:before {
+  content: "" !important;
+}
+/* r */
+tei-rdg {
+  /*perhaps choice */
+}
+tei-rdgGrp {
+  /* Empty Rule Set */
+}
+tei-re {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+tei-recordHist {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-recording {
+  /* not sure here, only in header? */
+}
+tei-recordingStmt {
+  /* Empty Rule Set */
+}
+tei-ref {
+  /*include link if target */
+}
+tei-region {
+  /* Empty Rule Set */
+}
+tei-relatedItem {
+  /* Empty Rule Set */
+}
+tei-relation {
+  /* Don't Know*/
+}
+tei-relationGrp {
+  /* Empty Rule Set */
+}
+tei-remarks {
+  font-weight: bold;
+}
+tei-remarks:before {
+  font-weight: bold;
+  content: "remarks: ";
+}
+tei-rendition {
+  /*Don't remember what we decided to do with this*/
+}
+tei-repository {
+  /* Empty Rule Set */
+}
+tei-residence {
+  /* Empty Rule Set */
+}
+tei-resp {
+  /* Empty Rule Set */
+}
+tei-teiHeader tei-respStmt {
+  display: block;
+/*  margin-top: 0;
+  margin-bottom: 0;*/
+}
+.teibp_notes tei-respStmt, tei-TEI tei-text tei-respStmt {
+  display:inline;
+}
+/* hide */
+tei-restore {
+  /* footnote or sidenote perhaps*/
+}
+tei-revisionDesc {
+  display: none;
+}
+tei-rhyme {
+  /* Empty Rule Set */
+}
+tei-role {
+  /* put on same line as roledesc? */
+}
+tei-roleDesc {
+  /* put on same line as role */
+}
+tei-roleName {
+  /* Empty Rule Set */
+}
+tei-root {
+  /* don't know */
+}
+tei-row {
+  /*removed to a specialised rule set*/
+}
+tei-rs {
+  /* Empty Rule Set */
+}
+/*label*/
+/* s */
+/* When TEI document is embedded in HTML page, 
+   TEI's <s> element can be interpreted by
+   browser as HTML <s>, which results in 
+   a strike-through from the "user agent"
+   styles. */
+tei-s {
+  text-decoration: none;
+}
+tei-said {
+  /* Empty Rule Set */
+}
+tei-salute {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-samplingDecl {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+tei-schemaSpec {
+  /*NOT SURE, talk over with group */
+}
+tei-scriptDesc {
+  /*NOT SURE, talk over with group */
+}
+tei-scriptNote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-scriptStmt {
+  /* not sure */
+}
+tei-seal {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+tei-seal:before {
+  font-weight: bold;
+  content: "Seal: ";
+}
+tei-sealDesc {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-secFol:before {
+  font-weight: bold;
+  content: "Second Folio: ";
+}
+tei-seg {
+  /* Empty Set Rule */
+}
+tei-segmentation {
+  /* Empty Rule Set */
+}
+tei-sense {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+tei-series {
+  /* treat same as seriesstmt? */
+}
+tei-seriesStmt {
+  display: none;
+}
+tei-set {
+  /* Empty Set Rule */
+}
+tei-setting {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+tei-settingDesc {
+  /* Empty Set Rule */
+}
+tei-settlement {
+  /* Empty Set Rule */
+}
+tei-sex {
+  /* Empty Rule Set */
+}
+tei-shift {
+  /* seems a bit to complex to do anything with */
+}
+tei-sic {
+  /* rend as choice when contained within a choice tag, perhaps as label with parenthesis after when alone */
+}
+tei-signatures {
+  /* DON't KNOW, look again later */
+}
+tei-signed {
+  display: block;
+  margin-top: 2em;
+  /*should make name a block when contained within  */
+
+}
+tei-soCalled {
+  quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d";
+}
+tei-soCalled:before {
+  content: open-quote;
+}
+tei-soCalled:after {
+  content: close-quote;
+}
+tei-soCalled[next]:after {
+  content: "" !important;
+}
+tei-soCalled[prev]:before {
+  content: "" !important;
+}
+tei-socecStatus {
+  /* Empty Set Rule */
+}
+tei-sound {
+  font-style: italic;
+}
+tei-source {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+tei-sourceDesc {
+  display: none;
+}
+tei-sp {
+  /*empty rule set*/
+}
+tei-space:before {
+  font-weight: bold;
+  content: "";
+}
+tei-TEI tei-span {
+  /* jawalsh: why were we hiding this? */
+
+  /* .hide; */
+
+}
+tei-TEI tei-egXML span {
+  display: inline;
+}
+tei-spanGrp {
+  /* NOT SURE, look back on */
+}
+tei-speaker {
+  font-weight: bold;
+  margin-right: 0;
+}
+tei-specDesc {
+  /* NOT SURE, look back on */
+}
+tei-specGrp {
+  /* NOT SURE, look back on */
+}
+tei-specGrpRef {
+  /* NOT SURE, look back on */
+}
+tei-specList {
+  /* Empty Set Rule */
+}
+tei-sponsor {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* Block element, maybe labeled  */
+
+}
+tei-sponsor:before {
+  font-weight: bold;
+  content: "Sponsor:";
+}
+tei-stage {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+tei-stamp {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tei-stamp:before {
+  font-weight: bold;
+  content: "Stamped: ";
+}
+tei-state {
+  /* Empty Set Rule */
+}
+tei-stdVals {
+  /* Empty Set Rule */
+}
+tei-street {
+  /* Empty Set Rule */
+}
+tei-stress {
+  /* Empty Set Rule */
+}
+tei-string {
+  /* Empty Set Rule */
+}
+tei-stringVal {
+  /* doesn't seem to be part of tei 5 */
+}
+tei-subc {
+  /* Empty Set Rule */
+}
+tei-subst {
+  /* Empty Set Rule */
+}
+tei-summary {
+  /* Empty Set Rule */
+}
+tei-superEntry {
+  /* Block with space above and below, maybe have no block and space for <entry> when contained by this element */
+}
+tei-supplied {
+  /* not sure on this one, seems like we should indicate somehow. Is there a standard way to do this? */
+}
+tei-support {
+  /* Empty Set Rule */
+}
+tei-supportDesc {
+  /* do nothing with or maybe block */
+}
+tei-surface {
+  /* choice */
+}
+tei-surname {
+  /* Empty Set Rule */
+}
+tei-surplus {
+  display: none;
+}
+tei-surrogates {
+  /*Empty Rule Set */
+}
+tei-syll {
+  /* Empty Set Rule */
+}
+tei-symbol {
+  /* Empty Set Rule */
+}
+/* t */
+tei-TEI {
+  display: block;
+}
+tei-table {
+ /* removed to a specialised rule set */
+}
+/* Why is this selector "TEI table" instead of just "table"? */
+tei-TEI tei-table {
+ /* removed to a specialised rule set */
+}
+tei-table > tei-head {
+ /* removed to a specialised rule set */
+}
+tei-teiHeader {
+  display: block;
+  /*
+border-radius: 15px;
+border: 1px solid black;
+background:white;
+*/
+
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #999;
+  clear: both;
+}
+tei-TEI > tei-text {
+  display: block;
+  /*
+border-radius: 15px;
+border: 1px solid black;
+background:white;
+*/
+
+  line-height: 1.5;
+}
+tei-textClass {
+  display: none;
+}
+tei-textDesc {
+  display: none;
+}
+/* title */
+/* Need TEI ancestor to distinguish TEI title from HTML title */
+tei-TEI tei-title, tei-body tei-title {
+  display: inline;
+}
+tei-title[level=a] {
+  quotes: "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d" "\2018" "\2019" "\201c" "\201d";
+}
+tei-title[level=a]:before {
+  content: open-quote;
+}
+tei-title[level=a]:after {
+  content: close-quote;
+}
+tei-title[level=a][next]:after {
+  content: "" !important;
+}
+tei-title[level=a][prev]:before {
+  content: "" !important;
+}
+tei-title[level=m] {
+  font-style: italic;
+}
+/* We transformed teiHeader//title to tei.title  */
+/* as a hack to solve a JavaScript/jQuery issue. */
+tei-titleStmt > tei-title {
+  display: block;
+  font-family: Arvo, sans-serif;
+  font-weight: normal;
+  font-weight: bold !important;
+  font-size: 150%;
+}
+tei-titleStmt > tei-editor:before {
+  content: "Edited by ";
+}
+tei-typeDesc {
+  display: none;
+}
+/* u */
+u:before {
+  content: "-";
+}
+tei-unicodeName {
+  /* Empty Rule Set */
+}
+tei-usg {
+  /* Empty Rule Set */
+}
+/* v */
+tei-vAlt {
+  /* Empty Rule Set */
+}
+tei-vColl {
+  /* Empty Rule Set */
+}
+tei-vDefault {
+  /* Empty Rule Set */
+}
+tei-vLabel {
+  /* Empty Rule Set */
+}
+tei-vMerge {
+  /* Empty Rule Set */
+}
+tei-vNot {
+  /* Empty Rule Set */
+}
+tei-vRange {
+  /* Empty Rule Set */
+}
+tei-val {
+  /* Empty Rule Set */
+}
+tei-valDesc {
+  /* Empty Rule Set */
+}
+tei-valItem {
+  /* Empty Rule Set */
+}
+tei-valList {
+  /* Empty Rule Set */
+}
+tei-value {
+  /* Empty Rule Set */
+}
+tei-variantEncoding {
+  /* Empty Rule Set */
+}
+tei-view {
+  font-style: italic;
+}
+tei-vocal {
+  /* Empty Rule Set */
+}
+/* w */
+tei-w {
+  /* Empty Rule Set */
+}
+tei-watermark {
+  /* Empty Rule Set */
+}
+tei-when {
+  /* Empty Rule Set */
+}
+tei-width {
+  /* Empty Rule Set */
+}
+tei-wit {
+  /* Empty Rule Set */
+}
+tei-witDetail {
+  /* Empty Rule Set */
+}
+tei-witEnd {
+  /* Empty Rule Set */
+}
+tei-witStart {
+  /* Empty Rule Set */
+}
+tei-witness {
+  /* Empty Rule Set */
+}
+tei-writing {
+  /* Empty Rule Set */
+}
+/* x */
+tei-xr {
+  /* Empty Rule Set */
+}
+/* z */
+tei-zone {
+  /* Empty Rule Set */
+}
+/* styles for html shell and html elements in TEI (e.g.,<a> tei-and <img>) */
+html > body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  margin: 0;
+  padding: 0;
+  margin-left: 2em;
+  margin-right: 4em;
+  padding: 2.5em;
+  font-family: "Gentium Book Basic", Cochin, Georgia, Serif;
+  font-size: 14pt;
+  background-color: #ebebeb;
+  color: #292929;
+  width: 33em;
+}
+img {
+  border: 1px solid #aaaaaa;
+}
+footer {
+  margin-top: 1em;
+  border-top: 1px solid #292929;
+  padding-top: .5em;
+  font-size: 12pt;
+}
+/* a:link,
+a:visited,
+a:active {
+  color: #5f0000;
+  text-decoration: none;
+}
+a:hover {
+  color: #5f0000;
+  text-decoration: underline;
+}*/
+#teibpToolbox {
+  left: 56em;
+  top: 25px;
+  position: fixed;
+  font-size: 70%;
+  margin-right: 1em;
+  padding: 1em;
+  border-radius: 15px;
+  border: 1px solid #aaaaaa;
+  background: #fafafa;
+  font-family: Arvo, Verdana, sans-serif;
+  text-align: justify;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  width: 12em;
+}
+#teibpToolbox h1 {
+  font-weight: bold;
+  font-size: 115%;
+  margin-top: 0;
+  margin-bottom: .5em;
+  border-bottom: 1px solid #aaaaaa;
+}
+/* xml-serialization */
+.eg-element {
+  color: #0165c8;
+}
+.eg-comment {
+  color: gray;
+}
+.eg-att,
+.eg-nsdecl {
+  color: #f58650;
+}
+.eg-attvalue,
+.eg-ns {
+  color: #993300;
+}
+.eg-text {
+  color: #292929;
+}
+/* loading animation */
+#loading {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/transparentbg.png");
+}
+/* facsViewer */
+#resizable {
+  background-color: #ebebeb;
+  width: 550px;
+  height: 700px;
+  overflow: hidden;
+  padding: 0 1em .25em 0;
+}
+div.facsImage {
+  width: 100%;
+  height: 98%;
+  overflow-y: scroll;
+  border: 1px solid black;
+}
+div.facsImage img {
+  max-width: 98% !important;
+  margin-top: .5em;
+}
+div.facsImage img:first-child {
+  margin-top: 0;
+}
+.head-font {
+  font-family: Arvo, sans-serif;
+  font-weight: normal;
+}

@@ -1,0 +1,164 @@
+/*********************
+This stylesheet provides a two-column view,
+displaying the facsimiles on the left
+and the tei-text on the right.
+**********************/
+
+/* omit shamela page breaks */
+tei-pb[ed = "shamela"]{
+    display:none;
+}
+
+/* provide a new and broader width and override other settings */
+html {
+	width: 1100px !important;
+}
+
+tei-TEI > tei-text {
+	width: 550px;
+}
+
+/* Move rtl tei-text right and the facsimile left */
+
+tei-TEI > tei-text[lang = "ar"],
+tei-TEI > tei-text[lang = "ota"],
+tei-TEI > tei-text[lang = "fa"],
+tei-TEI > tei-text[lang = "he"],
+tei-TEI > tei-text[lang *= "-Arab-Ar"] {
+	/*width: 550px;*/
+	float: right;
+	/*padding-left: 2em;
+	border-left: 5px dotted #EBEBEB;*/
+}
+/* everything should "clear:right" but for <l>, which are already floating */
+tei-TEI > tei-text[lang = "ar"] tei-div >*,
+tei-TEI > tei-text[lang = "ota"] tei-div >*,
+tei-TEI > tei-text[lang = "fa"] tei-div >*,
+tei-TEI > tei-text[lang = "he"] tei-div >*,
+tei-TEI > tei-text[lang *= "-Arab-Ar"] tei-div >* {
+	clear: right !important;
+}
+
+/* Move ltr tei-text left and the facsimile right */
+
+tei-TEI > tei-text[lang = "en"],
+tei-TEI > tei-text[lang = "fr"],
+tei-TEI > tei-text[lang = "de"],
+tei-TEI > tei-text[lang = "it"],
+tei-TEI > tei-text[lang *= "ar-Latn-"],
+tei-TEI > tei-text[lang *= "ota-Latn-"] {
+	/*width: 550px;*/
+	float: left;
+	/*padding-left: 2em;
+	border-left: 5px dotted #EBEBEB;*/
+}
+/* everything should "clear:right" but for <l>, which are already floating */
+tei-TEI > tei-text[lang = "en"] tei-div >*,
+tei-TEI > tei-text[lang = "fr"] tei-div >*,
+tei-TEI > tei-text[lang = "de"] tei-div >*,
+tei-TEI > tei-text[lang = "it"] tei-div >*,
+tei-TEI > tei-text[lang *= "ar-Latn-"] tei-div >*,
+tei-TEI > tei-text[lang *= "ota-Latn-"] tei-div >* {
+	clear: left !important;
+}
+
+/* the span containing the entire <pb> information */
+span.-tei-teibp-pb {
+	clear: both !important;
+	display: block;
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	padding-top: 5px;
+	border-top: 5px dotted #EBEBEB;
+}
+
+/*span.-tei-teibp-pbLIne {
+	display: block;
+	width: inherit;
+	border-top: 5px dotted #EBEBEB;
+}*/
+
+tei-TEI > tei-text[lang = "ar"] span.-tei-teibp-pb,
+tei-TEI > tei-text[lang = "ota"] span.-tei-teibp-pb,
+tei-TEI > tei-text[lang = "fa"] span.-tei-teibp-pb,
+tei-TEI > tei-text[lang = "he"] span.-tei-teibp-pb,
+tei-TEI > tei-text[lang *= "-Arab-Ar"] span.-tei-teibp-pb {
+	/* clear: left is necessary here if facsimiles are larger than the space occupied by the transcription */
+	clear: left !important;
+}
+
+tei-TEI > tei-text[lang = "en"] span.-tei-teibp-pb,
+tei-TEI > tei-text[lang = "fr"] span.-tei-teibp-pb,
+tei-TEI > tei-text[lang = "de"] span.-tei-teibp-pb,
+tei-TEI > tei-text[lang = "it"] span.-tei-teibp-pb,
+tei-TEI > tei-text[lang *= "ar-Latn-"] span.-tei-teibp-pb,
+tei-TEI > tei-text[lang *= "ota-Latn-"] span.-tei-teibp-pb {
+	/* clear: right is necessary here if facsimiles are larger than the space occupied by the transcription */
+	clear: right !important;
+}
+
+/* the actual images */
+/*span.-tei-teibp-facs {
+	display: block;
+	float: left;
+}*/
+span.-tei-teibp-pbImgInfo {
+	display: block;
+	width: 430px;
+}
+span.-tei-teibp-pb img {
+	display: block;
+	width:430px;
+	height: 100% !important;
+	max-height: 100% !important;
+	border-style: none;
+	/* make images sticky: "position: sticky" does not seem to work with floating elements */
+    /*position: -webkit-sticky;
+    top: -8px;*/
+	}
+
+/* clip the scans that always contain a lot of empty space around the tei-text block
+but do so conservatively
+syntax: top, right, bottom, left */
+/* clip works only with absolutely positioned elements */
+/*clip: rect(0px, 20px, 0px, 20px);*/
+/* no browser seems to support the clip-path property. It works with the 
+vendor-specific prefix */
+/*span.-tei-teibp-pb img {
+-webkit-clip-path: inset(0px 20px 0px 20px);
+clip-path: inset(0px 20px 0px 20px);
+}*/
+
+tei-TEI > tei-text[lang = "ar"] span.-tei-teibp-pbImgInfo,
+tei-TEI > tei-text[lang = "ota"] span.-tei-teibp-pbImgInfo,
+tei-TEI > tei-text[lang = "fa"] span.-tei-teibp-pbImgInfo,
+tei-TEI > tei-text[lang = "he"] span.-tei-teibp-pbImgInfo,
+tei-TEI > tei-text[lang *= "-Arab-Ar"] span.-tei-teibp-pbImgInfo {
+	float: left;
+	clear: left;
+	border-right: 5px dotted #EBEBEB;
+}
+tei-TEI > tei-text[lang = "en"] span.-tei-teibp-pbImgInfo,
+tei-TEI > tei-text[lang = "fr"] span.-tei-teibp-pbImgInfo,
+tei-TEI > tei-text[lang = "de"] span.-tei-teibp-pbImgInfo,
+tei-TEI > tei-text[lang = "it"] span.-tei-teibp-pbImgInfo,
+tei-TEI > tei-text[lang *= "ar-Latn-"] span.-tei-teibp-pbImgInfo,
+tei-TEI > tei-text[lang *= "ota-Latn-"] span.-tei-teibp-pbImgInfo {
+	float: right;
+	clear: right;
+	border-left: 5px dotted #EBEBEB;
+}
+
+
+/* the page number */
+span.-tei-teibp-pageNum {
+	display: block;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+span.-tei-teibp-pbNote {
+	display: inline;
+}

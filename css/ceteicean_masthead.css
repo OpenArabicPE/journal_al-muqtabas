@@ -1,0 +1,38 @@
+/**********************
+This stylesheet styles the masthead
+of journals 
+***********************/
+
+tei-div[type = "masthead"] {
+	display: block;
+	border-bottom: solid black 2px;
+}
+
+/* make line breaks tei-dividers */
+tei-div[type = "masthead"] >  tei-lb {
+	display: block;
+	border-bottom: solid black 2px;
+}
+
+/* provide a central large title */
+tei-div[type = "masthead"] > tei-bibl > tei-title[level = "j"] {
+	display: block;
+	font-size: 4em;
+	text-align: center;
+	/*border-top: solid black 2px;*/
+}
+
+/* float issue and volume numbers */
+
+tei-div[type = "masthead"] > tei-bibl > tei-biblScope {
+	display: block;
+}
+tei-div[type = "masthead"] > tei-bibl > tei-biblScope[unit = "issue"] {
+	float: right;
+	display: block;
+}
+tei-div[type = "masthead"] > tei-bibl > tei-biblScope[unit = "volume"] {
+	float: left;
+	display: block;
+}
+
