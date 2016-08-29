@@ -17,6 +17,25 @@
   <script src="js/CETEI.js"></script>
   <script>
     var CETEIcean = new CETEI();
+    CETEIcean.addBehaviors(
+        {
+  "handlers": {
+    "ptr": ["<a href=\"$rw@target\">$@target</a>"],
+    "head": ["<a class=\"c_link-self\" href=\"$x@xml:id\">","</a>"],
+    // "head": function() {
+    //   var self = this;
+    //   return function () {
+    //       var link = document.createElement("a");
+    //       link.setAttribute ("href", this.getAttribute("xml:id"));
+    //   }
+    //   }
+    // },
+    "add": ["`","´"],
+  },
+  "fallbacks": {
+  }
+}
+      )
     CETEIcean.getHTML5('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_42.TEIP5.xml', function(data) {
       document.getElementById("TEI").innerHTML = "";
       document.getElementById("TEI").appendChild(data);
