@@ -1,6 +1,7 @@
 <html><head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://teic.github.io/CETEIcean/css/CETEIcean.css" media="screen" charset="utf-8">
+    <!-- <link rel="stylesheet" href="https://teic.github.io/CETEIcean/css/CETEIcean.css" media="screen" charset="utf-8"> -->
+    <link rel="stylesheet" type="text/css" href="css/teibp.css">
   <style>.italic{
 font-style: italic;
 }
@@ -13,14 +14,14 @@ text-decoration: underline;
     <script src="js/CETEI.js"></script>
     <script>
       var CETEIcean = new CETEI();
-      CETEIcean.getHTML5('xml/oclc_4770057679-i_1.TEIP5.xml', function(data) {
+      CETEIcean.getHTML5('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_1.TEIP5.xml', function(data) {
         document.getElementById("TEI").innerHTML = "";
         document.getElementById("TEI").appendChild(data);
         CETEIcean.addStyle(document, data);
       });
 
       // Alternatively, use then()
-      // (new CETEI).getHTML5('xml/oclc_4770057679-i_1.TEIP5.xml').then(function(data){
+      // (new CETEI).getHTML5('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_1.TEIP5.xml').then(function(data){
       //   document.getElementById("TEI").appendChild(data);
       // });
 
