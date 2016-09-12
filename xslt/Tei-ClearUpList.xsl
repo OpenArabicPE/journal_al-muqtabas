@@ -16,7 +16,7 @@
         </xd:desc>
     </xd:doc>
     
-    <xsl:output encoding="UTF-8" indent="yes" method="xml"  omit-xml-declaration="no" version="1.0"/>
+    <xsl:output encoding="UTF-8" indent="no" method="xml"  omit-xml-declaration="no" version="1.0"/>
     
     <xsl:template match="@* | node()">
         <xsl:copy>
