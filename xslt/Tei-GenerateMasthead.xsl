@@ -20,6 +20,7 @@
     <xsl:output method="xml" omit-xml-declaration="no" indent="no" encoding="UTF-8"/>
 
     <xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
+<!--    <xsl:include href="../../xslt-calendar-conversion/date-function.xsl"/>-->
     
     <xsl:template match="@* | node()">
         <xsl:copy>
