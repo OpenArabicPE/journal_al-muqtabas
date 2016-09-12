@@ -9,7 +9,8 @@
     <xsl:preserve-space elements="*"/>
     
     <!-- $p_master-toponyms is a TEI XML file containing <listPlace> <place> and <placeName> entities -->
-    <xsl:param name="p_master-toponyms" select="doc('../xml/toponyms_Damascus-radius_200.TEIP5.xml')/descendant::tei:listPlace"/>
+<!--    <xsl:param name="p_master-toponyms" select="doc('../xml/toponyms_Damascus-radius_200.TEIP5.xml')/descendant::tei:listPlace"/>-->
+    <xsl:param name="p_master-toponyms" select="doc('../xml/toponyms_extracted.TEIP5.xml')/descendant::tei:listPlace"/>
     <xsl:param name="p_id-author" select="'pers_TG'"/>
     
     <xsl:template match="/">
@@ -33,7 +34,7 @@
                 </xsl:if>
             </xsl:for-each>
         </xsl:variable>
-        <xsl:analyze-string select="." regex="(\sو?ا?ل?)({$v_toponyms})([\s\.,:\?])">
+        <xsl:analyze-string select="." regex="(\sو?ل?ب?)({$v_toponyms})([\s\.,:\?])">
             <xsl:matching-substring>
                 <!--<xsl:message>
                     <xsl:value-of select="regex-group(1)"/>
@@ -46,7 +47,9 @@
                 <xsl:element name="tei:placeName">
                     <xsl:attribute name="type" select="'auto-markup'"/>
                     <xsl:attribute name="resp" select="concat('#',$p_id-author)"/>
-                    <xsl:attribute name="ref" select="concat('geon:',$v_id)"/>
+                    <xsl:if test="$v_id!=''">
+                        <xsl:attribute name="ref" select="concat('geon:',$v_id)"/>
+                    </xsl:if>
                     <xsl:value-of select="$v_toponym"/>
                 </xsl:element>
                 <xsl:value-of select="regex-group(3)"/>
