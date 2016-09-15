@@ -12,7 +12,7 @@
     
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p>This stylesheet generates clears up groups of <p/>s wrapped in <list/> by transforming them into <item/>s.</xd:p>
+            <xd:p>This stylesheet generates clears up groups of <tei:gi>p</tei:gi>s wrapped in <tei:gi>list</tei:gi>s by transforming them into <tei:gi>item</tei:gi>s and <tei:gi>p</tei:gi>s wrapped in <tei:gi>table</tei:gi>s by transforming them into <tei:gi>row</tei:gi>s</xd:p>
         </xd:desc>
     </xd:doc>
     
