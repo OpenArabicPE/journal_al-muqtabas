@@ -1,7 +1,7 @@
 ---
 title: "Notes for TEI mark-up of *majallat al-muqtabas*"
 author: Till Grallert
-date: 2015-11-02
+date: 2016-09-17
 tags:
 - documentation
 - tei
@@ -62,6 +62,8 @@ The structure is as follows
 ## 1. additions
 
 - allow `<bibl>` as child of `<opener>`,`<byline>`, `<closer>`
+- allow `<q>` as child of `<persName>` etc.
+- provide two standard values for `@rend` on `<q>` and `<quote>`: these strings are either marked with quotation marks (French style) or brackets.
 
 
 ## 2. deletions
