@@ -16,8 +16,9 @@
     </xd:doc>
 
     <xsl:variable name="vFileId" select="tei:TEI/@xml:id"/>
-    <xsl:variable name="vgFileUrl"
-        select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>
+    <!--<xsl:variable name="vgFileUrl"
+        select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()])"/>-->
+    <xsl:variable name="vgFileUrl" select="tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type='url']"/>
     <xsl:variable name="vN" select="'&#x0A;'"/>
     <xsl:param name="pLang" select="'ar'"/>
 
@@ -75,18 +76,45 @@
             select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
         <xsl:variable name="vPublisher" select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
         
-        <xsl:result-document href="../jekyll/_posts/{concat($vPublDate/@when,'-',translate($vArticleTitle,' ','-'),'-',$vFileId,'-',@xml:id)}.md" method="text">
-            <!-- some metadata on the file itself: YAML -->
+        <!-- generate the md file -->
+<!--        <xsl:result-document href="../jekyll/_posts/{concat($vPublDate/@when,'-',translate($vArticleTitle,' ','-'),'-',$vFileId,'-',@xml:id)}.md" method="text">-->
+        <xsl:result-document href="../md/{concat($vFileId,'-',@xml:id)}.md" method="text">
+            
+            <!-- some metadata on the file itself: YAML. In order to support pandoc conversions etc. the Yaml block should also containe a link to the BibTeX file identifying this article. -->
             <xsl:text>---</xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>title: "*</xsl:text><xsl:value-of select="$vArticleTitle"/><xsl:text>*. </xsl:text><xsl:value-of select="$vPublicationTitle"/><xsl:text> </xsl:text><xsl:value-of select="$vVolume"/><xsl:text>(</xsl:text><xsl:value-of select="$vIssue"/><xsl:text>)</xsl:text><xsl:text>"</xsl:text><xsl:value-of select="$vN"/>
             <xsl:text>author: </xsl:text><xsl:value-of select="$vAuthor"/><xsl:value-of select="$vN"/>
             <xsl:text>date: </xsl:text><xsl:value-of select="$vPublDate/@when"/><xsl:value-of select="$vN"/>
+            <xsl:text>bibliography: </xsl:text><xsl:value-of select="concat($vFileId,'-',@xml:id,'.bib')"/><xsl:value-of select="$vN"/>
             <xsl:text>---</xsl:text><xsl:value-of select="$vN"/><xsl:value-of select="$vN"/>
-            <xsl:text># </xsl:text><xsl:value-of select="child::tei:head"/><xsl:value-of select="$vN"/>
-            <xsl:value-of select="$vN"/>
-            <xsl:value-of select="$vN"/>
-            <xsl:apply-templates select="child::node()" mode="mPlainText"/>
+            <xsl:apply-templates mode="mPlainText"/>
         </xsl:result-document>
+    </xsl:template>
+    
+    <!-- heads -->
+    
+    <xsl:template match="tei:head">
+        <!-- establish the level of nesting -->
+        <xsl:variable name="v_level" select="number(count(ancestor::tei:div))"/>
+        <xsl:choose>
+            <xsl:when test="$v_level =1">
+                <xsl:text># </xsl:text>
+            </xsl:when>
+            <xsl:when test="$v_level =2">
+                <xsl:text>## </xsl:text>
+            </xsl:when>
+            <xsl:when test="$v_level =3">
+                <xsl:text>### </xsl:text>
+            </xsl:when>
+            <xsl:when test="$v_level =4">
+                <xsl:text>#### </xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text></xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:value-of select="."/><xsl:value-of select="$vN"/>
+        <xsl:value-of select="$vN"/>
     </xsl:template>
     
     <!-- paragraphs, lines -->
