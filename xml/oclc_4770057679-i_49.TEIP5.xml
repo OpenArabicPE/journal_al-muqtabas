@@ -5,9 +5,9 @@
                 <title xml:lang="ar">مجلة المقتبس</title>
                 <title xml:lang="ar-Latn-x-ijmes">Majallat al-Muqtabas, Vol. 5, n. 2</title>
                 <title type="sub" xml:lang="en">TEI edition</title>
-                <author ref="viaf:32272677">
-                  <persName xml:lang="ar"><forename>محمد</forename> <surname>كرد علي</surname></persName>
-                  <persName xml:lang="ar-Latn-x-ijmes"><forename>Muḥammad</forename> <surname>Kurd ʿAlī</surname></persName>
+                <author ref="viaf:32272677" xml:lang="en">
+                  <persName xml:lang="ar"><forename xml:lang="ar">محمد</forename> <surname xml:lang="ar">كرد علي</surname></persName>
+                  <persName xml:lang="ar-Latn-x-ijmes"><forename xml:lang="ar-Latn-x-ijmes">Muḥammad</forename> <surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname></persName>
                 </author>
                 <respStmt xml:lang="en">
                     <resp xml:lang="en">Transcription</resp>
@@ -32,7 +32,7 @@
                     <licence target="http://creativecommons.org/licenses/by-sa/4.0/" xml:lang="en">Distributed under a Creative Commons
                         Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
                 </availability>
-                <idno type="url">https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/oclc_4770057679-i_49.TEIP5.xml</idno>
+                <idno type="url" xml:lang="en">https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/oclc_4770057679-i_49.TEIP5.xml</idno>
             </publicationStmt>
             <sourceDesc xml:lang="en">
                 <biblStruct xml:lang="en">
@@ -42,7 +42,7 @@
                         <title level="j" xml:lang="ar-Latn-x-ijmes">Majallat al-Muqtabas</title>
                         <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿilmiyya ijtimāʿiyya tuṣadiru fī kull shahr ʿarabī
                             bi-Dimashq</title>
-                        <editor ref="viaf:32272677"> 
+                        <editor ref="viaf:32272677" xml:lang="en"> 
                      <persName xml:lang="ar"> 
                         <forename xml:lang="ar">محمد</forename>
                             <surname xml:lang="ar">كرد علي</surname> 
@@ -53,11 +53,11 @@
                             </persName> 
                   </editor>
                         <imprint xml:lang="en">
-                            <publisher> 
+                            <publisher xml:lang="en"> 
                         <orgName xml:lang="ar">مطبعة المقتبس</orgName>
                                 <orgName notAfter="1914" notBefore="1908" xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Muqtabas</orgName> 
                      </publisher>
-                            <pubPlace> 
+                            <pubPlace xml:lang="en"> 
                         <placeName xml:lang="ar">دمشق</placeName> 
                         <placeName xml:lang="en">Damascus</placeName> 
                      </pubPlace>
@@ -76,42 +76,42 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2016-06-15" who="pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
-            <change when="2016-04-18" who="#pers_TG">Added semantic and structural mark-up, particularly for bibliographic metadata. Added
+        <revisionDesc><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
+            <change when="2016-04-18" who="#pers_TG" xml:lang="en">Added semantic and structural mark-up, particularly for bibliographic metadata. Added
                 automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing
-                    <att>xml:id</att>following the pattern "name()_generate-id()".</change><tei:change when="2016-04-15" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi>num</tei:gi> elements separated by " . " into a single <tei:gi>num</tei:gi> element. The <tei:att>resp</tei:att> and <tei:att>type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><change when="2016-04-02" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
-            <change when="2016-03-24" who="#pers_TG">Linked all <tag>pb ed="print"</tag> to the corresponding facsimile</change>
-            <change when="2016-03-24" who="#pers_DD">Added page breaks</change>
-         <change when="2016-02-29" who="#pers_TG">Generated a new <gi>front</gi> based on the <gi>sourceDesc</gi> that matches the information found in the masthead of the actual issues.</change>
-         <change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
-         <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
-         <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
-         <change when="2015-12-07" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
-         <change when="2015-12-07" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
-            <change when="2015-12-07" who="#pers_TG">Added <gi>graphic</gi> for 72 pages with references to digital images at
+                    <att>xml:id</att>following the pattern "name()_generate-id()".</change><tei:change when="2016-04-15" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi xml:lang="en">num</tei:gi> elements separated by " . " into a single <tei:gi xml:lang="en">num</tei:gi> element. The <tei:att xml:lang="en">resp</tei:att> and <tei:att xml:lang="en">type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+            <change when="2016-03-24" who="#pers_TG" xml:lang="en">Linked all <tag xml:lang="en">pb ed="print"</tag> to the corresponding facsimile</change>
+            <change when="2016-03-24" who="#pers_DD" xml:lang="en">Added page breaks</change>
+         <change when="2016-02-29" who="#pers_TG" xml:lang="en">Generated a new <gi>front</gi> based on the <gi>sourceDesc</gi> that matches the information found in the masthead of the actual issues.</change>
+         <change when="2016-01-12" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+         <change when="2016-01-12" who="#pers_TG" xml:lang="en">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag xml:lang="en">lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag xml:lang="en">l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
+         <change when="2015-12-17" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+         <change when="2015-12-07" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+         <change when="2015-12-07" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
+            <change when="2015-12-07" who="#pers_TG" xml:lang="en">Added <gi>graphic</gi> for 72 pages with references to digital images at
                 HathiTrust and EAP.</change>
-            <change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for
+            <change when="2015-11-28" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for
                 thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single
                 <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and
-                the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup"
+                the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag xml:lang="en">num resp="#pers_TG" type="auto-markup"
                 value="31670.40"</tag> .</change>
-            <change when="2015-11-16">Created <att>xml:id</att> for <gi>TEI</gi> and added <tag>idno
+            <change when="2015-11-16" xml:lang="en">Created <att>xml:id</att> for <gi>TEI</gi> and added <tag xml:lang="en">idno
                 type="url"</tag> containing the file's URL on GitHub to <gi>publicationStmt</gi>
          </change>
-            <change when="2015-10-11">Created <att>xml:id</att> for <gi>tei:TEI</gi> and changed the file name to
+            <change when="2015-10-11" xml:lang="en">Created <att>xml:id</att> for <gi>tei:TEI</gi> and changed the file name to
                 reflect my URI design.</change>
-            <change when="2015-09-21">Added the <att>xml:lang</att> attribute to all nodes that lacked this attribute. The value
+            <change when="2015-09-21" xml:lang="en">Added the <att>xml:lang</att> attribute to all nodes that lacked this attribute. The value
                 is based on the closest ancestor.</change>
-            <change when="2015-09-21" xml:lang="en">Wrapped all numerals in <gi xml:lang="en">num</gi> with <att xml:lang="en">value</att> recording their value in standardised form and converted them into Arabic numerals to reflect
+            <change when="2015-09-21" xml:lang="en">Wrapped all numerals in <gi>num</gi> with <att>value</att> recording their value in standardised form and converted them into Arabic numerals to reflect
                 the original text.</change>
-            <change when="2015-09-12" who="#pers_TG" xml:lang="en">Made significant changes to the bibliographic information in <gi xml:lang="en">biblStruct</gi> in the <gi xml:lang="en">teiHeader</gi> and added some language information for English and
+            <change when="2015-09-12" who="#pers_TG" xml:lang="en">Made significant changes to the bibliographic information in <gi>biblStruct</gi> in the <gi>teiHeader</gi> and added some language information for English and
                 French in Arabic script</change>
             <change when="2015-08-25" who="#pers_TG" xml:lang="en">Created this file by splitting <ref target="file:/BachUni/BachBibliothek/GitHub/ArabicTeiEdition/MajallatMuqtabas/xml/muqtabas-Edited.TEIP5.xml" xml:lang="en">the master file</ref> into individual files for each issue that are linked to the master file by means of
                 xPointer.</change>
-            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Marked all original <gi xml:lang="en">pb</gi> as <att xml:lang="en">ed</att> ="shamela" as they do not correspond to the original print edition.</change>
-            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Wrote the <gi xml:lang="en">teiHeader</gi> .</change>
-            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Changed <att xml:lang="en">type</att> from "article" to "section" for all
-                <gi xml:lang="en">div</gi> whose <gi xml:lang="en">head</gi> was equal to the following values: <list xml:lang="en">
+            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Marked all original <gi>pb</gi> as <att>ed</att> ="shamela" as they do not correspond to the original print edition.</change>
+            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Wrote the <gi>teiHeader</gi> .</change>
+            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Changed <att>type</att> from "article" to "section" for all
+                <gi>div</gi> whose <gi>head</gi> was equal to the following values: <list xml:lang="en">
                 <item xml:lang="en">تدبير الصحة</item>
                 <item xml:lang="en">سير العلم</item>
                 <item xml:lang="en">سيرة العلم</item>
@@ -121,13 +121,13 @@
                 <item xml:lang="en">أخبار وأفكار</item>
                 </list> 
          </change>
-            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Added <att xml:lang="en">type</att> ="article" to all <gi xml:lang="en">div</gi> s.</change>
-            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Converted the mark-up of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign> s from <gi xml:lang="en">p</gi> s divided by a <gi xml:lang="en">gap</gi> to <gi xml:lang="en">lg</gi> of
-                <att xml:lang="en">type</att> ="bayt" comprising two <gi xml:lang="en">l</gi> nodes.</change>
-            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Corrected the problem of trailing <gi xml:lang="en">pb</gi> s by moving
-                them to the beginning of the following <gi xml:lang="en">body</gi> .</change>
-            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Converted all <gi xml:lang="en">lb</gi> into proper parapgraphs ( <gi xml:lang="en">p</gi> ).</change>
-            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Divided the <gi xml:lang="en">body</gi> into a <gi xml:lang="en">group</gi> of <gi xml:lang="en">text</gi> s along the issues of this periodical.</change>
+            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Added <att>type</att> ="article" to all <gi>div</gi> s.</change>
+            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Converted the mark-up of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign> s from <gi>p</gi> s divided by a <gi>gap</gi> to <gi>lg</gi> of
+                <att>type</att> ="bayt" comprising two <gi>l</gi> nodes.</change>
+            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Corrected the problem of trailing <gi>pb</gi> s by moving
+                them to the beginning of the following <gi>body</gi> .</change>
+            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Converted all <gi>lb</gi> into proper parapgraphs ( <gi>p</gi> ).</change>
+            <change when="2015-08-25" who="#pers_TG" xml:lang="en">Divided the <gi>body</gi> into a <gi>group</gi> of <gi>text</gi> s along the issues of this periodical.</change>
             <change when="2015-08-24" who="#pers_TG" xml:lang="en">Added and corrected mark-up with regex</change>
             <change when="2015-08-24" who="#pers_TG" xml:lang="en">Created this TEI P5 file by automatic conversion from ePub using custom
                 XSLT.</change>
@@ -570,10 +570,10 @@
     <text n="i49" type="issue" xml:id="text" xml:lang="ar">
       <pb ed="print" n="89" facs="#facs_103" xml:id="pb_1.d1e1495"/>
         <front xml:lang="ar" xml:id="front_1.d1e1441">
-         <div type="masthead" xml:id="div_1.d1e1542">
-            <bibl xml:id="bibl_1.d1e1544">
-               <biblScope unit="issue" n="2" xml:id="biblScope_4.d1e1546">الجزء 2</biblScope>
-               <biblScope unit="volume" n="5" xml:id="biblScope_4.d1e1549">المجلد 5</biblScope>
+         <div type="masthead" xml:id="div_1.d1e1542" xml:lang="ar">
+            <bibl xml:id="bibl_1.d1e1544" xml:lang="ar">
+               <biblScope unit="issue" n="2" xml:id="biblScope_4.d1e1546" xml:lang="ar">الجزء 2</biblScope>
+               <biblScope unit="volume" n="5" xml:id="biblScope_4.d1e1549" xml:lang="ar">المجلد 5</biblScope>
                <lb xml:id="lb_1.d1e1552"/>
                <title level="j" xml:lang="ar" xml:id="title_8.d1e1554">المقتبس</title>
             </bibl>
@@ -585,16 +585,16 @@
             <pb corresp="file:../epub/26523/OEBPS/xhtml/P3164.xhtml" ed="shamela" n="n49-p1" xml:id="pb_2.d1e1497"/>
             <div type="article" xml:lang="ar" xml:id="div_2.d1e1499">
                 <head xml:lang="ar" xml:id="head_1.d1e1501">مذاهب الأعراب وفلاسفة الإسلام في الجن</head>
-                <p xml:lang="ar" xml:id="p_15.d1e1504">تتمة <ref target="oclc_4770057679-i_48.TEIP5.xml#div_4.d1e1914" xml:id="ref_5.d1e1599">ما ورد في الجزء
+                <p xml:lang="ar" xml:id="p_15.d1e1504">تتمة <ref target="oclc_4770057679-i_48.TEIP5.xml#div_4.d1e1914" xml:id="ref_5.d1e1599" xml:lang="ar">ما ورد في الجزء
                         الماضي</ref></p>
-                <div type="section" xml:id="div_2.d1e1572">
-                    <head xml:id="head_2.d1e1574">مزاعمهم في الهاتف والناقل والرائي<note type="footnote" n="1" xml:id="note_1.d1e1606">
+                <div type="section" xml:id="div_2.d1e1572" xml:lang="ar">
+                    <head xml:id="head_2.d1e1574" xml:lang="ar">مزاعمهم في الهاتف والناقل والرائي<note type="footnote" n="1" xml:id="note_1.d1e1606" xml:lang="ar">
                             <gap resp="#org_MS" xml:id="gap_1.d1e1608"/>
                         </note></head>
-                    <p xml:lang="ar" xml:id="p_17.d1e1510">قال <persName ref="viaf:11070">الجاحظ</persName>: والأعراب وأشباه الأعراب لا
+                    <p xml:lang="ar" xml:id="p_17.d1e1510">قال <persName ref="viaf:11070" xml:lang="ar">الجاحظ</persName>: والأعراب وأشباه الأعراب لا
                         يتحاشون من الإيمان بالهاتف بل يتعجبون ممن رد ذلك فمن ذلك حديث الأعشى ابن ماس
                         بن زرارة الأسدي أنه سمع هاتفاً يقول:</p>
-                    <lg xml:id="lg_1.d1e1562">
+                    <lg xml:id="lg_1.d1e1562" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1564">
                             <seg xml:lang="ar" xml:id="seg_1.d1e1566">لقد هلك الفياض غيث بني فهر </seg>
                             <seg xml:lang="ar" xml:id="seg_2.d1e1569">وذو البياع والمجد الرفيع وذو
@@ -602,7 +602,7 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_18.d1e1523">قال فقلت مجيباً له:</p>
-                    <lg xml:id="lg_1.d1e1578">
+                    <lg xml:id="lg_1.d1e1578" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1580">
                             <seg xml:lang="ar" xml:id="seg_3.d1e1582">ألا أيها الناعي أخا الجود
                                 والندى </seg>
@@ -611,7 +611,7 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_19.d1e1535">فقال:</p>
-                    <lg xml:id="lg_1.d1e1593">
+                    <lg xml:id="lg_1.d1e1593" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1595">
                             <seg xml:lang="ar" xml:id="seg_5.d1e1597">نعيت ابن جدعان بن عمرو أخو
                                 الندى </seg>
@@ -632,14 +632,14 @@
                     <p xml:lang="ar" xml:id="p_23.d1e1557">وأما العراف وهو دون الكاهن فمثل الأبلق
                         الأسيدي والأجلح الزهري وعروة بن زيد الأسدي وعراف اليمامة رباح بن كحلة وهو
                         صاحب المستنير البلثعي وقد قال الشاعر:</p>
-                    <lg xml:id="lg_1.d1e1618">
+                    <lg xml:id="lg_1.d1e1618" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1620">
                             <seg xml:lang="ar" xml:id="seg_7.d1e1622">فقلت لعراف اليمامة داوني </seg>
                             <seg xml:lang="ar" xml:id="seg_8.d1e1625">فإنك إن أبرأتني لطبيب</seg>
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_24.d1e1569">وقال جبهاء الأشجعي:</p>
-                    <lg xml:id="lg_1.d1e1633">
+                    <lg xml:id="lg_1.d1e1633" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1635">
                             <seg xml:lang="ar" xml:id="seg_9.d1e1637">أقام هوى صفية في فؤادي </seg>
                             <seg xml:lang="ar" xml:id="seg_10.d1e1640">وقد سيرت كل هوى حبيب</seg>
@@ -661,7 +661,7 @@
                     <p xml:lang="ar" xml:id="p_27.d1e1612">وقد كان مسيلمة يدعي أن معه رئياً في أول
                         زمانه ولذلك قال الشاعر حين وصف مخاريقه وخدعه:</p>
                     <pb ed="print" n="91" facs="#facs_105" xml:id="pb_5.d1e1699"/>
-                    <lg xml:id="lg_1.d1e1679">
+                    <lg xml:id="lg_1.d1e1679" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1681">
                             <seg xml:lang="ar" xml:id="seg_15.d1e1683">بيضة قارور وراية شادن </seg>
                             <seg xml:lang="ar" xml:id="seg_16.d1e1686">وخلة جني وتوصيل طائر</seg>
@@ -669,8 +669,8 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_28.d1e1624">ألا تراه ذكر خلة الجني.</p>
                 </div>
-                <div type="section" xml:id="div_3.d1e1717">
-                    <head xml:id="head_3.d1e1719">ما روي من هتوفهم بالبعثة المحمدية</head>
+                <div type="section" xml:id="div_3.d1e1717" xml:lang="ar">
+                    <head xml:id="head_3.d1e1719" xml:lang="ar">ما روي من هتوفهم بالبعثة المحمدية</head>
                     <p xml:lang="ar" xml:id="p_30.d1e1631">حكى الإمام الماوردي في أعلام النبوة ما
                         رواه أهل السير من هتوف الجن برسول الله صلى الله عليه وسلم قبل مبعثه وأنه كان
                         من آيات نبوته الصادرة عن إلهام فمن ذلك ما رواه عثمان بن عبد الرحمن عن محمد
@@ -681,7 +681,7 @@
                         أتاني رئي من الجن فضربني برجله وقال: قم يا سواد بن قارب فاسمع مقالي وأعقل إن
                         كنت تعقل أنه قد بعث رسول الله صلى الله عليه وسلم من لؤي بن غالب يدعو إلى
                         الله تعالى وإلى عبادته وأنشأ يقول:</p>
-                    <lg xml:id="lg_1.d1e1701">
+                    <lg xml:id="lg_1.d1e1701" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1703">
                             <seg xml:lang="ar" xml:id="seg_17.d1e1705">عجب للجن وتطلباتها </seg>
                             <seg xml:lang="ar" xml:id="seg_18.d1e1708">وشدها العيس باقتابها</seg>
@@ -699,7 +699,7 @@
                         بما قال رأساً فلما كانت الليلة الثانية أتاني فضربني برجله وقال: قم يا سواد
                         بن قارب فاسمع مقالتي وأعقل إن كنت تعقل أنه قد بعث رسول الله صلى الله عليه
                         وسلم من لؤي بن غالب يدعو إلى الله تعالى وإلى عبادته وأنشأ يقول: <pb corresp="file:../epub/26523/OEBPS/xhtml/P3166.xhtml" ed="shamela" n="n49-p3" xml:id="pb_4.d1e1663"/> عجب للجن وتخبارها <gap resp="#org_MS" xml:id="gap_3.d1e1665"/> وشدها العيس بأكوارها</p>
-                    <lg xml:id="lg_1.d1e1738">
+                    <lg xml:id="lg_1.d1e1738" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1740">
                             <seg xml:lang="ar" xml:id="seg_23.d1e1742">تهوي إلى مكة تبغي الهدى </seg>
                             <seg xml:lang="ar" xml:id="seg_24.d1e1745">ما مؤمنو الجن ككذابها</seg>
@@ -713,7 +713,7 @@
                         قال رأساً فلما كانت الليلة الثالثة أتاني فضربني برجله وقال: قم يا سواد بن
                         قارب فاسمع مقالتي وأعقل إن كنت تعقل أنه قد بعث رسول الله صلى الله عليه وسلم
                         من لؤي بن غالب يدعو إلى الله تعالى وإلى عبادته وأنشأ يقول:</p>
-                    <lg xml:id="lg_1.d1e1762">
+                    <lg xml:id="lg_1.d1e1762" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1764">
                             <seg xml:lang="ar" xml:id="seg_27.d1e1766">عجب للجن وتجساسها </seg>
                             <seg xml:lang="ar" xml:id="seg_28.d1e1769">وشدها العيس بأحلاسها</seg>
@@ -731,7 +731,7 @@
                     <p xml:lang="ar" xml:id="p_33.d1e1718">قال: فأصبحت وقد امتحن الله قلبي للإسلام
                         فرحلت ناقتي وأتيت المدينة فإذا رسول الله صلى الله عليه وسلم وأصحابه فقلت:
                         اسمع مقالتي يا رسول الله قال: هات فأنشأت:</p>
-                    <lg xml:id="lg_1.d1e1796">
+                    <lg xml:id="lg_1.d1e1796" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1798">
                             <seg xml:lang="ar" xml:id="seg_33.d1e1800">أتاني نجيٌّ بين هدو ورقدة </seg>
                             <seg xml:lang="ar" xml:id="seg_34.d1e1803">ولم أك فيما نجوت بكاذب</seg>
@@ -776,14 +776,14 @@
                         فبينا نحن عند صنم ذات ليلة نتقاضى إليه في أمر قد شجر بيننا إذ صاح صائح من
                         جوفه. <pb corresp="file:../epub/26523/OEBPS/xhtml/P3167.xhtml" ed="shamela" n="n49-p4" xml:id="pb_5.d1e1790"/> يا أيها الركب ذوو الأحكام <gap resp="#org_MS" xml:id="gap_4.d1e1792"/> ما أنتم وطائش الأحلام</p>
                     <p xml:lang="ar" xml:id="p_36.d1e1795">ومستندو الحكم إلى الأصنام</p>
-                    <lg xml:id="lg_1.d1e1876">
+                    <lg xml:id="lg_1.d1e1876" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1878">
                             <seg xml:lang="ar" xml:id="seg_47.d1e1880">هذا نبي سيد الأنام </seg>
                             <seg xml:lang="ar" xml:id="seg_48.d1e1883">يصدع بالحق وبالإسلام</seg>
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_37.d1e1808">اعدل ذي حكم من الأحكام</p>
-                    <lg xml:id="lg_1.d1e1892">
+                    <lg xml:id="lg_1.d1e1892" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1894">
                             <seg xml:lang="ar" xml:id="seg_49.d1e1896">ويتبع النور عَلَى الأظلام </seg>
                             <seg xml:lang="ar" xml:id="seg_50.d1e1899">سيعلن في البلد الحرام</seg>
@@ -794,7 +794,7 @@
                         وأسلمت مع النبي صلى الله عليه وسلم وروى إبراهيم بن سلامة بسنده عن رجل حدث
                         عمر بن الخطاب قال له: خرجت وأصحاب لي في تجارة لنا نريد الشام فصحبنا رجل من
                         يهود فلما كنا ببعض أودية الشام هتف هاتف</p>
-                    <lg xml:id="lg_1.d1e1910">
+                    <lg xml:id="lg_1.d1e1910" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1912">
                             <seg xml:lang="ar" xml:id="seg_51.d1e1914">إياك لا تجعل وخذها موبقة </seg>
                             <seg xml:lang="ar" xml:id="seg_52.d1e1917">فإن شر السير سير
@@ -812,7 +812,7 @@
                         صلى الله عليه وسلم بمكة</p>
                     <p xml:lang="ar" xml:id="p_42.d1e1851">ومن بشائر هتوفهم ما حكاه أبو عيسى قال:
                         سمعت قريشا في الليل هاتفا عَلَى أبي قبيس (جبل) يقول:</p>
-                    <lg xml:id="lg_1.d1e1941">
+                    <lg xml:id="lg_1.d1e1941" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1943">
                             <seg xml:lang="ar" xml:id="seg_55.d1e1945">إن يسلم السعدان يصبح محمد </seg>
                             <seg xml:lang="ar" xml:id="seg_56.d1e1948">بمكة لا يخشى خلاف مخالف</seg>
@@ -820,7 +820,7 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_43.d1e1863">فلما أصبحوا قال أبو سفيان من السعدان سعد
                         بكر وسعد تميم فلما كان في الليلة الثانية سمعوه يقول</p>
-                    <lg xml:id="lg_1.d1e1956">
+                    <lg xml:id="lg_1.d1e1956" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1958">
                             <seg xml:lang="ar" xml:id="seg_57.d1e1960">أيا سعد سعد الأوس كن أنت
                                 ناصرا </seg>
@@ -846,8 +846,8 @@
                         والبشارة أخباراً والثاني أن الكهانة عن مغيب والبشارة عن معين فالعيان معلوم
                         والغائب موهوم اهـ كلام الماوردي.</p>
                 </div>
-                <div type="section" xml:id="div_4.d1e2021">
-                    <head xml:id="head_4.d1e2023">مزاعمهم في أوصافهم ومن قتلوه</head>
+                <div type="section" xml:id="div_4.d1e2021" xml:lang="ar">
+                    <head xml:id="head_4.d1e2023" xml:lang="ar">مزاعمهم في أوصافهم ومن قتلوه</head>
                     <p xml:lang="ar" xml:id="p_46.d1e1902">يقولون من الجن جنس صورة الواحد منهم عَلَى
                         صورة الإنسان واسمه شق وأنه كثيراً ما يعرض للرجل المسافر إذا كان وحده فربما
                         أهلكه فزعاً وربما أهلكه قتلاً وضرباً (قالوا) فمن ذلك حديث علقمة بن صفوان بن
@@ -855,7 +855,7 @@
                         بمكة وهو عَلَى حمار وعليه أزار ورداء ومعه مقرعة في ليلة أضحانية حتى انتهى
                         إلى موضع يقال له حائط جرمان فإذا هو بشق له يد ورجل وعين معه سيف وهو
                         يقول:</p>
-                    <lg xml:id="lg_1.d1e1998">
+                    <lg xml:id="lg_1.d1e1998" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2000">
                             <seg xml:lang="ar" xml:id="seg_63.d1e2002">علقم إني مقتول </seg>
                             <seg xml:lang="ar" xml:id="seg_64.d1e2005">وإن لحمي مأكول</seg>
@@ -868,7 +868,7 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_47.d1e1924">رحب الذراع بهلول</p>
                     <p xml:lang="ar" xml:id="p_48.d1e1927">فقال علقمة:</p>
-                    <lg xml:id="lg_1.d1e2025">
+                    <lg xml:id="lg_1.d1e2025" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2027">
                             <seg xml:lang="ar" xml:id="seg_67.d1e2029">يا شق ها مالي ولك، </seg>
                             <seg xml:lang="ar" xml:id="seg_68.d1e2032">اغمد عني منصلك</seg>
@@ -876,7 +876,7 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_49.d1e1939">تقتل من لا يقتلك</p>
                     <p xml:lang="ar" xml:id="p_50.d1e1942">قال شق:</p>
-                    <lg xml:id="lg_1.d1e2044">
+                    <lg xml:id="lg_1.d1e2044" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2046">
                             <seg xml:lang="ar" xml:id="seg_69.d1e2048">عنيت لك عنيت لك، </seg>
                             <seg xml:lang="ar" xml:id="seg_70.d1e2051">كيما أبيح مقتلك</seg>
@@ -889,15 +889,15 @@
                     <p xml:lang="ar" xml:id="p_53.d1e1961">(قالوا) وقتلت مرداس بن أبي عامر أبا عباس
                         بن مرداس_وقتلت الغريض خنقاً بعد أن غنى بالغناء الذي كانوا نهوه عنه_وقتلت
                         الجن سعد بن عبادة بن ديلم وسمعوا الهاتف يقول: <pb corresp="file:../epub/26523/OEBPS/xhtml/P3169.xhtml" ed="shamela" n="n49-p6" xml:id="pb_7.d1e1963"/> نحن قتلنا سيد الخز <gap resp="#org_MS" xml:id="gap_5.d1e1965"/> رج سعد بن عباده</p>
-                    <lg xml:id="lg_1.d1e2069">
+                    <lg xml:id="lg_1.d1e2069" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2071">
                             <seg xml:lang="ar" xml:id="seg_71.d1e2073">ورميناه بسهمين </seg>
                             <seg xml:lang="ar" xml:id="seg_72.d1e2076">فلم نخط فؤَاده</seg>
                         </l>
                     </lg>
                 </div>
-                <div type="section" xml:id="div_5.d1e2117">
-                    <head xml:id="head_5.d1e2119">من استهووه ومنهم خرافة</head>
+                <div type="section" xml:id="div_5.d1e2117" xml:lang="ar">
+                    <head xml:id="head_5.d1e2119" xml:lang="ar">من استهووه ومنهم خرافة</head>
                     <p xml:lang="ar" xml:id="p_55.d1e1981">(قالوا) استهووا سنان بن أبي حارثة
                         ليستفحلوه فمات فيهم واستهووا طالب بن أبي طالب فلم يوجد له أثر إلى يومنا
                         هذا_واستهووا عمرو ابن عدي اللخمي الملك الذي يقال فيه شب عمرو عن الطوق ثم
@@ -910,12 +910,12 @@
                         سأل المفقود الذي استهوته الجن ما كان طعامهم قال: الروث: قال فما كان شرابهم
                         قال البول.</p>
                 </div>
-                <div type="section" xml:id="div_6.d1e2134">
-                    <head xml:id="head_6.d1e2136">توصيفهم رجل الغول وعين الشيطان</head>
+                <div type="section" xml:id="div_6.d1e2134" xml:lang="ar">
+                    <head xml:id="head_6.d1e2136" xml:lang="ar">توصيفهم رجل الغول وعين الشيطان</head>
                     <p xml:lang="ar" xml:id="p_59.d1e1993">العامة تزعم أن الغول يتصور في أحسن الصورة
                         إلا أنه لا بد أن تكون رجلها رجل حمار، وخبروا عن الخليل بن أحمد أن أعرابياً
                         أنشده:</p>
-                    <lg xml:id="lg_1.d1e2101">
+                    <lg xml:id="lg_1.d1e2101" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2103">
                             <seg xml:lang="ar" xml:id="seg_73.d1e2105">وحافر العير في ساق خدلجة، </seg>
                             <seg xml:lang="ar" xml:id="seg_74.d1e2108">وجفن عين خلاف الأنس في
@@ -923,10 +923,10 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_60.d1e2006">وذكروا أن العامة تزعم أن شق عين الشيطان
-                        بالطول: قال <persName ref="viaf:11070">الجاحظ</persName>: وما أظنهم أخذوا هذين المعنيين إلا عن الأعراب.</p>
+                        بالطول: قال <persName ref="viaf:11070" xml:lang="ar">الجاحظ</persName>: وما أظنهم أخذوا هذين المعنيين إلا عن الأعراب.</p>
                 </div>
-                <div type="section" xml:id="div_7.d1e2158">
-                    <head xml:id="head_7.d1e2160">مزاعمهم في أرض وبار وبلاد الحوش</head>
+                <div type="section" xml:id="div_7.d1e2158" xml:lang="ar">
+                    <head xml:id="head_7.d1e2160" xml:lang="ar">مزاعمهم في أرض وبار وبلاد الحوش</head>
                     <p xml:lang="ar" xml:id="p_62.d1e2012">تزعم الأعراب أن الله تعالى عندما أهلك
                         الأمة التي كانت تسمى وبار كما أهلك طمساً وجديساً وعملاقاً وثموداً وعاداً أن
                         الجن سكنت في منازلهم وحمتها من كل من أرادها وأنها أخصب بلاد الله وأكثرها
@@ -945,7 +945,7 @@
                         قد ضربت فيها الحوش وقال رؤبة:</p>
                     <p xml:lang="ar" xml:id="p_66.d1e2031">حوت رجال من بلاد الحوش</p>
                     <p xml:lang="ar" xml:id="p_67.d1e2034">وقال ابن هرمة:</p>
-                    <lg xml:id="lg_1.d1e2144">
+                    <lg xml:id="lg_1.d1e2144" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2146">
                             <seg xml:lang="ar" xml:id="seg_75.d1e2148">كأني عَلَى حوشية أو نعامة </seg>
                             <seg xml:lang="ar" xml:id="seg_76.d1e2151">لها نسب في الطير وهو
@@ -958,17 +958,17 @@
                         تيه من الأرض وتوسطوا بلاد الحوش خافوا عبث الجنان والسعالي والغيلان والشياطين
                         فيقوم أحدهم فيرفع صوته إنا عائذون بسيد هذا الوادي فلا يؤذيهم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> وتصير لهم
                         بذلك خفارة.</p>
-                    <gap xml:id="gap_8.d1e2205"> </gap>
+                    <gap xml:id="gap_8.d1e2205" xml:lang="ar"> </gap>
                     <pb ed="print" n="97" facs="#facs_111" xml:id="pb_16.d1e2208"/>
                     <gap resp="#org_MS" xml:id="gap_9.d1e2211"/>
                     <p xml:lang="ar" xml:id="p_69.d1e2049">
-                        <note resp="#org_MS" xml:id="note_1.d1e2215">يوجد نقص فقرة مزاعمهم في الصرع وفقرة مزاعمهم في
+                        <note resp="#org_MS" xml:id="note_1.d1e2215" xml:lang="ar">يوجد نقص فقرة مزاعمهم في الصرع وفقرة مزاعمهم في
                             الطاعون</note>
                     </p>
                 </div>
-                <div type="section" xml:id="div_8.d1e2220">
-                    <head xml:id="head_8.d1e2222">ما يزعمونه في تمثيلهم وتصويرهم</head>
-                    <p xml:lang="ar" xml:id="p_71.d1e2056">قال <persName ref="viaf:11070">الجاحظ</persName>: تزعم العامة أن الله تعالى ملك
+                <div type="section" xml:id="div_8.d1e2220" xml:lang="ar">
+                    <head xml:id="head_8.d1e2222" xml:lang="ar">ما يزعمونه في تمثيلهم وتصويرهم</head>
+                    <p xml:lang="ar" xml:id="p_71.d1e2056">قال <persName ref="viaf:11070" xml:lang="ar">الجاحظ</persName>: تزعم العامة أن الله تعالى ملك
                         الجن والشياطين والعمار والغيلان أن يتحولوا في أي صورة شاؤوا إلا الغول فإنها
                         تتحول في جميع صورة المرأة ولباسها إلا رجليها فلا بد أن يكونا رجلي حمار.</p>
                     <p xml:lang="ar" xml:id="p_72.d1e2059">وإنما قاسوا تصور الجن عَلَى تصور جبريل
@@ -991,13 +991,13 @@
                         فعله انتقل كالسحر (أي الشعبذة) (قال) وهذا قد يرجع إلى الأول اهـ وسيأتي تحقيق
                         تمثلهم في أول مباحث الخاتمة.</p>
                 </div>
-                <div type="section" xml:id="div_9.d1e2246">
-                    <head xml:id="head_9.d1e2248">رأيهم في قرناء الشعراء الفحول</head>
-                    <p xml:lang="ar" xml:id="p_77.d1e2077">قال <persName ref="viaf:11070">الجاحظ</persName>: يزعمون أن مع كل فحل من
+                <div type="section" xml:id="div_9.d1e2246" xml:lang="ar">
+                    <head xml:id="head_9.d1e2248" xml:lang="ar">رأيهم في قرناء الشعراء الفحول</head>
+                    <p xml:lang="ar" xml:id="p_77.d1e2077">قال <persName ref="viaf:11070" xml:lang="ar">الجاحظ</persName>: يزعمون أن مع كل فحل من
                         الشعراء شيطاناً يقول ذلك الفحل عَلَى لسانه ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> ويقولون اسم شيطان المخبل
                         عمرو واسم شيطان الأعشى مسحل وكذلك أيضاً اسم شيطان الفرزدق عمرو وقد ذكر
                         الأعشى مسحلاً حين هجاه جهنام فقال:</p>
-                    <lg xml:id="lg_1.d1e2190">
+                    <lg xml:id="lg_1.d1e2190" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2192">
                             <seg xml:lang="ar" xml:id="seg_77.d1e2194">دعوت خليلي مسحلاً ودعوا له </seg>
                             <seg xml:lang="ar" xml:id="seg_78.d1e2197">بجهنام يدعى للهجين
@@ -1005,14 +1005,14 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_78.d1e2089">وذكره الأعشى فقال:</p>
-                    <lg xml:id="lg_1.d1e2205">
+                    <lg xml:id="lg_1.d1e2205" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2207">
                             <seg xml:lang="ar" xml:id="seg_79.d1e2209">حباني أخي الجني نفسي فداؤه </seg>
                             <seg xml:lang="ar" xml:id="seg_80.d1e2212">بأقبح جياش العشيات مرحم</seg>
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_79.d1e2101">وقال أعشى سليم:</p>
-                    <lg xml:id="lg_1.d1e2221">
+                    <lg xml:id="lg_1.d1e2221" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2223">
                             <seg xml:lang="ar" xml:id="seg_81.d1e2225">وما كان جني الفرزدق أسوة </seg>
                             <seg xml:lang="ar" xml:id="seg_82.d1e2228">وما كان فيهم مثل فحل
@@ -1025,7 +1025,7 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_80.d1e2123">وقال الفرزدق في مديح أسد بن عبد الله:</p>
-                    <lg xml:id="lg_1.d1e2245">
+                    <lg xml:id="lg_1.d1e2245" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2247">
                             <seg xml:lang="ar" xml:id="seg_85.d1e2249">لتبلغن أبا الأشبال مدحتنا </seg>
                             <seg xml:lang="ar" xml:id="seg_86.d1e2252">من كان بالغور أو طودي
@@ -1040,7 +1040,7 @@
                     <p xml:lang="ar" xml:id="p_81.d1e2144">وقال:</p>
                     <p xml:lang="ar" xml:id="p_82.d1e2147">فلو كنت عندي يوم قرء عذرتني <gap resp="#org_MS" xml:id="gap_8.d1e2149"/> بيوم دهتني جنه وخبائله <pb corresp="file:../epub/26523/OEBPS/xhtml/P3172.xhtml" ed="shamela" n="n49-p9" xml:id="pb_10.d1e2151"/> فمن أجل هذا البيت ومن أجل قول
                         آخر:</p>
-                    <lg xml:id="lg_1.d1e2276">
+                    <lg xml:id="lg_1.d1e2276" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2278">
                             <seg xml:lang="ar" xml:id="seg_89.d1e2280">إذ ما زاع جارية فلاقى </seg>
                             <seg xml:lang="ar" xml:id="seg_90.d1e2283">خبال الله من أنس وجن</seg>
@@ -1055,7 +1055,7 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_83.d1e2173">أي أحمد لي في الشعر من أن يكون لي عليه من
                         معين فقال أعشى سليم يرد عليه:</p>
-                    <lg xml:id="lg_1.d1e2301">
+                    <lg xml:id="lg_1.d1e2301" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2303">
                             <seg xml:lang="ar" xml:id="seg_93.d1e2305">إذا <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> الجني قرداً مشنفاً </seg>
                             <seg xml:lang="ar" xml:id="seg_94.d1e2308">فقولوا لخنزير الجزيرة
@@ -1065,7 +1065,7 @@
                     <p xml:lang="ar" xml:id="p_84.d1e2185">فجزع بشار عند ذلك جزعاً شديداً لأنه كان
                         يعلم مع تغزله أن وجهه وجه قرد وكان أول ما عرف من جزعه من ذكر القرد الذي رأوا
                         منه حتى أنشد قول حماد عجرد:</p>
-                    <lg xml:id="lg_1.d1e2316">
+                    <lg xml:id="lg_1.d1e2316" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2318">
                             <seg xml:lang="ar" xml:id="seg_95.d1e2320">ويا أقبح من قرد </seg>
                             <seg xml:lang="ar" xml:id="seg_96.d1e2323">إذا ما عمي القرد</seg>
@@ -1073,14 +1073,14 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_85.d1e2198">وفي أن مع كل شاعر شيطاناً يقال معه قول
                         أبي النجم:</p>
-                    <lg xml:id="lg_1.d1e2331">
+                    <lg xml:id="lg_1.d1e2331" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2333">
                             <seg xml:lang="ar" xml:id="seg_97.d1e2335">إني وكل شاعر من البشر </seg>
                             <seg xml:lang="ar" xml:id="seg_98.d1e2338">شيطانه أنثى وشيطاني ذكر</seg>
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_86.d1e2210">وقال آخر:</p>
-                    <lg xml:id="lg_1.d1e2347">
+                    <lg xml:id="lg_1.d1e2347" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2349">
                             <seg xml:lang="ar" xml:id="seg_99.d1e2351">إني وإن كنت صغير السن </seg>
                             <seg xml:lang="ar" xml:id="seg_100.d1e2354">وكان في العين نبوٌّ
@@ -1089,7 +1089,7 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_87.d1e2222">فإن شيطاني كبير الجن</p>
                     <p xml:lang="ar" xml:id="p_88.d1e2225">وأما قول عمرو بن كلثوم:</p>
-                    <lg xml:id="lg_1.d1e2365">
+                    <lg xml:id="lg_1.d1e2365" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2367">
                             <seg xml:lang="ar" xml:id="seg_101.d1e2369">وقد هرب كلاب الجن منا </seg>
                             <seg xml:lang="ar" xml:id="seg_102.d1e2372">وشذبنا قتادة من يلينا</seg>
@@ -1097,7 +1097,7 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_89.d1e2238">فإنهم يزعمون أن كلاب الجن هم الشعراء.
                         ومما دل عَلَى أنهم يقولون أن مع كل شاعر شيطاناً قول شاعرهم:</p>
-                    <lg xml:id="lg_1.d1e2381">
+                    <lg xml:id="lg_1.d1e2381" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2383">
                             <seg xml:lang="ar" xml:id="seg_103.d1e2385">إذا ما ترعرع فينا الغلا </seg>
                             <seg xml:lang="ar" xml:id="seg_104.d1e2388">م فليس يقال له من هوه</seg>
@@ -1116,14 +1116,14 @@
                     <p xml:lang="ar" xml:id="p_90.d1e2268">وشيصبان وشنقان رئيسان من آباء القبائل في
                         زعمهم وقد ذكرهما أبو النجم.</p>
                 </div>
-                <div type="section" xml:id="div_10.d1e2483">
-                    <head xml:id="head_10.d1e2485">خيالهم في جن الشام والهند</head>
-                    <p xml:lang="ar" xml:id="p_92.d1e2275">قال <persName ref="viaf:11070">الجاحظ</persName>: وأصحاب الرقي والأخذ والعزائم
+                <div type="section" xml:id="div_10.d1e2483" xml:lang="ar">
+                    <head xml:id="head_10.d1e2485" xml:lang="ar">خيالهم في جن الشام والهند</head>
+                    <p xml:lang="ar" xml:id="p_92.d1e2275">قال <persName ref="viaf:11070" xml:lang="ar">الجاحظ</persName>: وأصحاب الرقي والأخذ والعزائم
                         والسحر والشعبذة يزعمون أن العدد والقوة في الجن والشياطين لنزالة الشام والهند
                         وإن عظيم شياطين الهند يقال له (سكويرك) وعظيم شياطين الشام يقال له در كاراب
                         وقد ذكرهما أبو إسحاق في هجائه محمد ابن بشير حين <pb corresp="file:../epub/26523/OEBPS/xhtml/P3173.xhtml" ed="shamela" n="n49-p10" xml:id="pb_11.d1e2277"/> ادعى هذه الصناعة فقال:</p>
                     <pb ed="print" n="100" facs="#facs_114" xml:id="pb_22.d1e2493"/>
-                    <lg xml:id="lg_1.d1e2422">
+                    <lg xml:id="lg_1.d1e2422" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2424">
                             <seg xml:lang="ar" xml:id="seg_109.d1e2426">قد لعمري جمعت من أصعياب </seg>
                             <seg xml:lang="ar" xml:id="seg_110.d1e2429">ثم من شعر آدم والخراب</seg>
@@ -1140,7 +1140,7 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_93.d1e2307">واستثرت الأرواح بالبحر يأتين لصرح الصحيح
                         بعد المصاب</p>
-                    <lg xml:id="lg_1.d1e2456">
+                    <lg xml:id="lg_1.d1e2456" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2458">
                             <seg xml:lang="ar" xml:id="seg_115.d1e2460">جامعاً من لطائف الدهمسيا </seg>
                             <seg xml:lang="ar" xml:id="seg_116.d1e2463">ت كنوساً نعتها في كتاب</seg>
@@ -1159,12 +1159,12 @@
                         </l>
                     </lg>
                 </div>
-                <div type="section" xml:id="div_11.d1e2570">
-                    <head xml:id="head_11.d1e2572">توهمهم ملامح الجن في الأنس</head>
+                <div type="section" xml:id="div_11.d1e2570" xml:lang="ar">
+                    <head xml:id="head_11.d1e2572" xml:lang="ar">توهمهم ملامح الجن في الأنس</head>
                     <p xml:lang="ar" xml:id="p_95.d1e2350">قال القعقعاع بن زرارة في ابنه عوف ابن
                         القعقعاع: والله لما أرى في عوف من شمائل الجن أكثر مما أرى من شمائل الأنس:
                         وقال بجير بن أيوب:</p>
-                    <lg xml:id="lg_1.d1e2501">
+                    <lg xml:id="lg_1.d1e2501" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2503">
                             <seg xml:lang="ar" xml:id="seg_123.d1e2505">أخو قفرات حالف الجن وانتفى </seg>
                             <seg xml:lang="ar" xml:id="seg_124.d1e2508">من الأنس حتى تقضت
@@ -1176,7 +1176,7 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_96.d1e2372">وقال الآخر:</p>
-                    <lg xml:id="lg_1.d1e2525">
+                    <lg xml:id="lg_1.d1e2525" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2527">
                             <seg xml:lang="ar" xml:id="seg_127.d1e2529">وصار خليل الغول يعد عداوة </seg>
                             <seg xml:lang="ar" xml:id="seg_128.d1e2532">صفياً وربته القفار
@@ -1194,10 +1194,10 @@
                         </l>
                     </lg>
                 </div>
-                <div type="section" xml:id="div_12.d1e2633">
-                    <head xml:id="head_12.d1e2635">قولهم في جنون الجن وصرع الشيطان</head>
+                <div type="section" xml:id="div_12.d1e2633" xml:lang="ar">
+                    <head xml:id="head_12.d1e2635" xml:lang="ar">قولهم في جنون الجن وصرع الشيطان</head>
                     <p xml:lang="ar" xml:id="p_98.d1e2406">أنشد أعرابي:</p>
-                    <lg xml:id="lg_1.d1e2562">
+                    <lg xml:id="lg_1.d1e2562" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2564">
                             <seg xml:lang="ar" xml:id="seg_133.d1e2566">فما يعجب الجنان منك عدمتهم </seg>
                             <seg xml:lang="ar" xml:id="seg_134.d1e2569">وفي الأسد أفراس لهم
@@ -1221,7 +1221,7 @@
                     <p xml:lang="ar" xml:id="p_99.d1e2446">وقال دعلج بن الحكم <pb corresp="file:../epub/26523/OEBPS/xhtml/P3174.xhtml" ed="shamela" n="n49-p11" xml:id="pb_12.d1e2448"/>
                         <pb ed="print" n="101" facs="#facs_115" xml:id="pb_24.d1e2684"/> وكيف يفيق الدهر كعب بن ناشب <gap resp="#org_MS" xml:id="gap_9.d1e2450"/> وشيطانه عند الأهلة يصرع</p>
                     <p xml:lang="ar" xml:id="p_100.d1e2453">وأنشد عبد الرحمن بن منصور الأسدي:</p>
-                    <lg xml:id="lg_1.d1e2611">
+                    <lg xml:id="lg_1.d1e2611" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2613">
                             <seg xml:lang="ar" xml:id="seg_141.d1e2615">جنونك مجنون ول<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6">ست</num> بواجد </seg>
                             <seg xml:lang="ar" xml:id="seg_142.d1e2618">طبيباً يداوي من جنون
@@ -1229,7 +1229,7 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_101.d1e2465">وأنشد:</p>
-                    <lg xml:id="lg_1.d1e2627">
+                    <lg xml:id="lg_1.d1e2627" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2629">
                             <seg xml:lang="ar" xml:id="seg_143.d1e2631">أتوني بمجنون يسيل لعابه </seg>
                             <seg xml:lang="ar" xml:id="seg_144.d1e2634">وما صاحبي إلا الصحيح
@@ -1237,7 +1237,7 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_102.d1e2477">وقال ابن ميادة:</p>
-                    <lg xml:id="lg_1.d1e2642">
+                    <lg xml:id="lg_1.d1e2642" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2644">
                             <seg xml:lang="ar" xml:id="seg_145.d1e2646">فلما أتاني ما تقول محارب </seg>
                             <seg xml:lang="ar" xml:id="seg_146.d1e2649">تغنت شياطين وجن جنونها</seg>
@@ -1249,14 +1249,14 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_103.d1e2499">وقال في التمثيل:</p>
-                    <lg xml:id="lg_1.d1e2666">
+                    <lg xml:id="lg_1.d1e2666" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2668">
                             <seg xml:lang="ar" xml:id="seg_149.d1e2670">إن شرخ الشباب والشعر الأسو </seg>
                             <seg xml:lang="ar" xml:id="seg_150.d1e2673">د ما لم يعاض كان جنونا</seg>
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_104.d1e2511">وقال الآخر:</p>
-                    <lg xml:id="lg_1.d1e2682">
+                    <lg xml:id="lg_1.d1e2682" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2684">
                             <seg xml:lang="ar" xml:id="seg_151.d1e2686">جادت بها عند الغداة يمينه </seg>
                             <seg xml:lang="ar" xml:id="seg_152.d1e2689">كلتا يدي عمرو والغداة
@@ -1269,7 +1269,7 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_105.d1e2533">وقال الجمحي:</p>
-                    <lg xml:id="lg_1.d1e2706">
+                    <lg xml:id="lg_1.d1e2706" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2708">
                             <seg xml:lang="ar" xml:id="seg_155.d1e2710">ولو أنني لم أنل منكم معاقبة </seg>
                             <seg xml:lang="ar" xml:id="seg_156.d1e2713">إلا السنان بذات الموت
@@ -1282,7 +1282,7 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_106.d1e2554">وانشد:</p>
-                    <lg xml:id="lg_1.d1e2730">
+                    <lg xml:id="lg_1.d1e2730" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2732">
                             <seg xml:lang="ar" xml:id="seg_159.d1e2734">هم أحموا حمى الرقبى بضرب </seg>
                             <seg xml:lang="ar" xml:id="seg_160.d1e2737">يؤلف بين أشتات المنون</seg>
@@ -1294,10 +1294,10 @@
                         </l>
                     </lg>
                 </div>
-                <div type="section" xml:id="div_13.d1e2834">
-                    <head xml:id="head_13.d1e2836">ما يحكونه من نيران السعالي والجن</head>
+                <div type="section" xml:id="div_13.d1e2834" xml:lang="ar">
+                    <head xml:id="head_13.d1e2836" xml:lang="ar">ما يحكونه من نيران السعالي والجن</head>
                     <p xml:lang="ar" xml:id="p_108.d1e2579">أنشد أبو زيد لسهم بن الحارث:</p>
-                    <lg xml:id="lg_1.d1e2758">
+                    <lg xml:id="lg_1.d1e2758" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2760">
                             <seg xml:lang="ar" xml:id="seg_163.d1e2762">ونار قد حضأت بعيد هدء </seg>
                             <seg xml:lang="ar" xml:id="seg_164.d1e2765">بدار لا أريد بها مقام</seg>
@@ -1313,9 +1313,9 @@
                                 ظلاما</seg>
                         </l>
                     </lg>
-                    <p xml:lang="ar" xml:id="p_109.d1e2610">فقلت إلى الطعام فقال منهم <gap resp="#org_MS" xml:id="gap_10.d1e2612"/> زعيم نحسد الإنس الطعاما <pb corresp="file:../epub/26523/OEBPS/xhtml/P3175.xhtml" ed="shamela" n="n49-p12" xml:id="pb_13.d1e2614"/> قال <persName ref="viaf:11070">الجاحظ</persName>: وهذا غلط وليس من هذا
+                    <p xml:lang="ar" xml:id="p_109.d1e2610">فقلت إلى الطعام فقال منهم <gap resp="#org_MS" xml:id="gap_10.d1e2612"/> زعيم نحسد الإنس الطعاما <pb corresp="file:../epub/26523/OEBPS/xhtml/P3175.xhtml" ed="shamela" n="n49-p12" xml:id="pb_13.d1e2614"/> قال <persName ref="viaf:11070" xml:lang="ar">الجاحظ</persName>: وهذا غلط وليس من هذا
                         الباب بل الذي يقع ههنا قول أبي المطراب عبيد بن أيوب:</p>
-                    <lg xml:id="lg_1.d1e2795">
+                    <lg xml:id="lg_1.d1e2795" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2797">
                             <seg xml:lang="ar" xml:id="seg_169.d1e2799">فلله در الغول أي رفيقة </seg>
                             <seg xml:lang="ar" xml:id="seg_170.d1e2802">لصاحب قفر خائف متنفر</seg>
@@ -1327,9 +1327,9 @@
                         </l>
                     </lg>
                 </div>
-                <div type="section" xml:id="div_14.d1e2903">
-                    <head xml:id="head_14.d1e2905">فلسفة ما تزعمه الأعراب من عزيف الجنان وتغول الغيلان</head>
-                    <p xml:lang="ar" xml:id="p_111.d1e2638">قال <persName ref="viaf:11070">الجاحظ</persName> رحمه الله: كان أبو إسحق يقول
+                <div type="section" xml:id="div_14.d1e2903" xml:lang="ar">
+                    <head xml:id="head_14.d1e2905" xml:lang="ar">فلسفة ما تزعمه الأعراب من عزيف الجنان وتغول الغيلان</head>
+                    <p xml:lang="ar" xml:id="p_111.d1e2638">قال <persName ref="viaf:11070" xml:lang="ar">الجاحظ</persName> رحمه الله: كان أبو إسحق يقول
                         في الذي تذكر الأعراب من عزيف الجنان وتغول الغيلان أصل هذا المر وابتداؤه أن
                         القوم لما نزلوا ببلاد الوحش عملت فيهم الوحشة، ومن انفرد وطال مقامه في البلاد
                         والخلاء والبعد من الأنس استوحش ولاسيما مع قلة الاشتغال والمذاكرين والوحدة،
@@ -1347,14 +1347,14 @@
                         قتلتها ثم يتجاوز ذلك إلى أن يقول رافقتها ثم يتجاوز ذلك إلى أن يقول تزوجتها
                         قال عبيد بن أيوب:</p>
                     <pb ed="print" n="103" facs="#facs_117" xml:id="pb_27.d1e2911"/>
-                    <lg xml:id="lg_1.d1e2823">
+                    <lg xml:id="lg_1.d1e2823" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2825">
                             <seg xml:lang="ar" xml:id="seg_173.d1e2827">فلله در الغول أي رفيقة </seg>
                             <seg xml:lang="ar" xml:id="seg_174.d1e2830">لصاحب قفر خائف متنفر</seg>
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_112.d1e2651">وقال:</p>
-                    <lg xml:id="lg_1.d1e2838">
+                    <lg xml:id="lg_1.d1e2838" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2840">
                             <seg xml:lang="ar" xml:id="seg_175.d1e2842">أهذا رفيق الغول والذئب والذي </seg>
                             <seg xml:lang="ar" xml:id="seg_176.d1e2845">يهيم بربات الحجال
@@ -1371,7 +1371,7 @@
                         حديثه أكثر فلذلك صار بعضهم يدعي رؤية الغول أو قتلها أو مرافقتها أو تزويجها،
                         وآخر يزعم أنه رافق في مغارة نمراً فكان يطاعمه ويؤاكله فمن هؤلاء خاصة القتال
                         الكلابي فإنه الذي يقول:</p>
-                    <lg xml:id="lg_1.d1e2866">
+                    <lg xml:id="lg_1.d1e2866" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2868">
                             <seg xml:lang="ar" xml:id="seg_177.d1e2870">أيرسل مروان الأمير رسالة </seg>
                             <seg xml:lang="ar" xml:id="seg_178.d1e2873">لآتيه إني إذاً لمضلل</seg>
@@ -1418,7 +1418,7 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_116.d1e2761">وأنشد الأصمعي:</p>
                     <pb ed="print" n="104" facs="#facs_118" xml:id="pb_29.d1e3045"/>
-                    <lg xml:id="lg_1.d1e2954">
+                    <lg xml:id="lg_1.d1e2954" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2956">
                             <seg xml:lang="ar" xml:id="seg_195.d1e2958">ظللنا معاً جارين نحترس الثأي </seg>
                             <seg xml:lang="ar" xml:id="seg_196.d1e2961">يشاربني من فضلتي
@@ -1430,7 +1430,7 @@
                         صاحبه.</p>
                     <p xml:lang="ar" xml:id="p_118.d1e2776">فأما من جميع ما ذكرناه عنهم فإنما يخبرون
                         عنه من جهة المعاينة والتحقيق وغنما المثل في هذا مثل قوله:</p>
-                    <lg xml:id="lg_1.d1e2973">
+                    <lg xml:id="lg_1.d1e2973" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2975">
                             <seg xml:lang="ar" xml:id="seg_197.d1e2977">قد كان شيطانك من خطابها </seg>
                             <seg xml:lang="ar" xml:id="seg_198.d1e2980">وكان شيطاني من طلابها</seg>
@@ -1438,7 +1438,7 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_119.d1e2789">حيناً فلما اعتركا ألوى بها <pb corresp="file:../epub/26523/OEBPS/xhtml/P3177.xhtml" ed="shamela" n="n49-p14" xml:id="pb_15.d1e2791"/> والإنسان يجوع فيسمع في أذنه كالدوي
                         وقال الشاعر:</p>
-                    <lg xml:id="lg_1.d1e2990">
+                    <lg xml:id="lg_1.d1e2990" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2992">
                             <seg xml:lang="ar" xml:id="seg_199.d1e2994">دوي الفيافي رابه فكأنه </seg>
                             <seg xml:lang="ar" xml:id="seg_200.d1e2997">أميم وساري الليل للضوء
@@ -1449,7 +1449,7 @@
                         دعوتني فيقول لا وإنما اعترى مسامعه ذلك لعرض لا أنه سمع صوتاً.</p>
                     <p xml:lang="ar" xml:id="p_121.d1e2806">ومن هذا الباب قول تأبط شراً أو قول
                         القائل في كلمة له:</p>
-                    <lg xml:id="lg_1.d1e3008">
+                    <lg xml:id="lg_1.d1e3008" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e3010">
                             <seg xml:lang="ar" xml:id="seg_201.d1e3012">يظل بموماة ويمسي بقفرة </seg>
                             <seg xml:lang="ar" xml:id="seg_202.d1e3015">جحيشاً ويعروري ظهور
@@ -1485,7 +1485,7 @@
                         من نزولهم في بلاد الوحش وبين الحشرات والسابع ما رواه لنا أبو مسهر عن أعرابي
                         من بني تمتم نزل ناحية الشام فكان لا يعدمه في كل ليلة أن يعضه أو يعض ولده أو
                         بعض حاشيته <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="7">سبع</num> من السباع أو دابة من دواب الأرض فقال:</p>
-                    <lg xml:id="lg_1.d1e3070">
+                    <lg xml:id="lg_1.d1e3070" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e3072">
                             <seg xml:lang="ar" xml:id="seg_213.d1e3074">تعاورني دين وذلك وغربة </seg>
                             <seg xml:lang="ar" xml:id="seg_214.d1e3077">ومزق جلدي ناب <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="7">سبع</num>
@@ -1498,17 +1498,17 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_123.d1e2886">ثم عد في قصيدته ما ينيف عن ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="30">ثلاثين</num>
                         صنفاً ما بين حيوان وحشرات.</p>
-                    <closer><ref target="oclc_4770057679-i_50.TEIP5.xml#div_4.d1e2033">يتبع</ref></closer>
+                    <closer xml:lang="ar"><ref target="oclc_4770057679-i_50.TEIP5.xml#div_4.d1e2033" xml:lang="ar">يتبع</ref></closer>
                 </div>
-                <byline xml:id="byline_1.d1e3191"><persName xml:id="persName_8.d1e3192"><forename xml:id="forename_5.d1e3193">جمال الدين</forename><surname xml:id="surname_5.d1e3195">
+                <byline xml:id="byline_1.d1e3191" xml:lang="ar"><persName xml:id="persName_8.d1e3192" xml:lang="ar"><forename xml:id="forename_5.d1e3193" xml:lang="ar">جمال الدين</forename><surname xml:id="surname_5.d1e3195" xml:lang="ar">
                         القاسمي</surname></persName></byline>
             </div>
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P3178.xhtml" ed="shamela" n="n49-p15" xml:id="pb_16.d1e2896"/> <pb ed="print" n="105" facs="#facs_119" xml:id="pb_32.d1e3201"/>
             <div type="article" xml:lang="ar" xml:id="div_3.d1e2898">
                 <head xml:lang="ar" xml:id="head_2.d1e2900">نشوءُ اللغات الإسلامية</head>
-                <p xml:lang="ar" xml:id="p_126.d1e2903">تتمة <ref target="oclc_4770057679-i_48.TEIP5.xml#div_3.d1e1801" xml:id="ref_6.d1e3244">ما ورد في الجزء
+                <p xml:lang="ar" xml:id="p_126.d1e2903">تتمة <ref target="oclc_4770057679-i_48.TEIP5.xml#div_3.d1e1801" xml:id="ref_6.d1e3244" xml:lang="ar">ما ورد في الجزء
                         الماضي</ref></p>
-                <p xml:lang="ar" xml:id="p_127.d1e2906">دعت ضرورة إيجاد ألفاظ جديدة للتعبير عن أفكار حديثة أن تأخذ اللغة العربية من اللغات الأجنبية أو أن تعمد إلى معجمها بأن تصيغ ألفاظاً جديدة أو بأن تضع معاني جديدة للألفاظ التي تجدها في متن اللغة. ولم يكن في العربية سهولة اللغات الرومانية بأن تعمد إلى اللاتينية أو اليونانية لتصيغ التعابير الجديدة وبهذا تألف حزبان حزب يقول بأخذ الألفاظ الإفرنجية والآخر لا يرضى إلا بالرجوع إلى الاشتقاق من متن اللغة. والظاهر أن الحزب الأول قد كتبت له الغلبة أولاً ولاسيما في بلاد الجزائر وذلك لجهل المترجمين أو لغلبة الكسل عليهم فبدلاً من أن يبحثوا في إيجاد لفظ يقابل اللفظ الفرنسوي اكتفوا بنقله عَلَى ما هو بدون أن يحدثوا فيه تغييراً ثم إن عدم وجود صحافة وطنية مما ساعد عَلَى ذلك أيضاً فإن <bibl>جريدة <title level="j">المبشر</title> الرسمية ما برحت إلى عهد قريب هي الجريدة الوحيدة في <pubPlace><placeName>الجزائر</placeName></pubPlace></bibl> أما جرائد البلاد الخارجية فلم يكن دخولها إليها إلا من المتعذرات. وقد ذكر المسيو واشنطون سويرس من جملة الألفاظ الأعجمية التي دخلت عَلَى اللغة الجزائرية لفظة شامبيت ويجمعونها عَلَى شامابيت أي حارس الحقل بدلاً من عسس الفحص وفي الوراق الرسمية السيد الكوفرنور جنرال أي سيدي الحاكم العام في حين كان من السهل جداً أن يقال سعادة والي مملكة الجزائر وقد أنحى برسنيه في كتابه الملح العربية عَلَى هذا النقل الرديء وحق له أن ينحي عليه قال لأنه لا يفهم له معنى حتى عند الفرنسيس أنفسهم.</p>
+                <p xml:lang="ar" xml:id="p_127.d1e2906">دعت ضرورة إيجاد ألفاظ جديدة للتعبير عن أفكار حديثة أن تأخذ اللغة العربية من اللغات الأجنبية أو أن تعمد إلى معجمها بأن تصيغ ألفاظاً جديدة أو بأن تضع معاني جديدة للألفاظ التي تجدها في متن اللغة. ولم يكن في العربية سهولة اللغات الرومانية بأن تعمد إلى اللاتينية أو اليونانية لتصيغ التعابير الجديدة وبهذا تألف حزبان حزب يقول بأخذ الألفاظ الإفرنجية والآخر لا يرضى إلا بالرجوع إلى الاشتقاق من متن اللغة. والظاهر أن الحزب الأول قد كتبت له الغلبة أولاً ولاسيما في بلاد الجزائر وذلك لجهل المترجمين أو لغلبة الكسل عليهم فبدلاً من أن يبحثوا في إيجاد لفظ يقابل اللفظ الفرنسوي اكتفوا بنقله عَلَى ما هو بدون أن يحدثوا فيه تغييراً ثم إن عدم وجود صحافة وطنية مما ساعد عَلَى ذلك أيضاً فإن <bibl xml:lang="ar">جريدة <title level="j" xml:lang="ar">المبشر</title> الرسمية ما برحت إلى عهد قريب هي الجريدة الوحيدة في <pubPlace xml:lang="ar"><placeName xml:lang="ar">الجزائر</placeName></pubPlace></bibl> أما جرائد البلاد الخارجية فلم يكن دخولها إليها إلا من المتعذرات. وقد ذكر المسيو واشنطون سويرس من جملة الألفاظ الأعجمية التي دخلت عَلَى اللغة الجزائرية لفظة شامبيت ويجمعونها عَلَى شامابيت أي حارس الحقل بدلاً من عسس الفحص وفي الوراق الرسمية السيد الكوفرنور جنرال أي سيدي الحاكم العام في حين كان من السهل جداً أن يقال سعادة والي مملكة الجزائر وقد أنحى برسنيه في كتابه الملح العربية عَلَى هذا النقل الرديء وحق له أن ينحي عليه قال لأنه لا يفهم له معنى حتى عند الفرنسيس أنفسهم.</p>
                 <p xml:lang="ar" xml:id="p_128.d1e2909">ويا ليته يرى ما سرى إلى لسان العامة من الجزائريين وفي مكاتباتهم من الألفاظ الفرنسوية المحرفة تحريفاً تتعذر
                     أحياناً معرفته. وفقد جاء في كتاب الرسائل العربية المخطوطة الذي نشره المسيو دلفين لفظة لانتوراليزه فرانسه بمعنى المتجنس
                     بالجنسية الفرنسوية ولفظة كاتارفاويتبدلاً من لفظة <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8">ثمانية</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="80">ثمانين</num>. ونحن لا نورد ألفاظاً كثيرة من هذا القبيل من الألفاظ
@@ -1569,8 +1569,8 @@
                     هاجمت الألفاظ الأجنبية اللغة ولم تكن هذه الألفاظ مأخوذة عن أقرب الأمم من فارس كما كان المنتظر ولا من أكثرهن نفوذاً فيها
                     من حيث السياسة والاقتصاد بل إن اللغة الفرنسوية هي التي دخلت عَلَى أهل الجيل الحاضر بأفكارها ومصطلحاتها اللازمة للتعبير
                     عن الألفاظ الحديثة في الشرق.</p>
-                <p xml:lang="ar" xml:id="p_137.d1e2950">بحث في هذا الموضوع <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> كبار رجال فارس المرزا علي <persName>خان ذكاء الملك</persName> مدير <orgName>مدرسة السياسة</orgName> في <placeName>طهران</placeName> في محاضرة له ألقاها في مدرسة <orgName>الاتحاد الإسرائيلي</orgName> في عاصمة <placeName>إيران</placeName>
-                    <pb corresp="file:../epub/26523/OEBPS/xhtml/P3182.xhtml" ed="shamela" n="n49-p19" xml:id="pb_20.d1e2952"/> يوم <date when="1907-04-13"><num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_1.d1e2954">١٣</num> نيسان <num type="auto-markup" resp="#pers_TG" value="1907" xml:lang="ar" xml:id="num_1.d1e2957">١٩٠٧</num></date> ونشرت محاضراته في المجلة <title level="j">الزرقاء</title> تكلم فيها بعد أن أورد بعض الملاحظات عَلَى الألفاظ العربية والتركية والهندية التي أخذتها الفارسية عَلَى نشوء<pb ed="print" n="109" facs="#facs_123" xml:id="pb_40.d1e3271"/> لغته الحديث فقال أن اللغة الروسية واللغة الإنكليزية لم يسر منهما إلى الفارسية إلا ألفاظ قليلة جداً.</p>
+                <p xml:lang="ar" xml:id="p_137.d1e2950">بحث في هذا الموضوع <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> كبار رجال فارس المرزا علي <persName xml:lang="ar">خان ذكاء الملك</persName> مدير <orgName xml:lang="ar">مدرسة السياسة</orgName> في <placeName xml:lang="ar">طهران</placeName> في محاضرة له ألقاها في مدرسة <orgName xml:lang="ar">الاتحاد الإسرائيلي</orgName> في عاصمة <placeName xml:lang="ar">إيران</placeName>
+                    <pb corresp="file:../epub/26523/OEBPS/xhtml/P3182.xhtml" ed="shamela" n="n49-p19" xml:id="pb_20.d1e2952"/> يوم <date when="1907-04-13" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_1.d1e2954">١٣</num> نيسان <num type="auto-markup" resp="#pers_TG" value="1907" xml:lang="ar" xml:id="num_1.d1e2957">١٩٠٧</num></date> ونشرت محاضراته في المجلة <title level="j" xml:lang="ar">الزرقاء</title> تكلم فيها بعد أن أورد بعض الملاحظات عَلَى الألفاظ العربية والتركية والهندية التي أخذتها الفارسية عَلَى نشوء<pb ed="print" n="109" facs="#facs_123" xml:id="pb_40.d1e3271"/> لغته الحديث فقال أن اللغة الروسية واللغة الإنكليزية لم يسر منهما إلى الفارسية إلا ألفاظ قليلة جداً.</p>
                 <p xml:lang="ar" xml:id="p_138.d1e2961">وربما وجد الناظر في لغة أهل طوريس ورشت بعض ألفاظ روسية في اللغة الدارجة ولكنها قليلة للغاية وهذا مما يدل
                     عَلَى أن الروس قد أخذوا ألفاظاً كثيرة من لغتهم عن الأجانب مثل الفرنسويين والألمان والإنكليز والطليان فلم تستعر الفارسية
                     من الروسية إلا لفظ سماور واستكان طاس ودروخكا عربة وكاليسكه كاليش (وهي عربة ذات <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> دواليب) وتارنتاس وباراخود للسفينة
@@ -1638,7 +1638,7 @@
                     النسافة (توربيدو) وهي من الإيطالية وبالإفرنسية (توربل) و (غانيوط) أي سفينة مدفعية وهي من الإنكليزية (كونبوت).</p>
                 <p xml:lang="ar" xml:id="p_149.d1e3005">أما المصطلحات العلمية فتكاد تكون تقريباً بأجمعها تركية أو فارسية أو عربية ويعمد إلى الفرنسوية واللاتينية في
                     النادر ولا تستعمل الإنكليزية ولا الألمانية.</p>
-                <p xml:lang="ar" xml:id="p_150.d1e3008">أما سائر اللهجات الشرقية التي تأثرت من اللغات العثمانية باللغات الأوربية فإن اللغة الروسية تكاد تكون وحدها منفردة بهذا الامتياز ولا يشاهد ذلك إلا في اللغة التتارية خاصة والظاهر أن ذلك بدأ في النصف الأول من القرن التاسع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> فإنك تجد في القصص الهزلية التي ألفها أليرزا فتح العلي آخوان زاده التي كتبت بين سنتي <num type="auto-markup" resp="#pers_TG" value="1850" xml:lang="ar" xml:id="num_1.d1e3010">١٨٥٠</num> و <num type="auto-markup" resp="#pers_TG" value="1860" xml:lang="ar" xml:id="num_1.d1e3013">١٨٦٠</num> بعض الألفاظ لم تكن روسية فتكون قد سرت إلى التتارية من اللغة الروسية مثل (زاكون) <pb corresp="file:../epub/26523/OEBPS/xhtml/P3186.xhtml" ed="shamela" n="n49-p23" xml:id="pb_24.d1e3016"/> قانون (بيلت) من (بيله) الفرنسوية أي تذكرة و (باشور) من (باسور) أي جواز و (مدال) من ميدال أي نوط ولا تكاد الآن تفتح جريدة مثل <bibl><title level="j">ترجمان</title> التي تصدر في <pubPlace><placeName>بعجه سراي</placeName></pubPlace></bibl> و<bibl><title level="j">ترقي</title> التي تصدر في <pubPlace><placeName>باكو</placeName></pubPlace></bibl> و<bibl>جريدة <title level="j">قازان مخبري</title></bibl> <pb ed="print" n="113" facs="#facs_127" xml:id="pb_48.d1e3337"/> إلا وتدهش مما تراه من كثرة الألفاظ الروسية أو المصبوغة بالصبغة الروسية لأن كثيراً منها من أصل فرنسوي أو ألماني أو إيطالي.</p>
+                <p xml:lang="ar" xml:id="p_150.d1e3008">أما سائر اللهجات الشرقية التي تأثرت من اللغات العثمانية باللغات الأوربية فإن اللغة الروسية تكاد تكون وحدها منفردة بهذا الامتياز ولا يشاهد ذلك إلا في اللغة التتارية خاصة والظاهر أن ذلك بدأ في النصف الأول من القرن التاسع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> فإنك تجد في القصص الهزلية التي ألفها أليرزا فتح العلي آخوان زاده التي كتبت بين سنتي <num type="auto-markup" resp="#pers_TG" value="1850" xml:lang="ar" xml:id="num_1.d1e3010">١٨٥٠</num> و <num type="auto-markup" resp="#pers_TG" value="1860" xml:lang="ar" xml:id="num_1.d1e3013">١٨٦٠</num> بعض الألفاظ لم تكن روسية فتكون قد سرت إلى التتارية من اللغة الروسية مثل (زاكون) <pb corresp="file:../epub/26523/OEBPS/xhtml/P3186.xhtml" ed="shamela" n="n49-p23" xml:id="pb_24.d1e3016"/> قانون (بيلت) من (بيله) الفرنسوية أي تذكرة و (باشور) من (باسور) أي جواز و (مدال) من ميدال أي نوط ولا تكاد الآن تفتح جريدة مثل <bibl xml:lang="ar"><title level="j" xml:lang="ar">ترجمان</title> التي تصدر في <pubPlace xml:lang="ar"><placeName xml:lang="ar">بعجه سراي</placeName></pubPlace></bibl> و<bibl xml:lang="ar"><title level="j" xml:lang="ar">ترقي</title> التي تصدر في <pubPlace xml:lang="ar"><placeName xml:lang="ar">باكو</placeName></pubPlace></bibl> و<bibl xml:lang="ar">جريدة <title level="j" xml:lang="ar">قازان مخبري</title></bibl> <pb ed="print" n="113" facs="#facs_127" xml:id="pb_48.d1e3337"/> إلا وتدهش مما تراه من كثرة الألفاظ الروسية أو المصبوغة بالصبغة الروسية لأن كثيراً منها من أصل فرنسوي أو ألماني أو إيطالي.</p>
                 <p xml:lang="ar" xml:id="p_151.d1e3019">إذا عرفت من هذا فما هو مستقبل اللغة التركية؟ إنا نشهد الآن لجنة المعارف العمومية في مجلس النواب الروسي تعنى
                     بالكتب المؤلفة باللغة المحلية للمدارس وقد رفضت الاستعاضة عن اللفظ التتري باللفظ التركي وذلك ليحولوا دون الجامعة التركيةز
                     ولكن من أين نشأت هذه المخاوف؟</p>
@@ -1665,7 +1665,7 @@
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P3188.xhtml" ed="shamela" n="n49-p25" xml:id="pb_26.d1e3032"/>
             <div type="article" xml:lang="ar" xml:id="div_4.d1e3034">
                 <head xml:lang="ar" xml:id="head_3.d1e3036">المالية العثمانية</head>
-                <p xml:lang="ar" xml:id="p_154.d1e3039">لا شيء يشغل بال العارفين من العثمانيين مثل إصلاح ميزانية الدولة وبينا النفوس متطلعة إلى ما يجري في مجلسنا النيابي بشأنها وردت <bibl>مجلة <title level="j">العالمين</title> الباريزية وفيها مقالة بقلم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> الأخصائيين في هذا المعنى</bibl> قال فيها أن واردات السلطان سليم الأول كانت تقدر سنة <num type="auto-markup" resp="#pers_TG" value="1508" xml:lang="ar" xml:id="num_1.d1e3044">١٥٠٨</num> بـ <num type="auto-markup" resp="#pers_TG" value="3.13E6" xml:lang="ar" xml:id="num_1.d1e3047">٣.١٣٠.٠٠٠</num> دوكا وبلغت سنة <num type="auto-markup" resp="#pers_TG" value="1553" xml:lang="ar" xml:id="num_1.d1e3050">١٥٥٣</num> <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e3053">١٥</num> مليون دوكا وبعد ذلك عاد ارتقاؤها انحطاطاً وقوتها ضعفاً مشهوداً بالاقتراض فأصبحت المملكة في قبضة أرباب المصارف من الماليين ولا تزال حتى يوم الناس هذا. فليت شعري هل ينهض أحرار الأمة العثمانية المجددون لإنهاض ماليتهم من كبوتها؟ فالجواب عَلَى ذلك اقتصدوا عَلَى وجه حسن تحسن ماليتكم لأن هذه لا تستمد إلا من الاقتصاد عَلَى أن الحالة الزراعية والصناعية والتجارية في السلطنة العثمانية ليست عَلَى ما يرام بالنظر لمثل هذه المملكة الواسعة الرباع والأصقاع. فقد خرجت المملكة سنة <num type="auto-markup" resp="#pers_TG" value="1905" xml:lang="ar" xml:id="num_1.d1e3057">١٩٠٥</num> <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e3060">١٨</num> مليون قنطار من الحنطة و <num type="auto-markup" resp="#pers_TG" value="34" xml:lang="ar" xml:id="num_1.d1e3063">٣٤</num> مليون قنطار من الشعير والجاودار (الحنطة السوداء) والقرطمان والذرة. ويستخرج من اليمن قهوة حسنة معروفة منزلتها. وتبلغ مساحة الغابات<pb ed="print" n="115" facs="#facs_129" xml:id="pb_52.d1e3390"/> التي خربتها المواشي <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ملايين هكتار. ويصدر من ولاية بورصة ولواء أزميد نحو <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> طن من الفيالج (الشرانق) وكثير من المواد الطبيعية عَلَى ظاهر الأرض وباطنها لم تستثمر إلى الآن لقلة رؤوس الأموال والمهندسين. وتقدر صادرات المملكة ووارداتها بنحو <num type="auto-markup" resp="#pers_TG" value="1150" xml:lang="ar" xml:id="num_1.d1e3066">١١٥٠</num> مليون فرنك تكاد تنقسم نصفين وطول سككها الحديدية <num type="auto-markup" resp="#pers_TG" value="6600" xml:lang="ar" xml:id="num_1.d1e3069">٦٦٠٠</num> كيلومتر.</p>
+                <p xml:lang="ar" xml:id="p_154.d1e3039">لا شيء يشغل بال العارفين من العثمانيين مثل إصلاح ميزانية الدولة وبينا النفوس متطلعة إلى ما يجري في مجلسنا النيابي بشأنها وردت <bibl xml:lang="ar">مجلة <title level="j" xml:lang="ar">العالمين</title> الباريزية وفيها مقالة بقلم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> الأخصائيين في هذا المعنى</bibl> قال فيها أن واردات السلطان سليم الأول كانت تقدر سنة <num type="auto-markup" resp="#pers_TG" value="1508" xml:lang="ar" xml:id="num_1.d1e3044">١٥٠٨</num> بـ <num type="auto-markup" resp="#pers_TG" value="3.13E6" xml:lang="ar" xml:id="num_1.d1e3047">٣.١٣٠.٠٠٠</num> دوكا وبلغت سنة <num type="auto-markup" resp="#pers_TG" value="1553" xml:lang="ar" xml:id="num_1.d1e3050">١٥٥٣</num> <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e3053">١٥</num> مليون دوكا وبعد ذلك عاد ارتقاؤها انحطاطاً وقوتها ضعفاً مشهوداً بالاقتراض فأصبحت المملكة في قبضة أرباب المصارف من الماليين ولا تزال حتى يوم الناس هذا. فليت شعري هل ينهض أحرار الأمة العثمانية المجددون لإنهاض ماليتهم من كبوتها؟ فالجواب عَلَى ذلك اقتصدوا عَلَى وجه حسن تحسن ماليتكم لأن هذه لا تستمد إلا من الاقتصاد عَلَى أن الحالة الزراعية والصناعية والتجارية في السلطنة العثمانية ليست عَلَى ما يرام بالنظر لمثل هذه المملكة الواسعة الرباع والأصقاع. فقد خرجت المملكة سنة <num type="auto-markup" resp="#pers_TG" value="1905" xml:lang="ar" xml:id="num_1.d1e3057">١٩٠٥</num> <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e3060">١٨</num> مليون قنطار من الحنطة و <num type="auto-markup" resp="#pers_TG" value="34" xml:lang="ar" xml:id="num_1.d1e3063">٣٤</num> مليون قنطار من الشعير والجاودار (الحنطة السوداء) والقرطمان والذرة. ويستخرج من اليمن قهوة حسنة معروفة منزلتها. وتبلغ مساحة الغابات<pb ed="print" n="115" facs="#facs_129" xml:id="pb_52.d1e3390"/> التي خربتها المواشي <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ملايين هكتار. ويصدر من ولاية بورصة ولواء أزميد نحو <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> طن من الفيالج (الشرانق) وكثير من المواد الطبيعية عَلَى ظاهر الأرض وباطنها لم تستثمر إلى الآن لقلة رؤوس الأموال والمهندسين. وتقدر صادرات المملكة ووارداتها بنحو <num type="auto-markup" resp="#pers_TG" value="1150" xml:lang="ar" xml:id="num_1.d1e3066">١١٥٠</num> مليون فرنك تكاد تنقسم نصفين وطول سككها الحديدية <num type="auto-markup" resp="#pers_TG" value="6600" xml:lang="ar" xml:id="num_1.d1e3069">٦٦٠٠</num> كيلومتر.</p>
                 <p xml:lang="ar" xml:id="p_155.d1e3073">هذا ما قاله صاحب هذا المبحث وقال إن إصلاح المالية العثمانية ليس بالأمر المتعذر فإنها إذا لم تحدث للدولة
                     مشاكل خارجية تستطيع أن تلم شعثها بعد بضع سنين إذا أحسن الأحرار السياسة والإدارة. وهو قول يشبه ما يردده ناظر ماليتنا
                     عَلَى أنه مثل بعض الماليين لا يرى عَلَى الدولة حرجاً في الاقتراض لسد العجز من ميزانيتها لأن الدولة تقترض من جهة وتوفي
@@ -1739,38 +1739,38 @@
                     نضيف إلى هذا المبلغ قيمة الديون المضمونة بخراج مصر والدين الذي كان معروفاً بالتحويلات الممتازة فبلغ مجموع ذلك زهاء <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="50">خمسين</num>
                     مليون ليرة وهذا يكاد لا يتجاوز مقدار الدين الموحد الآن فأين هذا من <num type="auto-markup" resp="#pers_TG" value="150" xml:lang="ar" xml:id="num_1.d1e3220">١٥٠</num> مليوناً.</p>
                 <p xml:lang="ar" xml:id="p_166.d1e3224">أما ديوننا الخارجية الآن فهي كما يأتي وهي أرقام حقيقية راهنة لا اعتبارية:</p>
-                    <table xml:id="table_1.d1e3597">
-                        <row xml:id="row_1.d1e3599">
-                            <cell xml:id="cell_1.d1e3601"><num type="auto-markup" resp="#pers_TG" value="18.606" xml:lang="ar" xml:id="num_1.d1e3229">١٨,٦١</num>
+                    <table xml:id="table_1.d1e3597" xml:lang="ar">
+                        <row xml:id="row_1.d1e3599" xml:lang="ar">
+                            <cell xml:id="cell_1.d1e3601" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="18.606" xml:lang="ar" xml:id="num_1.d1e3229">١٨,٦١</num>
                             </cell>
-                            <cell xml:id="cell_2.d1e3606">الديون المضمونة بخراج مصر</cell>
+                            <cell xml:id="cell_2.d1e3606" xml:lang="ar">الديون المضمونة بخراج مصر</cell>
                         </row>
-                        <row xml:id="row_2.d1e3610">
-                            <cell xml:id="cell_3.d1e3612"><num type="auto-markup" resp="#pers_TG" value="52.394" xml:lang="ar" xml:id="num_1.d1e3235">٥٢,٣٩</num>
+                        <row xml:id="row_2.d1e3610" xml:lang="ar">
+                            <cell xml:id="cell_3.d1e3612" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="52.394" xml:lang="ar" xml:id="num_1.d1e3235">٥٢,٣٩</num>
                             </cell>
-                            <cell xml:id="cell_4.d1e3617">الدين الموحد</cell>
+                            <cell xml:id="cell_4.d1e3617" xml:lang="ar">الدين الموحد</cell>
                         </row>
-                        <row xml:id="row_3.d1e3621">
-                            <cell xml:id="cell_5.d1e3623">
+                        <row xml:id="row_3.d1e3621" xml:lang="ar">
+                            <cell xml:id="cell_5.d1e3623" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="31.332" xml:lang="ar" xml:id="num_1.d1e3241">٣١,٣٣</num></cell>
-                            <cell xml:id="cell_6.d1e3628"> ديون أخرى مودعة لمجلس الدين</cell>
+                            <cell xml:id="cell_6.d1e3628" xml:lang="ar"> ديون أخرى مودعة لمجلس الدين</cell>
                         </row>
-                        <row xml:id="row_4.d1e3632">
-                            <cell xml:id="cell_7.d1e3634">
+                        <row xml:id="row_4.d1e3632" xml:lang="ar">
+                            <cell xml:id="cell_7.d1e3634" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="2.399" xml:lang="ar" xml:id="num_1.d1e3248">٢,٤</num>
                             </cell>
-                            <cell xml:id="cell_8.d1e3640">ديون لبعض البيوت المالية</cell>
+                            <cell xml:id="cell_8.d1e3640" xml:lang="ar">ديون لبعض البيوت المالية</cell>
                         </row>
-                        <row xml:id="row_5.d1e3644">
-                            <cell xml:id="cell_9.d1e3646">
+                        <row xml:id="row_5.d1e3644" xml:lang="ar">
+                            <cell xml:id="cell_9.d1e3646" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="15.262" xml:lang="ar" xml:id="num_1.d1e3254">١٥,٢٦</num>
                             </cell>
-                            <cell xml:id="cell_10.d1e3652">ديون منوط أمر تأديتها بنظارة المالية (منها القرضان الأخيران.</cell>
+                            <cell xml:id="cell_10.d1e3652" xml:lang="ar">ديون منوط أمر تأديتها بنظارة المالية (منها القرضان الأخيران.</cell>
                         </row>
-                        <row xml:id="row_6.d1e3657">
-                            <cell xml:id="cell_11.d1e3659">
+                        <row xml:id="row_6.d1e3657" xml:lang="ar">
+                            <cell xml:id="cell_11.d1e3659" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="119996281" xml:lang="ar" xml:id="num_1.d1e3260">١١٩٩٩٦٢٨١</num></cell>
-                            <cell xml:id="cell_12.d1e3664">المجموع</cell>
+                            <cell xml:id="cell_12.d1e3664" xml:lang="ar">المجموع</cell>
                         </row>
                     </table>
                 <p xml:lang="ar" xml:id="p_173.d1e3264">فإذا أضفنا إلى هذا المبلغ قيمة القرض الذي تنوي الحكومة عقده وأضفنا <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20">عشرين</num> مليوناً رأس مال ما ندفعه كل سنة
@@ -1825,10 +1825,10 @@
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P3196.xhtml" ed="shamela" n="n49-p33" xml:id="pb_34.d1e3372"/>
             <pb ed="print" n="121" facs="#facs_135" xml:id="pb_66.d1e3710"/>
             <div type="article" xml:lang="ar" xml:id="div_6.d1e3374">
-                <head xml:lang="ar" xml:id="head_5.d1e3376">التربية الأوربية<note type="footnote" n="1" xml:id="note_3.d1e3790">خطاب القيناه في <orgName xml:id="orgName_4.d1e3792">المنتدى
-                            الادبي</orgName> في <placeName xml:id="placeName_3.d1e3795">الاستانة</placeName> وهو مجمع الناشئة العربية من طلاب المدرسة
+                <head xml:lang="ar" xml:id="head_5.d1e3376">التربية الأوربية<note type="footnote" n="1" xml:id="note_3.d1e3790" xml:lang="ar">خطاب القيناه في <orgName xml:id="orgName_4.d1e3792" xml:lang="ar">المنتدى
+                            الادبي</orgName> في <placeName xml:id="placeName_3.d1e3795" xml:lang="ar">الاستانة</placeName> وهو مجمع الناشئة العربية من طلاب المدرسة
                     العلية</note></head>
-                <salute xml:id="salute_1.d1e3799">سادتي الأخوان الأعزاء:</salute>
+                <salute xml:id="salute_1.d1e3799" xml:lang="ar">سادتي الأخوان الأعزاء:</salute>
                 <p xml:lang="ar" xml:id="p_203.d1e3382">أوعز إليّ بعض أصدقاء هذا المنتدى الكريم أن أحدثكم بما رأيت في رحلتي الأخيرة إلى أوربا فلم تسعني مخالفتهم
                     لأن الطلاب أعزة وتبادل الأفكار مهم مع أشرف المطالب ولكن الموضوع كبير لا يتسع وقتي الآن للإحاطة بأطرافه كله ولا أوقات
                     الحضور الكرام إلى وعيه وسماعه ولذلك أقتصر منه في هذه الليلة عَلَى الإشارة إلى طرف مما تأثرت به نفسي في درس معالم الحضارة
@@ -1853,7 +1853,7 @@
                     المحاضرات والخطب والدروس النوادر ولما كثرت عليّ الموضوعات كلّ القلم من التقييد وقلت إنك يا هذا تكتفي متى عدت لتحدث قومك
                     بما رأيت من تسجيل ما يعلق في ذهنك وبعض مما فيه الغناء والكفاية.</p>
                 <p xml:lang="ar" xml:id="p_209.d1e3403">نعم تركت التقييد عَلَى خلاف عادتي فصدق فيَّ قول الشاعر:</p>
-                <lg xml:id="lg_1.d1e3611">
+                <lg xml:id="lg_1.d1e3611" xml:lang="ar">
                <l type="bayt" xml:lang="ar" xml:id="l_1.d1e3613">
                     <seg xml:lang="ar" xml:id="seg_217.d1e3615">تكاثرت الظباءُ عَلَى خراشٍ </seg>
                     <seg xml:lang="ar" xml:id="seg_218.d1e3618">فما يدري خراشُ ما يصيد</seg>
@@ -1901,7 +1901,7 @@
                     يقيدوا آثار بعثتهم وقد أخذ <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> أعضاء البعثة صورة<pb ed="print" n="126" facs="#facs_140" xml:id="pb_74.d1e3795"/> طوبوغرافية من خط هذه الرحلة وفوائد فلكية في عدة نقاط وآب بمجموعة من
                     الحشرات والحيوانات تغني المتحف الطبيعي وبصور كثيرة عرضت بالفانوس السحري عَلَى الحضور تلك الليلة حتى لكأنهم ذهبوا بأنفسهم
                     إلى تلك الأصقاع النائية.</p>
-                <p xml:lang="ar" xml:id="p_218.d1e3451">هذه المحاضرة الأولى التي تكهرب بها جسمي وتأثرت عواطفي وسمعت بها مهانة أمتي بأذني. والمحاضرة الثانية التي ألقاها المسيو تارديو من كبار السياسيين الفرنسويين وصاحب المقالات الافتتاحية في جريدة <title level="j">الطان</title> في <placeName>الدولة العثمانية</placeName> فهو أول أخصائي في سياسة الشرق ولاسيما دولتنا يقلب القلم بين أصابعه كما تشاء حكومته. حضرت خطبة له في مدرسة اللغات الشرقية الحية ألقاها عَلَى طلبة تلك المدرسة العالية ممن يتخرجون الآن ليذهبوا إلى الشرق فيما بعد لخدمة حكومتهم ويكون منهم التراجمة والقناصل والسفراءُ ببيان لم أسمع من العرب ولا من العجم أبلغ منه لم يتمتم ولم يعطس ولم يكرر وقلما رأيت إنساناً درس موضوعه وأعد له المواد التاريخية والمستندات أكثر من ذلك ولكن سياسة المنافع والمصالح كانت تلوح صراحة من خلال كلام الخطيب فكان عجبي بتحامله عَلَى <pb corresp="file:../epub/26523/OEBPS/xhtml/P3200.xhtml" ed="shamela" n="n49-p37" xml:id="pb_38.d1e3453"/> الدولة أكثر من عجبي بذلاقة لسان فقد تكلم عَلَى علاقة فرنسا بالشرق ولاسيما الدولة العلية فقال أن فرنسا صاحبة الفكر الأول في الحروب الصليبية قد أتى عليها زمن حالفت فيه الدولة العلية أيام قوتها لتستخدمها لأغراضها وقد جنى الفرنسيس ثمار هذا الوفاق ثم لما مضت سنون والدولة لم تر خيراً لها من تلك المحالفة نزعت يدها من يد حليفتها ثم عادت فرنسا فبعثت أبناءها إلى القريم ليحابوا مع الإنكليز والعثمانيين جيوش الروس لأن مصلحتها اقتضت إذ ذاك وأفاض في نشأة الامتيازات<pb ed="print" n="127" facs="#facs_141" xml:id="pb_76.d1e3802"/> الأجنبية في البلاد المصرية والعثمانية وقال أن فرنسا في كل دور من أدوارها استخدمت الدولة العلية لمقاصدها وأن لها اليد الطولى في المسألة الشرقية أي استقلال بلاد البلقان واليونان وأنها لا تقصر كل حين في بتر عضو من أعضاء هذه الدولة حتى تموت وتفنى.</p>
+                <p xml:lang="ar" xml:id="p_218.d1e3451">هذه المحاضرة الأولى التي تكهرب بها جسمي وتأثرت عواطفي وسمعت بها مهانة أمتي بأذني. والمحاضرة الثانية التي ألقاها المسيو تارديو من كبار السياسيين الفرنسويين وصاحب المقالات الافتتاحية في جريدة <title level="j" xml:lang="ar">الطان</title> في <placeName xml:lang="ar">الدولة العثمانية</placeName> فهو أول أخصائي في سياسة الشرق ولاسيما دولتنا يقلب القلم بين أصابعه كما تشاء حكومته. حضرت خطبة له في مدرسة اللغات الشرقية الحية ألقاها عَلَى طلبة تلك المدرسة العالية ممن يتخرجون الآن ليذهبوا إلى الشرق فيما بعد لخدمة حكومتهم ويكون منهم التراجمة والقناصل والسفراءُ ببيان لم أسمع من العرب ولا من العجم أبلغ منه لم يتمتم ولم يعطس ولم يكرر وقلما رأيت إنساناً درس موضوعه وأعد له المواد التاريخية والمستندات أكثر من ذلك ولكن سياسة المنافع والمصالح كانت تلوح صراحة من خلال كلام الخطيب فكان عجبي بتحامله عَلَى <pb corresp="file:../epub/26523/OEBPS/xhtml/P3200.xhtml" ed="shamela" n="n49-p37" xml:id="pb_38.d1e3453"/> الدولة أكثر من عجبي بذلاقة لسان فقد تكلم عَلَى علاقة فرنسا بالشرق ولاسيما الدولة العلية فقال أن فرنسا صاحبة الفكر الأول في الحروب الصليبية قد أتى عليها زمن حالفت فيه الدولة العلية أيام قوتها لتستخدمها لأغراضها وقد جنى الفرنسيس ثمار هذا الوفاق ثم لما مضت سنون والدولة لم تر خيراً لها من تلك المحالفة نزعت يدها من يد حليفتها ثم عادت فرنسا فبعثت أبناءها إلى القريم ليحابوا مع الإنكليز والعثمانيين جيوش الروس لأن مصلحتها اقتضت إذ ذاك وأفاض في نشأة الامتيازات<pb ed="print" n="127" facs="#facs_141" xml:id="pb_76.d1e3802"/> الأجنبية في البلاد المصرية والعثمانية وقال أن فرنسا في كل دور من أدوارها استخدمت الدولة العلية لمقاصدها وأن لها اليد الطولى في المسألة الشرقية أي استقلال بلاد البلقان واليونان وأنها لا تقصر كل حين في بتر عضو من أعضاء هذه الدولة حتى تموت وتفنى.</p>
                 <p xml:lang="ar" xml:id="p_219.d1e3456">فيا أخواني وسادتي أيسمع عثماني هذا الكلام ولا يجهش نفسه بالبكاء ولا تذوب كمداً وحسرة وتسود الدنيا في
                     عينيه؟</p>
                 <p xml:lang="ar" xml:id="p_220.d1e3459">هذا بعض ما يعده الغرب للشرق فمإذا يعد الشرق للغرب؟</p>
@@ -1977,8 +1977,8 @@
                     جملة المدارس التي زرتها في فرنسا وتأثرت أيضاً بنظامها مدرسة جزيرة فرنسا في مقاطعة الواز. زرتها بدعوة من صديقي مرسي أفندي
                     محمود <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> كتاب مصر فكانت زيارتها وزيارة مدرسة كرنيون من اسعد الأيام التي قضيتها في أرض الفرنسيس وإني أحب أن أقص عليكم
                     قصة هذه المدرسة لتعرفوا الغرض منها فأقول:</p>
-                <p xml:lang="ar" xml:id="p_236.d1e3518">قام منذ <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> سنين في فرنسا رجل من رجال الصحافة اسمه <persName xml:lang="fr-Arab-AR"><forename>أديمون</forename>
-                    <surname>ديمولانس</surname></persName> درس طرق الحضارة والتعليم والتربية عند الألمان والإنكليز والأميركان وقابل بين طرائقهم وأخلاقهم وعاداتهم وبين ما عند الفرنسيس منها ووضع لذلك الكتب وكتب المقالات وأنشأ مجلة العلم الاجتماعي التي تدور عَلَى هذا الغرض ومن جملة كتبه سر تقدم الإنكليز السكسونيين الذي نقل إلى<pb ed="print" n="133" facs="#facs_147" xml:id="pb_86.d1e3879"/> العربية فعمت فائدته العرب كما عمت الإفرنج.</p>
+                <p xml:lang="ar" xml:id="p_236.d1e3518">قام منذ <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> سنين في فرنسا رجل من رجال الصحافة اسمه <persName xml:lang="fr-Arab-AR"><forename xml:lang="fr-Arab-AR">أديمون</forename>
+                    <surname xml:lang="fr-Arab-AR">ديمولانس</surname></persName> درس طرق الحضارة والتعليم والتربية عند الألمان والإنكليز والأميركان وقابل بين طرائقهم وأخلاقهم وعاداتهم وبين ما عند الفرنسيس منها ووضع لذلك الكتب وكتب المقالات وأنشأ مجلة العلم الاجتماعي التي تدور عَلَى هذا الغرض ومن جملة كتبه سر تقدم الإنكليز السكسونيين الذي نقل إلى<pb ed="print" n="133" facs="#facs_147" xml:id="pb_86.d1e3879"/> العربية فعمت فائدته العرب كما عمت الإفرنج.</p>
                 <p xml:lang="ar" xml:id="p_237.d1e3521">وقد وفق ديمولانس صاحب تلك الدعوة بأنه التف حوله أناس من أرباب الغيرة عَلَى ارتقاء بلادهم والاهتمام
                     بمستقبلها فكانوا يعطونه بالمئات لقيان الغرض الذي حاول بلوغه وتربية أبناء الفرنسيس عَلَى الطريقة الأنكلو سكسونية العملية
                     فأسست لذلك <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> مدارس كبرى عقيب دعوته الأولى مدرسة بروش أسست سنة <num type="auto-markup" resp="#pers_TG" value="1899" xml:lang="ar" xml:id="num_1.d1e3523">١٨٩٩</num> باسم جماعة من المساهمين وأخرى في إقليم نورمانديا لجماعة من كبار الصناع منها
@@ -2043,7 +2043,7 @@
                     والإنكليز والمصريين وهكذا شأن معظم المدارس في فرنسا ولاسيما في كلياتها الجامعة فلا يتعلم فيها الطلبة من الذكور فقط بل
                     يتعلم فيها الطالبات من الإناث وإني لا أذكر أنني حضرت خطبة أو درساً أو مجلساً علمياً ولا زرت متحفاً ولا مطبعة ولا إدارة
                     جريدة إلا <pb corresp="file:../epub/26523/OEBPS/xhtml/P3208.xhtml" ed="shamela" n="n49-p45" xml:id="pb_46.d1e3570"/>
-                    ورأيت الفتيات سبقنني إلى تلك الأمكنة ومعظمهن روسيات وإنكليزيات وألمانيات وبلقانيا وبولونيات. والبولونيات<note type="footnote" n="1" xml:id="note_4.d1e4025">
+                    ورأيت الفتيات سبقنني إلى تلك الأمكنة ومعظمهن روسيات وإنكليزيات وألمانيات وبلقانيا وبولونيات. والبولونيات<note type="footnote" n="1" xml:id="note_4.d1e4025" xml:lang="ar">
                         <gap resp="#org_MS" xml:id="gap_17.d1e4027"/>
                     </note> أكثر الفتيات الأجنبيات في فرنسا وأكثرهن عناية بتعلم<pb ed="print" n="138" facs="#facs_152" xml:id="pb_95.d1e3941"/> اللغات الأجنبية حتى أن الواحدة منهن لتكلمك فلا تحسبها إلا فرنسوية لكثرة إتقانها للغة
                     الفرنسوية وإجادتها النطق بها مما لا يكاد يتيسر مثله لغريبة ولا لغريب عن اللغة وهن مع هذا أكثر النساء الأوربيات تفانياً
@@ -2091,8 +2091,8 @@
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P3211.xhtml" ed="shamela" n="n49-p48" xml:id="pb_49.d1e3610"/>
             <div type="section" xml:lang="ar" xml:id="div_7.d1e3612">
                 <head xml:lang="ar" xml:id="head_6.d1e3614">سير العلم والاجتماع</head>
-                <div type="article" xml:id="div_20.d1e3995">
-                    <head xml:id="head_20.d1e3997">الدرس في النزهة</head>
+                <div type="article" xml:id="div_20.d1e3995" xml:lang="ar">
+                    <head xml:id="head_20.d1e3997" xml:lang="ar">الدرس في النزهة</head>
                     <p xml:lang="ar" xml:id="p_259.d1e3620">اعتادت بعض المدارس في الغرب أن تخرج
                         بتلامذتها في أيام معينة من الأسبوع إلى الضواحي تدرسهم في كتاب الطبيعة بعيدين
                         عن الدفاتر والكتب وجدران صفوفهم ما يحرر حواسهم من رقها وينزه عقولهم من
@@ -2170,9 +2170,9 @@
                         ويدرك التلامذة باحتكاكهم بأرباب الصناعات وعملة الحقول أن العمل شريف في ذاته
                         وأنه خير ما يعد له نفسه.</p>
                 </div>
-                <div type="article" xml:id="div_21.d1e4036">
-                    <head xml:id="head_21.d1e4038">العالم في الصور</head>
-                    <p xml:lang="ar" xml:id="p_268.d1e3653"><bibl>كتبت <author>الآنسة برس</author> في مجلة التربية مقالة</bibl> قالت فيها: إن أول من رأس تسهيل الدرس عَلَى الأطفال بوضع صور في الكتب المدرسية هو <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> قدماء العلماء آموس كومينوس ( <num type="auto-markup" resp="#pers_TG" value="1592" xml:lang="ar" xml:id="num_1.d1e3655">١٥٩٢</num> _ <num type="auto-markup" resp="#pers_TG" value="1671" xml:lang="ar" xml:id="num_1.d1e3658">١٦٧١</num> ) وما برحت طريقته تنتشر ولكن عَلَى ضعف حتى العهد الأخير وقد غدت الكتب المدرسية وغيرها مصورة كلها بل أفرطوا في بعضها حتى قال بعضهم أن كثرة <pb corresp="file:../epub/26523/OEBPS/xhtml/P3214.xhtml" ed="shamela" n="n49-p51" xml:id="pb_52.d1e3661"/> الصور توشك أن تأتي عَلَى كل اجتهاد للفهم وتفكر الإنسان بنفسه في موضوع بمجرد وصفه وصفاً بسيطاً. ولكن الذاهبين إلى أن الصور تضعف قوة التصور هم عَلَى خطأ في دعواهم فإن الصورة تقوي الجهاد للفهم وذلك بأن تجعل الحواس والذهن تتحرك بنفسها منذ الصغر ويتسع أمام الطفل عالم العلم المنوع وتعلق بواسطته مبادئ من العلم غير قليلة وبذلك يكون الفكر في سعة من الوقت والقوة اللازمة للبحث في أمور أخرى لا يتأتى التمكن منها بالنظر. نعم إن الصور توضح كل شيءٍ بحيث تكتفي أرباب أرباب العقول العادية بما فيها وهي مفيدة تفتح لأرباب الأفكار العالية أموراً جديدة أخرى. ولعمري أليس التصوير من حيث الجملة هو سبب ونتيجة لاتساع الانتباه العقلي في السنين الأخيرة.</p>
+                <div type="article" xml:id="div_21.d1e4036" xml:lang="ar">
+                    <head xml:id="head_21.d1e4038" xml:lang="ar">العالم في الصور</head>
+                    <p xml:lang="ar" xml:id="p_268.d1e3653"><bibl xml:lang="ar">كتبت <author xml:lang="ar">الآنسة برس</author> في مجلة التربية مقالة</bibl> قالت فيها: إن أول من رأس تسهيل الدرس عَلَى الأطفال بوضع صور في الكتب المدرسية هو <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> قدماء العلماء آموس كومينوس ( <num type="auto-markup" resp="#pers_TG" value="1592" xml:lang="ar" xml:id="num_1.d1e3655">١٥٩٢</num> _ <num type="auto-markup" resp="#pers_TG" value="1671" xml:lang="ar" xml:id="num_1.d1e3658">١٦٧١</num> ) وما برحت طريقته تنتشر ولكن عَلَى ضعف حتى العهد الأخير وقد غدت الكتب المدرسية وغيرها مصورة كلها بل أفرطوا في بعضها حتى قال بعضهم أن كثرة <pb corresp="file:../epub/26523/OEBPS/xhtml/P3214.xhtml" ed="shamela" n="n49-p51" xml:id="pb_52.d1e3661"/> الصور توشك أن تأتي عَلَى كل اجتهاد للفهم وتفكر الإنسان بنفسه في موضوع بمجرد وصفه وصفاً بسيطاً. ولكن الذاهبين إلى أن الصور تضعف قوة التصور هم عَلَى خطأ في دعواهم فإن الصورة تقوي الجهاد للفهم وذلك بأن تجعل الحواس والذهن تتحرك بنفسها منذ الصغر ويتسع أمام الطفل عالم العلم المنوع وتعلق بواسطته مبادئ من العلم غير قليلة وبذلك يكون الفكر في سعة من الوقت والقوة اللازمة للبحث في أمور أخرى لا يتأتى التمكن منها بالنظر. نعم إن الصور توضح كل شيءٍ بحيث تكتفي أرباب أرباب العقول العادية بما فيها وهي مفيدة تفتح لأرباب الأفكار العالية أموراً جديدة أخرى. ولعمري أليس التصوير من حيث الجملة هو سبب ونتيجة لاتساع الانتباه العقلي في السنين الأخيرة.</p>
                     <p xml:lang="ar" xml:id="p_269.d1e3664">فالواجب أن تري الجغرافيا عيوننا صوراً من
                         بلاد العالم لم نراها ولن نراها. وأن يكون التاريخ معرضاً صور لكل عصر أو لكل
                         القصص التي تعظم قيمتها لقلة صحتها لأنها تعبر عن حالة الأفكار العامة لزمن أو
@@ -2201,9 +2201,9 @@
                         بها وهو ساه لاهٍ عنها وبذلك يعلم جمال الحقيقة فالإكثار من مجاميع الصور في
                         المدارس والبيوت من أقوى أسباب التعليم.</p>
                 </div>
-                <div type="article" xml:id="div_22.d1e4066">
-                    <head xml:id="head_22.d1e4068">صحة العين</head>
-                    <p xml:lang="ar" xml:id="p_273.d1e3678"><bibl>نشر <author>الدكتور <persName><surname>دوفور</surname></persName></author> في مجلة التربية مقالة في صحة العين في البيوت المدارس</bibl> قال فيها:</p>
+                <div type="article" xml:id="div_22.d1e4066" xml:lang="ar">
+                    <head xml:id="head_22.d1e4068" xml:lang="ar">صحة العين</head>
+                    <p xml:lang="ar" xml:id="p_273.d1e3678"><bibl xml:lang="ar">نشر <author xml:lang="ar">الدكتور <persName xml:lang="ar"><surname xml:lang="ar">دوفور</surname></persName></author> في مجلة التربية مقالة في صحة العين في البيوت المدارس</bibl> قال فيها:</p>
                     <p xml:lang="ar" xml:id="p_274.d1e3682">إن الواجب تنظيف عيون الأولاد والعمل لما
                         فيه وقايتها لا أن يمدوا أيديهم إليها وهي وسخة فلا تستعمل لها اسفنجة ولا خرقة
                         استعملت في سائر أجزاء الجسد ولا أن تغل عيون الأولاد بما استحموا به. لأن
@@ -2290,9 +2290,9 @@
                             <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e3753">١١</num> ً) يحظر استعمال الورق ( <num type="auto-markup" resp="#pers_TG" value="12" xml:lang="ar" xml:id="num_1.d1e3756">١٢</num> ً) يباعد بين العنق والعمل
                         القريب.</p>
                 </div>
-                <div type="article" xml:id="div_23.d1e4159">
-                    <head xml:id="head_23.d1e4161">تربية بيوت الضاحية</head>
-                    <p xml:lang="ar" xml:id="p_282.d1e3763">اشتهر <persName>الدكتور ليز</persName> في ألمانيا بإنشاء مدارس سماها بهذا الاسم وشاعت طريقتها في أوربا وأميركا عَلَى نحو ما كانت شاعت منذ بضع سنين كتب إديمون ديمولانس في فرنسا القائل باتخاذ التربية السكسونية. وقد <bibl>كتبت مجلة التربية الفرنسوية يصف طريقة مدارسه</bibl> قال: إننا أنشأنا خلال ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> السنين الأخيرة من بيوت التربية <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> وهي في الضواحي بعيدة عن المدن يتربى فيها التلميذ ممتعاً بكل قواه الطبيعية والدينية والأدبية فيعيش في محيط ملائم لتربية شخصيته عَلَى القوة والنشاط عَلَى صورة تعرف فيها قيمة الحياة وأفراحها وتكون جديرة بأن تساعد عَلَى سعادة الخلق فيقوم المعلمون في هذه المدارس بوظيفة المربي الحقيقي يعيشون مع الفتيان الذين عهدت إليهم تربيتهم كما يعيش الأصحاب ويعينونهم ما أمكن عَلَى إتمام تربيتهم الشخصية فيلعبون ويعملون معهم ويقاسمونهم اللذائذ والأعمال الجدية ويؤثرون فيهم بالمثل والقدوة وبما يبثونه في قلوبهم من حب الميل إلى كل الصور الشريفة والنافعة في العمل. وللتربية العملية المقام الأول في هذه<pb ed="print" n="149" facs="#facs_163" xml:id="pb_116.d1e4166"/> التربية فيمكنون الطفل أن يعيش في الهواء الطلق وما يتحتم عليه القيام به من أنواع الرياضات البدنية يكون متناسباً مع نموه ويعمل به بدون إفراط فيوصونه بالمشي والعدو وأعمال الرياضة وركوب الدراجة وهذه الرياضة الأخيرة تكون في السنة الحادية <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ومن جملة <pb corresp="file:../epub/26523/OEBPS/xhtml/P3219.xhtml" ed="shamela" n="n49-p56" xml:id="pb_57.d1e3765"/> الأعمال التي تقوي جسمه زراعة البقول والزروع والنجارة وهي من الصناعات التي كتبت لها المدرسة فضل التقدم وإذ كان الدكتور وايز يعلق شأناً عظيماً عَلَى تأثير جمال الأقاليم في التلميذ أسس مدارسه ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أقاليم بهجة من بلاد ألمانيا أما الأشغال العقلية فيجب أن يعلمها الطفل عَلَى صورة مقبولة ويتقبلها بفرح فينبه ما فيه من الميل الفطري وهباته في النظر وقوته في التفكر كما تربي فيه العواطف الدينية والأدبية والوطنية وتفي بما يحفظ نظام الحياة وسذاجتها وإخلاصها المطلق نحو الواجب.</p>
+                <div type="article" xml:id="div_23.d1e4159" xml:lang="ar">
+                    <head xml:id="head_23.d1e4161" xml:lang="ar">تربية بيوت الضاحية</head>
+                    <p xml:lang="ar" xml:id="p_282.d1e3763">اشتهر <persName xml:lang="ar">الدكتور ليز</persName> في ألمانيا بإنشاء مدارس سماها بهذا الاسم وشاعت طريقتها في أوربا وأميركا عَلَى نحو ما كانت شاعت منذ بضع سنين كتب إديمون ديمولانس في فرنسا القائل باتخاذ التربية السكسونية. وقد <bibl xml:lang="ar">كتبت مجلة التربية الفرنسوية يصف طريقة مدارسه</bibl> قال: إننا أنشأنا خلال ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> السنين الأخيرة من بيوت التربية <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> وهي في الضواحي بعيدة عن المدن يتربى فيها التلميذ ممتعاً بكل قواه الطبيعية والدينية والأدبية فيعيش في محيط ملائم لتربية شخصيته عَلَى القوة والنشاط عَلَى صورة تعرف فيها قيمة الحياة وأفراحها وتكون جديرة بأن تساعد عَلَى سعادة الخلق فيقوم المعلمون في هذه المدارس بوظيفة المربي الحقيقي يعيشون مع الفتيان الذين عهدت إليهم تربيتهم كما يعيش الأصحاب ويعينونهم ما أمكن عَلَى إتمام تربيتهم الشخصية فيلعبون ويعملون معهم ويقاسمونهم اللذائذ والأعمال الجدية ويؤثرون فيهم بالمثل والقدوة وبما يبثونه في قلوبهم من حب الميل إلى كل الصور الشريفة والنافعة في العمل. وللتربية العملية المقام الأول في هذه<pb ed="print" n="149" facs="#facs_163" xml:id="pb_116.d1e4166"/> التربية فيمكنون الطفل أن يعيش في الهواء الطلق وما يتحتم عليه القيام به من أنواع الرياضات البدنية يكون متناسباً مع نموه ويعمل به بدون إفراط فيوصونه بالمشي والعدو وأعمال الرياضة وركوب الدراجة وهذه الرياضة الأخيرة تكون في السنة الحادية <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ومن جملة <pb corresp="file:../epub/26523/OEBPS/xhtml/P3219.xhtml" ed="shamela" n="n49-p56" xml:id="pb_57.d1e3765"/> الأعمال التي تقوي جسمه زراعة البقول والزروع والنجارة وهي من الصناعات التي كتبت لها المدرسة فضل التقدم وإذ كان الدكتور وايز يعلق شأناً عظيماً عَلَى تأثير جمال الأقاليم في التلميذ أسس مدارسه ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أقاليم بهجة من بلاد ألمانيا أما الأشغال العقلية فيجب أن يعلمها الطفل عَلَى صورة مقبولة ويتقبلها بفرح فينبه ما فيه من الميل الفطري وهباته في النظر وقوته في التفكر كما تربي فيه العواطف الدينية والأدبية والوطنية وتفي بما يحفظ نظام الحياة وسذاجتها وإخلاصها المطلق نحو الواجب.</p>
                     <p xml:lang="ar" xml:id="p_283.d1e3768">قال لقد أنشأنا في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أقاليم بهجة من
                         بلاد ألمانيا (في هارز تورنغ ورون) <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> دور للتربية للأطفال والمتوسطين
                         والكبار وذلك ليكون أبناء كل سن مع أبناء سنهم ويخلصوا من حبسهم في مدارس
@@ -2383,8 +2383,8 @@
                         المدارس التي أنشئت في البلاد الخارجية فأبانت عن نجاح وستعظم فائدته في
                         المستقبل أكثر.</p>
                 </div>
-                <div type="article" xml:id="div_24.d1e4232">
-                    <head xml:id="head_24.d1e4234">معنى التاريخ</head>
+                <div type="article" xml:id="div_24.d1e4232" xml:lang="ar">
+                    <head xml:id="head_24.d1e4234" xml:lang="ar">معنى التاريخ</head>
                     <p xml:lang="ar" xml:id="p_294.d1e3824">كتب الدكتور ماكس نورد كتاباً بالإفرنسية
                         تحت هذا الاسم جاءت فيه بعض الفقرات الآتية:</p>
                     <p xml:lang="ar" xml:id="p_295.d1e3827">إن ما كان يراه الجيل الماضي في التاريخ
@@ -2434,8 +2434,8 @@
                         بعيد أن تدوين وقائع التاريخ لا يوصل إلى معرفة المستقبل إلا كما يدل علم
                         النجوم والقيافة والعرافة.</p>
                 </div>
-                <div type="article" xml:id="div_25.d1e4256">
-                    <head xml:id="head_25.d1e4258">الصحة المدرسية</head>
+                <div type="article" xml:id="div_25.d1e4256" xml:lang="ar">
+                    <head xml:id="head_25.d1e4258" xml:lang="ar">الصحة المدرسية</head>
                     <p xml:lang="ar" xml:id="p_299.d1e3844">اجتمعت جمعية الصحة الألمانية في ديسو من
                         بلاد ألمانيا وبحثت في أمور كثيرة في<pb ed="print" n="154" facs="#facs_168" xml:id="pb_127.d1e4263"/>
                         حفظ صحة التلامذة ولاسيما في مسألة العيون فقد رأي أن خير وقاية للعين من
@@ -2447,8 +2447,8 @@
                         طريق للعناية بنظر حماة الوطن وأبناء المستقبل على أن يعنى أرباب البيوت بصحة
                         عيون أبنائهم عناية المدارس بها بعد.</p>
                 </div>
-                <div type="article" xml:id="div_26.d1e4267">
-                    <head xml:id="head_26.d1e4269">كلية ليبسيك</head>
+                <div type="article" xml:id="div_26.d1e4267" xml:lang="ar">
+                    <head xml:id="head_26.d1e4269" xml:lang="ar">كلية ليبسيك</head>
                     <p xml:lang="ar" xml:id="p_301.d1e3850">احتفلت كلية لايبسيك الألمانية بمرور
                         <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="500">خمسمائة</num> سنة على تأسيسها فقد أنشئت سنة <num type="auto-markup" resp="#pers_TG" value="1409" xml:lang="ar" xml:id="num_1.d1e3852">١٤٠٩</num> على يد أساتذة وتلامذة من الألمان هاجروا من براغ للخلاص
                         من النفوذ السلافي فمد فريديريك المحارب ظل حمايته عليها وكذلك صاحب مسينا
@@ -2461,8 +2461,8 @@
                         سنة والدور الذي رفض فيه الفيلسوف ليبنز من نيل شهادة الحقوق ودور ليسنج وكيتي
                         و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> من قدماء تلامذة لايبسيك.</p>
                 </div>
-                <div type="article" xml:id="div_27.d1e4285">
-                    <head xml:id="head_27.d1e4287">بلجيكا الحديثة</head>
+                <div type="article" xml:id="div_27.d1e4285" xml:lang="ar">
+                    <head xml:id="head_27.d1e4287" xml:lang="ar">بلجيكا الحديثة</head>
                     <p xml:lang="ar" xml:id="p_303.d1e3865">نشر فرنسوي أقام في بلاد البلجيك زمناً
                         كتاباً في وصفها جاء أن ليس في بلجيكا روح بلجيكية كما ليس في ألمانيا ولا في
                         فرنسا روح فرنسوية ولا في إنكلترا روح إنكليزية لأنه <pb corresp="file:../epub/26523/OEBPS/xhtml/P3225.xhtml" ed="shamela" n="n49-p62" xml:id="pb_63.d1e3867"/> ما من شعب في الأرض يملك روحاً خاصة
@@ -2480,89 +2480,89 @@
                         الأحزاب فتدعو إلى مذهبها بما تقوم به من الأفعال النافعة العملية فهي تسطو على
                         الفلاح والعامل والطفل أيضاً تتناولهم من المهد ولا تتركهم إلى اللحد.</p>
                 </div>
-                <div type="article" xml:id="div_28.d1e4330">
-                    <head xml:id="head_28.d1e4332">محصول الذهب</head>
-                    <p xml:lang="ar" xml:id="p_305.d1e3905">قال <bibl>مجلة <title level="j">الاقتصاديين</title></bibl>: ما برح محصول الذهب في العالم يزيد سنة عن سنة وليس هو الذي زاد غلاء المعيشة بل إن الغلاء ناشيء بطبيعة الحال من التدابير السياسية والقوانين الاجتماعية وهاك جدولاً بمحصوله سنة <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e3907">١٩٠٩</num> ومنه تفهم أن الولية قد فازت بها الترنسفال في هذا الباب.</p>
+                <div type="article" xml:id="div_28.d1e4330" xml:lang="ar">
+                    <head xml:id="head_28.d1e4332" xml:lang="ar">محصول الذهب</head>
+                    <p xml:lang="ar" xml:id="p_305.d1e3905">قال <bibl xml:lang="ar">مجلة <title level="j" xml:lang="ar">الاقتصاديين</title></bibl>: ما برح محصول الذهب في العالم يزيد سنة عن سنة وليس هو الذي زاد غلاء المعيشة بل إن الغلاء ناشيء بطبيعة الحال من التدابير السياسية والقوانين الاجتماعية وهاك جدولاً بمحصوله سنة <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e3907">١٩٠٩</num> ومنه تفهم أن الولية قد فازت بها الترنسفال في هذا الباب.</p>
                     <table xml:lang="ar" xml:id="table_2.d1e4429">
-                        <row role="label" xml:id="row_7.d1e4431">
-                            <cell xml:id="cell_13.d1e4433">فرنك</cell>
+                        <row role="label" xml:id="row_7.d1e4431" xml:lang="ar">
+                            <cell xml:id="cell_13.d1e4433" xml:lang="ar">فرنك</cell>
                             <cell xml:id="cell_14.d1e4436"/>
                         </row>
-                        <row xml:id="row_8.d1e4439">
-                            <cell xml:id="cell_15.d1e4441"><num type="auto-markup" resp="#pers_TG" value="770.1" xml:lang="ar" xml:id="num_1.d1e3916">٧٧٠,١</num>
+                        <row xml:id="row_8.d1e4439" xml:lang="ar">
+                            <cell xml:id="cell_15.d1e4441" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="770.1" xml:lang="ar" xml:id="num_1.d1e3916">٧٧٠,١</num>
                             </cell>
-                            <cell xml:id="cell_16.d1e4446">الترنسفال</cell>
+                            <cell xml:id="cell_16.d1e4446" xml:lang="ar">الترنسفال</cell>
                         </row>
-                        <row xml:id="row_9.d1e4450">
-                            <cell xml:id="cell_17.d1e4452"><num type="auto-markup" resp="#pers_TG" value="429.15" xml:lang="ar" xml:id="num_1.d1e3922">٤٢٩,١٥</num>
+                        <row xml:id="row_9.d1e4450" xml:lang="ar">
+                            <cell xml:id="cell_17.d1e4452" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="429.15" xml:lang="ar" xml:id="num_1.d1e3922">٤٢٩,١٥</num>
                             </cell>
-                            <cell xml:id="cell_18.d1e4457">الولايات المتحدة</cell>
+                            <cell xml:id="cell_18.d1e4457" xml:lang="ar">الولايات المتحدة</cell>
                         </row>
-                        <row xml:id="row_10.d1e4461">
-                            <cell xml:id="cell_19.d1e4463">
+                        <row xml:id="row_10.d1e4461" xml:lang="ar">
+                            <cell xml:id="cell_19.d1e4463" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="367.101" xml:lang="ar" xml:id="num_1.d1e3928">٣٦٧,١</num>
                             </cell>
-                            <cell xml:id="cell_20.d1e4469">أوستراليا</cell>
+                            <cell xml:id="cell_20.d1e4469" xml:lang="ar">أوستراليا</cell>
                         </row>
-                        <row xml:id="row_11.d1e4473">
-                            <cell xml:id="cell_21.d1e4475">
+                        <row xml:id="row_11.d1e4473" xml:lang="ar">
+                            <cell xml:id="cell_21.d1e4475" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="174.216" xml:lang="ar" xml:id="num_1.d1e3935">١٧٤,٢٢</num>
                             </cell>
-                            <cell xml:id="cell_22.d1e4481">روسيا</cell>
+                            <cell xml:id="cell_22.d1e4481" xml:lang="ar">روسيا</cell>
                         </row>
-                        <row xml:id="row_12.d1e4486">
-                            <cell xml:id="cell_23.d1e4488"><num type="auto-markup" resp="#pers_TG" value="132.6" xml:lang="ar" xml:id="num_1.d1e3941">١٣٢,٦</num>
+                        <row xml:id="row_12.d1e4486" xml:lang="ar">
+                            <cell xml:id="cell_23.d1e4488" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="132.6" xml:lang="ar" xml:id="num_1.d1e3941">١٣٢,٦</num>
                             </cell>
-                            <cell xml:id="cell_24.d1e4493">المكسيك</cell>
+                            <cell xml:id="cell_24.d1e4493" xml:lang="ar">المكسيك</cell>
                         </row>
-                        <row xml:id="row_13.d1e4497">
-                            <cell xml:id="cell_25.d1e4499">
+                        <row xml:id="row_13.d1e4497" xml:lang="ar">
+                            <cell xml:id="cell_25.d1e4499" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="64.285" xml:lang="ar" xml:id="num_1.d1e3947">٦٤,٢٨</num>
                             </cell>
-                            <cell xml:id="cell_26.d1e4505">رودوسيا</cell>
+                            <cell xml:id="cell_26.d1e4505" xml:lang="ar">رودوسيا</cell>
                         </row>
                         <pb corresp="file:../epub/26523/OEBPS/xhtml/P3226.xhtml" ed="shamela" n="n49-p63" xml:id="pb_64.d1e3950"/>
-                        <row xml:id="row_14.d1e4511">
-                            <cell xml:id="cell_27.d1e4513">
+                        <row xml:id="row_14.d1e4511" xml:lang="ar">
+                            <cell xml:id="cell_27.d1e4513" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="5.61E7" xml:lang="ar" xml:id="num_1.d1e3952">٥٦.١٠٠.٠٠٠</num>
                             </cell>
-                            <cell xml:id="cell_28.d1e4519">الصين واليابان وكوريا</cell>
+                            <cell xml:id="cell_28.d1e4519" xml:lang="ar">الصين واليابان وكوريا</cell>
                         </row>
-                        <row xml:id="row_15.d1e4523">
-                            <cell xml:id="cell_29.d1e4525">
+                        <row xml:id="row_15.d1e4523" xml:lang="ar">
+                            <cell xml:id="cell_29.d1e4525" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="54.825" xml:lang="ar" xml:id="num_1.d1e3958">٥٤,٨٢</num>
                             </cell>
-                            <cell xml:id="cell_30.d1e4531">كندا</cell>
+                            <cell xml:id="cell_30.d1e4531" xml:lang="ar">كندا</cell>
                         </row>
-                        <row xml:id="row_16.d1e4535">
-                            <cell xml:id="cell_31.d1e4537">
+                        <row xml:id="row_16.d1e4535" xml:lang="ar">
+                            <cell xml:id="cell_31.d1e4537" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="53.886" xml:lang="ar" xml:id="num_1.d1e3964">٥٣,٨٩</num>
                             </cell>
-                            <cell xml:id="cell_32.d1e4543">الهند الإنكليزية</cell>
+                            <cell xml:id="cell_32.d1e4543" xml:lang="ar">الهند الإنكليزية</cell>
                         </row>
-                        <row xml:id="row_17.d1e4548">
-                            <cell xml:id="cell_33.d1e4550">
+                        <row xml:id="row_17.d1e4548" xml:lang="ar">
+                            <cell xml:id="cell_33.d1e4550" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="32.587" xml:lang="ar" xml:id="num_1.d1e3970">٣٢,٥٩</num>
                             </cell>
-                            <cell xml:id="cell_34.d1e4556">أفريقية الغربية</cell>
+                            <cell xml:id="cell_34.d1e4556" xml:lang="ar">أفريقية الغربية</cell>
                         </row>
-                        <row xml:id="row_18.d1e4560">
-                            <cell xml:id="cell_35.d1e4562">
+                        <row xml:id="row_18.d1e4560" xml:lang="ar">
+                            <cell xml:id="cell_35.d1e4562" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="12.648" xml:lang="ar" xml:id="num_1.d1e3977">١٢,٦٥</num>
                             </cell>
-                            <cell xml:id="cell_36.d1e4568">مدغسكر</cell>
+                            <cell xml:id="cell_36.d1e4568" xml:lang="ar">مدغسكر</cell>
                         </row>
-                        <row xml:id="row_19.d1e4572">
-                            <cell xml:id="cell_37.d1e4574">
+                        <row xml:id="row_19.d1e4572" xml:lang="ar">
+                            <cell xml:id="cell_37.d1e4574" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="127.5" xml:lang="ar" xml:id="num_1.d1e3983">١٢٧,٥</num>
                             </cell>
-                            <cell xml:id="cell_38.d1e4580">الأقطار الأخرى</cell>
+                            <cell xml:id="cell_38.d1e4580" xml:lang="ar">الأقطار الأخرى</cell>
                         </row>
-                        <row xml:id="row_20.d1e4584">
-                            <cell xml:id="cell_39.d1e4586">
+                        <row xml:id="row_20.d1e4584" xml:lang="ar">
+                            <cell xml:id="cell_39.d1e4586" xml:lang="ar">
                                 <num type="auto-markup" resp="#pers_TG" value="2.329" xml:lang="ar" xml:id="num_1.d1e3989">٢,٣٣</num>
                             </cell>
-                            <cell xml:id="cell_40.d1e4592">المجموع</cell>
+                            <cell xml:id="cell_40.d1e4592" xml:lang="ar">المجموع</cell>
                         </row>
                     </table>
                 </div>
@@ -2570,14 +2570,14 @@
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P3227.xhtml" ed="shamela" n="n49-p64" xml:id="pb_65.d1e3994"/>
             <div type="section" xml:lang="ar" xml:id="div_8.d1e3996">
                 <head xml:lang="ar" xml:id="head_7.d1e3998">مخطوطات ومطبوعات</head>
-                <div type="article" xml:id="div_30.d1e4433">
-                    <head xml:id="head_30.d1e4435">أمهات مخطوطات</head>
-                    <p xml:lang="ar" xml:id="p_320.d1e4004">ندر جداً بين غلاة الكتب العارفين في البلاد العربية مثل <persName xml:id="persName_9.d1e4614">الشيخ طاهر
-                            الجزائري</persName> في <placeName xml:id="placeName_4.d1e4617">دمشق</placeName> و<persName xml:id="persName_10.d1e4620">محمود شكري أفندي الآلوسي</persName> في
-                            <placeName xml:id="placeName_5.d1e4623">بغداد</placeName> و<persName xml:id="persName_11.d1e4626">أحمد بك زكي</persName> في <placeName xml:id="placeName_6.d1e4630">القاهرة</placeName> فهم يتوسلون إلى
+                <div type="article" xml:id="div_30.d1e4433" xml:lang="ar">
+                    <head xml:id="head_30.d1e4435" xml:lang="ar">أمهات مخطوطات</head>
+                    <p xml:lang="ar" xml:id="p_320.d1e4004">ندر جداً بين غلاة الكتب العارفين في البلاد العربية مثل <persName xml:id="persName_9.d1e4614" xml:lang="ar">الشيخ طاهر
+                            الجزائري</persName> في <placeName xml:id="placeName_4.d1e4617" xml:lang="ar">دمشق</placeName> و<persName xml:id="persName_10.d1e4620" xml:lang="ar">محمود شكري أفندي الآلوسي</persName> في
+                            <placeName xml:id="placeName_5.d1e4623" xml:lang="ar">بغداد</placeName> و<persName xml:id="persName_11.d1e4626" xml:lang="ar">أحمد بك زكي</persName> في <placeName xml:id="placeName_6.d1e4630" xml:lang="ar">القاهرة</placeName> فهم يتوسلون إلى
                         نشر كتب السلف بكل ما لديهم من ذرائع لينيروا بها آفاق البلاد ويحيوا موات المجموع والأفراد. وطريقة العالم المصري في
                         الدعوة غريبة لأنه متشبع باللغة أو باللغات الإفرنجية فقد نشر أمس تقريراً طبعه باللغة العربية والتركية لتنظيم خزائن
-                        الكتب العامة في <placeName xml:id="placeName_7.d1e4633">الآستانة</placeName> وأقرب الطرق إلى الانتفاع بها واليوم نشر كراسة بالإفرنسية فقط ذكر
+                        الكتب العامة في <placeName xml:id="placeName_7.d1e4633" xml:lang="ar">الآستانة</placeName> وأقرب الطرق إلى الانتفاع بها واليوم نشر كراسة بالإفرنسية فقط ذكر
                         فيها الأسباب التي يجب الاعتماد عليها في مصر لإحياء الآداب العربية فيها فقال أن القاهرة منذ أسسها الفاطميون استأثرت
                         بالإرث العلمي الذي كان لبغداد وقرطبة فازدهرت فيها الحضارة الإسلامية وأنارت الأفق آثارها فنجحت مساعي العلماء المصريين
                         إلى آخر عهد سلاطين المماليك وأثمرت أعمالهم ثمرات جنية كان لهم من تنشيط الملوك والأفراد الذين شغلوا بالآداب والعلوم
@@ -2648,106 +2648,106 @@
                         المصري والعمري الدمشقي ليكون لمصر مجد خالد كالأهرام على الدوام وفقه وسائر
                         العاملين لخدمة العلم.</p>
                 </div>
-                <div type="article" xml:id="div_31.d1e4481">
-                    <head xml:id="head_31.d1e4483"><bibl xml:id="bibl_2.d1e4680"><title level="m" xml:id="title_9.d1e4681">فلسفة الإسلام</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_327.d1e4045"><bibl xml:id="bibl_3.d1e4685"><supplied xml:id="supplied_1.d1e4686"><title level="m" resp="#pers_TG" xml:id="title_10.d1e4687">فلسفة
-                                الإسلام</title></supplied> نشر <author xml:id="author_2.d1e4690"><persName xml:id="persName_12.d1e4691">الماجور ليوناردو</persName></author> الإنكليزي كتاباً في
+                <div type="article" xml:id="div_31.d1e4481" xml:lang="ar">
+                    <head xml:id="head_31.d1e4483" xml:lang="ar"><bibl xml:id="bibl_2.d1e4680" xml:lang="ar"><title level="m" xml:id="title_9.d1e4681" xml:lang="ar">فلسفة الإسلام</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_327.d1e4045"><bibl xml:id="bibl_3.d1e4685" xml:lang="ar"><supplied xml:id="supplied_1.d1e4686" xml:lang="ar"><title level="m" resp="#pers_TG" xml:id="title_10.d1e4687" xml:lang="ar">فلسفة
+                                الإسلام</title></supplied> نشر <author xml:id="author_2.d1e4690" xml:lang="ar"><persName xml:id="persName_12.d1e4691" xml:lang="ar">الماجور ليوناردو</persName></author> الإنكليزي كتاباً في
                             الإسلام وصاحب الشريعة (عليه الصلاة والسلام) على وجه يرفع الغشاء عنها ويزيل الشبه الشائعة في الغرب اليوم عن حقيقة
                             هذا الدين وقد قدم له السيد أمير علي العام الهند الشهير مقدمة بالإنكليزية وأثنى على علمه <pb corresp="file:../epub/26523/OEBPS/xhtml/P3230.xhtml" ed="shamela" n="n49-p67" xml:id="pb_68.d1e4047"/> وحبه
-                            للحق والكتاب يطلب من <publisher xml:id="publisher_2.d1e4696"><orgName xml:id="orgName_5.d1e4697">مكتبة لوزان</orgName></publisher> في
-                                    <pubPlace xml:id="pubPlace_3.d1e4700"><placeName xml:id="placeName_8.d1e4701">لندرا</placeName></pubPlace></bibl>.</p>
+                            للحق والكتاب يطلب من <publisher xml:id="publisher_2.d1e4696" xml:lang="ar"><orgName xml:id="orgName_5.d1e4697" xml:lang="ar">مكتبة لوزان</orgName></publisher> في
+                                    <pubPlace xml:id="pubPlace_3.d1e4700" xml:lang="ar"><placeName xml:id="placeName_8.d1e4701" xml:lang="ar">لندرا</placeName></pubPlace></bibl>.</p>
                 </div>
-                <div type="article" xml:id="div_32.d1e4492">
-                    <head xml:id="head_32.d1e4494"><bibl xml:id="bibl_4.d1e4709"><title level="m" xml:id="title_11.d1e4710">النصائح الكافية لمن يتولى معاوية</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_329.d1e4054"><bibl xml:id="bibl_5.d1e4714"><supplied resp="#pers_TG" xml:id="supplied_2.d1e4715"><title level="m" xml:id="title_12.d1e4716">النصائح الكافية لمن يتولى
-                                    معاوية</title></supplied> كتاب في <biblScope unit="page" from="1" to="224" xml:id="biblScope_6.d1e4719"><num type="auto-markup" resp="#pers_TG" value="224" xml:lang="ar" xml:id="num_1.d1e4056">٢٢٤</num> صفحة</biblScope> في أفعال
-                                <persName xml:id="persName_13.d1e4724">معاوية بن أبي فيان</persName> رأس خلفاء بني أمية وما<pb ed="print" n="159" facs="#facs_173" xml:id="pb_138.d1e4502"/> عامل به آل البيت وكيف قام على الإمام الحق وشيءٍ من تاريخ ذاك الدور تأليف
-                                    <author xml:id="author_3.d1e4729"><persName xml:id="persName_14.d1e4730">السيد محمد بن عقيل العلوي الحسيني</persName></author> من نحارير الكاتبين
+                <div type="article" xml:id="div_32.d1e4492" xml:lang="ar">
+                    <head xml:id="head_32.d1e4494" xml:lang="ar"><bibl xml:id="bibl_4.d1e4709" xml:lang="ar"><title level="m" xml:id="title_11.d1e4710" xml:lang="ar">النصائح الكافية لمن يتولى معاوية</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_329.d1e4054"><bibl xml:id="bibl_5.d1e4714" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_2.d1e4715" xml:lang="ar"><title level="m" xml:id="title_12.d1e4716" xml:lang="ar">النصائح الكافية لمن يتولى
+                                    معاوية</title></supplied> كتاب في <biblScope unit="page" from="1" to="224" xml:id="biblScope_6.d1e4719" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="224" xml:lang="ar" xml:id="num_1.d1e4056">٢٢٤</num> صفحة</biblScope> في أفعال
+                                <persName xml:id="persName_13.d1e4724" xml:lang="ar">معاوية بن أبي فيان</persName> رأس خلفاء بني أمية وما<pb ed="print" n="159" facs="#facs_173" xml:id="pb_138.d1e4502"/> عامل به آل البيت وكيف قام على الإمام الحق وشيءٍ من تاريخ ذاك الدور تأليف
+                                    <author xml:id="author_3.d1e4729" xml:lang="ar"><persName xml:id="persName_14.d1e4730" xml:lang="ar">السيد محمد بن عقيل العلوي الحسيني</persName></author> من نحارير الكاتبين
                             والعالمين</bibl>.</p>
                 </div>
-                <div type="article" xml:id="div_33.d1e4506">
-                    <head xml:id="head_33.d1e4508"><bibl xml:id="bibl_6.d1e4739"><title level="s" xml:id="title_13.d1e4740">مبادئ الفلسفة القديمة</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_331.d1e4063"><bibl xml:id="bibl_7.d1e4744"><supplied resp="#pers_TG" xml:id="supplied_3.d1e4745"><title level="s" xml:id="title_14.d1e4746">مبادئ الفلسفة
-                                القديمة</title></supplied> هي مجموعة فيها <bibl xml:id="bibl_7.d1e4749"><title level="m" xml:id="title_15.d1e4750">كتاب ما ينبغي أن يقدم قبل أن تعلم فلسفة
-                                    أرسطو</title> ل<persName xml:id="persName_15.d1e4753">أبي نصر الفارابي</persName></bibl> و<bibl xml:id="bibl_8.d1e4756"><title level="m" xml:id="title_16.d1e4757">كتاب عيون المسائل في
-                                    المنطق ومبادئ الفلسفة</title> له أيضاً</bibl> عنيت بتصحيحها ونشرهما <publisher xml:id="publisher_3.d1e4761"><orgName xml:id="orgName_6.d1e4762">المكتبة
-                                    السلفية</orgName></publisher> ب<pubPlace xml:id="pubPlace_4.d1e4765"><placeName xml:id="placeName_9.d1e4766">مصر</placeName></pubPlace> لمؤسسيها <persName xml:id="persName_16.d1e4769">محب
-                                الدين أفندي الخطيب</persName> و<persName xml:id="persName_17.d1e4773">عبد الفتاح أفندي القثلان</persName>.</bibl> وقد جعلت له مقدمة في
+                <div type="article" xml:id="div_33.d1e4506" xml:lang="ar">
+                    <head xml:id="head_33.d1e4508" xml:lang="ar"><bibl xml:id="bibl_6.d1e4739" xml:lang="ar"><title level="s" xml:id="title_13.d1e4740" xml:lang="ar">مبادئ الفلسفة القديمة</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_331.d1e4063"><bibl xml:id="bibl_7.d1e4744" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_3.d1e4745" xml:lang="ar"><title level="s" xml:id="title_14.d1e4746" xml:lang="ar">مبادئ الفلسفة
+                                القديمة</title></supplied> هي مجموعة فيها <bibl xml:id="bibl_7.d1e4749" xml:lang="ar"><title level="m" xml:id="title_15.d1e4750" xml:lang="ar">كتاب ما ينبغي أن يقدم قبل أن تعلم فلسفة
+                                    أرسطو</title> ل<persName xml:id="persName_15.d1e4753" xml:lang="ar">أبي نصر الفارابي</persName></bibl> و<bibl xml:id="bibl_8.d1e4756" xml:lang="ar"><title level="m" xml:id="title_16.d1e4757" xml:lang="ar">كتاب عيون المسائل في
+                                    المنطق ومبادئ الفلسفة</title> له أيضاً</bibl> عنيت بتصحيحها ونشرهما <publisher xml:id="publisher_3.d1e4761" xml:lang="ar"><orgName xml:id="orgName_6.d1e4762" xml:lang="ar">المكتبة
+                                    السلفية</orgName></publisher> ب<pubPlace xml:id="pubPlace_4.d1e4765" xml:lang="ar"><placeName xml:id="placeName_9.d1e4766" xml:lang="ar">مصر</placeName></pubPlace> لمؤسسيها <persName xml:id="persName_16.d1e4769" xml:lang="ar">محب
+                                الدين أفندي الخطيب</persName> و<persName xml:id="persName_17.d1e4773" xml:lang="ar">عبد الفتاح أفندي القثلان</persName>.</bibl> وقد جعلت له مقدمة في
                         ترجمة الفارابي مطولة وعلقت عليه حواشي مفيدة.</p>
                 </div>
-                <div type="article" xml:id="div_34.d1e4516">
-                    <head xml:id="head_34.d1e4518"><bibl xml:id="bibl_10.d1e4783"><title level="m" xml:id="title_17.d1e4784">سمير الليالي</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_333.d1e4069"><bibl xml:id="bibl_11.d1e4788"><supplied resp="#pers_TG" xml:id="supplied_4.d1e4789"><title level="m" xml:id="title_18.d1e4790">سمير الليالي</title></supplied>
-                            طبعت <publisher xml:id="publisher_4.d1e4793"><orgName xml:id="orgName_7.d1e4794">المكتبة الرفاعية</orgName></publisher> في <pubPlace xml:id="pubPlace_5.d1e4797"><placeName xml:id="placeName_10.d1e4798">طرابلس
+                <div type="article" xml:id="div_34.d1e4516" xml:lang="ar">
+                    <head xml:id="head_34.d1e4518" xml:lang="ar"><bibl xml:id="bibl_10.d1e4783" xml:lang="ar"><title level="m" xml:id="title_17.d1e4784" xml:lang="ar">سمير الليالي</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_333.d1e4069"><bibl xml:id="bibl_11.d1e4788" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_4.d1e4789" xml:lang="ar"><title level="m" xml:id="title_18.d1e4790" xml:lang="ar">سمير الليالي</title></supplied>
+                            طبعت <publisher xml:id="publisher_4.d1e4793" xml:lang="ar"><orgName xml:id="orgName_7.d1e4794" xml:lang="ar">المكتبة الرفاعية</orgName></publisher> في <pubPlace xml:id="pubPlace_5.d1e4797" xml:lang="ar"><placeName xml:id="placeName_10.d1e4798" xml:lang="ar">طرابلس
                                 الشام</placeName></pubPlace>
-                            <biblScope xml:id="biblScope_7.d1e4801">الجزء الأول</biblScope> من هذا الكتاب تأليف <author xml:id="author_4.d1e4804"><persName xml:id="persName_18.d1e4805">محمد أمين أفندي صوفي
-                                السكري</persName></author> وهو في جغرافية الممالك العثمانية وشيء من تاريخها وهو في <biblScope unit="page" from="1" to="198" xml:id="biblScope_8.d1e4808"><num type="auto-markup" resp="#pers_TG" value="198" xml:lang="ar" xml:id="num_1.d1e4071">١٩٨</num> صفحة</biblScope></bibl> وعسى أن يزيد المؤلف كتابه تدقيقاً في الطبعة القادمة لأن فيه بعض نواقص
+                            <biblScope xml:id="biblScope_7.d1e4801" xml:lang="ar">الجزء الأول</biblScope> من هذا الكتاب تأليف <author xml:id="author_4.d1e4804" xml:lang="ar"><persName xml:id="persName_18.d1e4805" xml:lang="ar">محمد أمين أفندي صوفي
+                                السكري</persName></author> وهو في جغرافية الممالك العثمانية وشيء من تاريخها وهو في <biblScope unit="page" from="1" to="198" xml:id="biblScope_8.d1e4808" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="198" xml:lang="ar" xml:id="num_1.d1e4071">١٩٨</num> صفحة</biblScope></bibl> وعسى أن يزيد المؤلف كتابه تدقيقاً في الطبعة القادمة لأن فيه بعض نواقص
                         لا يصح أن تبقى فيه.</p>
                 </div>
-                <div type="article" xml:id="div_35.d1e4528">
-                    <head xml:id="head_35.d1e4530"><bibl xml:id="bibl_12.d1e4818"><title level="m" xml:id="title_19.d1e4819">الغصن الرطيب في فن الخطيب</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_335.d1e4079"><bibl xml:id="bibl_13.d1e4823"><supplied resp="#pers_TG" xml:id="supplied_5.d1e4824"><title level="m" xml:id="title_20.d1e4825">الغصن الرطيب في فن
-                                    الخطيب</title></supplied> هو مختصر في تعليم الخطابة ل<author xml:id="author_5.d1e4828"><persName xml:id="persName_19.d1e4829">لشيخ سعد
-                                الشرتوني</persName></author> من فصحاء <placeName xml:id="placeName_11.d1e4832">لبنان</placeName> ولغوييه</bibl> وفيه كثير من القواعد وبعض
+                <div type="article" xml:id="div_35.d1e4528" xml:lang="ar">
+                    <head xml:id="head_35.d1e4530" xml:lang="ar"><bibl xml:id="bibl_12.d1e4818" xml:lang="ar"><title level="m" xml:id="title_19.d1e4819" xml:lang="ar">الغصن الرطيب في فن الخطيب</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_335.d1e4079"><bibl xml:id="bibl_13.d1e4823" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_5.d1e4824" xml:lang="ar"><title level="m" xml:id="title_20.d1e4825" xml:lang="ar">الغصن الرطيب في فن
+                                    الخطيب</title></supplied> هو مختصر في تعليم الخطابة ل<author xml:id="author_5.d1e4828" xml:lang="ar"><persName xml:id="persName_19.d1e4829" xml:lang="ar">لشيخ سعد
+                                الشرتوني</persName></author> من فصحاء <placeName xml:id="placeName_11.d1e4832" xml:lang="ar">لبنان</placeName> ولغوييه</bibl> وفيه كثير من القواعد وبعض
                         أمثلة.</p>
                 </div>
-                <div type="article" xml:id="div_36.d1e4537">
-                    <head xml:id="head_36.d1e4539"><bibl xml:id="bibl_14.d1e4841"><title level="m" xml:id="title_21.d1e4842">مطالع الأضواء في مناهج الكتاب والشعراء</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_337.d1e4085"><bibl xml:id="bibl_15.d1e4846"><supplied resp="#pers_TG" xml:id="supplied_6.d1e4847"><title level="m" xml:id="title_22.d1e4848">مطالع الأضواء في مناهج الكتاب
-                                    والشعراء</title></supplied> هو موجز أيضاً ل<persName xml:id="persName_20.d1e4851">لشيخ سعد الشرتوني</persName></bibl> انتقى فيه زبدة
+                <div type="article" xml:id="div_36.d1e4537" xml:lang="ar">
+                    <head xml:id="head_36.d1e4539" xml:lang="ar"><bibl xml:id="bibl_14.d1e4841" xml:lang="ar"><title level="m" xml:id="title_21.d1e4842" xml:lang="ar">مطالع الأضواء في مناهج الكتاب والشعراء</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_337.d1e4085"><bibl xml:id="bibl_15.d1e4846" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_6.d1e4847" xml:lang="ar"><title level="m" xml:id="title_22.d1e4848" xml:lang="ar">مطالع الأضواء في مناهج الكتاب
+                                    والشعراء</title></supplied> هو موجز أيضاً ل<persName xml:id="persName_20.d1e4851" xml:lang="ar">لشيخ سعد الشرتوني</persName></bibl> انتقى فيه زبدة
                         علوم المعاني والبيان والبديع والعروض بعبارات وجيزة قال <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> الناظرين فيه تبين لنا أثناء مرور النظر على مباحث هذا
                         الكتاب أن المؤلف إذا استشهد ببيت شعر يعزو لقائله أو فقرة من المزامير يبين عدد الصحيفة التي وردت بها الآيات القرآنية
                         الشريفة فإذا استشهد بها لا يعزوها بل يتخذها كالمثال المبتكر من عنده أو كالكلام المعتاد فيا حبذا لو أرجع الآيات كما
                         يرجع غيرها.  </p>
                 </div>
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P3231.xhtml" ed="shamela" n="n49-p68" xml:id="pb_69.d1e4087"/>
-                <div type="article" xml:id="div_37.d1e4548">
-                    <head xml:id="head_37.d1e4550"><bibl xml:id="bibl_16.d1e4861"><title level="m" xml:id="title_23.d1e4862">الأرض في السماء</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_338.d1e4090"><bibl xml:id="bibl_17.d1e4866"><supplied resp="#pers_TG" xml:id="supplied_7.d1e4867"><title level="m" xml:id="title_24.d1e4868">الأرض في
+                <div type="article" xml:id="div_37.d1e4548" xml:lang="ar">
+                    <head xml:id="head_37.d1e4550" xml:lang="ar"><bibl xml:id="bibl_16.d1e4861" xml:lang="ar"><title level="m" xml:id="title_23.d1e4862" xml:lang="ar">الأرض في السماء</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_338.d1e4090"><bibl xml:id="bibl_17.d1e4866" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_7.d1e4867" xml:lang="ar"><title level="m" xml:id="title_24.d1e4868" xml:lang="ar">الأرض في
                                 السماء</title></supplied> هي قصائد أجنبية أخلاقية تاريخية وأساطير حكمية تأليف
-                                        <author xml:id="author_6.d1e4871"><persName xml:id="persName_21.d1e4872"><forename xml:id="forename_6.d1e4873">محمد</forename> أفندي <surname xml:id="surname_6.d1e4876">ظاهر خير
+                                        <author xml:id="author_6.d1e4871" xml:lang="ar"><persName xml:id="persName_21.d1e4872" xml:lang="ar"><forename xml:id="forename_6.d1e4873" xml:lang="ar">محمد</forename> أفندي <surname xml:id="surname_6.d1e4876" xml:lang="ar">ظاهر خير
                                 الله</surname></persName></author> من الشعراء والكتاب جمع فيها الحقائق العلمية والنتائج العقلية والفوائد
                             الزراعية على نمط جديد ولم يلتزم فيها الروي في كل شطر وسماه الأرض في السماء أي ما ينال به الإنسان رغد العيش
-                            وحلاوة الأمن وهو مشكول بالشكل الكامل ليسهل على كل متناول <pb ed="print" n="160" facs="#facs_174" xml:id="pb_140.d1e4555"/>وعدد صفحات <biblScope xml:id="biblScope_9.d1e4881">هذا الجزء</biblScope>
-                            <biblScope unit="page" from="1" to="142" xml:id="biblScope_10.d1e4884"><num type="auto-markup" resp="#pers_TG" value="142" xml:lang="ar" xml:id="num_1.d1e4092">١٤٢</num> ص</biblScope> طبع ب<publisher xml:id="publisher_5.d1e4889"><orgName xml:id="orgName_8.d1e4890">المطبعة
-                                الأدبية</orgName></publisher> في <pubPlace xml:id="pubPlace_6.d1e4894"><placeName xml:id="placeName_12.d1e4895">بيروت</placeName></pubPlace> ويطلب من مؤلفه في
-                                <placeName xml:id="placeName_13.d1e4898">دمشق</placeName></bibl>.</p>
+                            وحلاوة الأمن وهو مشكول بالشكل الكامل ليسهل على كل متناول <pb ed="print" n="160" facs="#facs_174" xml:id="pb_140.d1e4555"/>وعدد صفحات <biblScope xml:id="biblScope_9.d1e4881" xml:lang="ar">هذا الجزء</biblScope>
+                            <biblScope unit="page" from="1" to="142" xml:id="biblScope_10.d1e4884" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="142" xml:lang="ar" xml:id="num_1.d1e4092">١٤٢</num> ص</biblScope> طبع ب<publisher xml:id="publisher_5.d1e4889" xml:lang="ar"><orgName xml:id="orgName_8.d1e4890" xml:lang="ar">المطبعة
+                                الأدبية</orgName></publisher> في <pubPlace xml:id="pubPlace_6.d1e4894" xml:lang="ar"><placeName xml:id="placeName_12.d1e4895" xml:lang="ar">بيروت</placeName></pubPlace> ويطلب من مؤلفه في
+                                <placeName xml:id="placeName_13.d1e4898" xml:lang="ar">دمشق</placeName></bibl>.</p>
                 </div>
-                <div type="article" xml:id="div_38.d1e4562">
-                    <head xml:id="head_38.d1e4564"><bibl xml:id="bibl_18.d1e4906"><title level="m" xml:id="title_25.d1e4907">دروس الحياة الإنسانية في مدرسة الله النباتية</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_340.d1e4099"><bibl xml:id="bibl_19.d1e4911"><supplied resp="#pers_TG" xml:id="supplied_8.d1e4912"><title level="m" xml:id="title_26.d1e4913">دروس الحياة الإنسانية في مدرسة
-                                    الله النباتية</title></supplied> هو كتاب في <biblScope unit="page" from="1" to="152" xml:id="biblScope_11.d1e4916"><num type="auto-markup" resp="#pers_TG" value="152" xml:lang="ar" xml:id="num_1.d1e4101">١٥٢</num>
-                                ص</biblScope> تأليف <author xml:id="author_7.d1e4921"><persName xml:id="persName_22.d1e4922"><forename xml:id="forename_7.d1e4923">أمين</forename> أفندي <surname xml:id="surname_7.d1e4926">ظاهر خير
+                <div type="article" xml:id="div_38.d1e4562" xml:lang="ar">
+                    <head xml:id="head_38.d1e4564" xml:lang="ar"><bibl xml:id="bibl_18.d1e4906" xml:lang="ar"><title level="m" xml:id="title_25.d1e4907" xml:lang="ar">دروس الحياة الإنسانية في مدرسة الله النباتية</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_340.d1e4099"><bibl xml:id="bibl_19.d1e4911" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_8.d1e4912" xml:lang="ar"><title level="m" xml:id="title_26.d1e4913" xml:lang="ar">دروس الحياة الإنسانية في مدرسة
+                                    الله النباتية</title></supplied> هو كتاب في <biblScope unit="page" from="1" to="152" xml:id="biblScope_11.d1e4916" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="152" xml:lang="ar" xml:id="num_1.d1e4101">١٥٢</num>
+                                ص</biblScope> تأليف <author xml:id="author_7.d1e4921" xml:lang="ar"><persName xml:id="persName_22.d1e4922" xml:lang="ar"><forename xml:id="forename_7.d1e4923" xml:lang="ar">أمين</forename> أفندي <surname xml:id="surname_7.d1e4926" xml:lang="ar">ظاهر خير
                                     الله</surname></persName></author></bibl> المشار إليه جعل شعاره أن المبرؤات المحدودة تنطق بلسان صمتها عن
                         تمام حكمة البارئ الغير محدودة وفيه مباحث أدبية واجتماعية جعل الدين ولاسيما آيات الكتاب المقدس دعامتها الكبرى وذلك
                         لينتفع به طلاب المدارس المسيحية وهو مشكول أيضاً سهل العبارة حسن الأسلوب والنسج.</p>
                 </div>
-                <div type="article" xml:id="div_39.d1e4574">
-                    <head xml:id="head_39.d1e4576"><bibl xml:id="bibl_20.d1e4935"><title level="m" xml:id="title_27.d1e4936">تاريخ أبي المحاسن</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_342.d1e4109"><bibl xml:id="bibl_21.d1e4940"><supplied resp="#pers_TG" xml:id="supplied_9.d1e4941"><title level="m" xml:id="title_28.d1e4942">تاريخ أبي
-                                المحاسن</title></supplied> بدأت <orgName xml:id="orgName_9.d1e4945">جامعة <placeName xml:id="placeName_14.d1e4947">كليفورنيا</placeName></orgName> في
-                                <placeName xml:id="placeName_15.d1e4950">أميركا</placeName> بنشر كتب في اللغات السامية أن تستفتح عملها بنشر <biblScope n="2" unit="volume" xml:id="biblScope_12.d1e4953">الجزء الثاني</biblScope> من <title level="m" xml:id="title_29.d1e4956">كتاب النجوم لزاهرة في ملوك مصر والقاهرة</title> ل<persName xml:id="persName_23.d1e4959">أبي
-                                المحاسن ابن تغري بردي</persName> وهو في <biblScope unit="volume" from="1" to="6" xml:id="biblScope_13.d1e4963">ست مجلدات</biblScope> كان
-                            نشر الجزء الأول منه في <placeName xml:id="placeName_16.d1e4966">ليدن</placeName></bibl>.  وهذا التاريخ يبدأ من الفتح الإسلامي وينتهي سنة <num type="auto-markup" resp="#pers_TG" value="872" xml:lang="ar" xml:id="num_1.d1e4111">٨٧٢</num> للهجرة. وفي هذا
+                <div type="article" xml:id="div_39.d1e4574" xml:lang="ar">
+                    <head xml:id="head_39.d1e4576" xml:lang="ar"><bibl xml:id="bibl_20.d1e4935" xml:lang="ar"><title level="m" xml:id="title_27.d1e4936" xml:lang="ar">تاريخ أبي المحاسن</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_342.d1e4109"><bibl xml:id="bibl_21.d1e4940" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_9.d1e4941" xml:lang="ar"><title level="m" xml:id="title_28.d1e4942" xml:lang="ar">تاريخ أبي
+                                المحاسن</title></supplied> بدأت <orgName xml:id="orgName_9.d1e4945" xml:lang="ar">جامعة <placeName xml:id="placeName_14.d1e4947" xml:lang="ar">كليفورنيا</placeName></orgName> في
+                                <placeName xml:id="placeName_15.d1e4950" xml:lang="ar">أميركا</placeName> بنشر كتب في اللغات السامية أن تستفتح عملها بنشر <biblScope n="2" unit="volume" xml:id="biblScope_12.d1e4953" xml:lang="ar">الجزء الثاني</biblScope> من <title level="m" xml:id="title_29.d1e4956" xml:lang="ar">كتاب النجوم لزاهرة في ملوك مصر والقاهرة</title> ل<persName xml:id="persName_23.d1e4959" xml:lang="ar">أبي
+                                المحاسن ابن تغري بردي</persName> وهو في <biblScope unit="volume" from="1" to="6" xml:id="biblScope_13.d1e4963" xml:lang="ar">ست مجلدات</biblScope> كان
+                            نشر الجزء الأول منه في <placeName xml:id="placeName_16.d1e4966" xml:lang="ar">ليدن</placeName></bibl>.  وهذا التاريخ يبدأ من الفتح الإسلامي وينتهي سنة <num type="auto-markup" resp="#pers_TG" value="872" xml:lang="ar" xml:id="num_1.d1e4111">٨٧٢</num> للهجرة. وفي هذا
                         الجزء كلام على خليفتين من خلفاء الفاطميين العزيز الناصر والحكم.</p>
                 </div>
-                <div type="article" xml:id="div_40.d1e4587">
-                    <head xml:id="head_40.d1e4589"><bibl xml:id="bibl_22.d1e4977"><title level="m" xml:id="title_30.d1e4978">حضارة بابل</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_344.d1e4118"><bibl xml:id="bibl_23.d1e4982"><supplied resp="#pers_TG" xml:id="supplied_10.d1e4983"><title level="m" xml:id="title_31.d1e4984">حضارة بابل</title></supplied>
-                            نشر <editor xml:id="editor_2.d1e4987"><persName xml:id="persName_24.d1e4988">المسيو مارتين</persName></editor>
+                <div type="article" xml:id="div_40.d1e4587" xml:lang="ar">
+                    <head xml:id="head_40.d1e4589" xml:lang="ar"><bibl xml:id="bibl_22.d1e4977" xml:lang="ar"><title level="m" xml:id="title_30.d1e4978" xml:lang="ar">حضارة بابل</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_344.d1e4118"><bibl xml:id="bibl_23.d1e4982" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_10.d1e4983" xml:lang="ar"><title level="m" xml:id="title_31.d1e4984" xml:lang="ar">حضارة بابل</title></supplied>
+                            نشر <editor xml:id="editor_2.d1e4987" xml:lang="ar"><persName xml:id="persName_24.d1e4988" xml:lang="ar">المسيو مارتين</persName></editor>
                             <num type="auto-markup" resp="#pers_TG" value="248" xml:lang="ar" xml:id="num_1.d1e4120">٢٤٨</num> رسالة باللغة
                             البابلية</bibl> وجدت في أبي حبة على <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="50">خمسين</num> كيلومتراً من مدينة بابل وفيها إشارات إلى ثروة تلك البلاد وأشخاصها
                         ومجتمعها المدني وأشغالها التجارية والحقوقية وذلك مدة <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="50">خمسين</num> سنة من سقوط بابل إلى أوائل قيام دار ملك الفرس.</p>
                 </div>
-                <div type="article" xml:id="div_41.d1e4599">
-                    <head xml:id="head_41.d1e4601"><bibl xml:id="bibl_24.d1e5000"><title level="m" xml:id="title_32.d1e5001">ابن الطفيل</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_346.d1e4127"><bibl xml:id="bibl_25.d1e5005"><supplied resp="#pers_TG" xml:id="supplied_11.d1e5006"><title level="m" xml:id="title_33.d1e5007">ابن الطفيل</title></supplied>
-                            نشر <persName xml:id="persName_25.d1e5010">المسيو ليون غوتيه</persName> بالإفرنسية كتاباً</bibl> على <persName xml:id="persName_26.d1e5014">أبي بكر ابن الطفيل</persName>
-                        <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> فلاسفة <placeName xml:id="placeName_17.d1e5017">الأندلس</placeName> فيه <pb corresp="file:../epub/26523/OEBPS/xhtml/P3232.xhtml" ed="shamela" n="n49-p69" xml:id="pb_70.d1e4129"/> ذكر حياته وأعماله وأشار إلى رسالته حي بن يقظان في الحكمة الشرقية.</p>
+                <div type="article" xml:id="div_41.d1e4599" xml:lang="ar">
+                    <head xml:id="head_41.d1e4601" xml:lang="ar"><bibl xml:id="bibl_24.d1e5000" xml:lang="ar"><title level="m" xml:id="title_32.d1e5001" xml:lang="ar">ابن الطفيل</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_346.d1e4127"><bibl xml:id="bibl_25.d1e5005" xml:lang="ar"><supplied resp="#pers_TG" xml:id="supplied_11.d1e5006" xml:lang="ar"><title level="m" xml:id="title_33.d1e5007" xml:lang="ar">ابن الطفيل</title></supplied>
+                            نشر <persName xml:id="persName_25.d1e5010" xml:lang="ar">المسيو ليون غوتيه</persName> بالإفرنسية كتاباً</bibl> على <persName xml:id="persName_26.d1e5014" xml:lang="ar">أبي بكر ابن الطفيل</persName>
+                        <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> فلاسفة <placeName xml:id="placeName_17.d1e5017" xml:lang="ar">الأندلس</placeName> فيه <pb corresp="file:../epub/26523/OEBPS/xhtml/P3232.xhtml" ed="shamela" n="n49-p69" xml:id="pb_70.d1e4129"/> ذكر حياته وأعماله وأشار إلى رسالته حي بن يقظان في الحكمة الشرقية.</p>
                 </div>
-                <div type="article" xml:id="div_42.d1e4610">
-                    <head xml:id="head_42.d1e4612"><bibl xml:id="bibl_26.d1e5027"><title level="m" xml:id="title_34.d1e5028">ابن رشد</title></bibl></head>
-                    <p xml:lang="ar" xml:id="p_348.d1e4136">نشر المستشرق الموما إليه كتاباً في <persName xml:id="persName_27.d1e5033">ابن رشد</persName> الفيلسوف
+                <div type="article" xml:id="div_42.d1e4610" xml:lang="ar">
+                    <head xml:id="head_42.d1e4612" xml:lang="ar"><bibl xml:id="bibl_26.d1e5027" xml:lang="ar"><title level="m" xml:id="title_34.d1e5028" xml:lang="ar">ابن رشد</title></bibl></head>
+                    <p xml:lang="ar" xml:id="p_348.d1e4136">نشر المستشرق الموما إليه كتاباً في <persName xml:id="persName_27.d1e5033" xml:lang="ar">ابن رشد</persName> الفيلسوف
                         الإسلامي جعله تتمة لما كتبه الفيلسوف رنان عنه وأفاض في الكلام على كتاب فصل المقال في تقرير ما بين الشريعة والحكمة من
                         الاتصال. </p>
                 </div>
