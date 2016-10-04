@@ -43,6 +43,8 @@
                     </xsl:matching-substring>
                 </xsl:analyze-string>
             </xsl:attribute>
+            <!-- add information on the source edition -->
+            <xsl:attribute name="ed" select="'shamela'"/>
             <!-- point to the source file -->
             <xsl:attribute name="corresp" select="base-uri()"/>
         </xsl:element>
@@ -63,7 +65,7 @@
     
     <!-- gaps -->
     <xsl:template match="html:span[@class='red'][text()='...']" priority="2">
-        <gap/>
+        <gap resp="#org_MS"/>
     </xsl:template>
     <xsl:template match="html:span[@class='red']" priority="1">
         <hi style="color:red;">

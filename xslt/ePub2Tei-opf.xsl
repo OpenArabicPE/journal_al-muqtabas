@@ -30,7 +30,7 @@
     </xsl:template>
     
     <xsl:template match="opf:package">
-        <xsl:result-document href="{child::opf:metadata/dc:identifier[@opf:scheme='UUID']}.TEIP5.xml">
+        <xsl:result-document href="{translate(child::opf:metadata/dc:identifier[@opf:scheme='UUID'],':','-')}.TEIP5.xml">
             <TEI>
                 <teiHeader>
                     <fileDesc>
