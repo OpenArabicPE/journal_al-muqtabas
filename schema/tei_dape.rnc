@@ -7,7 +7,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2016-06-17T15:17:01Z. .
+# Schema generated from ODD source 2016-10-03T07:57:08Z. .
 # TEI Edition: Version 3.0.0. Last updated on
 #	29th March 2016, revision 89ba24e
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -59,9 +59,7 @@ dape_att.canonical.attribute.ref =
 dape_att.dimensions.attributes =
   dape_att.dimensions.attribute.unit,
   dape_att.dimensions.attribute.quantity,
-  dape_att.dimensions.attribute.extent,
-  dape_att.dimensions.attribute.precision,
-  dape_att.dimensions.attribute.scope
+  dape_att.dimensions.attribute.extent
 dape_att.dimensions.attribute.unit =
   
   ## names the unit used for the measurement
@@ -96,30 +94,6 @@ dape_att.dimensions.attribute.extent =
   
   ## indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.
   attribute extent { xsd:string }?
-dape_att.dimensions.attribute.precision =
-  
-  ## characterizes the precision of the values specified by the other attributes.
-  attribute precision {
-    
-    ##
-    "high"
-    | 
-      ##
-      "medium"
-    | 
-      ##
-      "low"
-    | 
-      ##
-      "unknown"
-  }?
-dape_att.dimensions.attribute.scope =
-  
-  ## where the measurement summarizes more than one observation, specifies the applicability of this measurement.
-  ## Sample values include: 1] all; 2] most; 3] range
-  attribute scope {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-  }?
 dape_att.written.attributes = dape_att.written.attribute.hand
 dape_att.written.attribute.hand =
   
@@ -363,42 +337,6 @@ dape_att.global.responsibility.attribute.resp =
   ## (responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.
   attribute resp {
     list { xsd:anyURI+ }
-  }?
-dape_att.editLike.attributes =
-  dape_att.dimensions.attributes,
-  dape_att.source.attributes,
-  dape_att.editLike.attribute.evidence,
-  dape_att.editLike.attribute.instant
-dape_att.editLike.attribute.evidence =
-  
-  ## indicates the nature of the evidence supporting the reliability or accuracy of the intervention or interpretation.
-  ## Suggested values include: 1] internal; 2] external; 3] conjecture
-  attribute evidence {
-    list {
-      (
-       ## there is internal evidence to support the intervention.
-       "internal"
-       | 
-         ## there is external evidence to support the intervention.
-         "external"
-       | 
-         ## the intervention or interpretation has been made by the editor, cataloguer, or scholar on the basis of their expertise.
-         "conjecture"
-       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
-    }
-  }?
-dape_att.editLike.attribute.instant =
-  
-  ## indicates whether this is an instant revision or not.
-  [ a:defaultValue = "false" ]
-  attribute instant {
-    xsd:boolean
-    | (
-       ##
-       "unknown"
-       | 
-         ##
-         "inapplicable")
   }?
 dape_att.global.rendition.attributes =
   dape_att.global.rendition.attribute.rend,
@@ -908,7 +846,6 @@ dape_att.tableDecoration.attribute.cols =
   [ a:defaultValue = "1" ] attribute cols { xsd:nonNegativeInteger }?
 dape_att.timed.attributes = empty
 dape_att.transcriptional.attributes =
-  dape_att.editLike.attributes,
   dape_att.written.attributes,
   dape_att.transcriptional.attribute.status,
   dape_att.transcriptional.attribute.cause,
@@ -1719,9 +1656,27 @@ dape_quote =
   ## (quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3. Quotation 4.3.1. Grouped Texts]
   element quote {
     dape_macro.specialPara,
-    dape_att.global.attributes,
+    dape_att.global.attribute.xmlid,
+    dape_att.global.attribute.n,
+    dape_att.global.attribute.xmllang,
+    dape_att.global.rendition.attribute.style,
+    dape_att.global.rendition.attribute.rendition,
+    dape_att.global.linking.attribute.corresp,
+    dape_att.global.linking.attribute.next,
+    dape_att.global.linking.attribute.prev,
+    dape_att.global.facs.attribute.facs,
+    dape_att.global.responsibility.attribute.resp,
     dape_att.typed.attributes,
     dape_att.source.attributes,
+    
+    ## (rendition) indicates how the element in question was rendered or presented in the source text.
+    ## Sample values include: 1] brackets; 2] quotation-marks
+    [ a:defaultValue = "quotation-marks" ]
+    attribute rend {
+      list {
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      }
+    }?,
     empty
   }
 dape_q =
@@ -1729,9 +1684,27 @@ dape_q =
   ## (quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used. [3.3.3. Quotation]
   element q {
     dape_macro.specialPara,
-    dape_att.global.attributes,
+    dape_att.global.attribute.xmlid,
+    dape_att.global.attribute.n,
+    dape_att.global.attribute.xmllang,
+    dape_att.global.rendition.attribute.style,
+    dape_att.global.rendition.attribute.rendition,
+    dape_att.global.linking.attribute.corresp,
+    dape_att.global.linking.attribute.next,
+    dape_att.global.linking.attribute.prev,
+    dape_att.global.facs.attribute.facs,
+    dape_att.global.responsibility.attribute.resp,
     dape_att.ascribed.attributes,
     dape_att.source.attributes,
+    
+    ## (rendition) indicates how the element in question was rendered or presented in the source text.
+    ## Sample values include: 1] brackets; 2] quotation-marks
+    [ a:defaultValue = "quotation-marks" ]
+    attribute rend {
+      list {
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      }
+    }?,
     
     ## may be used to indicate whether the offset passage is spoken or thought, or to characterize it more finely.
     ## Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreign; 6] distinct; 7] term; 8] emph; 9] mentioned
@@ -1810,7 +1783,6 @@ dape_corr =
   element corr {
     dape_macro.paraContent,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.typed.attributes,
     empty
   }
@@ -1829,7 +1801,6 @@ dape_reg =
   element reg {
     dape_macro.paraContent,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.typed.attributes,
     empty
   }
@@ -1859,7 +1830,6 @@ dape_gap =
     dape_att.global.linking.attribute.prev,
     dape_att.global.facs.attribute.facs,
     dape_att.timed.attributes,
-    dape_att.editLike.attributes,
     
     ## (responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.
     [ a:defaultValue = "#org_MS" ]
@@ -1911,7 +1881,6 @@ dape_unclear =
   element unclear {
     dape_macro.paraContent,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     
     ## indicates why the material is hard to transcribe.
     attribute reason {
@@ -1938,7 +1907,6 @@ dape_name =
     dape_att.global.attributes,
     dape_att.personal.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.typed.attributes,
     empty
   }
@@ -2043,7 +2011,6 @@ dape_date =
     (text | dape_model.gLike | dape_model.phrase | dape_model.global)*,
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.typed.attributes,
     empty
   }
@@ -2054,7 +2021,6 @@ dape_time =
     (text | dape_model.gLike | dape_model.phrase | dape_model.global)*,
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.typed.attributes,
     empty
   }
@@ -2078,10 +2044,7 @@ dape_expan =
   
   ## (expansion) contains the expansion of an abbreviation. [3.5.5. Abbreviations and Their Expansions]
   element expan {
-    dape_macro.phraseSeq,
-    dape_att.global.attributes,
-    dape_att.editLike.attributes,
-    empty
+    dape_macro.phraseSeq, dape_att.global.attributes, empty
   }
 dape_ptr =
   
@@ -2356,10 +2319,10 @@ dape_pb =
     attribute ed {
       list {
         (
-         ##
+         ## Page break according to a printed edition
          "print"
          | 
-           ##
+           ## Page break as found in the transcription from Maktabat al-Shamela
            "shamela"
          | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
       }
@@ -3829,7 +3792,6 @@ dape_orgName =
     dape_macro.phraseSeq,
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.personal.attributes,
     dape_att.typed.attributes,
     empty
@@ -3841,7 +3803,6 @@ dape_persName =
     dape_macro.phraseSeq,
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.personal.attributes,
     dape_att.typed.attributes,
     empty
@@ -3911,7 +3872,6 @@ dape_placeName =
   element placeName {
     dape_macro.phraseSeq,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.global.attributes,
     dape_att.personal.attributes,
     dape_att.typed.attributes,
@@ -3978,7 +3938,6 @@ dape_offset =
   element offset {
     dape_macro.phraseSeq,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.global.attributes,
     dape_att.naming.attributes,
     dape_att.typed.attributes,
@@ -3990,7 +3949,6 @@ dape_geogName =
   element geogName {
     dape_macro.phraseSeq,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.global.attributes,
     dape_att.naming.attributes,
     dape_att.typed.attributes,
@@ -4002,7 +3960,6 @@ dape_geogFeat =
   element geogFeat {
     dape_macro.phraseSeq,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.global.attributes,
     dape_att.naming.attributes,
     dape_att.typed.attributes,
@@ -4014,7 +3971,6 @@ dape_affiliation =
   element affiliation {
     dape_macro.phraseSeq,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.datable.attributes,
     dape_att.naming.attributes,
     empty
@@ -4025,7 +3981,6 @@ dape_age =
   element age {
     dape_macro.phraseSeq.limited,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.datable.attributes,
     
     ## supplies a numeric code representing the age or age group
@@ -4038,7 +3993,6 @@ dape_birth =
   element birth {
     dape_macro.phraseSeq,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.datable.attributes,
     dape_att.naming.attributes,
     empty
@@ -4053,7 +4007,6 @@ dape_climate =
      dape_climate*),
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.naming.attributes,
     dape_att.typed.attributes,
     empty
@@ -4064,7 +4017,6 @@ dape_death =
   element death {
     dape_macro.phraseSeq,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.datable.attributes,
     dape_att.naming.attributes,
     empty
@@ -4075,7 +4027,6 @@ dape_education =
   element education {
     dape_macro.phraseSeq,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.datable.attributes,
     dape_att.naming.attributes,
     empty
@@ -4090,7 +4041,6 @@ dape_event =
      dape_event*),
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.typed.attributes,
     dape_att.naming.attributes,
     dape_att.sortable.attributes,
@@ -4105,7 +4055,6 @@ dape_faith =
   element faith {
     dape_macro.phraseSeq,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.datable.attributes,
     dape_att.canonical.attributes,
     empty
@@ -4117,7 +4066,6 @@ dape_floruit =
     dape_macro.phraseSeq,
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     empty
   }
 dape_geo =
@@ -4190,7 +4138,6 @@ dape_location =
     dape_att.global.attributes,
     dape_att.typed.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     empty
   }
 dape_nationality =
@@ -4200,7 +4147,6 @@ dape_nationality =
     dape_macro.phraseSeq,
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.naming.attributes,
     empty
   }
@@ -4211,7 +4157,6 @@ dape_occupation =
     dape_macro.phraseSeq,
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.naming.attributes,
     
     ## indicates the classification system or taxonomy in use, for example by supplying the identifier of a taxonomy element, or pointing to some other resource.
@@ -4236,7 +4181,6 @@ dape_org =
      dape_model.personLike*),
     dape_att.global.attributes,
     dape_att.typed.attributes,
-    dape_att.editLike.attributes,
     dape_att.sortable.attributes,
     
     ## specifies a primary role or classification for the organization.
@@ -4264,7 +4208,6 @@ dape_person =
   element person {
     (dape_model.pLike+ | (dape_model.personPart | dape_model.global)*),
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.sortable.attributes,
     
     ## specifies a primary role or classification for the person.
@@ -4333,7 +4276,6 @@ dape_place =
      (dape_model.placeLike | dape_listPlace)*),
     dape_att.global.attributes,
     dape_att.typed.attributes,
-    dape_att.editLike.attributes,
     dape_att.sortable.attributes,
     empty
   }
@@ -4347,7 +4289,6 @@ dape_population =
      dape_population*),
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.naming.attributes,
     dape_att.typed.attributes,
     empty
@@ -4417,7 +4358,6 @@ dape_relation =
   element relation {
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.canonical.attributes,
     dape_att.sortable.attributes,
     dape_att.typed.attributes,
@@ -4450,7 +4390,6 @@ dape_residence =
     dape_macro.phraseSeq,
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.naming.attributes,
     empty
   }
@@ -4460,7 +4399,6 @@ dape_sex =
   element sex {
     dape_macro.phraseSeq,
     dape_att.global.attributes,
-    dape_att.editLike.attributes,
     dape_att.datable.attributes,
     
     ## supplies a coded value for sex
@@ -4478,7 +4416,6 @@ dape_socecStatus =
     dape_macro.phraseSeq,
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.naming.attributes,
     
     ## identifies the classification system or taxonomy in use, for example by pointing to a locally-defined taxonomy element or by supplying a URI for an externally-defined system.
@@ -4501,7 +4438,6 @@ dape_state =
         | dape_model.biblLike)*),
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.typed.attributes,
     dape_att.naming.attributes,
     empty
@@ -4516,7 +4452,6 @@ dape_terrain =
      dape_terrain*),
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.naming.attributes,
     dape_att.typed.attributes,
     empty
@@ -4534,7 +4469,6 @@ dape_trait =
         | dape_model.biblLike)*),
     dape_att.global.attributes,
     dape_att.datable.attributes,
-    dape_att.editLike.attributes,
     dape_att.naming.attributes,
     dape_att.typed.attributes,
     empty
@@ -4831,12 +4765,7 @@ dape_zone =
 dape_ex =
   
   ## (editorial expansion) contains a sequence of letters added by an editor or transcriber when expanding an abbreviation. [11.3.1.2. Abbreviation and Expansion]
-  element ex {
-    dape_macro.xtext,
-    dape_att.global.attributes,
-    dape_att.editLike.attributes,
-    empty
-  }
+  element ex { dape_macro.xtext, dape_att.global.attributes, empty }
 dape_fw =
   
   ## (forme work) contains a running head (e.g. a header, footer), catchword, or similar material appearing on the current page. [11.6. Headers, Footers, and Similar Matter]
@@ -4860,7 +4789,6 @@ dape_am =
     (text | dape_model.gLike | dape_model.pPart.transcriptional)*,
     dape_att.global.attributes,
     dape_att.typed.attributes,
-    dape_att.editLike.attributes,
     empty
   }
 dape_space =
@@ -4913,7 +4841,6 @@ dape_supplied =
     dape_att.global.linking.attribute.next,
     dape_att.global.linking.attribute.prev,
     dape_att.global.facs.attribute.facs,
-    dape_att.editLike.attributes,
     
     ## (responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.
     attribute resp {

@@ -4,14 +4,16 @@
         <fileDesc>
             <titleStmt>
                 <title>Digital Arabic Periodical Editions: Schema</title>
-                <author><persName xml:id="pers_TG"><forename>Till</forename> <surname>Grallert</surname></persName></author>
+                <author><persName xml:id="pers_TG"
+                    ><forename>Till</forename><surname>Grallert</surname></persName></author>
             </titleStmt>
             <publicationStmt>
-                <authority> <persName>Till Grallert</persName> </authority>
+                <authority><persName>Till Grallert</persName></authority>
                 <pubPlace>Beirut</pubPlace>
                 <date when="2016">2016</date>
                 <availability status="restricted">
-                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/"
+                        >Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
                 </availability>
             </publicationStmt>
             <notesStmt>
@@ -32,7 +34,7 @@
         <body>
             <p>This TEI customisation includes the modules:
                 <list>
-                    <item>core</item>
+                <item>core</item>
                 <item>tei</item>
                 <item>header</item>
                 <item>textstructure</item>
@@ -41,8 +43,7 @@
                 <item>linking</item>
                 <item>figures</item>
                 <item>transcr</item>
-                </list>
-            </p>
+                </list> </p>
             <p>Many elements and attribute classes and attributes were deleted from the standard set. The values of some attributes were restricted.</p>
             <schemaSpec ident="tei_dape" docLang="en" prefix="dape_" xml:lang="en">
                 <moduleRef key="core"
@@ -55,7 +56,8 @@
                 <moduleRef key="tagdocs"
                     except="altIdent alternate attDef attList attRef classRef classSpec classes constraint constraintSpec content dataRef dataSpec datatype defaultVal eg egXML elementRef elementSpec equiv exemplum ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition param paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList textNode val valDesc valItem valList"/>
                 <moduleRef key="namesdates" except="langKnowledge langKnown"/>
-                <moduleRef key="linking" except="alt altGrp anchor join joinGrp link linkGrp timeline when"/>
+                <moduleRef key="linking"
+                    except="alt altGrp anchor join joinGrp link linkGrp timeline when"/>
                 <moduleRef key="figures" except="formula notatedMusic"/>
                 <moduleRef key="transcr"
                     except="addSpan damage damageSpan delSpan handNotes handShift line listTranspose mod redo restore retrace secl sourceDoc subst substJoin surplus transpose undo"/>
@@ -150,6 +152,7 @@
                         <attDef ident="cert" mode="delete"/>
                     </attList>
                 </classSpec>
+                <classSpec type="atts" ident="att.damaged" mode="delete" module="tei"/>
                 <classSpec ident="att.datable" mode="change" type="atts" module="tei">
                     <attList>
                         <attDef ident="period" mode="delete"/>
@@ -167,6 +170,13 @@
                     </attList>
                 </classSpec>
                 <classSpec ident="att.declaring" mode="delete" module="tei" type="atts"/>
+                <classSpec type="atts" ident="att.dimensions" mode="change" module="tei">
+                    <attList>
+                        <attDef ident="precision" mode="delete"/>
+                        <attDef ident="scope" mode="delete"/>
+                    </attList>
+                </classSpec>
+                <classSpec type="atts" ident="att.editLike" mode="delete" module="tei"/>
                 <classSpec ident="att.ranging" mode="delete" module="tei" type="atts"/>
                 <classSpec ident="att.tableDecoration" mode="change" module="tei" type="atts">
                     <attList>
@@ -302,8 +312,12 @@
                         <attDef ident="ed" mode="change">
                             <defaultVal>print</defaultVal>
                             <valList type="semi" mode="replace">
-                                <valItem ident="print"/>
-                                <valItem ident="shamela"/>
+                                <valItem ident="print">
+                                    <desc>Page break according to a printed edition</desc>
+                                </valItem>
+                                <valItem ident="shamela">
+                                    <desc>Page break as found in the transcription from Maktabat al-Shamela</desc>
+                                </valItem>
                             </valList>
                         </attDef>
                     </attList>
@@ -311,6 +325,28 @@
                 <elementSpec ident="supplied" module="transcr" mode="change">
                     <attList>
                         <attDef ident="resp" mode="change" usage="req"/>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="q" module="core" mode="change">
+                    <attList>
+                        <attDef ident="rend" mode="change">
+                            <defaultVal>quotation-marks</defaultVal>
+                            <valList type="open" mode="replace">
+                                <valItem ident="brackets"/>
+                                <valItem ident="quotation-marks"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="quote" module="core" mode="change">
+                    <attList>
+                        <attDef ident="rend" mode="change">
+                            <defaultVal>quotation-marks</defaultVal>
+                            <valList type="open" mode="replace">
+                                <valItem ident="brackets"/>
+                                <valItem ident="quotation-marks"/>
+                            </valList>
+                        </attDef>
                     </attList>
                 </elementSpec>
             </schemaSpec>

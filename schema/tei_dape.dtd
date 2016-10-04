@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2016-06-17T15:17:49Z. .[http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
+DTD generated from ODD source 2016-10-03T07:58:01Z. .[http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
 TEI Edition: Version 3.0.0. Last updated on
 	29th March 2016, revision 89ba24e
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -58,8 +58,6 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
 <!ENTITY % teidata.xmlName ' CDATA ' >
 
 <!ENTITY % teidata.enumerated '%teidata.word;' >
-
-<!ENTITY % teidata.probCert ' CDATA ' >
 
 <!ENTITY % teidata.unboundedInt ' CDATA ' >
 
@@ -204,18 +202,10 @@ quantity %teidata.numeric;  #IMPLIED'>
 
 <!ENTITY % dape_att.dimensions.attribute.extent '
 extent %teidata.text;  #IMPLIED'>
-
-<!ENTITY % dape_att.dimensions.attribute.precision '
-precision %teidata.certainty;  #IMPLIED'>
-
-<!ENTITY % dape_att.dimensions.attribute.scope '
-scope %teidata.enumerated;  #IMPLIED'>
 <!ENTITY % dape_att.dimensions.attributes '
  %dape_att.dimensions.attribute.unit;
  %dape_att.dimensions.attribute.quantity;
- %dape_att.dimensions.attribute.extent;
- %dape_att.dimensions.attribute.precision;
- %dape_att.dimensions.attribute.scope;'> 
+ %dape_att.dimensions.attribute.extent;'> 
 <!ENTITY % dape_att.written.attribute.hand '
 hand %teidata.pointer;  #IMPLIED'>
 <!ENTITY % dape_att.written.attributes '
@@ -276,14 +266,6 @@ status %teidata.enumerated;  "draft" '>
 resp CDATA  #IMPLIED'>
 <!ENTITY % dape_att.global.responsibility.attributes '
  %dape_att.global.responsibility.attribute.resp;'> 
-<!ENTITY % dape_att.editLike.attribute.evidence '
-evidence CDATA  #IMPLIED'>
-
-<!ENTITY % dape_att.editLike.attribute.instant '
-instant %teidata.xTruthValue;  "false" '>
-<!ENTITY % dape_att.editLike.attributes '%dape_att.dimensions.attributes;%dape_att.source.attributes;
- %dape_att.editLike.attribute.evidence;
- %dape_att.editLike.attribute.instant;'> 
 <!ENTITY % dape_att.global.rendition.attribute.rend '
 rend CDATA  #IMPLIED'>
 
@@ -420,7 +402,7 @@ cause %teidata.enumerated;  #IMPLIED'>
 
 <!ENTITY % dape_att.transcriptional.attribute.seq '
 seq CDATA  #IMPLIED'>
-<!ENTITY % dape_att.transcriptional.attributes '%dape_att.editLike.attributes;%dape_att.written.attributes;
+<!ENTITY % dape_att.transcriptional.attributes '%dape_att.written.attributes;
  %dape_att.transcriptional.attribute.status;
  %dape_att.transcriptional.attribute.cause;
  %dape_att.transcriptional.attribute.seq;'> 
@@ -1020,7 +1002,6 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST affiliation xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST affiliation
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.datable.attributes;
  %dape_att.naming.attributes; >
 <!--doc:specifies the age of a person. [13.3.2.1. Personal Characteristics] -->
@@ -1028,7 +1009,6 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST age xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST age
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.datable.attributes;
 value %teidata.count;  #IMPLIED >
 <!--doc:(abbreviation marker) contains a sequence of letters or signs present in an abbreviation which are omitted or replaced in the expanded form of the abbreviation. [11.3.1.2. Abbreviation and Expansion] -->
@@ -1036,8 +1016,7 @@ value %teidata.count;  #IMPLIED >
 <!ATTLIST am xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST am
  %dape_att.global.attributes;
- %dape_att.typed.attributes;
- %dape_att.editLike.attributes; >
+ %dape_att.typed.attributes; >
 <!--doc:(attribute) contains the name of an attribute appearing within running text. [22. Documentation Elements] -->
 <!ELEMENT att  (#PCDATA)>
 <!ATTLIST att xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1104,7 +1083,6 @@ status (free|unknown|restricted) "unknown"  >
 <!ATTLIST birth xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST birth
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.datable.attributes;
  %dape_att.naming.attributes; >
 <!--doc:contains the name of a geo-political unit consisting of two or more nation states or countries. [13.2.3. Place Names] -->
@@ -1186,7 +1164,6 @@ target CDATA  #IMPLIED >
 <!ATTLIST climate
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.naming.attributes;
  %dape_att.typed.attributes; >
 <!--doc:groups together salutations, datelines, and similar phrases appearing as a final group at the end of a division, especially of a letter. [4.2.2. Openers and Closers 4.2. Elements Common to All Divisions] -->
@@ -1206,7 +1183,6 @@ lang %teidata.word;  #IMPLIED >
 <!ATTLIST corr xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST corr
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.typed.attributes; >
 <!--doc:(correction principles) states how and under what circumstances corrections have been made in the text. [2.3.3. The Editorial Practices Declaration 15.3.2. Declarable Elements] -->
 <!ELEMENT correction (%model.pLike;)+>
@@ -1252,7 +1228,6 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST date
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.typed.attributes; >
 <!--doc:contains a brief description of the place, date, time, etc. of production of a letter, newspaper story, or other work, prefixed or suffixed to it as a kind of heading or trailer. [4.2.2. Openers and Closers] -->
 <!ELEMENT dateline (#PCDATA|_DUMMY_model.gLike|%model.phrase;|%model.global;|docDate)*>
@@ -1264,7 +1239,6 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST death xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST death
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.datable.attributes;
  %dape_att.naming.attributes; >
 <!--doc:(deletion) contains a letter, word, or passage deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the copy text by an author, scribe, or a previous annotator or corrector. [3.4.3. Additions, Deletions, and Omissions] -->
@@ -1323,7 +1297,6 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST education xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST education
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.datable.attributes;
  %dape_att.naming.attributes; >
 <!--doc:(encoding description) documents the relationship between an electronic text and the source or sources from which it was derived. [2.3. The Encoding Description 2.1.1. The TEI Header and Its Components] -->
@@ -1342,7 +1315,6 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST event
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.typed.attributes;
  %dape_att.naming.attributes;
  %dape_att.sortable.attributes;
@@ -1351,14 +1323,12 @@ where %teidata.pointer;  #IMPLIED >
 <!ELEMENT ex %macro.xtext;>
 <!ATTLIST ex xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST ex
- %dape_att.global.attributes;
- %dape_att.editLike.attributes; >
+ %dape_att.global.attributes; >
 <!--doc:(expansion) contains the expansion of an abbreviation. [3.5.5. Abbreviations and Their Expansions] -->
 <!ELEMENT expan %macro.phraseSeq;>
 <!ATTLIST expan xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST expan
- %dape_att.global.attributes;
- %dape_att.editLike.attributes; >
+ %dape_att.global.attributes; >
 <!--doc:contains a representation of some written source in the form of a set of images rather than as transcribed or encoded text. [11.1. Digital Facsimiles] -->
 <!ELEMENT facsimile (((front)?,(%model.graphicLike;|surface|surfaceGrp)+,(back)?))>
 <!ATTLIST facsimile xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1369,7 +1339,6 @@ where %teidata.pointer;  #IMPLIED >
 <!ATTLIST faith xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST faith
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.datable.attributes;
  %dape_att.canonical.attributes; >
 <!--doc:(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images] -->
@@ -1400,8 +1369,7 @@ where %teidata.pointer;  #IMPLIED >
 <!ATTLIST floruit xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST floruit
  %dape_att.global.attributes;
- %dape_att.datable.attributes;
- %dape_att.editLike.attributes; >
+ %dape_att.datable.attributes; >
 <!--doc:identifies a word or phrase as belonging to some language other than that of the surrounding text. [3.3.2.1. Foreign Words or Expressions] -->
 <!ELEMENT foreign %macro.phraseSeq;>
 <!ATTLIST foreign xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1448,7 +1416,6 @@ type %teidata.enumerated;  #IMPLIED >
  %dape_att.global.linking.attribute.prev;
  %dape_att.global.facs.attribute.facs;
  %dape_att.timed.attributes;
- %dape_att.editLike.attributes;
 resp CDATA  "#org_MS" 
 reason CDATA  #IMPLIED
 hand %teidata.pointer;  #IMPLIED
@@ -1479,7 +1446,6 @@ Elements] -->
 <!ATTLIST geogFeat xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST geogFeat
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.global.attributes;
  %dape_att.naming.attributes;
  %dape_att.typed.attributes; >
@@ -1488,7 +1454,6 @@ Elements] -->
 <!ATTLIST geogName xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST geogName
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.global.attributes;
  %dape_att.naming.attributes;
  %dape_att.typed.attributes; >
@@ -1683,8 +1648,7 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST location
  %dape_att.global.attributes;
  %dape_att.typed.attributes;
- %dape_att.datable.attributes;
- %dape_att.editLike.attributes; >
+ %dape_att.datable.attributes; >
 <!--doc:contains a word or phrase referring to some quantity of an object or commodity, usually comprising a number, a unit, and a commodity name. [3.5.3. Numbers and
 Measures] -->
 <!ELEMENT measure %macro.phraseSeq;>
@@ -1732,7 +1696,6 @@ Elements] -->
  %dape_att.global.attributes;
  %dape_att.personal.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.typed.attributes; >
 <!--doc:(name link) contains a connecting phrase or link used within a name but not regarded as part of it, such as van der or of. [13.2.1. Personal Names] -->
 <!ELEMENT nameLink %macro.phraseSeq;>
@@ -1746,7 +1709,6 @@ Elements] -->
 <!ATTLIST nationality
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.naming.attributes; >
 <!--doc:contains a note or annotation. [3.8.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.11.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries] -->
 <!ELEMENT note %macro.specialPara;>
@@ -1799,7 +1761,6 @@ parts CDATA  #IMPLIED >
 <!ATTLIST occupation
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.naming.attributes;
 scheme %teidata.pointer;  #IMPLIED
 code %teidata.pointer;  #IMPLIED >
@@ -1808,7 +1769,6 @@ code %teidata.pointer;  #IMPLIED >
 <!ATTLIST offset xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST offset
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.global.attributes;
  %dape_att.naming.attributes;
  %dape_att.typed.attributes; >
@@ -1824,7 +1784,6 @@ code %teidata.pointer;  #IMPLIED >
 <!ATTLIST org
  %dape_att.global.attributes;
  %dape_att.typed.attributes;
- %dape_att.editLike.attributes;
  %dape_att.sortable.attributes;
 role CDATA  #IMPLIED >
 <!--doc:(organization name) contains an organizational name. [13.2.2. Organizational Names] -->
@@ -1833,7 +1792,6 @@ role CDATA  #IMPLIED >
 <!ATTLIST orgName
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.personal.attributes;
  %dape_att.typed.attributes; >
 <!--doc:(original form) contains a reading which is marked as following the original, rather than being normalized or corrected. [3.4.2. Regularization and
@@ -1867,7 +1825,6 @@ ed CDATA  "print"  >
 <!ATTLIST persName
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.personal.attributes;
  %dape_att.typed.attributes; >
 <!--doc:provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a historical source. [13.3.2. The Person Element 15.2.2. The Participant Description] -->
@@ -1875,7 +1832,6 @@ ed CDATA  "print"  >
 <!ATTLIST person xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST person
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.sortable.attributes;
 role CDATA  #IMPLIED
 sex CDATA  #IMPLIED
@@ -1896,14 +1852,12 @@ size CDATA  #IMPLIED >
 <!ATTLIST place
  %dape_att.global.attributes;
  %dape_att.typed.attributes;
- %dape_att.editLike.attributes;
  %dape_att.sortable.attributes; >
 <!--doc:contains an absolute or relative place name. [13.2.3. Place Names] -->
 <!ELEMENT placeName %macro.phraseSeq;>
 <!ATTLIST placeName xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST placeName
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.global.attributes;
  %dape_att.personal.attributes;
  %dape_att.typed.attributes; >
@@ -1913,7 +1867,6 @@ size CDATA  #IMPLIED >
 <!ATTLIST population
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.naming.attributes;
  %dape_att.typed.attributes; >
 <!--doc:contains a postscript, e.g. to a letter. [4.2. Elements Common to All Divisions] -->
@@ -1976,9 +1929,19 @@ placement (internal|external) #IMPLIED >
 <!ELEMENT q %macro.specialPara;>
 <!ATTLIST q xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST q
- %dape_att.global.attributes;
+ %dape_att.global.attribute.xmlid;
+ %dape_att.global.attribute.n;
+ %dape_att.global.attribute.xmllang;
+ %dape_att.global.rendition.attribute.style;
+ %dape_att.global.rendition.attribute.rendition;
+ %dape_att.global.linking.attribute.corresp;
+ %dape_att.global.linking.attribute.next;
+ %dape_att.global.linking.attribute.prev;
+ %dape_att.global.facs.attribute.facs;
+ %dape_att.global.responsibility.attribute.resp;
  %dape_att.ascribed.attributes;
  %dape_att.source.attributes;
+rend CDATA  "quotation-marks" 
 type %teidata.enumerated;  #IMPLIED >
 <!--doc:specifies editorial practice adopted with respect to quotation marks in the original. [2.3.3. The Editorial Practices Declaration 15.3.2. Declarable Elements] -->
 <!ELEMENT quotation (%model.pLike;)*>
@@ -1991,9 +1954,19 @@ marks (none|some|all) #IMPLIED >
 <!ELEMENT quote %macro.specialPara;>
 <!ATTLIST quote xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST quote
- %dape_att.global.attributes;
+ %dape_att.global.attribute.xmlid;
+ %dape_att.global.attribute.n;
+ %dape_att.global.attribute.xmllang;
+ %dape_att.global.rendition.attribute.style;
+ %dape_att.global.rendition.attribute.rendition;
+ %dape_att.global.linking.attribute.corresp;
+ %dape_att.global.linking.attribute.next;
+ %dape_att.global.linking.attribute.prev;
+ %dape_att.global.facs.attribute.facs;
+ %dape_att.global.responsibility.attribute.resp;
  %dape_att.typed.attributes;
- %dape_att.source.attributes; >
+ %dape_att.source.attributes;
+rend CDATA  "quotation-marks"  >
 <!--doc:(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6. Simple Links and Cross-References 16.1. Links] -->
 <!ELEMENT ref %macro.paraContent;>
 <!ATTLIST ref xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -2024,7 +1997,6 @@ Normalization 12. Critical Apparatus] -->
 <!ATTLIST reg xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST reg
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.typed.attributes; >
 <!--doc:contains the name of an administrative unit such as a state, province, or county, larger than a settlement, but smaller than a country. [13.2.3. Place Names] -->
 <!ELEMENT region %macro.phraseSeq;>
@@ -2040,7 +2012,6 @@ Normalization 12. Critical Apparatus] -->
 <!ATTLIST relation
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.canonical.attributes;
  %dape_att.sortable.attributes;
  %dape_att.typed.attributes;
@@ -2062,7 +2033,6 @@ selector CDATA  #IMPLIED >
 <!ATTLIST residence
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.naming.attributes; >
 <!--doc:(responsibility) contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role in the production or distribution of a work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement] -->
 <!ELEMENT resp %macro.phraseSeq.limited;>
@@ -2162,7 +2132,6 @@ direct %teidata.xTruthValue;  "true"  >
 <!ATTLIST sex xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST sex
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
  %dape_att.datable.attributes;
 value CDATA  #IMPLIED >
 <!--doc:(Latin for thus or so
@@ -2178,7 +2147,6 @@ value CDATA  #IMPLIED >
 <!ATTLIST socecStatus
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.naming.attributes;
 scheme %teidata.pointer;  #IMPLIED
 code %teidata.pointer;  #IMPLIED >
@@ -2213,7 +2181,6 @@ dim (horizontal|vertical) #IMPLIED >
 <!ATTLIST state
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.typed.attributes;
  %dape_att.naming.attributes; >
 <!--doc:signifies text supplied by the transcriber or editor for any reason; for example because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe. [11.3.3.1. Damage, Illegibility, and Supplied Text] -->
@@ -2230,7 +2197,6 @@ dim (horizontal|vertical) #IMPLIED >
  %dape_att.global.linking.attribute.next;
  %dape_att.global.linking.attribute.prev;
  %dape_att.global.facs.attribute.facs;
- %dape_att.editLike.attributes;
 resp CDATA  #REQUIRED
 reason CDATA  #IMPLIED >
 <!--doc:defines a written surface as a two-dimensional coordinate space, optionally grouping one or more graphic representations of that space, zones of interest within that space, and transcriptions of the writing within them. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription] -->
@@ -2301,7 +2267,6 @@ type %teidata.enumerated;  "text"  >
 <!ATTLIST terrain
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.naming.attributes;
  %dape_att.typed.attributes; >
 <!--doc:contains a single text of any kind, whether unitary or composite, for example a poem or drama, a collection of essays, a novel, a dictionary, or a corpus sample. [4. Default Text Structure 15.1. Varieties of Composite Text] -->
@@ -2317,7 +2282,6 @@ type %teidata.enumerated;  "text"  >
 <!ATTLIST time
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.typed.attributes; >
 <!--doc:contains a title for any kind of work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement] -->
 <!ELEMENT title %macro.paraContent;>
@@ -2345,7 +2309,6 @@ level (a|m|j|s|u) #IMPLIED >
 <!ATTLIST trait
  %dape_att.global.attributes;
  %dape_att.datable.attributes;
- %dape_att.editLike.attributes;
  %dape_att.naming.attributes;
  %dape_att.typed.attributes; >
 <!--doc:contains a word, phrase, or passage which cannot be transcribed with certainty because it is illegible or inaudible in the source. [11.3.3.1. Damage, Illegibility, and Supplied Text 3.4.3. Additions, Deletions, and Omissions] -->
@@ -2353,7 +2316,6 @@ level (a|m|j|s|u) #IMPLIED >
 <!ATTLIST unclear xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST unclear
  %dape_att.global.attributes;
- %dape_att.editLike.attributes;
 reason CDATA  #IMPLIED
 hand %teidata.pointer;  #IMPLIED
 agent %teidata.enumerated;  #IMPLIED >
