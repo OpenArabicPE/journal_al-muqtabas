@@ -555,7 +555,7 @@
             </xsl:call-template>
             <xsl:choose>
                 <xsl:when test="parent::node()/@xml:id">
-                    <a href="#{parent::node()/@xml:id}" class="c_link-self"><xsl:apply-templates select="node()"/></a>
+                    <a href="#{parent::node()/@xml:id}" class="c_link-self" title="{concat($p_text-permalink, $p_text-name-element_div)}"><xsl:apply-templates select="node()"/></a>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:apply-templates select="node()"/>
@@ -601,13 +601,24 @@
             <span class="c_id" lang="en">
                 <xsl:choose>
                     <xsl:when test="@xml:id">
-                        <a href="#{@xml:id}" class="c_link-self">
+                        <a href="#{@xml:id}" class="c_link-self" title="{concat($p_text-permalink, $p_text-name-element_p)}">
                             <span class="c_link-self c_number" lang="en"><xsl:value-of select="$vCount"/></span>
-                            <span class="c_link-self c_id c_hidden" lang="en">
-                                <!--<xsl:value-of select="concat($v_url-file,'#',@xml:id)"/>-->
-                                <xsl:value-of select="concat('#',@xml:id)"/>
-                            </span>
                         </a>
+                        <!--<a href="#{@xml:id}" class="c_link-self" title="{concat($p_text-permalink, $p_text-name-element_p)}">
+                            <span class="c_link-self c_number" lang="en"><xsl:value-of select="$vCount"/></span>
+                            <!-\- generate a pop-up label -\->
+                            <span class="c_link-self c_id c_hidden" lang="en">
+                                <!-\-<xsl:value-of select="concat($v_url-file,'#',@xml:id)"/>-\->
+                                <xsl:value-of select="concat($p_text-permalink, $p_text-name-element_p,' (#',@xml:id,')')"/>
+                            </span>
+                        </a>-->
+                        <!--<xsl:call-template name="t_link-self">
+                            <xsl:with-param name="p_id" select="@xml:id"/>
+                            <xsl:with-param name="p_name-element" select="'p'"/>
+                            <xsl:with-param name="p_content">
+                                <span class="c_link-self c_number" lang="en"><xsl:value-of select="$vCount"/></span>
+                            </xsl:with-param>
+                        </xsl:call-template>-->
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="$vCount"/>
@@ -739,6 +750,7 @@
         </td>
     </xsl:template> -->
     
+    <!-- provide links to linked data -->
     <xsl:template match="tei:*[@ref][ancestor::tei:text]">
         <xsl:copy>
             <xsl:apply-templates/>
@@ -750,18 +762,27 @@
                 <xsl:attribute name="href">
                     <xsl:value-of select="concat('http://www.geonames.org/',substring-after(@ref,'geon:'))"/>
                 </xsl:attribute>
+                <xsl:attribute name="title">
+                    <xsl:text>Link to this toponym on GeoNames</xsl:text>
+                </xsl:attribute>
                 <xsl:text>geonames</xsl:text>
             </xsl:when>
             <xsl:when test="starts-with(@ref,'oclc')">
                 <xsl:attribute name="href">
                     <xsl:value-of select="concat('https://www.worldcat.org/oclc/',substring-after(@ref,'oclc:'))"/>
                 </xsl:attribute>
+                <xsl:attribute name="title">
+                    <xsl:text>Link to this bibliographic item on WorldCat</xsl:text>
+                </xsl:attribute>                
                 <xsl:text>oclc</xsl:text>
             </xsl:when>
             <xsl:when test="starts-with(@ref,'viaf')">
               <xsl:attribute name="href">
                   <xsl:value-of select="concat('https://viaf.org/viaf/',substring-after(@ref,'viaf:'))"/>
               </xsl:attribute>
+                <xsl:attribute name="title">
+                    <xsl:text>Link to this entity at VIAF</xsl:text>
+                </xsl:attribute> 
                 <xsl:text>viaf</xsl:text>
             </xsl:when>
             <xsl:otherwise>
@@ -771,6 +792,33 @@
                 <xsl:text>link</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
+        </a>
+    </xsl:template>
+    
+    <!-- template to provide permalinks to elements -->
+    <xsl:template name="t_link-self">
+        <!-- passon content of the link -->
+        <xsl:param name="p_content"/>
+        <!-- the @xml:id to link back to -->
+        <xsl:param name="p_id"/>
+        <xsl:param name="p_name-element"/>
+        <xsl:variable name="v_name-element">
+            <xsl:choose>
+                <xsl:when test="$p_name-element = 'div'">
+                    <xsl:copy-of select="$p_text-name-element_div"/>
+                </xsl:when>
+                <xsl:when test="$p_name-element = 'p'">
+                    <xsl:copy-of select="$p_text-name-element_p"/>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <a href="#{$p_id}" class="c_link-self" title="{concat($p_text-permalink, $v_name-element)}">
+            <xsl:copy-of select="$p_content"/>
+            <!-- generate a pop-up label -->
+            <span class="c_link-self c_id c_hidden" lang="en">
+                <!--<xsl:value-of select="concat($v_url-file,'#',@xml:id)"/>-->
+                <xsl:value-of select="concat($p_text-permalink, $v_name-element,' (#',$p_id,')')"/>
+            </span>
         </a>
     </xsl:template>
 </xsl:stylesheet>

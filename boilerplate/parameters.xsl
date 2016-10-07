@@ -15,7 +15,7 @@
     <!-- select whether you want to display facsimiles -->
     <xsl:param name="displayPageBreaks" select="true()"/>
     <!-- select whether or not you want to display online or local facsimiles -->
-    <xsl:param name="pgOnlineFacs" select="true()"/>
+    <xsl:param name="pgOnlineFacs" select="false()"/>
     <!-- select whether you want to use inline CSS for the display -->
     <xsl:param name="inlineCSS" select="true()"/>
     <!-- select whether the language of the interface should follow the main language of the text -->
@@ -68,6 +68,36 @@
                 </xsl:otherwise>
             </xsl:choose>
         </span>
+    </xsl:param>
+    <xsl:param name="p_text-permalink">
+        <xsl:choose>
+            <xsl:when test="$v_lang-interface = 'ar'">
+                <xsl:text>الرابط الثابت ل</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>Permalink to </xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:param>
+    <xsl:param name="p_text-name-element_div">
+        <xsl:choose>
+            <xsl:when test="$v_lang-interface = 'ar'">
+                <xsl:text>هذه المقالة</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>this article/section</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:param>
+    <xsl:param name="p_text-name-element_p">
+        <xsl:choose>
+            <xsl:when test="$v_lang-interface = 'ar'">
+                <xsl:text>هذه الفقرة</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>this paragraph</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:param>
     <!-- parameters for file paths or URLs -->
     <!-- modify filePrefix to point to boilerplate files on your own server, 
