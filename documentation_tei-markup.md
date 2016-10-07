@@ -61,23 +61,18 @@ The structure is as follows
 # 2. changes to the schema
 ## 1. additions
 
-- allow `<bibl>` as child of `<opener>`,`<byline>`, `<closer>`
-- allow `<q>` as child of `<persName>` etc.
-- provide two standard values for `@rend` on `<q>` and `<quote>`: these strings are either marked with quotation marks (French style) or brackets.
+- changes that would potentially render the files non-compliant:
+    - allow `<bibl>` as child of `<opener>`,`<byline>`, `<closer>`
+    - allow `<q>` as child of `<persName>` etc.
+- changes to mark-up reflecting recent changes in the TEI guidelines:
+    + move `<idno>` from a direct child of `<biblStruct>` to `<monogr>`
 
 
 ## 2. deletions
 
-- `tei:num/@cert`
 - `tei:num/@confidence`
 - `tei:num/@facs`
-- `@hand`
 - `@part`
-- `@agent`
-- `@evidence`
-- `@instant`
-- `@precision`
-- `@scope`
 
 
 # 3. current mark-up
