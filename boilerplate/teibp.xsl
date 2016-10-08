@@ -69,7 +69,7 @@
         <xsl:element name="{local-name()}">
             <xsl:apply-templates select="@*"/>
             <xsl:call-template name="addID"/>
-            <xsl:call-template name="rendition"/>
+<!--            <xsl:call-template name="rendition"/>-->
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
@@ -103,9 +103,9 @@
                 renditions, i.e., styles.</xd:p>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="@rend">
+    <xsl:template match="@style">
         <xsl:choose>
-            <xsl:when test="$inlineCSS = true()">
+            <xsl:when test="$p_use-inline-css = true()">
                 <xsl:attribute name="style">
                     <xsl:value-of select="."/>
                 </xsl:attribute>
@@ -117,13 +117,14 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template name="rendition">
+    <!-- as this template simply replicates the @rendition attribute, it has been removed -->
+    <!--<xsl:template name="rendition">
         <xsl:if test="@rendition">
             <xsl:attribute name="rendition">
                 <xsl:value-of select="@rendition"/>
             </xsl:attribute>
         </xsl:if>
-    </xsl:template>
+    </xsl:template>-->
     <xsl:template match="@xml:id">
         <!-- @xml:id is copied to @id, which browsers can use for internal links. -->
         <xsl:attribute name="id">
@@ -138,7 +139,7 @@
     <xsl:template match="tei:ref[@target]" priority="99">
         <a href="{@target}">
             <xsl:apply-templates select="@*"/>
-            <xsl:call-template name="rendition"/>
+<!--            <xsl:call-template name="rendition"/>-->
             <xsl:apply-templates select="@* | node()"/>
             <!-- <xsl:apply-templates select="node()"/> -->
         </a>
@@ -153,7 +154,7 @@
     <xsl:template match="tei:ptr[@target]" priority="99">
         <a href="{@target}">
             <xsl:apply-templates select="@*"/>
-            <xsl:call-template name="rendition"/>
+<!--            <xsl:call-template name="rendition"/>-->
             <xsl:value-of select="normalize-space(@target)"/>
         </a>
     </xsl:template>
@@ -501,7 +502,18 @@
     <xsl:template match="tei:lb | tei:cb" mode="mToc">
         <xsl:text> </xsl:text>
     </xsl:template>
-    <xsl:template match="tei:lb | tei:cb">
+    <!-- toggle the display of line breaks -->
+    <xsl:template match="tei:lb">
+        <xsl:choose>
+            <xsl:when test="$p_display-line-breaks = true()">
+                <br/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text> </xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template match="tei:cb">
         <xsl:text> </xsl:text>
     </xsl:template>
     
