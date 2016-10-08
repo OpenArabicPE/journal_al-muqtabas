@@ -14,7 +14,7 @@
             <xsl:number count="//tei:pb" level="any"/>
         </xsl:param>-->
         <xsl:choose>
-            <xsl:when test="$displayPageBreaks = true()">
+            <xsl:when test="$p_display-page-breaks = true()">
                 <!-- add @lang="en" to ensure correct ltr rendering -->
                 <span class="-teibp-pb" lang="en">
                     <xsl:call-template name="addID"/>
@@ -77,7 +77,7 @@
                 <xsl:when test="starts-with($p_facs, '#')">
                     <!-- Preference:  -->
                     <xsl:choose>
-                        <xsl:when test="$pgOnlineFacs = true()">
+                        <xsl:when test="$p_display-online-facsimiles = true()">
                             <xsl:value-of select="$v_url-graphic"/>
                         </xsl:when>
                         <!-- select the local file -->
