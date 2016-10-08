@@ -7,8 +7,7 @@
 
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p>Match document root and create and html5 wrapper for the TEI document, which is copied, with some modification, into the
-                HTML document.</xd:p>
+            <xd:p>This stylesheet defines global parameters to change the display of TEI XML files in the browser using an adapted TEI Boilerplate.</xd:p>
         </xd:desc>
     </xd:doc>
 
