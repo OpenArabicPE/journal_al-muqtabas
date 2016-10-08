@@ -12,12 +12,14 @@
         </xd:desc>
     </xd:doc>
 
-    <!-- select whether you want to display facsimiles -->
-    <xsl:param name="displayPageBreaks" select="true()"/>
-    <!-- select whether or not you want to display online or local facsimiles -->
-    <xsl:param name="pgOnlineFacs" select="true()"/>
+    <!-- select whether you want to display page breaks and facsimiles -->
+    <xsl:param name="p_display-page-breaks" select="true()"/>
+    <!-- select whether you want to display online or local facsimiles -->
+    <xsl:param name="p_display-online-facsimiles" select="true()"/>
+    <!-- select whether you want to display line breaks -->
+    <xsl:param name="p_display-line-breaks" select="false()"/>
     <!-- select whether you want to use inline CSS for the display -->
-    <xsl:param name="inlineCSS" select="true()"/>
+    <xsl:param name="p_use-inline-css" select="true()"/>
     <!-- select whether the language of the interface should follow the main language of the text -->
     <xsl:param name="p_lang-interface-same-as-text" select="false()"/>
 
