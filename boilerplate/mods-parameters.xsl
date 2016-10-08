@@ -7,7 +7,7 @@
 
  
     <!-- select whether you want to use inline CSS for the display -->
-    <xsl:param name="inlineCSS" select="true()"/>
+    <xsl:param name="p_use-inline-css" select="true()"/>
 
     <!-- origianal TEI Boileplate stuff -->
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
