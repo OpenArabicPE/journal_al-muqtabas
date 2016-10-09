@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2016-10-03T07:58:01Z. .[http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
+DTD generated from ODD source 2016-10-09T07:02:08Z. .[http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
 TEI Edition: Version 3.0.0. Last updated on
 	29th March 2016, revision 89ba24e
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -1227,8 +1227,24 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST date xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST date
  %dape_att.global.attributes;
- %dape_att.datable.attributes;
- %dape_att.typed.attributes; >
+ %dape_att.datable.w3c.attribute.when;
+ %dape_att.datable.w3c.attribute.notBefore;
+ %dape_att.datable.w3c.attribute.notAfter;
+ %dape_att.datable.w3c.attribute.from;
+ %dape_att.datable.w3c.attribute.to;
+ %dape_att.datable.iso.attribute.when-iso;
+ %dape_att.datable.iso.attribute.notBefore-iso;
+ %dape_att.datable.iso.attribute.notAfter-iso;
+ %dape_att.datable.iso.attribute.from-iso;
+ %dape_att.datable.iso.attribute.to-iso;
+ %dape_att.datable.custom.attribute.when-custom;
+ %dape_att.datable.custom.attribute.notBefore-custom;
+ %dape_att.datable.custom.attribute.notAfter-custom;
+ %dape_att.datable.custom.attribute.from-custom;
+ %dape_att.datable.custom.attribute.to-custom;
+ %dape_att.typed.attributes;
+calendar (#cal_gregorian|#cal_islamic|#cal_julian|#cal_ottomanfiscal) #IMPLIED
+datingMethod (#cal_gregorian|#cal_islamic|#cal_julian|#cal_ottomanfiscal) #IMPLIED >
 <!--doc:contains a brief description of the place, date, time, etc. of production of a letter, newspaper story, or other work, prefixed or suffixed to it as a kind of heading or trailer. [4.2.2. Openers and Closers] -->
 <!ELEMENT dateline (#PCDATA|_DUMMY_model.gLike|%model.phrase;|%model.global;|docDate)*>
 <!ATTLIST dateline xmlns CDATA "http://www.tei-c.org/ns/1.0">

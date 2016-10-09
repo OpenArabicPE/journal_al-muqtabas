@@ -7,7 +7,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2016-10-03T07:57:08Z. .
+# Schema generated from ODD source 2016-10-09T07:00:50Z. .
 # TEI Edition: Version 3.0.0. Last updated on
 #	29th March 2016, revision 89ba24e
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -1670,11 +1670,17 @@ dape_quote =
     dape_att.source.attributes,
     
     ## (rendition) indicates how the element in question was rendered or presented in the source text.
-    ## Sample values include: 1] brackets; 2] quotation-marks
+    ## Suggested values include: 1] brackets; 2] quotation-marks
     [ a:defaultValue = "quotation-marks" ]
     attribute rend {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        (
+         ##
+         "brackets"
+         | 
+           ##
+           "quotation-marks"
+         | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
       }
     }?,
     empty
@@ -1698,11 +1704,17 @@ dape_q =
     dape_att.source.attributes,
     
     ## (rendition) indicates how the element in question was rendered or presented in the source text.
-    ## Sample values include: 1] brackets; 2] quotation-marks
+    ## Suggested values include: 1] brackets; 2] quotation-marks
     [ a:defaultValue = "quotation-marks" ]
     attribute rend {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        (
+         ##
+         "brackets"
+         | 
+           ##
+           "quotation-marks"
+         | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
       }
     }?,
     
@@ -2010,8 +2022,76 @@ dape_date =
   element date {
     (text | dape_model.gLike | dape_model.phrase | dape_model.global)*,
     dape_att.global.attributes,
-    dape_att.datable.attributes,
+    dape_att.datable.w3c.attribute.when,
+    dape_att.datable.w3c.attribute.notBefore,
+    dape_att.datable.w3c.attribute.notAfter,
+    dape_att.datable.w3c.attribute.from,
+    dape_att.datable.w3c.attribute.to,
+    dape_att.datable.iso.attribute.when-iso,
+    dape_att.datable.iso.attribute.notBefore-iso,
+    dape_att.datable.iso.attribute.notAfter-iso,
+    dape_att.datable.iso.attribute.from-iso,
+    dape_att.datable.iso.attribute.to-iso,
+    dape_att.datable.custom.attribute.when-custom,
+    dape_att.datable.custom.attribute.notBefore-custom,
+    dape_att.datable.custom.attribute.notAfter-custom,
+    dape_att.datable.custom.attribute.from-custom,
+    dape_att.datable.custom.attribute.to-custom,
     dape_att.typed.attributes,
+    (
+     ## indicates the system or calendar to which the date represented by the content of this element belongs.
+     attribute calendar {
+       
+       ##
+       "#cal_gregorian"
+       | 
+         ##
+         "#cal_islamic"
+       | 
+         ##
+         "#cal_julian"
+       | 
+         ##
+         "#cal_ottomanfiscal"
+     }?)
+    >> sch:pattern [
+         id = "tei_dape-date-calendar-calendar-constraint-9"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:*[@calendar]"
+           "\x{a}" ~
+           "               "
+           sch:assert [
+             test = "string-length(.) gt 0"
+             "\x{a}" ~
+             "@calendar indicates the system or calendar to which the date represented by the content of this element\x{a}" ~
+             "belongs, but this "
+             sch:name [ ]
+             " element has no textual content."
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    
+    ## supplies a pointer to a calendar element or other means of interpreting the values of the custom dating attributes.
+    attribute datingMethod {
+      
+      ##
+      "#cal_gregorian"
+      | 
+        ##
+        "#cal_islamic"
+      | 
+        ##
+        "#cal_julian"
+      | 
+        ##
+        "#cal_ottomanfiscal"
+    }?,
     empty
   }
 dape_time =
@@ -2125,7 +2205,7 @@ dape_list =
          dape_model.global*)+),
      (dape_model.divBottom, dape_model.global*)*)
     >> sch:pattern [
-         id = "tei_dape-list-gloss-list-must-have-labels-constraint-9"
+         id = "tei_dape-list-gloss-list-must-have-labels-constraint-10"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2640,7 +2720,7 @@ dape_lg =
       | dape_lg)*,
      (dape_model.divBottom, dape_model.global*)*)
     >> sch:pattern [
-         id = "tei_dape-lg-atleast1oflggapl-constraint-7"
+         id = "tei_dape-lg-atleast1oflggapl-constraint-8"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4298,7 +4378,7 @@ dape_relation =
   ## (relationship) describes any kind of relationship or linkage amongst a specified group of places, events, persons, objects or other items. [13.3.2.3. Personal Relationships]
   [
     sch:pattern [
-      id = "tei_dape-relation-reforkeyorname-constraint-8"
+      id = "tei_dape-relation-reforkeyorname-constraint-9"
       "\x{a}" ~
       "            "
       sch:rule [

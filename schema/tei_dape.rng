@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2016-10-03T07:57:25Z. .
+Schema generated from ODD source 2016-10-09T07:01:44Z. .
 TEI Edition: Version 3.0.0. Last updated on
 	29th March 2016, revision 89ba24e
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -2965,12 +2965,18 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
                        name="rend"
                        a:defaultValue="quotation-marks">
                <a:documentation>(rendition) indicates how the element in question was rendered or presented in the source text.
-Sample values include: 1] brackets; 2] quotation-marks</a:documentation>
+Suggested values include: 1] brackets; 2] quotation-marks</a:documentation>
                <list>
                   <oneOrMore>
-                     <data type="token">
-                        <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-                     </data>
+                     <choice>
+                        <value>brackets</value>
+                        <a:documentation/>
+                        <value>quotation-marks</value>
+                        <a:documentation/>
+                        <data type="token">
+                           <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                        </data>
+                     </choice>
                   </oneOrMore>
                </list>
             </attribute>
@@ -2999,12 +3005,18 @@ Sample values include: 1] brackets; 2] quotation-marks</a:documentation>
                        name="rend"
                        a:defaultValue="quotation-marks">
                <a:documentation>(rendition) indicates how the element in question was rendered or presented in the source text.
-Sample values include: 1] brackets; 2] quotation-marks</a:documentation>
+Suggested values include: 1] brackets; 2] quotation-marks</a:documentation>
                <list>
                   <oneOrMore>
-                     <data type="token">
-                        <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-                     </data>
+                     <choice>
+                        <value>brackets</value>
+                        <a:documentation/>
+                        <value>quotation-marks</value>
+                        <a:documentation/>
+                        <data type="token">
+                           <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                        </data>
+                     </choice>
                   </oneOrMore>
                </list>
             </attribute>
@@ -3369,8 +3381,63 @@ Measures]</a:documentation>
             </choice>
          </zeroOrMore>
          <ref name="dape_att.global.attributes"/>
-         <ref name="dape_att.datable.attributes"/>
+         <ref name="dape_att.datable.w3c.attribute.when"/>
+         <ref name="dape_att.datable.w3c.attribute.notBefore"/>
+         <ref name="dape_att.datable.w3c.attribute.notAfter"/>
+         <ref name="dape_att.datable.w3c.attribute.from"/>
+         <ref name="dape_att.datable.w3c.attribute.to"/>
+         <ref name="dape_att.datable.iso.attribute.when-iso"/>
+         <ref name="dape_att.datable.iso.attribute.notBefore-iso"/>
+         <ref name="dape_att.datable.iso.attribute.notAfter-iso"/>
+         <ref name="dape_att.datable.iso.attribute.from-iso"/>
+         <ref name="dape_att.datable.iso.attribute.to-iso"/>
+         <ref name="dape_att.datable.custom.attribute.when-custom"/>
+         <ref name="dape_att.datable.custom.attribute.notBefore-custom"/>
+         <ref name="dape_att.datable.custom.attribute.notAfter-custom"/>
+         <ref name="dape_att.datable.custom.attribute.from-custom"/>
+         <ref name="dape_att.datable.custom.attribute.to-custom"/>
          <ref name="dape_att.typed.attributes"/>
+         <optional>
+            <attribute name="calendar">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the system or calendar to which the date represented by the content of this element belongs.</a:documentation>
+               <choice>
+                  <value>#cal_gregorian</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>#cal_islamic</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>#cal_julian</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>#cal_ottomanfiscal</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </attribute>
+         </optional>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="tei_dape-date-calendar-calendar-constraint-9">
+            <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      context="tei:*[@calendar]">
+               <sch:assert test="string-length(.) gt 0">
+@calendar indicates the system or calendar to which the date represented by the content of this element
+belongs, but this <sch:name/> element has no textual content.</sch:assert>
+            </sch:rule>
+         </pattern>
+         <optional>
+            <attribute name="datingMethod">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to a calendar element or other means of interpreting the values of the custom dating attributes.</a:documentation>
+               <choice>
+                  <value>#cal_gregorian</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>#cal_islamic</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>#cal_julian</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>#cal_ottomanfiscal</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -3526,7 +3593,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
       
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_dape-list-gloss-list-must-have-labels-constraint-9">
+                  id="tei_dape-list-gloss-list-must-have-labels-constraint-10">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -4282,7 +4349,7 @@ Sample values include: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] sho
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_dape-lg-atleast1oflggapl-constraint-7">
+                  id="tei_dape-lg-atleast1oflggapl-constraint-8">
             <rule context="tei:lg">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -7126,7 +7193,7 @@ Sample values include: 1] TEI(text encoding initiative) ; 2] DBK(docbook) ; 3] X
       <element name="relation">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(relationship) describes any kind of relationship or linkage amongst a specified group of places, events, persons, objects or other items. [13.3.2.3. Personal Relationships]</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_dape-relation-reforkeyorname-constraint-8">
+                  id="tei_dape-relation-reforkeyorname-constraint-9">
             <rule context="tei:relation">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        test="@ref or @key or @name">One of the attributes  'name', 'ref' or 'key' must be supplied</assert>
