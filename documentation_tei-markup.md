@@ -66,6 +66,7 @@ The structure is as follows
     - allow `<q>` as child of `<persName>` etc.
 - changes to mark-up reflecting recent changes in the TEI guidelines:
     + move `<idno>` from a direct child of `<biblStruct>` to `<monogr>`
+- allow `@source` on `<date>` in `<biblStruct>` to provide a means to capture an external source
 
 
 ## 2. deletions
