@@ -54,9 +54,9 @@
     <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
     <xsl:param name="pImgStartHathiDifference" select="14" as="xs:integer"/>
     <!-- volume in HathTrust collection -->
-    <xsl:variable name="vHathiTrustId" select="'umn.319510029968632'"/>
+    <xsl:variable name="vHathiTrustId" select="'umn.319510029968624'"/>
     <!-- volume in EAP collection: needs to be set  -->
-    <xsl:variable name="vEapVolumeId" select="'3'"/>
+    <xsl:variable name="vEapVolumeId" select="'2'"/>
     
     <!-- URL to Hathi, this is always the same -->
     <xsl:variable name="vFileUrlHathi" select="concat('https://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
