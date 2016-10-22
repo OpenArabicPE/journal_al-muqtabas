@@ -138,6 +138,68 @@
     <xsl:template
         match="node()[self::text() = ' . ' and name(preceding-sibling::node()[1]) = 'num' and name(following-sibling::node()[1]) = 'num']"/>
     
+    <!-- test for large numbers divided into groups of three integers by a comma. -->
+    <xsl:template
+        match="tei:num[following-sibling::node()[1] = ' ، ' and name(following-sibling::node()[2]) = 'num']"
+        priority="60">
+        <xsl:variable name="val1" select="@value"/>
+        <xsl:variable name="val2" select="following-sibling::node()[2]/@value"/>
+        <xsl:variable name="value" select="number(concat($val1, $val2))"/>
+        <xsl:element name="tei:num">
+            <xsl:attribute name="type" select="'auto-markup'"/>
+            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="value" select="$value"/>
+            <xsl:attribute name="xml:lang" select="'ar'"/>
+            <xsl:value-of select="translate(format-number($value,'###.###,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template
+        match="tei:num[following-sibling::node()[1] = ' ، ' and name(following-sibling::node()[2]) = 'num' and following-sibling::node()[3] = ' ، ' and name(following-sibling::node()[4]) = 'num']"
+        priority="80">
+        <xsl:variable name="val1" select="@value"/>
+        <xsl:variable name="val2" select="following-sibling::node()[2]/@value"/>
+        <xsl:variable name="val3" select="following-sibling::node()[4]/@value"/>
+        <xsl:variable name="value" select="number(concat($val1, $val2, $val3))"/>
+        <xsl:element name="tei:num">
+            <xsl:attribute name="type" select="'auto-markup'"/>
+            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="value" select="$value"/>
+            <xsl:attribute name="xml:lang" select="'ar'"/>
+            <xsl:value-of select="translate(format-number($value,'###.###,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template
+        match="tei:num[following-sibling::node()[1] = ' ، ' and name(following-sibling::node()[2]) = 'num' and following-sibling::node()[3] = ' ، ' and name(following-sibling::node()[4]) = 'num' and following-sibling::node()[5] = ' ، ' and name(following-sibling::node()[6]) = 'num']"
+        priority="100">
+        <xsl:variable name="val1" select="@value"/>
+        <xsl:variable name="val2" select="following-sibling::node()[2]/@value"/>
+        <xsl:variable name="val3" select="following-sibling::node()[4]/@value"/>
+        <xsl:variable name="val4" select="following-sibling::node()[6]/@value"/>
+        <xsl:variable name="value" select="number(concat($val1, $val2, $val3, $val4))"/>
+        <xsl:element name="tei:num">
+            <xsl:attribute name="type" select="'auto-markup'"/>
+            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="value" select="$value"/>
+            <xsl:attribute name="xml:lang" select="'ar'"/>
+            <xsl:value-of select="translate(format-number($value,'###.###,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
+        </xsl:element>
+    </xsl:template>
+    
+    
+    <!-- omit output for following tei:num -->
+    <xsl:template
+        match="tei:num[preceding-sibling::node()[1] = ' ، ' and name(preceding-sibling::node()[2]) = 'num']" priority="70"/>
+    <xsl:template
+        match="tei:num[preceding-sibling::node()[1] = ' ، ' and name(preceding-sibling::node()[2]) = 'num' and preceding-sibling::node()[3] = ' ، ' and name(preceding-sibling::node()[4]) = 'num']" priority="90"/>
+    <xsl:template
+        match="tei:num[preceding-sibling::node()[1] = ' ، ' and name(preceding-sibling::node()[2]) = 'num' and preceding-sibling::node()[3] = ' ، ' and name(preceding-sibling::node()[4]) = 'num' and preceding-sibling::node()[5] = ' ، ' and name(preceding-sibling::node()[6]) = 'num']" priority="110"/>
+    <!--<xsl:template
+        match="tei:num[preceding-sibling::node()[1] = ' ، ' and name(preceding-sibling::node()[2]) = 'num' and preceding-sibling::node()[3] = ' ، ' and name(preceding-sibling::node()[4]) = 'num' and preceding-sibling::node()[5] = ' ، ' and name(preceding-sibling::node()[6]) = 'num' and preceding-sibling::node()[7] = ' ، ' and name(preceding-sibling::node()[8]) = 'num']" priority="130"/>-->
+    
+    <!-- omit output for following text()=' ، ' -->
+    <xsl:template
+        match="node()[self::text() = ' ، ' and name(preceding-sibling::node()[1]) = 'num' and name(following-sibling::node()[1]) = 'num']"/>
+    
     <!-- add the additional attributes to existing tei:num -->
     <xsl:template match="tei:num" priority="10">
         <xsl:copy>
