@@ -1,7 +1,7 @@
 ---
 title: "Readme: Digial Muqtabas"
 author: Till Grallert
-date: 2016-05-21 16:15:52 +0300
+date: 2016-10-23 23:25:09 +0200
 ---
 
 Quick links: [Blog](https://tillgrallert.github.io/digital-muqtabas), [Webview *al-Muqtabas* 6(1) (text, facsimile)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml), [Zotero group "Digital Muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/digital-muqtabas/items/)
@@ -31,8 +31,8 @@ All deliverables and milestones will be covered in more detail in the following 
     - Full text of 96 issues (c. 7000 pages) with semantic mark-up as TEI P5 XML with its own schema.
     - The text of digital edition links to open-access digital facsimiles if available (see below).
     - [A webview](https://github.com/tillgrallert/tei-boilerplate-arabic-editions), based on [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/), shows digital text and images side by side. It provides an automatically generated table of content and links to the bibliographic metadata of every article.
-    - Bibliographic metadata for every article in *Majallat al-Muqtabas* is provided as individual BibTeX file in the sub-folder `metadata`. The metadata includes a URL pointing to the webview of this item and the webview includes a link to the BibTeX file for every article.
-        + To ease browsing the journal, we have set up the public Zotero group [Digital Muqtabas](https://www.zotero.org/groups/digital-muqtabas/items). This group is updated by means of the BibTeX files.
+    - Bibliographic metadata for every article in *Majallat al-Muqtabas* is provided as individual MODS and BibTeX files in the sub-folder `metadata`. The metadata includes a URL pointing to the webview of this item and the webview includes a link to the metadata files for every article.
+        + To ease browsing the journal, we have set up the public Zotero group [Digital Muqtabas](https://www.zotero.org/groups/digital-muqtabas/items). This group is updated by means of the MODS XML files.
 - Possible / planned deliverables
     + Scans of issues not currently available in open-access repositories, namely of vol. 9, which we hold at [Orient-Institut Beirut](http://www.orient-institut.org).
 
@@ -283,7 +283,10 @@ There are, however, a number of problems with the format:
 
 The [MODS standard](http://www.loc.gov/standards/mods/) is expressed in XML and maintained by the [Network Development and MARC Standards Office](http://www.loc.gov/marc/ndmso.html) of the Library of Congress with input from users. Compared to BibTeX MODS has he advantage of being properly standardised, human and machine readable, and much better suited to include all the needed bibliographic information.
 
-I have written an XSLT stylesheet to generate MODS from the TEI source: [`Tei2Mods-issues.xsl`](xslt/Tei2Mods-issues.xsl)
+The repository currently contains two XSLT stylesheets to automatically generate MODS XML files from the TEI source:
+
+1. [`Tei2Mods-articles.xsl`](xslt/Tei2Mods-articles.xsl): generates one MODS file for each article and section of a periodical issue.
+2. [`Tei2Mods-issues.xsl`](xslt/Tei2Mods-issues.xsl): generates one MODS file per periodical issue, comprising entries for every article and section.
 
 MODS also serves as the intermediary format for the free [bibutils suite](https://sourceforge.net/projects/bibutils/) of conversions between bibliographic metadata formats (including BibTeX) which is under constant development and released under a GNU/GPL (General Public License). `Tei2Mods-issues.xsl` and `bibutils` provide a means to automatically generate a large number of bibliographic formats to suit the reference manager one is working with; e.g.: 
 
@@ -293,7 +296,7 @@ MODS also serves as the intermediary format for the free [bibutils suite](https:
 
 ## 6.3 Index by means of a Zotero group
 
-As the webview or reading edition is implemented on the issue level and as we have currently no plans to implement and host a database on the backend, *Digital Muqtabas* needed a way to navigate and browse all articles, authors etc. To this end, we have set up the public [Zotero group "Digital Muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/digital-muqtabas/items/). It can updated by means of the MODS or BibTeX files. Updating from MODS is the preferred method since it is the more expressive format.
+As the webview or reading edition is implemented on the issue level and as we have currently no plans to implement and host a database on the backend, *Digital Muqtabas* needed a way to navigate and browse all articles, authors etc. To this end, we have set up the public [Zotero group "Digital Muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/digital-muqtabas/items/). It can be updated by means of the MODS or BibTeX files. Updating from MODS is the preferred method since it is the more expressive format.
 
 [Zotero groups](https://www.zotero.org/groups) are great way to share bibliographic metadata. Hosted by the Roy Rosenzweig Center for History and Media, they allow for public access to structured bibliographic metadata through a web interface. Of course they also integrate with the free and open-source reference manager [Zotero](https://www.zotero.org). All one needs is a free Zotero account and either the Zotero plug-in for the Firefox and Chrome browsers or the Zotero standalone version for Mac OSX and Linux. One can then join the group and sync all data to the local installation of Zotero, which means that, similar to the webview and all other components of this edition, bibliographic metadata can be browsed and searched through a graphical user interface without a continuous internet connection.
 
