@@ -61,6 +61,7 @@ The structure is as follows
 # 2. changes to the schema
 ## 1. additions
 
+- add `@ref` to `<bibl>`
 - changes that would potentially render the files non-compliant:
     - allow `<bibl>` as child of `<opener>`,`<byline>`, `<closer>`
     - allow `<q>` as child of `<persName>` etc.
@@ -609,15 +610,25 @@ Often times a full bibliographic reference is given in the title of the review a
 
 Whenever it is possible to point to an external resource, use `@corresp` to do so.
 
+Use `@ref` to point to some authority file that provides more information on that concrete edition or copy:
+
+
+
 ### 3. encoding with `<title>`
 
-References to titles of intellectual works, such as books, periodicals etc., could be encoded with `<title>` using the `@level` attribute for some granularity.
+References to titles of intellectual works, such as books, periodicals etc., could be encoded with `<title>` using the `@level` attribute for some granularity. Note that references to titles should be conceived as references to abstract intellectual works and not individual editions or copies of that work (which should be encoded as `<bibl>`.
 
 ~~~{.xml}
 حتى بلغ المطبوع منها مليون نسخة وأصبحت اليوم تطبع مليوناً ومائتي ألف نسخة في حين تطبع <title level="j">التيمس</title> 55 ألفاً فقط و<title level="j">الديلي اكسبرس</title> 700 ألف و<title level="j">الديلي تلغراف</title> 350 ألفاً والديلي نيوز 300 ألف والمورنن ليدر 350 والستاندارد 120 ألفاً
 ~~~
 
 Whenever it is possible to point to an external resource, use `@corresp` to do so.
+
+Use `@ref` to point to some authority file:
+
+~~~{.}
+<p xml:id="p_153.d1e3706" xml:lang="ar"><bibl xml:id="bibl_4.d1e4520" xml:lang="ar">كتب <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_116.d1e4502">أحد</num> الباحثين في <title level="j" ref="oclc:472961924" xml:id="title_12.d1e4505" xml:lang="ar">المجلة</title> الباريزية بحثاً في النوم</bibl> وما ينبغي للإنسان منه حتى تجود صحته فقال أن النوم هو <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_117.d1e4508">أحد</num> نواميس الكون وجميع البشر على اختلاف في أعمارهم خاضعون له وأن الرجل العادي يموت من قلة الهواء في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5" xml:id="num_118.d1e4511">خمس</num> دقائق ومن قلة الماء في أسبوع ومن قلة النوم</p>
+~~~
 
 ### 4. encoding with `<rs>`
 
