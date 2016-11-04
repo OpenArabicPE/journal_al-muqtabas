@@ -9,9 +9,11 @@
     <xsl:include href="Tei2Mods-functions.xsl"/>
     <!--<xsl:include href="https://rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>-->
     
+    <!-- this parameter is currently not used -->
     <xsl:param name="pg_head-section" select="'مخطوطات ومطبوعات'"/>
-
-    <xsl:template match="tei:bibl">
+    
+    <!-- it doesn't matter one applies the transformation to bibl or biblStruct -->
+    <xsl:template match="tei:bibl | tei:biblStruct">
         <xsl:variable name="v_type">
             <xsl:choose>
                 <xsl:when test="descendant::tei:title/@level = 'm'">
@@ -61,9 +63,8 @@
             <!-- empty params that are node sets need to be set -->
             <xsl:with-param name="p_idno" select="descendant::tei:idno"/>
             <xsl:with-param name="p_url-licence"/>
-            <xsl:with-param name="p_url-self"
-                select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()], '#', @xml:id)"
-            />
+            <xsl:with-param name="p_url-self"/>
+<!--            <xsl:with-param name="p_url-self" select="concat('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/', tokenize(base-uri(), '/')[last()], '#', @xml:id)"/>-->
         </xsl:call-template>
     </xsl:template>
 
@@ -72,7 +73,7 @@
             <xsl:value-of select="'&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;../boilerplate/mods-bp.xsl&quot;?&gt;'" disable-output-escaping="yes"/>
             <modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 {$vgSchemaLocation}">
                 <!--<xsl:apply-templates select=".//tei:body//tei:bibl[contains(ancestor::tei:div/tei:head/text(),$pg_head-section)]"/>-->
-                <xsl:apply-templates select=".//tei:body//tei:bibl[descendant::tei:title]"/>
+                <xsl:apply-templates select=".//tei:body//tei:bibl[descendant::tei:title] | .//tei:body//tei:biblStruct"/>
             </modsCollection>
         </xsl:result-document>
     </xsl:template>
