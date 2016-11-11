@@ -17,7 +17,7 @@
     <xsl:include href="https://cdn.rawgit.com/tillgrallert/xslt-calendar-conversion/master/date-function.xsl"/>
 
 
-    <!-- parameter to select the language of some fields (if available): 'ar-Latn-x-ijmes', 'ar', 'en' etc. -->
+    <!-- parameter to actively select the language of some fields (if available): 'ar-Latn-x-ijmes', 'ar', 'en' etc. -->
     <xsl:param name="pLang" select="'ar'"/>
 
     <xsl:variable name="vgFileId" select="tei:TEI/@xml:id"/>
@@ -78,10 +78,18 @@
                 </xsl:choose>
             </xsl:with-param>
             <xsl:with-param name="p_date-accessed" select="ancestor::tei:TEI/tei:teiHeader/tei:revisionDesc/tei:change[1]/@when"/>
-            <xsl:with-param name="p_publisher"
-                select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
-            <xsl:with-param name="p_place-publication"
-                select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
+            <!-- provide tei:publisher with a single child in the target language -->
+            <xsl:with-param name="p_publisher">
+                <tei:publisher>
+                    <xsl:copy-of select="$vBiblStructSource/tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
+                </tei:publisher>
+            </xsl:with-param>
+            <!-- provide tei:pubPlace with a single child in the target language -->
+            <xsl:with-param name="p_place-publication">
+                <tei:pubPlace>
+                    <xsl:copy-of select="$vBiblStructSource/tei:monogr/tei:imprint/tei:pubPlace/tei:placeName[@xml:lang = $vLang]"/>
+                </tei:pubPlace>
+            </xsl:with-param>
             <xsl:with-param name="p_author" select="tei:byline/descendant::tei:persName"/>
             <xsl:with-param name="p_editor" select="$vBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang = $vLang]"/>
             <xsl:with-param name="p_pages">
@@ -110,9 +118,13 @@
     <xsl:template name="t_bibl-mods">
         <!-- possible values are 'a' and 'm' similar to the @level attribute on <tei:title>  -->
         <xsl:param name="p_type" select="'a'"/>
+        <!-- this should not be externally selected but depend on the source language of fields -->
         <xsl:param name="p_lang" select="'ar'"/>
+        <!-- this parameter describes the language a book, journal, article etc. is in as opposed to the language describing the item -->
+        <xsl:param name="p_lang-source" select="'ar'"/>
         <xsl:param name="p_title-article"/>
         <xsl:param name="p_title-publication"/>
+        <!-- $p_publisher expects one or more tei:publisher nodes -->
         <xsl:param name="p_publisher"/>
         <!-- publication dates are formatted as <tei:date when="" calendar="" when-custom=""/> -->
         <xsl:param name="p_date-publication"/>
@@ -150,14 +162,13 @@
                 <edition xml:lang="en">
                     <xsl:apply-templates select="$p_edition" mode="m_plain-text"/>
                 </edition>
-                <place>
+                <xsl:apply-templates select="$p_place-publication" mode="m_tei2mods"/>
+                <!--<place>
                     <placeTerm type="text" xml:lang="{$p_lang}">
                         <xsl:apply-templates select="$p_place-publication" mode="m_plain-text"/>
                     </placeTerm>
-                </place>
-                <publisher xml:lang="{$p_lang}">
-                    <xsl:apply-templates select="$p_publisher" mode="m_plain-text"/>
-                </publisher>
+                </place>-->
+                <xsl:apply-templates select="$p_publisher" mode="m_tei2mods"/>
                 <dateIssued>
                     <xsl:if test="$p_date-publication/descendant-or-self::tei:date/@when!=''">
                         <xsl:attribute name="encoding" select="'w3cdtf'"/>
@@ -266,7 +277,12 @@
             </xsl:if>
         </xsl:variable>
 
-        <mods ID="{concat($vgFileId,'-',@xml:id,'-mods')}">
+        <mods>
+            <xsl:attribute name="ID">
+                <xsl:if test="$vgFileId !='' and @xml:id !=''">
+                    <xsl:value-of select="concat($vgFileId,'-',@xml:id,'-mods')"/>
+                </xsl:if>
+            </xsl:attribute>
             <titleInfo>
                 <title  xml:lang="{$p_lang}">
                     <xsl:choose>
@@ -358,7 +374,7 @@
             </location>
             <language>
                 <languageTerm type="code" authorityURI="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">
-                    <xsl:value-of select="$p_lang"/>
+                    <xsl:value-of select="$p_lang-source"/>
                 </languageTerm>
             </language>
         </mods>
@@ -403,6 +419,25 @@
         <identifier type="{@type}">
             <xsl:apply-templates select="." mode="m_plain-text"/>
         </identifier>
+    </xsl:template>
+    
+    <xsl:template match="tei:publisher" mode="m_tei2mods">
+        <!-- tei:publisher can have a variety of child nodes, which are completely ignored by this template -->
+            <publisher xml:lang="{@xml:lang}">
+                <xsl:apply-templates select="." mode="m_plain-text"/>
+            </publisher>
+    </xsl:template>
+    
+    <xsl:template match="tei:pubPlace" mode="m_tei2mods">
+        <place>
+            <xsl:apply-templates mode="m_tei2mods"/>
+        </place>
+    </xsl:template>
+    
+    <xsl:template match="tei:placeName" mode="m_tei2mods">
+        <placeTerm type="text" xml:lang="{@xml:lang}">
+            <xsl:apply-templates select="." mode="m_plain-text"/>
+        </placeTerm>
     </xsl:template>
 
 
