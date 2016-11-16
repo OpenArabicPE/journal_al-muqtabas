@@ -120,11 +120,14 @@
         <xsl:param name="p_type" select="'a'"/>
         <!-- this should not be externally selected but depend on the source language of fields -->
         <xsl:param name="p_lang" select="'ar'"/>
-        <!-- this parameter describes the language a book, journal, article etc. is in as opposed to the language describing the item -->
-        <xsl:param name="p_lang-source" select="'ar'"/>
+        <!-- this parameter describes the language a book, journal, article etc. is in as opposed to the language describing the item. This parameter expectes one or more tei:lang nodes -->
+        <xsl:param name="p_lang-source">
+            <tei:lang>ar</tei:lang>
+        </xsl:param>
+        <!-- $p_title parameters expect <tei:title> nodes -->
         <xsl:param name="p_title-article"/>
         <xsl:param name="p_title-publication"/>
-        <!-- $p_publisher expects one or more tei:publisher nodes -->
+        <!-- $p_publisher expects one or more <tei:publisher> nodes -->
         <xsl:param name="p_publisher"/>
         <!-- publication dates are formatted as <tei:date when="" calendar="" when-custom=""/> -->
         <xsl:param name="p_date-publication"/>
@@ -278,18 +281,22 @@
         </xsl:variable>
 
         <mods>
-            <xsl:attribute name="ID">
                 <xsl:if test="$vgFileId !='' and @xml:id !=''">
-                    <xsl:value-of select="concat($vgFileId,'-',@xml:id,'-mods')"/>
+                    <xsl:attribute name="ID">
+                        <xsl:value-of select="concat($vgFileId,'-',@xml:id,'-mods')"/>
+                    </xsl:attribute>
                 </xsl:if>
-            </xsl:attribute>
+            
             <titleInfo>
-                <title  xml:lang="{$p_lang}">
+                <title>
+                    <!-- the @xml:lang is still dysfunctional -->
                     <xsl:choose>
                         <xsl:when test="$p_type='a'">
+                            <xsl:attribute name="xml:lang" select="$p_title-article/descendant-or-self::tei:title/@xml:lang"/>
                             <xsl:apply-templates select="$p_title-article" mode="m_plain-text"/>
                         </xsl:when>
                         <xsl:when test="$p_type='m' or $p_type='j'">
+                            <xsl:attribute name="xml:lang" select="$p_title-publication/descendant-or-self::tei:title/@xml:lang"/>
                             <xsl:apply-templates select="$p_title-publication" mode="m_plain-text"/>
                         </xsl:when>
                     </xsl:choose>
@@ -367,16 +374,14 @@
             <accessCondition>
                 <xsl:value-of select="$p_url-licence"/>
             </accessCondition>
-            <location>
-                <url dateLastAccessed="{$p_date-accessed}" usage="primary display">
-                    <xsl:value-of select="$p_url-self"/>
-                </url>
-            </location>
-            <language>
-                <languageTerm type="code" authorityURI="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">
-                    <xsl:value-of select="$p_lang-source"/>
-                </languageTerm>
-            </language>
+            <xsl:if test="$p_url-self !=''">
+                <location>
+                    <url dateLastAccessed="{$p_date-accessed}" usage="primary display">
+                        <xsl:value-of select="$p_url-self"/>
+                    </url>
+                </location>
+            </xsl:if>
+            <xsl:apply-templates select="$p_lang-source" mode="m_tei2mods"/>
         </mods>
     </xsl:template>
 
@@ -398,13 +403,13 @@
     <!-- transform TEI names to MODS -->
     <xsl:template match="tei:surname | tei:persName" mode="m_tei2mods">
         <xsl:param name="p_lang"/>
-        <namePart type="family" xml:lang="{$p_lang}">
+        <namePart type="family" xml:lang="{@xml:lang}">
             <xsl:apply-templates select="." mode="m_plain-text"/>
         </namePart>
     </xsl:template>
     <xsl:template match="tei:forename" mode="m_tei2mods">
         <xsl:param name="p_lang"/>
-        <namePart type="given" xml:lang="{$p_lang}">
+        <namePart type="given" xml:lang="{@xml:lang}">
             <xsl:apply-templates select="." mode="m_plain-text"/>
         </namePart>
     </xsl:template>
@@ -421,7 +426,7 @@
         </identifier>
     </xsl:template>
     
-    <xsl:template match="tei:publisher" mode="m_tei2mods">
+    <xsl:template match="tei:publisher/tei:orgName | tei:publisher/tei:persName" mode="m_tei2mods">
         <!-- tei:publisher can have a variety of child nodes, which are completely ignored by this template -->
             <publisher xml:lang="{@xml:lang}">
                 <xsl:apply-templates select="." mode="m_plain-text"/>
@@ -438,6 +443,15 @@
         <placeTerm type="text" xml:lang="{@xml:lang}">
             <xsl:apply-templates select="." mode="m_plain-text"/>
         </placeTerm>
+    </xsl:template>
+    
+    <!-- source languages -->
+    <xsl:template match="tei:lang" mode="m_tei2mods">
+        <language>
+            <languageTerm type="code" authorityURI="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">
+                <xsl:value-of select="."/>
+            </languageTerm>
+        </language>
     </xsl:template>
 
 

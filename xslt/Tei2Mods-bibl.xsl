@@ -36,18 +36,28 @@
             <xsl:with-param name="p_author" select="descendant::tei:author"/>
             <xsl:with-param name="p_editor" select="descendant::tei:editor"/>
             <xsl:with-param name="p_edition" select="descendant::tei:edition"/>
+            <!-- expects <tei:title> nodes as input -->
             <xsl:with-param name="p_title-article" select="descendant::tei:title[@level = 'a']"/>
             <xsl:with-param name="p_title-publication">
                 <xsl:choose>
                     <xsl:when test="$v_type = 'm'">
-                        <xsl:value-of select="descendant::tei:title[@level = 'm']"/>
+                        <xsl:copy-of select="descendant::tei:title[@level = 'm']"/>
                     </xsl:when>
                     <xsl:when test="$v_type = 'j' or $v_type = 'a'">
-                        <xsl:value-of select="descendant::tei:title[@level = 'j'][not(@type='sub')]"/>
-                        <xsl:if test="descendant::tei:title[@level = 'j'][@type='sub']">
-                            <xsl:text>: </xsl:text>
-                            <xsl:value-of select="descendant::tei:title[@level = 'j'][@type='sub']"/>
-                        </xsl:if>
+                       <!-- <xsl:for-each select="descendant::tei:title[@level = 'j'][not(@type='sub')]">
+                            <tei:title xml:lang="{@xml:lang}">
+                                <xsl:value-of select="."/>
+                            </tei:title>
+                        </xsl:for-each>-->
+                         
+                        <tei:title xml:lang="{descendant::tei:title[@level = 'j'][not(@type='sub')]/@xml:lang}">
+                            <xsl:value-of select="descendant::tei:title[@level = 'j'][not(@type='sub')]"/>
+                            <xsl:if test="descendant::tei:title[@level = 'j'][@type='sub']">
+                                <xsl:text>: </xsl:text>
+                                <xsl:value-of select="descendant::tei:title[@level = 'j'][@type='sub']"/>
+                            </xsl:if>
+                        </tei:title>
+                        
                     </xsl:when>
                 </xsl:choose>
             </xsl:with-param>
