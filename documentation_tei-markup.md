@@ -8,7 +8,8 @@ tags:
 - xml
 ---
 
-# 1.  Issues to be solved
+
+# 1. Issues to be solved
 ## Serialised articles
 
 The information that an article / work / book was serialised can be either explicit or implicit. 
@@ -78,257 +79,9 @@ The structure is as follows
 
 
 # 3. current mark-up
-# Gaps in the transcription
+## 3.1. Metadata
 
-Gaps in the transcription as copied from *shamela.ws* are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`. Many, if not most of these originated as the gap between two halves of a single line of a *qaṣīda*.
-
-Sometimes shamela's transcribers could not read a word and marked such omissions with ellipses:
-
-> مثل ال. . . . . ود لكن درها عسل
-
-# Structure
-
-Each issue is conceived of as a single `<text>` that is then grouped into volumes and a complete edition of all issues by means of xPointer.
-
-## The periodical issue
-
-The main structural unit are `<div>`s, as usual.
-
-~~~{.xml}
-<text type="issue">
-    <front>
-    <!-- some bibliographic data commonly found in the masthead -->
-    </front>
-    <body>
-        <div type="article">
-            <head></head>
-            <p></p>
-            <!-- ... -->
-        </div>
-        <div type="section">
-            <head></head>
-            <div type="article">
-            <head></head>
-            <p></p>
-            <!-- ... -->
-        </div>
-        </div>
-    </body>
-</text>
-~~~
-
-The bibliographic meta-data in the `<front>` is not necessarily found in the issue itself, since, according to Seikaly, issues carried no date whatsoever after Ramadan 1327 / September 1909.^["*al-Muqtabas* appeared regularly at the beginning of every Arab month only when it was published in Cairo (between *Muharram* 1324 / Februrary 1906 and *Dhul-hijja* 1909). When it was removed to Damascus and because of frequent official harassment, it appeared irregularly and somewhat haphazardly. Although after 1909, as indeed before it, each volume contained twelve numbers, nevertheless publication of each separate issue did not necessarily occur on time at the start of every month of the Muslim calendar. Indeed the last issue to which a specific month was affixed was *Ramadan* 1327 / September 1909. After that Kurd 'Ali merely numbered his journal by year, volume and issue. Because of this feature reference to *al-Muqtabas* in this study will throughout follow its owner's method of enumeration." {Seikaly 1981@126}] Unfortunately Seikaly's statement is caused by the absence of the cover sheets from most surviving copies and collections of *al-Muqtabas*. The copy of volume 4 from the holdings of OIB show that the cover sheet / wrapper still carried a date after Ramadan 1327: issue 12 was published for Dhū al-Ḥujja 1327 
-
-##  Divisions: `<div>`
-
-Divisions can be of various types (`@type`), using a semi-controlled vocabulary of attribute values
-
-- structual information
-    + `section`
-    + `article` (?)
-- genre information
-    - `advert`
-    - `article`
-    - `bill`
-
-
-<!-- needs revisions -->
-As paragraphs (`<p>`) cannot interlace with `<div>`s after the first `<div>` child of a parent `<div>`, `<div @type="article">` is commonly the lowest level of tessellation but in the case of very long articles that might themselves contain `@type="section"` children.
-
-The common structure of an issue would be a mix of `<div @type="article">` and `<div @type="section">`
-
-### heads
-
-Sections and articles are commonly introduced by a clearly distinguishable heading. These are marked-up as `<head>`. Some articles might also have sub headings, which should be marked up as `<head type="sub">`. 
-
-See for example [i_50](xml/oclc_4770057679-i_50.TEIP5.xml#div_5.d1e2312):
-
-~~~{.xml}
-<div type="article">
-    <head>الاتكال الشرقي</head>
-    <head type="sub">نصيحة غربي</head>
-    <p>
-        <!-- -->
-    </p>
-</div>
-~~~
-
-Beware that what looks like a sub heading, might also be a section heading introducing a sub section of an article.
-
-### legal texts, bills
-
-It is quite common to find legal texts in late nineteenth, early twentieth century periodicals and I would like to differenciate them by means of the `@type="bill"` attribute because they can be nested inside an article or appear as free-standing chunk of text on the article level. Legal texts are commonly structured into sections / chapters, articles, and paragraphs and shall be encoded thus; i.e. as `<div type="section">`, `<div type="article">`, and `<p>`.
-
-This encoding however mixes structural `@type` attributes such as `section` and `article` with semantic assumptions as to the genre of the text, i.e. `bill`. In future iterations of the schema / encoding this should be tackled and changed.
-
-
-In some cases the legal text itself is accompanied by a commentary intersecting with the legal text on the article level. they could be encoded in various ways, but the important thing is to link the commentary to the corresponding article by means of an attribute.
-
-
-## Page, line, and column breaks
-
-Currently, only page breaks are recorded. They are marked up with the empty milestone element `<pb/>`. Page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the original printed copies. They were therefore marked as `<pb ed="shamila">`. Page breaks corresponding to the original printed edition are identified by `@ed="print"`.
-
-Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the original, it appeared to be a facsimile reprint: pagination, font, layout --- everything is identical.
-
-1. Printed original copy: `<pb ed="print"/>`
-    - the page number is recorded in the `@n` attribute
-    - These page breaks are then linked through the `@facs` attribute to the `@xml:id` of a `<surface>` element; i.e. `<pb ed="print" n="78" facs="#facs_78"/>`
-2. Transcription from *al-maktaba al-shāmila*: `<pb ed="shamela"/>`
-
-The current state of mark-up for page breaks is kept in a [second file](notes-tei-markup-pb.md).
-
-
-
-## Lists
-
-Lists have been encoded as `<list>` independent of their original formating (only rarely were lists indented etc.). In case lists apear with numbered labels in the original, i.e. "(الخامس)", "(٢)", the labels have been encoded with `<label>`.
-
-## Notes
-
-Unfortunately, *al-maktaba al-shāmila* did NOT include the sometimes abundant footnotes in their transcription.
-
-Notes should be encoded with `<note>` at the location it appears in the text. The super-scripted number is recorded in the `@n` attribute. A further `@type="footnote"` attribute specifies that this note appeared in the actual print edition, as opposed to potential editorial notes added by various editors of the digital edition, which should carry `@type="editorial"` and a `@resp` attribute pointing to the responsible editor. 
-
-## Tables
-
-## Verse: bayt
-
-Many articles contain *qaṣīda*s with the characteristic printing of the two *bayt*s on each line as two columns. After some talk with Mathew Miller from the Persian Digital Library and their TEI files of Persian poetry, I decided to follow their encoding of *bayt* as `<l type="bayt">` with two `<seg>` children. Successive lines are then wrapped in `<lg>`:
-
-~~~ {.xml}
-<lg>
-    <l type="bayt">
-        <seg>أبرموا أمرهم عشاء فلما </seg> <seg>أصبحوا أصبحت لهم ضوضاء</seg>
-    </l>
-    <l type="bayt">
-        <seg>من منادٍ ومن مجيبٍ ومن تص</seg><seg>هالٍ خليل خلال ذاك رغاء</seg>
-    </l>
-</lg>
-~~~
-
-
-There are cases when words are split between the two lines of the *qaṣīda*:
-
-![example for split line of a *qaṣīda*](assets/images/qasida-bayt.png)
-
-How should this be encoded?
-
-~~~ {.xml}
-<l type="bayt">
-    <seg>أبرموا أمرهم عشاء فلما </seg>
-    <seg> أصبحوا أصبحت لهم ضوضاء</seg>
-</l>
-<l type="bayt">
-    <seg>من منادٍ ومن مجيبٍ ومن تص</seg>
-    <seg>هالٍ خليل خلال ذاك رغاء</seg>
-</l>
-~~~
-
-## Verse: 3 columns
-
-In rare cases we find lines of poetry that are formatted in three colums of text:
-
-![example from *Muqtabas* 1(2)](images/oclc_4770057679-v_1/umn-319510029968608-img_097.jpg)
-
-# Punctuation
-
-There are two problems with punctuation in this corpus:
-
-1. The original prints show an inconsistent use of punctuation marks
-    - the many quotes are sometimes wrapped in quotation marks, sometimes in brackets, but mostly they are not typographically marked
-    - many quotes are preceded by a leading colon.
-    - words in foreign languages are sometimes wrapped in quotation marks or brackets.
-2. The *shamela.ws* transcribers inconsistently transcribed existing punctuation marks and added some of their own, particularly full stops. 
-
-## encoding in TEI
-
-Punctuation marks are not consistently transcribed into TEI in consequence. I have chosen to retain all existing punctuation from *shamela.ws*. In some cases I have added encoding for quotation marks and quotations:
-
-1. `<q>`: material visually marked by some sort of quotation marks, but which not necessarily constitute a quotation
-2. `<quote>`: a phrase or passage attributed by the narrator or author to some agency external to the text.
-
-
-# URIs
-
-each part of the edition down to, at least, the paragraph level should be addressable for reference in scholarly work with stable `@xml:id`s
-
-1. General principle: The URI should resemble a sequence of key-value pairs
-    + key and value are deliminated by `_`
-    + key-value pairs are deliminate dy `-`
-1. File names:
-    + I decided to start with an existing identifier for *al-Muqtabas*, the OCLC number: `oclc_4770057679`, and
-    + a continuous issue counter from 1 to 96: `oclc_4770057679-i_60`
-    + Volumes run from 1 to 9: `oclc_4770057679-v_6`
-3. Elements inside the files:
-    + Make use of `@xml:base` on the `<tei:TEI>` allows for shorter internal `@xml:id`s
-    + facsimiles: they are simply identified by combining a short string signifying facsimiles (i.e. "facs_") with the image number provided by HathiTrust. `facs_93` thus identifies a `<surface>` element with `<graphic>` children pointing to different file formats and locations.
-    + graphics: `facs_93-g_1`
-    + all other elements:
-        * combine the element's name as key with the position of the element in the document tree and an automatically generated ID (through XPath function `generate-id()`) separated by a period: `div_12.d1e1895`
-        * note that the first number after the underscore cannot and should be used to identify the position of an element in the tree, as these will most certainly change over time, while the `@xml:id` shall be stable.
-        * the process of assigning IDs is automated through the XSLT [`Tei-GenerateIds.xsl`](xslt/Tei-GenerateIds.xsl) and it needs to be run everytime someone has added mark-up to the file.
-
-<!-- + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>` -->
-
-# Facsimiles
-
-Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem through the British Library's "Endangered Archives Project" (vols. 2-7)](http://eap.bl.uk/database/overview_project.a4d?projID=EAP119;r=63), [HathiTrust (vols. 1-6, 8)](http://catalog.hathitrust.org/Record/100658549), and [Institut du Monde Arabe](http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=9C82C139F9785E99D30089727B40A269). Due to its open access licence, preference is given to facsimiles from EAP.
-
-## EAP119
-
-- links to volumes:
-    + [Vol. 2](http://eap.bl.uk/database/overview_item.a4d?catId=809;r=12316)
-    + [Vol. 3](http://eap.bl.uk/database/overview_item.a4d?catId=812;r=3035)
-    + [Vol. 4](http://eap.bl.uk/database/overview_item.a4d?catId=813;r=22190)
-    + [Vol. 5](http://eap.bl.uk/database/overview_item.a4d?catId=814;r=1842)
-    + [Vol. 6](http://eap.bl.uk/database/overview_item.a4d?catId=810;r=288)
-    + [Vol. 7](http://eap.bl.uk/database/overview_item.a4d?catId=811;r=30106)
-- access:
-    + the journal is in the public domain and the images can be freely accessed without restrictions. EAP does not provide a download button.
-    + Terms of access for material provided by the British Library can be found [here](http://www.bl.uk/aboutus/terms/index.html)
-
-##  HathiTrust
-
-- links to volumes
-    + [Vol. 1](http://hdl.handle.net/2027/umn.319510029968608)
-    + [Vol. 2](http://hdl.handle.net/2027/umn.319510029968616)
-    + [Vol. 3](http://hdl.handle.net/2027/umn.319510029968624)
-    + [Vol. 4](http://hdl.handle.net/2027/umn.319510029968632)
-    + [Vol. 5](http://hdl.handle.net/2027/umn.319510029968640)
-    + [Vol. 6](http://hdl.handle.net/2027/njp.32101073250910)
-    + [Vol. 8](http://hdl.handle.net/2027/njp.32101007615691)
-    + [Index](http://hdl.handle.net/2027/umn.31951d008457474)
-- access
-    + The journal is in the public domain in the US and can be freely accessed and downloaded
-    + Outside the US, access is restricted.
-    + Formal [licence](https://www.hathitrust.org/access_use#pd-us-google): 
-
-> Public Domain or Public Domain in the United States, Google-digitized: In addition to the terms for works that are in the Public Domain or in the Public Domain in the United States above, the following statement applies: The digital images and OCR of this work were produced by Google, Inc. (indicated by a watermark on each page in the PageTurner). Google requests that the images and OCR not be re-hosted, redistributed or used commercially. The images are provided for educational, scholarly, non-commercial purposes.
-> Note: There are no restrictions on use of text transcribed from the images, or paraphrased or translated using the images.
-
-## Mark-up
-
-Facsimiles are linked through the `<facsimile>` child of `<TEI>`:
-
-~~~{.xml}
-<facsimile>
-    <surface xml:id="facs_445">
-        <graphic xml:id="facs_445-g_1" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.tif" mimeType="image/tiff"/>
-        <graphic xml:id="facs_445-g_2" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.jpg" mimeType="image/jpeg"/>
-        <graphic xml:id="facs_445-g_3" url="http://babel.hathitrust.org/cgi/imgsrv/image?id=njp.32101073250910;seq=445" mimeType="image/jpeg"/>
-        <graphic xml:id="facs_445-g_4" url="http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_5-EAP119_muq191108_441_L.jpg" mimeType="image/jpeg"/>
-    </surface>
-</facsimile>
-~~~
-
-- The `@url` of `<graphic>` links to local downloads of the image as well as to the image hosted on HathiTrust's servers
-
-
-
-# Metadata
-
-## bibliographic information
+### 3.1.1. bibliographic information
 
 All bibliographic information pertaining to the file and the individual periodical issue should be encoded in a `<biblStruct>`
 
@@ -336,9 +89,9 @@ All bibliographic information pertaining to the file and the individual periodic
 1. In the `<teiHeader>` information should be provided in Latin script
 2. In the `<front>` information should be provided in Arabic, just as it would in the masthead of the actual issue
 
-### volume
+#### 3.1.1.1. volume
 
-### issue
+#### 3.1.1.2. issue
 
 All information on the individual issue is part of the *monographic* level of bibliographic metadata. Journals and anthologies are treated as monographs (`<monogr>`). The structure is as follows:
 
@@ -428,7 +181,7 @@ Current structure of the `<biblStruct>` in `<sourceDesc>`:
 </text>
 ~~~
 
-### publication dates
+#### 3.1.1.3. publication dates
 
 As noted somewhere [else](readme.md), *al-Muqtabas* did not provide publication dates in the masthead beginning with [No. 4/10](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_45.TEIP5.xml), which would have been scheduled for Shawwāl 1327 aH (Oct/Nov 1909). Thus, one needs a means to differentiate between the official publication date as recorded in the issues' mastheads and the cover leaves of each volume and the actual date of publication as deduced from other sources. The first suggestion is to differentiate between three different types of publication dates with a `@type` attribute:
 
@@ -443,7 +196,7 @@ As noted somewhere [else](readme.md), *al-Muqtabas* did not provide publication 
 <date type="supplied" notAfter="1910-09-13" notBefore="1910-09-06" source="bibl:biblStruct_1.d1e1263"/>
 ~~~
 
-## Languages: `@xml:lang`
+### 3.1.2. Languages: `@xml:lang`
 
 The use of language codes as values for `@xml:lang` follows [BCP 47](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) and specifies that the language code is to be followed by information on the script, if the latter is not the common script for this language, followed by information on the transcribing convention. Use of languages is declared in the `<langUsage>` descendant of the `<teiHeader>`:
 
@@ -478,7 +231,7 @@ These codes can then be referenced throughout the file by means of the `@xml:lan
 
 A small XSLT ([Tei-GenerateXmlLang](xslt/Tei-GenerateXmlLang.xsl)) goes through the files and checks for every node if `@xml:lang` is present; if not, `@xml:lang` is generated based on the `@xml:lang` of the closest ancestor.
 
-### Words in other alphabets than Arabic
+#### 3.1.2.1. Words in other alphabets than Arabic: `<foreign>`
 
 Unfortunately, *al-maktaba al-shāmila* did NOT include these words, often technical terms in articles on science and medicine, in their transcription. These terms should be encoded as
 
@@ -486,9 +239,266 @@ Unfortunately, *al-maktaba al-shāmila* did NOT include these words, often techn
 <foreign xml:lang="fr">Physique</foreign>
 ~~~
 
-# non-structural phenomena of interest to the historian
+### 3.1.3. URIs
 
-## Measures and prices
+each part of the edition down to, at least, the paragraph level should be addressable for reference in scholarly work with stable `@xml:id`s
+
+1. General principle: The URI should resemble a sequence of key-value pairs
+    + key and value are deliminated by `_`
+    + key-value pairs are deliminate dy `-`
+1. File names:
+    + I decided to start with an existing identifier for *al-Muqtabas*, the OCLC number: `oclc_4770057679`, and
+    + a continuous issue counter from 1 to 96: `oclc_4770057679-i_60`
+    + Volumes run from 1 to 9: `oclc_4770057679-v_6`
+3. Elements inside the files:
+    + Make use of `@xml:base` on the `<tei:TEI>` allows for shorter internal `@xml:id`s
+    + facsimiles: they are simply identified by combining a short string signifying facsimiles (i.e. "facs_") with the image number provided by HathiTrust. `facs_93` thus identifies a `<surface>` element with `<graphic>` children pointing to different file formats and locations.
+    + graphics: `facs_93-g_1`
+    + all other elements:
+        * combine the element's name as key with the position of the element in the document tree and an automatically generated ID (through XPath function `generate-id()`) separated by a period: `div_12.d1e1895`
+        * note that the first number after the underscore cannot and should be used to identify the position of an element in the tree, as these will most certainly change over time, while the `@xml:id` shall be stable.
+        * the process of assigning IDs is automated through the XSLT [`Tei-GenerateIds.xsl`](xslt/Tei-GenerateIds.xsl) and it needs to be run everytime someone has added mark-up to the file.
+
+<!-- + page breaks: the print edition is paginated per volume. It would thus make much sense to adopt a similar URI-scheme for `<pb>`s, for instance, `<pb xml:id="pb_176" n="176"/>` -->
+
+## 3.2. Structure
+
+Each issue is conceived of as a single `<text>` that is then grouped into volumes and a complete edition of all issues by means of xPointer.
+
+### 3.2.1. The periodical issue: `<text>`
+
+Each periodical issue is conceived of as a single `<text>` with some bibliographic metadata (issue number, publication dates) that is commonly found in mastheads grouped in a `<front>` child. The content of the periodical issue is grouped into various `<div>`s (divisions) inside the `<body>`:
+
+~~~{.xml}
+<text type="issue">
+    <front>
+    <!-- some bibliographic data commonly found in the masthead -->
+    </front>
+    <body>
+        <div type="article">
+            <head></head>
+            <p></p>
+            <!-- ... -->
+        </div>
+        <div type="section">
+            <head></head>
+            <div type="article">
+            <head></head>
+            <p></p>
+            <!-- ... -->
+        </div>
+        </div>
+    </body>
+</text>
+~~~
+
+The bibliographic meta-data in the `<front>` is not necessarily found in the issue itself, since, according to Seikaly, issues carried no date whatsoever after Ramadan 1327 / September 1909.^["*al-Muqtabas* appeared regularly at the beginning of every Arab month only when it was published in Cairo (between *Muharram* 1324 / Februrary 1906 and *Dhul-hijja* 1909). When it was removed to Damascus and because of frequent official harassment, it appeared irregularly and somewhat haphazardly. Although after 1909, as indeed before it, each volume contained twelve numbers, nevertheless publication of each separate issue did not necessarily occur on time at the start of every month of the Muslim calendar. Indeed the last issue to which a specific month was affixed was *Ramadan* 1327 / September 1909. After that Kurd 'Ali merely numbered his journal by year, volume and issue. Because of this feature reference to *al-Muqtabas* in this study will throughout follow its owner's method of enumeration." {Seikaly 1981@126}] Unfortunately Seikaly's statement is caused by the absence of the cover sheets from most surviving copies and collections of *al-Muqtabas*. The copy of volume 4 from the holdings of OIB show that the cover sheet / wrapper still carried a date after Ramadan 1327: issue 12 was published for Dhū al-Ḥujja 1327 
+
+### 3.2.2. Sections and articles: `<div>`
+
+Divisions can be of various types (`@type`), using a semi-controlled vocabulary of attribute values
+
+- structual information
+    + `section`
+    + `article` (?)
+- genre information
+    - `advert`
+    - `article`
+    - `bill`
+
+
+<!-- needs revisions -->
+As paragraphs (`<p>`) cannot interlace with `<div>`s after the first `<div>` child of a parent `<div>`, `<div @type="article">` is commonly the lowest level of tessellation but in the case of very long articles that might themselves contain `@type="section"` children.
+
+The common structure of an issue would be a mix of `<div @type="article">` and `<div @type="section">`
+
+### 3.2.3. legal texts, bills: `<div>`
+
+It is quite common to find legal texts in late nineteenth, early twentieth century periodicals and I would like to differenciate them by means of the `@type="bill"` attribute because they can be nested inside an article or appear as free-standing chunk of text on the article level. Legal texts are commonly structured into sections / chapters, articles, and paragraphs and shall be encoded thus; i.e. as `<div type="section">`, `<div type="article">`, and `<p>`.
+
+This encoding however mixes structural `@type` attributes such as `section` and `article` with semantic assumptions as to the genre of the text, i.e. `bill`. In future iterations of the schema / encoding this should be tackled and changed.
+
+
+In some cases the legal text itself is accompanied by a commentary intersecting with the legal text on the article level. they could be encoded in various ways, but the important thing is to link the commentary to the corresponding article by means of an attribute.
+
+### 3.2.4. heads
+
+Sections and articles are commonly introduced by a clearly distinguishable heading. These are marked-up as `<head>`. Some articles might also have sub headings, which should be marked up as `<head type="sub">`. 
+
+See for example [i_50](xml/oclc_4770057679-i_50.TEIP5.xml#div_5.d1e2312):
+
+~~~{.xml}
+<div type="article">
+    <head>الاتكال الشرقي</head>
+    <head type="sub">نصيحة غربي</head>
+    <p>
+        <!-- -->
+    </p>
+</div>
+~~~
+
+Beware that what looks like a sub heading, might also be a section heading introducing a sub section of an article.
+
+### 3.2.5. Page, line, and column breaks
+
+Currently, only page breaks are recorded. They are marked up with the empty milestone element `<pb/>`. Page breaks found in *al-maktaba al-shāmila*, however, do not correspond to those in the original printed copies. They were therefore marked as `<pb ed="shamila">`. Page breaks corresponding to the original printed edition are identified by `@ed="print"`.
+
+Dār Ṣādir in Beirut published a reprint in 1992, which is entirely unmarked as such but for the information on the binding itself. Checking this reprint against the original, it appeared to be a facsimile reprint: pagination, font, layout---everything is identical.
+
+1. Printed original copy: `<pb ed="print"/>`
+    - the page number is recorded in the `@n` attribute
+    - These page breaks are then linked through the `@facs` attribute to the `@xml:id` of a `<surface>` element; i.e. `<pb ed="print" n="78" facs="#facs_78"/>`
+2. Transcription from *al-maktaba al-shāmila*: `<pb ed="shamela"/>`
+
+The current state of mark-up for page breaks is kept in a [second file](notes-tei-markup-pb.md).
+
+
+
+### 3.2.6. Gaps in the transcription
+
+Gaps in the transcription as copied from *shamela.ws* are marked as `<gap resp="#org_MS" unit="pages" quantity="1"/>`. Many, if not most of these originated as the gap between two halves of a single line of a *qaṣīda*.
+
+Sometimes shamela's transcribers could not read a word and marked such omissions with ellipses:
+
+> مثل ال. . . . . ود لكن درها عسل
+
+
+## 3.3. Textual phenomena
+### 3.3.1. Footnotes and notes in general
+
+Unfortunately, *al-maktaba al-shāmila* did NOT include the sometimes abundant footnotes in their transcription.
+
+Notes should be encoded with `<note>` at the location it appears in the text. The super-scripted number is recorded in the `@n` attribute. A further `@type="footnote"` attribute specifies that this note appeared in the actual print edition, as opposed to potential editorial notes added by various editors of the digital edition, which should carry `@type="editorial"` and a `@resp` attribute pointing to the responsible editor. 
+
+### 3.3.2. Punctuation
+
+There are two problems with punctuation in this corpus:
+
+1. The original prints show an inconsistent use of punctuation marks
+    - the many quotes are sometimes wrapped in quotation marks, sometimes in brackets, but mostly they are not typographically marked
+    - many quotes are preceded by a leading colon.
+    - words in foreign languages are sometimes wrapped in quotation marks or brackets.
+2. The *shamela.ws* transcribers inconsistently transcribed existing punctuation marks and added some of their own, particularly full stops. 
+
+#### encoding in TEI
+
+Punctuation marks are not consistently transcribed into TEI in consequence. I have chosen to retain all existing punctuation from *shamela.ws*. In some cases I have added encoding for quotation marks and quotations:
+
+1. `<q>`: material visually marked by some sort of quotation marks, but which not necessarily constitute a quotation
+2. `<quote>`: a phrase or passage attributed by the narrator or author to some agency external to the text.
+
+### 3.3.3. Lists
+
+Lists have been encoded as `<list>` independent of their original formating (only rarely were lists indented etc.). In case lists apear with numbered labels in the original, i.e. "(الخامس)", "(٢)", the labels have been encoded with `<label>`.
+
+### 3.3.4. Tables
+
+Encoding of tables follows the standard encoding as `<table>`.
+
+### 3.3.5. Verse: *bayt*
+
+Many articles contain *qaṣīda*s with the characteristic printing of the two *bayt*s on each line as two columns. After some talk with Mathew Miller from the Persian Digital Library and their TEI files of Persian poetry, I decided to follow their encoding of *bayt* as `<l type="bayt">` with two `<seg>` children. Successive lines are then wrapped in `<lg>`:
+
+~~~ {.xml}
+<lg>
+    <l type="bayt">
+        <seg>أبرموا أمرهم عشاء فلما </seg> <seg>أصبحوا أصبحت لهم ضوضاء</seg>
+    </l>
+    <l type="bayt">
+        <seg>من منادٍ ومن مجيبٍ ومن تص</seg><seg>هالٍ خليل خلال ذاك رغاء</seg>
+    </l>
+</lg>
+~~~
+
+
+There are cases when words are split between the two lines of the *qaṣīda*:
+
+![example for split line of a *qaṣīda*](assets/images/qasida-bayt.png)
+
+How should this be encoded?
+
+~~~ {.xml}
+<l type="bayt">
+    <seg>أبرموا أمرهم عشاء فلما </seg>
+    <seg> أصبحوا أصبحت لهم ضوضاء</seg>
+</l>
+<l type="bayt">
+    <seg>من منادٍ ومن مجيبٍ ومن تص</seg>
+    <seg>هالٍ خليل خلال ذاك رغاء</seg>
+</l>
+~~~
+
+#### 3.2.5.1. Verse: 3 columns
+
+In rare cases we find lines of poetry that are formatted in three colums of text:
+
+![example from *Muqtabas* 1(2)](images/oclc_4770057679-v_1/umn-319510029968608-img_097.jpg)
+
+
+
+
+
+
+## 3.4. Facsimiles
+
+Digital facsimiles of individual pages, either local or online, are linked through the `<facsimile>` child of `<TEI>`:
+
+~~~{.xml}
+<facsimile>
+    <surface xml:id="facs_445">
+        <graphic xml:id="facs_445-g_1" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.tif" mimeType="image/tiff"/>
+        <graphic xml:id="facs_445-g_2" url="../images/oclc-4770057679_v6/njp-32101073250910_img-445.jpg" mimeType="image/jpeg"/>
+        <graphic xml:id="facs_445-g_3" url="http://babel.hathitrust.org/cgi/imgsrv/image?id=njp.32101073250910;seq=445" mimeType="image/jpeg"/>
+        <graphic xml:id="facs_445-g_4" url="http://eap.bl.uk/EAPDigitalItems/EAP119/EAP119_1_4_5-EAP119_muq191108_441_L.jpg" mimeType="image/jpeg"/>
+    </surface>
+</facsimile>
+~~~
+
+- The `@url` of `<graphic>` links to local downloads of the image as well as to the image hosted on HathiTrust's servers
+
+
+
+### *al-Muqtabas*
+
+Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem through the British Library's "Endangered Archives Project" (vols. 2-7)](http://eap.bl.uk/database/overview_project.a4d?projID=EAP119;r=63), [HathiTrust (vols. 1-6, 8)](http://catalog.hathitrust.org/Record/100658549), and [Institut du Monde Arabe](http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=9C82C139F9785E99D30089727B40A269). Due to its open access licence, preference is given to facsimiles from EAP.
+
+#### EAP119
+
+- links to volumes:
+    + [Vol. 2](http://eap.bl.uk/database/overview_item.a4d?catId=809;r=12316)
+    + [Vol. 3](http://eap.bl.uk/database/overview_item.a4d?catId=812;r=3035)
+    + [Vol. 4](http://eap.bl.uk/database/overview_item.a4d?catId=813;r=22190)
+    + [Vol. 5](http://eap.bl.uk/database/overview_item.a4d?catId=814;r=1842)
+    + [Vol. 6](http://eap.bl.uk/database/overview_item.a4d?catId=810;r=288)
+    + [Vol. 7](http://eap.bl.uk/database/overview_item.a4d?catId=811;r=30106)
+- access:
+    + the journal is in the public domain and the images can be freely accessed without restrictions. EAP does not provide a download button.
+    + Terms of access for material provided by the British Library can be found [here](http://www.bl.uk/aboutus/terms/index.html)
+
+####  HathiTrust
+
+- links to volumes
+    + [Vol. 1](http://hdl.handle.net/2027/umn.319510029968608)
+    + [Vol. 2](http://hdl.handle.net/2027/umn.319510029968616)
+    + [Vol. 3](http://hdl.handle.net/2027/umn.319510029968624)
+    + [Vol. 4](http://hdl.handle.net/2027/umn.319510029968632)
+    + [Vol. 5](http://hdl.handle.net/2027/umn.319510029968640)
+    + [Vol. 6](http://hdl.handle.net/2027/njp.32101073250910)
+    + [Vol. 8](http://hdl.handle.net/2027/njp.32101007615691)
+    + [Index](http://hdl.handle.net/2027/umn.31951d008457474)
+- access
+    + The journal is in the public domain in the US and can be freely accessed and downloaded
+    + Outside the US, access is restricted.
+    + Formal [licence](https://www.hathitrust.org/access_use#pd-us-google): 
+
+> Public Domain or Public Domain in the United States, Google-digitized: In addition to the terms for works that are in the Public Domain or in the Public Domain in the United States above, the following statement applies: The digital images and OCR of this work were produced by Google, Inc. (indicated by a watermark on each page in the PageTurner). Google requests that the images and OCR not be re-hosted, redistributed or used commercially. The images are provided for educational, scholarly, non-commercial purposes.
+> Note: There are no restrictions on use of text transcribed from the images, or paraphrased or translated using the images.
+
+
+
+## 3.5 non-structural phenomena of interest to the historian
+
+### 3.5.1. Measures and prices
 
 For the moment I would settle for the following pattern: 
 
@@ -508,7 +518,7 @@ Imagine, someone bought <measureGrp><measure commodity="wheat" quantity="2" unit
     + $price expands into `<measure commodity="currency">` etc. and copies the content of the clipboard between the tags
     + $meas expands into `<measure commodity="">` etc. and copies the content of the clipboard between the tags
 
-## Numbers and numerals
+### 3.5.2. Numbers and numerals
 
 The transcribers at *shamela.ws* transcribed all numbers---the originals use the eastern Arabic numerals common in the Levant---into Arabic numerals; i.e. when the original read "١٢٨٥" the transcription recorded "1285". To reconstruct the original without loosing the convenience of machine-readability, I wrote a small XSLT script ([`Tei-MarkupNumerals`](xslt/Tei-MarkupNumerals.xsl)) that uses regex to identify all numerical values in `<tei:text>`. It wraps the result in a `<num>` element with the original value as `@value` and converts the number to eastern Arabic numerals. It also indicates the responsible editor with `@resp` and the method of generating the mark-up as `@type="auto-markup"` e.g.
 
@@ -522,13 +532,13 @@ The transcribers at *shamela.ws* transcribed all numbers---the originals use the
 
 A second XSLT stylesheet ([`Tei-MarkupNumerals-Correction`](xslt/Tei-MarkupNumerals-Correction.xsl)) corrects this fault in the original conversion.
 
-## Persons, Places, Organisations
+### 3.5.3. Persons, Places, Organisations
 
-### 1. Persons:`<persName>`
+#### 3.5.3.1. Persons:`<persName>`
 
 How to encode this string: "حسين كاظم بك والي حلب الحالي" ? Should the information on his position be included in the `<persName>`?
 
-### 2. Places: `<placeName>`
+#### 3.5.3.2. Places: `<placeName>`
 
 All references to places with an explicit name (toponyms) including geographic names such as "Taurus Mountains", "Euphrates River" and geo-political names such as "Province of Aleppo" are encoded as `<placeName>`. The `<geogName>` tag is not used in this project.  `<placeName>` can self nest.
 
@@ -546,9 +556,9 @@ All references to places with an explicit name (toponyms) including geographic n
 
 - In order to automatically tag as many toponyms as possible, one can make use of the GeoNames.org API, which allows for a "findnearby" search such as: `http://api.geonames.org/findNearby?lat=33.5102&lng=36.29128&radius=300&featureClass=P&style=FULL&maxRows=100000&username=tardigradae&lang=ar`. This query will return all names of inhabited places within a radius of 250km around Damascus and their corresponding locations.
 
-### 3. Organisations: `<orgName>`
+#### 3.5.3.3. Organisations: `<orgName>`
 
-## Dates and calendars
+### 3.5.4. Dates and calendars
 
 There are two attributes that specify the dating system used in an element:
 
@@ -559,6 +569,7 @@ There are two attributes that specify the dating system used in an element:
 2. `@calendar="#cal_islamic"`
 3. `@calendar="#cal_julian"`
 4. `@calendar="#cal_ottomanfiscal"`
+
 
 ## references to internal or external URIs
 
