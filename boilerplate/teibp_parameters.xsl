@@ -26,7 +26,7 @@
     <!-- select whether you want to display page breaks and facsimiles -->
     <xsl:param name="p_display-page-breaks" select="true()"/>
     <!-- select whether you want to display online or local facsimiles -->
-    <xsl:param name="p_display-online-facsimiles" select="false()"/>
+    <xsl:param name="p_display-online-facsimiles" select="true()"/>
     <!-- select whether you want to display line breaks -->
     <xsl:param name="p_display-line-breaks" select="true()"/>
     <!-- select whether you want to use inline CSS for the display -->
