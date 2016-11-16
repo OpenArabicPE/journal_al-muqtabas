@@ -7,16 +7,28 @@
 
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p>This stylesheet defines global parameters to change the display of TEI XML files in the browser using an adapted TEI Boilerplate.</xd:p>
+             <xd:p>This stylesheet is the entry point into the TEI boilerplate for the display of (mainly Arabic) periodicals in any modern web browser using XSLT 1. The system has been adopted from the original TEI boilerplate.</xd:p>
+            <xd:p>As well as loading all other stylesheets, this stylesheet defines global parameters.</xd:p>
+            
         </xd:desc>
     </xd:doc>
+    
+    <!-- Load all other stylesheets -->
+    <!-- import the standard TEI Boilerplate stylesheets -->
+    <xsl:include href="teibp_main.xsl"/>
+    <xsl:include href="teibp_sourcedesc.xsl"/>
+    <xsl:include href="xml-to-string.xsl"/>
+    <!-- import the stylesheet formatting all bibliographic metadata -->
+    <xsl:include href="teibp_bibl.xsl"/>
+    <!-- import the stylesheet dealing with the display of <pb> and facsimiles -->
+    <xsl:include href="teibp_pb.xsl"/>
 
     <!-- select whether you want to display page breaks and facsimiles -->
     <xsl:param name="p_display-page-breaks" select="true()"/>
     <!-- select whether you want to display online or local facsimiles -->
-    <xsl:param name="p_display-online-facsimiles" select="true()"/>
+    <xsl:param name="p_display-online-facsimiles" select="false()"/>
     <!-- select whether you want to display line breaks -->
-    <xsl:param name="p_display-line-breaks" select="false()"/>
+    <xsl:param name="p_display-line-breaks" select="true()"/>
     <!-- select whether you want to use inline CSS for the display -->
     <xsl:param name="p_use-inline-css" select="true()"/>
     <!-- select whether the language of the interface should follow the main language of the text -->
