@@ -46,7 +46,7 @@
                 <div id="tei_wrapper">
                     <xsl:apply-templates/>
                 </div>
-                <xsl:copy-of select="$vNotes"/>
+                <xsl:copy-of select="$v_notes"/>
                 <xsl:copy-of select="$htmlFooter"/>
             </body>
         </html>
@@ -641,14 +641,16 @@
         </xsl:copy>
     </xsl:template>
 
-    <!-- do something with notes -->
-    <xsl:variable name="vNotes">
+    <!-- render foot and end notes-->
+    <!-- generate a block of endnotes to be inserted at some point in the result document -->
+    <xsl:variable name="v_notes">
         <div id="teibp_notes">
+            <!-- add support for multiple languages -->
             <head lang="ar">ملاحظات</head>
-            <xsl:apply-templates select="/descendant::tei:body/descendant::tei:note" mode="mNotes"/>
+            <xsl:apply-templates select="/descendant::tei:body/descendant::tei:note[@type='footnote' or @type='endnote']" mode="m_notes"/>
         </div>
     </xsl:variable>
-    <xsl:template match="tei:note" mode="mNotes">
+    <xsl:template match="tei:note[@type='footnote' or @type='endnote']" mode="m_notes">
         <p class="cNote" id="fn-{generate-id()}">
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
@@ -664,7 +666,8 @@
             </a>
         </p>
     </xsl:template>
-    <xsl:template match="tei:body//tei:note">
+    <!-- generate the references to the block of endnotes in the text -->
+    <xsl:template match="tei:body//tei:note[@type='footnote' or @type='endnote']">
         <a href="#fn-{generate-id()}" id="fn-mark-{generate-id()}" class="c_fn cContent">
             <!-- one should have the full text of the note hidden by CSS -->
             <span class="c_fn-mark" lang="en"><xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/></span>
