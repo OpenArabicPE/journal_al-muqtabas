@@ -72,14 +72,8 @@ span.c_teibp-pb {
 	margin-bottom: 0px;
 	margin-top: 10px;
 	padding-top: 5px;
-	border-top: 5px dotted #EBEBEB;
+	/*border-top: 5px dotted #EBEBEB;*/
 }
-
-/*span.c_teibp-pbLIne {
-	display: block;
-	width: inherit;
-	border-top: 5px dotted #EBEBEB;
-}*/
 
 TEI > text[lang = "ar"] span.c_teibp-pb,
 TEI > text[lang = "ota"] span.c_teibp-pb,
@@ -100,15 +94,42 @@ TEI > text[lang *= "ota-Latn-"] span.c_teibp-pb {
 	clear: right !important;
 }
 
-/* the actual images */
-/*span.-teibp-facs {
+/* draw a thin dotted horizontal line across the entire page */
+span.c_teibp-pbLine {
 	display: block;
-	float: left;
-}*/
+	width: inherit;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 5px dotted #EBEBEB;
+}
+
+/* the block containing the images  */
 span.c_teibp-pbImgInfo {
 	display: block;
-	width: 430px;
+	width: 440px;
 }
+
+TEI > text[lang = "ar"] span.c_teibp-pbImgInfo,
+TEI > text[lang = "ota"] span.c_teibp-pbImgInfo,
+TEI > text[lang = "fa"] span.c_teibp-pbImgInfo,
+TEI > text[lang = "he"] span.c_teibp-pbImgInfo,
+TEI > text[lang *= "-Arab-Ar"] span.c_teibp-pbImgInfo {
+	float: left;
+	clear: left;
+	border-right: 5px dotted #EBEBEB;
+}
+TEI > text[lang = "en"] span.c_teibp-pbImgInfo,
+TEI > text[lang = "fr"] span.c_teibp-pbImgInfo,
+TEI > text[lang = "de"] span.c_teibp-pbImgInfo,
+TEI > text[lang = "it"] span.c_teibp-pbImgInfo,
+TEI > text[lang *= "ar-Latn-"] span.c_teibp-pbImgInfo,
+TEI > text[lang *= "ota-Latn-"] span.c_teibp-pbImgInfo {
+	float: right;
+	clear: right;
+	border-left: 5px dotted #EBEBEB;
+}
+
+/* the images themselves */
 span.c_teibp-pb img {
 	display: block;
 	width:430px;
@@ -132,29 +153,9 @@ vendor-specific prefix */
 clip-path: inset(0px 20px 0px 20px);
 }*/
 
-TEI > text[lang = "ar"] span.c_teibp-pbImgInfo,
-TEI > text[lang = "ota"] span.c_teibp-pbImgInfo,
-TEI > text[lang = "fa"] span.c_teibp-pbImgInfo,
-TEI > text[lang = "he"] span.c_teibp-pbImgInfo,
-TEI > text[lang *= "-Arab-Ar"] span.c_teibp-pbImgInfo {
-	float: left;
-	clear: left;
-	border-right: 5px dotted #EBEBEB;
-}
-TEI > text[lang = "en"] span.c_teibp-pbImgInfo,
-TEI > text[lang = "fr"] span.c_teibp-pbImgInfo,
-TEI > text[lang = "de"] span.c_teibp-pbImgInfo,
-TEI > text[lang = "it"] span.c_teibp-pbImgInfo,
-TEI > text[lang *= "ar-Latn-"] span.c_teibp-pbImgInfo,
-TEI > text[lang *= "ota-Latn-"] span.c_teibp-pbImgInfo {
-	float: right;
-	clear: right;
-	border-left: 5px dotted #EBEBEB;
-}
-
 
 /* the page number */
-span.-teibp-pageNum {
+span.c_teibp-pageNum {
 	display: block;
 	padding-left: 5px;
 	padding-right: 5px;

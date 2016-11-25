@@ -113,9 +113,12 @@
         <!-- construct the final output -->
         <span class="c_teibp-pb" lang="en">
             <xsl:call-template name="addID"/>
-            <!-- why would one need this additional <span>? -->
+            <!-- span to draw a horizontal divider -->
+            <span class="c_teibp-pbLine"> </span>
+            <!-- span to act as container for information and facsimiles-->
         <span class="c_teibp-pbImgInfo">
-            <span class="-teibp-pageNum" lang="{$v_lang-interface}">
+            <!-- span containing all information on the page and the facsimile -->
+            <span class="c_teibp-pageNum" lang="{$v_lang-interface}">
                 <!-- this should be a back-link -->
                 <a class="c_link-self" href="{concat('#',$v_id)}" title="{concat($p_text-permalink,$p_text-name-element_pb)}">
                     <xsl:copy-of select="$p_text-page"/>
@@ -130,10 +133,11 @@
                     <xsl:copy-of select="$v_facs-links"/>
                 </xsl:if>
             </span>
+            <!-- span containing the actual image -->
             <xsl:if test="$v_facs = true()">
                 <span class="c_teibp-pbFacs" lang="en">
                     <a class="gallery-facs" lang="en" href="{$v_url-facs}" target="_blank">
-                        <img src="{$v_url-facs}" class="-teibp-thumbnail"/>
+                        <img src="{$v_url-facs}" class="c_teibp-thumbnail"/>
                     </a>
                 </span>
             </xsl:if>
