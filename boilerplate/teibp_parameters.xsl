@@ -33,6 +33,8 @@
     <xsl:param name="p_use-inline-css" select="true()"/>
     <!-- select whether the language of the interface should follow the main language of the text -->
     <xsl:param name="p_lang-interface-same-as-text" select="false()"/>
+    <!-- select the colour scheme for heads -->
+    <xsl:param name="p_display-dark-heads" select="false()"/>
 
     <!-- original TEI Boilerplate stuff -->
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
@@ -59,7 +61,7 @@
     </xsl:variable>
     <!-- interface text -->
     <xsl:param name="p_text-page">
-        <span class="-teibp-pbNote" lang="{$v_lang-interface}">
+        <span class="c_teibp-pbNote" lang="{$v_lang-interface}">
             <xsl:choose>
                 <xsl:when test="$v_lang-interface = 'ar'">
                     <xsl:text>صفحة</xsl:text>
@@ -71,7 +73,7 @@
         </span>
     </xsl:param>
     <xsl:param name="p_text-facs-link">
-        <span class="-teibp-pbNote" lang="{$v_lang-interface}">
+        <span class="c_teibp-pbNote" lang="{$v_lang-interface}">
             <xsl:choose>
                 <xsl:when test="$v_lang-interface = 'ar'">
                     <xsl:text>انظر الى هذه الصورة في</xsl:text>
@@ -112,14 +114,34 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:param>
+    <xsl:param name="p_text-name-element_pb">
+        <xsl:choose>
+            <xsl:when test="$v_lang-interface = 'ar'">
+                <xsl:text>هذه الصفحة</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>this page break</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:param>
+    
     <!-- parameters for file paths or URLs -->
-    <!-- modify filePrefix to point to boilerplate files on your own server, 
-		or to specify a relative path, e.g.:
-		<xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>
+    <!-- modify filePrefix to point to boilerplate files on your own server, or to specify a relative path, e.g.: <xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>
 	-->
     <xsl:param name="filePrefix" select="'..'"/>
+    <!-- the following parameters should not be changed unless the folder structure and file names have been changed -->
     <xsl:param name="teibpCSS" select="concat($filePrefix, '/css/teibp.css')"/>
-    <xsl:param name="customCSS" select="concat($filePrefix, '/css/custom.css')"/>
+    <xsl:param name="customCSS" select="concat($filePrefix, '/css/teibp_custom.css')"/>
+    <xsl:variable name="v_css-heads">
+        <xsl:choose>
+            <xsl:when test="$p_display-dark-heads = true()">
+                <xsl:value-of select="concat($filePrefix,'/css/teibp_heads-dark.css')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="concat($filePrefix,'/css/teibp_heads-light.css')"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
     <xsl:param name="jqueryJS" select="concat($filePrefix, '/js/jquery/jquery.min.js')"/>
     <xsl:param name="jqueryBlockUIJS" select="concat($filePrefix, '/js/jquery/plugins/jquery.blockUI.js')"/>
     <xsl:param name="teibpJS" select="concat($filePrefix, '/js/teibp.js')"/>

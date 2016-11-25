@@ -16,23 +16,9 @@
         <xsl:choose>
             <xsl:when test="$p_display-page-breaks = true()">
                 <!-- add @lang="en" to ensure correct ltr rendering -->
-                <span class="-teibp-pb" lang="en">
-                    <xsl:call-template name="addID"/>
                     <xsl:call-template name="t_handler-pb">
-                        <xsl:with-param name="p_n" select="@n"/>
-                        <xsl:with-param name="p_facs" select="@facs"/>
-                        <xsl:with-param name="p_id">
-                            <xsl:choose>
-                                <xsl:when test="@xml:id">
-                                    <xsl:value-of select="@xml:id"/>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="generate-id()"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:with-param>
+                        <xsl:with-param name="p_pb" select="."/>
                     </xsl:call-template>
-                </span>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:copy>
@@ -42,11 +28,21 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template name="t_handler-pb">
-        <xsl:param name="p_n"/>
-        <xsl:param name="p_facs"/>
-        <xsl:param name="p_id"/>
+        <xsl:param name="p_pb"/>
+<!--        <xsl:variable name="v_n" select="@n"/>-->
+        <xsl:variable name="v_facs" select="$p_pb/@facs"/>
+        <xsl:variable name="v_id">
+            <xsl:choose>
+                <xsl:when test="$p_pb/@xml:id">
+                    <xsl:value-of select="$p_pb/@xml:id"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="generate-id()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:variable name="v_mimetype" select="'image/jpeg'"/>
-        <xsl:variable name="v_id-facs" select="substring-after($p_facs, '#')"/>
+        <xsl:variable name="v_id-facs" select="substring-after($v_facs, '#')"/>
         <xsl:variable name="v_graphic" select="ancestor::tei:TEI/tei:facsimile/tei:surface[@xml:id = $v_id-facs]/tei:graphic"/>
         <!-- select which online facsimile to display based on the order of preference: EAP, sakhrit, HathiTrust, other; and https over http -->
         <xsl:variable name="v_url-graphic">
@@ -74,7 +70,7 @@
         <!-- dealing with pointers instead of full URLs in @facs -->
         <xsl:variable name="v_url-facs">
             <xsl:choose>
-                <xsl:when test="starts-with($p_facs, '#')">
+                <xsl:when test="starts-with($v_facs, '#')">
                     <!-- Preference:  -->
                     <xsl:choose>
                         <xsl:when test="$p_display-online-facsimiles = true()">
@@ -87,22 +83,22 @@
                     </xsl:choose>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="$p_facs"/>
+                    <xsl:value-of select="$v_facs"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="v_url-facs-online">
             <xsl:choose>
-                <xsl:when test="starts-with($p_facs, '#')">
+                <xsl:when test="starts-with($v_facs, '#')">
                     <xsl:value-of select="$v_url-graphic"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="$p_facs"/>
+                    <xsl:value-of select="$v_facs"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <!-- constructing a link for every graphic element -->
-        <xsl:variable name="v_facs-a">
+        <xsl:variable name="v_facs-links">
             <xsl:for-each select="$v_graphic[starts-with(@url, 'http')]">
                 <a href="{@url}" target="_blank">
                     <xsl:call-template name="t_url-to-name">
@@ -115,26 +111,33 @@
             </xsl:for-each>
         </xsl:variable>
         <!-- construct the final output -->
-        <span class="-teibp-pbImgInfo">
+        <span class="c_teibp-pb" lang="en">
+            <xsl:call-template name="addID"/>
+            <!-- why would one need this additional <span>? -->
+        <span class="c_teibp-pbImgInfo">
             <span class="-teibp-pageNum" lang="{$v_lang-interface}">
-                <xsl:copy-of select="$p_text-page"/>
+                <!-- this should be a back-link -->
+                <a class="c_link-self" href="{concat('#',$v_id)}" title="{concat($p_text-permalink,$p_text-name-element_pb)}">
+                    <xsl:copy-of select="$p_text-page"/>
                 <xsl:text> </xsl:text>
-                <xsl:value-of select="@n"/>
+                <xsl:value-of select="$p_pb/@n"/>
+                </a>
                 <!-- provide link to online facsimile no matter what -->
-                <xsl:if test="$p_facs = true()">
+                <xsl:if test="$v_facs = true()">
                     <xsl:text> - </xsl:text>
                     <xsl:copy-of select="$p_text-facs-link"/>
                     <xsl:text> </xsl:text>
-                    <xsl:copy-of select="$v_facs-a"/>
+                    <xsl:copy-of select="$v_facs-links"/>
                 </xsl:if>
             </span>
-            <xsl:if test="$p_facs = true()">
-                <span class="-teibp-pbFacs" lang="en">
+            <xsl:if test="$v_facs = true()">
+                <span class="c_teibp-pbFacs" lang="en">
                     <a class="gallery-facs" lang="en" href="{$v_url-facs}" target="_blank">
                         <img src="{$v_url-facs}" class="-teibp-thumbnail"/>
                     </a>
                 </span>
             </xsl:if>
+        </span>
         </span>
     </xsl:template>
     
