@@ -74,8 +74,7 @@
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
             <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="child::tei:front"/>
-            <xsl:apply-templates select="child::tei:body"/>
+            <xsl:apply-templates select="child::node()[not(self::tei:back)]"/>
             <xsl:choose>
                 <xsl:when test="child::tei:back">
                     <xsl:apply-templates select="child::tei:back"/>
