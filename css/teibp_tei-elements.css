@@ -233,11 +233,19 @@ text orgName{
     /*border-bottom: 5px dotted #E4E8FF;*/
 }
 
-text persName, text placeName, text orgName, text>body title {
+text persName, 
+text placeName, 
+text orgName, 
+text>body title {
   display: inline;
   position: relative;
 }
-text persName::after, text placeName::after, text orgName::after, text>body title::after {
+/* generate a box for "fake" underlines. this could float 
+next to the text to not obstruct the reader's view of the text */
+text persName::after, 
+text placeName::after, 
+text orgName::after, 
+text>body title::after {
   content: '';
   position: absolute;
   left: 0;
@@ -247,10 +255,10 @@ text persName::after, text placeName::after, text orgName::after, text>body titl
   margin-top: 7px;
 }
 
+/* coloured underlines for different entities */
 text persName::after {
     border-bottom: 3px dotted #C9F6C5;
 }
-
 text placeName::after{
     border-bottom: 3px dotted #FADDFF;
 }
@@ -286,6 +294,7 @@ text>body title:hover:after{
     margin:-2em 0 0 0;
     /*z-index: 10000;*/
 }
+/* display element name */
 text persName:hover:after{
     content:"persName"
 }

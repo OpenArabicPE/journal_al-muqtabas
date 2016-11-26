@@ -36,19 +36,13 @@
                 <div id="tei_wrapper">
                     <xsl:apply-templates/>
                 </div>
-                <xsl:copy-of select="$v_notes"/>
+                <!-- this was moved to the back of the TEI document -->
+                <!--<xsl:copy-of select="$v_notes"/>-->
                 <xsl:copy-of select="$htmlFooter"/>
             </body>
         </html>
     </xsl:template>
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Basic copy template, copies all attribute nodes from source XML tree to output document.</xd:p>
-        </xd:desc>
-    </xd:doc>
-    <xsl:template match="@*">
-        <xsl:copy/>
-    </xsl:template>
+    
     <xd:doc>
         <xd:desc>
             <xd:p>Template for elements, which handles style and adds an @xml:id to every element. Existing @xml:id attributes are retained
@@ -59,12 +53,52 @@
         <xsl:element name="{local-name()}">
             <xsl:apply-templates select="@*"/>
             <xsl:call-template name="addID"/>
-<!--            <xsl:call-template name="rendition"/>-->
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
             <xsl:apply-templates select="node()"/>
         </xsl:element>
+    </xsl:template>
+    <xd:doc>
+        <xd:desc>
+            <xd:p>Basic copy template, copies all attribute nodes from source XML tree to output document.</xd:p>
+        </xd:desc>
+    </xd:doc>
+    <xsl:template match="@*">
+        <xsl:copy/>
+    </xsl:template>
+    <!-- add notes to the <back> element -->
+    <xsl:template match="tei:text">
+        <xsl:copy>
+            <xsl:call-template name="templHtmlAttrLang">
+                <xsl:with-param name="pInput" select="."/>
+            </xsl:call-template>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="child::tei:front"/>
+            <xsl:apply-templates select="child::tei:body"/>
+            <xsl:choose>
+                <xsl:when test="child::tei:back">
+                    <xsl:apply-templates select="child::tei:back"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:element name="back">
+                        <xsl:call-template name="templHtmlAttrLang">
+                            <xsl:with-param name="pInput" select="."/>
+                        </xsl:call-template>
+                        <xsl:copy-of select="$v_notes"/>
+                    </xsl:element>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="tei:back">
+        <xsl:copy>
+            <xsl:call-template name="templHtmlAttrLang">
+                <xsl:with-param name="pInput" select="."/>
+            </xsl:call-template>
+            <xsl:apply-templates select="@* | node()"/>
+            <xsl:copy-of select="$v_notes"/>
+        </xsl:copy>
     </xsl:template>
     <xd:doc>
         <xd:desc>
@@ -89,7 +123,7 @@
     <xsl:template match="processing-instruction()" priority="10"/>
     <xd:doc>
         <xd:desc>
-            <xd:p>Template moves value of @rend into an html @style attribute. Stylesheet assumes CSS is used in @rend to describe
+            <xd:p>Template replicates value of @style into an html @style attribute. Stylesheet assumes CSS is used in @style to describe
                 renditions, i.e., styles.</xd:p>
         </xd:desc>
     </xd:doc>
@@ -107,14 +141,6 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <!-- as this template simply replicates the @rendition attribute, it has been removed -->
-    <!--<xsl:template name="rendition">
-        <xsl:if test="@rendition">
-            <xsl:attribute name="rendition">
-                <xsl:value-of select="@rendition"/>
-            </xsl:attribute>
-        </xsl:if>
-    </xsl:template>-->
     <xsl:template match="@xml:id">
         <!-- @xml:id is copied to @id, which browsers can use for internal links. -->
         <xsl:attribute name="id">
@@ -128,10 +154,7 @@
     </xd:doc>
     <xsl:template match="tei:ref[@target]" priority="99">
         <a href="{@target}">
-            <xsl:apply-templates select="@*"/>
-<!--            <xsl:call-template name="rendition"/>-->
             <xsl:apply-templates select="@* | node()"/>
-            <!-- <xsl:apply-templates select="node()"/> -->
         </a>
     </xsl:template>
     <!-- prevent @target from being reproduced here -->
@@ -144,7 +167,6 @@
     <xsl:template match="tei:ptr[@target]" priority="99">
         <a href="{@target}">
             <xsl:apply-templates select="@*"/>
-<!--            <xsl:call-template name="rendition"/>-->
             <xsl:value-of select="normalize-space(@target)"/>
         </a>
     </xsl:template>
@@ -199,7 +221,6 @@
 	</xsl:template>
 	-->
     <xsl:template name="addID">
-        <xsl:if test="not(ancestor::eg:egXML)">
             <xsl:attribute name="id">
                 <xsl:choose>
                     <xsl:when test="@xml:id">
@@ -212,7 +233,6 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:attribute>
-        </xsl:if>
     </xsl:template>
     <xd:doc>
         <xd:desc>
@@ -377,23 +397,6 @@
 		  })();
 		</script>
     </xsl:template>
-    
-    <xsl:template match="eg:egXML">
-        <xsl:element name="{local-name()}">
-            <xsl:apply-templates select="@*"/>
-            <xsl:call-template name="addID"/>
-            <xsl:call-template name="xml-to-string">
-                <xsl:with-param name="node-set">
-                    <xsl:copy-of select="node()"/>
-                </xsl:with-param>
-            </xsl:call-template>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="eg:egXML//comment()">
-        <xsl:comment>
-			<xsl:value-of select="."/>
-		</xsl:comment>
-    </xsl:template>
 
     <xd:doc>
         <xd:desc>
@@ -437,7 +440,6 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
-            <!--<xsl:apply-templates select="./tei:head" mode="mToc"/>-->
             <a>
                 <!-- generate IDs on the fly if there are non existing. The link should point to the parent::tei:div and not the head -->
                 <xsl:attribute name="href">
@@ -451,7 +453,6 @@
                     </xsl:choose>
                 </xsl:attribute>
                 <!-- provide content of head -->
-                <!--<xsl:apply-templates/>-->
                 <xsl:apply-templates select="child::tei:head" mode="mToc"/>
                 <xsl:text> (</xsl:text>
                 <!-- add author names and pages if available -->
@@ -546,7 +547,6 @@
             </span>
             <!-- body of the div -->
             <xsl:apply-templates select="node()[not(self::tei:head)]"/>
-            <!--</a>-->
         </xsl:copy>
     </xsl:template>
     <!-- link heads back to themselves -->
@@ -636,13 +636,25 @@
     <!-- generate a block of endnotes to be inserted at some point in the result document -->
     <xsl:variable name="v_notes">
         <div id="teibp_notes">
-            <!-- add support for multiple languages -->
-            <head lang="ar">ملاحظات</head>
+            <head>
+                <xsl:call-template name="templHtmlAttrLang">
+                    <xsl:with-param name="pInput" select="tei:TEI/tei:text"/>
+                </xsl:call-template>
+<!--                <xsl:value-of select="$p_text-notes"/>-->
+                <xsl:choose>
+                    <xsl:when test="tei:TEI/tei:text/@xml:lang = 'ar'">
+                        <xsl:text>ملاحظات</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>Notes</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </head>
             <xsl:apply-templates select="/descendant::tei:body/descendant::tei:note[@type='footnote' or @type='endnote']" mode="m_notes"/>
         </div>
     </xsl:variable>
     <xsl:template match="tei:note[@type='footnote' or @type='endnote']" mode="m_notes">
-        <p class="cNote" id="fn-{generate-id()}">
+        <note class="c_note" id="fn-{generate-id()}">
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
@@ -656,7 +668,7 @@
                 <!-- <xsl:text>&#x21A9;</xsl:text>-->
                 <!-- <xsl:text>&#x21AA;</xsl:text>-->
             </a>
-        </p>
+        </note>
     </xsl:template>
     <!-- generate the references to the block of endnotes in the text -->
     <xsl:template match="tei:body//tei:note[@type='footnote' or @type='endnote']">
@@ -716,14 +728,18 @@
         <div id="NextIssue" class="c_button-sidebar">
             <ul>
                 <li>
-                    <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo +1,'.TEIP5.xml')}">Next issue</a>
+                    <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo +1,'.TEIP5.xml')}">
+                        <xsl:copy-of select="$p_text-nav_next-issue"/>
+                    </a>
                 </li>
             </ul>
         </div>
         <div id="PrevIssue" class="c_button-sidebar">
             <ul>
                 <li>
-                    <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo -1,'.TEIP5.xml')}">Previous issue</a>
+                    <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo -1,'.TEIP5.xml')}">
+                        <xsl:copy-of select="$p_text-nav_previous-issue"/>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -817,6 +833,9 @@
                 </xsl:when>
                 <xsl:when test="$p_name-element = 'p'">
                     <xsl:copy-of select="$p_text-name-element_p"/>
+                </xsl:when>
+                <xsl:when test="$p_name-element = 'pb'">
+                    <xsl:copy-of select="$p_text-name-element_pb"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
