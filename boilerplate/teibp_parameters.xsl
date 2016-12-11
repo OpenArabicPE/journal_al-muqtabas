@@ -4,10 +4,10 @@
     xmlns="http://www.w3.org/1999/xhtml" xmlns:eg="http://www.tei-c.org/ns/Examples" xmlns:exsl="http://exslt.org/common"
     xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
+    
     <xd:doc scope="stylesheet">
         <xd:desc>
-             <xd:p>This stylesheet is the entry point into the TEI boilerplate for the display of (mainly Arabic) periodicals in any modern web browser using XSLT 1. The system has been adopted from the original TEI boilerplate.</xd:p>
+            <xd:p>This stylesheet is the entry point into the TEI boilerplate for the display of (mainly Arabic) periodicals in any modern web browser using XSLT 1. The system has been adopted from the original TEI boilerplate.</xd:p>
             <xd:p>As well as loading all other stylesheets, this stylesheet defines global parameters.</xd:p>
             
         </xd:desc>
@@ -25,22 +25,24 @@
 
     <!-- select whether you want to display page breaks and facsimiles -->
     <xsl:param name="p_display-page-breaks" select="true()"/>
-    <!-- select whether you want to display online or local facsimiles -->
+    <!-- select whether you want to display online or local facsimiles; default: true() -->
     <xsl:param name="p_display-online-facsimiles" select="true()"/>
-    <!-- select whether you want to display line breaks -->
-    <xsl:param name="p_display-line-breaks" select="true()"/>
-    <!-- select whether you want to use inline CSS for the display -->
+    <!-- select whether you want to display line breaks; default: false() -->
+    <xsl:param name="p_display-line-breaks" select="false()"/>
+    <!-- select whether you want to process XInclude; default: true()  -->
+    <xsl:param name="p_process-xinclude" select="true()"/>
+    <!-- select whether you want to use inline CSS for the display; default: true() -->
     <xsl:param name="p_use-inline-css" select="true()"/>
-    <!-- select whether the language of the interface should follow the main language of the text -->
+    <!-- select whether the language of the interface should follow the main language of the text; default: false() -->
     <xsl:param name="p_lang-interface-same-as-text" select="false()"/>
-    <!-- select the colour scheme for heads -->
+    <!-- select the colour scheme for heads; default: false() -->
     <xsl:param name="p_display-dark-heads" select="false()"/>
-
+    
     <!-- original TEI Boilerplate stuff -->
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
     <xsl:param name="includeToolbox" select="false()"/>
     <xsl:param name="includeAnalytics" select="false()"/>
-  
+    
     <!-- special characters -->
     <xsl:param name="quot">
         <text>"</text>
@@ -147,7 +149,7 @@
             </xsl:choose>
         </span>
     </xsl:param>
-
+    
     <xsl:param name="p_text-nav_previous-issue">
         <span lang="{$v_lang-interface}">
             <xsl:choose>
