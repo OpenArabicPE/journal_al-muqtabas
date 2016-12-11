@@ -23,7 +23,7 @@
     <!-- import the stylesheet dealing with the display of <pb> and facsimiles -->
     <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/teibp_pb.xsl"/>
 
-    <!-- select whether you want to display page breaks and facsimiles -->
+    <!-- select whether you want to display page breaks and facsimiles; default: true() -->
     <xsl:param name="p_display-page-breaks" select="true()"/>
     <!-- select whether you want to display online or local facsimiles; default: true() -->
     <xsl:param name="p_display-online-facsimiles" select="true()"/>
