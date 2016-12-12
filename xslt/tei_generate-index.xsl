@@ -84,7 +84,7 @@
     </xsl:template>
     
     <!-- prevent notes in div/head from producing output -->
-    <xsl:template match="tei:head/descendant::tei:note" mode="m_plain-text" priority="100"/>
+    <xsl:template match="tei:head/tei:note" mode="m_plain-text" priority="100"/>
     
     <!-- suppress output for some divs. As the XPath expression is less specific then others, it will act as a fall-back option -->
     <xsl:template match="tei:div" mode="m_index"/>
