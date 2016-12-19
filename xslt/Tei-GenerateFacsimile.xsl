@@ -53,6 +53,8 @@
     <xsl:param name="pEapIssueId" select="'191202'"/>
     <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
     <xsl:param name="pImgStartHathiDifference" select="0" as="xs:integer"/>
+    <!-- set-off between EAP image number and the printed edition -->
+    <xsl:param name="p_image-setoff_eap" select="1"/>
     <!-- volume in HathTrust collection -->
     <xsl:variable name="vHathiTrustId" select="'umn.319510029968624'"/>
     <!-- volume in EAP collection: needs to be set  -->
@@ -148,7 +150,7 @@
             <xsl:if test="$p_file-eap = true()">
             <xsl:element name="tei:graphic">
                 <xsl:attribute name="xml:id" select="concat($v_id-facs,$p_page-start,'-g_4')"/>
-                <xsl:attribute name="url" select="concat($vFileUrlEap,'_',format-number($p_page-start,'000'),'_L.jpg')"/>
+                <xsl:attribute name="url" select="concat($vFileUrlEap,'_',format-number($p_page-start + $p_image-setoff_eap,'000'),'_L.jpg')"/>
                 <xsl:attribute name="mimeType" select="'image/jpeg'"/>
             </xsl:element>
             </xsl:if>
