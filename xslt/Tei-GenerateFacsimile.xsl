@@ -20,8 +20,8 @@
     <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
     
     <!-- params to toggle certain links -->
-    <xsl:param name="p_file-local" select="true()"/>
-    <xsl:param name="p_file-hathi" select="true()"/>
+    <xsl:param name="p_file-local" select="false()"/>
+    <xsl:param name="p_file-hathi" select="false()"/>
     <xsl:param name="p_file-eap" select="true()"/>
     <xsl:param name="p_file-sakhrit" select="false()"/>
     
@@ -50,13 +50,13 @@
     </xsl:variable>
     
     <!-- ID / date of issue in EAP: these are formatted as yyyymm and need to be set for each issue. the volumes commence with yyyy02 -->
-    <xsl:param name="pEapIssueId" select="'190602'"/>
+    <xsl:param name="pEapIssueId" select="'191202'"/>
     <!-- set-off between the EAP, which takes the printed page number as image number and Hathi, which doesn't -->
-    <xsl:param name="pImgStartHathiDifference" select="14" as="xs:integer"/>
+    <xsl:param name="pImgStartHathiDifference" select="0" as="xs:integer"/>
     <!-- volume in HathTrust collection -->
     <xsl:variable name="vHathiTrustId" select="'umn.319510029968624'"/>
     <!-- volume in EAP collection: needs to be set  -->
-    <xsl:variable name="vEapVolumeId" select="'2'"/>
+    <xsl:variable name="vEapVolumeId" select="'6'"/>
     
     <!-- URL to Hathi, this is always the same -->
     <xsl:variable name="vFileUrlHathi" select="concat('https://babel.hathitrust.org/cgi/imgsrv/image?id=',$vHathiTrustId,';seq=')"/>
