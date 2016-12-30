@@ -80,7 +80,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
+        <revisionDesc><change  when="2016-12-06" who="pers_TG">Added automated mark-up of strings wrapped in brackets with <tag>tei:q rend="brackets"</tag> and <att>rend</att> on existing nodes.</change><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
          <change when="2016-02-29" who="#pers_TG" xml:lang="en">Generated a new <gi>front</gi> based on the <gi>sourceDesc</gi> that matches the information found in the masthead of the actual issues.</change>
             <change when="2016-01-12" who="#pers_TG" xml:lang="en">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag xml:lang="en">lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag xml:lang="en">l type="bayt"</tag>, each consisting of two <gi>seg</gi>.Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()".</change>
          <change when="2015-12-17" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
@@ -552,14 +552,14 @@
                   <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_3.d1e1280">١</num> - القسم الأول
                         كلام مؤرخي العرب أو مشاهيرهم:</head>
                     <p xml:lang="ar" xml:id="p_16.d1e1284">أول من ذكر البرجان من جغرافيي العرب هو أول مؤلف عربي صنف في وصف البلدان أعني به
-                        أبا زيد أحمد البلخي صاحب كتاب صور الأقاليم المتوفى ليلة السبت ل<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9">تسع</num> بقين من ذي القعدة سنة <num type="auto-markup" resp="#pers_TG" value="322" xml:lang="ar" xml:id="num_4.d1e1286">٣٢٢</num> هـ ( <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_5.d1e1289">٣</num>
-                        تشرين الثاني <num type="auto-markup" resp="#pers_TG" value="933" xml:lang="ar" xml:id="num_6.d1e1292">٩٣٣</num> م) إذ يقول: أما مملكة الإسلام فإن
-                        شرقيها (في عهد المؤلف) الهند وفارس، وغربيها مملكة الروم وما يتصل بها من الأرمن واللان والبرجان والسرير والخزر والروس
+                        أبا زيد أحمد البلخي صاحب كتاب صور الأقاليم المتوفى ليلة السبت ل<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9">تسع</num> بقين من ذي القعدة سنة <num type="auto-markup" resp="#pers_TG" value="322" xml:lang="ar" xml:id="num_4.d1e1286">٣٢٢</num> هـ <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_5.d1e1289">٣</num>
+                        تشرين الثاني <num type="auto-markup" resp="#pers_TG" value="933" xml:lang="ar" xml:id="num_6.d1e1292">٩٣٣</num> م إذ يقول: أما مملكة الإسلام فإن
+                        شرقيها <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">في عهد المؤلف</tei:q> الهند وفارس، وغربيها مملكة الروم وما يتصل بها من الأرمن واللان والبرجان والسرير والخزر والروس
                         والبلغار والصقالية وطائفة من الترك، وشماليها مملكة الصين وما اتصل بها من بلاد الأتراك ومنها بحر فارس المطلوب من
                         إيراده.</p>
-                    <p xml:lang="ar" xml:id="p_17.d1e1296">وقال ابن خرداذبة: والعمل الثاني (من بلاد الروم) عمل تراقية وحده من المشرق السور
+                    <p xml:lang="ar" xml:id="p_17.d1e1296">وقال ابن خرداذبة: والعمل الثاني <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">من بلاد الروم</tei:q> عمل تراقية وحده من المشرق السور
                         ومن الجنوب عمل مقدرنية ومن الغرب بلاد برجان ومن الشمال بحر الخزر وقد <pb ed="print" n="266" facs="#facs_270" xml:id="pb_3.d1e1298"/>جاء في كتاب المسالك والممالك ذكر البرجان مراراً عديدة وكلها بهذا المعنى.</p>
-                    <p xml:lang="ar" xml:id="p_18.d1e1301">وقال ابن الفقيه في كتاب البلدان: وإليها (أي إلى الري) تقع تجارات أرمينية
+                    <p xml:lang="ar" xml:id="p_18.d1e1301">وقال ابن الفقيه في كتاب البلدان: وإليها <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي إلى الري</tei:q> تقع تجارات أرمينية
                         وأذربيجان وخراسان والخزر وبلاد برجان.</p>
                     <p xml:lang="ar" xml:id="p_19.d1e1304">وأما اليعقوبي فلم يتعرض لذكرهم، وممن ضرب صفحاً عن ذكرهم أيضاً الاصطخري وابن حوقل
                         والمقدسي وقدامة بن جعفر والبكري والبيروني.</p>
@@ -568,42 +568,42 @@
                         المتأخرين أو المعاصرين: هي أرض واسعة ينتهي قصر النهار عند البلغار والروس في الشتاء إلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> ساعات ونصف ساعة <pb ed="shamela" n="n63-p2" corresp="file:../epub/26523/OEBPS/xhtml/P4181.xhtml" xml:id="pb_4.d1e1310"/> قال الجواليقي: ولقد شهدت ذلك عندهم فكان طول النهار عندهم مقدار ما صلي <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربع</num> صلوات كل صلاة في
                         عقيب الأخرى مع الأذان وركعات قلائل الإقامة والتسبيح، وعماراتها متصلة بعمارة الروم، وهم أمم عظيمة ومدينتهم تسمى بلغار
                         وهي مدينة عظيمة يخرج واصفها إلى حد التكذيب.</p>
-                    <p xml:lang="ar" xml:id="p_21.d1e1313">وقال الطبري ( <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_7.d1e1315">١</num> : <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_8.d1e1318">١٨</num> من ولد يوان: الصقالبة وبرجان. (وفي <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_9.d1e1321">١</num> : <num type="auto-markup" resp="#pers_TG" value="299" xml:lang="ar" xml:id="num_10.d1e1324">٢٩٩</num> )
-                        وملك (افريذون ابنه) سلماً الروم والصقالية والبرجان وما في حدود ذلك (وفي <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_11.d1e1327">١</num> : <num type="auto-markup" resp="#pers_TG" value="900" xml:lang="ar" xml:id="num_12.d1e1331">٩٠٠</num> ) وانوشروان غزا
-                        برجان ثم رجع فبنى الباب والأبواب. (وفي <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_13.d1e1334">٢</num> : <num type="auto-markup" resp="#pers_TG" value="1317" xml:lang="ar" xml:id="num_14.d1e1337">١٣١٧</num> ) وفي هذه السنة (أي سنة <num type="auto-markup" resp="#pers_TG" value="98" xml:lang="ar" xml:id="num_15.d1e1340">٩٨</num> ) أغارت برجان على مسلمة بن عبد الملك وهو في قلة من الناس فأمده سليمان بن عبد الملك
-                        بمسعدة أو عمرو بن قيس في جمع فمكرت بهم الصقالية، ثم هزمهم الله بعد أن قتلوا شراحيل بن عبدة. (وفي <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_16.d1e1343">٣</num> : <num type="auto-markup" resp="#pers_TG" value="775" xml:lang="ar" xml:id="num_17.d1e1346">٧٧٥</num> )
-                        وقتل في هذه السنة (سنة <num type="auto-markup" resp="#pers_TG" value="193" xml:lang="ar" xml:id="num_18.d1e1350">١٩٣</num> ) نقفور ملك الروم في حرب
-                        برجان وفي ( <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_19.d1e1353">٣</num> : <num type="auto-markup" resp="#pers_TG" value="1450" xml:lang="ar" xml:id="num_20.d1e1356">١٤٥٠</num> ) وقد كان إذن (ملك الروم في سنة <num type="auto-markup" resp="#pers_TG" value="246" xml:lang="ar" xml:id="num_21.d1e1359">٢٤٦</num> هـ -) لوفود برجان وغيرهم ممن ورد عليه.</p>
+                    <p xml:lang="ar" xml:id="p_21.d1e1313">وقال الطبري <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_7.d1e1315">١</num> : <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_8.d1e1318">١٨</num> من ولد يوان: الصقالبة وبرجان. وفي <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_9.d1e1321">١</num> : <num type="auto-markup" resp="#pers_TG" value="299" xml:lang="ar" xml:id="num_10.d1e1324">٢٩٩</num>
+                        وملك <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">افريذون ابنه</tei:q> سلماً الروم والصقالية والبرجان وما في حدود ذلك وفي <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_11.d1e1327">١</num> : <num type="auto-markup" resp="#pers_TG" value="900" xml:lang="ar" xml:id="num_12.d1e1331">٩٠٠</num> وانوشروان غزا
+                        برجان ثم رجع فبنى الباب والأبواب. وفي <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_13.d1e1334">٢</num> : <num type="auto-markup" resp="#pers_TG" value="1317" xml:lang="ar" xml:id="num_14.d1e1337">١٣١٧</num> ) وفي هذه السنة أي سنة <num type="auto-markup" resp="#pers_TG" value="98" xml:lang="ar" xml:id="num_15.d1e1340">٩٨</num> أغارت برجان على مسلمة بن عبد الملك وهو في قلة من الناس فأمده سليمان بن عبد الملك
+                        بمسعدة أو عمرو بن قيس في جمع فمكرت بهم الصقالية، ثم هزمهم الله بعد أن قتلوا شراحيل بن عبدة. وفي <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_16.d1e1343">٣</num> : <num type="auto-markup" resp="#pers_TG" value="775" xml:lang="ar" xml:id="num_17.d1e1346">٧٧٥</num>
+                        وقتل في هذه السنة سنة <num type="auto-markup" resp="#pers_TG" value="193" xml:lang="ar" xml:id="num_18.d1e1350">١٩٣</num> نقفور ملك الروم في حرب
+                        برجان وفي <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_19.d1e1353">٣</num> : <num type="auto-markup" resp="#pers_TG" value="1450" xml:lang="ar" xml:id="num_20.d1e1356">١٤٥٠</num> ) وقد كان إذن ملك الروم في سنة <num type="auto-markup" resp="#pers_TG" value="246" xml:lang="ar" xml:id="num_21.d1e1359">٢٤٦</num> هـ - لوفود برجان وغيرهم ممن ورد عليه.</p>
                     <p xml:lang="ar" xml:id="p_22.d1e1363">وقال المسعودي في كتاب التنبيه: وحد الإقليم الخامس بحر الشام إلى أقصى أرض الروم
                         مما يلي البحر إلى تراقية وبلاد برجان والصقالية والابر إلى حد أرض يأجوج ومأجوج وقال في موضع آخر من كتابه المذكور: إن
-                        السبب في ذلك (في انتصار الملك قسطنطين على أعدائه) ظهور صليب له نوري في السماء في نومه في حال حربه مع ملك برجان وأنه
+                        السبب في ذلك <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">في انتصار الملك قسطنطين على أعدائه</tei:q> ظهور صليب له نوري في السماء في نومه في حال حربه مع ملك برجان وأنه
                         قيل له: استنصر به على عدوك تنصر عليه.</p>
-                    <p xml:lang="ar" xml:id="p_23.d1e1366">وقال (في ص <num type="auto-markup" resp="#pers_TG" value="141" xml:lang="ar" xml:id="num_22.d1e1368">١٤١</num> ):
-                        وقد دخل كثير منهم (من الأجانب) في وقتنا هذا في <pb ed="print" n="267" facs="#facs_271" xml:id="pb_5.d1e1371"/>جملة
+                    <p xml:lang="ar" xml:id="p_23.d1e1366">وقال في ص <num type="auto-markup" resp="#pers_TG" value="141" xml:lang="ar" xml:id="num_22.d1e1368">١٤١</num>:
+                        وقد دخل كثير منهم <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">من الأجانب</tei:q> في وقتنا هذا في <pb ed="print" n="267" facs="#facs_271" xml:id="pb_5.d1e1371"/>جملة
                         الروم كدخول الأرمن والبرغر وهم نوع من الصقالية والبجناك من الأتراك فشحنوا بهم كثيراً من حصونهم التي تلي الثغور
                         الشامية وجعلوهم ازاء برجان وغيرهم من الأمم المتأبدة بهم والمحيطة بملكهم. . . وقد ذكرنا فيما سلف من كتبنا السبب في
                         كيفية بناء القسطنطينية والتنازع في ذلك، وقول من قال ما وراء الخليج كان من أرض برجان فاحتال قسطنطين على ملك برجان
                         لعلمه بالموضع وحصانته حتى أذن له في بنائها.</p>
-                    <p xml:lang="ar" xml:id="p_24.d1e1374">وقال (في ص <num type="auto-markup" resp="#pers_TG" value="164" xml:lang="ar" xml:id="num_23.d1e1376">١٦٤</num> ) لحق
-                        (يسطنيانس) بملك الخزر مستنجداً به وتزوج هناك فلم ير عندهم ما يحب فصار إلى طرفلا ملك برجان. . . . وقد كان شرط لطرفلا
+                    <p xml:lang="ar" xml:id="p_24.d1e1374">وقال في ص <num type="auto-markup" resp="#pers_TG" value="164" xml:lang="ar" xml:id="num_23.d1e1376">١٦٤</num> لحق
+                        <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">يسطنيانس</tei:q> بملك الخزر مستنجداً به وتزوج هناك فلم ير عندهم ما يحب فصار إلى طرفلا ملك برجان. . . . وقد كان شرط لطرفلا
                         ملك برجان إذا <pb ed="shamela" n="n63-p3" corresp="file:../epub/26523/OEBPS/xhtml/P4182.xhtml" xml:id="pb_6.d1e1379"/> رجع
                         الملك إليه أن يحمل إليه في كل سنة خراجاً وكان يفعل ذلك. . .</p>
-                    <p xml:lang="ar" xml:id="p_25.d1e1382">وقال (في ص <num type="auto-markup" resp="#pers_TG" value="183" xml:lang="ar" xml:id="num_24.d1e1384">١٨٣</num> ) وقد
+                    <p xml:lang="ar" xml:id="p_25.d1e1382">وقال في ص <num type="auto-markup" resp="#pers_TG" value="183" xml:lang="ar" xml:id="num_24.d1e1384">١٨٣</num> وقد
                         ذكر خبر السور المسمى بالرومية مقرون لينحس تفسير ذلك السور الطويل الحاجز بين بلاد برجان وبين البنود ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> التي وراء
                         القسطنطينية</p>
                     <p xml:lang="ar" xml:id="p_26.d1e1389">وقال في ص <num type="auto-markup" resp="#pers_TG" value="184" xml:lang="ar" xml:id="num_25.d1e1391">١٨٤</num> وقرب
                         من هذا الجبل جبل القبق من الأمم كاللان والسرير والخزر وجرزان والابخاز والصنارية وكشك والكاسكية وغيرهم والابر وبرجان
                         والروس والبرغر والافرنجة والصقالبة. .</p>
                     <p xml:lang="ar" xml:id="p_27.d1e1395">وقال في ص <num type="auto-markup" resp="#pers_TG" value="191" xml:lang="ar" xml:id="num_26.d1e1397">١٩١</num> ومن
-                        جاورهم (أي الروم) من الممالك: من برجان والابر والبرغر والصقالبة والخزر وغيرهم. . .</p>
-                    <p xml:lang="ar" xml:id="p_28.d1e1401">وقال (في ص <num type="auto-markup" resp="#pers_TG" value="196" xml:lang="ar" xml:id="num_27.d1e1403">١٩٦</num> ) وقد
+                        جاورهم <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي الروم</tei:q> من الممالك: من برجان والابر والبرغر والصقالبة والخزر وغيرهم. . .</p>
+                    <p xml:lang="ar" xml:id="p_28.d1e1401">وقال في ص <num type="auto-markup" resp="#pers_TG" value="196" xml:lang="ar" xml:id="num_27.d1e1403">١٩٦</num> وقد
                         ذكرنا ما جرى بين الروم وبرجان والبرغر والترك وغيرهم من الوقائع المشهورة والحروب المذكورة. .</p>
-                    <p xml:lang="ar" xml:id="p_29.d1e1407">وقال المسعودي في كتابه الآخر مروج الذهب: ( <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_28.d1e1409">٢</num> : <num type="auto-markup" resp="#pers_TG" value="16" xml:lang="ar" xml:id="num_29.d1e1412">١٦</num> طبعة باريس) وشن
-                        الغارات (أي ملك البرغر يريد البلغار) حولها (أي حول القسطنطينية) إلى بلاد رومية والأندلس وأرض برجان والجلالقة
-                        والافرنجة. . . وقال (في ص <num type="auto-markup" resp="#pers_TG" value="311" xml:lang="ar" xml:id="num_30.d1e1415">٣١١</num> من ذلك الجزء). . وقد كان
-                        له (أي لقسطنطين الملك) في بنائها خبر طريف مع بعض ملوك برجان لخوف دخله من بعض ملوك آل ساسان. . وقال (في ص <num type="auto-markup" resp="#pers_TG" value="314" xml:lang="ar" xml:id="num_31.d1e1418">٣١٤</num> ) وكان السبب في دخول قسطنطين بن هلاني في دين النصرانية
-                        والرغبة فيها أن قسطنطين خرج في بعض حروب برجان أوغيرهم من الأمم فكانت الحرب بينهم سجالاً نحواً من سنة. . . وقال (في
-                        <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_32.d1e1421">٣</num> : <num type="auto-markup" resp="#pers_TG" value="66" xml:lang="ar" xml:id="num_33.d1e1425">٦٦</num> ) الافرنجة والصقالبة والنوكبرد والاشبان واليأجوج والمأجوج <pb ed="print" n="268" facs="#facs_272" xml:id="pb_7.d1e1428"/>والترك والخزر وبرجان واللان والجلالقة. . . وقال (في ص <num type="auto-markup" resp="#pers_TG" value="78" xml:lang="ar" xml:id="num_34.d1e1430">٧٨</num> ) ولربما اجتمع عليهم (على أهل الأندلس) من الأمم من ولد يافث من الجلالقة وبرجان
+                    <p xml:lang="ar" xml:id="p_29.d1e1407">وقال المسعودي في كتابه الآخر مروج الذهب: <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_28.d1e1409">٢</num> : <num type="auto-markup" resp="#pers_TG" value="16" xml:lang="ar" xml:id="num_29.d1e1412">١٦</num> طبعة باريس وشن
+                        الغارات <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي ملك البرغر يريد البلغار</tei:q> حولها <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي حول القسطنطينية</tei:q> إلى بلاد رومية والأندلس وأرض برجان والجلالقة
+                        والافرنجة. . . وقال في ص <num type="auto-markup" resp="#pers_TG" value="311" xml:lang="ar" xml:id="num_30.d1e1415">٣١١</num> من ذلك الجزء. . وقد كان
+                        له <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي لقسطنطين الملك</tei:q> في بنائها خبر طريف مع بعض ملوك برجان لخوف دخله من بعض ملوك آل ساسان. . وقال في ص <num type="auto-markup" resp="#pers_TG" value="314" xml:lang="ar" xml:id="num_31.d1e1418">٣١٤</num> وكان السبب في دخول قسطنطين بن هلاني في دين النصرانية
+                        والرغبة فيها أن قسطنطين خرج في بعض حروب برجان أوغيرهم من الأمم فكانت الحرب بينهم سجالاً نحواً من سنة. . . وقال في
+                        <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_32.d1e1421">٣</num> : <num type="auto-markup" resp="#pers_TG" value="66" xml:lang="ar" xml:id="num_33.d1e1425">٦٦</num> الافرنجة والصقالبة والنوكبرد والاشبان واليأجوج والمأجوج <pb ed="print" n="268" facs="#facs_272" xml:id="pb_7.d1e1428"/>والترك والخزر وبرجان واللان والجلالقة. . . وقال في ص <num type="auto-markup" resp="#pers_TG" value="78" xml:lang="ar" xml:id="num_34.d1e1430">٧٨</num> ولربما اجتمع عليهم <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">على أهل الأندلس</tei:q> من الأمم من ولد يافث من الجلالقة وبرجان
                         وافرنجة وغيرها من الألسن. . . وقال في <num type="auto-markup" resp="#pers_TG" value="3814" xml:lang="ar" xml:id="num_35.d1e1433">٣٨١٤</num> عمل الترك
                         لخافان <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="700">سبع مائة</num> فرسخ في <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="500">خمسمائة</num>. أي طوله. . . وعرضه. . . عمل الخزر واللان <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="700">سبع مائة</num> فرسخ في <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="500">خمسمائة</num> فرسخ، عمل برجان
                         <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> و<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="500">خمسمائة</num> فرسخ في <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="300">ثلثمائة</num> فرسخ، عمل الصقالبة <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="3000">ثلاثة آلاف</num> و<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="500">خمسمائة</num> فرسخ في <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="700">سبعمائة</num> فرسخ، وقال في <num type="auto-markup" resp="#pers_TG" value="14327" xml:lang="ar" xml:id="num_36.d1e1436">١٤٣٢٧</num> وفي هذه السنة وهي سنة <num type="auto-markup" resp="#pers_TG" value="223" xml:lang="ar" xml:id="num_37.d1e1439">٢٢٣</num> خرج توفيل بن ميخائيل ملك الروم في عساكره ومعه ملوك برجان والبرغر والصقالبة وغيرهم
@@ -617,13 +617,13 @@
                     <p xml:lang="ar" xml:id="p_32.d1e1453">وأما ما وراء هذه الأقاليم إلى تمام الموضع المسكون الذي عرفناه فإنه يبتدئ من
                         المشرق من بلاد يأجوج ثم يمر على بلاد التغزغز وأرض الترك ثم على بلاد اللان ثم على الابر ثم على برجان والصقالبة وينتهي
                         إلى بحر المغرب.</p>
-                    <p xml:lang="ar" xml:id="p_33.d1e1456">وقال في موضع آخر: ومن هذه المدينة (أي رومية) تركب البحر فتسير <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أشهر حتى
+                    <p xml:lang="ar" xml:id="p_33.d1e1456">وقال في موضع آخر: ومن هذه المدينة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي رومية</tei:q> تركب البحر فتسير <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أشهر حتى
                         تنتهي إلى بلاد ملك برجان وتسير منها في جبال وعقاب شهراً واحداً حتى تنتهي إلى بلاد فرنجه.</p>
                     <p xml:lang="ar" xml:id="p_34.d1e1459">وقال ياقوت: برجان بالجيم، بلد من نواحي الخزر، قال المنجمون: هو في الإقليم السادس
                         وطوله <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="40">أربعون</num> درجة وعرضه <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمس</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="40">أربعون</num> درجة وكان المسلمون غزوه في أيام عثمان رضه.</p>
-                    <p xml:lang="ar" xml:id="p_35.d1e1462">وقال البلخي في كتاب البدء والتاريخ ( <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_38.d1e1464">١</num> : <num type="auto-markup" resp="#pers_TG" value="64" xml:lang="ar" xml:id="num_39.d1e1467">٦٤</num> ) سمعت قوماً من
-                        برجان يسمونه (أي الله) ادفوا، فسألتهم عن اسم الصنم فقالوا: فغ وقال (في <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_40.d1e1470">٣</num> : <num type="auto-markup" resp="#pers_TG" value="26" xml:lang="ar" xml:id="num_41.d1e1473">٢٦</num> ) فمنهم (من أولاد
-                        يافث) الترك والخزر والصقالبة وبرجان واشبان ويأجوج ومأجوج <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6">ستة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="30">ثلاثون</num> لساناً وقال (في <num type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar" xml:id="num_42.d1e1476">٤</num> : <num type="auto-markup" resp="#pers_TG" value="53" xml:lang="ar" xml:id="num_43.d1e1480">٥٣</num> ) الإقليم السادس:
+                    <p xml:lang="ar" xml:id="p_35.d1e1462">وقال البلخي في كتاب البدء والتاريخ <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_38.d1e1464">١</num> : <num type="auto-markup" resp="#pers_TG" value="64" xml:lang="ar" xml:id="num_39.d1e1467">٦٤</num> سمعت قوماً من
+                        برجان يسمونه <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي الله</tei:q> ادفوا، فسألتهم عن اسم الصنم فقالوا: فغ وقال في <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_40.d1e1470">٣</num> : <num type="auto-markup" resp="#pers_TG" value="26" xml:lang="ar" xml:id="num_41.d1e1473">٢٦</num> ) فمنهم من أولاد
+                        يافث الترك والخزر والصقالبة وبرجان واشبان ويأجوج ومأجوج <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6">ستة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="30">ثلاثون</num> لساناً وقال في <num type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar" xml:id="num_42.d1e1476">٤</num> : <num type="auto-markup" resp="#pers_TG" value="53" xml:lang="ar" xml:id="num_43.d1e1480">٥٣</num> الإقليم السادس:
                         يبتدئ من المشرق فيمر على بلاد <pb ed="print" n="269" facs="#facs_273" xml:id="pb_9.d1e1483"/>يأجوج ومأجوج ثم على
                         بلاد الخزر ثم على وسط بحر جرجان إلى بلاد الروم فيمر على جرزان وهرقلة وقسطنطينية وبلاد برجان إلى بحر المغرب، قال أهل
                         هذا العلم: أما ما وراء هذه الأقاليم إلى تمام الموضع المسكون الذي عرفناه فإنه يبتدئ من المشرق من بلاد يأجوج ومأجوج
@@ -633,21 +633,21 @@
                         الذين يقال لهم برجان وكان لهم شهرة وبأس في قديم الزمان فاستولت عليهم الألمانية وأبادوهم حتى لم يبق منهم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> ولا بقي
                         لهم أثر</p>
                     <p xml:lang="ar" xml:id="p_36.d1e1488">وقال القرماني: برجان بلاد غائصة في جهة الشمال فيها قصر النهار إلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربع</num> ساعات
-                        والليل إلى <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20">عشرين</num> ساعة وبالعكس وأهلها مجوس، وقال عن بلغار: مدينة عظيمة (كذا والمراد هنا قاعدة البلغار) على ساحل
+                        والليل إلى <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20">عشرين</num> ساعة وبالعكس وأهلها مجوس، وقال عن بلغار: مدينة عظيمة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">كذا والمراد هنا قاعدة البلغار</tei:q> على ساحل
                         بحرمانطس مبنية من خشب الصنوبر وسورها من خشب البلوط، وحولها من أمم الترك ما لا يعد ولا يحصى، والبرد عندهم شديد جداً
                         لا يكاد الثلج أن ينقطع عن أرضهم صيفاً وشتاءً.</p>
-                    <p xml:lang="ar" xml:id="p_37.d1e1491">وقال ابن الأثير في ( <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_44.d1e1493">١</num>
-                        : <num type="auto-markup" resp="#pers_TG" value="28" xml:lang="ar" xml:id="num_45.d1e1496">٢٨</num> من طبعة مصر) ومن ولد بوان (والأصح يوان بالمثناة
-                        التحتية) الصقالبة وبرجان والاشبان كانوا في القديم بأرض الروم قبل أن يقع فيها من وقع من ولد العيص بن اسحق وغيرهم،
-                        وقال (في <num type="auto-markup" resp="#pers_TG" value="116" xml:lang="ar" xml:id="num_46.d1e1499">١١٦</num> ) ثم ملك اسطينان (أي أسطنيانس أو يسطنيان)
+                    <p xml:lang="ar" xml:id="p_37.d1e1491">وقال ابن الأثير في <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_44.d1e1493">١</num>
+                        : <num type="auto-markup" resp="#pers_TG" value="28" xml:lang="ar" xml:id="num_45.d1e1496">٢٨</num> من طبعة مصر) ومن ولد بوان والأصح يوان بالمثناة
+                        التحتية الصقالبة وبرجان والاشبان كانوا في القديم بأرض الروم قبل أن يقع فيها من وقع من ولد العيص بن اسحق وغيرهم،
+                        وقال في <num type="auto-markup" resp="#pers_TG" value="116" xml:lang="ar" xml:id="num_46.d1e1499">١١٦</num> ثم ملك اسطينان <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي أسطنيانس أو يسطنيان</tei:q>
                         المعروف بالأخرم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9">تسع</num> سنين أيام عبد الملك ثم خلعه الروم وخرموا أنفه وحمل إلى بعض الجزائر فهرب ولحق بملك الخزر واستنجده
                         فلم ينجده فانتقل إلى ملك برجان، ثم ملك بعده لونطش <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> سنين أيام عبد الملك ثم ترك الملك وترهب، ثم ملك السمين المعروف
                         بالطرسوسي <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="7">سبع</num> سنين فقصده اسطينان ومعه برجان وجرى بينهما حروب كثيرة وظفر به اسطينان وخلعه وعاد إلى ملكه فكان ذلك أيام
                         الوليد بن عبد الملك واستقر اسطينان وكان قد شرط لملك برجان أن يحمل إليه خراجاً كل سنة فعسف الروم وقتل بها خلقاً
-                        كثيراً فاجتمعوا عليه وقتلوه فكان ملكه الثاني سنتين ونصفاً وقال (في ص <num type="auto-markup" resp="#pers_TG" value="117" xml:lang="ar" xml:id="num_47.d1e1502">١١٧</num> ) وجرى بين نقفور وبين برجان حرب سنة <num type="auto-markup" resp="#pers_TG" value="193" xml:lang="ar" xml:id="num_48.d1e1505">١٩٣</num> فقتل فيها وقال (في ص <num type="auto-markup" resp="#pers_TG" value="154" xml:lang="ar" xml:id="num_49.d1e1509">١٥٤</num> ) عن كسرى انوشروان عاد إلى <pb ed="print" n="270" facs="#facs_274" xml:id="pb_11.d1e1512"/>المدائن وغزا
-                        البرجان ثم رجع وأرسل جنده إلى اليمن، ثم قال (في ص <num type="auto-markup" resp="#pers_TG" value="155" xml:lang="ar" xml:id="num_50.d1e1514">١٥٥</num> )
-                        وقوي أمره (أي انوشروان) وغزا فرغانة والبرجان وعاد فبنى مدينة الشابران، وقال (في <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_51.d1e1517">٥</num> : <num type="auto-markup" resp="#pers_TG" value="10" xml:lang="ar" xml:id="num_52.d1e1520">١٠</num> ) وفي هذه السنة (أي
-                        <num type="auto-markup" resp="#pers_TG" value="98" xml:lang="ar" xml:id="num_53.d1e1523">٩٨</num> ) فتحت مدينة الصقالبة وكان برجان قد أغار على مسلمة بن
+                        كثيراً فاجتمعوا عليه وقتلوه فكان ملكه الثاني سنتين ونصفاً وقال في ص <num type="auto-markup" resp="#pers_TG" value="117" xml:lang="ar" xml:id="num_47.d1e1502">١١٧</num> وجرى بين نقفور وبين برجان حرب سنة <num type="auto-markup" resp="#pers_TG" value="193" xml:lang="ar" xml:id="num_48.d1e1505">١٩٣</num> فقتل فيها وقال في ص <num type="auto-markup" resp="#pers_TG" value="154" xml:lang="ar" xml:id="num_49.d1e1509">١٥٤</num> عن كسرى انوشروان عاد إلى <pb ed="print" n="270" facs="#facs_274" xml:id="pb_11.d1e1512"/>المدائن وغزا
+                        البرجان ثم رجع وأرسل جنده إلى اليمن، ثم قال في ص <num type="auto-markup" resp="#pers_TG" value="155" xml:lang="ar" xml:id="num_50.d1e1514">١٥٥</num>
+                        وقوي أمره <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي انوشروان</tei:q> وغزا فرغانة والبرجان وعاد فبنى مدينة الشابران، وقال في <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_51.d1e1517">٥</num> : <num type="auto-markup" resp="#pers_TG" value="10" xml:lang="ar" xml:id="num_52.d1e1520">١٠</num> ) وفي هذه السنة أي
+                        <num type="auto-markup" resp="#pers_TG" value="98" xml:lang="ar" xml:id="num_53.d1e1523">٩٨</num> فتحت مدينة الصقالبة وكان برجان قد أغار على مسلمة بن
                         عبد الملك وهو في قلة فكتب إلى سليمان يستمده فأمده فمكرت بهم الصقالبة ثم انهزموا. <pb ed="shamela" n="n63-p6" corresp="file:../epub/26523/OEBPS/xhtml/P4185.xhtml" xml:id="pb_12.d1e1527"/> وأنت
                         ترى أن ما نقلناه هنا عن ابن الأثير يكاد يكون نص الطبري بعينه، ومثل هذين النصين كلام ابن خلدون فلهذا نضرب صفحاً عن
                         ذكره، وإلى هنا أيضاً انتهى ماجمعناه من كتب أشهر المؤرخين وأهل التخطيط وإن كان ثم غير هؤلاء إلا أنهم يعدون من النقلة
@@ -684,9 +684,9 @@
                         الصقالبة قريبة منهم.</p>
                     <pb ed="print" n="271" facs="#facs_275" xml:id="pb_13.d1e1579"/>
                     <p xml:lang="ar" xml:id="p_45.d1e1582">وقال صاحب الأوقيانوس: برجان على وزن عثمان اسم جنس من الروم وفي كتاب المغرب
-                        للمطرزي (ماذكرناه آنفاً) وكتاب الخريدة لابن الوردي (مانقلناه فويق هذا) ثم قال: وعليه فيؤخذ من هذا الكلام وعن سائر ما
+                        للمطرزي <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">ماذكرناه آنفاً</tei:q> وكتاب الخريدة لابن الوردي <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">مانقلناه فويق هذا</tei:q> ثم قال: وعليه فيؤخذ من هذا الكلام وعن سائر ما
                         ورد في كتب تخطيط البلدان أن برجان وبغدان هما بلاد وجيل معروفان يكونان وراء نهر الطونة، فمن المحتمل إذاً أن تكون كلمة
-                        برجان معربة عن بوجاق (كذا، ويراد ببوجاق البلاد المعروفة باسم بسرابية) بل ولعل الأرجح أن <pb ed="shamela" n="n63-p7" corresp="file:../epub/26523/OEBPS/xhtml/P4186.xhtml" xml:id="pb_14.d1e1584"/> تكون
+                        برجان معربة عن بوجاق <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">كذا، ويراد ببوجاق البلاد المعروفة باسم بسرابية</tei:q> بل ولعل الأرجح أن <pb ed="shamela" n="n63-p7" corresp="file:../epub/26523/OEBPS/xhtml/P4186.xhtml" xml:id="pb_14.d1e1584"/> تكون
                         برجان تعريب بغدان تعريباً.</p>
                     <p xml:lang="ar" xml:id="p_46.d1e1587">ومن الغريب أن القلقشندي الذي وضع كتاباً في الأنساب وذكر أنساب كثير من الأجيال
                         والأمم والشعوب لم يتعرض لذكر البرجان، وممن أغفل التنويه بهم سائر اللغويين من العرب كصاحب الجمهرة وتهذيب اللغة
@@ -702,8 +702,8 @@
                         لرؤيتهم كثيرين من كتاب العرب جمعوا في عبارة واحدة بين البرجان والبلغار وميزوا بين الجيلين تمييزاً بيناً فاستنتجوا أن
                         القومين ليسا بواحد بل هما <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2">اثنان</num> وإن كانا في أغلب الأحايين متحالفين متفقين في الهجوم والدفاع وفي القتال والقراع.</p>
                     <p xml:lang="ar" xml:id="p_49.d1e1602">على أن بعض الافرنج ذهبوا إلى أن المراد بالبرجان في بعض عبارات الكتاب من العرب قوم
-                        يكونون في افرنجة (افرنسة) وهم المعروفون باسم البرجون أو البرغون أي هم المعروفون باللغة الفرنسوية باسم وهم محقون في
-                        ذلك، مثلاً ما قال المسعودي في عبارته (في <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_55.d1e1604">٢</num> : <num type="auto-markup" resp="#pers_TG" value="16" xml:lang="ar" xml:id="num_56.d1e1607">١٦</num> ) وفي عبارته (في <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_57.d1e1610">٣</num> : <num type="auto-markup" resp="#pers_TG" value="78" xml:lang="ar" xml:id="num_58.d1e1613">٧٨</num> ) فلا شك أن المراد
+                        يكونون في افرنجة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">افرنسة</tei:q> وهم المعروفون باسم البرجون أو البرغون أي هم المعروفون باللغة الفرنسوية باسم وهم محقون في
+                        ذلك، مثلاً ما قال المسعودي في عبارته في <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_55.d1e1604">٢</num> : <num type="auto-markup" resp="#pers_TG" value="16" xml:lang="ar" xml:id="num_56.d1e1607">١٦</num> ) وفي عبارته في <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_57.d1e1610">٣</num> : <num type="auto-markup" resp="#pers_TG" value="78" xml:lang="ar" xml:id="num_58.d1e1613">٧٨</num> فلا شك أن المراد
                         بالبرجان <pb ed="print" n="272" facs="#facs_276" xml:id="pb_15.d1e1616"/>هناك البرجون أو البرغون، وهذا التصحيف قريب
                         من البرجان فظن المؤلف الأول أو ناسخ الكتاب أن البرجون والبرجان شيء واحد، والحال: أن الأمر على خلاف ما يظن وإن كان
                         بين اللفظين تناسب في الاشتقاق، ولهذا فقد أصاب الفاضل بربيه دمينار <foreign xml:lang="fr" xml:id="foreign_8.d1e1619">Barbir de maynard</foreign> حينما ذكر هذه العبارة: وبشن الغارات حولها إلى بلاد رومية والأندلس وأرض برجان والجلالقة
@@ -813,9 +813,9 @@
                     <p xml:lang="ar" xml:id="p_69.d1e1838">وكذلك حسم المنازعات في مساحة قطع الأرض أو مقادير السقيا من الأنهار أو الدمن يتوقف
                         على فن الهندسة والمقاييس.</p>
                     <p xml:lang="ar" xml:id="p_70.d1e1841">وهكذا التقاضي في وقف على بلد من بلاد دولة من الدول معينة ارتيب في كون تلك البلد
-                        من حوزتها أو حدودها يتوقف على علم الجغرافيا (تقويم البلدان) فمنه يعلم دخولها في شرط الواقف أو عدم دخولها. <pb ed="shamela" n="n63-p13" corresp="file:../epub/26523/OEBPS/xhtml/P4192.xhtml" xml:id="pb_25.d1e1843"/> وهكذا أفتى من المحققين غير و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> أن لمن له معرفة بعلم هيئة الفلك أن يعمل بحسابه في صوم رمضان
-                        والفطر منه بل أفتى تقي الدين السبكي لما كان قاضي القضاة بدمشق في رسالة سماها (العلم المنشور في إثبات الشهور) إن من
-                        شهد برؤية الهلال في رمضان أو ذي الحجة مثلاً ودل الحساب على أنه لا تمكن رؤيته أن تلك الشهادة ترد (قال) لأنه أقوى من
+                        من حوزتها أو حدودها يتوقف على علم الجغرافيا <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">تقويم البلدان</tei:q> فمنه يعلم دخولها في شرط الواقف أو عدم دخولها. <pb ed="shamela" n="n63-p13" corresp="file:../epub/26523/OEBPS/xhtml/P4192.xhtml" xml:id="pb_25.d1e1843"/> وهكذا أفتى من المحققين غير و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> أن لمن له معرفة بعلم هيئة الفلك أن يعمل بحسابه في صوم رمضان
+                        والفطر منه بل أفتى تقي الدين السبكي لما كان قاضي القضاة بدمشق في رسالة سماها <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">العلم المنشور في إثبات الشهور</tei:q> إن من
+                        شهد برؤية الهلال في رمضان أو ذي الحجة مثلاً ودل الحساب على أنه لا تمكن رؤيته أن تلك الشهادة ترد <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q> لأنه أقوى من
                         الريبة لأنه مستحيل عادة، وبين رحمه الله في هذه الرسالة ما يجب على القاضي من التثبت في ذلك وما ينبغي له من الإلمام
                         بعلم الهيئة والميقات أو تقليد من يثق به في ذلك ليكون على بصيرة مما يقبل من الشهادة في ذلك أو يرد.</p>
                     <p xml:lang="ar" xml:id="p_71.d1e1846">ورسالته هذه من أنفس الرسائل المضنون بها.</p>
@@ -834,7 +834,7 @@
                         ومن بعدهم في هذه الأيمان وتكلموا في بعضها على ذلك فمنهم من قال إذا حنث بها لزمه ما التزمه ومنهم من قال لا يلزمه إلا
                         الطلاق والعتاق ومنهم من قال بل هذا من جنس إيمان أهل الشرك لا يلزم بها شيء ومنهم من قال بل هي من ايمان المسلمين يلزم
                         فيها ما يلزم في سائر ايمان المسلمين واتبع هؤلاء ما نقل في هذا الجنس <pb ed="shamela" n="n63-p14" corresp="file:../epub/26523/OEBPS/xhtml/P4193.xhtml" xml:id="pb_27.d1e1862"/> عن
-                        الصحابة وما دل عليه الكتاب والسنة (قال) كما بسط في موضع آخر.</p>
+                        الصحابة وما دل عليه الكتاب والسنة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q> كما بسط في موضع آخر.</p>
                     <p xml:lang="ar" xml:id="p_74.d1e1865">وبالجملة فأهم مسائل الطلاق الآن مسألة الحلف به وبالحرام، والتعليق عليه، وطلاق
                         السكران، وطلاق الغضبان، وجمع ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> في كلمة دفعة واحدة، والطلاق في الحيض، ويندرج تحت كل صور شتى يرى الواقف على مذاهب
                         السلف فيها أقوالاً وفتاوى عديدة وقد أسلفنا ما اتفق عليه كلام المحققين من وجوب التحري في المسائل المختلف فيها وبذل
@@ -852,27 +852,27 @@
                         الماوردي - من كبار أئمة الشافعية - في كتابه الأحكام السلطانية وعبارته:</p>
                     <p xml:lang="ar" xml:id="p_77.d1e1883">فأما طلب القضاء وخطبة الولاة عليه فإن كان من غير أهل الاجتهاد فيه كان تعرضه لطلبه
                         محظوراً وصار بالطلب مجروحاً.</p>
-                    <p xml:lang="ar" xml:id="p_78.d1e1886">وإن كان من أهله على الصفة التي يجوز معها نظره فله في طلبه <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أحوال (أحدها) أن
+                    <p xml:lang="ar" xml:id="p_78.d1e1886">وإن كان من أهله على الصفة التي يجوز معها نظره فله في طلبه <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أحوال <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أحدها</tei:q> أن
                         يكون القضاء في غير مستحقه إما لنقص علمه وإما لظهور جوره فيخطب القضاء دفعاً لمن لا يستحقه ليكون فيمن هو بالقضاء أحق
                         فهذا سائغ لما تضمنه من دفع منكر ثم ينظر فإن كان أكثر قصده إزالة غير المستحق كان مأجورا وإن كان أكثره اختصاصه بالنظر
                         فيه كان مباحاً.</p>
-                    <p xml:lang="ar" xml:id="p_79.d1e1889">(والحالة الثانية) أن يكون القضاء في مستحقه ومن هو أهله ويريد أن يعزله عنه إما
+                    <p xml:lang="ar" xml:id="p_79.d1e1889"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">والحالة الثانية</tei:q> أن يكون القضاء في مستحقه ومن هو أهله ويريد أن يعزله عنه إما
                         لعداوة بينهما وإما ليجر بالقضاء إلى نفسه نفعاً فهذا الطلب محظور وهو بهذا الطلب مجروح.</p>
-                    <p xml:lang="ar" xml:id="p_80.d1e1893">(والحال الثالثة) أن لا يكون في القضاء ناظر وهو خال من وال عليه فيراعي حاله في <pb ed="shamela" n="n63-p15" corresp="file:../epub/26523/OEBPS/xhtml/P4194.xhtml" xml:id="pb_29.d1e1895"/> طلبه فإن كان لحاجته إلى رزق القضاء المستحق في بيت المال كان طلبه مباحاً وإن كان رغبة في
+                    <p xml:lang="ar" xml:id="p_80.d1e1893"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">والحال الثالثة</tei:q> أن لا يكون في القضاء ناظر وهو خال من وال عليه فيراعي حاله في <pb ed="shamela" n="n63-p15" corresp="file:../epub/26523/OEBPS/xhtml/P4194.xhtml" xml:id="pb_29.d1e1895"/> طلبه فإن كان لحاجته إلى رزق القضاء المستحق في بيت المال كان طلبه مباحاً وإن كان رغبة في
                         إقامة الحق وخوفه أن يتعرض له غير مستحق كان طلبه مستحباً فإن قصد بطلبه المباهاة والمنزلة فقد اختلف في كراهية ذلك مع
                         الاتفاق على جوازه فكرهته طائفة لأن طلب المباهاة والمنزلة في الدنيا مكروه قال الله تعالى: تلك الدار الآخرة نجعلها
                         للذين لا يريدون علواً في الأرض ولا فساداً والعاقبة للمتقين.</p>
                     <p xml:lang="ar" xml:id="p_81.d1e1898">وذهبت طائفة أخرى إلى أن طلبه لذلك غير مكروه لأن طلب المنزلة مما أبيح وقد رغب نبي
                         الله يوسف عليه السلام إلى فرعون في الولاية فقال اجعلني على خزائن الأرض اتي حفيظ عليم فطلب الولاية ووصف نفسه بما
-                        يستحقها به من قوله اني حفيظ عليم وفيه تأويلان (أحدهما) حفيظ لما استودعتني عليم بما وليتني وهذا قول عبد الرحمن بن زيد
-                        (والثاني) أنه حفيظ للحساب عليم بالألسن وهذا قول اسحق بن سفيان وخرج هذا القول عن حد التزكية لنفسه والمدح لها لأنه كان
+                        يستحقها به من قوله اني حفيظ عليم وفيه تأويلان <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أحدهما</tei:q> حفيظ لما استودعتني عليم بما وليتني وهذا قول عبد الرحمن بن زيد
+                        <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">والثاني</tei:q> أنه حفيظ للحساب عليم بالألسن وهذا قول اسحق بن سفيان وخرج هذا القول عن حد التزكية لنفسه والمدح لها لأنه كان
                         لسبب دعا إليه انتهى.</p>
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_10.d1e1902">
                     <head xml:lang="ar" xml:id="head_10.d1e1904">اشتراط علم المولي بأهلية من يوليه لصحة التولية</head>
-                    <p xml:lang="ar" xml:id="p_82.d1e1907">قال الإمام الماوردي: تمام الولاية معتبر بأربعة شروط (أحدها) معرفة المولي للمولى
+                    <p xml:lang="ar" xml:id="p_82.d1e1907">قال الإمام الماوردي: تمام الولاية معتبر بأربعة شروط <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أحدها</tei:q> معرفة المولي للمولى
                         <pb ed="print" n="279" facs="#facs_283" xml:id="pb_30.d1e1909"/>بأنه على الصفة التي يجوز أن يولى معها فإن لم يعلم
-                        أنه على الصفة التي تجوز معها تلك الولاية لم يصح تقليده (والشرط الثاني) معرفة المولي بما عليه المولى من استحقاق تلك
+                        أنه على الصفة التي تجوز معها تلك الولاية لم يصح تقليده <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">والشرط الثاني</tei:q> معرفة المولي بما عليه المولى من استحقاق تلك
                         الولاية بصفاته التي يصير بها مستحقاً لها وأنه قد تقلدها وصار مستحقاً للاستنابة فيها ثم ذكر تتمة الشروط في تولية
                         القضاء مما يدل على اعتبارها فيما هو دون تولية القضاء من الافتاء والتدريس والوعظ والإرشاد والخطابة والإمامة بالأولى
                         ولله در المستوعر الأكبر في قوله:</p>
@@ -905,12 +905,12 @@
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_11.d1e1955">
                     <head xml:lang="ar" xml:id="head_11.d1e1957">حكم الاشتراط في الفتوى أن تكون على مذهب معين</head>
-                    <p xml:lang="ar" xml:id="p_84.d1e1960">يستفاد هذا مما أوضحه الإمام الماوردي في الأحكام السلطانية في القضاء (قال): ويجوز
+                    <p xml:lang="ar" xml:id="p_84.d1e1960">يستفاد هذا مما أوضحه الإمام الماوردي في الأحكام السلطانية في القضاء <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q>: ويجوز
                         لمن اعتقد مذهب الشافعي رحمه الله أن يقلد القضاء من اعتقد مذهب أبي حنيفة لأن للقاضي أن يجتهد برأيه في قضائه ولا يلزمه
                         أن يقلد في النوازل والأحكام من اعتزى إلى مذهبه، فإذا كان شافعياً لم يلزمه المصير في أحكامه إلى أقاويل الشافعي حتى
                         يؤديه اجتهاده إليها، فإن أداه اجتهاده إلى الأخذ بقول أبي حنيفة عمل عليه وأخذ به.</p>
                     <p xml:lang="ar" xml:id="p_85.d1e1963">وقد منع بعض الفقهاء من اعتزى إلى مذهب أن يحكم بغيره لما يتوجه إليه من التهمة
-                        والممايلة في القضايا والأحكام وإذا حكم بمذهب لا يتعداه كا ن أنفى للتهمى وأرضى للخصوم <pb ed="print" n="280" facs="#facs_284" xml:id="pb_32.d1e1965"/>(قال الماوردي) وهذا وإن كانت السياسة تقتضيه فأحكام الشرع لا توجبه لأن
+                        والممايلة في القضايا والأحكام وإذا حكم بمذهب لا يتعداه كا ن أنفى للتهمى وأرضى للخصوم <pb ed="print" n="280" facs="#facs_284" xml:id="pb_32.d1e1965"/><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال الماوردي</tei:q> وهذا وإن كانت السياسة تقتضيه فأحكام الشرع لا توجبه لأن
                         التقليد فيها محظور والاجتهاد فيها مستحق.</p>
                     <p xml:lang="ar" xml:id="p_86.d1e1968">ثم قال: فلو شرط المولي وهو حنفي أو شافعي على من ولاه القضاء أن لا يحكم إلا بمذهب
                         الشافعي أو أبي حنيفة فهذا على ضربين أحدهما أن يشترط ذلك عموماً في جميع الأحكام فهذا شرط باطل سواء كان موافقاً لمذهب
@@ -975,9 +975,9 @@
                         السلطان يرسل إليه في الفتاوى فيكتب: يجوز كذا أو يصح كذا أو ينعقد كذا بشرطه، فأرسل إليه يقول: فأتينا فتاوى منك فيها:
                         يجوز أو ينعقد أو يصح بشرطه نحن لا نعلم شرطه فإما أن تبين شرطه وإما أن لا تكتب ذلك قال وسمعت شيخنا - ابن تيمية -
                         يقول: كل <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> يحسن أن يفتي بهذا الشرط وهذا ليس بعلم ولا يفيد سوى حيرة السائل وتنكده.</p>
-                    <p xml:lang="ar" xml:id="p_99.d1e2036">(وكذلك) قول بعضهم في فتاويه: يرجع في ذلك إلى رأي الحاكم: قال فياسبحان الله: لو
+                    <p xml:lang="ar" xml:id="p_99.d1e2036"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">وكذلك</tei:q> قول بعضهم في فتاويه: يرجع في ذلك إلى رأي الحاكم: قال فياسبحان الله: لو
                         كان الحاكم شريحا وأشباهه لما كان مرد أحكام الله ورسوله إلى رأيه فضلاً عن حكام زماننا والله المستعان.</p>
-                    <p xml:lang="ar" xml:id="p_100.d1e2039">وسئل بعضهم عن مسألة فقال: فيها خلاف: فقيل: كيف يعمل المفتي (فقال) يختار له
+                    <p xml:lang="ar" xml:id="p_100.d1e2039">وسئل بعضهم عن مسألة فقال: فيها خلاف: فقيل: كيف يعمل المفتي <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">فقال</tei:q> يختار له
                         القاضي <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> المذهبين.</p>
                     <pb ed="print" n="283" facs="#facs_287" xml:id="pb_38.d1e2042"/>
                     <p xml:lang="ar" xml:id="p_101.d1e2044">
@@ -1097,13 +1097,13 @@
                         الفاسد وهل يصلح العطار ما أفسد الدهر وقال رضي الله عنه في إحياء علوم الدين في الباب الرابع من أبواب العلم في مباحث
                         المناظرة وتلبيس المناظرين ما مثاله: اعلم أن هؤلاء قد يستدرجون الناس إلى ذلك بأن غرضنا من المناظرات المباحثة عن الحق
                         ليتضح فإن الحق مطلوب والتعاون على النظر في العلم وتوارد الخواطر <pb ed="print" n="288" facs="#facs_292" xml:id="pb_47.d1e2165"/>مفيد ومؤثر هكذا كانت عادة الصحابة رضي الله عنهم في مشاوراتهم ثم <pb ed="shamela" n="n63-p24" corresp="file:../epub/26523/OEBPS/xhtml/P4203.xhtml" xml:id="pb_48.d1e2167"/> قال
-                        ويطلعك على هذا التلبيس ما أذكره وهو أن التعاون على طلب الحق من الدين ولكن له شروط وعلامات ثمان (إلى أن قال) الثالث
+                        ويطلعك على هذا التلبيس ما أذكره وهو أن التعاون على طلب الحق من الدين ولكن له شروط وعلامات ثمان <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">إلى أن قال</tei:q> الثالث
                         أن يكون المناظر مجتهداً يفتي برأيه لا بمذهب الشافعي وأبي حنيفة وغيرهما حتى إذا ظهر له الحق من مذهب أبي حنيفة ترك ما
                         يوافق رأي الشافعي وأفتى بما ظهر له كما كان يفعله الصحابة رضي الله عنهم والأئمة فأما من ليس له رتبة الاجتهاد وإنما
                         يفتي فيما يسأل عنه نافلا عن مذهب صاحبه فلو ظهر له ضعف مذهبه لم يتركه فأي فائدة له في المناظرة ومذهبه معلوم وما يشكل
                         عليه يقول لعل عند صاحب مذهبي جواباً عن هذا فإنى ل<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6">ست</num> مستقلاً بالاجتهاد.</p>
                     <p xml:lang="ar" xml:id="p_112.d1e2170">وقال رضي الله عنه أيضاً في كتاب آداب تلاوة القرآن في أسباب موانع الفهم ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num>
-                        ما مثاله في الثاني (ثانيها) أن يكون مقلداً لمذهب سمعه بالتقليد وجمد عليه وثبت في نفسه التعصب له بمجرد الاتباع
+                        ما مثاله في الثاني <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">ثانيها</tei:q> أن يكون مقلداً لمذهب سمعه بالتقليد وجمد عليه وثبت في نفسه التعصب له بمجرد الاتباع
                         للمسموع من غير وصول إليه ببصيرة ومشاهدة فهذا شخص قيده معتقده عن أن يجاوزه فلا يمكنه أن يخطر بباله غير معتقده فصار
                         نظره موقوفا على مسموعه، فإن لمع برق على بعد وبدا له معنى من المعاني التي تباين مسموعه حمل عليه شيطان التقليد حملة
                         وقال كيف يخطر هذا ببالك وهو خلاف معتقد آبائك فيرى أن ذلك من غرور الشيطان فيتباعد منه ويحترز عن مثله ولمثل هذا قالت
@@ -1138,8 +1138,8 @@
                     <p xml:lang="ar" xml:id="p_120.d1e2216">قال حجة الإسلام الغزالي في فيصل التفرقة، إذا رأيت الفقيه الذي بضاعته مجرد الفقه
                         يخوض في التكفير والتضليل فاعرض عنه ولا تشغل به قلبك ولسانك فإن التحدي بالعلوم غريزة في الطبع لا يصبر عنه الجهال
                         ولأجله كثر الخلاف بين الناس ولو ينكث من الأيدي من لا يدرى لقل الخلاف بين الخلق.</p>
-                    <p xml:lang="ar" xml:id="p_121.d1e2219">(وقال) رضي الله عنه أيضاً، واعلم أنه لا تكفير في الفروع أصلاً إلا في مسألة واحدة
-                        وهي أن ينكر أصلاً دينياً علم من الرسول صلى الله عليه وسلم بالتواتر (ثم قال) ولو أنكر ما ثبت بأخبار الآحاد فلا يلزمه
+                    <p xml:lang="ar" xml:id="p_121.d1e2219"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">وقال</tei:q> رضي الله عنه أيضاً، واعلم أنه لا تكفير في الفروع أصلاً إلا في مسألة واحدة
+                        وهي أن ينكر أصلاً دينياً علم من الرسول صلى الله عليه وسلم بالتواتر <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">ثم قال</tei:q> ولو أنكر ما ثبت بأخبار الآحاد فلا يلزمه
                         به الكفر ولو أنكر ما ثبت بالإجماع فهذا فيه نظر لأن معرفة كون الإجماع حجة أصلاً فصار كون الإجماع مختلفاً فيه.</p>
                     <p xml:lang="ar" xml:id="p_122.d1e2223">وقال أيضاً ولا يلزم كفر المأولين ما داموا يلازمون قانون التأويل وكيف يلزم الكفر
                         بالتأويل وما من فريق من أهل الإسلام إلا وهو مضطر إليه.</p>
@@ -1177,21 +1177,21 @@
                         قطعاً إذ لا يعلم أن الباقي موافقون ولا يكفي عدم علم خلافهم فإن الإجماع هو الوفاق لا عدم علم الخلاف انتهى.</p>
                     <p xml:lang="ar" xml:id="p_128.d1e2260">وقال حجة الإسلام الغزالي في كتابه فيصل التفرقة بين الإسلام والزندقة وأما ما
                         يستند إلى الإجماع فدرك ذلك من أغمض الأشياء إذ شرطه أن يجتمع أهل الحل والعقد في صعيد و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> على أمر و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> اتفاقاً بلفظ
-                        صريح ثم يستمروا عليه مرة عند قوم وإلى انقراض العصر عند قوم ومن هذا علم حد الإجماع (وقال أيضاً) وإنما يعرف ذلك -
+                        صريح ثم يستمروا عليه مرة عند قوم وإلى انقراض العصر عند قوم ومن هذا علم حد الإجماع <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">وقال أيضاً</tei:q> وإنما يعرف ذلك -
                         مواضع الإجماع - من مطالعة الكتب المصنفة في الاختلاف والإجماع للسلف ثم لا يحصل العلم في ذلك بمطالعة تصنيف ولا تصنيفين
-                        إذ لا يحصل تواتر الإجماع به (قال) وقد صنف أبو بكر الفارسي رحمه الله كتاباً في مسائل الإجماع وأنكر عليه كثير منه
-                        وخولف في بعض تلك المسائل (قال) فإذن من خالف الإجماع ولم يثبت عنده بعد فهو جاهل مخطئ وليس بمكذب فلا يمكن تكفيره
+                        إذ لا يحصل تواتر الإجماع به <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q> وقد صنف أبو بكر الفارسي رحمه الله كتاباً في مسائل الإجماع وأنكر عليه كثير منه
+                        وخولف في بعض تلك المسائل <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q> فإذن من خالف الإجماع ولم يثبت عنده بعد فهو جاهل مخطئ وليس بمكذب فلا يمكن تكفيره
                         والاستقلال بمعرفة التحقيق في هذا ليس بيسير انتهى كلام حجة الإسلام نفعنا المولى بعلومه.</p>
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_21.d1e2265">
                     <head xml:lang="ar" xml:id="head_21.d1e2267">المفتي والعالم بإزاء ما ينبزه بالألقاب</head>
                     <p xml:lang="ar" xml:id="p_129.d1e2270">إن العالم لما أخذ الله عليه الصدع بالحق والأمر بالمعروف والنهي عن المنكر وأن لا
                         يخاف في الله لومة لائم كان معرضاً من أعداء أنفسهم وعبيد أهوائهم للشنان والنبز وبالألقاب فتراهم أن وجدوه يميل للنظر
-                        في الأدلة على الأحكام والوقوف على مآخذ المذاهب <pb ed="print" n="292" facs="#facs_296" xml:id="pb_55.d1e2272"/>والأقوال وتحري الأقوم والأصلح بدون تعصب لإمام ولا تحزب لآخر نبزوه بالاجتهاد وسموه (مجتهداً) تهكماً مع أنه بذلك لم
-                        يقم إلا بواجبه، وإن أبصروا ميله لعلوم الحكمة والرياضيات وتشويقه لاقتطاف ثمارها سموه (طبيعياً) وإن رأوا حثه على البذل
-                        والإنفاق في سبيل الله ودعواه الموسرين للعطف على البؤساء لقبوه (اشتراكياً) وإن سمعوه <pb ed="shamela" n="n63-p28" corresp="file:../epub/26523/OEBPS/xhtml/P4207.xhtml" xml:id="pb_56.d1e2274"/> يتكلم
+                        في الأدلة على الأحكام والوقوف على مآخذ المذاهب <pb ed="print" n="292" facs="#facs_296" xml:id="pb_55.d1e2272"/>والأقوال وتحري الأقوم والأصلح بدون تعصب لإمام ولا تحزب لآخر نبزوه بالاجتهاد وسموه <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">مجتهداً</tei:q> تهكماً مع أنه بذلك لم
+                        يقم إلا بواجبه، وإن أبصروا ميله لعلوم الحكمة والرياضيات وتشويقه لاقتطاف ثمارها سموه <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">طبيعياً</tei:q> وإن رأوا حثه على البذل
+                        والإنفاق في سبيل الله ودعواه الموسرين للعطف على البؤساء لقبوه <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">اشتراكياً</tei:q> وإن سمعوه <pb ed="shamela" n="n63-p28" corresp="file:../epub/26523/OEBPS/xhtml/P4207.xhtml" xml:id="pb_56.d1e2274"/> يتكلم
                         في الزيارة المشروعة وينهى عما أحدث فيها أو يتكلم على أنواع الشرك المقررة في السنة أو يزجر عن الغلو في الصالحين دعوه
-                        (وهابياً)<note type="footnote" n="1" xml:id="note_9.d1e2276" xml:lang="ar"> 
+                        <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">وهابياً</tei:q><note type="footnote" n="1" xml:id="note_9.d1e2276" xml:lang="ar"> 
                      <gap resp="#org_MS" xml:id="gap_9.d1e2278"/> 
                   </note> إلى غير ذلك من
                         أفانين أقوالهم ونبزهم بالألقاب لكل من لا يمالئهم على ميولهم ولا يسايرهم على أهوائهم، ولهم في كل عصر تلقيب جديد ونبز
@@ -1234,16 +1234,16 @@
                         خاصة والقصدان التلفيق الذي يبحث عنه المأخرون <pb ed="print" n="294" facs="#facs_298" xml:id="pb_59.d1e2313"/>ينبغي
                         للمفتي إذا استفتي عن مسألة منه أن ينظر إلى مأخذها من الكتاب أو السنة أو مدركها المعقول منها وإما تسرعه إلى القول
                         بالتلفيق بطلاناً أو قبولاً فعدول عن مهيع السلف على أن ما يسمونه بعد تلفيقاً بقطع النظر عما ذكرنا في شأنه ربما رجع
-                        إلى نوع الرخص التي يحب الله أن تؤتى وللشيخ مرعي الحنبلي - <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> فقهاء الحنابلة المشاهير - رسالة في جواز التلفيق <pb ed="shamela" n="n63-p30" corresp="file:../epub/26523/OEBPS/xhtml/P4209.xhtml" xml:id="pb_60.d1e2315"/> للعوام وهي رسالة نفيسة قال: لأن العلماء نصوا على أن العامة ليس لهم مذهب معين (قال) وقد قال
-                        غير و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> لا يلزم العامي أن يتمذهب بمذهب معين كما لم يلزم في عصر أوائل الأمة (قال) والذي أذهب إليه واختاره القول
-                        بجواز التقليد في التلفيق لا بقصد تتبع ذلك بل من حيث وقع ذلك اتفاقاً خصوصاً من العوام الذين لا يسعهم غير ذلك (إلى أن
-                        قال) ولا يسع الناس غير هذا ويؤيده أنه في عصر الصحابة والتابعين رضي الله تعالى عنهم مع كثرة مذاهبهم وتباينهم لم ينقل
+                        إلى نوع الرخص التي يحب الله أن تؤتى وللشيخ مرعي الحنبلي - <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> فقهاء الحنابلة المشاهير - رسالة في جواز التلفيق <pb ed="shamela" n="n63-p30" corresp="file:../epub/26523/OEBPS/xhtml/P4209.xhtml" xml:id="pb_60.d1e2315"/> للعوام وهي رسالة نفيسة قال: لأن العلماء نصوا على أن العامة ليس لهم مذهب معين <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q> وقد قال
+                        غير و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> لا يلزم العامي أن يتمذهب بمذهب معين كما لم يلزم في عصر أوائل الأمة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q> والذي أذهب إليه واختاره القول
+                        بجواز التقليد في التلفيق لا بقصد تتبع ذلك بل من حيث وقع ذلك اتفاقاً خصوصاً من العوام الذين لا يسعهم غير ذلك إلى أن
+                        قال ولا يسع الناس غير هذا ويؤيده أنه في عصر الصحابة والتابعين رضي الله تعالى عنهم مع كثرة مذاهبهم وتباينهم لم ينقل
                         عن <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> منهم أنه قال لمن استفتاه الواجب عليك أن تراعي أحكام مذهب من قلدته لئلا تلفق في عبادتك بين مذهبين فأكثر بل كل
                         من سئل منهم عن مسألة أفتى السائل بما يراه مجيزاً له العمل من غير فحص ولا تفصيل ولو كان ذلك لازماً لما أهملوه خصوصاً
                         مع كثرة تباين أقوالهم انتهى.</p>
                     <p xml:lang="ar" xml:id="p_137.d1e2318">وقال العلامة الدسوقي - من فقهاء المالكية في مصر - في حواشيه على شرح خليل في بحث
                         الفتوى من خطبة الكتاب ما مثاله وفي كتاب الشبرخيتي امتناع التلفيق والذي سمعناه من شيخنا نقلاً عن شيخه الصغير وغيره أن
-                        الصحيح جوازه وهو فسحة (قال الدسوقي) وبالجملة ففي التلفيق في العبادة الواحدة من مذهبين طريقتان المنع وهو طريقة
+                        الصحيح جوازه وهو فسحة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال الدسوقي</tei:q> وبالجملة ففي التلفيق في العبادة الواحدة من مذهبين طريقتان المنع وهو طريقة
                         المصاروة والجواز وهو طريقة المغاربة ورجحت انتهى.</p>
                     <p xml:lang="ar" xml:id="p_138.d1e2321">وقال ابن الهمام في فتح القدير في كتاب أدب القاضي: المقلد له أن يقلد أي مجتهد شاء
                         ثم قال: وأنا لا أدري ما يمنع هذا أي تتبع الرخص وأخذ العامي في كل مسألة بقول مجتهد أخف عليه من النقل أو العقل، وكون
@@ -1283,7 +1283,7 @@
                </p>
                     <p xml:lang="ar" xml:id="p_144.d1e2371">وينبغي أن يكون بصيراً بمكر الناس وخداعهم حذراً مما يصورونه في سؤالاتهم لئلا
                         يوقعوه في المكروه.</p>
-                    <p xml:lang="ar" xml:id="p_145.d1e2375">ويحرم تساهل مفتٍ وتقليد معروف به (قال الشيخ): لا يجوز استفتاء إلا من يفتي بعلم
+                    <p xml:lang="ar" xml:id="p_145.d1e2375">ويحرم تساهل مفتٍ وتقليد معروف به <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال الشيخ</tei:q>: لا يجوز استفتاء إلا من يفتي بعلم
                         أو عدل:</p>
                     <pb ed="print" facs="#facs_300" n="296" xml:id="pb_63.d1e2378"/>
                     <p xml:lang="ar" xml:id="p_146.d1e2380">ويلزم المفتي تكرير النظر عند تكرار الواقعة وإن حدث ما لا قول فيه تكلم فيه حاكم
@@ -1297,7 +1297,7 @@
                         يسألون إلا عما ينفعهم.</p>
                     <p xml:lang="ar" xml:id="p_150.d1e2395">وللمفتي قبول هدية لكن لا ليفتيه بما يريده به غيره وإلا حرم قبولها.</p>
                     <p xml:lang="ar" xml:id="p_151.d1e2398">وللمفتي رد الفتيا إن خاف غائلتها أو كان في البلد مني قوم مقامه وإلا لم يجز له
-                        ردها لتعينها عليه (والتعليم كذلك).</p>
+                        ردها لتعينها عليه <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">والتعليم كذلك</tei:q>.</p>
                     <p xml:lang="ar" xml:id="p_152.d1e2401">ومن قوي عنده مذهب غير إمامه لظهور الدليل مع أفتى به وأعلم السائل.</p>
                     <p xml:lang="ar" xml:id="p_153.d1e2404">ويجوز للمفتي العدول عن جواب المسؤل عنه إلى ما هو أنفع للسائل.</p>
                     <p xml:lang="ar" xml:id="p_154.d1e2407">وللمفتي أن يدله على عوض ما منعه عنه وأن ينبهه على ما يجب الاحتراز عنه لأن ذلك من
@@ -1309,7 +1309,7 @@
                         والجواب صحيح وبه أقول.</p>
                     <p xml:lang="ar" xml:id="p_158.d1e2420">وإذا مثل المفتي عن شرط واقف لم يفت بإلزم العمل به حتى يعلم هل الشرط معمول به في
                         الشرع أو من الشروط التي لا تحل مثل أن يشرط أن يصلي الصلوات في التربة المدفون بها الواقف ويدع المسجد أو يشعل بها
-                        قنديلاً أو سرجاً لأن ذلك محرم كما تقدم (لصاحب الإقناع) في الجنائز.<note type="footnote" n="1" xml:id="note_13.d1e2422" xml:lang="ar"> 
+                        قنديلاً أو سرجاً لأن ذلك محرم كما تقدم <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">لصاحب الإقناع</tei:q> في الجنائز.<note type="footnote" n="1" xml:id="note_13.d1e2422" xml:lang="ar"> 
                      <gap resp="#org_MS" xml:id="gap_13.d1e2424"/> 
                   </note>
                </p>
@@ -1318,7 +1318,7 @@
                         سئل المفتي هل له الأكل في رمضان بعد طلوع الفجر فلا بد أن يقول: يجوز بعد الفجر الأول لا الثاني. وأرسل الإمام أبو
                         حنيفة إلى أبي يوسف يسأله عمن دفع ثوباً إلى قصار فقصره وجحده هل له أجره إن عاد وسلمه إلى ربه وقال أبو يوسف نعم أو لا
                         أخطأ ففطن أبو يوسف وقال إن قصره قبل جحوده فله الأجرة لأنه قصره لربه أو قصره بعد جحوده لا أجرة له لأنه قصره لنفسه.
-                        (وسأل) أبو الطيب الطبري قوماً من أصحابه عن بيع رطل <pb ed="shamela" n="n63-p33" corresp="file:../epub/26523/OEBPS/xhtml/P4212.xhtml" xml:id="pb_66.d1e2431"/> تمر
+                        <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">وسأل</tei:q> أبو الطيب الطبري قوماً من أصحابه عن بيع رطل <pb ed="shamela" n="n63-p33" corresp="file:../epub/26523/OEBPS/xhtml/P4212.xhtml" xml:id="pb_66.d1e2431"/> تمر
                         برطل تمر فقالوا يجوز فخطأهم فقالوا لا فخطأهم فقال: إن تساويا كيلاً جاز. فهذا يوضح خطأهم المطلق في كل ما يحتمل
                         التفصيل.</p>
                     <p xml:lang="ar" xml:id="p_160.d1e2434">ولا يجوز للمفتي ولا لغيره تتبع الحيل المحرمة والمكروهة ولا تتبع الرخص لمن أراد
@@ -1370,7 +1370,7 @@
                         عنه حياة تبكي تعاسة وشقاء.</p>
                     <p xml:lang="ar" xml:id="p_168.d1e2506">وضاق به العيش في باريس فحثته النفس بالهجرة إلى أميركا وكان على وشك أن يؤمها لولا
                         صديق ثنى عزمه عن المهاجرة بجملة أوردها في عرض حديث تجاذبا أطرافه عن الفكر العملي في العالم الجديد فقال له صديقه ان
-                        لا كرنج (رياضي فرنساوي شهير) لو ذهب إلى أميركا لم يجد عملاً يقوم بأوده سوى مسح الأرضين. فعدل كونت عن السفر وأقام في
+                        لا كرنج <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">رياضي فرنساوي شهير</tei:q> لو ذهب إلى أميركا لم يجد عملاً يقوم بأوده سوى مسح الأرضين. فعدل كونت عن السفر وأقام في
                         باريس يعالج الحياة المرة ويتبلغ بثمانين ليرة يتقاضاها راتباً سنوياً من <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">إحدى</num> المدارس التي انتدبه لتعليم الرياضيات حتى
                         سعى له أصدقاؤه بوظيفة تدريس في دار المسيو كازيميريه المشهور فدخلها ووجد هناك أسباب الراحة والهناء غير أن المعيشة لم
                         ترقه لحنينه إلى الحرية التي أضاعها فلم يستقر به المقام أكثر من <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أسابيع ودع بعدها مضيفيه وعاد إلى حاجته السابقة
@@ -1407,7 +1407,7 @@
                     <p xml:lang="ar" xml:id="p_175.d1e2542">نشوء الأفكار السامية في هذه البيئة الرديئة يحرك في النفوس مواضع الدهشة والإعجاب
                         ويحملها على احترام الفيلسوف الذي كان يقوم على تنشئتها والخطوب المتوالية تفسد نظام حياته وكان الفشل حليفه في كل
                         أعماله فأخفق في إيجاد تلامذة يتلقون أفكاره وآراءه ولم يجبه سوى شخص أضجرته الوحدة فودع أستاذه غير آسف.</p>
-                    <p xml:lang="ar" xml:id="p_176.d1e2545">وفي هذه الأثناء أخذت أفكار الفيلسوف بالتكامل وشرع بنشر مقالات في جريدة <title level="j" xml:lang="ar">المنتج</title> (لوبرودكتور) كان يتقاضى عنها بعض الدريهمات ولما آيس من بث أفكاره بواسطة تلاميذه عمد إلى إلقاء محاضرات وأعلن عن المحاضرة الأولى سنة <num type="auto-markup" resp="#pers_TG" value="1826" xml:lang="ar" xml:id="num_84.d1e2547">١٨٢٦</num> راجياً أن يصيب بذلك شهرة وأن يفوز بنفع مادي يستعين به على حاجته وفقره وشجعه <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> أصدقائه على ذلك بقوله: إن كثيرين يبحثون في آرائك وأفكارك غير ذاكريك بشيءٍ فاعلن أنك أنت صاحبها فعمل فيلسوفنا بنصيحته وسمع المحاضرة الأولى رجال من جلة علماء فرنسة ونخبة آدابها.</p>
+                    <p xml:lang="ar" xml:id="p_176.d1e2545">وفي هذه الأثناء أخذت أفكار الفيلسوف بالتكامل وشرع بنشر مقالات في جريدة <title level="j" xml:lang="ar">المنتج</title> <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">لوبرودكتور</tei:q> كان يتقاضى عنها بعض الدريهمات ولما آيس من بث أفكاره بواسطة تلاميذه عمد إلى إلقاء محاضرات وأعلن عن المحاضرة الأولى سنة <num type="auto-markup" resp="#pers_TG" value="1826" xml:lang="ar" xml:id="num_84.d1e2547">١٨٢٦</num> راجياً أن يصيب بذلك شهرة وأن يفوز بنفع مادي يستعين به على حاجته وفقره وشجعه <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> أصدقائه على ذلك بقوله: إن كثيرين يبحثون في آرائك وأفكارك غير ذاكريك بشيءٍ فاعلن أنك أنت صاحبها فعمل فيلسوفنا بنصيحته وسمع المحاضرة الأولى رجال من جلة علماء فرنسة ونخبة آدابها.</p>
                     <p xml:lang="ar" xml:id="p_177.d1e2552">وما كاد طالع السعادة يبسم لكونت ويتحدث الناس باسمه وفضله حتى داهمته الكوارث فمني
                         بنزيف دماغي عقيب المحاضرة الثالثة لأن ثورة أفكاره انعقدت بتأثره لشقائه العائلي فأصيب بمرض عضال عاناه سنة فلما أخذ
                         بالنقه من مرضه فكر فيما آلت إليه حاله وأبصر لتعاسة آخذة بسبله فيئس من الحياة وعول على الانتحار غرقاً في نهر السين ثم
@@ -1415,7 +1415,7 @@
                     <p xml:lang="ar" xml:id="p_178.d1e2555">وفي هذا الدور التعس عقد لكونت عقد ديني أيضاً غير أن ذلك لم يمحِ شيئاً من اختلال
                         بيته وكان المرض قد أثر فيه تأثيراً شديداً فظهرت عليه إمارات الجنون فقام الفلاسفة <pb ed="print" n="302" facs="#facs_306" xml:id="pb_75.d1e2557"/>من معارضي كونت يقبحون طريقته ويتخذون هذه الحادثة حجة على سخف رأيه وفساد
                         تعليمه ويقولون ليس من العقل في شيءٍ أن يتبع الإنسان مذهب مجنون وهذا تحامل مجرد يقصد منه تضييع تأثيره فقد أصيب نيوتن
-                        قبله بمرض دماغي فلم ينقص ذلك شيئاً من حرمته والإعجاب بكتابه المسمى (برنيب) الذي وضعه عقيب ذلك المرض. <pb ed="shamela" n="n63-p38" corresp="file:../epub/26523/OEBPS/xhtml/P4217.xhtml" xml:id="pb_76.d1e2559"/> وبعد أن استجم كونت قواه عاد سنة <num type="auto-markup" resp="#pers_TG" value="1828" xml:lang="ar" xml:id="num_85.d1e2561">١٨٢٨</num> إلى إلقاء المحاضرات ونشر المجلد الأول في دروس الفلسفة الموجبة سنة <num type="auto-markup" resp="#pers_TG" value="1830" xml:lang="ar" xml:id="num_86.d1e2564">١٨٣٠</num> بعد تعب كثير وعمل طويل بدأ سنة <num type="auto-markup" resp="#pers_TG" value="1826" xml:lang="ar" xml:id="num_87.d1e2567">١٨٢٦</num> ولم يكن عمله في المجلدات ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> التي تلته أقل عناء فانه لم يتمكن من نشر المجلد
+                        قبله بمرض دماغي فلم ينقص ذلك شيئاً من حرمته والإعجاب بكتابه المسمى <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">برنيب</tei:q> الذي وضعه عقيب ذلك المرض. <pb ed="shamela" n="n63-p38" corresp="file:../epub/26523/OEBPS/xhtml/P4217.xhtml" xml:id="pb_76.d1e2559"/> وبعد أن استجم كونت قواه عاد سنة <num type="auto-markup" resp="#pers_TG" value="1828" xml:lang="ar" xml:id="num_85.d1e2561">١٨٢٨</num> إلى إلقاء المحاضرات ونشر المجلد الأول في دروس الفلسفة الموجبة سنة <num type="auto-markup" resp="#pers_TG" value="1830" xml:lang="ar" xml:id="num_86.d1e2564">١٨٣٠</num> بعد تعب كثير وعمل طويل بدأ سنة <num type="auto-markup" resp="#pers_TG" value="1826" xml:lang="ar" xml:id="num_87.d1e2567">١٨٢٦</num> ولم يكن عمله في المجلدات ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> التي تلته أقل عناء فانه لم يتمكن من نشر المجلد
                         السادس إلى سنة <num type="auto-markup" resp="#pers_TG" value="1842" xml:lang="ar" xml:id="num_88.d1e2571">١٨٤٢</num> .</p>
                     <p xml:lang="ar" xml:id="p_179.d1e2575">كانت ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2">اثنتا</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> سنة التي قضاها الفيلسوف في التأليف سني خير وبركه علمه ذاق في
                         خلالها السعادة المادية لأنه دعي في سنة <num type="auto-markup" resp="#pers_TG" value="1838" xml:lang="ar" xml:id="num_89.d1e2577">١٨٣٨</num> إلى امتحان
@@ -1431,7 +1431,7 @@
                         يعترضه من الموانع في هذه السنة حدثت ثورة في باريس أظهر فيها كونت عطفه على المجتمع فقد كان يفضل السجن على الدخول في
                         الفرق الوطنية التي ألفت يومئذٍ ومع أنه لم يدع الناس لحمل السلاح على الملكية فانه لم يقسم لها يمين الإخلاص.</p>
                     <p xml:lang="ar" xml:id="p_182.d1e2593">ولم يكن كونت يتأثر من مشاهدة الروايات مع أنه كان كثيراً ما ينتاب الملعب
-                        فالمفجعات (تراجيدي) في نظره ظواهر مصنعة ليس فيها من الحقيقة إلا ظل لطيف <pb ed="print" n="303" facs="#facs_307" xml:id="pb_77.d1e2595"/>فقل اكتراثه بها وما سواها القصص المضحكة (كوميدي).</p>
+                        فالمفجعات <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">تراجيدي</tei:q> في نظره ظواهر مصنعة ليس فيها من الحقيقة إلا ظل لطيف <pb ed="print" n="303" facs="#facs_307" xml:id="pb_77.d1e2595"/>فقل اكتراثه بها وما سواها القصص المضحكة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">كوميدي</tei:q>.</p>
                     <p xml:lang="ar" xml:id="p_183.d1e2599">وقد كتب <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> تلامذته عن أحواله وصفاته الشخصية ما يأتي:</p>
                     <p xml:lang="ar" xml:id="p_184.d1e2602">دقت ساعة لوكسنبورغ الثامنة وكان صدى صوتها لا يزال يرن في الآذان حين فتح باب <pb ed="shamela" n="n63-p39" corresp="file:../epub/26523/OEBPS/xhtml/P4218.xhtml" xml:id="pb_78.d1e2604"/> الغرفة ودخل رجل قصير القامة ممتلئ الجسم نظيف الثياب ملتح ممعن في قبض شواربه حتى لم يبق لها
                         ظل وكان يكتسي الأثواب السوداء ويتأنق في لبسه فكلما رأيته تخاله مدعواً وليمة وكانت عقدة رقبته كأن المكواة مرت عليها
@@ -1506,7 +1506,7 @@
                         كونت لم يدرك جميع آماله في إنشاء هذه الجمعية فقد أدرك بعضها باجتماع تلامذة الفيلسوف ووضعهم مذهباً فلسفياً جديداً كما
                         يهوى ويختار.</p>
                     <p xml:lang="ar" xml:id="p_199.d1e2687">وكان كونت سنة <num type="auto-markup" resp="#pers_TG" value="49" xml:lang="ar" xml:id="num_100.d1e2689">٤٩</num> و
-                        <num type="auto-markup" resp="#pers_TG" value="50" xml:lang="ar" xml:id="num_101.d1e2692">٥٠</num> و <num type="auto-markup" resp="#pers_TG" value="51" xml:lang="ar" xml:id="num_102.d1e2695">٥١</num> يلقي في القصر الملكي (باله رويال) في باريس محاضرات متتالية يحضرها عامة الناس
+                        <num type="auto-markup" resp="#pers_TG" value="50" xml:lang="ar" xml:id="num_101.d1e2692">٥٠</num> و <num type="auto-markup" resp="#pers_TG" value="51" xml:lang="ar" xml:id="num_102.d1e2695">٥١</num> يلقي في القصر الملكي <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">باله رويال</tei:q> في باريس محاضرات متتالية يحضرها عامة الناس
                         وخاصتهم فيبحث في فلسفته ومعتقداته ودعاويه وقد ختم محاضرته الأخيرة بقوله:</p>
                     <p xml:lang="ar" xml:id="p_200.d1e2699">يا خدمة البشرية والفلسفة الحقيقية يجب أن تتولوا زعامة العالم لأن ذلك حقكم الصريح
                         وأقصى أماني الإنسانية تأليف حكومة أخلاقية مادية فكرية فإن الحكومات التي قامت على دعامات الكثلكة والبروتستانية سقطت
@@ -1628,17 +1628,17 @@
                         وارتباطها المنطقي فقسم العلوم إلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6">ستة</num> فروع كبرى تنضوي تحتها فنون مختلفة وإليك هي:</p>
                     <list xml:lang="ar" xml:id="list_2.d1e2847">
                         <item xml:lang="ar" xml:id="item_8.d1e2849">
-                     <label xml:id="label_1.d1e2850" xml:lang="ar">( <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_105.d1e2852">١</num> )</label> - الرياضيات (<foreign xml:lang="fr" xml:id="foreign_27.d1e2856">mathématiques</foreign>)</item>
+                     <label xml:id="label_1.d1e2850" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_105.d1e2852" rend="brackets">١</num></label> - الرياضيات <foreign xml:lang="fr" xml:id="foreign_27.d1e2856" rend="brackets">mathématiques</foreign></item>
                         <item xml:lang="ar" xml:id="item_9.d1e2860">
-                     <label xml:id="label_2.d1e2861" xml:lang="ar">( <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_106.d1e2863">٢</num> )</label> - الهيأة (الفلك) (<foreign xml:lang="fr" xml:id="foreign_28.d1e2867">Astronomie</foreign>)</item>
+                     <label xml:id="label_2.d1e2861" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_106.d1e2863" rend="brackets">٢</num></label> - الهيأة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">الفلك</tei:q> <foreign xml:lang="fr" xml:id="foreign_28.d1e2867" rend="brackets">Astronomie</foreign></item>
                         <item xml:lang="ar" xml:id="item_10.d1e2871">
-                     <label xml:id="label_3.d1e2872" xml:lang="ar">( <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_107.d1e2874">٣</num> )</label> - الفلسفة الطبيعية - (<foreign xml:lang="fr" xml:id="foreign_29.d1e2878">Physique</foreign>)</item>
+                     <label xml:id="label_3.d1e2872" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_107.d1e2874" rend="brackets">٣</num></label> - الفلسفة الطبيعية - <foreign xml:lang="fr" xml:id="foreign_29.d1e2878" rend="brackets">Physique</foreign></item>
                         <item xml:lang="ar" xml:id="item_11.d1e2882">
-                     <label xml:id="label_4.d1e2883" xml:lang="ar">( <num type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar" xml:id="num_108.d1e2885">٤</num> )</label> - الكيمياء (<foreign xml:lang="fr" xml:id="foreign_30.d1e2889">Chimie</foreign>)</item>
+                     <label xml:id="label_4.d1e2883" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar" xml:id="num_108.d1e2885" rend="brackets">٤</num></label> - الكيمياء <foreign xml:lang="fr" xml:id="foreign_30.d1e2889" rend="brackets">Chimie</foreign></item>
                         <item xml:lang="ar" xml:id="item_12.d1e2893">
-                     <label xml:id="label_5.d1e2894" xml:lang="ar">( <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_109.d1e2896">٥</num> )</label> - الفلسفة العضوية (<foreign xml:lang="fr" xml:id="foreign_31.d1e2900">Physique organique</foreign>)</item>
+                     <label xml:id="label_5.d1e2894" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_109.d1e2896" rend="brackets">٥</num></label> - الفلسفة العضوية <foreign xml:lang="fr" xml:id="foreign_31.d1e2900" rend="brackets">Physique organique</foreign></item>
                         <item xml:lang="ar" xml:id="item_13.d1e2905">
-                     <label xml:id="label_6.d1e2906" xml:lang="ar">( <num type="auto-markup" resp="#pers_TG" value="6" xml:lang="ar" xml:id="num_110.d1e2908">٦</num> )</label> - الفلسفة الاجتماعية (<foreign xml:lang="fr" xml:id="foreign_32.d1e2912">Physique sociale</foreign>)</item>
+                     <label xml:id="label_6.d1e2906" xml:lang="ar"><num type="auto-markup" resp="#pers_TG" value="6" xml:lang="ar" xml:id="num_110.d1e2908" rend="brackets">٦</num></label> - الفلسفة الاجتماعية <foreign xml:lang="fr" xml:id="foreign_32.d1e2912" rend="brackets">Physique sociale</foreign></item>
                     </list>
                     <p xml:lang="ar" xml:id="p_229.d1e2917">وقد قدم كونت العلوم الرياضية بالذكر لأنها أقدم العلوم الموجودة وأكملها وهي <pb ed="print" n="312" facs="#facs_316" xml:id="pb_95.d1e2919"/>أول ما دخل في الفلسفة الموجبة وقد راعى كونت في ترتيب هذه
                         الفروع تاريخ ثبوتها ومما لا ريب فيه أن الرياضيات بدأت مثبتة وما زالت ترتقي من أقدم عهدها إلى اليوم وتهلتها الهيأة
@@ -1654,7 +1654,7 @@
                         لأنه وجد الأولى غير كافية لتأسيس فلسفة حقيقية تامة حتى قال: إن ما بذله المفكرون من المساعي في العصور الماضية لإيجاد
                         فلسفة جديدة تحل محل الفلسفة الموضوعة ذهب أدراج الرياح لأن الذين حاولوا ذلك أرادوا أن يتخذوا الرياضيات ركناً وينشئوا
                         مذهبهم باختلاف طفيف أو كبير وإذا أمكن اقتباس حقيقة من الرياضيات فلا يمكن التوسع في ذلك الفكر وجعله عاماً فإن الحوادث
-                        الرياضية قد ضبطت قوانينها (الهندسة والميكانيك) هي في غاية السذاجة فلا يمكن تطبيق شرائعها على المركبات وكثيرون من
+                        الرياضية قد ضبطت قوانينها <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">الهندسة والميكانيك</tei:q> هي في غاية السذاجة فلا يمكن تطبيق شرائعها على المركبات وكثيرون من
                         الرياضيين في عصرنا الحاضر يقولون أن غرائب الحوادث الفلكية والحوادث الاجتماعية الناتجة عن إرادة البشر وقدرتهم غير
                         خاضعة لنواميس معينة.</p>
                     <p xml:lang="ar" xml:id="p_232.d1e2930">في الفلسفة الحكمية والكيمومية لا نجد خوارق مما يحملنا على القول أن جميع الحوادث
@@ -1675,7 +1675,7 @@
                         القوانين العامة على ما لا يؤيده شاهد من التاريخ وجب علينا أن نحكم بفساد التاريخ واختلاله لأن صفحاته الأولية مهزعة
                         وكلما أعرق الناس في الحضارة ازدادوا دقة في تدوين الحوادث وإذا كان التاريخ يدلنا على مجرى الرقي البشري في غابر العصور
                         فهو لا يوجب اتخاذ ذلك المجرى سنناً ولا يضع قانوناً فمتى شئنا معرفة القوانين تعين علينا أن نعود إلى علم النفس
-                        (البسيكولوجيا).</p>
+                        <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">البسيكولوجيا</tei:q>.</p>
                     <p xml:lang="ar" xml:id="p_236.d1e2947">إن قوانين الطبيعة البشرية العامة هي في جملة موسوعات علم الاجتماع غير أنها تختلف
                         في استعمالها عن القوانين الطبيعية فإن التجارب الخصوصية في هذه تؤدي عن طريق القياس إلى استخراج القوانين العامة وفي
                         العلم الاجتماعي نبلغ الناموس العام من التجربة الخاصة ثم نستخرج عن طريق القياس نتيجة تؤيد صحته.</p>
@@ -1699,10 +1699,10 @@
                             <l type="bayt" xml:lang="ar" xml:id="l_1.d1e3246"> <seg xml:lang="ar" xml:id="seg_17.d1e3248">وليس على عبد تقي نقيصة </seg> <seg xml:lang="ar" xml:id="seg_18.d1e3251"> إذا صحح التقوى وإن حاك أو حجم</seg> </l>
                         </lg>
                     </quote>
-                    <bibl xml:lang="ar">(<author xml:lang="ar"><persName xml:lang="ar">أبو العتاهية</persName></author>)</bibl>
+                    <bibl xml:lang="ar"><author xml:lang="ar" rend="brackets"><persName xml:lang="ar">أبو العتاهية</persName></author></bibl>
                 </cit>
-                <p xml:lang="ar" xml:id="p_239.d1e2994">يتوهم بعض الكتاب أن العرب أهملوا الصناعات يل استنكفوا منها لأنهم لم يقولوا (آل
-                    الحائك) خشية تحقير المضاف والحقيقة هي أن قدماء العرب لم تنصرف أفكارهم إلى الحياكة في زمان بداوتهم لأنهم لبسوا جلود
+                <p xml:lang="ar" xml:id="p_239.d1e2994">يتوهم بعض الكتاب أن العرب أهملوا الصناعات يل استنكفوا منها لأنهم لم يقولوا آل
+                    الحائك خشية تحقير المضاف والحقيقة هي أن قدماء العرب لم تنصرف أفكارهم إلى الحياكة في زمان بداوتهم لأنهم لبسوا جلود
                     الحيوانات وابتاعوا منسوجات غيرهم فلم يتقنوا الحياكة على أنهم عرفوها بعد ذلك واشتهروا بكثير منها ونقل الإفرنج عنهم ما
                     تفننوا به مثل الموركو والكوردوفان لنوعين من الجلود التي دبغها العرب الأول في مراكش والثاني في قرطبة. والدامسكو للشيخ
                     الدمشقي المشجر. والدامسكين للترصيع المعدني الدمشقي والموصلين لنسيج عرفت به الموصل وصناعة الشفار والسيوف التي أخذوها من
@@ -1797,8 +1797,8 @@
                     وأمكنتهم وأزمنتهم صناعات كثيرة جمعت الآن منهم ما وصلت إليه يد البحث تذكرة لقوم يعقلون:</p>
                 <p xml:lang="ar" xml:id="p_249.d1e3142">كان أبو بكر الصديق وعثمان بن عفان وطلحة بن الزبير وعبد الرحمن بن عوف بزازين وعمر بن
                     الخطاب دلالاً فتاجراً. والوليد بن المغيرة وأبو العاص أخو أبي جهل حدادين. والنضر بن الحارث عوداً يضرب بالعود. وللعاص بن
-                    وائل السهمي بيطاراً يعالج الخيل. وابنه عمرو بن العاص جزاراً ومثله الإمام أبو حنيفة وقيل كانا خزازين يبيعان الخز (وهو
-                    التباس يقع في التصحيف). والزبير بن العوام خياطاً ومثله عثمان بن طلحة الذي دفع له النبي مفتاح الكعبة وهكذا قيس بن مخرمة.
+                    وائل السهمي بيطاراً يعالج الخيل. وابنه عمرو بن العاص جزاراً ومثله الإمام أبو حنيفة وقيل كانا خزازين يبيعان الخز وهو
+                    التباس يقع في التصحيف. والزبير بن العوام خياطاً ومثله عثمان بن طلحة الذي دفع له النبي مفتاح الكعبة وهكذا قيس بن مخرمة.
                     وكان مالك بن دينار وراقاً والمهلب بن أبي صفرة بستانياً. وقتيبة بن مسلم الذي فتح بلاد العجم إلى ما وراء النهر جمالاً.
                     وعقبة بن <pb ed="shamela" n="n63-p53" corresp="file:../epub/26523/OEBPS/xhtml/P4232.xhtml" xml:id="pb_105.d1e3144"/> معيط
                     خماراً وسعد بن أبي وقاص بارياً للنبال. وأبو سفيان ابن حرب يبيع الزيت والأدم. وعبد الله بن جدعان نخاساً يبيع الجواري.
@@ -1806,11 +1806,11 @@
                 <p xml:lang="ar" xml:id="p_250.d1e3147">وكان سفيان بن عيينة معلماً ومثله الضحاك بن مزاحم وعطاء ابن أبي رباح والكميت الشاعر
                     والحجاج بن يوسف الثقفي الشهير وعبد الحميد بن يحيى إمام المترسلين وأبو عبيد الله القاسم بم سلام والكسائي مؤدب الأمين
                     والمأمون وكثير غيرهم ممن مارسوا التدريس والتهذيب وكانت هذه الصناعة تسمى عندهم صناعة الأشراف. وكان أبو يوسف الفقيه قصاراً
-                    (يبيض الثياب) وأبو العتاهية الزاهد يبيع الفخار في الكوفة فسمي الجرار. وأبو تمام الشاعر كان سقاءً وقيل خادم حائك.
+                    <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">يبيض الثياب</tei:q> وأبو العتاهية الزاهد يبيع الفخار في الكوفة فسمي الجرار. وأبو تمام الشاعر كان سقاءً وقيل خادم حائك.
                     والمتنبي ابن سقَّاء في الكوفة. والعكبري في أول أمره منجماً ثم صار نحوياً. وحماد عجرد الشاعر باري نبال. وأبو إسحاق
                     إبراهيم الحصري كان يعمل الحصر أو يبيعها وأبو إسحق إبراهيم بن محمد الزجاج النحوي كان يخرط الزجاج وأبو الحسن السري الرفاء
                     الشاعر كان يرفو ويطرز وأبو بكر عبد الله القفال المروزي الفقيه يعمل الأقفال. وأبو الحسن الماوردي الفقيه كان يبيع ماء
-                    الورد. وأبو الحسن علي بن هلال كان أبوه بواباً فسمي بابن البواب. وأبو القاسم الزاهي الشاعر كان قطاناً (يبيع القطن). وأحمد
+                    الورد. وأبو الحسن علي بن هلال كان أبوه بواباً فسمي بابن البواب. وأبو القاسم الزاهي الشاعر كان قطاناً <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">يبيع القطن</tei:q>. وأحمد
                     بن محمد الطوسي الغزالي وأخوه الإمام الغزالي الشهير كانا منسوبين إلى عمل الغزل على طريقة النسبة عند الخوارزميين إذ يقولون
                     القصاري والعطاري في القصار والعطار. <pb ed="print" n="317" facs="#facs_321" xml:id="pb_106.d1e3149"/>وأبو بكر أزهر بن
                     سعد السمان الباهلي البصري كان يبيع السمن وأبو غالب تمام التياني اللغوي القرطبي كان يبيع التين. وأبو القاسم الجنيد لقب
@@ -1819,7 +1819,7 @@
                     وابو مغيث الحسين بن منصور الحلاج الزاهد حلج القطن فنسب إليه. ومؤيد الدين الطغرائي نسب إلى كتابة الطغراء. وأبو عمرة حمزة
                     بن حبيب الزيات باع الزيت ومثله كثيرون لقبوا بلقبه مثل محمد بن زيات وزير المعتصم وغيره. وأبو عمرو خليفة بن الخياط العصفري
                     نسب إلى الخياطة والصبغ بالعصفر. وأبو المعالي سعد بن علي <pb ed="shamela" n="n63-p54" corresp="file:../epub/26523/OEBPS/xhtml/P4233.xhtml" xml:id="pb_107.d1e3151"/> المعروف
-                    بالحظيري (بالظاء المشالة) الوراق لقب بصناعته دلال الكتب ورشيد الدولة فضل الله الهمذاني طبيب خرمندة التتري كان في عمره
+                    بالحظيري <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">بالظاء المشالة</tei:q> الوراق لقب بصناعته دلال الكتب ورشيد الدولة فضل الله الهمذاني طبيب خرمندة التتري كان في عمره
                     عطاراً فصار يدبر ممالك التتر. وأبو منصور عبد الملك الثعالبي نسب إلى خياطة جلود الثعالب وعملها فراءً. وأبو قاسم عثمان
                     الانماطي الفقيه كان يبيع الانماط وهي البسط التي تفرش. وأبو عمرو عثمان بن الحاجب كان والده حاجباً للأمير عز الدين موسك
                     الصلاحي. وأبو الحسن علي بن عبد الله السمسماني اللغوي نسب إلى السمسم. وأبو الحسن علي بن الحسن القاضي الملقب بالخلعي كان
@@ -1886,12 +1886,12 @@
                 <p xml:lang="ar" xml:id="p_253.d1e3189">ومنهم من تدل أسماؤهم على أنهم من أرباب الصناعات وهم لم يتعاطوها مثل أبي سلمة <pb ed="shamela" n="n63-p57" corresp="file:../epub/26523/OEBPS/xhtml/P4236.xhtml" xml:id="pb_113.d1e3191"/> حفص ابن سليمان الخلال الهمداني فانه لم يكن خلالاً ولكنه كان يجلس إلى محل للخلالين قرب داره
                     بالكوفة فلقب بالخلال. ومثل أبي القاسم عبد الرحمن بن إسحق الزجاجي النحوي البغدادي الذي لم يشتغل بالزجاج ولكنه صحب أبا
                     إسحق إبراهيم بن السري الزجاجي فنسب إليه. وأبو سعيد الصدفي لم ينسب إلى صناعة الصدف بل إلى الصدف بن سهل وهي قبيلة كبيرة
-                    حميرية هبطت مصر. وكثير من العلماء لقبوا بالعسكري ولم يكونوا عساكر ولكنهم نسبوا إلى (سر من رأى) الملقبة بالعسكر حيث نشأوا
+                    حميرية هبطت مصر. وكثير من العلماء لقبوا بالعسكري ولم يكونوا عساكر ولكنهم نسبوا إلى <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">سر من رأى</tei:q> الملقبة بالعسكر حيث نشأوا
                     لأن المعتصم لما بناها انتقل إليها بعسكره فقيل لها العسكر ومنهم أبو الحسن العسكري من أهل القرن الثاني للهجرة. ومنهم من
                     سموا باسم عسكر مكرم من كور الأهواز مثل أبي القاسم محمد العسكري وغيره. وأبو الحسن الكسائي لم ينسب إلى عمل الكساء بل لأنه
                     دخل مرة على حمزة بن حبيب الزيات وهو ملتف بكساء وقيل بل أحرم بكساء فنسب إليه. وأبو زيد محمد القاشاني المشهور ولكنه نسب
                     إلى مسقط رأسه فاشان في بلاد فارس. وكمال الدين الفراوي نسب إلى فراوة في خوارزم لا إلى الفراء ومن النكت باسمه أنه قيل عنه
-                    (الفراوي <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> راوي). وأبو بكر الآجري الفقيه لم ينسب إلى صناعة الآجر (القرميد) ولكن إلى قرية آجر من قرى بغداد. وأبو بشر
+                    الفراوي <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> راوي. وأبو بكر الآجري الفقيه لم ينسب إلى صناعة الآجر <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">القرميد</tei:q> ولكن إلى قرية آجر من قرى بغداد. وأبو بشر
                     محمد الرازي الدولابي لم يصنع الدولاب ولكن نسب إلى الدولاب وهي قرية من الري وصناعته كانت الوراقة فلقب بالوراق وأبو بكر
                     محمد الصولي الشطرنجي توهم بعضهم أنه وضع الشطرنج أو صنعه والصحيح أنه اشتهر باللعب فيه. والفراء النحوي اللغوي الكوفي كان
                     يفري الكلام ولم يشتغل بالفراء فعرف بهذا اللقب وأبو عمرو بن دراج القسطلي نسب إلى قسطلة في الأندلس لا إلى عمل القساطل
@@ -1955,7 +1955,7 @@
                         <seg xml:lang="ar" xml:id="seg_52.d1e3571"> يا أعين الناس قفي وانظري</seg>
                     </l>
                </lg>
-                    <p xml:lang="ar" xml:id="p_258.d1e3270">فقال الأول (رجالك) مكان (رجالكن) وقال الثاني (قفي وانظري) مكان (قفن وانظرن). <pb ed="shamela" n="n63-p60" corresp="file:../epub/26523/OEBPS/xhtml/P4239.xhtml" xml:id="pb_118.d1e3272"/> 
+                    <p xml:lang="ar" xml:id="p_258.d1e3270">فقال الأول <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">رجالك</tei:q> مكان <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">رجالكن</tei:q> وقال الثاني <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قفي وانظري</tei:q> مكان <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قفن وانظرن</tei:q>. <pb ed="shamela" n="n63-p60" corresp="file:../epub/26523/OEBPS/xhtml/P4239.xhtml" xml:id="pb_118.d1e3272"/> 
                </p>
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_32.d1e3277">
@@ -1974,7 +1974,7 @@
                         الإشارة للخبر. فإن كان المرجع مؤنثاً والخبر مذكراً أجازوا الإتيان بضمير المذكر. وكذا إذا كان المرجع مذكراً والخبر
                         مؤنثاً مثال الأول قول التبريزي في شرح الحماسة: فائدة إذن هو أخرج البيت مخرج الجواب ومثال الثاني ما جاء في كامل
                         المبرد من قوله: إذا صب لبن حليب على حامض فهي المرخة وهذا فاش في كلام الفصحاء وقد جاء في سورة الأنعام فلما رأى الشمس
-                        بازغة قال هذا ربي مكان هذه ربي. قال صاحب الكشاف فإن قلت ما وجه التذكير في قوله (هذا ربي) والإشارة للشمس قلت جعل
+                        بازغة قال هذا ربي مكان هذه ربي. قال صاحب الكشاف فإن قلت ما وجه التذكير في قوله <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">هذا ربي</tei:q> والإشارة للشمس قلت جعل
                         المبتدأ مثل الخبر لكونهما عبارة عن شيء و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num>. وقال صاحب أنوار التنزيل ذكر اسم الإشارة لتذكير الخبر وصيانة للرب عن
                         التأنيث.</p>
                 </div>
@@ -1999,8 +1999,8 @@
                         <seg xml:lang="ar" xml:id="seg_56.d1e3639"> أم العلاء ونادها لو تسمع</seg>
                     </l>
                </lg>
-                    <p xml:lang="ar" xml:id="p_264.d1e3331">ويروى فحيها هل تسمع والفرق بين (لو) هنا وبين (هل) أن (لو) فائدته الشرط هنا
-                        والكلام به كلام من غلب القنوط عليه من إدراكها تحية من زارها و (هل) من حيث كان للاستفهام يصير الكلام به كأنه كلام راج
+                    <p xml:lang="ar" xml:id="p_264.d1e3331">ويروى فحيها هل تسمع والفرق بين <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">لو</tei:q> هنا وبين <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">هل</tei:q> أن <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">لو</tei:q> فائدته الشرط هنا
+                        والكلام به كلام من غلب القنوط عليه من إدراكها تحية من زارها و <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">هل</tei:q> من حيث كان للاستفهام يصير الكلام به كأنه كلام راج
                         أو طامع في سماعا ويكون المعنى حيها وانظر هل تسمع.</p>
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_35.d1e3335">
@@ -2017,7 +2017,7 @@
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_37.d1e3354">
                     <head xml:lang="ar" xml:id="head_37.d1e3356">الدقيقة السابعة</head>
-                    <p xml:lang="ar" xml:id="p_267.d1e3359">(فضلاً) مصدر يتوسط بين الأدنى والأعلى للتنبيه بنفي الأدنى واستبعاده عن <pb ed="print" n="324" facs="#facs_328" xml:id="pb_121.d1e3361"/>الوقوع على نفي الأعلى واستحالته فيقع بعد نفي إما صريح
+                    <p xml:lang="ar" xml:id="p_267.d1e3359"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">فضلاً</tei:q> مصدر يتوسط بين الأدنى والأعلى للتنبيه بنفي الأدنى واستبعاده عن <pb ed="print" n="324" facs="#facs_328" xml:id="pb_121.d1e3361"/>الوقوع على نفي الأعلى واستحالته فيقع بعد نفي إما صريح
                         كقولك لا يملك فلان الدراهم فضلاً عن الدينار وإما ضمير نحو وتقاصر هممهم عن أدنى عدد هذا العلم فضلاً أن تترقى إلى
                         الكلام المؤسس على علمي المعاني والبيان. وأكثر الكتبة المعاصرين ذاهلون عن هذا الحكم فيستعملون فضلاً في الإيجاب كقولك
                         زيد بارع في صيد البر فضلا عن براعته في صيد البحر وهو مخالف للقاعدة المذكورة مغاير لمنهج البلغاء.</p>
@@ -2026,7 +2026,7 @@
                     <head xml:lang="ar" xml:id="head_38.d1e3367">الدقيقة الثامنة</head>
                     <p xml:lang="ar" xml:id="p_268.d1e3370"> 
                   <pb ed="shamela" n="n63-p62" corresp="file:../epub/26523/OEBPS/xhtml/P4241.xhtml" xml:id="pb_122.d1e3372"/> قد
-                        فشا في كتب علماء الصرف أن (يدع ويذر) قد اميت ماضيهما حتى صار ذلك معلوماً لصبيان المكاتب ولم أعثر في قديم الكلام على
+                        فشا في كتب علماء الصرف أن <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">يدع ويذر</tei:q> قد اميت ماضيهما حتى صار ذلك معلوماً لصبيان المكاتب ولم أعثر في قديم الكلام على
                         ما يخالف ذلك إلا في بيت من قصيدة عينية لسويد بن أبي كاهل اليشكري وهو:</p>
                     <lg xml:id="lg_1.d1e3688" xml:lang="ar">
                   <l type="bayt" xml:lang="ar" xml:id="l_1.d1e3690">
@@ -2039,7 +2039,7 @@
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_39.d1e3388">
                     <head xml:lang="ar" xml:id="head_39.d1e3390">الدقيقة التاسعة</head>
-                    <p xml:lang="ar" xml:id="p_270.d1e3393">لم يذكر النحاة شيئاً في إعراب (حاش الله) وهي في موضع النصب على المصدرية. وإنما
+                    <p xml:lang="ar" xml:id="p_270.d1e3393">لم يذكر النحاة شيئاً في إعراب <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">حاش الله</tei:q> وهي في موضع النصب على المصدرية. وإنما
                         بقيت على بنائها كبقاء عن على بنائها في نحو جلس عن يمينه. ذكر ذلك الزمخشري في تفسير سورة يوسف.</p>
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_40.d1e3397">
@@ -2073,7 +2073,7 @@
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_44.d1e3450">
                     <head xml:lang="ar" xml:id="head_44.d1e3452">الدقيقة الرابعة عشرة</head>
-                    <p xml:lang="ar" xml:id="p_276.d1e3455">إن (أحداً) لا يستعمل إلا مسبوقاً بالنفي ما لم يضف نحو قام أحد ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> أو يقع
+                    <p xml:lang="ar" xml:id="p_276.d1e3455">إن <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أحداً</tei:q> لا يستعمل إلا مسبوقاً بالنفي ما لم يضف نحو قام أحد ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> أو يقع
                         نعتاً لله نحو هو الله ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> أو يصاحب أسماء العدد كقولك عندي <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20">عشرون</num> رجلاً هذا ما صرح به في كتبهم ولقد رأيت
                         البلغاء يستعملونه قبل النفي كقول الزمخشري وعلمه أن أحداً غيره لا يقوم مقامه فيؤخذ من ذلك أن الشرط مصاحبه النفي سواء
                         تقدم أم تأخر خلافاً لما يفهمه أكثر الأدباء من وجوب الوقوع بعد النفي.</p>
@@ -2129,7 +2129,7 @@
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_50.d1e3546">
                     <head xml:lang="ar" xml:id="head_50.d1e3548">الدقيقة العشرون</head>
-                    <p xml:lang="ar" xml:id="p_284.d1e3551">إذا كان المتكلم في فن ثم شرع في فن آخر من الكلام يصدر الكلام الجديد بقوله (اعلم)
+                    <p xml:lang="ar" xml:id="p_284.d1e3551">إذا كان المتكلم في فن ثم شرع في فن آخر من الكلام يصدر الكلام الجديد بقوله <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">اعلم</tei:q>
                         تنبيهاً على الانتقال - ذكر ذلك الزمخشري في كشافه.</p>
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_51.d1e3555">
@@ -2155,13 +2155,13 @@
                 <div type="section" xml:lang="ar" xml:id="div_53.d1e3592">
                     <head xml:lang="ar" xml:id="head_53.d1e3594">الدقيقة الثالثة والعشرون</head>
                     <p xml:lang="ar" xml:id="p_289.d1e3597">قد رأيت من الأدباء من ينكر استعمال صار بمعنى حصل وهذا خطأ جلبه نقص العلم فهي
-                        تأتي بمعنى حصل ومن تتبع كتب اللغة يرها واردة بهذا المعنى في عدة مواضع من ذلك ما جاء في مادة (وق ع) ونصه وقع في ارض
+                        تأتي بمعنى حصل ومن تتبع كتب اللغة يرها واردة بهذا المعنى في عدة مواضع من ذلك ما جاء في مادة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">وق ع</tei:q> ونصه وقع في ارض
                         فلاة صار فيها.</p>
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_54.d1e3601">
                     <head xml:lang="ar" xml:id="head_54.d1e3603">الدقيقة الرابعة والعشرون</head>
                     <p xml:lang="ar" xml:id="p_290.d1e3606">إن أكثر الأدباء يرون قول العامة بقي فلان بفرد يد خطأ وصوابه بيدٍ واحدةٍ والحال
-                        أنه عربي فصيح فقد جاء في أخبار دعبل في كتاب الأغاني فحلف أن لا يبيعها (أي الحلة) أو يعطوه بعضاً ليكون في كفنه فأعطوه
+                        أنه عربي فصيح فقد جاء في أخبار دعبل في كتاب الأغاني فحلف أن لا يبيعها <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي الحلة</tei:q> أو يعطوه بعضاً ليكون في كفنه فأعطوه
                         فردكم أي كماً واحداً وقد ورد هذا في غير الأغاني من كتب البلغاء.</p>
                 </div>
                 <div type="section" xml:lang="ar" xml:id="div_55.d1e3611">

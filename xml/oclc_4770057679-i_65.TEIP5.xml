@@ -84,7 +84,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
+        <revisionDesc><change  when="2016-12-06" who="pers_TG">Added automated mark-up of strings wrapped in brackets with <tag>tei:q rend="brackets"</tag> and <att>rend</att> on existing nodes.</change><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
             <change when="2016-04-02" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>. Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()".</change>
          <change when="2016-02-29" who="#pers_TG" xml:lang="en">Generated a new <gi>front</gi> based on the <gi>sourceDesc</gi> that matches the information found in the masthead of the actual issues.</change>
          <change when="2016-01-12" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
@@ -519,10 +519,10 @@
                         أفكارهم كلما آنسوا من نفوسهم مللاً وتعباً رجاء أن يخفف عنهم ما نابهم
                         فيعاودون أعمالهم بنشاط أكثر ومضاء أوفى وأوفر. وعلى هذه السنة جرى كاتب هذه
                         السطور فركب العربة من دمشق بعد ظهر <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1911-04-13" xml:lang="ar" xml:id="date_12.d1e1209">الخميس في <num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_3.d1e1211">١٣</num> ربيع الثاني <num type="auto-markup" resp="#pers_TG" value="1327" xml:lang="ar" xml:id="num_4.d1e1214">١٣٢٧</num>
-                        </date> (<date calendar="#cal_gregorian" datingMethod="#cal_gregorian" when="1911-04-13" xml:lang="ar" xml:id="date_13.d1e1218">
+                        </date> <date calendar="#cal_gregorian" datingMethod="#cal_gregorian" when="1911-04-13" xml:lang="ar" xml:id="date_13.d1e1218" rend="brackets">
                             <num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_5.d1e1220">١٣</num> نيسان غربي
                                 <num type="auto-markup" resp="#pers_TG" value="1911" xml:lang="ar" xml:id="num_6.d1e1223">١٩١١</num>
-                        </date>) قاصداً إلى <placeName xml:lang="ar" xml:id="placeName_5.d1e1227">قطنا</placeName> مركز <placeName xml:lang="ar" xml:id="placeName_6.d1e1230">قضاء وادي العجم</placeName> فبتنا فيه
+                        </date> قاصداً إلى <placeName xml:lang="ar" xml:id="placeName_5.d1e1227">قطنا</placeName> مركز <placeName xml:lang="ar" xml:id="placeName_6.d1e1230">قضاء وادي العجم</placeName> فبتنا فيه
                         ليلتنا على مثل ما كان النهار سخية هطالة ورياحاً نكباء وزعازع وأعاصير وكنا
                         نود لو نخلص من الغد إلى <placeName xml:lang="ar" xml:id="placeName_7.d1e1233">راشيا</placeName> ولكن حالت الثلوج
                         المتراكمة في سفوح <placeName xml:lang="ar" xml:id="placeName_8.d1e1237">
@@ -584,8 +584,8 @@
                         مدافن أغنياء وأمراء لا مقابر فلاحين فقراء وفي كل قرية فقراء وفي كل قرية
                         نواويس لا تقل عن هذه بمكانتها وقد طمست الأيام معالمها فلم يعلم اسم
                         بانيها.</p>
-                    <p xml:lang="ar" xml:id="p_22.d1e1286">والنفوس قليلة في هذين الإقليمين (وادي
-                        العجم وإقليم البلان) لا تزيد في الإحصاء الرسمي عن <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> نسمة عدا
+                    <p xml:lang="ar" xml:id="p_22.d1e1286">والنفوس قليلة في هذين الإقليمين وادي
+                        العجم وإقليم البلان لا تزيد في الإحصاء الرسمي عن <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> نسمة عدا
                         القرى الملحقة بعمل دمشق مثل المزة وكفرسوسة وداريا وصحنايا والأشرفية وبلاس
                         ومع أن البلاد تؤوي مائتي <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> وأكثر ترى الهجرة أيضاً إلى أميركا تقلل نفوسها
                         سنة عن سنة وسكان هذه البلاد أخلاط بمذاهبهم فيهم المسلمون السنية ومسيحيون روم
@@ -702,19 +702,19 @@
                     </head>
                     <p xml:lang="ar" xml:id="p_24.d1e1468">الجولان كورة عظيمة من كور الشام تعد من
                         بلاد حوران يحدها من الشرق نهر العلان ومن الغرب بحيرة طبريا والأردن الأعلى
-                        (الرقاد) ويفصلها نهر اليرموك<note type="footnote" n="1" xml:id="note_3.d1e1470" xml:lang="ar">
+                        <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">الرقاد</tei:q> ويفصلها نهر اليرموك<note type="footnote" n="1" xml:id="note_3.d1e1470" xml:lang="ar">
                             <gap resp="#org_MS" xml:id="gap_1.d1e1472"/>
                         </note>
                   <pb ed="print" n="389" facs="#facs_393" xml:id="pb_9.d1e1474"/> عن
                         بلاد عجلون من الجنوب وبحر الحاصباني بالقرب من بانياس وجيل الشيخ من الشمال
-                        وتسمى هذه المقاطعة بالعبرانية كولان (<foreign xml:lang="fr" xml:id="foreign_7.d1e1476">Golan</foreign>) كان يطلق هذا الاسم أولاً على
+                        وتسمى هذه المقاطعة بالعبرانية كولان <foreign xml:lang="fr" xml:id="foreign_7.d1e1476" rend="brackets">Golan</foreign> كان يطلق هذا الاسم أولاً على
                         مدينة إسرائيلية مقدسة من بلاد باشان تنزلها قبيلة منسى وهي اليوم مدينة سحم
                         الجولان بعينها قرية على بعد كيلومترين شرقي نهر العلان وعلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="7">سبعة</num> كيلومترات من
                         الشمال والشمال الغربي من زيزون ولا يزال فيها بعض آثار وخرائب منها برج مربع
                         علو <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_7.d1e1479">١٥</num> متراً
                         وبالقرب منه بناء جميل يظن أنه كان كنيسة وقد أقام فيها أدمون روتشيلد
                         الإسرائيلي الغني الشهير مستعمرة للإسرائيليين.</p>
-                    <p xml:lang="ar" xml:id="p_25.d1e1483">وكانت الجولان (<foreign xml:lang="fr" xml:id="foreign_8.d1e1485">Gaulanitide</foreign>) تمتد إلى شرقي المناذرة
+                    <p xml:lang="ar" xml:id="p_25.d1e1483">وكانت الجولان <foreign xml:lang="fr" xml:id="foreign_8.d1e1485" rend="brackets">Gaulanitide</foreign> تمتد إلى شرقي المناذرة
                         وتعد من بلاد بترا أو العربية الصخرية ومن جملة مملكة فيليبس<note type="footnote" n="1" xml:id="note_4.d1e1488" xml:lang="ar">
                             <gap resp="#org_MS" xml:id="gap_2.d1e1490"/>
                         </note> ولبلاد الجولان ذكر قليل في تاريخ العرب نزلها الحرث الأعرج
@@ -881,7 +881,7 @@
                         غزيرة وآثار لليونانيين قديمة وقال أبو الفدا بانياس اسم لبلدة صغيرة ذات أشجار
                         محمضات وغيرها وأنهار وهي على مرحلة ونصف من دمشق من جهة الغرب بميلة إلى
                         الجنوب والصبيبة اسم قلعتها وهي من الحصون المنيعة قال العزيزي ومدينة بانياس
-                        في لحف جبل الثلج (جبل الشيخ) وهو مطل عليها والثلج على رأسه كالعمامة لا يعدم
+                        في لحف جبل الثلج <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">جبل الشيخ</tei:q> وهو مطل عليها والثلج على رأسه كالعمامة لا يعدم
                         منه صيفاً ولا شتاءً وقال ابن جبير في وصف بانياس أنها مدينة صغيرة ولها قلعة
                         يستدير بها تحت السور نهر يفضي إلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> أبواب المدينة وله مصب تحت أرجاء وكانت
                         بيد الإفرنج فاسترجعها نور الدين ولها محرث واسع في بطحاء متصلة يشرف عليها حصن
@@ -891,8 +891,8 @@
                         ولا سيما الزلازل تدل على عظمة من استولوا عليها ومياهها غزيرة للغاية لو توفرت
                         العناية بإخراج الصخور والردوم من طريقها لتضاعفت كميتها ولما كانت تقل عن مياه
                         بردى وللإفرنج كلام طويل في عمران هذه القرية الحقيرة اليوم والمدينة العظمى
-                        أمس فقد قالوا أن اسمها مطابق للاسم اليوناني (<foreign xml:lang="fr" xml:id="foreign_9.d1e1671">Panéas</foreign>) الذي كان يطلق على هذه
-                        المدينة والكورة بأجمعها سميت بذلك لمغارة اختصت بعبادة بان (<foreign xml:lang="fr" xml:id="foreign_10.d1e1674">Pan</foreign>) وهي تحت منبع
+                        أمس فقد قالوا أن اسمها مطابق للاسم اليوناني <foreign xml:lang="fr" xml:id="foreign_9.d1e1671" rend="brackets">Panéas</foreign> الذي كان يطلق على هذه
+                        المدينة والكورة بأجمعها سميت بذلك لمغارة اختصت بعبادة بان <foreign xml:lang="fr" xml:id="foreign_10.d1e1674" rend="brackets">Pan</foreign> وهي تحت منبع
                         الأردن وقد أنشأ فيها هيرودس معبداً على اسم أعسطس وأنجز ابنه قيليبس بناء هذه
                         المدينة وسماها قيسرية فيليبس تمييزاً لها عن قيسارية فلسطين وقد وسمها هيرودس
                         أغريبا الثاني وسماها نيرنياس وهو اسم أطلق عليها مدة قليلة من الزمن وكان فيها
@@ -1014,13 +1014,13 @@
                         أيضاً شقيف تيرون بكسر المثناة الفوقية وسكون <pb ed="print" n="396" facs="#facs_400" xml:id="pb_23.d1e1847"/>المثناة التحتية وضم الراء
                         المهملة وواو ونون قال وهي أيضاً قلعة بقرب صور بالساحل.</p>
                     <p xml:lang="ar" xml:id="p_41.d1e1850">وقال في شقيف تيرون أنها قلعة منيعة نافلة
-                        عن صفت (صلخد) على مسيرة يوم في سمت الشمال والشقيف أيضاً شقيف ارنون وهو في
+                        عن صفت <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">صلخد</tei:q> على مسيرة يوم في سمت الشمال والشقيف أيضاً شقيف ارنون وهو في
                         سمت الجبال عن شقيف تيرون وشقيف ارنون بعضه مغارة منحوتة في الصخر وبعضه له سور
                         وهو حصين جداً.</p>
                     <p xml:lang="ar" xml:id="p_42.d1e1853">والأصح أن بلاد الشقيف<note type="footnote" n="1" xml:id="note_9.d1e1855" xml:lang="ar">
                             <gap resp="#org_MS" xml:id="gap_7.d1e1857"/>
                         </note> من مقاطعات جبل عامل ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> وهي بلاد الشقيف وبلاد بشارة وإقليما
-                        الشحار والتفاح ويسمى جبل عامل أو عاملة وجبل الخليل (؟) وهو البلاد الواقعة في
+                        الشحار والتفاح ويسمى جبل عامل أو عاملة وجبل الخليل <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">؟</tei:q> وهو البلاد الواقعة في
                         نواحي قلعة الشقيف سمي بعاملة القضاعية وهي أم الحارث بن عدي التي تنتسب قبيلته
                         إليها نزلوا الشام مع بني جذام ولخم وغسان وشقيف تيرون هي المعروفة اليوم بقرية
                         نيحا على حدود جزين <q xml:id="q_2.d1e1860" xml:lang="ar">
@@ -1288,9 +1288,9 @@
                         يقال أنها من بناء الملك قسطنطين وقال البكري<note type="footnote" n="1" xml:id="note_21.d1e2107" xml:lang="ar">
                             <gap resp="#org_MS" xml:id="gap_19.d1e2109"/>
                         </note> إن السفن كانت تسلك من الاسكندرية إلى أبي قير فدمياط فبحيرة تنيس ثم
-                        إلى جزيرة دبقوا وهي التي تصنع فيها الثياب الديبقية ثم إلى تيدار ميماس (؟)
-                        ومنها إلى غزة فمليحة الواردية فعسقلان فقيسارية فرأس الكرمان (لعله رأس
-                        الكرمل) فحيفا فعكا فصور وهي داخل البحر وهي ساحل بيت المقدس ثم إلى صيدا ثم
+                        إلى جزيرة دبقوا وهي التي تصنع فيها الثياب الديبقية ثم إلى تيدار ميماس <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">؟</tei:q>
+                        ومنها إلى غزة فمليحة الواردية فعسقلان فقيسارية فرأس الكرمان لعله رأس
+                        الكرمل فحيفا فعكا فصور وهي داخل البحر وهي ساحل بيت المقدس ثم إلى صيدا ثم
                         إلى بيروت ثم إلى طرابلس الخ. وأنت ترى اليوم أن من بين هذه الموانئ السورية ما
                         لا تقف عليه المراكب مثل عسقلان وقيسارية وصور وصيدا فسبحان محول الممالك قرى
                         وجاعل المجاهل معالم.</p>
@@ -1328,7 +1328,7 @@
                     <p xml:lang="ar" xml:id="p_73.d1e2134">وقال ابن خرداذبة<note type="footnote" n="1" xml:id="note_23.d1e2136" xml:lang="ar">
                             <gap resp="#org_MS" xml:id="gap_21.d1e2138"/>
                         </note>: وسواحل جند دمشق عرقة طرابلس وجبيل وبيروت وصيدا وحصن <pb ed="shamela" n="n65-p21" corresp="file:../epub/26523/OEBPS/xhtml/P4323.xhtml" xml:id="pb_42.d1e2141"/> الصرفند وعدلون وسواحل جند الأردن صور وعكا وبصور
-                        صناعة المراكب أي المسلحة (الترسانة) وفي نزهة المشتاق: ومن إسكندرية إلى مدينة
+                        صناعة المراكب أي المسلحة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">الترسانة</tei:q> وفي نزهة المشتاق: ومن إسكندرية إلى مدينة
                         صور <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> ميلاً وهي مدينة حسنة على ضفة البحر ومن صور إلى طبرية يومان
                         كبيران ومنها إلى عدلون وهو حصن منيع على البحر ومنه إلى صيدا <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> أميال وبين
                         صور وصرفند يقع نهر ليطة ليطاني ومنبعه من الجبال ويقع هناك في البحر ومن صور
@@ -1340,7 +1340,7 @@
                         فيها ليلة انقبضت فيها النفس انقباضاً <pb ed="print" n="406" facs="#facs_410" xml:id="pb_43.d1e2149"/>لم يعرض لها في أحقر القرى التي مررنا بها في
                         رحلتنا ومن الغد ركبنا المركبة إلى صيدا في أراض مزروعة وجداول منسابه والمسافة
                         <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربع</num> ساعات وليس في الطريق من أثر إلا بقايا أنقاض الصرفند وتعرف قديماً باسم
-                        الزاربات (<foreign xml:lang="fr" xml:id="foreign_14.d1e2151">Zarpath</foreign>) وعدلون <foreign xml:lang="fr" xml:id="foreign_15.d1e2154">Orinthoporis</foreign> ومغارة اسمها معارة
+                        الزاربات <foreign xml:lang="fr" xml:id="foreign_14.d1e2151" rend="brackets">Zarpath</foreign> وعدلون <foreign xml:lang="fr" xml:id="foreign_15.d1e2154">Orinthoporis</foreign> ومغارة اسمها معارة
                         البزاز يرشح الماء من أعلى صخر منها المتجمع من مياه المطر فيشرب منه الرعاة
                         حيث يلجأون في الشتاء ويعتقد بعض العامة أن كل مرضع جف لبنها وانقطعت درتها
                         تستشفي يرشح من قطرات الماء فيدر لبنها ولم يقم دليل على ذلك في الحس كما لم
@@ -1393,7 +1393,7 @@
                         الرابع قبل المسيح بمائة و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8">ثماني</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="60">ستين</num> أو <pb ed="print" n="407" facs="#facs_411" xml:id="pb_45.d1e2218"/>سبع و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="60">ستين</num> سنة كتب عليها أنها
                         ضربت في صور أم الصيدونيين ووجدت أيقونة أخرى كأنها رد على هذه الدعوى مكتوب
                         عليها الصيدونيين مذلولون صور الكاذبة وهكذا تنازعت صور وصيدا شرف التقدم كما
-                        تنازعتا مدينة صرفند (صرفت) التي بناها أهل صيدا على <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_37.d1e2220">١٥</num> كيلو متراً ونصف جنوبي
+                        تنازعتا مدينة صرفند <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">صرفت</tei:q> التي بناها أهل صيدا على <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_37.d1e2220">١٥</num> كيلو متراً ونصف جنوبي
                         صيدون على الشاطئ ومعناها سبك المعادن من صرف العبراني أي ذوب.</p>
                     <p xml:lang="ar" xml:id="p_78.d1e2224">بيد أن التاريخ ناطق بأن صيدا وإن سبقت
                         الفينيقيين بتأسيس المستعمرات منذ عهد عريق في القدم فأنشأت هيبون في نوميديا
@@ -1434,16 +1434,16 @@
                         والفرسخ <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أميال و<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="300">ثلاثمائة</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> إصبع يقص <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2">اثني</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> إصبع وكانت الطريق
                         على رواية العزيزي من صيدا إلى مدينة مشغرا وهي أنزة بلد في تلك الناحية في واد
                         في نهاية الحسن بالأشجار والأنهار والمسافة <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20">عشرون</num> ميلاً ومن مدينة مشغرا
-                        إلى مدينة تعرف بكامد (الغالب أنها كامد اللوز قرية في غربي البقاع) قاعدة تلك
+                        إلى مدينة تعرف بكامد <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">الغالب أنها كامد اللوز قرية في غربي البقاع</tei:q> قاعدة تلك
                         البلاد قديماً <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6">ستة</num> أميال ومن مدينة كامد إلى ضيعة تعرف بعين الجر <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8">ثمانية</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num>
                         ميلاً ومن عين الجر إلى مدينة دمشق <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8">ثمانية</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> ميلاً.</p>
                     <p xml:lang="ar" xml:id="p_82.d1e2302">ولا يعرف بالتحقيق الباني الأول لصور وصيدا
                         والأرجح أن الأولى بنيت في أيام جلعاد من سبط منشأ بني عمون اليهود والثانية
                         بناها صيدون بكر كنعان. وكانت مدينة صيدون <pb ed="shamela" n="n65-p24" corresp="file:../epub/26523/OEBPS/xhtml/P4326.xhtml" xml:id="pb_48.d1e2304"/> أي صيدا أول ما أحدثه كنعان<note type="footnote" n="3" xml:id="note_27.d1e2306" xml:lang="ar">
                             <gap resp="#org_MS" xml:id="gap_25.d1e2308"/>
-                        </note> علة بضعة مراحل من جنوبي بيروت ولم تكن إلا قرية للصيادين (كما يدل
-                        عليه اسمها نفسه) بناها على ما جاء في روايتهم القديمة الإله بعل (المعروف عند
-                        اليونان بسم آجنور) على المنحدر الشمالي لرأس صغير يشرف بانعطاف نحو الجنوب
+                        </note> علة بضعة مراحل من جنوبي بيروت ولم تكن إلا قرية للصيادين كما يدل
+                        عليه اسمها نفسه) بناها على ما جاء في روايتهم القديمة الإله بعل المعروف عند
+                        اليونان بسم آجنور على المنحدر الشمالي لرأس صغير يشرف بانعطاف نحو الجنوب
                         الغربي وقد كان لميناها عند السلف شهرة فائقة وهي محصورة بين صخور منخفضة
                         متتابعة تبتدئ من النهاية الشمالية لشبه الجزيرة ثم تمتد بحذاء الساحل على
                         مساحة بضع مئات من الأمتار والسهل المحيط بها يسقيه نهر جميل يعرف باسم بوسترين
@@ -1467,9 +1467,9 @@
                         خلال ذلك العهد كل من صور وصيدا عبارة عن دولة صغرى تطمح إليها أنظار مجاوريها
                         بسبب ما أحرزتاه من توفر أسباب الثروة ولكنهما قاومتا هذه الأطماع مدة بما كان
                         لهما من الحصون والأسوار غير أنهما لم يتأت لهما البقاء زماناً على هذا
-                        الاستقلال فأقلع من عسقلون (عسقلان) أسطول فلسطيني سنة <num type="auto-markup" resp="#pers_TG" value="1210" xml:lang="ar" xml:id="num_53.d1e2322">١٢١٠</num> وتلاقى بعمارة
+                        الاستقلال فأقلع من عسقلون <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">عسقلان</tei:q> أسطول فلسطيني سنة <num type="auto-markup" resp="#pers_TG" value="1210" xml:lang="ar" xml:id="num_53.d1e2322">١٢١٠</num> وتلاقى بعمارة
                         الصيدونيين فدمرها تدميراً ثم استولى على مدينة صيدون ومن نجا من أهلها فروا
-                        إلى صور فقويت بهم حتى صارت أقوى دولة فينيقية وفي أيام حيرام الأول <pb ed="shamela" n="n65-p25" corresp="file:../epub/26523/OEBPS/xhtml/P4327.xhtml" xml:id="pb_50.d1e2325"/> ( <num type="auto-markup" resp="#pers_TG" value="980" xml:lang="ar" xml:id="num_54.d1e2327">٩٨٠</num> - <num type="auto-markup" resp="#pers_TG" value="945" xml:lang="ar" xml:id="num_55.d1e2330">٩٤٥</num> ق. م) بلغت صور ببحريتها أعلى الدرجات
+                        إلى صور فقويت بهم حتى صارت أقوى دولة فينيقية وفي أيام حيرام الأول <pb ed="shamela" n="n65-p25" corresp="file:../epub/26523/OEBPS/xhtml/P4327.xhtml" xml:id="pb_50.d1e2325"/> <num type="auto-markup" resp="#pers_TG" value="980" xml:lang="ar" xml:id="num_54.d1e2327">٩٨٠</num> - <num type="auto-markup" resp="#pers_TG" value="945" xml:lang="ar" xml:id="num_55.d1e2330">٩٤٥</num> ق. م بلغت صور ببحريتها أعلى الدرجات
                         وانبسط سلطانها.</p>
                     <p xml:lang="ar" xml:id="p_85.d1e2334">كانت صور متفرقة في عدة جزائر يفصل بعضها
                         عن بعض ألسنة من البحر ليست بالعميقة بل تتخللها صخور طافية رؤوسها على صفحات
@@ -2119,13 +2119,12 @@
                 </div>
                 <div type="article" xml:lang="ar" xml:id="div_13.d1e2989">
                     <head xml:lang="ar" xml:id="head_13.d1e2991">إعانة البائسين</head>
-                    <p xml:lang="ar" xml:id="p_151.d1e2994">كان في فرنسا في آخر سنة <num type="auto-markup" resp="#pers_TG" value="1908" xml:lang="ar" xml:id="num_85.d1e2996">١٩٠٨</num> ( <num type="auto-markup" resp="#pers_TG" value="512000" xml:lang="ar" xml:id="num_86.d1e2999">٥١٢٠٠٠</num> )
-                        إنسان محتاج للإعانة منهم ( <num type="auto-markup" resp="#pers_TG" value="354000" xml:lang="ar" xml:id="num_87.d1e3002">٣٥٤٠٠٠</num> ) شيخ تجاوز ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="70">سبعين</num> و ( <num type="auto-markup" resp="#pers_TG" value="100000" xml:lang="ar" xml:id="num_86.d1e3295">١٠٠.٠٠٠</num> ) عليل و (
-                            <num type="auto-markup" resp="#pers_TG" value="58000" xml:lang="ar" xml:id="num_86.d1e3298">٥٨.٠٠٠</num> ) مريض مرضاً
+                    <p xml:lang="ar" xml:id="p_151.d1e2994">كان في فرنسا في آخر سنة <num type="auto-markup" resp="#pers_TG" value="1908" xml:lang="ar" xml:id="num_85.d1e2996">١٩٠٨</num> <num type="auto-markup" resp="#pers_TG" value="512000" xml:lang="ar" xml:id="num_86.d1e2999" rend="brackets">٥١٢٠٠٠</num>
+                        إنسان محتاج للإعانة منهم <num type="auto-markup" resp="#pers_TG" value="354000" xml:lang="ar" xml:id="num_87.d1e3002" rend="brackets">٣٥٤٠٠٠</num> شيخ تجاوز ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="70">سبعين</num> و <num type="auto-markup" resp="#pers_TG" value="100000" xml:lang="ar" xml:id="num_86.d1e3295" rend="brackets">١٠٠.٠٠٠</num> ) عليل و <num type="auto-markup" resp="#pers_TG" value="58000" xml:lang="ar" xml:id="num_86.d1e3298" rend="brackets">٥٨.٠٠٠</num> مريض مرضاً
                         عضالاً ومعظم هؤلاء البائسين ابعث إليهم نظارة الأعمال والإحسان الاجتماعي
-                        مرتباتهم إلى بيوتهم وتختلف من <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_92.d1e3018">٥</num> إلى <num type="auto-markup" resp="#pers_TG" value="30" xml:lang="ar" xml:id="num_93.d1e3021">٣٠</num> فرنكاً في الشهر و ( <num type="auto-markup" resp="#pers_TG" value="39" xml:lang="ar" xml:id="num_94.d1e3024">٣٩</num> ) ألفاً منهم تؤويهم في
+                        مرتباتهم إلى بيوتهم وتختلف من <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_92.d1e3018">٥</num> إلى <num type="auto-markup" resp="#pers_TG" value="30" xml:lang="ar" xml:id="num_93.d1e3021">٣٠</num> فرنكاً في الشهر و <num type="auto-markup" resp="#pers_TG" value="39" xml:lang="ar" xml:id="num_94.d1e3024" rend="brackets">٣٩</num> ألفاً منهم تؤويهم في
                         أماكن إقامتها لهم كالمتشفيات وغيرها يصرف عليهم في السنة <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> ملايين ليرة
-                        تدفع الحكومة نصفها والنصف الآخر جمعية الإحسان وفي فرنسا الآن ( <num type="auto-markup" resp="#pers_TG" value="16118" xml:lang="ar" xml:id="num_95.d1e3027">١٦١١٨</num> ) مكتباً
+                        تدفع الحكومة نصفها والنصف الآخر جمعية الإحسان وفي فرنسا الآن <num type="auto-markup" resp="#pers_TG" value="16118" xml:lang="ar" xml:id="num_95.d1e3027" rend="brackets">١٦١١٨</num> مكتباً
                         لجمع الإحسان غير جمعيات الحكومة تغيث زهاء مليون من السكان.</p>
                 </div>
                 <div type="article" xml:lang="ar" xml:id="div_14.d1e3032">
@@ -2198,7 +2197,7 @@
                         والصليبيون والثيرنيون والاتروسكيون واليهود المراكشيون والأندلسيون الذين
                         زحزحهم ديوان التفتيش عن أرضهم وديارهم ثم أن الفرنسيس الويغريون والمغول
                         والهونسيون والاوز والخزر والابر والكومانيون وغير ذلك العناصر والشعوب مثل
-                        البولونيين والهلفتيين (السويسريين) والايبريين (الإسبانيين) وغير ذلك وربما
+                        البولونيين والهلفتيين <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">السويسريين</tei:q> والايبريين <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">الإسبانيين</tei:q> وغير ذلك وربما
                         بعض الزنوج.</p>
                     <p xml:lang="ar" xml:id="p_158.d1e3192">فوحدة الدم ليس بينها وبين ما تمتاز به
                         أمة من الصفات الأخلاقية والعقلية بل أن امتزاج دم الشعوب بعضها ببعض تزيد في
@@ -2258,7 +2257,7 @@
                         الشعلة الضئيلة الوطنية بقيت حية تحت جبال من الرماد ولما سكنت العاصفة عاد
                         التشك وأظهروا ذات يوم أنفسهم وعنصرهم ومقاومتهم للألمانية أكثر من ذي قبل.
                         وجزيرة كريت الصغيرة الباسلة التعسة ستنضم عما قريب إلى يونان على الرغم من
-                        عناد الحكومة العثمانية (؟) وعمى رجال السياسة وكذلك الحال في بولونيا وفنلندا.
+                        عناد الحكومة العثمانية <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">؟</tei:q> وعمى رجال السياسة وكذلك الحال في بولونيا وفنلندا.
                         وإن الاستيلاء على الشعوب استيلاءً وحشياً قد مضى وانقضى فالواجب استمالة
                         القلوب واستتباع الأرواح وأن الأمل الذي يدفن في أعماق القلوب أقوى من طرقات
                         المطارق على أجسامنا فالأمم تحيا ما دامت لا تريد أن تموت.</p>
@@ -2330,15 +2329,15 @@
                     <head xml:lang="ar" xml:id="head_20.d1e3482">بين <placeName xml:lang="ar" xml:id="placeName_36.d1e3484">القاهرة</placeName> والرأس</head>
                     <p xml:lang="ar" xml:id="p_176.d1e3488">عزم رجلان ألمانيان أحدهما ضابط والآخر
                         جيولوجي أن يجتازا المسافة بين رأس الرجاء الصالح والقاهرة في السيارة
-                        (اتوموبيل) والمسافة بين البلدين <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">آلاف</num> كيلومتر وذلك ليتأكدا إذا كان يتأتى
+                        <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">اتوموبيل</tei:q> والمسافة بين البلدين <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">آلاف</num> كيلومتر وذلك ليتأكدا إذا كان يتأتى
                         لهذه المركبة أن تحمل ركاباً وبضائع بين جنوبي أفريقية وشماليها وسيقطران مركبة
                         أخرى إلى السيارة التي تقلهما وتكلف نفقات <pb ed="print" n="439" facs="#facs_443" xml:id="pb_110.d1e3490"/>إنشائها مائتي <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> مارك على أن
                         الخط الحديدي المنوي به ربط تينك المدينتين إحداهما بالأخرى قد تم بعضه ومؤخراً
-                        افتتح فرع من واد مدني إلى سنار وقد بلغ طوله ما مدَّ منه من الجنوب <num type="auto-markup" resp="#pers_TG" value="1501" xml:lang="ar" xml:id="num_163.d1e3492">١٥٠١</num> ميل (نحو
+                        افتتح فرع من واد مدني إلى سنار وقد بلغ طوله ما مدَّ منه من الجنوب <num type="auto-markup" resp="#pers_TG" value="1501" xml:lang="ar" xml:id="num_163.d1e3492">١٥٠١</num> ميل نحو
                             <num type="auto-markup" resp="#pers_TG" value="2400" xml:lang="ar" xml:id="num_164.d1e3495">٢٤٠٠</num> كيلو
-                        متر) والفرع الجنوبي تسير قطاراته الآن من كبتون إلى المحل المسمى ستار أوف
-                        كونغو في مملكة الكونغو الحرة أي على مسافة <num type="auto-markup" resp="#pers_TG" value="2312" xml:lang="ar" xml:id="num_165.d1e3498">٢٣١٢</num> ميلاً (نحو <num type="auto-markup" resp="#pers_TG" value="3700" xml:lang="ar" xml:id="num_166.d1e3501">٣٧٠٠</num> كيلو متر) فيبقى بعيداً
-                        عن الخطوط بعد <num type="auto-markup" resp="#pers_TG" value="2060" xml:lang="ar" xml:id="num_167.d1e3505">٢٠٦٠</num> ميلاً ( <num type="auto-markup" resp="#pers_TG" value="3200" xml:lang="ar" xml:id="num_168.d1e3508">٣٢٠٠</num> كيلو متر) فيكون على هذا التخطيط طول
+                        متر والفرع الجنوبي تسير قطاراته الآن من كبتون إلى المحل المسمى ستار أوف
+                        كونغو في مملكة الكونغو الحرة أي على مسافة <num type="auto-markup" resp="#pers_TG" value="2312" xml:lang="ar" xml:id="num_165.d1e3498">٢٣١٢</num> ميلاً نحو <num type="auto-markup" resp="#pers_TG" value="3700" xml:lang="ar" xml:id="num_166.d1e3501">٣٧٠٠</num> كيلو متر فيبقى بعيداً
+                        عن الخطوط بعد <num type="auto-markup" resp="#pers_TG" value="2060" xml:lang="ar" xml:id="num_167.d1e3505">٢٠٦٠</num> ميلاً <num type="auto-markup" resp="#pers_TG" value="3200" xml:lang="ar" xml:id="num_168.d1e3508" rend="brackets">٣٢٠٠</num> كيلو متر فيكون على هذا التخطيط طول
                         هذا الخط كله <num type="auto-markup" resp="#pers_TG" value="5873" xml:lang="ar" xml:id="num_169.d1e3511">٥٨٧٣</num> ميلاً منها <num type="auto-markup" resp="#pers_TG" value="3813" xml:lang="ar" xml:id="num_170.d1e3514">٣٨١٣</num> ميلاً قد نجزت والقطارات تغدو فيها
                         وتروح وستجعل لها طبقة رابعة للفقراء.</p>
                 </div>
