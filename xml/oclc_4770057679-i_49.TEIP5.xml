@@ -76,7 +76,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
+        <revisionDesc><change  when="2016-12-06" who="pers_TG">Added automated mark-up of strings wrapped in brackets with <tag>tei:q rend="brackets"</tag> and <att>rend</att> on existing nodes.</change><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
             <change when="2016-04-18" who="#pers_TG" xml:lang="en">Added semantic and structural mark-up, particularly for bibliographic metadata. Added
                 automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing
                     <att>xml:id</att>following the pattern "name()_generate-id()".</change><tei:change when="2016-04-15" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi xml:lang="en">num</tei:gi> elements separated by " . " into a single <tei:gi xml:lang="en">num</tei:gi> element. The <tei:att xml:lang="en">resp</tei:att> and <tei:att xml:lang="en">type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
@@ -772,7 +772,7 @@
                         منك هذا الحديث فهل يأتيك رئيك اليوم فقال: مذ قرأت القرآن فلا ونعم العوض كتاب
                         الله من الجن.</p>
                     <p xml:lang="ar" xml:id="p_35.d1e1788">يروي إبراهيم بن سلامة بسنده إلى رجل من
-                        خثعم قال: كانت خثعم لا تحل حلالاً ولا تحرم حراماً وكانت تعبد أصناماً (قال)
+                        خثعم قال: كانت خثعم لا تحل حلالاً ولا تحرم حراماً وكانت تعبد أصناماً <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q>
                         فبينا نحن عند صنم ذات ليلة نتقاضى إليه في أمر قد شجر بيننا إذ صاح صائح من
                         جوفه. <pb corresp="file:../epub/26523/OEBPS/xhtml/P3167.xhtml" ed="shamela" n="n49-p4" xml:id="pb_5.d1e1790"/> يا أيها الركب ذوو الأحكام <gap resp="#org_MS" xml:id="gap_4.d1e1792"/> ما أنتم وطائش الأحلام</p>
                     <p xml:lang="ar" xml:id="p_36.d1e1795">ومستندو الحكم إلى الأصنام</p>
@@ -811,7 +811,7 @@
                         قلنا: ما يقول قال: يخبر أن نبيّا قد ظهر خلا فكم بمكة فقدمنا فوجدنا نبيّ الله
                         صلى الله عليه وسلم بمكة</p>
                     <p xml:lang="ar" xml:id="p_42.d1e1851">ومن بشائر هتوفهم ما حكاه أبو عيسى قال:
-                        سمعت قريشا في الليل هاتفا عَلَى أبي قبيس (جبل) يقول:</p>
+                        سمعت قريشا في الليل هاتفا عَلَى أبي قبيس <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">جبل</tei:q> يقول:</p>
                     <lg xml:id="lg_1.d1e1941" xml:lang="ar">
                         <l type="bayt" xml:lang="ar" xml:id="l_1.d1e1943">
                             <seg xml:lang="ar" xml:id="seg_55.d1e1945">إن يسلم السعدان يصبح محمد </seg>
@@ -840,9 +840,9 @@
                     </lg>
                     <p xml:lang="ar" xml:id="p_44.d1e1894">قال الماوردي: ولئن كانت هذه الهتوف أخبار
                         آحاد عمن لا يرى شخصه ولا يحج قوله فخروجه عن العادة نذير وتأثير في النفس بشير
-                        وقد قبلها السامعون وقبول الأخبار يؤكد صحتها ويؤيد حجتها (فإن قيل) إن كانت
+                        وقد قبلها السامعون وقبول الأخبار يؤكد صحتها ويؤيد حجتها <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">فإن قيل</tei:q> إن كانت
                         هتوف الجن من دلائل النبوة جاز أن تكون دليلاً <pb corresp="file:../epub/26523/OEBPS/xhtml/P3168.xhtml" ed="shamela" n="n49-p5" xml:id="pb_6.d1e1896"/> عَلَى صحة الكهانة فعنه جوابان
-                        (إحداهما) أن دلائل النبوة غيرها وإنما هي من البشائر بها وفرق بين الدلالة
+                        <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">إحداهما</tei:q> أن دلائل النبوة غيرها وإنما هي من البشائر بها وفرق بين الدلالة
                         والبشارة أخباراً والثاني أن الكهانة عن مغيب والبشارة عن معين فالعيان معلوم
                         والغائب موهوم اهـ كلام الماوردي.</p>
                 </div>
@@ -850,7 +850,7 @@
                     <head xml:id="head_4.d1e2023" xml:lang="ar">مزاعمهم في أوصافهم ومن قتلوه</head>
                     <p xml:lang="ar" xml:id="p_46.d1e1902">يقولون من الجن جنس صورة الواحد منهم عَلَى
                         صورة الإنسان واسمه شق وأنه كثيراً ما يعرض للرجل المسافر إذا كان وحده فربما
-                        أهلكه فزعاً وربما أهلكه قتلاً وضرباً (قالوا) فمن ذلك حديث علقمة بن صفوان بن
+                        أهلكه فزعاً وربما أهلكه قتلاً وضرباً <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قالوا</tei:q> فمن ذلك حديث علقمة بن صفوان بن
                         أمية بن حرب الكناني جد مروان ابن الحكم في الجاهلية خرج وهو يريد مالاً له
                         بمكة وهو عَلَى حمار وعليه أزار ورداء ومعه مقرعة في ليلة أضحانية حتى انتهى
                         إلى موضع يقال له حائط جرمان فإذا هو بشق له يد ورجل وعين معه سيف وهو
@@ -883,10 +883,10 @@
                         </l>
                     </lg>
                     <p xml:lang="ar" xml:id="p_51.d1e1955">فاصبر لما قد حم لك</p>
-                    <p xml:lang="ar" xml:id="p_52.d1e1958">(قالوا) ومن الدليل أن هذين البيتين من
+                    <p xml:lang="ar" xml:id="p_52.d1e1958"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قالوا</tei:q> ومن الدليل أن هذين البيتين من
                         أشعار الجن أن أحداً لا يستطيع أن ينشدهما <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> مرات متصلة لا يتعتع فيها وهو
                         يستطيع أن ينشد أثقل شعر في الأرض وأشقه <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> مرات ولا يتعتع.</p>
-                    <p xml:lang="ar" xml:id="p_53.d1e1961">(قالوا) وقتلت مرداس بن أبي عامر أبا عباس
+                    <p xml:lang="ar" xml:id="p_53.d1e1961"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قالوا</tei:q> وقتلت مرداس بن أبي عامر أبا عباس
                         بن مرداس_وقتلت الغريض خنقاً بعد أن غنى بالغناء الذي كانوا نهوه عنه_وقتلت
                         الجن سعد بن عبادة بن ديلم وسمعوا الهاتف يقول: <pb corresp="file:../epub/26523/OEBPS/xhtml/P3169.xhtml" ed="shamela" n="n49-p6" xml:id="pb_7.d1e1963"/> نحن قتلنا سيد الخز <gap resp="#org_MS" xml:id="gap_5.d1e1965"/> رج سعد بن عباده</p>
                     <lg xml:id="lg_1.d1e2069" xml:lang="ar">
@@ -898,7 +898,7 @@
                 </div>
                 <div type="section" xml:id="div_5.d1e2117" xml:lang="ar">
                     <head xml:id="head_5.d1e2119" xml:lang="ar">من استهووه ومنهم خرافة</head>
-                    <p xml:lang="ar" xml:id="p_55.d1e1981">(قالوا) استهووا سنان بن أبي حارثة
+                    <p xml:lang="ar" xml:id="p_55.d1e1981"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قالوا</tei:q> استهووا سنان بن أبي حارثة
                         ليستفحلوه فمات فيهم واستهووا طالب بن أبي طالب فلم يوجد له أثر إلى يومنا
                         هذا_واستهووا عمرو ابن عدي اللخمي الملك الذي يقال فيه شب عمرو عن الطوق ثم
                         ردوه عَلَى جذيمة الأبرش بعد سنين_واستهووا عمارة بن المغيرة ونفخوا في إحليله
@@ -932,14 +932,14 @@
                         الجن سكنت في منازلهم وحمتها من كل من أرادها وأنها أخصب بلاد الله وأكثرها
                         شجراً وأكثرها حباً وعنباً وأكثرها نخلاً وموزاً فإن دنا إنسان من تلك البلاد
                         متعمداً أو غالظاً حثوا في وجهه التراب فإن أبى الرجوع خيلوه وربما قتلوه.</p>
-                    <p xml:lang="ar" xml:id="p_63.d1e2015">(قال الجاحظ) والموضع نفسه باطل فإن قيل
+                    <p xml:lang="ar" xml:id="p_63.d1e2015"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال الجاحظ</tei:q> والموضع نفسه باطل فإن قيل
                         لهم دلونا عَلَى جهته وأوقفونا عَلَى حده وخلاكم ذم زعموا أن من أراده ألقى
                         عَلَى قلبه الصرفة حتى كأنهم أصحاب موسى في التيه وقال الشاعر:</p>
                     <p xml:lang="ar" xml:id="p_64.d1e2018">وداع دعا والليل مرخ سدوله <gap resp="#org_MS" xml:id="gap_6.d1e2020"/> رجاء القرى يا مسلم بن حمار <pb corresp="file:../epub/26523/OEBPS/xhtml/P3170.xhtml" ed="shamela" n="n49-p7" xml:id="pb_8.d1e2022"/> دعا جعلاً لا يهتدي لمقيله <gap resp="#org_MS" xml:id="gap_7.d1e2024"/> من اللؤم حتى يهتدي لوبار</p>
                     <p xml:lang="ar" xml:id="p_65.d1e2027">فهذا الشاعر الأعرابي جعل أرض وبار مثلاً
                         في الضلال، والأعراب يتحدثون عنها كما يتحدثون عما يجدونه بالدو والصان
                         والدهناء ورمل يبرين وما<pb ed="print" n="96" facs="#facs_110" xml:id="pb_15.d1e2180"/> أكثر ما
-                        يذكرون أرض وبار في الشعر عَلَى معنى هذا الشاعر (قالوا) فليس اليوم في تلك
+                        يذكرون أرض وبار في الشعر عَلَى معنى هذا الشاعر <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قالوا</tei:q> فليس اليوم في تلك
                         البلاد إلا الجن والإبل الحوشية والحوش من الإبل عندهم هي التي قد ضربت فيها
                         فحول إبل الجن فالحوشية من نسل ابن الجن والعبدية والمهرية والعسجدية والعمانية
                         قد ضربت فيها الحوش وقال رؤبة:</p>
@@ -975,7 +975,7 @@
                         عليه السلام في صورة دحية ابن خليفة الكلبي_وعلى تصور الملائكة الذين أتوا مريم
                         وإبراهيم ولوطاً وداود في صورة المؤمنين_وعلى ما جاء في الأثر من تصور إبليس في
                         صورة سرافة بن مالك_وعلى تصوره في صورة الشيخ النجدي.</p>
-                    <p xml:lang="ar" xml:id="p_73.d1e2062">(قالوا) فإذا استقام أن تختلف صورهم وأخلاط
+                    <p xml:lang="ar" xml:id="p_73.d1e2062"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قالوا</tei:q> فإذا استقام أن تختلف صورهم وأخلاط
                         أبدانهم وتتفق عقولهم ونياتهم واستطاعتهم جاز أيضاً أن يكون إبليس لعنة الله
                         عليه والشيطان والغول أن يتبدلوا في الصور من غير <pb corresp="file:../epub/26523/OEBPS/xhtml/P3171.xhtml" ed="shamela" n="n49-p8" xml:id="pb_9.d1e2064"/> أن يتبدلوا في العقل والبيان
                         والاستطاعة اهـ.</p>
@@ -983,12 +983,12 @@
                         البيهقي في مناقب الشافعي بإسناده عن الربيع قال سمعت الشافعي يقول: من زعم أنه
                         يرى الجن أبطلنا شهادته إلا أن يكون نبياً اهـ.</p>
                     <pb ed="print" n="98" facs="#facs_112" xml:id="pb_18.d1e2240"/>
-                    <p xml:lang="ar" xml:id="p_75.d1e2070">(قال ابن حجر) وهذا محمول عَلَى من يدعي
+                    <p xml:lang="ar" xml:id="p_75.d1e2070"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال ابن حجر</tei:q> وهذا محمول عَلَى من يدعي
                         رؤيتهم عَلَى صورهم التي خلقوا عليها وأما من ادعى أنه يرى شيئاً منهم بعد أن
                         يتطور عَلَى صور شتى من الحيوان فلا يقدح فيه وقد تواردت الأخبار بتطورهم في
-                        الصور، (قال) واختلف أهل الكلام فقي ذلك فقيل هو تخييل فقط ولا ينتقل <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> عن
+                        الصور، <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q> واختلف أهل الكلام فقي ذلك فقيل هو تخييل فقط ولا ينتقل <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> عن
                         صورته الأصلية وقيل بل ينتقلون لكن لا باقتدارهم عَلَى ذلك بل بضرب من الفعل إذ
-                        فعله انتقل كالسحر (أي الشعبذة) (قال) وهذا قد يرجع إلى الأول اهـ وسيأتي تحقيق
+                        فعله انتقل كالسحر <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أي الشعبذة</tei:q> <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q> وهذا قد يرجع إلى الأول اهـ وسيأتي تحقيق
                         تمثلهم في أول مباحث الخاتمة.</p>
                 </div>
                 <div type="section" xml:id="div_9.d1e2246" xml:lang="ar">
@@ -1120,7 +1120,7 @@
                     <head xml:id="head_10.d1e2485" xml:lang="ar">خيالهم في جن الشام والهند</head>
                     <p xml:lang="ar" xml:id="p_92.d1e2275">قال <persName ref="viaf:11070" xml:lang="ar">الجاحظ</persName>: وأصحاب الرقي والأخذ والعزائم
                         والسحر والشعبذة يزعمون أن العدد والقوة في الجن والشياطين لنزالة الشام والهند
-                        وإن عظيم شياطين الهند يقال له (سكويرك) وعظيم شياطين الشام يقال له در كاراب
+                        وإن عظيم شياطين الهند يقال له <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">سكويرك</tei:q> وعظيم شياطين الشام يقال له در كاراب
                         وقد ذكرهما أبو إسحاق في هجائه محمد ابن بشير حين <pb corresp="file:../epub/26523/OEBPS/xhtml/P3173.xhtml" ed="shamela" n="n49-p10" xml:id="pb_11.d1e2277"/> ادعى هذه الصناعة فقال:</p>
                     <pb ed="print" n="100" facs="#facs_114" xml:id="pb_22.d1e2493"/>
                     <lg xml:id="lg_1.d1e2422" xml:lang="ar">
@@ -1334,7 +1334,7 @@
                         القوم لما نزلوا ببلاد الوحش عملت فيهم الوحشة، ومن انفرد وطال مقامه في البلاد
                         والخلاء والبعد من الأنس استوحش ولاسيما مع قلة الاشتغال والمذاكرين والوحدة،
                         لا تقطع أيامهم إلا بالمنى أو بالتفكير، والفكر ربما كان من أسباب الوسوسة وقد
-                        ابتلي بذلك غير حاسب كابي ياسر ومثنى ولد الفنافر (قال) وخبرني الأعمش أنه فكر
+                        ابتلي بذلك غير حاسب كابي ياسر ومثنى ولد الفنافر <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال</tei:q> وخبرني الأعمش أنه فكر
                         في مسألة فأنكر أهله عقله حتى حموه وداووه، وقد عرض ذلك لكثير من الهند وإذا
                         استوحش الإنسان مثل له الشيء الصغير في صورة الكبير وارتاب وتفرق ذهنه وانتقضت
                         أخلاطه فيرى ما لا يرى ويسمع ما لا يسمع ويتوهم عَلَى الشيء الصغير الحقير أنه
@@ -1481,7 +1481,7 @@
                                 الشوابك</seg>
                         </l>
                     </lg>
-                    <p xml:lang="ar" xml:id="p_122.d1e2864">(قال الجاحظ): ويدل عَلَى ما قال أبو إسحق
+                    <p xml:lang="ar" xml:id="p_122.d1e2864"><tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قال الجاحظ</tei:q>: ويدل عَلَى ما قال أبو إسحق
                         من نزولهم في بلاد الوحش وبين الحشرات والسابع ما رواه لنا أبو مسهر عن أعرابي
                         من بني تمتم نزل ناحية الشام فكان لا يعدمه في كل ليلة أن يعضه أو يعض ولده أو
                         بعض حاشيته <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="7">سبع</num> من السباع أو دابة من دواب الأرض فقال:</p>
@@ -1525,7 +1525,7 @@
                     التونسية في تعريب الألفاظ.</p>
                 <p xml:lang="ar" xml:id="p_130.d1e2924">وإليك الآن عدة أمثلة في استعمال المولد من الألفاظ العربية الصرفة اقتبسناها من كتاب المسيو واشنطون سويرس ومن
                     هذه الألفاظ لفظة منطاد للبالون ودراجة للبيسيكليت ومطفأة لمضخة الحريق ومستوصف. ومن جملة الألفاظ التي كانت موجودة في اللغة
-                    واستعملت لمعنى جديد لفظة امتياز وإنهاء ودشن افتتح وتحقيق ومذهب (سياسي) وصبغة (سياسية). وأنت ترى أن لفظة صبغة بالمعنى
+                    واستعملت لمعنى جديد لفظة امتياز وإنهاء ودشن افتتح وتحقيق ومذهب <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">سياسي</tei:q> وصبغة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">سياسية</tei:q>. وأنت ترى أن لفظة صبغة بالمعنى
                     الخاص معناها اللون والصباغ أما الذين يصوغون الكلمات المولدة عندما يعمدون إلى ألفاظ موجودة في متن اللغة فإنهم يستندون
                     عَلَى المعنى الأصلي للفظ الذي يريدون أن يعربوه. ومن هذه الألفاظ التي كان عَلَى المسيو واشنطون سويرس أن يضيفها إلى قائمة
                     الألفاظ المعربة لفظة كلية فقد كان المترجمون يستطيعون أن يطلقوا عليها لفظة دار العلوم أو دار الفنون ولكن كثيراً من الكتاب
@@ -1534,7 +1534,7 @@
                 <p xml:lang="ar" xml:id="p_131.d1e2927">وبعد فإنا إذا بحثنا عن الألفاظ في كل قطر عربي وعن علاقة ألفاظه بالألفاظ الفرنسوية نستنتج ما يأتي: ففي سورية
                     ومصر وتونس كمية كبيرة من الألفاظ الفرنسوية مختلفة الأساليب وفيها أيضاً كثير من الألفاظ التركية أو الفارسية انتقلت إلى
                     العربية بواسطة التركية وهي في الأكثر تعابير عسكرية وإدارية أو ألفاظ تشريف مثل باشا<pb ed="print" n="107" facs="#facs_121" xml:id="pb_35.d1e3236"/> وبك وأفندي <pb corresp="file:../epub/26523/OEBPS/xhtml/P3180.xhtml" ed="shamela" n="n49-p17" xml:id="pb_18.d1e2929"/> وخانم.
-                    وألفاظ طليانية مثل سيغورطه (ضمان من الحريق أو ضمان الحياة) المستعملة في التركية. وندر استعمال هذه الألفاظ في البلاد
+                    وألفاظ طليانية مثل سيغورطه <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">ضمان من الحريق أو ضمان الحياة</tei:q> المستعملة في التركية. وندر استعمال هذه الألفاظ في البلاد
                     الأخرى وهي شائعة بالاستعمال عَلَى الألسن في طرابلس الغرب كما تجد بعض الألفاظ الرومية وهناك ألفاظ أعجمية أخرى ولكنها
                     قليلة وهي مستعملة في مصر خاصة مثل لفظة جنيه الإنكليزية لليرة المصرية. وهذا جماع الألفاظ الأعجمية وقد سبق لنا الكلام
                     عَلَى المالطية وهي بين اللغة التونسية والمصرية وفيها أثر كبير من الإيطالية.</p>
@@ -1542,7 +1542,7 @@
                     الإفرنسية والإيطالية بكثرة. أما لهج الجزائر فتكثر فيها الألفاظ الفرنسوية وفيها كما في لهجة تونس بعض الألفاظ التركية
                     وقليل من الإسبانية والإيطالية. أما لغة مراكش فتجد فيها تعابير فرنسوية وإيطالية واقتبست قليلاً من لغة البربر وكثيراً من
                     اللغة الإسبانية وربما بعض الألفاظ البرتقالية. وقد أكد المسيو مرسيه في بحثه عن هذه الألفاظ المشتركة أن الألفاظ البربرية
-                    (التي قد تكون أحياناً ألفاظاً من أصل عربي متبربرة ثم أعيدت إلى اللغة العربية) قلما توجد إلا في البلاد الكبرى التي تكثر
+                    <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">التي قد تكون أحياناً ألفاظاً من أصل عربي متبربرة ثم أعيدت إلى اللغة العربية</tei:q> قلما توجد إلا في البلاد الكبرى التي تكثر
                     فيها اللغة البربرية ثم أن تأثير اللغة الإسبانية في المدن الساحلية محسوس جداً فتراهم يستعملون في الكلام لفظة كوشطا للساحل
                     مأخوذة من كوستا الإسبانية وفالسو أي رديء الصفة وفافور نعمة وخلينالد محتذاة من جنرال وموندا من موني أي المعاملة. ولم يثبت
                     بأن الأدوات أو الحروف دي وديال الكثيرة الاستعمال قد أتت من دي ودل ولكن اللغة العربية المراكشية أخذت عن الإسبانية حرف ب.
@@ -1560,8 +1560,8 @@
                     إدغام اللغة الفارسية بالألفاظ العربية نشأت اللهجة الفارسية الحالية.</p>
                 <p xml:lang="ar" xml:id="p_135.d1e2943">ولقد كان الفرس والأتراك أو التتار في القرون الوسطى الكثير من العلائق التي أبقت أثراً منها في اللغة وسرت بعض
                     الألفاظ التركية إلى الفارسية منذ قرون ومن جملها ما ذكر أرمينوس فمبرى من الألفاظ المستعملة في الفارسية وهي من أصل تركي
-                    مثل سالار قائد وخواجه معلم أو أستاذ. وسرى إليها بعض الألقاب وأسماء الوظائف مثل آغا وبك وخان وباشي (زعيم) التي كثيراً ما
-                    نراها متصلة بألفاظ فارسية مثل متولي باشي وهو اسم لقب ديني وده باشي زعيم <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> (أون باشي) أما سائر اللهجات المحكية في فارس
+                    مثل سالار قائد وخواجه معلم أو أستاذ. وسرى إليها بعض الألقاب وأسماء الوظائف مثل آغا وبك وخان وباشي <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">زعيم</tei:q> التي كثيراً ما
+                    نراها متصلة بألفاظ فارسية مثل متولي باشي وهو اسم لقب ديني وده باشي زعيم <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أون باشي</tei:q> أما سائر اللهجات المحكية في فارس
                     كالآرامية ولغات الشعوب القافقاسية الخاضعة للحكم الفارسي فلم تتأثر حتى أوائل القرن التاسع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> بالمؤثرات الفارسية وهكذا في
                     اللغة الهندستانية عَلَى كثرة الصلات الموجودة بين فارس والهند فالواجب مع هذا أن لا نغفل عن لفظة لك <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100">مئة</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> وكورور <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="500">خمسمائة</num>
                     <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> وتشاب طبع أو مطبوعات وتنوب هذه عن لفظة طبع العربية وهي لفظة حديثة العهد.</p>
@@ -1575,11 +1575,11 @@
                     عَلَى أن الروس قد أخذوا ألفاظاً كثيرة من لغتهم عن الأجانب مثل الفرنسويين والألمان والإنكليز والطليان فلم تستعر الفارسية
                     من الروسية إلا لفظ سماور واستكان طاس ودروخكا عربة وكاليسكه كاليش (وهي عربة ذات <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> دواليب) وتارنتاس وباراخود للسفينة
                     البخارية وأسكنات معاملة الورق وهي من أصل فرنسوي أسنيا.</p>
-                <p xml:lang="ar" xml:id="p_139.d1e2964">والألفاظ الإنكليزية عبارة عن <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> وهي فاغون وترمواي ونوت من بانكنوت وشيك وجيلاس (قدح للشرب) وجلاس وسار لا
+                <p xml:lang="ar" xml:id="p_139.d1e2964">والألفاظ الإنكليزية عبارة عن <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> وهي فاغون وترمواي ونوت من بانكنوت وشيك وجيلاس <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">قدح للشرب</tei:q> وجلاس وسار لا
                     سهم الشركات الخ. أما الألفاظ الفرنسوية في الفارسية فكثيرة جداً وهي تنقسم عَلَى الوجه الآتي: الألفاظ العلمية وأسماء
                     العقاقير وأسماء الأطعمة مثل سوب حساءٌ وجيكو فخذ وكوتلت ضلع وأسماء الألبسة مثل كلوش حذاء الرجل وبلوز مشلح وبالتو معطف
                     وباردسو شعار وأسماء للتعبير عن المخترعات الحديثة: مثل تلغراف وتلفون وأتوموبيل وبالون وغاز للاستصباح وألفاظ للجندية مثل
-                    أسكادرون كتيبة وباتري (بطارية) عدة مدافع ومارش سير هالت وقوف ودفليه مضيق وموسيك موسيقى وإن وجود معلمين من الفرنسيس في
+                    أسكادرون كتيبة وباتري <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">بطارية</tei:q> عدة مدافع ومارش سير هالت وقوف ودفليه مضيق وموسيك موسيقى وإن وجود معلمين من الفرنسيس في
                     الجيش الفارسي في أزمان مختلفة قد انتهي باستعمالهم الألفاظ الإفرنجية وأسماء الأثاث مثل بيانو ولانترن مصباح وأسماء مدرسية
                     مثل كلاس صف وبروغرام خطة وديكته إملاء ونمرة واستعمالهم لفظتي برلمان وكونستيتوسيون اللتين نقلوهما بألفاظ شوالي مري
                     ومشروطيت أو سياسية فيقولون عنها سياست وتعابير دولية مثل قنصل وتمبر طابع وبودجه ميزانية وهنور شرف التي تقابل لفظة هنر
@@ -1613,8 +1613,8 @@
                     غليها من اللغات الصينية ولكن ما أُخذ من اللغات الأوربية كثير للغاية.</p>
                 <p xml:lang="ar" xml:id="p_145.d1e2987">في أي عصر دخلت إلى التركية الألفاظ الأولى التي هي من أصل غربي؟ إنه من الصعب أن يحكم بذلك حكماً صريحاً عَلَى
                     أن الأخذ عن الرومية نشاهده قد حدث منذ القرن الثالث <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num>. وفي المعجم اللغوي الذي نشره المسيو هوتسما وكتاب نحو التركية لأبي
-                    حيان بعض ألفاظ من هذا القبيل مثل لفظة (أوغور) سعادة (أرغات) صانع وهذه الألفاظ عَلَى ندرتها في اللهجات الشرقية تكثر بسرعة
-                    عجيبة في اللغة التركية العثمانية بعد فتح الآستانة حتى أن لفظة (أفندي) الذي كتب المسيو بسيشاري تاريخها الغريب والتي تنقلت
+                    حيان بعض ألفاظ من هذا القبيل مثل لفظة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أوغور</tei:q> سعادة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أرغات</tei:q> صانع وهذه الألفاظ عَلَى ندرتها في اللهجات الشرقية تكثر بسرعة
+                    عجيبة في اللغة التركية العثمانية بعد فتح الآستانة حتى أن لفظة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">أفندي</tei:q> الذي كتب المسيو بسيشاري تاريخها الغريب والتي تنقلت
                     بها الحالات صورة ومعنى كانت مستعملة منذ القرن الخامس <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num>.</p>
                 <p xml:lang="ar" xml:id="p_146.d1e2990">وإذا كانت الإيطالية هي اللغة البحرية والتجارية في البحر المتوسط فقد اكتسبت في كل زمان كمية عظيمة من الألفاظ
                     للغة العثمانية فإننا نجد فيها تعابير بحرية وتجارية وهي من لهجة البندقية خاصة.</p>
@@ -1634,11 +1634,11 @@
                     الإصلاح يأتي بالنتائج المنتظرة منه خصوصاً وأن له علاقة بالحركة لتوحيد اللغة العثمانية وهي الحركة التي أشير عليها وسنعود
                     إلى الكلام عليها. وعلى أي حال فإنا نرى الآن في الصحافة التركية ألفاظاً مولدة مثل تحت البحر سفينة سي أي غواصة وآثار عتيقة
                     أي العاديات أو الآثار العتيقة وبيطر فلك الحياد بين الملل دولي وغيرها. وقد نقلوا إلى التركية كما نقل كتاب العرب ألفاظاً
-                    إفرنجية وضعوا لها مسميات فترجموا دراعة بلفظ زرخلي ولكن الطراد أبقوه عَلَى أصله الفرنسوي فقالوا (كروازور) وقالوا عن
-                    النسافة (توربيدو) وهي من الإيطالية وبالإفرنسية (توربل) و (غانيوط) أي سفينة مدفعية وهي من الإنكليزية (كونبوت).</p>
+                    إفرنجية وضعوا لها مسميات فترجموا دراعة بلفظ زرخلي ولكن الطراد أبقوه عَلَى أصله الفرنسوي فقالوا <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">كروازور</tei:q> وقالوا عن
+                    النسافة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">توربيدو</tei:q> وهي من الإيطالية وبالإفرنسية <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">توربل</tei:q> و <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">غانيوط</tei:q> أي سفينة مدفعية وهي من الإنكليزية <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">كونبوت</tei:q>.</p>
                 <p xml:lang="ar" xml:id="p_149.d1e3005">أما المصطلحات العلمية فتكاد تكون تقريباً بأجمعها تركية أو فارسية أو عربية ويعمد إلى الفرنسوية واللاتينية في
                     النادر ولا تستعمل الإنكليزية ولا الألمانية.</p>
-                <p xml:lang="ar" xml:id="p_150.d1e3008">أما سائر اللهجات الشرقية التي تأثرت من اللغات العثمانية باللغات الأوربية فإن اللغة الروسية تكاد تكون وحدها منفردة بهذا الامتياز ولا يشاهد ذلك إلا في اللغة التتارية خاصة والظاهر أن ذلك بدأ في النصف الأول من القرن التاسع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> فإنك تجد في القصص الهزلية التي ألفها أليرزا فتح العلي آخوان زاده التي كتبت بين سنتي <num type="auto-markup" resp="#pers_TG" value="1850" xml:lang="ar" xml:id="num_1.d1e3010">١٨٥٠</num> و <num type="auto-markup" resp="#pers_TG" value="1860" xml:lang="ar" xml:id="num_1.d1e3013">١٨٦٠</num> بعض الألفاظ لم تكن روسية فتكون قد سرت إلى التتارية من اللغة الروسية مثل (زاكون) <pb corresp="file:../epub/26523/OEBPS/xhtml/P3186.xhtml" ed="shamela" n="n49-p23" xml:id="pb_24.d1e3016"/> قانون (بيلت) من (بيله) الفرنسوية أي تذكرة و (باشور) من (باسور) أي جواز و (مدال) من ميدال أي نوط ولا تكاد الآن تفتح جريدة مثل <bibl xml:lang="ar"><title level="j" xml:lang="ar">ترجمان</title> التي تصدر في <pubPlace xml:lang="ar"><placeName xml:lang="ar">بعجه سراي</placeName></pubPlace></bibl> و<bibl xml:lang="ar"><title level="j" xml:lang="ar">ترقي</title> التي تصدر في <pubPlace xml:lang="ar"><placeName xml:lang="ar">باكو</placeName></pubPlace></bibl> و<bibl xml:lang="ar">جريدة <title level="j" xml:lang="ar">قازان مخبري</title></bibl> <pb ed="print" n="113" facs="#facs_127" xml:id="pb_48.d1e3337"/> إلا وتدهش مما تراه من كثرة الألفاظ الروسية أو المصبوغة بالصبغة الروسية لأن كثيراً منها من أصل فرنسوي أو ألماني أو إيطالي.</p>
+                <p xml:lang="ar" xml:id="p_150.d1e3008">أما سائر اللهجات الشرقية التي تأثرت من اللغات العثمانية باللغات الأوربية فإن اللغة الروسية تكاد تكون وحدها منفردة بهذا الامتياز ولا يشاهد ذلك إلا في اللغة التتارية خاصة والظاهر أن ذلك بدأ في النصف الأول من القرن التاسع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> فإنك تجد في القصص الهزلية التي ألفها أليرزا فتح العلي آخوان زاده التي كتبت بين سنتي <num type="auto-markup" resp="#pers_TG" value="1850" xml:lang="ar" xml:id="num_1.d1e3010">١٨٥٠</num> و <num type="auto-markup" resp="#pers_TG" value="1860" xml:lang="ar" xml:id="num_1.d1e3013">١٨٦٠</num> بعض الألفاظ لم تكن روسية فتكون قد سرت إلى التتارية من اللغة الروسية مثل <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">زاكون</tei:q> <pb corresp="file:../epub/26523/OEBPS/xhtml/P3186.xhtml" ed="shamela" n="n49-p23" xml:id="pb_24.d1e3016"/> قانون <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">بيلت</tei:q> من <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">بيله</tei:q> الفرنسوية أي تذكرة و <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">باشور</tei:q> من <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">باسور</tei:q> أي جواز و <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">مدال</tei:q> من ميدال أي نوط ولا تكاد الآن تفتح جريدة مثل <bibl xml:lang="ar"><title level="j" xml:lang="ar">ترجمان</title> التي تصدر في <pubPlace xml:lang="ar"><placeName xml:lang="ar">بعجه سراي</placeName></pubPlace></bibl> و<bibl xml:lang="ar"><title level="j" xml:lang="ar">ترقي</title> التي تصدر في <pubPlace xml:lang="ar"><placeName xml:lang="ar">باكو</placeName></pubPlace></bibl> و<bibl xml:lang="ar">جريدة <title level="j" xml:lang="ar">قازان مخبري</title></bibl> <pb ed="print" n="113" facs="#facs_127" xml:id="pb_48.d1e3337"/> إلا وتدهش مما تراه من كثرة الألفاظ الروسية أو المصبوغة بالصبغة الروسية لأن كثيراً منها من أصل فرنسوي أو ألماني أو إيطالي.</p>
                 <p xml:lang="ar" xml:id="p_151.d1e3019">إذا عرفت من هذا فما هو مستقبل اللغة التركية؟ إنا نشهد الآن لجنة المعارف العمومية في مجلس النواب الروسي تعنى
                     بالكتب المؤلفة باللغة المحلية للمدارس وقد رفضت الاستعاضة عن اللفظ التتري باللفظ التركي وذلك ليحولوا دون الجامعة التركيةز
                     ولكن من أين نشأت هذه المخاوف؟</p>
@@ -1651,7 +1651,7 @@
                     بما دهمها من الألفاظ العربية والفارسية أولاً والألفاظ الإفرنجية ثانياً فالقوم فيها يبحثون في حذف جميع هذه الألفاظ
                     ليستعيضوا عنها بما يقابلها من الألفاظ التركية التي نسيت منذ عهد بعيد وهي أكثر التئاماً مع روح اللغة. وأصبح لهذه الحركة
                     شأن عظيم بما توفر عليه القائمون بطرح الألفاظ الدخيلة عَلَى التركية من الأبحاث اللغوية المهم أكثرها كأبحاث العلماء أمثال
-                    القائم مقام نجيب عاصم بك والمقالات الكثيرة التي نشرت في جرائد وتأسيس الجمعيات لهذا الغرض مثل جمعية (ترك درنكي) أي
+                    القائم مقام نجيب عاصم بك والمقالات الكثيرة التي نشرت في جرائد وتأسيس الجمعيات لهذا الغرض مثل جمعية <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">ترك درنكي</tei:q> أي
                     المنتدى التركي وغرضه درس أصول اللغة التركية وإحياء ما عاث فيه البلى من الألفاظ ويقول المسيو هارتمان <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> علماء المشرقيات
                     أنه يرجى أن تكون لهذه الحركة نتائج حسنة. <pb corresp="file:../epub/26523/OEBPS/xhtml/P3187.xhtml" ed="shamela" n="n49-p24" xml:id="pb_25.d1e3027"/> وهكذا
                     يرجع العثمانيون الأتراك إلى التركية القديمة والتتر الروسيون يحاولون الجري عَلَى مثال اللغة التركية الشائعة في الآستانة
@@ -1665,7 +1665,7 @@
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P3188.xhtml" ed="shamela" n="n49-p25" xml:id="pb_26.d1e3032"/>
             <div type="article" xml:lang="ar" xml:id="div_4.d1e3034">
                 <head xml:lang="ar" xml:id="head_3.d1e3036">المالية العثمانية</head>
-                <p xml:lang="ar" xml:id="p_154.d1e3039">لا شيء يشغل بال العارفين من العثمانيين مثل إصلاح ميزانية الدولة وبينا النفوس متطلعة إلى ما يجري في مجلسنا النيابي بشأنها وردت <bibl xml:lang="ar">مجلة <title level="j" xml:lang="ar">العالمين</title> الباريزية وفيها مقالة بقلم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> الأخصائيين في هذا المعنى</bibl> قال فيها أن واردات السلطان سليم الأول كانت تقدر سنة <num type="auto-markup" resp="#pers_TG" value="1508" xml:lang="ar" xml:id="num_1.d1e3044">١٥٠٨</num> بـ <num type="auto-markup" resp="#pers_TG" value="3.13E6" xml:lang="ar" xml:id="num_1.d1e3047">٣.١٣٠.٠٠٠</num> دوكا وبلغت سنة <num type="auto-markup" resp="#pers_TG" value="1553" xml:lang="ar" xml:id="num_1.d1e3050">١٥٥٣</num> <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e3053">١٥</num> مليون دوكا وبعد ذلك عاد ارتقاؤها انحطاطاً وقوتها ضعفاً مشهوداً بالاقتراض فأصبحت المملكة في قبضة أرباب المصارف من الماليين ولا تزال حتى يوم الناس هذا. فليت شعري هل ينهض أحرار الأمة العثمانية المجددون لإنهاض ماليتهم من كبوتها؟ فالجواب عَلَى ذلك اقتصدوا عَلَى وجه حسن تحسن ماليتكم لأن هذه لا تستمد إلا من الاقتصاد عَلَى أن الحالة الزراعية والصناعية والتجارية في السلطنة العثمانية ليست عَلَى ما يرام بالنظر لمثل هذه المملكة الواسعة الرباع والأصقاع. فقد خرجت المملكة سنة <num type="auto-markup" resp="#pers_TG" value="1905" xml:lang="ar" xml:id="num_1.d1e3057">١٩٠٥</num> <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e3060">١٨</num> مليون قنطار من الحنطة و <num type="auto-markup" resp="#pers_TG" value="34" xml:lang="ar" xml:id="num_1.d1e3063">٣٤</num> مليون قنطار من الشعير والجاودار (الحنطة السوداء) والقرطمان والذرة. ويستخرج من اليمن قهوة حسنة معروفة منزلتها. وتبلغ مساحة الغابات<pb ed="print" n="115" facs="#facs_129" xml:id="pb_52.d1e3390"/> التي خربتها المواشي <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ملايين هكتار. ويصدر من ولاية بورصة ولواء أزميد نحو <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> طن من الفيالج (الشرانق) وكثير من المواد الطبيعية عَلَى ظاهر الأرض وباطنها لم تستثمر إلى الآن لقلة رؤوس الأموال والمهندسين. وتقدر صادرات المملكة ووارداتها بنحو <num type="auto-markup" resp="#pers_TG" value="1150" xml:lang="ar" xml:id="num_1.d1e3066">١١٥٠</num> مليون فرنك تكاد تنقسم نصفين وطول سككها الحديدية <num type="auto-markup" resp="#pers_TG" value="6600" xml:lang="ar" xml:id="num_1.d1e3069">٦٦٠٠</num> كيلومتر.</p>
+                <p xml:lang="ar" xml:id="p_154.d1e3039">لا شيء يشغل بال العارفين من العثمانيين مثل إصلاح ميزانية الدولة وبينا النفوس متطلعة إلى ما يجري في مجلسنا النيابي بشأنها وردت <bibl xml:lang="ar">مجلة <title level="j" xml:lang="ar">العالمين</title> الباريزية وفيها مقالة بقلم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> الأخصائيين في هذا المعنى</bibl> قال فيها أن واردات السلطان سليم الأول كانت تقدر سنة <num type="auto-markup" resp="#pers_TG" value="1508" xml:lang="ar" xml:id="num_1.d1e3044">١٥٠٨</num> بـ <num type="auto-markup" resp="#pers_TG" value="3.13E6" xml:lang="ar" xml:id="num_1.d1e3047">٣.١٣٠.٠٠٠</num> دوكا وبلغت سنة <num type="auto-markup" resp="#pers_TG" value="1553" xml:lang="ar" xml:id="num_1.d1e3050">١٥٥٣</num> <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e3053">١٥</num> مليون دوكا وبعد ذلك عاد ارتقاؤها انحطاطاً وقوتها ضعفاً مشهوداً بالاقتراض فأصبحت المملكة في قبضة أرباب المصارف من الماليين ولا تزال حتى يوم الناس هذا. فليت شعري هل ينهض أحرار الأمة العثمانية المجددون لإنهاض ماليتهم من كبوتها؟ فالجواب عَلَى ذلك اقتصدوا عَلَى وجه حسن تحسن ماليتكم لأن هذه لا تستمد إلا من الاقتصاد عَلَى أن الحالة الزراعية والصناعية والتجارية في السلطنة العثمانية ليست عَلَى ما يرام بالنظر لمثل هذه المملكة الواسعة الرباع والأصقاع. فقد خرجت المملكة سنة <num type="auto-markup" resp="#pers_TG" value="1905" xml:lang="ar" xml:id="num_1.d1e3057">١٩٠٥</num> <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e3060">١٨</num> مليون قنطار من الحنطة و <num type="auto-markup" resp="#pers_TG" value="34" xml:lang="ar" xml:id="num_1.d1e3063">٣٤</num> مليون قنطار من الشعير والجاودار <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">الحنطة السوداء</tei:q> والقرطمان والذرة. ويستخرج من اليمن قهوة حسنة معروفة منزلتها. وتبلغ مساحة الغابات<pb ed="print" n="115" facs="#facs_129" xml:id="pb_52.d1e3390"/> التي خربتها المواشي <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ملايين هكتار. ويصدر من ولاية بورصة ولواء أزميد نحو <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> طن من الفيالج <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">الشرانق</tei:q> وكثير من المواد الطبيعية عَلَى ظاهر الأرض وباطنها لم تستثمر إلى الآن لقلة رؤوس الأموال والمهندسين. وتقدر صادرات المملكة ووارداتها بنحو <num type="auto-markup" resp="#pers_TG" value="1150" xml:lang="ar" xml:id="num_1.d1e3066">١١٥٠</num> مليون فرنك تكاد تنقسم نصفين وطول سككها الحديدية <num type="auto-markup" resp="#pers_TG" value="6600" xml:lang="ar" xml:id="num_1.d1e3069">٦٦٠٠</num> كيلومتر.</p>
                 <p xml:lang="ar" xml:id="p_155.d1e3073">هذا ما قاله صاحب هذا المبحث وقال إن إصلاح المالية العثمانية ليس بالأمر المتعذر فإنها إذا لم تحدث للدولة
                     مشاكل خارجية تستطيع أن تلم شعثها بعد بضع سنين إذا أحسن الأحرار السياسة والإدارة. وهو قول يشبه ما يردده ناظر ماليتنا
                     عَلَى أنه مثل بعض الماليين لا يرى عَلَى الدولة حرجاً في الاقتراض لسد العجز من ميزانيتها لأن الدولة تقترض من جهة وتوفي
@@ -1726,7 +1726,7 @@
                 <p xml:lang="ar" xml:id="p_164.d1e3182">وقد كتب شفيق بك المؤيد نائب دمشق في مجلس الأمة العثمانية وهو ثقة في الشؤُون المالية مبحثاً قال فيه: إن ديون
                     الدولة يوم تألفت إدارة الديون العمومية محررة بالضبط في تأليف قانون هذه الإدارة وكانت يومئذ عبارة عن <num type="auto-markup" resp="#pers_TG" value="1.16815172E8" xml:lang="ar" xml:id="num_1.d1e3184">١١٦.٨١٥.١٧٢</num> ليرة عثمانية غير أنا إذا دققنا نجد أن قيمة هذه الديون الحقيقية لا تتجاوز <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="30">ثلاثين</num> مليون ليرة لأن القمة
                     المحررة في القانون هي قيمة اعتبارية لا حقيقية وقد قسمت الديون المذكورة  <pb ed="print" n="118" facs="#facs_132" xml:id="pb_58.d1e3517"/>وقتئذ إلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> أقسام أعظمها وكان يتناول أمثر من
-                    <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أرباعها ما كان معروفاً عند أصحاب الدين باسم (ترتيب د).</p>
+                    <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أرباعها ما كان معروفاً عند أصحاب الدين باسم <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">ترتيب د</tei:q>.</p>
                 <p xml:lang="ar" xml:id="p_165.d1e3188">وهكذا كانت ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100">مئة</num> منه تختلف أبداً بين <num type="auto-markup" resp="#pers_TG" value="17" xml:lang="ar" xml:id="num_1.d1e3190">١٧</num> و <num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e3193">٢٠</num> وإنا عَلَى ما ذكر ما
                     تجاوزت قط قبل أن تظهر مسألة توحيد الديون <num type="auto-markup" resp="#pers_TG" value="21" xml:lang="ar" xml:id="num_1.d1e3196">٢١</num> و <num type="auto-markup" resp="#pers_TG" value="22" xml:lang="ar" xml:id="num_1.d1e3199">٢٢</num> كما أن مجلس الديون
                     العمومية لم يدفع قط في مشتراه لاستهلاك الدين قيمة فوق ذلك. وإني لآت ببرهان جلي عَلَى أن قيمة الحقيقية أعني قيمتها في
@@ -1806,12 +1806,12 @@
                 <p xml:lang="ar" xml:id="p_186.d1e3318">سران يضمنان احترام الشيخوخة وصفاء الحياة: حب العمل والشعور بالواجب.</p>
                 <p xml:lang="ar" xml:id="p_187.d1e3321">النظام يسعف الذاكرة ويوفر الوقت ويحفظ الأشياء.</p>
                 <p xml:lang="ar" xml:id="p_188.d1e3325">يقرأ الإنسان ليمهر فلو كان الناس يقرؤن ليكونوا أحسن حالاً يصبحون عما قريب أمهر وأحذق.</p>
-                <p xml:lang="ar" xml:id="p_189.d1e3328">نشكو قليلاً في الأحيان من أحبابنا لنبرر سلفاً خفثنا (لاروشفو كولد).</p>
-                <p xml:lang="ar" xml:id="p_190.d1e3331">إن تعلم النظر هو أطول الفنون وأصعبها (كونكور).</p>
-                <p xml:lang="ar" xml:id="p_191.d1e3334">إننا نحب من يعجب بنا ولكننا لا نحب أبداً من نعجب بهم (لاروشفو كولد).</p>
-                <p xml:lang="ar" xml:id="p_192.d1e3337">يجد المرء في السياحة رأس مال للبطالة لا يخلو منه زاوية من زوايا قلب كل منا (بانفيل).</p>
-                <p xml:lang="ar" xml:id="p_193.d1e3340">علينا وحدنا أن نحرس أفكارنا ففي البيوت نسهر عَلَى أخلاقنا وفي المجتمعات نحرس ألسنتنا (العقيلة دي
-                    ساتيل).</p>
+                <p xml:lang="ar" xml:id="p_189.d1e3328">نشكو قليلاً في الأحيان من أحبابنا لنبرر سلفاً خفثنا <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">لاروشفو كولد</tei:q>.</p>
+                <p xml:lang="ar" xml:id="p_190.d1e3331">إن تعلم النظر هو أطول الفنون وأصعبها <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">كونكور</tei:q>.</p>
+                <p xml:lang="ar" xml:id="p_191.d1e3334">إننا نحب من يعجب بنا ولكننا لا نحب أبداً من نعجب بهم <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">لاروشفو كولد</tei:q>.</p>
+                <p xml:lang="ar" xml:id="p_192.d1e3337">يجد المرء في السياحة رأس مال للبطالة لا يخلو منه زاوية من زوايا قلب كل منا <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">بانفيل</tei:q>.</p>
+                <p xml:lang="ar" xml:id="p_193.d1e3340">علينا وحدنا أن نحرس أفكارنا ففي البيوت نسهر عَلَى أخلاقنا وفي المجتمعات نحرس ألسنتنا العقيلة دي
+                    ساتيل.</p>
                 <p xml:lang="ar" xml:id="p_194.d1e3344">لا يحدث في الحياة أمر لا كما يخشى منه ولا كما يؤمل فيه.</p>
                 <p xml:lang="ar" xml:id="p_195.d1e3347">أشبه بمن يقول الكذب من يورد قولاً في معرض الحق وهو لم يفكر فيه.</p>
                 <p xml:lang="ar" xml:id="p_196.d1e3350">في القراءة أجمل سلوى عن الحياة وعن النفس.</p>
@@ -2294,7 +2294,7 @@
                     <head xml:id="head_23.d1e4161" xml:lang="ar">تربية بيوت الضاحية</head>
                     <p xml:lang="ar" xml:id="p_282.d1e3763">اشتهر <persName xml:lang="ar">الدكتور ليز</persName> في ألمانيا بإنشاء مدارس سماها بهذا الاسم وشاعت طريقتها في أوربا وأميركا عَلَى نحو ما كانت شاعت منذ بضع سنين كتب إديمون ديمولانس في فرنسا القائل باتخاذ التربية السكسونية. وقد <bibl xml:lang="ar">كتبت مجلة التربية الفرنسوية يصف طريقة مدارسه</bibl> قال: إننا أنشأنا خلال ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> السنين الأخيرة من بيوت التربية <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> وهي في الضواحي بعيدة عن المدن يتربى فيها التلميذ ممتعاً بكل قواه الطبيعية والدينية والأدبية فيعيش في محيط ملائم لتربية شخصيته عَلَى القوة والنشاط عَلَى صورة تعرف فيها قيمة الحياة وأفراحها وتكون جديرة بأن تساعد عَلَى سعادة الخلق فيقوم المعلمون في هذه المدارس بوظيفة المربي الحقيقي يعيشون مع الفتيان الذين عهدت إليهم تربيتهم كما يعيش الأصحاب ويعينونهم ما أمكن عَلَى إتمام تربيتهم الشخصية فيلعبون ويعملون معهم ويقاسمونهم اللذائذ والأعمال الجدية ويؤثرون فيهم بالمثل والقدوة وبما يبثونه في قلوبهم من حب الميل إلى كل الصور الشريفة والنافعة في العمل. وللتربية العملية المقام الأول في هذه<pb ed="print" n="149" facs="#facs_163" xml:id="pb_116.d1e4166"/> التربية فيمكنون الطفل أن يعيش في الهواء الطلق وما يتحتم عليه القيام به من أنواع الرياضات البدنية يكون متناسباً مع نموه ويعمل به بدون إفراط فيوصونه بالمشي والعدو وأعمال الرياضة وركوب الدراجة وهذه الرياضة الأخيرة تكون في السنة الحادية <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ومن جملة <pb corresp="file:../epub/26523/OEBPS/xhtml/P3219.xhtml" ed="shamela" n="n49-p56" xml:id="pb_57.d1e3765"/> الأعمال التي تقوي جسمه زراعة البقول والزروع والنجارة وهي من الصناعات التي كتبت لها المدرسة فضل التقدم وإذ كان الدكتور وايز يعلق شأناً عظيماً عَلَى تأثير جمال الأقاليم في التلميذ أسس مدارسه ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أقاليم بهجة من بلاد ألمانيا أما الأشغال العقلية فيجب أن يعلمها الطفل عَلَى صورة مقبولة ويتقبلها بفرح فينبه ما فيه من الميل الفطري وهباته في النظر وقوته في التفكر كما تربي فيه العواطف الدينية والأدبية والوطنية وتفي بما يحفظ نظام الحياة وسذاجتها وإخلاصها المطلق نحو الواجب.</p>
                     <p xml:lang="ar" xml:id="p_283.d1e3768">قال لقد أنشأنا في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أقاليم بهجة من
-                        بلاد ألمانيا (في هارز تورنغ ورون) <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> دور للتربية للأطفال والمتوسطين
+                        بلاد ألمانيا <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">في هارز تورنغ ورون</tei:q> <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> دور للتربية للأطفال والمتوسطين
                         والكبار وذلك ليكون أبناء كل سن مع أبناء سنهم ويخلصوا من حبسهم في مدارس
                         داخلية أشبه بالثكن منها بالمدارس فيعمل أهل كل سن ما يشاؤن لتنمية شخصياتهم
                         ولهم من تنوع الأقاليم التي ينقلون من مدارسها ما يوسع أمامهم أفق العمل في
@@ -2601,7 +2601,7 @@
                         المصرية في عهد الخديوي عباس الثاني إلى إحياء ما خلفه لنا السلف الصالح وأورد
                         ما وفق جمعه من مكاتب منوعة بواسطة التصوير الشمسي من الكتب الممتعة أو ما
                         استنسخه أو ما عرف مكانه ككتاب نهاية الأرب في فنون الأدب لشهاب الدين أحمد بن
-                        عبد الكريم النويري (ونويرة قرية بالقرب من بني سويف في صعيد مصر) وهو كتاب
+                        عبد الكريم النويري <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">ونويرة قرية بالقرب من بني سويف في صعيد مصر</tei:q> وهو كتاب
                         دائرة معارف في العلوم البشرية التي عرفت في عصره قسمه إلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> أقسام وهي
                         السماء والأرض وما فيها والإنسان وعالم الحيوان وعالم النبات (وفيه نبذة في
                         الطب) والتاريخ وهو في <num type="auto-markup" resp="#pers_TG" value="31" xml:lang="ar" xml:id="num_1.d1e4011">٣١</num> مجلداً انتهى قبيل سنة
@@ -2640,7 +2640,7 @@
                         الثالث للميلاد وأراد أن تبقى يونان على وثنيتها والكتاب الخامس <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> رسالة في
                         تاريخ الغناء وعدم حرمته وأخبار المغنين في بلاد العرب ومؤلفه من أهل القرن
                         الثاني والكتاب السادس <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> كتاب العز والمنافع للمجاهدين بآلات الحرب والمدافع
-                        وهو كتاب معرب عن اللغة الإسبانية الإسلامية (الجميادو) بقلم قاضيب فارس سنة
+                        وهو كتاب معرب عن اللغة الإسبانية الإسلامية <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">الجميادو</tei:q> بقلم قاضيب فارس سنة
                             <num type="auto-markup" resp="#pers_TG" value="1050" xml:lang="ar" xml:id="num_1.d1e4035">١٠٥٠</num> هـ قال فيه أن البارود اخترعه راهب
                         ألماني.</p>
                     <p xml:lang="ar" xml:id="p_325.d1e4039">هذه هي الكتب التي لفت إليها صاحب اللائحة
@@ -2652,7 +2652,7 @@
                     <head xml:id="head_31.d1e4483" xml:lang="ar"><bibl xml:id="bibl_2.d1e4680" xml:lang="ar"><title level="m" xml:id="title_9.d1e4681" xml:lang="ar">فلسفة الإسلام</title></bibl></head>
                     <p xml:lang="ar" xml:id="p_327.d1e4045"><bibl xml:id="bibl_3.d1e4685" xml:lang="ar"><supplied xml:id="supplied_1.d1e4686" xml:lang="ar"><title level="m" resp="#pers_TG" xml:id="title_10.d1e4687" xml:lang="ar">فلسفة
                                 الإسلام</title></supplied> نشر <author xml:id="author_2.d1e4690" xml:lang="ar"><persName xml:id="persName_12.d1e4691" xml:lang="ar">الماجور ليوناردو</persName></author> الإنكليزي كتاباً في
-                            الإسلام وصاحب الشريعة (عليه الصلاة والسلام) على وجه يرفع الغشاء عنها ويزيل الشبه الشائعة في الغرب اليوم عن حقيقة
+                            الإسلام وصاحب الشريعة <tei:q rend="brackets" type="auto-markup" resp="#pers_TG">عليه الصلاة والسلام</tei:q> على وجه يرفع الغشاء عنها ويزيل الشبه الشائعة في الغرب اليوم عن حقيقة
                             هذا الدين وقد قدم له السيد أمير علي العام الهند الشهير مقدمة بالإنكليزية وأثنى على علمه <pb corresp="file:../epub/26523/OEBPS/xhtml/P3230.xhtml" ed="shamela" n="n49-p67" xml:id="pb_68.d1e4047"/> وحبه
                             للحق والكتاب يطلب من <publisher xml:id="publisher_2.d1e4696" xml:lang="ar"><orgName xml:id="orgName_5.d1e4697" xml:lang="ar">مكتبة لوزان</orgName></publisher> في
                                     <pubPlace xml:id="pubPlace_3.d1e4700" xml:lang="ar"><placeName xml:id="placeName_8.d1e4701" xml:lang="ar">لندرا</placeName></pubPlace></bibl>.</p>
