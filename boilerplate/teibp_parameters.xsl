@@ -81,7 +81,7 @@
                     <xsl:text>انظر الى هذه الصورة في</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:text>view facsimile(s) at</xsl:text>
+                    <xsl:text>view facsimile at</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
         </span>
