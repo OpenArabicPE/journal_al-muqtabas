@@ -3,7 +3,7 @@
     msxsl" version="1.0"
     xmlns="http://www.w3.org/1999/xhtml" xmlns:eg="http://www.tei-c.org/ns/Examples" xmlns:exsl="http://exslt.org/common"
     xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
-    xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <xd:doc scope="stylesheet">
         <xd:desc>
@@ -271,7 +271,7 @@
     <xsl:template name="htmlHead">
         <head>
             <meta charset="UTF-8"/>
-            <xsl:call-template name="templMetadataDCFile"/>
+            <xsl:call-template name="t_metadata-dc-file"/>
             <link href="{$teibpCSS}" id="maincss" rel="stylesheet" type="text/css"/>
             <link href="{$customCSS}" id="customcss" rel="stylesheet" type="text/css"/>
             <link href="{$v_css-heads}" id="css-heads" rel="stylesheet" type="text/css"/>
@@ -286,7 +286,8 @@
 			</script>
             <xsl:call-template name="tagUsage2style"/>
             <xsl:call-template name="rendition2style"/>
-            <title><!-- don't leave empty. --></title>
+            <!-- <title>don't leave empty.</title> -->
+            <xsl:call-template name="t_metadata-file"/>
             <xsl:if test="$includeAnalytics = true()">
                 <xsl:call-template name="analytics"/>
             </xsl:if>
@@ -776,7 +777,10 @@
     <!-- provide links to linked data -->
     <xsl:template match="tei:*[@ref][ancestor::tei:text]">
         <xsl:copy>
-            <xsl:apply-templates/>
+            <xsl:call-template name="templHtmlAttrLang">
+                <xsl:with-param name="pInput" select="."/>
+            </xsl:call-template>
+            <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
         <!-- do something with private urls -->
         <a class="c_linked-data" target="_blank" lang="en">
@@ -846,5 +850,13 @@
                 <xsl:value-of select="concat($p_text-permalink, $v_name-element,' (#',$p_id,')')"/>
             </span>
         </a>
+    </xsl:template>
+    
+    <!-- template to follow XIncludes -->
+    <xsl:template match="xi:include">
+        <xsl:if test="$p_process-xinclude = true()">
+            <xsl:variable name="v_id-element" select="@xpointer"/>
+            <xsl:apply-templates select="document(@href)//node()[@xml:id=$v_id-element]"/>
+        </xsl:if>
     </xsl:template>
 </xsl:stylesheet>

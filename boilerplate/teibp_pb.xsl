@@ -73,12 +73,12 @@
                 <xsl:when test="starts-with($v_facs, '#')">
                     <!-- Preference:  -->
                     <xsl:choose>
-                        <xsl:when test="$p_display-online-facsimiles = true()">
-                            <xsl:value-of select="$v_url-graphic"/>
-                        </xsl:when>
-                        <!-- select the local file -->
-                        <xsl:otherwise>
+                        <xsl:when test="$p_display-online-facsimiles = false()">
                             <xsl:value-of select="$v_graphic[@mimeType = $v_mimetype][1]/@url"/>
+                        </xsl:when>
+                        <!-- select the online copy as default -->
+                        <xsl:otherwise>
+                            <xsl:value-of select="$v_url-graphic"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
