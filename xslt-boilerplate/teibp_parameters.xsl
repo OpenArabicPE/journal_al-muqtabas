@@ -15,13 +15,13 @@
     
     <!-- Load all other stylesheets -->
     <!-- import the standard TEI Boilerplate stylesheets -->
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/teibp_main.xsl"/>
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/teibp_sourcedesc.xsl"/>
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/xml-to-string.xsl"/>
+    <xsl:include href="teibp_main.xsl"/>
+    <xsl:include href="teibp_sourcedesc.xsl"/>
+    <xsl:include href="xml-to-string.xsl"/>
     <!-- import the stylesheet formatting all bibliographic metadata -->
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/teibp_bibl.xsl"/>
+    <xsl:include href="teibp_bibl.xsl"/>
     <!-- import the stylesheet dealing with the display of <pb> and facsimiles -->
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/teibp_pb.xsl"/>
+    <xsl:include href="teibp_pb.xsl"/>
 
     <!-- select whether you want to display page breaks and facsimiles; default: true() -->
     <xsl:param name="p_display-page-breaks" select="true()"/>
@@ -166,7 +166,7 @@
     <!-- parameters for file paths or URLs -->
     <!-- modify filePrefix to point to boilerplate files on your own server, or to specify a relative path, e.g.: <xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>
 	-->
-    <xsl:param name="filePrefix" select="'https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master'"/>
+    <xsl:param name="filePrefix" select="'..'"/>
     <!-- the following parameters should not be changed unless the folder structure and file names have been changed -->
     <xsl:param name="teibpCSS" select="concat($filePrefix, '/css/teibp.css')"/>
     <xsl:param name="customCSS" select="concat($filePrefix, '/css/teibp_custom.css')"/>
