@@ -17,7 +17,8 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:date[@when-custom][not(@when)]">
+    <!-- convert dates date include information on single days -->
+    <xsl:template match="tei:date[string-length(@when-custom)=10][not(@when)]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:attribute name="when">
@@ -39,6 +40,39 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <!-- convert hijri years only -->
+    <xsl:template match="tei:date[string-length(@when-custom)=4][@datingMethod='#cal_islamic'][not(@when)][not(@notBefore)]">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:variable name="v_date-h-1"
+                select="concat(@when-custom,'-01-01')"/>
+            <xsl:variable name="v_date-g-1">
+                <xsl:call-template name="funcDateH2G">
+                    <xsl:with-param name="pDateH" select="$v_date-h-1"/>
+                </xsl:call-template>
+            </xsl:variable>
+            <xsl:variable name="v_date-h-2"
+                select="concat(@when-custom,'-12-29')"/>
+            <xsl:variable name="v_date-g-2">
+                <xsl:call-template name="funcDateH2G">
+                    <xsl:with-param name="pDateH" select="$v_date-h-2"/>
+                </xsl:call-template>
+            </xsl:variable>
+            <!-- test if the Hijrī year spans more than one Gregorian year (this is not the case for 1295, 1329  -->
+            <xsl:choose>
+                <xsl:when test="substring($v_date-g-1,1,4)=substring($v_date-g-2,1,4)">
+                    <xsl:attribute name="when" select="substring($v_date-g-1,1,4)"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="notBefore" select="$v_date-g-1"/>
+                    <xsl:attribute name="notAfter" select="$v_date-g-2"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
     
