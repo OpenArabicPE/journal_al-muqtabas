@@ -50,6 +50,7 @@
     <!-- generate documentation of change -->
     <xsl:template match="tei:revisionDesc">
         <xsl:copy>
+            <xsl:apply-templates select="@*"/>
             <xsl:element name="change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
                 <xsl:attribute name="who" select="$pAuthorXmlId"/>
@@ -61,7 +62,7 @@
                 <xsl:element name="att">xml:id</xsl:element>
                 <xsl:text>following the pattern "name()_generate-id()"</xsl:text>
             </xsl:element>
-            <xsl:apply-templates select="@* | node()"/>
+            <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
     

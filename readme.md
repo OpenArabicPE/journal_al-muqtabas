@@ -4,9 +4,21 @@ author: Till Grallert
 date: 2016-10-23 23:25:09 +0200
 ---
 
+<<<<<<< HEAD
 Quick links: [Blog](https://tillgrallert.github.io/digital-muqtabas), [Webview *al-Muqtabas* 6(1) (text, facsimile)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml), [Zotero group "OpenAraPE/digital-muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/openarape/items/collectionKey/8SINFUW9)
 
+=======
+>>>>>>> master
 # Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1917/18)
+
+[![GitHub release](https://img.shields.io/github/release/tillgrallert/digital-muqtabas.svg?maxAge=2592000)](https://github.com/tillgrallert/digital-muqtabas/releases)
+[![DOI](https://zenodo.org/badge/45922152.svg?maxAge=2592000)](https://zenodo.org/badge/latestdoi/45922152)
+
+Quick links: 
+
+- [Blog](https://tillgrallert.github.io/digital-muqtabas), 
+- [Webview *al-Muqtabas* 6(1) (text, facsimile)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml), 
+- [Zotero group "OpenAraPE/digital-muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/openarape/items/collectionKey/8SINFUW9)
 
 In the context of the current onslaught cultural artifacts in the Middle East face from the iconoclasts of the Islamic State, from the institutional neglect of states and elites, and from poverty and war, digital preservation efforts promise some relief as well as potential counter narratives. They might also be the only resolve for future education and rebuilding efforts once the wars in Syria, Iraq or Yemen come to an end. 
 

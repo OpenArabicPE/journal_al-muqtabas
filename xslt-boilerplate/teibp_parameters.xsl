@@ -136,6 +136,27 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:param>
+    <!-- not yet ready for production -->
+    <xsl:param name="p_text-open">
+        <xsl:choose>
+            <xsl:when test="$v_lang-interface = 'ar'">
+                <xsl:text>empty</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>Open</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:param>
+    <xsl:param name="p_text-new-window">
+        <xsl:choose>
+            <xsl:when test="$v_lang-interface = 'ar'">
+                <xsl:text>empty</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>in new window</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:param>
     
     <xsl:param name="p_text-nav_next-issue">
         <span lang="{$v_lang-interface}">
