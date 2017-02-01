@@ -80,7 +80,8 @@
 
     <xsl:template match="/">
         <xsl:result-document href="../metadata/{$vgFileId}-bibl.MODS.xml">
-            <xsl:value-of select="'&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;../xslt-boilerplate/mods-bp.xsl&quot;?&gt;'" disable-output-escaping="yes"/>
+            <xsl:value-of select="'&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;../xslt-boilerplate/modsbp_main.xsl&quot;?&gt;'" disable-output-escaping="yes"/>
+
             <modsCollection xsi:schemaLocation="http://www.loc.gov/mods/v3 {$vgSchemaLocation}">
                 <!--<xsl:apply-templates select=".//tei:body//tei:bibl[contains(ancestor::tei:div/tei:head/text(),$pg_head-section)]"/>-->
                 <xsl:apply-templates select=".//tei:body//tei:bibl[descendant::tei:title] | .//tei:body//tei:biblStruct"/>
