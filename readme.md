@@ -4,7 +4,7 @@ author: Till Grallert
 date: 2016-10-23 23:25:09 +0200
 ---
 
-Quick links: [Blog](https://tillgrallert.github.io/digital-muqtabas), [Webview *al-Muqtabas* 6(1) (text, facsimile)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml), [Zotero group "Digital Muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/digital-muqtabas/items/)
+Quick links: [Blog](https://tillgrallert.github.io/digital-muqtabas), [Webview *al-Muqtabas* 6(1) (text, facsimile)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml), [Zotero group "OpenAraPE/digital-muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/openarape/items/collectionKey/8SINFUW9)
 
 # Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1917/18)
 
