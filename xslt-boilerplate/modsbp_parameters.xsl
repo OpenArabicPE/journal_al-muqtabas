@@ -28,5 +28,5 @@
 		<xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>
 	-->
     <xsl:param name="filePrefix" select="'..'"/>
-    <xsl:param name="modsbpCSS" select="concat($filePrefix, '/css/mods-bp.css')"/>
+    <xsl:param name="modsbpCSS" select="concat($filePrefix, '/css/modsbp.css')"/>
 </xsl:stylesheet>

@@ -19,7 +19,7 @@
     <xsl:output encoding="UTF-8" method="xml" omit-xml-declaration="yes"/>
     <xsl:strip-space elements="*"/>
     <!-- import stylesheet setting all the parameters -->
-    <xsl:include href="mods-parameters.xsl"/>
+    <xsl:include href="modsbp_parameters.xsl"/>
 
     <!-- variables -->
     <xsl:variable name="vMimeType" select="'image/jpeg'"/>
