@@ -6,8 +6,8 @@ date: 2016-10-23 23:25:09 +0200
 
 # Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1917/18)
 
-[![GitHub release](https://img.shields.io/github/release/tillgrallert/digital-muqtabas.svg)](https://github.com/tillgrallert/tei-boilerplate-arabic-editions/releases)
-[![DOI](https://zenodo.org/badge/45922152.svg)](https://zenodo.org/badge/latestdoi/45922152)
+[![GitHub release](https://img.shields.io/github/release/tillgrallert/digital-muqtabas.svg?maxAge=2592000)](https://github.com/tillgrallert/tei-boilerplate-arabic-editions/releases)
+[![DOI](https://zenodo.org/badge/45922152.svg?maxAge=2592000)](https://zenodo.org/badge/latestdoi/45922152)
 
 Quick links: 
 
