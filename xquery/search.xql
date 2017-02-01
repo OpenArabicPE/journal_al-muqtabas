@@ -28,7 +28,7 @@ let $v_teis := $v_library/descendant-or-self::tei:TEI[tei:teiHeader/tei:fileDesc
 let $v_url-base := 'https://rawgit.com/tillgrallert/digital-muqtabas/master'
 
 (: call stylesheet :)
-let $v_teibp := doc('/db/DAPE/boilerplate/teibp.xsl')
+let $v_teibp := doc('/db/DAPE/xslt-boilerplate/teibp.xsl')
 
 (: the search function :)
 let $v_query := request:get-parameter('search', 'المرأة')
