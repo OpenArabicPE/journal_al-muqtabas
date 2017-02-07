@@ -16,7 +16,7 @@
         </xd:desc>
     </xd:doc>
     
-    <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
+    <xsl:output encoding="UTF-8" indent="no" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
     
     <!-- reproduce everything -->
     <xsl:template match="@* | node()">
@@ -52,7 +52,7 @@
         <xsl:copy>
             <xsl:attribute name="from" select="@n"/>
             <xsl:attribute name="to" select="@n"/>
-            <xsl:apply-templates select="@*[not(@n)] | node()"/>
+            <xsl:apply-templates select="@*[not(parent::node()/@n)] | node()"/>
         </xsl:copy>
     </xsl:template>
     
