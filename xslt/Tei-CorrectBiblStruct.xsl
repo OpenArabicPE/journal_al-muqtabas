@@ -12,7 +12,7 @@
     
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p>This stylesheet moves any <tei:gi>biblScope</tei:gi> from inside <tei:gi>imprint</tei:gi> to its paren <tei:gi>monograph</tei:gi> in order to comply with TEI encoding practices.</xd:p>
+            <xd:p>This stylesheet moves any <tei:gi>biblScope</tei:gi> from inside <tei:gi>imprint</tei:gi> to its parent <tei:gi>monograph</tei:gi> in order to comply with TEI encoding practices. It also converts the <tei:att>n</tei:att> attribute and its value to identical <tei:att>from</tei:att> and <tei:att>to</tei:att>.</xd:p>
         </xd:desc>
     </xd:doc>
     
@@ -29,7 +29,7 @@
         <xsl:copy>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:text>Corrected </xsl:text><tei:gi>biblStruct</tei:gi><xsl:text> by moving all </xsl:text><tei:gi>biblScope</tei:gi><xsl:text> from </xsl:text><tei:gi>imprint</tei:gi><xsl:text> to </xsl:text><tei:gi>monogr</tei:gi><xsl:text>.</xsl:text>
+                <xsl:text>Corrected </xsl:text><tei:gi>biblStruct</tei:gi><xsl:text> by moving all </xsl:text><tei:gi>biblScope</tei:gi><xsl:text> from </xsl:text><tei:gi>imprint</tei:gi><xsl:text> to </xsl:text><tei:gi>monogr</tei:gi><xsl:text> and by converting all </xsl:text><tei:att>n</tei:att><xsl:text> to </xsl:text><tei:att>from</tei:att><xsl:text> and </xsl:text><tei:att>to</tei:att><xsl:text>with identical values.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
@@ -45,6 +45,14 @@
     <xsl:template match="tei:imprint[./tei:biblScope]">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()[not(ancestor-or-self::tei:biblScope)]"/>
+        </xsl:copy>
+    </xsl:template>
+    <!-- correct the faulty @n attribute -->
+    <xsl:template match="tei:biblScope[@n][not(@from)][not(@to)]">
+        <xsl:copy>
+            <xsl:attribute name="from" select="@n"/>
+            <xsl:attribute name="to" select="@n"/>
+            <xsl:apply-templates select="@*[not(@n)] | node()"/>
         </xsl:copy>
     </xsl:template>
     
