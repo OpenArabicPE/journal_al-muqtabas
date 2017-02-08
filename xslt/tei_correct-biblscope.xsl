@@ -56,11 +56,11 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="/">
+    <!--<xsl:template match="/">
         <xsl:result-document href="{substring-before(base-uri(),'.TEIP5.xml')}_corrected-biblStruct.TEIP5.xml">
             <xsl:copy>
                 <xsl:apply-templates select="node()"/>
             </xsl:copy>
         </xsl:result-document>
-    </xsl:template>
+    </xsl:template>-->
 </xsl:stylesheet>
