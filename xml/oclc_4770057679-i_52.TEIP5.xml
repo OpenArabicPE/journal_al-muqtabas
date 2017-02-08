@@ -64,8 +64,8 @@
                      </pubPlace>
                             <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1910-05-11" when-custom="1328-05-01" xml:lang="ar-Latn-x-ijmes">1 Jum I 1328</date>
                         </imprint>
-                        <biblScope from="5" to="5"/>
-                        <biblScope from="5" to="5"/>
+                        <biblScope unit="volume" n="5"/>
+                        <biblScope unit="issue" n="5"/>
                         <biblScope unit="page" from="289" to="352"/>
                     </monogr>
                     <idno type="oclc" xml:lang="en">4770057679</idno>
@@ -77,7 +77,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><tei:change when="2017-02-08">Corrected <tei:gi>biblStruct</tei:gi> by moving all <tei:gi>biblScope</tei:gi> from <tei:gi>imprint</tei:gi> to <tei:gi>monogr</tei:gi> and by converting all <tei:att>n</tei:att> to <tei:att>from</tei:att> and <tei:att>to</tei:att>with identical values.</tei:change><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><tei:change when="2016-04-16" who="#pers_TG" xml:lang="en">Linked all <tei:tag xml:lang="en">pb ed="print"</tei:tag> to the corresponding facsimile</tei:change><tei:change when="2016-04-15" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi xml:lang="en">num</tei:gi> elements separated by " . " into a single <tei:gi xml:lang="en">num</tei:gi> element. The <tei:att xml:lang="en">resp</tei:att> and <tei:att xml:lang="en">type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
+        <revisionDesc><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><tei:change when="2016-04-16" who="#pers_TG" xml:lang="en">Linked all <tei:tag xml:lang="en">pb ed="print"</tei:tag> to the corresponding facsimile</tei:change><tei:change when="2016-04-15" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <tei:gi xml:lang="en">num</tei:gi> elements separated by " . " into a single <tei:gi xml:lang="en">num</tei:gi> element. The <tei:att xml:lang="en">resp</tei:att> and <tei:att xml:lang="en">type</tei:att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tei:tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag>.</tei:change>
             <change when="2016-04-14" who="#pers_TG" xml:lang="en">Made some corrections to the structural mark-up. Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()".</change>
             <change when="2016-04-11" who="#pers_DD" xml:lang="en">Added structural mark-up of the articles; added mark-up of personal and place names.</change>
             <change when="2016-04-07" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
@@ -526,8 +526,8 @@
         <front xml:lang="ar" xml:id="front_1.d1e1335">
          <div type="masthead" xml:id="div_1.d1e1451" xml:lang="ar">
             <bibl xml:id="bibl_1.d1e1453" xml:lang="ar">
-               <biblScope from="5" to="5">الجزء 5</biblScope>
-               <biblScope from="5" to="5">المجلد 5</biblScope>
+               <biblScope unit="issue" n="5" xml:id="biblScope_4.d1e1455" xml:lang="ar">الجزء 5</biblScope>
+               <biblScope unit="volume" n="5" xml:id="biblScope_4.d1e1458" xml:lang="ar">المجلد 5</biblScope>
                <lb xml:id="lb_1.d1e1461"/>
                <title level="j" xml:lang="ar" xml:id="title_8.d1e1463">المقتبس</title>
             </bibl>
@@ -1795,7 +1795,10 @@
                         العاقلة والشعور والميل إلى الحنق والنزق. وقد نظر غاروفالو <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> مشاهير علماء
                         الجزاء في إيطاليا في الجناة فلم يجد واحداً منهم خلواً من إمارات مادية وأدبية
                         تحكي الإنسان الأول.</p>
-                    <p xml:lang="ar" xml:id="p_198.d1e2834">وما ظهر من الحقائق الجديدة من أمثال هذا الاستقراء والاستقصاء هو موضوع الرأي العام في أوربا في شأن تنظيم الجزاء حتى نشأ عن هذه التجارب الطبية علم جديد يسمى <q rend="quotation-marks">علم الجرائم البشرية — آنتروبولوجي كريميتل</q> وكان للإيطاليين اليد الطولى في خدمة هذا الفن الجليل.</p>
+                    <p xml:lang="ar" xml:id="p_198.d1e2834"
+                        >وما ظهر من الحقائق الجديدة من أمثال هذا الاستقراء والاستقصاء هو موضوع الرأي العام في أوربا في شأن تنظيم الجزاء حتى نشأ عن هذه التجارب الطبية علم جديد يسمى <q
+                        rend="quotation-marks"
+                        >علم الجرائم البشرية — آنتروبولوجي كريميتل</q> وكان للإيطاليين اليد الطولى في خدمة هذا الفن الجليل.</p>
                     <p xml:lang="ar" xml:id="p_199.d1e2837">نال المنفلوطي من المدنية الغربية في
                         كلامه عليها ما لا أرضاه له كل من درسها حق دراستها وبحث فيه بحث العالم
                         المتجرد عن المؤثرات دينية كانت أم قومية لا بحث خطيب أو أديب أو شاعر أو واعظ

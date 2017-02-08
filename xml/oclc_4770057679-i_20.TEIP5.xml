@@ -75,7 +75,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><tei:change when="2017-02-08">Corrected <tei:gi>biblStruct</tei:gi> by moving all <tei:gi>biblScope</tei:gi> from <tei:gi>imprint</tei:gi> to <tei:gi>monogr</tei:gi> and by converting all <tei:att>n</tei:att> to <tei:att>from</tei:att> and <tei:att>to</tei:att>with identical values.</tei:change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+        <revisionDesc><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
          <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
@@ -130,10 +130,10 @@
                      </pubPlace>
                                     <date when="1907-09-15" xml:lang="ar" xml:id="date_11.d1e642">بتاريخ:  <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e644">١٥</num>  -  <num type="auto-markup" resp="#pers_TG" value="9" xml:lang="ar" xml:id="num_1.d1e647">٩</num>  -  <num type="auto-markup" resp="#pers_TG" value="1907" xml:lang="ar" xml:id="num_1.d1e650">١٩٠٧</num> 
                      </date>
-                                    
+                                    <biblScope n="20" unit="issue" xml:lang="ar" xml:id="biblScope_3.d1e654">العدد  <num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e656">٢٠</num> 
+                     </biblScope>
                                 </imprint>
-                            <biblScope from="20" to="20">العدد  <num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e656">٢٠</num> 
-                     </biblScope></monogr>
+                            </monogr>
                         </biblStruct>
                     </div>
                 </front>
@@ -142,7 +142,7 @@
                     <div xml:lang="ar" xml:id="div_2.d1e669">
                         <head xml:lang="ar" xml:id="head_1.d1e671"> 
                <bibl xml:lang="ar" xml:id="bibl_1.d1e673"> 
-                  <biblScope from="20" to="20">العدد  <num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e677">٢٠</num> 
+                  <biblScope n="20" unit="issue" xml:lang="ar" xml:id="biblScope_4.d1e675">العدد  <num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e677">٢٠</num> 
                   </biblScope> 
                   <date when="1907-09-15" xml:lang="ar" xml:id="date_12.d1e681">بتاريخ:  <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e683">١٥</num>  -  <num type="auto-markup" resp="#pers_TG" value="9" xml:lang="ar" xml:id="num_1.d1e686">٩</num>  -
                              <num type="auto-markup" resp="#pers_TG" value="1907" xml:lang="ar" xml:id="num_1.d1e689">١٩٠٧</num> 
@@ -1256,72 +1256,180 @@
                         <head xml:lang="ar" xml:id="head_8.d1e2591">مطبوعات ومخطوطات</head>
                 <div type="article">
                     <head>الدليل في موارد أعالي النيل</head>
-                    <p xml:lang="ar" xml:id="p_146.d1e2597">ألف هذا الكتاب السير وليم جارستن مستشار نظارة الأشغال العمومية في مصر وعربه إبرأهيممصور بك رئيس الترجمة في هذه النظارة. وقد جمع فأوعى في وصف كل ماله علاقة بالنيلين الأبيض والأزرق من منطقة البحيرات في أواسط القارة الأفريقية حتى بلاد السودان. صرف المؤلف سنين في الرحلة إلى تلك البلاد ووصف أحوالها الطبيعية والجيولوجية وأمدته الكومة بالنفقات الطائلة التي لا تقوى عليها إلا الدول العظمى وساعده في مهمته بعض رجال الري والعلماء المخصين في هذا الفن فجاء ما كتب دليلاً على جودة البحث والاستقراء. والكتاب في <num type="auto-markup" resp="#pers_TG" value="636" xml:lang="ar" xml:id="num_1.d1e2599">٦٣٦</num> صفحة كبيرة من أجود الطبع والورق وفيه ما عدا الملحقات وذكر ما يمكن القيام به في المستقبل من الأعمال في سبيل زيادة الانتفاع بمياه النيل رسوم شمسية في الأماكن والجبال والجدأول والأنهار التي يمر بها هذا النيل وهي <num type="auto-markup" resp="#pers_TG" value="46" xml:lang="ar" xml:id="num_1.d1e2602">٤٦</num> رسماً متقناً.</p>
-                    <p xml:lang="ar" xml:id="p_147.d1e2606">ومن تلاه بالأمعأن الذي يستحقه يدرك غاية الإفرنج في إشباع مصنفاتهم وصرف أقصى الهمة إلى تحسينها وإتقانها ويدرك مبلغ اهتمام المترجم بنقل هذا الكتاب الفني الذي يهم العربية نقل أمثاله من اللغات الإفرنجية.</p>
-                    <p xml:lang="ar" xml:id="p_148.d1e2610">هذا السفر المفيد شاهد عدل على اتساع صدر العربية لترجمة عامة العلوم والفنون بلغة بليغة لا تشوبها شائبة العجمة وتنطبق على الأصل المنقول عنه ولا نغالي إذا قلنا أن لغة الدليل هي من أصبح الإنشاء بلاغة وتحريراً فإن كان ابن النيل لا يجد مندوحة من تنأول هذا الكتاب ليعرف سر ماء يرويه فإن ابن غير هذا الوادي يجب عليه أن يتنأوله ليتخذه أنموذجاً في التعريب الصحيح كما يستفيد منه الفوائد العلمية والفنية التي تكثر في كل صفحة من صفحاته. ولو نقل كل شهر إلى هذا اللسان كتاب استوفى شروط التأليف على الصورة التي ذكرناها في فرع من فروع العلم التي لا عهد بها للعربية لما اتت عليها بضع سنين ألا وهي تحاكي أرقى اللغات العلمية الأوروبية.</p>
-                    <p xml:lang="ar" xml:id="p_149.d1e2613">ومن تصفح كتاب الدليل ممن عانى صناعة التعريب يتجلى له ما عاناه معربه في نقله وخصوصاً بعض المصطلحات التي عمد إلى بحر اللغة واغترف منه ألفاظاً عربية قابل <pb ed="shamela" n="n20-p41" corresp="file:../epub/26523/OEBPS/xhtml/P1140.xhtml" xml:id="pb_42.d1e2615"/> بها المفردات الإفرنجي وهي تربو على <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100">مئة</num> لفظة ومعظمها مما لم يدر على السن الكتاب والمعربين.</p>
+                    <p xml:lang="ar" xml:id="p_146.d1e2597"
+                        >ألف هذا الكتاب السير وليم جارستن مستشار نظارة الأشغال العمومية في مصر وعربه إبرأهيممصور بك رئيس الترجمة في هذه النظارة. وقد جمع فأوعى في وصف كل ماله علاقة بالنيلين الأبيض والأزرق من منطقة البحيرات في أواسط القارة الأفريقية حتى بلاد السودان. صرف المؤلف سنين في الرحلة إلى تلك البلاد ووصف أحوالها الطبيعية والجيولوجية وأمدته الكومة بالنفقات الطائلة التي لا تقوى عليها إلا الدول العظمى وساعده في مهمته بعض رجال الري والعلماء المخصين في هذا الفن فجاء ما كتب دليلاً على جودة البحث والاستقراء. والكتاب في <num
+                        type="auto-markup" resp="#pers_TG" value="636" xml:lang="ar"
+                        xml:id="num_1.d1e2599"
+                        >٦٣٦</num> صفحة كبيرة من أجود الطبع والورق وفيه ما عدا الملحقات وذكر ما يمكن القيام به في المستقبل من الأعمال في سبيل زيادة الانتفاع بمياه النيل رسوم شمسية في الأماكن والجبال والجدأول والأنهار التي يمر بها هذا النيل وهي <num
+                        type="auto-markup" resp="#pers_TG" value="46" xml:lang="ar"
+                        xml:id="num_1.d1e2602">٤٦</num> رسماً متقناً.</p>
+                    <p xml:lang="ar" xml:id="p_147.d1e2606"
+                        >ومن تلاه بالأمعأن الذي يستحقه يدرك غاية الإفرنج في إشباع مصنفاتهم وصرف أقصى الهمة إلى تحسينها وإتقانها ويدرك مبلغ اهتمام المترجم بنقل هذا الكتاب الفني الذي يهم العربية نقل أمثاله من اللغات الإفرنجية.</p>
+                    <p xml:lang="ar" xml:id="p_148.d1e2610"
+                        >هذا السفر المفيد شاهد عدل على اتساع صدر العربية لترجمة عامة العلوم والفنون بلغة بليغة لا تشوبها شائبة العجمة وتنطبق على الأصل المنقول عنه ولا نغالي إذا قلنا أن لغة الدليل هي من أصبح الإنشاء بلاغة وتحريراً فإن كان ابن النيل لا يجد مندوحة من تنأول هذا الكتاب ليعرف سر ماء يرويه فإن ابن غير هذا الوادي يجب عليه أن يتنأوله ليتخذه أنموذجاً في التعريب الصحيح كما يستفيد منه الفوائد العلمية والفنية التي تكثر في كل صفحة من صفحاته. ولو نقل كل شهر إلى هذا اللسان كتاب استوفى شروط التأليف على الصورة التي ذكرناها في فرع من فروع العلم التي لا عهد بها للعربية لما اتت عليها بضع سنين ألا وهي تحاكي أرقى اللغات العلمية الأوروبية.</p>
+                    <p xml:lang="ar" xml:id="p_149.d1e2613"
+                        >ومن تصفح كتاب الدليل ممن عانى صناعة التعريب يتجلى له ما عاناه معربه في نقله وخصوصاً بعض المصطلحات التي عمد إلى بحر اللغة واغترف منه ألفاظاً عربية قابل <pb
+                        ed="shamela" n="n20-p41"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1140.xhtml" xml:id="pb_42.d1e2615"
+                        /> بها المفردات الإفرنجي وهي تربو على <num xml:lang="ar" type="auto-markup"
+                        subtype="d3" resp="#pers_TG" value="100"
+                        >مئة</num> لفظة ومعظمها مما لم يدر على السن الكتاب والمعربين.</p>
                 </div>
                 <div type="article">
                     <head>تاريخ الأستاذ الأمام</head>
-                    <p xml:lang="ar" xml:id="p_151.d1e2621">هو اسم تاريخ فقيد الشرق الشيخ محمد جمعه له مريده السيد محمد رشيد رضا صاحب المنار الاغر في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> مجلدات كبيرة الأول في سيرته وهو لا يزال تحت الطبع والثاني في منشآته وهو يحتوي على بعض رسائله ومقالاته التي نشرت في الجرائد والمجلات ولوائحه في إصلاح التربية والتعليم الديني ورسائله إلى العلماء والأدباء وحكمه المنثورة وهو في <num type="auto-markup" resp="#pers_TG" value="560" xml:lang="ar" xml:id="num_1.d1e2623">٥٦٠</num> صفحة من قطع الثمن وقد قدم له مؤلفة مقدمة بين فيها منزلة المرحوم المفتي من العلم والعمل ثم أخذ في نقل بعض ما خطته يراعته في خلال حياته على اختلاف اطوارها ومن تلاه يدرك قدر الفقيد العزيز. والجزء الثالث وهو في <num type="auto-markup" resp="#pers_TG" value="438" xml:lang="ar" xml:id="num_1.d1e2626">٤٣٨</num> صفحة من قطع الثمن أيضاً يحتوي على تأبين الجرائد وبعض الكبراء والفضلاء ونموذج من التعازي ومراثي الشعراء وفيه شي كثير من ذكر العواطف يدل على مكانته من وضع التاريخ له في قلوب مريديه واحبابه على اختلاف الأمصار والأفكار وفي هذا الجزء مثال من شعر العصر ونثره في موضوع و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> وهو الرثاء وتقييد المناقب والأثار.</p>
-                    <p xml:lang="ar" xml:id="p_152.d1e2630">وثمن الجزء الثاني <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> قرشاً صحيحاً في مصر وأجرة البريد <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> قروش وفي الخارج <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6">ستة</num> فرنكات وثمن الجزء الثالث <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> قروش صحيحة و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> اجرة البريد و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> فرنكات في سائر الاقطار ويبأعان بمكتبة المنار في شارع درب الجماميز وهما من جيد الطبع والورق. فنثني الثناء الاطيب على حسن وفاء رصيفنا جامع هذا التاريخ وعلى ما بذله من الهمة العالية في وضعه وجودة تنسيقه حتى جاء كتاب أدب وحكمة وكنا نود الاقتباس منه لنفع القراء لولا معرفتنا بانه سينشر انتشاراً عظيماً في عامة الاقطار والأمصار.</p>
+                    <p xml:lang="ar" xml:id="p_151.d1e2621"
+                        >هو اسم تاريخ فقيد الشرق الشيخ محمد جمعه له مريده السيد محمد رشيد رضا صاحب المنار الاغر في <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
+                        >ثلاث</num> مجلدات كبيرة الأول في سيرته وهو لا يزال تحت الطبع والثاني في منشآته وهو يحتوي على بعض رسائله ومقالاته التي نشرت في الجرائد والمجلات ولوائحه في إصلاح التربية والتعليم الديني ورسائله إلى العلماء والأدباء وحكمه المنثورة وهو في <num
+                        type="auto-markup" resp="#pers_TG" value="560" xml:lang="ar"
+                        xml:id="num_1.d1e2623"
+                        >٥٦٠</num> صفحة من قطع الثمن وقد قدم له مؤلفة مقدمة بين فيها منزلة المرحوم المفتي من العلم والعمل ثم أخذ في نقل بعض ما خطته يراعته في خلال حياته على اختلاف اطوارها ومن تلاه يدرك قدر الفقيد العزيز. والجزء الثالث وهو في <num
+                        type="auto-markup" resp="#pers_TG" value="438" xml:lang="ar"
+                        xml:id="num_1.d1e2626"
+                        >٤٣٨</num> صفحة من قطع الثمن أيضاً يحتوي على تأبين الجرائد وبعض الكبراء والفضلاء ونموذج من التعازي ومراثي الشعراء وفيه شي كثير من ذكر العواطف يدل على مكانته من وضع التاريخ له في قلوب مريديه واحبابه على اختلاف الأمصار والأفكار وفي هذا الجزء مثال من شعر العصر ونثره في موضوع و<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> وهو الرثاء وتقييد المناقب والأثار.</p>
+                    <p xml:lang="ar" xml:id="p_152.d1e2630">وثمن الجزء الثاني <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشر</num> قرشاً صحيحاً في مصر وأجرة البريد <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
+                        >ثلاثة</num> قروش وفي الخارج <num xml:lang="ar" type="auto-markup"
+                        subtype="d1" resp="#pers_TG" value="6"
+                        >ستة</num> فرنكات وثمن الجزء الثالث <num xml:lang="ar" type="auto-markup"
+                        subtype="d2" resp="#pers_TG" value="10">عشرة</num> قروش صحيحة و<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
+                        >ثلاثة</num> اجرة البريد و<num xml:lang="ar" type="auto-markup" subtype="d1"
+                        resp="#pers_TG" value="4"
+                        >أربعة</num> فرنكات في سائر الاقطار ويبأعان بمكتبة المنار في شارع درب الجماميز وهما من جيد الطبع والورق. فنثني الثناء الاطيب على حسن وفاء رصيفنا جامع هذا التاريخ وعلى ما بذله من الهمة العالية في وضعه وجودة تنسيقه حتى جاء كتاب أدب وحكمة وكنا نود الاقتباس منه لنفع القراء لولا معرفتنا بانه سينشر انتشاراً عظيماً في عامة الاقطار والأمصار.</p>
                 </div>
                 <div type="article">
                     <head>لوائح الانوار البهية</head>
-                    <p xml:lang="ar" xml:id="p_154.d1e2637">كتاب للشيخ محمد بن احمد السفاريني الأثري الحنبلي من أهل القرن الثاني <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> يتضمن شرح منظومته التي ضمنها أمهات مسائل عقائد السلف وهو في مجلدين الأول في <num type="auto-markup" resp="#pers_TG" value="388" xml:lang="ar" xml:id="num_1.d1e2639">٣٨٨</num> صفحة والثاني في <num type="auto-markup" resp="#pers_TG" value="488" xml:lang="ar" xml:id="num_1.d1e2642">٤٨٨</num> صفحة طبعها على نفقته طبعاً متقناً بعض الراغبين باتحاف <pb ed="shamela" n="n20-p42" corresp="file:../epub/26523/OEBPS/xhtml/P1141.xhtml" xml:id="pb_43.d1e2645"/> الخلف بأثار السلف وذلك في مطبعة المنار وبملاحظة صاحبها الفاضل وقد وشحه بفهرست مرتب على الحروف يتيسر به الوقوف على محتويات الكتاب فنحت الأثريين على اقتنائه ونشكر لطابعة ومصححة عنايتهما.</p>
+                    <p xml:lang="ar" xml:id="p_154.d1e2637"
+                        >كتاب للشيخ محمد بن احمد السفاريني الأثري الحنبلي من أهل القرن الثاني <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشر</num> يتضمن شرح منظومته التي ضمنها أمهات مسائل عقائد السلف وهو في مجلدين الأول في <num
+                        type="auto-markup" resp="#pers_TG" value="388" xml:lang="ar"
+                        xml:id="num_1.d1e2639">٣٨٨</num> صفحة والثاني في <num type="auto-markup"
+                        resp="#pers_TG" value="488" xml:lang="ar" xml:id="num_1.d1e2642"
+                        >٤٨٨</num> صفحة طبعها على نفقته طبعاً متقناً بعض الراغبين باتحاف <pb
+                        ed="shamela" n="n20-p42"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1141.xhtml" xml:id="pb_43.d1e2645"
+                        /> الخلف بأثار السلف وذلك في مطبعة المنار وبملاحظة صاحبها الفاضل وقد وشحه بفهرست مرتب على الحروف يتيسر به الوقوف على محتويات الكتاب فنحت الأثريين على اقتنائه ونشكر لطابعة ومصححة عنايتهما.</p>
                 </div>
                 <div type="article">
                     <head>مؤلفات السيد البكري</head>
-                    <p xml:lang="ar" xml:id="p_156.d1e2651">سماحة السيد محمد توفيق البكري نقيب الإشراف هو من بيت مذكور بالشرف في مصر وهو معروف باشتغاله بالعلم والأدب وقد طبع في هذه الأيام <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> كتب مهمة في بابها احدها سماه صهاريج اللؤلؤ وهو سفر وقع في <num type="auto-markup" resp="#pers_TG" value="388" xml:lang="ar" xml:id="num_1.d1e2653">٣٨٨</num> صفحة بقطع الثمن جيد الطبعة جمع فيه كثيراً من نثره ونظمه الرائق وسلك فيه مسلكاً جديداً في الوصف جمع إلى فخامة اللفظ براعة المعنى وشرحه الشيخ احمد الشنقيطي والشيخ محمد المصري شرحاً صافياً. الثاني كتاب التعليم والإرشاد جمعه بعض رجال الصوفية في عصرنا بأمره وهو في <num type="auto-markup" resp="#pers_TG" value="677" xml:lang="ar" xml:id="num_1.d1e2656">٦٧٧</num> صفحة وفيه ما لا يسع الصوفية جهله من المسائل. والثالث كتاب بيت السادة الوفائية تأليف سماحته واسمه يدل على مسماه ذكر فيه تراجم ما اشتهر من هذا البيت ومناقبهم. والرابع كتاب بيت الصديق تأليفه أيضاً يظم منثورة من أسفار عديدة استقصى فيه تاريخ هذا البيت الظاهر مكانه في الإسلام وهو في <num type="auto-markup" resp="#pers_TG" value="411" xml:lang="ar" xml:id="num_1.d1e2659">٤١١</num> صفحة من قطع الثمن. والخامس كتاب المستقبل للإسلام وهو من قلم المؤلف أيضاً ذكر فيه ما يتعلق بهذا الشأن فنثني على همة المؤلف ونرجو أن يوأصل اتحاف القراء بمثل ما اتحفهم به من هذه الأثار الرائعة.</p>
+                    <p xml:lang="ar" xml:id="p_156.d1e2651"
+                        >سماحة السيد محمد توفيق البكري نقيب الإشراف هو من بيت مذكور بالشرف في مصر وهو معروف باشتغاله بالعلم والأدب وقد طبع في هذه الأيام <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5"
+                        >خمسة</num> كتب مهمة في بابها احدها سماه صهاريج اللؤلؤ وهو سفر وقع في <num
+                        type="auto-markup" resp="#pers_TG" value="388" xml:lang="ar"
+                        xml:id="num_1.d1e2653"
+                        >٣٨٨</num> صفحة بقطع الثمن جيد الطبعة جمع فيه كثيراً من نثره ونظمه الرائق وسلك فيه مسلكاً جديداً في الوصف جمع إلى فخامة اللفظ براعة المعنى وشرحه الشيخ احمد الشنقيطي والشيخ محمد المصري شرحاً صافياً. الثاني كتاب التعليم والإرشاد جمعه بعض رجال الصوفية في عصرنا بأمره وهو في <num
+                        type="auto-markup" resp="#pers_TG" value="677" xml:lang="ar"
+                        xml:id="num_1.d1e2656"
+                        >٦٧٧</num> صفحة وفيه ما لا يسع الصوفية جهله من المسائل. والثالث كتاب بيت السادة الوفائية تأليف سماحته واسمه يدل على مسماه ذكر فيه تراجم ما اشتهر من هذا البيت ومناقبهم. والرابع كتاب بيت الصديق تأليفه أيضاً يظم منثورة من أسفار عديدة استقصى فيه تاريخ هذا البيت الظاهر مكانه في الإسلام وهو في <num
+                        type="auto-markup" resp="#pers_TG" value="411" xml:lang="ar"
+                        xml:id="num_1.d1e2659"
+                        >٤١١</num> صفحة من قطع الثمن. والخامس كتاب المستقبل للإسلام وهو من قلم المؤلف أيضاً ذكر فيه ما يتعلق بهذا الشأن فنثني على همة المؤلف ونرجو أن يوأصل اتحاف القراء بمثل ما اتحفهم به من هذه الأثار الرائعة.</p>
                 </div>
                 <div type="article">
                     <head>مجموعة</head>
-                    <p xml:lang="ar" xml:id="p_158.d1e2666">هي مجموعة مشتملة على الرسالة التدمرية لشيخ الإسلام ابن تيمية وعلى كتاب الحيدة للأمام عبد العزيز الكناني وعلى عقيدة السلف لابن سهيل الصابوني وهذه الرسائل ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> مهمة في بابها ولاسيما رسالة الحيدة فإنها صورة مناظرة جرت في حضرة أمير المؤمنين المأمون في مسألة خلق القرآن بين عبد العزيز الكناني وبشر المريسي وكان المأمون هو الحكم قابان عن فضل جم وإنه كان يقصد بمسألة خلق القرآن التي شغلت بعض العلماء في آخر عهده تحقيق حقيقة علمية لا الانتصار لنفسه او لما وقع في ذهنه وهذه الرسالة أعظم مثال في الحرية العربية. طبعها الحاج مقبل الذكير وجعلها وفقاً لا يباع ولا يشرى يمعرفة فرج الله أفندي زكي الكردي الكتبي المعروف في القاهرة فجاءت في <num type="auto-markup" resp="#pers_TG" value="249" xml:lang="ar" xml:id="num_1.d1e2668">٢٤٩</num> صفحة جيدة <pb ed="shamela" n="n20-p43" corresp="file:../epub/26523/OEBPS/xhtml/P1142.xhtml" xml:id="pb_44.d1e2671"/> الشكل.</p>
+                    <p xml:lang="ar" xml:id="p_158.d1e2666"
+                        >هي مجموعة مشتملة على الرسالة التدمرية لشيخ الإسلام ابن تيمية وعلى كتاب الحيدة للأمام عبد العزيز الكناني وعلى عقيدة السلف لابن سهيل الصابوني وهذه الرسائل ال<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
+                        >ثلاث</num> مهمة في بابها ولاسيما رسالة الحيدة فإنها صورة مناظرة جرت في حضرة أمير المؤمنين المأمون في مسألة خلق القرآن بين عبد العزيز الكناني وبشر المريسي وكان المأمون هو الحكم قابان عن فضل جم وإنه كان يقصد بمسألة خلق القرآن التي شغلت بعض العلماء في آخر عهده تحقيق حقيقة علمية لا الانتصار لنفسه او لما وقع في ذهنه وهذه الرسالة أعظم مثال في الحرية العربية. طبعها الحاج مقبل الذكير وجعلها وفقاً لا يباع ولا يشرى يمعرفة فرج الله أفندي زكي الكردي الكتبي المعروف في القاهرة فجاءت في <num
+                        type="auto-markup" resp="#pers_TG" value="249" xml:lang="ar"
+                        xml:id="num_1.d1e2668">٢٤٩</num> صفحة جيدة <pb ed="shamela" n="n20-p43"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1142.xhtml" xml:id="pb_44.d1e2671"
+                        /> الشكل.</p>
                 </div>
                 <div type="article">
                     <head>الجامعة الإسلامية وأوروبا</head>
-                    <p xml:lang="ar" xml:id="p_160.d1e2678"><bibl><supplied><title>الجامعة الإسلامية وأوروبا</title></supplied> هي رسالة تأليف <author><persName>رفيق بك العظم</persName></author> صاحب كتاب أشهر مشاهير الإسلام وغيره من المصنفات الاجتماعية بحث فيها بحثاً تاريخياً في الجامعة الإسلامية وذكر فيها للمتعصبين من ساسة الاوربيين تحاملهم على بلاد الإسلام بالبراهين التاريخية الدامغة ونصح فيها للشرقيين والغربيين نصيحة من خبر الأمور الحاضرة وقاسها بالغابرة وهي <biblScope unit="page" from="1" to="58"><num type="auto-markup" resp="#pers_TG" value="58" xml:lang="ar" xml:id="num_1.d1e2680">٥٨</num> صفحة</biblScope> جيدة الطبع والوضع</bibl>.</p>
+                    <p xml:lang="ar" xml:id="p_160.d1e2678"
+                        ><bibl><supplied><title>الجامعة الإسلامية وأوروبا</title></supplied> هي رسالة تأليف <author><persName>رفيق بك العظم</persName></author> صاحب كتاب أشهر مشاهير الإسلام وغيره من المصنفات الاجتماعية بحث فيها بحثاً تاريخياً في الجامعة الإسلامية وذكر فيها للمتعصبين من ساسة الاوربيين تحاملهم على بلاد الإسلام بالبراهين التاريخية الدامغة ونصح فيها للشرقيين والغربيين نصيحة من خبر الأمور الحاضرة وقاسها بالغابرة وهي <biblScope
+                        unit="page" from="1" to="58"><num type="auto-markup" resp="#pers_TG"
+                        value="58" xml:lang="ar" xml:id="num_1.d1e2680"
+                        >٥٨</num> صفحة</biblScope> جيدة الطبع والوضع</bibl>.</p>
                 </div>
                 <div type="article">
                     <head>الإنسان ابن التربية</head>
-                    <p xml:lang="ar" xml:id="p_162.d1e2687"><bibl><supplied><title level="m">الإنسان ابن التربية</title></supplied> كتاب أدبي أخلاقي انتقادي ل<author><persName>جرجي أفندي نقولا</persName></author> باز المعروف بمقالاته الاجتماعية والأخلاقية وفيه مباحث مفيدة مثل محاسن العصر ومساوئ الحضارة وسوء التربية والوالدين والتربية البيتية والاجتماعية وغير ذلك مما ينفع أرباب البيوت ويؤثر في عقول الناشئة وهو في <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100">مئة</num> صفحة أهداه لرصيفنا صاحب <title level="j" ref="oclc:1639361">الهلال</title>
+                    <p xml:lang="ar" xml:id="p_162.d1e2687"><bibl><supplied><title level="m"
+                        >الإنسان ابن التربية</title></supplied> كتاب أدبي أخلاقي انتقادي ل<author><persName>جرجي أفندي نقولا</persName></author> باز المعروف بمقالاته الاجتماعية والأخلاقية وفيه مباحث مفيدة مثل محاسن العصر ومساوئ الحضارة وسوء التربية والوالدين والتربية البيتية والاجتماعية وغير ذلك مما ينفع أرباب البيوت ويؤثر في عقول الناشئة وهو في <num
+                        xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100"
+                        >مئة</num> صفحة أهداه لرصيفنا صاحب <title level="j" ref="oclc:1639361"
+                        >الهلال</title>
                         <persName><forename>جرجي</forename> أفندي <surname>زيدان</surname></persName> وصدره يرسمه وطبعته <publisher><orgName>جمعية شمس البر</orgName></publisher> في <pubPlace><placeName>بيروت</placeName></pubPlace> وخصصت ريعه لأعمالها الأدبية</bibl>.</p>
                 </div>
                 <div type="article">
                     <head>عبد القادر الجيلاني</head>
-                    <p xml:lang="ar" xml:id="p_164.d1e2693">هي نبذة في تر جمة هذا العالم نشرها بالعربية والإنكليزية الأستاذ مرجليوث مدرس العربية في كلية اكسفورد جمعت فأوعت في هذا الباب وقد نشرت ملحقة في المجلة الآسياوية الإنكليزية.</p>
+                    <p xml:lang="ar" xml:id="p_164.d1e2693"
+                        >هي نبذة في تر جمة هذا العالم نشرها بالعربية والإنكليزية الأستاذ مرجليوث مدرس العربية في كلية اكسفورد جمعت فأوعت في هذا الباب وقد نشرت ملحقة في المجلة الآسياوية الإنكليزية.</p>
                 </div>
                 <div type="article">
                     <head>التقيه في الإسلام</head>
-                    <p xml:lang="ar" xml:id="p_166.d1e2700">رسالة من قلم الأستاذ غولد سهير مدرس اللغة العربية في كلية بودابست كتبها بالألمانية ونشرب ملحقاًُ للمجلة الألمانية المشرقية أهدانا إياها مؤلفها عقيب أن طلع على مقالة التقيه في الجزء الثالث من هذه السنة وسنعود إلى الاقتباس منها ما لم نحصل عليه من النقول.</p>
+                    <p xml:lang="ar" xml:id="p_166.d1e2700"
+                        >رسالة من قلم الأستاذ غولد سهير مدرس اللغة العربية في كلية بودابست كتبها بالألمانية ونشرب ملحقاًُ للمجلة الألمانية المشرقية أهدانا إياها مؤلفها عقيب أن طلع على مقالة التقيه في الجزء الثالث من هذه السنة وسنعود إلى الاقتباس منها ما لم نحصل عليه من النقول.</p>
                 </div>
                 <div type="article">
                     <head>مقالات قصر الدوبارة</head>
-                    <p xml:lang="ar" xml:id="p_168.d1e2706">كتاب في <num type="auto-markup" resp="#pers_TG" value="110" xml:lang="ar" xml:id="num_1.d1e2708">١١٠</num> صفحات طبعه عبد الله أفندي حسين وصالح أفندي شكري حوى مقالات كتبتها جريدة المؤيد في اللورد كرومر وسياسته وخطابه الوداعي ورد المؤيد عليه وغير <pb ed="shamela" n="n20-p44" corresp="file:../epub/26523/OEBPS/xhtml/P1143.xhtml" xml:id="pb_45.d1e2711"/> ذلك مما له صلة بهذا البحث وقد أحسن طابعاه في نشره على هذا الشكل الجميل فإن هذه المقالات من خير ما خطته يراعة كاتب سياسي في معنى الدفاع عن امته وبلاده وهو يطلب من طابعيه في دار المؤيد.</p>
+                    <p xml:lang="ar" xml:id="p_168.d1e2706">كتاب في <num type="auto-markup"
+                        resp="#pers_TG" value="110" xml:lang="ar" xml:id="num_1.d1e2708"
+                        >١١٠</num> صفحات طبعه عبد الله أفندي حسين وصالح أفندي شكري حوى مقالات كتبتها جريدة المؤيد في اللورد كرومر وسياسته وخطابه الوداعي ورد المؤيد عليه وغير <pb
+                        ed="shamela" n="n20-p44"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1143.xhtml" xml:id="pb_45.d1e2711"
+                        /> ذلك مما له صلة بهذا البحث وقد أحسن طابعاه في نشره على هذا الشكل الجميل فإن هذه المقالات من خير ما خطته يراعة كاتب سياسي في معنى الدفاع عن امته وبلاده وهو يطلب من طابعيه في دار المؤيد.</p>
                 </div>
                 <div type="article">
-                    <head>لبنان في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمس</num> سنين</head>
-                    <p xml:lang="ar" xml:id="p_170.d1e2717">هو كتاب وقائع في <num type="auto-markup" resp="#pers_TG" value="140" xml:lang="ar" xml:id="num_1.d1e2719">١٤٠</num> صفحة شرح فيه كاتبه ما حدث من الحوادث والأخبار في جبل لبنأن في عهده الأخير شرحاً ضافياً يستعان به في المستقبل على وضع تاريخ مفصل لهذا الجبل فجاء ما كتبه الكاتب أشبه بالأخبار اليومية لابن بدير في القرن الثاني <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> في دمشق والجبرتي في القرن الثالث <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> في مصر هذا مع سلاسة في التعبير وتلاعب بالألفاظ والمعاني يدل على بعد غور الكاتب وحسن بيانه.</p>
+                    <head>لبنان في <num xml:lang="ar" type="auto-markup" subtype="d1"
+                        resp="#pers_TG" value="5">خمس</num> سنين</head>
+                    <p xml:lang="ar" xml:id="p_170.d1e2717">هو كتاب وقائع في <num type="auto-markup"
+                        resp="#pers_TG" value="140" xml:lang="ar" xml:id="num_1.d1e2719"
+                        >١٤٠</num> صفحة شرح فيه كاتبه ما حدث من الحوادث والأخبار في جبل لبنأن في عهده الأخير شرحاً ضافياً يستعان به في المستقبل على وضع تاريخ مفصل لهذا الجبل فجاء ما كتبه الكاتب أشبه بالأخبار اليومية لابن بدير في القرن الثاني <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشر</num> في دمشق والجبرتي في القرن الثالث <num xml:lang="ar"
+                        type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشر</num> في مصر هذا مع سلاسة في التعبير وتلاعب بالألفاظ والمعاني يدل على بعد غور الكاتب وحسن بيانه.</p>
                 </div>
                 <div type="article">
                     <head>أطباق الذهب</head>
-                    <p xml:lang="ar" xml:id="p_172.d1e2727">لشرف الدين عبد المؤمن بن هبة الله المغربي الأصفهاني مائتا مقالة ومقالة في الحكم والمواعظ على طريقة السجع البديع شرحها الشيخ محمد منير المقدم في الأزهر وضبطها بالشكل الكامل وطبعها طبعاً جيداً فجاءت في زهاء <num type="auto-markup" resp="#pers_TG" value="150" xml:lang="ar" xml:id="num_1.d1e2729">١٥٠</num> صفحة صغيرة.</p>
+                    <p xml:lang="ar" xml:id="p_172.d1e2727"
+                        >لشرف الدين عبد المؤمن بن هبة الله المغربي الأصفهاني مائتا مقالة ومقالة في الحكم والمواعظ على طريقة السجع البديع شرحها الشيخ محمد منير المقدم في الأزهر وضبطها بالشكل الكامل وطبعها طبعاً جيداً فجاءت في زهاء <num
+                        type="auto-markup" resp="#pers_TG" value="150" xml:lang="ar"
+                        xml:id="num_1.d1e2729">١٥٠</num> صفحة صغيرة.</p>
                 </div>
                 <div type="article">
                     <head>رواية الخادعين</head>
-                    <p xml:lang="ar" xml:id="p_174.d1e2736">هي <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">إحدى</num> روايات احمد مدحت أفندي الكاتب التركي عربها حقي بك العظم صاحب كتابي دفاع بلفنا وحرب اليونان وهي تمثل صورة من المدنية الإسلامية في القرن الأول نشرت ملحقة لجريدة الكلمة الحرة وتباع بأربعة قروش في مكتبة القاهرة.</p>
+                    <p xml:lang="ar" xml:id="p_174.d1e2736">هي <num xml:lang="ar" type="auto-markup"
+                        subtype="d1" resp="#pers_TG" value="1"
+                        >إحدى</num> روايات احمد مدحت أفندي الكاتب التركي عربها حقي بك العظم صاحب كتابي دفاع بلفنا وحرب اليونان وهي تمثل صورة من المدنية الإسلامية في القرن الأول نشرت ملحقة لجريدة الكلمة الحرة وتباع بأربعة قروش في مكتبة القاهرة.</p>
                 </div>
                 <div type="article">
                     <head>الدقائق في الحقائق</head>
-                    <p xml:lang="ar" xml:id="p_176.d1e2742">(أفكاري عن النفس والروح ثم القدرة الإلهية والأديان تأليف يعقوب أفندي جبرائيل مراد) وهو في <num type="auto-markup" resp="#pers_TG" value="126" xml:lang="ar" xml:id="num_1.d1e2744">١٢٦</num> صفحة جيدة الورق.</p>
+                    <p xml:lang="ar" xml:id="p_176.d1e2742"
+                        >(أفكاري عن النفس والروح ثم القدرة الإلهية والأديان تأليف يعقوب أفندي جبرائيل مراد) وهو في <num
+                        type="auto-markup" resp="#pers_TG" value="126" xml:lang="ar"
+                        xml:id="num_1.d1e2744">١٢٦</num> صفحة جيدة الورق.</p>
                 </div>
                 <div type="article">
                     <head>نسمات الصباح</head>
-                    <p xml:lang="ar" xml:id="p_178.d1e2752">هذه نبذة من شعر حلمي أفندي مصري صدرها بنبذة بالشعر والعرب وضمنها مقاطيع وتخاميس وقصائد عرب بعضها عن الإفرنسية ونظم بعضها في أغراض عصرية لطيفة فجاءت في <num type="auto-markup" resp="#pers_TG" value="64" xml:lang="ar" xml:id="num_1.d1e2754">٦٤</num> صفحة صغيرة. <pb ed="shamela" n="n20-p45" corresp="file:../epub/26523/OEBPS/xhtml/P1144.xhtml" xml:id="pb_46.d1e2757"/></p>
+                    <p xml:lang="ar" xml:id="p_178.d1e2752"
+                        >هذه نبذة من شعر حلمي أفندي مصري صدرها بنبذة بالشعر والعرب وضمنها مقاطيع وتخاميس وقصائد عرب بعضها عن الإفرنسية ونظم بعضها في أغراض عصرية لطيفة فجاءت في <num
+                        type="auto-markup" resp="#pers_TG" value="64" xml:lang="ar"
+                        xml:id="num_1.d1e2754">٦٤</num> صفحة صغيرة. <pb ed="shamela" n="n20-p45"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1144.xhtml" xml:id="pb_46.d1e2757"
+                        /></p>
                 </div>
                 <div type="article">
                     <head>اكاذيب السياسة</head>
-                    <p xml:lang="ar" xml:id="p_179.d1e2760">كراسة في الرد على خطبة اللورد كرومر التي القاها في حفلة وداعه التي اقيمت بأمره في دار التمثيل الكبرى بالقاهرة مساء <num type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar" xml:id="num_1.d1e2762">٤</num> مايو سنة <num type="auto-markup" resp="#pers_TG" value="1907" xml:lang="ar" xml:id="num_1.d1e2765">١٩٠٧</num> تأليف (ابنة النيل) وهي فتاة مصرية لم تصرح باسمها وعدد صفحاتها <num type="auto-markup" resp="#pers_TG" value="78" xml:lang="ar" xml:id="num_1.d1e2768">٧٨</num> صفحة صغيرة. </p>
+                    <p xml:lang="ar" xml:id="p_179.d1e2760"
+                        >كراسة في الرد على خطبة اللورد كرومر التي القاها في حفلة وداعه التي اقيمت بأمره في دار التمثيل الكبرى بالقاهرة مساء <num
+                        type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar"
+                        xml:id="num_1.d1e2762">٤</num> مايو سنة <num type="auto-markup"
+                        resp="#pers_TG" value="1907" xml:lang="ar" xml:id="num_1.d1e2765"
+                        >١٩٠٧</num> تأليف (ابنة النيل) وهي فتاة مصرية لم تصرح باسمها وعدد صفحاتها <num
+                        type="auto-markup" resp="#pers_TG" value="78" xml:lang="ar"
+                        xml:id="num_1.d1e2768">٧٨</num> صفحة صغيرة. </p>
                 </div>
                     </div>
                     <pb ed="shamela" n="n20-p46" corresp="file:../epub/26523/OEBPS/xhtml/P1145.xhtml" xml:id="pb_47.d1e2775"/><div type="section" xml:lang="ar" xml:id="div_10.d1e2773">
@@ -1329,74 +1437,261 @@
                         <head xml:lang="ar" xml:id="head_9.d1e2777">سير العلم</head>
                 <div type="article">
                     <head>سكة حديد جديدة</head>
-                    <p xml:lang="ar" xml:id="p_181.d1e2783">اخترع مهندس ايرلاندي اسمه لوي برنان بعد أن صرف سنين طويلة في النظر والبحث طريقة جديدة لتسيير مركبات السكك الحديدية إذا سلمت له من كل وجه فإنها تقلب أصول النقل المتبعة الأن في اقطار الأرض واختراعه عبارة عن تطبيق ناموس الجير وسكوب (وهي آلة اخترعها فوكول سنة <num type="auto-markup" resp="#pers_TG" value="1852" xml:lang="ar" xml:id="num_1.d1e2785">١٨٥٢</num> ليستدل بها على دورأن الأرض) على مركبات السكك الحديد بل على جميع المركبات كمركبات الاتوموييل وغيرها. فالسكة الجديدة تسير إذا على خط و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> فتوفر نفقات كثيرة وليس فيها ادنى خطر وتسير بالكهربائية لا بالبخار.</p>
+                    <p xml:lang="ar" xml:id="p_181.d1e2783"
+                        >اخترع مهندس ايرلاندي اسمه لوي برنان بعد أن صرف سنين طويلة في النظر والبحث طريقة جديدة لتسيير مركبات السكك الحديدية إذا سلمت له من كل وجه فإنها تقلب أصول النقل المتبعة الأن في اقطار الأرض واختراعه عبارة عن تطبيق ناموس الجير وسكوب (وهي آلة اخترعها فوكول سنة <num
+                        type="auto-markup" resp="#pers_TG" value="1852" xml:lang="ar"
+                        xml:id="num_1.d1e2785"
+                        >١٨٥٢</num> ليستدل بها على دورأن الأرض) على مركبات السكك الحديد بل على جميع المركبات كمركبات الاتوموييل وغيرها. فالسكة الجديدة تسير إذا على خط و<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> فتوفر نفقات كثيرة وليس فيها ادنى خطر وتسير بالكهربائية لا بالبخار.</p>
                 </div>
                 <div type="article">
                     <head>التصوير بالألوان</head>
-                    <p xml:lang="ar" xml:id="p_183.d1e2793">منذ <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="40">أربعين</num> سنة اخترعت طريقة التصوير بالألوان وما برحت تتعاور بالعناية لتبلغ كمالها وقد وفق رجل فرنساوي هذه الأيام اسمه لوميير فاخترع طريقة جديدة اقتصادية لرسم الألوأن الطبيعية كلها على أجمل وجه يتصوره العقل.</p>
+                    <p xml:lang="ar" xml:id="p_183.d1e2793">منذ <num xml:lang="ar"
+                        type="auto-markup" subtype="d2" resp="#pers_TG" value="40"
+                        >أربعين</num> سنة اخترعت طريقة التصوير بالألوان وما برحت تتعاور بالعناية لتبلغ كمالها وقد وفق رجل فرنساوي هذه الأيام اسمه لوميير فاخترع طريقة جديدة اقتصادية لرسم الألوأن الطبيعية كلها على أجمل وجه يتصوره العقل.</p>
                 </div>
                 <div type="article">
                     <head>الانتفاع بالفطر</head>
-                    <p xml:lang="ar" xml:id="p_185.d1e2799">الميكولوجيا هي فرع من فروع علم النبات خاص بمعرفة أنواع الفطر. وتقسم ضروب الفطر إلى نوعين وهما النوع المرئ الجيد والنوع السام الضار. ولما كان الفطر يكثر في تارار من أقليم الرون في فرنسا رأت جمعية تعليم العامة أن تنشئ لها في تارار مكتباً لمعرفة الجيد من هذا النبات من رديئه وكل من جنى فطراً وأتى به ذاك المكتب بفحصه له ويعطيه ورقة باسمه فكان الفطر بذلك لاهالي ذاك الأقليم الجبلي منذ <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاث</num> سنين أعظم مورد لهم يقتاتون منه ويبيعون لاما فضل منه وتساوت في معرفة جيده من رديئه الطفلة والشيخ الكبير ولم يعد <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> يتسمم ببعض أنواعه.</p>
+                    <p xml:lang="ar" xml:id="p_185.d1e2799"
+                        >الميكولوجيا هي فرع من فروع علم النبات خاص بمعرفة أنواع الفطر. وتقسم ضروب الفطر إلى نوعين وهما النوع المرئ الجيد والنوع السام الضار. ولما كان الفطر يكثر في تارار من أقليم الرون في فرنسا رأت جمعية تعليم العامة أن تنشئ لها في تارار مكتباً لمعرفة الجيد من هذا النبات من رديئه وكل من جنى فطراً وأتى به ذاك المكتب بفحصه له ويعطيه ورقة باسمه فكان الفطر بذلك لاهالي ذاك الأقليم الجبلي منذ <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
+                        >ثلاث</num> سنين أعظم مورد لهم يقتاتون منه ويبيعون لاما فضل منه وتساوت في معرفة جيده من رديئه الطفلة والشيخ الكبير ولم يعد <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> يتسمم ببعض أنواعه.</p>
                 </div>
                 <div type="article">
                     <head>سم الغضب</head>
-                    <p xml:lang="ar" xml:id="p_187.d1e2805">ثبت للأستاذ غاتس من واشنطن أن للغضب الذي يثور في رؤوس الناس سماً كما أن للحزن سماً خاصاً به وللخوف كذلك. ذلك لأن التغييرات الباطنية مهما كانت فجائية او زائلة يكون منها رد فعل على المجموع العصبي فنفس السخص الغضبان أو السوداوي يختلف بلونه عن نفس السوداوي الكئيب ولكي يثبت ذلك جعل بعضهم يتنفسون في أنبوب <pb ed="shamela" n="n20-p47" corresp="file:../epub/26523/OEBPS/xhtml/P1146.xhtml" xml:id="pb_48.d1e2807"/> برد بالجليد لينحل النفس المستنشق فيه فجاء منه سائل لا لون عند ما كان المتنفس في الانبوب ساكناً غير مضطرب. وسائل اسفع إذا كان المستنشق غضوباً وسائل اسود إذا كان حزيناً وسائل وردي إذا كان وجدانه يتألم. وقال أن نفس الغضب إذا سال على الطريقة التي ابتدعها يكون فيه كمية من القوة الحيوية ومواد كيماوية إذا ابتلعها المرء تورده حتفه وإن هذا السم هو أشد سم عرفه العلم حتى الآن.</p>
+                    <p xml:lang="ar" xml:id="p_187.d1e2805"
+                        >ثبت للأستاذ غاتس من واشنطن أن للغضب الذي يثور في رؤوس الناس سماً كما أن للحزن سماً خاصاً به وللخوف كذلك. ذلك لأن التغييرات الباطنية مهما كانت فجائية او زائلة يكون منها رد فعل على المجموع العصبي فنفس السخص الغضبان أو السوداوي يختلف بلونه عن نفس السوداوي الكئيب ولكي يثبت ذلك جعل بعضهم يتنفسون في أنبوب <pb
+                        ed="shamela" n="n20-p47"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1146.xhtml" xml:id="pb_48.d1e2807"
+                        /> برد بالجليد لينحل النفس المستنشق فيه فجاء منه سائل لا لون عند ما كان المتنفس في الانبوب ساكناً غير مضطرب. وسائل اسفع إذا كان المستنشق غضوباً وسائل اسود إذا كان حزيناً وسائل وردي إذا كان وجدانه يتألم. وقال أن نفس الغضب إذا سال على الطريقة التي ابتدعها يكون فيه كمية من القوة الحيوية ومواد كيماوية إذا ابتلعها المرء تورده حتفه وإن هذا السم هو أشد سم عرفه العلم حتى الآن.</p>
                 </div>
                 <div type="article">
                     <head>كتب الأرض</head>
-                    <p xml:lang="ar" xml:id="p_189.d1e2814">قدروا عدد المطبوعات الأدبية في العالم بخمسين مليون مجلد. ولم يكن حتى الأن لغير خزائن الكتب العظمى قوائم مطبوعة بالكتب التي لديها فكان مما يهم المشتغلين بالأمور العلمية وباعة الكتب أن ينظروا في المجلات التي تعنى بذكر الأسفار القديمة والحديثة.</p>
-                    <p xml:lang="ar" xml:id="p_190.d1e2817">وقد جرت العادة في ألمانيا أن يرسل كل طابع إلى مكتب العلوم الاجتماعية في برلين بنسخة مما يطبع وإن يرسل الطابعون مطبوعاتهم في إنكلترا إلى مكتب العلوم الطبيعية. وفي كلتا العاصمتين توضع فهارس كل سنة. وقد ارتأى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> علماء الأوطان أن تضاف فهارس مكتبة الأمة في باريز وهي ثالث مكتبة من مكاتب العالم بكثرة كتبها وتسقط منها المكررات وهكذا يعمل بالأحدى <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> مكتبة من المكاتب الكبرى في العالم فيأتي من ذلك فهرس عام لجميع الأسفار في الأرض.</p>
+                    <p xml:lang="ar" xml:id="p_189.d1e2814"
+                        >قدروا عدد المطبوعات الأدبية في العالم بخمسين مليون مجلد. ولم يكن حتى الأن لغير خزائن الكتب العظمى قوائم مطبوعة بالكتب التي لديها فكان مما يهم المشتغلين بالأمور العلمية وباعة الكتب أن ينظروا في المجلات التي تعنى بذكر الأسفار القديمة والحديثة.</p>
+                    <p xml:lang="ar" xml:id="p_190.d1e2817"
+                        >وقد جرت العادة في ألمانيا أن يرسل كل طابع إلى مكتب العلوم الاجتماعية في برلين بنسخة مما يطبع وإن يرسل الطابعون مطبوعاتهم في إنكلترا إلى مكتب العلوم الطبيعية. وفي كلتا العاصمتين توضع فهارس كل سنة. وقد ارتأى <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> علماء الأوطان أن تضاف فهارس مكتبة الأمة في باريز وهي ثالث مكتبة من مكاتب العالم بكثرة كتبها وتسقط منها المكررات وهكذا يعمل بالأحدى <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشرة</num> مكتبة من المكاتب الكبرى في العالم فيأتي من ذلك فهرس عام لجميع الأسفار في الأرض.</p>
                 </div>
                 <div type="article">
                     <head>السيارات</head>
-                    <p xml:lang="ar" xml:id="p_192.d1e2823">صنعت الولايات المتحدة سنة <num type="auto-markup" resp="#pers_TG" value="1906" xml:lang="ar" xml:id="num_1.d1e2825">١٩٠٦</num> - <num type="auto-markup" resp="#pers_TG" value="58" xml:lang="ar" xml:id="num_1.d1e2828">٥٨</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">ألف</num> سيارة (اتوموبيل) وصنعت فرنسا <num type="auto-markup" resp="#pers_TG" value="55" xml:lang="ar" xml:id="num_1.d1e2831">٥٥</num> ألفاً وصنعت إنكلترا <num type="auto-markup" resp="#pers_TG" value="27" xml:lang="ar" xml:id="num_1.d1e2834">٢٧</num> ألفاً وصنعت ألمانيا وإيطاليا <num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e2837">٢٠</num> ألفاً.</p>
+                    <p xml:lang="ar" xml:id="p_192.d1e2823">صنعت الولايات المتحدة سنة <num
+                        type="auto-markup" resp="#pers_TG" value="1906" xml:lang="ar"
+                        xml:id="num_1.d1e2825">١٩٠٦</num> - <num type="auto-markup" resp="#pers_TG"
+                        value="58" xml:lang="ar" xml:id="num_1.d1e2828">٥٨</num> <num xml:lang="ar"
+                        type="auto-markup" subtype="d4" resp="#pers_TG" value="1000"
+                        >ألف</num> سيارة (اتوموبيل) وصنعت فرنسا <num type="auto-markup"
+                        resp="#pers_TG" value="55" xml:lang="ar" xml:id="num_1.d1e2831"
+                        >٥٥</num> ألفاً وصنعت إنكلترا <num type="auto-markup" resp="#pers_TG"
+                        value="27" xml:lang="ar" xml:id="num_1.d1e2834"
+                        >٢٧</num> ألفاً وصنعت ألمانيا وإيطاليا <num type="auto-markup"
+                        resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e2837"
+                        >٢٠</num> ألفاً.</p>
                 </div>
                 <div type="article">
                     <head>التوفير</head>
-                    <p xml:lang="ar" xml:id="p_194.d1e2844">كان فيما مضي يمدح أهل الطبقة الوسطى في فرنسا لاقتصادهم ولكن ثبت أن الألمانيين من أهل طبقتهم أكثر منهم اقتصاداً فإن ما وضع في صناديق التوفير في فرنسا في سنة <num type="auto-markup" resp="#pers_TG" value="1904" xml:lang="ar" xml:id="num_1.d1e2846">١٩٠٤</num> قد بلغ <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> ملايين ونصفاً من الفرنكات وسكان فرنسا <num type="auto-markup" resp="#pers_TG" value="39" xml:lang="ar" xml:id="num_1.d1e2849">٣٩</num> مليوناً على حين بلغ ما وضعه الألمانيون وعددهم <num type="auto-markup" resp="#pers_TG" value="37" xml:lang="ar" xml:id="num_1.d1e2852">٣٧</num> مليوناً <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9">تسعة</num> ملايين ونصفاً وقد زاد المودع في صناديق التوفير في فرنسا من سنة <num type="auto-markup" resp="#pers_TG" value="1900" xml:lang="ar" xml:id="num_1.d1e2855">١٩٠٠</num> إلى سنة <num type="auto-markup" resp="#pers_TG" value="1904" xml:lang="ar" xml:id="num_1.d1e2858">١٩٠٤</num> مائتي مليون اما في بروسيا فقد بلغ مليارين من الفرنكات. <pb ed="shamela" n="n20-p48" corresp="file:../epub/26523/OEBPS/xhtml/P1147.xhtml" xml:id="pb_49.d1e2862"/></p>
+                    <p xml:lang="ar" xml:id="p_194.d1e2844"
+                        >كان فيما مضي يمدح أهل الطبقة الوسطى في فرنسا لاقتصادهم ولكن ثبت أن الألمانيين من أهل طبقتهم أكثر منهم اقتصاداً فإن ما وضع في صناديق التوفير في فرنسا في سنة <num
+                        type="auto-markup" resp="#pers_TG" value="1904" xml:lang="ar"
+                        xml:id="num_1.d1e2846">١٩٠٤</num> قد بلغ <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="4"
+                        >أربعة</num> ملايين ونصفاً من الفرنكات وسكان فرنسا <num type="auto-markup"
+                        resp="#pers_TG" value="39" xml:lang="ar" xml:id="num_1.d1e2849"
+                        >٣٩</num> مليوناً على حين بلغ ما وضعه الألمانيون وعددهم <num
+                        type="auto-markup" resp="#pers_TG" value="37" xml:lang="ar"
+                        xml:id="num_1.d1e2852">٣٧</num> مليوناً <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="9"
+                        >تسعة</num> ملايين ونصفاً وقد زاد المودع في صناديق التوفير في فرنسا من سنة <num
+                        type="auto-markup" resp="#pers_TG" value="1900" xml:lang="ar"
+                        xml:id="num_1.d1e2855">١٩٠٠</num> إلى سنة <num type="auto-markup"
+                        resp="#pers_TG" value="1904" xml:lang="ar" xml:id="num_1.d1e2858"
+                        >١٩٠٤</num> مائتي مليون اما في بروسيا فقد بلغ مليارين من الفرنكات. <pb
+                        ed="shamela" n="n20-p48"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1147.xhtml" xml:id="pb_49.d1e2862"
+                        /></p>
                 </div>
                 <div type="article">
                     <head>غلاء الحاجيات</head>
-                    <p xml:lang="ar" xml:id="p_195.d1e2866">غلت أسعار الحاجيات في العالم المتمدن مع أن ما يستخرج سنوياً من الذهب قد بلغ ضعفي ما كان عليه منذ <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> سنين. ويؤخذ من إحصاء التجارة العام أن تجارة العالم ارتفعت من <num type="auto-markup" resp="#pers_TG" value="54" xml:lang="ar" xml:id="num_1.d1e2868">٥٤</num> مليار فرنك سنة <num type="auto-markup" resp="#pers_TG" value="1867" xml:lang="ar" xml:id="num_1.d1e2871">١٨٦٧</num> إلى <num type="auto-markup" resp="#pers_TG" value="136" xml:lang="ar" xml:id="num_1.d1e2874">١٣٦</num> ملياراً سنة <num type="auto-markup" resp="#pers_TG" value="1901" xml:lang="ar" xml:id="num_1.d1e2877">١٩٠١</num> أي أن مجموع النقود المتعامل بها قد بلغت <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أضعاف ما كانت في <num type="auto-markup" resp="#pers_TG" value="34" xml:lang="ar" xml:id="num_1.d1e2880">٣٤</num> سنة على أن محصولات العالم لم ترتق <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3">ثلاثة</num> أضعاف ما كانت عليه ولا تنسب الزيادة لارتفاع أسعار البضائع بل لبخس أثمأن الذهب لكثرة المستخرج منه.</p>
+                    <p xml:lang="ar" xml:id="p_195.d1e2866"
+                        >غلت أسعار الحاجيات في العالم المتمدن مع أن ما يستخرج سنوياً من الذهب قد بلغ ضعفي ما كان عليه منذ <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشر</num> سنين. ويؤخذ من إحصاء التجارة العام أن تجارة العالم ارتفعت من <num
+                        type="auto-markup" resp="#pers_TG" value="54" xml:lang="ar"
+                        xml:id="num_1.d1e2868">٥٤</num> مليار فرنك سنة <num type="auto-markup"
+                        resp="#pers_TG" value="1867" xml:lang="ar" xml:id="num_1.d1e2871"
+                        >١٨٦٧</num> إلى <num type="auto-markup" resp="#pers_TG" value="136"
+                        xml:lang="ar" xml:id="num_1.d1e2874">١٣٦</num> ملياراً سنة <num
+                        type="auto-markup" resp="#pers_TG" value="1901" xml:lang="ar"
+                        xml:id="num_1.d1e2877"
+                        >١٩٠١</num> أي أن مجموع النقود المتعامل بها قد بلغت <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
+                        >ثلاثة</num> أضعاف ما كانت في <num type="auto-markup" resp="#pers_TG"
+                        value="34" xml:lang="ar" xml:id="num_1.d1e2880"
+                        >٣٤</num> سنة على أن محصولات العالم لم ترتق <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="3"
+                        >ثلاثة</num> أضعاف ما كانت عليه ولا تنسب الزيادة لارتفاع أسعار البضائع بل لبخس أثمأن الذهب لكثرة المستخرج منه.</p>
                 </div>
                 <div type="article">
                     <head>عمال المخازن</head>
-                    <p xml:lang="ar" xml:id="p_197.d1e2887">كتب <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> كبار البيوت التجارية التي تبيع بالجملة في شيكاغو نصيحة لمستخدميه وهي: لا تحتقر أصلاً زبوناً ولو كان رث الثياب. ولا تقلم أظافرك على ملاء من الناس ولجعل في جيبك أبداً قلم رصاص ولا تعره ل<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">أحد</num> ولا ترتكب غلطة واحدة سبق لك ارتكابها.</p>
+                    <p xml:lang="ar" xml:id="p_197.d1e2887">كتب <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> كبار البيوت التجارية التي تبيع بالجملة في شيكاغو نصيحة لمستخدميه وهي: لا تحتقر أصلاً زبوناً ولو كان رث الثياب. ولا تقلم أظافرك على ملاء من الناس ولجعل في جيبك أبداً قلم رصاص ولا تعره ل<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >أحد</num> ولا ترتكب غلطة واحدة سبق لك ارتكابها.</p>
                 </div>
                 <div type="article">
                     <head>طواف العالم</head>
-                    <p xml:lang="ar" xml:id="p_199.d1e2893">آخر ما اهتدى إليه البشر من السرعة في الأسفار أن يقطع المرء الأرض في <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="50">خمسين</num> يوماً بإنفاق <num type="auto-markup" resp="#pers_TG" value="146" xml:lang="ar" xml:id="num_1.d1e2895">١٤٦</num> جنيهاً فيسير السائح من باريز إلى موسكو ففلاديفوستك فكويه فيوكوهاما فسيتيل فنيويورك فشربورغ ففرنسا.</p>
+                    <p xml:lang="ar" xml:id="p_199.d1e2893"
+                        >آخر ما اهتدى إليه البشر من السرعة في الأسفار أن يقطع المرء الأرض في <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="50"
+                        >خمسين</num> يوماً بإنفاق <num type="auto-markup" resp="#pers_TG"
+                        value="146" xml:lang="ar" xml:id="num_1.d1e2895"
+                        >١٤٦</num> جنيهاً فيسير السائح من باريز إلى موسكو ففلاديفوستك فكويه فيوكوهاما فسيتيل فنيويورك فشربورغ ففرنسا.</p>
                 </div>
                 <div type="article">
                     <head>اتقاء الغش</head>
-                    <p xml:lang="ar" xml:id="p_201.d1e2903">من أحسن الطرق التي سارت عليها الولايات المتحدة في اتقاء الغش في الإعلانات أنه إذا نشرت جريدة إعلاناً ضاراً تنذرها دار البريد بأنها تحرمها من الأمتيازات التي خصتها بها إذا ظلت تنشر هذا الإعلان وترجع جميع الرسائل الواردة باسم المعلن إلى من صدرت عنهم وتكتب عليها (مزورة) وفي ألمانيا وروسيا يتداخل الأطباء في الأمور الضارة بالصحة التي تنشر الجرائد عنها الإعلانات.</p>
+                    <p xml:lang="ar" xml:id="p_201.d1e2903"
+                        >من أحسن الطرق التي سارت عليها الولايات المتحدة في اتقاء الغش في الإعلانات أنه إذا نشرت جريدة إعلاناً ضاراً تنذرها دار البريد بأنها تحرمها من الأمتيازات التي خصتها بها إذا ظلت تنشر هذا الإعلان وترجع جميع الرسائل الواردة باسم المعلن إلى من صدرت عنهم وتكتب عليها (مزورة) وفي ألمانيا وروسيا يتداخل الأطباء في الأمور الضارة بالصحة التي تنشر الجرائد عنها الإعلانات.</p>
                 </div>
                 <div type="article">
                     <head>التربية في يابان</head>
-                    <p xml:lang="ar" xml:id="p_203.d1e2909">كتب <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> نبلاء يابان مقالة في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">إحدى</num> المجلات الإنكليزية ذكر فيها ما توفر الميكادو عليه من العناية منذ <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمس</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20">عشرين</num> سنة لإنهاض الآداب في بلاده. قال أنه شرع سنة <num type="auto-markup" resp="#pers_TG" value="1880" xml:lang="ar" xml:id="num_1.d1e2911">١٨٨٠</num> <pb ed="shamela" n="n20-p49" corresp="file:../epub/26523/OEBPS/xhtml/P1148.xhtml" xml:id="pb_50.d1e2914"/> بمنع بعض الكتب المدرسية والدساتير وفي سنة <num type="auto-markup" resp="#pers_TG" value="1890" xml:lang="ar" xml:id="num_1.d1e2916">١٨٩٠</num> جعل بناء التعليم على أسس جديدة وأمر الأمبراطور أن تكون مبادئ التربية مأخوذة عن تربية البيوت وعواطف المربين وعطفهم على من يربون وأن يسعى كل أمرئ إلى توسيع مداركه العقلية بان يتأهل للدفاع عن المصلحة العامة.</p>
+                    <p xml:lang="ar" xml:id="p_203.d1e2909">كتب <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> نبلاء يابان مقالة في <num xml:lang="ar" type="auto-markup"
+                        subtype="d1" resp="#pers_TG" value="1"
+                        >إحدى</num> المجلات الإنكليزية ذكر فيها ما توفر الميكادو عليه من العناية منذ <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5"
+                        >خمس</num> و<num xml:lang="ar" type="auto-markup" subtype="d2"
+                        resp="#pers_TG" value="20"
+                        >عشرين</num> سنة لإنهاض الآداب في بلاده. قال أنه شرع سنة <num
+                        type="auto-markup" resp="#pers_TG" value="1880" xml:lang="ar"
+                        xml:id="num_1.d1e2911">١٨٨٠</num> <pb ed="shamela" n="n20-p49"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1148.xhtml" xml:id="pb_50.d1e2914"
+                        /> بمنع بعض الكتب المدرسية والدساتير وفي سنة <num type="auto-markup"
+                        resp="#pers_TG" value="1890" xml:lang="ar" xml:id="num_1.d1e2916"
+                        >١٨٩٠</num> جعل بناء التعليم على أسس جديدة وأمر الأمبراطور أن تكون مبادئ التربية مأخوذة عن تربية البيوت وعواطف المربين وعطفهم على من يربون وأن يسعى كل أمرئ إلى توسيع مداركه العقلية بان يتأهل للدفاع عن المصلحة العامة.</p>
                 </div>
                 <div type="article">
                     <head>وصية عالم</head>
-                    <p xml:lang="ar" xml:id="p_205.d1e2923">ترك ادوارد دي هارتمأن الفيلسوف العظيم كتاباً عظيماً سينشر بعده في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8">ثماني</num> مجلدات وهو خلاصة الفلسفة كلها وشرح مبادئها وقد خص كل مجلد بفرع من فروعها كعلم النفس والعلوم الطبيعية والمادية والمبادئ الأولية والأخلاقية وهذه هي وصيته.</p>
+                    <p xml:lang="ar" xml:id="p_205.d1e2923"
+                        >ترك ادوارد دي هارتمأن الفيلسوف العظيم كتاباً عظيماً سينشر بعده في <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8"
+                        >ثماني</num> مجلدات وهو خلاصة الفلسفة كلها وشرح مبادئها وقد خص كل مجلد بفرع من فروعها كعلم النفس والعلوم الطبيعية والمادية والمبادئ الأولية والأخلاقية وهذه هي وصيته.</p>
                 </div>
                 <div type="article">
                     <head>معونة على العلم</head>
-                    <p xml:lang="ar" xml:id="p_207.d1e2930">كان <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> محسني الفرنسيس المسيو كاهن وقف على كلية فرنسا ألوفاً من الفرنكات لتصرفها كل سنة في إعانة أهل العلم والأدب يسيحون في الأرض ليزدادوا علماً ويؤبوا إلى بلادهم لينفعوها بفضل علمهم وقد وفق الآن <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5">خمسة</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشر</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000">الف</num> فرنك تصرف لأمرأتين او فتاتين كل سنة لتطوفا بها إلى أوروبا والولايات المتحدة واشترط أن تكونا معلمتين في المدارس الثانوية وأن تكونا عارفتين بلغة أجنبية.</p>
+                    <p xml:lang="ar" xml:id="p_207.d1e2930">كان <num xml:lang="ar"
+                        type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> محسني الفرنسيس المسيو كاهن وقف على كلية فرنسا ألوفاً من الفرنكات لتصرفها كل سنة في إعانة أهل العلم والأدب يسيحون في الأرض ليزدادوا علماً ويؤبوا إلى بلادهم لينفعوها بفضل علمهم وقد وفق الآن <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5"
+                        >خمسة</num> <num xml:lang="ar" type="auto-markup" subtype="d2"
+                        resp="#pers_TG" value="10">عشر</num> <num xml:lang="ar" type="auto-markup"
+                        subtype="d4" resp="#pers_TG" value="1000"
+                        >الف</num> فرنك تصرف لأمرأتين او فتاتين كل سنة لتطوفا بها إلى أوروبا والولايات المتحدة واشترط أن تكونا معلمتين في المدارس الثانوية وأن تكونا عارفتين بلغة أجنبية.</p>
                 </div>
                 <div type="article">
                     <head>عنصر الفقراء</head>
-                    <p xml:lang="ar" xml:id="p_209.d1e2936">كان الرأي الشائع أن أولاد الفقراء أصبح أجسأما من أولاد الأغنياء وإن هؤلاء دون أولئك بذكاء عقولهم وصحة أحلامهم ولكن العالم نيسفور <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> أساتذة كلية لوزأن في سويسرا بما احدثه من الفن الجديد وهو علم تعريف طبقات الفقراء قد أثبت أن الأولاد الأغنياء أرقى فطرة وسحنة عقلاً مما كانوا يوصفون به ففتح بذلك سبيلاً نافعاً في مستقبل الإنسانية وكان بعلمه الجديد القائم على البحث في أحوال الفقراء لا البحث في الفقر أشبه بعلم البحث في الجانين لا البحث في الجنايات قال من بحث له في المجلة الإفرنسية: ويعرف الاختلاف الظاهر في أشكال طبقات أهل السعة وأهل الفاقة من الناس وما بينهما من الفروق التي تكاد تجعلهما ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="200">متين</num>يمتباينتين مع إنهما يعيشأن في ارض واحدة ويتكلمان بلغة واحدة بالبحث في أشكال الطبقات النازلة وتأثيرهما الطبيعية والفسيولوجية. قال توكفيل الكاتب السياسي الفرنسوي ( <num type="auto-markup" resp="#pers_TG" value="1805" xml:lang="ar" xml:id="num_1.d1e2938">١٨٠٥</num> - <num type="auto-markup" resp="#pers_TG" value="1859" xml:lang="ar" xml:id="num_1.d1e2941">١٨٥٩</num> ) تتألف أمم مختلفة كثيرة من طبقات المجتمع الواحد <pb ed="shamela" n="n20-p50" corresp="file:../epub/26523/OEBPS/xhtml/P1149.xhtml" xml:id="pb_51.d1e2944"/> وقالوا أن كل امة تنقسم إلى ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="200">متين</num>يوهو قول صحيح لأننا لو بحثنا في حياة الفقير وحياة الغني لرأينا أن مبدأ التناقض بينهما على اتمة بيد أن هذا الرأي يعد من غريب الآراء.</p>
-                    <p xml:lang="ar" xml:id="p_210.d1e2947">قامات الفقراء من أرباب الأعسار أصغر من قامات الموسع عليهم من أهل اليسار. فطول بن الفقير في الرابعة <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> من عمره متر و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6">ستة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="40">أربعون</num> سنتيمراً وطول ابن الغني في مثل هذه السن متر ونصف وطول قامات الرجال الفقراء متر و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4">أربعة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="60">ستون</num> سنتيمتراً في الغالب وطول الأغنياء في سنهم متر و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8">ثمانية</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="60">ستون</num> سنتيمتراً ووزن جسم الموسرين من الأولاد وهم في الثالثة <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> <num type="auto-markup" resp="#pers_TG" value="35" xml:lang="ar" xml:id="num_1.d1e2949">٣٥</num> كيلو وزنة جسم ابن الفقير في مثل تلك السن <num type="auto-markup" resp="#pers_TG" value="33" xml:lang="ar" xml:id="num_1.d1e2952">٣٣</num> كيلو. ومحيط رأس ابن الفقير في الحادية <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> أصغر من محيط رأس ابن الغني فهو في الأول <num type="auto-markup" resp="#pers_TG" value="524" xml:lang="ar" xml:id="num_1.d1e2955">٥٢٤</num> في الثاني <num type="auto-markup" resp="#pers_TG" value="533" xml:lang="ar" xml:id="num_1.d1e2958">٥٣٣</num> وابن الغني وهو في سن ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20">عشرين</num> <num type="auto-markup" resp="#pers_TG" value="551" xml:lang="ar" xml:id="num_1.d1e2961">٥٥١</num> . <num type="auto-markup" resp="#pers_TG" value="9" xml:lang="ar" xml:id="num_1.d1e2965">٩</num> وابن الفقير <num type="auto-markup" resp="#pers_TG" value="547" xml:lang="ar" xml:id="num_1.d1e2968">٥٤٧</num> . <num type="auto-markup" resp="#pers_TG" value="0" xml:lang="ar" xml:id="num_1.d1e2971">٠</num> وهكذا ارتفاع الجبهة وقوة الجمجمة والدماغ والجمجمة الداخلية وزاوية الوجه كلها في قياسها في الفقراء أصغر مما هي في الأغنياء وسعة الحنك في الفقراء أكثر مماهي في الأغنياء.</p>
-                    <p xml:lang="ar" xml:id="p_211.d1e2975">وإذا قيست قوة أبناء الفقراء بقوة أبناء الأغنياء بمقياس القوة (ديناموتر) نجد أن الغني في السابعة يحمل <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> كيلو على حين لايقدر ابن الفقير أن يحمل أكثر من <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8">ثمانية</num>. والفتاة من بنات اليسار تحمل <num type="auto-markup" resp="#pers_TG" value="12" xml:lang="ar" xml:id="num_1.d1e2977">١٢</num> كيلو وهي في الثانية <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> ومثلها من الفقيرات لا تقوى على حمل أكثر من <num type="auto-markup" resp="#pers_TG" value="7" xml:lang="ar" xml:id="num_1.d1e2980">٧</num> كيلو. وأولاد الأغنياء أقل صبراً على التعب من أولاد الفقراء فقد دلت التجارب الكثيرة أن أبناء الأغنياء في الثانية <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10">عشرة</num> من اعمارهم تنقص من <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e2983">١٨</num> إلى <num type="auto-markup" resp="#pers_TG" value="7" xml:lang="ar" xml:id="num_1.d1e2986">٧</num> كيلو. وكذلك الصدر فإنه في أولاد الموسرين أكثر سعة من أبناء المعسرين اللهم إلا فيمن يعملون أعمالاً صناعية من أبناء الفقراء يكبر بها محيط صدورهم.</p>
-                    <p xml:lang="ar" xml:id="p_212.d1e2990">وحركة النمو في أولاد الفقراء أبطأ مما هي في أولاد الأغنياء. وبنات الفقراء لا يبلغن الا بعد سنة او سنتين من السن التي يبلغ فيها امثالهن من بنات الأغنياء. وأثبت كثير من الأطباء أن المولودين حديثاً من أولاد الفقراء أقل وزناً من امثالهم من أبناء الأغنياء والأم المستريحة تلد أولاداً أثقل وزناً من الأم المتعبة إلى آخر يوم من حملها وليس لها غذاء جيد. ومن المؤثرات في صحة المولود سن الأم وزمن بلوغها وتعاقب ولادتها وصحة حالتها وكل هذه الأمور تؤثر في طول الطفل ووزنه. <pb ed="shamela" n="n20-p51" corresp="file:../epub/26523/OEBPS/xhtml/P1150.xhtml" xml:id="pb_52.d1e2992"/> ويخطئ من يقول أن الجمال وتناسب الأعضاء موجدان في أولاد الفقراء لأن الجمال والقوة والنشاط تابعة لسعة العيش أبداً ولاسيما لحالة الأم وإن وجد جمال في أبناء الفقيرات وبناتهن فإنه عرض زائل يذبل لأول نضارته وأقل تعب ينالهم. وتكثر الأسقام والموت في الفقراء أكثر من كثرتها بين الأغنياء وذلك لأن الفقير عرضة للأمراض أكثر بالنظر لتركيبه فلا يقوى على مقاومتها ولان معيشته شاقة. وخالف من يقول بان تشويه وجوه الفقراء وسحناتهم ناتج من تعاطيهم بعض الصنائع وأثبت بأن ذلك خلقي فيهم وأن للفقر والانحطاط الطبيعي وما يلحق بذلك من التبدلات والاضطرابات في التغذية يداً كبيرة في التأثير في الطفل قبل أن يحيا. وتكلم على الأخلاق النفسية من الإحساس على اختلاف أنواعه والعواطف الأدبية والتأثرات والذكاء فقال أنها في الفقراء أقل مما هي في الأغنياء واذ يتأخر ابن الفقير في نموه فهو لا يبلغ أشده بدون مساعدة شروط كثيرة من التعليم والمحيط المرتقي والرفاهية الطبيعية والاقتصادية وهو مما لا يحلم أن يراه من كانوا في أدنى سلم الاجتماع. ولئن نشأ من الطبقة النازلة أناس يكذبون هذه القضية كانوا من خيرة العقلاء والأذكياء ولكنهم قلائل جداً لأن الأسباب الصحية والاقتصادية تؤثر في بنية الإنسان وعواطفه وعقله ولاسيما في ذكائه ونبوغه وليس الذكاء والنبوغ مما يستفيد من المحيط بل هما خلقة في المرء. ومما لا ريب فيه أنه كلما كثر في عنصر الانحطاط العقلي والانحطاط المعاشي لا ينشأ وسطه إلا أناس ضعيفة عقولهم منحطون عن غيرهم من أهل السعة.</p>
-                    <p xml:lang="ar" xml:id="p_213.d1e2996">بحث الباحثون في خصائص الشعوب والأجناس والقبائل ولم يبحثوا كثيراً في خصائص الطبقات الاجتماعية في امة واحدة. وما الخصائص التي تميز طبقتين من طبقات شعب و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> غنية وفقير إلا بأكثر تبايناً حتى بين أهل البلد مما هي بين امة في القاصية وامة في الدانية وثبت للباحث بالبراهين المدققة أن الاختلاف في الولادة والموت وسن الزواج والأمراض وغيرها بين البارزين الفقراء وبين أهل طبقتهم من سكان فينا أقل مما هو بين سكان مملكتي إيطاليا ونروج مثلاً وأن الاختلاف يكثر بين طبقتي الفقراء والأغنياء من أهل البلد الواحد ولا يكثر على تلك النسبة بين شعبين متباينين بلغتيهما وأصلهما بعيدين أحدهما عن الآخر مئات من المراحل. والتمدن يبدو في الطبقات النازلة مهما ارتقت بلادهم <pb ed="shamela" n="n20-p52" corresp="file:../epub/26523/OEBPS/xhtml/P1151.xhtml" xml:id="pb_53.d1e2998"/> كما يبدو عند الطبقات النازلة في البلاد المنحطة أي أن فقراء بلاد التمدن ينتشر فيهم الجهل ويقل النسل ويكثر الموت والجرائم كما هو الحال بين فقراء البلاد الساقطة. ولا يفوتنا النظر أن التمدن لا ينتشر في الآفاق المنوعة من ارض واحدة على معدل و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> بل أنه يستنير كل الإنارة في أفق ويظلم في آخر أو يكون ذا نور ضئيل ورسم محيل. وهم قوم أن الطوتمية وعبادة الظلام والحيوانات والأحجار والأشجار والمياه والنيران والظواهر الجوية والسحر وغيرها من أنواع التعبد هي من خصائص الأمم المتوحشة القديمة والحقيقة أن هذه العبادات لا تزال حية نامية بين الطبقات النازلة عند أكثر الأمم عراقة في الحضارة على أنك تجد مثل هذه العادات والاوهام والأخلاق شائعة أيضاً عند أرقى الطبقات المتحضرة لهذا العهد وذلك لأن للاموات تأثيراً شديداً في نفوسنا وهي الحاكمة المتحكمة فينا ولكم يحاول المتمدن منا أن ينزع عنه ما كان الفه اسلافه من العادات والعبادات وماهو يبالغ ما أراد لا تحكم ذلك منه وغلبة العادة ولكن ذلك يقل في الطبقات العالية ويكثر في الطبقات النازلة. </p>
+                    <p xml:lang="ar" xml:id="p_209.d1e2936"
+                        >كان الرأي الشائع أن أولاد الفقراء أصبح أجسأما من أولاد الأغنياء وإن هؤلاء دون أولئك بذكاء عقولهم وصحة أحلامهم ولكن العالم نيسفور <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> أساتذة كلية لوزأن في سويسرا بما احدثه من الفن الجديد وهو علم تعريف طبقات الفقراء قد أثبت أن الأولاد الأغنياء أرقى فطرة وسحنة عقلاً مما كانوا يوصفون به ففتح بذلك سبيلاً نافعاً في مستقبل الإنسانية وكان بعلمه الجديد القائم على البحث في أحوال الفقراء لا البحث في الفقر أشبه بعلم البحث في الجانين لا البحث في الجنايات قال من بحث له في المجلة الإفرنسية: ويعرف الاختلاف الظاهر في أشكال طبقات أهل السعة وأهل الفاقة من الناس وما بينهما من الفروق التي تكاد تجعلهما ال<num
+                        xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="200"
+                        >متين</num>يمتباينتين مع إنهما يعيشأن في ارض واحدة ويتكلمان بلغة واحدة بالبحث في أشكال الطبقات النازلة وتأثيرهما الطبيعية والفسيولوجية. قال توكفيل الكاتب السياسي الفرنسوي ( <num
+                        type="auto-markup" resp="#pers_TG" value="1805" xml:lang="ar"
+                        xml:id="num_1.d1e2938">١٨٠٥</num> - <num type="auto-markup" resp="#pers_TG"
+                        value="1859" xml:lang="ar" xml:id="num_1.d1e2941"
+                        >١٨٥٩</num> ) تتألف أمم مختلفة كثيرة من طبقات المجتمع الواحد <pb
+                        ed="shamela" n="n20-p50"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1149.xhtml" xml:id="pb_51.d1e2944"
+                        /> وقالوا أن كل امة تنقسم إلى ال<num xml:lang="ar" type="auto-markup"
+                        subtype="d3" resp="#pers_TG" value="200"
+                        >متين</num>يوهو قول صحيح لأننا لو بحثنا في حياة الفقير وحياة الغني لرأينا أن مبدأ التناقض بينهما على اتمة بيد أن هذا الرأي يعد من غريب الآراء.</p>
+                    <p xml:lang="ar" xml:id="p_210.d1e2947"
+                        >قامات الفقراء من أرباب الأعسار أصغر من قامات الموسع عليهم من أهل اليسار. فطول بن الفقير في الرابعة <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشرة</num> من عمره متر و<num xml:lang="ar" type="auto-markup" subtype="d1"
+                        resp="#pers_TG" value="6">ستة</num> و<num xml:lang="ar" type="auto-markup"
+                        subtype="d2" resp="#pers_TG" value="40"
+                        >أربعون</num> سنتيمراً وطول ابن الغني في مثل هذه السن متر ونصف وطول قامات الرجال الفقراء متر و<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4"
+                        >أربعة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2"
+                        resp="#pers_TG" value="60"
+                        >ستون</num> سنتيمتراً في الغالب وطول الأغنياء في سنهم متر و<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8"
+                        >ثمانية</num> و<num xml:lang="ar" type="auto-markup" subtype="d2"
+                        resp="#pers_TG" value="60"
+                        >ستون</num> سنتيمتراً ووزن جسم الموسرين من الأولاد وهم في الثالثة <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشرة</num> <num type="auto-markup" resp="#pers_TG" value="35" xml:lang="ar"
+                        xml:id="num_1.d1e2949"
+                        >٣٥</num> كيلو وزنة جسم ابن الفقير في مثل تلك السن <num type="auto-markup"
+                        resp="#pers_TG" value="33" xml:lang="ar" xml:id="num_1.d1e2952"
+                        >٣٣</num> كيلو. ومحيط رأس ابن الفقير في الحادية <num xml:lang="ar"
+                        type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشرة</num> أصغر من محيط رأس ابن الغني فهو في الأول <num type="auto-markup"
+                        resp="#pers_TG" value="524" xml:lang="ar" xml:id="num_1.d1e2955"
+                        >٥٢٤</num> في الثاني <num type="auto-markup" resp="#pers_TG" value="533"
+                        xml:lang="ar" xml:id="num_1.d1e2958">٥٣٣</num> وابن الغني وهو في سن ال<num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20"
+                        >عشرين</num> <num type="auto-markup" resp="#pers_TG" value="551"
+                        xml:lang="ar" xml:id="num_1.d1e2961">٥٥١</num> . <num type="auto-markup"
+                        resp="#pers_TG" value="9" xml:lang="ar" xml:id="num_1.d1e2965"
+                        >٩</num> وابن الفقير <num type="auto-markup" resp="#pers_TG" value="547"
+                        xml:lang="ar" xml:id="num_1.d1e2968">٥٤٧</num> . <num type="auto-markup"
+                        resp="#pers_TG" value="0" xml:lang="ar" xml:id="num_1.d1e2971"
+                        >٠</num> وهكذا ارتفاع الجبهة وقوة الجمجمة والدماغ والجمجمة الداخلية وزاوية الوجه كلها في قياسها في الفقراء أصغر مما هي في الأغنياء وسعة الحنك في الفقراء أكثر مماهي في الأغنياء.</p>
+                    <p xml:lang="ar" xml:id="p_211.d1e2975"
+                        >وإذا قيست قوة أبناء الفقراء بقوة أبناء الأغنياء بمقياس القوة (ديناموتر) نجد أن الغني في السابعة يحمل <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشرة</num> كيلو على حين لايقدر ابن الفقير أن يحمل أكثر من <num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8"
+                        >ثمانية</num>. والفتاة من بنات اليسار تحمل <num type="auto-markup"
+                        resp="#pers_TG" value="12" xml:lang="ar" xml:id="num_1.d1e2977"
+                        >١٢</num> كيلو وهي في الثانية <num xml:lang="ar" type="auto-markup"
+                        subtype="d2" resp="#pers_TG" value="10"
+                        >عشرة</num> ومثلها من الفقيرات لا تقوى على حمل أكثر من <num
+                        type="auto-markup" resp="#pers_TG" value="7" xml:lang="ar"
+                        xml:id="num_1.d1e2980"
+                        >٧</num> كيلو. وأولاد الأغنياء أقل صبراً على التعب من أولاد الفقراء فقد دلت التجارب الكثيرة أن أبناء الأغنياء في الثانية <num
+                        xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10"
+                        >عشرة</num> من اعمارهم تنقص من <num type="auto-markup" resp="#pers_TG"
+                        value="18" xml:lang="ar" xml:id="num_1.d1e2983">١٨</num> إلى <num
+                        type="auto-markup" resp="#pers_TG" value="7" xml:lang="ar"
+                        xml:id="num_1.d1e2986"
+                        >٧</num> كيلو. وكذلك الصدر فإنه في أولاد الموسرين أكثر سعة من أبناء المعسرين اللهم إلا فيمن يعملون أعمالاً صناعية من أبناء الفقراء يكبر بها محيط صدورهم.</p>
+                    <p xml:lang="ar" xml:id="p_212.d1e2990"
+                        >وحركة النمو في أولاد الفقراء أبطأ مما هي في أولاد الأغنياء. وبنات الفقراء لا يبلغن الا بعد سنة او سنتين من السن التي يبلغ فيها امثالهن من بنات الأغنياء. وأثبت كثير من الأطباء أن المولودين حديثاً من أولاد الفقراء أقل وزناً من امثالهم من أبناء الأغنياء والأم المستريحة تلد أولاداً أثقل وزناً من الأم المتعبة إلى آخر يوم من حملها وليس لها غذاء جيد. ومن المؤثرات في صحة المولود سن الأم وزمن بلوغها وتعاقب ولادتها وصحة حالتها وكل هذه الأمور تؤثر في طول الطفل ووزنه. <pb
+                        ed="shamela" n="n20-p51"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1150.xhtml" xml:id="pb_52.d1e2992"
+                        /> ويخطئ من يقول أن الجمال وتناسب الأعضاء موجدان في أولاد الفقراء لأن الجمال والقوة والنشاط تابعة لسعة العيش أبداً ولاسيما لحالة الأم وإن وجد جمال في أبناء الفقيرات وبناتهن فإنه عرض زائل يذبل لأول نضارته وأقل تعب ينالهم. وتكثر الأسقام والموت في الفقراء أكثر من كثرتها بين الأغنياء وذلك لأن الفقير عرضة للأمراض أكثر بالنظر لتركيبه فلا يقوى على مقاومتها ولان معيشته شاقة. وخالف من يقول بان تشويه وجوه الفقراء وسحناتهم ناتج من تعاطيهم بعض الصنائع وأثبت بأن ذلك خلقي فيهم وأن للفقر والانحطاط الطبيعي وما يلحق بذلك من التبدلات والاضطرابات في التغذية يداً كبيرة في التأثير في الطفل قبل أن يحيا. وتكلم على الأخلاق النفسية من الإحساس على اختلاف أنواعه والعواطف الأدبية والتأثرات والذكاء فقال أنها في الفقراء أقل مما هي في الأغنياء واذ يتأخر ابن الفقير في نموه فهو لا يبلغ أشده بدون مساعدة شروط كثيرة من التعليم والمحيط المرتقي والرفاهية الطبيعية والاقتصادية وهو مما لا يحلم أن يراه من كانوا في أدنى سلم الاجتماع. ولئن نشأ من الطبقة النازلة أناس يكذبون هذه القضية كانوا من خيرة العقلاء والأذكياء ولكنهم قلائل جداً لأن الأسباب الصحية والاقتصادية تؤثر في بنية الإنسان وعواطفه وعقله ولاسيما في ذكائه ونبوغه وليس الذكاء والنبوغ مما يستفيد من المحيط بل هما خلقة في المرء. ومما لا ريب فيه أنه كلما كثر في عنصر الانحطاط العقلي والانحطاط المعاشي لا ينشأ وسطه إلا أناس ضعيفة عقولهم منحطون عن غيرهم من أهل السعة.</p>
+                    <p xml:lang="ar" xml:id="p_213.d1e2996"
+                        >بحث الباحثون في خصائص الشعوب والأجناس والقبائل ولم يبحثوا كثيراً في خصائص الطبقات الاجتماعية في امة واحدة. وما الخصائص التي تميز طبقتين من طبقات شعب و<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> غنية وفقير إلا بأكثر تبايناً حتى بين أهل البلد مما هي بين امة في القاصية وامة في الدانية وثبت للباحث بالبراهين المدققة أن الاختلاف في الولادة والموت وسن الزواج والأمراض وغيرها بين البارزين الفقراء وبين أهل طبقتهم من سكان فينا أقل مما هو بين سكان مملكتي إيطاليا ونروج مثلاً وأن الاختلاف يكثر بين طبقتي الفقراء والأغنياء من أهل البلد الواحد ولا يكثر على تلك النسبة بين شعبين متباينين بلغتيهما وأصلهما بعيدين أحدهما عن الآخر مئات من المراحل. والتمدن يبدو في الطبقات النازلة مهما ارتقت بلادهم <pb
+                        ed="shamela" n="n20-p52"
+                        corresp="file:../epub/26523/OEBPS/xhtml/P1151.xhtml" xml:id="pb_53.d1e2998"
+                        /> كما يبدو عند الطبقات النازلة في البلاد المنحطة أي أن فقراء بلاد التمدن ينتشر فيهم الجهل ويقل النسل ويكثر الموت والجرائم كما هو الحال بين فقراء البلاد الساقطة. ولا يفوتنا النظر أن التمدن لا ينتشر في الآفاق المنوعة من ارض واحدة على معدل و<num
+                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                        >احد</num> بل أنه يستنير كل الإنارة في أفق ويظلم في آخر أو يكون ذا نور ضئيل ورسم محيل. وهم قوم أن الطوتمية وعبادة الظلام والحيوانات والأحجار والأشجار والمياه والنيران والظواهر الجوية والسحر وغيرها من أنواع التعبد هي من خصائص الأمم المتوحشة القديمة والحقيقة أن هذه العبادات لا تزال حية نامية بين الطبقات النازلة عند أكثر الأمم عراقة في الحضارة على أنك تجد مثل هذه العادات والاوهام والأخلاق شائعة أيضاً عند أرقى الطبقات المتحضرة لهذا العهد وذلك لأن للاموات تأثيراً شديداً في نفوسنا وهي الحاكمة المتحكمة فينا ولكم يحاول المتمدن منا أن ينزع عنه ما كان الفه اسلافه من العادات والعبادات وماهو يبالغ ما أراد لا تحكم ذلك منه وغلبة العادة ولكن ذلك يقل في الطبقات العالية ويكثر في الطبقات النازلة. </p>
                 </div>
                     </div>
                     <pb ed="shamela" n="n20-p53" corresp="file:../epub/26523/OEBPS/xhtml/P1152.xhtml" xml:id="pb_54.d1e3004"/><div type="article" xml:lang="ar" xml:id="div_11.d1e3002">
                         
-                        <head xml:lang="ar" xml:id="head_10.d1e3006">نقد <title level="j" ref="oclc:4770057679">المقتبس</title></head>
-                        <p xml:lang="ar" xml:id="p_214.d1e3009">كان معظم النقد الذي ورد على <rs ref="oclc:4770057679">هذه المجلة</rs> في عامها الأول مقصوراً على الألفاظ والوضع اما نقد هذه السنة فأكثره على المعاني والمقاصد. وقد كتب إلينا <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> أهل العلم في القاهرة يقول (كنت آليت على نفسك أن لا تتعرض في المقتبس للمباحث المتعلقة بالدين أو السياسة لئلا يظهر منك ما يشتم منه رائحة التعصب للملة أو الدولة ثم رأيتك كانك نسيت عهدك حتى نبهك <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">احد</num> أدباء بغداد على ذلك. وقد رأيتك عدت إلى مثل ذلك فأكبرت الأمر في مثل مسألة بسيطة لا توجب شدة ولا حدة كمسألة التقية ورحت بنحي فيها على الشيعة وإن كان ما أوردته منقولاً عن غيرك حتى أحرجت بذلك صدورنا دع عنك صدورهم. وكذلك فعلت في مسألة السموأل فإنها مسألة طفيفة فما بالك أعظمت الأمر فيها ولعلك تقول أن المقصد بذلك تنقيح البحث في التاريخ وهو من مباحث العلم على أن الاعتراض جاء من غيري فنشرته. أقول نعم كان الخطب سهلاً لو لم يكن في المقالة شدة. وصاحب المجلة مسؤول عما يكتب في مجلته. والمأمول أن لا تعود إلى مثل ذلك او تبين عذرك المقبول في هذا الشأن والسلام عليك)</p>
+                        <head xml:lang="ar" xml:id="head_10.d1e3006">نقد <title level="j"
+                    ref="oclc:4770057679">المقتبس</title></head>
+                        <p xml:lang="ar" xml:id="p_214.d1e3009">كان معظم النقد الذي ورد على <rs
+                    ref="oclc:4770057679"
+                    >هذه المجلة</rs> في عامها الأول مقصوراً على الألفاظ والوضع اما نقد هذه السنة فأكثره على المعاني والمقاصد. وقد كتب إلينا <num
+                    xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                    >احد</num> أهل العلم في القاهرة يقول (كنت آليت على نفسك أن لا تتعرض في المقتبس للمباحث المتعلقة بالدين أو السياسة لئلا يظهر منك ما يشتم منه رائحة التعصب للملة أو الدولة ثم رأيتك كانك نسيت عهدك حتى نبهك <num
+                    xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
+                    >احد</num> أدباء بغداد على ذلك. وقد رأيتك عدت إلى مثل ذلك فأكبرت الأمر في مثل مسألة بسيطة لا توجب شدة ولا حدة كمسألة التقية ورحت بنحي فيها على الشيعة وإن كان ما أوردته منقولاً عن غيرك حتى أحرجت بذلك صدورنا دع عنك صدورهم. وكذلك فعلت في مسألة السموأل فإنها مسألة طفيفة فما بالك أعظمت الأمر فيها ولعلك تقول أن المقصد بذلك تنقيح البحث في التاريخ وهو من مباحث العلم على أن الاعتراض جاء من غيري فنشرته. أقول نعم كان الخطب سهلاً لو لم يكن في المقالة شدة. وصاحب المجلة مسؤول عما يكتب في مجلته. والمأمول أن لا تعود إلى مثل ذلك او تبين عذرك المقبول في هذا الشأن والسلام عليك)</p>
                         <p xml:lang="ar" xml:id="p_215.d1e3012">هذا ما تناولناه بيد المنة لكاتبه وكنا نود أن نكتفي بنشره ونترك الحكم فيه للقراء كما فعلنا حتى الآن في جميع ما
                             جاءنا من هذا القبيل لولا أن كثر مثل هذا النقد علينا وجاءنا شيء من نوعه من مصر والشام والعراق فأصبح السكوت عن
                             الأجابة ضرباً من ضروب الأهمال. وبعد فالمجلة لا تزال جارية على الخطة التي رسمتها في أول جزء صدر من التمحص للعلم
