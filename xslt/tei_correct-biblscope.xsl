@@ -52,7 +52,8 @@
         <xsl:copy>
             <xsl:attribute name="from" select="@n"/>
             <xsl:attribute name="to" select="@n"/>
-            <xsl:apply-templates select="@*[not(parent::node()/@n)] | node()"/>
+            <!-- @n should be excluded from reproduction -->
+            <xsl:apply-templates select="@*[name()!='n'] | node()"/>
         </xsl:copy>
     </xsl:template>
     
