@@ -66,8 +66,8 @@
                      </pubPlace>
                             <date when-custom="1329-03-01" datingMethod="#cal_islamic" calendar="#cal_islamic" when="1911-03-02" xml:lang="en">1 Rab I 1329</date>
                         </imprint>
-                        <biblScope unit="volume" n="6"/>
-                        <biblScope unit="issue" n="3"/>
+                        <biblScope from="6" to="6" unit="volume"/>
+                        <biblScope from="3" to="3" unit="issue"/>
                         <biblScope unit="page" from="177" to="264"/>
                     </monogr>
                     <idno type="oclc" xml:lang="en">4770057679</idno>
@@ -79,7 +79,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
+        <revisionDesc><tei:change when="2017-02-09">Corrected <tei:gi>biblStruct</tei:gi> by moving all <tei:gi>biblScope</tei:gi> from <tei:gi>imprint</tei:gi> to <tei:gi>monogr</tei:gi> and by converting all <tei:att>n</tei:att> to <tei:att>from</tei:att> and <tei:att>to</tei:att>with identical values.</tei:change><tei:change when="2016-09-25">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
          <change when="2016-02-29" who="#pers_TG" xml:lang="en">Generated a new <gi>front</gi> based on the <gi>sourceDesc</gi> that matches the information found in the masthead of the actual issues.</change>
          <change when="2016-01-12" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2016-01-12" who="#pers_TG" xml:lang="en">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag xml:lang="en">lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag xml:lang="en">l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
@@ -673,8 +673,8 @@
         <front xml:lang="ar" xml:id="front_1.d1e1431">
          <div type="masthead" xml:lang="ar">
             <bibl xml:lang="ar">
-               <biblScope unit="issue" n="3" xml:lang="ar">الجزء 3</biblScope>
-               <biblScope unit="volume" n="6" xml:lang="ar">المجلد 6</biblScope>
+               <biblScope from="3" to="3" unit="issue" xml:lang="ar">الجزء 3</biblScope>
+               <biblScope from="6" to="6" unit="volume" xml:lang="ar">المجلد 6</biblScope>
                <lb/>
                <title level="j" xml:lang="ar">المقتبس</title>
             </bibl>
@@ -2796,32 +2796,8 @@
                 </div>
                 <div type="article" xml:lang="ar" xml:id="div_68.d1e5414">
                     <head xml:lang="ar" xml:id="head_68.d1e5416">قرطاجنة والعرب</head>
-                    <pb ed="shamela" n="n62-p86"
-                        corresp="file:../epub/26523/OEBPS/xhtml/P4177.xhtml" xml:id="pb_173.d1e5420"/>
-                    <p xml:lang="ar" xml:id="p_315.d1e5419"> <bibl>بعث <author><persName
-                        xml:lang="fr-Arab-AR"
-                        >المسيو <surname>برتولون</surname></persName></author> من المشتغلين بعلم تاريخ الإنسان <foreign
-                        xml:lang="fr"
-                        >Anthropologie</foreign> إلى المجمع العلمي القرطاجني في تونس بمبحث</bibl> بين فيه الفروق بين جماجم القرطاجنيين منذ <num
-                        type="auto-markup" resp="#pers_TG" value="2400" xml:lang="ar"
-                        xml:id="num_329.d1e5422"
-                        >٢٤٠٠</num> سنة وجماجم التونسيين المعاصرين جاء فيه أن علماء الإنسان يتوصلون إلى درس الأخلاق الرئيسة لمعرفة مميزات عنصر من العناصر بالنظر أولاً إلى قامات أهله فمن أجناس الأمم من يغلب عليها طول القامات مثل الايكوسيين والسويديين ومنهم من يكونون قصارها مثل اللايونيين والسارديين والصقليين ثم ينظر إلى ألوان البشرة والعيون والشعور وحجم الجماجم <pb
-                        ed="print" n="264" facs="#facs_268" xml:id="pb_174.d1e5425"
-                        />والأنف والعيون والوجه فيقدرون المقياس الأعلى بمئة ومن بلغ طول رأسه من <num
-                        type="auto-markup" resp="#pers_TG" value="70" xml:lang="ar"
-                        xml:id="num_330.d1e5427">٧٠</num> إلى <num type="auto-markup"
-                        resp="#pers_TG" value="86" xml:lang="ar" xml:id="num_331.d1e5430"
-                        >٨٦</num> كان معدوداً في طوال الوجوه ثم يقاس الطول مع العرض وتجري النسبة بينهما وقد قاس في تونس <num
-                        xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100"
-                        >مئة</num> جمجمة قديمة جداً يظن أنها من جماجم القرطاجنيين من القرن الرابع قبل الميلاد و <num
-                        type="auto-markup" resp="#pers_TG" value="23" xml:lang="ar"
-                        xml:id="num_332.d1e5433"
-                        >٢٣</num> جمجمة حديثة من جماجم التونسيين فاستبان أن نساء القدماء يشبهن بتقاطيعهن نساء المحدثين إلا قليلاً وأن الاختلاف محسوس بين رجال اليوم ورجال أمس وأن العقول كانت واحدة في القرطاجنيين والتونسيين وكان كثيرون من القرطاجنيين طوال القامات ومميزاتهم كمميزات قبائل الغرب العظمى المعروفة في التاريخ باسم النوميديين وثبت له أن سكان ضواحي تونس يشبهون أولئك القدماء في قاماتهم وأن سكان قرطاجنة وتونس ظلوا متشابهين منذ القديم إلى يومنا هذا على ما طرأ عليهم من الطوارئ السياسية وبعيد أن يكون قدماء القرطاجنيين من فينيقية لأن الفينيقيين عرفوا بضيق جبهاتهم وكانت أواسط رؤوسهم منبسطة واستدل من حفريات مدافن صيدا ومن قياس هيكل عظام الملك ثابنيت بن اشمونازار الذي وجد في <num
-                        xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1"
-                        >إحدى</num> النواويس الصيداوية أن القرطاجنيين لم يشبهوا الفينيقيين بجنسهم وأن القرطاجنيين اختلطوا بأهل عنصر طويلة رؤوسهم وكذلك الحال في عيون الصيداويين أنها كانت أكثر استدارة من عيون القرطاجنيين وأنوف الفينيقيين أصغر من أنوف القرطاجنيين وبذلك ظهر أن سكان قرطاجنة (المستعمرة الفينيقية) في القرن الرابع لم يكونوا من عنصر يشبه العنصر الفينيقي وأن سكان قرطاجنة من أصل العنصر الذي أنشأ المدنية في بحر ايجيه (الارخبيل) أي أجداد المدنية اليونانية كما استدل الباحثون في أصول مدنية شواطئ البحر الأبيض أن هؤلاء الإفريقيين القرطاجنيين قد فني فيهم الطوارئ من الفينيقيين الذين حلوا ديارهم فكان أهل قرطاجنة فينيقيين ثم رومانيين ثم <pb
-                        ed="shamela" n="n62-p87"
-                        corresp="file:../epub/26523/OEBPS/xhtml/P4178.xhtml" xml:id="pb_175.d1e5437"
-                        /> عرباً قال: وعلى فرنسا أن تنظر إلى ما تم في هذا السبيل من صبغة التونسيين لنعيدهم إلى صبغتها لأن حكم العرب قد أتاهم بقانون سنه رعاة لرعيان فصعب تطبيق هذه الشريعة على مجتمعات ممدنة كالمجتمع القرطاجني ولذا انحط أي انحطاط عما كان عليه زمن الفتح الروماني، قال وإن مبادئ التنظيم الذي بقيت آثاره إلى اليوم في تونس مثل البلديات والصناعات وصناعة الخزف والبناء والهندسة ليست من اختراع العرب كما يقال بل هي بقايا من المدنية القديمة السابقة للإسلام فسدت على عهد الفاتحين وأعمالهم العقيمة، قلنا وبمثل هذا المتعصب الفرنسوي ممن يمدون أقلامهم بالسم الزعاف ليكتبوا عن العرب جهلاً منهم أو تجاهلاً ما برح استعمار فرنسا متأخراً عن غيره من الأمم وسيتراجع عمرانها كلما قويت شأفة الممحاكين والسفسطائيين من أبنائها. </p>
+                    <pb ed="shamela" n="n62-p86" corresp="file:../epub/26523/OEBPS/xhtml/P4177.xhtml" xml:id="pb_173.d1e5420"/>
+                    <p xml:lang="ar" xml:id="p_315.d1e5419"> <bibl>بعث <author><persName xml:lang="fr-Arab-AR">المسيو <surname>برتولون</surname></persName></author> من المشتغلين بعلم تاريخ الإنسان <foreign xml:lang="fr">Anthropologie</foreign> إلى المجمع العلمي القرطاجني في تونس بمبحث</bibl> بين فيه الفروق بين جماجم القرطاجنيين منذ <num type="auto-markup" resp="#pers_TG" value="2400" xml:lang="ar" xml:id="num_329.d1e5422">٢٤٠٠</num> سنة وجماجم التونسيين المعاصرين جاء فيه أن علماء الإنسان يتوصلون إلى درس الأخلاق الرئيسة لمعرفة مميزات عنصر من العناصر بالنظر أولاً إلى قامات أهله فمن أجناس الأمم من يغلب عليها طول القامات مثل الايكوسيين والسويديين ومنهم من يكونون قصارها مثل اللايونيين والسارديين والصقليين ثم ينظر إلى ألوان البشرة والعيون والشعور وحجم الجماجم <pb ed="print" n="264" facs="#facs_268" xml:id="pb_174.d1e5425"/>والأنف والعيون والوجه فيقدرون المقياس الأعلى بمئة ومن بلغ طول رأسه من <num type="auto-markup" resp="#pers_TG" value="70" xml:lang="ar" xml:id="num_330.d1e5427">٧٠</num> إلى <num type="auto-markup" resp="#pers_TG" value="86" xml:lang="ar" xml:id="num_331.d1e5430">٨٦</num> كان معدوداً في طوال الوجوه ثم يقاس الطول مع العرض وتجري النسبة بينهما وقد قاس في تونس <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100">مئة</num> جمجمة قديمة جداً يظن أنها من جماجم القرطاجنيين من القرن الرابع قبل الميلاد و <num type="auto-markup" resp="#pers_TG" value="23" xml:lang="ar" xml:id="num_332.d1e5433">٢٣</num> جمجمة حديثة من جماجم التونسيين فاستبان أن نساء القدماء يشبهن بتقاطيعهن نساء المحدثين إلا قليلاً وأن الاختلاف محسوس بين رجال اليوم ورجال أمس وأن العقول كانت واحدة في القرطاجنيين والتونسيين وكان كثيرون من القرطاجنيين طوال القامات ومميزاتهم كمميزات قبائل الغرب العظمى المعروفة في التاريخ باسم النوميديين وثبت له أن سكان ضواحي تونس يشبهون أولئك القدماء في قاماتهم وأن سكان قرطاجنة وتونس ظلوا متشابهين منذ القديم إلى يومنا هذا على ما طرأ عليهم من الطوارئ السياسية وبعيد أن يكون قدماء القرطاجنيين من فينيقية لأن الفينيقيين عرفوا بضيق جبهاتهم وكانت أواسط رؤوسهم منبسطة واستدل من حفريات مدافن صيدا ومن قياس هيكل عظام الملك ثابنيت بن اشمونازار الذي وجد في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1">إحدى</num> النواويس الصيداوية أن القرطاجنيين لم يشبهوا الفينيقيين بجنسهم وأن القرطاجنيين اختلطوا بأهل عنصر طويلة رؤوسهم وكذلك الحال في عيون الصيداويين أنها كانت أكثر استدارة من عيون القرطاجنيين وأنوف الفينيقيين أصغر من أنوف القرطاجنيين وبذلك ظهر أن سكان قرطاجنة (المستعمرة الفينيقية) في القرن الرابع لم يكونوا من عنصر يشبه العنصر الفينيقي وأن سكان قرطاجنة من أصل العنصر الذي أنشأ المدنية في بحر ايجيه (الارخبيل) أي أجداد المدنية اليونانية كما استدل الباحثون في أصول مدنية شواطئ البحر الأبيض أن هؤلاء الإفريقيين القرطاجنيين قد فني فيهم الطوارئ من الفينيقيين الذين حلوا ديارهم فكان أهل قرطاجنة فينيقيين ثم رومانيين ثم <pb ed="shamela" n="n62-p87" corresp="file:../epub/26523/OEBPS/xhtml/P4178.xhtml" xml:id="pb_175.d1e5437"/> عرباً قال: وعلى فرنسا أن تنظر إلى ما تم في هذا السبيل من صبغة التونسيين لنعيدهم إلى صبغتها لأن حكم العرب قد أتاهم بقانون سنه رعاة لرعيان فصعب تطبيق هذه الشريعة على مجتمعات ممدنة كالمجتمع القرطاجني ولذا انحط أي انحطاط عما كان عليه زمن الفتح الروماني، قال وإن مبادئ التنظيم الذي بقيت آثاره إلى اليوم في تونس مثل البلديات والصناعات وصناعة الخزف والبناء والهندسة ليست من اختراع العرب كما يقال بل هي بقايا من المدنية القديمة السابقة للإسلام فسدت على عهد الفاتحين وأعمالهم العقيمة، قلنا وبمثل هذا المتعصب الفرنسوي ممن يمدون أقلامهم بالسم الزعاف ليكتبوا عن العرب جهلاً منهم أو تجاهلاً ما برح استعمار فرنسا متأخراً عن غيره من الأمم وسيتراجع عمرانها كلما قويت شأفة الممحاكين والسفسطائيين من أبنائها. </p>
                 </div>
             </div>
         </body>
