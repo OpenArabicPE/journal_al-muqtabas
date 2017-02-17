@@ -3,27 +3,26 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Digital Arabic Periodical Editions: Schema</title>
-                <author><persName xml:id="pers_TG"
-                    ><forename>Till</forename><surname>Grallert</surname></persName></author>
+                <title>Open Arabic Periodical Editions (OpenAraPE): Schema</title>
+                <author><persName xml:id="pers_TG"><forename>Till</forename><surname>Grallert</surname></persName></author>
             </titleStmt>
             <publicationStmt>
                 <authority><persName>Till Grallert</persName></authority>
                 <pubPlace>Beirut</pubPlace>
                 <date when="2016">2016</date>
                 <availability status="restricted">
-                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/"
-                        >Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
                 </availability>
             </publicationStmt>
             <notesStmt>
-                <note type="ns">https://tillgrallert.github.io/ns/tei_dape</note>
+                <note type="ns">https://tillgrallert.github.io/ns/tei_openarape</note>
             </notesStmt>
             <sourceDesc>
                 <p>created on Friday 17th June 2016 02:20:14 PM</p>
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change when="2017-01-15" who="#pers_TG">Added @type="inline" to tei:note. Added @type attributes to tei:date.</change>
             <change when="2016-06-17" who="#pers_TG">Initial creation of this file.</change>
         </revisionDesc>
     </teiHeader>
@@ -45,7 +44,7 @@
                 <item>transcr</item>
                 </list> </p>
             <p>Many elements and attribute classes and attributes were deleted from the standard set. The values of some attributes were restricted.</p>
-            <schemaSpec ident="tei_dape" docLang="en" prefix="dape_" xml:lang="en">
+            <schemaSpec ident="tei_OpenAraPE" docLang="en" prefix="OpenAraPE_" xml:lang="en">
                 <moduleRef key="core"
                     except="addrLine address analytic binaryObject desc distinct divGen email emph gloss headItem headLabel media meeting mentioned postBox postCode relatedItem soCalled sp speaker stage street textLang"/>
                 <moduleRef key="tei" except=""/>
@@ -98,40 +97,34 @@
                                     <desc>Farsi in Arabic script</desc>
                                 </valItem>
                                 <valItem ident="ar-Latn-x-ijmes">
-                                    <desc>Arabic in Latin script following the IJMES
-                                        transcription</desc>
+                                    <desc>Arabic in Latin script following the IJMES transcription</desc>
                                 </valItem>
                                 <valItem ident="ota-Latn-x-ijmes">
-                                    <desc>Ottoman in Latin script following the IJMES
-                                        transcription</desc>
+                                    <desc>Ottoman in Latin script following the IJMES transcription</desc>
                                 </valItem>
                                 <valItem ident="ota-Latn-TR">
-                                    <desc>Ottoman in Latin script following common Turkish
-                                        conventions</desc>
+                                    <desc>Ottoman in Latin script following common Turkish conventions</desc>
                                 </valItem>
                                 <valItem ident="fa-Latn-x-ijmes">
-                                    <desc>Farsi in Latin script following the IJMES
-                                        transcription</desc>
+                                    <desc>Farsi in Latin script following the IJMES transcription</desc>
                                 </valItem>
                                 <valItem ident="ar-Latn-EN">
-                                    <desc>Arabic in Latin script following common English
-                                        conventions</desc>
+                                    <desc>Arabic in Latin script following common English conventions</desc>
                                 </valItem>
                                 <valItem ident="ar-Latn-FR">
-                                    <desc>Arabic in Latin script following common French
-                                        conventions</desc>
+                                    <desc>Arabic in Latin script following common French conventions</desc>
                                 </valItem>
                                 <valItem ident="ar-Latn-x-dmg">
-                                    <desc>Arabic in Latin script following the DMG
-                                        transcription</desc>
+                                    <desc>Arabic in Latin script following the DMG transcription</desc>
+                                </valItem>
+                                <valItem ident="de-Arab-AR">
+                                    <desc>German transcribed into Arabic script following common Levantine Arabic practices</desc>
                                 </valItem>
                                 <valItem ident="en-Arab-AR">
-                                    <desc>English transcribed into Arabic script following
-                                        common Levantine Arabic practices</desc>
+                                    <desc>English transcribed into Arabic script following common Levantine Arabic practices</desc>
                                 </valItem>
                                 <valItem ident="fr-Arab-AR">
-                                    <desc>French transcribed into Arabic script following common
-                                        Levantine Arabic practices</desc>
+                                    <desc>French transcribed into Arabic script following common Levantine Arabic practices</desc>
                                 </valItem>
                             </valList>
                         </attDef>
@@ -202,6 +195,54 @@
                         <attDef ident="varSeq" mode="delete"/>
                     </attList>
                 </classSpec>
+                <elementSpec ident="add" module="core" mode="change">
+                    <attList>
+                        <attDef ident="resp" mode="change" usage="req"/>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="corr" module="core" mode="change">
+                    <attList>
+                        <attDef ident="resp" mode="change" usage="req"/>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="date" module="core" mode="change">
+                    <attList>
+                        <attDef ident="datingMethod" mode="change">
+                            <valList type="closed" mode="replace">
+                                <valItem ident="#cal_gregorian"/>
+                                <valItem ident="#cal_islamic"/>
+                                <valItem ident="#cal_julian"/>
+                                <valItem ident="#cal_ottomanfiscal"/>
+                            </valList>
+                        </attDef>
+                        <attDef ident="calendar" mode="change">
+                            <valList type="closed" mode="replace">
+                                <valItem ident="#cal_gregorian"/>
+                                <valItem ident="#cal_islamic"/>
+                                <valItem ident="#cal_julian"/>
+                                <valItem ident="#cal_ottomanfiscal"/>
+                            </valList>
+                        </attDef>
+                        <attDef ident="type" mode="change">
+                            <valList type="semi" mode="replace">
+                                <valItem ident="official">
+                                    <desc>A publication date as provided on the masthead</desc>
+                                </valItem>
+                                <valItem ident="scheduled">
+                                    <desc>A publication date according to the publication schedule</desc>
+                                </valItem>
+                                <valItem ident="supplied">
+                                    <desc>A publication date as indicated by other sources</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="del" module="core" mode="change">
+                    <attList>
+                        <attDef ident="resp" mode="change" usage="req"/>
+                    </attList>
+                </elementSpec>
                 <elementSpec ident="div" mode="change" module="textstructure">
                     <attList>
                         <attDef ident="type" mode="change">
@@ -265,6 +306,7 @@
                                 <valItem ident="endnote"/>
                                 <valItem ident="footnote"/>
                                 <valItem ident="gloss"/>
+                                <valItem ident="inline"/>
                             </valList>
                         </attDef>
                     </attList>
@@ -345,26 +387,6 @@
                             <valList type="semi" mode="replace">
                                 <valItem ident="brackets"/>
                                 <valItem ident="quotation-marks"/>
-                            </valList>
-                        </attDef>
-                    </attList>
-                </elementSpec>
-                <elementSpec ident="date" module="core" mode="change">
-                    <attList>
-                        <attDef ident="datingMethod" mode="change">
-                            <valList type="closed" mode="replace">
-                                <valItem ident="#cal_gregorian"/>
-                                <valItem ident="#cal_islamic"/>
-                                <valItem ident="#cal_julian"/>
-                                <valItem ident="#cal_ottomanfiscal"/>
-                            </valList>
-                        </attDef>
-                        <attDef ident="calendar" mode="change">
-                            <valList type="closed" mode="replace">
-                                <valItem ident="#cal_gregorian"/>
-                                <valItem ident="#cal_islamic"/>
-                                <valItem ident="#cal_julian"/>
-                                <valItem ident="#cal_ottomanfiscal"/>
                             </valList>
                         </attDef>
                     </attList>
