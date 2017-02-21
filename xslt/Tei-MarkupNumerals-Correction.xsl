@@ -22,7 +22,7 @@
 
 <!--    <xsl:param name="pUrlInput" select="'../xml'"/>-->
     <!-- identify the author of the change by means of a @xml:id -->
-    <xsl:param name="pAuthorXmlId" select="'pers_TG'"/>
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
     
    <!-- <xsl:variable name="vUrlInput" select="concat($pUrlInput, '?select=*.xml;recurse=yes')"/>-->
 
@@ -50,7 +50,7 @@
         <xsl:copy>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="concat('#',$pAuthorXmlId)"/>
+                <xsl:attribute name="who" select="concat('#',$p_id-editor)"/>
                 <xsl:text>Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive </xsl:text><tei:gi>num</tei:gi><xsl:text> elements separated by " . " into a single </xsl:text><tei:gi>num</tei:gi><xsl:text> element. The </xsl:text><tei:att>resp</tei:att><xsl:text> and </xsl:text><tei:att>type</tei:att><xsl:text> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as </xsl:text><tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag><xsl:text>.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="@* | node()"/>
@@ -66,7 +66,7 @@
         <xsl:variable name="value" select="number(concat($val1, '.', $val2))"/>
         <xsl:element name="tei:num">
             <xsl:attribute name="type" select="'auto-markup'"/>
-            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
             <xsl:attribute name="value" select="$value"/>
             <xsl:attribute name="xml:lang" select="'ar'"/>
             <xsl:value-of select="translate(format-number($value,'###.##0,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
@@ -88,7 +88,7 @@
         <xsl:variable name="value" select="number(concat($val1, $val2))"/>
         <xsl:element name="tei:num">
             <xsl:attribute name="type" select="'auto-markup'"/>
-            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
             <xsl:attribute name="value" select="$value"/>
             <xsl:attribute name="xml:lang" select="'ar'"/>
             <xsl:value-of select="translate(format-number($value,'###.###,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
@@ -103,7 +103,7 @@
         <xsl:variable name="value" select="number(concat($val1, $val2, $val3))"/>
         <xsl:element name="tei:num">
             <xsl:attribute name="type" select="'auto-markup'"/>
-            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
             <xsl:attribute name="value" select="$value"/>
             <xsl:attribute name="xml:lang" select="'ar'"/>
             <xsl:value-of select="translate(format-number($value,'###.###,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
@@ -119,7 +119,7 @@
         <xsl:variable name="value" select="number(concat($val1, $val2, $val3, $val4))"/>
         <xsl:element name="tei:num">
             <xsl:attribute name="type" select="'auto-markup'"/>
-            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
             <xsl:attribute name="value" select="$value"/>
             <xsl:attribute name="xml:lang" select="'ar'"/>
             <xsl:value-of select="translate(format-number($value,'###.###,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
@@ -147,7 +147,7 @@
         <xsl:variable name="value" select="number(concat($val1, $val2))"/>
         <xsl:element name="tei:num">
             <xsl:attribute name="type" select="'auto-markup'"/>
-            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
             <xsl:attribute name="value" select="$value"/>
             <xsl:attribute name="xml:lang" select="'ar'"/>
             <xsl:value-of select="translate(format-number($value,'###.###,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
@@ -162,7 +162,7 @@
         <xsl:variable name="value" select="number(concat($val1, $val2, $val3))"/>
         <xsl:element name="tei:num">
             <xsl:attribute name="type" select="'auto-markup'"/>
-            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
             <xsl:attribute name="value" select="$value"/>
             <xsl:attribute name="xml:lang" select="'ar'"/>
             <xsl:value-of select="translate(format-number($value,'###.###,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
@@ -178,7 +178,7 @@
         <xsl:variable name="value" select="number(concat($val1, $val2, $val3, $val4))"/>
         <xsl:element name="tei:num">
             <xsl:attribute name="type" select="'auto-markup'"/>
-            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
             <xsl:attribute name="value" select="$value"/>
             <xsl:attribute name="xml:lang" select="'ar'"/>
             <xsl:value-of select="translate(format-number($value,'###.###,##','ar_default'),$vStringTranscribeFromIjmes,$vStringTranscribeToArabic)"/>
@@ -204,7 +204,7 @@
     <xsl:template match="tei:num" priority="10">
         <xsl:copy>
             <xsl:attribute name="type" select="'auto-markup'"/>
-            <xsl:attribute name="resp" select="concat('#',$pAuthorXmlId)"/>
+            <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>

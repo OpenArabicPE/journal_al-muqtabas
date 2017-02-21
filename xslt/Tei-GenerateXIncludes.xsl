@@ -18,7 +18,7 @@
     <xsl:output encoding="UTF-8" indent="no" method="xml" name="xml" omit-xml-declaration="no" version="1.0" />
     
     <!-- identify the author of the change by means of a @xml:id -->
-    <xsl:param name="pAuthorXmlId" select="'pers_TG'"/>
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
 
     
     <!-- reproduce everything as is -->
@@ -49,7 +49,7 @@
         <xsl:copy>
             <xsl:element name="change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="$pAuthorXmlId"/>
+                <xsl:attribute name="who" select="$p_id-editor"/>
                 <xsl:text>Replaced </xsl:text>
                 <xsl:element name="gi">encodingDesc</xsl:element><xsl:text> and </xsl:text><xsl:element name="gi">profileDesc</xsl:element>
                 <xsl:text>with XPointers pointing to a master file.</xsl:text>

@@ -17,7 +17,7 @@
     <xsl:output encoding="UTF-8" indent="no" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
     
     <!-- identify the author of the change by means of a @xml:id -->
-    <xsl:param name="pAuthorXmlId" select="'pers_TG'"/>
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
    
     
     <!-- reproduce everything as is -->
@@ -53,7 +53,7 @@
             <xsl:apply-templates select="@*"/>
             <xsl:element name="change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="$pAuthorXmlId"/>
+                <xsl:attribute name="who" select="$p_id-editor"/>
                 <xsl:text>Added automated </xsl:text>
                 <xsl:element name="att">xml:id</xsl:element>
                 <xsl:text>s for every element that is a descendant of </xsl:text>

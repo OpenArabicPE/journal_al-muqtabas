@@ -23,7 +23,7 @@
         - vol. 6: 4 -->
     <xsl:param name="pPageSetOff" select="16"/>
     <!-- identify the author of the change by means of a @xml:id -->
-    <xsl:param name="pAuthorXmlId" select="'pers_TG'"/>
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
     <!-- select a range of <pb>s to be corrected -->
     <xsl:param name="pPbStart" select="210"/>
     <xsl:param name="pPbStop"/>
@@ -49,7 +49,7 @@
         <xsl:copy>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="concat('#',$pAuthorXmlId)"/>
+                <xsl:attribute name="who" select="concat('#',$p_id-editor)"/>
                 <xsl:text>Corrected the links between </xsl:text>
                 <xsl:element name="tei:tag">
                     <xsl:text>pb ed="print"</xsl:text>
