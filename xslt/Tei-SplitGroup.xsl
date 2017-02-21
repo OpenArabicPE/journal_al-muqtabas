@@ -20,6 +20,9 @@
     
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes" encoding="UTF-8"/>
     
+    <!-- identify the author of the change by means of a @xml:id -->
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
+
     <!-- some variables -->
     <xsl:variable name="vDateTodayIso" select="format-date( current-date(),'[Y0001]-[M01]-[D01]')"/>
     <xsl:variable name="vFileNameBase" select="'oclc_4770057679_'"/>
@@ -76,7 +79,7 @@
     <!-- document changes -->
     <xsl:template match="tei:revisionDesc">
         <xsl:copy>
-            <change when="{$vDateTodayIso}" who="pers_TG">Created this file by splitting <ref target="{base-uri()}">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
+            <change when="{$vDateTodayIso}" who="{concat('#',$p_id-editor)}">Created this file by splitting <ref target="{base-uri()}">the master file</ref> into individual files for each issue that are linked to the master file by means of xPointer.</change>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>

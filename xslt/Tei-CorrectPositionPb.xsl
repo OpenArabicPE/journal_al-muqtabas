@@ -20,7 +20,7 @@
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" name="xml" omit-xml-declaration="no" version="1.0"/>
     
-    <xsl:param name="pEditor" select="'pers_TG'"/>
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
     
     <xsl:template match="@* | node()">
         <xsl:copy>

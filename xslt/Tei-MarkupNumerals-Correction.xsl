@@ -51,7 +51,7 @@
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
                 <xsl:attribute name="who" select="concat('#',$p_id-editor)"/>
-                <xsl:text>Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive </xsl:text><tei:gi>num</tei:gi><xsl:text> elements separated by " . " into a single </xsl:text><tei:gi>num</tei:gi><xsl:text> element. The </xsl:text><tei:att>resp</tei:att><xsl:text> and </xsl:text><tei:att>type</tei:att><xsl:text> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as </xsl:text><tei:tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tei:tag><xsl:text>.</xsl:text>
+                <xsl:text>Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive </xsl:text><tei:gi>num</tei:gi><xsl:text> elements separated by " . " into a single </xsl:text><tei:gi>num</tei:gi><xsl:text> element. The </xsl:text><tei:att>resp</tei:att><xsl:text> and </xsl:text><tei:att>type</tei:att><xsl:text> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as </xsl:text><tei:tag>num resp="#xml:id-of-editor" type="auto-markup" value="31670.40"</tei:tag><xsl:text>.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>

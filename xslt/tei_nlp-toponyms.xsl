@@ -11,7 +11,7 @@
     <!-- $p_master-toponyms is a TEI XML file containing <listPlace> <place> and <placeName> entities -->
 <!--    <xsl:param name="p_master-toponyms" select="doc('../xml/toponyms_Damascus-radius_200.TEIP5.xml')/descendant::tei:listPlace"/>-->
     <xsl:param name="p_master-toponyms" select="doc('../xml/toponyms_extracted.TEIP5.xml')/descendant::tei:listPlace"/>
-    <xsl:param name="p_id-author" select="'pers_TG'"/>
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
     
     <xsl:template match="/">
         <xsl:apply-templates/>
@@ -46,7 +46,7 @@
                 <xsl:value-of select="regex-group(1)"/>
                 <xsl:element name="tei:placeName">
                     <xsl:attribute name="type" select="'auto-markup'"/>
-                    <xsl:attribute name="resp" select="concat('#',$p_id-author)"/>
+                    <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
                     <xsl:if test="$v_id!=''">
                         <xsl:attribute name="ref" select="concat('geon:',$v_id)"/>
                     </xsl:if>
@@ -95,7 +95,7 @@
         <xsl:copy>
             <xsl:element name="change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="$p_id-author"/>
+                <xsl:attribute name="who" select="$p_id-editor"/>
                 <xsl:text>Added automated mark-up of toponyms as </xsl:text>
                 <xsl:element name="gi">tei:placeName</xsl:element>
                 <xsl:text>and </xsl:text>

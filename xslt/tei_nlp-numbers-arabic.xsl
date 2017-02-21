@@ -20,7 +20,7 @@
     <xsl:preserve-space elements="*"/>
     
     <!-- identify the author of the change by means of a @xml:id -->
-    <xsl:param name="p_id-author" select="'pers_TG'"/>
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
     
     <!--  -->
     <xsl:param name="p_step" select="10"/>
@@ -232,7 +232,7 @@
                     <xsl:attribute name="xml:lang" select="'ar'"/>
                     <xsl:attribute name="type" select="'auto-markup'"/>
                     <xsl:attribute name="subtype" select="$p_type"/>
-                    <xsl:attribute name="resp" select="concat('#',$p_id-author)"/>
+                    <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
                     <xsl:attribute name="value" select="$p_stop"/>
                     <xsl:value-of select="regex-group(2)"/>
                 </xsl:element>
@@ -271,7 +271,7 @@
         <xsl:copy>
             <xsl:element name="change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="$p_id-author"/>
+                <xsl:attribute name="who" select="$p_id-editor"/>
                 <xsl:text>Added automated mark-up of Arabic numerals from </xsl:text>
                 <xsl:value-of select="$p_start"/><xsl:text> to </xsl:text> <xsl:value-of select="$p_stop"/><xsl:text> in increments of </xsl:text><xsl:value-of select="$p_step"/><xsl:text> as </xsl:text>
                 <xsl:element name="gi">tei:num</xsl:element>

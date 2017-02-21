@@ -16,6 +16,9 @@
     
     <xsl:output method="xml" omit-xml-declaration="no" indent="yes" encoding="UTF-8"/>
     
+    <!-- identify the author of the change by means of a @xml:id -->
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
+
     <!-- copy everything -->
     <xsl:template match="@* | node()">
         <xsl:copy>
@@ -58,7 +61,7 @@
     <!-- document changes -->
     <xsl:template match="tei:revisionDesc">
         <xsl:copy>
-            <change when="{format-date( current-date(),'[Y0001]-[M01]-[D01]')}" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
+            <change when="{format-date( current-date(),'[Y0001]-[M01]-[D01]')}" who="{concat('#',$p_id-editor)}">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
