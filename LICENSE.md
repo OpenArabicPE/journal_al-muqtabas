@@ -10,7 +10,7 @@ All data files (`.bib`, `.md`, `.xml`) in this [repository](https://github.com/t
 
 All software (`.xql`, `.xsl`) in this repository with the exception of the "TEI Boilerplate" (in [`xslt-boilerplate/`](xslt-boilerplate/))  is licensed under MIT license (see below) if not otherwise stated in the files themselves.
 
-The local copy of "[TEI Boilerplate for Arabic Editions](https://github.com/tillgrallert/tei-boilerplate-arabic-editions)"  (in [`xslt-boilerplate/`](xslt-boilerplate/)) is based on the original "[TEI Boilerplate](https://github.com/GrantLS/TEI-Boilerplate)" ([CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)) is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
+The local copy of "[TEI Boilerplate for Arabic Editions](https://github.com/tillgrallert/tei-boilerplate-arabic-editions)"  (in [`xslt-boilerplate/`](xslt-boilerplate/)) is based on the original "[TEI Boilerplate](https://github.com/GrantLS/TEI-Boilerplate)" ([CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)) and is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ## MIT License
 
