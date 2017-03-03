@@ -6,7 +6,7 @@ date: 2017-02-23 11:24:16 +0100
 
 # License information
 
-All data files (`.bib`, `.md`, `.xml`) in this [repository](https://github.com/tillgrallert/digital-muqtabas) is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) if not otherwise stated in the files themselves.
+All data files (`.bib`, `.md`, `.xml`) in this [repository](https://github.com/tillgrallert/digital-muqtabas) are licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) if not otherwise stated in the files themselves.
 
 All software (`.xql`, `.xsl`) in this repository with the exception of the "TEI Boilerplate" (in [`xslt-boilerplate/`](xslt-boilerplate/))  is licensed under MIT license (see below) if not otherwise stated in the files themselves.
 
