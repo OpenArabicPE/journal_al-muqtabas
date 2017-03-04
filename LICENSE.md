@@ -1,10 +1,12 @@
 ---
 title: "Licence: Digital Muqtabas"
 author: Till Grallert
-date: 2017-02-23 11:24:16 +0100
+date: 2017-03-04 16:21:50 +0100
 ---
 
 # License information
+
+The journal of *al-Muqtabas* has been identified by HathiTrust and EAP to be in the public domain in the US and beyond. The transcription itself is therefore marked with the Creative Common's [Public Domain Mark](https://creativecommons.org/publicdomain/mark/1.0/).
 
 All data files (`.bib`, `.md`, `.xml`) in this [repository](https://github.com/tillgrallert/digital-muqtabas) are licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) if not otherwise stated in the files themselves.
 
