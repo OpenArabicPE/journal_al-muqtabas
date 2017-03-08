@@ -13,7 +13,7 @@ Quick links:
 
 - [Blog](https://tillgrallert.github.io/digital-muqtabas), 
 - [Webview *al-Muqtabas* 6(1) (text, facsimile)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_60.TEIP5.xml), 
-- [Zotero group "OpenAraPE/digital-muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/openarape/items/collectionKey/8SINFUW9)
+- [Zotero group "OpenArabicPE/digital-muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/openarabicpe/items/collectionKey/8SINFUW9)
 
 In the context of the current onslaught cultural artifacts in the Middle East face from the iconoclasts of the Islamic State, from the institutional neglect of states and elites, and from poverty and war, digital preservation efforts promise some relief as well as potential counter narratives. They might also be the only resolve for future education and rebuilding efforts once the wars in Syria, Iraq or Yemen come to an end. 
 
