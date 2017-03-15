@@ -10,9 +10,6 @@
 
     <!-- could also select pb[@facs] -->
     <xsl:template match="tei:pb[@ed = 'print']">
-        <!--<xsl:param name="pn">
-            <xsl:number count="//tei:pb" level="any"/>
-        </xsl:param>-->
         <xsl:choose>
             <xsl:when test="$p_display-page-breaks = true()">
                 <!-- add @lang="en" to ensure correct ltr rendering -->
@@ -29,7 +26,6 @@
     </xsl:template>
     <xsl:template name="t_handler-pb">
         <xsl:param name="p_pb"/>
-<!--        <xsl:variable name="v_n" select="@n"/>-->
         <xsl:variable name="v_facs" select="$p_pb/@facs"/>
         <xsl:variable name="v_id">
             <xsl:choose>
@@ -62,6 +58,9 @@
                 <xsl:when test="$v_graphic[starts-with(@url, 'http://babel.hathitrust.org')]">
                     <xsl:value-of select="$v_graphic[starts-with(@url, 'http://babel.hathitrust.org')][1]/@url"/>
                 </xsl:when>
+                <xsl:when test="$v_graphic[starts-with(@url, 'https')]">
+                    <xsl:value-of select="$v_graphic[starts-with(@url, 'https')][1]/@url"/>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="$v_graphic[starts-with(@url, 'http')][1]/@url"/>
                 </xsl:otherwise>
@@ -73,12 +72,13 @@
                 <xsl:when test="starts-with($v_facs, '#')">
                     <!-- Preference:  -->
                     <xsl:choose>
-                        <xsl:when test="$p_display-online-facsimiles = true()">
-                            <xsl:value-of select="$v_url-graphic"/>
+                        <!-- display of local facsimiles -->
+                        <xsl:when test="$p_display-online-facsimiles = false()">
+                            <xsl:value-of select="$v_graphic[not(starts-with(@url,'http'))][@mimeType = $v_mimetype][1]/@url"/>
                         </xsl:when>
-                        <!-- select the local file -->
+                        <!-- select the online copy as default -->
                         <xsl:otherwise>
-                            <xsl:value-of select="$v_graphic[@mimeType = $v_mimetype][1]/@url"/>
+                            <xsl:value-of select="$v_url-graphic"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>

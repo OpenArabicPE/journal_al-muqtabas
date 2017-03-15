@@ -1,4 +1,6 @@
-/* make sure not to color etc. entities in heads. The !important flag is brutal and overrides any more specific rules */
+/* make sure not to color etc. entities in heads. 
+The !important flag is brutal and overrides any more specific rules. 
+Yet, font-size is not inherited by all descendants in Firefox if one relies on the *:not() selector; */
 head *:not(.c_fn-mark, .c_links, .c_fn-content, .c_linked-data) {
     color:inherit !important;
     /*background-color: inherit !important;*/
@@ -22,10 +24,10 @@ div > head{
     /* make headers sticky */
     position: -webkit-sticky;
     top: -8px;
-    /*position: -moz-sticky;
+    position: -moz-sticky;
     position: -ms-sticky;
     position: -o-sticky;
-    position: sticky;*/
+    position: sticky;
     /*z-index: 60;*/
 }
 

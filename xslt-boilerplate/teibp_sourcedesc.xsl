@@ -62,7 +62,23 @@
                             <xsl:text>volume </xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
-                    <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'volume']/@n"/>
+                    <!-- include @from and @to -->
+                    <xsl:choose>
+                        <!-- test for singular item -->
+                        <xsl:when test="parent::tei:monogr/tei:biblScope[@unit = 'volume']/@from = parent::tei:monogr/tei:biblScope[@unit = 'volume']/@to">
+                            <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'volume']/@from"/>
+                        </xsl:when>
+                        <!-- test for range -->
+                        <xsl:when test="parent::tei:monogr/tei:biblScope[@unit = 'volume']/@from != parent::tei:monogr/tei:biblScope[@unit = 'volume']/@to">
+                            <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'volume']/@from"/>
+                            <xsl:text>–</xsl:text>
+                            <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'volume']/@to"/>
+                        </xsl:when>
+                        <!-- default to @n -->
+                        <xsl:otherwise>
+                            <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'volume']/@n"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </span>
             </xsl:if>
             <xsl:if test="parent::tei:monogr/tei:biblScope[@unit = 'issue']">
@@ -79,7 +95,23 @@
                             <xsl:text>issue </xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
-                    <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'issue']/@n"/>
+                    <!-- include @from and @to -->
+                    <xsl:choose>
+                        <!-- test for singular item -->
+                        <xsl:when test="parent::tei:monogr/tei:biblScope[@unit = 'issue']/@from = parent::tei:monogr/tei:biblScope[@unit = 'issue']/@to">
+                            <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'issue']/@from"/>
+                        </xsl:when>
+                        <!-- test for range -->
+                        <xsl:when test="parent::tei:monogr/tei:biblScope[@unit = 'issue']/@from != parent::tei:monogr/tei:biblScope[@unit = 'issue']/@to">
+                            <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'issue']/@from"/>
+                            <xsl:text>–</xsl:text>
+                            <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'issue']/@to"/>
+                        </xsl:when>
+                        <!-- default to @n -->
+                        <xsl:otherwise>
+                            <xsl:value-of select="parent::tei:monogr/tei:biblScope[@unit = 'issue']/@n"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </span>
             </xsl:if>
             <xsl:if test="parent::tei:monogr/tei:biblScope[@unit = 'page']">

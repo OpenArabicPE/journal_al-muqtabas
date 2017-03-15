@@ -3,7 +3,7 @@
     msxsl" version="1.0"
     xmlns="http://www.w3.org/1999/xhtml" xmlns:eg="http://www.tei-c.org/ns/Examples" xmlns:exsl="http://exslt.org/common"
     xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
-    xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <xd:doc scope="stylesheet">
         <xd:desc>
@@ -170,11 +170,11 @@
         </a>
     </xsl:template>
     <!-- wrap all elements with @corresp in a link: this is a bad idea! Sometimes entire <div>s would become links -->
-    <!--<xsl:template match="tei:*[@corresp]">
-        <a href="{@corresp}" class="c_corresp">
-            <xsl:apply-templates/>
-        </a>
-    </xsl:template>-->
+    <xsl:template match="tei:*[not(self::tei:pb[@ed='shamela'])][@corresp]">
+        <xsl:apply-templates/>
+        <a href="{@corresp}" class="c_corresp" title="{concat($p_text-open,' ',@corresp,' ',$p_text-new-window)}" target="_blank" lang="en">external link</a>
+<!--        <a href="{@corresp}" class="c_corresp" title="Open {@corresp} in new window" target="_blank">external link</a>-->
+    </xsl:template>
     <!-- need something else for images with captions -->
     <xd:doc>
         <xd:desc>
@@ -271,7 +271,7 @@
     <xsl:template name="htmlHead">
         <head>
             <meta charset="UTF-8"/>
-            <xsl:call-template name="templMetadataDCFile"/>
+            <xsl:call-template name="t_metadata-dc-file"/>
             <link href="{$teibpCSS}" id="maincss" rel="stylesheet" type="text/css"/>
             <link href="{$customCSS}" id="customcss" rel="stylesheet" type="text/css"/>
             <link href="{$v_css-heads}" id="css-heads" rel="stylesheet" type="text/css"/>
@@ -286,7 +286,8 @@
 			</script>
             <xsl:call-template name="tagUsage2style"/>
             <xsl:call-template name="rendition2style"/>
-            <title><!-- don't leave empty. --></title>
+            <!-- <title>don't leave empty.</title> -->
+            <xsl:call-template name="t_metadata-file"/>
             <xsl:if test="$includeAnalytics = true()">
                 <xsl:call-template name="analytics"/>
             </xsl:if>
@@ -354,12 +355,8 @@
         </xd:desc>
     </xd:doc>
     <xsl:variable name="htmlFooter">
-        <footer>
-            <span>Powered by <a href="{$teibpHome}">TEI Boilerplate</a>. TEI Boilerplate is licensed under a <a
-                href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>. <a
-                href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons
-                    License"
-                src="http://i.creativecommons.org/l/by/3.0/80x15.png" style="border-width:0;"/></a></span>
+        <footer id="footer">
+            <span>Powered by <a href="{$teibpHome}">TEI Boilerplate</a>. TEI Boilerplate is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>. <a href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/80x15.png" style="border-width:0;"/></a></span>
             <span>
                 <a href="http://www.tei-c.org/">
                     <img src="http://www.tei-c.org/About/Badges/We-use-TEI.png" alt="We use TEI" style="border-width:0;"/>
@@ -528,9 +525,9 @@
             <!-- head -->
             <xsl:apply-templates select="tei:head"/>
             <!-- inject some author information -->
-            <span lang="ar" class="cAuthor">
-                <!-- add author names and pages if available -->
-                <xsl:if test="tei:byline/descendant::tei:persName">
+            <!-- add author names and pages if available -->
+            <xsl:if test="tei:byline/preceding-sibling::*[1]!=tei:head and tei:byline/descendant::tei:persName">
+                <span lang="ar" class="cAuthor">
                     <xsl:text>[</xsl:text>
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
@@ -542,8 +539,8 @@
                     </xsl:choose>
                     <xsl:value-of select="tei:byline/descendant::tei:persName"/>
                     <xsl:text>]</xsl:text>
-                </xsl:if>
-            </span>
+                </span>
+            </xsl:if>
             <!-- body of the div -->
             <xsl:apply-templates select="node()[not(self::tei:head)]"/>
         </xsl:copy>
@@ -701,9 +698,8 @@
                 <xsl:value-of select="tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type = 'url']"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of
-                    select="concat('https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/',$vFileId,'.TEIP5.xml')"
-                />
+                <!-- this needs a better fall-back path -->
+                <xsl:value-of select="concat('https://github.com/OpenArabicPE/digital-muqtabas/blob/master/xml/',$vFileId,'.TEIP5.xml')"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
@@ -711,8 +707,6 @@
     <xsl:variable name="vButtons">
         <!-- link to Github -->
         <div id="XmlSourceLink" class="c_button-sidebar">
-            <!-- xml: https://github.com/tillgrallert/ArabicTeiEdition/blob/master/MajallatMuqtabas/xml/oclc_4770057679-i_1.TEIP5.xml
-                boilerplate: https://rawgit.com/tillgrallert/ArabicTeiEdition/master/MajallatMuqtabas/xml/oclc_4770057679-i_60.TEIP5.xml-->
             <ul>
                 <li>
                     <a href="{$v_url-file}">
@@ -724,28 +718,42 @@
             </ul>
         </div>
         <!-- links to previous and next issues -->
-        <div id="NextIssue" class="c_button-sidebar">
-            <ul>
-                <li>
-                    <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo +1,'.TEIP5.xml')}">
-                        <xsl:copy-of select="$p_text-nav_next-issue"/>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div id="PrevIssue" class="c_button-sidebar">
-            <ul>
-                <li>
-                    <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo -1,'.TEIP5.xml')}">
-                        <xsl:copy-of select="$p_text-nav_previous-issue"/>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <xsl:if test="descendant-or-self::tei:TEI/@next">
+            <div id="NextIssue" class="c_button-sidebar">
+                <ul>
+                    <li>
+                        <!-- <a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo +1,'.TEIP5.xml')}">-->
+                        <a href="{descendant-or-self::tei:TEI/@next}.TEIP5.xml">
+                            <xsl:copy-of select="$p_text-nav_next-issue"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </xsl:if>
+        <xsl:if test="descendant-or-self::tei:TEI/@prev">
+            <div id="PrevIssue" class="c_button-sidebar">
+                <ul>
+                    <li>
+                        <!--<a href="{concat(substring-before($vFileId,'-i_'),'-i_',$vFileIssueNo -1,'.TEIP5.xml')}">-->
+                        <a href="{descendant-or-self::tei:TEI/@prev}.TEIP5.xml">
+                            <xsl:copy-of select="$p_text-nav_previous-issue"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </xsl:if>
+        <!-- top and bottom -->
         <div id="BackToTop" class="c_button-sidebar">
             <ul>
                 <li>
                     <a href="#">Top of the page</a>
+                </li>
+            </ul>
+        </div>
+        <div id="ToBottom" class="c_button-sidebar">
+            <ul>
+                <li>
+                    <a href="#footer">Bottom of the page</a>
                 </li>
             </ul>
         </div>
@@ -776,7 +784,10 @@
     <!-- provide links to linked data -->
     <xsl:template match="tei:*[@ref][ancestor::tei:text]">
         <xsl:copy>
-            <xsl:apply-templates/>
+            <xsl:call-template name="templHtmlAttrLang">
+                <xsl:with-param name="pInput" select="."/>
+            </xsl:call-template>
+            <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
         <!-- do something with private urls -->
         <a class="c_linked-data" target="_blank" lang="en">
@@ -846,5 +857,13 @@
                 <xsl:value-of select="concat($p_text-permalink, $v_name-element,' (#',$p_id,')')"/>
             </span>
         </a>
+    </xsl:template>
+    
+    <!-- template to follow XIncludes -->
+    <xsl:template match="xi:include">
+        <xsl:if test="$p_process-xinclude = true()">
+            <xsl:variable name="v_id-element" select="@xpointer"/>
+            <xsl:apply-templates select="document(@href)//node()[@xml:id=$v_id-element]"/>
+        </xsl:if>
     </xsl:template>
 </xsl:stylesheet>

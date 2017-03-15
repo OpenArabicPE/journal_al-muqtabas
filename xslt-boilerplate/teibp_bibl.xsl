@@ -20,8 +20,53 @@
     <xsl:variable name="vgPublicationTitle" select="$vgBiblStructSource/tei:monogr/tei:title[@xml:lang=$pgLang]"/>
     <xsl:variable name="vgPublicationDate" select="$vgBiblStructSource/tei:monogr/tei:imprint/tei:date[1]/@when"/>
     <xsl:variable name="vgEditor" select="$vgBiblStructSource/tei:monogr/tei:editor/tei:persName[@xml:lang=$pgLang]"/>
+
+    <xsl:template name="t_metadata-file">
+    	<!-- add title, volume, issue, date -->
+    	<title>
+    		<xsl:value-of select="$vgPublicationTitle"/>
+    		<xsl:text> </xsl:text>
+    	    <!-- include @from and @to -->
+    	    <xsl:choose>
+    	        <!-- test for singular item -->
+    	        <xsl:when test="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'volume']/@from = $vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'volume']/@to">
+    	            <xsl:value-of select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'volume']/@from"/>
+    	        </xsl:when>
+    	        <!-- test for range -->
+    	        <xsl:when test="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'volume']/@from != $vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'volume']/@to">
+    	            <xsl:value-of select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'volume']/@from"/>
+    	            <xsl:text>–</xsl:text>
+    	            <xsl:value-of select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'volume']/@to"/>
+    	        </xsl:when>
+    	        <!-- default to @n -->
+    	        <xsl:otherwise>
+    	            <xsl:value-of select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'volume']/@n"/>
+    	        </xsl:otherwise>
+    	    </xsl:choose>
+    		<xsl:text>(</xsl:text>
+    	    <!-- include @from and @to -->
+    	    <xsl:choose>
+    	        <!-- test for singular item -->
+    	        <xsl:when test="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'issue']/@from = $vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'issue']/@to">
+    	            <xsl:value-of select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'issue']/@from"/>
+    	        </xsl:when>
+    	        <!-- test for range -->
+    	        <xsl:when test="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'issue']/@from != $vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'issue']/@to">
+    	            <xsl:value-of select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'issue']/@from"/>
+    	            <xsl:text>–</xsl:text>
+    	            <xsl:value-of select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'issue']/@to"/>
+    	        </xsl:when>
+    	        <!-- default to @n -->
+    	        <xsl:otherwise>
+    	            <xsl:value-of select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'issue']/@n"/>
+    	        </xsl:otherwise>
+    	    </xsl:choose>
+    		<xsl:text>) </xsl:text>
+    		<!-- <xsl:value-of select="$vgPublicationDate"/> -->
+    	</title>
+    </xsl:template>
     
-    <xsl:template name="templMetadataDCFile">
+    <xsl:template name="t_metadata-dc-file">
         <xsl:param name="pLang" select="$pgLang"/>
         <meta name="dc.language" content="{$pLang}" />
         <meta name="dc.type" content="text" />
@@ -30,7 +75,7 @@
         <meta name="dc.date" content="{$vgPublicationDate}" />
     </xsl:template>
     
-    <xsl:template name="templMetadataDCArticle">
+    <xsl:template name="t_metadata-dc-article">
         <xsl:param name="pInput"/>
         <xsl:variable name="vArticleTitle" select="./tei:head"/>
         <xsl:variable name="vAuthor" select="./tei:byline/descendant::tei:persName"/>

@@ -1,5 +1,9 @@
 /* render Arabic as rtl */
-[lang = "ar"],[lang = "ota"],[lang = "fa"],[lang = "he"],[lang *= "-Arab-Ar"]{
+[lang = "ar"],
+[lang = "ota"],
+[lang = "fa"],
+[lang = "he"],
+[lang *="-Arab-AR"]{
     direction:rtl;
     text-align:right;
     font-family: AmiriWeb, Helvetica, Arial, sans-serif;
@@ -9,25 +13,27 @@
     font-size:18px;
 }
 /* display latin scripts in a smaller font */
-[lang = "en"],[lang = "fr"],[lang = "de"],[lang = "it"],[lang *= "ar-Latn-"],[lang *= "ota-Latn-"]{
+[lang = "en"],
+[lang = "fr"],
+[lang = "de"],
+[lang = "it"],
+[lang *="ar-Latn-"],
+[lang *="ota-Latn-"]{
     direction:ltr;
     text-align:left;
     font-family: Helvetica, Arial, sans-serif;
     font-size:14px;
 }
-[lang *= "ar-Latn-"],[lang *= "ota-Latn-"]{
+[lang *="ar-Latn-"],
+[lang *="ota-Latn-"]{
     font-style:italic;
 }
 /* change markers for quotes based on language */
 q[lang="ar"],
-quote[lang="ar"],
-*[rend="quotation-marks"][lang="ar"] {
+quote[lang="ar"] {
     quotes: "\00AB" "\00BB";
 } 
 
-*[rend="brackets"] {
-    quotes: "\0028" "\0029" !important;
-}
 
 /* account for qaṣīdas */
 lg{
