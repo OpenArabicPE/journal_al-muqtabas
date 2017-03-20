@@ -29,6 +29,8 @@
     <xsl:param name="p_display-online-facsimiles" select="true()"/>
     <!-- select whether you want to display line breaks; default: false() -->
     <xsl:param name="p_display-line-breaks" select="false()"/>
+    <!-- select whether you want to display editorial changes; default: false() -->
+    <xsl:param name="p_display-editorial-changes" select="false()"/>
     <!-- select whether you want to process XInclude; default: true()  -->
     <xsl:param name="p_process-xinclude" select="true()"/>
     <!-- select whether you want to use inline CSS for the display; default: true() -->
