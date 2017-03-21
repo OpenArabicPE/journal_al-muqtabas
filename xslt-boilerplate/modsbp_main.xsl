@@ -18,7 +18,7 @@
 
     <xsl:output encoding="UTF-8" method="xml" omit-xml-declaration="yes"/>
     <xsl:strip-space elements="*"/>
- 
+
 
     <!-- variables -->
     <xsl:variable name="vMimeType" select="'image/jpeg'"/>
@@ -64,16 +64,16 @@
             <xsl:apply-templates select="node()"/>
         </xsl:element>
     </xsl:template>
-    
-    
+
+
     <xd:doc>
         <xd:desc>
             <xd:p>Template to omit processing instructions from output.</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:template match="processing-instruction()" priority="10"/>
-   
-  
+
+
     <xsl:template match="@xml:id">
         <!-- @xml:id is copied to @id, which browsers can use for internal links. -->
         <xsl:attribute name="id">
@@ -113,8 +113,8 @@
         </xsl:choose>
     </xsl:template>
 
-   
- 
+
+
     <xd:doc>
         <xd:desc>
             <xd:p>Template for adding /html/head content.</xd:p>
@@ -127,8 +127,8 @@
             <title><!-- don't leave empty. --></title>
         </head>
     </xsl:template>
-   
-    
+
+
     <xd:doc>
         <xd:desc>
             <xd:p>Template for adding footer to html document.</xd:p>
@@ -139,7 +139,7 @@
             <span>Powered by MODS Boilerplate</span>
         </footer>
     </xsl:variable>
-   
+
 
     <xd:doc>
         <xd:desc>
@@ -164,17 +164,19 @@
         </xsl:choose>
     </xsl:template>
 
-<!-- mods -->
-    <xsl:template match="mods:modsCollection"> 
-       <div>
-           <p lang="en">
-               <xsl:value-of select="count(mods:mods)"/>
-               <xsl:text> bibliographic items</xsl:text>
-           </p>
+    <!-- mods -->
+    <xsl:template match="mods:modsCollection">
+        <div>
+            <p lang="en">
+                <xsl:value-of select="count(mods:mods)"/>
+                <xsl:text> bibliographic items</xsl:text>
+            </p>
             <ol lang="ar">
                 <xsl:apply-templates>
                     <xsl:sort select="mods:titleInfo"/>
-                    <xsl:sort select="descendant::mods:name[mods:role/mods:roleTerm[@authority='marcrelator']/text()='aut']"/><xsl:sort select="mods:titleInfo"/>
+                    <xsl:sort
+                        select="descendant::mods:name[mods:role/mods:roleTerm[@authority = 'marcrelator']/text() = 'aut']"/>
+                    <xsl:sort select="mods:titleInfo"/>
 
                 </xsl:apply-templates>
             </ol>
@@ -183,58 +185,52 @@
     <xsl:template match="mods:mods">
         <li>
             <xsl:apply-templates select="mods:titleInfo"/>
-            <xsl:apply-templates select="mods:name[mods:role/mods:roleTerm[@authority='marcrelator']/text()='aut']"/>
-            <xsl:apply-templates select="mods:name[mods:role/mods:roleTerm[@authority='marcrelator']/text()='edt']"/>
+            <xsl:apply-templates
+                select="mods:name[mods:role/mods:roleTerm[@authority = 'marcrelator']/text() = 'aut']"/>
+            <xsl:apply-templates
+                select="mods:name[mods:role/mods:roleTerm[@authority = 'marcrelator']/text() = 'edt']"/>
             <xsl:apply-templates select="descendant::mods:originInfo"/>
         </li>
     </xsl:template>
-    
+
     <!-- titles: generate links -->
     <xsl:template match="mods:titleInfo/mods:title">
         <a href="{ancestor::mods:mods/mods:location/mods:url}" target="_blank">
             <xsl:copy>
-                <xsl:apply-templates/>
+                <xsl:apply-templates select="@* | node()"/>
             </xsl:copy>
         </a>
     </xsl:template>
-    
+
     <xsl:template match="mods:originInfo">
         <xsl:apply-templates select="mods:place"/>
-<!--        <xsl:text>: </xsl:text>-->
+        <!--        <xsl:text>: </xsl:text>-->
         <xsl:apply-templates select="mods:publisher"/>
         <xsl:apply-templates select="mods:dateIssued"/>
         <xsl:apply-templates select="mods:dateOther"/>
     </xsl:template>
-    
+
     <xsl:template match="mods:name">
         <span class=" {name()} {mods:role/mods:roleTerm[@authority='marcrelator']/text()}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
+
     <!-- basic templates -->
     <xsl:template match="mods:*">
         <xsl:if test="descendant::text()">
             <span class=" {name()}">
-                <xsl:apply-templates select="@*"/>
-                <!--<xsl:call-template name="templHtmlAttrLang">
-                    <xsl:with-param name="pInput" select="."/>
-                </xsl:call-template>-->
-                <xsl:attribute name="lang">
-                <xsl:choose>
-                    <xsl:when test="@xml:lang">
-                            <xsl:value-of select="@xml:lang"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                            <xsl:value-of select="'en'"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-                </xsl:attribute>
-                <xsl:apply-templates select="node()"/>
+                <xsl:apply-templates select="@* | node()"/>
             </span>
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="@xml:lang">
+        <xsl:attribute name="lang">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
+    </xsl:template>
+
     <xsl:template match="@*">
         <xsl:copy/>
     </xsl:template>
