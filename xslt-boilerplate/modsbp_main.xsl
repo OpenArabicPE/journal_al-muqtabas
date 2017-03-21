@@ -18,14 +18,13 @@
 
     <xsl:output encoding="UTF-8" method="xml" omit-xml-declaration="yes"/>
     <xsl:strip-space elements="*"/>
-    <!-- import stylesheet setting all the parameters -->
-    <xsl:include href="modsbp_parameters.xsl"/>
+ 
 
     <!-- variables -->
     <xsl:variable name="vMimeType" select="'image/jpeg'"/>
     <xd:doc>
         <xd:desc>
-            <xd:p>Match document root and create and html5 wrapper for the TEI document, which is copied, with some modification, into the
+            <xd:p>Match document root and create and html5 wrapper for the MODS document, which is copied, with some modification, into the
                 HTML document.</xd:p>
         </xd:desc>
     </xd:doc>
@@ -73,12 +72,6 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="processing-instruction()" priority="10"/>
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Template moves value of @rend into an html @style attribute. Stylesheet assumes CSS is used in @rend to describe
-                renditions, i.e., styles.</xd:p>
-        </xd:desc>
-    </xd:doc>
    
   
     <xsl:template match="@xml:id">
@@ -130,9 +123,7 @@
     <xsl:template name="htmlHead">
         <head>
             <meta charset="UTF-8"/>
-            <link href="{$modsbpCSS}" id="maincss" rel="stylesheet" type="text/css"/>
-          <!--  <link href="{$customCSS}" id="customcss" rel="stylesheet" type="text/css"/>-->
-
+            <link href="{$p_path-css}" id="maincss" rel="stylesheet" type="text/css"/>
             <title><!-- don't leave empty. --></title>
         </head>
     </xsl:template>
