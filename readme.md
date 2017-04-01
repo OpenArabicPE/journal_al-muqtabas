@@ -176,6 +176,16 @@ Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem t
 > 
 > Note: There are no restrictions on use of text transcribed from the images, or paraphrased or translated using the images.
 
+- PDFs from HathiTrust are shared by the anonymous blog ["Wanderer Above the Mist"](http://oldbooksandjournals.blogspot.de)
+    - [vol. 1](http://download1325.mediafire.com/a6po86oua28g/qnc68dj1np3nufc/al-Muqtabas_v.1.pdf)
+    - [vol. 2](http://download947.mediafire.com/rvmpvm8bx1ug/wv0uzhvxcsl763c/al-Muqtabas_v.2.pdf)
+    - [vol. 3](http://download1490.mediafire.com/7nvo8i620tmg/6o4dg91sm44h94w/al-Muqtabas_v.3.pdf)
+    - [vol. 4](http://download1638.mediafire.com/8h1btyxxqwng/ob5ltcw8y31u4gm/al-Muqtabas_v.4.pdf)
+    - [vol. 5](http://download844.mediafire.com/n75opv8x2yxg/zbsul962j3tzfmg/al-Muqtabas_v.5.pdf)
+    - [vol. 6](http://download1648.mediafire.com/odvuqafwb7tg/4edrgomncf5y84i/al-Muqtabas_v.6.pdf)
+    - [vol. 8](http://download1322.mediafire.com/f3atj47uqy5g/uxgmhzxb2k97g4j/al-Muqtabas_v.8.pdf)
+    - [index](http://download1472.mediafire.com/oz4edojz52zg/k4bpx2v733xcic9/al-Muqtabas_Index.pdf)
+
 
 ### 3.1.3 [arshīf al-majallāt al-adabiyya wa-l-thaqafiyya al-ʿarabiyya (archive.sakhrit.co)](archive.sakhrit.co)
 
@@ -195,6 +205,8 @@ In the future we will link to the archive.sakhrit's digital facsimiles for those
 
 - Vol. 1: links to this volume are of particular importance as no scans are availble from EAP and those from HathiTrust remain unaccessible to the majority of potential users.
 - Vol. 2
+
+<!-- ### 3.1.3 other sources -->
 
 
 
