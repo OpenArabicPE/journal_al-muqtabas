@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2017-02-17T20:36:11Z. .
+Schema generated from ODD source 2017-04-06T10:32:21Z. .
 TEI Edition: Version 3.0.0. Last updated on
 	29th March 2016, revision 89ba24e
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -3456,13 +3456,15 @@ Measures]</a:documentation>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the system or calendar to which the date represented by the content of this element belongs.</a:documentation>
                <choice>
                   <value>#cal_gregorian</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Gregorian calendar</a:documentation>
                   <value>#cal_islamic</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Muslim lunar calendar known as hijrī</a:documentation>
                   <value>#cal_julian</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Reformed Julian calendar beginning the Year with 1 January</a:documentation>
                   <value>#cal_ottomanfiscal</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Ottoman fiscal calendar also known as mālī or rūmī calendar</a:documentation>
+                  <value>#cal_coptic</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The Coptic calendar</a:documentation>
                </choice>
             </attribute>
          </optional>
@@ -3482,13 +3484,15 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to a calendar element or other means of interpreting the values of the custom dating attributes.</a:documentation>
                <choice>
                   <value>#cal_gregorian</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Gregorian calendar</a:documentation>
                   <value>#cal_islamic</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Muslim lunar calendar known as hijrī beginning the year with 1 Muḥarram</a:documentation>
                   <value>#cal_julian</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Reformed Julian calendar beginning the year with 1 January</a:documentation>
                   <value>#cal_ottomanfiscal</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Ottoman fiscal calendar also known as mālī or rūmī calendar</a:documentation>
+                  <value>#cal_coptic</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The Coptic calendar</a:documentation>
                </choice>
             </attribute>
          </optional>
@@ -6464,7 +6468,38 @@ Sample values include: 1] TEI(text encoding initiative) ; 2] DBK(docbook) ; 3] X
          <ref name="OpenArabicPE_macro.phraseSeq"/>
          <ref name="OpenArabicPE_att.global.attributes"/>
          <ref name="OpenArabicPE_att.personal.attributes"/>
-         <ref name="OpenArabicPE_att.typed.attributes"/>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
+            <choice>
+               <value>title</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indicates formal titles, such as "Bey", "Pasha" etc.</a:documentation>
+               <value>honorific</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indicates honorific addresses or titles, such as "Miss", "Shaykh", "zade"</a:documentation>
+               <value>rank</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indicates ranks within an administrative, military or religious hierarchy, such as "farīq", "vālī", "Captain"</a:documentation>
+               <value>patronym</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>kunyah</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>khitab</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>nisbah</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
+         <optional>
+            <attribute name="subtype">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a sub-categorization of the element, if needed</a:documentation>
+               <choice>
+                  <value>military</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>civil</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>religious</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>

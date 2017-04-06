@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2017-02-17T20:36:53Z. .[http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
+DTD generated from ODD source 2017-04-06T10:32:34Z. .[http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
 TEI Edition: Version 3.0.0. Last updated on
 	29th March 2016, revision 89ba24e
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -1006,7 +1006,8 @@ resp CDATA  #REQUIRED >
 <!ATTLIST addName
  %OpenArabicPE_att.global.attributes;
  %OpenArabicPE_att.personal.attributes;
- %OpenArabicPE_att.typed.attributes; >
+type (title|honorific|rank|patronym|kunyah|khitab|nisbah) #REQUIRED
+subtype (military|civil|religious) #IMPLIED >
 <!--doc:contains an informal description of a person's present or past affiliation with some organization, for example an employer or sponsor. [15.2.2. The Participant Description] -->
 <!ELEMENT affiliation %macro.phraseSeq;>
 <!ATTLIST affiliation xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1263,8 +1264,8 @@ type %teidata.enumerated;  #IMPLIED >
  %OpenArabicPE_att.datable.custom.attribute.from-custom;
  %OpenArabicPE_att.datable.custom.attribute.to-custom;
  %OpenArabicPE_att.typed.attribute.subtype;
-calendar (#cal_gregorian|#cal_islamic|#cal_julian|#cal_ottomanfiscal) #IMPLIED
-datingMethod (#cal_gregorian|#cal_islamic|#cal_julian|#cal_ottomanfiscal) #IMPLIED
+calendar (#cal_gregorian|#cal_islamic|#cal_julian|#cal_ottomanfiscal|#cal_coptic) #IMPLIED
+datingMethod (#cal_gregorian|#cal_islamic|#cal_julian|#cal_ottomanfiscal|#cal_coptic) #IMPLIED
 type %teidata.enumerated;  #IMPLIED >
 <!--doc:contains a brief description of the place, date, time, etc. of production of a letter, newspaper story, or other work, prefixed or suffixed to it as a kind of heading or trailer. [4.2.2. Openers and Closers] -->
 <!ELEMENT dateline (#PCDATA|_DUMMY_model.gLike|%model.phrase;|%model.global;|docDate)*>
