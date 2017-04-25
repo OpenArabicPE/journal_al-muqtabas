@@ -189,7 +189,7 @@ Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem t
 
 ### 3.1.3 [arshīf al-majallāt al-adabiyya wa-l-thaqafiyya al-ʿarabiyya (archive.sakhrit.co)](archive.sakhrit.co)
 
-Recently, a colleague pointed me to another gray online library of Arabic material---one that was entirely dedicated to cultural and litrary journals: [arshīf al-majallāt al-adabiyya wa-l-thaqafiyya al-ʿarabiyya (archive.sakhrit.co)](archive.sakhrit.co). I have posted a review of the website on [my blog](https://tillgrallert.github.io/blog/2016/04/22/review-archive-sakhrit/).
+Recently, a colleague pointed me to another gray online library of Arabic material---one that was entirely dedicated to cultural and literary journals: [arshīf al-majallāt al-adabiyya wa-l-thaqafiyya al-ʿarabiyya (archive.sakhrit.co)](archive.sakhrit.co). I have posted a review of the website on [my blog](https://tillgrallert.github.io/blog/2016/04/22/review-archive-sakhrit/).
 
 Among their collection is also the journal [*al-Muqtabas*](http://archive.sakhrit.co/newmagazineYears.aspx?MID=125) and they provide:
 
@@ -206,7 +206,15 @@ In the future we will link to the archive.sakhrit's digital facsimiles for those
 - Vol. 1: links to this volume are of particular importance as no scans are availble from EAP and those from HathiTrust remain unaccessible to the majority of potential users.
 - Vol. 2
 
-<!-- ### 3.1.3 other sources -->
+### 3.1.3 other sources
+
+- Institut du Monde Arabe: bibliothèque numérique. 
+    + The website was built quite some time ago and is not meant for large screens. All digitised materials are served through a tiny pop-up window (740 x 570 px) even though the proprietary viewer allows for much larger views.  
+    + The scans are of a terrible quality
+    + [vol. 1](http://viewer2.bibalex.org/BookViewer/?book_id=DAF-Job:224412&locale=en&EnableLogin=True)
+    + [vol. 3](http://viewer2.bibalex.org/BookViewer/?book_id=DAF-Job:224413&locale=en&EnableLogin=True)
+    + [vol. 4](http://viewer2.bibalex.org/BookViewer/?book_id=DAF-Job:224414&locale=en&EnableLogin=True)
+    + [vol. 5](http://viewer2.bibalex.org/BookViewer/?book_id=DAF-Job:224415&locale=en&EnableLogin=True)
 
 
 
@@ -217,16 +225,21 @@ Somebody took the pains to create fully searchable text files and uploaded every
 
 ### 3.2.1 [al-Maktaba al-Shāmila](http://www.shamela.ws)
 
-- Extent: According to the main [entry](http://shamela.ws/index.php/book/26523), *shamela* has all 96 issues. 
+The digital text of [*al-Muqtabas* on *shamela.ws*](http://shamela.ws/index.php/book/26523) comprises all 96 issues totalling some 1.9 million words. It was transcribed from either digital facsimiles or original copies by anonymous transcribers following undocumented editing principles. Comparison with the original print edition allows us to discern common transcription errors, such as missing lines or characters, which indicate that *shamela.ws*'s text was indeed transcribed by humans without quality control through double-keying usually required for scholarly transcriptions. The comparison also reveals that *shamela.ws* principally omitted mastheads, all words in Latin script (mainly technical terms and proper nouns) and all footnotes. 
+
+The transcription has a number of substantial and unmarked gaps, ranging from a single paragraph to multiple pages. Some of these could be due to pages missing from the original from which the transcribers worked or page-turning errors. Others remain enigmatic and might have been driven by editorial choices. Someone copy edited the transcription, adding punctuation marks absent from the original and *hamza*s not commonly found in the original and thus, inter alia, differentiating between *inna* and *anna*. Some geographic names were normalised.
+
+In terms of structural mark-up, *shamela.ws* did not provide but an ecclectic selection of top-level headers. Bibliographic metadata is all but nonexisting, since *shamela.ws* supplied faulty Gregorian publication dates and its own consecutive issue count that ignores the original collation into volumes.
+
 - Transcribers, editors: Apparently, they have been typed and copy-edited by unnamed humans. 
-- Features edition: paragraphs, page breaks, headlines.
+- Features edition: paragraphs, page breaks, some headlines.
 - Features interface:
     + all issues can be browsed for headlines and searched
     + all pages can be individually adressed in the browser: [http://shamela.ws/browse.php/book-26523#page-2290](http://shamela.ws/browse.php/book-26523#page-2290)
 
 ### 3.2.2 WikiSource
 
-Sombody uploaded the text from *shamela* to WikiSource. Unfortunately it is impossible to browse the entire journal. Instead one has to adress each individual and consecutively numbered issue, e.g. Vol. 4, No. 1 is listed as [No. 37](https://ar.wikisource.org/wiki/%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D9%85%D9%82%D8%AA%D8%A8%D8%B3/%D8%A7%D9%84%D8%B9%D8%AF%D8%AF_37)
+Somebody uploaded the text from *shamela* to WikiSource. Unfortunately it is impossible to browse the entire journal. Instead one has to adress each individual and consecutively numbered issue, e.g. Vol. 4, No. 1 is listed as [No. 37](https://ar.wikisource.org/wiki/%D9%85%D8%AC%D9%84%D8%A9_%D8%A7%D9%84%D9%85%D9%82%D8%AA%D8%A8%D8%B3/%D8%A7%D9%84%D8%B9%D8%AF%D8%AF_37)
 
 # 4. Deliverable: TEI edition
 
