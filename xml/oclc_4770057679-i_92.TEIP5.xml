@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_92" next="oclc_4770057679-i_93" prev="oclc_4770057679-i_91">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_92" next="oclc_4770057679-i_93" prev="oclc_4770057679-i_91">
    <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -76,7 +76,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-12-06" who="#pers_TG">Added automated mark-up of strings wrapped in brackets with <tag>tei:q rend="brackets"</tag> and <att>rend</att> on existing nodes.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+        <revisionDesc><tei:change when="2017-04-28" who="#pers_TG">Automatically split all <tei:tag>div type="section"</tei:tag> into subsections of <tei:tag>div type="article"</tei:tag>, using paragraphs with a length of 30 or less as indicator of a heading.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-12-06" who="#pers_TG">Added automated mark-up of strings wrapped in brackets with <tag>tei:q rend="brackets"</tag> and <att>rend</att> on existing nodes.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
          <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
@@ -2132,16 +2132,13 @@
                         
                         <p xml:lang="ar" xml:id="p_232.d1e3507">النبطية <q rend="brackets" type="auto-markup" resp="#pers_TG" xml:id="q_1.d1e4349">جبل عامل</q>: سليمان ظاهر </p>
                     </div>
-                    <pb ed="shamela" n="n92-p65" corresp="file:../epub/26523/OEBPS/xhtml/P6435.xhtml" xml:id="pb_66.d1e3514"/><div type="section" xml:lang="ar" xml:id="div_12.d1e3512">
-                        
-                        <head xml:lang="ar" xml:id="head_11.d1e3516">مخطوطات ومطبوعات</head>
-                        <p xml:lang="ar" xml:id="p_233.d1e3519">الرحيق المختوم</p>
-                        <p xml:lang="ar" xml:id="p_234.d1e3522">في المنثور والمنظوم.</p>
-                        <p xml:lang="ar" xml:id="p_235.d1e3525">تأليف السيد محسن الحسيني العاملي</p>
+                    <pb ed="shamela" n="n92-p65" corresp="file:../epub/26523/OEBPS/xhtml/P6435.xhtml" xml:id="pb_66.d1e3514"/><div type="section" xml:lang="ar" xml:id="div_12.d1e3512"><head xml:lang="ar" xml:id="head_11.d1e3516">مخطوطات ومطبوعات</head><tei:div type="article"><tei:head>الرحيق المختوم</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>في المنثور والمنظوم.</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>تأليف السيد محسن الحسيني العاملي</tei:head>
                         <p xml:lang="ar" xml:id="p_236.d1e3529">طبع في المطبعة الوطنية بدمشق سنة  <num type="auto-markup" resp="#pers_TG" value="1332" xml:lang="ar" xml:id="num_1.d1e3531">١٣٣٢</num> 
             </p>
-                        <p xml:lang="ar" xml:id="p_237.d1e3535">ص  <num type="auto-markup" resp="#pers_TG" value="426" xml:lang="ar" xml:id="num_1.d1e3537">٤٢٦</num> 
-            </p>
+                        </tei:div><tei:div type="article"><tei:head>ص  <num type="auto-markup" resp="#pers_TG" value="426" xml:lang="ar" xml:id="num_1.d1e3537">٤٢٦</num> 
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_238.d1e3541">هو كتاب حوى شعر هذا المؤلف ونثره قدم له مقدمة في منافع الشعر قال فيها:</p>
                         <p xml:lang="ar" xml:id="p_239.d1e3544">إنه صقيل الأذهان وزينة الإنسان وقد سمع رسول الله صلى الله عليه وآله وسلم الشعر واستنشده وارتاح له وأجاز عليه وعفا
                             عن المجرمين بسببه ونظم أمير المؤمنين عليه السلام من الأشعار ما هو مشهور معلوم في كتب السير والآثار وإن كان
@@ -2250,7 +2247,7 @@
                         
                         
                         
-                        <p xml:lang="ar" xml:id="p_243.d1e3737">وقال في الحكم والمواعظ:</p>
+                        </tei:div><tei:div type="article"><tei:head>وقال في الحكم والمواعظ:</tei:head>
                         <lg xml:id="lg_1.d1e3911">
                <l type="bayt" xml:lang="ar" xml:id="l_1.d1e3913">
                             <seg xml:lang="ar" xml:id="seg_389.d1e3915">لعمرك ليس العلم بالفرو والقبا </seg>
@@ -2288,8 +2285,8 @@
                             الألفاظ أكثر من المعاني وقد ختم ديوانه بترجمة حاله بنفسه ترجمة طويلة ذكر فيها <pb ed="shamela" n="n92-p67" corresp="file:../epub/26523/OEBPS/xhtml/P6437.xhtml" xml:id="pb_68.d1e3797"/> عائلته ومنشأه وأساتذته
                             وإجازاته وما مدح به من القصائد فجاءت وحدها في  <num type="auto-markup" resp="#pers_TG" value="66" xml:lang="ar" xml:id="num_1.d1e3799">٦٦</num>  صفحة ومعظم الديوان يدور في الحقيقة على مدح الرسول وآل البيت
                             وأئمة الشيعة كأن قصد المؤلف الثواب على ذلك.</p>
-                        <p xml:lang="ar" xml:id="p_245.d1e3803">البعثة العلمية</p>
-                        <p xml:lang="ar" xml:id="p_246.d1e3806">إلى دار الخلافة الإسلامية.</p>
+                        </tei:div><tei:div type="article"><tei:head>البعثة العلمية</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إلى دار الخلافة الإسلامية.</tei:head>
                         <p xml:lang="ar" xml:id="p_247.d1e3810">تأليف محمد كرد علي صاحب المقتبس ومحمد الباقر صاحب</p>
                         <p xml:lang="ar" xml:id="p_248.d1e3813">البلاغ وعبد الباسط الأنسي صاحب الإقبال وحسين الحبال صاحب أبابيل.</p>
                         <p xml:lang="ar" xml:id="p_249.d1e3816">طبع في المطبعة العلمية في بيروت سنة  <num type="auto-markup" resp="#pers_TG" value="1334" xml:lang="ar" xml:id="num_1.d1e3818">١٣٣٤</num>  -  <num type="auto-markup" resp="#pers_TG" value="1916" xml:lang="ar" xml:id="num_1.d1e3821">١٩١٦</num>  ص  <num type="auto-markup" resp="#pers_TG" value="296" xml:lang="ar" xml:id="num_1.d1e3824">٢٩٦</num> 
@@ -2307,7 +2304,7 @@
                             الوفد في نظارة البحرية وصورة الرئيس والهيئة التحريرية.</p>
                         <p xml:lang="ar" xml:id="p_252.d1e3837">الرحلة الأنورية <pb ed="shamela" n="n92-p68" corresp="file:../epub/26523/OEBPS/xhtml/P6438.xhtml" xml:id="pb_69.d1e3839"/> إلى الأصقاع الحجازية
                             والشامية</p>
-                        <p xml:lang="ar" xml:id="p_253.d1e3843">تأليف محمد كرد علي صاحب المقتبس.</p>
+                        </tei:div><tei:div type="article"><tei:head>تأليف محمد كرد علي صاحب المقتبس.</tei:head>
                         <p xml:lang="ar" xml:id="p_254.d1e3846">طبع في المطبعة العلمية في بيروت سنة  <num type="auto-markup" resp="#pers_TG" value="1334" xml:lang="ar" xml:id="num_1.d1e3848">١٣٣٤</num>  -  <num type="auto-markup" resp="#pers_TG" value="1916" xml:lang="ar" xml:id="num_1.d1e3851">١٩١٦</num>  ص  <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_1.d1e3854">٣</num> .  <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_1.d1e3857">٢</num> 
             </p>
                         <p xml:lang="ar" xml:id="p_255.d1e3861">زار أنور باشا وكيل القائد الأعظم وناظر البحرية ربوع الشام والحجاز منذ أشهر ولم يسبق لناظر في مثل مركزه العظيم أن
@@ -2318,12 +2315,12 @@
                             بترجمته إلى اللسان العربي والكتاب مصدر بصورة صاحب الرحلة أنور باشا وفيه عدة رسوم تمثله وتمثل زميله أحمد جمال
                             باشا في القدس الشريف تحت قوس النصر وفي الكلية الصلاحية في القدس وفي المسجد الأقصى والحرم القدسي وفي استعراض
                             الجند في بئر ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="7" xml:id="num_299.d1e4719">سبع</num>.</p>
-                        <p xml:lang="ar" xml:id="p_256.d1e3864">السنة الثانية للحرب المركزية</p>
+                        </tei:div><tei:div type="article"><tei:head>السنة الثانية للحرب المركزية</tei:head>
                         <p xml:lang="ar" xml:id="p_257.d1e3867">هي كراسة نشرتها إدارة جورنال بيروت سنة  <num type="auto-markup" resp="#pers_TG" value="1916" xml:lang="ar" xml:id="num_1.d1e3869">١٩١٦</num>  وفيها خلاصة ما نقله البرق من الحوادث عن ساحات الحرب المختلفة مما يدخل
                             في سجلات التاريخ وقد قدم لها حليم بك حرفوش <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_301.d1e4731">أحد</num> محرري تلك الجريدة ألفرنسية بلغتها مقدمة لطيفة ختمها بلفظ الصلح في
                             السنة الثالثة.</p>
-                        <p xml:lang="ar" xml:id="p_258.d1e3873">الرسائل العصرية</p>
-                        <p xml:lang="ar" xml:id="p_259.d1e3877">تأليف بطرس البستاني.</p>
+                        </tei:div><tei:div type="article"><tei:head>الرسائل العصرية</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>تأليف بطرس البستاني.</tei:head>
                         <p xml:lang="ar" xml:id="p_260.d1e3880">طبع في المطبعة العلمية في بيروت سنة  <num type="auto-markup" resp="#pers_TG" value="191" xml:lang="ar" xml:id="num_1.d1e3882">١٩١</num> . ص  <num type="auto-markup" resp="#pers_TG" value="344" xml:lang="ar" xml:id="num_1.d1e3885">٣٤٤</num> 
             </p>
                         <p xml:lang="ar" xml:id="p_261.d1e3889">أجاد صديقنا مؤلف هذا الكتاب في مجموعته هذه التي حوت في مطاويها رسائل في عامة <pb ed="shamela" n="n92-p69" corresp="file:../epub/26523/OEBPS/xhtml/P6439.xhtml" xml:id="pb_70.d1e3891"/> الموضوعات المألوفة في فن
@@ -2331,20 +2328,20 @@
                             السهل الممتنع خالية من الحشو والتعقيد حالية بالسلاسة والرشاقة وقد اختار نموذجان من الرسائل منوعة ليتخرج بها
                             الطالب فجاء كتابه من أوعى ما <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_304.d1e4755">ألف</num> في موضوعه دليل الخبرة في أحوال الطلاب وما ينبغي لهم للنبوغ في الإنشاء فنشكر
                             المؤلف على كتابه الممتع وترجوأن يوفق إلى نشر أمثاله مما يفيد الطلاب والآداب.</p>
-                        <p xml:lang="ar" xml:id="p_262.d1e3894">آداب المراسلة</p>
-                        <p xml:lang="ar" xml:id="p_263.d1e3897">تأليف الخوري بطرس البستاني</p>
+                        </tei:div><tei:div type="article"><tei:head>آداب المراسلة</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>تأليف الخوري بطرس البستاني</tei:head>
                         <p xml:lang="ar" xml:id="p_264.d1e3900">طبع في المطبعة العلمية في بيروت سنة  <num type="auto-markup" resp="#pers_TG" value="1913" xml:lang="ar" xml:id="num_1.d1e3902">١٩١٣</num> ص  <num type="auto-markup" resp="#pers_TG" value="147" xml:lang="ar" xml:id="num_1.d1e3905">١٤٧</num> 
             </p>
-                        <p xml:lang="ar" xml:id="p_265.d1e3910">كتاب التلميذ</p>
+                        </tei:div><tei:div type="article"><tei:head>كتاب التلميذ</tei:head>
                         <p xml:lang="ar" xml:id="p_266.d1e3913">هو مختصر في فن الإنشاء على طريقة السؤال والجواب ليتأتي للأحداث استظهارها وفيه نموذجان من الرسائل يصح للمبتدئ
                             الأخذ بها والتطريس على منوالها.</p>
-                        <p xml:lang="ar" xml:id="p_267.d1e3916">الفلسفة النظرية</p>
-                        <p xml:lang="ar" xml:id="p_268.d1e3919">أوعلم الحكمة البشرية:</p>
+                        </tei:div><tei:div type="article"><tei:head>الفلسفة النظرية</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>أوعلم الحكمة البشرية:</tei:head>
                         <p xml:lang="ar" xml:id="p_269.d1e3922">تأليف الكردينال مرسيه رئيس أساقفة مالين في بلجيكا.</p>
                         <p xml:lang="ar" xml:id="p_270.d1e3925">عني بنقله إلى العربية وتعليق حواشيه الخوري أسقف نعمة الله</p>
                         <p xml:lang="ar" xml:id="p_271.d1e3929">أبي كرم الماروني رئيس المدرسة المارونية في رومية.</p>
                         <p xml:lang="ar" xml:id="p_272.d1e3932">طبع في المطبعة العلمية في بيروت سنة  <num type="auto-markup" resp="#pers_TG" value="191" xml:lang="ar" xml:id="num_1.d1e3934">١٩١</num> .</p>
-                        <p xml:lang="ar" xml:id="p_273.d1e3938">وهو في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6" xml:id="num_308.d1e4805">ستة</num> أجزاء لا تقل عن  <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e3940">١٥</num> . . صفحة.</p>
+                        </tei:div><tei:div type="article"><tei:head>وهو في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6" xml:id="num_308.d1e4805">ستة</num> أجزاء لا تقل عن  <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e3940">١٥</num> . . صفحة.</tei:head>
                         <p xml:lang="ar" xml:id="p_274.d1e3944">أهدتنا إدارة المطبعة العلمية هذا الكتاب وهو في الفلسفة المنطبقة مع روح الكثلكة وفيه ردود كثيرة على أصحاب الفلسفة
                             الحسية من الماديين وغيرهم وقد تصفحنا جانباً منه فرأينا بعض الغموض في بعض صفحاته وما ندري إن كان ناشئاً من
                             الترجمة أومن الأصل الذي فيه لبس وإشكال ومعان لم يحسن مؤلفها الأول تأديتها بألفاظ مفهومة وتقريبها من عقول القراء
@@ -2375,10 +2372,10 @@
                             الطرف عن قصور في لساننا مع توقد الذكاء في فؤادنا مما لا ينكره علينا عليم وحولنا من كل جانب قوم يفصحون عن المعاني
                             الجديدة والعلوم الحديثة بألفاظ منحوتة يفهمها خاصتهم وعامتهم وهي وإن كانت ليست من أوضاع لغاتهم مأنوسة عندهم وغير
                             أجنبية عنهم لمزاولتهم عموماً لغة الإغريق ثم لملابستها لألسنتهم.</p>
-                        <p xml:lang="ar" xml:id="p_275.d1e3954">معالم الكتابة ومغانم الإصابة</p>
+                        </tei:div><tei:div type="article"><tei:head>معالم الكتابة ومغانم الإصابة</tei:head>
                         <p xml:lang="ar" xml:id="p_276.d1e3957">إنشاء عبد الرحمن بن علي بن شيث القرشي عني بنشره وتعليق حواشيه</p>
                         <p xml:lang="ar" xml:id="p_277.d1e3961">الخوري قسطنطين الباشا المخلصي وطبع في المطبعة العلمية</p>
-                        <p xml:lang="ar" xml:id="p_278.d1e3964">في بيروت سنة <num type="auto-markup" resp="#pers_TG" value="1913" xml:lang="ar" xml:id="num_1.d1e3966">١٩١٣</num> .</p>
+                        </tei:div><tei:div type="article"><tei:head>في بيروت سنة <num type="auto-markup" resp="#pers_TG" value="1913" xml:lang="ar" xml:id="num_1.d1e3966">١٩١٣</num> .</tei:head>
                         <p xml:lang="ar" xml:id="p_279.d1e3970">هذا كتاب جليل تشكر الآداب العربية ناشره الفاضل على إحيائه بالطبع وتعليق حواش على بعض متونه. أما المؤلف فقد استدل
                             الناشر أنه كان في القرن السادس من الهجرة في زمان الملك الناصر صلاح الدين الأيوبي وأخيه الملك العادل وذكر له أنه
                             كان مصري المولد استوطن القدس وكان كاتباً في ديوان الإنشاء كما يظهر من نفس كاتبه الذي أخذه ناشره عن أصل مخطوط
@@ -2390,11 +2387,8 @@
                             على مقدارهما وذكر وضع الخط وحروفه وبري القلم وإمساكه وفي البلاغة وما يتصل بها وفي ألفاظ يقوم بعضها مقام بعض وفي
                             الأمثال التي يدمجها الكاتب في كلامه ويستشهد بها وفيما لا بد للكاتب من النظر فيه والتحرز منه وكثيراً ما يسقط فيه
                             الكاتب وهنا نحث كل متأدب على اقتناء هذا الأثر النفيس للأخذ من مضامينه والدمج على طريقته في الإنشاء العربي ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="200" xml:id="num_314.d1e4851">متين</num>ي                            والإيجاز اللطيف المرغوب فيه. </p>
-                    </div>
-                    <pb ed="shamela" n="n92-p73" corresp="file:../epub/26523/OEBPS/xhtml/P6443.xhtml" xml:id="pb_74.d1e3984"/><div type="section" xml:lang="ar" xml:id="div_13.d1e3982">
-                        
-                        <head xml:lang="ar" xml:id="head_12.d1e3986">أخبار وأفكار</head>
-                        <p xml:lang="ar" xml:id="p_281.d1e3989">المكرر يحلو</p>
+                    </tei:div></div>
+                    <pb ed="shamela" n="n92-p73" corresp="file:../epub/26523/OEBPS/xhtml/P6443.xhtml" xml:id="pb_74.d1e3984"/><div type="section" xml:lang="ar" xml:id="div_13.d1e3982"><head xml:lang="ar" xml:id="head_12.d1e3986">أخبار وأفكار</head><tei:div type="article"><tei:head>المكرر يحلو</tei:head>
                         <p xml:lang="ar" xml:id="p_282.d1e3992">جاءنا من <persName ref="viaf:73935498" xml:lang="ar">الأمير <forename>شكيب</forename> <surname>أرسلان</surname></persName> ما يأتي: قد نقلتم عن <q rend="brackets" type="auto-markup" resp="#pers_TG" xml:id="q_1.d1e4868">الشرق</q> مقالتي في صناعة السكر في الشرق واشتهار بلاد فلسطين بها
                             وما ذكره ياقوت الحموي عن زراعة قصب السكر في غور بيسان وصناعته في تلك الأرجاء إلى غير ذلك.</p>
                         <p xml:lang="ar" xml:id="p_283.d1e3995">وأزيدكم الآن برهاناً آخر وهو أنه وجدت في طرف أريحا الغربي آثار <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_315.d1e4874">ثلاث</num> معاصر للسكر مما يعزز هذه الحقيقة ويقوي الحجة
@@ -2410,7 +2404,7 @@
                             نشأ عن الحرب فضلاً عما اضطر بالأجسام من فقد السكر وغلاء الحلوى لأنه من المقرر أن الأمزجة تلتاث بانقطاعها عن
                             الحلويات ولا شك أن الأمراض التي نشأت في هاتين العامين كان من جملة أسبابها قلة السكر وأجدر بهذه البلاد أن تنبهها
                             الحرب العامة إلى استدراك فرطات كثيرة من جملتها هذه.</p>
-                        <p xml:lang="ar" xml:id="p_285.d1e4008">الحرب ومنسوب المياه</p>
+                        </tei:div><tei:div type="article"><tei:head>الحرب ومنسوب المياه</tei:head>
                         <p xml:lang="ar" xml:id="p_286.d1e4011">كتب <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_323.d1e4909">أحد</num> مهندسي برلين في عام  <num type="auto-markup" resp="#pers_TG" value="1897" xml:lang="ar" xml:id="num_1.d1e4013">١٨٩٧</num>  كتاباً سماه أدوار الحرب والاجتهاد العقلي في حياة <pb ed="shamela" n="n92-p74" corresp="file:../epub/26523/OEBPS/xhtml/P6444.xhtml" xml:id="pb_75.d1e4016"/> الشعوب تنبئ فيه أن هذا
                             الدور الذي نحن الآن فيه يكون فيه أدهش الحروب مستنداً في دعواه على منسوب مياه الأرض فإنها تختلف بموجب قانون لا
                             يتغير بين طرفين متباينين: ألفيضانات الكثيرة واليبوسة والجفاف.</p>
@@ -2428,7 +2422,7 @@
                             كلام هذا المتنبي. ومن رأيه أن عهد الرطوبة يبدأ سنة  <num type="auto-markup" resp="#pers_TG" value="1932" xml:lang="ar" xml:id="num_1.d1e4094">١٩٣٢</num>  وينتهي سنة  <num type="auto-markup" resp="#pers_TG" value="196" xml:lang="ar" xml:id="num_1.d1e4097">١٩٦</num> . فيكون دور علم وحضارة ولكنه لا يفوق ما
                             وقع من أمثاله بين سنتي  <num type="auto-markup" resp="#pers_TG" value="1876" xml:lang="ar" xml:id="num_1.d1e4100">١٨٧٦</num>  -  <num type="auto-markup" resp="#pers_TG" value="19" xml:lang="ar" xml:id="num_1.d1e4103">١٩</num> .  <num type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar" xml:id="num_1.d1e4106">٤</num>  ومن سنة  <num type="auto-markup" resp="#pers_TG" value="196" xml:lang="ar" xml:id="num_1.d1e4109">١٩٦</num> . إلى  <num type="auto-markup" resp="#pers_TG" value="1988" xml:lang="ar" xml:id="num_1.d1e4113">١٩٨٨</num>  يبدأ أيضاً دور الحروب وتبقى مع ذلك في حد معين وسط
                             فتأمل.</p>
-                        <p xml:lang="ar" xml:id="p_288.d1e4117">مدارسنا ومدارسهم</p>
+                        </tei:div><tei:div type="article"><tei:head>مدارسنا ومدارسهم</tei:head>
                         <p xml:lang="ar" xml:id="p_289.d1e4120">كتب خالد ضيا بك الكاتب العثماني الشهير مقالة في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_358.d1e5030">إحدى</num> صحف الأستانة قال فيها:</p>
                         <p xml:lang="ar" xml:id="p_290.d1e4124">أن أمور المعارف في ألمانيا معدودة من الشؤون الداخلية وعليه فإن هذه الإمبراطورية <pb ed="shamela" n="n92-p75" corresp="file:../epub/26523/OEBPS/xhtml/P6445.xhtml" xml:id="pb_76.d1e4126"/> العظيمة المؤلفة من
                             ولايات مختلفة تختلف إدارة مدارسها باختلاف ولاياتها فلكل منها تنسيق وترتيب يخالف تنسيق المدارس في ولاية أخرى
@@ -2472,7 +2466,7 @@
                             والجغرافية والكيمياء والحكمة الطبيعية والتاريخ الطبيعي حتى على الألسن والأدبيات وختم مقاله بقوله: ليست المدارس
                             الألمانية الابتدائية بأحسن من المدارس العثمانية ولكن التلميذ الألماني متعلم أكثر من التلميذ العثماني وفضلاً عن
                             ذلك فإن الأول يمكنه أن يستعمل علمه فيما يفيده في حياته وهذا على ما أظن الغاية المهمة التي يجب أن نسعى إليها.</p>
-                        <p xml:lang="ar" xml:id="p_300.d1e4167">رومانيا وجيوش التحالف</p>
+                        </tei:div><tei:div type="article"><tei:head>رومانيا وجيوش التحالف</tei:head>
                         <p xml:lang="ar" xml:id="p_301.d1e4170">شهرت ألمانيا الحرب على النمسا والمجر هذا الشهر لتفتح ترانسلفانيا وتضم من فيها من الرومانيين أبناء عنصرها فشهرت
                             ألمانيا والعثمانية وبلغاريا الحرب عليها والحرب الآن قائمة بين جيوش الرومان وقد أطلعنا على إحصاء أخير نشره <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_367.d1e5112">أحد</num>
                             أساتذة كلية غراز قال فيه أن مساحة رومانيا السطحية تبلغ  <num type="auto-markup" resp="#pers_TG" value="139" xml:lang="ar" xml:id="num_1.d1e4172">١٣٩</num> .  <num type="auto-markup" resp="#pers_TG" value="79" xml:lang="ar" xml:id="num_1.d1e4175">٧٩</num>  كيلومتراً مربعاً عدا ما دخل في ملكها من أرض
@@ -2485,7 +2479,7 @@
                             رومانيا سنة  <num type="auto-markup" resp="#pers_TG" value="1915" xml:lang="ar" xml:id="num_1.d1e4235">١٩١٥</num>  -  <num type="auto-markup" resp="#pers_TG" value="486" xml:lang="ar" xml:id="num_1.d1e4238">٤٨٦</num>  مليون مارك وكسور من الدخل والخرج يصرف منها  <num type="auto-markup" resp="#pers_TG" value="47" xml:lang="ar" xml:id="num_1.d1e4241">٤٧</num>  مليون مارك على التعليم و <num type="auto-markup" resp="#pers_TG" value="79" xml:lang="ar" xml:id="num_1.d1e4245">٧٩</num>  مليوناً على
                             الحربية وكان الدين عليهم  <num type="auto-markup" resp="#pers_TG" value="168" xml:lang="ar" xml:id="num_1.d1e4248">١٦٨</num>  مليار مارك و <num type="auto-markup" resp="#pers_TG" value="7" xml:lang="ar" xml:id="num_1.d1e4251">٧</num>  في ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_397.d1e5207">مئة</num> من صادرات رومانيا تصدر إلى ألمانيا ويرد إليها من ألمانيا  <num type="auto-markup" resp="#pers_TG" value="4" xml:lang="ar" xml:id="num_1.d1e4254">٤</num> .
                             في ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_399.d1e5213">مئة</num> من الواردات و <num type="auto-markup" resp="#pers_TG" value="23" xml:lang="ar" xml:id="num_1.d1e4257">٢٣</num>  في ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_401.d1e5219">مئة</num> من النمسا والمجر.</p>
-                        <p xml:lang="ar" xml:id="p_302.d1e4262">العلماء لا يحاربون</p>
+                        </tei:div><tei:div type="article"><tei:head>العلماء لا يحاربون</tei:head>
                         <p xml:lang="ar" xml:id="p_303.d1e4265">ذكرت جريدة الديلي نيوز الإنكليزية أنه جرى مؤخراً في لندرا توقيع ألحان من تأليف <pb ed="shamela" n="n92-p78" corresp="file:../epub/26523/OEBPS/xhtml/P6448.xhtml" xml:id="pb_79.d1e4267"/> واكنر الألماني المتوفي
                             سنة  <num type="auto-markup" resp="#pers_TG" value="1883" xml:lang="ar" xml:id="num_1.d1e4269">١٨٨٣</num>  وأنه هذه هي المرة الأولى منذ إعلان الحرب لحنت فيها أغان لهذه الموسيقى بحضور جمهور كبير من الأهلين ومنهم
                             ضباط بألبستهم الرسمية وربما عد بعضهم تلحين مؤلف ألماني انحطاطاً في الوطنية وعده آخرون علامة جيدة على تقرب
@@ -2498,7 +2492,7 @@
                             والأدباء من أي عنصر ولسان كانوا وناب</p>
                         <p xml:lang="ar" xml:id="p_305.d1e4276">عن المجر رئيس مجمعها العلمي ولم يكدر صفوهذا الاجتماع مكدر ولم يذكر <persName ref="viaf:96994048" xml:lang="en-Arab-AR"><surname>شكسبير</surname></persName> إلا بالتجلة كأنه من شعراء ألمانيا نفسها
                             فتأمل هذا التسامح في إكرام العلماء حتى زمن ألفتن والحروب. </p>
-                    </div>
+                    </tei:div></div>
                 </body>
             </text>
 </TEI>

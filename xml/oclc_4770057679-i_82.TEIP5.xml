@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_82" next="oclc_4770057679-i_83" prev="oclc_4770057679-i_81">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_82" next="oclc_4770057679-i_83" prev="oclc_4770057679-i_81">
    <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -76,7 +76,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2017-01-14" who="#pers_TG">Automatically added computed Gregorian dates to the <att>when</att> attributes of all non-Gregorian <gi>date</gi> elements.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+        <revisionDesc><tei:change when="2017-04-28" who="#pers_TG">Automatically split all <tei:tag>div type="section"</tei:tag> into subsections of <tei:tag>div type="article"</tei:tag>, using paragraphs with a length of 30 or less as indicator of a heading.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2017-01-14" who="#pers_TG">Automatically added computed Gregorian dates to the <att>when</att> attributes of all non-Gregorian <gi>date</gi> elements.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
          <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
@@ -1417,16 +1417,13 @@
                             مثل هذه الأسفار النافعة باللغة العربية فيبثوا فيها روحاً عالية جديدة وذلك أفيد للناس من مشاغب السياسة والأحزاب
                             لأنه هو الأساس ولا بناء بدون أُس قوي. </p>
                     </div>
-                    <pb ed="shamela" n="n82-p41" corresp="file:../epub/26523/OEBPS/xhtml/P5579.xhtml" xml:id="pb_42.d1e2467"/><div type="section" xml:lang="ar" xml:id="div_9.d1e2465">
-                        
-                        <head xml:lang="ar" xml:id="head_8.d1e2469">أخبار وأفكار</head>
-                        <p xml:lang="ar" xml:id="p_171.d1e2472">حفظ المكاتب</p>
+                    <pb ed="shamela" n="n82-p41" corresp="file:../epub/26523/OEBPS/xhtml/P5579.xhtml" xml:id="pb_42.d1e2467"/><div type="section" xml:lang="ar" xml:id="div_9.d1e2465"><head xml:lang="ar" xml:id="head_8.d1e2469">أخبار وأفكار</head><tei:div type="article"><tei:head>حفظ المكاتب</tei:head>
                         <p xml:lang="ar" xml:id="p_172.d1e2475">يحسن أصحاب المكاتب صنعاً إذا أرادوا بقاء كتبهم سالمة أن يقوموا باحتياطات الآتية: يقون أولاً استعمال الخزائن ذات
                             الزجاج ما عاد بعض الكتب الثمينة جداً التي تنفض عَلَى الدوام وذلك لأن الهواء لا يتخللها ويبقى جوها محصوراً مما
                             يساعد الحشرات الضارة كالأرضة عَلَى الإضرار بها وتكون مستوبلاً للعفن والجراثيم. ثم أنه يجدر وضع وراء الكتب بعض
                             قطع من الجوخ أو الصوف مغموسة بروح صمغ البطم التربنتين والبنزين وحامض الفنيك أو عصير التبغ بحسب ما يتيسر للإنسان.
                             وهذا الاحتياط إذا جدد من حين إلى آخر يعطي نتائج حسنة.</p>
-                        <p xml:lang="ar" xml:id="p_173.d1e2478">أوائل المعادن</p>
+                        </tei:div><tei:div type="article"><tei:head>أوائل المعادن</tei:head>
                         <p xml:lang="ar" xml:id="p_174.d1e2482">نشرت المجلة الأسبوعية مقالة في أول استعمال للمعادن قالت فيه ما ترجمته: يجب الرجوع إلى ما قبل التاريخ أيام استخرج
                             الإنسان من الحجر والقرن والعظام مواد صناعته واكتشف اكتشافاً رنَّ في العالم صداه ونعني به المعادن فكان باكتشافه
                             إياها كأنه ظفر بالطبيعة واتجهت أعمال البشر بعد إلى وجهة لا تزال إلى اليوم تتكاثر فوائدها فقد بدأ عصر المعادن
@@ -1523,8 +1520,8 @@
                             فتتطور إلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_137.d1e2808">ثلاثة</num> أطوار إلى آخر تشرين الأول وحينئذ يكون طول الذويبة سنتمتراً ونصفاً فإما أن تحفر لها حفرة أو أن
                             تلتجئ للمزابل لقضاء فصل الشتاء في حالة التخدر والسبات الطويل فتبقى كذلك للربيع القادم وفيه تتطور أيضاً طورين ثم
                             تبلغ في أيار أو حزيران وفيها ترتكب هذه المواليش أكبر فظائع التخريبات في المزروعات.</p>
-                        <p xml:lang="ar" xml:id="p_190.d1e2575">أوريزون (فرنسا) // عز الدين شيخ السروجية.</p>
-                        <p xml:lang="ar" xml:id="p_191.d1e2578">اليابان والأفيون</p>
+                        </tei:div><tei:div type="article"><tei:head>أوريزون (فرنسا) // عز الدين شيخ السروجية.</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>اليابان والأفيون</tei:head>
                         <p xml:lang="ar" xml:id="p_192.d1e2582">ذكرت الصحف الأوربية عام  <num type="auto-markup" resp="#pers_TG" value="1853" xml:lang="ar" xml:id="num_1.d1e2584">١٨٥٣</num>  مع الأسف أن عادة تدخين الأفيون لم تقتصر عَلَى بلاد الصين بل تعدتها إلى إنكلترا تقل
                             إليها استعمالها أناس من البحارة الصينيين كانوا مستخدمين في إخراج شحن البواخر أما اليوم فقد اختلفت الأحوال كل
                             الاختلاف فما من بلد في الغرب إلا سرى إليها استعمال هذا المخدر المضر فسرت إلى أوربا عدوى فاحشة إذ ثبت في أحوال
@@ -1548,7 +1545,7 @@
                             عَلَى اختلاف طبقاتهم أما فتح العثمانية والمصرية صدر بلادهما لما يرد من بلاد الغرب من المشروبات الروحية المختلفة
                             الصنع والاسم فإنه مما نسأل الله منه السلامة عَلَى صحة السكان وعقولهم وآدابهم وبينا نرى عجائب في الشرق الأقصى من
                             سهر حكومته عَلَى كمال سكانه نشهد العكس من حكومات الشرق الأدنى بتساهل فقيما يورث أهله النقص والانحلال.</p>
-                        <p xml:lang="ar" xml:id="p_197.d1e2608">عصابة ضد الجنون</p>
+                        </tei:div><tei:div type="article"><tei:head>عصابة ضد الجنون</tei:head>
                         <p xml:lang="ar" xml:id="p_198.d1e2612">الجنون من أعظم النوائب التي اشتدت وطأتها عَلَى الجنس البشري فقد أثبت الإحصاء في جميع البلدان أن معدل المختل
                             شعورهم أخذ بالتضاعف إلى حد يدهش المفكرين وجميع طبقات المجتمع يصاب منها أفراد وكثير من الناس يعلمون أسبابه ولا
                             يتقونها. يعلم الشبان والشيوخ والكهول أن كثرة التأثر ومجارات الشهوات من أعظم العوامل في الجنون ومع هذا تراهم لا
@@ -1569,7 +1566,7 @@
                             الإصلاحات الاجتماعية ومداواة العلل التي حدثت فينا من انتشار الو بقات والمسكرات بدلاً من أن يكثر بعضهم عَلَى بعض
                             عَلَى غير طائل ويسعوا للشهرة من غير أبوابها ناسين بأعمالهم هدي كتابهم وسنة رسولهم وهيهات أن يرزق العقل السليم من
                             حاد عن سنن الشرع السمح والمدنية الصحيحة.</p>
-                        <p xml:lang="ar" xml:id="p_201.d1e2623">جيش السلام</p>
+                        </tei:div><tei:div type="article"><tei:head>جيش السلام</tei:head>
                         <p xml:lang="ar" xml:id="p_202.d1e2626">مات في إنكلترا رجل غريب الشأن من رجالها وهو القائد نوت مؤسس جيش السلام توفي عن  <num type="auto-markup" resp="#pers_TG" value="81" xml:lang="ar" xml:id="num_1.d1e2628">٨١</num>  سنة قضاها في خدمة الإنسانية
                             وكان أجير خياط في السنة الخامسة <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_145.d1e2877">عشرة</num> من عمره ثم بلغ به تقواه وحنانه الغريب عَلَى نحو ما يكون عليه بعض أهالي
                             مذهبه فقام في ذهنه أن يدعو قومه وأبناء نحلته خاصة إلى العطف عَلَى البائسين ومواساة المنكوبين <pb ed="shamela" n="n82-p49" corresp="file:../epub/26523/OEBPS/xhtml/P5587.xhtml" xml:id="pb_50.d1e2631"/> ووعظ
@@ -1608,7 +1605,7 @@
                             وهذا القانون يشبه قانون الجمعيات الدينية عند الكاثوليك ولكنه جاء في صورة أخرى والجميع يعلمون الإحسان والشفقة
                             عَلَى بني الإنسان ومن النساء الداخلات في الجمعية من هن من بنات الطبقة الأولى طبقة الأشراف وفيهن من أهل الطبقة
                             الوسطى يتأدبن كلهن بآداب الإنجيل عَلَى مذهب مؤسس طريقتهن القائد بوت.</p>
-                        <p xml:lang="ar" xml:id="p_208.d1e2661">الشعب الإنكليزي</p>
+                        </tei:div><tei:div type="article"><tei:head>الشعب الإنكليزي</tei:head>
                         <p xml:lang="ar" xml:id="p_209.d1e2664">في المدينة الغربية رذائل وفضائل ومن الأسف إننا أخذنا في الشرق رذائلها قبل فضائلها فتسربت إلى أبنائنا وكادت تقوض
                             أركان مجتمعنا وكل يوم نحن منها في شأن ولكن الحضارة في العادة تدخل ويدخل معها كل شيء فإذا ارتقى فرع من فروعها
                             يتبعه الفرع <pb ed="shamela" n="n82-p51" corresp="file:../epub/26523/OEBPS/xhtml/P5589.xhtml" xml:id="pb_52.d1e2666"/> الآخر وإن كان لا علاقة
@@ -1642,7 +1639,7 @@
                             العاقلين فقللوا من ساعات العمل وأكثروا من أجور العمال مع مراعاة النسبة بين دخلهم وخرجهم وبذلك وجد الإنكليز بعض
                             المسكنات لتلك الأدواء ولعل عقول خاصتهم تهديهم إلى معالجة غيرها وإلا فتوشك أن تصاب المدنية الإنكليزية بما أصيبت
                             به المدنية الرومانية وغيرها.</p>
-                        <p xml:lang="ar" xml:id="p_215.d1e2690">الخوف</p>
+                        </tei:div><tei:div type="article"><tei:head>الخوف</tei:head>
                         <p xml:lang="ar" xml:id="p_216.d1e2694">خطب إرنست لفيس علامة الفرنسيس خطاباً في الخوف في مدرسة نوفيون ىن تيراش (فرنسا) قال فيه أن من النقائص التي يجب أن
                             تتغلب عليها التربية نقصاً تتساهل فيه المدرسة والأسرة معاً وذلك لأن المدرسة لا يبدو فيها هذا النقص خصوصاً وأن غير
                             المطيع والطائش من التلامذة يلقي الاضطراب في نظام المدرسة أكثر من الجبان فهذا وديع والمعلمون يقدرون وداعة
@@ -1691,7 +1688,7 @@
                             المستنير فلقنت أناساًَ من بلاد مختلفة قيمة الإنسان ولم يبرحوا يذكرونها بعملها فهي تعرف نفسها شريفة بين الأمم معم
                             إن العالم حولها قد تغير كثيراً من نصف قرن فقام شعب بالقرب منا يذكرنا كل حين بلسان البغضاء والقحة بأنه عظيم قوي.
                             ومع أن هذا الشعب عظيم وقوي فإن فرنسا التي تهدد أحداً لا تخاف أحداً بتاتاً بل تعلم إنها فرنسا عَلَى كل حال.</p>
-                        <p xml:lang="ar" xml:id="p_225.d1e2728">الإفرنج والنزهات</p>
+                        </tei:div><tei:div type="article"><tei:head>الإفرنج والنزهات</tei:head>
                         <p xml:lang="ar" xml:id="p_226.d1e2731">لا تكاد تطلع عَلَى صحيفة سياسية وعلمية من صحف الإفرنج في الصيف غلا وتجدها ملأى بوصف المنتزهات والحمامات والجبال
                             والبحيرات والغابات وأخبار الرحلات الخاصة منهم إلى الأصقاع ذات البهجة والرياض الممرعة الخصيبة فمن قائل مثلاً أن
                             <persName ref="viaf:100184045" xml:lang="fr-Arab-AR" xml:id="persName_10.d1e3037">جان جاك روسو</persName> الفيلسوف هو الذي سن للفرنسيس سنة التنقل في البلاد وحبب إليهم عيش الخلاء وعشق الطبيعة ومن مدع أن
@@ -1707,7 +1704,7 @@
                             الغربيين ليحبب إليهم أوطانهم ويعرفهم رجالهم ويبحث عن أمور لا يتيسر لكل إنسان أن يحصل عليها ويتعب المفكرون في
                             جمعها ونشرها <pb ed="shamela" n="n82-p56" corresp="file:../epub/26523/OEBPS/xhtml/P5594.xhtml" xml:id="pb_57.d1e2733"/> فيأخذها جمهور القراء
                             هينة لينة.</p>
-                        <p xml:lang="ar" xml:id="p_227.d1e2736">الحج المشوق</p>
+                        </tei:div><tei:div type="article"><tei:head>الحج المشوق</tei:head>
                         <p xml:lang="ar" xml:id="p_228.d1e2740">الإفرنج عَلَى تغاليهم بالبحث عن شؤونهم الداخلية وعاداتهم ورجالهم وأعمالهم وبلادهم لا يغفلون عن شؤون غيرهم وقد
                             أصاب بلادنا حظ وافر من عنايتهم فكانت بلاد العرب أو مصر والسام والجزيرة والعراق واليمن والحجاز ومراكش والجزائر
                             وتونس وطرابلس وبرقة موضوع أبحاثهم العلمية والأثرية والتاريخية والاقتصادية مما نخجل من كثرته إذا سمعنا بأسمائه
@@ -1736,7 +1733,7 @@
                             عليقه عنده وقال أن المسلمين مولعون بلقب حاج أكثر مما أولع أهل المملكة العثمانية بلقب بك أو باشا وفي الكتب أمور
                             حرية بالتدبر فكأن كاتبه مغرم بإظهار فكره في شأن البلاد التي دخلها والمعاهد التي زارها وقد حمد مقامه في فلسطين في
                             أديار الفرنسيسكان ووصفهم بالطبع أجمل وصف.</p>
-                        <p xml:lang="ar" xml:id="p_230.d1e2748">حياة بابل</p>
+                        </tei:div><tei:div type="article"><tei:head>حياة بابل</tei:head>
                         <p xml:lang="ar" xml:id="p_231.d1e2751">ذكرت بعض الصحف العلمية أن التوراة ترجع تاريخ بابل إلى أكثر من <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="7" xml:id="num_178.d1e3091">سبعة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="30" xml:id="num_179.d1e3094">ثلاثين</num> قرناً قبل المسيح وكانت عَلَى عهد ملكها
                             العظيم بختنصر أي قبل الميلاد بستة قرون عاصمة العالم بأجمعه وسكانها <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5" xml:id="num_180.d1e3097">خمسة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_181.d1e3100">عشرين</num> مليوناً وهي من الارتقاء عَلَى
                             جانب عظيم جداً وموقع بابل عَلَى الفرات وقد اشتق اسمها حديقة الحدائق من خصبها وأمراعها. دمرها الفرس عَلَى عهد
@@ -1755,12 +1752,12 @@
                             فيها وبذلك تحيا الراضي الواقعة عَلَى شاطئ دجلة والفرات فالبذار يزرع في الخريف فترويه الأمطار حتى إذا جاء آذار
                             ونيسان وفاض الرافدان دجلة والفرات تسقى تلك الأراضي بمياههما الصيف كله فهل تتحقق يا ترى هذه الأحلام ويعود لبابل
                             عزها في سالف الأيام أم يبقى أنر ري العراق في عالم الخيال أو كلاماً في كلام.</p>
-                        <p xml:lang="ar" xml:id="p_234.d1e2772">خمر الشام</p>
+                        </tei:div><tei:div type="article"><tei:head>خمر الشام</tei:head>
                         <p xml:lang="ar" xml:id="p_235.d1e2775">اكتشف بالقرب من مدينة بوردو الفرنسية ناووس من القرن الأول للميلاد وشوهدت عَلَى مقربة من هيكل العظام رجاجة مستطيلة
                             وشكلها يخالف شكل الزجاج المعمول في بلاد غاليا وقد حلل العلماء ما فيها فرأوه خمراً واستدل الباحثون أن هذا الخمر
                             من صنع سورية إذ كانت خمرها تحمل إلى جنوبي فرنسا كثيراً ويستطيبها الناس كل الاستطابة وذلك بفضل ما كان من الصلات
                             التجارية المستحكمة القديمة بين بلاد الشام وفرنسا.</p>
-                        <p xml:lang="ar" xml:id="p_236.d1e2778">المدنية</p>
+                        </tei:div><tei:div type="article"><tei:head>المدنية</tei:head>
                         <p xml:lang="ar" xml:id="p_237.d1e2781">كتب <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_188.d1e3142">أحد</num> علماء فرنسة في <title level="j" ref="oclc:472961924" xml:id="title_14.d1e3145">المجلة</title> الباريزية مقال تحت عنوان هل المنية في ارتقاء أو انحطاط قال فيها: إن الناظرين إلى
                             المدنية فريقان فريق يرى ما فيها من العظمة والمنافع <pb ed="shamela" n="n82-p59" corresp="file:../epub/26523/OEBPS/xhtml/P5597.xhtml" xml:id="pb_60.d1e2783"/> المادية التي سخرها
                             الإنسان لأمره وآخر يذهب إلى أن الارتقاء عَلَى عمومه لا يتأتى له إلا أن يسير عَلَى الدوام سيراً سريعاً. ويرى هذا
@@ -1826,18 +1823,18 @@
                             وإذا وفقوا لذلك حفظها زمناً من الانحطاط كما احتفظ بها أسلافهم. إن أول قدم يخطوها السائر نحو المدنية هو إصلاح
                             الأسرة وإعداد طبقة مختارة من الأمة وتكثير عددها وتجديد أعمالها وما السلام إلا في البيوت والمدن والمعابد وعند
                             الأمم ومتى أثبتت الأفعال أننا بلغنا الغاية فيها يتيسر لنا أن نقول أن من ينشأُ في ارتقاءٍ.</p>
-                        <p xml:lang="ar" xml:id="p_245.d1e2817">جراثيم البيض</p>
+                        </tei:div><tei:div type="article"><tei:head>جراثيم البيض</tei:head>
                         <p xml:lang="ar" xml:id="p_246.d1e2821">يقول العارفون أن البيض النظيف عقيم لا ينقف وأن البكتريا لا تدخل إلا في البيض المشقوق أو المكسور الذي تكون قشرته
                             ملوثة بالأوساخ ممسوسة بالأيدي وبفتح البيضة يدخلها الهواءُ وقد تدخله الجراثيم الضارة فالأجدر بربات المنازل أن
                             تتحامى استعمال البيض المكسر ولو كانت طرية لأن من استعمالها قد تنشأُ مضار ولا يخشى البيض إذا كان خارجه سليماً من
                             الوسخ والماء الغالي. فالبيضة التي تؤكل نصف مسلوقة عَلَى الصورة المذكورة لا يخشى من تناولها.</p>
-                        <p xml:lang="ar" xml:id="p_247.d1e2824">نبات السود</p>
+                        </tei:div><tei:div type="article"><tei:head>نبات السود</tei:head>
                         <p xml:lang="ar" xml:id="p_248.d1e2827">خاضت المجلات العلمية بالنبات البديع الذي يكثر في النيل الأزرق والنيل البيض ويسمى السود ولم يعرف <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_197.d1e3216">أحد</num> يحسن الانتفاع
                             من هذا النبات حتى الآن حتى قام عالمان ألمانيان وأثبتا أنه ينفع للوقود بدل الفحم وذلك بأن يقصل ويجمع كالقش حزماً
                             ويحمل في النيل ولا يلبث أن ينشف ويقطع ثمن كل طن <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8" xml:id="num_198.d1e3219">ثمانية</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_199.d1e3222">عشرين</num> فرنكاً في حين تباع مثل هذه الكمية من الفحم بمائة
                             و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4" xml:id="num_200.d1e3225">أربع</num> فرنكات ويرجي باستنبات هذا النبات والاستكثار منه أن يكون ثمنه أرخص من ذلك وقد أُنشئ في الخرطوم عاصمة
                             السودان أول معمل لإحضار هذا النبات الذي يخدم الصناعة خدماً كثيرة.</p>
-                        <p xml:lang="ar" xml:id="p_249.d1e2830">أضخم الكتب</p>
+                        </tei:div><tei:div type="article"><tei:head>أضخم الكتب</tei:head>
                         <p xml:lang="ar" xml:id="p_250.d1e2833">قالت المجلة تملك المكتبة الملوكية في استوكهلم كتاباً مخطوطاً عرف باسم توراة الشيطان ويدعى أيضاً مارد الكتب بسبب
                             حجمه العظيم فإن طوله  <num type="auto-markup" resp="#pers_TG" value="90" xml:lang="ar" xml:id="num_1.d1e2835">٩٠</num>  سنتمتراً وعرضه  <num type="auto-markup" resp="#pers_TG" value="50" xml:lang="ar" xml:id="num_1.d1e2838">٥٠</num>  
                <pb ed="shamela" n="n82-p63" corresp="file:../epub/26523/OEBPS/xhtml/P5601.xhtml" xml:id="pb_64.d1e2841"/> ويقتضي <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_203.d1e3242">ثلاثة</num> رجال لحمله
@@ -1846,16 +1843,16 @@
                         <p xml:lang="ar" xml:id="p_251.d1e2854">وفي سان فرنسيسكو بأميركا كتاب يعد من مردة الكتب أيضاً وهو الذي عرضته تلك المدينة أيام معروضات كليفورنيا ليكون
                             سجلاً توضع عليه أسماء الزائرين الذين بلغوا  <num type="auto-markup" resp="#pers_TG" value="135" xml:lang="ar" xml:id="num_1.d1e2856">١٣٥</num>  ألفاً وضعوا تواقيعهم عَلَى <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="7000" xml:id="num_209.d1e3264">سبعة آلاف</num> صفحة. وطول كل صفحة  <num type="auto-markup" resp="#pers_TG" value="775" xml:lang="ar" xml:id="num_1.d1e2859">٧٧٥</num> 
                             سنتمتراً ووزنه  <num type="auto-markup" resp="#pers_TG" value="250" xml:lang="ar" xml:id="num_1.d1e2862">٢٥٠</num>  كيلوغراماً.</p>
-                        <p xml:lang="ar" xml:id="p_252.d1e2867">نفقات حرب عامة</p>
+                        </tei:div><tei:div type="article"><tei:head>نفقات حرب عامة</tei:head>
                         <p xml:lang="ar" xml:id="p_253.d1e2870">حسب الأستاذ شارل ريشه ما تكلفه حرب عامة إذا نشبت في أوربة فكانت كل يوم  <num type="auto-markup" resp="#pers_TG" value="274" xml:lang="ar" xml:id="num_1.d1e2872">٢٧٤</num>  مليوناً ونصف مليون من الفرنكات تنفقها
                             الدول العظمى فقط.</p>
-                        <p xml:lang="ar" xml:id="p_254.d1e2876">نجاح أميركا</p>
+                        </tei:div><tei:div type="article"><tei:head>نجاح أميركا</tei:head>
                         <p xml:lang="ar" xml:id="p_255.d1e2879">كانت رؤوس الأموال التي وضعتها الولايات المتحدة منذ سنة  <num type="auto-markup" resp="#pers_TG" value="1900" xml:lang="ar" xml:id="num_1.d1e2881">١٩٠٠</num>  إلى  <num type="auto-markup" resp="#pers_TG" value="1910" xml:lang="ar" xml:id="num_1.d1e2884">١٩١٠</num>  في الأعمال الزراعية فقط  <num type="auto-markup" resp="#pers_TG" value="20439000" xml:lang="ar" xml:id="num_1.d1e2887">٢٠٤٣٩٠٠٠</num>  دولار فبلغت
                              <num type="auto-markup" resp="#pers_TG" value="40991000" xml:lang="ar" xml:id="num_1.d1e2890">٤٠٩٩١٠٠٠</num>  دولار أي أنها تضاعفت وتجاوزت رؤوس الأموال التي وضعت في المشاريع الزراعية في ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_217.d1e3301">عشر</num> سنين المذكورة من
                              <num type="auto-markup" resp="#pers_TG" value="8975000" xml:lang="ar" xml:id="num_1.d1e2893">٨٩٧٥٠٠٠</num>  دولار إلى  <num type="auto-markup" resp="#pers_TG" value="18429000" xml:lang="ar" xml:id="num_1.d1e2897">١٨٤٢٩٠٠٠</num>  دولار أي زادت عن الضعف أما الأموال التي استخدمت في السكك الحديدية فكانت سنة  <num type="auto-markup" resp="#pers_TG" value="1900" xml:lang="ar" xml:id="num_1.d1e2900">١٩٠٠</num> 
                              <num type="auto-markup" resp="#pers_TG" value="1263000" xml:lang="ar" xml:id="num_1.d1e2903">١٢٦٣٠٠٠</num>  دولار فأصبحت سنة  <num type="auto-markup" resp="#pers_TG" value="1910" xml:lang="ar" xml:id="num_1.d1e2906">١٩١٠</num>   
                <num type="auto-markup" resp="#pers_TG" value="1437000" xml:lang="ar" xml:id="num_1.d1e2909">١٤٣٧٠٠٠</num>  فتأمل.</p>
-                        <p xml:lang="ar" xml:id="p_256.d1e2913">جرحى الحروب</p>
+                        </tei:div><tei:div type="article"><tei:head>جرحى الحروب</tei:head>
                         <p xml:lang="ar" xml:id="p_257.d1e2916">قالوا أن الخرطوش في العهد الجديد يقل القتل به أكثر من الخرطوش قديماً ولكن الإحصاء دل عَلَى خلاف ذلك فقد قتل في
                             حرب ألمانيا سنة  <num type="auto-markup" resp="#pers_TG" value="1870" xml:lang="ar" xml:id="num_1.d1e2918">١٨٧٠</num>  و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_225.d1e3332">احد</num> من كل <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5" xml:id="num_226.d1e3335">خمسة</num> أشخاص واليابان في منشوريا قتل لهم و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_227.d1e3338">احد</num> من كل <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_228.d1e3341">ثلاثة</num> فقد كان المحاربون
                             الألمان عَلَى ذلك العهد  <num type="auto-markup" resp="#pers_TG" value="650" xml:lang="ar" xml:id="num_1.d1e2921">٦٥٠</num>  ألفاً فبلغ مجموع جرحاهم  <num type="auto-markup" resp="#pers_TG" value="116" xml:lang="ar" xml:id="num_1.d1e2924">١١٦</num>  ألفاً ومجوع محاربي الروس  <num type="auto-markup" resp="#pers_TG" value="590" xml:lang="ar" xml:id="num_1.d1e2927">٥٩٠</num>  ألفاهم فبلغ جرحاهم  <num type="auto-markup" resp="#pers_TG" value="170600" xml:lang="ar" xml:id="num_1.d1e2930">١٧٠٦٠٠</num> 
@@ -1890,7 +1887,7 @@
                             رعايا الدولة عن دفع الأموال المفروضة عليهم حتى أن زيادة الدخل في بيان نظارة المالية الأخيرة بلغ  <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_1.d1e3136">٢</num> .  <num type="auto-markup" resp="#pers_TG" value="509" xml:lang="ar" xml:id="num_1.d1e3139">٥٠٩</num> .  <num type="auto-markup" resp="#pers_TG" value="731" xml:lang="ar" xml:id="num_1.d1e3142">٧٣١</num>  ليرة
                             عثمانية وبلغ مجموع ضريبة الحرب في شهر و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_300.d1e3592">احد</num>  <num type="auto-markup" resp="#pers_TG" value="422" xml:lang="ar" xml:id="num_1.d1e3145">٤٢٢</num> .  <num type="auto-markup" resp="#pers_TG" value="495" xml:lang="ar" xml:id="num_1.d1e3148">٤٩٥</num>  ليرة عثمانية. وعليه إن الحكومة العثمانية تحتاج إلى المال فما
                             ذلك إلا لسد العجز السابق.</p>
-                        <p xml:lang="ar" xml:id="p_265.d1e3152">مدارس الفلاحة في الدانيمرك</p>
+                        </tei:div><tei:div type="article"><tei:head>مدارس الفلاحة في الدانيمرك</tei:head>
                         <p xml:lang="ar" xml:id="p_266.d1e3155">نشرت المجلة الفرنسوية مبحثاً مهماً تحت هذا العنوان بقلم العقيلة لونر كروبي فآثرنا ليضم إلى ما سبق لنا نشره من
                             نوعه في سني المقتبس السابقة قالت الكاتبة: عَلَى شاطئ بحر البلطيق بلاد صغيرة سعيدة وأعني بها الدانيمرك التي
                             تضاعفت تجارتها الخارجية في ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5" xml:id="num_303.d1e3608">خمس</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_304.d1e3611">عشرة</num> سنة الأخيرة لتوفرها عَلَى استثمار أرضها وقيامها عَلَى تربية الماشية حتى
@@ -2022,7 +2019,7 @@
                             واستماتوا في تربية الشعب فبذلوا كل قوتهم وبإرادتهم المتجمعة ودعواتهم التي لم يملوا من بثها نبهوا الفلاح
                             الدانيمركي من غفلته التي كان فيها منذ قرون. وكل بلد يقوم فيها مثل هذا النشاط تخصب في ربوعها العلوم والآداب لا
                             محالة.</p>
-                        <p xml:lang="ar" xml:id="p_279.d1e3249">مدينة لا ذباب فيها</p>
+                        </tei:div><tei:div type="article"><tei:head>مدينة لا ذباب فيها</tei:head>
                         <p xml:lang="ar" xml:id="p_280.d1e3252">أجمعت الآراء عَلَى ضرورة قتل الذباب ولكن لم يظفروا حتى الآن بالطرق للخلاص من هذا الضيف الثقيل المخطر الذي ينشر
                             جراثيم العدوى بدخوله في كل مكان وتلقيحه في كل مادة مضار عدواه. وقد وضع مؤتمر الصحة في ولاية إنديانا <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_344.d1e3793">إحدى</num>
                             الولايات المتحدة قاعدة أوصى فيها بإبادة هذه الآفة وهي اقتلوا الذباب بأي صورة كانت ولكن اقتلوه جملة يرددونها في
@@ -2033,33 +2030,33 @@
                             شهراً فلم يبق بعده أثراً <pb ed="shamela" n="n82-p73" corresp="file:../epub/26523/OEBPS/xhtml/P5611.xhtml" xml:id="pb_74.d1e3254"/> لهذا العدو الهائل وتخلصت
                             المدينة من الذباب فخفت حمى التيفوس بذلك عَلَى التدريج وجادت الصحة أي جودة وبذلك يفهم أن الحكومات إذا أرادت أن
                             تعمل الحسن للأمم توفق له مهما كان صعب الطريقة.</p>
-                        <p xml:lang="ar" xml:id="p_281.d1e3257">نادي المعمرين</p>
+                        </tei:div><tei:div type="article"><tei:head>نادي المعمرين</tei:head>
                         <p xml:lang="ar" xml:id="p_282.d1e3261">أنشئ حديثاً في طوكيو عاصمة اليابان ناد للشيوخ الذي لا يقل عمرهم عن ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="90" xml:id="num_347.d1e3810">تسعين</num> سنة برئاسة الكونت إوليما الياباني
                             ويقال أن بين من يضمهم النادي الآن <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2" xml:id="num_348.d1e3813">اثني</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_349.d1e3816">عشر</num> عضواً عمر الواحد منهم  <num type="auto-markup" resp="#pers_TG" value="110" xml:lang="ar" xml:id="num_1.d1e3263">١١٠</num>  سنوات وقد قيل شبيه الشيء منجذب إليه. إن
                             الطيور عَلَى أشكالها تقع.</p>
-                        <p xml:lang="ar" xml:id="p_283.d1e3267">إزالة الحبر عن البسط</p>
+                        </tei:div><tei:div type="article"><tei:head>إزالة الحبر عن البسط</tei:head>
                         <p xml:lang="ar" xml:id="p_284.d1e3270">إن أسهل طريقة يمكنك بها إزالة الحبر عن الطنافس أو البسط أن تأخذ شيئاً من الملح الناعم وتذره عَلَى الحبر وتى اسود
                             الملح ترفعه وتضع غيره مكانه.</p>
-                        <p xml:lang="ar" xml:id="p_285.d1e3273">أحياء الأزهار ميتة</p>
+                        </tei:div><tei:div type="article"><tei:head>أحياء الأزهار ميتة</tei:head>
                         <p xml:lang="ar" xml:id="p_286.d1e3276">إن الطريقة لإحياء الأزهار بعد ذبولها هي أن تقطع قليلاً من أصولها ثم تغمس هذه الأصول في ماء يغلي فالحرارة الشديدة
                             تنبه الزهرة تعد إليها الحياة التي أوشكت أن تفقدها وتجعلها كأنها مقطوفة منذ هنيهة.</p>
-                        <p xml:lang="ar" xml:id="p_287.d1e3279">أكلة الخبز</p>
+                        </tei:div><tei:div type="article"><tei:head>أكلة الخبز</tei:head>
                         <p xml:lang="ar" xml:id="p_288.d1e3283">في الإحصاءات الأخيرة أن كل دانيمركي يأكل في السنة  <num type="auto-markup" resp="#pers_TG" value="287" xml:lang="ar" xml:id="num_1.d1e3285">٢٨٧</num>  كيلوغراماً من الخبز والبلجيكي  <num type="auto-markup" resp="#pers_TG" value="274" xml:lang="ar" xml:id="num_1.d1e3288">٢٧٤</num>  كيلوغراماً والفرنسوي  <num type="auto-markup" resp="#pers_TG" value="234" xml:lang="ar" xml:id="num_1.d1e3291">٢٣٤</num> 
                             والسويسري  <num type="auto-markup" resp="#pers_TG" value="212" xml:lang="ar" xml:id="num_1.d1e3294">٢١٢</num>  كيلوغراماً والألماني  <num type="auto-markup" resp="#pers_TG" value="209" xml:lang="ar" xml:id="num_1.d1e3297">٢٠٩</num>  كيلوغرامات والإسباني والنمساوي  <num type="auto-markup" resp="#pers_TG" value="195" xml:lang="ar" xml:id="num_1.d1e3301">١٩٥</num>  كيلوغراماً والإيطالي والبرتقالي  <num type="auto-markup" resp="#pers_TG" value="102" xml:lang="ar" xml:id="num_1.d1e3304">١٠٢</num> 
                             كيلوغرامين. أما العربي فليس له محل من الإعراب في هذا الإحصاء ولعله من أكثر الأمم تنازلاً للخبز إذ ليس عنده الآن
                             إلا الخبز القفار وربما جاء زمن لا يحصله فيكتفي بأكل البقول والثمار.</p>
-                        <p xml:lang="ar" xml:id="p_289.d1e3308">ثروة سويسرا</p>
+                        </tei:div><tei:div type="article"><tei:head>ثروة سويسرا</tei:head>
                         <p xml:lang="ar" xml:id="p_290.d1e3311">أحصى الأستاذ ستيجر ثروة سويسرا عَلَى وجه التقريب فكانت نحو  <num type="auto-markup" resp="#pers_TG" value="14528" xml:lang="ar" xml:id="num_1.d1e3313">١٤٥٢٨</num>  مليون فرنك <pb ed="shamela" n="n82-p74" corresp="file:../epub/26523/OEBPS/xhtml/P5612.xhtml" xml:id="pb_75.d1e3316"/> وأغنى مقاطعاتها مقاطعة
                             برن التي بلغت ثروتها العامة  <num type="auto-markup" resp="#pers_TG" value="2444" xml:lang="ar" xml:id="num_1.d1e3318">٢٤٤٤</num>  مليوناً ثم مقاطعة فود  <num type="auto-markup" resp="#pers_TG" value="1742" xml:lang="ar" xml:id="num_1.d1e3321">١٧٤٢</num> .</p>
-                        <p xml:lang="ar" xml:id="p_291.d1e3325">نساء فنلندة</p>
+                        </tei:div><tei:div type="article"><tei:head>نساء فنلندة</tei:head>
                         <p xml:lang="ar" xml:id="p_292.d1e3328">تبين بالاستقراء أن المرأة في فنلندا لما صار له شأن في توظيف الشرطة في بلادها قل الفجور بل كاد يقضى عليه كل القضاء
                             وذلك أن من وظيفة الشرطيات الفنلنديات أن يسهرن عَلَى أخلاق الفتيات وأن يسعين في إيجاد أعمال ومحال يأوي إليها
                             المهملون أو اللقطاء والعجائز.</p>
-                        <p xml:lang="ar" xml:id="p_293.d1e3331">العناية بالمرأة</p>
+                        </tei:div><tei:div type="article"><tei:head>العناية بالمرأة</tei:head>
                         <p xml:lang="ar" xml:id="p_294.d1e3335">لما كان للمرأة بولاية كولورادو في الولايات المتحدة حق الانتخاب كالرجل منذ زمن طويل فقد وفقت إلى وضع قانون لحماية
                             الأمومة في البلاد ذلك أن كل الأمهات اللائي لا مورد لهن يعشن سواء كن عازبات أو متزوجات أو أيامى يقبضن من خزانة
                             الحكومة معاونات مالية مهمة تسمح لهن بتربية أولادهن عَلَى ما يجب.</p>
-                        <p xml:lang="ar" xml:id="p_295.d1e3338">الأنسجة الجديدة</p>
+                        </tei:div><tei:div type="article"><tei:head>الأنسجة الجديدة</tei:head>
                         <p xml:lang="ar" xml:id="p_296.d1e3341">آخر الأزياء الجديدة من ألبسة النساء الفساطين المصنوعة من الخرز المنسوج الذي يشبه الحرير بلمعانه ومرونته وقد اخترع
                             هذا النسيج في النمسا وألوانه عَلَى غاية من اللطف تختلف بين الأبيض والأخضر والوردي والبجلي (الليلكي) والأصفر وله
                             لمعان كلمعان الماس. وتصنع أيضاً أقمشة من ألياف معدنية معمول من أحجار ليفية لطيفة عَلَى اللمس جداً ومتينة للغاية.
@@ -2073,7 +2070,7 @@
                             للحمامات وأن مدينة طوكيو عاصمة اليابان لتصدر إلى إنكلترا وألمانيا وفرنسا كميات وافرة منه. ويعمل اليابانيون من
                             هذا القماش قفافيز للأيدي أيضاً. أما قماش القنب والحطب فيكون متيناً للغاية يمزج مع بعض المواد الكيماوية التي كتم
                             مخترعوها أسرارها فيباع بكميات رابحة في المستعمرات البريطانية.</p>
-                        <p xml:lang="ar" xml:id="p_297.d1e3346">ذكاء الحيوان</p>
+                        </tei:div><tei:div type="article"><tei:head>ذكاء الحيوان</tei:head>
                         <p xml:lang="ar" xml:id="p_298.d1e3349">كان للناس منذ القديم آراء متناقضة في مسألة ذكاء الحيوان فقد قال بيكورس الفيلسوف اليوناني أن للحيوانات روحاً
                             كالإنسان وقال أرسطو والرواقيون من فلاسفة اليونان أن ليس للحيوانات ذكاء يعتد به ورأت النصرانية مثل هذا الرأي
                             الأخير فأثبت لهم الغريزة ونفت عنهم العقل الذي لا حاجة لهم به واعتبر الفيلسوف ديكارت الحيوانات بأنها أدوات بسيطة
@@ -2086,7 +2083,7 @@
                             الكائنات قريبة من الجنس البشري فاعترفوا بأن للكلب شعوراً من العقل والذكاء اللذين طالما أقام البراهين عليها وثبت
                             أن حصان هانس يحسب ويجمع ويطرح بلا غلط ويجيب عَلَى المسائل العويصة بإشارات لا خطئُ وذبك ثبت بأن للحيوان نفوساً
                             كما للإنسان وإنها من الذكاء عَلَى جانب.</p>
-                        <p xml:lang="ar" xml:id="p_299.d1e3352">الإتحاد الأوربي</p>
+                        </tei:div><tei:div type="article"><tei:head>الإتحاد الأوربي</tei:head>
                         <p xml:lang="ar" xml:id="p_300.d1e3356">تكتب المجلات الكبرى في الغرب الحين بعد الآخر مقالات في الدعوة إلى اتحاد أوربي <pb ed="shamela" n="n82-p76" corresp="file:../epub/26523/OEBPS/xhtml/P5614.xhtml" xml:id="pb_77.d1e3358"/> عام تكون به دول أوربا
                             يداً واحدة في الخصام والسلام ومن ذلك ما نشرته <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_363.d1e3922">إحدى</num> المجلات الإنكليزية الخطيرة قالت مؤخراً أن من الأمور الثابتة
                             أن الحالة الحاضرة في أوربا ليست مما يبعث عَلَى الرضى فهي تفقد عَلَى التدريج المكانة وإن كانت لها فيما سلف من
@@ -2103,7 +2100,7 @@
                             بين أُسرة كبيرة أوربية تكون ممالكها الجنوبية أبناء ذاك فسكون هذا مؤلفاً من <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="6" xml:id="num_366.d1e3931">ست</num> دول وهي تدعو سائر الدول إلى
                             الاشتراك معها ويدور محور التحالف عَلَى الاحتفاظ بالحالة الحاضرة ولا شك أن كثيراً من الأمم تفادي بمصلحتها العامة
                             وإذ كانت الحكومة لا تحكم بدون مظاهرة الشعب فعلى الشعب أن يعد الأفكار لقبول هذه الدعوة للإتحاد العام.</p>
-                        <p xml:lang="ar" xml:id="p_301.d1e3361">تبدل المناخ</p>
+                        </tei:div><tei:div type="article"><tei:head>تبدل المناخ</tei:head>
                         <p xml:lang="ar" xml:id="p_302.d1e3364">تنبأ كثير من العلماء بإمكان تبدل يطرأ عَلَى الأرض وقدروا بأن كثرة ما ينفق من حامض الكربون في الهواء لكثرة إنفاق
                             الفحم سيكون السبب في ذلك وقد أكد <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_367.d1e3941">أحد</num> أساطين العلم مؤخراً بأن المناخ يتغير والحرارة تشتد مستشهداً لذلك بترقي
                             البشرية في صرف الفحوم <pb ed="shamela" n="n82-p77" corresp="file:../epub/26523/OEBPS/xhtml/P5615.xhtml" xml:id="pb_78.d1e3366"/> وزيادته سنة عن سنة وأن
@@ -2111,7 +2108,7 @@
                             المنفق منه قبل <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_372.d1e3959">عشر</num> سنين أكثر من  <num type="auto-markup" resp="#pers_TG" value="511" xml:lang="ar" xml:id="num_1.d1e3381">٥١١</num> .  <num type="auto-markup" resp="#pers_TG" value="518" xml:lang="ar" xml:id="num_1.d1e3384">٥١٨</num> .  <num type="auto-markup" resp="#pers_TG" value="258" xml:lang="ar" xml:id="num_1.d1e3387">٢٥٨</num>  في القرن ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_376.d1e3971">عشرين</num> بمليار طن عَلَى سرعة الزياد ويدعو إلى تقدير ما
                             سينفق من الطنات في القرن ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_377.d1e3975">عشرين</num> بمليار طن فتتضاعف كمية الكربون في الهواء وتحفظ الكرة حرارتها فتكون الحرارة في
                             الأرض كلها أكثر من الأول. والعلماء يتوقعون فيما إذا كانت هذه الزيادة في الحرارة تضر بوجود الهواء.</p>
-                        <p xml:lang="ar" xml:id="p_303.d1e3391">الأشجار التاريخية</p>
+                        </tei:div><tei:div type="article"><tei:head>الأشجار التاريخية</tei:head>
                         <p xml:lang="ar" xml:id="p_304.d1e3394">في سنة  <num type="auto-markup" resp="#pers_TG" value="1860" xml:lang="ar" xml:id="num_1.d1e3396">١٨٦٠</num>  غرس البرنس دي غال في حديقة نيويورك الوسطى بيده شجرة دردار أميركية وشجرة بلوط إنكليزية احتفالاً بمرور
                             <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="50" xml:id="num_379.d1e3987">خمسين</num> سنة عَلَى معاهدة غاند ومنذ ذلك العهد نجحت هاتان الشجرتان وأصبحتا من الجمال بحيث لا تضاهيهما شجرة من نوعهما
                             وعمرهما. ومن الأدواح الضخمة التاريخية في العالم شجرة البارون همبولد القائمة في وادي أرغوا في جمهورية فنزويلا
@@ -2121,13 +2118,13 @@
                             لم تبرح فيها الشجرة التي كانت تظلل بأغصانها أفلاطون وهو يحادث سقراط. ومن الشجار التاريخية <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_384.d1e4003">ثلاثة</num> شجرات في جزيرة
                             القديسة هيلانة التي نفي إليها نابليون وبين جذوعها قضى هذا الفاتح. ومنها نخلة جورج واشنطن محرر أميركا ولا يقل
                             عمرها عن قرنين وهي أجمل مثال في الأشجار التاريخية.</p>
-                        <p xml:lang="ar" xml:id="p_305.d1e3409">سكر النبا</p>
+                        </tei:div><tei:div type="article"><tei:head>سكر النبا</tei:head>
                         <p xml:lang="ar" xml:id="p_306.d1e3413">النبا نوع من النخيل ذو ورق كبير مركب عل شكل ريش أو مشط مجتمع في رأس ساقها. وهو يكثر في عدة أصقاع من الأرض ولاسيما
                             في جزائر الفلبين ويستخرج منه الكحول بلغ دخله في العام الماضي زهاء  <num type="auto-markup" resp="#pers_TG" value="80" xml:lang="ar" xml:id="num_1.d1e3415">٨٠</num>  <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_386.d1e4015">ألف</num> هكتولتر ويستعمل ورقه في نسج الحلفاء كما
                             تصنع منه أغطية للدور وورق للفائف ويؤكل ثمره نيئاً أو مطبوخاً وقد أنبأ المكتب العلمي في مانيلا جمهور الزراع
                             والصناع أنه اكتشف طريقة يمكن معها استخراج مادة سكرية <pb ed="shamela" n="n82-p78" corresp="file:../epub/26523/OEBPS/xhtml/P5616.xhtml" xml:id="pb_79.d1e3418"/> تنافس سكر القصب وتفوقه
                             بالرخص. وتعيش شجرة النبا <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="50" xml:id="num_387.d1e4020">خمسين</num> سنة وكل فدان زرع من النبا يعطي غلات وافرة جداً. ولعل بهذا السكر يرخص سكرنا.</p>
-                        <p xml:lang="ar" xml:id="p_307.d1e3421">أعاجيب الحاسبين</p>
+                        </tei:div><tei:div type="article"><tei:head>أعاجيب الحاسبين</tei:head>
                         <p xml:lang="ar" xml:id="p_308.d1e3424">ظهر في المكسيك حيسوب من أعاجيب الدهر هو فتى الآن في الثامنة من عمره اسمه ميشيل ألبرتو مانتيلا وهو ابن صراف في تلك
                             البلاد ومنذ سنتين كان كأقرانه ليس فيه شيء من خوارق العادات بينا كان أبوه ذات ليلة يجتهد في حساب <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_388.d1e4030">أحد</num> التواريخ
                             ليكون مطابقاً ليوم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_389.d1e4033">أحد</num> دهش لما رأى ولده يجيبه في الحال عَلَى هذه الأشكال وإذ رآه يحسن الإجابة عاد فسأله عن يوم
@@ -2150,7 +2147,7 @@
                              <num type="auto-markup" resp="#pers_TG" value="60" xml:lang="ar" xml:id="num_1.d1e3474">٦٠</num>  رقماً. ومن الغريب أن هؤلاء الأولاد الخوارق الذين يحصرون أبداً أذهانهم في هذه الموضوعات ليسوا في الأغلب إلا
                             أبناء فلاحين لا يقرأُون في لا يكتبون وهم بينما يعرفون ما لا يتصور العقل أصعب منه من المسائل لا يحسنون معرفة طريق
                             البلدة التي عاشوا فيها وهم يعمرون حافظين لقواهم العقلية فسبحان من خص ما شاء بما شاء.</p>
-                        <p xml:lang="ar" xml:id="p_311.d1e3478">فن الإعلانات</p>
+                        </tei:div><tei:div type="article"><tei:head>فن الإعلانات</tei:head>
                         <p xml:lang="ar" xml:id="p_312.d1e3482">لا يعرف منشأ الإعلانات حق المعرفة فقد اكتشف في ثيبة إعلانات عَلَى ورق البردي كتبت منذ زهاء <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="3000" xml:id="num_412.d1e4120">ثلاثة آلاف</num> سنة.
                             واستعمل اليونان واسطة لطيفة للإعلان فكانوا يخرجون منادياً ينادي في الشوارع يكون من أهل الفصاحة والبلاغة ليأخذ
                             بمجامع القلوب في الأزقة والجواد ويختارونه ممن خفت مشيته وكان جميل الشكل ويصحبونه مع هذا بموسيقار ليلفت الأنظار
@@ -2166,7 +2163,7 @@
                             الإعلانات حتى صار <pb ed="shamela" n="n82-p80" corresp="file:../epub/26523/OEBPS/xhtml/P5618.xhtml" xml:id="pb_81.d1e3490"/> البارع في وضعها وصنعها
                             يعد من المفضلين عَلَى الإنسانية مثل مخترع الطباعة ومخترع البخار ويعيش عيشة حسنة بما ينهال عليه من الأجور
                             والرواتب. </p>
-                    </div>
+                    </tei:div></div>
                 </body>
             </text>
 </TEI>

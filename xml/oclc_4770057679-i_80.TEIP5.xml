@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_80" next="oclc_4770057679-i_81" prev="oclc_4770057679-i_79">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_80" next="oclc_4770057679-i_81" prev="oclc_4770057679-i_79">
    <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -76,7 +76,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2017-01-14" who="#pers_TG">Automatically added computed Gregorian dates to the <att>when</att> attributes of all non-Gregorian <gi>date</gi> elements.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+        <revisionDesc><tei:change when="2017-04-28" who="#pers_TG">Automatically split all <tei:tag>div type="section"</tei:tag> into subsections of <tei:tag>div type="article"</tei:tag>, using paragraphs with a length of 30 or less as indicator of a heading.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2017-01-14" who="#pers_TG">Automatically added computed Gregorian dates to the <att>when</att> attributes of all non-Gregorian <gi>date</gi> elements.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
          <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
@@ -1322,10 +1322,7 @@
                         <p xml:lang="ar" xml:id="p_146.d1e2478">دمشق:</p>
                         <p xml:lang="ar" xml:id="p_147.d1e2481">خير الدين الزركلي. </p>
                     </div>
-                    <pb ed="shamela" n="n80-p33" corresp="file:../epub/26523/OEBPS/xhtml/P5413.xhtml" xml:id="pb_34.d1e2487"/><div type="section" xml:lang="ar" xml:id="div_9.d1e2485">
-                        
-                        <head xml:lang="ar" xml:id="head_8.d1e2489">مطبوعات ومخطوطات</head>
-                        <p xml:lang="ar" xml:id="p_148.d1e2492">ثلاثة كتب</p>
+                    <pb ed="shamela" n="n80-p33" corresp="file:../epub/26523/OEBPS/xhtml/P5413.xhtml" xml:id="pb_34.d1e2487"/><div type="section" xml:lang="ar" xml:id="div_9.d1e2485"><head xml:lang="ar" xml:id="head_8.d1e2489">مطبوعات ومخطوطات</head><tei:div type="article"><tei:head>ثلاثة كتب</tei:head>
                         <p xml:lang="ar" xml:id="p_149.d1e2495">كتاب الألفاظ الكتابة وكتاب الألفاظ الأشباه والنظائر وكتاب الألفاظ</p>
                         <p xml:lang="ar" xml:id="p_150.d1e2498">هذه <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_85.d1e2661">ثلاثة</num> كتب مختلفة العناوين ومختلفة أسماء المؤلفين والموضوع و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_86.d1e2664">احد</num> والنص و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_87.d1e2667">احد</num> والمؤلف الحقيقي و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_88.d1e2670">احد</num> لكن قضى التسرع
                             عَلَى ناشريها أن يصدروها بأسماء مؤلفين هم غير كاتبها أو مصنفيها كما سترى.</p>
@@ -1376,7 +1373,7 @@
                             الاطلاع عَلَى مثال يكون لك بمنزلة قياس تقيس عليه ما ورد في كلتا الطبعتين.</p>
                         <p xml:lang="ar" xml:id="p_161.d1e2558"> 
                <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e2560">١</num> ً جاء في الصفحة  <num type="auto-markup" resp="#pers_TG" value="12" xml:lang="ar" xml:id="num_1.d1e2563">١٢</num>  من كتاب الألفاظ المطبوع في الآستانة ما هذا نصه:</p>
-                        <p xml:lang="ar" xml:id="p_162.d1e2567">باب المعايب</p>
+                        </tei:div><tei:div type="article"><tei:head>باب المعايب</tei:head>
                         <p xml:lang="ar" xml:id="p_163.d1e2571">يقال ثلب فلان (حاشية: قال الواقف عَلَى تصحيحه: لعل فلاناً بالنصب، ولكنه كتب بالدفع (كذا. وهذا من غلط الطبع
                             والأصح: الرفع) في الأصل مصححه). قال صاحب هذه المقالة: الصح أن يقال: ثلب فلاناً. وأما فلان فمن غلط الناسخ لا غير.
                             وقصبهن وشتره، وضرسه، وسمه به، وندد به، وشرديه، وسعيه، وتنقصه، وعابه، وجد به، ووقع به، وشعث منه، وألحم عرضه، وقرع
@@ -1394,10 +1391,10 @@
                             علينا غلان سفاهة، ولم يكن سفيهاً تقول: نعوذ بالله من قوارعه، وقواذعه، ونواقره، وقوارص لسانه.</p>
                         <p xml:lang="ar" xml:id="p_165.d1e2588"> 
                <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_1.d1e2590">٢</num> ً: وجاء في هذا الباب في الصفحة  <num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e2593">٢٠</num>  من الطبعة البيروتية بهذه الصورة:</p>
-                        <p xml:lang="ar" xml:id="p_166.d1e2597">باب الثلب والطعن</p>
+                        </tei:div><tei:div type="article"><tei:head>باب الثلب والطعن</tei:head>
                         <p xml:lang="ar" xml:id="p_167.d1e2600">تقول: مازال فلان يذكر معايب فلان، ومثالبه. ومساوئه. ومقابحه. ومشايينه. ومقاذره. ومناقصه. ومخازيه. ومعايره.
                             ومساءته. وسوآته.</p>
-                        <p xml:lang="ar" xml:id="p_168.d1e2604">قالت ليلى الأخيلية في المعايير:</p>
+                        </tei:div><tei:div type="article"><tei:head>قالت ليلى الأخيلية في المعايير:</tei:head>
                         <lg xml:id="lg_1.d1e2783">
                <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2785">
                             <seg xml:lang="ar" xml:id="seg_261.d1e2787">لعمرك ما بالموت عار عَلَى الفتى </seg>
@@ -1405,7 +1402,7 @@
                         </l>
             </lg>
                         <p xml:lang="ar" xml:id="p_169.d1e2616">ويقال: ثلب فلاناً، وتنقصه. وعابه. (ويقال:) عيرته كذا، ولا يقال بكذا.</p>
-                        <p xml:lang="ar" xml:id="p_170.d1e2619">قال النابغة:</p>
+                        </tei:div><tei:div type="article"><tei:head>قال النابغة:</tei:head>
                         <lg xml:id="lg_1.d1e2801">
                <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2803">
                             <seg xml:lang="ar" xml:id="seg_263.d1e2805">وعيرتني بنو ذبيان خشيته </seg>
@@ -1425,16 +1422,16 @@
                         <p xml:lang="ar" xml:id="p_174.d1e2643">وبعد هذا التبيين نقول: إن نسخة بيروت أصح طبعاً من نسخة الآلوسي. فإن الأغلاط التي وردت في طبع هذه الأخيرة تنفر كل
                             إنسان من مطالعتها. ومع ذلك ففيها من الفوائد ما لا تراه في النسخة البيروتية. ولهذا يجدر بأحد الأدباء أن يجمع بين
                             النسختين ويصحح الواحدة. عَلَى الأخرى ليكسب رضا الجميع في إحياء مآثر السلف.</p>
-                        <p xml:lang="ar" xml:id="p_175.d1e2646">الخلاصة</p>
+                        </tei:div><tei:div type="article"><tei:head>الخلاصة</tei:head>
                         <p xml:lang="ar" xml:id="p_176.d1e2649">كتاب الألفاظ (ولا يجوز لك أن تغير هذا العنوان بقولك: كتاب الألفاظ الكتابية. أو كتاب ألفاظ الأشباه والنظائر) هو
                             لعبد الرحمن بن عيسى (بن) حماد الهمداني نسبة إلى همدان القبيلة اليمانية المشهورة. وليس لعبد الرحمن بن محمد بن
                             سعيد الأنباري، لاسيما إن علمت أن ابن الأنباري ولد سنة  <num type="auto-markup" resp="#pers_TG" value="513" xml:lang="ar" xml:id="num_1.d1e2651">٥١٣</num>  وتوفي سنة  <num type="auto-markup" resp="#pers_TG" value="577" xml:lang="ar" xml:id="num_1.d1e2654">٥٧٧</num>  وأن الهمداني توفي سنة  <num type="auto-markup" resp="#pers_TG" value="320" xml:lang="ar" xml:id="num_1.d1e2657">٣٢٠</num>  وإن من النسخ
                             القديمة الكتابة التي ظفر بها الطابع البيروتي ما كتب سنة  <num type="auto-markup" resp="#pers_TG" value="522" xml:lang="ar" xml:id="num_1.d1e2660">٥٢٢</num>  أي <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9" xml:id="num_107.d1e2854">تسع</num> سنوات بعد ولادة ابن الأنباري فلا يعقل أنه <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_108.d1e2858">ألف</num>
                             كتابه في هذا العمر. وعليه يجب تصحيح ما ورد من الخطأ والوهم في هذا الباب. فإن تفعل تحظ بالصواب.</p>
-                        <p xml:lang="ar" xml:id="p_177.d1e2664">ساتسنا.</p>
+                        </tei:div><tei:div type="article"><tei:head>ساتسنا.</tei:head>
                         <p xml:lang="ar" xml:id="p_178.d1e2668">وصف كتاب جامع التعريب، بالطريق القريب</p>
                         <p xml:lang="ar" xml:id="p_179.d1e2671">من تأليف <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_109.d1e2871">أحد</num> علماء القرن الثاني <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_110.d1e2874">عشر</num> الهجري أو السابع عشر</p>
-                        <p xml:lang="ar" xml:id="p_180.d1e2674">الميلادي.</p>
+                        </tei:div><tei:div type="article"><tei:head>الميلادي.</tei:head>
                         <p xml:lang="ar" xml:id="p_181.d1e2677">في جامع مرجان من جوامع بغداد خزانة كتب جليلة من وقف نعمان الآلوسي المؤلف الشهير ابن المؤلف الكبير محمد الآلوسي.
                             وبين كتبها الخطية كتاب اسمه جامع التعريب، بالطريق القريب. إلا أن صاحبه لم يذكر اسمه لا في صدر الكتاب ولا في
                             عجزه. والظاهر أنه عالم من علماء القرن الحادي <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_111.d1e2883">عشر</num> للهجر نقول ذلك تقريباً وتكهناً ولا تأكيداً وتثبتاً <pb ed="shamela" n="n80-p38" corresp="file:../epub/26523/OEBPS/xhtml/P5418.xhtml" xml:id="pb_39.d1e2679"/>
@@ -1497,7 +1494,7 @@
                             <seg xml:lang="ar" xml:id="seg_270.d1e2939"> هلكه وسط المحلة</seg>
                         </l>
             </lg>
-                        <p xml:lang="ar" xml:id="p_188.d1e2757">سيد القوم أتاه الحتف ثاو وسطه ظله</p>
+                        </tei:div><tei:div type="article"><tei:head>سيد القوم أتاه الحتف ثاو وسطه ظله</tei:head>
                         <lg xml:id="lg_1.d1e2948">
                <l type="bayt" xml:lang="ar" xml:id="l_1.d1e2950">
                             <seg xml:lang="ar" xml:id="seg_271.d1e2952">جعلت نار عليهم </seg>
@@ -1621,11 +1618,11 @@
                             الكاتب قد أحاط بكثير من الألفاظ التي لم يذكرها من سبقه إلى هذا الموضوع. بل ولم ينوه عنها من جاء من بعده. ولهذا
                             نتمنى أن يخرج هذا التصنيف اليتيمة إلى عالم المطبوعات. لينتفع بها محبو اللغات. ويقف عَلَى بعض محتوياته ما لا يوجد
                             في كثير من المصنفات. قيض الله أديباً فاضلاً يعنى به. إنه عظيم كريم.</p>
-                        <p xml:lang="ar" xml:id="p_195.d1e2890">بغداد:</p>
-                        <p xml:lang="ar" xml:id="p_196.d1e2893">ساتسنا.</p>
-                        <p xml:lang="ar" xml:id="p_197.d1e2896">تقارير المجمع العلمي السميثوني</p>
-                        <p xml:lang="ar" xml:id="p_198.d1e2899">عن سنة  <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e2901">١٩٠٩</num>  -  <num type="auto-markup" resp="#pers_TG" value="1910" xml:lang="ar" xml:id="num_1.d1e2904">١٩١٠</num>  -  <num type="auto-markup" resp="#pers_TG" value="1911" xml:lang="ar" xml:id="num_1.d1e2907">١٩١١</num> 
-            </p>
+                        </tei:div><tei:div type="article"><tei:head>بغداد:</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>ساتسنا.</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>تقارير المجمع العلمي السميثوني</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>عن سنة  <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e2901">١٩٠٩</num>  -  <num type="auto-markup" resp="#pers_TG" value="1910" xml:lang="ar" xml:id="num_1.d1e2904">١٩١٠</num>  -  <num type="auto-markup" resp="#pers_TG" value="1911" xml:lang="ar" xml:id="num_1.d1e2907">١٩١١</num> 
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_199.d1e2911"> 
                <hi style="color:red;" xml:lang="ar" xml:id="hi_17.d1e2913"> 
                   <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e2915">١٩٠٩</num>  -  <num type="auto-markup" resp="#pers_TG" value="1910" xml:lang="ar" xml:id="num_1.d1e2918">١٩١٠</num>  -  <num type="auto-markup" resp="#pers_TG" value="1911" xml:lang="ar" xml:id="num_1.d1e2921">١٩١١</num> 
@@ -1651,11 +1648,8 @@
                         <p xml:lang="ar" xml:id="p_202.d1e2944">وهذه التقارير في الجملة غاية في الإتقان والدقة مزدانة بالرسوم حسب ما تتطلبه الأبحاث والناظر إليها يشعر برقي هذا
                             المعهد العلمي سنة عن سنة نفع الله العلم به وأكثر من أمثاله في العالم. وقيض لهذا الشرق العربي أناساً يخدمونه في
                             الماديات ليخرجوا به من عالم الأدبيات والخطابيات. </p>
-                    </div>
-                    <pb ed="shamela" n="n80-p46" corresp="file:../epub/26523/OEBPS/xhtml/P5426.xhtml" xml:id="pb_47.d1e2950"/><div type="section" xml:lang="ar" xml:id="div_10.d1e2948">
-                        
-                        <head xml:lang="ar" xml:id="head_9.d1e2952">أخبار وأفكار</head>
-                        <p xml:lang="ar" xml:id="p_203.d1e2955">إيطاليا والإسلام</p>
+                    </tei:div></div>
+                    <pb ed="shamela" n="n80-p46" corresp="file:../epub/26523/OEBPS/xhtml/P5426.xhtml" xml:id="pb_47.d1e2950"/><div type="section" xml:lang="ar" xml:id="div_10.d1e2948"><head xml:lang="ar" xml:id="head_9.d1e2952">أخبار وأفكار</head><tei:div type="article"><tei:head>إيطاليا والإسلام</tei:head>
                         <p xml:lang="ar" xml:id="p_204.d1e2958">قال لنا ذات يوم <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_151.d1e3255">أحد</num> علماء الشرقيات من الألمان أتدري السر الأعظم في غلبتنا الفرنسيس في حرب ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="70" xml:id="num_152.d1e3258">سبعين</num> فذكرنا له ما
                             حضرنا من الأسباب فقال: لا هذا ولا ذاك وإنما كنا معاشر الألمان عارفين بما عند جيراننا حق المعرفة أما هم فكانوا
                             يجهلون حقيقتنا ولذلك كتب النصر لنا.</p>
@@ -1889,136 +1883,136 @@
                             والطبيعيات (وهي الرياضيات وعلم الفلك والحكمة الطبيعية والكيمياء والحيوانات والنباتات وطبقات الأرض). فعدد كليات
                             ألمانيا <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2" xml:id="num_215.d1e3591">اثنتان</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_216.d1e3594">عشرون</num>. نصفها في بروسيا ونصفها في سائر الحكومات المتحدة وهاك أسماء الموجودة بها مع تاريخ تأسيسها
                             وعدد طلابها السنة التدريسية الشتائية من سنة  <num type="auto-markup" resp="#pers_TG" value="1911" xml:lang="ar" xml:id="num_1.d1e3183">١٩١١</num> .</p>
-                        <p xml:lang="ar" xml:id="p_242.d1e3188">تاريخ التأسيس عدد الطلاب الكليات</p>
-                        <p xml:lang="ar" xml:id="p_243.d1e3191"> 
+                        </tei:div><tei:div type="article"><tei:head>تاريخ التأسيس عدد الطلاب الكليات</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1908" xml:lang="ar" xml:id="num_1.d1e3193">١٩٠٨</num>   
-               <num type="auto-markup" resp="#pers_TG" value="14543" xml:lang="ar" xml:id="num_1.d1e3196">١٤٥٤٣</num> برلين (بروسيا)</p>
-                        <p xml:lang="ar" xml:id="p_244.d1e3200"> 
+               <num type="auto-markup" resp="#pers_TG" value="14543" xml:lang="ar" xml:id="num_1.d1e3196">١٤٥٤٣</num> برلين (بروسيا)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1472" xml:lang="ar" xml:id="num_1.d1e3202">١٤٧٢</num>   
-               <num type="auto-markup" resp="#pers_TG" value="07596" xml:lang="ar" xml:id="num_1.d1e3205">٠٧٥٩٦</num> ميونخ (بافيرا)</p>
-                        <p xml:lang="ar" xml:id="p_245.d1e3209"> 
+               <num type="auto-markup" resp="#pers_TG" value="07596" xml:lang="ar" xml:id="num_1.d1e3205">٠٧٥٩٦</num> ميونخ (بافيرا)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1409" xml:lang="ar" xml:id="num_1.d1e3211">١٤٠٩</num>   
-               <num type="auto-markup" resp="#pers_TG" value="05804" xml:lang="ar" xml:id="num_1.d1e3214">٠٥٨٠٤</num>  ليبسيك (سكسونيا)</p>
-                        <p xml:lang="ar" xml:id="p_246.d1e3218"> 
+               <num type="auto-markup" resp="#pers_TG" value="05804" xml:lang="ar" xml:id="num_1.d1e3214">٠٥٨٠٤</num>  ليبسيك (سكسونيا)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1818" xml:lang="ar" xml:id="num_1.d1e3220">١٨١٨</num>   
-               <num type="auto-markup" resp="#pers_TG" value="01407" xml:lang="ar" xml:id="num_1.d1e3223">٠١٤٠٧</num>  بون (بروسيا)</p>
-                        <p xml:lang="ar" xml:id="p_247.d1e3227"> 
+               <num type="auto-markup" resp="#pers_TG" value="01407" xml:lang="ar" xml:id="num_1.d1e3223">٠١٤٠٧</num>  بون (بروسيا)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1502" xml:lang="ar" xml:id="num_1.d1e3229">١٥٠٢</num>   
-               <num type="auto-markup" resp="#pers_TG" value="02811" xml:lang="ar" xml:id="num_1.d1e3232">٠٢٨١١</num> هالله (بروسيا)</p>
-                        <p xml:lang="ar" xml:id="p_248.d1e3237"> 
+               <num type="auto-markup" resp="#pers_TG" value="02811" xml:lang="ar" xml:id="num_1.d1e3232">٠٢٨١١</num> هالله (بروسيا)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1567" xml:lang="ar" xml:id="num_1.d1e3239">١٥٦٧</num>   
-               <num type="auto-markup" resp="#pers_TG" value="02506" xml:lang="ar" xml:id="num_1.d1e3242">٠٢٥٠٦</num>  استراسبورغ (إلزاس ولورين)</p>
-                        <p xml:lang="ar" xml:id="p_249.d1e3246"> 
+               <num type="auto-markup" resp="#pers_TG" value="02506" xml:lang="ar" xml:id="num_1.d1e3242">٠٢٥٠٦</num>  استراسبورغ (إلزاس ولورين)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1702" xml:lang="ar" xml:id="num_1.d1e3248">١٧٠٢</num>   
-               <num type="auto-markup" resp="#pers_TG" value="02429" xml:lang="ar" xml:id="num_1.d1e3251">٠٢٤٢٩</num>  برسلاو (بروسيا)</p>
-                        <p xml:lang="ar" xml:id="p_250.d1e3255"> 
+               <num type="auto-markup" resp="#pers_TG" value="02429" xml:lang="ar" xml:id="num_1.d1e3251">٠٢٤٢٩</num>  برسلاو (بروسيا)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1457" xml:lang="ar" xml:id="num_1.d1e3257">١٤٥٧</num>   
-               <num type="auto-markup" resp="#pers_TG" value="02387" xml:lang="ar" xml:id="num_1.d1e3260">٠٢٣٨٧</num>  فرايبورغ (بادن)</p>
-                        <p xml:lang="ar" xml:id="p_251.d1e3264"> 
+               <num type="auto-markup" resp="#pers_TG" value="02387" xml:lang="ar" xml:id="num_1.d1e3260">٠٢٣٨٧</num>  فرايبورغ (بادن)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1737" xml:lang="ar" xml:id="num_1.d1e3266">١٧٣٧</num>   
-               <num type="auto-markup" resp="#pers_TG" value="02355" xml:lang="ar" xml:id="num_1.d1e3269">٠٢٣٥٥</num>  غوتنغن (بروسيا)</p>
-                        <p xml:lang="ar" xml:id="p_252.d1e3273"> 
+               <num type="auto-markup" resp="#pers_TG" value="02355" xml:lang="ar" xml:id="num_1.d1e3269">٠٢٣٥٥</num>  غوتنغن (بروسيا)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1771" xml:lang="ar" xml:id="num_1.d1e3275">١٧٧١</num>   
-               <num type="auto-markup" resp="#pers_TG" value="02296" xml:lang="ar" xml:id="num_1.d1e3278">٠٢٢٩٦</num>  مونستر (بروسيا)</p>
-                        <p xml:lang="ar" xml:id="p_253.d1e3282"> 
+               <num type="auto-markup" resp="#pers_TG" value="02296" xml:lang="ar" xml:id="num_1.d1e3278">٠٢٢٩٦</num>  مونستر (بروسيا)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1386" xml:lang="ar" xml:id="num_1.d1e3284">١٣٨٦</num>   
-               <num type="auto-markup" resp="#pers_TG" value="02181" xml:lang="ar" xml:id="num_1.d1e3287">٠٢١٨١</num>  هايدلبرغ (بادن)</p>
-                        <p xml:lang="ar" xml:id="p_254.d1e3292"> 
+               <num type="auto-markup" resp="#pers_TG" value="02181" xml:lang="ar" xml:id="num_1.d1e3287">٠٢١٨١</num>  هايدلبرغ (بادن)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1527" xml:lang="ar" xml:id="num_1.d1e3294">١٥٢٧</num>   
-               <num type="auto-markup" resp="#pers_TG" value="01936" xml:lang="ar" xml:id="num_1.d1e3297">٠١٩٣٦</num> ماربورغ (بروسيا)</p>
-                        <p xml:lang="ar" xml:id="p_255.d1e3301"> 
+               <num type="auto-markup" resp="#pers_TG" value="01936" xml:lang="ar" xml:id="num_1.d1e3297">٠١٩٣٦</num> ماربورغ (بروسيا)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1477" xml:lang="ar" xml:id="num_1.d1e3303">١٤٧٧</num>   
-               <num type="auto-markup" resp="#pers_TG" value="01913" xml:lang="ar" xml:id="num_1.d1e3306">٠١٩١٣</num>  توبينكن ورتمبرغ</p>
-                        <p xml:lang="ar" xml:id="p_256.d1e3310"> 
+               <num type="auto-markup" resp="#pers_TG" value="01913" xml:lang="ar" xml:id="num_1.d1e3306">٠١٩١٣</num>  توبينكن ورتمبرغ</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1558" xml:lang="ar" xml:id="num_1.d1e3312">١٥٥٨</num>   
-               <num type="auto-markup" resp="#pers_TG" value="01753" xml:lang="ar" xml:id="num_1.d1e3315">٠١٧٥٣</num>  يينا ساكس وإيمار</p>
-                        <p xml:lang="ar" xml:id="p_257.d1e3319"> 
+               <num type="auto-markup" resp="#pers_TG" value="01753" xml:lang="ar" xml:id="num_1.d1e3315">٠١٧٥٣</num>  يينا ساكس وإيمار</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1544" xml:lang="ar" xml:id="num_1.d1e3321">١٥٤٤</num>   
-               <num type="auto-markup" resp="#pers_TG" value="01614" xml:lang="ar" xml:id="num_1.d1e3324">٠١٦١٤</num>  كنغسبرغ بروسيا</p>
+               <num type="auto-markup" resp="#pers_TG" value="01614" xml:lang="ar" xml:id="num_1.d1e3324">٠١٦١٤</num>  كنغسبرغ بروسيا</tei:head>
                         <p xml:lang="ar" xml:id="p_258.d1e3328"> 
                <num type="auto-markup" resp="#pers_TG" value="1665" xml:lang="ar" xml:id="num_1.d1e3330">١٦٦٥</num>   
                <num type="auto-markup" resp="#pers_TG" value="01570" xml:lang="ar" xml:id="num_1.d1e3333">٠١٥٧٠</num>  كيل بروسيا <pb ed="shamela" n="n80-p59" corresp="file:../epub/26523/OEBPS/xhtml/P5439.xhtml" xml:id="pb_60.d1e3336"/>  
                <num type="auto-markup" resp="#pers_TG" value="1402" xml:lang="ar" xml:id="num_1.d1e3338">١٤٠٢</num>   
                <num type="auto-markup" resp="#pers_TG" value="01509" xml:lang="ar" xml:id="num_1.d1e3341">٠١٥٠٩</num>  ورتسبورغ
                             بافيرا</p>
-                        <p xml:lang="ar" xml:id="p_259.d1e3345"> 
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1607" xml:lang="ar" xml:id="num_1.d1e3347">١٦٠٧</num>   
-               <num type="auto-markup" resp="#pers_TG" value="01409" xml:lang="ar" xml:id="num_1.d1e3350">٠١٤٠٩</num>  كيش هس</p>
-                        <p xml:lang="ar" xml:id="p_260.d1e3355"> 
+               <num type="auto-markup" resp="#pers_TG" value="01409" xml:lang="ar" xml:id="num_1.d1e3350">٠١٤٠٩</num>  كيش هس</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1743" xml:lang="ar" xml:id="num_1.d1e3357">١٧٤٣</num>   
-               <num type="auto-markup" resp="#pers_TG" value="01099" xml:lang="ar" xml:id="num_1.d1e3360">٠١٠٩٩</num>  أرلانكن بافيرا</p>
-                        <p xml:lang="ar" xml:id="p_261.d1e3364"> 
+               <num type="auto-markup" resp="#pers_TG" value="01099" xml:lang="ar" xml:id="num_1.d1e3360">٠١٠٩٩</num>  أرلانكن بافيرا</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1456" xml:lang="ar" xml:id="num_1.d1e3366">١٤٥٦</num>   
-               <num type="auto-markup" resp="#pers_TG" value="01034" xml:lang="ar" xml:id="num_1.d1e3369">٠١٠٣٤</num>  كرابغسوالد بروسيا</p>
-                        <p xml:lang="ar" xml:id="p_262.d1e3373"> 
+               <num type="auto-markup" resp="#pers_TG" value="01034" xml:lang="ar" xml:id="num_1.d1e3369">٠١٠٣٤</num>  كرابغسوالد بروسيا</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1419" xml:lang="ar" xml:id="num_1.d1e3375">١٤١٩</num>   
-               <num type="auto-markup" resp="#pers_TG" value="00903" xml:lang="ar" xml:id="num_1.d1e3378">٠٠٩٠٣</num>  روشتوك مكلمبرغ</p>
+               <num type="auto-markup" resp="#pers_TG" value="00903" xml:lang="ar" xml:id="num_1.d1e3378">٠٠٩٠٣</num>  روشتوك مكلمبرغ</tei:head>
                         <p xml:lang="ar" xml:id="p_263.d1e3382"> 
                <num type="auto-markup" resp="#pers_TG" value="1913" xml:lang="ar" xml:id="num_1.d1e3384">١٩١٣</num>  جديدةفرانكفورت عَلَى ماين بروسيا</p>
-                        <p xml:lang="ar" xml:id="p_264.d1e3388"> 
-               <num type="auto-markup" resp="#pers_TG" value="63755" xml:lang="ar" xml:id="num_1.d1e3390">٦٣٧٥٥</num> المجموع</p>
+                        </tei:div><tei:div type="article"><tei:head> 
+               <num type="auto-markup" resp="#pers_TG" value="63755" xml:lang="ar" xml:id="num_1.d1e3390">٦٣٧٥٥</num> المجموع</tei:head>
                         <p xml:lang="ar" xml:id="p_265.d1e3394">ومن هذا المجموع  <num type="auto-markup" resp="#pers_TG" value="5000" xml:lang="ar" xml:id="num_1.d1e3396">٥٠٠٠</num>  طالبة تقريباً. وعدا ذلك فإن في غالب المدن مدارس عالية علمية، هندسية، زراعية، صناعية، تجارية،
                             حربية ومراصد فلك ودور معلمين ومعلمات.</p>
-                        <p xml:lang="ar" xml:id="p_266.d1e3401">الحنطة في فرنسا</p>
+                        </tei:div><tei:div type="article"><tei:head>الحنطة في فرنسا</tei:head>
                         <p xml:lang="ar" xml:id="p_267.d1e3404">قالت ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="200" xml:id="num_263.d1e3820">ماتين</num>ي إن أكثر الأمم مقطوعية للحنطة هي الأمة الفرنسوية ثم أيدت قولها بالإحصاء التالي وهو إحصاء سنة  <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e3406">١٩٠٩</num> 
                             الذي يمكن اعتباره كمتوسط كمية الحنطة التي تناولتها مقطوعية  <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e3409">١٩٠٩</num> .</p>
                         <p xml:lang="ar" xml:id="p_268.d1e3413">مقطوعيتها (ألف قنطار) المقطوعية الفردية</p>
-                        <p xml:lang="ar" xml:id="p_269.d1e3416">فرنسا <num type="auto-markup" resp="#pers_TG" value="984322" xml:lang="ar" xml:id="num_1.d1e3418">٩٨٤٣٢٢</num> .  <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e3421">٥</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_270.d1e3425">ألمانية <num type="auto-markup" resp="#pers_TG" value="576130" xml:lang="ar" xml:id="num_1.d1e3427">٥٧٦١٣٠</num> .  <num type="auto-markup" resp="#pers_TG" value="9" xml:lang="ar" xml:id="num_1.d1e3430">٩</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_271.d1e3434">النمسا والمجر  <num type="auto-markup" resp="#pers_TG" value="571201" xml:lang="ar" xml:id="num_1.d1e3436">٥٧١٢٠١</num> .  <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e3439">١</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_272.d1e3444">إسبانيا <num type="auto-markup" resp="#pers_TG" value="401672" xml:lang="ar" xml:id="num_1.d1e3446">٤٠١٦٧٢</num> .  <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e3449">١</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_273.d1e3453">الجزر البريطانية <num type="auto-markup" resp="#pers_TG" value="739441" xml:lang="ar" xml:id="num_1.d1e3455">٧٣٩٤٤١</num> .  <num type="auto-markup" resp="#pers_TG" value="7" xml:lang="ar" xml:id="num_1.d1e3458">٧</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_274.d1e3462">إيطاليا <num type="auto-markup" resp="#pers_TG" value="644481" xml:lang="ar" xml:id="num_1.d1e3464">٦٤٤٤٨١</num> .  <num type="auto-markup" resp="#pers_TG" value="9" xml:lang="ar" xml:id="num_1.d1e3467">٩</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_275.d1e3471">روسيا (أروربا وآسيا)  <num type="auto-markup" resp="#pers_TG" value="1784001" xml:lang="ar" xml:id="num_1.d1e3473">١٧٨٤٠٠١</num> .  <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e3476">١</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_276.d1e3480">الولايات المتحدة <num type="auto-markup" resp="#pers_TG" value="1490051" xml:lang="ar" xml:id="num_1.d1e3482">١٤٩٠٠٥١</num> .  <num type="auto-markup" resp="#pers_TG" value="6" xml:lang="ar" xml:id="num_1.d1e3485">٦</num> 
-            </p>
+                        </tei:div><tei:div type="article"><tei:head>فرنسا <num type="auto-markup" resp="#pers_TG" value="984322" xml:lang="ar" xml:id="num_1.d1e3418">٩٨٤٣٢٢</num> .  <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e3421">٥</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>ألمانية <num type="auto-markup" resp="#pers_TG" value="576130" xml:lang="ar" xml:id="num_1.d1e3427">٥٧٦١٣٠</num> .  <num type="auto-markup" resp="#pers_TG" value="9" xml:lang="ar" xml:id="num_1.d1e3430">٩</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>النمسا والمجر  <num type="auto-markup" resp="#pers_TG" value="571201" xml:lang="ar" xml:id="num_1.d1e3436">٥٧١٢٠١</num> .  <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e3439">١</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إسبانيا <num type="auto-markup" resp="#pers_TG" value="401672" xml:lang="ar" xml:id="num_1.d1e3446">٤٠١٦٧٢</num> .  <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e3449">١</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>الجزر البريطانية <num type="auto-markup" resp="#pers_TG" value="739441" xml:lang="ar" xml:id="num_1.d1e3455">٧٣٩٤٤١</num> .  <num type="auto-markup" resp="#pers_TG" value="7" xml:lang="ar" xml:id="num_1.d1e3458">٧</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إيطاليا <num type="auto-markup" resp="#pers_TG" value="644481" xml:lang="ar" xml:id="num_1.d1e3464">٦٤٤٤٨١</num> .  <num type="auto-markup" resp="#pers_TG" value="9" xml:lang="ar" xml:id="num_1.d1e3467">٩</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>روسيا (أروربا وآسيا)  <num type="auto-markup" resp="#pers_TG" value="1784001" xml:lang="ar" xml:id="num_1.d1e3473">١٧٨٤٠٠١</num> .  <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e3476">١</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>الولايات المتحدة <num type="auto-markup" resp="#pers_TG" value="1490051" xml:lang="ar" xml:id="num_1.d1e3482">١٤٩٠٠٥١</num> .  <num type="auto-markup" resp="#pers_TG" value="6" xml:lang="ar" xml:id="num_1.d1e3485">٦</num> 
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_277.d1e3489">فيتبين مما تقدم أن المقطوعية الشخصية هي في فرنسا أكثر منها في سواها. وإن في الإشاعات المتداولة عَلَى ألسنة الناس
                             في الخارج أو الفرنسويين يكثرون في أكل الحنطة والضفادع شيئاً صحيحاً أي أن قسمي الخبز صحيح أما الثاني فخرافة. <pb ed="shamela" n="n80-p60" corresp="file:../epub/26523/OEBPS/xhtml/P5440.xhtml" xml:id="pb_61.d1e3491"/>
                             ثم إذا اعتبرت المقطوعية من الوجهة العامة كان الفرنسيون بعد روسيا الشاسعة الأطراف والولايات المتحدة في طليعة سائر
                             الأمم في المقطوعية. وإن في الجدول الآنف دلالة عَلَى مقطوعية كل شعب من الحنطة. بقي أن نعرف كيف تتحوط كل أمة
                             لإملاء أهرائها التي تفرغ في كل عام. عَلَى أنه لا بد من التمييز بين البلاد التي تزيد مقطوعيتها من الحنطة عن
                             حاصلاتها والتي تزيد حاصلاتها الخاصة عن مقطوعيتها فمن الفئة الأولى.</p>
-                        <p xml:lang="ar" xml:id="p_278.d1e3495">حاصلاتها (ألف قنطار) الفرق</p>
-                        <p xml:lang="ar" xml:id="p_279.d1e3498">ألمانيا <num type="auto-markup" resp="#pers_TG" value="3755720056" xml:lang="ar" xml:id="num_1.d1e3500">٣٧٥٥٧٢٠٠٥٦</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_280.d1e3504">النمسا والمجر <num type="auto-markup" resp="#pers_TG" value="499367184" xml:lang="ar" xml:id="num_1.d1e3506">٤٩٩٣٦٧١٨٤</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_281.d1e3510">حاصلاتها (ألف قنطار) الفرق</p>
-                        <p xml:lang="ar" xml:id="p_282.d1e3513">إنكلترا  <num type="auto-markup" resp="#pers_TG" value="1748656458" xml:lang="ar" xml:id="num_1.d1e3515">١٧٤٨٦٥٦٤٥٨</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_283.d1e3519">إيطاليا  <num type="auto-markup" resp="#pers_TG" value="5181312635" xml:lang="ar" xml:id="num_1.d1e3521">٥١٨١٣١٢٦٣٥</num> 
-            </p>
+                        </tei:div><tei:div type="article"><tei:head>حاصلاتها (ألف قنطار) الفرق</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>ألمانيا <num type="auto-markup" resp="#pers_TG" value="3755720056" xml:lang="ar" xml:id="num_1.d1e3500">٣٧٥٥٧٢٠٠٥٦</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>النمسا والمجر <num type="auto-markup" resp="#pers_TG" value="499367184" xml:lang="ar" xml:id="num_1.d1e3506">٤٩٩٣٦٧١٨٤</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>حاصلاتها (ألف قنطار) الفرق</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إنكلترا  <num type="auto-markup" resp="#pers_TG" value="1748656458" xml:lang="ar" xml:id="num_1.d1e3515">١٧٤٨٦٥٦٤٥٨</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إيطاليا  <num type="auto-markup" resp="#pers_TG" value="5181312635" xml:lang="ar" xml:id="num_1.d1e3521">٥١٨١٣١٢٦٣٥</num> 
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_284.d1e3526">فأعظم البلاد استيراداً للحنطة هي إنكلترا ثم ألمانيا حليفتها. أما فرنسا وإسبانيا فإن محصولهما من الحنطة يعادل
                             عَلَى نوع ما مقطوعيتهما وبيان ذلك.</p>
-                        <p xml:lang="ar" xml:id="p_285.d1e3529">حاصلاتألف قنطارالفرق</p>
-                        <p xml:lang="ar" xml:id="p_286.d1e3532">فرنسا  <num type="auto-markup" resp="#pers_TG" value="97752680" xml:lang="ar" xml:id="num_1.d1e3534">٩٧٧٥٢٦٨٠</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_287.d1e3538">إسبانيا  <num type="auto-markup" resp="#pers_TG" value="39219948" xml:lang="ar" xml:id="num_1.d1e3540">٣٩٢١٩٩٤٨</num> 
-            </p>
+                        </tei:div><tei:div type="article"><tei:head>حاصلاتألف قنطارالفرق</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>فرنسا  <num type="auto-markup" resp="#pers_TG" value="97752680" xml:lang="ar" xml:id="num_1.d1e3534">٩٧٧٥٢٦٨٠</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إسبانيا  <num type="auto-markup" resp="#pers_TG" value="39219948" xml:lang="ar" xml:id="num_1.d1e3540">٣٩٢١٩٩٤٨</num> 
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_288.d1e3544">أما البلاد التي تزيد حاصلاتها عن مقطوعيتها فروسيا وحدها في أوربا ثم رومانيا. أما البلاد الأخرى فكلها واقعة وراء
                             البحار وبيان ذلك.</p>
-                        <p xml:lang="ar" xml:id="p_289.d1e3547">المقطوعيةالحاصلات</p>
-                        <p xml:lang="ar" xml:id="p_290.d1e3551">روسيا <num type="auto-markup" resp="#pers_TG" value="178400" xml:lang="ar" xml:id="num_1.d1e3553">١٧٨٤٠٠</num>   
+                        </tei:div><tei:div type="article"><tei:head>المقطوعيةالحاصلات</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>روسيا <num type="auto-markup" resp="#pers_TG" value="178400" xml:lang="ar" xml:id="num_1.d1e3553">١٧٨٤٠٠</num>   
                <num type="auto-markup" resp="#pers_TG" value="230288" xml:lang="ar" xml:id="num_1.d1e3556">٢٣٠٢٨٨</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_291.d1e3560">رومانيا  <num type="auto-markup" resp="#pers_TG" value="704016022" xml:lang="ar" xml:id="num_1.d1e3562">٧٠٤٠١٦٠٢٢</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_292.d1e3566">الولايات المتحدة  <num type="auto-markup" resp="#pers_TG" value="149005" xml:lang="ar" xml:id="num_1.d1e3568">١٤٩٠٠٥</num>   
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>رومانيا  <num type="auto-markup" resp="#pers_TG" value="704016022" xml:lang="ar" xml:id="num_1.d1e3562">٧٠٤٠١٦٠٢٢</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>الولايات المتحدة  <num type="auto-markup" resp="#pers_TG" value="149005" xml:lang="ar" xml:id="num_1.d1e3568">١٤٩٠٠٥</num>   
                <num type="auto-markup" resp="#pers_TG" value="185980" xml:lang="ar" xml:id="num_1.d1e3571">١٨٥٩٨٠</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_293.d1e3575">كندا <num type="auto-markup" resp="#pers_TG" value="30051" xml:lang="ar" xml:id="num_1.d1e3577">٣٠٠٥١</num>   
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>كندا <num type="auto-markup" resp="#pers_TG" value="30051" xml:lang="ar" xml:id="num_1.d1e3577">٣٠٠٥١</num>   
                <num type="auto-markup" resp="#pers_TG" value="45318" xml:lang="ar" xml:id="num_1.d1e3580">٤٥٣١٨</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_294.d1e3584">الهند الإنكليزية  <num type="auto-markup" resp="#pers_TG" value="66487" xml:lang="ar" xml:id="num_1.d1e3586">٦٦٤٨٧</num>   
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>الهند الإنكليزية  <num type="auto-markup" resp="#pers_TG" value="66487" xml:lang="ar" xml:id="num_1.d1e3586">٦٦٤٨٧</num>   
                <num type="auto-markup" resp="#pers_TG" value="77616" xml:lang="ar" xml:id="num_1.d1e3589">٧٧٦١٦</num> 
-            </p>
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_295.d1e3593">أوستراليا <num type="auto-markup" resp="#pers_TG" value="14137" xml:lang="ar" xml:id="num_1.d1e3595">١٤١٣٧</num>   
                <num type="auto-markup" resp="#pers_TG" value="24607" xml:lang="ar" xml:id="num_1.d1e3598">٢٤٦٠٧</num>  
                <pb ed="shamela" n="n80-p61" corresp="file:../epub/26523/OEBPS/xhtml/P5441.xhtml" xml:id="pb_62.d1e3601"/> الأرجنتين  <num type="auto-markup" resp="#pers_TG" value="884835655" xml:lang="ar" xml:id="num_1.d1e3603">٨٨٤٨٣٥٦٥٥</num> 
@@ -2030,69 +2024,69 @@
                             الخارج. وأهم البلاد التي تستورد منها روسيا وهي عدوتها. فإذا أمسكت عنها الحنطة في إبان الحرب وكانت لها (أي روسية)
                             بحرية قوية هلكت أمم التحالف الثلاثي جوعاً. وإن هذه الجاة حاجة استيراد المؤن من الخارج لتزيد عاماً فعام بسبب
                             ازدياد الناس في أوربا في الآونة الأخيرة وتجد البرهان عَلَى ذلك المقارنة التالية:</p>
-                        <p xml:lang="ar" xml:id="p_297.d1e3611">الكمية المستوردة (ألف قنطار)</p>
-                        <p xml:lang="ar" xml:id="p_298.d1e3614"> 
+                        </tei:div><tei:div type="article"><tei:head>الكمية المستوردة (ألف قنطار)</tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="1881" xml:lang="ar" xml:id="num_1.d1e3616">١٨٨١</num>   
                <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e3619">١٩٠٩</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_299.d1e3623">ألمانيا  <num type="auto-markup" resp="#pers_TG" value="3085" xml:lang="ar" xml:id="num_1.d1e3625">٣٠٨٥</num>   
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>ألمانيا  <num type="auto-markup" resp="#pers_TG" value="3085" xml:lang="ar" xml:id="num_1.d1e3625">٣٠٨٥</num>   
                <num type="auto-markup" resp="#pers_TG" value="2056" xml:lang="ar" xml:id="num_1.d1e3628">٢٠٥٦</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_300.d1e3632">النمسا والمجر  <num type="auto-markup" resp="#pers_TG" value="4137184" xml:lang="ar" xml:id="num_1.d1e3634">٤١٣٧١٨٤</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_301.d1e3638">إنكلترا <num type="auto-markup" resp="#pers_TG" value="35520" xml:lang="ar" xml:id="num_1.d1e3640">٣٥٥٢٠</num>   
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>النمسا والمجر  <num type="auto-markup" resp="#pers_TG" value="4137184" xml:lang="ar" xml:id="num_1.d1e3634">٤١٣٧١٨٤</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إنكلترا <num type="auto-markup" resp="#pers_TG" value="35520" xml:lang="ar" xml:id="num_1.d1e3640">٣٥٥٢٠</num>   
                <num type="auto-markup" resp="#pers_TG" value="56458" xml:lang="ar" xml:id="num_1.d1e3643">٥٦٤٥٨</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_302.d1e3648">إيطاليا <num type="auto-markup" resp="#pers_TG" value="48512605" xml:lang="ar" xml:id="num_1.d1e3650">٤٨٥١٢٦٠٥</num> 
-            </p>
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إيطاليا <num type="auto-markup" resp="#pers_TG" value="48512605" xml:lang="ar" xml:id="num_1.d1e3650">٤٨٥١٢٦٠٥</num> 
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_303.d1e3654">أما فرنسا التي كانت ما قط تستورد كميات كبيرة فقد استوردت في سنة  <num type="auto-markup" resp="#pers_TG" value="1881" xml:lang="ar" xml:id="num_1.d1e3656">١٨٨١</num>  <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2" xml:id="num_310.d1e4079">اثني</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_311.d1e4082">عشر</num> مليوناً و <num type="auto-markup" resp="#pers_TG" value="864" xml:lang="ar" xml:id="num_1.d1e3659">٨٦٤</num>  <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_313.d1e4088">ألف</num> قنطار أي أكثر مما
                             استوردته دول التحالف الثلاثي بثلاث مرات. وسبب ذلك أن سكان ألمانيا كانوا في ذلك العهد  <num type="auto-markup" resp="#pers_TG" value="44" xml:lang="ar" xml:id="num_1.d1e3662">٤٤</num>  مليوناً مقابل  <num type="auto-markup" resp="#pers_TG" value="64" xml:lang="ar" xml:id="num_1.d1e3665">٦٤</num>  مليوناً
                             في  <num type="auto-markup" resp="#pers_TG" value="1909" xml:lang="ar" xml:id="num_1.d1e3668">١٩٠٩</num>  و <num type="auto-markup" resp="#pers_TG" value="67" xml:lang="ar" xml:id="num_1.d1e3672">٦٧</num>  مليوناً اليوم. وكانت النمسا  <num type="auto-markup" resp="#pers_TG" value="38" xml:lang="ar" xml:id="num_1.d1e3675">٣٨</num>  مليوناً وهي اليوم  <num type="auto-markup" resp="#pers_TG" value="53" xml:lang="ar" xml:id="num_1.d1e3678">٥٣</num>  مليوناً. وإن ازدياد عدد السكان في أوربا كلها
                             ليضطرها أن تستورد حاجتها من الحنطة من الخارج. وهذا الاضطرار يقضي بوجوب الاعتماد عَلَى عمارة تجارية كبيرة وأسطول
                             حربي ضخم. اهـ.</p>
-                        <p xml:lang="ar" xml:id="p_304.d1e3682">أموال الفرنسيس</p>
+                        </tei:div><tei:div type="article"><tei:head>أموال الفرنسيس</tei:head>
                         <p xml:lang="ar" xml:id="p_305.d1e3685">لفرنسا وحدها في القروض التي عقدتها الدولة منذ سنة  <num type="auto-markup" resp="#pers_TG" value="1885" xml:lang="ar" xml:id="num_1.d1e3687">١٨٨٥</num>  إلى الآن مبلغ  <num type="auto-markup" resp="#pers_TG" value="846" xml:lang="ar" xml:id="num_1.d1e3690">٨٤٦</num>  مليون <pb ed="shamela" n="n80-p62" corresp="file:../epub/26523/OEBPS/xhtml/P5442.xhtml" xml:id="pb_63.d1e3693"/> فرنك يضاف إليها ما لها
                             من الأموال في المشاريع الآتية:</p>
-                        <p xml:lang="ar" xml:id="p_306.d1e3696">مليون فرنك</p>
-                        <p xml:lang="ar" xml:id="p_307.d1e3699">في البنك العثماني <num type="auto-markup" resp="#pers_TG" value="63" xml:lang="ar" xml:id="num_1.d1e3701">٦٣</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_308.d1e3706">سكة حديد أزمير  <num type="auto-markup" resp="#pers_TG" value="71" xml:lang="ar" xml:id="num_1.d1e3708">٧١</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_309.d1e3712">القدس ويافا  <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e3714">١٨</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_310.d1e3718">دمشق حماة <num type="auto-markup" resp="#pers_TG" value="121" xml:lang="ar" xml:id="num_1.d1e3720">١٢١</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_311.d1e3724">سلانيك  <num type="auto-markup" resp="#pers_TG" value="127" xml:lang="ar" xml:id="num_1.d1e3726">١٢٧</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_312.d1e3730">معدن هركلي  <num type="auto-markup" resp="#pers_TG" value="29" xml:lang="ar" xml:id="num_1.d1e3732">٢٩</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_313.d1e3736">مرفأ أزمير <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e3738">١١</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_314.d1e3743">بيروت <num type="auto-markup" resp="#pers_TG" value="14" xml:lang="ar" xml:id="num_1.d1e3745">١٤</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_315.d1e3749">الآستانة  <num type="auto-markup" resp="#pers_TG" value="37" xml:lang="ar" xml:id="num_1.d1e3751">٣٧</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_316.d1e3755">مياه الآستانة  <num type="auto-markup" resp="#pers_TG" value="17" xml:lang="ar" xml:id="num_1.d1e3757">١٧</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_317.d1e3761">شركة حصر الدخان  <num type="auto-markup" resp="#pers_TG" value="16" xml:lang="ar" xml:id="num_1.d1e3763">١٦</num> 
-            </p>
+                        </tei:div><tei:div type="article"><tei:head>مليون فرنك</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>في البنك العثماني <num type="auto-markup" resp="#pers_TG" value="63" xml:lang="ar" xml:id="num_1.d1e3701">٦٣</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>سكة حديد أزمير  <num type="auto-markup" resp="#pers_TG" value="71" xml:lang="ar" xml:id="num_1.d1e3708">٧١</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>القدس ويافا  <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e3714">١٨</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>دمشق حماة <num type="auto-markup" resp="#pers_TG" value="121" xml:lang="ar" xml:id="num_1.d1e3720">١٢١</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>سلانيك  <num type="auto-markup" resp="#pers_TG" value="127" xml:lang="ar" xml:id="num_1.d1e3726">١٢٧</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>معدن هركلي  <num type="auto-markup" resp="#pers_TG" value="29" xml:lang="ar" xml:id="num_1.d1e3732">٢٩</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>مرفأ أزمير <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e3738">١١</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>بيروت <num type="auto-markup" resp="#pers_TG" value="14" xml:lang="ar" xml:id="num_1.d1e3745">١٤</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>الآستانة  <num type="auto-markup" resp="#pers_TG" value="37" xml:lang="ar" xml:id="num_1.d1e3751">٣٧</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>مياه الآستانة  <num type="auto-markup" resp="#pers_TG" value="17" xml:lang="ar" xml:id="num_1.d1e3757">١٧</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>شركة حصر الدخان  <num type="auto-markup" resp="#pers_TG" value="16" xml:lang="ar" xml:id="num_1.d1e3763">١٦</num> 
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_318.d1e3767">يكون المجموع ملياراً و <num type="auto-markup" resp="#pers_TG" value="370" xml:lang="ar" xml:id="num_1.d1e3769">٣٧٠</num>  مليون فرنك يضاف إليها الديون غير المنتظمة وهي:</p>
-                        <p xml:lang="ar" xml:id="p_319.d1e3773">فرنك</p>
-                        <p xml:lang="ar" xml:id="p_320.d1e3777">الديون الموحدة العثمانية <num type="auto-markup" resp="#pers_TG" value="83" xml:lang="ar" xml:id="num_1.d1e3779">٨٣</num> .  <num type="auto-markup" resp="#pers_TG" value="600" xml:lang="ar" xml:id="num_1.d1e3782">٦٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3785">٠٠٠</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_321.d1e3789">تحويلات الرومللي <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e3791">١١</num> .  <num type="auto-markup" resp="#pers_TG" value="400" xml:lang="ar" xml:id="num_1.d1e3794">٤٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3797">٠٠٠</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_322.d1e3801">ديون أخرى  <num type="auto-markup" resp="#pers_TG" value="75" xml:lang="ar" xml:id="num_1.d1e3803">٧٥</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3806">٠٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3809">٠٠٠</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_323.d1e3813">سلفات متفرقة <num type="auto-markup" resp="#pers_TG" value="7" xml:lang="ar" xml:id="num_1.d1e3815">٧</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3818">٠٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3821">٠٠٠</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_324.d1e3825"> 
+                        </tei:div><tei:div type="article"><tei:head>فرنك</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>الديون الموحدة العثمانية <num type="auto-markup" resp="#pers_TG" value="83" xml:lang="ar" xml:id="num_1.d1e3779">٨٣</num> .  <num type="auto-markup" resp="#pers_TG" value="600" xml:lang="ar" xml:id="num_1.d1e3782">٦٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3785">٠٠٠</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>تحويلات الرومللي <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e3791">١١</num> .  <num type="auto-markup" resp="#pers_TG" value="400" xml:lang="ar" xml:id="num_1.d1e3794">٤٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3797">٠٠٠</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>ديون أخرى  <num type="auto-markup" resp="#pers_TG" value="75" xml:lang="ar" xml:id="num_1.d1e3803">٧٥</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3806">٠٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3809">٠٠٠</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>سلفات متفرقة <num type="auto-markup" resp="#pers_TG" value="7" xml:lang="ar" xml:id="num_1.d1e3815">٧</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3818">٠٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e3821">٠٠٠</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="3000000000" xml:lang="ar" xml:id="num_1.d1e3827">٣٠٠٠٠٠٠٠٠٠</num>   
                <num type="auto-markup" resp="#pers_TG" value="20" xml:lang="ar" xml:id="num_1.d1e3830">٢٠</num> /  <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e3833">١٥</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_325.d1e3837"> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head> 
                <num type="auto-markup" resp="#pers_TG" value="100" xml:lang="ar" xml:id="num_1.d1e3839">١٠٠</num> 
-            </p>
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_326.d1e3844">هذا عدا عن الأموال المستثمرة في بعض المشاريع الثانوية وهي كثيرة أيضاً فإذا أضفنا إليها سائر الديون العثمانية بلغ
                             المجموع نحو <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_350.d1e4274">ثلاثة</num> مليارات من الفرنكات تزيد فائدتها  <num type="auto-markup" resp="#pers_TG" value="25" xml:lang="ar" xml:id="num_1.d1e3846">٢٥</num>  في ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_352.d1e4280">مئة</num> من مجموع دخل الدولة ويضاف إلى ذلك القرض الأخير
                             وهو  <num type="auto-markup" resp="#pers_TG" value="700" xml:lang="ar" xml:id="num_1.d1e3849">٧٠٠</num>  مليون فرنك.</p>
@@ -2112,7 +2106,7 @@
                             بلغارياً و <num type="auto-markup" resp="#pers_TG" value="214" xml:lang="ar" xml:id="num_1.d1e3973">٢١٤</num>  مصرياً و <num type="auto-markup" resp="#pers_TG" value="190" xml:lang="ar" xml:id="num_1.d1e3977">١٩٠</num>  إونكليزياً و <num type="auto-markup" resp="#pers_TG" value="154" xml:lang="ar" xml:id="num_1.d1e3980">١٥٤</num>  نمسوياً ومجرياً و <num type="auto-markup" resp="#pers_TG" value="130" xml:lang="ar" xml:id="num_1.d1e3983">١٣٠</num>  إيطالياً و <num type="auto-markup" resp="#pers_TG" value="106" xml:lang="ar" xml:id="num_1.d1e3986">١٠٦</num>  من الولايات المتحدة و <num type="auto-markup" resp="#pers_TG" value="106" xml:lang="ar" xml:id="num_1.d1e3989">١٠٦</num>  من اليونان
                             و <num type="auto-markup" resp="#pers_TG" value="68" xml:lang="ar" xml:id="num_1.d1e3992">٦٨</num>  سويسرياً و <num type="auto-markup" resp="#pers_TG" value="81" xml:lang="ar" xml:id="num_1.d1e3996">٨١</num>  من أميركا الجنوبية و <num type="auto-markup" resp="#pers_TG" value="52" xml:lang="ar" xml:id="num_1.d1e3999">٥٢</num>  صربياً و <num type="auto-markup" resp="#pers_TG" value="52" xml:lang="ar" xml:id="num_1.d1e4002">٥٢</num>  أفريقياً و <num type="auto-markup" resp="#pers_TG" value="47" xml:lang="ar" xml:id="num_1.d1e4005">٤٧</num>  لوكسمبرغياً و <num type="auto-markup" resp="#pers_TG" value="40" xml:lang="ar" xml:id="num_1.d1e4008">٤٠</num>  إسبانيولياً و <num type="auto-markup" resp="#pers_TG" value="36" xml:lang="ar" xml:id="num_1.d1e4011">٣٦</num>  من الإلزاس
                             واللورين و <num type="auto-markup" resp="#pers_TG" value="31" xml:lang="ar" xml:id="num_1.d1e4015">٣١</num>  سويدياً ونروجياً و <num type="auto-markup" resp="#pers_TG" value="27" xml:lang="ar" xml:id="num_1.d1e4018">٢٧</num>  بلجيكياً و <num type="auto-markup" resp="#pers_TG" value="36" xml:lang="ar" xml:id="num_1.d1e4021">٣٦</num>  من أميركا الوسطى و <num type="auto-markup" resp="#pers_TG" value="25" xml:lang="ar" xml:id="num_1.d1e4024">٢٥</num>  إيرانياً و <num type="auto-markup" resp="#pers_TG" value="23" xml:lang="ar" xml:id="num_1.d1e4027">٢٣</num>  برازيلياً و <num type="auto-markup" resp="#pers_TG" value="19" xml:lang="ar" xml:id="num_1.d1e4030">١٩</num>  برتقالياً.</p>
-                        <p xml:lang="ar" xml:id="p_330.d1e4034">تربية النساء</p>
+                        </tei:div><tei:div type="article"><tei:head>تربية النساء</tei:head>
                         <p xml:lang="ar" xml:id="p_331.d1e4037">بينا نحن مع قومنا في ول درجة من سلم الارتقاء ولما لم نصعدها إذاً بنساء الغرب قد بلغن شوطاً في التعلم لا يكاد
                             يصدقه شرقي فقد ثافن الرجال في التعليم والتهذيب حتى كدن يفقنهم وبالغن في إنهاض بنات جنسهن حتى تطاولن في بعض
                             الممالك إلى المطالبة <pb ed="shamela" n="n80-p64" corresp="file:../epub/26523/OEBPS/xhtml/P5444.xhtml" xml:id="pb_65.d1e4039"/> بإشراكهن في الحياة
@@ -2147,7 +2141,7 @@
                             لارتقاء تلك الأمم والظفر بنا في مواقع الدفاع عن ذمارنا وديارنا لجودة سلاحهم وكثرة نصائرهم أما نحن فقد حرمنا
                             التربية البيتية كما حرمنا التربية المدرسية وهذا جماع انحطاطنا. نريد لنساء الإسلام التعليم الابتدائي الراقي الآن
                             ثم ترتقي درجته.</p>
-                        <p xml:lang="ar" xml:id="p_339.d1e4067">معادن القطر المصري</p>
+                        </tei:div><tei:div type="article"><tei:head>معادن القطر المصري</tei:head>
                         <p xml:lang="ar" xml:id="p_340.d1e4070">أنشأ المستر جون والس المفتش الأول في مصلحة المعادن المصرية سابقاً نقالة شائقة عن المعادن في هذا القطر قال
                             فيها:</p>
                         <p xml:lang="ar" xml:id="p_341.d1e4073">اختلف الناس في مسألة التعدين في القطر المصري في السنوات ال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_419.d1e4544">عشر</num> الماضية وتضاربت آراؤهم فيها فوضعها بعضهم موضع الهزء
@@ -2217,48 +2211,48 @@
                         <p xml:lang="ar" xml:id="p_359.d1e4181">الفحم - لا دليل إلى الآن يثبت وجود الفحم في مصر ولكن يحتمل العثور عَلَى فحم تجاري في شبه جزيرة سيناء إذا بحث عنه
                             بحثاً منتظماً إلا أن معلوماتنا الجيولوجية القديمة عن تكوين الصخور الكربونية في سيناء لا تخولنا إبداء رأي قاطع في
                             هذه المسألة المهمة.</p>
-                        <p xml:lang="ar" xml:id="p_360.d1e4184">دول الحضارة</p>
+                        </tei:div><tei:div type="article"><tei:head>دول الحضارة</tei:head>
                         <p xml:lang="ar" xml:id="p_361.d1e4187">بحث <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_443.d1e4690">إحدى</num> المجلات الأوربية عن مساحة الدول ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_444.d1e4693">ثلاث</num> ألمانيا وإنكلترا وفرنسا وعن عدد نفوسها وثروتها العامة وأوردت
                             سكانها وحكومتها وتجاراتها الخارجية ومحمول بواخرها التجارية والحربية وجاء فيها ما يلي:</p>
                         <p xml:lang="ar" xml:id="p_362.d1e4191">مساحة أراضيها عدد سكانهازيادة النفوس</p>
                         <p xml:lang="ar" xml:id="p_363.d1e4194">ألمانيا  <num type="auto-markup" resp="#pers_TG" value="540" xml:lang="ar" xml:id="num_1.d1e4196">٥٤٠</num> .  <num type="auto-markup" resp="#pers_TG" value="858" xml:lang="ar" xml:id="num_1.d1e4199">٨٥٨</num>   
                <num type="auto-markup" resp="#pers_TG" value="64" xml:lang="ar" xml:id="num_1.d1e4202">٦٤</num> .  <num type="auto-markup" resp="#pers_TG" value="926" xml:lang="ar" xml:id="num_1.d1e4205">٩٢٦</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e4208">٠٠٠</num>   
                <num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_1.d1e4212">١٣</num> .  <num type="auto-markup" resp="#pers_TG" value="6" xml:lang="ar" xml:id="num_1.d1e4215">٦</num>  في الألف</p>
-                        <p xml:lang="ar" xml:id="p_364.d1e4219">إنكلترا  <num type="auto-markup" resp="#pers_TG" value="313" xml:lang="ar" xml:id="num_1.d1e4221">٣١٣</num> .  <num type="auto-markup" resp="#pers_TG" value="607" xml:lang="ar" xml:id="num_1.d1e4224">٦٠٧</num>   
+                        </tei:div><tei:div type="article"><tei:head>إنكلترا  <num type="auto-markup" resp="#pers_TG" value="313" xml:lang="ar" xml:id="num_1.d1e4221">٣١٣</num> .  <num type="auto-markup" resp="#pers_TG" value="607" xml:lang="ar" xml:id="num_1.d1e4224">٦٠٧</num>   
                <num type="auto-markup" resp="#pers_TG" value="44" xml:lang="ar" xml:id="num_1.d1e4227">٤٤</num> .  <num type="auto-markup" resp="#pers_TG" value="902" xml:lang="ar" xml:id="num_1.d1e4230">٩٠٢</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e4233">٠٠٠</num>   
-               <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e4237">١١</num> .</p>
-                        <p xml:lang="ar" xml:id="p_365.d1e4241">فرنسا  <num type="auto-markup" resp="#pers_TG" value="536" xml:lang="ar" xml:id="num_1.d1e4243">٥٣٦</num> .  <num type="auto-markup" resp="#pers_TG" value="463" xml:lang="ar" xml:id="num_1.d1e4246">٤٦٣</num>   
+               <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e4237">١١</num> .</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>فرنسا  <num type="auto-markup" resp="#pers_TG" value="536" xml:lang="ar" xml:id="num_1.d1e4243">٥٣٦</num> .  <num type="auto-markup" resp="#pers_TG" value="463" xml:lang="ar" xml:id="num_1.d1e4246">٤٦٣</num>   
                <num type="auto-markup" resp="#pers_TG" value="39" xml:lang="ar" xml:id="num_1.d1e4249">٣٩</num> .  <num type="auto-markup" resp="#pers_TG" value="600" xml:lang="ar" xml:id="num_1.d1e4252">٦٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e4255">٠٠٠</num>   
                <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e4259">١</num> .  <num type="auto-markup" resp="#pers_TG" value="8" xml:lang="ar" xml:id="num_1.d1e4262">٨</num> 
-            </p>
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_366.d1e4266">الثورة العمومية الواردات السنوية العامة</p>
-                        <p xml:lang="ar" xml:id="p_367.d1e4269">ألمانيا  <num type="auto-markup" resp="#pers_TG" value="340" xml:lang="ar" xml:id="num_1.d1e4271">٣٤٠</num>  مليار فرنك <num type="auto-markup" resp="#pers_TG" value="50" xml:lang="ar" xml:id="num_1.d1e4274">٥٠</num>  مليار فرنك</p>
-                        <p xml:lang="ar" xml:id="p_368.d1e4279">إنكلترا <num type="auto-markup" resp="#pers_TG" value="320" xml:lang="ar" xml:id="num_1.d1e4281">٣٢٠</num>   
+                        </tei:div><tei:div type="article"><tei:head>ألمانيا  <num type="auto-markup" resp="#pers_TG" value="340" xml:lang="ar" xml:id="num_1.d1e4271">٣٤٠</num>  مليار فرنك <num type="auto-markup" resp="#pers_TG" value="50" xml:lang="ar" xml:id="num_1.d1e4274">٥٠</num>  مليار فرنك</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إنكلترا <num type="auto-markup" resp="#pers_TG" value="320" xml:lang="ar" xml:id="num_1.d1e4281">٣٢٠</num>   
                <num type="auto-markup" resp="#pers_TG" value="45" xml:lang="ar" xml:id="num_1.d1e4284">٤٥</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_369.d1e4288">فرنسا <num type="auto-markup" resp="#pers_TG" value="287" xml:lang="ar" xml:id="num_1.d1e4290">٢٨٧</num>   
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>فرنسا <num type="auto-markup" resp="#pers_TG" value="287" xml:lang="ar" xml:id="num_1.d1e4290">٢٨٧</num>   
                <num type="auto-markup" resp="#pers_TG" value="25" xml:lang="ar" xml:id="num_1.d1e4293">٢٥</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_370.d1e4297">واردات الحكومة سنوياً (عن سنة  <num type="auto-markup" resp="#pers_TG" value="1911" xml:lang="ar" xml:id="num_1.d1e4299">١٩١١</num> )</p>
-                        <p xml:lang="ar" xml:id="p_371.d1e4303">ألمانيا  <num type="auto-markup" resp="#pers_TG" value="10" xml:lang="ar" xml:id="num_1.d1e4305">١٠</num>  مليارات فرنك</p>
-                        <p xml:lang="ar" xml:id="p_372.d1e4309">إنكلترا  <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e4311">٥</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_373.d1e4315">فرنسا  <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e4317">٥</num> 
-            </p>
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>واردات الحكومة سنوياً (عن سنة  <num type="auto-markup" resp="#pers_TG" value="1911" xml:lang="ar" xml:id="num_1.d1e4299">١٩١١</num> )</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>ألمانيا  <num type="auto-markup" resp="#pers_TG" value="10" xml:lang="ar" xml:id="num_1.d1e4305">١٠</num>  مليارات فرنك</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إنكلترا  <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e4311">٥</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>فرنسا  <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e4317">٥</num> 
+            </tei:head>
                         <p xml:lang="ar" xml:id="p_374.d1e4322">التجارة الخارجية محمول السفن التجارية (عن سنة  <num type="auto-markup" resp="#pers_TG" value="1912" xml:lang="ar" xml:id="num_1.d1e4324">١٩١٢</num> )</p>
-                        <p xml:lang="ar" xml:id="p_375.d1e4328">ألمانيا <num type="auto-markup" resp="#pers_TG" value="24" xml:lang="ar" xml:id="num_1.d1e4330">٢٤</num>  مليار فرنك <num type="auto-markup" resp="#pers_TG" value="3023" xml:lang="ar" xml:id="num_1.d1e4333">٣٠٢٣</num>  <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_478.d1e4843">ألف</num> طن</p>
-                        <p xml:lang="ar" xml:id="p_376.d1e4337">إنكلترا <num type="auto-markup" resp="#pers_TG" value="27" xml:lang="ar" xml:id="num_1.d1e4339">٢٧</num>   
+                        </tei:div><tei:div type="article"><tei:head>ألمانيا <num type="auto-markup" resp="#pers_TG" value="24" xml:lang="ar" xml:id="num_1.d1e4330">٢٤</num>  مليار فرنك <num type="auto-markup" resp="#pers_TG" value="3023" xml:lang="ar" xml:id="num_1.d1e4333">٣٠٢٣</num>  <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_478.d1e4843">ألف</num> طن</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إنكلترا <num type="auto-markup" resp="#pers_TG" value="27" xml:lang="ar" xml:id="num_1.d1e4339">٢٧</num>   
                <num type="auto-markup" resp="#pers_TG" value="11683" xml:lang="ar" xml:id="num_1.d1e4342">١١٦٨٣</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_377.d1e4346">فرنسا  <num type="auto-markup" resp="#pers_TG" value="14" xml:lang="ar" xml:id="num_1.d1e4348">١٤</num>   
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>فرنسا  <num type="auto-markup" resp="#pers_TG" value="14" xml:lang="ar" xml:id="num_1.d1e4348">١٤</num>   
                <num type="auto-markup" resp="#pers_TG" value="1462" xml:lang="ar" xml:id="num_1.d1e4351">١٤٦٢</num>  
-               <pb ed="shamela" n="n80-p70" corresp="file:../epub/26523/OEBPS/xhtml/P5450.xhtml" xml:id="pb_71.d1e4354"/> محمول السفن الحربية</p>
-                        <p xml:lang="ar" xml:id="p_378.d1e4357">ألمانيا <num type="auto-markup" resp="#pers_TG" value="995400" xml:lang="ar" xml:id="num_1.d1e4359">٩٩٥٤٠٠</num>  طن</p>
-                        <p xml:lang="ar" xml:id="p_379.d1e4363">إنكلترا <num type="auto-markup" resp="#pers_TG" value="6016500" xml:lang="ar" xml:id="num_1.d1e4365">٦٠١٦٥٠٠</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_380.d1e4370">فرنسا <num type="auto-markup" resp="#pers_TG" value="643000" xml:lang="ar" xml:id="num_1.d1e4372">٦٤٣٠٠٠</num> 
-            </p>
-                        <p xml:lang="ar" xml:id="p_381.d1e4376">فضل القراءة</p>
+               <pb ed="shamela" n="n80-p70" corresp="file:../epub/26523/OEBPS/xhtml/P5450.xhtml" xml:id="pb_71.d1e4354"/> محمول السفن الحربية</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>ألمانيا <num type="auto-markup" resp="#pers_TG" value="995400" xml:lang="ar" xml:id="num_1.d1e4359">٩٩٥٤٠٠</num>  طن</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>إنكلترا <num type="auto-markup" resp="#pers_TG" value="6016500" xml:lang="ar" xml:id="num_1.d1e4365">٦٠١٦٥٠٠</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>فرنسا <num type="auto-markup" resp="#pers_TG" value="643000" xml:lang="ar" xml:id="num_1.d1e4372">٦٤٣٠٠٠</num> 
+            </tei:head>
+                        </tei:div><tei:div type="article"><tei:head>فضل القراءة</tei:head>
                         <p xml:lang="ar" xml:id="p_382.d1e4379">خطب إرنست لا فيس عالم الفرنسيس ومؤرخهم في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_486.d1e4891">إحدى</num> القرى في فرنسا خطبة عَلَى من أتموا دروسهم من أبناء الفلاحين قال:
                             يا أولادي الأعزة. أخاف أن يكون بينكم من يغادرون منكم المدرسة الآن أناس يقولون في نفوسهم: لا دروس ولا فروض ولا
                             دفاتر ولا كتب خلص من كل هذا. فإلى أمثال هؤلاء أوجه كلامي أريد أن أزيل عنهم ما انخدعوا به. كلا أيها الأصحاب
@@ -2308,7 +2302,7 @@
                             تجارب الحياة. تقومون اليوم بشيءٍ وغداً بآخر عَلَى التدريج تزداد معلوماتكم وتنسق في رءوسكم وتنشأ مادتكم من
                             الأفكار والعواطف فتعرفون زمانكم وتحسنون كيف تعيشون. وأختم كلامي بتوصيتكم باقتناء لوح خشب تضعون عليه كتبكم وأعدكم
                             بأني أعطي لوحاً لمن يطلبه مني وهو مدهون وملمع أيضاً. اهـ.</p>
-                        <p xml:lang="ar" xml:id="p_391.d1e4411">المرأة القديمة</p>
+                        </tei:div><tei:div type="article"><tei:head>المرأة القديمة</tei:head>
                         <p xml:lang="ar" xml:id="p_392.d1e4415">حاضر المسيو بنلفه من أعضاء مجمع العلوم في باريز نادي الطلاب في تلك العاصمة فيما كان للمرأة في القديم من التأثير
                             العقلي والأدبي ومما قاله: إننا نتخيل بأننا نتهور ونبتدع شيئاً جديداً لأننا نفتح السبل أمام المرأة والفتاة اليوم
                             للتوافر عَلَى دراسة العلوم والآداب والصناعات العقلية وهذا وهم لا حقيقة وذلك لأننا نحن أخلاف الرومان مباشرة أولئك
@@ -2329,7 +2323,7 @@
                             يسألون المولى تعالى. ولقد قام في دودون والكرنك عَلَى ما جاء في أساطير هيلاد ومصر فتاتان أُخذتا أسيرتين من مركب
                             فينيقي وهما اللتان أنشأتا المعبدين وأصبحت كاهنتين وسماهما اليونان الرسولتين أي الناقلتين من بلاد القاصية الحقائق
                             الجديدة.</p>
-                        <p xml:lang="ar" xml:id="p_394.d1e4423">الفلاح الغربي</p>
+                        </tei:div><tei:div type="article"><tei:head>الفلاح الغربي</tei:head>
                         <p xml:lang="ar" xml:id="p_395.d1e4426">يختلف التعليم في أوربا وأميركا باختلاف البلدان فتعليم البلاد التي تغلب فيها الصناعات غير تعليم الأقاليم الزراعية
                             والكور التي يكثر بها التجار غير الكور الساحلية البحرية وتعليم بلاد الغابات غير تعليم بلاد البقول والزرع وأقاليم
                             المعادن والمناجم غير تعليم <pb ed="shamela" n="n80-p74" corresp="file:../epub/26523/OEBPS/xhtml/P5454.xhtml" xml:id="pb_75.d1e4428"/> الصيد البحري وهكذا يلقن
@@ -2363,7 +2357,7 @@
                         <p xml:lang="ar" xml:id="p_401.d1e4458">وبالجملة يتعلمن دائرة معارف مختصرة سهلة يتعلمها بناتهم ونساؤهم في القرى لينجبون فلاحين صالحين ويتوفرن عَلَى حسن
                             استثمار الثروة من الأراضي والحيوان ويعشن عيش المرفهات الطاهرات المقتصدات والنساء في بلجيكا هن اللائي أخذن عَلَى
                             عاتقهن هذا الواجب مع القسيسين في أميركا يتولى ذلكلمبشرون والكهنة وكذلك في بولونيا. </p>
-                    </div>
+                    </tei:div></div>
                 </body>
             </text>
 </TEI>

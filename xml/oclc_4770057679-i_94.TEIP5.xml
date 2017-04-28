@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_94" next="oclc_4770057679-i_95" prev="oclc_4770057679-i_93">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_94" next="oclc_4770057679-i_95" prev="oclc_4770057679-i_93">
     <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -81,7 +81,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-12-06" who="#pers_TG">Added automated mark-up of strings wrapped in brackets with <tag>tei:q rend="brackets"</tag> and <att>rend</att> on existing nodes.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+        <revisionDesc><tei:change when="2017-04-28" who="#pers_TG">Automatically split all <tei:tag>div type="section"</tei:tag> into subsections of <tei:tag>div type="article"</tei:tag>, using paragraphs with a length of 30 or less as indicator of a heading.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-12-06" who="#pers_TG">Added automated mark-up of strings wrapped in brackets with <tag>tei:q rend="brackets"</tag> and <att>rend</att> on existing nodes.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
          <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
@@ -2373,10 +2373,7 @@
                 <p xml:lang="ar" xml:id="p_367.d1e4124">النبطية</p>
                 <p xml:lang="ar" xml:id="p_368.d1e4127">سليمان ظاهر </p>
             </div>
-            <pb ed="shamela" n="n94-p73" corresp="file:../epub/26523/OEBPS/xhtml/P6602.xhtml" xml:id="pb_74.d1e4133"/><div type="section" xml:lang="ar" xml:id="div_10.d1e4131">
-                
-                <head xml:lang="ar" xml:id="head_9.d1e4135">مطبوعات ومخطوطات</head>
-                <p xml:lang="ar" xml:id="p_369.d1e4138">كلمة موجزة</p>
+            <pb ed="shamela" n="n94-p73" corresp="file:../epub/26523/OEBPS/xhtml/P6602.xhtml" xml:id="pb_74.d1e4133"/><div type="section" xml:lang="ar" xml:id="div_10.d1e4131"><head xml:lang="ar" xml:id="head_9.d1e4135">مطبوعات ومخطوطات</head><tei:div type="article"><tei:head>كلمة موجزة</tei:head>
                 <p xml:lang="ar" xml:id="p_370.d1e4141">في سبير العلم وسيرتنا معه لإسعاف أفندي النشاشيبي</p>
                 <p xml:lang="ar" xml:id="p_371.d1e4144">هي كراسة كان حاضر بها صاحبها بعض فضلاء القدس وطبعها على حدة في مطبعة دار الأيتام السورية ألم فيها بتاريخ
                     العلم في العالم وذكر ما كان لصاحب الرسالة صلى الله عليه وسلم من الأثر الذي تغيرت به الأرض وبعد أن ذكر ما كان لأئمة العلم
@@ -2409,17 +2406,17 @@
                     ولا يعيبه عند <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_291.d1e4771">أحد</num> من الناس كما لم يضع من الإفرنج أنهم تلمذوا للعرب واليونان ورضوا بحكمائهم ولكن الذي يقلل من مكانة
                     الشرقي ويضحك منه خصمه وخليله أن يجد المنهل العذب وهو ملتهب الكبد فلا يرد ويتنور مقتبس الأنوار وقد دجا ليله وأحلولك فلا
                     يقتبس. . .</p>
-                <p xml:lang="ar" xml:id="p_373.d1e4153">ارتقاء ألمانيا الوطني</p>
+                </tei:div><tei:div type="article"><tei:head>ارتقاء ألمانيا الوطني</tei:head>
                 <p xml:lang="ar" xml:id="p_374.d1e4156">تأليف الدكتور كارل هلفريخوتعريب فليكس افندي فارس <pb ed="shamela" n="n94-p75" corresp="file:../epub/26523/OEBPS/xhtml/P6604.xhtml" xml:id="pb_76.d1e4158"/> طبع في المطبعة المارونية بحلب
                     <num type="auto-markup" resp="#pers_TG" value="1916" xml:lang="ar" xml:id="num_1.d1e4160">١٩١٦</num> 
             </p>
-                <p xml:lang="ar" xml:id="p_375.d1e4164">(ص <num type="auto-markup" resp="#pers_TG" value="142" xml:lang="ar" xml:id="num_1.d1e4166">١٤٢</num> )</p>
+                </tei:div><tei:div type="article"><tei:head>(ص <num type="auto-markup" resp="#pers_TG" value="142" xml:lang="ar" xml:id="num_1.d1e4166">١٤٢</num> )</tei:head>
                 <p xml:lang="ar" xml:id="p_376.d1e4170">هذه رسالة في ثروة ألمانيا الوطنية وارتقائها في مدة ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5" xml:id="num_294.d1e4795">خمسة</num> وال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_295.d1e4798">عشرين</num> سنة الأخيرة أو التقدم الاجتماعي وارتقاء
                     ألمانيا الوطني منذ مدة <num type="auto-markup" resp="#pers_TG" value="25" xml:lang="ar" xml:id="num_1.d1e4172">٢٥</num> سنة لحكم الإمبراطور غليوم الثاني وفيها حقائق كثيرة
                     من العوامل الاقتصادية في الإمبراطورية الألمانية والطرق التي سلكتها حتى بزت خصومها في هذا الباب وبعض الإحداثيات في هزا
                     الكتاب مملة مطولة وكان على المعرب أن يختصرها ويورد منها ما يكفي بمعرفته للقارئ العربي عن ألمانيا وإلا فأن التفاصيل
                     والأرقام الطويلة قد تدخل املل حتى على نفوس من كتب الكتاب لهم</p>
-                <p xml:lang="ar" xml:id="p_377.d1e4176">رسائل وكتب مختلفة</p>
+                </tei:div><tei:div type="article"><tei:head>رسائل وكتب مختلفة</tei:head>
                 <p xml:lang="ar" xml:id="p_378.d1e4180">الشرق المصور - مجلة أصدرتها أدارة الشرق في دمشق وفيها كثير من صور المشاهير والوقائع الأخيرة وقصائد بالعربية
                     والتركية وهي في <num type="auto-markup" resp="#pers_TG" value="16" xml:lang="ar" xml:id="num_1.d1e4182">١٦</num> صفحة</p>
                 <p xml:lang="ar" xml:id="p_379.d1e4186">الحجاز - جريدة سياسية تصدر <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_298.d1e4817">ثلاث</num> مرات في الأسبوع في المدينة المنورة مدبجة بيراع رئيس تحريرها محمدبن بدر
@@ -2444,17 +2441,14 @@
                     <num type="auto-markup" resp="#pers_TG" value="1334" xml:lang="ar" xml:id="num_1.d1e4245">١٣٣٤</num> 
             </p>
                 <p xml:lang="ar" xml:id="p_388.d1e4249">تعزية الخاطين في العترافات مار اغوسطين - عربها المونسنيور يوسف العلم طبعت بالمطبعة البنانية سنة <num type="auto-markup" resp="#pers_TG" value="199" xml:lang="ar" xml:id="num_1.d1e4251">١٩٩</num> في <num type="auto-markup" resp="#pers_TG" value="638" xml:lang="ar" xml:id="num_1.d1e4254">٦٣٨</num> صفحة صغيرة </p>
-            </div>
-            <pb ed="shamela" n="n94-p77" corresp="file:../epub/26523/OEBPS/xhtml/P6606.xhtml" xml:id="pb_78.d1e4262"/><div type="section" xml:lang="ar" xml:id="div_11.d1e4260">
-                
-                <head xml:lang="ar" xml:id="head_10.d1e4264">أخبار وأفكار</head>
-                <p xml:lang="ar" xml:id="p_389.d1e4267">نفقات القتل</p>
+            </tei:div></div>
+            <pb ed="shamela" n="n94-p77" corresp="file:../epub/26523/OEBPS/xhtml/P6606.xhtml" xml:id="pb_78.d1e4262"/><div type="section" xml:lang="ar" xml:id="div_11.d1e4260"><head xml:lang="ar" xml:id="head_10.d1e4264">أخبار وأفكار</head><tei:div type="article"><tei:head>نفقات القتل</tei:head>
                 <p xml:lang="ar" xml:id="p_390.d1e4270">اقتبست الصحف الألمانية عن <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_314.d1e4908">إحدى</num> المجلات الباريسية في تقدير المال الذي يستدعيه قتل الجنود في ساحات القتال
                     فقالت: معلوم أن كل قتال يبدأ بإطلاق نار المدفعيات فلا يلبث المعسكران المتحاربان أن يمطر كل منهما الآخر عدداً من القذائف
                     والقنابل من جميع العيارات فما هو إلا أن تفرغ عجلات الذخائر وتعود فتملا بقنابل تؤخذ من المستودعات وهذه تمدها القطارات
                     الواصلة إلى أقرب محطة بما تحمله إليها من المهمات والأدوات المهلكات. وفي مكان بعيد عن ساحة القتال يعمل عشرات الألوف من
                     الناس في معامل لصنع الذخائر التي تصرف في بضع دقائق في ساحات القتال</p>
-                <p xml:lang="ar" xml:id="p_391.d1e4273">أما نفقات هذه العملية فهي كما يلي:</p>
+                </tei:div><tei:div type="article"><tei:head>أما نفقات هذه العملية فهي كما يلي:</tei:head>
                 <p xml:lang="ar" xml:id="p_392.d1e4277">خذ بطارية مؤلفة من <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4" xml:id="num_315.d1e4917">أربعة</num> مدافع من عيار <num type="auto-markup" resp="#pers_TG" value="25" xml:lang="ar" xml:id="num_1.d1e4279">٢٥</num> ملم مع <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2" xml:id="num_317.d1e4923">أثنتي</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_318.d1e4926">عشرة</num>
                     عربة للذخائر ترى أن لكل مدفع ولكل عربة قطاراً من الذخائر ولكل بطارية قطاراً من مثل ذلك يحتوي كل منها <num type="auto-markup" resp="#pers_TG" value="24" xml:lang="ar" xml:id="num_1.d1e4282">٢٤</num> قنبلة وفي كل عربة <num type="auto-markup" resp="#pers_TG" value="72" xml:lang="ar" xml:id="num_1.d1e4285">٧٢</num> فبكون مجموع ما للبطارية من
                     القنابل <num type="auto-markup" resp="#pers_TG" value="1248" xml:lang="ar" xml:id="num_1.d1e4288">١٢٤٨</num> أي <num type="auto-markup" resp="#pers_TG" value="312" xml:lang="ar" xml:id="num_1.d1e4291">٣١٢</num> قنبلة لكل
@@ -2470,7 +2464,7 @@
                     فرنك، وقد قالوا أن الذهب الذي انفق في <pb ed="shamela" n="n94-p78" corresp="file:../epub/26523/OEBPS/xhtml/P6607.xhtml" xml:id="pb_79.d1e4348"/> حرب فردون لو جمع ليرات في صعيد
                     و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_347.d1e5024">احد</num> لبلغ حجمه <num type="auto-markup" resp="#pers_TG" value="8" xml:lang="ar" xml:id="num_1.d1e4350">٨</num> . متراً مكعباًهذا ما كلفته الحرب العامة فكم تنفق فيها الأمم
                     من أولها إلى آخرها يا ترى</p>
-                <p xml:lang="ar" xml:id="p_394.d1e4354">التجارة الخارجية</p>
+                </tei:div><tei:div type="article"><tei:head>التجارة الخارجية</tei:head>
                 <p xml:lang="ar" xml:id="p_395.d1e4357">ذكرت جريدة غرفة التجارة العثمانية أن الإنكليز كانوا مستأثرين بخمسين في ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_349.d1e5036">مئة</num> من تجارة الصادرات في المملكة
                     العثمانية وال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="50" xml:id="num_350.d1e5039">خمسون</num> الأخرى تتقاسمها الأمم المختلفة من الأجانب وليس للعثماني فيها سوى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5" xml:id="num_351.d1e5042">خمسة</num> في المئة</p>
                 <p xml:lang="ar" xml:id="p_396.d1e4360">كانت تجارتنا من الصادرات <num type="auto-markup" resp="#pers_TG" value="45" xml:lang="ar" xml:id="num_1.d1e4362">٤٥</num> مليون ليرة فإذا افترضنا أن الأجانب
@@ -2481,7 +2475,7 @@
                     على مستوى المتعلمين في هذا الشأن من الأجانب ودخلنا نتمرن في البيوت التجارية المعتبرة أما رؤوس الأموال فيمكن تأليف شركات
                     كوبراتيف للمحاصيل ونقابات كنقابة التين في أزمير التي كان منها رواج هذا الصنف بعد أن كاد يقضى عليه بسبب الحرب فربحت
                     النقابة منه أرباحاً طائلة</p>
-                <p xml:lang="ar" xml:id="p_397.d1e4366">إحصاء مهم</p>
+                </tei:div><tei:div type="article"><tei:head>إحصاء مهم</tei:head>
                 <p xml:lang="ar" xml:id="p_398.d1e4370">نشر <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_356.d1e5066">احد</num> الإحصائيين الأمريكيين إحصاء مهماً اثبت فيه أن ألفيات في الحروب آخذة بالتناقص منذ القرن السابع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_357.d1e5069">عشر</num>
                     إلى يومنا هذا، قال أن عدد القتلى في الحروب التي وقعت منذ سنة <num type="auto-markup" resp="#pers_TG" value="1631" xml:lang="ar" xml:id="num_1.d1e4372">١٦٣١</num> إلى
                     <num type="auto-markup" resp="#pers_TG" value="1634" xml:lang="ar" xml:id="num_1.d1e4375">١٦٣٤</num> وهو عهد إدخال الأسلحة النارية واستعمال الحراب كان <num type="auto-markup" resp="#pers_TG" value="255" xml:lang="ar" xml:id="num_1.d1e4378">٢٥٥</num> في ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_361.d1e5082">مئة</num> ونزل معدلهم في الحروب التي وقعت بين
@@ -2492,7 +2486,7 @@
                     وهو عهد أوائل استعمال المدفع الذي يملأ من مؤخرته في <num type="auto-markup" resp="#pers_TG" value="6" xml:lang="ar" xml:id="num_1.d1e4410">٦</num> حروب من حرب كنكراتز إلى
                     سيدان نزل معدل الهلكى في الحرب ال <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e4413">١١</num> في ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_377.d1e5132">مئة</num> ونزل أيضاً إلى <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e4416">١</num> . في ال<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_379.d1e5139">مئة</num> في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="7" xml:id="num_380.d1e5142">سبع</num> حروب من حرب سان جوان إلى موكدن <pb ed="shamela" n="n94-p79" corresp="file:../epub/26523/OEBPS/xhtml/P6608.xhtml" xml:id="pb_80.d1e4419"/> أي من سنة <num type="auto-markup" resp="#pers_TG" value="1898" xml:lang="ar" xml:id="num_1.d1e4421">١٨٩٨</num> إلى سنة <num type="auto-markup" resp="#pers_TG" value="195" xml:lang="ar" xml:id="num_1.d1e4425">١٩٥</num> أما هذه الحرب التي طالت وعرفت بشدتها بحيث لم يسبق لها مثيل في التاريخ فأنه يصعب تشبيهها بالحروب التي سبقت
                     وكانت في وضع الإحصاء</p>
-                <p xml:lang="ar" xml:id="p_399.d1e4429">بواكير الشعراء</p>
+                </tei:div><tei:div type="article"><tei:head>بواكير الشعراء</tei:head>
                 <p xml:lang="ar" xml:id="p_400.d1e4432">نريد ببواكير الشعراء أوائل أقوالهم التي فتحت بها قرائحهم واقتطفت منها ثمار أفكارهم وهاك الآن بعض هذه
                     البواكير التي نظمها قدماء الشعراء</p>
                 <p xml:lang="ar" xml:id="p_401.d1e4435">قال الأصمعي: أن أول بيت نظمه النابغة الذبياني هو:</p>
@@ -2514,7 +2508,7 @@
                 </l>
             </lg>
                 
-                <p xml:lang="ar" xml:id="p_403.d1e4469">جهداً تزداد على جهد</p>
+                </tei:div><tei:div type="article"><tei:head>جهداً تزداد على جهد</tei:head>
                 <lg xml:id="lg_1.d1e4795">
                <l type="bayt" xml:lang="ar" xml:id="l_1.d1e4797">
                     <seg xml:lang="ar" xml:id="seg_379.d1e4799">كالأفؤس تنفذ في الخشب </seg>
@@ -2526,7 +2520,7 @@
                 </l>
             </lg>
                 
-                <p xml:lang="ar" xml:id="p_404.d1e4490">بمجامع مصقول الحد</p>
+                </tei:div><tei:div type="article"><tei:head>بمجامع مصقول الحد</tei:head>
                 <p xml:lang="ar" xml:id="p_405.d1e4494">وقيل أن أول ما تكلم به عبد بني الحساس من الشعر أنهم أرسلوه رائداً وهو يقول:</p>
                 <lg xml:id="lg_1.d1e4822">
                <l type="bayt" xml:lang="ar" xml:id="l_1.d1e4824">
@@ -2572,7 +2566,7 @@
                 </l>
             </lg>
                 
-                <p xml:lang="ar" xml:id="p_411.d1e4583">لابد يوماً أن تصادي فاصبري</p>
+                </tei:div><tei:div type="article"><tei:head>لابد يوماً أن تصادي فاصبري</tei:head>
                 <p xml:lang="ar" xml:id="p_412.d1e4586">وروى ابن الأثير: أن أول شعر قاله المهلهل بن ربيعة التغلبي قوله من قصيدة أصلها <num type="auto-markup" resp="#pers_TG" value="18" xml:lang="ar" xml:id="num_1.d1e4588">١٨</num> بيتاً:</p>
                 <lg xml:id="lg_1.d1e4929">
                <l type="bayt" xml:lang="ar" xml:id="l_1.d1e4931">
@@ -2598,7 +2592,7 @@
                 </l>
             </lg>
                 <byline xml:id="byline_1.d1e5387"><persName ref="viaf:40250618" xml:id="persName_9.d1e5388"><forename xml:id="forename_6.d1e5389">عيسى</forename> <forename xml:id="forename_7.d1e5392">اسكندر</forename> أفندي <surname xml:id="surname_6.d1e5395">المعلوف</surname></persName></byline>
-            </div>
+            </tei:div></div>
             <pb ed="shamela" n="n94-p81" corresp="file:../epub/26523/OEBPS/xhtml/P6610.xhtml" xml:id="pb_82.d1e4638"/><div type="article" xml:lang="ar" xml:id="div_12.d1e4636">
                 
                 <head xml:lang="ar" xml:id="head_11.d1e4640">عدد الشيعة</head>

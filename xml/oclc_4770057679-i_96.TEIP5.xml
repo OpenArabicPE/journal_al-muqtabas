@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_96" prev="oclc_4770057679-i_95">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_96" prev="oclc_4770057679-i_95">
     <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -82,7 +82,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+        <revisionDesc><tei:change when="2017-04-28" who="#pers_TG">Automatically split all <tei:tag>div type="section"</tei:tag> into subsections of <tei:tag>div type="article"</tei:tag>, using paragraphs with a length of 30 or less as indicator of a heading.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
          <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
@@ -3037,10 +3037,7 @@
                     الأول وولد من اللفظ الخاص معنى عاماً فتسنى له أن يملأ صحيفته بالأرقام الكثيرة والأعداد الدالة على وفرة عدد أخواننا
                     الشيعة ومن شايعهم وذهب إلى ما ذهبوا إليه من جماعات المسلمين وفرقهم. </p>
             </div>
-            <pb ed="shamela" n="n96-p86" corresp="file:../epub/26523/OEBPS/xhtml/P6794.xhtml" xml:id="pb_87.d1e5135"/><div type="section" xml:lang="ar" xml:id="div_14.d1e5133">
-                
-                <head xml:lang="ar" xml:id="head_13.d1e5137">أخبار وأفكار</head>
-                <p xml:lang="ar" xml:id="p_372.d1e5140">ماليتنا</p>
+            <pb ed="shamela" n="n96-p86" corresp="file:../epub/26523/OEBPS/xhtml/P6794.xhtml" xml:id="pb_87.d1e5135"/><div type="section" xml:lang="ar" xml:id="div_14.d1e5133"><head xml:lang="ar" xml:id="head_13.d1e5137">أخبار وأفكار</head><tei:div type="article"><tei:head>ماليتنا</tei:head>
                 <p xml:lang="ar" xml:id="p_373.d1e5143">يؤخذ من خطاب جاويد بك وزير المالية في مجلس النواب العثماني أنه لما أعلنت الدولة الحرب على دول الائتلاف لم
                     يكن لديهم من المال غير مليون و<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="200" xml:id="num_261.d1e5665">مائتين</num>يوأثني <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_262.d1e5668">عشر</num> <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_263.d1e5671">ألف</num> ليرة كانت مدخرة في المصرف العثماني على أن هذا المبلغ الزهيد لم يكن
                     وافياً بنفقات أسبوع و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_264.d1e5674">احد</num> فاضطرت الدولة إلى عقد فروض بربا قليلة لدى الخزينة الألمانية وقد بلغت مقادير هذه القروض <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9" xml:id="num_265.d1e5677">تسعة</num>
@@ -3171,7 +3168,7 @@
                     العقول وتبدلت المحاريث القديمة بسكك بخارية وارتبطت البلاد بشبكة من خطوط الحديد فلا تلبث قليلاً من الزمن إلا وتكون
                     مواردنا أعظم من واردات أكبر دولة في العالم وقد تعلمنا من هذه الحرب الضروس الاعتماد على النفس وأن الحياة عراك عقلي دائم
                     يفوز فيه الشعب العامل ويندحر في ميدان الحامل المكسال أهـ.</p>
-                <p xml:lang="ar" xml:id="p_387.d1e5248">حياة أديسون العلمية</p>
+                </tei:div><tei:div type="article"><tei:head>حياة أديسون العلمية</tei:head>
                 <p xml:lang="ar" xml:id="p_388.d1e5251">لم يبق <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_479.d1e6415">أحد</num> غير واقف على شهرة أديسون العالم الأميركي المشهور باختراعاته واكتشافاته الكبيرة وقد أقيمت له في
                     جامعات أميركا حفلات عظيمة بمناسبة بلوغه <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="70" xml:id="num_480.d1e6418">سبعين</num> عاماً من حياته التي قضاها في الجد والاجتهاد.</p>
                 <p xml:lang="ar" xml:id="p_389.d1e5254">ولد أديون الأخصائي في علم الكهرباء سنة <num type="auto-markup" resp="#pers_TG" value="1847" xml:lang="ar" xml:id="num_1.d1e5256">١٨٤٧</num> في مدينة ميلان
@@ -3189,14 +3186,14 @@
                     ليفون وهو الذي كان عاملاً وحيداً في استعمال التليفون وفي السنة نفسها أوجد أداة ميليفون وأعقبها باختراعات كثيرة وقد بلغت
                     اكتشافاته نحو <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="600" xml:id="num_489.d1e6457">ستمائة</num> من أهمها اختراع الفوتوغراف الحاكي ولا يزال مثابر على أعماله العقلية بهمة ونشاط قلما نرى نظيره في
                     الشبان ففي كل سنة ينال امتيازاً بل امتيازات كثيرة بإبداع جديد وأثر حديث.</p>
-                <p xml:lang="ar" xml:id="p_392.d1e5280">الصفر</p>
+                </tei:div><tei:div type="article"><tei:head>الصفر</tei:head>
                 <p xml:lang="ar" xml:id="p_393.d1e5284">يرى كثيرون أن عادت استعمال الصفر في الرياضيات كان من علائم الارتقاء وقد تبين أن قدماء البابليين لم يكونوا
                     يعرفوا الصفر في الأعداد وأن الهنود لم يستعملوه إلا نحو سنة <num type="auto-markup" resp="#pers_TG" value="600" xml:lang="ar" xml:id="num_1.d1e5286">٦٠٠</num> للمسيح وأقدم
                     استعمال للصف عند الهنود لم تختلف فيه كان منذ سنة <num type="auto-markup" resp="#pers_TG" value="870" xml:lang="ar" xml:id="num_1.d1e5289">٨٧٠</num> ويؤخذ من البحث الذي
                     وقع في أميركا الوسطى أن شعوب المايا كانوا يعرفوا الصفر قبل الشعوب الآسيوية بستة قرون ولم يكن أهل المايا يحسبون على
                     الطريقة العشرية بل على الطريقة العشرينية أي يحسبون <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_492.d1e6472">عشرين</num> عشرين والأعداد من الواحد إلى ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9" xml:id="num_493.d1e6475">تسعة</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_494.d1e6478">عشر</num> كانوا يرقمونها بنقط أو
                     أشارات ويكون الصفر أشبه بعين مطبقة على ما عرف من عادياتهم. </p>
-            </div>
+            </tei:div></div>
         </body>
     </text>
 </TEI>

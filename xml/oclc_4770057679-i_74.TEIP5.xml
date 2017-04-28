@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_74" next="oclc_4770057679-i_75" prev="oclc_4770057679-i_73">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_74" next="oclc_4770057679-i_75" prev="oclc_4770057679-i_73">
    <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -82,7 +82,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2017-01-14" who="#pers_TG">Automatically added computed Gregorian dates to the <att>when</att> attributes of all non-Gregorian <gi>date</gi> elements.</change><change xmlns="" when="2017-01-09" who="#pers_TG">Added links to local facsimile files for each <gi>surface</gi> element.</change>
+        <revisionDesc><tei:change when="2017-04-28" who="#pers_TG">Automatically split all <tei:tag>div type="section"</tei:tag> into subsections of <tei:tag>div type="article"</tei:tag>, using paragraphs with a length of 30 or less as indicator of a heading.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2017-01-14" who="#pers_TG">Automatically added computed Gregorian dates to the <att>when</att> attributes of all non-Gregorian <gi>date</gi> elements.</change><change xmlns="" when="2017-01-09" who="#pers_TG">Added links to local facsimile files for each <gi>surface</gi> element.</change>
          <change when="2016-12-20" who="#pers_TG">Added <gi>graphic</gi> for 80 pages with references to digital images.</change>
          <change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change>
          <change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
@@ -1604,10 +1604,7 @@
                             مخترعيها فقالوا عنها أرابسك أي النقوش عَلَى هيئة النباتات والأوراق. </p>
                     </div>
                     <pb ed="shamela" n="n74-p63" corresp="file:../epub/26523/OEBPS/xhtml/P4962.xhtml" xml:id="pb_64.d1e1849"/>
-         <div type="section" xml:lang="ar" xml:id="div_6.d1e1847">
-                        
-                        <head xml:lang="ar" xml:id="head_5.d1e1851">مخطوطات ومطبوعات</head>
-                        <p xml:lang="ar" xml:id="p_210.d1e1854">المجموع المشتمل عَلَى الدرر</p>
+         <div type="section" xml:lang="ar" xml:id="div_6.d1e1847"><head xml:lang="ar" xml:id="head_5.d1e1851">مخطوطات ومطبوعات</head><tei:div type="article"><tei:head>المجموع المشتمل عَلَى الدرر</tei:head>
                         <p xml:lang="ar" xml:id="p_211.d1e1857">كما قيض الله سبحانه رجالاً في الهند لنشر مذهب السلف بطبع كتب الحديث وسننه ومسانيده وأجزاءه وكتب عقيدتهم الصحيحة
                             كذلك أتاح لذلك رجالا من البحرين ومصر وجدة لا يألون جهداً في السعي وراء إحياء آثار السلف وبعثها من مراقد الإهمال
                             الذي قضى عليها ضعف العلم في العصور الأخيرة.</p>
@@ -1653,8 +1650,8 @@
                             وصفاته ليسلك سبيلهم من أحب لاقتداء بهم.</p>
                         <p xml:lang="ar" xml:id="p_223.d1e1905">وقد تخلل هذه المجموعة البديعة منظومة للحجاوي الحنبلي في تعداد الكبائر ومنظومة في عقيدة أهل الأثر لأبي خطاب
                             الحنبلي، وكلها نفائس وغرر، جديرة أن تلقب بما لقب به بالمجموعة المشتملة عَلَى الدرر. دمشق</p>
-                        <p xml:lang="ar" xml:id="p_224.d1e1908">(أبو الضياء).</p>
-                        <p xml:lang="ar" xml:id="p_225.d1e1912">الاعتبار</p>
+                        </tei:div><tei:div type="article"><tei:head>(أبو الضياء).</tei:head>
+                        </tei:div><tei:div type="article"><tei:head>الاعتبار</tei:head>
                         <p xml:lang="ar" xml:id="p_226.d1e1915">تأليف مؤيد الدولة أبو المظفر أسامة بن مرشد الكناني الشيزري بالمعروف بأبي منقذ طبع بمطبعة بريل في ليدن سنة
                              <num type="auto-markup" resp="#pers_TG" value="1884" xml:lang="ar" xml:id="num_1.d1e1917">١٨٨٤</num> .</p>
                         <p xml:lang="ar" xml:id="p_227.d1e1921">لمطبعة بريل في ليدن من بلاد القاع (هولاندة) يد طولى عَلَى اللغات الشرقية عامة واللغة العربية خاصة فقد طبعت جزءاً
@@ -1711,7 +1708,7 @@
                             ما عمل له وذكر أموراً من مثل هذه غريبة ووصف قومه وصفاً دل عَلَى أن الفروسية هي جماع فضائل المشارقة والمغاربة في
                             القرون الوسطى ولا يمتازون الأولون عن الآخرين إلا ببعض العادات الحسنة والمدنية التي تعد شيئاً بالنسبة لتلك
                             الأعصر.</p>
-                        <p xml:lang="ar" xml:id="p_234.d1e1952">ذيل تاريخ دمشق</p>
+                        </tei:div><tei:div type="article"><tei:head>ذيل تاريخ دمشق</tei:head>
                         <p xml:lang="ar" xml:id="p_235.d1e1955">لأبي يعلى حمزة بن القلانسي المعروف بذيل تاريخ دمشق طبع في بيروت سنة  <num type="auto-markup" resp="#pers_TG" value="1908" xml:lang="ar" xml:id="num_1.d1e1957">١٩٠٨</num> 
             </p>
                         <p xml:lang="ar" xml:id="p_236.d1e1961">لعلماء المشرقيات فضل كبير عَلَى العلم والتاريخ والآداب العربية لا ينكره عليهم إلا مكابر أو جاهل ومما أحيوه بالطبع
@@ -1746,7 +1743,7 @@
                             يكونون أرقى منها بمراحل خصوصا من كان <pb ed="shamela" n="n74-p70" corresp="file:../epub/26523/OEBPS/xhtml/P4969.xhtml" xml:id="pb_71.d1e1984"/> منهم قريباً من الاختلاط
                             بالناس وأرباب الرحلات وسبق له أن تولى أمور الناس ولم يكتف بالدرس في المدارس أمثال أبي شامة وأبي الفدا والعماد
                             الكاتب والقاضي الفاضل وابن خلدون وابن منقذ والصابي.</p>
-                        <p xml:lang="ar" xml:id="p_240.d1e1987">تاريخ آداب العرب</p>
+                        </tei:div><tei:div type="article"><tei:head>تاريخ آداب العرب</tei:head>
                         <p xml:lang="ar" xml:id="p_241.d1e1990">لأبي السامي مصطفى صادق أفندي الرافعي طبع بمطبعة الأخبار في مصر سنة  <num type="auto-markup" resp="#pers_TG" value="1330" xml:lang="ar" xml:id="num_1.d1e1992">١٣٣٠</num>  -  <num type="auto-markup" resp="#pers_TG" value="1912" xml:lang="ar" xml:id="num_1.d1e1995">١٩١٢</num>  الجزء الأول صفحة  <num type="auto-markup" resp="#pers_TG" value="443" xml:lang="ar" xml:id="num_1.d1e1998">٤٤٣</num> 
             </p>
                         <p xml:lang="ar" xml:id="p_242.d1e2002">مؤلف هذا الكتاب من كبار شعراء هذا العصر اشتهر بالأدب منظومه ومنثوره وقد نشر حتى الآن ديوانه في الشعر في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_410.d1e3209">ثلاثة</num>
@@ -1782,12 +1779,9 @@
                             الأناضول معروفة في تاريخ العثمانيين ولها ذكر كثير فيه.</p>
                         <p xml:lang="ar" xml:id="p_245.d1e2020">وبالإجمال فإنا نثني الثناء الأطيب عَلَى صديقنا صاحب هذا التاريخ ونرجو له التوفيق إلى إنجازه عَلَى ما يحب ويحب له
                             عشاق الأدب. </p>
-                    </div>
+                    </tei:div></div>
                     <pb ed="shamela" n="n74-p72" corresp="file:../epub/26523/OEBPS/xhtml/P4971.xhtml" xml:id="pb_73.d1e2026"/>
-         <div type="section" xml:lang="ar" xml:id="div_7.d1e2024">
-                        
-                        <head xml:lang="ar" xml:id="head_6.d1e2028">أخبار وأفكار</head>
-                        <p xml:lang="ar" xml:id="p_246.d1e2031">فن الأكل</p>
+         <div type="section" xml:lang="ar" xml:id="div_7.d1e2024"><head xml:lang="ar" xml:id="head_6.d1e2028">أخبار وأفكار</head><tei:div type="article"><tei:head>فن الأكل</tei:head>
                         <p xml:lang="ar" xml:id="p_247.d1e2034">دعا غلاء الحاجيات <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_419.d1e3263">أحد</num> الأطباء أن كتب في المجلة جاء فيها أن المرء إذا دقق في ميزانية طعامه يستطيع أن يقتصد منها
                             اقتصاداً محموداً بدون أدنى ضرر يلحق صحته فيتمكن بذلك من النجاة من مخالب المضاربين بالأطعمة ممن يغنمون مثل هذه
                             الفرص في الصعود فيغالون في مضاعفة أسعارهم ويقال عَلَى الجملة أن المرء يأكل أكثر مما تقتضيه حاجته الحقيقية وإن
@@ -1816,7 +1810,7 @@
                             كان يرتاض بركوب الدراجة فيقطع من  <num type="auto-markup" resp="#pers_TG" value="60" xml:lang="ar" xml:id="num_1.d1e2057">٦٠</num>  إلى  <num type="auto-markup" resp="#pers_TG" value="85" xml:lang="ar" xml:id="num_1.d1e2060">٨٥</num>  كيلومتراً كل يوم بدون أن يشعر بتعب وقلت ساعات نومه وقويت نفسه عَلَى
                             المشاق وسكنت أخلاقه من دون بلاهة. ويفهم من قائمة طعام الطبيب الدانيماركي الموما إليه أن اللحم قليل جداً في
                             وجباته ثم أن الأستاذ شتيدن وصف الإقلال منه وأن الآخر كان حذف من طعامه اللبن والبيض واقتصر فقط عَلَى البقول.</p>
-                        <p xml:lang="ar" xml:id="p_253.d1e2064">الجزر الطافية</p>
+                        </tei:div><tei:div type="article"><tei:head>الجزر الطافية</tei:head>
                         <p xml:lang="ar" xml:id="p_254.d1e2067">رأيت بارجة في صيف سنة  <num type="auto-markup" resp="#pers_TG" value="1892" xml:lang="ar" xml:id="num_1.d1e2069">١٨٩٢</num>  في عرض البحر قرب نيويورك جزيرة طافية تقدر مساحتها بألف هكتار مغشاة بالأشجار عَلَى طول
                             الواحدة منها <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_426.d1e3308">عشرة</num> أمتار وبعد شهرين شاهدت هذه الجزيرة باخرة أخرى قرب ترنوف فتكون قد قطعت في مدة شهرين نحو <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_427.d1e3311">ألف</num> ميل
                             بحري أي  <num type="auto-markup" resp="#pers_TG" value="1852" xml:lang="ar" xml:id="num_1.d1e2072">١٨٥٢</num>  كيلومتراً ولم يعد يراها <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_429.d1e3317">أحد</num> بعد. ومن المحتمل أن هذه الجزيرة قطعة من أرض ثابتة مفصولة من الشاطئ
@@ -1827,18 +1821,18 @@
                             تغييراً غير منتظر في معدل المياه. ففي بعض البحيرات ترى جزر عَلَى سطحها ثم تغيب في أوقات معينة فإن كتلة من
                             الحشائش قد تغمر بحيرة برمتها إلا قليلاً فإذا ارتفعت المياه تنفصل هذه الكتلة عن البحيرة ويكون منها جزيرة طافية ثم
                             تعود المياه فتغمرها وهكذا لا ترى الجزيرة إلا إذا انحسر الماء أو يحدث سبب سابق يرفع الجزيرة فتراها العيون.</p>
-                        <p xml:lang="ar" xml:id="p_255.d1e2079">الخبز</p>
+                        </tei:div><tei:div type="article"><tei:head>الخبز</tei:head>
                         <p xml:lang="ar" xml:id="p_256.d1e2082">عهدت الحكومة الإنكليزية إلى الدكتور هاميل أن يقدم تقريراً عن الخبز فأثبت أن الطرق الحديثة المستعملة في طحن الدقيق
                             في مطاحن اسطوانية ليست أحسن من الطريقة القديمة في طحن الطحين بين حجرين ولكن هذه الطريقة القديمة لا تصلح لطحن
                             حنطة أميركا الصلبة وأقام الحجة عَلَى من يدعي أن الخبز الأسمر أنفع للصحة من الأبيض وقال بتفضيل الأخير عَلَى الأول
                             في التغذية ورأي أن يعطى الأطفال خبزاً أبيض وشيئاً من الخبز الذي لم يقطع وفيه شيء من السمرة الأصلية وذلك للأولاد
                             الذين يجعلون الخبز أهم غذائهم لا لمن يتناول اللحم والبقول.</p>
-                        <p xml:lang="ar" xml:id="p_257.d1e2085">نقل الدم</p>
+                        </tei:div><tei:div type="article"><tei:head>نقل الدم</tei:head>
                         <p xml:lang="ar" xml:id="p_258.d1e2088">كان بعض الأطباء ينقل الدم من جسم الصحيح إلى جسم العليل بواسطة أدوات لهم معروفة عندهم ولكن كان الدم المنقول لا
                             يخلو من كدورات مضرة وقد اخترع الآن <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_431.d1e3339">أحد</num> الأطباء في نيويورك آلة غريبة تنقي الدم المنقول الذي يحقن به بإضافة شيء من
                             الأوكسجين ومحلول قلوي والحديد في الماء فجرب ذلك في الضفادع والكلاب أولاً ثم جرب في المستشفيات في الآدميين فأسفر
                             عن نتائج حسنة جداً.</p>
-                        <p xml:lang="ar" xml:id="p_259.d1e2091">دين مجهول</p>
+                        </tei:div><tei:div type="article"><tei:head>دين مجهول</tei:head>
                         <p xml:lang="ar" xml:id="p_260.d1e2094">اكتشفوا في جبال هندوراس مجموعة أشياء من قبل التاريخ تدل عَلَى وجود عبادة غير معروفة اليوم وذلك في مكان ظنوه أولاً
                             معدن نحاس مهجور فرأوا مغارة مقدسة تدل عَلَى وجود ديانة كانت موجودة منذ ألوف من السنين أن بها الماياس وهم شعب
                             قديم جداً كان يعبد الخفاش وهذه الأشياء هي أجراس صغيرة تبلغ <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_432.d1e3348">عشرة</num> 
@@ -1851,26 +1845,26 @@
                             ما هو معمول من المعدن المطروق ومنها من المعدن المطرق مما دل أن المغارة كانت ملجأ لرهبان كان يدينون لرب اسمه
                             زوتياشيمكان ورد ذكره في التقاليد وكان له عَلَى أمة الماياس سلطة غريبة ولعل علماء الآثار يهتدون إلى سر هذه
                             الموجودات لقرب عاصمة ناكو القديمة من بلاد هندوراس لأنه ورد ذكر تلك العاصمة في تاريخها.</p>
-                        <p xml:lang="ar" xml:id="p_261.d1e2106">البصل</p>
+                        </tei:div><tei:div type="article"><tei:head>البصل</tei:head>
                         <p xml:lang="ar" xml:id="p_262.d1e2109">استعمل بعض الأطباء البصل مؤخراً لمريض أصيب بضعف الكبد المشوش في الاستسقاء فأبان عن أحسن النتائج وسهل البول بحيث
                             لا يتأتى ذلك بالأدوية المعتادة وهذا ما يدل عَلَى بعد نظر القدماء في القديم في تعويلهم تعلى البصل فقد كان أطباء
                             المصريين والعبرانيين واليونانيين والرومانيين يحلون استعماله المحل الأرفع وكان جند قيصر يمتانه في سيره أثناء
                             قتاله للغلو وشاع استعماله في أوربا في أواخر القرن السابع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_437.d1e3373">عشر</num> إلى أوائل القرن التاسع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_438.d1e3376">عشر</num> في مداواة وجع المفاصل
                             والرثية وأمراض الصلب أما في الطب الحديث فقد ترك استعماله بتاتاً وها هم قد عادوا إليه.</p>
-                        <p xml:lang="ar" xml:id="p_263.d1e2112">الحكم عَلَى فرنسا</p>
+                        </tei:div><tei:div type="article"><tei:head>الحكم عَلَى فرنسا</tei:head>
                         <p xml:lang="ar" xml:id="p_264.d1e2115">طاف المستر أديسون المخترع الأميركي الشهير بلاد أوربا فسئل رأيه عن فرنسا فاصدر الحكم الآتي: إن مساكنها قبيحة لا
                             راحة فيها ولا رفاهية وهي متأخرة عن بيوت الأميركان قروناً وفرنسا فائقة بطرقها البديعة التي تربط قراها وبلاد
                             الأقاليم فيها بالحواضر والمدن وعلى مهندسي الممالك الأخرى أن يأتوا إلى فرنسا ليتعلموا عَلَى مهندسيها أحسن دروس
                             <pb ed="shamela" n="n74-p76" corresp="file:../epub/26523/OEBPS/xhtml/P4975.xhtml" xml:id="pb_77.d1e2117"/> في صناعتهم أما طبخ
                             الفرنسيس فقد حوى الذوق وجودة الطعم وحسن الأسلوب بحيث جاء مطبخهم أفضل مطابخ الأمم الممدنة وهذا ما دعا إلى علو كعب
                             الفرنسيس فبجودة الطعام ضمنوا لبلادهم الصحة وحسن الخلق والنجاح.</p>
-                        <p xml:lang="ar" xml:id="p_265.d1e2120">التلغراف اللاسلكي</p>
+                        </tei:div><tei:div type="article"><tei:head>التلغراف اللاسلكي</tei:head>
                         <p xml:lang="ar" xml:id="p_266.d1e2123">أفاد هذا التلغراف في مواطن كثيرة وثبت غناؤه في الدول والأفراد فعزمت إنكلترا أن تمد منه خطين الأول بين مالطة وقبرص
                             وعدن وبومباي وسنغافورة وادلايدا إلى زيلاندة الجديدة و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="2" xml:id="num_439.d1e3393">اثنان</num> آخران يسيران عَلَى شاطئ أفريقية من الشرق ومن الغرب
                             فتتصل الهند بأفريقية الجنوبية واستراليا بجزيرة موريس وجزيرة نيلسون ومونترال تفاوض الهند الغربية تواً فيكون لها
                              <num type="auto-markup" resp="#pers_TG" value="25" xml:lang="ar" xml:id="num_1.d1e2125">٢٥</num>  محطةً تحتاج إلى  <num type="auto-markup" resp="#pers_TG" value="37" xml:lang="ar" xml:id="num_1.d1e2128">٣٧</num>  مليون ونصف مليون من الفرنكات يتخابر بها الناس كل كلمة بعشرة سنتيمات وتربح منها الحكومة  <num type="auto-markup" resp="#pers_TG" value="15" xml:lang="ar" xml:id="num_1.d1e2131">١٥</num> 
                             مليون فرنك مسانهة ولا تنفق سوى  <num type="auto-markup" resp="#pers_TG" value="5" xml:lang="ar" xml:id="num_1.d1e2134">٥</num>  ملايين.</p>
-                        <p xml:lang="ar" xml:id="p_267.d1e2139">الألكحول في أفريقية</p>
+                        </tei:div><tei:div type="article"><tei:head>الألكحول في أفريقية</tei:head>
                         <p xml:lang="ar" xml:id="p_268.d1e2142">يحاول عقلاء الإنكليز أن يحظروا استعمال المشروبات الروحية في بلاد خط الاستواء وجنوبي أفريقية وذلك بوضع العقبات في
                             سبيله لأنه ثبت أنها آذت الوطنيين بصحتهم وقرض أو كاد جنسهم وكانوا قبل دخولهم عليهم سالمين أقوياء وما كانوا من قبل
                             يسكرون إلا بالمشروبات المخمرة المستخرجة من ماء النخل وجوز الكاكاو والذرة وهي مشروبات يقل ضررها بالنسبة لخمور
@@ -1879,7 +1873,7 @@
                             من المنبهات بالقهوة وجوز الكولا فهي أقل ضرراً من الجين والويسكي. وإذا منعت الحكومة الإنكليزية المسكرات من تلك
                             الأقاليم الأفريقية تخسر ثمانمائة <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_444.d1e3415">ألف</num> جنيه كل سنة من جنوبي نيجيريا فقط وستعتاض عن هذه الرسوم التي تنقص ميزانيتهم
                             بضرب ضرائب عَلَى الأنفس.</p>
-                        <p xml:lang="ar" xml:id="p_269.d1e2145">الصحافة الصفراء</p>
+                        </tei:div><tei:div type="article"><tei:head>الصحافة الصفراء</tei:head>
                         <p xml:lang="ar" xml:id="p_270.d1e2148">يسمون بهذا الاسم الحديث تلك الصحف الأميركية التي تنشر أخباراً مزعجة ملفقة تقيم <pb ed="shamela" n="n74-p77" corresp="file:../epub/26523/OEBPS/xhtml/P4976.xhtml" xml:id="pb_78.d1e2150"/> وتقعد والحال أن هذا
                             النوع من الصحافة قديم يرد عهدها في الحقيقة إلى يوم قام بنيت مؤسس جريدة نيويورك هرالد وأعلن أنه سيتخلون عما
                             يسمونه بالمبادئ ويبحث خاصة فينشر رصائفه أخباراً كثيرة وحوادث اليوم مفعلاً فيما ينقل ويروي ماله دخل بحوادث البيوت
@@ -1893,7 +1887,7 @@
                             داعية بل أكثر داعية للارتقاء والإصلاح الاجتماعي تنصرف لخدمة المصلحة العامة مستقلة في أفكارها تحمل عَلَى الرشوة
                             حملات هائلة تنتقد الأفكار وتكشف القناع عن أعمال رجال السياسة وفضائحهم وتقاوم الحكومة البلوتوكراتية والامتيازات
                             فهي خادمة أمينة للديمقراطية من هذا الوجه.</p>
-                        <p xml:lang="ar" xml:id="p_271.d1e2153">ملح تونس</p>
+                        </tei:div><tei:div type="article"><tei:head>ملح تونس</tei:head>
                         <p xml:lang="ar" xml:id="p_272.d1e2156">ثبت أن أرض تونس بطبيعتها قابلة لاستخراج الملح الصناعي الذي هو أنفع لتمليح الأسماك التي تصطاد من شمال أوربا أكثر
                             من الأملاح التي تستخرج من صقلية وإسبانيا والبرتغال بل هو أحسن ملح في العالم لأنه خالٍ من المواد قابلة التحليل
                             ويستخرج منه الآن <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="500" xml:id="num_445.d1e3432">خمسمائة</num> 
@@ -1909,7 +1903,7 @@
                             أكثر والحكومة تتقاضى هذه الجوائز من العزب فتأخذ من كل عزب تجاوز الخامسة وال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="30" xml:id="num_457.d1e3474">ثلاثين</num> ولم يتزوج <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="50" xml:id="num_458.d1e3477">خمسين</num> فرنكاً في
                             السنة ويتناقش مجلس النواب في ولاية فيسكونسين في ضرب ضريبة قدرها <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5" xml:id="num_459.d1e3480">خمسة</num> و<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_460.d1e3484">عشرون</num> فرنكاً في السنة عَلَى كل امرأة بلغت
                             الخامسة وال<num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_461.d1e3487">عشرين</num> ولم تتزوج وربما ألفت هذه الولاية لجنة رسمية لتجد زوجاً لكل طالبة.</p>
-                        <p xml:lang="ar" xml:id="p_274.d1e2180">التعليم في بورتوريكو</p>
+                        </tei:div><tei:div type="article"><tei:head>التعليم في بورتوريكو</tei:head>
                         <p xml:lang="ar" xml:id="p_275.d1e2183">بورتوريكو جزيرة في أرخبيل البحر المحيط غربي هاييتي سكانها زهاء المليون نسمة لم يكن فيها سنة  <num type="auto-markup" resp="#pers_TG" value="1907" xml:lang="ar" xml:id="num_1.d1e2185">١٩٠٧</num>  خزانة كتب بتة
                             وها قد أصبح فيها اليوم  <num type="auto-markup" resp="#pers_TG" value="233" xml:lang="ar" xml:id="num_1.d1e2188">٢٣٣</num>  خزانة كتب عامة ولما استولت الولايات المتحدة عَلَى هذه الجزيرة لم يكن فيها مدارس أما
                             اليوم فقد بلغ عدد من يتعلمون من بنيها  <num type="auto-markup" resp="#pers_TG" value="121" xml:lang="ar" xml:id="num_1.d1e2191">١٢١</num> .  <num type="auto-markup" resp="#pers_TG" value="453" xml:lang="ar" xml:id="num_1.d1e2194">٤٥٣</num>  أي نحو <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9" xml:id="num_466.d1e3509">تسع</num> السكان وفي المدارس حدائق أطفال (الكندر جارتن)  <num type="auto-markup" resp="#pers_TG" value="230" xml:lang="ar" xml:id="num_1.d1e2197">٢٣٠</num> 
@@ -1920,10 +1914,10 @@
                             بدأت تعين من أبناء الجزيرة نفسها ولكن معظم المعلمين يأتون من الولايات المتحدة و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="9" xml:id="num_479.d1e3551">تسعة</num> أعشار التلامذة يتعلمون
                             العلوم اليوم بالإنكليزية وعما قريب تقوض اللغة الإسبانية خيامها من تلك الجزيرة وتحل محلها اللغة الإنكليزية إلى
                             أبد الآبدين.</p>
-                        <p xml:lang="ar" xml:id="p_276.d1e2236">مدارس الأمهات</p>
+                        </tei:div><tei:div type="article"><tei:head>مدارس الأمهات</tei:head>
                         <p xml:lang="ar" xml:id="p_277.d1e2239">أنشئوا في الغرب مدارس لتعليم الأمهات ما يستطيعون معه دفع المهالك عن أولادهم <pb ed="shamela" n="n74-p79" corresp="file:../epub/26523/OEBPS/xhtml/P4978.xhtml" xml:id="pb_80.d1e2241"/> وتقوية أجسامهم وحفظ
                             صحتهم إذ قد ثبت أن جهل الأمهات كثيراً ما يودي بالبنين والبنات وهذه المدارس تزداد انتشاراً في مدن أوربا. </p>
-                    </div>
+                    </tei:div></div>
                 </body>
             </text>
 </TEI>

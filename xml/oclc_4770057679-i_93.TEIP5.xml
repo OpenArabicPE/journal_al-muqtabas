@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_93" next="oclc_4770057679-i_94" prev="oclc_4770057679-i_92">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_93" next="oclc_4770057679-i_94" prev="oclc_4770057679-i_92">
    <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -76,7 +76,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-12-06" who="#pers_TG">Added automated mark-up of strings wrapped in brackets with <tag>tei:q rend="brackets"</tag> and <att>rend</att> on existing nodes.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+        <revisionDesc><tei:change when="2017-04-28" who="#pers_TG">Automatically split all <tei:tag>div type="section"</tei:tag> into subsections of <tei:tag>div type="article"</tei:tag>, using paragraphs with a length of 30 or less as indicator of a heading.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-12-06" who="#pers_TG">Added automated mark-up of strings wrapped in brackets with <tag>tei:q rend="brackets"</tag> and <att>rend</att> on existing nodes.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
          <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
@@ -1996,10 +1996,7 @@
                         
                         <p xml:lang="ar" xml:id="p_208.d1e2980">النبطية سليمان ظاهر </p>
                     </div>
-                    <pb ed="shamela" n="n93-p64" corresp="file:../epub/26523/OEBPS/xhtml/P6513.xhtml" xml:id="pb_65.d1e2986"/><div type="section" xml:lang="ar" xml:id="div_13.d1e2984">
-                        
-                        <head xml:lang="ar" xml:id="head_12.d1e2988">أخبار وأفكار</head>
-                        <p xml:lang="ar" xml:id="p_209.d1e2991">البسيكومتر</p>
+                    <pb ed="shamela" n="n93-p64" corresp="file:../epub/26523/OEBPS/xhtml/P6513.xhtml" xml:id="pb_65.d1e2986"/><div type="section" xml:lang="ar" xml:id="div_13.d1e2984"><head xml:lang="ar" xml:id="head_12.d1e2988">أخبار وأفكار</head><tei:div type="article"><tei:head>البسيكومتر</tei:head>
                         <p xml:lang="ar" xml:id="p_210.d1e2994">اخترع عالمان من علماء النفس الأستاذ جونغ من جامعة زوريخ والأستاذ بترسن من جامعة نيويورك آلة دعواها البسيكومتر
                             الكهربائي أن لم يمكن بها قراءة أفكار من يخضعون للتّجربة برضاهم أبغير رضاهم فلا أقلّ من الوقوف على حقيقة أقوالهم
                             والآلة مؤلفة من كالفانومتر ومن آلة تقيد تنوع ألفكر وظهوره في الكلام وذلك على الوجه الآتي: أ، الكالفانومتر متصل
@@ -2008,7 +2005,7 @@
                             شدّة الحواس النفسية أو الطبيعة التي تجري في خاطر الإنسان الذي يراد اختباره فإذا كذب هذا الرجل كان من اضطراب حركة
                             الدماغ الحادثة من التناقض بين ألفكر والإرادة التي تظهر العكس أن يحدث منه مجرى كهربائي يختلف ضعفاً وقوته بعلو
                             اللهيب المار ذكره. وقد أثبتت التجارب الكثيرة صحة هذا الاختراع الذي هو من أغرب ما سمع.</p>
-                        <p xml:lang="ar" xml:id="p_211.d1e2997">ألمانيا الاقتصادية</p>
+                        </tei:div><tei:div type="article"><tei:head>ألمانيا الاقتصادية</tei:head>
                         <p xml:lang="ar" xml:id="p_212.d1e3001">الظاهر أن ليس في العالم أمة كالألمان عرفت طرق الاقتصاد وادخرت وفرها للأيام الشّداد وعالجت كلّ أسباب هذا الباب حتى
                             أعجب بها الأعداء قبل الأحباب. وقد قدّر العارفون ثروة الشّعب الألماني قبل من  <num type="auto-markup" resp="#pers_TG" value="33" xml:lang="ar" xml:id="num_1.d1e3003">٣٣</num> . إلى  <num type="auto-markup" resp="#pers_TG" value="39" xml:lang="ar" xml:id="num_1.d1e3006">٣٩</num> . مليار مارك وثروة
                             بريطانيا من  <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_1.d1e3009">٣</num> . . إلى  <num type="auto-markup" resp="#pers_TG" value="36" xml:lang="ar" xml:id="num_1.d1e3012">٣٦</num> . وثروة فرنسا من  <num type="auto-markup" resp="#pers_TG" value="26" xml:lang="ar" xml:id="num_1.d1e3015">٢٦</num> . إلى  <num type="auto-markup" resp="#pers_TG" value="29" xml:lang="ar" xml:id="num_1.d1e3019">٢٩</num> . ودلّت كثرة الوارد على صناديق التّوفير خلال الحرب أيضاً أن
@@ -2069,7 +2066,7 @@
                         <p xml:lang="ar" xml:id="p_219.d1e3444">هذه حقائق تشهد شهادةً صادقةً بارتقاء حليفتنا ومن أعدّ للمستقبل مثل هذه العدّة المالية يستحيل على جيوشه أن تغلب
                             وعلى خزانته أن تنضب ومثل هذه القوى المادية إذا وقفت إلى إيجادها أمّةٌ لا تحارب حولين فقط بل عشراتٍ من
                             السنين.</p>
-                        <p xml:lang="ar" xml:id="p_220.d1e3447">الجرائم والحرب</p>
+                        </tei:div><tei:div type="article"><tei:head>الجرائم والحرب</tei:head>
                         <p xml:lang="ar" xml:id="p_221.d1e3450">كتب الغربيون كثيراً في الدواعي والبواعث على الإخلال بالأمن والقتل والانتحار وقام أناس يدّعون في العهد الأخير أن
                             الحرب من العوامل التي تساعد على كثرة الجرائم بالواسطة لأنها تحسّن حالة الاستكثار من التسليح وهو على ما يزعمون
                             سبب معظم الشرور التي يقاسي منها المجتمع وخصوصاً في كثرة الجرائم وزعموا أن التسليح العام سببٌ عظيمٌ من أسباب
@@ -2118,7 +2115,7 @@
                             والمجتمع أن يجتهدا في القضاء على الشّقاء والأمراض الّتي <pb ed="shamela" n="n93-p70" corresp="file:../epub/26523/OEBPS/xhtml/P6519.xhtml" xml:id="pb_71.d1e3563"/> أحدثتها الحرب وأن يقوي
                             في غضون الحرب في جميع طبقات الشعب الاعتقاد بالظّفر النّهائي وأننا على حقٍّ فيما نحارب لأجله وأن نثلم من النفوس
                             بعد الحرب وحشيّتها وقسوتها وذلك بوساطة الصّحافة والتّمثيل والمحاضرات العامّة</p>
-                        <p xml:lang="ar" xml:id="p_229.d1e3566">الألعاب الرياضيّة</p>
+                        </tei:div><tei:div type="article"><tei:head>الألعاب الرياضيّة</tei:head>
                         <p xml:lang="ar" xml:id="p_230.d1e3570">كتب الدّكتور ماكس نودرو العالم الإسرائيلي الألماني الكبير مقالة في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_357.d1e4129">إحدى</num> المجالات الإفرنسيّة في الرّياضات والألعاب
                             الرّياضية قال ما تعريبهُ:</p>
                         <p xml:lang="ar" xml:id="p_231.d1e3573">لقد دعي عصرنا حتى الآن بجميع الأسماء الممكنة فسمّي عصر الطّفل وعصر المرأة وعصر الطّيران وعصر السّرعة. وإذا قلنا
@@ -2205,7 +2202,7 @@
                             متوسّطاً فيما يتمّ على يديه أو بالمجد والغنى وقد احتفل بالفائزين في سباق الرياضات أكثر مما احتفل بالعلماء
                             الأعلام ولا فائدة منه إلا أنّه يدلّ أنّ المرء يستطيع أن يسير أبرع من حصان السّباق وأنّه يجري شوطاً أوسع من شوط
                             الذّئب ويقفز أكثر من النّمر</p>
-                        <p xml:lang="ar" xml:id="p_238.d1e3606">القضاء والعلم</p>
+                        </tei:div><tei:div type="article"><tei:head>القضاء والعلم</tei:head>
                         <p xml:lang="ar" xml:id="p_239.d1e3609">دعا ناظر مدرسة حقوقٍ تلامذة الصّف الآخر من مدرسته وخاطبهم فقال:</p>
                         <p xml:lang="ar" xml:id="p_240.d1e3612">إنني مسرورٌ لرؤيتكم مرّةً أخرى مجتمعين قبل حصولكم على شهادتكم النهائية ومفارقتكم للمدرسة. لا تتصوّروا بعد حصولكم
                             على الشّهادة أنّ باب الدّرس أقفل فالإنسان لا يستغني أبداً عن المطالعة والدّروس وعليه فأنا أميل كثيراً إلى أن
@@ -2290,7 +2287,7 @@
                             كانوا السببفي تفشّيه بين شبابنا في عامة الأنحاء فتراه اليوم يباع في الأناضول في كل مدينة وقصبة وقرية ومزرعة ومن
                             المُحَقّق أنّه بعد مدّة يصبح دواء هذا الخطر من أعقد المسائل وعليه فينبغي اتّخاذ الأسباب اللاّزمة من الآن
                             والتّحيّل لرد هذا العدو الأزرق الذي يسمّ النّسل ويضربه ضربة قاضية لا يقوم منها أبداً. رشدي <pb ed="shamela" n="n93-p79" corresp="file:../epub/26523/OEBPS/xhtml/P6528.xhtml" xml:id="pb_80.d1e3660"/> الحكيم. </p>
-                    </div>
+                    </tei:div></div>
                 </body>
             </text>
 </TEI>

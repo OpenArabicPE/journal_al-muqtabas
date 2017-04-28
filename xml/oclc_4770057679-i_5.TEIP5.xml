@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_5" next="oclc_4770057679-i_6" prev="oclc_4770057679-i_4">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_5" next="oclc_4770057679-i_6" prev="oclc_4770057679-i_4">
    <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -79,7 +79,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change>
+        <revisionDesc><tei:change when="2017-04-28" who="#pers_TG">Automatically split all <tei:tag>div type="section"</tei:tag> into subsections of <tei:tag>div type="article"</tei:tag>, using paragraphs with a length of 30 or less as indicator of a heading.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change>
          <change when="2016-05-21" who="#pers_TG">Added <gi>graphic</gi> for 48 pages with references to digital images.</change>
          <change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change>
             <change when="2016-02-25" who="#pers_TG">Added mark-up of bibliographic metadata to the review sections. Added automated
@@ -1555,10 +1555,7 @@
                 </div>
             </div>
                     <pb ed="shamela" n="n5-p36" corresp="file:../epub/26523/OEBPS/xhtml/P257.xhtml" xml:id="pb_37.d1e2388"/>
-         <div type="section" xml:lang="ar" xml:id="div_14.d1e2386">
-                        
-                        <head xml:lang="ar" xml:id="head_13.d1e2390">سير العلم</head>
-                        <p xml:lang="ar" xml:id="p_206.d1e2393">مساكين المحترفين</p>
+         <div type="section" xml:lang="ar" xml:id="div_14.d1e2386"><head xml:lang="ar" xml:id="head_13.d1e2390">سير العلم</head><tei:div type="article"><tei:head>مساكين المحترفين</tei:head>
                         <p xml:lang="ar" xml:id="p_207.d1e2396">ليس الفقر مختصاً بطبقة خاصة من الناس من سوقة وباعة ومزارعين وصناع بل قد عض ناب الفقر في الغرب أيضاً طبقة ممن
                             يتعاطون المحاماة والتعليم والكتابة فقد بحث <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_190.d1e3471">أحد</num> الأمريكان فرأى أن أحسن طريقة لتلافي هذا الخطب النازل تغيير أساليب
                             التربية فيدخل الأولاد أولاً مدارس ابتدائية إجبارية في السن التي يحظر عليهم فيها دخول المعامل ثم يدخلون المدارس
@@ -1566,13 +1563,13 @@
                             التخرج في المحاماة والطب والهندسة فيبدأون بالدراسة ويداومون العمل طويلاً وتجد الدروس العالية لها مكاناً بين
                             المدرسة الابتدائية والمدارس التجهيزية إلى اتخاذ الصنائع الحرة وتخف بذلك النفقات التي تنفقها الحكومات الآن ويكون
                             التعليم خاصاً ويقضي التعليم الصناعي على الفقر والحاجة.</p>
-                        <p xml:lang="ar" xml:id="p_208.d1e2399">مدفع للبرد</p>
+                        </tei:div><tei:div type="article"><tei:head>مدفع للبرد</tei:head>
                         <p xml:lang="ar" xml:id="p_209.d1e2403">معلوم أن البرد يضر كثيراً من المزروعات بنزوله عليها ناهيك بأن واحدتها قد تكون بحجم الجوزة. وقد فكر أحدهم في إيجاد
                             مدفع يبدد شمل البرد إذا تجمع الجو ويدفع عاديته عن المزروعات والمغروسات ومازال مخترعه واسمه سيتجر يتوفر على إكمال
                             مدفعه حتى وفق في العهد الأخير إلى وضع حلقة في داخل المدفع قطرها من  <num type="auto-markup" resp="#pers_TG" value="12" xml:lang="ar" xml:id="num_1.d1e2405">١٢</num>  إلى  <num type="auto-markup" resp="#pers_TG" value="13" xml:lang="ar" xml:id="num_1.d1e2408">١٣</num>  سنتيمتراً وبهذه الواسطة تمكن من قذف
                             الهواء المضغوط بواسطة انفجار البارود بسرعة على أطراف الحلقة بقوة غريبة في القذف العلوي فيضطرب الجو بشدة في
                             الطبقة التي يكون فيها البرد.</p>
-                        <p xml:lang="ar" xml:id="p_210.d1e2412">كتب الدنيا</p>
+                        </tei:div><tei:div type="article"><tei:head>كتب الدنيا</tei:head>
                         <p xml:lang="ar" xml:id="p_211.d1e2415">أحصى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_193.d1e3493">أحد</num> العارفين الكتب التي طبعت منذ اختراع الطباعة فقال أنه طبع منذ سنة  <num type="auto-markup" resp="#pers_TG" value="1450" xml:lang="ar" xml:id="num_1.d1e2417">١٤٥٠</num>  إلى سنة  <num type="auto-markup" resp="#pers_TG" value="1536" xml:lang="ar" xml:id="num_1.d1e2420">١٥٣٦</num> ،  <num type="auto-markup" resp="#pers_TG" value="42" xml:lang="ar" xml:id="num_1.d1e2423">٤٢</num>  
                <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_197.d1e3505">ألف</num> مؤلف وطبع من
                             سنة  <num type="auto-markup" resp="#pers_TG" value="1536" xml:lang="ar" xml:id="num_1.d1e2426">١٥٣٦</num>  إلى  <num type="auto-markup" resp="#pers_TG" value="1636" xml:lang="ar" xml:id="num_1.d1e2429">١٦٣٦</num>  قرابة  <num type="auto-markup" resp="#pers_TG" value="275" xml:lang="ar" xml:id="num_1.d1e2433">٢٧٥</num>  ألفاً ومن سنة  <num type="auto-markup" resp="#pers_TG" value="1636" xml:lang="ar" xml:id="num_1.d1e2436">١٦٣٦</num>  إلى  <num type="auto-markup" resp="#pers_TG" value="1736" xml:lang="ar" xml:id="num_1.d1e2439">١٧٣٦</num> ،  <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e2442">١</num> .  <num type="auto-markup" resp="#pers_TG" value="225" xml:lang="ar" xml:id="num_1.d1e2445">٢٢٥</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e2448">٠٠٠</num>  ومن سنة  <num type="auto-markup" resp="#pers_TG" value="1736" xml:lang="ar" xml:id="num_1.d1e2452">١٧٣٦</num>  إلى  <num type="auto-markup" resp="#pers_TG" value="1836" xml:lang="ar" xml:id="num_1.d1e2455">١٨٣٦</num> ،  <num type="auto-markup" resp="#pers_TG" value="1" xml:lang="ar" xml:id="num_1.d1e2458">١</num> .  <num type="auto-markup" resp="#pers_TG" value="839" xml:lang="ar" xml:id="num_1.d1e2461">٨٣٩</num> .  <num type="auto-markup" resp="#pers_TG" value="960" xml:lang="ar" xml:id="num_1.d1e2464">٩٦٠</num>  فكان
@@ -1584,29 +1581,29 @@
                              <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e2513">٠٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e2517">٠٠٠</num>  وعند كتبيها وطابعيها  <num type="auto-markup" resp="#pers_TG" value="60" xml:lang="ar" xml:id="num_1.d1e2520">٦٠</num>  مليوناً وفي خزائن كتبها العمومية  <num type="auto-markup" resp="#pers_TG" value="50" xml:lang="ar" xml:id="num_1.d1e2523">٥٠</num>  مليوناً وعند تلامذتها <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8" xml:id="num_230.d1e3614">ثمانية</num> ملايين وعلى
                             تلك النسبة حسب ما في العالم من أسفار فكانت  <num type="auto-markup" resp="#pers_TG" value="3" xml:lang="ar" xml:id="num_1.d1e2526">٣</num> .  <num type="auto-markup" resp="#pers_TG" value="200" xml:lang="ar" xml:id="num_1.d1e2529">٢٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e2532">٠٠٠</num> .  <num type="auto-markup" resp="#pers_TG" value="000" xml:lang="ar" xml:id="num_1.d1e2536">٠٠٠</num> 
             </p>
-                        <p xml:lang="ar" xml:id="p_213.d1e2540">كليات الشعب بإسبانيا</p>
+                        </tei:div><tei:div type="article"><tei:head>كليات الشعب بإسبانيا</tei:head>
                         <p xml:lang="ar" xml:id="p_214.d1e2543">نجحت الكليات التي أنشئت لعامة الشعب ممن لم تساعدهم الأيام على الدراسة في الكليات العالية في إسبانيا وهي تفتح
                             مرتين في الأسبوع وتعلم علماً واحداً وليس التدريس فيها خاصاً بالأساتذة بل إن جماعة من أهل الأخصاء من طبيب ومهندس
                             ومحام بل وتلميذ يلقون فيها على المستمعين من طلاب الاستفادة كل ما شاق وراق من الموضوعات.</p>
-                        <p xml:lang="ar" xml:id="p_215.d1e2547">كلية النساء في اليابان</p>
+                        </tei:div><tei:div type="article"><tei:head>كلية النساء في اليابان</tei:head>
                         <p xml:lang="ar" xml:id="p_216.d1e2550">أسس اليابان كلية جامعة في طوكيو سنة  <num type="auto-markup" resp="#pers_TG" value="1896" xml:lang="ar" xml:id="num_1.d1e2552">١٨٩٦</num>  خصت بالنساء دون الرجال وغايتها تعليم اليابانيات ما يؤهلهن للعمل على
                             ترقية الوطن ومدة الدراسة <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_236.d1e3646">ثلاث</num> سنين تنال الطالبة بعدها شهادة تنطق باقتدارها وكان عدد الطالبات سنة  <num type="auto-markup" resp="#pers_TG" value="1901" xml:lang="ar" xml:id="num_1.d1e2555">١٩٠١</num>  ثمانمائة
                             طالبة وتقسم الدروس إلى <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="3" xml:id="num_238.d1e3652">ثلاثة</num> فروع وهي الآداب اليابانية والآداب الإنكليزية والعلم والأدب وهذان العلمان يقسمان إلى
                             فروع أهمها الاقتصاد السياسي والقانون المدني والفيسيولوجيا وتدبير المنزل والصحة. والمعلمات بأجمعهن من نساء يابان
                             أو إنكلترا ويشترط أن لا يقل عمر الطالبة عن  <num type="auto-markup" resp="#pers_TG" value="17" xml:lang="ar" xml:id="num_1.d1e2558">١٧</num>  سنة وتعيش هذه الكلية بالإعانات الخاصة ولا تدفع لها الحكومة في
                             السنة غير ألفي يان (ريال ياباني).</p>
-                        <p xml:lang="ar" xml:id="p_217.d1e2562">أعظم شلال</p>
+                        </tei:div><tei:div type="article"><tei:head>أعظم شلال</tei:head>
                         <p xml:lang="ar" xml:id="p_218.d1e2565">كان الباحثون موقنين بأن أعظم شلال في العالم هو شلال نيكاراغا في أميركا أو شلال فكتوريا على نهر الزمبيز في إفريقية
                             وقد اكتشفت الآن شلال ثالث يفوق الشلالين السابقين في كثرة ارتفاع <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_240.d1e3664">مائه</num> وهو شلال اينياسو القائم على نهر صغير
                             المتدفق من نهر بارانا في البرازيل من جنوبي أميركا سعته  <num type="auto-markup" resp="#pers_TG" value="4734" xml:lang="ar" xml:id="num_1.d1e2567">٤٧٣٤</num>  متراً أي أنه بالقياس إلى شلال نيكاراغا ضعفان ونصف
                             ويدفع في الساعة  <num type="auto-markup" resp="#pers_TG" value="940" xml:lang="ar" xml:id="num_1.d1e2570">٩٤٠</num>  مليون طن (الطن <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_243.d1e3673">ألف</num> كيلو غرام) من علو <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="70" xml:id="num_244.d1e3676">سبعين</num> متراً <pb ed="shamela" n="n5-p38" corresp="file:../epub/26523/OEBPS/xhtml/P259.xhtml" xml:id="pb_39.d1e2573"/> وهو في غابة غبياء لم
                             ينزلها بشر ولا رفع منها حجر ولا مدر ومساحتها لا تقل عن <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_245.d1e3682">ألف</num> و<num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="500" xml:id="num_246.d1e3685">خمسمائة</num> كيلومتر مأهولة من جهاتها ال<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4" xml:id="num_247.d1e3688">أربع</num>.</p>
-                        <p xml:lang="ar" xml:id="p_219.d1e2576">باطية عجيبة</p>
+                        </tei:div><tei:div type="article"><tei:head>باطية عجيبة</tei:head>
                         <p xml:lang="ar" xml:id="p_220.d1e2579">اخترع أحدهم باطية أو زجاجة تحفظ السوائل التي تملأ بها حارة كانت أو باردة وهي عبارة عن غطائين من الزجاج بينهما
                             فراغ يطلى داخلهما فيمتنع الإشعاع وينفع هذا الاختراع الأطباء والجنود والصيادين والسائحين كما ينفع المرضى ممن
                             يضطرون أن يتناولوا اللبن المغلي في أوقات معينة ومن يريدون تناول الأشربة حارة فيجد المرء متى أراد شيئاً من
                             الشوكولاتا الحارة أو الشاي الساخن أو القهوة الحارة ويتيسر للمريض أخذ الماء المغلي متى أراد.</p>
-                        <p xml:lang="ar" xml:id="p_221.d1e2583">مخيم قديم</p>
+                        </tei:div><tei:div type="article"><tei:head>مخيم قديم</tei:head>
                         <p xml:lang="ar" xml:id="p_222.d1e2586">عثر منذ سنين في ضواحي مرفأ فارامبول من أعمال مقاطعة فكتوريا في أستراليا على آثار أقدام بشرية قديمة جداً وذلك في
                             قطعة من الحجر الرملي فأخذت قطعة منه ودفعت لكلاتش <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_248.d1e3704">أحد</num> علماء الحيوانات والنباتات الأرضية (بالونتولوجست) ومن أساتذة
                             كلية هايدلبرغ الألمانية فقال أنها آثار وجدت قبل التاريخ. ثم رحل بالذات إلى تلك البلاد ليحقق قوله بالبرهان. وقد
@@ -1614,19 +1611,19 @@
                             المخيم وحوى أجناساً من البشر قبل التاريخ في أستراليا وأن هذه القارة وتاسمانية كانت جزءاً من القارة الجنوبية التي
                             كانت تمتد إلى المحيط الهندي وتصل أستراليا بآسيا وإفريقية. فدل ذلك على أن الإنسان على الأرض أقدم بكثير مما يتوهمه
                             بعضهم وربما رد عهده إلى مئات الألوف من السنين على ما يحققه العلم والبحث.</p>
-                        <p xml:lang="ar" xml:id="p_223.d1e2589">اختفاء بحيرة</p>
+                        </tei:div><tei:div type="article"><tei:head>اختفاء بحيرة</tei:head>
                         <p xml:lang="ar" xml:id="p_224.d1e2592">الظاهر أن إفريقية الوسطى أخذت تنشف بطائحها وتجف مياهها بالتدريج والعناية وقد غابت عن الأنظار هذه الأيام بحيرة
                             شيروا في الجنوب الشرقي من نياسا في إفريقية الوسطى وطولها  <num type="auto-markup" resp="#pers_TG" value="45" xml:lang="ar" xml:id="num_1.d1e2594">٤٥</num>  كيلومتراً وعمقها <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="20" xml:id="num_250.d1e3716">عشرون</num> اكتشفت سنة  <num type="auto-markup" resp="#pers_TG" value="1869" xml:lang="ar" xml:id="num_1.d1e2597">١٨٦٩</num>  وخفيت هذه
                             السنة.</p>
                         <p xml:lang="ar" xml:id="p_225.d1e2601">تلفون جديد <pb ed="shamela" n="n5-p39" corresp="file:../epub/26523/OEBPS/xhtml/P260.xhtml" xml:id="pb_40.d1e2603"/> التلفون وعربه بعضهم
                             بالمقول معروف في هذه البلاد وقد توصل العلماء إلى اختراع نوه منه لا سلك له يستخدم إذا حدثت حوادث في الخطوط
                             الحديدية أثناء سيرها وسينتقل من أميركا محل اختراعه إلى أوربا وغيرها فتوصل آلته بأي سلك كان.</p>
-                        <p xml:lang="ar" xml:id="p_226.d1e2606">السل البقري</p>
+                        </tei:div><tei:div type="article"><tei:head>السل البقري</tei:head>
                         <p xml:lang="ar" xml:id="p_227.d1e2610">قر الرأي أو كاد على أن السل قد ينقل بواسطة لبن حليب البقر إلى السليمين ممن يشربونه وقد كان ادعى الأستاذ بهرنغ لما
                             نال منذ <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4" xml:id="num_252.d1e3733">أربع</num> سنين جائزة نوبل في استكهولم عاصمة الدانمارك جزاء اكتشافه مصلاً للخناق - أنه اكتشف طريقة أكيدة
                             لتلقيح المصابة من البقر بالسل فثبت الآن دعواه وصحت. وطريقته هذه أن يحقن كل حيوان في الأعصاب مرتين في بضعة أسابيع
                             وبمقادير معلومة من باشلس السل المأخوذ من المرضى من البشر.</p>
-                        <p xml:lang="ar" xml:id="p_228.d1e2613">حالة العلم الحاضر</p>
+                        </tei:div><tei:div type="article"><tei:head>حالة العلم الحاضر</tei:head>
                         <p xml:lang="ar" xml:id="p_229.d1e2616">هو كتاب ألفه اميل بيكارد <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_253.d1e3743">أحد</num> أعضاء المجمع العلمي في فرنسا ذكر فيه فصولاً في الجبر والرياضيات والفلك وعلم جر
                             الأثقال والطبيعيات والكيمياء وعلم طبقات الأرض ومنافع الأعضاء والنبات والطب بقلم يشف عن سلاسة وتحقيق ولا يستقل به
                             الأكبار أهل الأخصاء المحققين فكأن المؤلف وضع دائرة معارف يصعب على كثيرين أن يقوموا ببعض ما قام به هذا الفرد إذ
@@ -1637,7 +1634,7 @@
                             به من أن الحادثات الحيوية تؤول إلى الحادثات الطبيعية والكيماوية. وكل مباحثه تدل على ما ينبغي للعالم أن يعده عما
                             قريب للمستقبل من عدد العلم ليتأتى له أن يحسن البحث العلمي. والحياة العلمية كالحياة الاجتماعية كلما تعاقبت القرون
                             يكثر فيها تعاور الأيدي والاشتراك. </p>
-                    </div>
+                    </tei:div></div>
             <pb ed="shamela" n="n5-p40" corresp="file:../epub/26523/OEBPS/xhtml/P261.xhtml" xml:id="pb_41.d1e2625"/>
                     <div type="section" xml:lang="ar" xml:id="div_15.d1e2623">
                 <head xml:lang="ar" xml:id="head_14.d1e2627">مقالات المجلات</head>
