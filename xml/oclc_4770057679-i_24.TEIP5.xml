@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_24" next="oclc_4770057679-i_25" prev="oclc_4770057679-i_23">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_24" next="oclc_4770057679-i_25" prev="oclc_4770057679-i_23">
    <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -76,7 +76,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
+        <revisionDesc><tei:change when="2017-04-28" who="#pers_TG">Automatically split all <tei:tag>div type="section"</tei:tag> into subsections of <tei:tag>div type="article"</tei:tag>, using paragraphs with a length of 30 or less as indicator of a heading.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-06-15" who="#pers_TG">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-01-12" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2016-01-12" who="#pers_TG">Converted the mark-up of lines of <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>s from <tag>lg type="bayt"</tag>s divided into two <gi>l</gi> to <tag>l type="bayt"</tag>, each consisting of two <gi>seg</gi>.</change>
          <change when="2015-12-17" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
          <change when="2015-11-28" who="#pers_TG">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag>num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change>
@@ -1784,10 +1784,7 @@
                             استمروا على الدراسة منهم  <num type="auto-markup" resp="#pers_TG" value="324" xml:lang="ar" xml:id="num_1.d1e2944">٣٢٤</num>  وتقدم للمشيخة هذا العام  <num type="auto-markup" resp="#pers_TG" value="485" xml:lang="ar" xml:id="num_1.d1e2947">٤٨٥</num>  استمر منهم على الطلب  <num type="auto-markup" resp="#pers_TG" value="293" xml:lang="ar" xml:id="num_1.d1e2950">٢٩٣</num>  وفي التقرير فوائد كثيرة تدل
                             على سلوك هذا المعهد العلمي سبيل النجاح. </p>
                     </div>
-                    <pb ed="shamela" n="n24-p61" corresp="file:../epub/26523/OEBPS/xhtml/P1405.xhtml" xml:id="pb_62.d1e2957"/><div type="section" xml:lang="ar" xml:id="div_14.d1e2955">
-                        
-                        <head xml:lang="ar" xml:id="head_13.d1e2959">سير العلم</head>
-                        <p xml:lang="ar" xml:id="p_217.d1e2962">العلم في مصر</p>
+                    <pb ed="shamela" n="n24-p61" corresp="file:../epub/26523/OEBPS/xhtml/P1405.xhtml" xml:id="pb_62.d1e2957"/><div type="section" xml:lang="ar" xml:id="div_14.d1e2955"><head xml:lang="ar" xml:id="head_13.d1e2959">سير العلم</head><tei:div type="article"><tei:head>العلم في مصر</tei:head>
                         <p xml:lang="ar" xml:id="p_218.d1e2965">مما يسجل بالحمد ويدعو إلى توسيع الأمال في مستقبل مصران نظارة معارفها وفرت العناية هذه السنة بالتعليم باللغة
                             العربية في المدارس الأميرية وارسلت <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="8" xml:id="num_205.d1e3503">ثمانية</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_206.d1e3506">عشر</num> تلميذا من نبهاء المصريين إلى بعض مدارس إنكلترا يتعلمون فيها كما
                             كأنت العادة جارية منذ زمن محمد علي إلى عهد قريب بإرسال طائفة من التلاميذ الأذكياء إلى مدارس الغرب ليعودوا منها
@@ -1812,7 +1809,7 @@
                            </persName> و<persName xml:id="persName_52.d1e3555">المطران يوسف الدبس</persName> و<persName xml:id="persName_53.d1e3558">رشيد أفندي الشرتوني</persName> و<persName xml:id="persName_54.d1e3562">السيد محمد ابن الخوجة</persName> و<persName xml:id="persName_55.d1e3565">الشيخ طه محمود خليل أفندي الخوري</persName> و<persName xml:id="persName_56.d1e3568">نجيب أفندي
                             حبيقة</persName> وكانوا اخلف الله علينا من يقوم مقامهم أعضاء نافعة في جسم المجتمع خدموه جهد طاقتهم بعقولهم. أما البلاد
                             العربية الأخرى فلم يحدث فيها هذه السنة ماهو جدير بالدوين هنا.</p>
-                        <p xml:lang="ar" xml:id="p_220.d1e2974">العلم في ألمانيا</p>
+                        </tei:div><tei:div type="article"><tei:head>العلم في ألمانيا</tei:head>
                         <p xml:lang="ar" xml:id="p_221.d1e2977">ساعد على ارتقاء ألمانيا في أواخر القرن التاسع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_219.d1e3578">عشر</num> أن التعليم العام فيها انتشر انتشارا لايكاد يتصوره العقل فبعد أن
                             كان فيها سنة  <num type="auto-markup" resp="#pers_TG" value="1882" xml:lang="ar" xml:id="num_1.d1e2979">١٨٨٢</num>  -  <num type="auto-markup" resp="#pers_TG" value="20440" xml:lang="ar" xml:id="num_1.d1e2982">٢٠٤٤٠</num>  مدرسة ابتدائية تحتوي على  <num type="auto-markup" resp="#pers_TG" value="1427045" xml:lang="ar" xml:id="num_1.d1e2985">١٤٢٧٠٤٥</num> تلميذا أصبح فيها سنة  <num type="auto-markup" resp="#pers_TG" value="1901" xml:lang="ar" xml:id="num_1.d1e2988">١٩٠١</num> في المدن  <num type="auto-markup" resp="#pers_TG" value="4413" xml:lang="ar" xml:id="num_1.d1e2991">٤٤١٣</num> مدرسة فيها
                              <num type="auto-markup" resp="#pers_TG" value="35733" xml:lang="ar" xml:id="num_1.d1e2995">٣٥٧٣٣</num> فرقةوفي القرى <num type="auto-markup" resp="#pers_TG" value="32332" xml:lang="ar" xml:id="num_1.d1e2998">٣٢٣٣٢</num> مدرسة فيها  <num type="auto-markup" resp="#pers_TG" value="68349" xml:lang="ar" xml:id="num_1.d1e3001">٦٨٣٤٩</num>  فرقة وفي مجموعها كلهازهاء <num type="auto-markup" resp="#pers_TG" value="5680000" xml:lang="ar" xml:id="num_1.d1e3004">٥٦٨٠٠٠٠</num> تلميذا وهكذا الحال في التعليم الثانوي
@@ -1829,19 +1826,19 @@
                             وبعد أن كان الاشخاص الذين يعيشون من التمثيل والموسيقى والمعارض الصناعية سنة  <num type="auto-markup" resp="#pers_TG" value="1882" xml:lang="ar" xml:id="num_1.d1e3085">١٨٨٢</num>  -  <num type="auto-markup" resp="#pers_TG" value="46508" xml:lang="ar" xml:id="num_1.d1e3089">٤٦٥٠٨</num>  اشخاص أصبح سنة  <num type="auto-markup" resp="#pers_TG" value="1899" xml:lang="ar" xml:id="num_1.d1e3092">١٨٩٩</num>  -
                              <num type="auto-markup" resp="#pers_TG" value="65565" xml:lang="ar" xml:id="num_1.d1e3095">٦٥٥٦٥</num> 
             </p>
-                        <p xml:lang="ar" xml:id="p_222.d1e3099">استحالة الطماطم</p>
+                        </tei:div><tei:div type="article"><tei:head>استحالة الطماطم</tei:head>
                         <p xml:lang="ar" xml:id="p_223.d1e3102">بلغ من تفنن بوربانك مؤلف كتاب الفواكه أن اخرج من الطماطم (البندورة) عنبا واجاصا وكمثرى وتفاحا ودراقا وغيرها من
                             الفواكه مما إذا رأيته ظننته أصليا. وكان من اجود اختراعته في ذلك الطماطم بالعنب والطماطم بالكمثرى ومنها
                             الأصفروالأحمر ويستخدم الأصفر في المربيات لجودة رائحته وكأنت الطماطم بهذه الأنواع من الفاكهة تخرج كل نبتة منه من
                             <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_263.d1e3725">مئة</num> إلى <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="200" xml:id="num_264.d1e3728">مائتين</num>يوخمسين وتعطي أرباحا عظيمة وهي تنبت من شهر يوليو إلى اكتوبر بعد أن تزرع من ابريل إلى مايو.</p>
-                        <p xml:lang="ar" xml:id="p_224.d1e3105">الاستصباح الصناعي</p>
+                        </tei:div><tei:div type="article"><tei:head>الاستصباح الصناعي</tei:head>
                         <p xml:lang="ar" xml:id="p_225.d1e3108">نشر <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_265.d1e3737">احد</num> مهندسي الأمريكان بحثا في هذا المعنى قال فيه أن الاستصباح بالاضواء الصناعية المتعارفة يجب أن يكون إلى
                             الانوار الطبيعية اقرب وأن يجمع بين الفائدة والجمال وأن الطريقة المتبعة الأن في تنوير المساكن والمحال العامة في
                             الليل سواء كان بالاضواء الكهربائية أو الغازية أو الزيتية أو غيرها ليست من الاضواء الطبيعية في شئ وينبغي أن
                             يستعمل من مواد الإنارة مايقربها من الطبيعي لئلا تتضرر العيون ورأى أن الاجدر بالنور الصناعي أن يكون مستورا او
                             معتدلا وبذلك يجب التخلي عن المصابيح الشائعة بالاستعمال الآن وإن اضواء المسكن يجب أن تكون متناسبة مع أثاثه وفرشه
                             كما تكون متوأفقة مع عدد الاشخاص الساكنين فيه وهو يحاول ابدال الطريقة المستعملة في الإنارة بغيرها.</p>
-                        <p xml:lang="ar" xml:id="p_226.d1e3112">طول العمر</p>
+                        </tei:div><tei:div type="article"><tei:head>طول العمر</tei:head>
                         <p xml:lang="ar" xml:id="p_227.d1e3115">نصح <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_266.d1e3747">أحد</num> الأطباء لمن أراد أن يطول عمره <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_267.d1e3750">مئة</num> سنة أن يقوي حواس جسمه وانسجته برياضات يومية في الهواء الطلق وذلك
                             باستعمال الالعاب الجسدية أو التنفسية وأن يعتدل <pb ed="shamela" n="n24-p64" corresp="file:../epub/26523/OEBPS/xhtml/P1408.xhtml" xml:id="pb_65.d1e3117"/> في اكله وشربه ولذائذ
                             الطبيعة وأن يهوي المساكن ويقيم ماامكن في العراء وأن يقاوم الأمراض والاستعداد لما ورثه من آبائه وأن يباكر النوم
@@ -1849,7 +1846,7 @@
                             والسرور وسكون الروح والأمل في الحياة وأن ينبه في نفسه الشعور بالواجب كل وقت من أوقات الحياة ويقوي العزيمة في
                             مجاهدة المصائب وينشطها على فعل الخير واتقاء الصبر. قال <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_270.d1e3762">أحد</num> الظرفاء وعندي شرط عاشر لطول الحياء وهو أن لايشتغل
                             المرء بالسياسة فإن الاشتغال بها يقصر الاعمار.</p>
-                        <p xml:lang="ar" xml:id="p_228.d1e3120">دواء الكلب</p>
+                        </tei:div><tei:div type="article"><tei:head>دواء الكلب</tei:head>
                         <p xml:lang="ar" xml:id="p_229.d1e3123">اخترع <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_271.d1e3771">احد</num> أطباء نيويورك دواء جديد للكلب. وقد زاد عدد المصأبين بهذا الداء الذي ينسب انتشاره لرداءة الأسباب الصحية
                             التي تعيش فيها الكلاب في العادة فيحبس بعضها في الدور ويغذى باخبث المآكل. ولاحظ بعضهم أن الكلاب تعيش <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="60" xml:id="num_272.d1e3774">ستين</num> ايسلاند
                             وهي جزيرة واقعة بين لون ايسلاند وجون راريتأن في المحيط الاتلانتيكي اهنأ عيشة ويعنى بأمرها من وراء الغابة ومع هذا
@@ -1859,18 +1856,18 @@
                             فيه بعض الأجسام النيجرية نسبة للبكتريا ومتى وجدت هذه الأجسام في الكلب فهو مصاب بالكلب لامحالة وبذلك لايعتمد إلى
                             استعمال الطريقة المتبعة الأن في كشف حال الكلب يحقن عين ارنب والانتظار <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5" xml:id="num_273.d1e3777">خمسة</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_274.d1e3780">عشر</num> يوما لتحقيق إلأصابة بل أن المصاب
                             يعرف في اليوم الذي يشتبه فيه.</p>
-                        <p xml:lang="ar" xml:id="p_230.d1e3126">دواء للصمم</p>
+                        </tei:div><tei:div type="article"><tei:head>دواء للصمم</tei:head>
                         <p xml:lang="ar" xml:id="p_231.d1e3129">منذ <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="5" xml:id="num_275.d1e3789">خمسة</num> <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_276.d1e3792">عشر</num> سنة اكتشف دواء يعين بعض الشيء على الشفاء من الصمم سموه التيوزينامين ولم يثبت نفعه الافي هذه السنة
                             بفضل محلول مائي منه اخترع حديثا ويؤكدون أن هذا الدواء يسكن بعض التسكين ولايفيد كل الفائدة.</p>
                         <p xml:lang="ar" xml:id="p_232.d1e3133">أعظم ضوء <pb ed="shamela" n="n24-p65" corresp="file:../epub/26523/OEBPS/xhtml/P1409.xhtml" xml:id="pb_66.d1e3135"/> هو الذي ينبعث من الكرة
                             المعلقة في أعلى برج من المحطة الجديدة في مدينة لاكاوانا في ولاية نيوجرسي من أعمال الولايات المتحدة فقد جعل داخل
                             هذه الكرة التي يبلغ قطرها مترين  <num type="auto-markup" resp="#pers_TG" value="49" xml:lang="ar" xml:id="num_1.d1e3137">٤٩</num>  مصباحا ذا اقواس يكون منها نور يعادل مليون ونصف مليون من الشموع وينير الضواحي
                             والاقاصي.</p>
-                        <p xml:lang="ar" xml:id="p_233.d1e3141">مكتبة العميان</p>
+                        </tei:div><tei:div type="article"><tei:head>مكتبة العميان</tei:head>
                         <p xml:lang="ar" xml:id="p_234.d1e3144">اغتنت مكتبة العميأن في نيويورك المؤسسة من اعانات المحسنين بقائمة جديدة من كتبهم مؤلفة من <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="3000" xml:id="num_278.d1e3810">ثلاثة آلاف</num> كتاب جعلت في
                             جرار خاصة يكفي الأعمى أن يمر يده على احدها حتى يفهم موضوعه وهذه الكتب تساعد الاكمة كثيراً على التعلم وعدد
                             العميأن في الولايات المتحدة نحو <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="70" xml:id="num_279.d1e3813">سبعين</num> الفا.</p>
-                        <p xml:lang="ar" xml:id="p_235.d1e3147">نبوغ الكاتبات</p>
+                        </tei:div><tei:div type="article"><tei:head>نبوغ الكاتبات</tei:head>
                         <p xml:lang="ar" xml:id="p_236.d1e3150">قالت <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_280.d1e3822">إحدى</num> المجلات الفرنسوية من الصعوبة أبداً أن يبدأ المرء في عمل ويبرز فيه والبداءة بالأدب من جملة الأمور
                             المتعذرة وقد كان شأن القصصية هانري كريفيل شأن غيرها من الكاتبات والكاتبين في ذلك فطافت لأول عهدها إدارات تحرير
                             الجرائد والمجلات فلم تقبل لها شيئا من رواياتها فاضطرت أن تعيش في مسكنة وتسكن مسكنا حقيرا وقد قبلت (مجلة
@@ -1879,22 +1876,22 @@
                             ويقين من جودة منثورها خطر لها أن تشترط على أولئك الطابعين بان تتقاضى منهم ضعف ما اتفقت معهم عليه عند ما يتجاوز
                             المطبوع من قصصها الطبعة العاشرة وكأن ذلك كما خطر لها إذ أنها لم تمت حتى رأت معظم ما كتبت وقد طبع <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="40" xml:id="num_282.d1e3828">أربعين</num> مرة
                             فاتاها بثروة عاشت فيها في خفض وسعة.</p>
-                        <p xml:lang="ar" xml:id="p_237.d1e3153">الراحة الأسبوعية</p>
+                        </tei:div><tei:div type="article"><tei:head>الراحة الأسبوعية</tei:head>
                         <p xml:lang="ar" xml:id="p_238.d1e3157">نشرت جريدة الاقتصاديين مقالة في فضل الراحة يوماً في الأسبوع وشيء من تاريخها وأوردت صورة المحضر الذي وقع عليه في
                             لندن سنة  <num type="auto-markup" resp="#pers_TG" value="1851" xml:lang="ar" xml:id="num_1.d1e3159">١٨٥١</num>  بقلم  <num type="auto-markup" resp="#pers_TG" value="640" xml:lang="ar" xml:id="num_1.d1e3162">٦٤٠</num>  طبيباً وما كتبته <pb ed="shamela" n="n24-p66" corresp="file:../epub/26523/OEBPS/xhtml/P1410.xhtml" xml:id="pb_67.d1e3165"/> الفلاسفة في هذا الشأن
                             مثل <persName ref="viaf:100184045" xml:lang="fr-Arab-AR" xml:id="persName_57.d1e3845">روسو</persName> علماء الاجتماع مثل ما كولي ولنكلن والاقتصاديون مثل برودون ورجال السياسة مثل بالمرستون وروبرت بيل وكلهم
                             يثبتون ضرورة راحة يوم في الأسبوع ومنافعها الطبيعية والأخلاقية وحسناتها الاقتصادية والاجتماعية.</p>
-                        <p xml:lang="ar" xml:id="p_239.d1e3168">نساء أميركيا</p>
+                        </tei:div><tei:div type="article"><tei:head>نساء أميركيا</tei:head>
                         <p xml:lang="ar" xml:id="p_240.d1e3171">بحثت <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_285.d1e3855">إحدى</num> المجلات الألمانية في حالة النساء في الولايات المتحدة فقالت أن عددهن فيها بالنسبة لعدد الرجال يقل نحو
                             مليون نسمة أما التعليم فإن عدد المتعلمات منهن هو ضعفا عدد الرجال ولذلك يقوى الميل كل يوم في تلك البلاد في تقليل
                             تربية البنات مع الصبيان وإنشاء مدارس للبنات خاصة.</p>
-                        <p xml:lang="ar" xml:id="p_241.d1e3174">حب الوطن</p>
+                        </tei:div><tei:div type="article"><tei:head>حب الوطن</tei:head>
                         <p xml:lang="ar" xml:id="p_242.d1e3177">أسف <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_286.d1e3864">أحد</num> المفكرين المجلات الألمانية من أن محبة الوطن لا تلقن الناس إلا بتجميد أبطال الحروب فيعلم التلميذ الإعجاب
                             بالغالب في ساحة الوغى وما المجد الحقيقي إلا لتلك الأجيال من الفلاحين والعملة ممن عملوا بسلام على إغناء بلادهم
                             وراحة أفرادها ولاسيما أولئك العلماء ممن تجردت نفوسهم عن الأغراض فنفعوا بما أتوا من أعمالهم الجليلة أبناء البشر
                             عامة ولا يحتفظ بحب الوطن الحقيقي إلا بإلقاء النظر على أعمال السواد الأعظم من الأمة. وقد قال الاشتراكي فولمار منذ
                             أيام: أن محبة الإنسانية لا تمنعا مطلقاً من أن تكون من أحسن الألمان عراقة في الوطنية.</p>
-                        <p xml:lang="ar" xml:id="p_243.d1e3180">استعارة الكتب</p>
+                        </tei:div><tei:div type="article"><tei:head>استعارة الكتب</tei:head>
                         <p xml:lang="ar" xml:id="p_244.d1e3184">نشرت مجلة التعليم الدولية مقالة ف نظام إعارة الكتب من مكاتب باريز وجميع أنحاء فرنسا وكلياتها وبلدتها سواء كان
                             لأبناء البلاد أو لمن يطلبها من العلماء في الخارج لقاء رهن وشروط تشترط نظارة معارف فرنسا على المستعير وعلى دولته
                             المتوسطة في الأمر فقالت أن الحكومة هناك بذلت ومازالت تبذل منذ <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="30" xml:id="num_287.d1e3873">ثلاثين</num> سنة كل ما يساعد المؤلفين والعالمين على
@@ -1905,38 +1902,38 @@
                             الثمينة وتعرضها لخطر الضياع والحوادث باعارتها. أما الأمم الغربية فتستفير من فرنسا أكثر مما يستعير علماء الفرنسيس
                             من غيرهم وقد كان عدد الكتب التي أعارتها مكاتب باريز والولايات سنة  <num type="auto-markup" resp="#pers_TG" value="1906" xml:lang="ar" xml:id="num_1.d1e3191">١٩٠٦</num>  -  <num type="auto-markup" resp="#pers_TG" value="488" xml:lang="ar" xml:id="num_1.d1e3194">٤٨٨</num>  وما اعارته فرنسا للخارج  <num type="auto-markup" resp="#pers_TG" value="121" xml:lang="ar" xml:id="num_1.d1e3197">١٢١</num>  اما عدد
                             ما استعارته من الخارج فهو  <num type="auto-markup" resp="#pers_TG" value="11" xml:lang="ar" xml:id="num_1.d1e3201">١١</num>  كتاباً.</p>
-                        <p xml:lang="ar" xml:id="p_245.d1e3205">الشعر والثورة</p>
+                        </tei:div><tei:div type="article"><tei:head>الشعر والثورة</tei:head>
                         <p xml:lang="ar" xml:id="p_246.d1e3208">ألف <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_293.d1e3901">احد</num> علماء الفرنسيس مجلداً ضخماً أثبت فيه بالبرهأن التاريخي تأثير الثورة الفرنسوية الأولى في عقول بعض الشعراء
                             الإنكليز المعاصرين لها حتى صارت روحها تظهر على أسلات أقلامهم وتتجلى في إبداعهم ونظامهم ولاسيما ورتسورت وسوتني
                             وكولريج وقال أن الاضطرابات والشعور الذي نالهم من ذاك الحادث قد ساعدهم على تجليد حياة الشعر الإنكليزي المعروف
                             بالرومانتك أي الجديد الخالي من التقليد. وبين المؤلف تأثير الثورة الفلسفي أي الأفكار الأدبية والاجتماعية التي
                             نتجت منها ورددها أولئك الشعراء وتغنوا بها بين قومهم.</p>
-                        <p xml:lang="ar" xml:id="p_247.d1e3211">محصول السكر</p>
+                        </tei:div><tei:div type="article"><tei:head>محصول السكر</tei:head>
                         <p xml:lang="ar" xml:id="p_248.d1e3214">كان محصول السكر في العالم سنة  <num type="auto-markup" resp="#pers_TG" value="1870" xml:lang="ar" xml:id="num_1.d1e3216">١٨٧٠</num>  -  <num type="auto-markup" resp="#pers_TG" value="2" xml:lang="ar" xml:id="num_1.d1e3219">٢</num> .  <num type="auto-markup" resp="#pers_TG" value="600" xml:lang="ar" xml:id="num_1.d1e3222">٦٠٠</num> . طن فبلغ سنة  <num type="auto-markup" resp="#pers_TG" value="1905" xml:lang="ar" xml:id="num_1.d1e3225">١٩٠٥</num>   
                <num type="auto-markup" resp="#pers_TG" value="10" xml:lang="ar" xml:id="num_1.d1e3228">١٠</num> .  <num type="auto-markup" resp="#pers_TG" value="086" xml:lang="ar" xml:id="num_1.d1e3232">٠٨٦</num> . طن.</p>
-                        <p xml:lang="ar" xml:id="p_249.d1e3236">مسكرات العالم</p>
+                        </tei:div><tei:div type="article"><tei:head>مسكرات العالم</tei:head>
                         <p xml:lang="ar" xml:id="p_250.d1e3240">في إحصاء أخير إنه كان مجموع الوارد من المشروبات على أوروبا سنة  <num type="auto-markup" resp="#pers_TG" value="1906" xml:lang="ar" xml:id="num_1.d1e3242">١٩٠٦</num>   
                <num type="auto-markup" resp="#pers_TG" value="633566" xml:lang="ar" xml:id="num_1.d1e3245">٦٣٣٥٦٦</num>  هيكتولتر منها  <num type="auto-markup" resp="#pers_TG" value="4764" xml:lang="ar" xml:id="num_1.d1e3248">٤٧٦٤</num>  على البلاد
                             العثمانية في أوروبا و  <num type="auto-markup" resp="#pers_TG" value="979" xml:lang="ar" xml:id="num_1.d1e3251">٩٧٩</num>  على بلادها في آسيا والهيكتولتر <num xml:lang="ar" type="auto-markup" subtype="d3" resp="#pers_TG" value="100" xml:id="num_304.d1e3947">مئة</num> ليتر.</p>
-                        <p xml:lang="ar" xml:id="p_251.d1e3255">مدارس الأجانب</p>
+                        </tei:div><tei:div type="article"><tei:head>مدارس الأجانب</tei:head>
                         <p xml:lang="ar" xml:id="p_252.d1e3258">بلغ عدد التلاميذ الذين يدرسون اللغة الفرنسوية في مدارس فرنسوية  <num type="auto-markup" resp="#pers_TG" value="90" xml:lang="ar" xml:id="num_1.d1e3260">٩٠</num>  ألفا في البلاد العثمانية و <num type="auto-markup" resp="#pers_TG" value="16753" xml:lang="ar" xml:id="num_1.d1e3263">١٦٧٥٣</num>  في مصر.
                             وإيطاليا وألمانيا تحأولان أن تتقدما على فرنسا في هذا الباب ولاسيما بعد فصل فرنسا الدين عن السياسة وإعلانها الحرب
                             على الدين وأهله فقد <pb ed="shamela" n="n24-p68" corresp="file:../epub/26523/OEBPS/xhtml/P1412.xhtml" xml:id="pb_69.d1e3266"/> بلغ ما خصصته إيطاليا سنة
                              <num type="auto-markup" resp="#pers_TG" value="1904" xml:lang="ar" xml:id="num_1.d1e3268">١٩٠٤</num>  لإنشاء مدارس لها في اسكوب واشقودرة والاستانه وسلانيك وازمير  <num type="auto-markup" resp="#pers_TG" value="1112000" xml:lang="ar" xml:id="num_1.d1e3271">١١١٢٠٠٠</num>  لير واللير معاملة طليانية قدرها فرنك
                             وبلغ ما خصصته ألمانيا  <num type="auto-markup" resp="#pers_TG" value="650" xml:lang="ar" xml:id="num_1.d1e3275">٦٥٠</num>  <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_310.d1e3975">ألف</num> مارك للانفاق على مدارسها في فلسطين وغيرها والمارك فرنك وربع.</p>
-                        <p xml:lang="ar" xml:id="p_253.d1e3279">الخطوط الحديدية</p>
+                        </tei:div><tei:div type="article"><tei:head>الخطوط الحديدية</tei:head>
                         <p xml:lang="ar" xml:id="p_254.d1e3282">بلغ ما مد إلى الآن من السكك الحديدية في السلطنة العثمانية  <num type="auto-markup" resp="#pers_TG" value="6100" xml:lang="ar" xml:id="num_1.d1e3284">٦١٠٠</num>  كيلو متر وبلغ طول السكك الحديدية في الديار
                             المصرية <num type="auto-markup" resp="#pers_TG" value="5252" xml:lang="ar" xml:id="num_1.d1e3287">٥٢٥٢</num>  كيلو متراً.</p>
-                        <p xml:lang="ar" xml:id="p_255.d1e3291">شاعر مضحك</p>
+                        </tei:div><tei:div type="article"><tei:head>شاعر مضحك</tei:head>
                         <p xml:lang="ar" xml:id="p_256.d1e3295">عثروا في <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_313.d1e3996">إحدى</num> القرى التي غابت عن الأنظار في ضفة النيل على <num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="4" xml:id="num_314.d1e3999">أربع</num> قطع للشاعر اليوناني الهزلي مياندر المتوفي قبل  <num type="auto-markup" resp="#pers_TG" value="2200" xml:lang="ar" xml:id="num_1.d1e3297">٢٢٠٠</num> 
                             سنة وقد فرح أهل الأدب بهذا الاكتشاف لأنهم لم يروا مما خلفه مياندر حتى الأن الا محاورات طفيفة والمأثور عنه أنه
                             <num xml:lang="ar" type="auto-markup" subtype="d4" resp="#pers_TG" value="1000" xml:id="num_316.d1e4005">ألف</num> ثمانمائة رواية ويقول مؤرخو الأدب إن مياندر جاء العالم بقصائده المضحكة قبل ترأس الشاعر الهزلي وقبل شعراء
                             اللاتين.</p>
-                        <p xml:lang="ar" xml:id="p_257.d1e3301">التلغراف اللاسكي</p>
+                        </tei:div><tei:div type="article"><tei:head>التلغراف اللاسكي</tei:head>
                         <p xml:lang="ar" xml:id="p_258.d1e3304">من أهم ما وفق إليه العلم في الأيام الأخيرة ربط أوروبا بأميركا بالتلغراف اللاسكي الذي اخترعه ماركوني الإيطالي وبه
                             ينقل الكلام بأسرع مما كان ينقل بواسطة الأسلاك البحرية وبه يمكن إرسال رسالتين في آن و<num xml:lang="ar" type="auto-markup" subtype="d1" resp="#pers_TG" value="1" xml:id="num_317.d1e4015">احد</num> ومعنى مختلف وهذا
                             الاختراع سيغير أحوال المخابرات بعض التغيير. </p>
-                    </div>
+                    </tei:div></div>
                 </body>
             </text>
 </TEI>
