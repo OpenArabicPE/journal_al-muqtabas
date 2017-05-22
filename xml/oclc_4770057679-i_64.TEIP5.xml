@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_64" next="oclc_4770057679-i_65" prev="oclc_4770057679-i_63">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?><TEI xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0" xml:id="oclc_4770057679-i_64" next="oclc_4770057679-i_65" prev="oclc_4770057679-i_63">
     <teiHeader xml:lang="en">
         <fileDesc xml:lang="en">
             <titleStmt xml:lang="en">
@@ -6,8 +6,8 @@
                 <title xml:lang="ar-Latn-x-ijmes">Majallat al-Muqtabas, Vol. 6, no. 5</title>
                 <title type="sub" xml:lang="en">TEI edition</title>
                 <author ref="viaf:32272677" xml:lang="en">
-                  <persName xml:lang="ar"><forename xml:lang="ar">محمد</forename> <surname xml:lang="ar">كرد علي</surname></persName>
-                  <persName xml:lang="ar-Latn-x-ijmes"><forename xml:lang="ar-Latn-x-ijmes">Muḥammad</forename> <surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname></persName>
+                  <persName xml:lang="ar" ref="viaf:32272677"><forename xml:lang="ar">محمد</forename> <surname xml:lang="ar">كرد علي</surname></persName>
+                  <persName xml:lang="ar-Latn-x-ijmes" ref="viaf:32272677"><forename xml:lang="ar-Latn-x-ijmes">Muḥammad</forename> <surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname></persName>
                 </author>
                 <respStmt xml:lang="en">
                     <resp xml:lang="en">Transcription</resp>
@@ -52,11 +52,11 @@
                             politique, littérature, histoire, archéologie, philologie, ménagerie,
                             hygiène, bibliographie, civilisation arabe et occidentale</title>
                         <editor ref="viaf:32272677" xml:lang="en">
-                            <persName xml:lang="ar">
+                            <persName xml:lang="ar" ref="viaf:32272677">
                                 <forename xml:lang="ar">محمد</forename>
                                 <surname xml:lang="ar">كرد علي</surname>
                             </persName>
-                            <persName xml:lang="ar-Latn-x-ijmes">
+                            <persName xml:lang="ar-Latn-x-ijmes" ref="viaf:32272677">
                                 <forename xml:lang="ar-Latn-x-ijmes">Muḥammad</forename>
                                 <surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname>
                             </persName>
@@ -86,7 +86,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="encodingDesc" parse="xml"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" xpointer="profileDesc" parse="xml"/>
-        <revisionDesc><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-09-25">Added the <att>xml:lang</att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Corrected faulty <gi>pb</gi>s. Added some footnotes. Linked all <tag xml:lang="en">pb
+        <revisionDesc><tei:change when="2017-05-22" who="pers_TG">Added references to VIAF IDs to <tei:gi>persName</tei:gi>s without such references based on  <tei:gi>person</tei:gi>s mentioned in <tei:ref target="../tei/entities_master.TEIP5.xml">../tei/entities_master.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change><change when="2017-03-03" who="#pers_TG">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change><change when="2017-02-09">Corrected <gi>biblStruct</gi> by moving all <gi>biblScope</gi> from <gi>imprint</gi> to <gi>monogr</gi> and by converting all <att>n</att> to <att>from</att> and <att>to</att>with identical values.</change><change when="2016-09-25">Added the <att>xml:lang</att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</change><change when="2016-06-15" who="#pers_TG" xml:lang="en">Replaced <gi>encodingDesc</gi> and <gi>profileDesc</gi>with XPointers pointing to a master file.</change><change when="2016-05-09" who="#pers_TG" xml:lang="en">Added automated mark-up of Arabic numerals that are written as words instead of digits (i.e. خمسة instead of 5) as <gi>tei:num</gi>and <att>xml:value</att>recording the normalised value.</change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Corrected the faulty mark-up of numbers containing commas or group separatours for thousands (i.e. ".") by grouping successive <gi>num</gi> elements separated by " . " into a single <gi>num</gi> element. The <att>resp</att> and <att>type</att> indicate the responsible editor and the automated mark-up; i.e. the string "٣١.٦٧٠،٤٠" is marked up as <tag xml:lang="en">num resp="#pers_TG" type="auto-markup" value="31670.40"</tag>.</change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Corrected faulty <gi>pb</gi>s. Added some footnotes. Linked all <tag xml:lang="en">pb
                 ed="print"</tag> to the corresponding facsimile. Added automated <att>xml:id</att>s for every element that is a
                 descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern
                 "name()_generate-id()".</change><change when="2016-04-02" who="#pers_TG" xml:lang="en">Added automated <att>xml:id</att>s for every element that is a descendant of <gi>tei:text</gi>and had no existing <att>xml:id</att>following the pattern "name()_generate-id()"</change>
@@ -2306,7 +2306,9 @@
                         في الحضارة الإسلامية وكانت سبب عظمتها ومجدها كما أن بذلك يعلل سبب انحطاطها
                         وخرابها وبهذا ساغ أن نميز بين انتشار الدعوة الإسلامية بادئ بدءٍ ووعظ القرآن
                         والهداية الدينية وبين الفتح الحربي وتوحيد سياسة العالم العربي. وهذا <pb ed="shamela" n="n64-p44" corresp="file:../epub/26523/OEBPS/xhtml/P4290.xhtml" xml:id="pb_88.d1e3660"/> التمييز الأساسي الجوهري لا يفاجأ به إنسان تبحر
-                        في دروس التاريخ الديني فإن مؤرخي الإصلاح الذي قام به <persName ref="viaf:14773105" xml:id="persName_12.d1e4067">لوثيروس</persName> وكلفن شاهدون
+                        في دروس التاريخ الديني فإن مؤرخي الإصلاح الذي قام به <persName ref="viaf:14773105" xml:id="persName_12.d1e4067"> 
+                     <surname>لوثيروس</surname> 
+                  </persName> وكلفن شاهدون
                         بما كان للسياسة من عمل في نشر المذهب البرتستانتي. وحقاً أن كبار المصلحين في
                         القرن السادس <num xml:lang="ar" type="auto-markup" subtype="d2" resp="#pers_TG" value="10" xml:id="num_67.d1e4070">عشر</num> كانوا أرباب وجدانات وأخلاق ونوابغ في الدين من الطراز الأول
                         ولكن جذبهم تيار السياسة في عصرهم فعملوا على أن يديروه بحيث يوافق رغائبهم
