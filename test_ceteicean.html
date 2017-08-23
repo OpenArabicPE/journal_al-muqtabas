@@ -16,61 +16,20 @@
   <div id="TEI"></div>
   <script src="js/CETEI.js"></script>
   <script>
-    var CETEIcean = new CETEI();
-    CETEIcean.addBehaviors(
-        {
-  "handlers": {
-    "ptr": ["<a href=\"$rw@target\">$@target</a>"],
-    "graphic": function() {
-      let ceteicean = this;
-      return function() {
-        let shadow = this.createShadowRoot();
-        let img = new Image();
-        img.src = ceteicean.rw(this.getAttribute("url"));
-        if (this.hasAttribute("width")) {
-          img.width = this.getAttribute("width").replace(/[^.0-9]/g, "");
-        }
-        if (this.hasAttribute("height")) {
-          img.height = this.getAttribute("height").replace(/[^.0-9]/g, "");
-        }
-        shadow.appendChild(img);
-      }
-    },
-    "head": function() {
-      return function() {
-        let 
-      }
-    },
-    "add": ["`","´"],
-  },
-  "fallbacks": {
-    "graphic": function(elt) {
-      let ceteicean = this;
-      let content = new Image();
-      content.src = ceteicean.rw(this.getAttribute("url"));
-      if (elt.hasAttribute("width")) {
-        content.width = elt.getAttribute("width").replace(/[^.0-9]/g, "");
-      }
-      if (elt.hasAttribute("height")) {
-        content.height = elt.getAttribute("height").replace(/[^.0-9]/g, "");
-      }
-      elt.appendChild(content);
-    }
-  }
-}
-      )
-    CETEIcean.getHTML5('xml/test.TEIP5.xml', function(data) {
-      document.getElementById("TEI").innerHTML = "";
-      document.getElementById("TEI").appendChild(data);
-      CETEIcean.addStyle(document, data);
-    });
+      var CETEIcean = new CETEI();
+      CETEIcean.getHTML5('xml/oclc_4770057679-i_1.TEIP5.xml', function(data) {
+        document.getElementById("TEI").innerHTML = "";
+        document.getElementById("TEI").appendChild(data);
+        CETEIcean.addStyle(document, data);
+      });
 
       // Alternatively, use then()
-      // (new CETEI).getHTML5('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_42.TEIP5.xml').then(function(data){
+      // (new CETEI).getHTML5('https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_1.TEIP5.xml').then(function(data){
       //   document.getElementById("TEI").appendChild(data);
       // });
 
     </script>
+  
 
 
   </body>
