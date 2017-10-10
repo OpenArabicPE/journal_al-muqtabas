@@ -1,7 +1,7 @@
 ---
 title: "Readme: Digial Muqtabas"
 author: Till Grallert
-date: 2016-10-23 23:25:09 +0200
+date: 2017-10-09 14:27:13 +0300
 ---
 
 # Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1917/18)
@@ -144,6 +144,8 @@ In addition to the original edition, at least one reprint appeared: In 1992 Dār
 Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem through the British Library's "Endangered Archives Project" (vols. 2-7)](http://eap.bl.uk/database/overview_project.a4d?projID=EAP119;r=63), [HathiTrust (vols. 1-6, 8)](http://catalog.hathitrust.org/Record/100658549), and [Institut du Monde Arabe](http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=9C82C139F9785E99D30089727B40A269). Due to its open access licence, preference is given to facsimiles from EAP.
 
 ### 3.1.1 [EAP119](http://eap.bl.uk/)
+
+- IMPORTANT NOTE: EAP has changed its website and **ALL** links at some point in September 2017. Thus, all links to facsimiles are broken.
 
 - links to volumes:
     + [Vol. 2](http://eap.bl.uk/database/overview_item.a4d?catId=809;r=12316)
