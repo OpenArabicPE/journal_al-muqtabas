@@ -189,7 +189,7 @@
     <!-- parameters for file paths or URLs -->
     <!-- modify filePrefix to point to boilerplate files on your own server, or to specify a relative path, e.g.: <xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>
 	-->
-    <xsl:param name="filePrefix" select="'https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master'"/>
+    <xsl:param name="filePrefix" select="'https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/boilerplate'"/>
     <!-- the following parameters should not be changed unless the folder structure and file names have been changed -->
     <xsl:param name="teibpCSS" select="concat($filePrefix, '/css/teibp.css')"/>
     <xsl:param name="customCSS" select="concat($filePrefix, '/css/teibp_custom.css')"/>
