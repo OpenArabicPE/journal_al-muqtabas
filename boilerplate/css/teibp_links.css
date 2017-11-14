@@ -1,0 +1,133 @@
+------------------
+This stylesheet governs the display of links
+-------------------*/
+
+a {
+	display: inline;
+	text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:active {
+  /*color: #BD4007;*/
+  text-decoration: none;
+}
+a:hover {
+	/* could be green (#84DA00) or the original orange (#BD4007) well */
+  /*color: #62A401;*/
+  text-decoration: none;
+}
+
+
+/* elements pointing to themselves */
+head a.c_link-self {
+	display: block;
+	color: inherit;
+}
+
+
+/* footnote anchors and external references */
+.c_fn-mark, 
+a.c_linked-data,
+a.c_corresp {
+    vertical-align:top;
+    font-size:10px !important;
+    padding-left:0.5em;
+    padding-right:0.5em;
+}
+
+a.c_linked-data svg {
+	width: 16px;
+	height: 16px;
+}
+
+/* footnote back links */
+*[lang="ar"] >a.c_fn-back:after {
+	content: "\21AA";
+}
+a.c_fn-back:after {
+	content: "\21A9";
+}
+a.c_link-self .c_number {
+	font-size:10px;
+}
+
+/* hide content of links that is marked as hidden */
+a .c_hidden {
+	display: none;
+}
+
+/* show the content if hovering */
+a.c_fn:hover > .c_hidden, 
+a.c_link-self:hover > .c_hidden {
+	display:inline-block;
+	/*font-size:inherit;*/
+	background-color: white;
+	color: black;
+	padding-left:0.5em;
+    padding-right:0.5em;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+	border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    border-bottom-right-radius:3px;
+    border-bottom-left-radius:3px;
+    border: solid #62A401 1px;
+    box-shadow:0px 1px 5px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.3) inset;
+    /* position the pop over */
+    position:absolute;
+    margin:-1em 0 0 0;
+    z-index: 10000;
+}
+
+/* content of footnotes */
+.c_fn-content, 
+.c_fn-content * {
+	font-size: 14px !important;
+	min-width: 60px;
+    max-width: 200px;
+}
+/* the display of IDs and Links should not flow 
+beyond the screens's borders */
+
+a.c_link-self:hover > .c_hidden {
+	display: block;
+	font-size: 10px;
+	width: 90px;
+}
+/* this would hide the paragraph number when the hidden text is displayed */
+/*a.c_link-self:hover > .c_number {
+	display: none;
+}*/
+
+/* link back to the top of the page: have been removed from the <head>s */
+
+a.cBackToTop {
+	display: block;
+	padding-top: 0.5em;
+	text-align: left;
+	font-size: 0.5em;
+}
+
+a.cBackToTop::after {
+	content: "back to top";
+}
+/* link to the BibTex files */
+head span.c_links {
+	display: block;
+	text-align: left;
+	font-size: 10px;
+	color: inherit;
+	padding-bottom: 0;
+}
+
+a.c_link-bibtex, 
+a.c_link-mods {
+	display: inline;
+	font-size: inherit;
+	padding-right: 0.5em;
+}
+/*a.cLinkBibText::after{
+	content: "BibTeX";
+}*/

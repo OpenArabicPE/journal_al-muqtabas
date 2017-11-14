@@ -1,0 +1,150 @@
+/* from the top right corner */
+/*generic button */
+div.c_sidebar {
+    background-color:white;
+    display: block;
+    width: 40px;
+    right: 0px;
+    /*transition: 0.5s;*/
+    /*set margin and padding to zero */
+    margin: 0;
+    padding: 0;
+}
+.c_button {
+    cursor: pointer;
+}
+    
+.c_button-sidebar{
+    display: block;
+    background-color:white;
+    border:1px solid #e5e5e5;
+    position:fixed;
+    height:40px;
+    width:inherit;
+    right:inherit;
+   /*set margin and padding to zero */
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    /* The transition somehow causes different displays in different browsers */
+    /* -webkit-transition:width .05s linear;
+    transition:width .05s linear;
+    -webkit-transform:translateZ(0) scale(1, 1);*/
+    z-index:1000;
+    cursor: pointer;
+    /* if we add transition here it adds to the transition of the containing
+    element upon invoking the sliding navigation */
+    /*transition: 0.2s;*/
+}
+/* common settings for all child elements */
+div.c_button-sidebar > * {
+    text-decoration:none;
+    line-height:1.3em;
+    font-size:16px;
+    display: block;
+    height: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    /*position:fixed;*/
+    float: left;
+    clear: left;
+
+    /*height: inherit;*/
+    /*padding-left:0.5em;
+    padding-right:0.2em;*/
+}
+/* show icon */
+div.c_button > .c_icon {
+    display: block;
+    /* icons should inherit the full width*/
+    width: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+/* do not display label */
+div.c_button-sidebar > .c_label {
+    visibility: hidden;
+    /*padding-left: 40px;*/
+    /*width: 200px;*/
+    width: 155px;
+    text-decoration:none;
+    /*margin-left: 40px;*/
+    padding-left: 0.2em;
+    clear: right;
+}
+/* hovering state */
+div.c_button-sidebar:hover {
+    width:200px;
+}
+/* display block */
+/* padding and margins */
+
+/* toggle the display of direct children with class c_label*/
+div.c_button-sidebar:hover > *.c_label,
+div.c_button-sidebar:focus > *.c_label {
+    visibility: visible;
+/*    border:1px solid #e5e5e5;
+    border-top-left-radius:5px;
+    border-top-right-radius:0px;
+    border-bottom-right-radius:0px;
+    border-bottom-left-radius:5px;*/
+}
+
+/* sort order of buttons and stack them vertically */
+/*#menu,*/
+#toggleSettings {
+    top:0px;
+}
+#toggleNav {
+    top:40px;
+}
+#xmlSourceLink{
+    top:80px;
+}
+#backToTop{
+    top:120px;
+}
+#goToBottom {
+    top:160px;
+}
+#prevIssue{
+    top:200px;
+}
+#nextIssue{
+    top:240px;
+}
+/* the first button toggling display features should have a leading gap*/
+/*#toggleLb {
+    bottom:0px;
+}*/
+/* change toggled buttons*/
+#toggleLb.c_toggled,
+#toggleLb.c_on{
+    /*color: white;
+    background-color: black;*/
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.6);
+}
+.c_button-toggle >.c_on,
+.c_button-toggle.c_off >.c_on {
+    display: block;
+}
+.c_button-toggle >.c_off,
+.c_button-toggle.c_off > .c_off {
+    display: none;
+}
+.c_button-toggle.c_toggled >.c_on,
+.c_button-toggle.c_on >.c_on {
+    display: none;
+}
+.c_button-toggle.c_toggled >.c_off,
+.c_button-toggle.c_on > .c_off {
+    display: block;
+}
+/* content of buttons */
+.c_button-sidebar svg,
+.c_button svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
