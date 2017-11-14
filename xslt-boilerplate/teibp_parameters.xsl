@@ -14,14 +14,14 @@
     </xd:doc>
     
     <!-- Load all other stylesheets -->
-    <!-- import the standard TEI Boilerplate stylesheets -->
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/teibp_main.xsl"/>
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/teibp_sourcedesc.xsl"/>
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/xml-to-string.xsl"/>
+    <!-- import the standard TEI Boilerplate stylesheets. If you link to versions hosted on GitHub make sure to point to a stable version to ensure that future changes won't break your set-up -->
+    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/boilerplate/xslt/teibp_main.xsl"/>
+    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/boilerplate/xslt/teibp_sourcedesc.xsl"/>
+    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/boilerplate/xslt/xml-to-string.xsl"/>
     <!-- import the stylesheet formatting all bibliographic metadata -->
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/teibp_bibl.xsl"/>
+    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/boilerplate/xslt/teibp_bibl.xsl"/>
     <!-- import the stylesheet dealing with the display of <pb> and facsimiles -->
-    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/xslt-boilerplate/teibp_pb.xsl"/>
+    <xsl:include href="https://rawgit.com/tillgrallert/tei-boilerplate-arabic-editions/master/boilerplate/xslt/teibp_pb.xsl"/>
 
     <!-- select whether you want to display page breaks and facsimiles; default: true() -->
     <xsl:param name="p_display-page-breaks" select="true()"/>
