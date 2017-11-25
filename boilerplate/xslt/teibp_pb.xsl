@@ -43,6 +43,12 @@
         <!-- select which online facsimile to display based on the order of preference: EAP, sakhrit, HathiTrust, other; and https over http -->
         <xsl:variable name="v_url-graphic">
             <xsl:choose>
+                <!-- sequence of providers and protocolls is currently hardcoded and can be changed to taste -->
+                <!-- iiif -->
+                <xsl:when test="$v_graphic[@type='iiif']">
+                    <!-- iiif allows for various paramters to be set. Currently, we opted for minimized traffic -->
+                    <xsl:value-of select="concat($v_graphic[@type='iiif'][1]/@url,'/full/400,/0/gray.jpg')"/>
+                </xsl:when>
                 <xsl:when test="$v_graphic[starts-with(@url, 'https://eap.')]">
                     <xsl:value-of select="$v_graphic[starts-with(@url, 'https://eap.')][1]/@url"/>
                 </xsl:when>
