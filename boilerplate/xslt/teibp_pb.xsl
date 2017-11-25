@@ -106,7 +106,17 @@
         <!-- constructing a link for every graphic element -->
         <xsl:variable name="v_facs-links">
             <xsl:for-each select="$v_graphic[starts-with(@url, 'http')]">
-                <a href="{@url}" target="_blank">
+                <a target="_blank">
+                    <xsl:attribute name="href">
+                        <xsl:choose>
+                            <xsl:when test="@type='iiif'">
+                                <xsl:value-of select="concat(@url,'/full/800,/0/gray.jpg')"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="@url"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:attribute>
                     <xsl:call-template name="t_url-to-name">
                         <xsl:with-param name="p_input" select="@url"/>
                     </xsl:call-template>
@@ -154,13 +164,13 @@
     <xsl:template name="t_url-to-name">
         <xsl:param name="p_input"/>
         <xsl:choose>
-            <xsl:when test="contains($p_input, '://eap.')">
+            <xsl:when test="contains($p_input, 'eap.')">
                 <span lang="en">EAP</span>
             </xsl:when>
-            <xsl:when test="contains($p_input, '://archive.sakhrit.co')">
+            <xsl:when test="contains($p_input, 'archive.sakhrit.co')">
                 <span lang="en">archive.sakhrit.co</span>
             </xsl:when>
-            <xsl:when test="contains($p_input, '://babel.hathitrust.org')">
+            <xsl:when test="contains($p_input, 'hathitrust.')">
                 <span lang="en">HathiTrust</span>
             </xsl:when>
             <xsl:otherwise>
