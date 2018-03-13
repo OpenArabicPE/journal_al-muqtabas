@@ -803,6 +803,8 @@
     <xsl:template match="tei:del[@resp='#org_MS']">
         <xsl:apply-templates/>
     </xsl:template>
+    <!-- sometimes the editors at shamela.ws commented on the text. This should also be ignored -->
+    <xsl:template match="tei:note[@resp='#org_MS']"/>
     
     <!-- abbreviations: are dealt with in CSS -->
     
