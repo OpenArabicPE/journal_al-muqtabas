@@ -39,7 +39,7 @@ All deliverables and milestones will be covered in more detail in the following 
     - The text of digital edition links to open-access digital facsimiles if available (see below).
     - [A webview](https://github.com/tillgrallert/tei-boilerplate-arabic-editions), based on [TEI Boilerplate](http://dcl.slis.indiana.edu/teibp/), shows digital text and images side by side. It provides an automatically generated table of content and links to the bibliographic metadata of every article.
     - Bibliographic metadata for every article in *Majallat al-Muqtabas* is provided as individual MODS and BibTeX files in the sub-folder `metadata`. The metadata includes a URL pointing to the webview of this item and the webview includes a link to the metadata files for every article.
-        + To ease browsing the journal, we have set up the public Zotero group [Digital Muqtabas](https://www.zotero.org/groups/digital-muqtabas/items). This group is updated by means of the MODS XML files.
+        + To ease browsing the journal, we have set up the public Zotero group [Digital Muqtabas](ttps://www.zotero.org/groups/openarabicpe/items/collectionKey/8SINFUW9). This group is updated by means of the MODS XML files.
 - Possible / planned deliverables
     + Scans of issues not currently available in open-access repositories, namely of vol. 9, which we hold at [Orient-Institut Beirut](http://www.orient-institut.org).
 
