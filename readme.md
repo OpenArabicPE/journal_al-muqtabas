@@ -78,11 +78,11 @@ The most likely candidates for such follow-up projects are
 
 There is no proper release schedule yet but I conceive of version 1.0 as the first complete edition. 
 
-- version 0.1 shall be the first "official" release. It is scheduled for May/June 2016 and will include
-    1. TEI files of all at least one volume of *al-Muqtabas* (i.e. 12 issues / files) with structural mark-up of mastheads, sections, articles, and with page breaks linked to the facsimiles; for no other reason but interes in their content, we have started work on vol. 5 and 6, which are therefore the most likely release candidates;
+- version 0.1 was the the first "official" release. It was released in February 2017 and included
+    1. TEI files of all at least one volume of *al-Muqtabas* (i.e. 12 issues / files) with structural mark-up of mastheads, sections, articles, and with page breaks linked to the facsimiles; for no other reason but interes in their content, we have started work on vol. 5 and 6, which were therefore the most likely release candidates;
     2. MODS / BibTeX files for all issues, sections, and articles;
-    3. XSLT stylesheets for all necessary initial and periodic conversions;
-    4. XSLT, JS, and CSS for a webview.
+    3. XSLT, JS, and CSS for a webview.
+- versions 0.1.1 - 0.1.x: each completed issue will warant a minor release.
 - versions 0.1 - 0.x: each completed volume of 11 to 12 issues / TEI files will warant an incremental release.
 - version 1.0 shall include
     1. TEI files of all 96 issues of *al-Muqtabas* with structural mark-up of mastheads, sections, articles, and with page breaks linked to the facsimiles;
