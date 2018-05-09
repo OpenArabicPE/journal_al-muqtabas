@@ -255,9 +255,9 @@ To allow a quick review of the mark-up and read the journal's content, I decided
 
 The webview provides a parallel display of either online or local facsimiles and the text of *al-Muqtabas*. It includes a fully functional table of contents, stable links to all section and article heads, and links to bibliographic metadata for every article. For a first impression see [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml). 
 
-![webview of [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml)](assets/images/boilerplate_muqtabas-1.jpg)
+![webview of [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml)](assets/boilerplate_muqtabas-1.jpg)
 
-![webview of [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml) with expanded table of content](assets/images/boilerplate_muqtabas-2.jpg)
+![webview of [*al-Muqtabas* 6(2)](https://rawgit.com/tillgrallert/digital-muqtabas/master/xml/oclc_4770057679-i_62.TEIP5.xml) with expanded table of content](assets/boilerplate_muqtabas-2.jpg)
 
 A detailed description of the web display is available [here](notes-web-display.md).
 
@@ -265,13 +265,13 @@ User will, of course, want to search the edition for specific terms and will imm
 
 - the [GitHub repository](https://github.com/tillgrallert/digital-muqtabas), which allows for browsing and searching and displays search results in context.
 
-![Search the GitHub repository](assets/images/search-github.jpg)
+![Search the GitHub repository](assets/search-github.jpg)
 
 - Google's web search provides a [`site:` operator](https://moz.com/blog/25-killer-combos-for-googles-site-operator) that can be extensively manipulated:
     + [`site:https://github.com/tillgrallert/digital-muqtabas/blob/master search string`](site:https://github.com/tillgrallert/digital-muqtabas/blob/master) will search all files in the Digital Muqtabas repository.
     + add [`filetype:xml`](site:https://github.com/tillgrallert/digital-muqtabas/blob/master filetype:xml) to search only XML files. Other options would be `filetype:md` for plain text markdown files, `filetype.bib` for BibTeX files etc.
 
-![Search Google with the `site:` operator](assets/images/search-google.jpg)
+![Search Google with the `site:` operator](assets/search-google.jpg)
 
 - a public [Zotero group](https://www.zotero.org/groups/digital-muqtabas/items/) comprising bibliographic metadata for all articles and sections, including author names, titles, publication dates, volume and issue numbers etc., including links to the webview.
 
