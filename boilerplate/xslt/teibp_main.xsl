@@ -1021,5 +1021,7 @@
         </xsl:choose>
     </xsl:variable>
     
+    <!-- supress @rend on tei:head -->
+    <xsl:template match="tei:head/@rend"/>
 
 </xsl:stylesheet>
