@@ -36,10 +36,10 @@ a.c_corresp {
     padding-left:0.5em;
     padding-right:0.5em;
 }
-
+/* size of the arrows following each link*/
 a.c_linked-data svg {
-	width: 16px;
-	height: 16px;
+	width: 10px;
+	height: 10px;
 }
 
 /* footnote back links */
@@ -54,13 +54,14 @@ a.c_link-self .c_number {
 }
 
 /* hide content of links that is marked as hidden */
-a .c_hidden {
+.c_hidden {
 	display: none;
 }
 
 /* show the content if hovering */
 a.c_fn:hover > .c_hidden, 
-a.c_link-self:hover > .c_hidden {
+a.c_link-self:hover > .c_hidden,
+.c_toggle-popup:hover > .c_hidden {
 	display:inline-block;
 	/*font-size:inherit;*/
 	background-color: white;
@@ -81,10 +82,10 @@ a.c_link-self:hover > .c_hidden {
     z-index: 10000;
 }
 
-/* content of footnotes */
-.c_fn-content, 
-.c_fn-content * {
-	font-size: 14px !important;
+/* content of pop-up notes that are set to .c_hidden */
+.c_popup, 
+.c_popup * {
+	font-size: 16px !important;
 	min-width: 60px;
     max-width: 200px;
 }
