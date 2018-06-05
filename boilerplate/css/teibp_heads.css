@@ -1,7 +1,7 @@
 /* make sure not to color etc. entities in heads. 
 The !important flag is brutal and overrides any more specific rules. 
 Yet, font-size is not inherited by all descendants in Firefox if one relies on the *:not() selector; */
-head *:not(.c_fn-mark, .c_links, .c_fn-content, .c_linked-data) {
+head *:not(.c_fn-mark, .c_links, .c_fn-content, .c_linked-data, .c_popup) {
     color:inherit !important;
     /*background-color: inherit !important;*/
     font-size: inherit !important;
@@ -10,7 +10,7 @@ head *:not(.c_fn-mark, .c_links, .c_fn-content, .c_linked-data) {
 }
 
 /* have heads stick to the borders of the html */
-div > head{
+div > head {
    	text-indent:0;
     display: block;
    	padding-right: 0.5em;
@@ -28,7 +28,7 @@ div > head{
     position: -ms-sticky;
     position: -o-sticky;
     position: sticky;
-    /*z-index: 60;*/
+    z-index: 20;
 }
 
 
@@ -78,19 +78,31 @@ text > * > div > div > div > div > head {
 }*/
 
 /* levels of heads: margin-right for Arabic */
-text > * > div > head[lang="ar"], text[lang="ar"] text > * > div > head {
+text > * > div > head[lang="ar"], 
+text[lang="ar"] text > * > div > head,
+text > * > div > head[lang="ota"], 
+text[lang="ota"] text > * > div > head {
 	margin-right: -100px;
     font-size: 2em;
 }
-text > * > div > div > head[lang="ar"], text[lang="ar"] text > * > div > div > head {
+text > * > div > div > head[lang="ar"], 
+text[lang="ar"] text > * > div > div > head,
+text > * > div > div > head[lang="ota"], 
+text[lang="ota"] text > * > div > div > head {
 	margin-right: -80px;
     font-size: 1.5em;
 }
-text > * > div > div > div > head[lang="ar"], text[lang="ar"] text > * > div > div > div > head {
+text > * > div > div > div > head[lang="ar"], 
+text[lang="ar"] text > * > div > div > div > head
+text > * > div > div > div > head[lang="ota"], 
+text[lang="ota"] text > * > div > div > div > head {
 	margin-right: -60px;
     font-size: 1.3em;
 }
-text > * > div > div > div > div > head[lang="ar"], text[lang="ar"] text > * > div > div > div > div > head {
+text > * > div > div > div > div > head[lang="ar"], 
+text[lang="ar"] text > * > div > div > div > div > head,
+text > * > div > div > div > div > head[lang="ota"], 
+text[lang="ota"] text > * > div > div > div > div > head {
 	margin-right: -60px;
     font-size: 1.1em;
 }
@@ -115,7 +127,10 @@ head, text[lang="en"] head, text[lang="fr"] head, text[lang="de"] head {
     border-bottom-left-radius: 0px;
 }
 /* rtl heads */
-head[lang="ar"], text[lang="ar"] head {
+head[lang="ar"], 
+text[lang="ar"] head,
+head[lang="ota"], 
+text[lang="ota"] head {
     margin-top: 20px;
     margin-bottom: 20px;
     /* margin-right: -100px; */
