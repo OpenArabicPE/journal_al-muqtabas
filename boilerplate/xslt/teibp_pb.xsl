@@ -5,7 +5,7 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <!-- parameter to select the mimeType. In some cases tiff might be more efficient than jpeg -->
-        <xsl:param name="p_mimetype" select="'image/tiff'"/>
+        <xsl:param name="p_mimetype" select="'image/jpeg'"/>
     
     <!-- construct the image URL on the fly -->
     <xsl:variable name="v_volume" select="$vgBiblStructSource/tei:monogr/tei:biblScope[@unit = 'volume']/@n"/>
