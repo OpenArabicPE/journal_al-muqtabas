@@ -29,17 +29,22 @@ head a.c_link-self {
 
 /* footnote anchors and external references */
 .c_fn-mark, 
-a.c_linked-data,
+/*a.c_linked-data,*/
 a.c_corresp {
     vertical-align:top;
     font-size:10px !important;
     padding-left:0.5em;
     padding-right:0.5em;
 }
-/* size of the arrows following each link*/
-a.c_linked-data svg {
-	width: 10px;
-	height: 10px;
+/* size of the arrows following each link: this has been changed */
+a.c_corresp > svg,
+.c_icon-entity >svg {
+  display: inline;
+  width:12px;
+  height: 12px;
+  vertical-align: top;
+  padding-right: 4px;
+  padding-left: 4px;
 }
 
 /* footnote back links */
@@ -81,13 +86,14 @@ a.c_link-self:hover > .c_hidden,
     margin:-1em 0 0 0;
     z-index: 10000;
 }
-
 /* content of pop-up notes that are set to .c_hidden */
-.c_popup, 
-.c_popup * {
-	font-size: 16px !important;
+.c_popup {
 	min-width: 60px;
     max-width: 200px;
+}
+.c_popup,
+.c_popup * {
+	font-size: 16px !important;
 }
 /* the display of IDs and Links should not flow 
 beyond the screens's borders */
