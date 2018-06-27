@@ -1,13 +1,22 @@
-<?xml version="1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
                 <title>Open Arabic Periodical Editions (OpenArabicPE): Schema</title>
-                <author><persName xml:id="pers_TG"><forename>Till</forename><surname>Grallert</surname></persName></author>
+                <author>
+                    <persName xml:id="pers_TG">
+                        <forename>Till</forename>
+                        <surname>Grallert</surname>
+                    </persName>
+                </author>
             </titleStmt>
             <publicationStmt>
-                <authority><persName>Till Grallert</persName></authority>
+                <authority>
+                    <persName>Till Grallert</persName>
+                </authority>
                 <pubPlace>Beirut</pubPlace>
                 <date when="2016">2016</date>
                 <availability status="restricted">
@@ -23,7 +32,7 @@
         </fileDesc>
         <revisionDesc>
             <change when="2018-01-16" who="#pers_TG">Added the att.global.change.</change>
-            <change when="2017-01-15" who="#pers_TG">Added @type="inline" to tei:note. Added @type attributes to tei:date.</change>
+            <change when="2017-01-15" who="#pers_TG">Added @type=&quot;inline&quot; to tei:note. Added @type attributes to tei:date.</change>
             <change when="2016-06-17" who="#pers_TG">Initial creation of this file.</change>
         </revisionDesc>
     </teiHeader>
@@ -34,41 +43,68 @@
         <body>
             <p>This TEI customisation includes the modules:
                 <list>
-                <item>core</item>
-                <item>tei</item>
-                <item>header</item>
-                <item>textstructure</item>
-                <item>tagdocs</item>
-                <item>namesdates</item>
-                <item>linking</item>
-                <item>figures</item>
-                <item>transcr</item>
-                </list> 
+                    <item>core</item>
+                    <item>tei</item>
+                    <item>header</item>
+                    <item>textstructure</item>
+                    <item>tagdocs</item>
+                    <item>namesdates</item>
+                    <item>linking</item>
+                    <item>figures</item>
+                    <item>transcr</item>
+                    <item>corpus</item></list>
             </p>
             <p>Many elements and attribute classes and attributes were deleted from the standard set. The values of some attributes were restricted.</p>
-            <schemaSpec ident="tei_OpenArabicPE" docLang="en" prefix="OpenArabicPE_" xml:lang="en">
-                <moduleRef key="core"
-                    except="addrLine address analytic binaryObject desc distinct divGen email emph gloss headItem headLabel media meeting mentioned postBox postCode relatedItem soCalled sp speaker stage street textLang"/>
-                <moduleRef key="tei" except=""/>
-                <moduleRef key="header"
-                    except="abstract appInfo application cRefPattern catDesc catRef category classCode classDecl creation extent geoDecl handNote interpretation keywords listChange namespace normalization principal scriptNote sponsor stdVals styleDefDecl tagUsage tagsDecl taxonomy textClass typeNote xenoData"/>
-                <moduleRef key="textstructure"
-                    except="argument div1 div2 div3 div4 div5 div6 div7 docAuthor docDate docEdition docImprint docTitle imprimatur signed titlePage titlePart"/>
-                <moduleRef key="tagdocs"
-                    except="altIdent alternate attDef attList attRef classRef classSpec classes constraint constraintSpec content dataRef dataSpec datatype defaultVal eg egXML elementRef elementSpec equiv exemplum ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition param paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList textNode val valDesc valItem valList"/>
+            <schemaSpec docLang="en" ident="tei_OpenArabicPE" prefix="OpenArabicPE_" xml:lang="en">
+                <moduleRef except="addrLine address analytic binaryObject desc distinct divGen email emph gloss headItem headLabel index media meeting mentioned postBox postCode reg relatedItem series soCalled sp speaker stage street textLang" key="core"/>
+                <moduleRef except="" key="tei"/>
+                <moduleRef except="abstract appInfo application cRefPattern catDesc catRef category classCode classDecl correction correspAction correspContext correspDesc creation extent geoDecl handNote hyphenation interpretation keywords listChange namespace normalization principal punctuation refState schemaRef scriptNote segmentation seriesStmt sponsor stdVals styleDefDecl tagUsage tagsDecl taxonomy textClass typeNote xenoData" key="header"/>
+                <moduleRef except="argument div1 div2 div3 div4 div5 div6 div7 docAuthor docDate docEdition docImprint docTitle epigraph imprimatur postscript signed titlePage titlePart" key="textstructure"/>
+                <moduleRef except="altIdent alternate anyElement attDef attList attRef classRef classSpec classes code constraint constraintSpec content dataFacet dataRef dataSpec datatype defaultVal eg egXML empty elementRef elementSpec equiv exemplum ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition param paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList textNode val valDesc valItem valList" key="tagdocs"/>
                 <!-- many elements should be removed from namesdates: sex socecStatus -->
-                <moduleRef key="namesdates" except="langKnowledge langKnown"/>
-                <moduleRef key="linking"
-                    except="alt altGrp anchor join joinGrp link linkGrp timeline when"/>
-                <moduleRef key="figures" except="formula notatedMusic"/>
-                <moduleRef key="transcr"
-                    except="addSpan damage damageSpan delSpan handNotes handShift line listTranspose mod redo restore retrace secl sourceDoc subst substJoin surplus transpose undo"/>
-                <classSpec ident="att.canonical" module="tei" mode="change" type="atts">
+                <moduleRef except="affiliation age bloc climate country district education faith geogFeat geogName langKnowledge langKnown nationality offset occupation persona population region residence settlement sex socecStatus state terrain" key="namesdates"/>
+                <moduleRef except="alt altGrp anchor join joinGrp link linkGrp timeline when" key="linking"/>
+                <moduleRef except="formula notatedMusic" key="figures"/>
+                <moduleRef except="addSpan damage damageSpan delSpan handNotes handShift line listTranspose mod redo restore retrace secl sourceDoc space subst substJoin surplus transpose undo" key="transcr"/>
+                <!-- corpus provides profileDesc, particDesc, settingDesc -->
+                <moduleRef except="activity channel constitution derivation domain factuality interaction locale preparedness purpose setting textDesc" key="corpus"/>
+                <!-- Changes to attribute classes -->
+                <classSpec ident="att.breaking" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.canonical" mode="change" module="tei" type="atts">
                     <attList>
                         <attDef ident="key" mode="delete"/>
                     </attList>
                 </classSpec>
-                <classSpec ident="att.global" mode="change" type="atts" module="tei">
+                <classSpec ident="att.coordinated" mode="delete" module="transcr" type="atts"/>
+                <classSpec ident="att.damaged" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.datable" mode="change" module="tei" type="atts">
+                    <attList>
+                        <attDef ident="period" mode="delete"/>
+                    </attList>
+                </classSpec>
+                <classSpec ident="att.datable.custom" mode="change" module="namesdates" type="atts">
+                    <attList>
+                        <attDef ident="datingPoint" mode="delete"/>
+                    </attList>
+                </classSpec>
+                <classSpec ident="att.datable.iso" mode="delete" module="namesdates" type="atts"/>
+                <classSpec ident="att.declarable" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.declaring" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.divLike" mode="change" module="tei" type="atts">
+                    <attList>
+                        <attDef ident="org" mode="delete"/>
+                        <attDef ident="sample" mode="delete"/>
+                    </attList>
+                </classSpec>
+                <classSpec ident="att.dimensions" mode="change" module="tei" type="atts">
+                    <attList>
+                        <attDef ident="precision" mode="delete"/>
+                        <attDef ident="scope" mode="delete"/>
+                    </attList>
+                </classSpec>
+                <classSpec ident="att.editLike" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.fragmentable" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.global" mode="change" module="tei" type="atts">
                     <attList>
                         <attDef ident="xml:base" mode="delete"/>
                         <attDef ident="xml:space" mode="delete"/>
@@ -133,7 +169,7 @@
                         </attDef>
                     </attList>
                 </classSpec>
-                <classSpec ident="att.global.linking" module="linking" mode="change" type="atts">
+                <classSpec ident="att.global.linking" mode="change" module="linking" type="atts">
                     <attList>
                         <attDef ident="copyOf" mode="delete"/>
                         <attDef ident="exclude" mode="delete"/>
@@ -142,39 +178,42 @@
                         <attDef ident="synch" mode="delete"/>
                     </attList>
                 </classSpec>
-                <!-- adds the @change attribute to all elements -->
-                <!--<classSpec ident="att.global.change" mode="add" module="transcr" type="atts"/>-->
-                <classSpec ident="att.global.responsibility" module="tei" mode="change" type="atts">
+                <classSpec ident="att.global.responsibility" mode="change" module="tei" type="atts">
                     <attList>
                         <attDef ident="cert" mode="delete"/>
                     </attList>
                 </classSpec>
-                <classSpec type="atts" ident="att.damaged" mode="delete" module="tei"/>
-                <classSpec ident="att.datable" mode="change" type="atts" module="tei">
+                <classSpec ident="att.global.source" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.media" mode="change" module="tei" type="atts">
+                    <!-- even though I delete all attributes in this class, the class itself is required as it is member of att.internetMedia, which provides the @mimeType attribute -->
                     <attList>
-                        <attDef ident="period" mode="delete"/>
+                        <attDef ident="height" mode="delete"/>
+                        <attDef ident="scale" mode="delete"/>
+                        <attDef ident="width" mode="delete"/>
                     </attList>
                 </classSpec>
-                <classSpec ident="att.datable.custom" mode="change" type="atts" module="namesdates">
+                 <classSpec ident="att.naming" mode="change" module="tei" type="atts">
                     <attList>
-                        <attDef ident="datingPoint" mode="delete"/>
+                        <attDef ident="role" mode="delete"/>
                     </attList>
                 </classSpec>
-                <classSpec ident="att.divLike" mode="change" module="tei" type="atts">
+                <classSpec ident="att.personal" mode="change" module="tei" type="atts">
+                    <!-- even though I delete all attributes in this class, the class itself is required as it is member of att.canonical, which provides the @ref attribute -->
                     <attList>
-                        <attDef ident="org" mode="delete"/>
-                        <attDef ident="sample" mode="delete"/>
+                        <attDef ident="full" mode="delete"/>
+                        <attDef ident="full" mode="delete"/>
                     </attList>
                 </classSpec>
-                <classSpec ident="att.declaring" mode="delete" module="tei" type="atts"/>
-                <classSpec type="atts" ident="att.dimensions" mode="change" module="tei">
+                 <classSpec ident="att.pointing" mode="change" module="tei" type="atts">
                     <attList>
-                        <attDef ident="precision" mode="delete"/>
-                        <attDef ident="scope" mode="delete"/>
+                        <attDef ident="evaluate" mode="delete"/>
+                        <attDef ident="targetLang" mode="delete"/>
                     </attList>
                 </classSpec>
-                <classSpec type="atts" ident="att.editLike" mode="delete" module="tei"/>
                 <classSpec ident="att.ranging" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.segLike" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.sortable" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.spanning" mode="delete" module="tei" type="atts"/>
                 <classSpec ident="att.tableDecoration" mode="change" module="tei" type="atts">
                     <attList>
                         <attDef ident="role" mode="change" usage="opt">
@@ -192,87 +231,171 @@
                         <attDef ident="start" mode="delete"/>
                     </attList>
                 </classSpec>
-                <classSpec ident="att.textCritical" mode="change" module="textcrit" type="atts">
-                    <attList>
-                        <attDef ident="cause" mode="delete"/>
-                        <attDef ident="hand" mode="delete"/>
-                        <attDef ident="varSeq" mode="delete"/>
-                    </attList>
-                </classSpec>
-                <elementSpec ident="add" module="core" mode="change">
+                <classSpec ident="att.transcriptional" mode="delete" module="tei" type="atts"/>
+                <classSpec ident="att.written" mode="delete" module="tei" type="atts"/>
+                <elementSpec ident="add" mode="change" module="core">
                     <attList>
                         <attDef ident="resp" mode="change" usage="req"/>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="addName" module="namesdates" mode="change">
+                <elementSpec ident="addName" mode="change" module="namesdates">
                     <attList>
                         <attDef ident="type" mode="change" usage="req">
                             <defaultVal>title</defaultVal>
-                            <valList type="closed" mode="replace">
+                            <valList mode="replace" type="closed">
                                 <valItem ident="title">
-                                    <desc>indicates formal titles, such as "Bey", "Pasha" etc.</desc>
+                                    <desc>indicates formal titles, such as &quot;Bey&quot;, &quot;Pasha&quot; etc.</desc>
                                 </valItem>
                                 <valItem ident="honorific">
-                                    <desc>indicates honorific addresses or titles, such as Miss, <foreign xml:lang="ar-Latn-x-ijmes">Shaykh</foreign>, <foreign xml:lang="ota-Latn-TR">zade</foreign></desc>
+                                    <desc>indicates honorific addresses or titles, such as Miss, 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Shaykh</foreign>
+                                        , 
+                                        <foreign xml:lang="ota-Latn-TR">zade</foreign></desc>
                                 </valItem>
                                 <valItem ident="rank">
-                                    <desc>indicates ranks within an administrative, military or religious hierarchy, such as <foreign xml:lang="ar-Latn-x-ijmes">farīq</foreign>, <foreign xml:lang="ota-Latn-x-ijmes">vālī</foreign>, Captain</desc>
+                                    <desc>indicates ranks within an administrative, military or religious hierarchy, such as 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">farīq</foreign>
+                                        , 
+                                        <foreign xml:lang="ota-Latn-x-ijmes">vālī</foreign>
+                                        , Captain</desc>
                                 </valItem>
                                 <valItem ident="nickname">
-                                    <desc>a phrase someone is commonly referred to, such as "Owner of the newspaper xyz"</desc>
+                                    <desc>a phrase someone is commonly referred to, such as &quot;Owner of the newspaper xyz&quot;</desc>
                                 </valItem>
-                                <!--<valItem ident="function">
-                                    <desc></desc>
-                                </valItem>-->
+                                <!--<valItem ident="function"><desc></desc></valItem>-->
                                 <valItem ident="nasab">
-                                    <desc>a <term>patronym</term> introduced by “Ibn” (<foreign xml:lang="ar">إبن</foreign> - son of)</desc>
+                                    <desc>a 
+                                        <term>patronym</term>
+                                        introduced by “Ibn” (
+                                        <foreign xml:lang="ar">إبن</foreign>
+                                        - son of)</desc>
                                 </valItem>
                                 <valItem ident="kunyah">
-                                    <desc>a <term>teknonym</term> beginning with <foreign xml:lang="ar-Latn-x-ijmes">Abū</foreign> (<foreign xml:lang="ar">أبو</foreign> - father of) or <foreign xml:lang="ar-Latn-x-ijmes">Umm</foreign> (<foreign xml:lang="ar">أم</foreign> - mather of). It may also have hypothetical or metaphorical references as a mark of distinction. For example, <foreign xml:lang="ar-Latn-x-ijmes">Abū Yūsuf</foreign> (<foreign xml:lang="ar">أبو يوسف</foreign>) is often used for someone who is called <foreign xml:lang="ar-Latn-x-ijmes">Ya'qūb</foreign> (<foreign xml:lang="ar">يعقوب</foreign>) </desc>
+                                    <desc>a 
+                                        <term>teknonym</term>
+                                        beginning with 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Abū</foreign>
+                                        (
+                                        <foreign xml:lang="ar">أبو</foreign>
+                                        - father of) or 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Umm</foreign>
+                                        (
+                                        <foreign xml:lang="ar">أم</foreign>
+                                        - mather of). It may also have hypothetical or metaphorical references as a mark of distinction. For example, 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Abū Yūsuf</foreign>
+                                        (
+                                        <foreign xml:lang="ar">أبو يوسف</foreign>
+                                        ) is often used for someone who is called 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Ya'qūb</foreign>
+                                        (
+                                        <foreign xml:lang="ar">يعقوب</foreign>
+                                        ) </desc>
                                 </valItem>
                                 <valItem ident="khitab">
-                                    <desc>an honorific name, which is usually ended by the suffix <foreign xml:lang="ar-Latn-x-ijmes">al-Dīn</foreign> (<foreign xml:lang="ar">الدين</foreign>) </desc>
+                                    <desc>an honorific name, which is usually ended by the suffix 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">al-Dīn</foreign>
+                                        (
+                                        <foreign xml:lang="ar">الدين</foreign>
+                                        ) </desc>
                                 </valItem>
                                 <valItem ident="nisbah">
-                                    <desc>an adjective formed by using the suffix ī in order to indicate the person origin, his birth place, or his residence. It represents the relationship name, which can be a genealogical, political or ideological affiliation of a person. Example: the mathematician <foreign xml:lang="ar-Latn-x-ijmes">al-Khawarizmī</foreign> refers to “Khuwarism”, the name of a place located in Central Asia</desc>
+                                    <desc>an adjective formed by using the suffix ī in order to indicate the person origin, his birth place, or his residence. It represents the relationship name, which can be a genealogical, political or ideological affiliation of a person. Example: the mathematician 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">al-Khawarizmī</foreign>
+                                        refers to “Khuwarism”, the name of a place located in Central Asia</desc>
                                 </valItem>
                             </valList>
                         </attDef>
+                        <!-- subtype is depreciated -->
                         <attDef ident="subtype" mode="change" usage="opt">
-                            <valList type="closed" mode="replace">
+                            <valList mode="replace" type="closed">
                                 <valItem ident="military">
-                                    <desc>Indicates a military rank, such as Captain or <foreign xml:lang="ar-Latn-x-ijmes">Farīq</foreign></desc>
+                                    <desc>Indicates a military rank, such as Captain or 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Farīq</foreign></desc>
                                 </valItem>
                                 <valItem ident="civil">
                                     <desc>Indicates a civil rank within the bureaucracy</desc>
                                 </valItem>
                                 <valItem ident="religious">
-                                    <desc>Indicates a religious rank, such as Bishop or <foreign xml:lang="ar-Latn-x-ijmes">Muṭrān</foreign></desc>
+                                    <desc>Indicates a religious rank, such as Bishop or 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Muṭrān</foreign></desc>
                                 </valItem>
                             </valList>
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="corr" module="core" mode="change">
+                <elementSpec ident="roleName" mode="change" module="namesdates">
+                    <attList>
+                        <attDef ident="type" mode="change" usage="req">
+                            <defaultVal>title</defaultVal>
+                            <valList mode="replace" type="closed">
+                                <valItem ident="title">
+                                    <desc>Formal titles, such as &quot;Bey&quot;, &quot;Pasha&quot; etc.</desc>
+                                </valItem>
+                                <valItem ident="honorific">
+                                    <desc>Honorific addresses or titles, such as Miss, 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Shaykh</foreign>
+                                        , 
+                                        <foreign xml:lang="ota-Latn-TR">zade</foreign></desc>
+                                </valItem>
+                                <valItem ident="nobility">
+                                    <desc>An inherited or life-time title of nobility such as Lord, Viscount, Baron, etc.</desc>
+                                </valItem>
+                                <valItem ident="rank">
+                                    <desc>indicates ranks within an administrative, military or religious hierarchy, such as 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">farīq</foreign>
+                                        , 
+                                        <foreign xml:lang="ota-Latn-x-ijmes">vālī</foreign>
+                                        , Captain</desc>
+                                </valItem>
+                                <valItem ident="epithet">
+                                    <desc>a phrase someone is commonly referred to (nick-name), such as &quot;Owner of the newspaper xyz&quot;</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                        <attDef ident="subtype" mode="change" usage="opt">
+                            <valList mode="replace" type="closed">
+                                <valItem ident="military">
+                                    <desc>Indicates a military rank, such as Captain or 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Farīq</foreign></desc>
+                                </valItem>
+                                <valItem ident="civil">
+                                    <desc>Indicates a civil rank within the bureaucracy</desc>
+                                </valItem>
+                                <valItem ident="religious">
+                                    <desc>Indicates a religious rank, such as Bishop or 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Muṭrān</foreign></desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="corr" mode="change" module="core">
                     <attList>
                         <attDef ident="resp" mode="change" usage="req"/>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="date" module="core" mode="change">
+                <elementSpec ident="date" mode="change" module="core">
                     <attList>
                         <attDef ident="datingMethod" mode="change">
-                            <valList type="closed" mode="replace">
+                            <valList mode="replace" type="closed">
                                 <valItem ident="#cal_gregorian">
                                     <desc>Gregorian calendar</desc>
                                 </valItem>
                                 <valItem ident="#cal_islamic">
-                                    <desc>Muslim lunar calendar known as <foreign>hijrī</foreign> beginning the year with 1 <foreign>Muḥarram</foreign></desc>
+                                    <desc>Muslim lunar calendar known as 
+                                        <foreign>hijrī</foreign>
+                                        beginning the year with 1 
+                                        <foreign>Muḥarram</foreign></desc>
                                 </valItem>
                                 <valItem ident="#cal_julian">
                                     <desc>Reformed Julian calendar beginning the year with 1 January</desc>
                                 </valItem>
                                 <valItem ident="#cal_ottomanfiscal">
-                                    <desc>Ottoman fiscal calendar also known as <foreign>mālī</foreign> or <foreign>rūmī</foreign> calendar</desc>
+                                    <desc>Ottoman fiscal calendar also known as 
+                                        <foreign>mālī</foreign>
+                                        or 
+                                        <foreign>rūmī</foreign>
+                                        calendar</desc>
                                 </valItem>
                                 <valItem ident="#cal_coptic">
                                     <desc>The Coptic calendar</desc>
@@ -280,18 +403,23 @@
                             </valList>
                         </attDef>
                         <attDef ident="calendar" mode="change">
-                            <valList type="closed" mode="replace">
+                            <valList mode="replace" type="closed">
                                 <valItem ident="#cal_gregorian">
                                     <desc>Gregorian calendar</desc>
                                 </valItem>
                                 <valItem ident="#cal_islamic">
-                                    <desc>Muslim lunar calendar known as <foreign>hijrī</foreign></desc>
+                                    <desc>Muslim lunar calendar known as 
+                                        <foreign>hijrī</foreign></desc>
                                 </valItem>
                                 <valItem ident="#cal_julian">
                                     <desc>Reformed Julian calendar beginning the Year with 1 January</desc>
                                 </valItem>
                                 <valItem ident="#cal_ottomanfiscal">
-                                    <desc>Ottoman fiscal calendar also known as <foreign>mālī</foreign> or <foreign>rūmī</foreign> calendar</desc>
+                                    <desc>Ottoman fiscal calendar also known as 
+                                        <foreign>mālī</foreign>
+                                        or 
+                                        <foreign>rūmī</foreign>
+                                        calendar</desc>
                                 </valItem>
                                 <valItem ident="#cal_coptic">
                                     <desc>The Coptic calendar</desc>
@@ -299,7 +427,7 @@
                             </valList>
                         </attDef>
                         <attDef ident="type" mode="change">
-                            <valList type="semi" mode="replace">
+                            <valList mode="replace" type="semi">
                                 <valItem ident="official">
                                     <desc>A publication date as provided on the masthead</desc>
                                 </valItem>
@@ -313,7 +441,7 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="del" module="core" mode="change">
+                <elementSpec ident="del" mode="change" module="core">
                     <attList>
                         <attDef ident="resp" mode="change" usage="req"/>
                     </attList>
@@ -328,7 +456,7 @@
                                     <desc>smallest independent segment, such as a news item or an article in a periodical or of a bill</desc>
                                 </valItem>
                                 <valItem ident="section">
-                                    <desc>section of a newspaper issue that explicitly groups items, such as a rubric "domestic news", or sections of a larger item such as the sub divisions of an article or bill</desc>
+                                    <desc>section of a newspaper issue that explicitly groups items, such as a rubric &quot;domestic news&quot;, or sections of a larger item such as the sub divisions of an article or bill</desc>
                                 </valItem>
                                 <valItem ident="volume"/>
                                 <valItem ident="issue"/>
@@ -354,14 +482,14 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="gap" module="core" mode="change">
+                <elementSpec ident="gap" mode="change" module="core">
                     <attList>
                         <attDef ident="resp" mode="change" usage="req">
                             <defaultVal>#org_MS</defaultVal>
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="l" module="core" mode="change">
+                <elementSpec ident="l" mode="change" module="core">
                     <classes mode="replace">
                         <memberOf key="model.lLike"/>
                         <memberOf key="att.fragmentable"/>
@@ -374,20 +502,22 @@
                             <defaultVal>bayt</defaultVal>
                             <valList type="closed">
                                 <valItem ident="bayt">
-                                    <desc>Two-partite line of an Arabic Qasida. The parts are encoded as <gi>seg</gi>.</desc>
+                                    <desc>Two-partite line of an Arabic Qasida. The parts are encoded as 
+                                        <gi>seg</gi>
+                                        .</desc>
                                 </valItem>
                             </valList>
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="note" module="core" mode="change">
+                <elementSpec ident="note" mode="change" module="core">
                     <attList>
                         <attDef ident="n" mode="change">
                             <defaultVal>1</defaultVal>
                         </attDef>
                         <attDef ident="type" mode="change">
                             <defaultVal>footnote</defaultVal>
-                            <valList type="semi" mode="replace">
+                            <valList mode="replace" type="semi">
                                 <valItem ident="endnote"/>
                                 <valItem ident="footnote"/>
                                 <valItem ident="gloss"/>
@@ -396,22 +526,12 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="num" module="core" mode="change">
-                    <!--<classes mode="change">
-                        <memberOf key="model.measureLike"/>
-                        <!-\-<memberOf key="att.fragmentable"/>
-                        <memberOf key="att.global"/>
-                        <memberOf key="att.metrical"/>-\->
-                        <memberOf key="att.typed" mode="add"/>
-                    </classes>-->
+                <elementSpec ident="num" mode="change" module="core">
+                    <!--<classes mode="change"><memberOf key="model.measureLike"/><!-\-<memberOf key="att.fragmentable"/><memberOf key="att.global"/><memberOf key="att.metrical"/>-\-><memberOf key="att.typed" mode="add"/></classes>-->
                     <attList>
-                        <!--<attDef ident="type" mode="change">
-                            <valList type="semi" mode="replace">
-                                <valItem ident="auto-markup"/>
-                            </valList>
-                        </attDef>-->
+                        <!--<attDef ident="type" mode="change"><valList type="semi" mode="replace"><valItem ident="auto-markup"/></valList></attDef>-->
                         <attDef ident="subtype" mode="add">
-                            <valList type="semi" mode="replace">
+                            <valList mode="replace" type="semi">
                                 <valItem ident="d1">
                                     <desc>Single digit</desc>
                                 </valItem>
@@ -434,11 +554,11 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="pb" module="core" mode="change">
+                <elementSpec ident="pb" mode="change" module="core">
                     <attList>
                         <attDef ident="ed" mode="change" usage="req">
                             <defaultVal>print</defaultVal>
-                            <valList type="semi" mode="replace">
+                            <valList mode="replace" type="semi">
                                 <valItem ident="print">
                                     <desc>Page beginning, i.e. break, according to a printed edition</desc>
                                 </valItem>
@@ -449,11 +569,11 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="lb" module="core" mode="change">
+                <elementSpec ident="lb" mode="change" module="core">
                     <attList>
                         <attDef ident="ed" mode="change" usage="rec">
                             <defaultVal>print</defaultVal>
-                            <valList type="semi" mode="replace">
+                            <valList mode="replace" type="semi">
                                 <valItem ident="print">
                                     <desc>Page beginning, i.e. break, according to a printed edition</desc>
                                 </valItem>
@@ -464,11 +584,11 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="cb" module="core" mode="change">
+                <elementSpec ident="cb" mode="change" module="core">
                     <attList>
                         <attDef ident="ed" mode="change" usage="rec">
                             <defaultVal>print</defaultVal>
-                            <valList type="semi" mode="replace">
+                            <valList mode="replace" type="semi">
                                 <valItem ident="print">
                                     <desc>Page beginning, i.e. break, according to a printed edition</desc>
                                 </valItem>
@@ -479,27 +599,27 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="supplied" module="transcr" mode="change">
+                <elementSpec ident="supplied" mode="change" module="transcr">
                     <attList>
                         <attDef ident="resp" mode="change" usage="req"/>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="q" module="core" mode="change">
+                <elementSpec ident="q" mode="change" module="core">
                     <attList>
                         <attDef ident="rend" mode="change">
                             <defaultVal>quotation-marks</defaultVal>
-                            <valList type="semi" mode="replace">
+                            <valList mode="replace" type="semi">
                                 <valItem ident="brackets"/>
                                 <valItem ident="quotation-marks"/>
                             </valList>
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="quote" module="core" mode="change">
+                <elementSpec ident="quote" mode="change" module="core">
                     <attList>
                         <attDef ident="rend" mode="change">
                             <defaultVal>quotation-marks</defaultVal>
-                            <valList type="semi" mode="replace">
+                            <valList mode="replace" type="semi">
                                 <valItem ident="brackets"/>
                                 <valItem ident="quotation-marks"/>
                             </valList>
