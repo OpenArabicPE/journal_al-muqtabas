@@ -150,7 +150,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:copy>
-                    <xsl:apply-templates select="@* | node()"/>
+                    <xsl:apply-templates/>
                 </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
@@ -585,7 +585,7 @@
             </xsl:call-template>
             <!-- head: there are some divs without heads. they should nevertheless have a place-holder head -->
             <!--            <xsl:apply-templates select="tei:head"/>-->
-            <xsl:if test="not(@type = 'masthead')">
+            <xsl:if test="not(@type = 'masthead' or @subtype = 'masthead')">
                 <tei:head>
                     <xsl:apply-templates select="tei:head/@*"/>
                     <xsl:call-template name="templHtmlAttrLang">
@@ -604,7 +604,7 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <!-- text of the head -->
-                            <xsl:for-each select="tei:head">
+                                <xsl:for-each select="tei:head">
                                     <xsl:text> </xsl:text>
                                     <xsl:apply-templates/>
                                 </xsl:for-each>
@@ -613,25 +613,17 @@
                     <xsl:variable name="vBiblUrl"
                         select="concat('../metadata/', $vFileId, '-', @xml:id)"/>
                     <xsl:choose>
-                        <xsl:when
-                            test="@type = 'section' and not(ancestor::tei:div[@type = 'article']) and not(ancestor::tei:div[@type = 'bill'])">
+                        <!-- specify in which cases not to provide links to bibliographic metadata -->
+                        <xsl:when test="@type = 'section' and ancestor::tei:div[@type = 'item'][@subtype = 'article'] and ancestor::tei:div[@type = 'item'][@subtype = 'bill']">
+                        </xsl:when>
+                        <xsl:when test="@type = 'section' and ancestor::tei:div[@type = 'article'] and ancestor::tei:div[@type = 'bill']"/>
+                        <xsl:when test="@type = 'article' and ancestor::tei:div[@type = 'bill']"/>
+                        <xsl:otherwise>
                             <xsl:call-template name="templBiblDataLinks">
                                 <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
                             </xsl:call-template>
-                        </xsl:when>
-                        <xsl:when
-                            test="@type = 'article' and not(ancestor::tei:div[@type = 'bill'])">
-                            <xsl:call-template name="templBiblDataLinks">
-                                <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
-                            </xsl:call-template>
-                        </xsl:when>
-                        <xsl:when test="@type = 'bill'">
-                            <xsl:call-template name="templBiblDataLinks">
-                                <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
-                            </xsl:call-template>
-                        </xsl:when>
+                        </xsl:otherwise>
                     </xsl:choose>
-
                 </tei:head>
             </xsl:if>
             <!-- inject some author information -->
@@ -657,49 +649,7 @@
             <xsl:apply-templates select="node()[not(self::tei:head)]"/>
         </xsl:copy>
     </xsl:template>
-    <!-- link heads back to themselves -->
-    <xsl:template match="tei:head" mode="m_unused">
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <xsl:call-template name="templHtmlAttrLang">
-                <xsl:with-param name="pInput" select="."/>
-            </xsl:call-template>
-            <xsl:choose>
-                <xsl:when test="parent::node()/@xml:id">
-                    <a href="#{parent::node()/@xml:id}" class="c_link-self"
-                        title="{concat($p_text-permalink, $p_text-name-element_div)}">
-                        <xsl:apply-templates select="node()"/>
-                    </a>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates select="node()"/>
-                </xsl:otherwise>
-            </xsl:choose>
-            <xsl:variable name="vBiblUrl"
-                select="concat('../metadata/', $vFileId, '-', parent::node()/@xml:id)"/>
-            <xsl:choose>
-                <xsl:when
-                    test="parent::tei:div[@type = 'section'] and not(ancestor::tei:div[@type = 'article']) and not(ancestor::tei:div[@type = 'bill'])">
-                    <xsl:call-template name="templBiblDataLinks">
-                        <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
-                    </xsl:call-template>
-                </xsl:when>
-                <xsl:when
-                    test="parent::tei:div[@type = 'article'] and not(ancestor::tei:div[@type = 'bill'])">
-                    <xsl:call-template name="templBiblDataLinks">
-                        <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
-                    </xsl:call-template>
-                </xsl:when>
-                <xsl:when test="parent::tei:div[@type = 'bill']">
-                    <xsl:call-template name="templBiblDataLinks">
-                        <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
-                    </xsl:call-template>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:copy>
-        <!-- link to the top of the page, content can be provided by css; moved to the side navigation -->
-        <!--<a class="cBackToTop cInterface" href="#" title="To the top of this page"> </a>-->
-    </xsl:template>
+   
 
 
     <!-- omit line breaks in heads: all breaks have been omitted -->
@@ -1142,6 +1092,17 @@
                 <span class="c_icon-entity"><xsl:copy-of select="$v_icon"/></span>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    <xsl:template match="tei:date[ancestor::tei:body]">
+        <xsl:variable name="v_icon" select="document('../assets/icons/calendar.svg')"/>
+        <xsl:copy>
+            <xsl:call-template name="templHtmlAttrLang">
+                <xsl:with-param name="pInput" select="."/>
+            </xsl:call-template>
+            <xsl:apply-templates select="@* | node()"/>
+        </xsl:copy>
+        <!-- add icon -->
+        <span class="c_icon-entity"><xsl:copy-of select="$v_icon"/></span>
     </xsl:template>
 
 
