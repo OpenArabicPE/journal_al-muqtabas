@@ -595,11 +595,19 @@
                         <xsl:when test="@xml:id">
                             <a href="#{@xml:id}" class="c_link-self"
                                 title="{concat($p_text-permalink, $p_text-name-element_div)}">
-                                <xsl:apply-templates select="tei:head/node()"/>
+                                <!-- text of the head -->
+                                <xsl:for-each select="tei:head">
+                                    <xsl:text> </xsl:text>
+                                    <xsl:apply-templates/>
+                                </xsl:for-each>
                             </a>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:apply-templates select="tei:head/node()"/>
+                            <!-- text of the head -->
+                            <xsl:for-each select="tei:head">
+                                    <xsl:text> </xsl:text>
+                                    <xsl:apply-templates/>
+                                </xsl:for-each>
                         </xsl:otherwise>
                     </xsl:choose>
                     <xsl:variable name="vBiblUrl"
