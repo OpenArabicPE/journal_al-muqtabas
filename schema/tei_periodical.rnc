@@ -6,10 +6,10 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-06-27T19:45:45Z. .
-# TEI Edition: Version 3.2.0. Last updated on
-#	10th July 2017, revision 0fcf651
-# TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.2.0/
+# Schema generated from ODD source 2018-09-28T22:00:37Z. .
+# TEI Edition: Version 3.4.0. Last updated on
+#	23rd July 2018, revision 1fa0b54
+# TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
 #
 
 # [http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
@@ -46,6 +46,15 @@ OpenArabicPE_att.ascribed.attribute.who =
   attribute who {
     list { xsd:anyURI+ }
   }?
+OpenArabicPE_att.ascribed.directed.attributes =
+  OpenArabicPE_att.ascribed.attributes,
+  OpenArabicPE_att.ascribed.directed.attribute.toWhom
+OpenArabicPE_att.ascribed.directed.attribute.toWhom =
+  
+  ## indicates the person, or group of people, to whom a speech act or action is directed.
+  attribute toWhom {
+    list { xsd:anyURI+ }
+  }?
 OpenArabicPE_att.canonical.attributes =
   OpenArabicPE_att.canonical.attribute.ref
 OpenArabicPE_att.canonical.attribute.ref =
@@ -54,6 +63,44 @@ OpenArabicPE_att.canonical.attribute.ref =
   attribute ref {
     list { xsd:anyURI+ }
   }?
+OpenArabicPE_att.dimensions.attributes =
+  OpenArabicPE_att.dimensions.attribute.unit,
+  OpenArabicPE_att.dimensions.attribute.quantity,
+  OpenArabicPE_att.dimensions.attribute.extent
+OpenArabicPE_att.dimensions.attribute.unit =
+  
+  ## names the unit used for the measurement
+  ## Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inches) ; 4] lines; 5] chars (characters) 
+  attribute unit {
+    
+    ## (centimetres) 
+    "cm"
+    | 
+      ## (millimetres) 
+      "mm"
+    | 
+      ## (inches) 
+      "in"
+    | 
+      ## lines of text
+      "lines"
+    | 
+      ## (characters) characters of text
+      "chars"
+    | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+  }?
+OpenArabicPE_att.dimensions.attribute.quantity =
+  
+  ## specifies the length in the units specified
+  attribute quantity {
+    xsd:double
+    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+    | xsd:decimal
+  }?
+OpenArabicPE_att.dimensions.attribute.extent =
+  
+  ## indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.
+  attribute extent { xsd:string }?
 OpenArabicPE_att.cReferencing.attributes =
   OpenArabicPE_att.cReferencing.attribute.cRef
 OpenArabicPE_att.cReferencing.attribute.cRef =
@@ -370,7 +417,7 @@ OpenArabicPE_att.measurement.attributes =
 OpenArabicPE_att.measurement.attribute.unit =
   
   ## indicates the units used for the measurement, usually using the standard symbol for the desired units.
-  ## Suggested values include: 1] m(metre) ; 2] kg(kilogram) ; 3] s(second) ; 4] Hz(hertz) ; 5] Pa(pascal) ; 6] Ω(ohm) ; 7] L(litre) ; 8] t(tonne) ; 9] ha(hectare) ; 10] Å(ångström) ; 11] mL(millilitre) ; 12] cm(centimetre) ; 13] dB(decibel) ; 14] kbit(kilobit) ; 15] Kibit(kibibit) ; 16] kB(kilobyte) ; 17] KiB(kibibyte) ; 18] MB(megabyte) ; 19] MiB(mebibyte) 
+  ## Suggested values include: 1] m (metre) ; 2] kg (kilogram) ; 3] s (second) ; 4] Hz (hertz) ; 5] Pa (pascal) ; 6] Ω (ohm) ; 7] L (litre) ; 8] t (tonne) ; 9] ha (hectare) ; 10] Å (ångström) ; 11] mL (millilitre) ; 12] cm (centimetre) ; 13] dB (decibel) ; 14] kbit (kilobit) ; 15] Kibit (kibibit) ; 16] kB (kilobyte) ; 17] KiB (kibibyte) ; 18] MB (megabyte) ; 19] MiB (mebibyte) 
   attribute unit {
     
     ## (metre) SI base unit of length
@@ -455,6 +502,14 @@ OpenArabicPE_att.naming.attribute.nymRef =
   ## (reference to the canonical name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.
   attribute nymRef {
     list { xsd:anyURI+ }
+  }?
+OpenArabicPE_att.notated.attributes =
+  OpenArabicPE_att.notated.attribute.notation
+OpenArabicPE_att.notated.attribute.notation =
+  
+  ## names the notation used for the content of the element.
+  attribute notation {
+    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
   }?
 OpenArabicPE_att.placement.attributes =
   OpenArabicPE_att.placement.attribute.place
@@ -654,10 +709,10 @@ OpenArabicPE_att.citing.attribute.unit =
       ## the element identifies a part of a book or collection.
       "part"
     | 
-      ## the element identifies an entry number or label in a list of entries.
+      ## the element identifies a column.
       "column"
     | 
-      ## the element identifies a column.
+      ## the element identifies an entry number or label in a list of entries.
       "entry"
     | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
   }?
@@ -721,31 +776,37 @@ OpenArabicPE_model.measureLike =
   OpenArabicPE_num
   | OpenArabicPE_measure
   | OpenArabicPE_measureGrp
+  | OpenArabicPE_unit
   | OpenArabicPE_geo
 OpenArabicPE_model.measureLike_alternation =
   OpenArabicPE_num
   | OpenArabicPE_measure
   | OpenArabicPE_measureGrp
+  | OpenArabicPE_unit
   | OpenArabicPE_geo
 OpenArabicPE_model.measureLike_sequence =
   OpenArabicPE_num,
   OpenArabicPE_measure,
   OpenArabicPE_measureGrp,
+  OpenArabicPE_unit,
   OpenArabicPE_geo
 OpenArabicPE_model.measureLike_sequenceOptional =
   OpenArabicPE_num?,
   OpenArabicPE_measure?,
   OpenArabicPE_measureGrp?,
+  OpenArabicPE_unit?,
   OpenArabicPE_geo?
 OpenArabicPE_model.measureLike_sequenceOptionalRepeatable =
   OpenArabicPE_num*,
   OpenArabicPE_measure*,
   OpenArabicPE_measureGrp*,
+  OpenArabicPE_unit*,
   OpenArabicPE_geo*
 OpenArabicPE_model.measureLike_sequenceRepeatable =
   OpenArabicPE_num+,
   OpenArabicPE_measure+,
   OpenArabicPE_measureGrp+,
+  OpenArabicPE_unit+,
   OpenArabicPE_geo+
 OpenArabicPE_model.egLike = notAllowed
 OpenArabicPE_model.egLike_alternation = notAllowed
@@ -856,6 +917,7 @@ OpenArabicPE_model.linePart =
   | OpenArabicPE_unclear
   | OpenArabicPE_seg
   | OpenArabicPE_zone
+  | OpenArabicPE_path
 OpenArabicPE_model.ptrLike = OpenArabicPE_ptr | OpenArabicPE_ref
 OpenArabicPE_model.lPart = notAllowed
 OpenArabicPE_model.global.meta = notAllowed
@@ -1320,7 +1382,8 @@ OpenArabicPE_p =
   element p {
     OpenArabicPE_macro.paraContent
     >> sch:pattern [
-         id = "tei_OpenArabicPE-p-abstractModel-p-constraint-report-4"
+         id =
+           "tei_OpenArabicPE-p-abstractModel-structure-p-constraint-report-5"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1329,9 +1392,9 @@ OpenArabicPE_p =
            "               "
            sch:report [
              test =
-               "not(ancestor::floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum                |parent::tei:item                |parent::tei:note                |parent::tei:q                |parent::tei:quote                |parent::tei:remarks                |parent::tei:said                |parent::tei:sp                |parent::tei:stage                |parent::tei:cell                |parent::tei:figure                )"
+               "not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum                |parent::tei:item                |parent::tei:note                |parent::tei:q                |parent::tei:quote                |parent::tei:remarks                |parent::tei:said                |parent::tei:sp                |parent::tei:stage                |parent::tei:cell                |parent::tei:figure                )"
              "\x{a}" ~
-             "        Abstract model violation: Paragraphs may not contain other paragraphs or ab elements.\x{a}" ~
+             "        Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.\x{a}" ~
              "      "
            ]
            "\x{a}" ~
@@ -1342,7 +1405,7 @@ OpenArabicPE_p =
        ]
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-p-abstractModel-structure-l-constraint-report-5"
+           "tei_OpenArabicPE-p-abstractModel-structure-l-constraint-report-6"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1387,10 +1450,9 @@ OpenArabicPE_said =
   element said {
     OpenArabicPE_macro.specialPara,
     OpenArabicPE_att.global.attributes,
-    OpenArabicPE_att.ascribed.attributes,
+    OpenArabicPE_att.ascribed.directed.attributes,
     
     ## may be used to indicate whether the quoted matter is regarded as having been vocalized or signed.
-    [ a:defaultValue = "unknown" ]
     attribute aloud {
       xsd:boolean
       | (
@@ -1431,6 +1493,7 @@ OpenArabicPE_quote =
     OpenArabicPE_att.global.change.attribute.change,
     OpenArabicPE_att.global.responsibility.attribute.resp,
     OpenArabicPE_att.typed.attributes,
+    OpenArabicPE_att.notated.attributes,
     
     ## (rendition) indicates how the element in question was rendered or presented in the source text.
     ## Suggested values include: 1] brackets; 2] quotation-marks
@@ -1464,7 +1527,7 @@ OpenArabicPE_q =
     OpenArabicPE_att.global.facs.attribute.facs,
     OpenArabicPE_att.global.change.attribute.change,
     OpenArabicPE_att.global.responsibility.attribute.resp,
-    OpenArabicPE_att.ascribed.attributes,
+    OpenArabicPE_att.ascribed.directed.attributes,
     
     ## (rendition) indicates how the element in question was rendered or presented in the source text.
     ## Suggested values include: 1] brackets; 2] quotation-marks
@@ -1577,7 +1640,7 @@ OpenArabicPE_choice =
   
   ## groups a number of alternative encodings for the same point in a text. [3.4. Simple Editorial Changes]
   element choice {
-    (OpenArabicPE_model.choicePart | OpenArabicPE_choice)*,
+    (OpenArabicPE_model.choicePart | OpenArabicPE_choice)+,
     OpenArabicPE_att.global.attributes,
     empty
   }
@@ -1607,6 +1670,7 @@ OpenArabicPE_gap =
     OpenArabicPE_att.global.facs.attribute.facs,
     OpenArabicPE_att.global.change.attribute.change,
     OpenArabicPE_att.timed.attributes,
+    OpenArabicPE_att.dimensions.attributes,
     
     ## (responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.
     [ a:defaultValue = "#org_MS" ]
@@ -1643,9 +1707,6 @@ OpenArabicPE_gap =
       }
     }?,
     
-    ## in the case of text omitted from the transcription because of deliberate deletion by an identifiable hand, indicates the hand which made the deletion.
-    attribute hand { xsd:anyURI }?,
-    
     ## in the case of text omitted because of damage, categorizes the cause of the damage, if it can be identified.
     ## Sample values include: 1] rubbing; 2] mildew; 3] smoke
     attribute agent {
@@ -1671,6 +1732,7 @@ OpenArabicPE_add =
     OpenArabicPE_att.global.change.attribute.change,
     OpenArabicPE_att.placement.attributes,
     OpenArabicPE_att.typed.attributes,
+    OpenArabicPE_att.dimensions.attributes,
     
     ## (responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.
     attribute resp {
@@ -1695,6 +1757,7 @@ OpenArabicPE_del =
     OpenArabicPE_att.global.facs.attribute.facs,
     OpenArabicPE_att.global.change.attribute.change,
     OpenArabicPE_att.typed.attributes,
+    OpenArabicPE_att.dimensions.attributes,
     
     ## (responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.
     attribute resp {
@@ -1708,16 +1771,30 @@ OpenArabicPE_unclear =
   element unclear {
     OpenArabicPE_macro.paraContent,
     OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.dimensions.attributes,
     
     ## indicates why the material is hard to transcribe.
+    ## Suggested values include: 1] illegible; 2] inaudible; 3] faded; 4] background_noise; 5] eccentric_ductus
     attribute reason {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        (
+         ##
+         "illegible"
+         | 
+           ##
+           "inaudible"
+         | 
+           ##
+           "faded"
+         | 
+           ##
+           "background_noise"
+         | 
+           ##
+           "eccentric_ductus"
+         | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
       }
     }?,
-    
-    ## Where the difficulty in transcription arises from action (partial deletion, etc.) assignable to an identifiable hand, signifies the hand responsible for the action.
-    attribute hand { xsd:anyURI }?,
     
     ## Where the difficulty in transcription arises from damage, categorizes the cause of the damage, if it can be identified.
     ## Sample values include: 1] rubbing; 2] mildew; 3] smoke
@@ -1830,6 +1907,17 @@ OpenArabicPE_measureGrp =
     OpenArabicPE_att.typed.attributes,
     empty
   }
+OpenArabicPE_unit =
+  
+  ## contains a symbol, a word or a phrase referring to a unit of measurement in any kind of formal or informal system. [3.5.3. Numbers and
+  ## Measures]
+  element unit {
+    OpenArabicPE_macro.phraseSeq,
+    OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.typed.attributes,
+    OpenArabicPE_att.measurement.attributes,
+    empty
+  }
 OpenArabicPE_date =
   
   ## contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.6. Dates and Times]
@@ -1849,6 +1937,7 @@ OpenArabicPE_date =
     OpenArabicPE_att.datable.custom.attribute.notAfter-custom,
     OpenArabicPE_att.datable.custom.attribute.from-custom,
     OpenArabicPE_att.datable.custom.attribute.to-custom,
+    OpenArabicPE_att.dimensions.attributes,
     OpenArabicPE_att.typed.attribute.subtype,
     (
      ## indicates the system or calendar to which the date represented by the content of this element belongs.
@@ -1871,7 +1960,7 @@ OpenArabicPE_date =
      }?)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-date-calendar-calendar-constraint-rule-7"
+           "tei_OpenArabicPE-date-calendar-calendar-constraint-rule-8"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1938,6 +2027,7 @@ OpenArabicPE_time =
      | OpenArabicPE_model.global)*,
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.datable.attributes,
+    OpenArabicPE_att.dimensions.attributes,
     OpenArabicPE_att.typed.attributes,
     empty
   }
@@ -1970,7 +2060,7 @@ OpenArabicPE_ptr =
   element ptr {
     empty
     >> sch:pattern [
-         id = "tei_OpenArabicPE-ptr-ptrAtts-constraint-report-6"
+         id = "tei_OpenArabicPE-ptr-ptrAtts-constraint-report-7"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2003,7 +2093,7 @@ OpenArabicPE_ref =
   element ref {
     OpenArabicPE_macro.paraContent
     >> sch:pattern [
-         id = "tei_OpenArabicPE-ref-refAtts-constraint-report-7"
+         id = "tei_OpenArabicPE-ref-refAtts-constraint-report-8"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2044,7 +2134,7 @@ OpenArabicPE_list =
      (OpenArabicPE_model.divBottom, OpenArabicPE_model.global*)*)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-list-gloss-list-must-have-labels-constraint-rule-8"
+           "tei_OpenArabicPE-list-gloss-list-must-have-labels-constraint-rule-9"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2201,6 +2291,7 @@ OpenArabicPE_gb =
     empty,
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.typed.attributes,
+    OpenArabicPE_att.edition.attributes,
     empty
   }
 OpenArabicPE_pb =
@@ -2211,7 +2302,6 @@ OpenArabicPE_pb =
     empty,
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.typed.attributes,
-    OpenArabicPE_att.edition.attribute.edRef,
     
     ## (edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.
     ## Suggested values include: 1] print; 2] shamela
@@ -2227,6 +2317,18 @@ OpenArabicPE_pb =
          | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
       }
     },
+    
+    ## (edition reference) Points to the xml:id of the corresponding print edition
+    ## Suggested values include: 1] #edition_1
+    [ a:defaultValue = "#edition_1" ]
+    attribute edRef {
+      list {
+        (
+         ## Points to an exemplary xml:id of a biblStruct describing the corresponding print edition.
+         "#edition_1"
+         | xsd:anyURI)+
+      }
+    }?,
     empty
   }
 OpenArabicPE_lb =
@@ -2237,7 +2339,6 @@ OpenArabicPE_lb =
     empty,
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.typed.attributes,
-    OpenArabicPE_att.edition.attribute.edRef,
     
     ## (edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.
     ## Suggested values include: 1] print; 2] shamela
@@ -2253,6 +2354,18 @@ OpenArabicPE_lb =
          | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
       }
     }?,
+    
+    ## (edition reference) Points to the xml:id of the corresponding print edition
+    ## Suggested values include: 1] #edition_1
+    [ a:defaultValue = "#edition_1" ]
+    attribute edRef {
+      list {
+        (
+         ## Exemplary xml:id of a biblStruct describing the corresponding print edition.
+         "#edition_1"
+         | xsd:anyURI)+
+      }
+    }?,
     empty
   }
 OpenArabicPE_cb =
@@ -2263,7 +2376,6 @@ OpenArabicPE_cb =
     empty,
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.typed.attributes,
-    OpenArabicPE_att.edition.attribute.edRef,
     
     ## (edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.
     ## Suggested values include: 1] print; 2] shamela
@@ -2277,6 +2389,18 @@ OpenArabicPE_cb =
            ## Page beginning, i.e. break, as found in the transcription from Maktabat al-Shamela
            "shamela"
          | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
+      }
+    }?,
+    
+    ## (edition reference) Points to the xml:id of the corresponding print edition
+    ## Suggested values include: 1] #edition_1
+    [ a:defaultValue = "#edition_1" ]
+    attribute edRef {
+      list {
+        (
+         ## Points to an exemplary xml:id of a biblStruct describing the corresponding print edition.
+         "#edition_1"
+         | xsd:anyURI)+
       }
     }?,
     empty
@@ -2366,7 +2490,7 @@ OpenArabicPE_title =
     OpenArabicPE_att.datable.attributes,
     
     ## classifies the title according to some convenient typology.
-    ## Sample values include: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] short; 5] desc(descriptive) 
+    ## Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] short; 5] desc (descriptive) 
     attribute type {
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
     }?,
@@ -2408,6 +2532,7 @@ OpenArabicPE_publisher =
   element publisher {
     OpenArabicPE_macro.phraseSeq,
     OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.canonical.attributes,
     empty
   }
 OpenArabicPE_biblScope =
@@ -2491,7 +2616,7 @@ OpenArabicPE_l =
       | OpenArabicPE_model.global)*)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-l-abstractModel-structure-l-constraint-report-8"
+           "tei_OpenArabicPE-l-abstractModel-structure-l-constraint-report-9"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2558,7 +2683,7 @@ OpenArabicPE_lg =
        ]
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-lg-abstractModel-structure-l-constraint-report-9"
+           "tei_OpenArabicPE-lg-abstractModel-structure-l-constraint-report-10"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2594,8 +2719,7 @@ OpenArabicPE_teiCorpus =
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.typed.attributes,
     
-    ## The version of the TEI scheme
-    [ a:defaultValue = "5.0" ]
+    ## specifies the version number of the TEI Guidelines against which this document is valid.
     attribute version {
       xsd:token { pattern = "[\d]+(\.[\d]+){0,2}" }
     }?,
@@ -2684,6 +2808,7 @@ OpenArabicPE_distributor =
   element distributor {
     OpenArabicPE_macro.phraseSeq,
     OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.canonical.attributes,
     empty
   }
 OpenArabicPE_authority =
@@ -2692,6 +2817,7 @@ OpenArabicPE_authority =
   element authority {
     OpenArabicPE_macro.phraseSeq.limited,
     OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.canonical.attributes,
     empty
   }
 OpenArabicPE_idno =
@@ -2725,7 +2851,7 @@ OpenArabicPE_idno =
         ## English Short-Title Catalogue number: an identifying number assigned to a document in English printed in the British Isles or North America before 1801.
         "ESTC"
       | 
-        ## union catalog number in WorldCat representing a resource held by one or more of the member libraries in the global cooperative Online Computer Library Center.
+        ## OCLC control number (record number) for the union catalog record in WorldCat, a union catalog for member libraries in the Online Computer Library Center global cooperative.
         "OCLC"
       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
     }?,
@@ -2739,7 +2865,6 @@ OpenArabicPE_availability =
     OpenArabicPE_att.global.attributes,
     
     ## supplies a code identifying the current availability of the text.
-    [ a:defaultValue = "unknown" ]
     attribute status {
       
       ## the text is freely available.
@@ -2831,7 +2956,7 @@ OpenArabicPE_quotation =
     (OpenArabicPE_model.pLike*)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-quotation-quotationContents-constraint-report-10"
+           "tei_OpenArabicPE-quotation-quotationContents-constraint-report-11"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2987,7 +3112,7 @@ OpenArabicPE_TEI =
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.typed.attributes,
     
-    ## specifies the major version number of the TEI Guidelines against which this document is valid.
+    ## specifies the version number of the TEI Guidelines against which this document is valid.
     attribute version {
       xsd:token { pattern = "[\d]+(\.[\d]+){0,2}" }
     }?,
@@ -3070,7 +3195,7 @@ OpenArabicPE_div =
       (OpenArabicPE_model.divBottom, OpenArabicPE_model.global*)*)?)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-div-abstractModel-structure-l-constraint-report-11"
+           "tei_OpenArabicPE-div-abstractModel-structure-l-constraint-report-12"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3091,7 +3216,7 @@ OpenArabicPE_div =
        ]
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-div-abstractModel-structure-p-constraint-report-12"
+           "tei_OpenArabicPE-div-abstractModel-structure-p-constraint-report-13"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3279,7 +3404,7 @@ OpenArabicPE_att =
     OpenArabicPE_att.global.attributes,
     
     ## supplies an identifier for the scheme in which this name is defined.
-    ## Sample values include: 1] TEI(text encoding initiative) ; 2] DBK(docbook) ; 3] XX(unknown) ; 4] imaginary; 5] XHTML; 6] XML; 7] XI
+    ## Sample values include: 1] TEI (text encoding initiative) ; 2] DBK (docbook) ; 3] XX (unknown) ; 4] imaginary; 5] XHTML; 6] XML; 7] XI
     [ a:defaultValue = "TEI" ]
     attribute scheme {
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
@@ -3294,7 +3419,7 @@ OpenArabicPE_gi =
     OpenArabicPE_att.global.attributes,
     
     ## supplies the name of the scheme in which this name is defined.
-    ## Sample values include: 1] TEI; 2] DBK(docbook) ; 3] XX(unknown) ; 4] Schematron; 5] HTML
+    ## Sample values include: 1] TEI; 2] DBK (docbook) ; 3] XX (unknown) ; 4] Schematron; 5] HTML
     [ a:defaultValue = "TEI" ]
     attribute scheme {
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
@@ -3331,7 +3456,7 @@ OpenArabicPE_tag =
     }?,
     
     ## supplies the name of the schema in which this tag is defined.
-    ## Sample values include: 1] TEI(text encoding initiative) ; 2] DBK(docbook) ; 3] XX(unknown) ; 4] Schematron; 5] HTML
+    ## Sample values include: 1] TEI (text encoding initiative) ; 2] DBK (docbook) ; 3] XX (unknown) ; 4] Schematron; 5] HTML
     [ a:defaultValue = "TEI" ]
     attribute scheme {
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
@@ -3603,11 +3728,12 @@ OpenArabicPE_birth =
     OpenArabicPE_macro.phraseSeq,
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.datable.attributes,
+    OpenArabicPE_att.dimensions.attributes,
     OpenArabicPE_att.naming.attributes,
     OpenArabicPE_att.typed.attribute.subtype,
     
     ## characterizes the element in some sense, using any convenient classification scheme or typology.
-    ## Sample values include: 1] caesarean(caesarean section) ; 2] vaginal(vaginal delivery) ; 3] exNihilo(ex nihilo) ; 4] incorporated; 5] founded; 6] established
+    ## Sample values include: 1] caesarean (caesarean section) ; 2] vaginal (vaginal delivery) ; 3] exNihilo (ex nihilo) ; 4] incorporated; 5] founded; 6] established
     attribute type {
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
     }?,
@@ -3618,8 +3744,9 @@ OpenArabicPE_death =
   ## contains information about a person's death, such as its date and place. [15.2.2. The Participant Description]
   element death {
     OpenArabicPE_macro.phraseSeq,
-    OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.datable.attributes,
+    OpenArabicPE_att.dimensions.attributes,
+    OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.naming.attributes,
     OpenArabicPE_att.typed.attribute.subtype,
     
@@ -3654,6 +3781,7 @@ OpenArabicPE_floruit =
     OpenArabicPE_macro.phraseSeq,
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.datable.attributes,
+    OpenArabicPE_att.dimensions.attributes,
     empty
   }
 OpenArabicPE_geo =
@@ -3676,7 +3804,7 @@ OpenArabicPE_listEvent =
   ## (list of events) contains a list of descriptions, each of which provides information about an identifiable event. [13.3.1. Basic Principles]
   element listEvent {
     (OpenArabicPE_model.headLike*,
-     (OpenArabicPE_event | OpenArabicPE_listEvent)+,
+     OpenArabicPE_model.eventLike+,
      (OpenArabicPE_relation | OpenArabicPE_listRelation)*),
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.typed.attributes,
@@ -3857,7 +3985,7 @@ OpenArabicPE_relation =
       "         "
     ]
     sch:pattern [
-      id = "tei_OpenArabicPE-relation-activemutual-constraint-report-13"
+      id = "tei_OpenArabicPE-relation-activemutual-constraint-report-14"
       "\x{a}" ~
       "            "
       sch:rule [
@@ -3866,8 +3994,7 @@ OpenArabicPE_relation =
         "               "
         sch:report [
           test = "@active and @mutual"
-          "Only one of the attributes\x{a}" ~
-          "@active and @mutual may be supplied"
+          "Only one of the attributes @active and @mutual may be supplied"
         ]
         "\x{a}" ~
         "            "
@@ -3877,7 +4004,7 @@ OpenArabicPE_relation =
     ]
     sch:pattern [
       id =
-        "tei_OpenArabicPE-relation-activepassive-constraint-report-14"
+        "tei_OpenArabicPE-relation-activepassive-constraint-report-15"
       "\x{a}" ~
       "            "
       sch:rule [
@@ -3886,9 +4013,7 @@ OpenArabicPE_relation =
         "               "
         sch:report [
           test = "@passive and not(@active)"
-          "the attribute 'passive'\x{a}" ~
-          "	may be supplied only if the attribute 'active' is\x{a}" ~
-          "	supplied"
+          "the attribute 'passive' may be supplied only if the attribute 'active' is supplied"
         ]
         "\x{a}" ~
         "            "
@@ -3939,6 +4064,7 @@ OpenArabicPE_trait =
     OpenArabicPE_att.datable.attributes,
     OpenArabicPE_att.naming.attributes,
     OpenArabicPE_att.typed.attributes,
+    OpenArabicPE_att.dimensions.attributes,
     empty
   }
 OpenArabicPE_nym =
@@ -3993,7 +4119,7 @@ OpenArabicPE_ab =
     OpenArabicPE_macro.paraContent
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-ab-abstractModel-structure-p-constraint-report-15"
+           "tei_OpenArabicPE-ab-abstractModel-structure-ab-constraint-report-16"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4002,9 +4128,9 @@ OpenArabicPE_ab =
            "               "
            sch:report [
              test =
-               "not(ancestor::floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum         |parent::tei:item         |parent::tei:note         |parent::tei:q         |parent::tei:quote         |parent::tei:remarks         |parent::tei:said         |parent::tei:sp         |parent::tei:stage         |parent::tei:cell         |parent::tei:figure)"
+               "not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum         |parent::tei:item         |parent::tei:note         |parent::tei:q         |parent::tei:quote         |parent::tei:remarks         |parent::tei:said         |parent::tei:sp         |parent::tei:stage         |parent::tei:cell         |parent::tei:figure)"
              "\x{a}" ~
-             "        Abstract model violation: ab may not contain paragraphs or other ab elements.\x{a}" ~
+             "        Abstract model violation: ab may not occur inside paragraphs or other ab elements.\x{a}" ~
              "      "
            ]
            "\x{a}" ~
@@ -4015,7 +4141,7 @@ OpenArabicPE_ab =
        ]
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-ab-abstractModel-structure-l-constraint-report-16"
+           "tei_OpenArabicPE-ab-abstractModel-structure-l-constraint-report-17"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4045,6 +4171,7 @@ OpenArabicPE_seg =
     OpenArabicPE_macro.paraContent,
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.typed.attributes,
+    OpenArabicPE_att.notated.attributes,
     empty
   }
 OpenArabicPE_table =
@@ -4142,6 +4269,7 @@ OpenArabicPE_surface =
       | OpenArabicPE_model.labelLike
       | OpenArabicPE_model.graphicLike)*,
      ((OpenArabicPE_zone
+       | OpenArabicPE_path
        | OpenArabicPE_surface
        | OpenArabicPE_surfaceGrp),
       OpenArabicPE_model.global*)*),
@@ -4186,11 +4314,82 @@ OpenArabicPE_zone =
     attribute rotate { xsd:nonNegativeInteger }?,
     empty
   }
+OpenArabicPE_path =
+  
+  ## defines any line passing through two or more points within a surface element. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription]
+  element path {
+    empty
+    >> sch:pattern [
+         id =
+           "tei_OpenArabicPE-path-pathmustnotbeclosed-constraint-rule-10"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:path[@points]"
+           "\x{a}" ~
+           "        \x{a}" ~
+           "               "
+           sch:let [
+             name = "firstPair"
+             value = "tokenize( normalize-space( @points ), ' ')[1]"
+           ]
+           "\x{a}" ~
+           "               "
+           sch:let [
+             name = "lastPair"
+             value =
+               "tokenize( normalize-space( @points ), ' ')[last()]"
+           ]
+           "\x{a}" ~
+           "               "
+           sch:let [
+             name = "firstX"
+             value = "xs:float( substring-before( $firstPair, ',') )"
+           ]
+           "\x{a}" ~
+           "               "
+           sch:let [
+             name = "firstY"
+             value = "xs:float( substring-after( $firstPair, ',') )"
+           ]
+           "\x{a}" ~
+           "               "
+           sch:let [
+             name = "lastX"
+             value = "xs:float( substring-before( $lastPair, ',') )"
+           ]
+           "\x{a}" ~
+           "               "
+           sch:let [
+             name = "lastY"
+             value = "xs:float( substring-after( $lastPair, ',') )"
+           ]
+           "\x{a}" ~
+           "               "
+           sch:report [
+             test = "$firstX eq $lastX  and  $firstY eq $lastY"
+             "The first and\x{a}" ~
+             "          last elements of this path are the same. To specify a closed polygon, use\x{a}" ~
+             "          the zone element rather than the path element. "
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.typed.attributes,
+    empty
+  }
 OpenArabicPE_ex =
   
   ## (editorial expansion) contains a sequence of letters added by an editor or transcriber when expanding an abbreviation. [11.3.1.2. Abbreviation and Expansion]
   element ex {
-    OpenArabicPE_macro.xtext, OpenArabicPE_att.global.attributes, empty
+    OpenArabicPE_macro.xtext,
+    OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.dimensions.attributes,
+    empty
   }
 OpenArabicPE_fw =
   
@@ -4201,7 +4400,7 @@ OpenArabicPE_fw =
     OpenArabicPE_att.placement.attributes,
     
     ## classifies the material encoded according to some useful typology.
-    ## Sample values include: 1] header; 2] footer; 3] pageNum(page number) ; 4] lineNum(line number) ; 5] sig(signature) ; 6] catch(catchword) 
+    ## Sample values include: 1] header; 2] footer; 3] pageNum (page number) ; 4] lineNum (line number) ; 5] sig (signature) ; 6] catch (catchword) 
     attribute type {
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
     }?,
@@ -4234,6 +4433,7 @@ OpenArabicPE_supplied =
     OpenArabicPE_att.global.linking.attribute.prev,
     OpenArabicPE_att.global.facs.attribute.facs,
     OpenArabicPE_att.global.change.attribute.change,
+    OpenArabicPE_att.dimensions.attributes,
     
     ## (responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.
     attribute resp {
