@@ -1,7 +1,7 @@
 ---
 title: "Readme: Digial Muqtabas"
 author: Till Grallert
-date: 2017-10-09 14:27:13 +0300
+date: 2018-11-02 13:27:33 +0200
 ---
 
 # Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1917/18)
