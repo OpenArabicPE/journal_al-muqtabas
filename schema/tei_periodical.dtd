@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2018-09-28T21:59:46Z. .[http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
+DTD generated from ODD source 2018-11-09T08:22:24Z. .[http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
 TEI Edition: Version 3.4.0. Last updated on
 	23rd July 2018, revision 1fa0b54
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
@@ -635,11 +635,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.global_sequenceOptional "%model.milestoneLike;?, %model.noteLike;?, %model.global.edit;?, figure?, metamark?"> 
 <!ENTITY % model.global_sequenceOptionalRepeatable "%model.milestoneLike;*, %model.noteLike;*, %model.global.edit;*, figure*, metamark*"> 
 <!ENTITY % model.global_sequenceRepeatable "%model.milestoneLike;+, %model.noteLike;+, %model.global.edit;+, figure+, metamark+"> 
-<!ENTITY % model.biblPart "%model.respLike; |%model.imprintPart; |citedRange |bibl |edition |availability |listRelation"> 
-<!ENTITY % model.biblPart_sequence "%model.respLike;, %model.imprintPart;, citedRange, bibl, edition, availability, listRelation"> 
-<!ENTITY % model.biblPart_sequenceOptional "%model.respLike;?, %model.imprintPart;?, citedRange?, bibl?, edition?, availability?, listRelation?"> 
-<!ENTITY % model.biblPart_sequenceOptionalRepeatable "%model.respLike;*, %model.imprintPart;*, citedRange*, bibl*, edition*, availability*, listRelation*"> 
-<!ENTITY % model.biblPart_sequenceRepeatable "%model.respLike;+, %model.imprintPart;+, citedRange+, bibl+, edition+, availability+, listRelation+"> 
+<!ENTITY % model.biblPart "%model.respLike; |%model.imprintPart; |citedRange |bibl |textLang |edition |availability |listRelation"> 
+<!ENTITY % model.biblPart_sequence "%model.respLike;, %model.imprintPart;, citedRange, bibl, textLang, edition, availability, listRelation"> 
+<!ENTITY % model.biblPart_sequenceOptional "%model.respLike;?, %model.imprintPart;?, citedRange?, bibl?, textLang?, edition?, availability?, listRelation?"> 
+<!ENTITY % model.biblPart_sequenceOptionalRepeatable "%model.respLike;*, %model.imprintPart;*, citedRange*, bibl*, textLang*, edition*, availability*, listRelation*"> 
+<!ENTITY % model.biblPart_sequenceRepeatable "%model.respLike;+, %model.imprintPart;+, citedRange+, bibl+, textLang+, edition+, availability+, listRelation+"> 
 <!ENTITY % model.frontPart "listBibl"> 
 <!ENTITY % model.frontPart_sequence "listBibl"> 
 <!ENTITY % model.frontPart_sequenceOptional "listBibl?"> 
@@ -1715,7 +1715,7 @@ selector %teidata.text;  #IMPLIED >
 <!ATTLIST roleName
  %OpenArabicPE_att.global.attributes;
  %OpenArabicPE_att.personal.attributes;
-type (title|honorific|nobility|rank|epithet) "title" 
+type (title|honorific|nobility|rank|epithet|pseudonym) "title" 
 subtype (military|civil|religious) #IMPLIED >
 <!--doc:contains one row of a table. [14.1.1. TEI Tables] -->
 <!ELEMENT row (cell)+>
@@ -1854,6 +1854,13 @@ version %teidata.version;  #IMPLIED >
 <!ATTLIST text
  %OpenArabicPE_att.global.attributes;
  %OpenArabicPE_att.typed.attributes; >
+<!--doc:(text language) describes the languages and writing systems identified within the bibliographic work being described, rather than its description. [3.11.2.4. Imprint, Size of a Document, and Reprint Information 10.6.6. Languages and Writing Systems] -->
+<!ELEMENT textLang %macro.phraseSeq;>
+<!ATTLIST textLang xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST textLang
+ %OpenArabicPE_att.global.attributes;
+mainLang %teidata.language;  #IMPLIED
+otherLangs CDATA  #IMPLIED >
 <!--doc:contains a phrase defining a time of day in any format. [3.5.4. Dates and Times] -->
 <!ELEMENT time (#PCDATA|_DUMMY_model.gLike|%model.phrase;|%model.global;)*>
 <!ATTLIST time xmlns CDATA "http://www.tei-c.org/ns/1.0">

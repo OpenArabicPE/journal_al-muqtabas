@@ -57,7 +57,7 @@
             </p>
             <p>Many elements and attribute classes and attributes were deleted from the standard set. The values of some attributes were restricted.</p>
             <schemaSpec docLang="en" ident="tei_OpenArabicPE" prefix="OpenArabicPE_" xml:lang="en">
-                <moduleRef except="addrLine address analytic binaryObject desc distinct divGen email emph gloss headItem headLabel index media meeting mentioned postBox postCode reg relatedItem series soCalled sp speaker stage street textLang" key="core"/>
+                <moduleRef except="addrLine address analytic binaryObject desc distinct divGen email emph gloss headItem headLabel index media meeting mentioned postBox postCode reg relatedItem series soCalled sp speaker stage street" key="core"/>
                 <moduleRef except="" key="tei"/>
                 <moduleRef except="abstract appInfo application cRefPattern catDesc catRef category classCode classDecl correction correspAction correspContext correspDesc creation extent geoDecl handNote hyphenation interpretation keywords listChange namespace normalization principal punctuation refState schemaRef scriptNote segmentation seriesStmt sponsor stdVals styleDefDecl tagUsage tagsDecl taxonomy textClass typeNote xenoData" key="header"/>
                 <moduleRef except="argument div1 div2 div3 div4 div5 div6 div7 docAuthor docDate docEdition docImprint docTitle epigraph imprimatur postscript signed titlePage titlePart" key="textstructure"/>
@@ -244,26 +244,30 @@
                         <attDef ident="type" mode="change" usage="req">
                             <defaultVal>title</defaultVal>
                             <valList mode="replace" type="closed">
+                                <!-- this is goind to be depreciated -->
                                 <valItem ident="title">
-                                    <desc>indicates formal titles, such as &quot;Bey&quot;, &quot;Pasha&quot; etc.</desc>
+                                    <desc>indicates formal titles, such as &quot;Bey&quot;, &quot;Pasha&quot; etc. This use is depreciated in favour of <tag>roleName type="title"</tag></desc>
                                 </valItem>
+                                <!-- this is goind to be depreciated -->
                                 <valItem ident="honorific">
                                     <desc>indicates honorific addresses or titles, such as Miss, 
                                         <foreign xml:lang="ar-Latn-x-ijmes">Shaykh</foreign>
                                         , 
-                                        <foreign xml:lang="ota-Latn-TR">zade</foreign></desc>
+                                        <foreign xml:lang="ota-Latn-TR">zade</foreign>. This use is depreciated in favour of <tag>roleName type="honorific"</tag></desc>
                                 </valItem>
+                                <!-- this is goind to be depreciated -->
                                 <valItem ident="rank">
                                     <desc>indicates ranks within an administrative, military or religious hierarchy, such as 
                                         <foreign xml:lang="ar-Latn-x-ijmes">farīq</foreign>
                                         , 
                                         <foreign xml:lang="ota-Latn-x-ijmes">vālī</foreign>
-                                        , Captain</desc>
+                                        , Captain. This use is depreciated in favour of <tag>roleName type="rank"</tag></desc>
                                 </valItem>
+                                <!-- this is goind to be depreciated -->
                                 <valItem ident="nickname">
-                                    <desc>a phrase someone is commonly referred to, such as &quot;Owner of the newspaper xyz&quot;</desc>
+                                    <desc>a phrase someone is commonly referred to, such as &quot;Owner of the newspaper xyz&quot;. This use is depreciated in favour of <tag>roleName type="title"</tag></desc>
                                 </valItem>
-                                <!--<valItem ident="function"><desc></desc></valItem>-->
+                                <!-- classic conception of Arabic names -->
                                 <valItem ident="nasab">
                                     <desc>a 
                                         <term>patronym</term>
@@ -351,6 +355,9 @@
                                 <valItem ident="epithet">
                                     <desc>a phrase someone is commonly referred to (nick-name), such as &quot;Owner of the newspaper xyz&quot;</desc>
                                 </valItem>
+                                <valItem ident="pseudonym">
+                                    <desc>a ficticious name, especially one used by an author.</desc>
+                                </valItem>
                             </valList>
                         </attDef>
                         <attDef ident="subtype" mode="change" usage="opt">
@@ -384,19 +391,19 @@
                                 </valItem>
                                 <valItem ident="#cal_islamic">
                                     <desc>Muslim lunar calendar known as 
-                                        <foreign>hijrī</foreign>
+                                        <foreign xml:lang="ar-Latn-x-ijmes">hijrī</foreign> calendar
                                         beginning the year with 1 
-                                        <foreign>Muḥarram</foreign></desc>
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Muḥarram</foreign></desc>
                                 </valItem>
                                 <valItem ident="#cal_julian">
-                                    <desc>Reformed Julian calendar beginning the year with 1 January</desc>
+                                    <desc>Reformed Julian calendar also known as <foreign xml:lang="ar-Latn-x-ijmes">sharqī</foreign> or <foreign xml:lang="ar-Latn-x-ijmes">rūmī</foreign> calendar beginning the Year with 1 January</desc>
                                 </valItem>
                                 <valItem ident="#cal_ottomanfiscal">
                                     <desc>Ottoman fiscal calendar also known as 
-                                        <foreign>mālī</foreign>
+                                        <foreign xml:lang="ar-Latn-x-ijmes">mālī</foreign>
                                         or 
-                                        <foreign>rūmī</foreign>
-                                        calendar</desc>
+                                        <foreign xml:lang="ar-Latn-x-ijmes">rūmī</foreign>
+                                        calendar beginning the year with 1 <foreign xml:lang="ar-Latn-x-ijmes">mārt</foreign> (March), similar to the old Julian calendar.</desc>
                                 </valItem>
                                 <valItem ident="#cal_coptic">
                                     <desc>The Coptic calendar</desc>
@@ -410,17 +417,19 @@
                                 </valItem>
                                 <valItem ident="#cal_islamic">
                                     <desc>Muslim lunar calendar known as 
-                                        <foreign>hijrī</foreign></desc>
+                                        <foreign xml:lang="ar-Latn-x-ijmes">hijrī</foreign> calendar
+                                        beginning the year with 1 
+                                        <foreign xml:lang="ar-Latn-x-ijmes">Muḥarram</foreign></desc>
                                 </valItem>
                                 <valItem ident="#cal_julian">
-                                    <desc>Reformed Julian calendar beginning the Year with 1 January</desc>
+                                    <desc>Reformed Julian calendar also known as <foreign xml:lang="ar-Latn-x-ijmes">sharqī</foreign> or <foreign xml:lang="ar-Latn-x-ijmes">rūmī</foreign> calendar beginning the Year with 1 January</desc>
                                 </valItem>
                                 <valItem ident="#cal_ottomanfiscal">
                                     <desc>Ottoman fiscal calendar also known as 
-                                        <foreign>mālī</foreign>
+                                        <foreign xml:lang="ar-Latn-x-ijmes">mālī</foreign>
                                         or 
-                                        <foreign>rūmī</foreign>
-                                        calendar</desc>
+                                        <foreign xml:lang="ar-Latn-x-ijmes">rūmī</foreign>
+                                        calendar beginning the year with 1 <foreign xml:lang="ar-Latn-x-ijmes">mārt</foreign> (March), similar to the old Julian calendar.</desc>
                                 </valItem>
                                 <valItem ident="#cal_coptic">
                                     <desc>The Coptic calendar</desc>
@@ -585,10 +594,10 @@
                             <defaultVal>print</defaultVal>
                             <valList mode="replace" type="semi">
                                 <valItem ident="print">
-                                    <desc>Page beginning, i.e. break, according to a printed edition</desc>
+                                    <desc>Line beginning, i.e. break, according to a printed edition</desc>
                                 </valItem>
                                 <valItem ident="shamela">
-                                    <desc>Page beginning, i.e. break, as found in the transcription from Maktabat al-Shamela</desc>
+                                    <desc>Line beginning, i.e. break, as found in the transcription from Maktabat al-Shamela</desc>
                                 </valItem>
                             </valList>
                         </attDef>
@@ -609,10 +618,10 @@
                             <defaultVal>print</defaultVal>
                             <valList mode="replace" type="semi">
                                 <valItem ident="print">
-                                    <desc>Page beginning, i.e. break, according to a printed edition</desc>
+                                    <desc>Column beginning, i.e. break, according to a printed edition</desc>
                                 </valItem>
                                 <valItem ident="shamela">
-                                    <desc>Page beginning, i.e. break, as found in the transcription from Maktabat al-Shamela</desc>
+                                    <desc>Column beginning, i.e. break, as found in the transcription from Maktabat al-Shamela</desc>
                                 </valItem>
                             </valList>
                         </attDef>

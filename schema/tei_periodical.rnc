@@ -6,7 +6,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-09-28T22:00:37Z. .
+# Schema generated from ODD source 2018-11-09T08:22:55Z. .
 # TEI Edition: Version 3.4.0. Last updated on
 #	23rd July 2018, revision 1fa0b54
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
@@ -1261,6 +1261,7 @@ OpenArabicPE_model.biblPart =
   | OpenArabicPE_model.imprintPart
   | OpenArabicPE_citedRange
   | OpenArabicPE_bibl
+  | OpenArabicPE_textLang
   | OpenArabicPE_edition
   | OpenArabicPE_availability
   | OpenArabicPE_listRelation
@@ -1946,13 +1947,13 @@ OpenArabicPE_date =
        ## Gregorian calendar
        "#cal_gregorian"
        | 
-         ## Muslim lunar calendar known as hijrī
+         ## Muslim lunar calendar known as hijrī calendar beginning the year with 1 Muḥarram
          "#cal_islamic"
        | 
-         ## Reformed Julian calendar beginning the Year with 1 January
+         ## Reformed Julian calendar also known as sharqī or rūmī calendar beginning the Year with 1 January
          "#cal_julian"
        | 
-         ## Ottoman fiscal calendar also known as mālī or rūmī calendar
+         ## Ottoman fiscal calendar also known as mālī or rūmī calendar beginning the year with 1 mārt (March), similar to the old Julian calendar.
          "#cal_ottomanfiscal"
        | 
          ## The Coptic calendar
@@ -1988,13 +1989,13 @@ OpenArabicPE_date =
       ## Gregorian calendar
       "#cal_gregorian"
       | 
-        ## Muslim lunar calendar known as hijrī beginning the year with 1 Muḥarram
+        ## Muslim lunar calendar known as hijrī calendar beginning the year with 1 Muḥarram
         "#cal_islamic"
       | 
-        ## Reformed Julian calendar beginning the year with 1 January
+        ## Reformed Julian calendar also known as sharqī or rūmī calendar beginning the Year with 1 January
         "#cal_julian"
       | 
-        ## Ottoman fiscal calendar also known as mālī or rūmī calendar
+        ## Ottoman fiscal calendar also known as mālī or rūmī calendar beginning the year with 1 mārt (March), similar to the old Julian calendar.
         "#cal_ottomanfiscal"
       | 
         ## The Coptic calendar
@@ -2346,10 +2347,10 @@ OpenArabicPE_lb =
     attribute ed {
       list {
         (
-         ## Page beginning, i.e. break, according to a printed edition
+         ## Line beginning, i.e. break, according to a printed edition
          "print"
          | 
-           ## Page beginning, i.e. break, as found in the transcription from Maktabat al-Shamela
+           ## Line beginning, i.e. break, as found in the transcription from Maktabat al-Shamela
            "shamela"
          | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
       }
@@ -2383,10 +2384,10 @@ OpenArabicPE_cb =
     attribute ed {
       list {
         (
-         ## Page beginning, i.e. break, according to a printed edition
+         ## Column beginning, i.e. break, according to a printed edition
          "print"
          | 
-           ## Page beginning, i.e. break, as found in the transcription from Maktabat al-Shamela
+           ## Column beginning, i.e. break, as found in the transcription from Maktabat al-Shamela
            "shamela"
          | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
       }
@@ -2418,12 +2419,14 @@ OpenArabicPE_monogr =
        OpenArabicPE_title+,
        (OpenArabicPE_model.ptrLike
         | OpenArabicPE_idno
+        | OpenArabicPE_textLang
         | OpenArabicPE_editor
         | OpenArabicPE_respStmt)*)
       | ((OpenArabicPE_title
           | OpenArabicPE_model.ptrLike
           | OpenArabicPE_idno)+,
-         (OpenArabicPE_author
+         (OpenArabicPE_textLang
+          | OpenArabicPE_author
           | OpenArabicPE_editor
           | OpenArabicPE_respStmt)*)
       | (OpenArabicPE_authority, OpenArabicPE_idno))?,
@@ -2722,6 +2725,32 @@ OpenArabicPE_teiCorpus =
     ## specifies the version number of the TEI Guidelines against which this document is valid.
     attribute version {
       xsd:token { pattern = "[\d]+(\.[\d]+){0,2}" }
+    }?,
+    empty
+  }
+OpenArabicPE_textLang =
+  
+  ## (text language) describes the languages and writing systems identified within the bibliographic work being described, rather than its description. [3.11.2.4. Imprint, Size of a Document, and Reprint Information 10.6.6. Languages and Writing Systems]
+  element textLang {
+    OpenArabicPE_macro.phraseSeq,
+    OpenArabicPE_att.global.attributes,
+    
+    ## (main language) supplies a code which identifies the chief language used in the bibliographic work.
+    attribute mainLang {
+      xsd:language
+      | (
+         ##
+         "")
+    }?,
+    
+    ## (other languages) one or more codes identifying any other languages used in the bibliographic work.
+    attribute otherLangs {
+      list {
+        (xsd:language
+         | (
+            ##
+            ""))*
+      }
     }?,
     empty
   }
@@ -3629,16 +3658,16 @@ OpenArabicPE_addName =
     [ a:defaultValue = "title" ]
     attribute type {
       
-      ## indicates formal titles, such as "Bey", "Pasha" etc.
+      ## indicates formal titles, such as "Bey", "Pasha" etc. This use is depreciated in favour of 
       "title"
       | 
-        ## indicates honorific addresses or titles, such as Miss, Shaykh , zade
+        ## indicates honorific addresses or titles, such as Miss, Shaykh , zade. This use is depreciated in favour of 
         "honorific"
       | 
-        ## indicates ranks within an administrative, military or religious hierarchy, such as farīq , vālī , Captain
+        ## indicates ranks within an administrative, military or religious hierarchy, such as farīq , vālī , Captain. This use is depreciated in favour of 
         "rank"
       | 
-        ## a phrase someone is commonly referred to, such as "Owner of the newspaper xyz"
+        ## a phrase someone is commonly referred to, such as "Owner of the newspaper xyz". This use is depreciated in favour of 
         "nickname"
       | 
         ## a patronym introduced by “Ibn” ( إبن - son of)
@@ -3694,6 +3723,9 @@ OpenArabicPE_roleName =
       | 
         ## a phrase someone is commonly referred to (nick-name), such as "Owner of the newspaper xyz"
         "epithet"
+      | 
+        ## a ficticious name, especially one used by an author.
+        "pseudonym"
     },
     
     ## provides a sub-categorization of the element, if needed
