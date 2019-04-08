@@ -518,7 +518,8 @@
                             <xsl:text>تأليف: </xsl:text>
                         </xsl:when>
                     </xsl:choose>
-                    <xsl:value-of select="descendant::tei:byline/descendant::tei:persName"/>
+                    <!--<xsl:value-of select="descendant::tei:byline/descendant::tei:persName"/>-->
+                    <xsl:apply-templates select="descendant::tei:byline/descendant::tei:persName" mode="mToc"/>
                     <xsl:text>،</xsl:text>
                 </xsl:if>
                 <!-- add page numbers -->
@@ -542,12 +543,26 @@
             </xsl:if>
         </li>
     </xsl:template>
+    <xsl:template match="tei:persName" mode="mToc">
+        <!-- if there is more than forename and surname, strip that out -->
+        <xsl:choose>
+            <xsl:when test="child::tei:surname and child::tei:forename">
+                <xsl:apply-templates mode="mToc"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template match="tei:surname | tei:forename | tei:nameLink" mode="mToc">
+        <xsl:value-of select="normalize-space(.)"/>
+    </xsl:template>
 
     <!-- omit all nodes that are not explicitly dealt with -->
     <xsl:template match="tei:head" mode="mToc">
         <xsl:apply-templates mode="mToc"/>
     </xsl:template>
-    <xsl:template match="tei:note" mode="mToc"/>
+    <xsl:template match="tei:note | tei:addName | tei:roleName" mode="mToc"/>
     <xsl:template match="tei:lb | tei:cb" mode="mToc">
         <xsl:text> </xsl:text>
     </xsl:template>
@@ -956,39 +971,30 @@
             <!-- wrap everything in a link to external sources -->
             <a class="c_linked-data" lang="en" target="_blank">
                 <xsl:choose>
-                    <xsl:when test="starts-with(@ref, 'geon')">
-                        <xsl:attribute name="href">
-                            <xsl:value-of select="concat('http://www.geonames.org/', substring-after(@ref, 'geon:'))"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="title">
-                            <xsl:text>Link to this toponym on GeoNames</xsl:text>
-                        </xsl:attribute>
-                        <!-- <xsl:text>geonames</xsl:text>-->
-                        <!-- add a mapping symbol -->
-                        <!-- <xsl:copy-of select="document('../assets/icons/map-pin.svg')"/> -->
-                    </xsl:when>
-                    <xsl:when test="starts-with(@ref, 'oclc')">
-                        <xsl:attribute name="href">
-                            <xsl:value-of select="concat('https://www.worldcat.org/oclc/', substring-after(@ref, 'oclc:'))"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="title">
-                            <xsl:text>Link to this bibliographic item on WorldCat</xsl:text>
-                        </xsl:attribute>
-                        <!-- <xsl:text>oclc</xsl:text>-->
-                        <!-- add the arrow symbol -->
-                        <!-- <xsl:copy-of select="document('../assets/icons/book-open.svg')"/> -->
-                    </xsl:when>
-                    <xsl:when test="starts-with(@ref, 'viaf')">
+                    <xsl:when test="contains(@ref, 'viaf')">
                         <xsl:attribute name="href">
                             <xsl:value-of select="concat('https://viaf.org/viaf/', substring-after(@ref, 'viaf:'))"/>
                         </xsl:attribute>
                         <xsl:attribute name="title">
                             <xsl:text>Link to this entity at VIAF</xsl:text>
                         </xsl:attribute>
-                        <!-- <xsl:text>viaf</xsl:text>-->
-                        <!-- add a symbol for a person -->
-                        <!-- <xsl:copy-of select="document('../assets/icons/user.svg')"/> -->
                     </xsl:when>
+                    <xsl:when test="contains(@ref, 'geon')">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="concat('http://www.geonames.org/', substring-after(@ref, 'geon:'))"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:text>Link to this toponym on GeoNames</xsl:text>
+                        </xsl:attribute>
+                    </xsl:when>
+                     <xsl:when test="concat(@ref, 'oclc')">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="concat('https://www.worldcat.org/oclc/', substring-after(@ref, 'oclc:'))"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:text>Link to this bibliographic item on WorldCat</xsl:text>
+                        </xsl:attribute>
+                     </xsl:when>
                 </xsl:choose>
                 <xsl:copy-of select="$p_content"/>
             </a>
@@ -1095,14 +1101,37 @@
     </xsl:template>
     <xsl:template match="tei:date[ancestor::tei:body]">
         <xsl:variable name="v_icon" select="document('../assets/icons/calendar.svg')"/>
+        <span class="c_toggle-popup">
         <xsl:copy>
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
-        <!-- add icon -->
+            <!-- add icon -->
         <span class="c_icon-entity"><xsl:copy-of select="$v_icon"/></span>
+            <!-- generate a pop-up label -->
+            <xsl:if test="@datingMethod != ''">
+                <xsl:call-template name="t_pop-up-note">
+                    <xsl:with-param name="p_lang" select="'en'"/>
+                    <xsl:with-param name="p_content">
+                        <span class="c_li">@datingMethod: <xsl:value-of select="@datingMethod"/></span>
+                        <xsl:if test="@when-custom">
+                            <span class="c_li">@when-custom: <xsl:value-of select="@when-custom"/></span>
+                        </xsl:if>
+                        <xsl:if test="@when">
+                            <span class="c_li">@when: <xsl:value-of select="@when"/></span>
+                        </xsl:if>
+                        <xsl:if test="@notBefore">
+                            <span class="c_li">@notBefore: <xsl:value-of select="@notBefore"/></span>
+                        </xsl:if>
+                        <xsl:if test="@notAfter">
+                            <span class="c_li">@notAfter: <xsl:value-of select="@notAfter"/></span>
+                        </xsl:if>
+                    </xsl:with-param>
+                </xsl:call-template>
+            </xsl:if>
+        </span>
     </xsl:template>
 
 
