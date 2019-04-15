@@ -512,14 +512,38 @@
                 <xsl:text> (</xsl:text>
                 <!-- add author names and pages if available -->
                 <xsl:if
-                    test="tei:byline/descendant::tei:persName or tei:opener/tei:byline/descendant::tei:persName">
+                    test="tei:byline/descendant::tei:persName or tei:opener/tei:byline/descendant::tei:persName or tei:note[@type = 'bibliographic']/tei:bibl">
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
                             <xsl:text>تأليف: </xsl:text>
                         </xsl:when>
                     </xsl:choose>
-                    <!--<xsl:value-of select="descendant::tei:byline/descendant::tei:persName"/>-->
-                    <xsl:apply-templates select="descendant::tei:byline/descendant::tei:persName" mode="mToc"/>
+                    <xsl:choose>
+                        <xsl:when test="tei:byline/descendant::tei:persName">
+                            <xsl:for-each select="descendant::tei:byline/descendant::tei:persName">
+                                <xsl:apply-templates mode="mToc"/>
+                                <xsl:if test="not(last())">
+                                    <xsl:text>،</xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
+                            <xsl:for-each select="tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
+                                <xsl:apply-templates select="tei:persName" mode="mToc"/>
+                                <xsl:if test="not(last())">
+                                    <xsl:text>،</xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="tei:note[@type = 'bibliographic']/tei:bibl/tei:title[@level = 'j']">
+                            <xsl:for-each select="tei:note[@type = 'bibliographic']/tei:bibl/tei:title[@level = 'j']">
+                                <xsl:apply-templates select="tei:persName" mode="mToc"/>
+                                <xsl:if test="not(last())">
+                                    <xsl:text>،</xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                    </xsl:choose>
                     <xsl:text>،</xsl:text>
                 </xsl:if>
                 <!-- add page numbers -->
@@ -550,12 +574,12 @@
                 <xsl:apply-templates mode="mToc"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="."/>
+                <xsl:value-of select="normalize-space(.)"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:surname | tei:forename | tei:nameLink" mode="mToc">
-        <xsl:value-of select="normalize-space(.)"/>
+        <xsl:text> </xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text> </xsl:text>
     </xsl:template>
 
     <!-- omit all nodes that are not explicitly dealt with -->
@@ -722,7 +746,6 @@
                 <xsl:call-template name="templHtmlAttrLang">
                     <xsl:with-param name="pInput" select="tei:TEI/tei:text"/>
                 </xsl:call-template>
-                <!--                <xsl:value-of select="$p_text-notes"/>-->
                 <xsl:choose>
                     <xsl:when test="tei:TEI/tei:text/@xml:lang = 'ar'">
                         <xsl:text>ملاحظات</xsl:text>
@@ -733,17 +756,17 @@
                 </xsl:choose>
             </head>
             <xsl:apply-templates
-                select="/descendant::tei:body/descendant::tei:note[@type = 'footnote' or @type = 'endnote']"
+                select="/descendant::tei:body/descendant::tei:note[@type = 'footnote' or @type = 'endnote' or not(@place = 'inline')]"
                 mode="m_notes"/>
         </div>
     </xsl:variable>
-    <xsl:template match="tei:note[@type = 'footnote' or @type = 'endnote']" mode="m_notes">
+    <xsl:template match="tei:note[@type = 'footnote' or @type = 'endnote' or not(@place = 'inline')]" mode="m_notes">
         <note class="c_note" id="fn-{generate-id()}">
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
             <a href="#fn-mark-{generate-id()}" class="c_fn-mark" lang="en">
-                <xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/>
+                <xsl:value-of select="count(preceding::tei:note[@type = 'footnote' or @type = 'endnote' or not(@place = 'inline')][ancestor::tei:body]) + 1"/>
             </a>
             <xsl:apply-templates/>
             <!-- add a back link -->
@@ -754,11 +777,11 @@
         </note>
     </xsl:template>
     <!-- generate the references to the block of endnotes in the text, including a potential pop-up -->
-    <xsl:template match="tei:body//tei:note[@type = 'footnote' or @type = 'endnote']">
+    <xsl:template match="tei:body//tei:note[@type = 'footnote' or @type = 'endnote' or not(@place = 'inline')]">
         <a href="#fn-{generate-id()}" id="fn-mark-{generate-id()}" class="c_fn cContent c_toggle-popup">
             <!-- one should have the full text of the note hidden by CSS -->
             <span class="c_fn-mark" lang="en">
-                <xsl:value-of select="count(preceding::tei:note[ancestor::tei:body]) + 1"/>
+                <xsl:value-of select="count(preceding::tei:note[@type = 'footnote' or @type = 'endnote' or not(@place = 'inline')][ancestor::tei:body]) + 1"/>
             </span>
             <xsl:call-template name="t_pop-up-note">
                 <xsl:with-param name="p_lang">
