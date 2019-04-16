@@ -54,6 +54,11 @@
         </sch:rule>
     </sch:pattern>
     <sch:pattern>
+        <sch:rule context="tei:div[@type = 'item']" role="error">
+            <sch:assert test="@subtype">Divs of @type='item' need a @subtype attribute.</sch:assert>
+        </sch:rule>
+    </sch:pattern>
+    <sch:pattern>
         <sch:rule context="tei:note[@type='editorial']" role="error">
             <sch:assert test="@resp">The responsible editor for this note must be identfied through a reference to the relevant @xml:id.</sch:assert>
         </sch:rule>

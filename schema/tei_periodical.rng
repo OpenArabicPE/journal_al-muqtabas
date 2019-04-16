@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-04-15T10:27:26Z. .
+Schema generated from ODD source 2019-04-16T10:04:16Z. .
 TEI Edition: Version 3.3.0. Last updated on
 	31st January 2018, revision f4d8439
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
@@ -3295,24 +3295,22 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
             </attribute>
          </optional>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="type"
-                       a:defaultValue="footnote">
-               <a:documentation>characterizes the element in some sense, using any convenient classification scheme or typology.
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.
 Suggested values include: 1] bibliographic; 2] editorial; 3] endnote; 4] footnote; 5] gloss; 6] inline</a:documentation>
                <choice>
                   <value>bibliographic</value>
-                  <a:documentation>Note identifying authors, editors, or other sources of a text for cases that canot be covered by a byline.</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Note identifying authors, editors, or other sources of a text for cases that canot be covered by a byline.</a:documentation>
                   <value>editorial</value>
-                  <a:documentation>Note added by editors of the digital edition. The editor is identified by means of resp</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Note added by editors of the digital edition. The editor is identified by means of resp</a:documentation>
                   <value>endnote</value>
-                  <a:documentation>Discouraged: use place='end' instead.</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Discouraged: use place='end' instead.</a:documentation>
                   <value>footnote</value>
-                  <a:documentation>Discouraged: use place='bottom' instead.</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Discouraged: use place='bottom' instead.</a:documentation>
                   <value>gloss</value>
-                  <a:documentation>Discouraged: use place='margin' instead.</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Discouraged: use place='margin' instead.</a:documentation>
                   <value>inline</value>
-                  <a:documentation>Discouraged: use place='inline' instead.</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Discouraged: use place='inline' instead.</a:documentation>
                   <data type="token">
                      <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
                   </data>
@@ -5041,20 +5039,24 @@ Suggested values include: 1] item; 2] section; 3] volume; 4] issue</a:documentat
             </choice>
          </attribute>
          <optional>
-            <attribute name="subtype">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies a basic content classification
-Suggested values include: 1] bill; 2] advert; 3] letter; 4] masthead; 5] verse</a:documentation>
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                       name="subtype"
+                       a:defaultValue="article">
+               <a:documentation>specifies a basic content classification
+Suggested values include: 1] article; 2] bill; 3] advert; 4] letter; 5] masthead; 6] verse</a:documentation>
                <choice>
+                  <value>article</value>
+                  <a:documentation>a generic periodical article</a:documentation>
                   <value>bill</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a legal text</a:documentation>
+                  <a:documentation>a legal text</a:documentation>
                   <value>advert</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">an advertisement</a:documentation>
+                  <a:documentation>an advertisement</a:documentation>
                   <value>letter</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a letter</a:documentation>
+                  <a:documentation>a letter</a:documentation>
                   <value>masthead</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the masthead of a periodical issue</a:documentation>
+                  <a:documentation>the masthead of a periodical issue</a:documentation>
                   <value>verse</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation/>
                   <data type="token">
                      <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
                   </data>

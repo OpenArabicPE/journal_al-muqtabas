@@ -6,7 +6,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2019-04-15T10:28:14Z. .
+# Schema generated from ODD source 2019-04-16T10:04:38Z. .
 # TEI Edition: Version 3.3.0. Last updated on
 #	31st January 2018, revision f4d8439
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
@@ -2259,7 +2259,6 @@ OpenArabicPE_note =
     
     ## characterizes the element in some sense, using any convenient classification scheme or typology.
     ## Suggested values include: 1] bibliographic; 2] editorial; 3] endnote; 4] footnote; 5] gloss; 6] inline
-    [ a:defaultValue = "footnote" ]
     attribute type {
       
       ## Note identifying authors, editors, or other sources of a text for cases that canot be covered by a byline.
@@ -3314,11 +3313,15 @@ OpenArabicPE_div =
     },
     
     ## specifies a basic content classification
-    ## Suggested values include: 1] bill; 2] advert; 3] letter; 4] masthead; 5] verse
+    ## Suggested values include: 1] article; 2] bill; 3] advert; 4] letter; 5] masthead; 6] verse
+    [ a:defaultValue = "article" ]
     attribute subtype {
       
-      ## a legal text
-      "bill"
+      ## a generic periodical article
+      "article"
+      | 
+        ## a legal text
+        "bill"
       | 
         ## an advertisement
         "advert"
