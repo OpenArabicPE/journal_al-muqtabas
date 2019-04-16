@@ -512,7 +512,7 @@
                 <xsl:text> (</xsl:text>
                 <!-- add author names and pages if available -->
                 <xsl:if
-                    test="tei:byline/descendant::tei:persName or tei:opener/tei:byline/descendant::tei:persName or tei:note[@type = 'bibliographic']/tei:bibl">
+                    test="tei:byline/descendant::tei:persName or tei:opener/tei:byline/descendant::tei:persName or descendant::tei:note[@type = 'bibliographic']/tei:bibl">
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
                             <xsl:text>تأليف: </xsl:text>
@@ -527,17 +527,17 @@
                                 </xsl:if>
                             </xsl:for-each>
                         </xsl:when>
-                        <xsl:when test="tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
-                            <xsl:for-each select="tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
+                        <xsl:when test="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
+                            <xsl:for-each select="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
                                 <xsl:apply-templates select="tei:persName" mode="mToc"/>
                                 <xsl:if test="not(last())">
                                     <xsl:text>،</xsl:text>
                                 </xsl:if>
                             </xsl:for-each>
                         </xsl:when>
-                        <xsl:when test="tei:note[@type = 'bibliographic']/tei:bibl/tei:title[@level = 'j']">
-                            <xsl:for-each select="tei:note[@type = 'bibliographic']/tei:bibl/tei:title[@level = 'j']">
-                                <xsl:apply-templates select="tei:persName" mode="mToc"/>
+                        <xsl:when test="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:title[@level = 'j']">
+                            <xsl:for-each select="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:title[@level = 'j']">
+                                <xsl:apply-templates select="." mode="mToc"/>
                                 <xsl:if test="not(last())">
                                     <xsl:text>،</xsl:text>
                                 </xsl:if>
@@ -666,21 +666,52 @@
                 </tei:head>
             </xsl:if>
             <!-- inject some author information -->
-            <!-- add author names and pages if available -->
             <!-- BUG: this doesn't reliably work if there is more than one preceding <tei:head> -->
             <xsl:if
-                test="tei:byline/preceding-sibling::*[1] != tei:head and tei:byline/descendant::tei:persName">
-                <span lang="ar" class="c_byline">
-                    <xsl:text>[</xsl:text>
+                test="(tei:byline/preceding-sibling::*[1] != tei:head and tei:byline/descendant::tei:persName) or descendant::tei:note[@type = 'bibliographic']/tei:bibl">
+                <span class="c_byline">
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
+                            <xsl:attribute name="lang">
+                                <xsl:text>ar</xsl:text>
+                            </xsl:attribute>
+                            <xsl:text>[</xsl:text>
                             <xsl:text>تأليف: </xsl:text>
                         </xsl:when>
-                        <!--<xsl:when test="@xml:lang = 'en'">
+                        <xsl:otherwise>
+                            <xsl:attribute name="lang">
+                                <xsl:text>en</xsl:text>
+                            </xsl:attribute>
+                            <xsl:text>[</xsl:text>
                             <xsl:text>author: </xsl:text>
-                        </xsl:when>-->
+                        </xsl:otherwise>
                     </xsl:choose>
-                    <xsl:apply-templates select="tei:byline/descendant::tei:persName"/>
+                     <xsl:choose>
+                        <xsl:when test="tei:byline/descendant::tei:persName">
+                            <xsl:for-each select="descendant::tei:byline/descendant::tei:persName">
+                                <xsl:apply-templates select="."/>
+                                <xsl:if test="not(last())">
+                                    <xsl:text>،</xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
+                            <xsl:for-each select="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
+                                <xsl:apply-templates select="tei:persName"/>
+                                <xsl:if test="not(last())">
+                                    <xsl:text>،</xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:title[@level = 'j']">
+                            <xsl:for-each select="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:title[@level = 'j']">
+                                <xsl:apply-templates select="."/>
+                                <xsl:if test="not(last())">
+                                    <xsl:text>،</xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                    </xsl:choose>
                     <xsl:text>]</xsl:text>
                 </span>
             </xsl:if>
@@ -1010,7 +1041,7 @@
                             <xsl:text>Link to this toponym on GeoNames</xsl:text>
                         </xsl:attribute>
                     </xsl:when>
-                     <xsl:when test="concat(@ref, 'oclc')">
+                     <xsl:when test="contains(@ref, 'oclc')">
                         <xsl:attribute name="href">
                             <xsl:value-of select="concat('https://www.worldcat.org/oclc/', substring-after(@ref, 'oclc:'))"/>
                         </xsl:attribute>
