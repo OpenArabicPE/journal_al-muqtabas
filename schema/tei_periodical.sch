@@ -32,9 +32,9 @@
         </sch:rule>
     </sch:pattern>
     <sch:pattern>
-        <sch:rule context="tei:person[tei:idno/@type='viaf']">
-            <sch:let name="v_id-viaf" value="tei:idno[@type='viaf']"/>
-            <sch:report test="preceding::tei:person[not(@xml:id = $v_id)][tei:idno[@type='viaf'] = $v_id-viaf]">There is another person with the same VIAF ID <sch:value-of select="$v_id-viaf"/> at an earlier point in this file.</sch:report>
+        <sch:rule context="tei:person[tei:idno/@type='VIAF']">
+            <sch:let name="v_id-viaf" value="tei:idno[@type='VIAF']"/>
+            <sch:report test="preceding::tei:person[not(@xml:id = $v_id)][tei:idno[@type='VIAF'] = $v_id-viaf]">There is another person with the same VIAF ID <sch:value-of select="$v_id-viaf"/> at an earlier point in this file.</sch:report>
         </sch:rule>
         <!-- test if there is already a <person> with the same <persName> -->
         <sch:rule context="tei:person/tei:persName" role="warn">
@@ -53,4 +53,10 @@
             <sch:assert test="@subtype">The rank needs to be further identified through the @subtype attribute.</sch:assert>
         </sch:rule>
     </sch:pattern>
+    <sch:pattern>
+        <sch:rule context="tei:note[@type='editorial']" role="error">
+            <sch:assert test="@resp">The responsible editor for this note must be identfied through a reference to the relevant @xml:id.</sch:assert>
+        </sch:rule>
+    </sch:pattern>
+    
 </sch:schema>

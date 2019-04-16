@@ -63,7 +63,7 @@
                 <moduleRef except="argument div1 div2 div3 div4 div5 div6 div7 docAuthor docDate docEdition docImprint docTitle epigraph imprimatur postscript signed titlePage titlePart" key="textstructure"/>
                 <moduleRef except="altIdent alternate anyElement attDef attList attRef classRef classSpec classes code constraint constraintSpec content dataFacet dataRef dataSpec datatype defaultVal eg egXML empty elementRef elementSpec equiv exemplum ident listRef macroRef macroSpec memberOf model modelGrp modelSequence moduleRef moduleSpec outputRendition param paramList paramSpec remarks schemaSpec sequence specDesc specGrp specGrpRef specList textNode val valDesc valItem valList" key="tagdocs"/>
                 <!-- many elements should be removed from namesdates: sex socecStatus -->
-                <moduleRef except="affiliation age bloc climate country district education faith geogFeat geogName langKnowledge langKnown nationality offset occupation persona population region residence settlement sex socecStatus state terrain" key="namesdates"/>
+                <moduleRef except="affiliation age bloc climate country district geogFeat geogName langKnowledge langKnown nationality offset  persona population region residence settlement sex socecStatus terrain" key="namesdates"/>
                 <moduleRef except="alt altGrp anchor join joinGrp link linkGrp timeline when" key="linking"/>
                 <moduleRef except="formula notatedMusic" key="figures"/>
                 <moduleRef except="addSpan damage damageSpan delSpan handNotes handShift line listTranspose mod redo restore retrace secl sourceDoc space subst substJoin surplus transpose undo" key="transcr"/>
@@ -525,13 +525,30 @@
                         <attDef ident="n" mode="change">
                             <defaultVal>1</defaultVal>
                         </attDef>
+                        <attDef ident="place" mode="change">
+                            <defaultVal>bottom</defaultVal>
+                        </attDef>
                         <attDef ident="type" mode="change">
                             <defaultVal>footnote</defaultVal>
                             <valList mode="replace" type="semi">
-                                <valItem ident="endnote"/>
-                                <valItem ident="footnote"/>
-                                <valItem ident="gloss"/>
-                                <valItem ident="inline"/>
+                                <valItem ident="bibliographic">
+                                    <desc>Note identifying authors, editors, or other sources of a text for cases that canot be covered by a <gi>byline</gi>.</desc>
+                                </valItem>
+                                <valItem ident="editorial">
+                                    <desc>Note added by editors of the digital edition. The editor is identified by means of <att>resp</att></desc>
+                                </valItem>
+                                <valItem ident="endnote">
+                                    <desc>Discouraged: use <att>place</att>='end' instead.</desc>
+                                </valItem>
+                                <valItem ident="footnote">
+                                    <desc>Discouraged: use <att>place</att>='bottom' instead.</desc>
+                                </valItem>
+                                <valItem ident="gloss">
+                                    <desc>Discouraged: use <att>place</att>='margin' instead.</desc>
+                                </valItem>
+                                <valItem ident="inline">
+                                    <desc>Discouraged: use <att>place</att>='inline' instead.</desc>
+                                </valItem>
                             </valList>
                         </attDef>
                     </attList>

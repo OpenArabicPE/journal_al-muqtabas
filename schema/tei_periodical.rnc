@@ -6,10 +6,10 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-11-09T08:22:55Z. .
-# TEI Edition: Version 3.4.0. Last updated on
-#	23rd July 2018, revision 1fa0b54
-# TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
+# Schema generated from ODD source 2019-04-15T10:28:14Z. .
+# TEI Edition: Version 3.3.0. Last updated on
+#	31st January 2018, revision f4d8439
+# TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
 #
 
 # [http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license
@@ -44,15 +44,6 @@ OpenArabicPE_att.ascribed.attribute.who =
   
   ## indicates the person, or group of people, to whom the element content is ascribed.
   attribute who {
-    list { xsd:anyURI+ }
-  }?
-OpenArabicPE_att.ascribed.directed.attributes =
-  OpenArabicPE_att.ascribed.attributes,
-  OpenArabicPE_att.ascribed.directed.attribute.toWhom
-OpenArabicPE_att.ascribed.directed.attribute.toWhom =
-  
-  ## indicates the person, or group of people, to whom a speech act or action is directed.
-  attribute toWhom {
     list { xsd:anyURI+ }
   }?
 OpenArabicPE_att.canonical.attributes =
@@ -776,37 +767,31 @@ OpenArabicPE_model.measureLike =
   OpenArabicPE_num
   | OpenArabicPE_measure
   | OpenArabicPE_measureGrp
-  | OpenArabicPE_unit
   | OpenArabicPE_geo
 OpenArabicPE_model.measureLike_alternation =
   OpenArabicPE_num
   | OpenArabicPE_measure
   | OpenArabicPE_measureGrp
-  | OpenArabicPE_unit
   | OpenArabicPE_geo
 OpenArabicPE_model.measureLike_sequence =
   OpenArabicPE_num,
   OpenArabicPE_measure,
   OpenArabicPE_measureGrp,
-  OpenArabicPE_unit,
   OpenArabicPE_geo
 OpenArabicPE_model.measureLike_sequenceOptional =
   OpenArabicPE_num?,
   OpenArabicPE_measure?,
   OpenArabicPE_measureGrp?,
-  OpenArabicPE_unit?,
   OpenArabicPE_geo?
 OpenArabicPE_model.measureLike_sequenceOptionalRepeatable =
   OpenArabicPE_num*,
   OpenArabicPE_measure*,
   OpenArabicPE_measureGrp*,
-  OpenArabicPE_unit*,
   OpenArabicPE_geo*
 OpenArabicPE_model.measureLike_sequenceRepeatable =
   OpenArabicPE_num+,
   OpenArabicPE_measure+,
   OpenArabicPE_measureGrp+,
-  OpenArabicPE_unit+,
   OpenArabicPE_geo+
 OpenArabicPE_model.egLike = notAllowed
 OpenArabicPE_model.egLike_alternation = notAllowed
@@ -917,7 +902,6 @@ OpenArabicPE_model.linePart =
   | OpenArabicPE_unclear
   | OpenArabicPE_seg
   | OpenArabicPE_zone
-  | OpenArabicPE_path
 OpenArabicPE_model.ptrLike = OpenArabicPE_ptr | OpenArabicPE_ref
 OpenArabicPE_model.lPart = notAllowed
 OpenArabicPE_model.global.meta = notAllowed
@@ -1065,7 +1049,13 @@ OpenArabicPE_model.global.edit = OpenArabicPE_gap
 OpenArabicPE_model.divPart =
   OpenArabicPE_model.lLike | OpenArabicPE_model.pLike | OpenArabicPE_lg
 OpenArabicPE_model.persStateLike =
-  OpenArabicPE_persName | OpenArabicPE_floruit | OpenArabicPE_trait
+  OpenArabicPE_persName
+  | OpenArabicPE_education
+  | OpenArabicPE_faith
+  | OpenArabicPE_floruit
+  | OpenArabicPE_occupation
+  | OpenArabicPE_state
+  | OpenArabicPE_trait
 OpenArabicPE_model.personLike =
   OpenArabicPE_org | OpenArabicPE_person | OpenArabicPE_personGrp
 OpenArabicPE_model.personPart =
@@ -1088,26 +1078,32 @@ OpenArabicPE_model.placeNamePart_sequenceRepeatable =
 OpenArabicPE_model.placeStateLike =
   OpenArabicPE_model.placeNamePart
   | OpenArabicPE_location
+  | OpenArabicPE_state
   | OpenArabicPE_trait
 OpenArabicPE_model.placeStateLike_alternation =
   OpenArabicPE_model.placeNamePart_alternation
   | OpenArabicPE_location
+  | OpenArabicPE_state
   | OpenArabicPE_trait
 OpenArabicPE_model.placeStateLike_sequence =
   OpenArabicPE_model.placeNamePart_sequence,
   OpenArabicPE_location,
+  OpenArabicPE_state,
   OpenArabicPE_trait
 OpenArabicPE_model.placeStateLike_sequenceOptional =
   OpenArabicPE_model.placeNamePart_sequenceOptional?,
   OpenArabicPE_location?,
+  OpenArabicPE_state?,
   OpenArabicPE_trait?
 OpenArabicPE_model.placeStateLike_sequenceOptionalRepeatable =
   OpenArabicPE_model.placeNamePart_sequenceOptionalRepeatable*,
   OpenArabicPE_location*,
+  OpenArabicPE_state*,
   OpenArabicPE_trait*
 OpenArabicPE_model.placeStateLike_sequenceRepeatable =
   OpenArabicPE_model.placeNamePart_sequenceRepeatable+,
   OpenArabicPE_location+,
+  OpenArabicPE_state+,
   OpenArabicPE_trait+
 OpenArabicPE_model.orgPart =
   OpenArabicPE_model.eventLike
@@ -1384,7 +1380,7 @@ OpenArabicPE_p =
     OpenArabicPE_macro.paraContent
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-p-abstractModel-structure-p-constraint-report-5"
+           "tei_OpenArabicPE-p-abstractModel-structure-p-constraint-report-4"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1406,7 +1402,7 @@ OpenArabicPE_p =
        ]
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-p-abstractModel-structure-l-constraint-report-6"
+           "tei_OpenArabicPE-p-abstractModel-structure-l-constraint-report-5"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1451,7 +1447,7 @@ OpenArabicPE_said =
   element said {
     OpenArabicPE_macro.specialPara,
     OpenArabicPE_att.global.attributes,
-    OpenArabicPE_att.ascribed.directed.attributes,
+    OpenArabicPE_att.ascribed.attributes,
     
     ## may be used to indicate whether the quoted matter is regarded as having been vocalized or signed.
     attribute aloud {
@@ -1528,7 +1524,7 @@ OpenArabicPE_q =
     OpenArabicPE_att.global.facs.attribute.facs,
     OpenArabicPE_att.global.change.attribute.change,
     OpenArabicPE_att.global.responsibility.attribute.resp,
-    OpenArabicPE_att.ascribed.directed.attributes,
+    OpenArabicPE_att.ascribed.attributes,
     
     ## (rendition) indicates how the element in question was rendered or presented in the source text.
     ## Suggested values include: 1] brackets; 2] quotation-marks
@@ -1908,17 +1904,6 @@ OpenArabicPE_measureGrp =
     OpenArabicPE_att.typed.attributes,
     empty
   }
-OpenArabicPE_unit =
-  
-  ## contains a symbol, a word or a phrase referring to a unit of measurement in any kind of formal or informal system. [3.5.3. Numbers and
-  ## Measures]
-  element unit {
-    OpenArabicPE_macro.phraseSeq,
-    OpenArabicPE_att.global.attributes,
-    OpenArabicPE_att.typed.attributes,
-    OpenArabicPE_att.measurement.attributes,
-    empty
-  }
 OpenArabicPE_date =
   
   ## contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.6. Dates and Times]
@@ -1961,7 +1946,7 @@ OpenArabicPE_date =
      }?)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-date-calendar-calendar-constraint-rule-8"
+           "tei_OpenArabicPE-date-calendar-calendar-constraint-rule-7"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2061,7 +2046,7 @@ OpenArabicPE_ptr =
   element ptr {
     empty
     >> sch:pattern [
-         id = "tei_OpenArabicPE-ptr-ptrAtts-constraint-report-7"
+         id = "tei_OpenArabicPE-ptr-ptrAtts-constraint-report-6"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2094,7 +2079,7 @@ OpenArabicPE_ref =
   element ref {
     OpenArabicPE_macro.paraContent
     >> sch:pattern [
-         id = "tei_OpenArabicPE-ref-refAtts-constraint-report-8"
+         id = "tei_OpenArabicPE-ref-refAtts-constraint-report-7"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2135,7 +2120,7 @@ OpenArabicPE_list =
      (OpenArabicPE_model.divBottom, OpenArabicPE_model.global*)*)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-list-gloss-list-must-have-labels-constraint-rule-9"
+           "tei_OpenArabicPE-list-gloss-list-must-have-labels-constraint-rule-8"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2227,28 +2212,72 @@ OpenArabicPE_note =
     OpenArabicPE_att.global.facs.attribute.facs,
     OpenArabicPE_att.global.change.attribute.change,
     OpenArabicPE_att.global.responsibility.attribute.resp,
-    OpenArabicPE_att.placement.attributes,
     OpenArabicPE_att.pointing.attributes,
     OpenArabicPE_att.typed.attribute.subtype,
     
     ## (number) gives a number (or other label) for an element, which is not necessarily unique within the document.
     [ a:defaultValue = "1" ] attribute n { xsd:string }?,
     
+    ## specifies where this item is placed.
+    ## Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6] overleaf; 7] above; 8] end; 9] inline; 10] inspace
+    [ a:defaultValue = "bottom" ]
+    attribute place {
+      list {
+        (
+         ## below the line
+         "below"
+         | 
+           ## at the foot of the page
+           "bottom"
+         | 
+           ## in the margin (left, right, or both)
+           "margin"
+         | 
+           ## at the top of the page
+           "top"
+         | 
+           ## on the opposite, i.e. facing, page
+           "opposite"
+         | 
+           ## on the other side of the leaf
+           "overleaf"
+         | 
+           ## above the line
+           "above"
+         | 
+           ## at the end of e.g. chapter or volume.
+           "end"
+         | 
+           ## within the body of the text.
+           "inline"
+         | 
+           ## in a predefined space, for example left by an earlier scribe.
+           "inspace"
+         | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
+      }
+    }?,
+    
     ## characterizes the element in some sense, using any convenient classification scheme or typology.
-    ## Suggested values include: 1] endnote; 2] footnote; 3] gloss; 4] inline
+    ## Suggested values include: 1] bibliographic; 2] editorial; 3] endnote; 4] footnote; 5] gloss; 6] inline
     [ a:defaultValue = "footnote" ]
     attribute type {
       
-      ##
-      "endnote"
+      ## Note identifying authors, editors, or other sources of a text for cases that canot be covered by a byline.
+      "bibliographic"
       | 
-        ##
+        ## Note added by editors of the digital edition. The editor is identified by means of resp
+        "editorial"
+      | 
+        ## Discouraged: use place='end' instead.
+        "endnote"
+      | 
+        ## Discouraged: use place='bottom' instead.
         "footnote"
       | 
-        ##
+        ## Discouraged: use place='margin' instead.
         "gloss"
       | 
-        ##
+        ## Discouraged: use place='inline' instead.
         "inline"
       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
     }?,
@@ -2535,7 +2564,6 @@ OpenArabicPE_publisher =
   element publisher {
     OpenArabicPE_macro.phraseSeq,
     OpenArabicPE_att.global.attributes,
-    OpenArabicPE_att.canonical.attributes,
     empty
   }
 OpenArabicPE_biblScope =
@@ -2619,7 +2647,7 @@ OpenArabicPE_l =
       | OpenArabicPE_model.global)*)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-l-abstractModel-structure-l-constraint-report-9"
+           "tei_OpenArabicPE-l-abstractModel-structure-l-constraint-report-8"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2686,7 +2714,7 @@ OpenArabicPE_lg =
        ]
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-lg-abstractModel-structure-l-constraint-report-10"
+           "tei_OpenArabicPE-lg-abstractModel-structure-l-constraint-report-9"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2837,7 +2865,6 @@ OpenArabicPE_distributor =
   element distributor {
     OpenArabicPE_macro.phraseSeq,
     OpenArabicPE_att.global.attributes,
-    OpenArabicPE_att.canonical.attributes,
     empty
   }
 OpenArabicPE_authority =
@@ -2846,7 +2873,6 @@ OpenArabicPE_authority =
   element authority {
     OpenArabicPE_macro.phraseSeq.limited,
     OpenArabicPE_att.global.attributes,
-    OpenArabicPE_att.canonical.attributes,
     empty
   }
 OpenArabicPE_idno =
@@ -2985,7 +3011,7 @@ OpenArabicPE_quotation =
     (OpenArabicPE_model.pLike*)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-quotation-quotationContents-constraint-report-11"
+           "tei_OpenArabicPE-quotation-quotationContents-constraint-report-10"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3224,7 +3250,7 @@ OpenArabicPE_div =
       (OpenArabicPE_model.divBottom, OpenArabicPE_model.global*)*)?)
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-div-abstractModel-structure-l-constraint-report-12"
+           "tei_OpenArabicPE-div-abstractModel-structure-l-constraint-report-11"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3245,7 +3271,7 @@ OpenArabicPE_div =
        ]
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-div-abstractModel-structure-p-constraint-report-13"
+           "tei_OpenArabicPE-div-abstractModel-structure-p-constraint-report-12"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3789,6 +3815,23 @@ OpenArabicPE_death =
     }?,
     empty
   }
+OpenArabicPE_education =
+  
+  ## contains a description of the educational experience of a person. [15.2.2. The Participant Description]
+  element education {
+    OpenArabicPE_macro.phraseSeq,
+    OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.datable.attributes,
+    OpenArabicPE_att.naming.attributes,
+    OpenArabicPE_att.typed.attribute.subtype,
+    
+    ## characterizes the element in some sense, using any convenient classification scheme or typology.
+    ## Sample values include: 1] primary; 2] secondary; 3] undergraduate; 4] graduate; 5] residency; 6] apprenticeship
+    attribute type {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    }?,
+    empty
+  }
 OpenArabicPE_event =
   
   ## contains data relating to any kind of significant event associated with a person, place, or organization. [13.3.1. Basic Principles]
@@ -3804,6 +3847,23 @@ OpenArabicPE_event =
     
     ## indicates the location of an event by pointing to a place element
     attribute where { xsd:anyURI }?,
+    empty
+  }
+OpenArabicPE_faith =
+  
+  ## specifies the faith, religion, or belief set of a person. [13.3.2.1. Personal Characteristics]
+  element faith {
+    OpenArabicPE_macro.phraseSeq,
+    OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.datable.attributes,
+    OpenArabicPE_att.canonical.attributes,
+    OpenArabicPE_att.typed.attribute.subtype,
+    
+    ## characterizes the element in some sense, using any convenient classification scheme or typology.
+    ## Sample values include: 1] practicing; 2] clandestine; 3] patrilineal; 4] matrilineal; 5] convert
+    attribute type {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    }?,
     empty
   }
 OpenArabicPE_floruit =
@@ -3878,6 +3938,29 @@ OpenArabicPE_location =
     OpenArabicPE_att.global.attributes,
     OpenArabicPE_att.typed.attributes,
     OpenArabicPE_att.datable.attributes,
+    empty
+  }
+OpenArabicPE_occupation =
+  
+  ## contains an informal description of a person's trade, profession or occupation. [15.2.2. The Participant Description]
+  element occupation {
+    OpenArabicPE_macro.specialPara,
+    OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.datable.attributes,
+    OpenArabicPE_att.naming.attributes,
+    OpenArabicPE_att.typed.attribute.subtype,
+    
+    ## characterizes the element in some sense, using any convenient classification scheme or typology.
+    ## Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid
+    attribute type {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    }?,
+    
+    ## indicates the classification system or taxonomy in use, for example by supplying the identifier of a taxonomy element, or pointing to some other resource.
+    attribute scheme { xsd:anyURI }?,
+    
+    ## identifies an occupation code defined within the classification system or taxonomy defined by the scheme attribute.
+    attribute code { xsd:anyURI }?,
     empty
   }
 OpenArabicPE_org =
@@ -4017,7 +4100,7 @@ OpenArabicPE_relation =
       "         "
     ]
     sch:pattern [
-      id = "tei_OpenArabicPE-relation-activemutual-constraint-report-14"
+      id = "tei_OpenArabicPE-relation-activemutual-constraint-report-13"
       "\x{a}" ~
       "            "
       sch:rule [
@@ -4026,7 +4109,8 @@ OpenArabicPE_relation =
         "               "
         sch:report [
           test = "@active and @mutual"
-          "Only one of the attributes @active and @mutual may be supplied"
+          "Only one of the attributes\x{a}" ~
+          "@active and @mutual may be supplied"
         ]
         "\x{a}" ~
         "            "
@@ -4036,7 +4120,7 @@ OpenArabicPE_relation =
     ]
     sch:pattern [
       id =
-        "tei_OpenArabicPE-relation-activepassive-constraint-report-15"
+        "tei_OpenArabicPE-relation-activepassive-constraint-report-14"
       "\x{a}" ~
       "            "
       sch:rule [
@@ -4045,7 +4129,9 @@ OpenArabicPE_relation =
         "               "
         sch:report [
           test = "@passive and not(@active)"
-          "the attribute 'passive' may be supplied only if the attribute 'active' is supplied"
+          "the attribute 'passive'\x{a}" ~
+          "	may be supplied only if the attribute 'active' is\x{a}" ~
+          "	supplied"
         ]
         "\x{a}" ~
         "            "
@@ -4079,6 +4165,24 @@ OpenArabicPE_relation =
     attribute passive {
       list { xsd:anyURI+ }
     }?,
+    empty
+  }
+OpenArabicPE_state =
+  
+  ## contains a description of some status or quality attributed to a person, place, or organization often at some specific time or for a specific date range. [13.3.1. Basic Principles 13.3.2.1. Personal Characteristics]
+  element state {
+    (OpenArabicPE_state+
+     | (OpenArabicPE_model.headLike*,
+        OpenArabicPE_model.pLike+,
+        (OpenArabicPE_model.noteLike | OpenArabicPE_model.biblLike)*)
+     | (OpenArabicPE_model.labelLike
+        | OpenArabicPE_model.noteLike
+        | OpenArabicPE_model.biblLike)*),
+    OpenArabicPE_att.global.attributes,
+    OpenArabicPE_att.datable.attributes,
+    OpenArabicPE_att.typed.attributes,
+    OpenArabicPE_att.naming.attributes,
+    OpenArabicPE_att.dimensions.attributes,
     empty
   }
 OpenArabicPE_trait =
@@ -4151,7 +4255,7 @@ OpenArabicPE_ab =
     OpenArabicPE_macro.paraContent
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-ab-abstractModel-structure-ab-constraint-report-16"
+           "tei_OpenArabicPE-ab-abstractModel-structure-ab-constraint-report-15"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4173,7 +4277,7 @@ OpenArabicPE_ab =
        ]
     >> sch:pattern [
          id =
-           "tei_OpenArabicPE-ab-abstractModel-structure-l-constraint-report-17"
+           "tei_OpenArabicPE-ab-abstractModel-structure-l-constraint-report-16"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4301,7 +4405,6 @@ OpenArabicPE_surface =
       | OpenArabicPE_model.labelLike
       | OpenArabicPE_model.graphicLike)*,
      ((OpenArabicPE_zone
-       | OpenArabicPE_path
        | OpenArabicPE_surface
        | OpenArabicPE_surfaceGrp),
       OpenArabicPE_model.global*)*),
@@ -4344,74 +4447,6 @@ OpenArabicPE_zone =
     ## indicates the amount by which this zone has been rotated clockwise, with respect to the normal orientation of the parent surface element as implied by the dimensions given in the msDesc element or by the coordinates of the surface itself. The orientation is expressed in arc degrees.
     [ a:defaultValue = "0" ]
     attribute rotate { xsd:nonNegativeInteger }?,
-    empty
-  }
-OpenArabicPE_path =
-  
-  ## defines any line passing through two or more points within a surface element. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription]
-  element path {
-    empty
-    >> sch:pattern [
-         id =
-           "tei_OpenArabicPE-path-pathmustnotbeclosed-constraint-rule-10"
-         "\x{a}" ~
-         "            "
-         sch:rule [
-           context = "tei:path[@points]"
-           "\x{a}" ~
-           "        \x{a}" ~
-           "               "
-           sch:let [
-             name = "firstPair"
-             value = "tokenize( normalize-space( @points ), ' ')[1]"
-           ]
-           "\x{a}" ~
-           "               "
-           sch:let [
-             name = "lastPair"
-             value =
-               "tokenize( normalize-space( @points ), ' ')[last()]"
-           ]
-           "\x{a}" ~
-           "               "
-           sch:let [
-             name = "firstX"
-             value = "xs:float( substring-before( $firstPair, ',') )"
-           ]
-           "\x{a}" ~
-           "               "
-           sch:let [
-             name = "firstY"
-             value = "xs:float( substring-after( $firstPair, ',') )"
-           ]
-           "\x{a}" ~
-           "               "
-           sch:let [
-             name = "lastX"
-             value = "xs:float( substring-before( $lastPair, ',') )"
-           ]
-           "\x{a}" ~
-           "               "
-           sch:let [
-             name = "lastY"
-             value = "xs:float( substring-after( $lastPair, ',') )"
-           ]
-           "\x{a}" ~
-           "               "
-           sch:report [
-             test = "$firstX eq $lastX  and  $firstY eq $lastY"
-             "The first and\x{a}" ~
-             "          last elements of this path are the same. To specify a closed polygon, use\x{a}" ~
-             "          the zone element rather than the path element. "
-           ]
-           "\x{a}" ~
-           "            "
-         ]
-         "\x{a}" ~
-         "         "
-       ],
-    OpenArabicPE_att.global.attributes,
-    OpenArabicPE_att.typed.attributes,
     empty
   }
 OpenArabicPE_ex =
