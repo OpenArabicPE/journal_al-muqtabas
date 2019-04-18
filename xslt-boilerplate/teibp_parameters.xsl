@@ -26,7 +26,7 @@
     <!-- select whether you want to display page breaks and facsimiles; default: true() -->
     <xsl:param name="p_display-page-breaks" select="true()"/>
     <!-- select whether you want to display online or local facsimiles; default: true() -->
-    <xsl:param name="p_display-online-facsimiles" select="true()"/>
+    <xsl:param name="p_display-online-facsimiles" select="false()"/>
     <!-- select whether you want to display line breaks; default: false() -->
     <xsl:param name="p_display-line-breaks" select="false()"/>
     <!-- select whether you want to display editorial changes; default: false() -->
@@ -36,7 +36,7 @@
     <!-- select whether you want to use inline CSS for the display; default: true() -->
     <xsl:param name="p_use-inline-css" select="true()"/>
     <!-- select whether the language of the interface should follow the main language of the text; default: false() -->
-    <xsl:param name="p_lang-interface-same-as-text" select="true()"/>
+    <xsl:param name="p_lang-interface-same-as-text" select="false()"/>
     <!-- select the colour scheme for heads; currently available options: red, blue, green -->
     <xsl:param name="p_color-scheme" select="'red'"/>
     
