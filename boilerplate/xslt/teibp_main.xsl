@@ -653,10 +653,10 @@
                         select="concat('../metadata/', $vFileId, '-', @xml:id)"/>
                     <xsl:choose>
                         <!-- specify in which cases not to provide links to bibliographic metadata -->
-                        <xsl:when test="@type = 'section' and ancestor::tei:div[@type = 'item'][@subtype = 'article'] and ancestor::tei:div[@type = 'item'][@subtype = 'bill']">
+                        <xsl:when test="@type = 'section' and ancestor::tei:div[@type = 'item']">
                         </xsl:when>
-                        <xsl:when test="@type = 'section' and ancestor::tei:div[@type = 'article'] and ancestor::tei:div[@type = 'bill']"/>
-                        <xsl:when test="@type = 'article' and ancestor::tei:div[@type = 'bill']"/>
+                        <xsl:when test="@type = 'section' and (ancestor::tei:div[@type = 'article'] or ancestor::tei:div[@type = 'bill'])"/>
+                        <xsl:when test="(@type = 'article' or @type = 'item') and ancestor::tei:div[@type = 'bill']"/>
                         <xsl:otherwise>
                             <xsl:call-template name="templBiblDataLinks">
                                 <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
