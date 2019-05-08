@@ -529,7 +529,7 @@
                         </xsl:when>
                         <xsl:when test="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
                             <xsl:for-each select="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
-                                <xsl:apply-templates select="tei:persName" mode="mToc"/>
+                                <xsl:apply-templates select="descendant::tei:persName" mode="mToc"/>
                                 <xsl:if test="not(last())">
                                     <xsl:text>،</xsl:text>
                                 </xsl:if>
