@@ -512,7 +512,7 @@
                 <xsl:text> (</xsl:text>
                 <!-- add author names and pages if available -->
                 <xsl:if
-                    test="tei:byline/descendant::tei:persName or tei:opener/tei:byline/descendant::tei:persName or descendant::tei:note[@type = 'bibliographic']/tei:bibl">
+                    test="not(@type='section') and (tei:byline/descendant::tei:persName or tei:opener/tei:byline/descendant::tei:persName or descendant::tei:note[@type = 'bibliographic']/tei:bibl)">
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
                             <xsl:text>تأليف: </xsl:text>
@@ -527,6 +527,7 @@
                                 </xsl:if>
                             </xsl:for-each>
                         </xsl:when>
+                        <!-- problem: depth  -->
                         <xsl:when test="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
                             <xsl:for-each select="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
                                 <xsl:apply-templates select="descendant::tei:persName" mode="mToc"/>
@@ -694,6 +695,7 @@
             </xsl:if>
             <!-- inject some author information -->
             <!-- BUG: this doesn't reliably work if there is more than one preceding <tei:head> -->
+            <!-- BUG: sections inherit authors from articles -->
             <xsl:if
                 test="(tei:byline/preceding-sibling::*[1] != tei:head and tei:byline/descendant::tei:persName) or descendant::tei:note[@type = 'bibliographic']/tei:bibl">
                 <span class="c_byline">
