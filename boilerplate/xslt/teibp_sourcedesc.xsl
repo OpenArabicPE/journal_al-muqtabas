@@ -29,9 +29,9 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="tei:sourceDesc/tei:biblStruct[child::tei:monogr/tei:title[@level = 'j']]">
+    <xsl:template match="tei:sourceDesc/tei:biblStruct[child::tei:monogr/tei:title]">
         <div class="cSource">
-            <xsl:for-each select="child::tei:monogr/tei:title[@level = 'j'][not(@type = 'sub')]">
+            <xsl:for-each select="child::tei:monogr/tei:title[not(@type = 'sub')]">
                 <xsl:apply-templates select="." mode="mBibl"/>
             </xsl:for-each>
         </div>
@@ -41,7 +41,7 @@
         <xsl:text>hello</xsl:text>
     </xsl:template>-->
     
-    <xsl:template match="tei:monogr/tei:title[@level = 'j'][not(@type = 'sub')]" mode="mBibl">
+    <xsl:template match="tei:monogr/tei:title[not(@type = 'sub')]" mode="mBibl">
         <xsl:variable name="vLang" select="@xml:lang"/>
         <div>
             <xsl:call-template name="templHtmlAttrLang">
@@ -50,7 +50,7 @@
             <title>
                 <xsl:value-of select="."/>
             </title>
-            <xsl:for-each select="parent::tei:monogr/tei:title[@level = 'j'][@type = 'sub'][@xml:lang = $vLang]">
+            <xsl:for-each select="parent::tei:monogr/tei:title[@type = 'sub'][@xml:lang = $vLang]">
                 <xsl:text>: </xsl:text>
                 <span class="cSubTitle">
                     <xsl:value-of select="."/>
