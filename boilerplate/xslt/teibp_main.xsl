@@ -5,7 +5,8 @@
     xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xi="http://www.w3.org/2001/XInclude">
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <xd:doc scope="stylesheet">
         <xd:desc>
@@ -796,6 +797,81 @@
             </span>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
+    </xsl:template>
+    
+     <!-- provide paragraph count independent of css implementation -->
+    <xsl:template match="tei:lb[ancestor::tei:body]">
+        <xsl:variable name="v_id-precending-pb" select="preceding::tei:pb[@ed='print'][1]/@xml:id"/>
+        <xsl:variable name="v_count" select="count(preceding::tei:lb[preceding::tei:pb[@ed='print'][1]/@xml:id = $v_id-precending-pb]) + 1"/>
+        <xsl:variable name="v_interval" select="5"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+        <xsl:choose>
+            <xsl:when test="($v_count div $v_interval) = 1">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 2">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 3">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 4">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 5">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 6">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+        </xsl:choose>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template name="t_element-count">
+        <xsl:param name="p_xml-id"/>
+        <xsl:param name="p_a-title"/>
+        <xsl:param name="p_count"/>
+        <span class="c_id" lang="en">
+                <xsl:choose>
+                    <xsl:when test="$p_xml-id!=''">
+                        <a href="#{$p_xml-id}" class="c_link-self"
+                            title="{$p_a-title}">
+                            <span class="c_link-self c_number" lang="en">
+                                <xsl:value-of select="$p_count"/>
+                            </span>
+                        </a>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$p_count"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </span>
     </xsl:template>
 
     <!-- render foot and end notes-->

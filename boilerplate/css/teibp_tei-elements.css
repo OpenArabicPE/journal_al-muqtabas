@@ -102,28 +102,30 @@ text p:before{
 }*/
 
 /* new explicit counting */
-p>span.c_id{
+p span.c_id{
     direction:ltr;
     /* vertical-align:top; */
     font-size:0.5em;
     display:block;
-    position:absolute;
+    position:relative;
     padding-right:0.5em;
     padding-left:0.5em;
     margin-top:0.5em;
     /*color:gray;*/
 }
 /* for ltr languages*/
-p>span.c_id{
+p span.c_id{
     margin-left: -4em;
+    float: left;
 }
 /* for rtl languages*/
-p[lang = "ar"]>span.c_id,
-p[lang = "ota"]>span.c_id,
-p[lang = "fa"]>span.c_id,
-p[lang = "he"]>span.c_id,
-p[lang *="-Arab-AR"]>span.c_id{
+p[lang = "ar"] span.c_id,
+p[lang = "ota"] span.c_id,
+p[lang = "fa"] span.c_id,
+p[lang = "he"] span.c_id,
+p[lang *="-Arab-AR"] span.c_id{
     margin-right: -4em;
+    float: right;
 }
 
 p>span.c_id:before {
@@ -131,6 +133,24 @@ p>span.c_id:before {
     direction:ltr;
 }
 /* lines */
+
+lb>span.c_id:before {
+    content:"l ";
+    direction:ltr;
+}
+
+head lb>span.c_id {
+    display: none;
+}
+
+p[lang = "ar"] lb>span.c_id,
+p[lang = "ota"] lb>span.c_id,
+p[lang = "fa"] lb>span.c_id,
+p[lang = "he"] lb>span.c_id,
+p[lang *="-Arab-AR"] lb>span.c_id{
+    margin-right: -5em;
+    float: right;
+}
 /*pb {
     counter-reset: br;
     counter-increment: br;
@@ -260,10 +280,18 @@ sic:after {
 /*------------------------
 milestones
 ------------------------*/
-lb.c_toggled:after {
+lb {
+    display: none;
+}
+lb.c_toggled {
+    display: inline;
+}
+
+lb.c_toggled:before {
   content: '\a';
   white-space: pre;
 }
+
 lb:before {
     content: ' ';
     white-space: pre;
