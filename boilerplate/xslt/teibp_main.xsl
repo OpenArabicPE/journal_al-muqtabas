@@ -5,7 +5,8 @@
     xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xi="http://www.w3.org/2001/XInclude">
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <xd:doc scope="stylesheet">
         <xd:desc>
@@ -512,7 +513,7 @@
                 <xsl:text> (</xsl:text>
                 <!-- add author names and pages if available -->
                 <xsl:if
-                    test="tei:byline/descendant::tei:persName or tei:opener/tei:byline/descendant::tei:persName or descendant::tei:note[@type = 'bibliographic']/tei:bibl">
+                    test="not(@type='section') and (tei:byline/descendant::tei:persName or tei:opener/tei:byline/descendant::tei:persName or descendant::tei:note[@type = 'bibliographic']/tei:bibl)">
                     <xsl:choose>
                         <xsl:when test="@xml:lang = 'ar'">
                             <xsl:text>تأليف: </xsl:text>
@@ -527,9 +528,10 @@
                                 </xsl:if>
                             </xsl:for-each>
                         </xsl:when>
+                        <!-- problem: depth  -->
                         <xsl:when test="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
                             <xsl:for-each select="descendant::tei:note[@type = 'bibliographic']/tei:bibl/tei:author">
-                                <xsl:apply-templates select="tei:persName" mode="mToc"/>
+                                <xsl:apply-templates select="descendant::tei:persName" mode="mToc"/>
                                 <xsl:if test="not(last())">
                                     <xsl:text>،</xsl:text>
                                 </xsl:if>
@@ -630,6 +632,12 @@
                     <xsl:call-template name="templHtmlAttrLang">
                         <xsl:with-param name="pInput" select="tei:head"/>
                     </xsl:call-template>
+                    <!-- content of the head -->
+                    <span class="c_content">
+                        <xsl:call-template name="templHtmlAttrLang">
+                            <xsl:with-param name="pInput" select="tei:head"/>
+                        </xsl:call-template>
+                        <!-- provide back link to the article -->
                     <xsl:choose>
                         <xsl:when test="@xml:id">
                             <a href="#{@xml:id}" class="c_link-self"
@@ -649,24 +657,46 @@
                                 </xsl:for-each>
                         </xsl:otherwise>
                     </xsl:choose>
-                    <xsl:variable name="vBiblUrl"
-                        select="concat('../metadata/', $vFileId, '-', @xml:id)"/>
+                    </span>
+                    <span class="c_metadata">
+                        <!-- links to bibliographic metadata -->
                     <xsl:choose>
                         <!-- specify in which cases not to provide links to bibliographic metadata -->
-                        <xsl:when test="@type = 'section' and ancestor::tei:div[@type = 'item']">
-                        </xsl:when>
+                        <xsl:when test="@type = 'section' and ancestor::tei:div[@type = 'item']"/>
                         <xsl:when test="@type = 'section' and (ancestor::tei:div[@type = 'article'] or ancestor::tei:div[@type = 'bill'])"/>
                         <xsl:when test="(@type = 'article' or @type = 'item') and ancestor::tei:div[@type = 'bill']"/>
                         <xsl:otherwise>
+                            <xsl:variable name="vBiblUrl" select="concat('../metadata/', $vFileId, '-', @xml:id)"/>
                             <xsl:call-template name="templBiblDataLinks">
                                 <xsl:with-param name="pBiblUrl" select="$vBiblUrl"/>
                             </xsl:call-template>
                         </xsl:otherwise>
                     </xsl:choose>
+                    <!-- potentially provide links to previous / next article in a series -->
+                    <xsl:if test="@next or @prev">
+                        <span class="c_links">
+                    <xsl:if test="@next">
+                        <a href="{@next}" title="next article in this series">
+                            <span class="c_icon">
+                            <xsl:copy-of select="document('../assets/icons/chevron-right.svg')"/>
+                        </span>
+                        </a>
+                    </xsl:if>
+                            <xsl:if test="@prev">
+                            <a href="{@prev}" title="previous article in this series">
+                            <span class="c_icon">
+                                <xsl:copy-of select="document('../assets/icons/chevron-left.svg')"/>
+                            </span>
+                        </a>
+                    </xsl:if>
+                        </span>
+                    </xsl:if>
+                    </span>
                 </tei:head>
             </xsl:if>
             <!-- inject some author information -->
             <!-- BUG: this doesn't reliably work if there is more than one preceding <tei:head> -->
+            <!-- BUG: sections inherit authors from articles -->
             <xsl:if
                 test="(tei:byline/preceding-sibling::*[1] != tei:head and tei:byline/descendant::tei:persName) or descendant::tei:note[@type = 'bibliographic']/tei:bibl">
                 <span class="c_byline">
@@ -767,6 +797,81 @@
             </span>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
+    </xsl:template>
+    
+     <!-- provide paragraph count independent of css implementation -->
+    <xsl:template match="tei:lb[ancestor::tei:body]">
+        <xsl:variable name="v_id-precending-pb" select="preceding::tei:pb[@ed='print'][1]/@xml:id"/>
+        <xsl:variable name="v_count" select="count(preceding::tei:lb[preceding::tei:pb[@ed='print'][1]/@xml:id = $v_id-precending-pb]) + 1"/>
+        <xsl:variable name="v_interval" select="5"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+        <xsl:choose>
+            <xsl:when test="($v_count div $v_interval) = 1">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 2">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 3">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 4">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 5">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="($v_count div $v_interval) = 6">
+            <xsl:call-template name="t_element-count">
+                <xsl:with-param name="p_xml-id" select="@xml:id"/>
+                <xsl:with-param name="p_a-title"/>
+                <xsl:with-param name="p_count" select="$v_count"/>
+            </xsl:call-template>
+            </xsl:when>
+        </xsl:choose>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template name="t_element-count">
+        <xsl:param name="p_xml-id"/>
+        <xsl:param name="p_a-title"/>
+        <xsl:param name="p_count"/>
+        <span class="c_id" lang="en">
+                <xsl:choose>
+                    <xsl:when test="$p_xml-id!=''">
+                        <a href="#{$p_xml-id}" class="c_link-self"
+                            title="{$p_a-title}">
+                            <span class="c_link-self c_number" lang="en">
+                                <xsl:value-of select="$p_count"/>
+                            </span>
+                        </a>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$p_count"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </span>
     </xsl:template>
 
     <!-- render foot and end notes-->
@@ -1226,6 +1331,15 @@
     <xsl:template match="xi:include">
         <xsl:if test="$p_process-xinclude = true()">
             <xsl:variable name="v_id-element" select="@xpointer"/>
+            <!-- provide some source information -->
+            <a href="{concat(@href,'#',$v_id-element)}">
+            <xsl:call-template name="t_source-reference-for-div">
+                <xsl:with-param name="p_input" select="document(@href)//node()[@xml:id = $v_id-element]"/>
+            </xsl:call-template>
+            </a>
+            <!-- add pb preceding the included fragment -->
+            <xsl:apply-templates select="document(@href)//node()[@xml:id = $v_id-element]/preceding::tei:pb[@ed = 'print'][1]"/>
+            <!-- include the XML fragment -->
             <xsl:apply-templates select="document(@href)//node()[@xml:id = $v_id-element]"/>
         </xsl:if>
     </xsl:template>

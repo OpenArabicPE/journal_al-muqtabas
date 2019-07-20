@@ -174,7 +174,7 @@
                 <xsl:apply-templates select="parent::tei:monogr/tei:imprint/tei:publisher/tei:orgName[@xml:lang = $vLang]"/>
                 <xsl:text>, </xsl:text>
                 <!-- publication date(s) -->
-                <xsl:apply-templates select="parent::tei:monogr/tei:imprint/tei:date[@calendar='#cal_islamic'][1]" mode="mBibl">
+                <xsl:apply-templates select="parent::tei:monogr/tei:imprint/tei:date[@datingMethod='#cal_islamic'][1]" mode="mBibl">
                     <xsl:with-param name="pLang" select="$vLang"/>
                 </xsl:apply-templates>
             </span>
@@ -187,7 +187,7 @@
         <xsl:variable name="vMonth" select="number(substring(@when-custom, 6, 2))"/>
         <xsl:variable name="vDay" select="number(substring(@when-custom, 9, 2))"/>
         <xsl:choose>
-            <xsl:when test="@calendar = '#cal_islamic'">
+            <xsl:when test="@datingMethod = '#cal_islamic'">
                 <xsl:value-of select="$vDay"/>
                 <xsl:text> </xsl:text>
                 <xsl:call-template name="templMonthNames">
