@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet exclude-result-prefixes="xsl tei xd eg fn #default" extension-element-prefixes="exsl
-    msxsl" version="1.0"
-    xmlns="http://www.w3.org/1999/xhtml" xmlns:eg="http://www.tei-c.org/ns/Examples" xmlns:exsl="http://exslt.org/common"
-    xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+<xsl:stylesheet exclude-result-prefixes="xsl tei xd eg fn #default"  version="1.0"
+    xmlns="http://www.w3.org/1999/xhtml" xmlns:eg="http://www.tei-c.org/ns/Examples" 
+     xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     
     <xd:doc scope="stylesheet">
@@ -22,15 +21,16 @@
     <xsl:include href="../boilerplate/xslt/teibp_bibl.xsl"/>
     <!-- import the stylesheet dealing with the display of <pb> and facsimiles -->
     <xsl:include href="../boilerplate/xslt/teibp_pb.xsl"/>
-
+    
+    <!-- PARAMETERS -->
     <!-- select whether you want to display page breaks and facsimiles; default: true() -->
     <xsl:param name="p_display-page-breaks" select="true()"/>
     <!-- select whether you want to display online or local facsimiles; default: true() -->
-    <xsl:param name="p_display-online-facsimiles" select="true()"/>
+    <xsl:param name="p_display-online-facsimiles" select="false()"/>
     <!-- select whether you want to display line breaks; default: false() -->
     <xsl:param name="p_display-line-breaks" select="false()"/>
     <!-- select whether you want to display editorial changes; default: false() -->
-    <xsl:param name="p_display-editorial-changes" select="true()"/>
+    <xsl:param name="p_display-editorial-changes" select="false()"/>
     <!-- select whether you want to process XInclude; default: true()  -->
     <xsl:param name="p_process-xinclude" select="true()"/>
     <!-- select whether you want to use inline CSS for the display; default: true() -->
@@ -39,11 +39,11 @@
     <xsl:param name="p_lang-interface-same-as-text" select="false()"/>
     <!-- select the colour scheme for heads; currently available options: red, blue, green -->
     <xsl:param name="p_color-scheme" select="'red'"/>
+    <!-- parameter to select the mimeType. In some cases tiff might be more efficient than jpeg -->
+    <xsl:param name="p_mimetype" select="'image/tiff'"/>
     
     <!-- original TEI Boilerplate stuff -->
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
-    <xsl:param name="includeToolbox" select="false()"/>
-    <xsl:param name="includeAnalytics" select="false()"/>
     
     <!-- special characters -->
     <xsl:param name="quot">
@@ -187,15 +187,17 @@
     </xsl:param>
     
     <!-- parameters for file paths or URLs -->
-    <!-- modify filePrefix to point to boilerplate files on your own server, or to specify a relative path, e.g.: <xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>
+    <!-- modify filePrefix to point to boilerplate files on your own server, or to specify a relative path, e.g.: <xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>. 
+        Remember: relative paths are relative to the file they are called from
 	-->
     <xsl:param name="filePrefix" select="'../boilerplate'"/>
     <!-- the following parameters should not be changed unless the folder structure and file names have been changed -->
     <xsl:param name="teibpCSS" select="concat($filePrefix, '/css/teibp.css')"/>
     <xsl:param name="customCSS" select="concat($filePrefix, '/css/teibp_custom.css')"/>
+    
     <xsl:param name="jqueryJS" select="concat($filePrefix, '/js/jquery/jquery.min.js')"/>
-    <xsl:param name="jqueryBlockUIJS" select="concat($filePrefix, '/js/jquery/plugins/jquery.blockUI.js')"/>
-    <xsl:param name="teibpJS" select="concat($filePrefix, '/js/teibp.js')"/>
+    <!--<xsl:param name="jqueryBlockUIJS" select="concat($filePrefix, '/js/jquery/plugins/jquery.blockUI.js')"/>
+    <xsl:param name="teibpJS" select="concat($filePrefix, '/js/teibp.js')"/>-->
     <xsl:param name="p_js-slideout" select="concat($filePrefix,'/js/nav-slideout.js')"/>
     <xsl:param name="p_js" select="concat($filePrefix,'/js/script.js')"/>
     <xsl:param name="theme.default" select="concat($filePrefix, '/css/teibp.css')"/>
