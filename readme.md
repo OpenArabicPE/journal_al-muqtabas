@@ -112,6 +112,10 @@ According to the masthead and the cover sheet, *al-Muqtabas*'s publication sched
 
 [^11]:{KurdʿAlī 1928@415}
 
+An article in [no. 4(2)](https://github.com/tillgrallert/digital-muqtabas/blob/master/xml/oclc_4770057679-i_38.TEIP5.xml#div_25.d1e4565) scheduled for February/March 1909 was referenced in the newspaper [*al-Quds* #60 of 11 June 1909, p.4](http://www.palestine.mei.columbia.edu/alquds-issues/2017/2/21/issue-60).[^16] The back cover of no.4(4), available at OIB, announces the hope that no. 4(5) and 4(6) will be published as a double issue in mid-Shaʿbān (1327) or mid-August 1909. No. 4(5) was scheduled for Jum I 1327 (May/June 1909).
+
+[^16]: {al-quds-1-60@4}
+
 By Summer 1909, *al-Muqtabas* was lagging severely behind its publication schedule. [No. 4/7](https://tillgrallert.github.io/digital-muqtabas/xml/oclc_4770057679-i_42.TEIP5.xml), scheduled for Rajab 1327 aH (Jul/Aug 1909) was published only in the first week of April 1910 but it took only another week for [No. 4/8](https://tillgrallert.github.io/digital-muqtabas/xml/oclc_4770057679-i_43.TEIP5.xml) to appear.[^14] No. 4/9 and [4/10](https://tillgrallert.github.io/digital-muqtabas/xml/oclc_4770057679-i_45.TEIP5.xml) were then published within another month.[^4] Nevertheless there were still rather late (the latter should have been published in Shawwāl 1327 aH (Oct/Nov 1909)). [No. 4/12 (Dhu II 1327 aH [Dec 1909/ Jan 1910])](https://tillgrallert.github.io/digital-muqtabas/xml/oclc_4770057679-i_47.TEIP5.xml) was published at the beginning of July 1910, some seven months behind the schedule.[^6]
 
 Muḥammad Kurd ʿAlī and his staff seemingly entered another productive period in fall 1910, publishing eight "monthly" issues in three months:
