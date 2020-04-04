@@ -11,7 +11,7 @@ date: 2018-11-02 13:27:33 +0200
 
 Quick links:
 
-- [Blog](https://tillgrallert.github.io/digital-muqtabas),
+- [Blog](https://openarabicpe.github.io),
 - [Webview *al-Muqtabas* 1(1) (text, facsimile)](https://tillgrallert.github.io/digital-muqtabas/xml/oclc_4770057679-i_1.TEIP5.xml),
 - [Zotero group "OpenArabicPE/digital-muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/openarabicpe/items/collectionKey/8SINFUW9)
 
