@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ns1="https://openarabicpe.github.io/ns"
            xmlns:tei="http://www.tei-c.org/ns/1.0"
            elementFormDefault="qualified"
            targetNamespace="http://www.tei-c.org/ns/1.0">
    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
               schemaLocation="xml.tmp"/>
+   <xs:import namespace="https://openarabicpe.github.io/ns" schemaLocation="ns1.tmp"/>
    <!--
-    Schema generated from ODD source 2019-04-16T10:04:32Z. .
-    TEI Edition: Version 3.3.0. Last updated on
-    	31st January 2018, revision f4d8439
-    TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.3.0/
+    Schema generated from ODD source 2020-04-09T21:00:04Z. .
+    TEI Edition: Version 3.5.0. Last updated on
+    	29th January 2019, revision 3c0c64ec4
+    TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
     
   -->
    <!-- [http://creativecommons.org/licenses/by-sa/4.0/] Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license -->
@@ -30,6 +32,7 @@
    </xs:complexType>
    <xs:complexType name="OpenArabicPE_macro.phraseSeq" mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:group ref="tei:OpenArabicPE_model.qLike"/>
          <xs:group ref="tei:OpenArabicPE_model.phrase"/>
          <xs:element ref="tei:OpenArabicPE_model.global"/>
       </xs:choice>
@@ -55,6 +58,25 @@
       <xs:attribute name="who">
          <xs:annotation>
             <xs:documentation>indicates the person, or group of people, to whom the element content is ascribed.</xs:documentation>
+         </xs:annotation>
+         <xs:simpleType>
+            <xs:restriction>
+               <xs:simpleType>
+                  <xs:list itemType="xs:anyURI"/>
+               </xs:simpleType>
+               <xs:minLength value="1"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="OpenArabicPE_att.ascribed.directed.attributes">
+      <xs:attributeGroup ref="tei:OpenArabicPE_att.ascribed.attributes"/>
+      <xs:attributeGroup ref="tei:OpenArabicPE_att.ascribed.directed.attribute.toWhom"/>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="OpenArabicPE_att.ascribed.directed.attribute.toWhom">
+      <xs:attribute name="toWhom">
+         <xs:annotation>
+            <xs:documentation>indicates the person, or group of people, to whom a speech act or action is directed.</xs:documentation>
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction>
@@ -335,12 +357,31 @@ Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] 
          </xs:simpleType>
       </xs:attribute>
    </xs:attributeGroup>
+   <xs:attributeGroup name="OpenArabicPE_att.global.source.attributes">
+      <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="OpenArabicPE_att.global.source.attribute.source">
+      <xs:attribute name="source">
+         <xs:annotation>
+            <xs:documentation>specifies the source from which some aspect of this element is drawn.</xs:documentation>
+         </xs:annotation>
+         <xs:simpleType>
+            <xs:restriction>
+               <xs:simpleType>
+                  <xs:list itemType="xs:anyURI"/>
+               </xs:simpleType>
+               <xs:minLength value="1"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:attributeGroup>
    <xs:attributeGroup name="OpenArabicPE_att.global.attributes">
       <xs:attributeGroup ref="tei:OpenArabicPE_att.global.rendition.attributes"/>
       <xs:attributeGroup ref="tei:OpenArabicPE_att.global.linking.attributes"/>
       <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attributes"/>
       <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attributes"/>
       <xs:attributeGroup ref="tei:OpenArabicPE_att.global.responsibility.attributes"/>
+      <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attributes"/>
       <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attribute.xmlid"/>
       <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attribute.n"/>
       <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attribute.xmllang"/>
@@ -907,46 +948,6 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          </xs:simpleType>
       </xs:attribute>
    </xs:attributeGroup>
-   <xs:attributeGroup name="OpenArabicPE_att.tableDecoration.attributes">
-      <xs:attributeGroup ref="tei:OpenArabicPE_att.tableDecoration.attribute.role"/>
-      <xs:attributeGroup ref="tei:OpenArabicPE_att.tableDecoration.attribute.rows"/>
-      <xs:attributeGroup ref="tei:OpenArabicPE_att.tableDecoration.attribute.cols"/>
-   </xs:attributeGroup>
-   <xs:attributeGroup name="OpenArabicPE_att.tableDecoration.attribute.role">
-      <xs:attribute name="role" default="data">
-         <xs:annotation>
-            <xs:documentation>indicates the kind of information held in this cell or in each cell of this row.</xs:documentation>
-         </xs:annotation>
-         <xs:simpleType>
-            <xs:restriction base="xs:token">
-               <xs:enumeration value="data">
-                  <xs:annotation>
-                     <xs:documentation/>
-                  </xs:annotation>
-               </xs:enumeration>
-               <xs:enumeration value="label">
-                  <xs:annotation>
-                     <xs:documentation/>
-                  </xs:annotation>
-               </xs:enumeration>
-            </xs:restriction>
-         </xs:simpleType>
-      </xs:attribute>
-   </xs:attributeGroup>
-   <xs:attributeGroup name="OpenArabicPE_att.tableDecoration.attribute.rows">
-      <xs:attribute name="rows" default="1" type="xs:nonNegativeInteger">
-         <xs:annotation>
-            <xs:documentation>indicates the number of rows occupied by this cell or row.</xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
-   </xs:attributeGroup>
-   <xs:attributeGroup name="OpenArabicPE_att.tableDecoration.attribute.cols">
-      <xs:attribute name="cols" default="1" type="xs:nonNegativeInteger">
-         <xs:annotation>
-            <xs:documentation>(columns) indicates the number of columns occupied by this cell or row.</xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
-   </xs:attributeGroup>
    <xs:attributeGroup name="OpenArabicPE_att.citing.attributes">
       <xs:attributeGroup ref="tei:OpenArabicPE_att.citing.attribute.unit"/>
       <xs:attributeGroup ref="tei:OpenArabicPE_att.citing.attribute.from"/>
@@ -1237,6 +1238,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:num"/>
          <xs:element ref="tei:measure"/>
          <xs:element ref="tei:measureGrp"/>
+         <xs:element ref="tei:unit"/>
          <xs:element ref="tei:geo"/>
       </xs:choice>
    </xs:group>
@@ -1245,6 +1247,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:num"/>
          <xs:element ref="tei:measure"/>
          <xs:element ref="tei:measureGrp"/>
+         <xs:element ref="tei:unit"/>
          <xs:element ref="tei:geo"/>
       </xs:choice>
    </xs:group>
@@ -1253,6 +1256,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:num"/>
          <xs:element ref="tei:measure"/>
          <xs:element ref="tei:measureGrp"/>
+         <xs:element ref="tei:unit"/>
          <xs:element ref="tei:geo"/>
       </xs:sequence>
    </xs:group>
@@ -1261,6 +1265,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element minOccurs="0" ref="tei:num"/>
          <xs:element minOccurs="0" ref="tei:measure"/>
          <xs:element minOccurs="0" ref="tei:measureGrp"/>
+         <xs:element minOccurs="0" ref="tei:unit"/>
          <xs:element minOccurs="0" ref="tei:geo"/>
       </xs:sequence>
    </xs:group>
@@ -1269,6 +1274,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:num"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:measure"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:measureGrp"/>
+         <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:unit"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:geo"/>
       </xs:sequence>
    </xs:group>
@@ -1277,6 +1283,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element maxOccurs="unbounded" ref="tei:num"/>
          <xs:element maxOccurs="unbounded" ref="tei:measure"/>
          <xs:element maxOccurs="unbounded" ref="tei:measureGrp"/>
+         <xs:element maxOccurs="unbounded" ref="tei:unit"/>
          <xs:element maxOccurs="unbounded" ref="tei:geo"/>
       </xs:sequence>
    </xs:group>
@@ -1422,6 +1429,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:unclear"/>
          <xs:element ref="tei:seg"/>
          <xs:element ref="tei:zone"/>
+         <xs:element ref="tei:path"/>
       </xs:choice>
    </xs:group>
    <xs:element name="OpenArabicPE_model.ptrLike" abstract="true"/>
@@ -1545,6 +1553,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:listPerson"/>
          <xs:element ref="tei:listPlace"/>
          <xs:element ref="tei:listRelation"/>
+         <xs:element ref="tei:listObject"/>
          <xs:element ref="tei:listNym"/>
          <xs:element ref="tei:table"/>
       </xs:choice>
@@ -1557,6 +1566,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:listPerson"/>
          <xs:element ref="tei:listPlace"/>
          <xs:element ref="tei:listRelation"/>
+         <xs:element ref="tei:listObject"/>
          <xs:element ref="tei:listNym"/>
          <xs:element ref="tei:table"/>
       </xs:choice>
@@ -1569,6 +1579,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:listPerson"/>
          <xs:element ref="tei:listPlace"/>
          <xs:element ref="tei:listRelation"/>
+         <xs:element ref="tei:listObject"/>
          <xs:element ref="tei:listNym"/>
          <xs:element ref="tei:table"/>
       </xs:sequence>
@@ -1581,6 +1592,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element minOccurs="0" ref="tei:listPerson"/>
          <xs:element minOccurs="0" ref="tei:listPlace"/>
          <xs:element minOccurs="0" ref="tei:listRelation"/>
+         <xs:element minOccurs="0" ref="tei:listObject"/>
          <xs:element minOccurs="0" ref="tei:listNym"/>
          <xs:element minOccurs="0" ref="tei:table"/>
       </xs:sequence>
@@ -1593,6 +1605,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:listPerson"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:listPlace"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:listRelation"/>
+         <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:listObject"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:listNym"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:table"/>
       </xs:sequence>
@@ -1605,6 +1618,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element maxOccurs="unbounded" ref="tei:listPerson"/>
          <xs:element maxOccurs="unbounded" ref="tei:listPlace"/>
          <xs:element maxOccurs="unbounded" ref="tei:listRelation"/>
+         <xs:element maxOccurs="unbounded" ref="tei:listObject"/>
          <xs:element maxOccurs="unbounded" ref="tei:listNym"/>
          <xs:element maxOccurs="unbounded" ref="tei:table"/>
       </xs:sequence>
@@ -1626,6 +1640,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attribute.facs"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attribute.change"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.responsibility.attribute.resp"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.pointing.attributes"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attribute.subtype"/>
                <xs:attribute name="n" default="1" type="xs:string">
@@ -1750,7 +1765,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
                <xs:attribute name="type">
                   <xs:annotation>
                      <xs:documentation>characterizes the element in some sense, using any convenient classification scheme or typology.
-Suggested values include: 1] bibliographic; 2] editorial; 3] endnote; 4] footnote; 5] gloss; 6] inline</xs:documentation>
+Suggested values include: 1] bibliographic; 2] editorial; 3] endnote; 4] footnote; 5] gloss; 6] inline; 7] tagList</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:union>
@@ -1804,6 +1819,15 @@ Suggested values include: 1] bibliographic; 2] editorial; 3] endnote; 4] footnot
                               <xs:enumeration value="inline">
                                  <xs:annotation>
                                     <xs:documentation>Discouraged: use place='inline' instead.</xs:documentation>
+                                 </xs:annotation>
+                              </xs:enumeration>
+                           </xs:restriction>
+                        </xs:simpleType>
+                        <xs:simpleType>
+                           <xs:restriction base="xs:token">
+                              <xs:enumeration value="tagList">
+                                 <xs:annotation>
+                                    <xs:documentation>Note containing a list of tags to be used mainly in authority files for further computational transformations and analysis</xs:documentation>
                                  </xs:annotation>
                               </xs:enumeration>
                            </xs:restriction>
@@ -1925,6 +1949,7 @@ Suggested values include: 1] bibliographic; 2] editorial; 3] endnote; 4] footnot
          <xs:attributeGroup ref="tei:OpenArabicPE_att.global.linking.attribute.prev"/>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attribute.facs"/>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attribute.change"/>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.dimensions.attributes"/>
          <xs:attribute name="resp" use="required">
             <xs:annotation>
@@ -2328,6 +2353,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
          <xs:element ref="tei:rs"/>
          <xs:element ref="tei:idno"/>
          <xs:group ref="tei:OpenArabicPE_model.persNamePart"/>
+         <xs:element ref="tei:objectName"/>
       </xs:choice>
    </xs:group>
    <xs:group name="OpenArabicPE_model.nameLike_alternation">
@@ -2337,6 +2363,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
          <xs:element ref="tei:rs"/>
          <xs:element ref="tei:idno"/>
          <xs:group ref="tei:OpenArabicPE_model.persNamePart_alternation"/>
+         <xs:element ref="tei:objectName"/>
       </xs:choice>
    </xs:group>
    <xs:group name="OpenArabicPE_model.nameLike_sequence">
@@ -2346,6 +2373,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
          <xs:element ref="tei:rs"/>
          <xs:element ref="tei:idno"/>
          <xs:group ref="tei:OpenArabicPE_model.persNamePart_sequence"/>
+         <xs:element ref="tei:objectName"/>
       </xs:sequence>
    </xs:group>
    <xs:group name="OpenArabicPE_model.nameLike_sequenceOptional">
@@ -2358,6 +2386,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
          <xs:element minOccurs="0" ref="tei:idno"/>
          <xs:group minOccurs="0"
                    ref="tei:OpenArabicPE_model.persNamePart_sequenceOptional"/>
+         <xs:element minOccurs="0" ref="tei:objectName"/>
       </xs:sequence>
    </xs:group>
    <xs:group name="OpenArabicPE_model.nameLike_sequenceOptionalRepeatable">
@@ -2373,6 +2402,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
          <xs:group minOccurs="0"
                    maxOccurs="unbounded"
                    ref="tei:OpenArabicPE_model.persNamePart_sequenceOptionalRepeatable"/>
+         <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:objectName"/>
       </xs:sequence>
    </xs:group>
    <xs:element name="OpenArabicPE_model.global" abstract="true"/>
@@ -2386,6 +2416,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
          <xs:element ref="tei:edition"/>
          <xs:element ref="tei:availability"/>
          <xs:element ref="tei:listRelation"/>
+         <xs:element ref="tei:objectIdentifier"/>
       </xs:choice>
    </xs:group>
    <xs:group name="OpenArabicPE_model.frontPart">
@@ -2632,6 +2663,12 @@ Suggested values include: 1] article; 2] bill; 3] advert; 4] letter; 5] masthead
    </xs:element>
    <xs:element name="OpenArabicPE_model.profileDescPart" abstract="true"/>
    <xs:element name="OpenArabicPE_model.resourceLike" abstract="true"/>
+   <xs:group name="OpenArabicPE_model.objectLike">
+      <xs:choice>
+         <xs:element ref="tei:object"/>
+         <xs:element ref="tei:listObject"/>
+      </xs:choice>
+   </xs:group>
    <xs:attributeGroup name="OpenArabicPE_att.personal.attributes">
       <xs:attributeGroup ref="tei:OpenArabicPE_att.naming.attributes"/>
       <xs:attributeGroup ref="tei:OpenArabicPE_att.personal.attribute.sort"/>
@@ -2854,7 +2891,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <xs:complexContent>
             <xs:extension base="tei:OpenArabicPE_macro.specialPara">
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
-               <xs:attributeGroup ref="tei:OpenArabicPE_att.ascribed.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.ascribed.directed.attributes"/>
                <xs:attribute name="aloud">
                   <xs:annotation>
                      <xs:documentation>may be used to indicate whether the quoted matter is regarded as having been vocalized or signed.</xs:documentation>
@@ -2923,6 +2960,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attribute.facs"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attribute.change"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.responsibility.attribute.resp"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.notated.attributes"/>
                <xs:attribute name="rend" default="quotation-marks">
@@ -2989,7 +3027,8 @@ Suggested values include: 1] brackets; 2] quotation-marks</xs:documentation>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attribute.facs"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attribute.change"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.responsibility.attribute.resp"/>
-               <xs:attributeGroup ref="tei:OpenArabicPE_att.ascribed.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.ascribed.directed.attributes"/>
                <xs:attribute name="rend" default="quotation-marks">
                   <xs:annotation>
                      <xs:documentation>(rendition) indicates how the element in question was rendered or presented in the source text.
@@ -3193,6 +3232,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.linking.attribute.prev"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attribute.facs"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attribute.change"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
                <xs:attribute name="resp" use="required">
                   <xs:annotation>
@@ -3259,6 +3299,7 @@ Normalization 12. Critical Apparatus]</xs:documentation>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.linking.attribute.prev"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attribute.facs"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attribute.change"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.placement.attributes"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.dimensions.attributes"/>
@@ -3297,6 +3338,7 @@ Normalization 12. Critical Apparatus]</xs:documentation>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.linking.attribute.prev"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attribute.facs"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attribute.change"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.dimensions.attributes"/>
                <xs:attribute name="resp" use="required">
@@ -3617,9 +3659,24 @@ Measures]</xs:documentation>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
       </xs:complexType>
    </xs:element>
+   <xs:element name="unit">
+      <xs:annotation>
+         <xs:documentation>contains a symbol, a word or a phrase referring to a unit of measurement in any kind of formal or informal system. [3.5.3. Numbers and
+Measures]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:OpenArabicPE_macro.phraseSeq">
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.measurement.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
    <xs:element name="date">
       <xs:annotation>
-         <xs:documentation>contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.6. Dates and Times]</xs:documentation>
+         <xs:documentation>contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.7. Dates and Times]</xs:documentation>
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -3627,6 +3684,7 @@ Measures]</xs:documentation>
             <xs:element ref="tei:OpenArabicPE_model.global"/>
          </xs:choice>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.canonical.attributes"/>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.datable.w3c.attribute.when"/>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.datable.w3c.attribute.notBefore"/>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.datable.w3c.attribute.notAfter"/>
@@ -3936,7 +3994,60 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
       <xs:complexType>
          <xs:complexContent>
             <xs:extension base="tei:OpenArabicPE_macro.specialPara">
-               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attribute.xmlid"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attribute.n"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attribute.xmllang"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.rendition.attribute.style"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.rendition.attribute.rendition"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.linking.attribute.corresp"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.linking.attribute.next"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.linking.attribute.prev"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attribute.facs"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attribute.change"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.responsibility.attribute.resp"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
+               <xs:attribute name="rend" default="block">
+                  <xs:annotation>
+                     <xs:documentation>(rendition) indicates how the element in question was rendered or presented in the source text.
+Suggested values include: 1] block; 2] inline</xs:documentation>
+                  </xs:annotation>
+                  <xs:simpleType>
+                     <xs:restriction>
+                        <xs:simpleType>
+                           <xs:list>
+                              <xs:simpleType>
+                                 <xs:union>
+                                    <xs:simpleType>
+                                       <xs:restriction base="xs:token">
+                                          <xs:enumeration value="block">
+                                             <xs:annotation>
+                                                <xs:documentation/>
+                                             </xs:annotation>
+                                          </xs:enumeration>
+                                       </xs:restriction>
+                                    </xs:simpleType>
+                                    <xs:simpleType>
+                                       <xs:restriction base="xs:token">
+                                          <xs:enumeration value="inline">
+                                             <xs:annotation>
+                                                <xs:documentation/>
+                                             </xs:annotation>
+                                          </xs:enumeration>
+                                       </xs:restriction>
+                                    </xs:simpleType>
+                                    <xs:simpleType>
+                                       <xs:restriction base="xs:token">
+                                          <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                       </xs:restriction>
+                                    </xs:simpleType>
+                                 </xs:union>
+                              </xs:simpleType>
+                           </xs:list>
+                        </xs:simpleType>
+                        <xs:minLength value="1"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:attribute>
             </xs:extension>
          </xs:complexContent>
       </xs:complexType>
@@ -4336,6 +4447,30 @@ Suggested values include: 1] #edition_1</xs:documentation>
             <xs:extension base="tei:OpenArabicPE_macro.phraseSeq">
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.naming.attributes"/>
+               <xs:attribute name="type">
+                  <xs:annotation>
+                     <xs:documentation/>
+                  </xs:annotation>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:enumeration value="owner">
+                           <xs:annotation>
+                              <xs:documentation>The owner-cum-editor, commonly referred to as ṣāḥib.</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="publisher">
+                           <xs:annotation>
+                              <xs:documentation>The publisher-cum-editor, commonly referred to as munshiʾ.</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="editor">
+                           <xs:annotation>
+                              <xs:documentation>Implicitly assumed type of all editors, used for all of the following:  * mudīr masʾūl (responsible director)  * raʾis al-taḥrīr (editor-in-chief)  * mudīr al-taḥrīr (managing editor)  * muḥarrir (editor)</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:attribute>
             </xs:extension>
          </xs:complexContent>
       </xs:complexType>
@@ -4462,6 +4597,7 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
          <xs:complexContent>
             <xs:extension base="tei:OpenArabicPE_macro.phraseSeq">
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.canonical.attributes"/>
             </xs:extension>
          </xs:complexContent>
       </xs:complexType>
@@ -4521,8 +4657,74 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
             <xs:element ref="tei:OpenArabicPE_model.global"/>
          </xs:choice>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
-         <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.docStatus.attributes"/>
+         <xs:attribute name="type">
+            <xs:annotation>
+               <xs:documentation>characterizes the element in some sense, using any convenient classification scheme or typology.
+Suggested values include: 1] book; 2] periodical</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:union>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:enumeration value="book">
+                           <xs:annotation>
+                              <xs:documentation>A book</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                     </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:enumeration value="periodical">
+                           <xs:annotation>
+                              <xs:documentation>A periodical publication</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                     </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:union>
+            </xs:simpleType>
+         </xs:attribute>
+         <xs:attribute name="subtype">
+            <xs:annotation>
+               <xs:documentation>provides a sub-categorization of the element, if needed
+Suggested values include: 1] journal; 2] newspaper</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:union>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:enumeration value="journal">
+                           <xs:annotation>
+                              <xs:documentation>A type of periodical publication that is called majalla in Arabic.</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                     </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:enumeration value="newspaper">
+                           <xs:annotation>
+                              <xs:documentation>A type of periodical publication that is called jarīda in Arabic.</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                     </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:union>
+            </xs:simpleType>
+         </xs:attribute>
+         <xs:attribute ref="ns1:frequency" default="monthly"/>
       </xs:complexType>
    </xs:element>
    <xs:element name="biblStruct">
@@ -4539,8 +4741,74 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
             </xs:choice>
          </xs:sequence>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
-         <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
          <xs:attributeGroup ref="tei:OpenArabicPE_att.docStatus.attributes"/>
+         <xs:attribute name="type">
+            <xs:annotation>
+               <xs:documentation>characterizes the element in some sense, using any convenient classification scheme or typology.
+Suggested values include: 1] book; 2] periodical</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:union>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:enumeration value="book">
+                           <xs:annotation>
+                              <xs:documentation>A book</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                     </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:enumeration value="periodical">
+                           <xs:annotation>
+                              <xs:documentation>A periodical publication</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                     </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:union>
+            </xs:simpleType>
+         </xs:attribute>
+         <xs:attribute name="subtype">
+            <xs:annotation>
+               <xs:documentation>provides a sub-categorization of the element, if needed
+Suggested values include: 1] journal; 2] newspaper</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:union>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:enumeration value="journal">
+                           <xs:annotation>
+                              <xs:documentation>A type of periodical publication that is called majalla in Arabic.</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                     </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:enumeration value="newspaper">
+                           <xs:annotation>
+                              <xs:documentation>A type of periodical publication that is called jarīda in Arabic.</xs:documentation>
+                           </xs:annotation>
+                        </xs:enumeration>
+                     </xs:restriction>
+                  </xs:simpleType>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:token">
+                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:union>
+            </xs:simpleType>
+         </xs:attribute>
+         <xs:attribute ref="ns1:frequency" default="monthly"/>
       </xs:complexType>
    </xs:element>
    <xs:element name="listBibl">
@@ -4839,6 +5107,7 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
          <xs:complexContent>
             <xs:extension base="tei:OpenArabicPE_macro.phraseSeq">
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.canonical.attributes"/>
             </xs:extension>
          </xs:complexContent>
       </xs:complexType>
@@ -4851,6 +5120,7 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
          <xs:complexContent>
             <xs:extension base="tei:OpenArabicPE_macro.phraseSeq.limited">
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.canonical.attributes"/>
             </xs:extension>
          </xs:complexContent>
       </xs:complexType>
@@ -5589,7 +5859,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                <xs:attribute name="scheme" default="TEI">
                   <xs:annotation>
                      <xs:documentation>supplies an identifier for the scheme in which this name is defined.
-Sample values include: 1] TEI (text encoding initiative) ; 2] DBK (docbook) ; 3] XX (unknown) ; 4] imaginary; 5] XHTML; 6] XML; 7] XI</xs:documentation>
+Sample values include: 1] TEI (Text Encoding Initiative) ; 2] DBK (Docbook) ; 3] XX (unknown) ; 4] imaginary; 5] XHTML; 6] XML; 7] XI</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
@@ -6754,9 +7024,81 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
          <xs:attributeGroup ref="tei:OpenArabicPE_att.dimensions.attributes"/>
       </xs:complexType>
    </xs:element>
+   <xs:element name="objectName">
+      <xs:annotation>
+         <xs:documentation>(name of an object) contains a proper noun or noun phrase used to refer to an object. [13.2.4. Object Names]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:OpenArabicPE_macro.phraseSeq">
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.datable.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.personal.attributes"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="object">
+      <xs:annotation>
+         <xs:documentation>contains a description of a single identifiable physical object. [13.3.5. Objects]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="tei:objectIdentifier"/>
+            <xs:group minOccurs="0"
+                      maxOccurs="unbounded"
+                      ref="tei:OpenArabicPE_model.headLike"/>
+            <xs:group minOccurs="0"
+                      maxOccurs="unbounded"
+                      ref="tei:OpenArabicPE_model.pLike"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+               <xs:element ref="tei:OpenArabicPE_model.noteLike"/>
+               <xs:group ref="tei:OpenArabicPE_model.biblLike"/>
+            </xs:choice>
+            <xs:element minOccurs="0" ref="tei:object"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.docStatus.attributes"/>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.canonical.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="listObject">
+      <xs:annotation>
+         <xs:documentation>(list of objects) contains a list of descriptions, each of which provides information about an identifiable physical object. [13.3.5. Objects]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:group minOccurs="0"
+                      maxOccurs="unbounded"
+                      ref="tei:OpenArabicPE_model.headLike"/>
+            <xs:group maxOccurs="unbounded" ref="tei:OpenArabicPE_model.objectLike"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+               <xs:element ref="tei:relation"/>
+               <xs:element ref="tei:listRelation"/>
+            </xs:choice>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="objectIdentifier">
+      <xs:annotation>
+         <xs:documentation>(object identifier) groups one or more identifiers or pieces of locating information concerning a single object. [13.3.5. Objects]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="tei:OpenArabicPE_model.placeNamePart"/>
+            <xs:element ref="tei:idno"/>
+            <xs:element ref="tei:objectName"/>
+         </xs:choice>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
    <xs:element name="nym">
       <xs:annotation>
-         <xs:documentation>(canonical name) contains the definition for a canonical name or name component of any kind. [13.3.5. Names and Nyms]</xs:documentation>
+         <xs:documentation>(canonical name) contains the definition for a canonical name or name component of any kind. [13.3.6. Names and Nyms]</xs:documentation>
       </xs:annotation>
       <xs:complexType>
          <xs:sequence>
@@ -6784,7 +7126,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
    </xs:element>
    <xs:element name="listNym">
       <xs:annotation>
-         <xs:documentation>(list of canonical names) contains a list of nyms, that is, standardized names for any thing. [13.3.5. Names and Nyms]</xs:documentation>
+         <xs:documentation>(list of canonical names) contains a list of nyms, that is, standardized names for any thing. [13.3.6. Names and Nyms]</xs:documentation>
       </xs:annotation>
       <xs:complexType>
          <xs:sequence>
@@ -6856,6 +7198,46 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
          <xs:documentation>(arbitrary segment) represents any segmentation of text below the chunk level. [16.3. Blocks, Segments, and Anchors 6.2. Components of the Verse Line 7.2.5. Speech Contents]</xs:documentation>
       </xs:annotation>
    </xs:element>
+   <xs:attributeGroup name="OpenArabicPE_att.tableDecoration.attributes">
+      <xs:attributeGroup ref="tei:OpenArabicPE_att.tableDecoration.attribute.role"/>
+      <xs:attributeGroup ref="tei:OpenArabicPE_att.tableDecoration.attribute.rows"/>
+      <xs:attributeGroup ref="tei:OpenArabicPE_att.tableDecoration.attribute.cols"/>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="OpenArabicPE_att.tableDecoration.attribute.role">
+      <xs:attribute name="role" default="data">
+         <xs:annotation>
+            <xs:documentation>indicates the kind of information held in this cell or in each cell of this row.</xs:documentation>
+         </xs:annotation>
+         <xs:simpleType>
+            <xs:restriction base="xs:token">
+               <xs:enumeration value="data">
+                  <xs:annotation>
+                     <xs:documentation/>
+                  </xs:annotation>
+               </xs:enumeration>
+               <xs:enumeration value="label">
+                  <xs:annotation>
+                     <xs:documentation/>
+                  </xs:annotation>
+               </xs:enumeration>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="OpenArabicPE_att.tableDecoration.attribute.rows">
+      <xs:attribute name="rows" default="1" type="xs:nonNegativeInteger">
+         <xs:annotation>
+            <xs:documentation>indicates the number of rows occupied by this cell or row.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="OpenArabicPE_att.tableDecoration.attribute.cols">
+      <xs:attribute name="cols" default="1" type="xs:nonNegativeInteger">
+         <xs:annotation>
+            <xs:documentation>(columns) indicates the number of columns occupied by this cell or row.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+   </xs:attributeGroup>
    <xs:element name="table">
       <xs:annotation>
          <xs:documentation>contains text displayed in tabular form, in rows and columns. [14.1.1. TEI Tables]</xs:documentation>
@@ -7024,6 +7406,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
                <xs:choice>
                   <xs:element ref="tei:zone"/>
+                  <xs:element ref="tei:path"/>
                   <xs:element ref="tei:surface"/>
                   <xs:element ref="tei:surfaceGrp"/>
                </xs:choice>
@@ -7084,6 +7467,15 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</xs:documentation>
                <xs:documentation>indicates the amount by which this zone has been rotated clockwise, with respect to the normal orientation of the parent surface element as implied by the dimensions given in the msDesc element or by the coordinates of the surface itself. The orientation is expressed in arc degrees.</xs:documentation>
             </xs:annotation>
          </xs:attribute>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="path">
+      <xs:annotation>
+         <xs:documentation>defines any line passing through two or more points within a surface element. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:OpenArabicPE_att.typed.attributes"/>
       </xs:complexType>
    </xs:element>
    <xs:element name="ex">
@@ -7149,6 +7541,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number) ; 4] lineN
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.linking.attribute.prev"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.facs.attribute.facs"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.global.change.attribute.change"/>
+               <xs:attributeGroup ref="tei:OpenArabicPE_att.global.source.attribute.source"/>
                <xs:attributeGroup ref="tei:OpenArabicPE_att.dimensions.attributes"/>
                <xs:attribute name="resp" use="required">
                   <xs:annotation>
