@@ -212,7 +212,7 @@ Image files are available from the [*al-Aqṣā* Mosque's library in Jerusalem t
 
 Recently, a colleague pointed me to another gray online library of Arabic material---one that was entirely dedicated to cultural and literary journals: [arshīf al-majallāt al-adabiyya wa-l-thaqafiyya al-ʿarabiyya (archive.sakhrit.co)](archive.sakhrit.co). I have posted a review of the website on [my blog](https://tillgrallert.github.io/blog/2016/04/22/review-archive-sakhrit/).
 
-Among their collection is also the journal [*al-Muqtabas*](http://archive.sakhrit.co/newmagazineYears.aspx?MID=125) and they provide:
+Among their collection is also the journal [*al-Muqtabas*](http://archive.sakhrit.co/newmagazineYears/125) and they provide:
 
 1. Partially watermarked digital imagery
 2. Functional tables of content for each issue, including author, title, page number
