@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="../schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="../schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-stylesheet type="text/xsl" href="../xslt-boilerplate/teibp_parameters.xsl"?>
 <TEI change="#d2e562" next="oclc_4770057679-i_13" prev="oclc_4770057679-i_11" xml:id="oclc_4770057679-i_12" xml:lang="" xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <teiHeader xml:id="teiHeader_1.d1e5" xml:lang="en">
@@ -116,6 +112,8 @@
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" parse="xml" xml:id="xi-include_1.d1e192" xpointer="encodingDesc"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" parse="xml" xml:id="xi-include_2.d1e194" xpointer="profileDesc"/>
         <revisionDesc xml:id="revisionDesc_1.d1e196">
+            <change when="2020-05-03" who="#pers_TG" xml:id="d2e897" xml:lang="en"
+                >Automatically wrapped all <tag>title level="j"</tag> preceded by مجلة or جريدة in a <tag>bibl type="periodical"</tag></change>
             <change when="2019-08-20" who="#pers_TG" xml:id="d5e834" xml:lang="en">Added references to local authority file (<ref target="../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml"
                 >../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml</ref>) and to OCLC (WorldCat) IDs to <gi>titles</gi>s without such references based on <gi>biblStruct</gi>s mentioned in the authority file (bibliography).</change>
             <change when="2019-05-22" who="#pers_TG" xml:id="d2e867" xml:lang="en">Mapped elements from version 1 of the ODD to version 2</change>
@@ -1548,8 +1546,8 @@
                 <head xml:id="head_14.d1e2447" xml:lang="ar"> <persName change="#d2e562" xml:id="persName_14.d1e3504" xml:lang="ar">الشيخ إبراهيم اليازجي</persName> </head>
                 <p xml:id="p_148.d1e2450" xml:lang="ar"
                     >فجعت العربية في <date>الشهر الماضي</date> بكبير من أكابر أهلها المنشئين وأستاذ من جهابذة المعربين والمؤلفين الطيب الذكر والأثر <persName>الشيخ إبراهيم اليازجي</persName>
-                    <persName>صاحب مجلة <title change="#d5e834" level="j" ref="oape:bibl:27 oclc:1034555409">الضياء</title></persName>. توفاه الله في هذه العاصمة عن <num resp="#pers_TG" subtype="d2"
-                    type="auto-markup" value="60" xml:id="num_218.d1e3503" xml:lang="ar"
+                    <persName>صاحب <bibl change="#d2e897" subtype="journal" type="periodical">مجلة <title change="#d5e834" level="j" ref="oape:bibl:27 oclc:1034555409"
+                    >الضياء</title></bibl></persName>. توفاه الله في هذه العاصمة عن <num resp="#pers_TG" subtype="d2" type="auto-markup" value="60" xml:id="num_218.d1e3503" xml:lang="ar"
                     >ستين</num> عاماً قضاها بين المحابر والدفاتر وقد وقف حياته على الإفادة والاستفادة فانتفع به خلق كثير في جميع البلاد التي تقرأ فيها العربية ولاسيما في مصر و<placeName>الشام</placeName>.</p>
                 <p xml:id="p_149.d1e2453" xml:lang="ar"
                     >ولقد عزَّ نعيه على كل من عرف فضله وأخلاقه وما خصَّ به من دماثة الخلق ولين الجانب وعزة النفس وحسن العهد ولا عجب فقد فقدت المطبوعات بفقده عضواً عاملاً ورجلاً نافعاً. ورثاه جمهور كبير من العلماء والفضلاء وابنته الصحف والمجلات على اختلاف <pb
@@ -1563,15 +1561,17 @@
                 <p xml:id="p_153.d1e2466" xml:lang="ar"
                     >فانصرف في مدينة <placeName>بيروت</placeName> كوالده الشيخ ناصيف إلى التعليم والتصنيف فتخرج به جهابذة أدباء وأكثرهم اليوم هم الحركة الدائمة في مصر و<placeName>الشام</placeName> و <num
                     resp="#pers_TG" subtype="d4" type="auto-markup" value="1000" xml:id="num_219.d1e3522" xml:lang="ar"
-                    >ألف</num> على ذاك العهد كتباً وصحح أخرى منها شرح ديوان المتنبي. وصحح التوراة كما نقح كتب والده المدرسية في الصرف والنحو والبيان والعروض ووقعت له محاورات مع صاحب الجوائب وغيره كطرفة الطرف وكتب مجلة <title
-                    change="#d5e834" level="j" ref="oape:bibl:37 oclc:173830042">الطبيب</title> سنة كاملة بمساعدة صديقيه العالمين الدكتورين زلزل وسعادة.</p>
+                    >ألف</num> على ذاك العهد كتباً وصحح أخرى منها شرح ديوان المتنبي. وصحح التوراة كما نقح كتب والده المدرسية في الصرف والنحو والبيان والعروض ووقعت له محاورات مع صاحب الجوائب وغيره كطرفة الطرف وكتب <bibl
+                    change="#d2e897" subtype="journal" type="periodical">مجلة <title change="#d5e834" level="j" ref="oape:bibl:37 oclc:173830042"
+                    >الطبيب</title></bibl> سنة كاملة بمساعدة صديقيه العالمين الدكتورين زلزل وسعادة.</p>
                 <p xml:id="p_154.d1e2469" xml:lang="ar">هبط مصر في شتاء <date change="#d2e616 #d2e648" type="auto-markup" when="1897" xml:id="date_8.d2e3965"> سنة <num resp="#pers_TG"
                     type="auto-markup" value="1897" xml:id="num_1.d1e2471" xml:lang="ar"
                     >١٨٩٧</num></date>لإنشاء مجلة علمية وطبع معجم عربي كان عني بتأليفه منذ سنين ولكن خانته الأقدار فرأى ما كان يسمعه عن نهضة مصر العلمية مبالغاً فيه وأن <pb
-                    corresp="file:../epub/26523/OEBPS/xhtml/P686.xhtml" ed="shamela" n="n12-p50" xml:id="pb_51.d1e2474"/> سوق العلم والأدب كاسدة لا لإقبال عليها فأصدر أولاً مجلة <title
-                    change="#d5e834" level="j" ref="oape:bibl:11 oclc:792754974">البيان</title> سنة بمعاونة <persName>الدكتور زلزل</persName> ثم أصدر وحده مجلة <title change="#d5e834" level="j"
+                    corresp="file:../epub/26523/OEBPS/xhtml/P686.xhtml" ed="shamela" n="n12-p50" xml:id="pb_51.d1e2474"/> سوق العلم والأدب كاسدة لا لإقبال عليها فأصدر أولاً <bibl change="#d2e897"
+                    subtype="journal" type="periodical">مجلة <title change="#d5e834" level="j" ref="oape:bibl:11 oclc:792754974"
+                    >البيان</title></bibl> سنة بمعاونة <persName>الدكتور زلزل</persName> ثم أصدر وحده <bibl change="#d2e897" subtype="journal" type="periodical">مجلة <title change="#d5e834" level="j"
                     ref="oape:bibl:27 oclc:1034555409"
-                    >الضياء</title> فدامت مطردة الصدور إلى صيف هذه السنة وقد شحنها من عرائس أفكاره وتحقيقاته اللغوية وأماليه الأدبية ما لو كتب بغير هذا اللسان لأعجب به أهله وكبروا مثل مقالات اللغة والعصر ولغة الجرائد وأغلاط العرب وأغلاط المولدين وطبع في العهد الأخير كتاب نجعة الرائد في اللغة ولم يوفق إلى طبع معجمه لأسباب أهمها قلة النصير والظهير.</p>
+                    >الضياء</title></bibl> فدامت مطردة الصدور إلى صيف هذه السنة وقد شحنها من عرائس أفكاره وتحقيقاته اللغوية وأماليه الأدبية ما لو كتب بغير هذا اللسان لأعجب به أهله وكبروا مثل مقالات اللغة والعصر ولغة الجرائد وأغلاط العرب وأغلاط المولدين وطبع في العهد الأخير كتاب نجعة الرائد في اللغة ولم يوفق إلى طبع معجمه لأسباب أهمها قلة النصير والظهير.</p>
                 <p xml:id="p_155.d1e2477" xml:lang="ar"
                     >كان الفقيد شديد الغيرة على لسان العرب بحيث لا يدانيه في ذلك غير خاصة الخاصة. مبالغاً في التدقيق والتمحيص حتى أنه كان يألم ممن يرتكب غلطاً لغوياً إنشائياً ألمه ممن يسيء مباشرة إليه أو يصادره في أعز الأشياء عليه ولذلك قلما كان يغفل كتاباً أو ديواناً من النقد اللغوي والأدبي وكثيراً ما تأخذه الحمية العربية فينحني على المنتقد عليه وربما وصلت المسألة من العموميات إلى الخصوصيات كما جرى في نقده معجم أقرب الموارد وكتاب الدرة اليتيمة وغيرهما. ولابد لمن يتمحض للانتقاد أن يلاقي ما لقي الشيخ اليازجي فيصاب ويصيب <pb
                     change="#d2e567 #d2e581 #d2e648 #d2e867" ed="print" edRef="#edition_1" facs="#facs_662" n="662" xml:id="pb_105.d2e3975"
@@ -1832,10 +1832,11 @@
                 <div change="#d2e562 #d2e867" subtype="article" type="item" xml:id="div_34.d1e4167" xml:lang="ar">
                     <head change="#d2e562" xml:id="head_34.d1e4169" xml:lang="ar">الإنكليزي والمطالعة</head>
                     <p xml:id="p_200.d1e2790" xml:lang="ar"> <bibl change="#d2e562" xml:id="bibl_14.d1e4173" xml:lang="ar"
-                        >نشر أحدهم مقالة في حرب الكتب في إنكلترا</bibl>قال فيها أن القارئ الإنكليزي من أطمح القراء في المطالعة وأن ميله إلى الإكثار منها يكاد لا يصدق وإن الإنكليزي ليطالع جريدة <title
-                        change="#d5e834" level="j" ref="oape:bibl:26 oclc:992611467">التيمس</title> وهي تصدر في <num resp="#pers_TG" subtype="d2" type="auto-markup" value="10" xml:id="num_286.d1e4176"
-                        xml:lang="ar">عشر</num> صفحات وأحياناً في <num resp="#pers_TG" subtype="d1" type="auto-markup" value="6" xml:id="num_287.d1e4179" xml:lang="ar">ست</num> <num resp="#pers_TG"
-                        subtype="d2" type="auto-markup" value="10" xml:id="num_288.d1e4182" xml:lang="ar"
+                        >نشر أحدهم مقالة في حرب الكتب في إنكلترا</bibl>قال فيها أن القارئ الإنكليزي من أطمح القراء في المطالعة وأن ميله إلى الإكثار منها يكاد لا يصدق وإن الإنكليزي ليطالع <bibl
+                        change="#d2e897" subtype="newspaper" type="periodical">جريدة <title change="#d5e834" level="j" ref="oape:bibl:26 oclc:992611467">التيمس</title></bibl> وهي تصدر في <num
+                        resp="#pers_TG" subtype="d2" type="auto-markup" value="10" xml:id="num_286.d1e4176" xml:lang="ar">عشر</num> صفحات وأحياناً في <num resp="#pers_TG" subtype="d1"
+                        type="auto-markup" value="6" xml:id="num_287.d1e4179" xml:lang="ar">ست</num> <num resp="#pers_TG" subtype="d2" type="auto-markup" value="10" xml:id="num_288.d1e4182"
+                        xml:lang="ar"
                         >عشرة</num> ولا تراه راضياً عن نفسه قانعاً بما أحرزه من الفوائد بل أن القوم لا يقبلون على مطالعة الموجزين في عباراتهم من المؤلفين بقدر إقبالهم على المكثارين منهم. فوالتير كوت تقرأ كتبه أكثر من هال كين وماري كورللي وفي المكتبة السيارة في لندن <num
                         resp="#pers_TG" subtype="d1" type="auto-markup" value="7" xml:id="num_289.d1e4185" xml:lang="ar">سبعة</num> ملايين مجلد.</p>
                 </div>
