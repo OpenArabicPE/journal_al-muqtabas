@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -184,7 +184,8 @@
                         <attDef ident="cert" mode="delete"/>
                     </attList>
                 </classSpec>
-                <classSpec ident="att.global.source" mode="delete" module="tei" type="atts"/>
+                <!-- we need @source at least in our authority files -->
+                <!--<classSpec ident="att.global.source" mode="delete" module="tei" type="atts"/>-->
                 <classSpec ident="att.media" mode="change" module="tei" type="atts">
                     <!-- even though I delete all attributes in this class, the class itself is required as it is member of att.internetMedia, which provides the @mimeType attribute -->
                     <attList>
@@ -328,6 +329,84 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                <elementSpec ident="bibl" mode="change" module="core">
+                    <attList>
+                        <attDef ident="subtype" mode="change" usage="opt">
+                            <valList mode="replace" type="semi">
+                                <valItem ident="journal">
+                                    <desc>A type of periodical publication that is called <foreign xml:lang="ar-Latn-x-ijmes">majalla</foreign> in Arabic.</desc>
+                                </valItem>
+                                <valItem ident="newspaper">
+                                    <desc>A type of periodical publication that is called <foreign xml:lang="ar-Latn-x-ijmes">jarīda</foreign> in Arabic.</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                        <attDef ident="type" mode="change" usage="opt">
+                            <valList mode="replace" type="semi">
+                                <valItem ident="book">
+                                    <desc>A book</desc>
+                                </valItem>
+                                <valItem ident="periodical">
+                                    <desc>A periodical publication</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                        <attDef ident="frequency" mode="add" ns="https://openarabicpe.github.io/ns" usage="opt">
+                            <desc>This attribute specifies the publication frequency</desc>
+                            <datatype>
+                                <dataRef key="teidata.text"/>
+                            </datatype>
+                            <defaultVal>monthly</defaultVal>
+                            <valList mode="add" type="semi">
+                                <valItem ident="daily"></valItem>
+                                <valItem ident="weekly"></valItem>
+                                <valItem ident="biweekly"></valItem>
+                                <valItem ident="fortnightly"></valItem>
+                                <valItem ident="monthly"></valItem>
+                                <valItem ident="annually"></valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="biblStruct" mode="change" module="core">
+                   <attList>
+                        <attDef ident="subtype" mode="change" usage="opt">
+                            <valList mode="replace" type="semi">
+                                <valItem ident="journal">
+                                    <desc>A type of periodical publication that is called <foreign xml:lang="ar-Latn-x-ijmes">majalla</foreign> in Arabic.</desc>
+                                </valItem>
+                                <valItem ident="newspaper">
+                                    <desc>A type of periodical publication that is called <foreign xml:lang="ar-Latn-x-ijmes">jarīda</foreign> in Arabic.</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                        <attDef ident="type" mode="change" usage="opt">
+                            <valList mode="replace" type="semi">
+                                <valItem ident="book">
+                                    <desc>A book</desc>
+                                </valItem>
+                                <valItem ident="periodical">
+                                    <desc>A periodical publication</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                        <attDef ident="frequency" mode="add" ns="https://openarabicpe.github.io/ns" usage="opt">
+                            <desc>This attribute specifies the publication frequency</desc>
+                            <datatype>
+                                <dataRef key="teidata.text"/>
+                            </datatype>
+                            <defaultVal>monthly</defaultVal>
+                            <valList mode="add" type="semi">
+                                <valItem ident="daily"></valItem>
+                                <valItem ident="weekly"></valItem>
+                                <valItem ident="biweekly"></valItem>
+                                <valItem ident="fortnightly"></valItem>
+                                <valItem ident="monthly"></valItem>
+                                <valItem ident="annually"></valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
                 <elementSpec ident="roleName" mode="change" module="namesdates">
                     <attList>
                         <attDef ident="type" mode="change" usage="req">
@@ -384,7 +463,7 @@
                 </elementSpec>
                 <elementSpec ident="date" mode="change" module="core">
                     <attList>
-                        <attDef ident="datingMethod" mode="change">
+                        <attDef ident="calendar" mode="change">
                             <valList mode="replace" type="closed">
                                 <valItem ident="#cal_gregorian">
                                     <desc>Gregorian calendar</desc>
@@ -410,7 +489,7 @@
                                 </valItem>
                             </valList>
                         </attDef>
-                        <attDef ident="calendar" mode="change">
+                        <attDef ident="datingMethod" mode="change">
                             <valList mode="replace" type="closed">
                                 <valItem ident="#cal_gregorian">
                                     <desc>Gregorian calendar</desc>
@@ -496,6 +575,28 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                <elementSpec ident="editor" mode="change" module="core">
+                    <attList>
+                        <attDef ident="type" mode="add" usage="opt">
+                            <valList mode="add" type="closed">
+                                <valItem ident="owner">
+                                    <desc>The owner-cum-editor, commonly referred to as <foreign xml:lang="ar-Larn-x-ijmes">ṣāḥib</foreign>.</desc>
+                                </valItem>
+                                <valItem ident="publisher">
+                                    <desc>The publisher-cum-editor, commonly referred to as <foreign xml:lang="ar-Larn-x-ijmes">munshiʾ</foreign>.</desc>
+                                </valItem>
+                                <valItem ident="editor">
+                                    <desc>Implicitly assumed type of all editors, used for all of the following: <list>
+                                        <item><foreign xml:lang="ar-Larn-x-ijmes">mudīr masʾūl</foreign> (responsible director)</item>
+                                        <item><foreign xml:lang="ar-Larn-x-ijmes">raʾis al-taḥrīr</foreign> (editor-in-chief)</item>
+                                        <item><foreign xml:lang="ar-Larn-x-ijmes">mudīr al-taḥrīr</foreign> (managing editor)</item>
+                                        <item><foreign xml:lang="ar-Larn-x-ijmes">muḥarrir</foreign> (editor)</item>
+                                    </list></desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
                 <elementSpec ident="gap" mode="change" module="core">
                     <attList>
                         <attDef ident="resp" mode="change" usage="req">
@@ -516,7 +617,7 @@
                             <defaultVal>bayt</defaultVal>
                             <valList type="closed">
                                 <valItem ident="bayt">
-                                    <desc>Two-partite line of an Arabic Qasida. The parts are encoded as 
+                                    <desc>Two-partite line of an Arabic <foreign xml:lang="ar-Latn-x-ijmes">qaṣīda</foreign>. The parts are encoded as 
                                         <gi>seg</gi>
                                         .</desc>
                                 </valItem>
@@ -551,6 +652,9 @@
                                 </valItem>
                                 <valItem ident="inline">
                                     <desc>Discouraged: use <att>place</att>='inline' instead.</desc>
+                                </valItem>
+                                <valItem ident="tagList">
+                                    <desc>Note containing a list of tags to be used mainly in authority files for further computational transformations and analysis</desc>
                                 </valItem>
                             </valList>
                         </attDef>
@@ -656,9 +760,15 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="supplied" mode="change" module="transcr">
+                <elementSpec ident="item" mode="change" module="core">
                     <attList>
-                        <attDef ident="resp" mode="change" usage="req"/>
+                        <attDef ident="rend" mode="change">
+                            <defaultVal>block</defaultVal>
+                            <valList mode="replace" type="semi">
+                                <valItem ident="block"/>
+                                <valItem ident="inline"/>
+                            </valList>
+                        </attDef>
                     </attList>
                 </elementSpec>
                 <elementSpec ident="q" mode="change" module="core">
@@ -681,6 +791,11 @@
                                 <valItem ident="quotation-marks"/>
                             </valList>
                         </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="supplied" mode="change" module="transcr">
+                    <attList>
+                        <attDef ident="resp" mode="change" usage="req"/>
                     </attList>
                 </elementSpec>
             </schemaSpec>
