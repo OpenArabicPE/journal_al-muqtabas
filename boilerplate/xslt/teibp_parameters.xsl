@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet exclude-result-prefixes="xsl tei xd eg fn #default" extension-element-prefixes="exsl
-    msxsl" version="1.0"
-    xmlns="http://www.w3.org/1999/xhtml" xmlns:eg="http://www.tei-c.org/ns/Examples" xmlns:exsl="http://exslt.org/common"
-    xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+<xsl:stylesheet exclude-result-prefixes="xsl tei xd eg  #default"  version="1.0"
+    xmlns="http://www.w3.org/1999/xhtml" xmlns:eg="http://www.tei-c.org/ns/Examples" 
+     xmlns:html="http://www.w3.org/1999/xhtml" 
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     
     <xd:doc scope="stylesheet">
@@ -17,16 +16,17 @@
     <!-- import the standard TEI Boilerplate stylesheets. If you link to versions hosted on GitHub make sure to point to a stable version to ensure that future changes won't break your set-up -->
     <xsl:include href="teibp_main.xsl"/>
     <xsl:include href="teibp_sourcedesc.xsl"/>
-    <xsl:include href="xml-to-string.xsl"/>
+    <!-- <xsl:include href="xml-to-string.xsl"/> -->
     <!-- import the stylesheet formatting all bibliographic metadata -->
     <xsl:include href="teibp_bibl.xsl"/>
     <!-- import the stylesheet dealing with the display of <pb> and facsimiles -->
     <xsl:include href="teibp_pb.xsl"/>
     
+    <!-- PARAMETERS -->
     <!-- select whether you want to display page breaks and facsimiles; default: true() -->
     <xsl:param name="p_display-page-breaks" select="true()"/>
     <!-- select whether you want to display online or local facsimiles; default: true() -->
-    <xsl:param name="p_display-online-facsimiles" select="false()"/>
+    <xsl:param name="p_display-online-facsimiles" select="true()"/>
     <!-- select whether you want to display line breaks; default: false() -->
     <xsl:param name="p_display-line-breaks" select="false()"/>
     <!-- select whether you want to display editorial changes; default: false() -->
@@ -36,15 +36,14 @@
     <!-- select whether you want to use inline CSS for the display; default: true() -->
     <xsl:param name="p_use-inline-css" select="true()"/>
     <!-- select whether the language of the interface should follow the main language of the text; default: false() -->
-    <xsl:param name="p_lang-interface-same-as-text" select="false()"/>
+    <xsl:param name="p_lang-interface-same-as-text" select="true()"/>
     <!-- select the colour scheme for heads; currently available options: red, blue, green -->
     <xsl:param name="p_color-scheme" select="'red'"/>
+    <!-- parameter to select the mimeType. In some cases tiff might be more efficient than jpeg -->
+    <xsl:param name="p_mimetype" select="'image/tiff'"/>
     
     <!-- original TEI Boilerplate stuff -->
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
-    <!-- toolbox and analytics have been removed -->
-    <xsl:param name="includeToolbox" select="false()"/>
-    <xsl:param name="includeAnalytics" select="false()"/>
     
     <!-- special characters -->
     <xsl:param name="quot">
@@ -173,7 +172,6 @@
             </xsl:choose>
         </span>
     </xsl:param>
-    
     <xsl:param name="p_text-nav_previous-issue">
         <span lang="{$v_lang-interface}">
             <xsl:choose>
@@ -186,12 +184,75 @@
             </xsl:choose>
         </span>
     </xsl:param>
+    <xsl:param name="p_text-nav_top">
+        <span lang="{$v_lang-interface}">
+            <xsl:choose>
+                <xsl:when test="$v_lang-interface = 'ar'">
+                    <xsl:text>أعلى الصفحة</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>Top of the page</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>
+    </xsl:param>
+    <xsl:param name="p_text-nav_bottom">
+        <span lang="{$v_lang-interface}">
+            <xsl:choose>
+                <xsl:when test="$v_lang-interface = 'ar'">
+                    <xsl:text>اسفل الصفحة</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>Bottom of the page</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>
+    </xsl:param>
+
+    <!-- menu -->
+    <xsl:param name="p_text-menu_contents">
+        <span lang="{$v_lang-interface}">
+            <xsl:choose>
+                <xsl:when test="$v_lang-interface = 'ar'">
+                    <xsl:text>فهرس</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>Contents</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>
+    </xsl:param>
+    <xsl:param name="p_text-menu_search">
+        <span lang="{$v_lang-interface}">
+            <xsl:choose>
+                <xsl:when test="$v_lang-interface = 'ar'">
+                    <xsl:text>بحث</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>Search</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>
+    </xsl:param>
+    <xsl:param name="p_text-menu_settings">
+        <span lang="{$v_lang-interface}">
+            <xsl:choose>
+                <xsl:when test="$v_lang-interface = 'ar'">
+                    <xsl:text>الإعدادات</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>Settings</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>
+    </xsl:param>
+    
     
     <!-- parameters for file paths or URLs -->
     <!-- modify filePrefix to point to boilerplate files on your own server, or to specify a relative path, e.g.: <xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>. 
         Remember: relative paths are relative to the file they are called from
 	-->
-    <xsl:param name="filePrefix" select="'../boilerplate/'"/>
+    <xsl:param name="filePrefix" select="'../boilerplate'"/>
     <!-- the following parameters should not be changed unless the folder structure and file names have been changed -->
     <xsl:param name="teibpCSS" select="concat($filePrefix, '/css/teibp.css')"/>
     <xsl:param name="customCSS" select="concat($filePrefix, '/css/teibp_custom.css')"/>

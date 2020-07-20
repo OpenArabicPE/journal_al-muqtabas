@@ -4,13 +4,9 @@
     xmlns:eg="http://www.tei-c.org/ns/Examples"
     xmlns:tei="http://www.tei-c.org/ns/1.0" 
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-    xmlns:exsl="http://exslt.org/common"
-    xmlns:msxsl="urn:schemas-microsoft-com:xslt"
-    xmlns:fn="http://www.w3.org/2005/xpath-functions"
-    extension-element-prefixes="exsl msxsl"
     xmlns="http://www.w3.org/1999/xhtml" 
     xmlns:html="http://www.w3.org/1999/xhtml" 
-    exclude-result-prefixes="xsl tei xd eg fn #default">
+    exclude-result-prefixes="xsl tei xd eg #default">
     
     <!-- This stylesheet provides structured bibliographic metat data and links to such data -->
     
@@ -79,8 +75,27 @@
     
     <xsl:template name="t_metadata-dc-article">
         <xsl:param name="pInput"/>
-        <xsl:variable name="vArticleTitle" select="./tei:head"/>
-        <xsl:variable name="vAuthor" select="./tei:byline/descendant::tei:persName"/>
+        <xsl:variable name="vArticleTitle" select="$pInput/tei:head"/>
+        <xsl:variable name="vAuthor" select="$pInput/tei:byline/descendant::tei:persName"/>
+        <meta name="dc.type" content="text" />
+        <meta name="dc.title" content="{$vArticleTitle}" />
+        <meta name="dc.creator">
+            <xsl:attribute name="content">
+                <xsl:value-of select="normalize-space($vgEditor)"/>
+            </xsl:attribute>
+        </meta>
+        <meta name="dc.creator">
+            <xsl:attribute name="content">
+                <xsl:value-of select="normalize-space($vgEditor)"/>
+            </xsl:attribute>
+        </meta>
+        <meta name="dc.date" content="{$vgPublicationDate}" />
+    </xsl:template>
+    
+    <xsl:template name="t_metadata-schema-article">
+        <xsl:param name="p_input"/>
+        <xsl:variable name="vArticleTitle" select="$p_input/tei:head"/>
+        <xsl:variable name="vAuthor" select="$p_input/tei:byline/descendant::tei:persName"/>
         <meta name="dc.type" content="text" />
         <meta name="dc.title" content="{$vArticleTitle}" />
         <meta name="dc.creator">
