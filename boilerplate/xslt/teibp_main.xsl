@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet exclude-result-prefixes="xsl tei xd eg fn #default"
-    extension-element-prefixes="exsl     msxsl" version="1.0" xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:eg="http://www.tei-c.org/ns/Examples" xmlns:exsl="http://exslt.org/common"
-    xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:tei="http://www.tei-c.org/ns/1.0"
+     version="1.0" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:eg="http://www.tei-c.org/ns/Examples" 
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <xd:doc scope="stylesheet">
         <xd:desc>
@@ -31,10 +30,6 @@
         <html id="html">
             <xsl:copy-of select="$v_html-head"/>
             <body ontouchstart="" id="body">
-                <!-- removed the toolbox altogether -->
-                <!--<xsl:if test="$includeToolbox = true()">
-                    <xsl:call-template name="teibpToolbox"/>
-                </xsl:if>-->
                 <!-- to prepare for the slideout, navigation and content are wrapped in divs  -->
                 <xsl:copy-of select="$v_navigation"/>
 
@@ -314,10 +309,6 @@
             <xsl:call-template name="rendition2style"/>
             <!-- <title>don't leave empty.</title> -->
             <xsl:call-template name="t_metadata-file"/>
-            <!-- removed analytics -->
-            <!--<xsl:if test="$includeAnalytics = true()">
-                <xsl:call-template name="analytics"/>
-            </xsl:if>-->
         </head>
     </xsl:variable>
     <xsl:template name="rendition2style">
@@ -401,37 +392,6 @@
             </span>
         </footer>
     </xsl:variable>
-    <!-- removed the toolbox -->
-    <!--<xsl:template name="teibpToolbox">
-        <div id="teibpToolbox">
-            <h1>Toolbox</h1>
-            <label for="pbToggle">Hide page breaks</label>
-            <input id="pbToggle" type="checkbox"/>
-            <div>
-                <h3>Themes:</h3>
-                <select id="themeBox" onchange="switchThemes(this);">
-                    <option value="{$theme.default}">Default</option>
-                    <option value="{$theme.sleepytime}">Sleepy Time</option>
-                    <option value="{$theme.terminal}">Terminal</option>
-                </select>
-            </div>
-        </div>
-    </xsl:template>-->
-    <!-- removed analytics -->
-    <!--<xsl:template name="analytics">
-        <script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  //include analytics account below.
-		  _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-		  _gaq.push(['_trackPageview']);
-		
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		</script>
-    </xsl:template>-->
 
     <xd:doc>
         <xd:desc>
@@ -624,6 +584,8 @@
             <xsl:call-template name="templHtmlAttrLang">
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
+            <!-- call some template to generate bibliographic metadata that can be scraped by zotero -->
+            
             <!-- head: there are some divs without heads. they should nevertheless have a place-holder head -->
             <!--            <xsl:apply-templates select="tei:head"/>-->
             <xsl:if test="not(@type = 'masthead' or @subtype = 'masthead')">
@@ -798,81 +760,6 @@
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
-    
-     <!-- provide paragraph count independent of css implementation -->
-    <xsl:template match="tei:lb[ancestor::tei:body]">
-        <xsl:variable name="v_id-precending-pb" select="preceding::tei:pb[@ed='print'][1]/@xml:id"/>
-        <xsl:variable name="v_count" select="count(preceding::tei:lb[preceding::tei:pb[@ed='print'][1]/@xml:id = $v_id-precending-pb]) + 1"/>
-        <xsl:variable name="v_interval" select="5"/>
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-        <xsl:choose>
-            <xsl:when test="($v_count div $v_interval) = 1">
-            <xsl:call-template name="t_element-count">
-                <xsl:with-param name="p_xml-id" select="@xml:id"/>
-                <xsl:with-param name="p_a-title"/>
-                <xsl:with-param name="p_count" select="$v_count"/>
-            </xsl:call-template>
-            </xsl:when>
-            <xsl:when test="($v_count div $v_interval) = 2">
-            <xsl:call-template name="t_element-count">
-                <xsl:with-param name="p_xml-id" select="@xml:id"/>
-                <xsl:with-param name="p_a-title"/>
-                <xsl:with-param name="p_count" select="$v_count"/>
-            </xsl:call-template>
-            </xsl:when>
-            <xsl:when test="($v_count div $v_interval) = 3">
-            <xsl:call-template name="t_element-count">
-                <xsl:with-param name="p_xml-id" select="@xml:id"/>
-                <xsl:with-param name="p_a-title"/>
-                <xsl:with-param name="p_count" select="$v_count"/>
-            </xsl:call-template>
-            </xsl:when>
-            <xsl:when test="($v_count div $v_interval) = 4">
-            <xsl:call-template name="t_element-count">
-                <xsl:with-param name="p_xml-id" select="@xml:id"/>
-                <xsl:with-param name="p_a-title"/>
-                <xsl:with-param name="p_count" select="$v_count"/>
-            </xsl:call-template>
-            </xsl:when>
-            <xsl:when test="($v_count div $v_interval) = 5">
-            <xsl:call-template name="t_element-count">
-                <xsl:with-param name="p_xml-id" select="@xml:id"/>
-                <xsl:with-param name="p_a-title"/>
-                <xsl:with-param name="p_count" select="$v_count"/>
-            </xsl:call-template>
-            </xsl:when>
-            <xsl:when test="($v_count div $v_interval) = 6">
-            <xsl:call-template name="t_element-count">
-                <xsl:with-param name="p_xml-id" select="@xml:id"/>
-                <xsl:with-param name="p_a-title"/>
-                <xsl:with-param name="p_count" select="$v_count"/>
-            </xsl:call-template>
-            </xsl:when>
-        </xsl:choose>
-        </xsl:copy>
-    </xsl:template>
-    
-    <xsl:template name="t_element-count">
-        <xsl:param name="p_xml-id"/>
-        <xsl:param name="p_a-title"/>
-        <xsl:param name="p_count"/>
-        <span class="c_id" lang="en">
-                <xsl:choose>
-                    <xsl:when test="$p_xml-id!=''">
-                        <a href="#{$p_xml-id}" class="c_link-self"
-                            title="{$p_a-title}">
-                            <span class="c_link-self c_number" lang="en">
-                                <xsl:value-of select="$p_count"/>
-                            </span>
-                        </a>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="$p_count"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </span>
-    </xsl:template>
 
     <!-- render foot and end notes-->
     <!-- generate a block of endnotes to be inserted at some point in the result document -->
@@ -1014,27 +901,32 @@
         <!-- wrap all buttons in a div -->
         <div id="sidebar-buttons" class="c_sidebar">
             <!-- button to toggle settings pane -->
-            <div class="c_button c_button-toggle c_off c_button-sidebar" id="toggleSettings">
+            <div class="c_button c_button-toggle c_off c_button-sidebar c_pos-1" id="toggleSettings">
                 <span class="c_icon c_on">
                     <xsl:copy-of select="document('../assets/icons/settings.svg')"/>
                 </span>
                 <span class="c_icon c_off">
                     <xsl:copy-of select="document('../assets/icons/x.svg')"/>
                 </span>
-                <span class="c_label" lang="en">Settings</span>
+                <span class="c_label" lang="{$v_lang-interface}">
+                    <xsl:copy-of select="$p_text-menu_settings"/>
+                </span>
             </div>
             <!-- button to toggle ToC -->
-            <div class="c_button c_button-toggle c_off c_button-sidebar" id="toggleNav">
+            <div class="c_button c_button-toggle c_off c_button-sidebar c_pos-2" id="toggleNav">
                 <span class="c_icon c_on">
                     <xsl:copy-of select="document('../assets/icons/list.svg')"/>
                 </span>
                 <span class="c_icon c_off">
                     <xsl:copy-of select="document('../assets/icons/x.svg')"/>
                 </span>
-                <span class="c_label" lang="en">Contents</span>
+                <span class="c_label" lang="{$v_lang-interface}">
+                    <xsl:copy-of select="$p_text-menu_contents"/>
+                </span>
             </div>
+
             <!-- link to Github -->
-            <div id="xmlSourceLink" class="c_button c_button-sidebar">
+            <div id="xmlSourceLink" class="c_button c_button-sidebar c_pos-3">
                 <span class="c_icon">
                     <xsl:copy-of select="document('../assets/icons/download.svg')"/>
                 </span>
@@ -1043,9 +935,28 @@
                     <xsl:text>TEI source on GitHub</xsl:text>
                 </a>
             </div>
+            <!-- top and bottom -->
+            <div id="backToTop" class="c_button c_button-sidebar c_pos-4">
+                <span class="c_icon">
+                    <xsl:copy-of select="document('../assets/icons/arrow-up.svg')"/>
+                </span>
+                <a href="#" class="c_label" lang="{$v_lang-interface}">
+                    <xsl:copy-of select="$p_text-nav_top"/>
+                </a>
+            </div>
+            <div id="goToBottom" class="c_button c_button-sidebar c_pos-5">
+                <span class="c_icon">
+                    <xsl:copy-of select="document('../assets/icons/arrow-down.svg')"/>
+                </span>
+                <a href="#footer" class="c_label"  lang="{$v_lang-interface}">
+                    <xsl:copy-of select="$p_text-nav_bottom"/>
+                </a>
+            </div>
+
+            
             <!-- links to previous and next issues -->
             <xsl:if test="descendant-or-self::tei:TEI/@next">
-                <div id="nextIssue" class="c_button c_button-sidebar">
+                <div id="nextIssue" class="c_button c_button-sidebar c_pos-6">
                     <span class="c_icon">
                         <xsl:copy-of select="document('../assets/icons/chevron-right.svg')"/>
                     </span>
@@ -1065,7 +976,7 @@
                 </div>
             </xsl:if>
             <xsl:if test="descendant-or-self::tei:TEI/@prev">
-                <div id="prevIssue" class="c_button c_button-sidebar">
+                <div id="prevIssue" class="c_button c_button-sidebar c_pos-7">
                     <span class="c_icon">
                         <xsl:copy-of select="document('../assets/icons/chevron-left.svg')"/>
                     </span>
@@ -1084,19 +995,6 @@
                     </a>
                 </div>
             </xsl:if>
-            <!-- top and bottom -->
-            <div id="backToTop" class="c_button c_button-sidebar">
-                <span class="c_icon">
-                    <xsl:copy-of select="document('../assets/icons/arrow-up.svg')"/>
-                </span>
-                <a href="#" class="c_label" lang="en">Top of the page</a>
-            </div>
-            <div id="goToBottom" class="c_button c_button-sidebar">
-                <span class="c_icon">
-                    <xsl:copy-of select="document('../assets/icons/arrow-down.svg')"/>
-                </span>
-                <a href="#footer" class="c_label" lang="en">Bottom of the page</a>
-            </div>
         </div>
     </xsl:variable>
 
