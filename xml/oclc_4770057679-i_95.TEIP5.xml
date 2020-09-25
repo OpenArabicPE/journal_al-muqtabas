@@ -38,7 +38,7 @@
                 <biblStruct change="#d2e589" ns:frequency="monthly" subtype="journal" type="periodical" xml:id="edition_1" xml:lang="en" xmlns:ns="https://openarabicpe.github.io/ns">
                     <monogr change="#d2e589 #d2e677" xml:id="monogr_1.d2e94" xml:lang="en">
                         <title change="#d2e677" level="j" xml:id="title_5.d2e99" xml:lang="ar">المقتبس</title>
-                         <title level="j" xml:id="title_4.d1e87" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
+                        <title level="j" xml:id="title_4.d1e87" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
                         <title level="j" xml:id="title_6.d1e93" xml:lang="fr">Al-Moktabas</title>
                         <idno change="#d2e589 #d2e677" type="OCLC" xml:id="idno_2.d2e105" xml:lang="en">4770057679</idno>
                         <idno change="#d2e589 #d2e677" type="OCLC" xml:id="idno_3.d2e108" xml:lang="en">79440195</idno>
@@ -56,7 +56,7 @@
                             <pubPlace change="#d2e677 #d2e689" xml:id="pubPlace_2.d2e149" xml:lang="en"> <placeName change="#d5e505 #d5e528 #d2e677" ref="oape:place:61 geon:170654"
                                 xml:id="placeName_1.d2e151" xml:lang="ar">دمشق</placeName> <placeName change="#d5e505 #d5e528 #d2e677" ref="oape:place:61 geon:170654" xml:id="placeName_2.d2e154"
                                 xml:lang="en">Damascus</placeName></pubPlace>
-                            <date change="#d2e677" notBefore="1917-01-31" source="#div_11.d1e2063" type="supplied"  xml:id="date_2.d2e157" xml:lang="en">c.1917</date>
+                            <date change="#d2e677" notBefore="1917-01-31" source="#div_11.d1e2063" type="supplied" xml:id="date_2.d2e157" xml:lang="en">c.1917</date>
                         </imprint>
                         <biblScope change="#d2e677" from="9" to="9" unit="volume" xml:id="biblScope_1.d2e161"/>
                         <biblScope change="#d2e677" from="1" to="1" unit="issue" xml:id="biblScope_2.d2e164"/>
@@ -68,6 +68,11 @@
         <xi:include change="#d2e677" href="oclc_4770057679-master_teiHeader.TEIP5.xml" parse="xml" xml:id="xi:include_1.d2e172" xpointer="encodingDesc"/>
         <xi:include change="#d2e677" href="oclc_4770057679-master_teiHeader.TEIP5.xml" parse="xml" xml:id="xi:include_2.d2e174" xpointer="profileDesc"/>
         <revisionDesc>
+            <tei:change when="2020-09-25" who="#pers_TG" xml:id="d3e695" xml:lang="en" xmlns:oape="https://openarabicpe.github.io/ns">Marked up dates by automatically wrapping all <tei:list>
+                <tei:item>occurrences of "سنة" and "عام" followed by a <tei:gi>num</tei:gi> node </tei:item>
+                <tei:item><tei:gi>num</tei:gi> nodes followed by either "هـ" or "م" as indicators of calendars</tei:item>
+                <tei:item>\d{3,4} followed by either "هـ" or "م" as indicators of calendars.</tei:item>
+                </tei:list> in a <tei:gi>date</tei:gi> with the appropriate <tei:att>calendar</tei:att> and <tei:att>datingMethod</tei:att> attributes</tei:change>
             <tei:change change="d2e689" when="2020-09-25" who="#pers_TG" xml:lang="en">Added the <tei:att xml:lang="en"
                 >xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change>
             <change when="2020-09-25" who="#pers_TG" xml:id="d2e677" xml:lang="en">Added automated <tei:att xml:lang="en">xml:id</tei:att>s for every element that is a descendant of <tei:gi
@@ -712,22 +717,23 @@
                 <list change="#d2e689" xml:id="list_2.d1e1169" xml:lang="ar">
                     <item xml:id="p_40.d1e1099" xml:lang="ar"> <label change="#d2e689" xml:id="label_1.d1e1173" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="1" xml:id="num_1.d1e1101"
                         xml:lang="ar">١</num> </label>فهرست ابن النديم وهو المتوفى <date calendar="#cal_islamic" change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup"
-                        when-custom="235" xml:id="date_18.d2e1730" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="235" xml:id="num_1.d1e1104" xml:lang="ar">٢٣٥</num></date> هـ <num
-                        rend="brackets" resp="#pers_TG" type="auto-markup" value="849" xml:id="num_1.d1e1107" xml:lang="ar"
-                        >٨٤٩</num> م ويعرف بقمطر الكتب ولا تزال نسخه الكاملة نادرة حتى أن نصفه في مكتبة فينا <q change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1027"
-                        xml:lang="ar">النمسا</q> والنصف الثاني في مكتبة الأمة في باريس <q change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1030" xml:lang="ar"
+                        when-custom="235" xml:id="date_18.d2e1730" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="235" xml:id="num_1.d1e1104" xml:lang="ar"
+                        >٢٣٥</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="0849"><num rend="brackets" resp="#pers_TG" type="auto-markup" value="849" xml:id="num_1.d1e1107"
+                        xml:lang="ar">٨٤٩</num></tei:date> م ويعرف بقمطر الكتب ولا تزال نسخه الكاملة نادرة حتى أن نصفه في مكتبة فينا <q change="#d2e689" rend="brackets" resp="#pers_TG"
+                        type="auto-markup" xml:id="q_1.d1e1027" xml:lang="ar">النمسا</q> والنصف الثاني في مكتبة الأمة في باريس <q change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup"
+                        xml:id="q_1.d1e1030" xml:lang="ar"
                         >فرنسا</q> والظاهر أنه أول كتاب من نوعه أفرد لوصف الكتب وهو مجموع قوائم المكاتب التي عرفت في أيامه والكتب التي كانت موفودة لذلك العهد. وقلما نجد له ذكراً في الكتب التي بين أيدينا لقلة نسخه</item>
                     <pb change="#d2e553 #d2e606 #d2e677" ed="print" edRef="#edition_1" facs="#facs_9" n="9" xml:id="pb_17.d2e1745"/>
                     <item xml:id="p_41.d1e1111" xml:lang="ar"> <label change="#d2e689" xml:id="label_2.d1e1186" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="2" xml:id="num_1.d1e1113"
                         xml:lang="ar">٢</num> </label>فهرست ابن النديم لمؤلفه أبي الفرج محمد بن اسحق بن يعقوب النديم البغدادي الورّاق المتوفى نحو <date calendar="#cal_islamic"
                         change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup" when-custom="385" xml:id="date_19.d2e1755" xml:lang="ar">سنة <num resp="#pers_TG"
-                        type="auto-markup" value="385" xml:id="num_1.d1e1116" xml:lang="ar">٣٨٥</num></date> هـ <num rend="brackets" resp="#pers_TG" type="auto-markup" value="995"
-                        xml:id="num_1.d1e1119" xml:lang="ar">٩٩٥</num> م وقد بدأ بطبعه المستشرق الشهير فوسطاف فنرغل المتوفى <date calendar="#cal_gregorian" change="#d2e517 #d2e677 #d2e689"
-                        type="auto-markup" when="1870" xml:id="date_20.d2e1763" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1870" xml:id="num_1.d1e1122" xml:lang="ar"
-                        >١٨٧٠</num></date> م مع ملاحظات وتحقيقات فأعجلته المنية عن إتمامه فأنجزه بعده هرمان رودريغر وأوغست ملّو فطبع الكتاب <date calendar="#cal_gregorian"
-                        change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1870" xml:id="date_21.d2e1768" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1870"
-                        xml:id="num_1.d1e1125" xml:lang="ar">١٨٧٠</num></date> م بالعربية في مدينة ليبسيك في <num resp="#pers_TG" type="auto-markup" value="360" xml:id="num_1.d1e1129" xml:lang="ar"
-                        >٣٦٠</num> صفحة بقطع نصف كبير والحق به جزء ضخم في <num resp="#pers_TG" type="auto-markup" value="279" xml:id="num_1.d1e1132" xml:lang="ar"
+                        type="auto-markup" value="385" xml:id="num_1.d1e1116" xml:lang="ar">٣٨٥</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="0995"><num rend="brackets"
+                        resp="#pers_TG" type="auto-markup" value="995" xml:id="num_1.d1e1119" xml:lang="ar">٩٩٥</num></tei:date> م وقد بدأ بطبعه المستشرق الشهير فوسطاف فنرغل المتوفى <date
+                        calendar="#cal_gregorian" change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1870" xml:id="date_20.d2e1763" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup"
+                        value="1870" xml:id="num_1.d1e1122" xml:lang="ar">١٨٧٠</num></date> م مع ملاحظات وتحقيقات فأعجلته المنية عن إتمامه فأنجزه بعده هرمان رودريغر وأوغست ملّو فطبع الكتاب <date
+                        calendar="#cal_gregorian" change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1870" xml:id="date_21.d2e1768" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup"
+                        value="1870" xml:id="num_1.d1e1125" xml:lang="ar">١٨٧٠</num></date> م بالعربية في مدينة ليبسيك في <num resp="#pers_TG" type="auto-markup" value="360" xml:id="num_1.d1e1129"
+                        xml:lang="ar">٣٦٠</num> صفحة بقطع نصف كبير والحق به جزء ضخم في <num resp="#pers_TG" type="auto-markup" value="279" xml:id="num_1.d1e1132" xml:lang="ar"
                         >٢٧٩</num> صفحة ضمن التفاسير والتعاليق والاستدراكات بالعربية والنمسوية مختوماً بفهارس للإعلام طبع <date calendar="#cal_gregorian" change="#d2e517 #d2e677 #d2e689"
                         type="auto-markup" when="1872" xml:id="date_22.d2e1780" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1872" xml:id="num_1.d1e1135" xml:lang="ar"
                         >١٨٧٢</num></date> م وقد استدرك <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:id="num_51.d1e1062" xml:lang="ar"
@@ -739,9 +745,9 @@
                     <item xml:id="p_42.d1e1148" xml:lang="ar"> <label change="#d2e689" xml:id="label_3.d1e1223" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="3" xml:id="num_1.d1e1150"
                         xml:lang="ar">٣</num> </label>طبقات الأمم لأبي قاسم صاعد بن أحمد بن عبد الرحمن بن محمد بن صاعد التغلبي القرطبي قاضي طليطلة في الأندلس المتوفى <date calendar="#cal_islamic"
                         change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup" when-custom="462" xml:id="date_24.d2e1808" xml:lang="ar">سنة <num resp="#pers_TG"
-                        type="auto-markup" value="462" xml:id="num_1.d1e1153" xml:lang="ar">٤٦٢</num></date> هـ <num rend="brackets" resp="#pers_TG" type="auto-markup" value="1069"
-                        xml:id="num_1.d1e1156" xml:lang="ar"
-                        >١٠٦٩</num> م بدأ فيه بتعريف العلوم عند الأمم كالهند والفرس والكلدان واليونان والروم والمصريين والعرب وبني إسرائيل وذكر المؤلفين فيها وكتبهم وأطال عن العرب في <placeName
+                        type="auto-markup" value="462" xml:id="num_1.d1e1153" xml:lang="ar">٤٦٢</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="1069"><num rend="brackets"
+                        resp="#pers_TG" type="auto-markup" value="1069" xml:id="num_1.d1e1156" xml:lang="ar"
+                        >١٠٦٩</num></tei:date> م بدأ فيه بتعريف العلوم عند الأمم كالهند والفرس والكلدان واليونان والروم والمصريين والعرب وبني إسرائيل وذكر المؤلفين فيها وكتبهم وأطال عن العرب في <placeName
                         change="#d6e665 #d2e677 #d2e689" ref="oape:place:209 geon:99237" xml:id="placeName_8.d2e1816" xml:lang="ar">العراق</placeName> و<placeName change="#d6e665 #d2e677 #d2e689"
                         ref="oape:place:61 geon:170654" xml:id="placeName_9.d2e1819" xml:lang="ar">الشام</placeName> ومصر والأندلس بلاد المؤلف وقد نشر في مجلة <title change="#d2e677 #d2e689" level="j"
                         xml:id="title_8.d2e1823" xml:lang="ar">الشرق</title> ( <num resp="#pers_TG" type="auto-markup" value="566" xml:id="num_1.d1e1159" xml:lang="ar">٥٦٦</num> : <num resp="#pers_TG"
@@ -751,16 +757,18 @@
                         value="1400" xml:id="num_1.d1e1171" xml:lang="ar"
                         >١٤٠٠</num> كتاب في كل علم مع أسانيدها ما رواه عن شيوخه في العلوم والمعارف. طبع هذا الفهرست أولاً ملحقاً لكشف الظنون في ليبيسك من <date change="#d2e517 #d2e677 #d2e689"
                         type="auto-markup" when="1835" xml:id="date_25.d2e1844" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1835" xml:id="num_1.d1e1174" xml:lang="ar"
-                        >١٨٣٥</num></date> - <num resp="#pers_TG" type="auto-markup" value="1858" xml:id="num_1.d1e1177" xml:lang="ar">١٨٥٨</num> م ثم نشرته مجلة أسبانية بعناية فرنسيس كوديرا <date
-                        calendar="#cal_gregorian" change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1894" xml:id="date_26.d2e1852" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup"
-                        value="1894" xml:id="num_1.d1e1180" xml:lang="ar">١٨٩٤</num></date> م في مدينة كازيروكوسته.</item>
+                        >١٨٣٥</num></date> - <tei:date calendar="#cal_gregorian" change="#d3e695" when="1858"><num resp="#pers_TG" type="auto-markup" value="1858" xml:id="num_1.d1e1177" xml:lang="ar"
+                        >١٨٥٨</num></tei:date> م ثم نشرته مجلة أسبانية بعناية فرنسيس كوديرا <date calendar="#cal_gregorian" change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1894"
+                        xml:id="date_26.d2e1852" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1894" xml:id="num_1.d1e1180" xml:lang="ar"
+                        >١٨٩٤</num></date> م في مدينة كازيروكوسته.</item>
                     <item xml:id="p_44.d1e1184" xml:lang="ar"> <label change="#d2e689" xml:id="label_5.d1e1261" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="5" xml:id="num_1.d1e1186"
                         xml:lang="ar">٥</num> </label>القصيدة اليائية في أسامي الكتب العلمية - لشرف الدين محمد بن عمر <pb change="#d2e553 #d2e606 #d2e677" ed="print" edRef="#edition_1" facs="#facs_10"
                         n="10" xml:id="pb_19.d2e1867"/>القدسي الكاتب المتوفى <date calendar="#cal_islamic" change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup"
-                        when-custom="712" xml:id="date_27.d2e1869" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="712" xml:id="num_1.d1e1189" xml:lang="ar">٧١٢</num></date> هـ <num
-                        rend="brackets" resp="#pers_TG" type="auto-markup" value="1312" xml:id="num_1.d1e1192" xml:lang="ar">١٣١٢</num> م ذكره ابن حجر العسقلاني في كتابه <q change="#d2e689"
-                        rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1125" xml:lang="ar">الدرر الكامنة</q> بقوله وما رأيت من <num resp="#pers_TG" subtype="d4" type="auto-markup"
-                        value="1000" xml:id="num_67.d1e1128" xml:lang="ar">ألف</num> فيه شيئاً غيره وقد عرفت حال النظم وضيقه عن استيعابه كما ينبغيفيكون أول قوائم الكتب الشعرية.</item>
+                        when-custom="712" xml:id="date_27.d2e1869" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="712" xml:id="num_1.d1e1189" xml:lang="ar"
+                        >٧١٢</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="1312"><num rend="brackets" resp="#pers_TG" type="auto-markup" value="1312"
+                        xml:id="num_1.d1e1192" xml:lang="ar">١٣١٢</num></tei:date> م ذكره ابن حجر العسقلاني في كتابه <q change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup"
+                        xml:id="q_1.d1e1125" xml:lang="ar">الدرر الكامنة</q> بقوله وما رأيت من <num resp="#pers_TG" subtype="d4" type="auto-markup" value="1000" xml:id="num_67.d1e1128" xml:lang="ar"
+                        >ألف</num> فيه شيئاً غيره وقد عرفت حال النظم وضيقه عن استيعابه كما ينبغيفيكون أول قوائم الكتب الشعرية.</item>
                     <item xml:id="p_45.d1e1196" xml:lang="ar"> <label change="#d2e689" xml:id="label_6.d1e1275" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="6" xml:id="num_1.d1e1198"
                         xml:lang="ar">٦</num></label>إرشاد القاصد إلى أسنى المقاصد - لأبي الجود شمس الدين محمد بن <lb change="#d2e677" xml:id="lb_2.d2e1892"/><choice change="#d2e677 #d2e689"
                         xml:id="choice_1.d2e1893" xml:lang="ar">
@@ -768,11 +776,12 @@
                         <corr change="#d2e677 #d2e689" resp="#org_MS" xml:id="corr_1.d2e1898" xml:lang="ar">عمر</corr>
                         </choice> بن ساعد الأنصاري المعروف بابن الأكفاني السنجاري الأصل المصري المتوفى <date calendar="#cal_islamic" change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic"
                         type="auto-markup" when-custom="749" xml:id="date_28.d2e1902" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="749" xml:id="num_1.d1e1201" xml:lang="ar"
-                        >٧٤٩</num></date> هـ <num rend="brackets" resp="#pers_TG" type="auto-markup" value="1348" xml:id="num_1.d1e1204" xml:lang="ar"
-                        >١٣٤٨</num> م ومداره على وصف العلوم وأهم الكتب المؤلفة فيها طبع في مصر <date calendar="#cal_islamic" change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic"
-                        type="auto-markup" when-custom="1318" xml:id="date_29.d2e1910" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1318" xml:id="num_1.d1e1207" xml:lang="ar"
-                        >١٣١٨</num></date> هـ <num rend="brackets" resp="#pers_TG" type="auto-markup" value="1900" xml:id="num_1.d1e1210" xml:lang="ar">١٩٠٠</num> م وفي <placeName
-                        change="#d6e665 #d2e677 #d2e689" ref="oape:place:26 geon:276781" xml:id="placeName_10.d2e1919" xml:lang="ar">بيروت</placeName> بعناية <persName change="#d2e539 #d3e659 #d2e677"
+                        >٧٤٩</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="1348"><num rend="brackets" resp="#pers_TG" type="auto-markup" value="1348"
+                        xml:id="num_1.d1e1204" xml:lang="ar">١٣٤٨</num></tei:date> م ومداره على وصف العلوم وأهم الكتب المؤلفة فيها طبع في مصر <date calendar="#cal_islamic"
+                        change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup" when-custom="1318" xml:id="date_29.d2e1910" xml:lang="ar">سنة <num resp="#pers_TG"
+                        type="auto-markup" value="1318" xml:id="num_1.d1e1207" xml:lang="ar">١٣١٨</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="1900"><num rend="brackets"
+                        resp="#pers_TG" type="auto-markup" value="1900" xml:id="num_1.d1e1210" xml:lang="ar">١٩٠٠</num></tei:date> م وفي <placeName change="#d6e665 #d2e677 #d2e689"
+                        ref="oape:place:26 geon:276781" xml:id="placeName_10.d2e1919" xml:lang="ar">بيروت</placeName> بعناية <persName change="#d2e539 #d3e659 #d2e677"
                         ref="oape:pers:324 viaf:90067250" xml:id="persName_8.d2e1922" xml:lang="ar"> <roleName change="#d2e677" type="honorific" xml:id="roleName_1.d2e1924" xml:lang="ar"
                         >الشيخ</roleName> <forename change="#d2e677" xml:id="forename_8.d2e1927" xml:lang="ar">طاهر</forename> <surname change="#d2e677" xml:id="surname_7.d2e1930" xml:lang="ar"
                         ><addName change="#d2e677 #d2e689" type="nisbah" xml:id="addName_2.d2e1931" xml:lang="ar">الجزائري</addName></surname></persName><date calendar="#cal_gregorian"
@@ -784,8 +793,8 @@
                         change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1172" xml:lang="ar">فهرسته</q> في كشف <pb
                         corresp="file:../epub/26523/OEBPS/xhtml/P6622.xhtml" ed="shamela" n="n95-p9" xml:id="pb_10.d1e1226"/> الظنون أيضاً طبع ليبسيك كما مر آنفاً وتوفي السيوطي هذا <date
                         calendar="#cal_islamic" change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup" when-custom="911" xml:id="date_31.d2e1955" xml:lang="ar">سنة <num
-                        resp="#pers_TG" type="auto-markup" value="911" xml:id="num_1.d1e1228" xml:lang="ar">٩١١</num></date> هـ <num rend="brackets" resp="#pers_TG" type="auto-markup" value="1505"
-                        xml:id="num_1.d1e1231" xml:lang="ar">١٥٠٥</num> م.</item>
+                        resp="#pers_TG" type="auto-markup" value="911" xml:id="num_1.d1e1228" xml:lang="ar">٩١١</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="1505"><num
+                        rend="brackets" resp="#pers_TG" type="auto-markup" value="1505" xml:id="num_1.d1e1231" xml:lang="ar">١٥٠٥</num></tei:date> م.</item>
                     <item xml:id="p_47.d1e1235" xml:lang="ar"> <label change="#d2e689" xml:id="label_8.d1e1315" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="8" xml:id="num_1.d1e1237"
                         xml:lang="ar">٨</num> </label>فهرست ابن خليل السكوني - ذكره المقري في نفح الطيب <num resp="#pers_TG" type="auto-markup" value="499" xml:id="num_1.d1e1240" xml:lang="ar"
                         >٤٩٩</num> : <num resp="#pers_TG" type="auto-markup" value="2" xml:id="num_1.d1e1243" xml:lang="ar">٢</num> أنه روى ما حرفيته: <p change="#d2e689" xml:id="p_30.d1e1325"
@@ -796,36 +805,39 @@
                     <item xml:id="p_49.d1e1251" xml:lang="ar"> <label change="#d2e689" xml:id="label_9.d1e1330" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="9" xml:id="num_1.d1e1253"
                         xml:lang="ar">٩</num> </label>مفتاح السعادة ومصباح السيادة - لعصام الدين أبي الخير أحمد بن المولى مصلح الدين مصطفى بن خليل الملقب بطاش كبري زاده المتوفى <date
                         calendar="#cal_islamic" change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup" when-custom="968" xml:id="date_32.d2e1992" xml:lang="ar">سنة <num
-                        resp="#pers_TG" type="auto-markup" value="968" xml:id="num_1.d1e1256" xml:lang="ar">٩٦٨</num></date> هـ <num rend="brackets" resp="#pers_TG" type="auto-markup" value="1560"
-                        xml:id="num_1.d1e1259" xml:lang="ar"
-                        >١٥٦٠</num> م وقد طبع منه جزآن في الهند والجزء الثالث لا يزال مخطوطاً وهو في تعريف العلوم ثم ذكر المؤلفين وما ألفوه مما أفردت لوصفه مقالة خاصة في مجلة <title
+                        resp="#pers_TG" type="auto-markup" value="968" xml:id="num_1.d1e1256" xml:lang="ar">٩٦٨</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="1560"><num
+                        rend="brackets" resp="#pers_TG" type="auto-markup" value="1560" xml:id="num_1.d1e1259" xml:lang="ar"
+                        >١٥٦٠</num></tei:date> م وقد طبع منه جزآن في الهند والجزء الثالث لا يزال مخطوطاً وهو في تعريف العلوم ثم ذكر المؤلفين وما ألفوه مما أفردت لوصفه مقالة خاصة في مجلة <title
                         change="#d5e577 #d2e677 #d2e689" level="j" ref="oape:bibl:9 oclc:4770057679" xml:id="title_9.d2e2000" xml:lang="ar">المقتبس</title> هذه وهو يقع في نحو <num resp="#pers_TG"
                         subtype="d4" type="auto-markup" value="1000" xml:id="num_85.d1e1214" xml:lang="ar">ألف</num> صفحة مطبوعة مرتب على العلوم.</item>
                     <item xml:id="p_50.d1e1263" xml:lang="ar"> <label change="#d2e689" xml:id="label_10.d1e1343" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="10"
                         xml:id="num_1.d1e1265" xml:lang="ar">١٠</num> </label>كشف الظنون عن أسامي الكتب والفنون - لمصطفى بن عبد الله <pb change="#d2e553 #d2e606 #d2e677" ed="print" edRef="#edition_1"
                         facs="#facs_11" n="11" xml:id="pb_21.d2e2015"/>كاتب حليي المعروف بالحاج خليفة <q change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1224"
                         xml:lang="ar">حاجي خليفة</q> المتوفى <date calendar="#cal_islamic" change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup" when-custom="1068"
-                        xml:id="date_33.d2e2020" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1068" xml:id="num_1.d1e1268" xml:lang="ar">١٠٦٨</num></date> هـ <num rend="brackets"
-                        resp="#pers_TG" type="auto-markup" value="1657" xml:id="num_1.d1e1271" xml:lang="ar"
-                        >١٦٥٧</num> م وهو مرتب على حروف المعجم مع مقدمات في العلوم بحسب الحروف التي تقع فيها وقد امتاز عما قبله من القوائم بنقل شيء من مضامين الكتب أو تعريف موضوعاتها وقد طبع مراراً في أوروبا والأستانة ومصر وهاتان الطبعتان في جزأين كبيرين بقطع نصف كبير. وأضبط طبعاته الأوروبية في <num
+                        xml:id="date_33.d2e2020" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1068" xml:id="num_1.d1e1268" xml:lang="ar">١٠٦٨</num></date> هـ <tei:date
+                        calendar="#cal_gregorian" change="#d3e695" when="1657"><num rend="brackets" resp="#pers_TG" type="auto-markup" value="1657" xml:id="num_1.d1e1271" xml:lang="ar"
+                        >١٦٥٧</num></tei:date> م وهو مرتب على حروف المعجم مع مقدمات في العلوم بحسب الحروف التي تقع فيها وقد امتاز عما قبله من القوائم بنقل شيء من مضامين الكتب أو تعريف موضوعاتها وقد طبع مراراً في أوروبا والأستانة ومصر وهاتان الطبعتان في جزأين كبيرين بقطع نصف كبير. وأضبط طبعاته الأوروبية في <num
                         resp="#pers_TG" subtype="d1" type="auto-markup" value="7" xml:id="num_89.d1e1233" xml:lang="ar"
                         >سبعة</num> مجلدات وعليها ذيل مفيد في مكاتب الأيام المتأخرة وعدد مجلداتها كما أشرت إلى ذلك في مقالة خاصة.</item>
                     <item xml:id="p_51.d1e1275" xml:lang="ar"> <label change="#d2e689" xml:id="label_11.d1e1356" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="11"
                         xml:id="num_1.d1e1277" xml:lang="ar">١١</num>
                         </label>كشف الظنون في أسماء الشروح والمتون - لكمال الدين محمد بن مصطفى بن كمال الدين بن علي البكري الصديقي الحنفي العزي المتوفى <date calendar="#cal_islamic"
                         change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup" when-custom="1096" xml:id="date_34.d2e2042" xml:lang="ar">سنة <num resp="#pers_TG"
-                        type="auto-markup" value="1096" xml:id="num_1.d1e1280" xml:lang="ar">١٠٩٦</num></date> هـ <num rend="brackets" resp="#pers_TG" type="auto-markup" value="1684"
-                        xml:id="num_1.d1e1283" xml:lang="ar">١٦٨٤</num> م وقد جمع فيه أسماء الكتب على طريقة غريبة. ولم نعلم بوجوده فلعله مفقود.</item>
+                        type="auto-markup" value="1096" xml:id="num_1.d1e1280" xml:lang="ar">١٠٩٦</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="1684"><num rend="brackets"
+                        resp="#pers_TG" type="auto-markup" value="1684" xml:id="num_1.d1e1283" xml:lang="ar"
+                        >١٦٨٤</num></tei:date> م وقد جمع فيه أسماء الكتب على طريقة غريبة. ولم نعلم بوجوده فلعله مفقود.</item>
                     <item xml:id="p_52.d1e1287" xml:lang="ar"> <label change="#d2e689" xml:id="label_12.d1e1370" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="12"
                         xml:id="num_1.d1e1289" xml:lang="ar">١٢</num> </label>المكتبة الشرقية - ومن أمهات هذه الفهارس المفيدة المكتبة الشرقية ليوسف السمعاني <pb
                         corresp="file:../epub/26523/OEBPS/xhtml/P6623.xhtml" ed="shamela" n="n95-p10" xml:id="pb_11.d1e1292"/> اللبناني المتوفى <date calendar="#cal_gregorian"
                         change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1767" xml:id="date_35.d2e2061" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1767"
-                        xml:id="num_1.d1e1294" xml:lang="ar">١٧٦٧</num></date> م <num rend="brackets" resp="#pers_TG" type="auto-markup" value="1181" xml:id="num_1.d1e1297" xml:lang="ar"
-                        >١١٨١</num> هـ وهي باللاتينية وصف فيها المخطوطات القديمة بالعربية والسريانية مترجماً مؤلفيها في <num resp="#pers_TG" type="auto-markup" value="12" xml:id="num_1.d1e1300"
-                        xml:lang="ar">١٢</num> مجلداً طبع <num resp="#pers_TG" subtype="d1" type="auto-markup" value="4" xml:id="num_97.d1e1269" xml:lang="ar">أربعة</num> منها فقط من <date
-                        change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1719" xml:id="date_36.d2e2076" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1719"
-                        xml:id="num_1.d1e1304" xml:lang="ar">١٧١٩</num></date> - <num resp="#pers_TG" type="auto-markup" value="1730" xml:id="num_1.d1e1307" xml:lang="ar"
-                        >١٧٣٠</num> في رومية والأجزاء ال <num resp="#pers_TG" subtype="d1" type="auto-markup" value="8" xml:id="num_100.d1e1278" xml:lang="ar">ثمانية</num> منها مخطوطة.</item>
+                        xml:id="num_1.d1e1294" xml:lang="ar">١٧٦٧</num></date> م <tei:date calendar="#cal_islamic" change="#d3e695" datingMethod="#cal_islamic" when-custom="1181"><num rend="brackets"
+                        resp="#pers_TG" type="auto-markup" value="1181" xml:id="num_1.d1e1297" xml:lang="ar"
+                        >١١٨١</num></tei:date> هـ وهي باللاتينية وصف فيها المخطوطات القديمة بالعربية والسريانية مترجماً مؤلفيها في <num resp="#pers_TG" type="auto-markup" value="12"
+                        xml:id="num_1.d1e1300" xml:lang="ar">١٢</num> مجلداً طبع <num resp="#pers_TG" subtype="d1" type="auto-markup" value="4" xml:id="num_97.d1e1269" xml:lang="ar"
+                        >أربعة</num> منها فقط من <date change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1719" xml:id="date_36.d2e2076" xml:lang="ar">سنة <num resp="#pers_TG"
+                        type="auto-markup" value="1719" xml:id="num_1.d1e1304" xml:lang="ar">١٧١٩</num></date> - <num resp="#pers_TG" type="auto-markup" value="1730" xml:id="num_1.d1e1307"
+                        xml:lang="ar">١٧٣٠</num> في رومية والأجزاء ال <num resp="#pers_TG" subtype="d1" type="auto-markup" value="8" xml:id="num_100.d1e1278" xml:lang="ar"
+                        >ثمانية</num> منها مخطوطة.</item>
                     <item xml:id="p_53.d1e1311" xml:lang="ar"> <label change="#d2e689" xml:id="label_13.d1e1395" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="13"
                         xml:id="num_1.d1e1313" xml:lang="ar">١٣</num>
                         </label>قائمة المخطوطات الشرقية في المكتبة النانية - للسمعاني الآنف الذكر وصف فيها ما في هذه المكتبة من المخطوطات باللغات الشرقية ولاسيما العربية.</item>
@@ -834,11 +846,11 @@
                         change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1295" xml:lang="ar">العربجية</q> في <placeName change="#d6e665 #d2e677 #d2e689"
                         ref="oape:place:1" xml:id="placeName_11.d2e2108" xml:lang="ar">الدولة العثمانية</placeName> توفي <date calendar="#cal_islamic" change="#d2e517 #d2e677 #d2e689"
                         datingMethod="#cal_islamic" type="auto-markup" when-custom="1189" xml:id="date_37.d2e2111" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1189"
-                        xml:id="num_1.d1e1323" xml:lang="ar">١١٨٩</num></date> هـ <num rend="brackets" resp="#pers_TG" type="auto-markup" value="1775" xml:id="num_1.d1e1326" xml:lang="ar"
-                        >١٧٧٥</num> م) كما في سلك الدرر للمرادي <num resp="#pers_TG" type="auto-markup" value="14" xml:id="num_1.d1e1329" xml:lang="ar">١٤</num> : <num resp="#pers_TG"
-                        type="auto-markup" value="1" xml:id="num_1.d1e1332" xml:lang="ar">١</num> ولا نعلم من أمره شيئاً ولعله في مكاتب <placeName change="#d6e665 #d2e677 #d2e689"
-                        ref="oape:place:3 geon:745044" xml:id="placeName_12.d2e2126" xml:lang="ar">الأستانة</placeName> أو في بعض مكاتب الخاصة. وهو ذيل على <q change="#d2e689" rend="brackets"
-                        resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1311" xml:lang="ar"
+                        xml:id="num_1.d1e1323" xml:lang="ar">١١٨٩</num></date> هـ <tei:date calendar="#cal_gregorian" change="#d3e695" when="1775"><num rend="brackets" resp="#pers_TG"
+                        type="auto-markup" value="1775" xml:id="num_1.d1e1326" xml:lang="ar">١٧٧٥</num></tei:date> م) كما في سلك الدرر للمرادي <num resp="#pers_TG" type="auto-markup" value="14"
+                        xml:id="num_1.d1e1329" xml:lang="ar">١٤</num> : <num resp="#pers_TG" type="auto-markup" value="1" xml:id="num_1.d1e1332" xml:lang="ar"
+                        >١</num> ولا نعلم من أمره شيئاً ولعله في مكاتب <placeName change="#d6e665 #d2e677 #d2e689" ref="oape:place:3 geon:745044" xml:id="placeName_12.d2e2126" xml:lang="ar"
+                        >الأستانة</placeName> أو في بعض مكاتب الخاصة. وهو ذيل على <q change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1311" xml:lang="ar"
                         >كشف الظنون</q> للحاج خليفة السابق وصفه. ولو وجده فلوغل لإضافه إلى الذيول التي ألحقها بطبعته للكشف البالغة منتهى التحقيق والتوسع لأنه أضاف إلى ذلك ذيول كثيرة مثل <q
                         change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1314" xml:lang="ar">آثارنوا</q> لأحمد حافظ زاده المتوفى <date calendar="#cal_islamic"
                         change="#d2e517 #d2e677 #d2e689" datingMethod="#cal_islamic" type="auto-markup" when-custom="1180" xml:id="date_38.d2e2135" xml:lang="ar">سنة <num resp="#pers_TG"
@@ -848,9 +860,10 @@
                         xml:id="num_1.d1e1342" xml:lang="ar">١٥</num>
                         </label>فهرست مخطوطات الفاتيكان العربية - وهو قائمة المكتبة المشهورة في ملانية رومية ألفه المطران اصطفان عواد اللبناني المتوفى <date calendar="#cal_gregorian"
                         change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1782" xml:id="date_39.d2e2149" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1782"
-                        xml:id="num_1.d1e1345" xml:lang="ar">١٧٨٢</num></date> م <num rend="brackets" resp="#pers_TG" type="auto-markup" value="1197" xml:id="num_1.d1e1348" xml:lang="ar"
-                        >١١٩٧</num> هـ <pb change="#d2e553 #d2e606 #d2e677" ed="print" edRef="#edition_1" facs="#facs_12" n="12" xml:id="pb_23.d2e2157"
-                        />بمساعدة خاله السمعاني قيم المكتبة الفاتيكانية الآنف الذكر. وطبعه في <num resp="#pers_TG" subtype="d1" type="auto-markup" value="3" xml:id="num_111.d1e1333" xml:lang="ar"
+                        xml:id="num_1.d1e1345" xml:lang="ar">١٧٨٢</num></date> م <tei:date calendar="#cal_islamic" change="#d3e695" datingMethod="#cal_islamic" when-custom="1197"><num rend="brackets"
+                        resp="#pers_TG" type="auto-markup" value="1197" xml:id="num_1.d1e1348" xml:lang="ar">١١٩٧</num></tei:date> هـ <pb change="#d2e553 #d2e606 #d2e677" ed="print" edRef="#edition_1"
+                        facs="#facs_12" n="12" xml:id="pb_23.d2e2157"/>بمساعدة خاله السمعاني قيم المكتبة الفاتيكانية الآنف الذكر. وطبعه في <num resp="#pers_TG" subtype="d1" type="auto-markup"
+                        value="3" xml:id="num_111.d1e1333" xml:lang="ar"
                         >ثلاثة</num> مجلدات الكردينال ماي خلخ السمعاني في نظارة المكتبة المذكورة. ثم طبع فهرس الكتب التي دخلت المكتبة بعد ذلك بكتاب آخر ألحق بالأول.</item>
                     <item xml:id="p_56.d1e1352" xml:lang="ar"> <label change="#d2e689" xml:id="label_16.d1e1438" xml:lang="ar"> <num resp="#pers_TG" type="auto-markup" value="16"
                         xml:id="num_1.d1e1354" xml:lang="ar">١٦</num> </label>فهرست مخطوطات كيجي العربية - وضعه المطران عواد المذكور لوصف مخطوطات هذه المكتبة في رومية أيضاً.</item>
@@ -864,11 +877,12 @@
                         value="1748" xml:id="num_1.d1e1372" xml:lang="ar">١٧٤٨</num></date> م لتنظيم مكتبة الاسكوريال في <pb corresp="file:../epub/26523/OEBPS/xhtml/P6624.xhtml" ed="shamela"
                         n="n95-p11" xml:id="pb_12.d1e1375"/> مدريد <q change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1369" xml:lang="ar"
                         >اسبانيا</q> التي يسميها العرب مجريط وتوفي <date calendar="#cal_gregorian" change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1791" xml:id="date_41.d2e2206"
-                        xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1791" xml:id="num_1.d1e1377" xml:lang="ar">١٧٩١</num></date> م <num rend="brackets" resp="#pers_TG"
-                        type="auto-markup" value="1206" xml:id="num_1.d1e1380" xml:lang="ar">١٢٠٦</num> هـ وقد طبع هذا البرنامج في مجلدين بقطع نصف باللغتين اللاتينية والعربية من <date
-                        change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1761" xml:id="date_42.d2e2215" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1761"
-                        xml:id="num_1.d1e1384" xml:lang="ar">١٧٦١</num></date> - <num resp="#pers_TG" type="auto-markup" value="1770" xml:id="num_1.d1e1387" xml:lang="ar"
-                        >١٧٧٠</num> م بمساعدة بولس خضر الماروني. هذا إلى غير ذلك من الفهارس الأخرى التي لا تزال مخطوطة أو مجهولة أو فقدت أو نقلت إلى المكاتب الأخرى وأغفل أمرها.</item>
+                        xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1791" xml:id="num_1.d1e1377" xml:lang="ar">١٧٩١</num></date> م <tei:date calendar="#cal_islamic"
+                        change="#d3e695" datingMethod="#cal_islamic" when-custom="1206"><num rend="brackets" resp="#pers_TG" type="auto-markup" value="1206" xml:id="num_1.d1e1380" xml:lang="ar"
+                        >١٢٠٦</num></tei:date> هـ وقد طبع هذا البرنامج في مجلدين بقطع نصف باللغتين اللاتينية والعربية من <date change="#d2e517 #d2e677 #d2e689" type="auto-markup" when="1761"
+                        xml:id="date_42.d2e2215" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1761" xml:id="num_1.d1e1384" xml:lang="ar">١٧٦١</num></date> - <tei:date
+                        calendar="#cal_gregorian" change="#d3e695" when="1770"><num resp="#pers_TG" type="auto-markup" value="1770" xml:id="num_1.d1e1387" xml:lang="ar"
+                        >١٧٧٠</num></tei:date> م بمساعدة بولس خضر الماروني. هذا إلى غير ذلك من الفهارس الأخرى التي لا تزال مخطوطة أو مجهولة أو فقدت أو نقلت إلى المكاتب الأخرى وأغفل أمرها.</item>
                 </list>
                 <p xml:id="p_59.d1e1391" xml:lang="ar">وعلى الجملة فإن القدماء اعتنوا بفهارس الكتب التي حفلت بها مكاتبهم فرتبوها في رفوف وخزائن حسب مواضيعها أو على حروف المعجم ووضعوا عليها أرقاماً <q
                     change="#d2e689" rend="brackets" resp="#pers_TG" type="auto-markup" xml:id="q_1.d1e1389" xml:lang="ar">نمراً</q> ربطوها في القوائم بها لزيادة الضبط.</p>
