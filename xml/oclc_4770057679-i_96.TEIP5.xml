@@ -56,7 +56,7 @@
                                 xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Taraqqī</orgName></publisher>
                             <pubPlace xml:id="pubPlace_3.d1e141" xml:lang="ar"> <placeName change="#d5e524 #d5e546" ref="oape:place:61 geon:170654" xml:id="placeName_2.d1e143" xml:lang="ar"
                                 >دمشق</placeName> <placeName change="#d5e524 #d5e546" ref="oape:place:61 geon:170654" xml:id="placeName_3.d1e149" xml:lang="en">Damascus</placeName></pubPlace>
-                            <date type="supplied" notAfter="1918" notBefore="1917-01-31" xml:id="date_2.d1e154" xml:lang="en">c.1917/18</date>
+                            <date notAfter="1918" notBefore="1917-01-31" type="supplied" xml:id="date_2.d1e154" xml:lang="en">c.1917/18</date>
                         </imprint>
                         <biblScope from="9" to="9" unit="volume" xml:id="biblScope_1.d1e158"/>
                         <biblScope from="2" to="2" unit="issue" xml:id="biblScope_2.d1e160"/>
@@ -68,6 +68,13 @@
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" parse="xml" xml:id="xi-include_1.d1e184" xpointer="encodingDesc"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" parse="xml" xml:id="xi-include_2.d1e186" xpointer="profileDesc"/>
         <revisionDesc xml:id="revisionDesc_1.d1e188">
+            <change when="2020-09-25" who="#pers_TG" xml:id="d3e712" xml:lang="en"
+                >Automatically added computed Gregorian dates to the <att>when</att> attributes of all non-Gregorian <gi>date</gi> elements.</change>
+            <tei:change when="2020-09-25" who="#pers_TG" xml:id="d3e683" xml:lang="en" xmlns:oape="https://openarabicpe.github.io/ns">Marked up dates by automatically wrapping all <tei:list>
+                <tei:item>occurrences of "سنة" and "عام" followed by a <tei:gi>num</tei:gi> node </tei:item>
+                <tei:item><tei:gi>num</tei:gi> nodes followed by either "هـ" or "م" as indicators of calendars</tei:item>
+                <tei:item>\d{3,4} followed by either "هـ" or "م" as indicators of calendars.</tei:item>
+                </tei:list> in a <tei:gi>date</tei:gi> with the appropriate <tei:att>calendar</tei:att> and <tei:att>datingMethod</tei:att> attributes</tei:change>
             <tei:change change="d2e677" when="2020-09-25" who="#pers_TG" xml:lang="en">Added the <tei:att xml:lang="en"
                 >xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change>
             <change when="2020-09-25" who="#pers_TG" xml:id="d2e665" xml:lang="en">Added automated <tei:att xml:lang="en">xml:id</tei:att>s for every element that is a descendant of <tei:gi
@@ -2139,20 +2146,22 @@
                     <p xml:id="p_301.d1e4315" xml:lang="ar">كتاب الفلاحة اليونانية: ترجمه إلى العربية قسطا بن لوقا الطبيب النصراني الفيلسوف الرياضي الرومي العلبكي نبغ <date
                         change="#d2e535 #d2e665 #d2e677" type="auto-markup" when="0250" xml:id="date_10.d2e5574" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="250"
                         xml:id="num_1.d1e4317" xml:lang="ar">٢٥٠</num></date> إلى <date calendar="#cal_islamic" change="#d2e535 #d2e665 #d2e677" datingMethod="#cal_islamic" type="auto-markup"
-                        when-custom="311" xml:id="date_11.d2e5579" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="311" xml:id="num_1.d1e4320" xml:lang="ar"
+                        when-custom="0311" xml:id="date_11.d2e5579" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="311" xml:id="num_1.d1e4320" xml:lang="ar"
                         >٣١١</num></date> هـ ويعرف بوضع <num resp="#pers_TG" type="auto-markup" value="11" xml:id="num_1.d1e4323" xml:lang="ar"
                         >١١</num> من المعنى في قليل من الكلام وقد نقله عن ترجمة سريانية لسرجيوس بن الياس <num resp="#pers_TG" type="auto-markup" value="11" xml:id="num_1.d1e4326" xml:lang="ar"
                         >١١</num> الرومي م رأس العين الذي نبغ في أيام القيصر يوستينيانس طبعت الترجمة العربية في <placeName change="#d6e653 #d2e665 #d2e677" ref="oape:place:226 geon:360630"
-                        xml:id="placeName_63.d2e5590" xml:lang="ar">القاهرة</placeName> <date calendar="#cal_islamic" change="#d2e535 #d2e665 #d2e677" datingMethod="#cal_islamic" type="auto-markup"
-                        when-custom="1293" xml:id="date_12.d2e5594" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1293" xml:id="num_1.d1e4329" xml:lang="ar"
-                        >١٢٩٣</num></date> هـ.</p>
+                        xml:id="placeName_63.d2e5590" xml:lang="ar">القاهرة</placeName> <date calendar="#cal_islamic" change="#d2e535 #d2e665 #d2e677 #d3e712" datingMethod="#cal_islamic"
+                        notAfter="1877-01-15" notBefore="1876-01-28" type="auto-markup" when-custom="1293" xml:id="date_12.d2e5594" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup"
+                        value="1293" xml:id="num_1.d1e4329" xml:lang="ar">١٢٩٣</num></date> هـ.</p>
                     <p xml:id="p_302.d1e4333" xml:lang="ar">علم الملاحة في علم الفلاحة: لعبد الغني النابلسي طبع في <placeName change="#d6e653 #d2e665 #d2e677" ref="oape:place:61 geon:170654"
-                        xml:id="placeName_64.d2e5603" xml:lang="ar">دمشق</placeName> <num resp="#pers_TG" type="auto-markup" value="1299" xml:id="num_1.d1e4335" xml:lang="ar"
-                        >١٢٩٩</num> هـ وهو مفيد في بابه ويغلب عليه أنه مختصر عن كتاب الفلاحة الذي نحن بصدده.</p>
+                        xml:id="placeName_64.d2e5603" xml:lang="ar">دمشق</placeName> <tei:date calendar="#cal_islamic" change="#d3e683 #d3e712" datingMethod="#cal_islamic" notAfter="1882-11-11"
+                        notBefore="1881-11-23" when-custom="1299"><num resp="#pers_TG" type="auto-markup" value="1299" xml:id="num_1.d1e4335" xml:lang="ar"
+                        >١٢٩٩</num></tei:date> هـ وهو مفيد في بابه ويغلب عليه أنه مختصر عن كتاب الفلاحة الذي نحن بصدده.</p>
                     <p xml:id="p_303.d1e4339" xml:lang="ar">لائحة الفلاح لتعليم الزراعة والنجاح طبعت في بولاق <date change="#d2e535 #d2e665 #d2e677" type="auto-markup" when="1245"
                         xml:id="date_13.d2e5612" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1245" xml:id="num_1.d1e4341" xml:lang="ar">١٢٤٥</num></date> وأيضاً <date
-                        calendar="#cal_islamic" change="#d2e535 #d2e665 #d2e677" datingMethod="#cal_islamic" type="auto-markup" when-custom="1258" xml:id="date_14.d2e5617" xml:lang="ar">سنة <num
-                        resp="#pers_TG" type="auto-markup" value="1258" xml:id="num_1.d1e4344" xml:lang="ar">١٢٥٨</num></date> هـ وهي في فن الزراعة ولم يذكر أوضعها.</p>
+                        calendar="#cal_islamic" change="#d2e535 #d2e665 #d2e677 #d3e712" datingMethod="#cal_islamic" notAfter="1843-01-31" notBefore="1842-02-12" type="auto-markup" when-custom="1258"
+                        xml:id="date_14.d2e5617" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1258" xml:id="num_1.d1e4344" xml:lang="ar"
+                        >١٢٥٨</num></date> هـ وهي في فن الزراعة ولم يذكر أوضعها.</p>
                     <p xml:id="p_304.d1e4349" xml:lang="ar">قانون الزراعة: طبع في بولاق <date change="#d2e535 #d2e665 #d2e677" type="auto-markup" when="1255" xml:id="date_15.d2e5625" xml:lang="ar"
                         >سنة <num resp="#pers_TG" type="auto-markup" value="1255" xml:id="num_1.d1e4351" xml:lang="ar">١٢٥٥</num></date> وأيضاً <date change="#d2e535 #d2e665 #d2e677"
                         type="auto-markup" when="1257" xml:id="date_16.d2e5630" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1257" xml:id="num_1.d1e4354" xml:lang="ar"
@@ -2163,16 +2172,17 @@
                     <p xml:id="p_306.d1e4366" xml:lang="ar">علم النبات: عربه عن الفرنساوية <persName change="#d2e557 #d3e648 #d2e677" ref="oape:pers:824" xml:id="persName_13.d1e4730" xml:lang="ar">
                         <forename change="#d2e665" xml:id="forename_15.d2e5647" xml:lang="ar">حنا</forename> <surname change="#d2e665" xml:id="surname_14.d2e5650" xml:lang="ar"
                         >عنجوري</surname></persName> من رجال القرن الثالث <num resp="#pers_TG" subtype="d2" type="auto-markup" value="10" xml:id="num_157.d1e4677" xml:lang="ar"
-                        >عشر</num> طبع في بولاق <num resp="#pers_TG" type="auto-markup" value="1257" xml:id="num_1.d1e4368" xml:lang="ar">١٢٥٧</num> هـ.</p>
+                        >عشر</num> طبع في بولاق <tei:date calendar="#cal_islamic" change="#d3e683 #d3e712" datingMethod="#cal_islamic" notAfter="1842-02-11" notBefore="1841-02-23" when-custom="1257"
+                        ><num resp="#pers_TG" type="auto-markup" value="1257" xml:id="num_1.d1e4368" xml:lang="ar">١٢٥٧</num></tei:date> هـ.</p>
                     <pb change="#d2e571 #d2e625 #d2e631 #d2e665" ed="print" edRef="#edition_1" facs="#facs_168" n="168" xml:id="pb_143.d2e5660"/>
                     <p xml:id="p_307.d1e4372" xml:lang="ar"
                         >كشف الأسرار النورانية القرآنية فيما خلق بالأجرام السماوية والأرض والحيوانات والنباتات والجواهر المعدنية: لمحمد بن أحمد لاسكدراني الطبيب نزيل <placeName
                         change="#d6e653 #d2e665 #d2e677" ref="oape:place:61 geon:170654" xml:id="placeName_65.d2e5665" xml:lang="ar">دمشق</placeName> فرغ من تبيضه <date calendar="#cal_islamic"
-                        change="#d2e535 #d2e665 #d2e677" datingMethod="#cal_islamic" type="auto-markup" when-custom="1290" xml:id="date_17.d2e5668" xml:lang="ar">سنة <num resp="#pers_TG"
-                        type="auto-markup" value="1290" xml:id="num_1.d1e4374" xml:lang="ar">١٢٩٠</num></date> هـ وطبع في <placeName change="#d6e653 #d2e665 #d2e677" ref="oape:place:226 geon:360630"
-                        xml:id="placeName_66.d2e5673" xml:lang="ar">القاهرة</placeName> في ج <num resp="#pers_TG" type="auto-markup" value="3" xml:id="num_1.d1e4377" xml:lang="ar">٣</num> <date
-                        change="#d2e535 #d2e665 #d2e677" type="auto-markup" when="1297" xml:id="date_18.d2e5679" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1297"
-                        xml:id="num_1.d1e4380" xml:lang="ar">١٢٩٧</num></date></p>
+                        change="#d2e535 #d2e665 #d2e677 #d3e712" datingMethod="#cal_islamic" notAfter="1874-02-17" notBefore="1873-03-01" type="auto-markup" when-custom="1290" xml:id="date_17.d2e5668"
+                        xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1290" xml:id="num_1.d1e4374" xml:lang="ar">١٢٩٠</num></date> هـ وطبع في <placeName
+                        change="#d6e653 #d2e665 #d2e677" ref="oape:place:226 geon:360630" xml:id="placeName_66.d2e5673" xml:lang="ar">القاهرة</placeName> في ج <num resp="#pers_TG" type="auto-markup"
+                        value="3" xml:id="num_1.d1e4377" xml:lang="ar">٣</num> <date change="#d2e535 #d2e665 #d2e677" type="auto-markup" when="1297" xml:id="date_18.d2e5679" xml:lang="ar">سنة <num
+                        resp="#pers_TG" type="auto-markup" value="1297" xml:id="num_1.d1e4380" xml:lang="ar">١٢٩٧</num></date></p>
                     <p xml:id="p_308.d1e4384" xml:lang="ar"
                         >منتخبات في فن الزراعة: ترجمه بشارة أبو عن اللغات الأورباوية وجعله على جزأين الأول في فن الزراعة مع بيان كيفية الأتربة والأجسام المعدنية والهواء والماء في تربية الحيوانات الداجنة ومداواتها إلى غير ذلك طبع في <placeName
                         change="#d6e653 #d2e665 #d2e677" ref="oape:place:26 geon:276781" xml:id="placeName_67.d2e5686" xml:lang="ar">بيروت</placeName> <date change="#d2e535 #d2e665 #d2e677"
@@ -2186,9 +2196,9 @@
                         xml:id="num_164.d1e4710" xml:lang="ar">عشر</num> للهجرة.</p>
                     <p xml:id="p_311.d1e4400" xml:lang="ar">النجاح للمزارع الفلاح لمحمود عطية طبع في مصر <date change="#d2e535 #d2e665 #d2e677" type="auto-markup" when="1305" xml:id="date_21.d2e5717"
                         xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1305" xml:id="num_1.d1e4402" xml:lang="ar">١٣٠٥</num></date> وهو في الزراعة وما يجب على الزراع فعله.</p>
-                    <p xml:id="p_312.d1e4406" xml:lang="ar">مختصر تركيب أعضاء النبات ووظائفها: طبع في مصر <date calendar="#cal_islamic" change="#d2e535 #d2e665 #d2e677" datingMethod="#cal_islamic"
-                        type="auto-markup" when-custom="1304" xml:id="date_22.d2e5725" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1304" xml:id="num_1.d1e4408" xml:lang="ar"
-                        >١٣٠٤</num></date> هـ للطبيب المصري عثمان غالب باشا.</p>
+                    <p xml:id="p_312.d1e4406" xml:lang="ar">مختصر تركيب أعضاء النبات ووظائفها: طبع في مصر <date calendar="#cal_islamic" change="#d2e535 #d2e665 #d2e677 #d3e712"
+                        datingMethod="#cal_islamic" notAfter="1887-09-18" notBefore="1886-09-30" type="auto-markup" when-custom="1304" xml:id="date_22.d2e5725" xml:lang="ar">سنة <num resp="#pers_TG"
+                        type="auto-markup" value="1304" xml:id="num_1.d1e4408" xml:lang="ar">١٣٠٤</num></date> هـ للطبيب المصري عثمان غالب باشا.</p>
                     <p xml:id="p_313.d1e4412" xml:lang="ar">مصنف في <num resp="#pers_TG" type="auto-markup" value="11" xml:id="num_1.d1e4414" xml:lang="ar"
                         >١١</num> لمتلفة الزراعة القطن المصري وكيفية <num resp="#pers_TG" type="auto-markup" value="11" xml:id="num_1.d1e4417" xml:lang="ar"
                         >١١</num> مع وصف شجيرة القطن وذكر الطريقة الزراعية لعلي فهمي بالزقايق طبع في مصر <date change="#d2e535 #d2e665 #d2e677" type="auto-markup" when="1895" xml:id="date_23.d2e5740"
@@ -2678,7 +2688,8 @@
                     <p xml:id="p_378.d1e5164" xml:lang="ar"
                         >أما نقودنا المتداولة بين أيدي الأفراد فهي عبارة عن المسكوكات الذهبية والفضية والمعدنية النيكلوأقدم نقودنا الذهبية هو ما أصدرته الخزينة العامرة في أيام السلطان عبد المجيد بين <date
                         change="#d2e535 #d2e665 #d2e677" type="auto-markup" when="1260" xml:id="date_30.d2e7131" xml:lang="ar">سنة <num resp="#pers_TG" type="auto-markup" value="1260"
-                        xml:id="num_1.d1e5166" xml:lang="ar">١٢٦٠</num></date> و <num resp="#pers_TG" type="auto-markup" value="1276" xml:id="num_1.d1e5169" xml:lang="ar">١٢٧٦</num> هـ وتبلغ <num
+                        xml:id="num_1.d1e5166" xml:lang="ar">١٢٦٠</num></date> و <tei:date calendar="#cal_islamic" change="#d3e683 #d3e712" datingMethod="#cal_islamic" notAfter="1860-07-18"
+                        notBefore="1859-07-31" when-custom="1276"><num resp="#pers_TG" type="auto-markup" value="1276" xml:id="num_1.d1e5169" xml:lang="ar">١٢٧٦</num></tei:date> هـ وتبلغ <num
                         resp="#pers_TG" subtype="d1" type="auto-markup" value="4" xml:id="num_341.d1e5934" xml:lang="ar">أربعة</num> <num resp="#pers_TG" subtype="d2" type="auto-markup" value="10"
                         xml:id="num_342.d1e5937" xml:lang="ar">عشر</num> مليون و<num resp="#pers_TG" subtype="d3" type="auto-markup" value="400" xml:id="num_343.d1e5940" xml:lang="ar"
                         >أربعمائة</num> و<num resp="#pers_TG" subtype="d2" type="auto-markup" value="80" xml:id="num_344.d1e5944" xml:lang="ar">ثمانين</num> <num resp="#pers_TG" subtype="d4"
