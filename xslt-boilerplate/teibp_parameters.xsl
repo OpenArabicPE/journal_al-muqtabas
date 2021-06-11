@@ -14,13 +14,13 @@
     
     <!-- Load all other stylesheets -->
     <!-- import the standard TEI Boilerplate stylesheets. If you link to versions hosted on GitHub make sure to point to a stable version to ensure that future changes won't break your set-up -->
-    <xsl:include href="../boilerplate/xslt/teibp_main.xsl"/>
-    <xsl:include href="../boilerplate/xslt/teibp_sourcedesc.xsl"/>
+    <xsl:include href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_main.xsl"/>
+    <xsl:include href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_sourcedesc.xsl"/>
     <!-- <xsl:include href="xml-to-string.xsl"/> -->
     <!-- import the stylesheet formatting all bibliographic metadata -->
-    <xsl:include href="../boilerplate/xslt/teibp_bibl.xsl"/>
+    <xsl:include href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_bibl.xsl"/>
     <!-- import the stylesheet dealing with the display of <pb> and facsimiles -->
-    <xsl:include href="../boilerplate/xslt/teibp_pb.xsl"/>
+    <xsl:include href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_pb.xsl"/>
     
     <!-- PARAMETERS -->
     <!-- select whether you want to display page breaks and facsimiles; default: true() -->
@@ -31,6 +31,8 @@
     <xsl:param name="p_display-line-breaks" select="false()"/>
     <!-- select whether you want to display editorial changes; default: false() -->
     <xsl:param name="p_display-editorial-changes" select="false()"/>
+    <!-- select image quality for facsimiles served through IIIF. To balance readability with bandwidth, images are currently set to a width of 800px and grayscale -->
+    <xsl:param name="p_iiif-settings-display" select="'/full/800,/0/gray.jpg'"/>
     <!-- select whether you want to process XInclude; default: true()  -->
     <xsl:param name="p_process-xinclude" select="true()"/>
     <!-- select whether you want to use inline CSS for the display; default: true() -->
@@ -39,8 +41,10 @@
     <xsl:param name="p_lang-interface-same-as-text" select="true()"/>
     <!-- select the colour scheme for heads; currently available options: red, blue, green -->
     <xsl:param name="p_color-scheme" select="'red'"/>
-    <!-- parameter to select the mimeType. In some cases tiff might be more efficient than jpeg -->
+    <!-- parameter to select the mimeType. In some cases tiff might be more efficient than jpeg. Note that JPG is the fallback if the preferred format isn't present -->
     <xsl:param name="p_mimetype" select="'image/tiff'"/>
+    <!-- toggle the width of the columns. If set to true(), the facsimiles will take up most of the available space -->
+    <xsl:param name="p_facsimile-only" select="false()"/>
     
     <!-- original TEI Boilerplate stuff -->
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
@@ -252,7 +256,7 @@
     <!-- modify filePrefix to point to boilerplate files on your own server, or to specify a relative path, e.g.: <xsl:param name="filePrefix" select="'http://dcl.slis.indiana.edu/teibp'"/>. 
         Remember: relative paths are relative to the file they are called from
 	-->
-    <xsl:param name="filePrefix" select="'../boilerplate'"/>
+    <xsl:param name="filePrefix" select="'https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate'"/>
     <!-- the following parameters should not be changed unless the folder structure and file names have been changed -->
     <xsl:param name="teibpCSS" select="concat($filePrefix, '/css/teibp.css')"/>
     <xsl:param name="customCSS" select="concat($filePrefix, '/css/teibp_custom.css')"/>
