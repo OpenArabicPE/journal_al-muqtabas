@@ -5,7 +5,8 @@
      xmlns:html="http://www.w3.org/1999/xhtml"
      xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xi="http://www.w3.org/2001/XInclude">
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions">
 
     <xd:doc scope="stylesheet">
         <xd:desc>
@@ -85,6 +86,17 @@
                 <xsl:with-param name="pInput" select="."/>
             </xsl:call-template>
             <xsl:apply-templates select="@*"/>
+            <!-- add class attribute -->
+            <!-- <xsl:attribute name="class">
+                <xsl:choose>
+                    <xsl:when test="$p_facsimile-only = true()">
+                        <xsl:text>c_facsimily-only</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="$p_facsimile-only = false()">
+                        <xsl:text>c_text-and-facsimily</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:attribute> -->
             <xsl:apply-templates select="child::node()[not(self::tei:back)]"/>
             <xsl:choose>
                 <xsl:when test="child::tei:back">
@@ -101,6 +113,23 @@
             </xsl:choose>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="tei:body">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <!-- class to determine the width -->
+            <xsl:attribute name="class">
+                <xsl:choose>
+                    <xsl:when test="$p_facsimile-only = true()">
+                        <xsl:text>c_facsimily-only</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="$p_facsimile-only = false()">
+                        <xsl:text>c_text-and-facsimily</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template> 
     <xsl:template match="tei:back">
         <xsl:copy>
             <xsl:call-template name="templHtmlAttrLang">
@@ -434,7 +463,18 @@
         <div class="c_sidenav" id="settings">
             <!--<ul lang="en">
             <li>-->
-            <div class="c_button c_button-toggle c_off c_toggle-lb">
+            <div>
+                <xsl:attribute name="class">
+                    <xsl:text>c_button c_button-toggle c_toggle-lb </xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="$p_display-line-breaks = true()">
+                            <xsl:text>c_on</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>c_off</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
                 <span class="c_icon c_on" lang="en">
                     <xsl:copy-of select="document('../assets/icons/circle.svg')"/>
                 </span>
@@ -553,16 +593,16 @@
         <xsl:text> </xsl:text>
     </xsl:template>
     <!-- toggle the display of line breaks -->
-    <!-- <xsl:template match="tei:lb">
-        <xsl:choose>
-            <xsl:when test="$p_display-line-breaks = true()">
-                <br/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:text> </xsl:text>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template> -->
+    <xsl:template match="tei:lb">
+        <xsl:copy>
+            <xsl:if test="$p_display-line-breaks = true()">
+                <xsl:attribute name="class">
+                    <xsl:text>c_toggled</xsl:text>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates select="@* | node()"/>
+        </xsl:copy>
+    </xsl:template>
     <xsl:template match="tei:cb">
         <xsl:text> </xsl:text>
     </xsl:template>
@@ -1021,7 +1061,8 @@
     </xsl:template> -->
 
     <!-- provide links to linked data -->
-    <xsl:template name="t_link-to-authority-file">
+    <xsl:template name="t_link-to-authority-file-old">
+        <!-- content: this is an icon only -->
         <xsl:param name="p_content" select="."/>
         <!-- provide a span to dynamically load further content -->
         <span class="c_toggle-popup">
@@ -1063,6 +1104,81 @@
         </xsl:call-template>-->
         </span>
     </xsl:template>
+    
+    <xsl:template name="t_link-to-authority-file">
+        <!-- content: this is an icon only -->
+        <xsl:param name="p_content"/>
+       <xsl:param name="p_ref"/>
+        <xsl:variable name="v_delimiter" select="' '"/>
+        <xsl:choose>
+            <!-- test if the ref contains the limiter. if so, split -->
+            <xsl:when test="contains($p_ref, $v_delimiter)">
+                <xsl:call-template name="t_convert-ref-to-link">
+                    <xsl:with-param name="p_content" select="$p_content"/>
+                    <xsl:with-param name="p_target" select="substring-before($p_ref, $v_delimiter)"/>
+                </xsl:call-template>
+                <xsl:call-template name="t_link-to-authority-file">
+                    <xsl:with-param name="p_content" select="$p_content"/>
+                    <xsl:with-param name="p_ref" select="substring-after($p_ref, $v_delimiter)"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="t_convert-ref-to-link">
+                    <xsl:with-param name="p_content" select="$p_content"/>
+                    <xsl:with-param name="p_target" select="$p_ref"/>
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>    
+    </xsl:template>
+    
+    <xsl:template name="t_convert-ref-to-link">
+        <!-- content is an iconxxw -->
+        <xsl:param name="p_content"/>
+        <xsl:param name="p_target"/>
+        <!-- provide a span to dynamically load further content -->
+        <span class="c_toggle-popup">
+            <!-- wrap everything in a link to external sources -->
+            <a class="c_linked-data" lang="en" target="_blank">
+                <xsl:choose>
+                    <xsl:when test="contains($p_target, 'viaf:')">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="concat('https://viaf.org/viaf/', substring-after($p_target, 'viaf:'))"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:text>Link to this entity at VIAF</xsl:text>
+                        </xsl:attribute>
+                        <xsl:copy-of select="$p_content"/>
+                    </xsl:when>
+                    <xsl:when test="contains($p_target, 'geon:')">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="concat('http://www.geonames.org/', substring-after($p_target, 'geon:'))"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:text>Link to this toponym on GeoNames</xsl:text>
+                        </xsl:attribute>
+                        <xsl:copy-of select="$p_content"/>
+                    </xsl:when>
+                     <xsl:when test="contains($p_target, 'oclc:')">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="concat('https://www.worldcat.org/oclc/', substring-after($p_target, 'oclc:'))"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:text>Link to this bibliographic item on WorldCat</xsl:text>
+                        </xsl:attribute>
+                         <xsl:copy-of select="$p_content"/>
+                     </xsl:when>
+                </xsl:choose>
+                <!-- content -->
+            </a>
+        <!--<xsl:call-template name="t_pop-up-note">
+            <xsl:with-param name="p_lang" select="'en'"/>
+            <xsl:with-param name="p_content">
+                <xsl:text>Test text</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>-->
+        </span>
+    </xsl:template>
+
 
     <xsl:template match="tei:persName[ancestor::tei:body]">
         <xsl:variable name="v_icon" select="document('../assets/icons/user.svg')"/>
@@ -1079,6 +1195,7 @@
                         <!-- add icon -->
                         <span class="c_icon-entity"><xsl:copy-of select="$v_icon"/></span>
                     </xsl:with-param>
+                    <xsl:with-param name="p_ref" select="@ref"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -1102,6 +1219,7 @@
                         <!-- add icon -->
                         <span class="c_icon-entity"><xsl:copy-of select="$v_icon"/></span>
                     </xsl:with-param>
+                    <xsl:with-param name="p_ref" select="@ref"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -1125,6 +1243,7 @@
                         <!-- add icon -->
                         <span class="c_icon-entity"><xsl:copy-of select="$v_icon"/></span>
                     </xsl:with-param>
+                    <xsl:with-param name="p_ref" select="@ref"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -1148,6 +1267,7 @@
                         <!-- add icon -->
                         <span class="c_icon-entity"><xsl:copy-of select="$v_icon"/></span>
                     </xsl:with-param>
+                    <xsl:with-param name="p_ref" select="@ref"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
