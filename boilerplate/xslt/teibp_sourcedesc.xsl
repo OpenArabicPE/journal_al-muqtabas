@@ -400,14 +400,14 @@
                     <tei:form xml:lang="tr">Ekim</tei:form>
                     <tei:form xml:lang="ar-Latn-x-ijmes">Tishrīn al-awwal</tei:form>
                     <tei:form xml:lang="ar-Latn-x-sente">Tish I</tei:form>
-                    <tei:form xml:lang="ar">تسرين الاول</tei:form>
+                    <tei:form xml:lang="ar">تشرين الاول</tei:form>
                     <tei:form xml:lang="ota-Latn-x-boa">Tş</tei:form>
                 </tei:nym>
                 <tei:nym n="9">
                     <tei:form xml:lang="tr">Kasım</tei:form>
                     <tei:form xml:lang="ar-Latn-x-ijmes">Tishrīn al-thānī</tei:form>
                     <tei:form xml:lang="ar-Latn-x-sente">Tish II</tei:form>
-                    <tei:form xml:lang="ar">تسرين الثاني</tei:form>
+                    <tei:form xml:lang="ar">تشرين الثاني</tei:form>
                     <tei:form xml:lang="ota-Latn-x-boa">Tn</tei:form>
                 </tei:nym>
                 <tei:nym n="10">
@@ -525,7 +525,7 @@
                     <tei:form xml:lang="tr">Ekim</tei:form>
                     <tei:form xml:lang="ar-Latn-x-ijmes">Tishrīn al-awwal</tei:form>
                     <tei:form xml:lang="ar-Latn-x-sente">Tish I</tei:form>
-                    <tei:form xml:lang="ar">تسرين الاول</tei:form>
+                    <tei:form xml:lang="ar">تشرين الاول</tei:form>
                     <tei:form xml:lang="ar-EG">اكتوبر</tei:form>
                     <tei:form xml:lang="en">October</tei:form>
                     <tei:form xml:lang="en">Oct</tei:form>
@@ -534,7 +534,7 @@
                     <tei:form xml:lang="tr">Kasım</tei:form>
                     <tei:form xml:lang="ar-Latn-x-ijmes">Tishrīn al-thānī</tei:form>
                     <tei:form xml:lang="ar-Latn-x-sente">Tish II</tei:form>
-                    <tei:form xml:lang="ar">تسرين الثاني</tei:form>
+                    <tei:form xml:lang="ar">تشرين الثاني</tei:form>
                     <tei:form xml:lang="ar-EG">نوفمبر</tei:form>
                     <tei:form xml:lang="ar-EG">نوڤمبر</tei:form>
                     <tei:form xml:lang="en">November</tei:form>
