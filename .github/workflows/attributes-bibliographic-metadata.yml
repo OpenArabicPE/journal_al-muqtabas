@@ -1,4 +1,5 @@
 name: "Add standard attributes, update bibliographic metadata"
+description: "This workflow runs a number of XSLT transformation on TEI XMl files to add missing `@xml:id` and `@xml:lang` attributes and generate bibliographic metadata in multiple output formats"
 on: 
   push:
     paths:
@@ -7,6 +8,7 @@ on:
       # NOTE that the trigger is not the selector for files to be transformed
       - tei/*.TEIP5.xml
 jobs:
+  # this is a build matrix [why do we need that here?]. If not needed the job can be renamed
   build:
     runs-on: ubuntu-latest
     steps:
