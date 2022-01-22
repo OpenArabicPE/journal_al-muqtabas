@@ -59,7 +59,7 @@
         </fileDesc>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" parse="xml" xml:id="xi-include_1.d1e203" xpointer="encodingDesc"/>
         <xi:include href="oclc_4770057679-master_teiHeader.TEIP5.xml" parse="xml" xml:id="xi-include_2.d1e205" xpointer="profileDesc"/>
-        <revisionDesc xml:id="revisionDesc_1.d1e207" xml:lang="en"><change when="2021-11-16" who="#github" xml:id="d2e708" xml:lang="en">Added the @xml:lang attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</change><change when="2021-11-16" who="#github" xml:id="d2e703" xml:lang="en">Added automated @xml:id to every element had no existing @xml:id, following the pattern "name()_generate-id()".</change><tei:change when="2021-10-18" who="#pers_TG" xml:id="d9e707" xml:lang="en">Added references to local authority file (<tei:ref target="/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/personography_OpenArabicPE.TEIP5.xml" change="#d2e703 #d2e708" xml:id="ref_1.d2e207" xml:lang="en">/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref>) and VIAF to <tei:gi change="#d2e703 #d2e708" xml:id="gi_1.d2e210" xml:lang="en">persName</tei:gi>s without such references based on <tei:gi change="#d2e703 #d2e708" xml:id="gi_1.d2e212" xml:lang="en">person</tei:gi>s in the local authority file. If the source <tei:gi change="#d2e703 #d2e708" xml:id="gi_1.d2e214" xml:lang="en">persName</tei:gi> did not contain any further TEI mark-up, this has been added from the local authority file.</tei:change>
+        <revisionDesc xml:id="revisionDesc_1.d1e207" xml:lang="en"><change when="2022-01-22" who="#pers_TG" xml:id="d3e728" xml:lang="en">Automatically added computed Gregorian dates to the <att>when</att> attributes of all non-Gregorian <gi>date</gi> elements.</change><tei:change when="2022-01-22" who="#pers_TG" xml:id="d3e710" xml:lang="en">Automatically marked up dates by wrapping all <tei:list><tei:item>occurrences of "سنة" and "عام" followed by a <tei:gi>num</tei:gi> node </tei:item><tei:item><tei:gi>num</tei:gi> nodes followed by either "هـ" or "م" as indicators of calendars</tei:item><tei:item>\d{3,4} followed by either "هـ" or "م" as indicators of calendars.</tei:item></tei:list> in a <tei:gi>date</tei:gi> with the appropriate <tei:att>calendar</tei:att> and <tei:att>datingMethod</tei:att> attributes</tei:change><change when="2021-11-16" who="#github" xml:id="d2e708" xml:lang="en">Added the @xml:lang attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</change><change when="2021-11-16" who="#github" xml:id="d2e703" xml:lang="en">Added automated @xml:id to every element had no existing @xml:id, following the pattern "name()_generate-id()".</change><tei:change when="2021-10-18" who="#pers_TG" xml:id="d9e707" xml:lang="en">Added references to local authority file (<tei:ref target="/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/personography_OpenArabicPE.TEIP5.xml" change="#d2e703 #d2e708" xml:id="ref_1.d2e207" xml:lang="en">/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref>) and VIAF to <tei:gi change="#d2e703 #d2e708" xml:id="gi_1.d2e210" xml:lang="en">persName</tei:gi>s without such references based on <tei:gi change="#d2e703 #d2e708" xml:id="gi_1.d2e212" xml:lang="en">person</tei:gi>s in the local authority file. If the source <tei:gi change="#d2e703 #d2e708" xml:id="gi_1.d2e214" xml:lang="en">persName</tei:gi> did not contain any further TEI mark-up, this has been added from the local authority file.</tei:change>
             <change when="2020-12-21" who="#github" xml:id="d2e672" xml:lang="en">Added the @xml:lang attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</change>
             <change when="2020-12-21" who="#github" xml:id="d2e660" xml:lang="en">Added automated @xml:id to every element had no existing @xml:id, following the pattern "name()_generate-id()".</change>
             <change when="2019-08-20" who="#pers_TG" xml:id="d5e659" xml:lang="en">Added references to local authority file (<ref change="#d2e660 #d2e672" target="../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml" xml:id="ref_1.d2e201" xml:lang="en">../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml</ref>) and to OCLC (WorldCat) IDs to <gi change="#d2e660 #d2e672" xml:id="gi_1.d2e204" xml:lang="en">titles</gi>s without such references based on  <gi change="#d2e660 #d2e672" xml:id="gi_2.d2e206" xml:lang="en">biblStruct</gi>s mentioned in the authority file (bibliography).</change>
@@ -650,9 +650,9 @@
                 <div change="#d2e678" subtype="article" type="item" xml:id="div_2.d2e1143" xml:lang="ar">
                     <head xml:id="head_2.d2e1145" xml:lang="ar"> <persName change="#d2e625 #d9e707" xml:id="persName_9.d2e1197" xml:lang="ar" ref="oape:pers:4023">مومسن</persName> </head>
                     <p xml:id="p_16.d1e706" xml:lang="ar">حدث في أوروبا منذ 
-                        <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1825" xml:id="date_5.d2e1203" xml:lang="ar">
+                        
                             عام 
-                            <num resp="#pers_TG" type="auto-markup" value="1825" xml:id="num_1.d1e708" xml:lang="ar">١٨٢٥</num></date>بما تجدد في الحياة الاقتصادية من النواميس انقلاب 
+                            <tei:date calendar="#cal_gregorian" when="1825" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1825" xml:id="num_1.d1e708" xml:lang="ar">١٨٢٥</num></tei:date>بما تجدد في الحياة الاقتصادية من النواميس انقلاب 
                         <lb change="#d2e678" ed="print" edRef="#edition_1" xml:id="lb_1.d2e1153"/>
                         هائل بفضل تمديد الأسلاك البرقية وتمهيد الطرق الحديدية وتكاثر الآلات الميكانيكية 
                         <lb change="#d2e678" ed="print" edRef="#edition_1" xml:id="lb_2.d2e1155"/>
@@ -663,9 +663,9 @@
                         يدعى بلسان الاقتصاد الصناعات الكبرى وأخذت كلها تظهر على الولاء بظهور الأفكار 
                         <lb change="#d2e678" ed="print" edRef="#edition_1" xml:id="lb_5.d2e1162"/>
                         والآثار. حدث هذا الانقلاب في ألمانيا بعد أن تأخر قليلاً أي بعد 
-                        <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1840" xml:id="date_5.d2e1219" xml:lang="ar">
+                        
                             عام 
-                            <num resp="#pers_TG" type="auto-markup" value="1840" xml:id="num_1.d1e711" xml:lang="ar">١٨٤٠</num></date>قال 
+                            <tei:date calendar="#cal_gregorian" when="1840" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1840" xml:id="num_1.d1e711" xml:lang="ar">١٨٤٠</num></tei:date>قال 
                         <persName change="#d2e625 #d9e707" xml:id="persName_10.d2e1224" xml:lang="ar" ref="oape:pers:4059">
                             هنري 
                             <lb change="#d2e678" ed="print" edRef="#edition_1" xml:id="lb_6.d2e1167"/>
@@ -700,30 +700,30 @@
                             <placeName change="#d5e662" ref="oape:place:344 geon:5160611" xml:id="placeName_6.d2e1214" xml:lang="ar">ليبسيك</placeName>
                             بمعونة صديقه جوليان أشميد مجلة تدعى: كرازتدن وكان صبغة هذه المجلة سياسية ونزعتها بروسية علناً.</p>
                         <p xml:id="p_24.d1e740" xml:lang="ar">دخل غستاف فريتغ عالم الكتابة 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1844" xml:id="date_5.d2e1281" xml:lang="ar">
+                            
                                 عام 
-                                <num resp="#pers_TG" type="auto-markup" value="1844" xml:id="num_1.d1e742" xml:lang="ar">١٨٤٤</num></date>بمؤلفه القصصي المسمى العالم وهو عبارة عن سلسلة أبحاث في التربية العامة. وكان رجلاً من أقوياء الفكر وعباد الحقائق غيوراً ليس في نفسه أثر للرحمة في مقاومة ما بطل من الأفكار والخيالات وبه أصبحت بلدة 
+                                <tei:date calendar="#cal_gregorian" when="1844" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1844" xml:id="num_1.d1e742" xml:lang="ar">١٨٤٤</num></tei:date>بمؤلفه القصصي المسمى العالم وهو عبارة عن سلسلة أبحاث في التربية العامة. وكان رجلاً من أقوياء الفكر وعباد الحقائق غيوراً ليس في نفسه أثر للرحمة في مقاومة ما بطل من الأفكار والخيالات وبه أصبحت بلدة 
                             <lb change="#d2e678" ed="print" edRef="#edition_1" xml:id="lb_13.d2e1223"/> <pb change="#d2e678" ed="print" edRef="#edition_1" facs="#facs_483" n="483" xml:id="pb_6.d2e1224"/> <placeName change="#d5e662" ref="oape:place:344 geon:5160611" xml:id="placeName_7.d2e1225" xml:lang="de-Arab-145">ليبسيك</placeName>
                             مركزاً نارياً لإذاعة الدعوة البروسية ونشرها في الأنحاء فاجتمع حول مجلته 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1848" xml:id="date_5.d2e1293" xml:lang="ar">
+                            
                                 عام 
-                                <num resp="#pers_TG" type="auto-markup" value="1848" xml:id="num_1.d1e745" xml:lang="ar">١٨٤٨</num></date>شرذمة من أولي الفضل الواسع ممن يحبون بروسيا وأوضاعها حباً جماً.</p>
+                                <tei:date calendar="#cal_gregorian" when="1848" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1848" xml:id="num_1.d1e745" xml:lang="ar">١٨٤٨</num></tei:date>شرذمة من أولي الفضل الواسع ممن يحبون بروسيا وأوضاعها حباً جماً.</p>
                         <p xml:id="p_25.d1e749" xml:lang="ar">ومنهم فؤدالب وكاتوليك اللذان شهرا على مذهب الخياليين حرباً عواناً أدارت رحاها الأقلام وأزمعا كما قال أشميد أن يبترا تلك القطع الفاسدة من آداب الألمان وينبذاها نبذ النواة فكان يجدان في أن يكتب القول الفصل للسياسة البروسية في كل صقع آتيين على كل ما فيه أثر التصنع ومسحة التكلف والتعمل وغير ذلك مما كانا يعدانه من الآفات المجتاحة لعواطف 
                             <pb corresp="file:../epub/26523/OEBPS/xhtml/P1943.xhtml" ed="shamela" n="n32-p3" xml:id="pb_4.d1e751"/>
                             الجرمان وأخلاقهم ومبايناً لسعادة الأمة وحسن نظامها. وعندهما أن لبروسيا فكراً سيحمل إلى ماضيها تاريخ مجد مؤثل بالرغم من مقاطعاتها الناقصة وحدودها المتنائية. ولهذا فإن الألمانيين راغبون من أجل سعادتهم عامة وسلامتهم في إعلاء اسم الجرمان باتحادهم تحت لواء تقدم بروسيا نابذين امتيازاتهم وشعورهم الشخصي ظهرياً. ولما أثنى فريتغ لأول مرة في ليبسيك على مهمة بروسيا وموقعها من ألمانيا حول قسم كبير من منوري الأفكار في ألمانيا أنظارهم نحو بروسيا التي كانت جندية الحلية أريستوكراتية المنزع غير مفكرين فيما يتخلل نظرياتهم السياسية ومذاهبهم من التناقض على أن الفرق طفيف جداً بين عالم الألمان ـ ذلك الجيل الناشئ على أفكار داروين واستراوس الفلسفية وبين جنود بروسيا: فكلاهما مولع في التقاط الحقيقة ومن ذوي القوة والبطش والاقتدار. أما بروسيا فقد كانت هيئة مسيطرة على ضروب المذهب الحقيقي: على السياسات والإدارة والجندية والاقتصاد وبالجملة فقد كانت متشبعة الروح بجميع أنواع مذهب الحقيقيين. وامتازت بخصلة هي فوق ذلك كله وهي أنها كانت تحس بوجود ميل خارق لسحق الفرنسيس كلما اقتربت منهم.</p>
                         <p xml:id="p_26.d1e754" xml:lang="ar">ذلك هو الفكر الذي جال في خاطر طلاب كلية ألمانيا الجديدة بروسيا منذ 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1850" xml:id="date_5.d2e1306" xml:lang="ar">
+                            
                                 عام 
-                                <num resp="#pers_TG" type="auto-markup" value="1850" xml:id="num_1.d1e756" xml:lang="ar">١٨٥٠</num></date>وأول من كان موفقاً لإيفاء هذه الوظيفة على غاية ما يمكن أن يكون من الإتقان والكمال المؤرخ مومسن:</p>
+                                <tei:date calendar="#cal_gregorian" when="1850" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1850" xml:id="num_1.d1e756" xml:lang="ar">١٨٥٠</num></tei:date>وأول من كان موفقاً لإيفاء هذه الوظيفة على غاية ما يمكن أن يكون من الإتقان والكمال المؤرخ مومسن:</p>
                         <p xml:id="p_27.d1e760" xml:lang="ar">تيودور مومسن من أغرب الألمانيين خُلقاً وخَلقاً اجتمعت في نفسه الأضداد بأجمعها فهو عالم كبير كما هو خيالي كبير ومع هذا فقد كان يوصي الناشئة الجديدة في أن يتلقوا ماله من الخيالات نموذجاً ليس من ورائها فائدة تذكر. وهو ديمقراطي على حين لم يوفق 
                             <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:id="num_14.d1e1161" xml:lang="ar">أحد</num>
                             إلى خدمة المذهب القيصري سراريزم تماثل ما عمله في مصنفه تاريخ رومية. ولد 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1817" xml:id="date_5.d2e1318" xml:lang="ar">
+                            
                                 عام 
-                                <num resp="#pers_TG" type="auto-markup" value="1817" xml:id="num_1.d1e762" xml:lang="ar">١٨١٧</num></date>ومات 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1903" xml:id="date_5.d2e1323" xml:lang="ar">
+                                <tei:date calendar="#cal_gregorian" when="1817" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1817" xml:id="num_1.d1e762" xml:lang="ar">١٨١٧</num></tei:date>ومات 
+                            
                                 سنة 
-                                <num resp="#pers_TG" type="auto-markup" value="1903" xml:id="num_1.d1e765" xml:lang="ar">١٩٠٣</num></date>في مقاطعة غاردينغ من أعمال شلزويق حيث كان أبوه راهباً. ونشأ على هذه القطعة الساحلية الغريبة التي كانت ترى بمراعيها الواسعة وحقولها الشاسعة ذات غضار 
+                                <tei:date calendar="#cal_gregorian" when="1903" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1903" xml:id="num_1.d1e765" xml:lang="ar">١٩٠٣</num></tei:date>في مقاطعة غاردينغ من أعمال شلزويق حيث كان أبوه راهباً. ونشأ على هذه القطعة الساحلية الغريبة التي كانت ترى بمراعيها الواسعة وحقولها الشاسعة ذات غضار 
                             <pb change="#d2e678" ed="print" edRef="#edition_1" facs="#facs_484" n="484" xml:id="pb_8.d2e1255"/>
                             ونضارة من الداخل أشبه بلون بحيرة تضطرب بأمواج كالجبال من الخارج وإذا عمنا بآراء 
                             <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:id="num_17.d1e1170" xml:lang="ar">أحد</num>
@@ -746,30 +746,30 @@
                             على أنه كان موسوعة من موسوعات العلوم.</p>
                         <p xml:id="p_30.d1e780" xml:lang="ar">كان مومسن يرى مع من يرى أن العلم غير منحصر في دائرة محدودة وأنه علم مشاع لهذا كان لا يستحسن تهافت الألمانيين على تعميم فكر الإخصاء ولا يقيم لتهالكم على انتشاره وزناً. فقد فقد قال في خطاب أورده في مؤتمر برلين العلمي في اللغة اللاتينية: الإخصاء في فرع من العلوم فقط واجب ولكن ليس من الواجب الاقتصار على ذلك الفرع والضرب دون غيره بإسداد بل يجب على الطالب لسعي لأن تتوفر لديه المعارف في هذا الفرع وأن يصيب حظاً من كل شيء. . فما أصغر هذه الكرة الرضية وأحقرها في نظر من لا يرون غير كتاب اليونان واللاتين وطبقات الأرض والمسائل الرياضية في هذا العالم الفسيح. . .</p>
                         <p xml:id="p_31.d1e783" xml:lang="ar">ومن غريب التضاد كون مومسن مفنناً خيالياً مع سعة اطلاعه العلمي المدهش. وإنك لتذهل عندما ترى هذا الرجل في نفس الأمر الذي يحمل تلك الجبهة ذات القوة والتؤدة والوقار من الشعراء المتأثرين غير أنه ليس نظير ميشله المؤرخ الفرنسوي الشهير تأخذه الهزة والانفعال لكل جميل فهو لا تأخذه رحمة ولا شفقة لآلام من يفترشون الأرض ويلتحفون السماء من بني آدم ولكنه صاحب عقل متأثر لا يتبين غلا بمتانته وقوة دهائه فقط في هذا العالم وهو من أجل الأشياء التي تنثر ضياءً وشرراً أشد ما يكون احتداماً هياماًَ. كان من المحتمل بقاء غرائز مومسن في العلم والصناعة طي الخفاء لولا أن قيض الله لها رجلاً في برلين 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1850" xml:id="date_5.d2e1366" xml:lang="ar">
+                            
                                 عام 
-                                <num resp="#pers_TG" type="auto-markup" value="1850" xml:id="num_1.d1e785" xml:lang="ar">١٨٥٠</num></date>يعنى بنشر المؤلفات فرغب إليه كتابة تاريخ لرومية إذ كان يبحث عن كاتب يشغله في كتابه أمهات التاريخ. فأصاب ذلك الرجل المرمى في اختياره هذا لأن المترجم من المشاهير الباحثين المدققين أرباب الاطلاع على تاريخ رومية. ومن المعلوم أن أساطين العلم لا يقدمون في الغالب على تأليف كتب تتناولها الأيدي عامة وتتداولها الطبقات كافة. وقد حصلت له ملكة سامية جداً عندما كان يعاني من صناعة الصحافة ما يعاني ولهذا ظهر تاريخ رومية مؤلفاً ثميناً. وليس مومسن من تلك الطائفة الشائخة أساتذة الجرمان التي اتخذت العلوم المنتسبة إليها ديدنها وقضت حياتها وقفاً خالصاً عليها بل هو أشد ما يكون تأثراً وانفعالاً للمسائل العامة.</p>
+                                <tei:date calendar="#cal_gregorian" when="1850" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1850" xml:id="num_1.d1e785" xml:lang="ar">١٨٥٠</num></tei:date>يعنى بنشر المؤلفات فرغب إليه كتابة تاريخ لرومية إذ كان يبحث عن كاتب يشغله في كتابه أمهات التاريخ. فأصاب ذلك الرجل المرمى في اختياره هذا لأن المترجم من المشاهير الباحثين المدققين أرباب الاطلاع على تاريخ رومية. ومن المعلوم أن أساطين العلم لا يقدمون في الغالب على تأليف كتب تتناولها الأيدي عامة وتتداولها الطبقات كافة. وقد حصلت له ملكة سامية جداً عندما كان يعاني من صناعة الصحافة ما يعاني ولهذا ظهر تاريخ رومية مؤلفاً ثميناً. وليس مومسن من تلك الطائفة الشائخة أساتذة الجرمان التي اتخذت العلوم المنتسبة إليها ديدنها وقضت حياتها وقفاً خالصاً عليها بل هو أشد ما يكون تأثراً وانفعالاً للمسائل العامة.</p>
                         <p xml:id="p_32.d1e789" xml:lang="ar">ربى مومسن في كلية كيل فجهزته بجهاز حب بلاده حباً جماً ولطالما قرّع أولئك الذين يقولون أنه يجري في عروقه الدم الدانيماركي بقوله: إن من يدعون أن مدينتي شلزويق 
                             <pb corresp="file:../epub/26523/OEBPS/xhtml/P1946.xhtml" ed="shamela" n="n32-p6" xml:id="pb_7.d1e791"/>
                             وهولستاين ليستا من تراب ألمانيا هم في الحقيقة معتوهون مفتونون. ولم يدخل مومسن في 
                             <pb change="#d2e678" ed="print" edRef="#edition_1" facs="#facs_486" n="486" xml:id="pb_13.d2e1299"/>
                             السياسة خلال 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1848" xml:id="date_5.d2e1378" xml:lang="ar">
+                            
                                 سنة 
-                                <num resp="#pers_TG" type="auto-markup" value="1848" xml:id="num_1.d1e793" xml:lang="ar">١٨٤٨</num></date>وهو وإن لم يحضر بصفة عضو رسمي في مؤتمر فرانكفورت فقد كان من أدهش المحامين عن حقوق الأفراد في ذلك الحين. فقد دافع أشهراً عن قواعد السياسة الحرة وانقطع هو ورفيقان له في مدينة زوريخ من أعمال سويسرا عندما نحي عن منصب تدريس حقوق رومية وكان أستاذاً له في كلية ليبسيك 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1851" xml:id="date_5.d2e1383" xml:lang="ar">
+                                <tei:date calendar="#cal_gregorian" when="1848" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1848" xml:id="num_1.d1e793" xml:lang="ar">١٨٤٨</num></tei:date>وهو وإن لم يحضر بصفة عضو رسمي في مؤتمر فرانكفورت فقد كان من أدهش المحامين عن حقوق الأفراد في ذلك الحين. فقد دافع أشهراً عن قواعد السياسة الحرة وانقطع هو ورفيقان له في مدينة زوريخ من أعمال سويسرا عندما نحي عن منصب تدريس حقوق رومية وكان أستاذاً له في كلية ليبسيك 
+                            
                                 عام 
-                                <num resp="#pers_TG" type="auto-markup" value="1851" xml:id="num_1.d1e796" xml:lang="ar">١٨٥١</num></date>ولم يعتم أن أعيد كرسي التعليم ثمة وأصبح يشتغل بتدريس ذلك الدرس نفسه زهاء سنتين. وفي 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1854" xml:id="date_5.d2e1388" xml:lang="ar">
+                                <tei:date calendar="#cal_gregorian" when="1851" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1851" xml:id="num_1.d1e796" xml:lang="ar">١٨٥١</num></tei:date>ولم يعتم أن أعيد كرسي التعليم ثمة وأصبح يشتغل بتدريس ذلك الدرس نفسه زهاء سنتين. وفي 
+                            
                                 عام 
-                                <num resp="#pers_TG" type="auto-markup" value="1854" xml:id="num_1.d1e799" xml:lang="ar">١٨٥٤</num></date>غادر سويسرا بدعوة من حزمة بروسيا إلى كلية برسلو. وكان يرجو دائماًُ تقدم شبان هذه المملكة ولطالما قال: إن حياة بروسيا تتوقف كل التوقف على سلوكها سبيل التقدم الذي مهده لها فريديك الكبير.</p>
+                                <tei:date calendar="#cal_gregorian" when="1854" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1854" xml:id="num_1.d1e799" xml:lang="ar">١٨٥٤</num></tei:date>غادر سويسرا بدعوة من حزمة بروسيا إلى كلية برسلو. وكان يرجو دائماًُ تقدم شبان هذه المملكة ولطالما قال: إن حياة بروسيا تتوقف كل التوقف على سلوكها سبيل التقدم الذي مهده لها فريديك الكبير.</p>
                         <p xml:id="p_33.d1e803" xml:lang="ar">هذا وإن بين مومسن وبين أبناء صناعته فرقاً بعيداً وذلك أنه ظل صادقاً مستقيماً حتى نهاية زهو شبابه ولم يكن ليحفل مثلهم بفخفخة ما أتاه من إمارات النصر ولا عظمة ما ناله من بوارق التوفيق.</p>
                     </div>
                     <div type="section" xml:id="div_4.d2e1315" xml:lang="ar">
                         <p xml:id="p_34.d1e806" xml:lang="ar">كان بدء احتفاظ مومسن بأفكاره على ما شوهد أشد الاحتفاظ بين 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1866" xml:id="date_5.d2e1402" xml:lang="ar">
+                            
                                 سنة 
-                                <num resp="#pers_TG" type="auto-markup" value="1866" xml:id="num_1.d1e808" xml:lang="ar">١٨٦٦</num></date>و 
+                                <tei:date calendar="#cal_gregorian" when="1866" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1866" xml:id="num_1.d1e808" xml:lang="ar">١٨٦٦</num></tei:date>و 
                             <num resp="#pers_TG" type="auto-markup" value="1870" xml:id="num_1.d1e811" xml:lang="ar">١٨٧٠</num>
                             الأمر الذي كان يتطلبه هو أن تكون ألمانيا عظيماً سلطانها منيعاً جانبها تضيء بأشعتها العلمية العالم المتمدن بأسره. ومما حكاه: إن تلك الشؤون السياسية قد شغلت حتى علماء المملكة سنين كثيرة. وهذا وإن كان يستند على أسباب معقولة مشروعة غير أنه حان زمن الإقدام والرجوع إلى الأعمال بعد ما تبينت نتيجة كل شيء. . . وكان يقول: من الواجب معالجة ينابيع قوى ألمانيا بالقوة وتوسيع نطاق علوم الألمان وكشف غطائها بالعمل. ولطالما حقر مومسن أولئك المتعصبين الذين كانوا يناهضون الموسويين بأبلغ ما يمكن تصوره من عبارات التحقير عاداً أنواع المبارزات الجنسية والدينية من رجوع القهقرى لأظلم أيام القرون الوسطى وأشدها أسى وبؤساً. فمن ثم ندد ببعض ضعاف الفكر من حسدة حزب الوطنيين مبيناً بطلان دعاوي تلك الفئة الواهية الواهنة ممن ادعوا بأن الموسويين عقبة كؤد في سبيل تكوين أمة قوية المنعة مصونة الحمى ويبين بمستندات تاريخية جمة أنهم مستعدون لكل ضروب التقدم والارتقاء وأنهم على العكس مما يظنون وانتقد سياسة بسمرك انتقاداً شديداً فحاكمه الوزير إلى المحاكم فحكمت ببراءة ساحته وكان عضواً في 
                             <pb corresp="file:../epub/26523/OEBPS/xhtml/P1947.xhtml" ed="shamela" n="n32-p7" xml:id="pb_8.d1e814"/>
@@ -800,12 +800,12 @@
                             <num resp="#pers_TG" subtype="d2" type="auto-markup" value="10" xml:id="num_26.d1e1251" xml:lang="ar">عشر</num>
                             من هذا الأسلوب التاريخي الذي اتخذه كتاب الإنكليز والفرنسيس مثالاً يحتذونه. وهذا نيبور ورانك المؤرخان الألمانيان يصفان الوقائع التاريخية ويصورانها دون أن تشتم من تضاعيف سطورهما رائحة تحزب أو تعصب بتاتاً.</p>
                         <p xml:id="p_42.d1e842" xml:lang="ar">وفي 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1850" xml:id="date_5.d2e1460" xml:lang="ar">
+                            
                                 عام 
-                                <num resp="#pers_TG" type="auto-markup" value="1850" xml:id="num_1.d1e844" xml:lang="ar">١٨٥٠</num></date>نشأ صنف من المؤرخين على غير تلك الطريقة والسبب في ذلك اجتماع طائفة من الأساتذة الأفاضل في مؤتمر فرانكفورت واشتغالهم بالسياسة بعض الاشتغال حتى إذا ما نقلوا مشاغلهم الخارجية إلى أرائك تدريسهم أخذوا يضعون موضع المذاكرة والبحث هاته الأحوال السياسية الحاضرة التي أورثت المسائل السياسية الغابرة تلك أطماع وذلك هو نتيجة الثورة السياسية 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1848" xml:id="date_5.d2e1465" xml:lang="ar">
+                                <tei:date calendar="#cal_gregorian" when="1850" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1850" xml:id="num_1.d1e844" xml:lang="ar">١٨٥٠</num></tei:date>نشأ صنف من المؤرخين على غير تلك الطريقة والسبب في ذلك اجتماع طائفة من الأساتذة الأفاضل في مؤتمر فرانكفورت واشتغالهم بالسياسة بعض الاشتغال حتى إذا ما نقلوا مشاغلهم الخارجية إلى أرائك تدريسهم أخذوا يضعون موضع المذاكرة والبحث هاته الأحوال السياسية الحاضرة التي أورثت المسائل السياسية الغابرة تلك أطماع وذلك هو نتيجة الثورة السياسية 
+                            
                                 سنة 
-                                <num resp="#pers_TG" type="auto-markup" value="1848" xml:id="num_1.d1e847" xml:lang="ar">١٨٤٨</num></date>.</p>
+                                <tei:date calendar="#cal_gregorian" when="1848" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1848" xml:id="num_1.d1e847" xml:lang="ar">١٨٤٨</num></tei:date>.</p>
                         <p xml:id="p_43.d1e851" xml:lang="ar">هذا هو مومسن قد حاز الأولية بين فريق هؤلاء المؤرخين هذا الرجل الذي كان يتخيل حينما يكتب تاريخه أن تعليلاته تنطبق على التجارب الماضية على حين أن القسم الأعظم منها كان ناشئاً في الغالب من شعوره الذاتي وتابعاً لأحوال محيطه وقوته المخيلة. 
                             <pb corresp="file:../epub/26523/OEBPS/xhtml/P1949.xhtml" ed="shamela" n="n32-p9" xml:id="pb_10.d1e853"/>
                             زبده فلسفة تاريخ مومسن براز في سبيل الحياة براز دائم من أجل تكوين جامعة سياسية وضمان عظمة قومية. وعنده أن تاريخ رومية يمكن تلخيصه بعدة فتن وحروب بدأت فيما فرط بإعداد الجيوش وسوقها كما بنيت على أساس تجاري ودولة رومية الزراعية التجارية التي تحيط بها قبائل الأعداء من كل ناحية وجهة تحارب أولاً صوناً لتجارتها من أن تبور حتى إذا انصبغت السياسة إذ ذاك بصبغة حكومة مطلقة تعمل على القيام على التهام ما حولها مما لا يزال فتياً.</p>
@@ -814,15 +814,15 @@
                         <pb change="#d2e678" ed="print" edRef="#edition_1" facs="#facs_489" n="489" xml:id="pb_19.d2e1393"/>
                         <p xml:id="p_45.d1e859" xml:lang="ar">إلا وأن فلسفة تاريخ كهذي تناسب جداً حال أمة بروسيا تحارب نفسيها بنفسها مرات ثلاثاً متتالية وتساعد كثيراً على تعميم الرقي والتقدم في ألمانيا أولاً ثم في أوروبا والعالم أجمع. ومع هذا فالمترجم لا يضم صوته إلى صوت الفيلسوف هيكل في قوله: إن وراء كل حرب فكراً أخلاقياً والقوة والفضيلة (لفظتان مترادفتان) ولا هو أيضاً من أرباب الاشتغال بالأخلاق. وكان يقول بهذا الناموس التاريخي: الحق مع القوة والتاريخ يكسر في مهب عواصفه العاتية الأمم التي لا صلابة فيها ولا مرونة كسر الفولاذ دون أن يشعر بأثر رحمة أو شفقة مطلقاً.</p>
                         <p xml:id="p_46.d1e862" xml:lang="ar">هذه هي نظرياته التاريخية التي يظل الإنسان حائراً حينما يرى أنها وأمثالها يدافع عنها ويحامي في وطن رجل مثل ذلك الفيلسوف كانت. لكن مظهر ألمانيا 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1850" xml:id="date_5.d2e1489" xml:lang="ar">
+                            
                                 عام 
-                                <num resp="#pers_TG" type="auto-markup" value="1850" xml:id="num_1.d1e864" xml:lang="ar">١٨٥٠</num></date>تغير عما كان عليه على عهد الفيلسوفين العظيمين فيختي وكانت. إذ أن فلاسفتها المحدثين أروها أن الأحوال والمواقع في تبدل دائم وأن قيمة الحقوق نسبية والقابض على أزمتها هي القوة فقط. ذلك هو ناموس العام الذي ليس في إمكاننا مهما أحسنا النقد نقضه أو تبديله. وناهيك بناموس كانت فلسفة بسمارك بأسرها عبارة عنه.</p>
+                                <tei:date calendar="#cal_gregorian" when="1850" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1850" xml:id="num_1.d1e864" xml:lang="ar">١٨٥٠</num></tei:date>تغير عما كان عليه على عهد الفيلسوفين العظيمين فيختي وكانت. إذ أن فلاسفتها المحدثين أروها أن الأحوال والمواقع في تبدل دائم وأن قيمة الحقوق نسبية والقابض على أزمتها هي القوة فقط. ذلك هو ناموس العام الذي ليس في إمكاننا مهما أحسنا النقد نقضه أو تبديله. وناهيك بناموس كانت فلسفة بسمارك بأسرها عبارة عنه.</p>
                         <p xml:id="p_47.d1e868" xml:lang="ar">أول درس رغب مومسن في إلقائه على مواطنيه وصيته العظيمة: لا تكونوا بلهاً أغراراً 
                             <pb corresp="file:../epub/26523/OEBPS/xhtml/P1950.xhtml" ed="shamela" n="n32-p10" xml:id="pb_11.d1e870"/>
                             ولقد تحققت أمنيته تلك. فإن الجنس الذي أوجد بسمارك لا يمكن أن ينسب إليه بله أو غباوة في حال من الأحوال. وإن تقدم أمة الجرمان ليصادم النظر في أغلب فصول كتابه فبينا هو يبحث عن الغاليين مثلاً إذ يشرع في وصفهم بقوله: إنهم شعراء أذكياء ذوو قلوب صافية سرائرها وليس بهم قوة ولا طاقة غير أنهم طائشون يرتاعون من العمل في الحقول والمزارع ويرتاحون للحانات والعربدة ويعتبرون قسيسهم أباً ومنه يرجون النصح في كل شيء. وكان مومسن لا يحب الفرنسويين بتة ومن أجل هذا فإنه أحيا تلك المعركة التي نشبت 
-                            <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1870" xml:id="date_5.d2e1499" xml:lang="ar">
+                            
                                 سنة 
-                                <num resp="#pers_TG" type="auto-markup" value="1870" xml:id="num_1.d1e872" xml:lang="ar">١٨٧٠</num></date>على أنها للألمانيين مخلصاً لهم يحررهم من داء تقليد فرنسا. وقد بحث في كتاب كتبه لإرجاع الإيطاليين عن فكر اتفاقهم مع فرنسا في اضمحلال بابل الجديدة (باريز) وسقوط أدبيات فرنسا التي هي أشبه بنهر السين اتساخاً ودنساً.</p>
+                                <tei:date calendar="#cal_gregorian" when="1870" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1870" xml:id="num_1.d1e872" xml:lang="ar">١٨٧٠</num></tei:date>على أنها للألمانيين مخلصاً لهم يحررهم من داء تقليد فرنسا. وقد بحث في كتاب كتبه لإرجاع الإيطاليين عن فكر اتفاقهم مع فرنسا في اضمحلال بابل الجديدة (باريز) وسقوط أدبيات فرنسا التي هي أشبه بنهر السين اتساخاً ودنساً.</p>
                         <p xml:id="p_48.d1e877" xml:lang="ar">هذا الميل الذي كان يشعر به مومسن نحو بلاده كان يجول في خلال كل سطر من تاريخه وفوق ذلك فإنه كان يرى العناصر الأخرى بجاني العصر الجرماني منحطة جداً.</p>
                         <p xml:id="p_49.d1e880" xml:lang="ar">ولم يكن يميل للأمة اللاتينية وإن كان يتظاهر بذلك أحياناً ولم يكن مصدر ذلك هو حب حقيقي وزد على ذلك فإنه كان لا يرتاح إلى أفكار هذه الأمة مع ما أوتيه من المواهب الطبيعية وما فيه من المبادئ السامية وما أتيح له من معرفة العظماء ومما قاله في ذلك 
                             <q rend="quotation-marks" xml:id="q_3.d2e1417" xml:lang="ar">
@@ -878,19 +878,19 @@
                     ل
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="3" xml:id="num_46.d1e1397" xml:lang="ar">ثلاث</num>
                     بقين من ذي الحجة 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="0263" xml:id="date_5.d2e1634" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="263" xml:id="num_1.d1e935" xml:lang="ar">٢٦٣</num></date>وفي أول سنة من خلافة القاهر العباسي صار بطريركاً على إسكندرية وسمي أتوشيوس وذلك في 
+                        <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0263" change="#d3e710 #d3e728" notBefore="0876-09-28" notAfter="0877-09-16"><num resp="#pers_TG" type="auto-markup" value="263" xml:id="num_1.d1e935" xml:lang="ar">٢٦٣</num></tei:date>وفي أول سنة من خلافة القاهر العباسي صار بطريركاً على إسكندرية وسمي أتوشيوس وذلك في 
                     <num resp="#pers_TG" type="auto-markup" value="8" xml:id="num_1.d1e938" xml:lang="ar">٨</num>
                     صفر 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="0321" xml:id="date_5.d2e1643" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="321" xml:id="num_1.d1e941" xml:lang="ar">٣٢١</num></date>وبقي في الكرسي والرئاسة 
+                        <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0321" change="#d3e710 #d3e728" when="0933"><num resp="#pers_TG" type="auto-markup" value="321" xml:id="num_1.d1e941" xml:lang="ar">٣٢١</num></tei:date>وبقي في الكرسي والرئاسة 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="7" xml:id="num_50.d1e1410" xml:lang="ar">سبع</num>
                     سنين ونصفاً ثم أصابه إسهال بمصر فحدث أنها على موته فصار إلى كرسيه بالإسكندرية وأقام به عدة أيام عليلاً وتنتح في آخر رجب 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="0328" xml:id="date_5.d2e1651" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="328" xml:id="num_1.d1e944" xml:lang="ar">٣٢٨</num></date>.</p>
+                        <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0328" change="#d3e710 #d3e728" notBefore="0939-10-23" notAfter="0940-10-10"><num resp="#pers_TG" type="auto-markup" value="328" xml:id="num_1.d1e944" xml:lang="ar">٣٢٨</num></tei:date>.</p>
                 <p xml:id="p_63.d1e948" xml:lang="ar">والبطريرك تعريب للفظ رومي معناه أبو الأسرة أو رب البيت قال المسعودي في كتاب التنبيه والإشراف أنه بالرومية بطرياركس تفسيره رئيس الآباء ثم خفف وقد سماه المسعودي والإسلاميون بطريرخ ثم بطريرك ثم خفف في الاستعمال فصرنا نقول بطرك ونكتبها بطريرك كما نقول جنبية ونكتب جنباواي وكانوا يكتبون جنبويه وكما نقول أبشيه 
                     <pb corresp="file:../epub/26523/OEBPS/xhtml/P1954.xhtml" ed="shamela" n="n32-p14" xml:id="pb_15.d1e950"/>
                     وأبشاي ونكتب أبشواي وكانوا قبلنا يكتبون أبشويه وكما نقول بيه ونكتب بك وهكذا. وأما البطريق فهو تعريف للفظة رومية هي 
@@ -925,9 +925,9 @@
                         <pb corresp="file:../epub/26523/OEBPS/xhtml/P1956.xhtml" ed="shamela" n="n32-p16" xml:id="pb_17.d1e967"/>
                         رحلته بها شؤون يا لها من شؤون.</p>
                     <p xml:id="p_68.d1e970" xml:lang="ar">ففي 
-                        <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="0217" xml:id="date_5.d2e1723" xml:lang="ar">
+                        
                             سنة 
-                            <num resp="#pers_TG" type="auto-markup" value="217" xml:id="num_1.d1e972" xml:lang="ar">٢١٧</num></date>هجرية وقع أمران عظيمان اضطرب لهما بال المأمون ولم ير في 
+                            <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0217" change="#d3e710 #d3e728" notBefore="0832-02-11" notAfter="0833-01-29"><num resp="#pers_TG" type="auto-markup" value="217" xml:id="num_1.d1e972" xml:lang="ar">٢١٧</num></tei:date>هجرية وقع أمران عظيمان اضطرب لهما بال المأمون ولم ير في 
                         <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:id="num_57.d1e1456" xml:lang="ar">أحد</num>
                         من أهله ولا من ذوي عمله الكفاءة لهما فندب نفسه وعزم على الخروج من <placeName change="#d2e660 #d2e672" xml:id="placeName_9.d2e1825" xml:lang="ar">بغداد</placeName>. وذلك أن ملك الروم كتب إليه يسأله الموادعة والمهادنة وبدأ في كتابه بنفسه وكانت قد حصلت بمصر فتنة عظيمة واضطرب أمرها. فعزم المأمون على الخروج لغزو ملك الروم ولإصلاح ذات البين بمصر. فأمر بعقد الألوية السود وهي شعار بني العباس كما تعلمون (ونقول بهذه أن بني العباس كان لهم لوآان فابيض يعقدونه لمن يولونه الأعمال والحكومات وأما الأسود فهو خاص يعقدونه لولاية العهد على الخلافة) ثم أمر بجمع المسودة وهم جيوش بني العباس وشعارهم السواد.</p>
                     <p xml:id="p_69.d1e976" xml:lang="ar">وقبل أن أسوق إليكم الحديث عما جمعته من شوارد هذه الرحلة العجيبة أخركم يا بني أمي ويا بني عمي بأمر هو من باب تحصيل الحاصل فأنتم تعلمون جميعاً أن أهل مصر عموماً 
@@ -992,25 +992,25 @@
                         <pb corresp="file:../epub/26523/OEBPS/xhtml/P1961.xhtml" ed="shamela" n="n32-p21" xml:id="pb_22.d1e1024"/>
                         ضياع وأعطاها من قريتها طا النمل مائتي فدان بغير خراج وانصرف متعجباً من كثرة مروءتها وسعة حالها.</p>
                     <p xml:id="p_76.d1e1027" xml:lang="ar">ثم سار حتى وصل الفسطاط عن طريق المطرية وعين شمس متبعاً في ذلك خط السير الذي اتبعه الجيش الإسلامي مع عمرو بن العاص في أيام الفتح في سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="20" xml:id="num_1.d1e1029" xml:lang="ar">٢٠</num>
+                        <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0020" change="#d3e710 #d3e728" notBefore="0640-12-24" notAfter="0641-12-12"><num resp="#pers_TG" type="auto-markup" value="20" xml:id="num_1.d1e1029" xml:lang="ar">٢٠</num></tei:date>
                         هجرية فدخل الفسطاط يوم الجمعة 
                         <num resp="#pers_TG" type="auto-markup" value="9" xml:id="num_1.d1e1032" xml:lang="ar">٩</num>
                         المحرم 
-                        <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="0217" xml:id="date_5.d2e1857" xml:lang="ar">
+                        
                             سنة 
-                            <num resp="#pers_TG" type="auto-markup" value="217" xml:id="num_1.d1e1035" xml:lang="ar">٢١٧</num></date>وكانت قد بنيت له قبة على الجبل المقطم فنزل فيها وكانت تسمى قبة الهواء وكان مع المأمون فراشون من النصارى فبعدت عليهم الكنائس التي في القصر فاستأذنوا المأمون في بناء كنيسة يصلون بها تكون بالقرب من قبة الهواء فإذن لهم فبنوا من فضلات قبة الهواء كنيسة مرتمريم التي في القنطرة وهي التي عرفت في ما بعد بكنيسة الروم.</p>
+                            <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0217" change="#d3e710 #d3e728" notBefore="0832-02-11" notAfter="0833-01-29"><num resp="#pers_TG" type="auto-markup" value="217" xml:id="num_1.d1e1035" xml:lang="ar">٢١٧</num></tei:date>وكانت قد بنيت له قبة على الجبل المقطم فنزل فيها وكانت تسمى قبة الهواء وكان مع المأمون فراشون من النصارى فبعدت عليهم الكنائس التي في القصر فاستأذنوا المأمون في بناء كنيسة يصلون بها تكون بالقرب من قبة الهواء فإذن لهم فبنوا من فضلات قبة الهواء كنيسة مرتمريم التي في القنطرة وهي التي عرفت في ما بعد بكنيسة الروم.</p>
                     <p xml:id="p_77.d1e1039" xml:lang="ar">وفي أثناء إقامته في الفسطاط أرسل ملك النوبة وفداً إلى المأمون ذكروا عنه أن ناساً من مملكته وعبيده باعوا ضياعاً من ضياعهم لمن جاورهم من أهل أسوان وأنها ضياعه والقوم عبيده ولا أملاك لهم وإنما تملكهم على هذه تملك العبيد العاملين فيها فحول المأمون على عامله بأسوان تحقيق هذه المسألة وأمره بالاستئناس بمعلومات من بها من الشيوخ وأهل العلم فوصل الخبر إلى أهل أسوان الذين اشتروا تلك الضياع وعلموا أن عدل المأمون سينزعها من ايديهم ويردها على صاحبها فأعملوا الحيلة حتى لا يضيع عليهم الثمن الذي دفعوه وتذهب عليهم الأعيان التي تملكوها فتقدموا إلى البائعين من أهل النوبة واتفقوا معهم على أنهم إذا أحضرهم الحاكم المولى من قبل المأمون يقولون بأنهم ليسوا عبيداً لملك النوبة وأن يقولوا بحضرته وبحضرة الشيوخ والشهود والعدول: سبيلنا معاشر المسلمين سبيلكم مع ملككم ويجب علينا طاعته وترك المخالفة له فإن كنتم أنتم عبيداً لملككم وأموالكم له فنحن كذلك. فلما جمع حاكم أسوان بين البائعين وبين رسول ملك النوبة والنائب عنه في هذه القضية المهمة اعتمدوا على هذه الحجج ونحوها مما لقنها لهم أصحاب الحظ والمصلحة في ثبوت البيع ونفاذه فصح البيع لعدم إقرارهم بالرق لملكهم.</p>
                     <p xml:id="p_78.d1e1042" xml:lang="ar">هذا وقد أنشأ المأمون أثناء مقامه بمصر جسراً (كوبرياً) يصل بين مصر القديمة 
                         <pb change="#d2e678" ed="print" edRef="#edition_1" facs="#facs_500" n="500" xml:id="pb_42.d2e1763"/>
                         وبين جزيرة الروضة وانتقل إلى المنيل فأعجبته هذه الجزيرة الجميلة فبنى بها جامعاً ومقياساً كما ذكره عبد الرشيد صالح بن نوري الباكوبي المولود في مدينة باكو من بلاد الروسيا 
                         <pb corresp="file:../epub/26523/OEBPS/xhtml/P1962.xhtml" ed="shamela" n="n32-p22" xml:id="pb_23.d1e1044"/>
                         وهو من أعيان القرن التاسع للهجرة في كتابه المسمى بتلخيص الآثار في عجائب الأقطار المحفوظ منه نسختان في مكتبة باريس الأهلية ولم يتم هذا المقياس في أيام المأمون فأتمه المتوكل العباسي وهو الباقي إلى اليوم. وقد كان القبط يتولون مقاييس النيل إلى أيام المتوكل في 
-                        <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="0247" xml:id="date_5.d2e1872" xml:lang="ar">
+                        
                             سنة 
-                            <num resp="#pers_TG" type="auto-markup" value="247" xml:id="num_1.d1e1046" xml:lang="ar">٢٤٧</num></date>فتولاه المسلمون بعد تمام مقياس الروضة وأولهم أبو الرداد المعلم الذي كان مؤذناً في جامع عمرو يعلم الصبيان القرآن واستمرت هذه الوظيفة في ذريته حتى 
-                        <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="0938" xml:id="date_5.d2e1877" xml:lang="ar">
+                            <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0247" change="#d3e710 #d3e728" notBefore="0861-03-21" notAfter="0862-03-09"><num resp="#pers_TG" type="auto-markup" value="247" xml:id="num_1.d1e1046" xml:lang="ar">٢٤٧</num></tei:date>فتولاه المسلمون بعد تمام مقياس الروضة وأولهم أبو الرداد المعلم الذي كان مؤذناً في جامع عمرو يعلم الصبيان القرآن واستمرت هذه الوظيفة في ذريته حتى 
+                        
                             سنة 
-                            <num resp="#pers_TG" type="auto-markup" value="938" xml:id="num_1.d1e1049" xml:lang="ar">٩٣٨</num></date>ويقول الموكلون به في أيامنا هذه أنهم من عقبة.</p>
+                            <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0938" change="#d3e710 #d3e728" notBefore="1531-08-25" notAfter="1532-08-12"><num resp="#pers_TG" type="auto-markup" value="938" xml:id="num_1.d1e1049" xml:lang="ar">٩٣٨</num></tei:date>ويقول الموكلون به في أيامنا هذه أنهم من عقبة.</p>
                     <p xml:id="p_79.d1e1053" xml:lang="ar">ثم عدا المأمون إلى بر الجيزة وذهب إلى الأهرام. قال شيخ الربوة الصوفي الدمشقي في كتاب نخبة الدهر في عجائب البر والبحر المطبوع في بطرسبورغ ما نصه: ولم تزل همم الملوك قاصرة عن تعرف ما في هذين الهرمين إلى أن ولي المأمون الخلافة وورد مصر فأمر بفتح و
                         <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:id="num_80.d1e1595" xml:lang="ar">احد</num>
                         ففتح بعد عناء طويل واتفقن له لسعده المعين على تحصيل عرضه أن فتح في مكان يسلك منه إلى الغرض المطلوب فانتهى بهم الطريق إلى موضع مربع في وسطه حوض من رخام مغطى بالكف عما سواه. ويا ليت لو كان أمر بفتح هرمين أو 
@@ -1018,9 +1018,9 @@
                         من الأهرام الصغار المبثوثة فيرهما لكي يبين الأمر جلياً له وللناس.</p>
                     <p xml:id="p_80.d1e1056" xml:lang="ar">وروى المقريزي عن صاحب تحفة الألباب أن المأمون أصعد بعضهم لتعرف ما بداخله وبعضهم لذرعه من الخارج.</p>
                     <p xml:id="p_81.d1e1060" xml:lang="ar">فأفضى الذين صعدوا إلى القبة التي في أعلى الهرم من الداخل إلى قبة صغيرة فيها صورة آدمي من حجر أخضر كالدهنج فأخرجت على المأمون فإذا هي منطبقة فلما فتحت وجد فيها جسد آدمي عليه درع من الذهب مزين بأنواع الجواهر وعليه حلة من ذهب قد بليت ولم يبق منها سوى سلوكها من الذهب وكان على هذه الموميا طلاء بمقدار شبر من المر والصبر وعلى صدره نصل سيف لا قيمة له وعند رأسه حجر ياقوت أحمر كبيضة الدجاجة يضيء كلهب النار فأخذه المأمون وقال هذا خير من خراج الذهب. وقال كثير من المؤرخين أن هذا التمثال الأخضر لم يزل معلقاً عند دار الملك بمدينة مصر إلى 
-                        <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="0611" xml:id="date_5.d2e1898" xml:lang="ar">
+                        
                             سنة 
-                            <num resp="#pers_TG" type="auto-markup" value="611" xml:id="num_1.d1e1062" xml:lang="ar">٦١١</num></date>هجرية.</p>
+                            <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0611" change="#d3e710 #d3e728" notBefore="1214-05-20" notAfter="1215-05-08"><num resp="#pers_TG" type="auto-markup" value="611" xml:id="num_1.d1e1062" xml:lang="ar">٦١١</num></tei:date>هجرية.</p>
                     <p xml:id="p_82.d1e1066" xml:lang="ar">أما الذين صعدوا فوقه فقد انتهوا إلى قمته بعد 
                         <num resp="#pers_TG" subtype="d1" type="auto-markup" value="3" xml:id="num_83.d1e1613" xml:lang="ar">ثلاث</num>
                         ساعات فوجدوا رأس الهرم قدر مبرك 
@@ -1095,9 +1095,9 @@
                 <p xml:id="p_91.d1e1145" xml:lang="ar">وما المسألة في الحقيقة متوقفة على توزيع الأموال بين الناس بل أن المسألة آتية من عدم كفاية ما تنتج الأرض من الضرورات ولو غلت ما يسد عوز الناس لما عادت الغلات تساوي شيئاً بل تصبح إذ ذاك كالماء في الأنهار والحصا في شواطئ البحار. وعلى ذلك 
                     <pb change="#d2e678" ed="print" edRef="#edition_1" facs="#facs_504" n="504" xml:id="pb_51.d2e1946"/>
                     فالواجب أن نحسب ما ينبغي لنا من بر وأرز ولحم وقطن وغير ذلك لنضع ميزانية مدققة لموارد البشر وهذا لا يتيسر الآن في دور الفوضى والطفولة الذي نحن فيه. ويؤخذ من أحدث الإحصائيات أن على الحنطة 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1907" xml:id="date_5.d2e2061" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1907" xml:id="num_1.d1e1147" xml:lang="ar">١٩٠٧</num></date>بلغت 
+                        <tei:date calendar="#cal_gregorian" when="1907" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1907" xml:id="num_1.d1e1147" xml:lang="ar">١٩٠٧</num></tei:date>بلغت 
                     <num resp="#pers_TG" type="auto-markup" value="1086" xml:id="num_1.d1e1150" xml:lang="ar">١٠٨٦</num>
                     مليون هكتو لتر موزونها 
                     <num resp="#pers_TG" type="auto-markup" value="87" xml:id="num_1.d1e1153" xml:lang="ar">٨٧</num>
@@ -1262,18 +1262,18 @@
                 <p xml:id="p_99.d1e1263" xml:lang="ar">قال اللورد روزبري: إن من يبعمل لما فيه إنهاض تلك الجماعات من الناس الذي قضي عليهم أن تصفر وجوههم وتذل نفوسهم
                             وتنحط مداركهم في المساكن القذرة التي ينزلونها هو بلا شك عامل على ما فيه نفع الجنس البشري عامة.</p>
                 <p xml:id="p_100.d1e1266" xml:lang="ar">ولقد نشأت الفكرة الأولى لإنشاء بيوت العملة حوالي 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1810" xml:id="date_5.d2e2299" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1810" xml:id="num_1.d1e1268" xml:lang="ar">١٨١٠</num></date>وزادت حركتها 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1835" xml:id="date_5.d2e2304" xml:lang="ar">
+                        <tei:date calendar="#cal_gregorian" when="1810" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1810" xml:id="num_1.d1e1268" xml:lang="ar">١٨١٠</num></tei:date>وزادت حركتها 
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1835" xml:id="num_1.d1e1271" xml:lang="ar">١٨٣٥</num></date>على يد شركات المناجم بني الحدود
+                        <tei:date calendar="#cal_gregorian" when="1835" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1835" xml:id="num_1.d1e1271" xml:lang="ar">١٨٣٥</num></tei:date>على يد شركات المناجم بني الحدود
                             الفرنسوية البلجيكية واحتذى 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:id="num_149.d1e1932" xml:lang="ar">أحد</num>
                     أرباب المعامل الألمانية 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1835" xml:id="date_5.d2e2312" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1835" xml:id="num_1.d1e1274" xml:lang="ar">١٨٣٥</num></date>حذو الشركات الفرنسوية فأنشأ في مولهوس 
+                        <tei:date calendar="#cal_gregorian" when="1835" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1835" xml:id="num_1.d1e1274" xml:lang="ar">١٨٣٥</num></tei:date>حذو الشركات الفرنسوية فأنشأ في مولهوس 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:id="num_151.d1e1938" xml:lang="ar">إحدى</num>
                     مدن
                             ألمانيا مسكناً كبيراً في حديقة تشمل على  
@@ -1281,9 +1281,9 @@
                     منزلاً فتم عمله على أحسن الأساليب واقتدى به كثير من أهل المقاطعات في
                             الشرق والشمال في فرنسا.</p>
                 <p xml:id="p_101.d1e1281" xml:lang="ar">وفي 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1851" xml:id="date_5.d2e2327" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1851" xml:id="num_1.d1e1283" xml:lang="ar">١٨٥١</num></date>توسع 
+                        <tei:date calendar="#cal_gregorian" when="1851" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1851" xml:id="num_1.d1e1283" xml:lang="ar">١٨٥١</num></tei:date>توسع 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:id="num_154.d1e1951" xml:lang="ar">أحد</num>
                     الفرنسيس في هذا الفكر وأنشأ شركة عمرت ل
                     <num resp="#pers_TG" subtype="d4" type="auto-markup" value="1000" xml:id="num_155.d1e1954" xml:lang="ar">ألف</num>
@@ -1307,9 +1307,9 @@
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="6" xml:id="num_162.d1e1979" xml:lang="ar">ستة</num>
                     فرنكات وجعلت إيجارها
                             الحقيقي كل 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="0230" xml:id="date_5.d2e2363" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="230" xml:id="num_1.d1e1299" xml:lang="ar">٢٣٠</num></date>فرنكاً أي أقل من فرنك كل يوم عن مسكن يؤوي عائلة مؤلفة من 
+                        <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0230" change="#d3e710 #d3e728" notBefore="0844-09-22" notAfter="0845-09-10"><num resp="#pers_TG" type="auto-markup" value="230" xml:id="num_1.d1e1299" xml:lang="ar">٢٣٠</num></tei:date>فرنكاً أي أقل من فرنك كل يوم عن مسكن يؤوي عائلة مؤلفة من 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="5" xml:id="num_164.d1e1985" xml:lang="ar">خمسة</num>
                     إلى 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="6" xml:id="num_165.d1e1988" xml:lang="ar">ستة</num>
@@ -1342,9 +1342,9 @@
                     فرنكاً في السنة وفيها معظم ما يحتاج إليه من الغرف والمطبخ والأنبار وحديقة لطيفة. 
                     <pb corresp="file:../epub/26523/OEBPS/xhtml/P1971.xhtml" ed="shamela" n="n32-p31" xml:id="pb_32.d1e1324"/>
                     وأنشأ الإنكليز بيوتاً رخيصة في جنوبي لندن كما أنشئوا منذ 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1867" xml:id="date_5.d2e2414" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1867" xml:id="num_1.d1e1326" xml:lang="ar">١٨٦٧</num></date>في شمالي إنكلترا في بعض المدن الصناعية بيوتاً يقل ثمن الواحد منها عن 
+                        <tei:date calendar="#cal_gregorian" when="1867" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1867" xml:id="num_1.d1e1326" xml:lang="ar">١٨٦٧</num></tei:date>في شمالي إنكلترا في بعض المدن الصناعية بيوتاً يقل ثمن الواحد منها عن 
                     <num resp="#pers_TG" subtype="d4" type="auto-markup" value="6000" xml:id="num_177.d1e2032" xml:lang="ar">ستة آلاف</num>
                     فرنك جعلوها درجات فالدرجة الأولى لا تتجاوز أجرتها في اليوم فرنكين وهكذا في الدرجة الخامسة. وسكان هذه البيوت أو مستأجروها لا يقبضون في يومهم أكثر من 
                     <num resp="#pers_TG" subtype="d2" type="auto-markup" value="10" xml:id="num_178.d1e2035" xml:lang="ar">عشرة</num>
@@ -1355,9 +1355,9 @@
                     في ال
                     <num resp="#pers_TG" subtype="d3" type="auto-markup" value="100" xml:id="num_181.d1e2044" xml:lang="ar">مائة</num>
                     فائدة الأموال التي يستخدمها في هذا السبيل. قال اللورد بيكنسفيلد 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1874" xml:id="date_5.d2e2435" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1874" xml:id="num_1.d1e1330" xml:lang="ar">١٨٧٤</num></date>عندما رأى حياً من تلك الأحياء التي أنشأتها 
+                        <tei:date calendar="#cal_gregorian" when="1874" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1874" xml:id="num_1.d1e1330" xml:lang="ar">١٨٧٤</num></tei:date>عندما رأى حياً من تلك الأحياء التي أنشأتها 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:id="num_183.d1e2051" xml:lang="ar">إحدى</num>
                     الشركات ليقيم فيها العملة: إنني لم أشعر في حياتي بدهشة أشد من دهشة عرتني عندما زرت هذه المدينة الصغرى (شهافتسوبورغ بارك) وقد تجلى لناظري نجاح ساكنيها الذي هو ولا شك ضمان لارتقاء الأمة. ولطالما جال في خاطري أن لا شيء يحمي حمى المدينة مثل البيت فهو مدرسة جماع الفضائل الأهلية وبدون مسكن لطيف الباطن يتعذر عليها في الحقيقة الوصول إلى هذه الفضائل.</p>
                 <p xml:id="p_104.d1e1334" xml:lang="ar">وكان يقتصر في أمثال تلك المساكن سابقاً على الضروري من الحجرات ويعني بأسباب الراحة فقط أما الآن فقط ارتقت الحال في
@@ -1372,9 +1372,9 @@
                     فيتيسر بذلك للساكن أن يجيء نصف النهار إلى بيته ليتناول الطعام مع أهله 
                     <pb change="#d2e678" ed="print" edRef="#edition_1" facs="#facs_509" n="509" xml:id="pb_62.d2e2321"/>
                     وفي ذلك من الاقتصاد ما فيه إذ يمتنع رب الأسرة عن الذهاب على المطاعم أو الحانات وكلها مما تضر بصحته وكيسه معاً وبذلك لا يصعب عليه أن يدفع أجرة أغلى من الأجرة التي يدفعها البعيد عن مسكنه. وقد أسست شركات عظمى غنية في لندن منذ 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1845" xml:id="date_5.d2e2456" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1845" xml:id="num_1.d1e1344" xml:lang="ar">١٨٤٥</num></date>وكثرت في المدن البريطانية ورأس مال كل شركة من هذه الشركات لا يقل عن مليوني جنيه وتدعى أمثال هذه الدور دور الثكن (القشلاقات) وهي أبنية عظمى ذات 
+                        <tei:date calendar="#cal_gregorian" when="1845" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1845" xml:id="num_1.d1e1344" xml:lang="ar">١٨٤٥</num></tei:date>وكثرت في المدن البريطانية ورأس مال كل شركة من هذه الشركات لا يقل عن مليوني جنيه وتدعى أمثال هذه الدور دور الثكن (القشلاقات) وهي أبنية عظمى ذات 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="5" xml:id="num_185.d1e2068" xml:lang="ar">خمس</num>
                     طبقات كل طبقة منفردة عن بعض يفصل بينها فناء متسع يلعب فيه الأولاد وقد فتحت فرج في الأدراج وجعلت في بعضها ممرات ومنافذ يدخل إليها النور والهواء وليس فيها دهاليز مظلمة وهي على غاية النظافة على أنواعها مستوفاة شروط الصحة كل الاستيفاء.</p>
                 <p xml:id="p_107.d1e1348" xml:lang="ar">ومعدل أجرة مسكن ذي 
@@ -1392,9 +1392,9 @@
                             من يريد السكنى في بيوتها وعن مسكنه وذمته في أداء الحقوق وهي تؤثر الأسرة التي لها أولاد على غيرها على حين أن أكثر
                             المؤجرين لا يرضون أن يكروا بيوتهم لمن كثر أولادهم فكان ذلك في فرنسا من جملة الأسباب في قلة النسل فيها.</p>
                 <p xml:id="p_108.d1e1358" xml:lang="ar">وقد أوصى المستر بابودي الأميركي 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1862" xml:id="date_5.d2e2485" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1862" xml:id="num_1.d1e1360" xml:lang="ar">١٨٦٢</num></date>باثني 
+                        <tei:date calendar="#cal_gregorian" when="1862" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1862" xml:id="num_1.d1e1360" xml:lang="ar">١٨٦٢</num></tei:date>باثني 
                     <num resp="#pers_TG" subtype="d2" type="auto-markup" value="10" xml:id="num_192.d1e2095" xml:lang="ar">عشر</num>
                     مليون فرنك لإنشاء دور من هذا النوع في وسط مدينة لندن ينفق
                             ريعها كل سنة لإنشاء بيوت جديدة وقال في وصيته أنه بعد انقضاء قرن يكون الريع السنوي الناتج من الإيجارات قد بلغ
@@ -1481,12 +1481,12 @@
                     <lb change="#d2e678" ed="print" edRef="#edition_1" xml:id="lb_30.d2e2441"/>
                     فيها لهمة الأفراد.</p>
                 <p xml:id="p_118.d1e1401" xml:lang="ar">وقد قررت دار الندوة الإنكليزية 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1890" xml:id="date_5.d2e2583" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1890" xml:id="num_1.d1e1403" xml:lang="ar">١٨٩٠</num></date>أن تمنح المجالس البلدية حق نزع ملكية البيوت القذرة وأن تمديد معونتها للشركات وتسلفها أموالاً في مقابلة رهن لإعادة تلك البيوت إلى حالة حسنة تجمع إلى النظافة الرخص ويعود الفقراء فيسكنوها فكان في ذلك من المنافع الصحية العامة ما ظهر أثره في وجوه السكان وصحتهم. ولا معنى لتساهل الحكومة وقلة عنايتها وهي المسيطرة على القانون أن تترك الناس وشأنهم إذا بلغت بهم الحال إلى هذه الدرجة من البؤس على أن هذا البحث كان موضوع المناقشة في المؤتمر الدولي 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1900" xml:id="date_5.d2e2588" xml:lang="ar">
+                        <tei:date calendar="#cal_gregorian" when="1890" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1890" xml:id="num_1.d1e1403" xml:lang="ar">١٨٩٠</num></tei:date>أن تمنح المجالس البلدية حق نزع ملكية البيوت القذرة وأن تمديد معونتها للشركات وتسلفها أموالاً في مقابلة رهن لإعادة تلك البيوت إلى حالة حسنة تجمع إلى النظافة الرخص ويعود الفقراء فيسكنوها فكان في ذلك من المنافع الصحية العامة ما ظهر أثره في وجوه السكان وصحتهم. ولا معنى لتساهل الحكومة وقلة عنايتها وهي المسيطرة على القانون أن تترك الناس وشأنهم إذا بلغت بهم الحال إلى هذه الدرجة من البؤس على أن هذا البحث كان موضوع المناقشة في المؤتمر الدولي 
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1900" xml:id="num_1.d1e1406" xml:lang="ar">١٩٠٠</num></date>وانقسمت الآراء فيما إذا كان يجب صرف أموال الضرائب في إقامة بيوت رخيصة كما يجري في لندن وبرمنغهام من بلاد الإنكليز وفي فريبورغ وأولم في ألمانيا وفي غوتسبورغ في السويد على يد المجالس البلدية إلا أن الرأي العام كان مناقضاً لهذه الاشتراكية. 
+                        <tei:date calendar="#cal_gregorian" when="1900" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1900" xml:id="num_1.d1e1406" xml:lang="ar">١٩٠٠</num></tei:date>وانقسمت الآراء فيما إذا كان يجب صرف أموال الضرائب في إقامة بيوت رخيصة كما يجري في لندن وبرمنغهام من بلاد الإنكليز وفي فريبورغ وأولم في ألمانيا وفي غوتسبورغ في السويد على يد المجالس البلدية إلا أن الرأي العام كان مناقضاً لهذه الاشتراكية. 
                     <pb corresp="file:../epub/26523/OEBPS/xhtml/P1976.xhtml" ed="shamela" n="n32-p36" xml:id="pb_37.d1e1409"/>
                     وإنك لتجد الممالك الصغرى في أوروبا من العناية بأمثال هذه المشاريع ما للممالك الكبرى وزيادة. فإذا كنا نسمع بنور المدينة ينبعث من ألمانيا وانكلترا وفرنسا في أوروبا فإن سويسرا والدانيمرك والسويد والبلجيك وهولاندة لا تقل عنها في المشاريع العامة الخيرية إن لم نقل تفوقها في أكثر حسنات المدينة لأن اللقمة الصغيرة يسهل ازدرادها أكثر من الكبيرة كما يقولون ولأن الصغير المدبر يتيسر له ضم أطرافه أكثر من الكبير المتوسع في أملاكه. وخذ مثلاً لذلك البلجيك فإنها بفضل صندوق التوفير العام فيها قد أصبح 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="5" xml:id="num_209.d1e2186" xml:lang="ar">خمسة</num> <num resp="#pers_TG" subtype="d2" type="auto-markup" value="10" xml:id="num_210.d1e2189" xml:lang="ar">عشر</num> <num resp="#pers_TG" subtype="d4" type="auto-markup" value="1000" xml:id="num_211.d1e2193" xml:lang="ar">ألف</num>
@@ -1585,9 +1585,9 @@
                     إلى 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="5" xml:id="num_241.d1e2309" xml:lang="ar">خمسة</num>
                     فرنكات في معرض باريز 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1900" xml:id="date_5.d2e2736" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1900" xml:id="num_1.d1e1459" xml:lang="ar">١٩٠٠</num></date>فكانت محل العجب وربما كانت هي المعول عليها في المستقبل
+                        <tei:date calendar="#cal_gregorian" when="1900" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1900" xml:id="num_1.d1e1459" xml:lang="ar">١٩٠٠</num></tei:date>فكانت محل العجب وربما كانت هي المعول عليها في المستقبل
                             لإيواء العملة وراحتهم ففيها جماع مرافق الحياة وفي كل منها حديقة للبقول تؤجر على حدة بأجرة طفيفة جداً. وهذه
                             الحدائق يمكن زرعها على أيسر سبيل بما أنشأته عقيلة من عقيلات الكرم والعقل من شركة تؤدي للعملة ما يلزمهم من الأرض
                             والبذور (التقاوي) والنباتات لغرسها في حدائقهم أو لتزيين بيوتهم بها.</p>
@@ -1630,9 +1630,9 @@
                 <p xml:id="p_128.d1e1484" xml:lang="ar">وما عدا دور العملة والعناية بأمرهم تجد في أوروبا جمعيات إحسان أخذت على نفسها إنشاء بيوت رخيصة يسكنها كل فقير بدون استثناء. وقد بلغ عددها في فرنسا 
                     <num resp="#pers_TG" type="auto-markup" value="67" xml:id="num_1.d1e1486" xml:lang="ar">٦٧</num>
                     جمعية وأقدمها جمعية باريز التي أنشئت 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1780" xml:id="date_5.d2e2797" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1780" xml:id="num_1.d1e1489" xml:lang="ar">١٧٨٠</num></date>فأنشأت بيوتاً مشتركة لا يكلف السكنة فيها كل أسبوع أكثر من 
+                        <tei:date calendar="#cal_gregorian" when="1780" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1780" xml:id="num_1.d1e1489" xml:lang="ar">١٧٨٠</num></tei:date>فأنشأت بيوتاً مشتركة لا يكلف السكنة فيها كل أسبوع أكثر من 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="3" xml:id="num_256.d1e2370" xml:lang="ar">ثلاثة</num>
                     فرنكات وربع إلى 
                     <num resp="#pers_TG" subtype="d1" type="auto-markup" value="7" xml:id="num_257.d1e2373" xml:lang="ar">سبعة</num>
@@ -1654,9 +1654,9 @@
                 <p xml:id="p_129.d1e1495" xml:lang="ar">ومثل هذه البيوت في نظامها وفائدتها كثير من الممالك الصغرى في أوروبا فتجد في كوبنهاغ شركة بيوت العملة وقد أقامت
                             ألوفاً من المساكن للعملة والشركة مؤلفة من العملة أنفسهم وهي لهم بمثابة صندوق اقتصاد فيدفع كل عامل في الأسبوع
                             قرشين أي نصف فرنك حتى يبلغ ما جمع من ذلك 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1900" xml:id="date_5.d2e2833" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1900" xml:id="num_1.d1e1497" xml:lang="ar">١٩٠٠</num></date>مقدار  
+                        <tei:date calendar="#cal_gregorian" when="1900" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1900" xml:id="num_1.d1e1497" xml:lang="ar">١٩٠٠</num></tei:date>مقدار  
                     <num resp="#pers_TG" type="auto-markup" value="5769930" xml:id="num_1.d1e1500" xml:lang="ar">٥٧٦٩٩٣٠</num>
                     كورونا (الكورون فرنك و
                     <num resp="#pers_TG" subtype="d2" type="auto-markup" value="40" xml:id="num_264.d1e2400" xml:lang="ar">أربعون</num>
@@ -1671,12 +1671,12 @@
                             مع أرباحه أو يأخذ داراً وإذا مات يأخذ ورثته هذا المبلغ ومما هو حري بالنظر في كوبنهاغ بيوت البحارة ومستخدمي
                             البحرية التي أنشأها الملك كريستيان الرابع.</p>
                 <p xml:id="p_130.d1e1504" xml:lang="ar">وشركة تحسين المنازل في سويسرا وميلان ونابولي ونيويورك حرية بالذكر أيضاً وكلها تدور على تحسين مسكن الفقير وبعضها يعنى بالتدفئة أيام الشتاء وبإعطاء الماء الساخن لمن شاء من الساكنين بلا مقابل وإلقاء الحرارة المعتدلة في مساكنهم وقد قامت بعض تلك الشركات بيد النساء فنجحت كما تنجح شركات الرجال. مثل شركة الآنسة كولنس في نيويورك التي أنشأتها على مثال شركة الآنسة أوكتافيا في لندن لتطهير المساكن القذرة من قذارتها وتطهير نفوس ساكنيها من حمأة الرذيلة فنجحت كلتا الشركتين وأتتا بأرباح حسنة. وقد بدأت حكومة البرازيل منذ 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1882" xml:id="date_5.d2e2857" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1882" xml:id="num_1.d1e1506" xml:lang="ar">١٨٨٢</num></date>تساعد في إنشاء البيوت الرخيصة فأصبح عددها في ريودجانيرو وحدها 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1897" xml:id="date_5.d2e2862" xml:lang="ar">
+                        <tei:date calendar="#cal_gregorian" when="1882" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1882" xml:id="num_1.d1e1506" xml:lang="ar">١٨٨٢</num></tei:date>تساعد في إنشاء البيوت الرخيصة فأصبح عددها في ريودجانيرو وحدها 
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1897" xml:id="num_1.d1e1509" xml:lang="ar">١٨٩٧</num></date>، 
+                        <tei:date calendar="#cal_gregorian" when="1897" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1897" xml:id="num_1.d1e1509" xml:lang="ar">١٨٩٧</num></tei:date>، 
                     <num resp="#pers_TG" type="auto-markup" value="5000" xml:id="num_1.d1e1512" xml:lang="ar">٥٠٠٠</num>
                     مسكن. ومن تلك الشركات جمعيات أخذت على نفسها نشر الدروس الاجتماعية والدعوة إلى تعلمها فكانت من أنفع ما يكون من الإصلاحات العظيمة التي أدخلت على بيوت الفقراء وجعل بعضها غايته درس الأسباب التي تنشأ الأسرة على أساس طبيعي وهو تمليكها أرضاً تحرثها وداراً تسكنها. تتذرع للوصول إلى هذا الغرض بكل وسيلة ممكنة تمكنها من نشر المطبوعات ودعوة الحكومات أو البلديات أو أرباب الغنى إلى إنشاء صناديق لإيجار بيوت بثمن بخس وتطالب بسن قانون تعفي الحكومة فيه من الضرائب ما يملكه الفقراء من المساكن والأراضي وتتخذ كل سبب ليتيسر للناس اقتناء مثل هذه البيوت أو بقاؤها أو انتقالها ومنها ما يعطى للمحاويج 
                     <pb corresp="file:../epub/26523/OEBPS/xhtml/P1981.xhtml" ed="shamela" n="n32-p41" xml:id="pb_42.d1e1515"/>
@@ -1797,19 +1797,19 @@
                 <p xml:id="p_149.d1e1590" xml:lang="ar">ألمانيا مسوقة إلى المشاريع التجارية بنابل من ناموسها الاقتصادي تضطرها إليه ضرورة ملازمة لها ملازمة محتمة. الألماني كثير النسل للغاية. فقد ازداد سكان ألمانيا من نحو 
                     <num resp="#pers_TG" type="auto-markup" value="25" xml:id="num_1.d1e1592" xml:lang="ar">٢٥</num>
                     مليوناً 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1846" xml:id="date_5.d2e3015" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1846" xml:id="num_1.d1e1595" xml:lang="ar">١٨٤٦</num></date>إلى زهاء 
+                        <tei:date calendar="#cal_gregorian" when="1846" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1846" xml:id="num_1.d1e1595" xml:lang="ar">١٨٤٦</num></tei:date>إلى زهاء 
                     <num resp="#pers_TG" type="auto-markup" value="36" xml:id="num_1.d1e1598" xml:lang="ar">٣٦</num>
                     مليوناً 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1855" xml:id="date_5.d2e3023" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1855" xml:id="num_1.d1e1601" xml:lang="ar">١٨٥٥</num></date>إلى 
+                        <tei:date calendar="#cal_gregorian" when="1855" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1855" xml:id="num_1.d1e1601" xml:lang="ar">١٨٥٥</num></tei:date>إلى 
                     <num resp="#pers_TG" type="auto-markup" value="60" xml:id="num_1.d1e1604" xml:lang="ar">٦٠</num>
                     مليوناً 
-                    <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1905" xml:id="date_5.d2e3032" xml:lang="ar">
+                    
                         سنة 
-                        <num resp="#pers_TG" type="auto-markup" value="1905" xml:id="num_1.d1e1608" xml:lang="ar">١٩٠٥</num></date>وأنت أعلم بأن هذه الزيادة تزيد في عدد الأسر والبيوت. 
+                        <tei:date calendar="#cal_gregorian" when="1905" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1905" xml:id="num_1.d1e1608" xml:lang="ar">١٩٠٥</num></tei:date>وأنت أعلم بأن هذه الزيادة تزيد في عدد الأسر والبيوت. 
                     </p>
                 <pb corresp="file:../epub/26523/OEBPS/xhtml/P1986.xhtml" ed="shamela" n="n32-p46" xml:id="pb_47.d1e1611"/>
                 <p xml:id="p_131.d2e2876" xml:lang="ar">وهذا النمو من الأمور التي ساعدت على نماء الثروة بينهم لأن الزائد كل سنة من أبناء الأمة ينشأ منهم لألمانيا جيش من العاملين الذين تحتاج إليهم الصناعة في ترقية شؤونها وقد انتشر فكر الإقدام على الأعمال في الطبقة الغنية من الأمة انتشاراً كثيراً. وإنك لترى رب الأسرة منهم غير طامع أن يترك لأبنائه كما هو الحال عند الفرنسيس مقاماً كريماً يعده لهم ودخلاً مضموناً يتمتعون به بعده بل أنه يربيهم تربية متينة ويجهزهم لجهاد الحياة بأقوى جهاز ثم يتركهم وشأنهم يجدون في الأرض مرتزقاً.</p>
@@ -2189,9 +2189,9 @@
                 <div change="#d2e678" subtype="article" type="item" xml:id="div_43.d2e3528" xml:lang="ar">
                     <head xml:id="head_39.d2e3530" xml:lang="ar">أندية العملة</head>
                     <p xml:id="p_223.d1e1950" xml:lang="ar">جعلت للعملة في بلاد الإنكليز منذ 
-                        <date change="#d2e597 #d2e625 #d2e672" type="auto-markup" when="1862" xml:id="date_5.d2e3717" xml:lang="ar">
+                        
                             سنة 
-                            <num resp="#pers_TG" type="auto-markup" value="1862" xml:id="num_1.d1e1952" xml:lang="ar">١٨٦٢</num></date>أندية خاصة يأوون إليها آونة فراغهم ولا يكونون فيها عرضة لتعاطي المشروبات الروحية وما برح المشتركون فيها ينمون حتى غدت وارداتها تكفيها. وفي إنكلترا 
+                            <tei:date calendar="#cal_gregorian" when="1862" change="#d3e710"><num resp="#pers_TG" type="auto-markup" value="1862" xml:id="num_1.d1e1952" xml:lang="ar">١٨٦٢</num></tei:date>أندية خاصة يأوون إليها آونة فراغهم ولا يكونون فيها عرضة لتعاطي المشروبات الروحية وما برح المشتركون فيها ينمون حتى غدت وارداتها تكفيها. وفي إنكلترا 
                         <num resp="#pers_TG" type="auto-markup" value="1100" xml:id="num_1.d1e1955" xml:lang="ar">١١٠٠</num>
                         ناد ينفق الفرد فيها كل أسبوع ثمن مشروبات ودخان ومياه معدنية شليناً واحداً ومنها مائتا ناد لها صفة سياسية وجميع هذه الأندية تمثل عامة الآراء والمذاهب وتنشئ محاضرات ومسامرات وسماعاً ومعارض زهور وأعياد إحسان ولكل ناد مال خاص ينفق منه على فقراء المقاطعة التي هو فيها. وأهم ما تمتاز به أندية العملة الامتناع عن المشروبات الروحية والإحسان لمن جار عليه الزمان من أبناء بلادهم ولبعضها خزائن كتب سيارة تطوف البلاد ليطالع فيها الناس مجاناً.</p>
                 </div>
@@ -2231,9 +2231,9 @@
                     <head xml:id="head_33.d1e3189" xml:lang="ar"> <bibl next="#bibl_4.d2e3611" xml:id="bibl_3.d2e3606" xml:lang="ar"> <title level="m" xml:id="title_15.d2e3607" xml:lang="ar">كتاب تأويل مختلف الحديث</title> </bibl> </head>
                     <p xml:id="p_233.d1e2000" xml:lang="ar"> <bibl next="#bibl_5.d2e3634" prev="#bibl_3.d2e3606" xml:id="bibl_4.d2e3611" xml:lang="ar">لل
                             <author xml:id="author_3.d2e3613" xml:lang="ar"> <persName xml:id="persName_18.d2e3614" xml:lang="ar" ref="oape:pers:3165" change="#d9e707">امام<addName type="kunyah" xml:lang="ar" change="#d2e703" xml:id="addName_1.d2e4039"><nameLink xml:lang="ar" change="#d2e703" xml:id="nameLink_1.d2e4040">ابي</nameLink>محمد<addName type="theophoric" xml:lang="ar" change="#d2e703" xml:id="addName_1.d2e4043">عبد الله</addName></addName><addName type="nasab" xml:lang="ar" change="#d2e703" xml:id="addName_3.d2e4045"><nameLink xml:lang="ar" change="#d2e703" xml:id="nameLink_2.d2e4046">بن</nameLink>مسلم<addName type="nasab" xml:lang="ar" change="#d2e703" xml:id="addName_3.d2e4049"><nameLink xml:lang="ar" change="#d2e703" xml:id="nameLink_3.d2e4050">بن</nameLink>قتيبة</addName></addName></persName></author>المتوفى 
-                            <date calendar="#cal_islamic" change="#d2e597 #d2e625 #d2e672" datingMethod="#cal_islamic" type="auto-markup" when-custom="0276" xml:id="date_5.d2e3807" xml:lang="ar">
+                            
                                 سنة 
-                                <num resp="#pers_TG" type="auto-markup" value="276" xml:id="num_1.d1e2002" xml:lang="ar">٢٧٦</num></date>هـ مصنفات كثيرة قبل أنها تربى على 
+                                <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="0276" change="#d3e710 #d3e728" notBefore="0889-05-10" notAfter="0890-04-28"><num resp="#pers_TG" type="auto-markup" value="276" xml:id="num_1.d1e2002" xml:lang="ar">٢٧٦</num></tei:date>هـ مصنفات كثيرة قبل أنها تربى على 
                             <num resp="#pers_TG" subtype="d3" type="auto-markup" value="300" xml:id="num_367.d1e3110" xml:lang="ar">ثلثمائة</num>
                             مصنف وهذا الكتاب من أجودها</bibl>. الفه بعد أن رأى ثلب أهل الكلام لأهل الحديث وإسهابهم في ذمهم ورميهم برواية المتناقض حتى كثر الاختلاف بين الأمة وقد تعرض في مقدمته لجل ما قاله علماء الكلام في حق رواة الحديث من الجمهور ومراده بأهل الكلام علماء المعتزلة إذ لم يكن هذا اللقب يطلق قديماً على غيرهم وأجاب عن اعتراضاتهم فيها بجواب مجمل وجعل تتمة الكتاب لتأويل الأحاديث التي ادعوا عليها التناقض أو المخالفة للكتاب العزيز أو المخالفة لصريح العقل الذي دل على اعتباره صحيح النقل. وأكثر في ذلك وأظهر ما اشتهر عنه من البراعة والإجادة فيما ينحو إليه ولكلامه وقع في النفوس وناهيك بمن قيل فيه أنه لأهل السنة مثل 
                         <persName change="#d2e648 #d9e707" ref="viaf:11070 oape:pers:68 wiki:Q293497" xml:id="persName_9.d1e3113" xml:lang="ar">الجاحظ</persName>
