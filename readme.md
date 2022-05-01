@@ -1,20 +1,27 @@
 ---
-title: "Readme: Digial Muqtabas"
+title: "Readme: Joural al-Muqtabas"
 author: Till Grallert
-date: 2021-09-03
+date: 2022-02-04
 ORCID: orcid.org/0000-0002-5739-8094
 ---
 
-# Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1917/18)
-
-[![GitHub release](https://img.shields.io/github/release/openarabicpe/journal_al-muqtabas.svg)](https://github.com/openarabicpe/journal_al-muqtabas/releases)
 [![DOI](https://zenodo.org/badge/45922152.svg)](https://zenodo.org/badge/latestdoi/45922152)
+[![GitHub release](https://img.shields.io/github/release/openarabicpe/journal_al-muqtabas.svg)](https://github.com/openarabicpe/journal_al-muqtabas/releases)
+[![License: CC BY 4.0](https://img.shields.io/badge/license-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Maintenance](https://img.shields.io/badge/maintained%3F-yes-green.svg)](https://github.com/openarabicpe/journal_al-muqtabas/graphs/commit-activity)
+![Commit activity](https://img.shields.io/github/commit-activity/m/openarabicpe/journal_al-muqtabas)
+![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/openarabicpe/journal_al-muqtabas/latest)
+![GitHub last commit](https://img.shields.io/github/last-commit/openarabicpe/journal_al-muqtabas)
+![GitHub contributors](https://img.shields.io/github/contributors/openarabicpe/journal_al-muqtabas)
+
+
+# Digital *Muqtabas*: An open, collaborative, and scholarly digital edition of Muḥammad Kurd ʿAlī's early Arabic periodical *Majallat al-Muqtabas* (1906--1917/18)
 
 Quick links:
 
 - [Blog](https://openarabicpe.github.io),
 - [Webview *al-Muqtabas* 1(1) (text, facsimile)](https://openarabicpe.github.io/journal_al-muqtabas/tei/oclc_4770057679-i_1.TEIP5.xml): works most reliably with Chrome and Safari
-- [Zotero group "OpenArabicPE/digital-muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/openarabicpe/items/collectionKey/8SINFUW9)
+- [Zotero group "OpenArabicPE/journal_al-muqtabas" (bibliographic metadata)](https://www.zotero.org/groups/openarabicpe/items/collectionKey/8SINFUW9)
 
 In the context of the current onslaught cultural artifacts in the Middle East face from the iconoclasts of the Islamic State, from the institutional neglect of states and elites, and from poverty and war, digital preservation efforts promise some relief as well as potential counter narratives. They might also be the only resolve for future education and rebuilding efforts once the wars in Syria, Iraq or Yemen come to an end.
 
