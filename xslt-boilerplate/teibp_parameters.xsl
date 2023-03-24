@@ -12,7 +12,7 @@
         </xd:desc>
     </xd:doc>
     
-    <!-- Load all other stylesheets -->
+    <!-- Load all other stylesheets: this should be moved to the main stylesheet as this is not going to be something one will want to change -->
     <!-- import the standard TEI Boilerplate stylesheets. If you link to versions hosted on GitHub make sure to point to a stable version to ensure that future changes won't break your set-up -->
     <xsl:include href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_main.xsl"/>
     <xsl:include href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_sourcedesc.xsl"/>
@@ -45,6 +45,10 @@
     <xsl:param name="p_mimetype" select="'image/tiff'"/>
     <!-- toggle the width of the columns. If set to true(), the facsimiles will take up most of the available space -->
     <xsl:param name="p_facsimile-only" select="false()"/>
+
+    <!-- link authority files -->
+    <xsl:param name="p_bibliography" select="document('https://openarabicpe.github.io/authority-files/data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml')"/>
+    <!-- <xsl:param name="p_bibliography" select="document('../../authority-files/data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml')"/> -->
     
     <!-- original TEI Boilerplate stuff -->
     <xsl:param name="teibpHome" select="'http://dcl.slis.indiana.edu/teibp/'"/>
